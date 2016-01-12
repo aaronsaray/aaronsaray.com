@@ -21,9 +21,9 @@ _I should mention... I'm just learning this particular integration, plus this is
 In my **edit.html.twig** file, I had the following:
 
     
-    
+    {% raw %}
     {{ form_row(form.myItem, {'label': 'My special label'}) }}
-    
+    {% endraw %}
 
 
 
@@ -31,7 +31,7 @@ It wasn't grabbing my output in the custom template.  The template excerpt looke
 
 
     
-    
+    {% raw %}
     {% block field_row %}
      
         <div class="{{ div_class }}">
@@ -43,7 +43,7 @@ It wasn't grabbing my output in the custom template.  The template excerpt looke
         </div>
      
     {% endblock field_row %}
-    
+    {% endraw %}
 
 
 
