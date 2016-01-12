@@ -1,0 +1,20 @@
+---
+author: aaron
+comments: true
+date: 2010-01-20 16:13:48+00:00
+layout: post
+slug: friend-of-a-friend-foaf
+title: 'Friend of a Friend: FOAF'
+wordpress_id: 545
+categories:
+- Misc Web Design
+tags:
+- Misc Web Design
+---
+
+So I added my own FOAF link on my home page.  The RDF file is here:
+[http://assets.aaronsaray.com/assets/foaf.rdf](http://assets.aaronsaray.com/assets/foaf.rdf)
+
+For those who aren't familiar, Friend of a Friend is a protocol defined to help machines read relationships between entities (persons) on the internet.  The relationships are set up in RDF file.  (Mine is severely limited - either I have no friends - or am just lazy - you tell me!)  For more info, check out [http://www.foaf-project.org/](http://www.foaf-project.org/).
+
+By far, the best library I've found for parsing FOAF files is located here: [http://gna.org/projects/phoaf](http://gna.org/projects/phoaf)

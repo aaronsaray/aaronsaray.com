@@ -1,0 +1,19 @@
+---
+author: aaron
+comments: true
+date: 2008-04-24 23:48:48+00:00
+layout: post
+slug: simplephpmailer
+title: SimplePHPMailer
+wordpress_id: 103
+categories:
+- open source
+- PHP
+tags:
+- open source
+- PHP
+---
+
+![](http://aaronsaray.com/wp-content/uploads/2008/05/email.gif)             There are a very small amount of really easy to implement PHP mailer             scripts in the wild.  They usually try to pump so many features into             them that it becomes difficult to implement or too large of a file.             For those looking for just a quick drop-in solution - that you DON'T             need to know PHP to use - SimplePHPMailer was developed.  All that is             needed is to drop the php file into the same area as your form, open it             up, and read the instructions.  There are some straight forward             configuration options with very easy to understand comments.  Download             it for your next quick project.
+
+[simplephpmailer.0.2.0](http://aaronsaray.com/wp-content/uploads/2010/08/SimplePHPMailer.0.2.0.zip)
