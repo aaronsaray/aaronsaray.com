@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+</head>
+<body>
+  <div>
+    <header class="container">
+      <nav>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Open Source</a></li>
+          <li><a href="#">Resume</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+  </div>
+  <footer>
+    <ul>
+      <li><a href="https://github.com/aaronsaray">Github</a></li>
+      <li><a href="https://twitter.com/aaronsaray">Twitter</a></li>
+      <li><a href="https://linkedin.com/in/aaronsaray">LinkedIn</a></li>
+    </ul>
+    <p>&copy; 2016 Aaron Saray</p>
+  </footer>
+</body>
 
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-  </body>
-
-</html>
