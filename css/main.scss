@@ -113,14 +113,24 @@ footer p {
   list-style: none;
   margin-bottom: 0.6rem;
 }
-.entry-list h3 {
+.entry-list h3, .entry h3 {
   display: inline-block;
 }
-.entry-list span {
+.entry-list span, .entry > span {
   font-size: 0.8rem;
   color: #aaaaaa;
 }
 .rss-subscribe {
   text-align: center;
   font-size: 0.8rem;
+}
+
+
+@import "syntax-highlighting";
+
+.highlight {
+  line-height: 1.5;
+  margin: 2rem 0;
+  background: aliceblue;
+  padding: 0.1rem 1rem;
 }
