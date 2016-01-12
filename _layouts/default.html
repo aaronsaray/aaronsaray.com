@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
@@ -13,10 +15,11 @@
     <header class="container">
       <nav>
         <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Open Source</a></li>
-          <li><a href="#">Resume</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="https://github.com/aaronsaray" target="_blank">Open Source</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -33,4 +36,4 @@
     <p>&copy; 2016 Aaron Saray</p>
   </footer>
 </body>
-
+</html>
