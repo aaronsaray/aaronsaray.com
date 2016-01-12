@@ -105,3 +105,22 @@ footer p {
   font-weight: normal;
   font-size: 1rem;
 }
+.entry-list, .entry-list li, .entry-list h3 {
+  margin: 0;
+  padding: 0;
+}
+.entry-list li {
+  list-style: none;
+  margin-bottom: 0.6rem;
+}
+.entry-list h3 {
+  display: inline-block;
+}
+.entry-list span {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+}
+.rss-subscribe {
+  text-align: center;
+  font-size: 0.8rem;
+}
