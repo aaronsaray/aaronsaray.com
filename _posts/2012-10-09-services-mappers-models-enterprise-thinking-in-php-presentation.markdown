@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-10-09 18:35:58+00:00
 layout: post
-slug: services-mappers-models-enterprise-thinking-in-php-presentation
 title: 'Services, Mappers, Models: Enterprise Thinking in PHP {presentation}'
-wordpress_id: 1307
-categories:
-- Milwaukee PHP Users Group
-- PHP
-- programming
 tags:
 - Milwaukee PHP Users Group
 - PHP

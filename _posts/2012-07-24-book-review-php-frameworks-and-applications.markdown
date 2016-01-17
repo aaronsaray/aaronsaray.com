@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2012-07-24 14:18:06+00:00
 layout: post
-slug: book-review-php-frameworks-and-applications
 title: 'Book Review: PHP Frameworks and Applications'
-wordpress_id: 1225
-categories:
+tags:
 - learning
 - PHP
 - programming
@@ -20,8 +15,6 @@ categories:
 This is the book I wish I had years ago.  This is the book I wish I had written.  Go [buy](http://www.amazon.com/gp/product/0470872497/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0470872497&linkCode=as2&tag=aarsar-20) this book.
 
 But let me break it down why I like it...
-
-
 
 
 

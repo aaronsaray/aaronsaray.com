@@ -1,18 +1,9 @@
 ---
-author: aaron
-comments: true
-date: 2012-08-22 00:52:57+00:00
 layout: post
-slug: ideas-online
 title: Ideas Online
-wordpress_id: 1289
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---
-
-**Ideas Online**
 
 This idea is to create an idea repository.  I started out wanting to make this website - and instead just decided to list my ideas on this blog.  But, here goes.
 

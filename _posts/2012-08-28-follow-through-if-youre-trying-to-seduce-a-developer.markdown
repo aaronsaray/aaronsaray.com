@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2012-08-28 14:43:51+00:00
 layout: post
-slug: follow-through-if-youre-trying-to-seduce-a-developer
 title: Follow Through if You're Trying to Seduce a Developer
-wordpress_id: 1239
-categories:
+tags:
 - business
 ---
 
@@ -17,6 +12,7 @@ I remember a scene from [A night at the roxbury](http://www.imdb.com/title/tt012
 I've been hearing for the longest time that it's very hard to recruit for PHP developers in our area.  Then I've seen offers from recruiters for jobs to those uninterested.  But the recruiters never follow through.  Let me explain.
 
 **Recruiter:** *emails* here's a great job for you if you're looking
+
 **Developer:** No Thanks.
 
 {{ crickets }}
@@ -26,6 +22,7 @@ Hey - that's not follow through!
 Here's another example.
 
 **Business owner:** I'd love to buy you lunch or a drink and just talk - see if you can point me in the right direction
+
 **Developer:** Cool, let me know.
 
 {{ same damn crickets }}
@@ -44,7 +41,9 @@ Let's do the scenarios again.
 
 
 Recruiter: *emails* here's a great job for you if you're looking
+
 Developer: No Thanks.
+
 **Recruiter:** Alright!  Thanks so much for taking the time to get back to me.  Really appreciate it.  I know not every opportunity is a great fit at this time, but do keep me in mind if you're looking for any new challenges.  I've got a few positions that offer unique sets of rewards for the right individual.**
 _BONUS POINTS IF YOU'RE LOCAL:_ Actually, if you're a coffee addict like me, could I buy you some coffee at Starbucks next week?  I could use some insight from people like you to find out how I might find other qualified candidates._
 (People like feeling important - plus you get to know the person, and maybe they really ARE looking.)
@@ -52,9 +51,13 @@ _BONUS POINTS IF YOU'RE LOCAL:_ Actually, if you're a coffee addict like me, cou
 The other example.
 
 Business owner: I'd love to buy you lunch or a drink and just talk - see if you can point me in the right direction
+
 Developer: Cool, let me know.
+
 [[ My guess to what's happening in the heads...]]
+
 Business owner: well I'm pretty busy so when the developer has some time, he'll email me.
+
 Developer: That seems cool. Why isn't he getting back to me?
 
 But here's how it should go.

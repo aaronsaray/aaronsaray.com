@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2012-09-25 15:41:41+00:00
 layout: post
-slug: the-point-of-custom-exceptions
 title: The point of custom exceptions
-wordpress_id: 1243
-categories:
+tags:
 - PHP
 - programming
 ---
@@ -22,28 +17,31 @@ Anyway, let's look at this in practice.
 **Here is our custom exception.**  Maybe if our target api returns error 500, we throw this exception.  Doesn't mean our site is kaput - we just can't use this API.
 
     
+{% highlight PHP %}
+<?php
+class API_500error_Exception extends exception {}
+{% endhighlight %}    
     
-    class API_500error_Exception extends exception {}
-    
-
 
 
 **and then...** here is our code
 
     
-    
-    $service = new API_Service();
-    try {
-      $service->connect();
-      // .... more code here
-    }
-    catch (API_500error_Exception $a5e) {
-      echo "Here is where I'd disable settings that use the API - but we can continue.";
-    }
-    catch (Exception $e) {
-      echo "Unfortunately, there was an unknown error on this page.";
-    }
-    
+{% highlight PHP %}
+<?php
+$service = new API_Service();
+try {
+  $service->connect();
+  // .... more code here
+}
+catch (API_500error_Exception $a5e) {
+  echo "Here is where I'd disable settings that use the API - but we can continue.";
+}
+catch (Exception $e) {
+  echo "Unfortunately, there was an unknown error on this page.";
+}
+{% endhighlight %}    
+
 
 
 

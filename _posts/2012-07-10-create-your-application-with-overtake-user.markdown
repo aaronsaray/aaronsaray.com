@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-07-10 15:05:36+00:00
 layout: post
-slug: create-your-application-with-overtake-user
 title: Create your application with "overtake user"
-wordpress_id: 1022
-categories:
-- Misc Web Design
-- programming
 tags:
 - Misc Web Design
 - programming

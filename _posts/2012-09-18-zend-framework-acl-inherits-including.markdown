@@ -1,12 +1,8 @@
 ---
-author: aaron
-comments: true
-date: 2012-09-18 14:24:30+00:00
 layout: post
-slug: zend-framework-acl-inherits-including
 title: 'Zend Framework ACL: Inherits Including'
 wordpress_id: 1259
-categories:
+tags:
 - zend framework
 ---
 
@@ -14,21 +10,21 @@ So one of the things that really bothered me about the Zend ACL implementation i
 
 **Acl.php**
 
-    
-    
-    class Application_Model_Acl extends Zend_Acl
+{% highlight PHP %}
+<?php
+class Application_Model_Acl extends Zend_Acl
+{
+ // snippy
+    public function inheritsRoleIncluding($role, $inherit, $onlyParents = false)
     {
-     // snippy
-        public function inheritsRoleIncluding($role, $inherit, $onlyParents = false)
-        {
-        	$inherits = $this->inheritsRole($role, $inherit, $onlyParents);
-        	if (!$inherits) {
-        		$inherits = $role == $inherit;
-        	}
-        	return $inherits;
-        }  
-    }
-    
+        $inherits = $this->inheritsRole($role, $inherit, $onlyParents);
+        if (!$inherits) {
+            $inherits = $role == $inherit;
+        }
+        return $inherits;
+    }  
+}
+{% endhighlight %}    
 
 
 

@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2012-09-11 14:14:00+00:00
 layout: post
-slug: the-importance-of-catching-your-breath
 title: The Importance of Catching Your Breath
-wordpress_id: 1263
-categories:
+tags:
 - business
 ---
 

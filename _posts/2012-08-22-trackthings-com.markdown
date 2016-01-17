@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-08-22 01:57:05+00:00
 layout: post
-slug: trackthings-com
 title: TrackThings.com
-wordpress_id: 1292
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---

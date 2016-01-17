@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-10-25 16:26:24+00:00
 layout: post
-slug: phpstorm-my-new-editor
 title: 'PHPStorm: My new editor'
-wordpress_id: 1317
-categories:
-- IDE and Web Dev Tools
 tags:
 - IDE and Web Dev Tools
 - PHPStorm

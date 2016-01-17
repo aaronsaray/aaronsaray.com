@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-08-14 15:28:30+00:00
 layout: post
-slug: thatconference-slides
 title: ThatConference Slides
-wordpress_id: 1268
-categories:
-- PHP
 tags:
 - PHP
 ---

@@ -1,25 +1,18 @@
 ---
-author: aaron
-comments: true
-date: 2012-07-17 15:17:02+00:00
 layout: post
-slug: datetime-my-new-best-friend
 title: 'DateTime: My new best friend'
-wordpress_id: 1028
-categories:
-- PHP
 tags:
 - PHP
 ---
 
 I have a new love affair... PHP's [DateTime](http://us2.php.net/manual/en/class.datetime.php) object.  I'm not sure when it started, but it's going on strong now.  If you haven't taken a look at it, I invite you to run over there now and just look at the methods.  If that isn't enough, let me give you a bit of example code... see if this makes you really want to do it:
 
-
-    
-    
-    $firstDate = new DateTime('01/12/2012 10:00:00');
-    $secondDate = new DateTime('2012-01-01 23:23:23');
-    echo $firstDate > $secondDate ? "First Date is Newer" : "Second date is newer";
+{% highlight PHP %}
+<?php
+$firstDate = new DateTime('01/12/2012 10:00:00');
+$secondDate = new DateTime('2012-01-01 23:23:23');
+echo $firstDate > $secondDate ? "First Date is Newer" : "Second date is newer";
+{% endhighlight %}    
     
 
 

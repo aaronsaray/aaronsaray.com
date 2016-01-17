@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-06-05 15:36:12+00:00
 layout: post
-slug: the-importance-of-adding-auditing-to-your-applications
 title: The Importance of Adding Auditing to Your Applications
-wordpress_id: 997
-categories:
-- programming
 tags:
 - programming
 ---

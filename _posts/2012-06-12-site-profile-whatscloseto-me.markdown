@@ -1,22 +1,16 @@
 ---
-author: aaron
-comments: true
-date: 2012-06-12 14:06:46+00:00
 layout: post
-slug: site-profile-whatscloseto-me
 title: 'Site profile: whatscloseto.me'
-wordpress_id: 1111
-categories:
+tags:
 - business
 - Misc Web Design
-- site profile
-tags:
 - site profile
 ---
 
 Goal: Clever named site that shows local establishments close to your location.  Was based on Google Ip location services.  The thought was just for people to think 'whats close to me' and type that up.
 
 Technology:
+
 Clean interface.  The design was made to make the map the focal point.  Colors were matched in shades - there were basically just two colors in the whole design.  
 
 As with most of my projects, I used deflate and far out expiration dates.  In this case I also removed all the whitespace from the HTML as well.  I even packed the javascript!

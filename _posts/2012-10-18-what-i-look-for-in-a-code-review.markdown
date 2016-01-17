@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-10-18 01:26:41+00:00
 layout: post
-slug: what-i-look-for-in-a-code-review
 title: What I look for in a code review
-wordpress_id: 1301
-categories:
-- learning
-- professional tips
-- programming
 tags:
 - learning
 - professional tips
@@ -20,7 +11,7 @@ A few days (ok, a bunch of days) ago, [someone](https://twitter.com/mathewpeters
 
 
 
-### Quality
+#### Quality
 
 
 First of all, I'm looking for bugs.  You'd be surprised of the number of submissions to revision control I've seen with PHP or Javascript errors in them.  I always suggest using a lint tool before committing your changes (or uploading them via FTP, or whatever you happen to use to deploy code).  I've written about [PHP Lint](http://aaronsaray.com/blog/2008/09/21/svn-pre-commit-duty-lint-your-php/) before - and don't forget our friend [JSLint](http://jslint.com).
@@ -29,14 +20,14 @@ Quality also comes from sticking to a set of coding standards.  In my projects, 
 
 
 
-### Architecture
+#### Architecture
 
 
 I also pay special attention to architecture.  Of course, it depends on the level of programmer who created the code you're looking at, but there should always be some semblance of an architectural pattern throughout the code block.  In cases where things look haphazard, or like "and me!" or "add on!", I'm going to bring that up.  In my team work, architectural decisions are often made by me.  This brings me to my next point...
 
 
 
-### Following Directions/Patterns
+#### Following Directions/Patterns
 
 
 Sometimes programmers will come and chat with me about a solution.  I try to guide them to the solution themselves.  However, if they still need additional help, I might tell them the solution that I'd like to see implemented.  When doing a code review, I'll follow up on this direction and compare it to what I mentioned.  If it is different, part of my review is asking for the details on why the programmer did what s/he did.  The open dialog will sometimes increase my understanding of where the idea came from - and open up more learning opportunities for the programmer.  In rare cases, if the programmer did not follow my directions and has no legitimate reason for doing it, that would be another thing I'd bring up as part of my review.
@@ -45,7 +36,7 @@ The other less quantitative thing is to make sure that the code is "doing it how
 
 
 
-### Legibility
+#### Legibility
 
 
 We're typing, so why is this an issue?!  This actually has to do with the complexity/obscurity of the code.  First, I'll notice a lot of times with new programmers a complex set of code because of a lack of familiarity with the language being used.  For example, PHP has a huge list of array manipulation functions.  Often, I'll see programmers unfamiliar with these functions recreating the wheel.
@@ -54,7 +45,7 @@ The other bit of complexity/obscurity I look for is the complexity of a code blo
 
 
 
-## Closing Thoughts
+#### Closing Thoughts
 
 
 These are the things that I look for in a code-review.  I have noticed that I may want to start integrating more positive feedback in my reviews as well.  Basically, if you take a lot of the opposites of what I mentioned, they'd make great positive statements, too - right?  Another thing I need to note: the goal of code reviews is not to catch a programmer in a mistake.  It is instead to produce teachable moments and keep quality/consistent code.  That's why I said "I'll bring it up" instead of "I'll yell at the programmer" when referring to infractions in my review process.  I would encourage everyone to look at it the same.  You hope for the best code, but in cases where it is not such, positively enforce quality.
