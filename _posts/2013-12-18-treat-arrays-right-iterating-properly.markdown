@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-12-18 23:51:37+00:00
 layout: post
-slug: treat-arrays-right-iterating-properly
 title: 'Treat Arrays Right: Iterating Properly'
-wordpress_id: 1671
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -24,69 +17,56 @@ If you’re like me, you’re already scanning through the article, looking for 
 
 
 
-### Best Practice: Use Loops When Not Changing Array Values
+#### Best Practice: Use Loops When Not Changing Array Values
 
+{% highlight PHP %}
+$array = ['a', 'b', 'c', 'd', 'e'];
 
-
-
-    
-    
-    $array = ['a', 'b', 'c', 'd', 'e'];
-    
-    $length = count($array);
-    print '<ul>';
-    for ($i = 0; $i < $length; $i++) {
-    	print "<li>{$array[$i]}</li>";
-    }
-    print '</ul>';
-    
-
+$length = count($array);
+print '<ul>';
+for ($i = 0; $i < $length; $i++) {
+    print "<li>{$array[$i]}</li>";
+}
+print '</ul>';
+{% endhighlight %}    
 
 
 Here, I have an array cleverly named $array.  I do not wish to change the values in the array, only display them in a nice unordered list.  I’m not sure how many elements there are, but they all belong in this list.  So, I can use a loop to iterate through each element and print each value out.
 
 
+#### Best Practice: Use Array Manipulation Function To Change Array Values
 
-### Best Practice: Use Array Manipulation Function To Change Array Values
+{% highlight PHP %}
+$array = ['a', 'b', 'c', 'd', 'e'];
 
-
-
-
-    
-    
-    $array = ['a', 'b', 'c', 'd', 'e'];
-    
-    array_walk($array, function(&$value, $key) {
-    	$value = strtoupper($value);
-    });
-    
-
+array_walk($array, function(&$value, $key) {
+    $value = strtoupper($value);
+});
+{% endhighlight %}    
 
 
 In this example, I want $array to contain all the same letters, just uppercase.  I’ll be using this array some other time, but I need the values changed immediately.  In cases like this, use the array_walk() method to pass in the array to a function to do the manipulation.  Since I’ve passed $value by reference, any manipulation I do to the value will be applied directly back to the array.
 	
 
 
-### Challenge: Create a New Array of Uppercase Values and a Random Number
+#### Challenge: Create a New Array of Uppercase Values and a Random Number
 
 
 
 For this challenge, what would be the best practice?  Should I create a loop or use an array manipulation method?  Below, I’ll show both ways to do it.  Which is best?
 
+{% highlight PHP %}
+$array = ['a', 'b', 'c', 'd', 'e'];
 
-    
-    
-    $array = ['a', 'b', 'c', 'd', 'e'];
-    
-    $uppercase = array_map(function($value){
-    	return strtoupper($value) . rand(1,1000);
-    }, $array);
-    
-    $secondUppercase = [];
-    foreach ($array as $letter) {
-    	$secondUppercase[] = strtoupper($letter) . rand(1,1000);
-    }
-    
+$uppercase = array_map(function($value){
+    return strtoupper($value) . rand(1,1000);
+}, $array);
+
+$secondUppercase = [];
+foreach ($array as $letter) {
+    $secondUppercase[] = strtoupper($letter) . rand(1,1000);
+}
+{% endhighlight %}    
 
 
 
@@ -97,21 +77,18 @@ But, if you’d like to just ruffle my feathers a little bit, I encourage you to
 
 
 
-### This Is Not The Best:
+#### This Is Not The Best:
 
 
+{% highlight PHP %}
+$array = ['a', 'b', 'c', 'd', 'e'];
 
-
-    
-    
-    $array = ['a', 'b', 'c', 'd', 'e'];
-    
-    print '<ul>';
-    array_walk($array, function($value, $key) {
-    	print "<li>{$value}</li>";
-    });
-    print '</ul>';
-    
+print '<ul>';
+array_walk($array, function($value, $key) {
+    print "<li>{$value}</li>";
+});
+print '</ul>';
+{% endhighlight %}    
 
 
 

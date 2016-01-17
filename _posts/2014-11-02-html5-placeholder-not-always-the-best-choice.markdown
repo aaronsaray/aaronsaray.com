@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2014-11-02 18:37:56+00:00
 layout: post
-slug: html5-placeholder-not-always-the-best-choice
 title: 'HTML5 Placeholder: Not Always the Best Choice'
-wordpress_id: 1770
-categories:
-- html
-- Misc Web Design
 tags:
 - html
 - Misc Web Design

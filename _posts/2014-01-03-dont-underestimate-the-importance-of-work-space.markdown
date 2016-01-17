@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2014-01-03 19:31:30+00:00
 layout: post
-slug: dont-underestimate-the-importance-of-work-space
 title: Don't Underestimate the Importance of Work Space
-wordpress_id: 1674
-categories:
-- business
 tags:
 - business
 ---

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2014-11-25 20:41:39+00:00
 layout: post
-slug: android-emulation-in-virtualbox-400-faster
 title: Android Emulation - in VirtualBox - 400% faster!
-wordpress_id: 1776
-categories:
-- android
 tags:
 - android
 ---
@@ -17,8 +10,7 @@ I've been working with my QA department to determine a faster, better way to tes
 Turns out, the project [Android-86](http://www.android-x86.org) exists - download Android images and install into virtualbox!  Yay!
 
 
-
-### What we need
+#### What we need
 
 
 

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-10-16 15:58:34+00:00
 layout: post
-slug: slowing-down-my-blog-frequency
 title: Slowing Down My Blog Frequency
-wordpress_id: 1650
-categories:
-- news
 tags:
 - news
 ---
@@ -17,8 +10,6 @@ tags:
 However, sometimes things have to change.  I've decided to stop sticking with my rigid schedule for fear of diluting the quality of my content.  I'm just having a hard time coming up with new, technical entries so often.  I will post when I think of something new or I have something good to say, so you can be sure that the quality will remain consistent, just not as often.  I don't necessarily think of this as [cutting my losses](http://aaronsaray.com/blog/2010/11/09/its-not-shameful-to-cut-your-losses/), more like [catching my breath](http://aaronsaray.com/blog/2012/09/11/the-importance-of-catching-your-breath/).
 
 I think it's important to also focus on all the things that I'm doing currently too.  I'm not just being lazy ;)
-
-
 
 
 

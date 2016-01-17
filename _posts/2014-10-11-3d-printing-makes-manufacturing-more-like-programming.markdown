@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2014-10-11 21:51:57+00:00
 layout: post
-slug: 3d-printing-makes-manufacturing-more-like-programming
 title: 3D Printing Makes Manufacturing More Like Programming
-wordpress_id: 1700
-categories:
-- business
-- programming
 tags:
 - business
 - programming

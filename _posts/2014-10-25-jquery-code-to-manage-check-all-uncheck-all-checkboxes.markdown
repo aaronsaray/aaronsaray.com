@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2014-10-25 15:31:02+00:00
 layout: post
-slug: jquery-code-to-manage-check-all-uncheck-all-checkboxes
 title: jQuery code to manage check all / uncheck all checkboxes
-wordpress_id: 1763
-categories:
-- html
-- jquery
 tags:
 - html
 - jquery
@@ -23,8 +15,7 @@ After we made the changes, they all agreed that the new functionality was as exp
 So I created a snippet of jQuery to handle this featureset for the team in a generic method.  You'll see this below.
 
 
-
-### Instructions
+#### Instructions
 
 
 
@@ -32,38 +23,36 @@ Create a checkbox that is your checkall control.  Give it a data attribute of 'c
 
 
 
-### The Code
+#### The Code
 
 
 
 Here is the jQuery snippet to handle the requested functionality.
 
-
-    
-    
-    $('input[data-checkall-control]').each(function(){
-        var $checkAll = $(this);
-        var $children = $('input[data-checkall-group="' + $checkAll.data('checkall-control') + '"]');
-     
-        $checkAll.on('click', function() {
-            if ($checkAll.is(':checked')) {
-                $children.prop('checked', true);
-            }
-            else {
-                $children.prop('checked', false);
-            }
-        });
-     
-        $children.on('click', function() {
-            if ($children.filter(':checked').length == $children.length) {
-                $checkAll.prop('checked', true);
-            }
-            else {
-                $checkAll.prop('checked', false);
-            }
-        });
+{% highlight javascript %}
+$('input[data-checkall-control]').each(function(){
+    var $checkAll = $(this);
+    var $children = $('input[data-checkall-group="' + $checkAll.data('checkall-control') + '"]');
+ 
+    $checkAll.on('click', function() {
+        if ($checkAll.is(':checked')) {
+            $children.prop('checked', true);
+        }
+        else {
+            $children.prop('checked', false);
+        }
     });
-    
+ 
+    $children.on('click', function() {
+        if ($children.filter(':checked').length == $children.length) {
+            $checkAll.prop('checked', true);
+        }
+        else {
+            $checkAll.prop('checked', false);
+        }
+    });
+});
+{% endhighlight %}    
 
 
 
@@ -71,28 +60,28 @@ Here is an example of the input boxes that this would control.
 
 
     
-    
-    <table>
-        <tr>
-            <th><label><input type="checkbox" data-checkall-control="group1">Check All</label></th>
-            <th>Option</th>
-        </tr>
-     
-        <tr>
-            <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="1"></th>
-            <th>Value 1</th>
-        </tr>
-        <tr>
-            <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="2"></th>
-            <th>Value 2</th>
-        </tr>
-        <tr>
-            <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="3"></th>
-            <th>Value 3</th>
-        </tr>
-        <tr>
-            <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="4"></th>
-            <th>Value 4</th>
-        </tr>
-    </table>
-    
+{% highlight HTML %}
+<table>
+    <tr>
+        <th><label><input type="checkbox" data-checkall-control="group1">Check All</label></th>
+        <th>Option</th>
+    </tr>
+ 
+    <tr>
+        <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="1"></th>
+        <th>Value 1</th>
+    </tr>
+    <tr>
+        <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="2"></th>
+        <th>Value 2</th>
+    </tr>
+    <tr>
+        <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="3"></th>
+        <th>Value 3</th>
+    </tr>
+    <tr>
+        <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="4"></th>
+        <th>Value 4</th>
+    </tr>
+</table>
+{% endhighlight %}    

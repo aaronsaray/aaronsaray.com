@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2014-08-18 16:09:33+00:00
 layout: post
-slug: keep-mentoring-even-if-it-looks-like-no-one-cares
 title: Keep Mentoring, Even If It Looks Like No One Cares
-wordpress_id: 1693
-categories:
-- business
-- professional tips
 tags:
 - business
 - professional tips

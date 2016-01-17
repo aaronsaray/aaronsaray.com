@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-12-13 01:18:17+00:00
 layout: post
-slug: video-post-enterprise-php-through-design-patterns-and-modularlization
 title: 'Video post: Enterprise PHP through Design Patterns and Modularlization'
-wordpress_id: 1659
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -18,7 +11,7 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 
 
-## Part 1
+#### Part 1
 
 
 [video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/1.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/1.pdf)
@@ -31,7 +24,7 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 
 
-## Part 2
+#### Part 2
 
 
 [video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/2.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/2.pdf)
@@ -44,7 +37,7 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 
 
-## Part 3
+#### Part 3
 
 
 [video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/3.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/3.pdf)
@@ -57,7 +50,7 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 
 
-## Part 4
+#### Part 4
 
 
 [video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/4.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/4.pdf)
@@ -70,7 +63,7 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 
 
-## Part 5
+#### Part 5
 
 
 [video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/5.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/5.pdf)
@@ -83,7 +76,7 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 
 
-## Part 6
+#### Part 6
 
 
 [video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/6.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/6.pdf)
@@ -96,7 +89,7 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 
 
-## Part 7
+#### Part 7
 
 
 [video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/7.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/7.pdf)

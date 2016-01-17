@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2014-09-24 16:03:01+00:00
 layout: post
-slug: preparing-a-conference-tell-your-presenters-this
 title: Preparing a Conference?  Tell Your Presenters This
-wordpress_id: 1697
-categories:
-- professional tips
 tags:
 - professional tips
 ---
