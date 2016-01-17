@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-03-12 14:22:16+00:00
 layout: post
-slug: quick-performance-test-with-apaches-ab
 title: Quick performance test with apache's ab
-wordpress_id: 1409
-categories:
-- apache
-- performance
 tags:
 - apache
 - performance
@@ -20,19 +12,18 @@ In a break from my normal type of tutorial, I just want to give a real quick ove
 
 In my case study, I've created some PHP code for my profile test page.  I have a long running function that is running too long for my user experience.  Lets take a look.
 
+{% highlight PHP %}
+<?php     
+function slowRunningFunction()
+{
+    echo 'Ok...';
+    $waitTime = rand(1,3);
+    sleep($waitTime);
+    echo 'Done!';
+}
 
-    
-    
-    function slowRunningFunction()
-    {
-    	echo 'Ok...';
-    	$waitTime = rand(1,3);
-    	sleep($waitTime);
-    	echo 'Done!';
-    }
-    
-    slowRunningFunction();
-    
+slowRunningFunction();
+{% endhighlight %}    
 
 
 
@@ -48,18 +39,18 @@ I obviously can see I have a problem here.  The 2 second mean time is just too m
 
 After some research, I found a new 'improved' method to replace in my code.  Instead of sleep(), I'm going to use usleep() (yup, this is cheesy).
 
-
+{% highlight PHP %}
+<?php
+function slowRunningFunction()
+{
+    echo 'Ok...';
+    $waitTime = rand(1,3);
+    usleep($waitTime);
+    echo 'Done!';
+}
     
-    
-    function slowRunningFunction()
-    {
-    	echo 'Ok...';
-    	$waitTime = rand(1,3);
-    	usleep($waitTime);
-    	echo 'Done!';
-    }
-    
-    slowRunningFunction();
+slowRunningFunction();
+{% endhighlight %}    
     
 
 
@@ -72,7 +63,7 @@ Now, if you look at the key metrics, you can see I've made considerable changes 
 
 
 
-### The moral of the story
+#### The moral of the story
 
 
 The code may look good on the surface, but its always important to know the facts of load testing.  At the very least, use a tool like ab to test your load on your sites.

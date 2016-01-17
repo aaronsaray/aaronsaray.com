@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-03-02 23:22:31+00:00
 layout: post
-slug: midwestphp-2013-talk-slides-and-files
 title: 'MidwestPHP 2013 Talk: Slides and Files'
-wordpress_id: 1417
-categories:
-- PHP
 tags:
 - PHP
 ---

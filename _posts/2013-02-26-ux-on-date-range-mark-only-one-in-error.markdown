@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-02-26 15:20:41+00:00
 layout: post
-slug: ux-on-date-range-mark-only-one-in-error
 title: 'UX: On date range, mark only one in error'
-wordpress_id: 1373
-categories:
-- user experience
 tags:
 - user experience
 ---

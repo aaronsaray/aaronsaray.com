@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-11-28 00:55:45+00:00
 layout: post
-slug: twitter-book
 title: Twitter Book
-wordpress_id: 1338
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---

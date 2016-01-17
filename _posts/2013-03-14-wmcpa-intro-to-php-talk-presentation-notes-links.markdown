@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-03-14 15:07:04+00:00
 layout: post
-slug: wmcpa-intro-to-php-talk-presentation-notes-links
 title: 'WMCPA: Intro to PHP Talk Presentation, Notes, Links'
-wordpress_id: 1392
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -18,7 +11,7 @@ The slides can be downloaded [Here](http://aaronsaray.com/wp-content/uploads/201
 
 
 
-## Useful Links
+##### Useful Links
 
 
 **The Environment**

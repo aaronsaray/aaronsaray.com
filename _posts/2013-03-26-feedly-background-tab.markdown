@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-03-26 14:47:29+00:00
 layout: post
-slug: feedly-background-tab
 title: Feedly Background Tab
-wordpress_id: 1475
-categories:
-- Google Chrome
 tags:
 - Google Chrome
 ---

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-02-05 15:39:29+00:00
 layout: post
-slug: ubuntu-lightdm-login-manager-does-not-display-properly-on-boot
 title: 'Ubuntu: lightdm login manager does not display properly on boot'
-wordpress_id: 1369
-categories:
-- linux
 tags:
 - linux
 ---

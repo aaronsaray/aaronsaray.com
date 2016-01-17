@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-01-29 15:59:41+00:00
 layout: post
-slug: theoretical-thoughts-on-data-object-validation
 title: Theoretical Thoughts on Data Object Validation
-wordpress_id: 1381
-categories:
-- PHP
-- programming
 tags:
 - PHP
 - programming

@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-02-19 14:47:14+00:00
 layout: post
-slug: release-the-quality-youd-expect
 title: Release the quality you'd expect
-wordpress_id: 1379
-categories:
-- programming
-- user experience
 tags:
 - programming
 - user experience

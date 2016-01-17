@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-11-20 18:02:59+00:00
 layout: post
-slug: duplicate-request-issued-in-zf-when-using-inline-scriptdocument-writeln-in-view
-title: Duplicate request issued in ZF when using inline script/document.writeln in
-  view
-wordpress_id: 1333
-categories:
-- PHP
-- zend framework
+title: Duplicate request issued in ZF when using inline script/document.writeln in view
 tags:
 - PHP
 - zend framework
@@ -23,13 +14,11 @@ I finally thought it must be hitting the page one more time (I've had a problem 
 
 In this case, however, I was found the following code:
 
-    
-    
-    <script>
-    document.writeln('<img class="album-cover" alt="" src="#" style="display:none;" />');
-    </script>
-    
-
+{% highlight HTML %}
+<script>
+document.writeln('<img class="album-cover" alt="" src="#" style="display:none;" />');
+</script>
+{% endhighlight %}    
 
 
 When I viewed the network tab in chrome, turns out it was issuing another request to my URL for some reason.  Once this code was removed, it was good to go.

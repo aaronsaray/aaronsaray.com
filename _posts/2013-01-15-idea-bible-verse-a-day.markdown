@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-01-15 02:23:01+00:00
 layout: post
-slug: idea-bible-verse-a-day
 title: 'Idea: Bible Verse A Day'
-wordpress_id: 1383
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---

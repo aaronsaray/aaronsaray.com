@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-11-13 15:08:55+00:00
 layout: post
-slug: lessons-for-managers
 title: Lessons for Managers
-wordpress_id: 1314
-categories:
-- business
 tags:
 - business
 ---
@@ -18,7 +11,7 @@ Excuse me while I brain dump. :)
 
 
 
-### People have different ways of motivation
+#### People have different ways of motivation
 
 
 When talking with a coworker about a wage adjustment, they said "yeah, the raise isn't really all that important to me."  I was taken aback.  I thought everyone was driven by money.  (At least that's what recent campaign commercials would have you believe: horrible, evil greed runs rampant!)  I asked more about what motivated that employee.  The answer was simple: "I have things to learn and ways to grow - and I get the chances here."  
@@ -29,7 +22,7 @@ So, the take-away here is to understand your team.  Perhaps a bonus or a raise i
 
 
 
-### Some people will care, others won't
+#### Some people will care, others won't
 
 
 Some people will care about their job, how well they do, if they're evaluated successfully.  Other's won't.  To me, it seems like those who do care have a few reasons that make them care.  These usually revolve around personal pride and appreciation of their direct manager.  (Perhaps I haven't been in such companies where employees want to do good because of the care they have in the company - which of course, is a bit sad.)  Others just won't care.  They have been disenfranchised for some reason.  They either dislike their manager, their company, or they don't care about their career/job - that is to say, don't have any aspirations for growth.  
@@ -38,7 +31,7 @@ What I've learned as a manager is that whether or not someone cares, I must care
 
 
 
-### ROI is tough
+#### ROI is tough
 
 
 When managing people, ROI can be tough.  I think of a recent example.  I requisitioned a software purchase of $1k.  Because I'm a budgetary based man, I like to try to determine the return on that investment.  Unfortunately, I couldn't directly point to what gain that software would have.  I guess, I could put together some sort of guestimate on efficiency, but it would only be a guess.  
@@ -49,7 +42,7 @@ One unique part of the tech world is the actual technology itself.  In no other 
 
 
 
-## I've got more to learn
+#### I've got more to learn
 
 
 I've got a lot more to learn.  But, I feel like this is a great start.  I particularly like to blog here about these concepts on a mainly technical blog to help mix the two worlds.  I also think that programmers can be too disconnected from the perils of management - and tend not to understand why their manager did what they did.  Perhaps entries like these will help shine some light.

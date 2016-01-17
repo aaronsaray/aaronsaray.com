@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-01-08 14:29:48+00:00
 layout: post
-slug: it-is-important-to-use-die-after-a-header-redirect-heres-why
 title: It is important to use die() after a header redirect - here's why
-wordpress_id: 1359
-categories:
-- PHP
-- security
 tags:
 - PHP
 - security
@@ -16,14 +8,12 @@ tags:
 
 I was doing some code challenge review for an open web developer position I have for my team, and I came across one piece of code that made me smile.
 
-
-    
-    
-    if (!$auth) {
-      header('Location: /login.php');
-    }
-    
-
+{% highlight PHP %}
+<?php
+if (!$auth) {
+  header('Location: /login.php');
+}
+{% endhighlight %}    
 
 
 Of course, there was much more, but this is the part that made me smile.  Here's why.
@@ -41,25 +31,25 @@ However, on action pages, such as a record delete, the page will process the ent
 I thought to myself: what if my browser started ignoring the redirect headers.  Would I be able to see the content of the page?  **Theoretically, yes.**  So I wrote the following code for a Google Chrome extension:
 
 
-    
-    
-    chrome.webRequest.onHeadersReceived.addListener(
-    	function(details) {
-    		for (var i = 0, j = details.responseHeaders.length; i < j; i++) {
-    			if (details.responseHeaders[i].name.toLowerCase() == 'location') {
-    				details.responseHeaders.[i].splice(i,1);
-    			}
-    		}
-    		return {
-    			responseHeaders: details.responseHeaders
-    		};
-    	},
-    	{
-    		urls: ["<all_urls>"]
-    	},
-    	['responseHeaders', 'blocking']
-    );
-    
+{% highlight javascript %}
+chrome.webRequest.onHeadersReceived.addListener(
+    function(details) {
+        for (var i = 0, j = details.responseHeaders.length; i < j; i++) {
+            if (details.responseHeaders[i].name.toLowerCase() == 'location') {
+                details.responseHeaders.[i].splice(i,1);
+            }
+        }
+        return {
+            responseHeaders: details.responseHeaders
+        };
+    },
+    {
+        urls: ["<all_urls>"]
+    },
+    ['responseHeaders', 'blocking']
+);
+{% endhighlight %}    
+
 
 
 
@@ -71,30 +61,32 @@ So I thought about this a bit more and said - well, the browser isn't the only w
 
 First, my "secure" page:
 
-    
-    
-    header('Location: /login.php');
-    echo 'Secure Stuff Here';
+{% highlight PHP %}
+<?php
+header('Location: /login.php');
+echo 'Secure Stuff Here';
+{% endhighlight %}    
     
 
 
 
 And now, my consumer:
 
-    
-    
-    $url = "http://localhost/redirectTest.php";
-    $opts = array('http' =>
-        array(
-            'method' => 'GET',
-            'max_redirects' => '0',
-            'ignore_errors' => '1'
-        )
-    );
-    
-    $context = stream_context_create($opts);
-    $stream = fopen($url, 'r', false, $context);
-    var_dump(stream_get_contents($stream));
+{% highlight PHP %}
+<?php
+$url = "http://localhost/redirectTest.php";
+$opts = array('http' =>
+    array(
+        'method' => 'GET',
+        'max_redirects' => '0',
+        'ignore_errors' => '1'
+    )
+);
+
+$context = stream_context_create($opts);
+$stream = fopen($url, 'r', false, $context);
+var_dump(stream_get_contents($stream));
+{% endhighlight %}    
     
 
 

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-03-14 15:10:35+00:00
 layout: post
-slug: wmcpa-2013-this-means-that-presentation
 title: 'WMCPA 2013: This Means That Presentation'
-wordpress_id: 1467
-categories:
-- PHP
 tags:
 - PHP
 ---

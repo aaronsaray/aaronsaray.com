@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-03-19 14:04:36+00:00
 layout: post
-slug: make-sure-not-to-too-future-proof-your-code
 title: Make sure not to "too" future-proof your code
-wordpress_id: 1376
-categories:
-- programming
 tags:
 - programming
 ---

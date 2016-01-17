@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-02-12 15:45:59+00:00
 layout: post
-slug: car-analogy-to-explain-old-browser-support
 title: Car analogy to explain old browser support
-wordpress_id: 1371
-categories:
-- Misc Web Design
 tags:
 - Misc Web Design
 ---

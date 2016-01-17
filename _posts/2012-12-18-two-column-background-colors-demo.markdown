@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-12-18 15:02:59+00:00
 layout: post
-slug: two-column-background-colors-demo
 title: Two Column Background Colors Demo
-wordpress_id: 1350
-categories:
-- CSS
-- html
-- Misc Web Design
 tags:
 - CSS
 - html
@@ -27,49 +18,51 @@ For this example, I colored each background color different.  In practice, you'l
 First, the markup.
 
     
-    
-    	<body>
-            <h1>Hi There Buddy</h1>
-            <div id="container">
-                <div id="primary">
-                    I am the primary content.
-    
-                </div>
-                <div id="secondary">
-                    I am the secondary content.
-                </div>
-            </div>
-            <h2>Hello There Friend</h2>
-    	</body>
-    
+{% highlight HTML %}
+<body>
+    <h1>Hi There Buddy</h1>
+    <div id="container">
+        <div id="primary">
+            I am the primary content.
+
+        </div>
+        <div id="secondary">
+            I am the secondary content.
+        </div>
+    </div>
+    <h2>Hello There Friend</h2>
+</body>
+{% endhighlight %}    
+
 
 
 
 Then, the CSS.
 
     
-    
-                #container {
-                    border: 1px solid #000;
-                    width: 500px;
-                    background: #acf;
-                }
-                #primary {
-                    background: #f9fcff;
-                    float: left;
-                    width: 300px;
-                }
-                #secondary:after {
-                    content: " ";
-                    display: block;
-                    clear: both;
-                    visibility: hidden;
-                    height: 0
-                }
-                #secondary {
-                    background: #f8b021;
-                    margin-left: 300px;
-                }
+{% highlight CSS %}
+#container {
+    border: 1px solid #000;
+    width: 500px;
+    background: #acf;
+}
+#primary {
+    background: #f9fcff;
+    float: left;
+    width: 300px;
+}
+#secondary:after {
+    content: " ";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0
+}
+#secondary {
+    background: #f8b021;
+    margin-left: 300px;
+}
+{% endhighlight %}    
     
 
 

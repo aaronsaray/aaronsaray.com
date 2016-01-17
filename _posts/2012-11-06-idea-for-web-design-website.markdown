@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-11-06 15:07:52+00:00
 layout: post
-slug: idea-for-web-design-website
 title: Idea for Web Design Website
-wordpress_id: 1319
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---
