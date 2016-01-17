@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-05-11 23:12:25+00:00
 layout: post
-slug: composer-based-utility-installs-vs-global-installs
 title: Composer-based Utility Installs vs Global Installs
-wordpress_id: 1813
-categories:
-- phpunit
-- web tools
 tags:
 - phpunit
 - web tools

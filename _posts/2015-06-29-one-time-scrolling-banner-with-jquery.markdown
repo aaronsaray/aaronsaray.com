@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-06-29 22:02:11+00:00
 layout: post
-slug: one-time-scrolling-banner-with-jquery
 title: One-time Scrolling Banner with jQuery
-wordpress_id: 1852
-categories:
-- jquery
 tags:
 - jquery
 ---
@@ -16,70 +9,54 @@ I'm not gonna lie - I was really trying to figure out how to put more keywords o
 
 So, I don't have a need for it for this particular site - but maybe you do?  Check out the [Scroll and stop demo in jquery](/demo/scroll-and-stop.html).
 
-
-
-### The Code
-
-
+#### The Code
 
 The mark-up is very simple.  Just a div, and a UL of terms:
 
-
-    
-    
-    <div id="hero">Let's make software <ul id="scroller"><li>stream-lined.</li><li>effective.</li><li>simple.</li></ul></div>
-    
-
-
+{% highlight html %}
+<div id="hero">Let's make software <ul id="scroller"><li>stream-lined.</li><li>effective.</li><li>simple.</li></ul></div>
+{% endhighlight %}    
 
 Next, let's look at the very small amount of CSS required:
-
-
     
-    
-    #hero {
-        font-size: 5rem;
-    }
-    #hero ul {
-        vertical-align: top;
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        display: block;
-        height: 6rem;
-        overflow: hidden;
-    }
-    
-
-
+{% highlight CSS %}
+#hero {
+    font-size: 5rem;
+}
+#hero ul {
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: block;
+    height: 6rem;
+    overflow: hidden;
+}
+{% endhighlight %}
 
 First, set the size of the font so we know what size the scrolling box will need to be.  Then, position our UL aligned vertically, with no padding or margin, and cut it off after the first word with the height/overflow styles.
 
 Finally, we need to have some javascript to rotate these.  I used jQuery to save some time - but this could be done without it as well.
 
+{% highlight javascript %}
+var $scrollingUL = $('#scroller');
 
-    
-    
-    var $scrollingUL = $('#scroller');
-    
-    function scroller(element)
-    {
-        var $nextSibling = $(element).next();
-        if ($nextSibling.length) {
-            setTimeout(function() {
-                $scrollingUL.animate({
-                    scrollTop: $scrollingUL.scrollTop() + $nextSibling.height()
-                }, 400, function() {
-                    scroller($nextSibling);
-                })
-            }, 5000);
-    
-        }
+function scroller(element)
+{
+    var $nextSibling = $(element).next();
+    if ($nextSibling.length) {
+        setTimeout(function() {
+            $scrollingUL.animate({
+                scrollTop: $scrollingUL.scrollTop() + $nextSibling.height()
+            }, 400, function() {
+                scroller($nextSibling);
+            })
+        }, 5000);
+
     }
-    
-    scroller($('#hero ul li:first-child'));
-    
+}
 
-
+scroller($('#hero ul li:first-child'));
+{% endhighlight %}    
 
 Let's look over the pieces here first.  (Just a reminder - if you're making a bigger project, you might want to encapsulate this functionality into a module.)  First, get a reference to the scoller UL.  Since the function is ran multiple times, I don't want to search for that item each time.  Next, call the scroller() function with an element: the first element in the scroller ul.  The function gets the next sibling, and if it exists, sets a time-out to animate it to the next position - afterwards it calls itself. (Yay recursion). 

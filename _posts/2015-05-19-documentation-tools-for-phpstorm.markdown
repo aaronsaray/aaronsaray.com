@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-05-19 19:56:05+00:00
 layout: post
-slug: documentation-tools-for-phpstorm
 title: Documentation Tools for PHPStorm
-wordpress_id: 1815
-categories:
-- web tools
 tags:
 - web tools
 ---
@@ -18,10 +11,7 @@ So, when it came to generating this documentation, I wanted to make sure that I 
 
 Let's have a quick look:
 
-
-
-### Setting up the Tools
-
+#### Setting up the Tools
 
 First, [install phpDocumentor](http://www.phpdoc.org/docs/latest/getting-started/installing.html) to your virtual machine.  I happened to have mine installed as a global binary on this project vm.
 
@@ -31,8 +21,6 @@ Next, Go to the **PHPStorm preferences > Tools > Remote SSH External Tools**.
 
 Click the **+** button to add a new tool:
 [![Screenshot 2015-04-05 18.15.42](http://aaronsaray.com/wp-content/uploads/2015/04/Screenshot-2015-04-05-18.15.42-150x150.png)](http://aaronsaray.com/wp-content/uploads/2015/04/Screenshot-2015-04-05-18.15.42.png)
-
-
 
   * Enter php doc as the name.  You can group it differently if you'd like.
 
@@ -51,5 +39,3 @@ Click OK and you're good to go for phpdocumentor.
 The same configuration can be done with apiDoc.  For parameters, I used "-i /path/to/api.php -o /path/to/api/doc/output".   
 
 [![Screenshot 2015-04-05 18.21.11](http://aaronsaray.com/wp-content/uploads/2015/04/Screenshot-2015-04-05-18.21.11-300x282.png)](http://aaronsaray.com/wp-content/uploads/2015/04/Screenshot-2015-04-05-18.21.11.png)After you save this, you now have external tools available to use in PHPStorm.  You simply have to click on the Tools menu, hover over External tools, and choose your tool from the menu.  (Note, if you have used vagrant, it may ask you to confirm you'd like to use the current vagrant instance each time you run the tool.)  Also, if you chose a different group for the commands, the menu will be different.
-
-
