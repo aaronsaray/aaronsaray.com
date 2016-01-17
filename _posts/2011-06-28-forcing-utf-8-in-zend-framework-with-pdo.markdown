@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-06-28 14:03:31+00:00
 layout: post
-slug: forcing-utf-8-in-zend-framework-with-pdo
 title: Forcing UTF-8 in Zend Framework with PDO
-wordpress_id: 921
-categories:
-- zend framework
 tags:
 - zend framework
 ---

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-05-24 14:12:22+00:00
 layout: post
-slug: zend-framework-bootstrap-vs-front-controller-plugin
 title: 'Zend Framework: Bootstrap vs Front Controller Plugin'
-wordpress_id: 904
-categories:
-- zend framework
 tags:
 - zend framework
 ---
@@ -26,21 +19,21 @@ Let's see this in practice.
 
 **Before: application/Bootstrap.php**
 
-    
-    
-    class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
-    {
-      protected function _initViewSettings()
-      {
-        $this->bootstrap('view');
-        $view = $this->getResource('view');
-        $view->doctype('HTML5');
-        $view->setEncoding('UTF-8');
-        $view->prependStylesheet('/css/main.css');
-      }
-      ...
-    }
-    
+{% highlight PHP %}
+<?php
+class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
+{
+  protected function _initViewSettings()
+  {
+    $this->bootstrap('view');
+    $view = $this->getResource('view');
+    $view->doctype('HTML5');
+    $view->setEncoding('UTF-8');
+    $view->prependStylesheet('/css/main.css');
+  }
+  // ...
+}
+{% endhighlight %}    
 
 
 
@@ -49,36 +42,39 @@ Now, afterward, make sure front controller plugins are defined, and then create 
 **After: application/Bootstrap.php**
 
     
-    
-    class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
-    {
-      protected function _initFrontControllerPlugins()
-      {
-        $front = Zend_Controller_Front::getInstance();
-        $front->registerPlugin(new Application_Plugin_ViewSetup());
-      }
-      ...
-    }
+{% highlight PHP %}
+<?php
+class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
+{
+  protected function _initFrontControllerPlugins()
+  {
+    $front = Zend_Controller_Front::getInstance();
+    $front->registerPlugin(new Application_Plugin_ViewSetup());
+  }
+  // ...
+}
+{% endhighlight %}    
     
 
 
 
 **After: application/plugins/ViewSetup.php**
 
-    
-    
-    class Application_Plugin_ViewSettings extends Zend_Controller_Plugin_Abstract
-    {
-      public function routeShutdown($request)
-      {
-        $bootstrap = Zend_Controller_Front::getInstance()->getParam('bootstrap');
-        $view = $bootstrap->bootstrap('view')->getResource('view');
-    
-        $view->doctype('HTML5');
-        $view->setEncoding('UTF-8');
-        $view->prependStylesheet('/css/main.css');
-      }
-    }
+{% highlight PHP %}
+<?php
+class Application_Plugin_ViewSettings extends Zend_Controller_Plugin_Abstract
+{
+  public function routeShutdown($request)
+  {
+    $bootstrap = Zend_Controller_Front::getInstance()->getParam('bootstrap');
+    $view = $bootstrap->bootstrap('view')->getResource('view');
+
+    $view->doctype('HTML5');
+    $view->setEncoding('UTF-8');
+    $view->prependStylesheet('/css/main.css');
+  }
+}
+{% endhighlight %}    
     
 
 

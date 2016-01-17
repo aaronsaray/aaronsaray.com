@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-05-31 23:10:40+00:00
 layout: post
-slug: phpunit-error-with-zend_session
 title: PHPUnit error with Zend_Session
-wordpress_id: 940
-categories:
-- phpunit
-- zend framework
 tags:
 - phpunit
 - zend framework
@@ -30,9 +22,10 @@ However, there is a better way!!
 Instead, add the following line:
 
     
-    
-    Zend_Session::$_unitTestEnabled = true;
-    
+{% highlight PHP %}
+<?php
+Zend_Session::$_unitTestEnabled = true;
+{% endhighlight %}    
 
 
 

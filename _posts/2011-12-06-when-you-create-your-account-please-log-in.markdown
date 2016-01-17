@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-12-06 15:33:56+00:00
 layout: post
-slug: when-you-create-your-account-please-log-in
 title: When you Create Your Account, Please log in.
-wordpress_id: 1060
-categories:
-- Misc Web Design
 tags:
 - Misc Web Design
 ---

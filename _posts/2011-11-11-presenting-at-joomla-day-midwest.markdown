@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-11-11 21:40:12+00:00
 layout: post
-slug: presenting-at-joomla-day-midwest
 title: Presenting at Joomla Day Midwest
-wordpress_id: 972
-categories:
-- learning
 tags:
 - learning
 ---

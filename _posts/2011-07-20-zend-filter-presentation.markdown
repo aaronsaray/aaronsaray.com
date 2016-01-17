@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-07-20 15:37:40+00:00
 layout: post
-slug: zend-filter-presentation
 title: Zend Filter Presentation
-wordpress_id: 960
-categories:
-- zend framework
 tags:
 - zend framework
 ---

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-06-14 20:01:07+00:00
 layout: post
-slug: easy-flash-messenger-messages-in-zend-framework
 title: Easy Flash Messenger Messages in Zend Framework
-wordpress_id: 932
-categories:
-- zend framework
 tags:
 - zend framework
 ---
@@ -16,7 +9,7 @@ Through reading a few blog posts over the last year and my own trial and error, 
 
 
 
-## Objective
+#### Objective
 
 
 
@@ -29,46 +22,48 @@ Through reading a few blog posts over the last year and my own trial and error, 
 
 
 
-## Using FlashMessenger in the Controller
+#### Using FlashMessenger in the Controller
 
 
 Now, we're going to change the way we assign messages in the controller.  Make an array of the message with a key of the type, and a value of the message.  You may want to use 'success' and 'failure':
 **in some controller...**
 
     
-    
-    $this->_helper->flashMessenger->addMessage(array('success'=>'The update was successful'));
-    
+{% highlight PHP %}
+<?php
+$this->_helper->flashMessenger->addMessage(array('success'=>'The update was successful'));
+{% endhighlight %}    
 
 
 
 
 
-## Next, create a View Helper
+#### Next, create a View Helper
 
 
 Create the following view helper. I placed mine here: application/views/helpers/FlashMessages.php
 
-    
-    
-    class Zend_View_Helper_FlashMessages extends Zend_View_Helper_Abstract
+{% highlight PHP %}
+<?php
+class Zend_View_Helper_FlashMessages extends Zend_View_Helper_Abstract
+{
+    public function flashMessages()
     {
-        public function flashMessages()
-        {
-            $messages = Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger')->getMessages();
-            $output = '';
-            
-            if (!empty($messages)) {
-                $output .= '<ul id="messages">';
-                foreach ($messages as $message) {
-                    $output .= '<li class="' . key($message) . '">' . current($message) . '</li>';
-                }
-                $output .= '</ul>';
+        $messages = Zend_Controller_Action_HelperBroker::getStaticHelper('FlashMessenger')->getMessages();
+        $output = '';
+        
+        if (!empty($messages)) {
+            $output .= '<ul id="messages">';
+            foreach ($messages as $message) {
+                $output .= '<li class="' . key($message) . '">' . current($message) . '</li>';
             }
-            
-            return $output;
+            $output .= '</ul>';
         }
+        
+        return $output;
     }
+}
+{% endhighlight %}    
     
 
 
@@ -77,14 +72,15 @@ The output is initially blank.  This is because we will always 'blindly' call th
 
 
 
-## Use this in Your View
+#### Use this in Your View
 
 
 I technically put this call in my layout towards the top of my content:
 
-    
-    
-    echo $this->flashMessages();
+{% highlight PHP %}
+<?php
+echo $this->flashMessages();
+{% endhighlight %}    
     
 
 

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-06-10 14:01:23+00:00
 layout: post
-slug: phpunit-error-no-release-available-for-package
 title: 'PHPUnit error: No release available for package'
-wordpress_id: 934
-categories:
-- phpunit
 tags:
 - phpunit
 ---

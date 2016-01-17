@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-07-27 02:09:59+00:00
 layout: post
-slug: testing-outgoing-email-with-zend-framework
 title: Testing Outgoing Email with Zend Framework
-wordpress_id: 923
-categories:
-- testing
-- zend framework
 tags:
 - testing
 - zend framework
@@ -18,7 +10,7 @@ I was creating a new application with Zend Framework at work the other day and I
 
 
 
-## Goals/Objectives
+#### Goals/Objectives
 
 
 
@@ -37,34 +29,36 @@ I was creating a new application with Zend Framework at work the other day and I
 
 
 
-## The Solution: A new class Application_Model_Mail
+#### The Solution: A new class Application_Model_Mail
 
 
 I decided to make a new model called Mail which will extend the Zend_Mail class.  Everything will work the same except for the to addresses.  See this code:
+
 **application/models/Mail.php**
 
-    
-    
-    class Application_Model_Mail extends Zend_Mail
+{% highlight PHP %}
+<?php
+class Application_Model_Mail extends Zend_Mail
+{
+    public function addTo($email, $name='')
     {
-        public function addTo($email, $name='')
-        {
-            if (!is_array($email)) {
-                $email = array($name => $email);
-            }
-    
-            if (APPLICATION_ENV !== 'production') array_walk($email, array($this, '_convertToTestEmails'), $this);        
-            
-            return parent::addTo($email);
+        if (!is_array($email)) {
+            $email = array($name => $email);
         }
+
+        if (APPLICATION_ENV !== 'production') array_walk($email, array($this, '_convertToTestEmails'), $this);        
         
-        protected static function _convertToTestEmails(&$email, $key, $mail)
-        {
-            $testEmail = 'test@developer.com';
-        	$mail->addHeader('X-Test-Original-Email', $email, TRUE);
-            $email = $testEmail;
-        }
+        return parent::addTo($email);
     }
+    
+    protected static function _convertToTestEmails(&$email, $key, $mail)
+    {
+        $testEmail = 'test@developer.com';
+        $mail->addHeader('X-Test-Original-Email', $email, TRUE);
+        $email = $testEmail;
+    }
+}
+{% endhighlight %}    
     
 
 

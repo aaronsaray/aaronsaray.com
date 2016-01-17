@@ -1,22 +1,13 @@
 ---
-author: aaron
-comments: true
-date: 2011-07-05 18:40:26+00:00
 layout: post
-slug: zend-framework-to-include-or-not-to-include
 title: 'Zend Framework: to include or not to include'
-wordpress_id: 909
-categories:
-- zend framework
 tags:
 - zend framework
 ---
 
 There are two ways of working with Zend Framework as a library in your project.  These are including it in your project repository and using a shared copy on the server (like PEAR).  Let us discuss both:
 
-
-
-## Including Zend Framework In Your Project
+#### Including Zend Framework In Your Project
 
 
 The first method is to include the Zend Framework library folder in your zend framework project's library folder (uh....).  So, for each project on your server that is built on Zend Framework, the following path has a copy of Zend Framework:  /root/to/your/app/library/Zend.  This means each project has at least the entire size of the Zend Framework in it.  Pros/Cons?
@@ -44,7 +35,7 @@ The first method is to include the Zend Framework library folder in your zend fr
 
 
 
-## Using Zend Framework as a server wide install
+#### Using Zend Framework as a server wide install
 
 
 Like PEAR, Zend Framework can be installed on the server in a shared location.  You may install your Zend Framework Library folder into a different path, for example: /root/to/shared/code/Zend.  Then, your PHP has to be configured to have that in its include path.  Pros/Cons?

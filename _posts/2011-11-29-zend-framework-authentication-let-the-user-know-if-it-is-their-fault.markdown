@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-11-29 20:03:50+00:00
 layout: post
-slug: zend-framework-authentication-let-the-user-know-if-it-is-their-fault
 title: 'Zend Framework Authentication: Let the user know if it is their fault'
-wordpress_id: 1015
-categories:
-- zend framework
 tags:
 - zend framework
 ---
@@ -19,12 +12,14 @@ Side note: some schools of thought want to go the extra mile for security and ne
 So, with Zend_Auth, the authenticate() method returns a Zend_Auth_Result.  This, of course, has the isValid() method which everyone is familiar with.  However, there are a number of reasons why this could return false.  Whatever reason generated the invalid response will be returned by the getCode() method.  These include:
 
     
-    
-        const FAILURE                        =  0;
-        const FAILURE_IDENTITY_NOT_FOUND     = -1;
-        const FAILURE_IDENTITY_AMBIGUOUS     = -2;
-        const FAILURE_CREDENTIAL_INVALID     = -3;
-        const FAILURE_UNCATEGORIZED          = -4;
+{% highlight PHP %}
+<?php
+const FAILURE                        =  0;
+const FAILURE_IDENTITY_NOT_FOUND     = -1;
+const FAILURE_IDENTITY_AMBIGUOUS     = -2;
+const FAILURE_CREDENTIAL_INVALID     = -3;
+const FAILURE_UNCATEGORIZED          = -4;
+{% endhighlight %}    
     
 
 
@@ -36,23 +31,24 @@ When I generate error messages for the user, I tend to make a method called isFa
 This is usually a very simple method:
 
 
+{% highlight PHP %}
+<?php
+/**
+ * Used to determine if this is a user failure or an internal failure on our part
+ * 
+ * @return boolean if its a user failure
+ */
+public function isFailureUserBased()
+{
+    $result = $this->_authResult->getCode(); //stored internal Zend_Auth_Result instance
     
-    
-    /**
-     * Used to determine if this is a user failure or an internal failure on our part
-     * 
-     * @return boolean if its a user failure
-     */
-    public function isFailureUserBased()
-    {
-    	$result = $this->_authResult->getCode(); //stored internal Zend_Auth_Result instance
-    	
-    	switch ($result) {
-    		case Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND:
-    		case Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID:
-    			return true;
-    	}
-    	
-    	return false;
+    switch ($result) {
+        case Zend_Auth_Result::FAILURE_IDENTITY_NOT_FOUND:
+        case Zend_Auth_Result::FAILURE_CREDENTIAL_INVALID:
+            return true;
     }
+    
+    return false;
+}
+{% endhighlight %}    
     

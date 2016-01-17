@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-07-12 20:08:25+00:00
 layout: post
-slug: adding-subdomain-routes-for-all-urls-in-zend-framework
 title: Adding Subdomain Routes for all URLs in Zend Framework
-wordpress_id: 907
-categories:
-- zend framework
 tags:
 - zend framework
 ---
@@ -22,17 +15,17 @@ In my example, I'm going to make sure that the following code is at the very end
 
 Use the following code:
 
-    
-    
-    $router = Zend_Controller_Front::getInstance()->getRouter();
-    
-    $hostnameRoute = new Zend_Controller_Router_Route_Hostname(":sitename.example.com");
-    
-    $router->addDefaultRoutes();
-    foreach ($router->getRoutes() as $key=>$route) {
-      $router->addRoute('hostname' . $key, $hostnameRoute->chain($route));
-    }
-    
+{% highlight PHP %}
+<?php
+$router = Zend_Controller_Front::getInstance()->getRouter();
+
+$hostnameRoute = new Zend_Controller_Router_Route_Hostname(":sitename.example.com");
+
+$router->addDefaultRoutes();
+foreach ($router->getRoutes() as $key=>$route) {
+  $router->addRoute('hostname' . $key, $hostnameRoute->chain($route));
+}
+{% endhighlight %}    
 
 
 

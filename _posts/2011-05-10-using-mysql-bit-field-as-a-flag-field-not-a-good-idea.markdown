@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-05-10 15:09:17+00:00
 layout: post
-slug: using-mysql-bit-field-as-a-flag-field-not-a-good-idea
 title: 'Using MySQL Bit Field as a Flag Field: Not a Good Idea'
-wordpress_id: 856
-categories:
-- mysql
 tags:
 - mysql
 ---
@@ -42,10 +35,6 @@ Every time I do a selection, I only get b's.  Maybe I'm doing something wrong.
     
     
     SHOW VARIABLES LIKE "%version%";
-    
-
-
-
     
     5.1.41-3ubuntu12.6
 

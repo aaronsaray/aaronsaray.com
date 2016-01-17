@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-06-07 15:13:57+00:00
 layout: post
-slug: zend-framework-view-helper-for-qr-codes
 title: Zend Framework View Helper for QR Codes
-wordpress_id: 915
-categories:
-- zend framework
 tags:
 - zend framework
 ---
@@ -16,28 +9,28 @@ Google Charts has a QR code generation service ([here are the details](http://co
 
 
 
-## The Code for Google QR Code
+#### The Code for Google QR Code
 
 
 Place the following code in your view helpers location.  For example... **application/views/helpers/GoogleQRCode.php**.
 
-    
-    
-    class Zend_View_Helper_GoogleQRCode extends Zend_View_Helper_Abstract
+{% highlight PHP %}
+<?php
+class Zend_View_Helper_GoogleQRCode extends Zend_View_Helper_Abstract
+{
+    public function googleQRCode($data, $width = 100, $height = 100)
     {
-        public function googleQRCode($data, $width = 100, $height = 100)
-        {
-        	$url = 'https://chart.googleapis.com/chart?';
-        	$params = array(
-        	               'cht'=>'qr',
-        	               'chs'=>(int)$width . 'x' . (int)$height,
-        	               'chl'=>$data
-        	               );
-        	$url .= http_build_query($params);
-        	return $url;
-        }
+        $url = 'https://chart.googleapis.com/chart?';
+        $params = array(
+                       'cht'=>'qr',
+                       'chs'=>(int)$width . 'x' . (int)$height,
+                       'chl'=>$data
+                       );
+        $url .= http_build_query($params);
+        return $url;
     }
-    
+}
+{% endhighlight %}    
 
 
 
@@ -49,12 +42,13 @@ To use this in your view, you may have the following code:
 **application/views/scripts/index/index.phtml**
 
     
-    
-    echo '<h2>Find Me Online</h2>';
-    echo '<img src="';
-    echo $this->googleQRCode('http://aaronsaray.com/contact');
-    echo '">';
-    
+{% highlight PHP %}
+<?php
+echo '<h2>Find Me Online</h2>';
+echo '<img src="';
+echo $this->googleQRCode('http://aaronsaray.com/contact');
+echo '">';
+{% endhighlight %}    
 
 
 

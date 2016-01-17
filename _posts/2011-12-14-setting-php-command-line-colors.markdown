@@ -1,25 +1,16 @@
 ---
-author: aaron
-comments: true
-date: 2011-12-14 16:50:43+00:00
 layout: post
-slug: setting-php-command-line-colors
 title: Setting PHP Command Line Colors
-wordpress_id: 1056
-categories:
-- PHP
 tags:
 - PHP
 ---
 
 I'm not entirely certain why this escaped me for so long, but it's remarkably easy to set terminal colors with PHP.  Simply echo the escape/color character \033, followed by the bash color definition and your output.  For reference, [here](https://wiki.archlinux.org/index.php/Color_Bash_Prompt) is a listing of bash colors.  So, for example, if we want to make something blue text, do the following:
 
-
-    
-    
-    echo "\033[34m" . 'here is blue text' . "\033[0m\n";
-    
-
+{% highlight PHP %}
+<?php
+echo "\033[34m" . 'here is blue text' . "\033[0m\n";
+{% endhighlight %}    
 
 
 This simply sets the blue color, adds the blue text, and then resets the color to default, and makes a new line.

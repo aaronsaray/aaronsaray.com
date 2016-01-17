@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-08-09 16:15:24+00:00
 layout: post
-slug: service-class-methodology
 title: Service Class Methodology
-wordpress_id: 930
-categories:
-- programming
-- zend framework
 tags:
 - programming
 - zend framework
@@ -28,31 +20,34 @@ The real life example of this could come in the form of a Zend Framework example
 
 First, for Zend Framework, I'm going to make a connection using ZF's database services.  This will be used later for loose-coupling in the service:
 
-    
-    
-    class Application_Model_DbTable_User extends Zend_Db_Table_Abstract
-    {
-        protected $_name = 'user';
-    }
-    
+{% highlight PHP %}
+<?php
+class Application_Model_DbTable_User extends Zend_Db_Table_Abstract
+{
+    protected $_name = 'user';
+}
+{% endhighlight %}    
 
 
 
 Next, I'm going to create a User object.  (You may notice some examples make the business object extend Zend_Db_Table_Rowset or similar classes.  This is coupling our object way too tightly to this particular data retrieval.  Our business object model shouldn't know about that!)
 
-    
-    
-    class Application_Model_User
-    {
-      public $id = 0;
-      public $firstName = '';
-      public $lastName = '';
-    
-      public function getFullName()
-      {
-        return $this->firstName . ' ' . $this->lastName;
-      }
-    }
+
+{% highlight PHP %}
+<?php
+
+class Application_Model_User
+{
+  public $id = 0;
+  public $firstName = '';
+  public $lastName = '';
+
+  public function getFullName()
+  {
+    return $this->firstName . ' ' . $this->lastName;
+  }
+}
+{% endhighlight %}    
     
 
 
@@ -62,20 +57,22 @@ Finally the service class would be needed to be created.  In our example, I'm go
 
 
     
-    
-    class Application_Model_UserService
-    {
-      public function getUserById($id)
-      {
-        $table = new Application_Model_DbTable_User();
-        $resultArray = $table->find($id)->current()->toArray();
-        $user = new Application_Model_User();
-        foreach ($resultArray as $key=>$val) {
-          $user->$key = $val;
-        }
-        return $user;
-      }
+{% highlight PHP %}
+<?php
+class Application_Model_UserService
+{
+  public function getUserById($id)
+  {
+    $table = new Application_Model_DbTable_User();
+    $resultArray = $table->find($id)->current()->toArray();
+    $user = new Application_Model_User();
+    foreach ($resultArray as $key=>$val) {
+      $user->$key = $val;
     }
+    return $user;
+  }
+}
+{% endhighlight %}    
     
 
 

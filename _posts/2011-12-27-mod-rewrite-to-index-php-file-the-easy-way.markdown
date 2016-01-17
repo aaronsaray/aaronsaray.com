@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-12-27 16:17:48+00:00
 layout: post
-slug: mod-rewrite-to-index-php-file-the-easy-way
 title: Mod Rewrite to index.php file, the easy way
-wordpress_id: 1058
-categories:
-- apache
 tags:
 - apache
 ---
