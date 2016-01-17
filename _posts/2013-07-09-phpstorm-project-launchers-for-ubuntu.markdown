@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-07-09 18:52:55+00:00
 layout: post
-slug: phpstorm-project-launchers-for-ubuntu
 title: PHPStorm Project Launchers for Ubuntu
-wordpress_id: 1515
-categories:
-- IDE and Web Dev Tools
-- linux
 tags:
 - IDE and Web Dev Tools
 - linux

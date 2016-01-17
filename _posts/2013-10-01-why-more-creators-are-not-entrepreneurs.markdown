@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-10-01 14:52:35+00:00
 layout: post
-slug: why-more-creators-are-not-entrepreneurs
 title: 'Why more creators are not entrepreneurs '
-wordpress_id: 1641
-categories:
-- business
 tags:
 - business
 ---

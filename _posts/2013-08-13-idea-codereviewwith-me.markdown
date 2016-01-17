@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-08-13 15:24:08+00:00
 layout: post
-slug: idea-codereviewwith-me
 title: 'Idea: CodeReviewWith.Me'
-wordpress_id: 1622
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-09-24 21:31:15+00:00
 layout: post
-slug: zend-translate-plurals
 title: Zend Translate Plurals
-wordpress_id: 1613
-categories:
-- zend framework
 tags:
 - zend framework
 ---
@@ -21,12 +14,10 @@ How to do Zend Translate Plurals in ZF 1.x...  [Very simply, the manual](http://
 But for those too lazy to click through...
 
 
-    
-    
-    $translate = new Zend_Translate($options);
-    echo $translate->translate(array('chicken', 'chickens', $numberOfChickens));
-    
-
+{% highlight PHP %}
+$translate = new Zend_Translate($options);
+echo $translate->translate(array('chicken', 'chickens', $numberOfChickens));
+{% endhighlight %}    
 
 
 Yup.  Very simple.  

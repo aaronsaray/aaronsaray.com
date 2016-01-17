@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-09-17 14:24:31+00:00
 layout: post
-slug: idea-voice-controlled-paginator-rss-reader
 title: 'Idea: Voice Controlled Paginator / RSS Reader'
-wordpress_id: 1636
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---

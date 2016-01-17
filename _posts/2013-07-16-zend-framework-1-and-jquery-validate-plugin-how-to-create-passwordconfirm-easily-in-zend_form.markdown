@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-07-16 12:39:42+00:00
 layout: post
-slug: zend-framework-1-and-jquery-validate-plugin-how-to-create-passwordconfirm-easily-in-zend_form
-title: 'Zend Framework 1 and jQuery Validate Plugin: how to create password/confirm
-  easily in Zend_Form'
-wordpress_id: 1531
-categories:
-- jquery
-- zend framework
+title: 'Zend Framework 1 and jQuery Validate Plugin: how to create password/confirm easily in Zend_Form'
 tags:
 - jquery
 - zend framework
@@ -19,29 +10,28 @@ Perhaps this trend is going away, but it used to be a "good thing" to make peopl
 
 **Part of your Zend_Form class:**
 
-    
-    
-    $this->addElement('password', 'password', array(
-        'label'        =>'New Password:',
-        'required'    =>true,
-        'validators'=>array(
-            array('StringLength', false, array(self::PASSWORD_MIN_LENGTH, self::PASSWORD_MAX_LENGTH))
-        ),
-        'class'        =>'required password',
-    ));
-            
-    $this->addElement('password', 'confirm_password', array(
-        'label'        =>'Confirm password:',
-        'required'    =>true,
-        'validators'=>array(
-            array('StringLength', false, array(self::PASSWORD_MIN_LENGTH, self::PASSWORD_MAX_LENGTH)),
-            array('identical', false, array('token'=>'password'))
-        ),
-       'class'        =>'required password',
-       'equalTo'    =>'#password', 
-    ));
-    
-
+{% highlight PHP %}
+<?php
+$this->addElement('password', 'password', array(
+    'label'        =>'New Password:',
+    'required'    =>true,
+    'validators'=>array(
+        array('StringLength', false, array(self::PASSWORD_MIN_LENGTH, self::PASSWORD_MAX_LENGTH))
+    ),
+    'class'        =>'required password',
+));
+        
+$this->addElement('password', 'confirm_password', array(
+    'label'        =>'Confirm password:',
+    'required'    =>true,
+    'validators'=>array(
+        array('StringLength', false, array(self::PASSWORD_MIN_LENGTH, self::PASSWORD_MAX_LENGTH)),
+        array('identical', false, array('token'=>'password'))
+    ),
+   'class'        =>'required password',
+   'equalTo'    =>'#password', 
+));
+{% endhighlight %}
 
 
 First thing, add the password field.  Use a validator to make sure that its of the proper length, and require it.  By default, jQuery Validate plugin will also do required on class of 'required' - so this helps out immensely. 

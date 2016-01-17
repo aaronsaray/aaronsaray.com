@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-08-20 12:47:37+00:00
 layout: post
-slug: testing-mysql-user-info-passwords
 title: Testing MySQL User Info Passwords
-wordpress_id: 1603
-categories:
-- mysql
-- security
 tags:
 - mysql
 - security
@@ -28,15 +20,13 @@ I decided to test one of my applications using six common ones:
 First, I had an application that I tested that was not salting passwords and was only using md5.  I thought it would be interesting to get the md5's and then write a quick query against them.
 
 
-    
-    
-    select md5('password'), md5('123456'), md5('12345678'), md5('qwerty'), md5('abc123'), md5('letmein');
-    
-    select id from user where `password` in (
-    '5f4dcc3b5aa765d61d8327deb882cf99', 'e10adc3949ba59abbe56e057f20f883e', '25d55ad283aa400af464c76d713c07ad', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'e99a18c428cb38d5f260853678922e03', '0d107d09f5bbe40cade3de5c71e9e9b7'
-    );
-    
+{% highlight mysql %}
+select md5('password'), md5('123456'), md5('12345678'), md5('qwerty'), md5('abc123'), md5('letmein');
 
+select id from user where `password` in (
+'5f4dcc3b5aa765d61d8327deb882cf99', 'e10adc3949ba59abbe56e057f20f883e', '25d55ad283aa400af464c76d713c07ad', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'e99a18c428cb38d5f260853678922e03', '0d107d09f5bbe40cade3de5c71e9e9b7'
+);
+{% endhighlight %}
 
 
 Found some good results.  
@@ -44,39 +34,35 @@ Found some good results.
 Then, I decided to move on to my sha1 salted application.  First, I just thought I'd want to see if there any users that matched.  Surely, there wouldn't be, right?
 
 
-    
-    
-    select * from user where password in (
+{% highlight mysql %}
+select * from user where password in (
     sha1(concat('password', passwordSalt)), 
     sha1(concat('123456', passwordSalt)), 
     sha1(concat('12345678', passwordSalt)), 
     sha1(concat('qwerty', passwordSalt)), 
     sha1(concat('abc123', passwordSalt)), 
     sha1(concat('letmein', passwordSalt))
-    );
+);
+{% endhighlight %}
     
-
-
 
 Drat, there were some.  So curiosity got the best of me... I want to know who is who now...
 
-
+  
+{% highlight mysql %}
+select 'password', user.* from user where password = sha1(concat('password', passwordSalt))
+union
+select '123456', user.* from user where password = sha1(concat('123456', passwordSalt))
+union
+select '12345678', user.* from user where password = sha1(concat('12345678', passwordSalt))
+union
+select 'qwerty', user.* from user where password = sha1(concat('qwerty', passwordSalt))
+union
+select 'abc123', user.* from user where password = sha1(concat('abc123', passwordSalt))
+union
+select 'letmein', user.* from user where password = sha1(concat('letmein', passwordSalt))
+{% endhighlight %}
     
-    
-    select 'password', user.* from user where password = sha1(concat('password', passwordSalt))
-    union
-    select '123456', user.* from user where password = sha1(concat('123456', passwordSalt))
-    union
-    select '12345678', user.* from user where password = sha1(concat('12345678', passwordSalt))
-    union
-    select 'qwerty', user.* from user where password = sha1(concat('qwerty', passwordSalt))
-    union
-    select 'abc123', user.* from user where password = sha1(concat('abc123', passwordSalt))
-    union
-    select 'letmein', user.* from user where password = sha1(concat('letmein', passwordSalt))
-    
-
-
 
 Yup, found the culprits and their passwords.  
 

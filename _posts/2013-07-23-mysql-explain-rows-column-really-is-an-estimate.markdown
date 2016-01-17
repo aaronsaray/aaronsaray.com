@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-07-23 14:53:10+00:00
 layout: post
-slug: mysql-explain-rows-column-really-is-an-estimate
 title: MySQL Explain rows column really IS an estimate
-wordpress_id: 1544
-categories:
-- mysql
 tags:
 - mysql
 ---

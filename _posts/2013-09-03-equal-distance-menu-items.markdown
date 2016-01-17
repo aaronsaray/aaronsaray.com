@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-09-03 12:57:35+00:00
 layout: post
-slug: equal-distance-menu-items
 title: Equal distance menu items
-wordpress_id: 1617
-categories:
-- CSS
 tags:
 - CSS
 ---
@@ -22,62 +15,57 @@ This screenshot is my final output:
 
 So here's the markup:
 
+{% highlight HTML %}
+<div id="main">
+    <h1>My Website</h1>
+    <nav>
+        <ul>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+            <li><a href="#">asdf asdf asdf</a></li>
+        </ul>
+    </nav>
 
-    
-    
-    <div id="main">
-        <h1>My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-                <li><a href="#">asdf asdf asdf</a></li>
-            </ul>
-        </nav>
-    
-        <p>Hi there buddy.</p>
-    </div>
-    
-
-
+    <p>Hi there buddy.</p>
+</div>
+{% endhighlight %}
 
 And then the CSS
 
-
-    
-    
-    body {
-        background: #f4f4f4;
-    }
-    #main {
-        background: #fff;
-        width: 800px;
-        margin: auto;
-    }
-    nav ul {
-        text-align:justify;
-        padding: 0px;
-    }
-    nav li {
-        list-style-type: none;
-        display: inline;
-    }
-    nav li > a {
-        display: inline-block
-    }
-    nav ul:after { 
-        content: ' '; 
-        display: inline-block; 
-        width: 100%; 
-        height: 0 
-    }
+{% highlight CSS %}
+body {
+    background: #f4f4f4;
+}
+#main {
+    background: #fff;
+    width: 800px;
+    margin: auto;
+}
+nav ul {
+    text-align:justify;
+    padding: 0px;
+}
+nav li {
+    list-style-type: none;
+    display: inline;
+}
+nav li > a {
+    display: inline-block
+}
+nav ul:after { 
+    content: ' '; 
+    display: inline-block; 
+    width: 100%; 
+    height: 0 
+}
+{% endhighlight %}
     

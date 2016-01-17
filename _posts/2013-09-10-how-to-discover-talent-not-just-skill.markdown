@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-09-10 13:26:04+00:00
 layout: post
-slug: how-to-discover-talent-not-just-skill
 title: How to discover talent, not just skill
-wordpress_id: 1629
-categories:
-- programming
 tags:
 - programming
 ---

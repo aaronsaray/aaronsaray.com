@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-07-30 14:19:45+00:00
 layout: post
-slug: my-stackoverflow-rant
 title: My StackOverflow Rant
-wordpress_id: 1605
-categories:
-- learning
 tags:
 - learning
 ---

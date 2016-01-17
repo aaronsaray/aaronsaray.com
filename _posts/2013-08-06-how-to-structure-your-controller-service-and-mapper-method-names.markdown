@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-08-06 16:55:19+00:00
 layout: post
-slug: how-to-structure-your-controller-service-and-mapper-method-names
 title: How to structure your controller, service and mapper method names
-wordpress_id: 1542
-categories:
-- programming
 tags:
 - programming
 ---

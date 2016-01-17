@@ -1,7 +1,4 @@
 ---
-author: aaron
-comments: true
-date: 2013-07-17 00:50:54+00:00
 layout: post
 slug: would-you-find-value-in-a-one-on-one-video-code-review-session
 title: Would You Find Value in a One on One Video Code Review Session?

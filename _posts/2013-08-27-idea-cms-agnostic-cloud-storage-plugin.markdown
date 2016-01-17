@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-08-27 12:58:18+00:00
 layout: post
-slug: idea-cms-agnostic-cloud-storage-plugin
 title: 'Idea: CMS agnostic cloud storage plugin'
-wordpress_id: 1615
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---
@@ -18,11 +11,7 @@ So first, here are the competitors:
 
 
 
-### Drupal Cloud Storage
-
-
-
-
+#### Drupal Cloud Storage
 
 
   * [Cloud Files](https://drupal.org/project/cloud_files)
@@ -46,7 +35,7 @@ So first, here are the competitors:
 
 
 
-### Joomla Cloud Storage
+#### Joomla Cloud Storage
 
 
 
@@ -71,7 +60,7 @@ So first, here are the competitors:
 
 
 
-### Wordpress Cloud Storage
+#### Wordpress Cloud Storage
 
 
 
@@ -107,7 +96,7 @@ So, here's the idea
 
 
 
-## Build the core, add on the plugins
+#### Build the core, add on the plugins
 
 
 
