@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-04-21 18:18:36+00:00
 layout: post
-slug: creating-a-google-fusion-table-from-a-google-drive-spreadsheet
 title: Creating a Google Fusion Table from a Google Drive Spreadsheet
-wordpress_id: 1837
-categories:
-- business
-- Misc Web Design
 tags:
 - business
 - Misc Web Design
@@ -26,9 +18,7 @@ Next, I scanned a tutorial about Fusion tables located here: [About Fusion Table
 
 And this is where we begin!
 
-
-
-### Selecting the Source
+#### Selecting the Source
 
 
 [![Choose Source](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-1-300x214.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-1.png)
@@ -37,7 +27,7 @@ I chose to use a Google Drive Spreadsheet.
 
 
 
-### Validating the Layout
+#### Validating the Layout
 
 
 [![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-2-300x214.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-2.png)
@@ -46,7 +36,7 @@ Yup, everything looks good.  I really like the option of choosing the header / l
 
 
 
-### Adding the Meta Data
+#### Adding the Meta Data
 
 
 [![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-3-300x217.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-3.png)
@@ -57,7 +47,7 @@ Click Finish!
 
 
 
-### The first result
+#### The first result
 
 
 [![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-4-300x202.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-4.png)
@@ -79,18 +69,16 @@ The next thing I wanted to do was configure the info window.  This is on the lef
 I decided to write my own HTML to customize the view.  You can click on the custom tab and do the following:
 
 
-    
-    
-    <div style="height: 11em; overflow-y: auto" class="googft-info-window">
+{% highlight html %}
+<div style="height: 11em; overflow-y: auto" class="googft-info-window">
     <img src="{Image}" style="float:right; height: 10em; margin-left: 0.5em"></img>
     <b>{Name}</b><br>
     {Address}<br>
     <hr>
     2015: ${2015}<br>
     <span style="color: #aaa">2014: ${2014}</span><br>
-    </div>
-    
-
+</div>
+{% endhighlight %}
 
 
 [![fusion-8](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-8-300x164.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-8.png)Ugh - inline style.  But, what can ya do?
@@ -99,7 +87,7 @@ Anyway, this makes a pretty good looking info window for our purposes.
 
 
 
-### Final Part
+#### Final Part
 
 
 

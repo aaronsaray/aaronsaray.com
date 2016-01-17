@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-02-10 01:50:49+00:00
 layout: post
-slug: started-my-own-company
 title: Started my own company
-wordpress_id: 1790
-categories:
-- business
 tags:
 - business
 ---

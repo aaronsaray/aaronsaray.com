@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-03-12 20:06:26+00:00
 layout: post
-slug: getting-variable-values-from-nested-twig-symfony-custom-template
 title: Getting variable values from nested twig / symfony custom template
-wordpress_id: 1800
-categories:
-- PHP
-- symfony
 tags:
 - PHP
 - symfony
@@ -20,10 +12,11 @@ _I should mention... I'm just learning this particular integration, plus this is
 
 In my **edit.html.twig** file, I had the following:
 
-    
-    {% raw %}
-    {{ form_row(form.myItem, {'label': 'My special label'}) }}
-    {% endraw %}
+{% highlight twig %}
+{% raw %}
+{{ form_row(form.myItem, {'label': 'My special label'}) }}
+{% endraw %}
+{% endhighlight %}
 
 
 
@@ -31,19 +24,19 @@ It wasn't grabbing my output in the custom template.  The template excerpt looke
 
 
     
-    {% raw %}
-    {% block field_row %}
-     
-        <div class="{{ div_class }}">
-            {{ form_label(form) }}
-            <div class="controls">
-                {{ form_widget(form, _context) }}
-                {{ form_errors(form) }}
-            </div>
+{% highlight twig %}
+{% raw %}
+{% block field_row %}
+     <div class="{{ div_class }}">
+        {{ form_label(form) }}
+        <div class="controls">
+            {{ form_widget(form, _context) }}
+            {{ form_errors(form) }}
         </div>
-     
-    {% endblock field_row %}
-    {% endraw %}
+    </div>
+{% endblock field_row %}
+{% endraw %}
+{% endhighlight %}
 
 
 
@@ -51,12 +44,12 @@ In this case, the form variable passed to form_label did not have my custom vari
 
 Turns out, the **_context** array had the values for this particular element.  So, I modified:
 
-
     
-    
-            {{ form_label(form, _context['label']) }}
-    
-
+{% highlight twig %}
+{% raw %}
+{{ form_label(form, _context['label']) }}
+{% endraw %}
+{% endhighlight %}    
 
 
 Yay!  That got the standard label - or the custom label I set.  Success.

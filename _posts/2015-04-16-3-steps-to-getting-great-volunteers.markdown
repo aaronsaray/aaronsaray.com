@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-04-16 19:17:07+00:00
 layout: post
-slug: 3-steps-to-getting-great-volunteers
 title: 3 Steps to Getting Great Volunteers
-wordpress_id: 1831
-categories:
-- business
 tags:
 - business
 ---
@@ -19,8 +12,7 @@ tags:
 So, let's get into the tips - to make sure you never have to worry about getting volunteers again.
 
 
-
-### Secret Shopper Program
+#### Secret Shopper Program
 
 
 
@@ -30,7 +22,7 @@ In the end, you may even actually get a new volunteer! - But even if you don't, 
 
 
 
-### Be a Spy / Ask for Help
+#### Be a Spy / Ask for Help
 
 
 
@@ -40,7 +32,7 @@ If you can't seem to get that information directly, it's ok to be a spy.  Jump o
 
 
 
-### Communicate the Value and Requirements, Kindly
+#### Communicate the Value and Requirements, Kindly
 
 
 
@@ -59,7 +51,7 @@ Remember, this is a cross between an interview and a sales opportunity.  And, fo
 
 
 
-### Final Thoughts
+#### Final Thoughts
 
 
 

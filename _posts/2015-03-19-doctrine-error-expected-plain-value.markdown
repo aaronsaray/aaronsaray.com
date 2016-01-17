@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-03-19 21:10:54+00:00
 layout: post
-slug: doctrine-error-expected-plain-value
 title: 'Doctrine Error: Expected Plain Value'
-wordpress_id: 1807
-categories:
-- Doctrine
 tags:
 - doctrine
 ---

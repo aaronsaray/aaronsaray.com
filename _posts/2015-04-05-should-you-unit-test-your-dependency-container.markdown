@@ -1,16 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-04-05 16:02:57+00:00
 layout: post
-slug: should-you-unit-test-your-dependency-container
 title: Should you unit test your dependency container?
-wordpress_id: 1810
-categories:
-- PHP
-- phpunit
-- programming
-- testing
 tags:
 - PHP
 - phpunit

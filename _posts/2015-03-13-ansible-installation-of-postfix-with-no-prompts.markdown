@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2015-03-13 15:04:14+00:00
 layout: post
-slug: ansible-installation-of-postfix-with-no-prompts
 title: Ansible Installation of Postfix with No Prompts
-wordpress_id: 1802
-categories:
-- ansible
-- scripting
-- server
 tags:
 - ansible
 - scripting
@@ -25,18 +16,17 @@ Here's an excerpt of the Ansible file.
 
 
     
-    
-    ---
-    - name: Set Postfix option hostname
-      debconf: name=postifx question="postfix/mailname" value="sandbox" vtype="string"
-    
-    - name: Set Postfix option type as internet site
-      debconf: name=postfix question="postfix/main_mailer_type" value="'Internet Site'" vtype="string"
-    
-    - name: install postfix
-      apt: name=postfix state=present
-    
+{% highlight yaml %}
+---
+- name: Set Postfix option hostname
+  debconf: name=postifx question="postfix/mailname" value="sandbox" vtype="string"
 
+- name: Set Postfix option type as internet site
+  debconf: name=postfix question="postfix/main_mailer_type" value="'Internet Site'" vtype="string"
+
+- name: install postfix
+  apt: name=postfix state=present
+{% endhighlight %}    
 
 
 Of course, remember to copy over your required **postfix/main.cnf** file after you're done, too.
