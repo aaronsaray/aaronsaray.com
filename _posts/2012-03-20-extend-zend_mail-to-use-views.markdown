@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-03-20 15:42:39+00:00
 layout: post
-slug: extend-zend_mail-to-use-views
 title: Extend Zend_Mail to use Views
-wordpress_id: 1012
-categories:
-- testing
-- zend framework
 tags:
 - testing
 - zend framework
@@ -20,49 +12,96 @@ Before we begin, it's important to know the goal. The goal is to create a versio
 
 **application/models/Mail.php**
 
-    
-    
-    $this->_getLayoutPath()));
-        	
-        	switch ($type) {
-        		case self::TYPE_HTML:
-        		case self::TYPE_TEXT:
-        			$layout->setLayout('email' . $type);
-        			break;
-        		default:
-        			throw new Zend_Exception($type . ' type is not a valid body type');
-        	}
-        	
-        	$view = new Zend_View;
-        	$view->setScriptPath($this->_getViewPath());
-        	foreach ($params as $key=>$value) $view->$key = $value;
-        	$layout->content = $view->render($scriptname . $type . '.phtml');
-        	
-        	$html = $layout->render();
-        	$func = 'setBody' . ucwords($type);
-        	$this->$func($html);
-        	
-        	return $this;
-        }
-    
-        /**
-         * returns the layout path used in email formation
-         * @return string path
-         */
-        protected function _getLayoutPath()
-        {
-        	return APPLICATION_PATH . '/layouts/scripts';
-        }
-    
-        /**
-         * returns the view path used in email formation
-         * @return string path
-         */
-        protected function _getViewPath()
-        {
-        	return APPLICATION_PATH . '/views/scripts/email';
-        }
+{% highlight PHP %}
+<?php
+/**
+ * Zend_Mail override
+ * 
+ * Holds the class for the zend_mail override
+ * @package AaronSaray
+ */
+ 
+/**
+ * Overrides Zend_Mail to use views
+ * 
+ * This creates the setBody commands in such a way that the views can be used to populate the emails
+ * @author Aaron Saray
+ * @package AaronSaray
+ */
+class Application_Model_Mail extends Zend_Mail
+{
+    /**
+     * @var string constant saying this a text type
+     */
+    const TYPE_TEXT = 'text';
+	
+    /**
+     * @var string constant saying this is html type
+     */
+    const TYPE_HTML = 'html';
+	
+    /**
+     * This is used to make all of my e-mails utf-8 instead
+     * @param string $charset
+     */
+    public function __construct($charset = 'UTF-8')
+    {
+        parent::__construct($charset);
     }
+    
+    /**
+     * Sets the type of body content
+     * 
+     * Sets the proper body content with the proper content, initializing view
+     * 
+     * @param string $type the type of stuff
+     * @param string $scriptname the name of the email script
+     * @param array $params stuff to replace
+     */
+    public function setBody($type, $scriptname, $params = array())
+    {
+    	$layout = new Zend_Layout(array('layoutPath'=>$this->_getLayoutPath()));
+    	        	
+        switch ($type) {
+            case self::TYPE_HTML:
+            case self::TYPE_TEXT:
+                $layout->setLayout('email' . $type);
+                break;
+            default:
+                throw new Zend_Exception($type . ' type is not a valid body type');
+        }
+        
+        $view = new Zend_View;
+        $view->setScriptPath($this->_getViewPath());
+        foreach ($params as $key=>$value) $view->$key = $value;
+        $layout->content = $view->render($scriptname . $type . '.phtml');
+        
+        $html = $layout->render();
+        $func = 'setBody' . ucwords($type);
+        $this->$func($html);
+        
+        return $this;
+    }
+
+    /**
+     * returns the layout path used in email formation
+     * @return string path
+     */
+    protected function _getLayoutPath()
+    {
+        return APPLICATION_PATH . '/layouts/scripts';
+    }
+
+    /**
+     * returns the view path used in email formation
+     * @return string path
+     */
+    protected function _getViewPath()
+    {
+        return APPLICATION_PATH . '/views/scripts/email';
+    }
+}
+{% endhighlight %}    
     
 
 
@@ -86,14 +125,14 @@ Finally, the views and layouts are rendered and applied.  The setBody specific c
 This is how you might use this:
 
 
-    
-    
-    $mail = new Application_Model_Mail();
-    ...
-    $mail->setBody(Application_Model_Mail::TYPE_HTML, 'forgotpassword', array('user'=>$user))
-         ->setBody(Application_Model_Mail::TYPE_TEXT, 'forgotpassword', array('user'=>$user));
-    $mail->send();
-    
+{% highlight PHP %}
+<?php
+$mail = new Application_Model_Mail();
+// ...
+$mail->setBody(Application_Model_Mail::TYPE_HTML, 'forgotpassword', array('user'=>$user))
+     ->setBody(Application_Model_Mail::TYPE_TEXT, 'forgotpassword', array('user'=>$user));
+$mail->send();
+{% endhighlight %}    
 
 
 

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-02-14 15:48:24+00:00
 layout: post
-slug: when-writing-unit-tests-test-against-absolutes
 title: When writing unit tests, test against absolutes
-wordpress_id: 1019
-categories:
-- testing
 tags:
 - testing
 ---
@@ -23,9 +16,9 @@ Basically, I told him that he can't necessarily know what the output of DomDocum
 So, in other words, here's what you should do:
 
 
-    
-    
-    $xmlString = "<xml><root><nodes><to><test></test></to></nodes></root></xml>";
-    $service = new ClassToTest();
-    $this->assertEquals($xmlString, $service->generatedXmlFromClass());
-    
+{% highlight PHP %}
+<?php
+$xmlString = "<xml><root><nodes><to><test></test></to></nodes></root></xml>";
+$service = new ClassToTest();
+$this->assertEquals($xmlString, $service->generatedXmlFromClass());
+{% endhighlight %}    

@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-05-01 13:41:12+00:00
 layout: post
-slug: translate-your-error-messages-in-your-zend-framework-controllers
 title: Translate Your Error Messages in Your Zend Framework Controllers
-wordpress_id: 991
-categories:
-- Misc Web Design
-- zend framework
 tags:
 - Misc Web Design
 - zend framework
@@ -25,19 +17,20 @@ Side note: There is some argument as to whether the translation should be handle
 Let's check out some code in an action
 
 
-    
-    
-    public function dosomethingAction()
-    {
-      if (!Zend_Auth::getInstance()->hasIdentity()) {
-        //ruh roh - need some identity
-        $translate = Zend_Registry::get('translate'); // our main object we created
-        $message = $translate->_('Please log in.');
-        $this->_helper->flashMessenger->addMessage($message);
-        return $this->_redirect('/');
-      }
-      // life is ok here!
-    }
+{% highlight PHP %}
+<?php
+public function dosomethingAction()
+{
+  if (!Zend_Auth::getInstance()->hasIdentity()) {
+    //ruh roh - need some identity
+    $translate = Zend_Registry::get('translate'); // our main object we created
+    $message = $translate->_('Please log in.');
+    $this->_helper->flashMessenger->addMessage($message);
+    return $this->_redirect('/');
+  }
+  // life is ok here!
+}
+{% endhighlight %}    
     
 
 

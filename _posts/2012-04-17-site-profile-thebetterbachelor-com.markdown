@@ -1,16 +1,9 @@
 ---
-author: aaron
-comments: true
-date: 2012-04-17 14:06:11+00:00
 layout: post
-slug: site-profile-thebetterbachelor-com
 title: 'Site profile: thebetterbachelor.com'
-wordpress_id: 1115
-categories:
+tags:
 - business
 - Misc Web Design
-- site profile
-tags:
 - site profile
 ---
 
@@ -42,4 +35,5 @@ _Screenshots:_
 [![](http://aaronsaray.com/wp-content/uploads/2012/03/2-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/2.png)
 
 **Bonus! Download the cookbook free!**
+
 [10dish Cookbook](http://aaronsaray.com/wp-content/uploads/2012/03/10dish.pdf)

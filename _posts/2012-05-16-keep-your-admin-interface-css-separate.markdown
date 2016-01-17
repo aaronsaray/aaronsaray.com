@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-05-16 15:14:53+00:00
 layout: post
-slug: keep-your-admin-interface-css-separate
 title: Keep your Admin Interface CSS Separate
-wordpress_id: 1031
-categories:
-- CSS
-- performance
-- security
 tags:
 - CSS
 - performance

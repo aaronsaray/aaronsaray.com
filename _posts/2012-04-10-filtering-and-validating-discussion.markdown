@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-04-10 13:13:43+00:00
 layout: post
-slug: filtering-and-validating-discussion
 title: Filtering and Validating Discussion
-wordpress_id: 1146
-categories:
-- business
-- programming
-- security
 tags:
 - business
 - programming
@@ -61,6 +52,7 @@ In the case of critical web services, I often store a compressed copy of my requ
 Finally, a question I have for the group - what practices do you follow regarding “internal” filtering and validating on a big system. With high cohesion you get an explosion of objects, each with public methods potentially being called from anywhere. When do you check parameter types and/or values? Or do you just let it fail? Type hinting’s fine for objects, but what about primitives? Personally, I know some of my “gateway” methods that start a cascade of actions, so I’ll make sure that I’ve at least got my parameters straight before I proceed with them so I don’t have to do a giant rollback way down the call stack, but I’ve often wondered if it’s overkill. 
 
 **[Aaron Saray](http://aaronsaray.com)**
+
 I have two thoughts.  First, we always talk about escaping output when it comes to the user.  However, there always seems to be a bit of confusion when the actual escaping should happen.  Don't you indeed escape potentially unsafe data going to your database (see: mysql_real_escape_string()) but you also escape it going outwards (htmlentities, etc)... So the question is where do you draw the line with escaping?  Could one argue that you could do htmlentities before you store the data too?
 
 Jeremy - in regards to your primitive checking.  I've never come across a good standard for doing that checking.  However, I've been known to write special methods per class... something like "_checkSanity()" with enough domain knowledge and type knowledge to filter out unwanted data.  I'm sure that's not the best way to do it, however.  I generally would trigger a failure than to filter the content.
@@ -77,7 +69,7 @@ Wow - great way of putting it Eric - "storing in the browser" - that notion of s
 
 
 
-### Final Thoughts
+#### Final Thoughts
 
 
 

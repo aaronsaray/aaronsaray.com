@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-01-24 15:40:41+00:00
 layout: post
-slug: split-readwrite-connections-in-zend-framework-database-on-the-application-level
-title: Split Read/Write Connections in Zend Framework Database on the Application
-  Level
-wordpress_id: 1044
-categories:
-- mysql
-- zend framework
+title: Split Read/Write Connections in Zend Framework Database on the Application Level
 tags:
 - mysql
 - zend framework
@@ -35,59 +26,58 @@ Next, create a method in your bootstrap called _initWriteConnection() or somethi
 
 Finally, time to extend the Zend_Db_Table_Abstract
 
-
+{% highlight PHP %}
+<?php
+class Application_Model_SplitReadWriteDatabaseConnection extends Zend_Db_Table_Abstract
+{
+    /**
+     * temporary storage of the read only adapter
+     */
+    protected $_readDB = null;
     
-    
-    class Application_Model_SplitReadWriteDatabaseConnection extends Zend_Db_Table_Abstract
+    /**
+     * invokes the read/write connection
+     * @see Db/Table/Zend_Db_Table_Abstract::insert()
+     */
+    public function insert(array $data)
     {
-    	/**
-             * temporary storage of the read only adapter
-    	 */
-    	protected $_readDB = null;
-    	
-    	/**
-    	 * invokes the read/write connection
-    	 * @see Db/Table/Zend_Db_Table_Abstract::insert()
-    	 */
-    	public function insert(array $data)
-    	{
-    		$this->_preWrite();
-    		$return = parent::insert($data);
-    		$this->_postWrite();
-    		return $return;
-    	}
-    	
-    	/**
-    	 * Invokes the read/write connection
-    	 * @see Db/Table/Zend_Db_Table_Abstract::update()
-    	 */
-    	public function update(array $data, $where)
-    	{
-            $this->_preWrite();
-            $return = parent::update($data, $where);
-            $this->_postWrite();
-            return $return;
-    	}
-    	
-    	/**
-    	 * Stores the read adapter and sets the write adapter
-    	 */
-    	protected function _preWrite()
-    	{
-    		$this->_readDB = $this->getAdapter();
-    		$this->_setAdapter(Zend_Registry::get('DbWriteConnection'));
-    	}
-    	
-    	/**
-    	 * Sets the read adapter back and clears the temporary storage
-    	 */
-    	public function _postWrite()
-    	{
-    		$this->_setAdapter($this->_readDB);
-    		$this->_readDB = null;
-    	}
+        $this->_preWrite();
+        $return = parent::insert($data);
+        $this->_postWrite();
+        return $return;
     }
     
+    /**
+     * Invokes the read/write connection
+     * @see Db/Table/Zend_Db_Table_Abstract::update()
+     */
+    public function update(array $data, $where)
+    {
+        $this->_preWrite();
+        $return = parent::update($data, $where);
+        $this->_postWrite();
+        return $return;
+    }
+    
+    /**
+     * Stores the read adapter and sets the write adapter
+     */
+    protected function _preWrite()
+    {
+        $this->_readDB = $this->getAdapter();
+        $this->_setAdapter(Zend_Registry::get('DbWriteConnection'));
+    }
+    
+    /**
+     * Sets the read adapter back and clears the temporary storage
+     */
+    public function _postWrite()
+    {
+        $this->_setAdapter($this->_readDB);
+        $this->_readDB = null;
+    }
+}
+{% endhighlight %}    
 
 
 
@@ -112,13 +102,13 @@ Any other ways that I can make this better?
 PS, if you'd like to test this, but don't actually have two different database credential connections (but want to be ready for later), make the _initWriteConnection() method contain the following code:
 
 
-    
-    
-            $this->bootstrap('db');
-            $db = $this->getResource('db');
-            Zend_Registry::set('DbWriteConnection', $db);
-            return $db;
-    
+{% highlight PHP %}
+<?php
+$this->bootstrap('db');
+$db = $this->getResource('db');
+Zend_Registry::set('DbWriteConnection', $db);
+return $db;
+{% endhighlight %}    
 
 
 

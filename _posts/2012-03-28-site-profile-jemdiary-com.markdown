@@ -1,16 +1,9 @@
 ---
-author: aaron
-comments: true
-date: 2012-03-28 19:48:18+00:00
 layout: post
-slug: site-profile-jemdiary-com
 title: 'Site profile: jemdiary.com'
-wordpress_id: 1120
-categories:
+tags:
 - business
 - Misc Web Design
-- site profile
-tags:
 - site profile
 ---
 
@@ -21,6 +14,7 @@ Goal: In 2001, having an online diary was only being piloted by a few people.  B
 What happened: This was my longest running website.  I think it was slightly before its time.  When it became more popular, I just didn't have the time to keep developing on it.  Then, other larger sites eclipsed it and it slowly lost market share.
 
 Technology:
+
 This was originally written in procedural PHP4.  Then, later I migrated to PHP5 in procedural style.  It finally became my first object oriented framework with my own custom controllers and views.  
 
 I used to host on dreamhost.  Because of that, I learned what it was like to have a slow host that needed the site to be optimized more.  I started compressing and caching my assets.  I even ran a system to create the home page every hour as a static page with no PHP required.  This made a huge performance boost.
@@ -38,6 +32,7 @@ The final thing I did, which was really a big deal for the time, was to allow us
 I learned from MySpace success for a time with the initial Tom friend.  I would add myself as a friend.  I also started using an automated system that would comment as my user on all new user's content. It would make one comment on their profile and one on their first diary entry. I twas ran every few hours.  The system would look at their account and create a special message based on things they said.  For example, I suggested someone add a profile picture in 4 different ways. The system would pick one randomly - and only add it to the message if they didn't have a profile picture already.  A lot of the users thought I was actually adding the messages myself.  (A few times the programming was faulty - and I commented on 'deleted' diary entries - that wasn't good!)
 
 Lessons learned:
+
 - keep with the times!  I think I could have made some more money off of google ads if I would have kept current
 - use google ads and other ads! I wasn't placing ads very well for a while.
 - advertise.  I was still #3 in free online diary search on google - but sometimes people just didn't search that.

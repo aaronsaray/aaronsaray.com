@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-01-03 16:19:05+00:00
 layout: post
-slug: running-phpunit-on-remote-system-from-command-line
 title: Running PHPUnit on Remote System from Command Line
-wordpress_id: 1050
-categories:
-- Eclipse PDT
-- phpunit
 tags:
 - Eclipse PDT
 - phpunit

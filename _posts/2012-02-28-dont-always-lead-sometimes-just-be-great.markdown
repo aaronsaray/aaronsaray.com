@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-02-28 15:35:57+00:00
 layout: post
-slug: dont-always-lead-sometimes-just-be-great
 title: 'Don''t Always Lead: Sometimes Just Be Great'
-wordpress_id: 983
-categories:
-- business
-- professional tips
 tags:
 - business
 - professional tips

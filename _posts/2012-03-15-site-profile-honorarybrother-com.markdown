@@ -1,16 +1,9 @@
 ---
-author: aaron
-comments: true
-date: 2012-03-15 00:54:51+00:00
 layout: post
-slug: site-profile-honorarybrother-com
 title: 'Site Profile: honorarybrother.com'
-wordpress_id: 1103
-categories:
+tags:
 - business
 - Misc Web Design
-- site profile
-tags:
 - site profile
 ---
 
@@ -19,6 +12,7 @@ Goal: to create a site serving females that felt a specific male in their life d
 Technology:
 
 Zend Framework
+
 This project was one of my first Zend Framework projects.  I did this as a proof of concept that this framework was far superior to the framework I had developed myself.  (Like they always say, PHP programmers program procedural, then OO, then create their own framework, and finally settle on an industry framework.)  I used 1.9.5 (Yah, I didn't mess with it in the pre-1.8 era.   That was just nasty.)
 
 The process was simple.  It would prompt the girl for the "brother's" name and email as well as her own.  It would then craft an email on her behalf with a custom URL for the 'brother.'  This generated a splash page with a link.  Then it was possible to view a printable design.

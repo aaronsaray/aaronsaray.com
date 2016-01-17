@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-02-21 18:55:24+00:00
 layout: post
-slug: zend-framework-use-filter-with-paginator
 title: Zend Framework Use Filter with Paginator
-wordpress_id: 1005
-categories:
-- zend framework
 tags:
 - zend framework
 ---
@@ -20,31 +13,30 @@ The Zend_Paginator class has a function called setFilter() that will accept a Ze
 
 So, for example, check out this code:
 
+{% highlight PHP %}
+<?php
+class MyObject
+{
+  public function __construct(array $items = array())
+  {
+    foreach ($items as $key=>$value) {
+      $this->$key = $value;
+    }
+  }
+}
 
-    
-    
-    class MyObject
-    {
-      public function __construct(array $items = array())
-      {
-        foreach ($items as $key=>$value) {
-          $this->$key = $value;
-        }
-      }
-    }
-    
-    class MyObjectPopulator implements Zend_Filter_Interface
-    {
-      public function filter($item)
-      {
-        return new MyObject($item);
-      }
-    }
-    
-    ...
-    $paginator = new Zend_Paginator($adapter);
-    $paginator->setFilter(new MyObjectPopulator());
-    
+class MyObjectPopulator implements Zend_Filter_Interface
+{
+  public function filter($item)
+  {
+    return new MyObject($item);
+  }
+}
+
+// ...
+$paginator = new Zend_Paginator($adapter);
+$paginator->setFilter(new MyObjectPopulator());
+{% endhighlight %} 
 
 
 

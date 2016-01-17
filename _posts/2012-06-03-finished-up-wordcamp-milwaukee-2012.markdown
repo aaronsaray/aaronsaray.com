@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2012-06-03 22:55:43+00:00
 layout: post
-slug: finished-up-wordcamp-milwaukee-2012
 title: Finished up WordCamp Milwaukee 2012
-wordpress_id: 1211
-categories:
+tags:
 - Misc Web Design
 - wordpress
 ---

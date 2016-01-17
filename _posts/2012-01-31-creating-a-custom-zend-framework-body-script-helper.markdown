@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-01-31 16:12:11+00:00
 layout: post
-slug: creating-a-custom-zend-framework-body-script-helper
 title: Creating a custom Zend Framework Body Script helper
-wordpress_id: 1008
-categories:
-- javascript
-- zend framework
 tags:
 - javascript
 - zend framework
@@ -21,25 +13,25 @@ By default, in Zend Framework, the Zend View Helper of HeadScript allows additio
 I've created my own solution.  Now, I put headScript() items only in the head when necessary, and I add everything else to my new custom bodyScript() handler.  This is simply extending the headScript() handler for a different position.
 
 
-    
-    
-    class Application_View_Helper_BodyScript extends Zend_View_Helper_HeadScript
+{% highlight PHP %}
+<?php
+class Application_View_Helper_BodyScript extends Zend_View_Helper_HeadScript
+{
+    /**
+     * @var string The key to store this in the registry
+     */
+    protected $_regKey = 'Application_View_Helper_BodyScript';
+        
+    /**
+     * Proxy for the different named head script
+     */
+    public function bodyScript()
     {
-    	/**
-    	 * @var string The key to store this in the registry
-    	 */
-    	protected $_regKey = 'Application_View_Helper_BodyScript';
-        	
-    	/**
-    	 * Proxy for the different named head script
-    	 */
-    	public function bodyScript()
-    	{
-    		$args = func_get_args();
-    		return call_user_func_array(array($this, 'headScript'), $args);
-    	}
+        $args = func_get_args();
+        return call_user_func_array(array($this, 'headScript'), $args);
     }
-    
+}
+{% endhighlight %}    
 
 
 
@@ -48,7 +40,7 @@ You'll notice it simply is simply extending the headScript item and calling it t
 And of course, this is simply called just like HeadScript
 
     
-    
-        bodyScript(); ?>
-    </body>
-    
+{% highlight HTML %}
+    <?php echo $this->bodyScript(); ?>
+</body>
+{% endhighlight %}    

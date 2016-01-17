@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2012-01-10 15:01:51+00:00
 layout: post
-slug: how-to-quickly-mask-a-credit-card-number
 title: How to Quickly Mask a Credit Card Number
-wordpress_id: 1025
-categories:
-- PHP
-- programming
 tags:
 - PHP
 - programming
@@ -18,10 +10,11 @@ So, often I have to show a masked credit card on the screen.  However, I really 
 
 
     
-    
-    $cc='1234123412341234';
-    $masked = str_pad(substr($cc, -4), strlen($cc), '*', STR_PAD_LEFT);
-    
+{% highlight PHP %}
+<?php
+$cc='1234123412341234';
+$masked = str_pad(substr($cc, -4), strlen($cc), '*', STR_PAD_LEFT);
+{% endhighlight %}    
 
 
 
