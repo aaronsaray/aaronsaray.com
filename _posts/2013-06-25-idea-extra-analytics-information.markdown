@@ -1,26 +1,16 @@
 ---
-author: aaron
-comments: true
-date: 2013-06-25 14:05:40+00:00
 layout: post
-slug: idea-extra-analytics-information
 title: 'Idea: Extra Analytics Information'
-wordpress_id: 1548
-categories:
-- Ideas for Websites
 tags:
 - Ideas for Websites
 ---
 
 When browsing the documentation for chrome, I came across this:
 
-
+{% highlight javascript %}
+window.performance.getEntries();
+{% endhighlight %}    
     
-    
-    window.performance.getEntries();
-    
-
-
 
 This gives a dump of all the connection and timing information available to the Javascript Timing and Resource API.  
 

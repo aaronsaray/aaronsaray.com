@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-05-28 12:26:04+00:00
 layout: post
-slug: google-map-markers-distorted-with-bootstrap
 title: Google Map Markers Distorted with Bootstrap
-wordpress_id: 1502
-categories:
-- CSS
 tags:
 - CSS
 ---
@@ -18,14 +11,11 @@ On a recent project, the dev team installed [Twitter Bootstrap](http://twitter.g
 
 I finally tracked down that it was some default styles in Bootstrap that were causing the issue.  I added this rule to our css:
 
-
-    
-    
-    #googlemap img[src^="http://maps.gstatic.com/"] {
-      max-width: none;
-    }
-    
-
+{% highlight CSS %}
+#googlemap img[src^="http://maps.gstatic.com/"] {
+  max-width: none;
+}
+{% endhighlight %}    
 
 
 And, we were good to go.  Proof:

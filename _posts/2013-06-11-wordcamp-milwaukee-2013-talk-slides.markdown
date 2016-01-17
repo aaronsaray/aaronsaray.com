@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-06-11 00:26:44+00:00
 layout: post
-slug: wordcamp-milwaukee-2013-talk-slides
 title: WordCamp Milwaukee 2013 Talk + Slides
-wordpress_id: 1574
-categories:
-- wordpress
 tags:
 - wordpress
 ---

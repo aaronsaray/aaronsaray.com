@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-05-14 14:52:42+00:00
 layout: post
-slug: vmware-script-to-toggle-vmware-workstation-startsuspend
 title: VMWare Script to Toggle VMWare Workstation start/suspend
-wordpress_id: 1518
-categories:
-- linux
-- scripting
 tags:
 - linux
 - scripting

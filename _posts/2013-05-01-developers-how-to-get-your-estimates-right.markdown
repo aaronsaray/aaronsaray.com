@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-05-01 04:48:25+00:00
 layout: post
-slug: developers-how-to-get-your-estimates-right
 title: 'Developers: How to get your estimates right'
-wordpress_id: 1479
-categories:
-- professional tips
-- programming
 tags:
 - professional tips
 - programming
@@ -24,7 +16,7 @@ I follow three steps when estimating: Preliminary research, Planning, and Saying
 
 
 
-### Preliminary Research
+#### Preliminary Research
 
 
 
@@ -36,7 +28,7 @@ Instead, **always estimate all of your tasks** even if you're not required to su
 
 
 
-### Planning
+#### Planning
 
 
 
@@ -48,7 +40,7 @@ The great tool here is that we often understimate - and the 20% column USUALLY c
 
 
 
-### Just say No
+#### Just say No
 
 
 
@@ -58,7 +50,7 @@ However, sometimes its unavoidable.  Whatever happens, **put a number on that 'y
 
 
 
-### Good Luck
+#### Good Luck
 
 
 

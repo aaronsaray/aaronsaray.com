@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-05-21 13:12:57+00:00
 layout: post
-slug: enable-your-blog-comments-already
 title: Enable your blog comments already!
-wordpress_id: 1527
-categories:
-- business
 tags:
 - business
 ---

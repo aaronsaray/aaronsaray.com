@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-06-07 01:35:38+00:00
 layout: post
-slug: review-learning-javascriptmvc-by-packt
 title: 'Review: Learning JavaScriptMVC by Packt'
-wordpress_id: 1569
-categories:
-- javascript
 tags:
 - javascript
 ---

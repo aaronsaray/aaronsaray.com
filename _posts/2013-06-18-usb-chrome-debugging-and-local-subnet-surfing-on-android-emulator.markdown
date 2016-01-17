@@ -1,16 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-06-18 12:36:34+00:00
 layout: post
-slug: usb-chrome-debugging-and-local-subnet-surfing-on-android-emulator
 title: USB Chrome Debugging and Local subnet surfing on Android Emulator
-wordpress_id: 1522
-categories:
-- android
-- linux
-- mobile
-- scripting
 tags:
 - android
 - linux
@@ -22,7 +12,7 @@ tags:
 
 
 
-### The Steps for the Emulator
+#### The Steps for the Emulator
 
 
 
@@ -79,7 +69,7 @@ Almost done with the emulator - last step is to open Chrome and enable the USB D
 
 
 
-### Steps for Scripting the Chrome Debugger and Host File
+#### Steps for Scripting the Chrome Debugger and Host File
 
 
 

@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-06-04 23:38:45+00:00
 layout: post
-slug: integrating-php-qa-tools-with-phing
 title: Integrating PHP QA Tools with Phing
-wordpress_id: 1551
-categories:
-- IDE and Web Dev Tools
-- phing
-- phpunit
 tags:
 - IDE and Web Dev Tools
 - phing
@@ -22,162 +13,159 @@ I have really found a great joy lately in phing scripts.  I know, really nerdy. 
 
 Let me post the phing build file, and then I'll go through step by step:
 
+{% highlight XML %}
+<project default="help" name="myproject">
+    <property override="true" name="basedir" value="."></property>
+    <property override="true" name="reportsdir" value="${basedir}/build/reports"></property>
+    <property override="true" name="excludedir" value="library/Zend/,build/"></property>
+    <property override="true" name="phplocdir" value="${reportsdir}/phploc"></property>
+    <property override="true" name="phpcpddir" value="${reportsdir}/phpcpd"></property>
+    <property override="true" name="phpmddir" value="${reportsdir}/phpmd"></property>
+    <property override="true" name="phpunitdir" value="${reportsdir}/phpunit"></property>
+    <property override="true" name="phpcsdir" value="${reportsdir}/phpcs"></property>
 
-    
-    
-    
-    <project default="help" name="myproject">
-    	<property override="true" name="basedir" value="."></property>
-    	<property override="true" name="reportsdir" value="${basedir}/build/reports"></property>
-    	<property override="true" name="excludedir" value="library/Zend/,build/"></property>
-    	<property override="true" name="phplocdir" value="${reportsdir}/phploc"></property>
-    	<property override="true" name="phpcpddir" value="${reportsdir}/phpcpd"></property>
-    	<property override="true" name="phpmddir" value="${reportsdir}/phpmd"></property>
-    	<property override="true" name="phpunitdir" value="${reportsdir}/phpunit"></property>
-    	<property override="true" name="phpcsdir" value="${reportsdir}/phpcs"></property>
-    
-    	<target name="metrics" description="Software Metrics Generation">
-    		
-    
-    		<trycatch>
-    			<try>
-    				<echo msg="Starting phploc"></echo>
-    				<delete quiet="true" dir="${phplocdir}"></delete>
-    				<mkdir dir="${phplocdir}"></mkdir>
-    				<echo msg="Starting phploc parsing [this may take a few seconds]"></echo>
-    				<exec checkreturn="true" executable="phploc">
-    					<arg value="--exclude"></arg>
-    					<arg value="${excludedir}"></arg>
-    					<arg path="${basedir}"></arg>
-    					<arg value=">${phplocdir}/output.txt"></arg>
-    				</exec>
-    				<echo msg="phploc finished"></echo>
-    			</try>
-    			<catch>
-    				<echo msg="phploc is not installed.  Run 'pear install pear.phpunit.de/phploc'" level="warning"></echo>
-    			</catch>
-    		</trycatch>
-    	</target>
-    
-    	<target depends="metrics" name="quality" description="Code Quality Measurements">
-    		
-    		<trycatch property="phpcsinstalled">
-    			
-    			<try>
-    				<exec checkreturn="true" executable="phpcs">
-    					<arg value="--version"></arg>
-    				</exec>
-    			</try>
-    			<catch></catch>
-    		</trycatch>
-    		<if>
-    			<contains substring="with code 127" string="${phpcsinstalled}"></contains>
-    			<then>
-    				<echo msg="phpcs is not installed.  Run pear install php_codesniffer" level="warning"></echo>
-    			</then>
-    			<else>
-    				<echo msg="Starting phpcs"></echo>
-    				<delete quiet="true" dir="${phpcsdir}"></delete>
-    				<mkdir dir="${phpcsdir}"></mkdir>
-    				<echo msg="Starting phpcs parsing."></echo>
-    				<trycatch>
-    					<try>
-    						<exec logoutput="true" checkreturn="true" executable="phpcs">
-    							<arg path="${basedir}/application"></arg>
-    							<arg value="--ignore=${excludedir},public/"></arg>
-    							<arg value="--standard=Zend"></arg>
-    							<arg value="--report-file=${phpcsdir}/output.txt"></arg>
-    							<arg value="--report-summary"></arg>
-    							<arg value="--report-full"></arg>
-    						</exec>
-    					</try>
-    					<catch></catch>
-    				</trycatch>
-    				<echo msg="phpcs finished"></echo>
-    			</else>
-    		</if>
-    
-    		
-    		<trycatch>
-    			<try>
-    				<echo msg="Starting phpcpd"></echo>
-    				<delete quiet="true" dir="${phpcpddir}"></delete>
-    				<mkdir dir="${phpcpddir}"></mkdir>
-    				<echo msg="Starting phpcpd parsing."></echo>
-    				<exec checkreturn="true" executable="phpcpd">
-    					<arg value="--exclude"></arg>
-    					<arg value="${excludedir}"></arg>
-    					<arg path="${basedir}"></arg>
-    					<arg value=">${phpcpddir}/output.txt"></arg>
-    				</exec>
-    				<echo msg="phpcpd finished"></echo>
-    			</try>
-    			<catch>
-    				<echo msg="phpcpd is not installed.  Run pear install pear.phpunit.de/phpcpd" level="warning"></echo>
-    			</catch>
-    		</trycatch>
-    
-    		
-    		<trycatch property="phpmdinstalled">
-    			
-    			<try>
-    				<exec checkreturn="true" command="phpmd"></exec>
-    			</try>
-    			<catch></catch>
-    		</trycatch>
-    		<if>
-    			<contains substring="with code 127" string="${phpmdinstalled}"></contains>
-    			<then>
-    				<echo msg="phpmd is not installed.  Run pear channel-discover pear.phpmd.org, pear channel-discover pear.pdepend.org, pear install --alldeps phpmd/PHP_PMD. Ignore phpize warning." level="warning"></echo>
-    			</then>
-    			<else>
-    				<echo msg="Starting phpmd"></echo>
-    				<delete quiet="true" dir="${phpmddir}"></delete>
-    				<mkdir dir="${phpmddir}"></mkdir>
-    				<echo msg="Starting phpmd parsing"></echo>
-    				<trycatch>
-    					<try>
-    						<exec logoutput="true" checkreturn="true" executable="phpmd">
-    							<arg path="${basedir}"></arg>
-    							<arg value="text"></arg>
-    							<arg value="codesize,controversial,design,naming"></arg>
-    							<arg value="--reportfile"></arg>
-    							<arg value="${phpmddir}/output.txt"></arg>
-    							<arg value="--exclude"></arg>
-    							<arg value="${excludedir}"></arg>
-    						</exec>
-    					</try>
-    					<catch></catch>
-    				</trycatch>
-    				<echo msg="phpmd finished"></echo>
-    			</else>
-    		</if>
-    
-    		
-    		<delete quiet="true" dir="${phpunitdir}"></delete>
-    		<mkdir dir="${phpunitdir}"></mkdir>
-    
-    		<echo msg="Starting phpunit parsing"></echo>
-    		<exec checkreturn="true" command="phpunit" dir="${basedir}/tests"></exec>
-    		<echo msg="phpunit finished"></echo>
-    	</target>
-    
-    	<target depends="quality" name="reports" description="Should be ran to launch all report generation"></target>
-    
-    	<target name="build" description="Used to build application">
-    		<echo msg="Starting Build"></echo>
-    
-    		<echo msg="Build Finished."></echo>
-    	</target>
-    
-    	<target name="help" description="Shows help for this task">
-    		<echo msg="Help for this Phing Taskset"></echo>
-    		<exec logoutput="true" executable="phing">
-    			<arg value="-l"></arg>
-    		</exec>
-    	</target>
-    </project>
-    
+    <target name="metrics" description="Software Metrics Generation">
+        
+
+        <trycatch>
+            <try>
+                <echo msg="Starting phploc"></echo>
+                <delete quiet="true" dir="${phplocdir}"></delete>
+                <mkdir dir="${phplocdir}"></mkdir>
+                <echo msg="Starting phploc parsing [this may take a few seconds]"></echo>
+                <exec checkreturn="true" executable="phploc">
+                    <arg value="--exclude"></arg>
+                    <arg value="${excludedir}"></arg>
+                    <arg path="${basedir}"></arg>
+                    <arg value=">${phplocdir}/output.txt"></arg>
+                </exec>
+                <echo msg="phploc finished"></echo>
+            </try>
+            <catch>
+                <echo msg="phploc is not installed.  Run 'pear install pear.phpunit.de/phploc'" level="warning"></echo>
+            </catch>
+        </trycatch>
+    </target>
+
+    <target depends="metrics" name="quality" description="Code Quality Measurements">
+        
+        <trycatch property="phpcsinstalled">
+            
+            <try>
+                <exec checkreturn="true" executable="phpcs">
+                    <arg value="--version"></arg>
+                </exec>
+            </try>
+            <catch></catch>
+        </trycatch>
+        <if>
+            <contains substring="with code 127" string="${phpcsinstalled}"></contains>
+            <then>
+                <echo msg="phpcs is not installed.  Run pear install php_codesniffer" level="warning"></echo>
+            </then>
+            <else>
+                <echo msg="Starting phpcs"></echo>
+                <delete quiet="true" dir="${phpcsdir}"></delete>
+                <mkdir dir="${phpcsdir}"></mkdir>
+                <echo msg="Starting phpcs parsing."></echo>
+                <trycatch>
+                    <try>
+                        <exec logoutput="true" checkreturn="true" executable="phpcs">
+                            <arg path="${basedir}/application"></arg>
+                            <arg value="--ignore=${excludedir},public/"></arg>
+                            <arg value="--standard=Zend"></arg>
+                            <arg value="--report-file=${phpcsdir}/output.txt"></arg>
+                            <arg value="--report-summary"></arg>
+                            <arg value="--report-full"></arg>
+                        </exec>
+                    </try>
+                    <catch></catch>
+                </trycatch>
+                <echo msg="phpcs finished"></echo>
+            </else>
+        </if>
+
+        
+        <trycatch>
+            <try>
+                <echo msg="Starting phpcpd"></echo>
+                <delete quiet="true" dir="${phpcpddir}"></delete>
+                <mkdir dir="${phpcpddir}"></mkdir>
+                <echo msg="Starting phpcpd parsing."></echo>
+                <exec checkreturn="true" executable="phpcpd">
+                    <arg value="--exclude"></arg>
+                    <arg value="${excludedir}"></arg>
+                    <arg path="${basedir}"></arg>
+                    <arg value=">${phpcpddir}/output.txt"></arg>
+                </exec>
+                <echo msg="phpcpd finished"></echo>
+            </try>
+            <catch>
+                <echo msg="phpcpd is not installed.  Run pear install pear.phpunit.de/phpcpd" level="warning"></echo>
+            </catch>
+        </trycatch>
+
+        
+        <trycatch property="phpmdinstalled">
+            
+            <try>
+                <exec checkreturn="true" command="phpmd"></exec>
+            </try>
+            <catch></catch>
+        </trycatch>
+        <if>
+            <contains substring="with code 127" string="${phpmdinstalled}"></contains>
+            <then>
+                <echo msg="phpmd is not installed.  Run pear channel-discover pear.phpmd.org, pear channel-discover pear.pdepend.org, pear install --alldeps phpmd/PHP_PMD. Ignore phpize warning." level="warning"></echo>
+            </then>
+            <else>
+                <echo msg="Starting phpmd"></echo>
+                <delete quiet="true" dir="${phpmddir}"></delete>
+                <mkdir dir="${phpmddir}"></mkdir>
+                <echo msg="Starting phpmd parsing"></echo>
+                <trycatch>
+                    <try>
+                        <exec logoutput="true" checkreturn="true" executable="phpmd">
+                            <arg path="${basedir}"></arg>
+                            <arg value="text"></arg>
+                            <arg value="codesize,controversial,design,naming"></arg>
+                            <arg value="--reportfile"></arg>
+                            <arg value="${phpmddir}/output.txt"></arg>
+                            <arg value="--exclude"></arg>
+                            <arg value="${excludedir}"></arg>
+                        </exec>
+                    </try>
+                    <catch></catch>
+                </trycatch>
+                <echo msg="phpmd finished"></echo>
+            </else>
+        </if>
+
+        
+        <delete quiet="true" dir="${phpunitdir}"></delete>
+        <mkdir dir="${phpunitdir}"></mkdir>
+
+        <echo msg="Starting phpunit parsing"></echo>
+        <exec checkreturn="true" command="phpunit" dir="${basedir}/tests"></exec>
+        <echo msg="phpunit finished"></echo>
+    </target>
+
+    <target depends="quality" name="reports" description="Should be ran to launch all report generation"></target>
+
+    <target name="build" description="Used to build application">
+        <echo msg="Starting Build"></echo>
+
+        <echo msg="Build Finished."></echo>
+    </target>
+
+    <target name="help" description="Shows help for this task">
+        <echo msg="Help for this Phing Taskset"></echo>
+        <exec logoutput="true" executable="phing">
+            <arg value="-l"></arg>
+        </exec>
+    </target>
+</project>
+{% endhighlight %}    
 
 
 

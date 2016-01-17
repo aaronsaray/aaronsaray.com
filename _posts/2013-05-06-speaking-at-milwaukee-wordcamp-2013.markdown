@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2013-05-06 00:23:10+00:00
 layout: post
-slug: speaking-at-milwaukee-wordcamp-2013
 title: Speaking at Milwaukee Wordcamp 2013
-wordpress_id: 1507
-categories:
-- wordpress
 tags:
 - wordpress
 ---
