@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-04-30 21:50:35+00:00
 layout: post
-slug: ie-js-error-expected-identifier-string-or-number
 title: 'IE JS Error: Expected identifier, string or number'
-wordpress_id: 387
-categories:
-- javascript
 tags:
 - javascript
 ---
@@ -16,13 +9,12 @@ I just ran into this a bunch - works fine in FireFox ... of course.
 
 Well apparently, Internet Explorer won't allow you to have a trailing comma in a array or object definition.  Let me show you:
 
-
-    
-    
-    functionCall({
-            options: {1,2,3},
-            others: {1,2,3},
-    });
+{% highlight javascript %}
+functionCall({
+        options: {1,2,3},
+        others: {1,2,3},
+});
+{% endhighlight %}
     
 
 
@@ -31,7 +23,7 @@ The trailing comma after the other's line is making IE expect another identifier
 
     
     
-            others: {1,2,3}
+    others: {1,2,3}
     
 
 

@@ -49,7 +49,7 @@ Turns out, the **_context** array had the values for this particular element.  S
 {% raw %}
 {{ form_label(form, _context['label']) }}
 {% endraw %}
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Yay!  That got the standard label - or the custom label I set.  Success.

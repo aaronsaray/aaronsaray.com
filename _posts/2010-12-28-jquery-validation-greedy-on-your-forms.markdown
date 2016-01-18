@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-12-28 16:59:33+00:00
 layout: post
-slug: jquery-validation-greedy-on-your-forms
 title: jQuery Validation - greedy on your forms?
-wordpress_id: 751
-categories:
-- javascript
-- jquery
 tags:
 - javascript
 - jquery
@@ -18,9 +10,9 @@ I was creating a page with two forms on it.  I ran into an issue where I would f
 
 I had been doing this:
 
-    
-    
-    $('form').validate();
+{% highlight javascript %}
+$('form').validate();
+{% endhighlight %}
     
 
 
@@ -29,8 +21,9 @@ Instead, I found that I needed to loop through each form on the page and validat
 
 
     
-    
-    $('form').each(function(){
-         $(this).validate();
-    });
+{% highlight javascript %}
+$('form').each(function(){
+     $(this).validate();
+});
+{% endhighlight %}
     

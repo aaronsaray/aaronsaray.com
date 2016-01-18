@@ -25,7 +25,7 @@ First, the html markup:
     <p>Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.</p>
   </section>
 </article>
-{% endhighlight %}    
+{% endhighlight %}
 
 The important parts is to have a container with the class of .has-read-more, have a checkbox with a class of .show-more and then have a section immediately after it.
 
@@ -72,7 +72,7 @@ input[type=checkbox]:checked {
 input[type=checkbox]:checked + section {
   height: auto;
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 The section style is just for this demo.  The really user-configurable sections are the .has-read-more width and the .has-read-more section height.  Oh, and the content I suppose of 'read more' could be changed (think: inline data image?)

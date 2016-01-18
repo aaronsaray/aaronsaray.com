@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-09-06 17:15:51+00:00
 layout: post
-slug: pass-php-session-to-a-new-script-using-fsockopen
 title: Pass PHP session to a new script using fsockopen
-wordpress_id: 71
-categories:
-- apache
-- PHP
 tags:
 - apache
 - PHP
@@ -20,8 +12,6 @@ I ran into an issue where now I needed to set a session variable in my calling s
 
 This is how I did it:
 
-<!-- more -->
-
 **The session ID is being stored via a cookie**
 
 There is a cookie named after our session with our session id.  When my called script generated a new session, it did not have this cookie available, and consequently started its own empty session.
@@ -30,11 +20,10 @@ There is a cookie named after our session with our session id.  When my called s
 
 I needed to send the cookie name and session id to the script.  Remember, this only works because these two scripts are on the same server/domain.  I used this code:
 
-
-    
-    $out .= "Cookie: " . session_name() . "=" . session_id() . "; path=/\r\n";
-
-
+{% highlight PHP %}
+<?php
+$out .= "Cookie: " . session_name() . "=" . session_id() . "; path=/\r\n";
+{% endhighlight %}
 
 **Close your session before you re-open it**
 

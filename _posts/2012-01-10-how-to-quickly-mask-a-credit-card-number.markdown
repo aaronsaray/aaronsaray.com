@@ -14,7 +14,7 @@ So, often I have to show a masked credit card on the screen.  However, I really 
 <?php
 $cc='1234123412341234';
 $masked = str_pad(substr($cc, -4), strlen($cc), '*', STR_PAD_LEFT);
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

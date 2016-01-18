@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-02-09 15:28:20+00:00
 layout: post
-slug: milwaukee-php-users-group
 title: Milwaukee PHP Users Group
-wordpress_id: 550
-categories:
-- Milwaukee PHP Users Group
 tags:
 - Milwaukee PHP Users Group
 ---

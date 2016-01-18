@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-11-13 20:54:25+00:00
 layout: post
-slug: how-to-throw-an-amazing-meeting
 title: How to throw an AMAZING meeting
-wordpress_id: 259
-categories:
-- professional tips
 tags:
 - professional tips
 ---
@@ -15,14 +8,13 @@ tags:
 ![](http://aaronsaray.com/blog/wp-content/uploads/2008/11/11326425712-225x300.jpg)I've been to far more meetings than any one on earth should ever have had to by the time they're 25.  With that experience, however, I can start to pick out key points of running a great meeting or demonstration.  I know this is a different type of post for this blog, but I think its important.  There may be times that you're called on to conduct a meeting or demonstration, as a technical resource.  Follow these tips and your meeting will go along smooth, effeciently and successfully.
 
 
-
-### Planning
-
+#### Planning
 
 
 
 
-#### Have an Outline
+
+##### Have an Outline
 
 
 
@@ -32,7 +24,7 @@ Send your outline out before the event.  Gauge the busyness of your audience to 
 
 
 
-#### Test Technical Items
+##### Test Technical Items
 
 
 
@@ -40,13 +32,13 @@ You should run through any technical demonstration at least once before you crea
 
 
 
-### Arrival
+#### Arrival
 
 
 
 
 
-#### Arrive Early
+##### Arrive Early
 
 
 
@@ -54,7 +46,7 @@ If you are either facilitating the meeting or participating in it, make sure to 
 
 
 
-#### Intro on Time
+##### Intro on Time
 
 
 
@@ -62,13 +54,13 @@ Generally, when sending out a meeting invite, there is a concise summary of what
 
 
 
-### Present
+#### Present
 
 
 
 
 
-#### Provide easy ways of feedback
+##### Provide easy ways of feedback
 
 
 
@@ -76,7 +68,7 @@ Some attendees may feel too nervous to shout out a question during your presenta
 
 
 
-#### Ask Questions
+##### Ask Questions
 
 
 
@@ -84,7 +76,7 @@ Along the way, its fine to ask questions - or better yet - encourage questions. 
 
 
 
-#### "No" Questions vs "Yes" Questions
+##### "No" Questions vs "Yes" Questions
 
 
 
@@ -92,13 +84,13 @@ This is particularly useful on telephone conversations - where you can't see any
 
 
 
-### Finishing
+#### Finishing
 
 
 
 
 
-#### One more time - questions?
+##### One more time - questions?
 
 
 
@@ -106,7 +98,7 @@ Ask for questions.  Attendees may have been writing down questions, intent on no
 
 
 
-#### Thank them
+##### Thank them
 
 
 
@@ -114,7 +106,7 @@ Thank your attendees for their time.  While you may have spent more time prepari
 
 
 
-#### Explain and Send Followup
+##### Explain and Send Followup
 
 
 

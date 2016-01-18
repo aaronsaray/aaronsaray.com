@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-08-09 22:48:35+00:00
 layout: post
-slug: adobe-air-log-file-watcher
 title: Adobe Air Log File Watcher
-wordpress_id: 149
-categories:
-- adobe air
 tags:
 - adobe air
 - log file watcher

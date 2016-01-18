@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2008-06-06 22:40:04+00:00
 layout: post
-slug: no-more-the-triangle
 title: No More "The Triangle"
-wordpress_id: 139
-categories:
+tags:
 - Misc Web Design
 ---
 

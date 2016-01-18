@@ -1,51 +1,44 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-21 20:04:07+00:00
 layout: post
-slug: when-is-a-php-array-not-an-array
 title: When is a PHP array not an array?
-wordpress_id: 57
-categories:
-- PHP
 tags:
 - PHP
 ---
 
 Arrays, return variables, expressions, OH MY!  I recently learned a lesson about array functions in PHP not returning what I thought they would.  I had a function that returned the value of array_shift()... and then used it in another function.  Unfortunately, this generated a strict error and was causing some issues... As usual, I put together a proof of concept.  Lets check out the code example, the error, and then why:
 
-<!-- more -->
-
-
-    
-    __data = 'one,two,three';
-        }
-    
-        public function getArray()
-        {
-            $a = array();
-    
-            $a[] = explode(',', $this->__data);
-            $a[] = explode(',', $this->__data);
-            $a[] = explode(',', $this->__data);
-    
-            return $a;
-        }
-    }
-    
-    function testFunction()
+{% highlight PHP %}
+<?php
+class TEST
+{
+    private $__data = '';
+ 
+    public function __construct()
     {
-        $test = new TEST();
-    
-        return array_shift($test->getArray());
+        $this->__data = 'one,two,three';
     }
-    
-    
-    var_dump(testFunction());
-    
-    ?>
-
-
+ 
+    public function getArray()
+    {
+        $a = array();
+ 
+        $a[] = explode(',', $this->__data);
+        $a[] = explode(',', $this->__data);
+        $a[] = explode(',', $this->__data);
+ 
+        return $a;
+    }
+}
+ 
+function testFunction()
+{
+    $test = new TEST();
+ 
+    return array_shift($test->getArray());
+}
+ 
+var_dump(testFunction());
+{% endhighlight %}
 
 When I execute this, I get a strict error:
 
@@ -58,6 +51,7 @@ First off, [this bug page](http://bugs.php.net/bug.php?id=33466) is from another
 
 Turns out that the way to fix this issue is going to be using [pass by reference](http://us.php.net/language.references.pass).  One quick modification and we're good:
 
-
-    
-    public function &getArray;()
+{% highlight PHP %}
+<?php
+public function &getArray()
+{% endhighlight %}

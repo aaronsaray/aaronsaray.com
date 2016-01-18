@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-03-22 14:04:52+00:00
 layout: post
-slug: scoping-your-bookmarklet-correctly
 title: Scoping your Bookmarklet Correctly
-wordpress_id: 872
-categories:
-- javascript
 tags:
 - javascript
 ---
@@ -16,7 +9,7 @@ I've been lucky so far.  I've used variable names and functions in my bookmarkle
 
 
 
-### Controlling Scope
+#### Controlling Scope
 
 
 In order to control that scope, its important to enclose the bookmarklet in its own anonymous function.  If you leave it out there with just the normal executation in the anchor tag with javascript:, it has access to all of the global objects of this page.  While in some cases, this is good, most cases this is bad.
@@ -27,32 +20,26 @@ I have a page that creates a global variable named "counter".  It starts out at 
 
 
     
-    
-    var counter = 3;
-    function addToCounter()
-    {
-        counter++;
-    }
-    addToCounter();
-    
+{% highlight javascript %}
+var counter = 3;
+function addToCounter()
+{
+    counter++;
+}
+addToCounter();
+{% endhighlight %}
 
 
-
+{% highlight html %}
+<button onclick="alert(counter)">Show Counter</button>
+{% endhighlight %}
     
-    
-    <button onclick="alert(counter)">Show Counter</button>
-    
-
-
 
 Now, lets say I have a bookmarklet that sets a counter variable for its own usage.  It alerts the counter value whenever its used.  And, to be safe, I redefine 'counter' with the 'var' statement:
 
-
-    
-    
-    <a href="javascript:var counter=100;alert(counter)">
-    Bookmarklet</a>
-    
+{% highlight html %}
+<a href="javascript:var counter=100;alert(counter)">Bookmarklet</a>
+{% endhighlight %}
 
 
 
@@ -79,7 +66,7 @@ As you see, even though I thought I properly scoped my variable, it now changes 
 
 
 
-### The Fix
+#### The Fix
 
 
 
@@ -87,8 +74,9 @@ Wrap the function in an anonymous function.
 
 
     
-    
-    <a href="javascript:(function(){var counter=100;alert(counter)})();">Bookmarklet</a>
+{% highlight html %}
+<a href="javascript:(function(){var counter=100;alert(counter)})();">Bookmarklet</a>
+{% endhighlight %}
     
 
 

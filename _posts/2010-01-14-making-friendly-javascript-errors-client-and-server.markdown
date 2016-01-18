@@ -1,22 +1,13 @@
 ---
-author: aaron
-comments: true
-date: 2010-01-14 16:30:15+00:00
 layout: post
-slug: making-friendly-javascript-errors-client-and-server
 title: Making Friendly Javascript Errors - Client and Server
-wordpress_id: 539
-categories:
-- javascript
 tags:
 - javascript
 ---
 
 The more I look at my code I wrote in my earlier posts about the [unknown _popupControl() function](http://aaronsaray.com/blog/2009/09/29/unknown-function-_popupcontrol/) and the [Javascript Error Handler](http://aaronsaray.com/blog/2009/09/23/javascript-error-handler/), I see opportunities to leverage these errors into useful user interactions.
 
-
-
-## Doing a service for your visitor
+#### Doing a service for your visitor
 
 
 After your javascript is tried and tested and error free, there are still chances that errors can be logged using my utility.  These usually are the result of Spyware that is left on the user's machine.  Sometimes some removal processes don't capture all of it.  The _popupControl() method was one such remnant.
@@ -25,11 +16,7 @@ I thought that instead of just ignoring these issues, I could gently alert the u
 
 There are two ways to go about handling these javascript errors: client side and server side.
 
-
-
-## Client Side
-
-
+#### Client Side
 
 Client side javascript error handling requires a bit more front-end programming.  It also shows a lot of your cards to the outside world.  By looking at the code in the javascript portion of your page, visitors could see all types of errors that you're trying to detect.  While I don't think this is a deterrent to using this method, you may feel otherwise.
 
@@ -37,28 +24,24 @@ First things first - if you can't remember, check out my [Javascript Error Handl
 
 My new code is going to look something like this:
 
+{% highlight javascript %}
+window.onerror = function (message, url, line) {
+    /** log message **/
+    var i = new Image();
+    i.src = 'error.php?url=' + escape(url) + '&message;=' + escape(message) + '&line;=' + line;
 
-    
-    
-                window.onerror = function (message, url, line) {
-                    /** log message **/
-                    var i = new Image();
-                    i.src = 'error.php?url=' + escape(url) + '&message;=' + escape(message) + '&line;=' + line;
-    
-                    if (message.indexOf('spywareWindowGenerator')) {
-                        var d = document.createElement('div');
-                        d.innerHTML = 'Sounds like you got spyware';
-                        document.body.appendChild(d);
-                    }
-                    else if (message.indexOf('otherbaddie')) {
-                        var d = document.createElement('div');
-                        d.innerHTML = 'Sounds like you got some other baddie';
-                        document.body.appendChild(d);
-                    }
-                }
-    
-
-
+    if (message.indexOf('spywareWindowGenerator')) {
+        var d = document.createElement('div');
+        d.innerHTML = 'Sounds like you got spyware';
+        document.body.appendChild(d);
+    }
+    else if (message.indexOf('otherbaddie')) {
+        var d = document.createElement('div');
+        d.innerHTML = 'Sounds like you got some other baddie';
+        document.body.appendChild(d);
+    }
+}
+{% endhighlight %}
 
 I'll break it down:
 
@@ -72,32 +55,25 @@ The second if statement is simply checking for the case of 'otherBaddie' - and w
 
 Like I mentioned before, this lays all of your cards out on the table - could potentially make your page load longer (especially if you have a lot of spyware you're tracking), but be most versatile.
 
-
-
-## Server Side
-
-
+#### Server Side
 
 With server side, I'm going to rely on the image that the javascript error handler is loading.  If this image is populated by my error.php file, then I'll show it.
 
 First, the modified javascript for our error handler now looks like this:
 
+{% highlight javascript %}
+window.onerror = function (message, url, line) {
+    /** log message **/
+    var i = new Image();
+    i.src = 'error.php?url=' + escape(url) + '&message;=' + escape(message) + '&line;=' + line;
 
-    
-    
-                window.onerror = function (message, url, line) {
-                    /** log message **/
-                    var i = new Image();
-                    i.src = 'error.php?url=' + escape(url) + '&message;=' + escape(message) + '&line;=' + line;
-    
-                    /** now check to see if we have something to show **/
-                    if (i.height) {
-                        /** add it to the page **/
-                        document.body.appendChild(i);
-                    }
-                }
-    
-
+    /** now check to see if we have something to show **/
+    if (i.height) {
+        /** add it to the page **/
+        document.body.appendChild(i);
+    }
+}
+{% endhighlight %}
 
 
 The first part is the standard logging mechanism that we're used to.  However, after that, I check for a height of the image that was requested.  If no image was generated by the PHP GET request, then the height will be 0.  Otherwise, the image object will return a height.  Then, just for demonstration, I append that image to the bottom of the body of the document.
@@ -106,35 +82,32 @@ This means that we put a little bit more of the responsibility for determining t
 
 Next, I had to edit my error.php file.  It now contains this code:
 
+{% highlight PHP %}
+<?php 
+$keys = array();
+$keys['_spywareWindowGenerator'] = 'badSypware.png';
+$keys['otherBadGuy'] = 'otherBadGuy.png';
 
-    
-    
-    $keys = array();
-    $keys['_spywareWindowGenerator'] = 'badSypware.png';
-    $keys['otherBadGuy'] = 'otherBadGuy.png';
-    
-    /**
-     * check for an image to show
-     */
-    
-    $imageToShow = '';
-    foreach ($keys as $substring=>$image) {
-        if (stripos($_GET['message'], $substring) !== false) {
-            $imageToShow = $image;
-        }
-    }
-    
-    if (!empty($imageToShow)) {
-        header('Content-Type: image/png');
-        readfile($imageToShow);
-        die();
-    }
-    else {
-        error_log("{$_GET['message']} occured on line {$_GET['line']} of URL {$_GET['url']}");
-    }
-    
+/**
+ * check for an image to show
+ */
 
+$imageToShow = '';
+foreach ($keys as $substring=>$image) {
+    if (stripos($_GET['message'], $substring) !== false) {
+        $imageToShow = $image;
+    }
+}
 
+if (!empty($imageToShow)) {
+    header('Content-Type: image/png');
+    readfile($imageToShow);
+    die();
+}
+else {
+    error_log("{$_GET['message']} occured on line {$_GET['line']} of URL {$_GET['url']}");
+}
+{% endhighlight %}
 
 The first step is to determine all of the key words that could appear in javascript error messages.  Then, associate them with an image that conveys our message.
 

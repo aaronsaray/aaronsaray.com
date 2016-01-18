@@ -13,7 +13,7 @@ I was doing some code challenge review for an open web developer position I have
 if (!$auth) {
   header('Location: /login.php');
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Of course, there was much more, but this is the part that made me smile.  Here's why.
@@ -48,7 +48,7 @@ chrome.webRequest.onHeadersReceived.addListener(
     },
     ['responseHeaders', 'blocking']
 );
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -65,7 +65,7 @@ First, my "secure" page:
 <?php
 header('Location: /login.php');
 echo 'Secure Stuff Here';
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -86,7 +86,7 @@ $opts = array('http' =>
 $context = stream_context_create($opts);
 $stream = fopen($url, 'r', false, $context);
 var_dump(stream_get_contents($stream));
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

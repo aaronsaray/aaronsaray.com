@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-09-20 02:53:42+00:00
 layout: post
-slug: multi-version-programming-to-successfully-leverage-overseas-programming
 title: Multi-Version Programming to Successfully Leverage Overseas Programming
-wordpress_id: 424
-categories:
-- business
-- programming
 tags:
 - business
 - programming

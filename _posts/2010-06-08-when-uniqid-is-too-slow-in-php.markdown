@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-06-08 15:00:07+00:00
 layout: post
-slug: when-uniqid-is-too-slow-in-php
 title: When uniqid is too slow in PHP
-wordpress_id: 624
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -16,35 +9,32 @@ I just profiled some of my code and found out that the biggest chunk of my proce
 
 The first thought is to just use one ID per page.  However, I didn't want to change too much of my code.  It's working - so lets just make it work faster.  I did some thinking and realized that maybe my unique id didn't need to be THAT unique - just not super predictable.  A sha1() hash of a random number should do the trick.  And it should be faster.  Just to verify, I did my own benchmark using this code:
 
+{% highlight PHP %}
+<?php
+$start = $stop = array();
 
-    
-    
-    $start = $stop = array();
-    
-    $start['uniqid'] = microtime(TRUE);
-    for ($x = 0; $x< 1000; $x++) {
-    	$val = uniqid();
-    }
-    $stop['uniqid'] = microtime(TRUE);
-    
-    $start['mt_rand'] = microtime(TRUE);
-    for ($x=0; $x<1000; $x++) {
-    	$val = mt_rand(0, 1000000);
-    }
-    $stop['mt_rand'] = microtime(TRUE);
-    
-    $start['sha1/mt_rand'] = microtime(TRUE);
-    for ($x=0; $x<1000; $x++) {
-    	$val = sha1(mt_rand(0, 1000000));
-    }
-    $stop['sha1/mt_rand'] = microtime(TRUE);
-    
-    foreach ($start as $key=>$startval) {
-    	echo "{$key}: " . ($stop[$key] - $startval) . "<br></br>";
-    }
-    
+$start['uniqid'] = microtime(TRUE);
+for ($x = 0; $x< 1000; $x++) {
+    $val = uniqid();
+}
+$stop['uniqid'] = microtime(TRUE);
 
+$start['mt_rand'] = microtime(TRUE);
+for ($x=0; $x<1000; $x++) {
+    $val = mt_rand(0, 1000000);
+}
+$stop['mt_rand'] = microtime(TRUE);
 
+$start['sha1/mt_rand'] = microtime(TRUE);
+for ($x=0; $x<1000; $x++) {
+    $val = sha1(mt_rand(0, 1000000));
+}
+$stop['sha1/mt_rand'] = microtime(TRUE);
+
+foreach ($start as $key=>$startval) {
+    echo "{$key}: " . ($stop[$key] - $startval) . "<br></br>";
+}
+{% endhighlight %}
 
 The results:
 

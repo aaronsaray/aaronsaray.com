@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2010-11-30 15:19:54+00:00
 layout: post
-slug: guitar-chord-fingering-with-php
 title: Guitar Chord fingering with PHP
-wordpress_id: 722
-categories:
+tags:
 - open source
 ---
 

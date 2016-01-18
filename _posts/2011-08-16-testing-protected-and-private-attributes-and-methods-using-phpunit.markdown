@@ -22,7 +22,7 @@ public function testUserRoleIsOne()
   $user = new User();
   $this->assertEquals(1, PHPUnit_Framework_Assert::readAttribute($user, '_roleId'));
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 #### Testing Protected/Private Methods in PHPUnit
@@ -42,7 +42,7 @@ public function testRetrieveKeyFromUser()
     
     $this->assertEquals('mysuperawesomekey', $method->invokeArgs($user, array()));
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

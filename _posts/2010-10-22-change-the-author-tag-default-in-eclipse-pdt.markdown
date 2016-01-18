@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-10-22 14:42:12+00:00
 layout: post
-slug: change-the-author-tag-default-in-eclipse-pdt
 title: Change the @author tag default in Eclipse PDT
-wordpress_id: 739
-categories:
-- Eclipse PDT
 tags:
 - Eclipse PDT
 ---

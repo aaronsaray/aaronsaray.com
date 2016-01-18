@@ -28,7 +28,7 @@ for ($i = 0; $i < $length; $i++) {
     print "<li>{$array[$i]}</li>";
 }
 print '</ul>';
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Here, I have an array cleverly named $array.  I do not wish to change the values in the array, only display them in a nice unordered list.  I’m not sure how many elements there are, but they all belong in this list.  So, I can use a loop to iterate through each element and print each value out.
@@ -42,7 +42,7 @@ $array = ['a', 'b', 'c', 'd', 'e'];
 array_walk($array, function(&$value, $key) {
     $value = strtoupper($value);
 });
-{% endhighlight %}    
+{% endhighlight %}
 
 
 In this example, I want $array to contain all the same letters, just uppercase.  I’ll be using this array some other time, but I need the values changed immediately.  In cases like this, use the array_walk() method to pass in the array to a function to do the manipulation.  Since I’ve passed $value by reference, any manipulation I do to the value will be applied directly back to the array.
@@ -66,7 +66,7 @@ $secondUppercase = [];
 foreach ($array as $letter) {
     $secondUppercase[] = strtoupper($letter) . rand(1,1000);
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -88,7 +88,7 @@ array_walk($array, function($value, $key) {
     print "<li>{$value}</li>";
 });
 print '</ul>';
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

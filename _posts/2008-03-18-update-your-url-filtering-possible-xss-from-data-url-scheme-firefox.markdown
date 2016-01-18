@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-03-18 02:03:34+00:00
 layout: post
-slug: update-your-url-filtering-possible-xss-from-data-url-scheme-firefox
 title: 'Update your URL filtering: possible XSS from "Data" URL scheme - Firefox'
-wordpress_id: 92
-categories:
-- html
-- javascript
-- security
 tags:
 - html
 - javascript
@@ -28,24 +19,21 @@ Lets see an example:
 
 First off, this is just an example - so it's pretty simple.  But I could make a request to a remote server through an image.src or an ajax call.  Here, I'm just alerting the cookie to the screen (note, if this wasn't an alert, the average user would not notice.)
 
-
-    
-    <script>alert("cookie steal: "+document.cookie);window.location.href='http://www.google.com';</script>
-
-
+{% highlight HTML %}
+<script>alert("cookie steal: "+document.cookie);window.location.href='http://www.google.com';</script>
+{% endhighlight %}
 
 Which, when base64 encoded is
-
 
     
     PHNjcmlwdD5hbGVydCgiY29va2llIHN0ZWFsOiAiK2RvY3VtZW50LmNvb2tpZSk7d2luZG93LmxvY2F0aW9uLmhyZWY9J2h0dHA6Ly93d3cuZ29vZ2xlLmNvbSc7PC9zY3JpcHQ+
 
 
-
 Put it all together:
 
-    
-    <a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgiY29va2llIHN0ZWFsOiAiK2RvY3VtZW50LmNvb2tpZSk7d2luZG93LmxvY2F0aW9uLmhyZWY9J2h0dHA6Ly93d3cuZ29vZ2xlLmNvbSc7PC9zY3JpcHQ+">Google.com</a>
+{% highlight HTML %}
+<a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgiY29va2llIHN0ZWFsOiAiK2RvY3VtZW50LmNvb2tpZSk7d2luZG93LmxvY2F0aW9uLmhyZWY9J2h0dHA6Ly93d3cuZ29vZ2xlLmNvbSc7PC9zY3JpcHQ+">Google.com</a>
+{% endhighlight %}
 
 
 

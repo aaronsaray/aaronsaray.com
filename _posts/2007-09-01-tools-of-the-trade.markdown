@@ -1,16 +1,9 @@
 ---
-author: aaron
-comments: true
-date: 2007-09-01 03:11:20+00:00
 layout: post
-slug: tools-of-the-trade
 title: Tools of the trade
-wordpress_id: 70
-categories:
-- IDE and Web Dev Tools
-- Misc Web Design
 tags:
 - IDE and Web Dev Tools
+- Misc Web Design
 ---
 
 I just thought I'd drop some useful links and tools your way for those beginning and non-tool-cist peoples:

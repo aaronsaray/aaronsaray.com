@@ -14,7 +14,7 @@ Ok, glamor aside, it follows the whole 80/20 rule.  80% of what I do is unique, 
 
 
 
-<blockquote>Before I go on, let me make sure to say that I have the utmost respect for manufacturing.  So many of the luxuries I take for granted are impossible without the manufacturing behind them.  This is not a disposition about better/worse, it's a comparison.</blockquote>
+    Before I go on, let me make sure to say that I have the utmost respect for manufacturing.  So many of the luxuries I take for granted are impossible without the manufacturing behind them.  This is not a disposition about better/worse, it's a comparison.
 
 
 

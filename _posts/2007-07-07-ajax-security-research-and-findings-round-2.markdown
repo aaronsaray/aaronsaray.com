@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-07 01:56:39+00:00
 layout: post
-slug: ajax-security-research-and-findings-round-2
 title: AJAX Security Research and Findings - Round 2
-wordpress_id: 39
-categories:
-- AJAX
-- PHP
-- security
 tags:
 - AJAX
 - PHP
@@ -26,43 +17,39 @@ Well, I had talked about an issue where you could substitute the javascript obje
 
 **javascripttest.html**
 
-    
-    <html>
+{% highlight html %}
+<html>
     <body>
-    <script type="text/javascript">
-    
-        function Object() {
-            this.hacked = 'test2';
-        }
-        document.Object = Object;
-    
-    </script>
-    <iframe src="http://release.local/test.html"></iframe>
+        <script type="text/javascript">
+            function Object() {
+                this.hacked = 'test2';
+            }
+            document.Object = Object;
+        </script>
+        <iframe src="http://release.local/test.html"></iframe>
     </body>
-    </html>
-    
-
+</html>
+{% endhighlight %}
 
 
 **test.html**
 
-    
-    <html>
+{% highlight html %}
+<html>
     <body>
-    <script type="text/javascript">
-        function clicker() {
-            var test = {};
-            var test2 = new Object();
-    
-            alert (test.hacked);
-            alert (test2.hacked);
-        }
-    </script>
-    <a href="#" onclick="clicker()">bleh</a>
+        <script type="text/javascript">
+            function clicker() {
+                var test = {};
+                var test2 = new Object();
+        
+                alert (test.hacked);
+                alert (test2.hacked);
+            }
+        </script>
+        <a href="#" onclick="clicker()">bleh</a>
     </body>
-    </html>
-    
-
+</html>
+{% endhighlight %}
 
 
 Yah - not an issue with the main browsers I use. I didn’t try it on other ones though - so it might still be an issue… who knows... I was just curious.
@@ -74,8 +61,6 @@ I got together a few of my final recommendations (yes, very devoid of anything w
 My Recommendations
 
 **Data Transfer**
-
-
 
 	
   * Data should be sent according to the RFC 2616 in regards to GET and POST.

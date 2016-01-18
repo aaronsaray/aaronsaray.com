@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-04-28 17:37:17+00:00
 layout: post
-slug: flash-of-unstyled-content-in-firefox-3
 title: Flash of Unstyled Content - in FireFox 3
-wordpress_id: 385
-categories:
-- CSS
-- html
-- javascript
 tags:
 - CSS
 - html
@@ -20,41 +11,34 @@ So I've heard of the [Flash of Unstyled Content](http://bluerobot.com/web/css/fo
 
 However, I just ran into it today - in FireFox even with a LINK tag...
 
-
-
-### Fixing Flash of Unstyled Content in Firefox
-
+#### Fixing Flash of Unstyled Content in Firefox
 
 Simple really - I was loading way too much javascript before my stylesheet (not my fault on the large amount of js!!) - and the delay was causing the flash.  I moved the link to the very first part of the content - and presto - good to go.
 
 So, **instead of**
-
     
-    
-    <head>
+{% highlight HTML %}
+<head>
     <script src="#"></script>
     <script src="#"></script>
     <script src="#"></script>
     <script src="#"></script>
     <link href="#" type="text/css" rel="stylesheet"></link>
-    </head>
+</head>
+{% endhighlight %}
     
-
-
 
 **Just move it to the top:**
 
     
-    
-    <head>
+{% highlight HTML %}
+<head>
     <link href="#" type="text/css" rel="stylesheet"></link>
     <script src="#"></script>
     <script src="#"></script>
     <script src="#"></script>
     <script src="#"></script>
-    </head>
+</head>
+{% endhighlight %}
     
-
-
-
 ... next battle, getting rid of sooo much js ;)

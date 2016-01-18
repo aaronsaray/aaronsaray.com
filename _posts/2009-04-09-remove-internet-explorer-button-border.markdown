@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-04-09 15:48:22+00:00
 layout: post
-slug: remove-internet-explorer-button-border
 title: Remove Internet Explorer Button Border
-wordpress_id: 369
-categories:
-- CSS
 tags:
 - CSS
 ---
@@ -16,20 +9,16 @@ Internet Explorer provides an additional border to any BUTTON element in the pag
 
 The solution was to add a span around the button:
 
-    
-    
-    button {
+{% highlight CSS %}
+button {
     border: 0px;
-    }
-    .button {
+}
+.button {
     border: 1px solid #fff;
-    }
-    
+}
+{% endhighlight %}
 
-
-
-
-    
-    
-    <span class="button"><button>My Button</button></span>
+{% highlight HTML %}
+<span class="button"><button>My Button</button></span>
+{% endhighlight %}
     

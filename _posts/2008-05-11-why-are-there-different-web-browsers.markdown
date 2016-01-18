@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-05-11 21:12:33+00:00
 layout: post
-slug: why-are-there-different-web-browsers
 title: Why are there different web browsers?
-wordpress_id: 115
-categories:
-- learning
 tags:
 - learning
 ---
@@ -30,9 +23,8 @@ In the same way that Internet Explorer was a default for Windows, Safari is the 
 ![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/opera_logo.jpg)**Opera**
 With roots as the third party browser with both professional and free-ad-supported versions, Opera has always been a unique feature promoter.  Opera’s support of standards is growing stronger each release – keep an eye out to watch for the newest versions of Opera – and their expansion to mobile devices.
 
-**
-What Does This Mean To Me?**
-Your web site firm should determine which may be the primary 2 browsers visitors will use to visit your website.  For example, if you’re a non-technical site, you can probably bet on Internet Explorer first, then perhaps FireFox.  If you’re a website about digital video editing equipment, you can probably bet a lot of Macs with Safari will be visiting, as well as FireFox.  If you’re a technical research site, you might find that FireFox followed by Opera are your most common visitors.  With this in mind, your firm should test the design, layout and functionality with at least those two browsers.  Any additional testing is a plus.  You may not choose to test with both browsers – but you should ask for the results of their testing with those browsers.  Any irregularities should be noted.  They may not make a lot of sense to ‘change,’ but it is something you should be aware of.  Do not accept responses like “This just won’t work in FireFox” if it is one of your targeted browsers.  Instead, ask what can be done to provide a consistent experience.
+**What Does This Mean To Me?**
 
+Your web site firm should determine which may be the primary 2 browsers visitors will use to visit your website.  For example, if you’re a non-technical site, you can probably bet on Internet Explorer first, then perhaps FireFox.  If you’re a website about digital video editing equipment, you can probably bet a lot of Macs with Safari will be visiting, as well as FireFox.  If you’re a technical research site, you might find that FireFox followed by Opera are your most common visitors.  With this in mind, your firm should test the design, layout and functionality with at least those two browsers.  Any additional testing is a plus.  You may not choose to test with both browsers – but you should ask for the results of their testing with those browsers.  Any irregularities should be noted.  They may not make a lot of sense to ‘change,’ but it is something you should be aware of.  Do not accept responses like “This just won’t work in FireFox” if it is one of your targeted browsers.  Instead, ask what can be done to provide a consistent experience.
 
 102 Degrees always tests with Internet Explorer and FireFox.  When we determine that additional browsers might be used more frequently, we’ll test with those as well.

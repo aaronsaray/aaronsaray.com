@@ -30,7 +30,7 @@ class Zend_View_Helper_GoogleQRCode extends Zend_View_Helper_Abstract
         return $url;
     }
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -48,7 +48,7 @@ echo '<h2>Find Me Online</h2>';
 echo '<img src="';
 echo $this->googleQRCode('http://aaronsaray.com/contact');
 echo '">';
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

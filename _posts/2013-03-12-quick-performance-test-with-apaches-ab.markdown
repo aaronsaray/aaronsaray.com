@@ -23,7 +23,7 @@ function slowRunningFunction()
 }
 
 slowRunningFunction();
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -50,7 +50,7 @@ function slowRunningFunction()
 }
     
 slowRunningFunction();
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-07-07 02:06:30+00:00
 layout: post
-slug: launch-screen-automatically
 title: Launch Screen Automatically
-wordpress_id: 408
-categories:
-- linux
 tags:
 - linux
 ---

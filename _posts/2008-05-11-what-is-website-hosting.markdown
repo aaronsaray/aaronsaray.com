@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-05-11 20:47:30+00:00
 layout: post
-slug: what-is-website-hosting
 title: What is Website Hosting?
-wordpress_id: 112
-categories:
-- learning
 tags:
 - learning
 ---
@@ -15,6 +8,7 @@ tags:
 What is website hosting and why do you need it?  Those are two very important questions.
 
 **Web Sites are Hosted on Computers**
+
 Every website resides on a computer somewhere.  This is where the term hosting comes from – because these computers host the website.
 
 These usually are special types of computers in specific configurations to host websites.  They may not have the same operating system you’re used to (like Windows, for example), may have different parts, might not even have monitors and keyboards!
@@ -24,6 +18,7 @@ They usually are in a data center that has back up power in case the power goes 
 These computers usually have a specific method of connecting to them remotely so that files can be added to be part of your website.  This way, it is not necessary for your web firm to be physically in front of the computer they’re working with for you.
 
 **What Types of Website Hosting are Available?**
+
 Because of the various different configuration options and quality of service, there are many different options when choosing website hosting.
 
 Physically, these computers are usually pretty big and powerful generally.  Because of that, they can provide service for more sites than just yours.  This is called shared hosting.
@@ -35,6 +30,7 @@ There are also free web services, but they usually have advertisements, are slow
 Along with different types of hosting, there are different services for each type.  Some may be suitable for hosting HTML only pages.  Some might allow for dynamic programming including PHP or MySQL.  (For more help on these acronyms, check out this article here.)  Depending on the extra services offered, the fee may be different for each hosting solution.
 
 **Why Can’t I Host it Myself?  Why do I Need to Buy This?**
+
 Technically, depending on your internet service provider, you could host your own website.  You could purchase a web server, or even use your home computer.  However, there are a bunch of reasons why you should buy service instead of trying to host it yourself.
 
 It may be against your Internet Service Provider’s terms of service to provide a hosting service on your internet connection.  They do this for both quality of service and security reasons.
@@ -48,5 +44,4 @@ Are you a computer administrator?  Do you know about all the various security ho
 
 You do need to have website hosting for your website.  Once you know the requirements of your website, your firm should be able to help you acquire hosting.  Fees may vary – and it is OK to shop around.  However, as always, fees sometimes do correlate to the level of quality (you’d hate to purchase web hosting and then find out that the webhost goes down and offline often!).
 
-_If you’re working on a project with 102 Degrees, we can offer hosting for you.
-_
+_If you’re working on a project with 102 Degrees, we can offer hosting for you._

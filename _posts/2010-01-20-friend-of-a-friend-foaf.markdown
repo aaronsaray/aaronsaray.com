@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-01-20 16:13:48+00:00
 layout: post
-slug: friend-of-a-friend-foaf
 title: 'Friend of a Friend: FOAF'
-wordpress_id: 545
-categories:
-- Misc Web Design
 tags:
 - Misc Web Design
 ---

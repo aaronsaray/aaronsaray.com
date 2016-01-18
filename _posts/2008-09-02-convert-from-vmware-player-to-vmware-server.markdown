@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-09-02 19:33:30+00:00
 layout: post
-slug: convert-from-vmware-player-to-vmware-server
 title: Convert from VMWare Player to VMWare Server
-wordpress_id: 200
-categories:
-- IDE and Web Dev Tools
-- windows
 tags:
 - IDE and Web Dev Tools
 - windows
@@ -23,4 +15,5 @@ At superdev, we have a distribution of a gentoo image made with vmware workstati
 **Finally, edit** the file named **VirtualMachineName.vmxd**.  If you have more than one (like -1, -2, use the one without the suffix.  Those are the data files, the vmxd is the config).  Once again, replace the **virtualHW.version = "6" with virtualHW.version = "4"**.  SAVE.
 
 **Other things I ran into...**
+
 For whatever reason, my eth0 turned into eth1 once I transferred.  So I had to do that modification.  (Also, my dhcp on my network stopped responding to the vm, but I changed it to NAT anyway - because I wanted it as a local connection anyways.)

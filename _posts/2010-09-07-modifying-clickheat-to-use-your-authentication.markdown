@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-09-07 14:29:34+00:00
 layout: post
-slug: modifying-clickheat-to-use-your-authentication
 title: Modifying Clickheat to use your authentication
-wordpress_id: 673
-categories:
-- PHP
-- web tools
 tags:
 - PHP
 - web tools
@@ -21,39 +13,34 @@ First, open up **index.php** in your editor.  Find the statement where it checks
 Above the isset() call and below the clickheat config include, put your custom code.  The important line is to define CLICKHEAD_ADMIN.
 For example, you could do this:
 
+{% highlight PHP %}
+<?php
+include CLICKHEAT_CONFIG;
 
+if ($_SESSION['userIsAdmin']) {
+    define('CLICKHEAT_ADMIN', true);
+}
+else {
+    die(header('/normalLoginPage.php'));
+}
+{% endhighlight %}
     
-    
-    include CLICKHEAT_CONFIG;
-    
-    if ($_SESSION['userIsAdmin']) {
-      define('CLICKHEAT_ADMIN', true);
-    }
-    else {
-     die(header('/normalLoginPage.php'));
-    }
-    
-
-
-
 Then, you can remove - or comment - the code block that starts with
 
-    
-    
-    if (isset($_COOKIE['clickheat']))
-    
-
+{% highlight PHP %}
+<?php
+if (isset($_COOKIE['clickheat']))
+{% endhighlight %}
 
 
 all the way down to the end of that IF statement... it ends at these lines:
 
-    
-    
-    	}
-    	$__action = 'login';
+{% highlight PHP %}
+<?php
     }
-    
-
+    $__action = 'login';
+}
+{% endhighlight %}
 
 
 This should now allow the script to use your authentication system and not its own.

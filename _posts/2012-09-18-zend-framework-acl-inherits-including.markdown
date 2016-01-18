@@ -24,7 +24,7 @@ class Application_Model_Acl extends Zend_Acl
         return $inherits;
     }  
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2010-11-02 15:02:24+00:00
 layout: post
-slug: 3d-walkthrough-in-basic
 title: 3D walkthrough in Basic
-wordpress_id: 727
-categories:
+tags:
 - open source
 ---
 
@@ -213,5 +208,3 @@ Just had a blast from the past... found this a while ago.  This was a program I 
     DO: Ky$ = INKEY$: LOOP UNTIL LEN(Ky$)
     keycode% = ASC(Ky$): IF keycode% = 0 THEN keycode% = -ASC(MID$(Ky$, 2, 1))
     END SUB
-    
-    

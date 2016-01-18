@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-02-23 16:35:42+00:00
 layout: post
-slug: internet-explorer-css-hacks-transparent-png-and-selectors
 title: Internet Explorer CSS Hacks - Transparent PNG and Selectors
-wordpress_id: 91
-categories:
-- CSS
 tags:
 - CSS
 ---

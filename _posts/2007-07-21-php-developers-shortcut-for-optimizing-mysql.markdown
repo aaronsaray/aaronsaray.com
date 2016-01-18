@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-21 18:33:51+00:00
 layout: post
-slug: php-developers-shortcut-for-optimizing-mysql
 title: PHP developer's shortcut for optimizing mysql
-wordpress_id: 55
-categories:
-- PHP
-- SQL
 tags:
 - PHP
 - SQL

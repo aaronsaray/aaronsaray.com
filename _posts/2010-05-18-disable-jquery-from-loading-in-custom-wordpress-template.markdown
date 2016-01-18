@@ -1,14 +1,5 @@
 ---
-author: aaron
-comments: true
-date: 2010-05-18 13:39:17+00:00
 layout: post
-slug: disable-jquery-from-loading-in-custom-wordpress-template
-title: Disable jQuery from loading in custom wordpress template
-wordpress_id: 612
-categories:
-- jquery
-- wordpress
 tags:
 - jquery
 - wordpress

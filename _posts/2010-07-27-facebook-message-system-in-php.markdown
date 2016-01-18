@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: false
-date: 2010-07-27 16:01:29+00:00
 layout: post
-slug: facebook-message-system-in-php
 title: Facebook Message System - in PHP
-wordpress_id: 663
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -20,7 +13,7 @@ I was recently faced with a task: Make our message system like facebook's.  OK -
 
 
 
-## Define the requirements
+#### Define the requirements
 
 
 It's easy to say that the system should be like Facebook's.  However, how does FB actually handle the messages?  What does the user really experience in the UI/UX?  Let's define some requirements:
@@ -59,14 +52,14 @@ It's easy to say that the system should be like Facebook's.  However, how does F
 
 
 
-## So there are the specs, lets do this
+#### So there are the specs, lets do this
 
 
 In order to demonstrate some of these features and practices, I'm going to have to jump ahead to the final product.  I will do my best to explain why I came up with those things, however
 
 
 
-### Create the MySQL tables
+##### Create the MySQL tables
 
 
 In order to keep the normalized feel of all of this, we'll need to create two tables.  The first table will be for the message itself.  It will contain the originator or author, when it was created, where it was created (IP), and the body of the message.  Side note: The tables will all be prefixed with a '2' because this is my second time trying to do this... hopefully this time is successful! :)
@@ -111,64 +104,67 @@ This table has the MID/SEQ identifier to point to the message that the users are
 
 
 
-### Creating the PHP
+##### Creating the PHP
 
 
 For demonstration purposes, we're going to include a file called currentuser.php.  All this does is set the $currentUser variable to an integer.  In your full featured product, you'd probably use some sort of authentication/session system.  Here it is:
 
 **currentuser.php**
 
+{% highlight PHP %}
+<?php
+$currentUser = 1;
+{% endhighlight %}
     
     
+Now, the first view of the user will probably be their inbox.  If they have no messages to view, it has to say so.
+Note: I am using PDO and not a lot of security based programming in this example.  Please look at the concepts and don't just copy/paste the code.
+Second note: I am not really using valid HTML or pretty pages either.  The focus is on the PHP system in this case.
     
+**inbox.php**
     
-    Now, the first view of the user will probably be their inbox.  If they have no messages to view, it has to say so.
-    Note: I am using PDO and not a lot of security based programming in this example.  Please look at the concepts and don't just copy/paste the code.
-    Second note: I am not really using valid HTML or pretty pages either.  The focus is on the PHP system in this case.
-    
-    <strong>inbox.php</strong>
-    
-    
-    
-    Acting as {$currentUser}</h1>";
-    print "<h2>Inbox</h2>";
-    
-    $dsn = 'mysql:host=db-1.local;dbname=c3';
-    $PDO = new PDO($dsn, 'user', 'pass');
-    
-    $sql = "
-    select m.mid, m.seq, m.created_on, m.created_by, m.body, r.status from message2_recips r
-    inner join message2 m on m.mid=r.mid and m.seq=r.seq
-    where r.uid=? and r.status in ('A', 'N')
-    and r.seq=(select max(rr.seq) from message2_recips rr where rr.mid=m.mid and rr.status in ('A', 'N'))
-    and if (m.seq=1 and m.created_by=?, 1=0, 1=1)
-    order by created_on desc";
-    
-    $stmt = $PDO->prepare($sql);
-    $args = array($currentUser, $currentUser);
-    
-    if (!$stmt->execute($args)) {
-    	die('error');
+{% highlight PHP %}
+<?php
+include ('currentuser.php');
+print "<h1>Acting as {$currentUser}</h1>";
+print "<h2>Inbox</h2>";
+
+$dsn = 'mysql:host=db-1.local;dbname=c3';
+$PDO = new PDO($dsn, 'user', 'pass');
+
+$sql = "
+select m.mid, m.seq, m.created_on, m.created_by, m.body, r.status from message2_recips r
+inner join message2 m on m.mid=r.mid and m.seq=r.seq
+where r.uid=? and r.status in ('A', 'N')
+and r.seq=(select max(rr.seq) from message2_recips rr where rr.mid=m.mid and rr.status in ('A', 'N'))
+and if (m.seq=1 and m.created_by=?, 1=0, 1=1)
+order by created_on desc";
+
+$stmt = $PDO->prepare($sql);
+$args = array($currentUser, $currentUser);
+
+if (!$stmt->execute($args)) {
+    die('error');
+}
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if (count($rows)) {
+    print '<table><tr><th>Originator</th><th>When</th><th>Body</th>';
+    print '<th>Status</th><th>View</th></tr>';
+
+    foreach ($rows as $row) {
+        echo '<tr><td>' . $row['created_by'] . '</td><td>' . $row['created_on'];
+                echo  '</td><td>' . $row['body'] . '</td><td>' . $row['status'] . '</td><td>';
+        echo '<a href="view.php?id=' . $row['mid'] . '">View</a>';
+        echo '</td></tr>';
     }
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if (count($rows)) {
-    	print '<table><tr><th>Originator</th><th>When</th><th>Body</th>';
-            print '<th>Status</th><th>View</th></tr>';
-    
-    	foreach ($rows as $row) {
-    		echo '<tr><td>' . $row['created_by'] . '</td><td>' . $row['created_on'];
-                    echo  '</td><td>' . $row['body'] . '</td><td>' . $row['status'] . '</td><td>';
-    		echo '<a href="view.php?id=' . $row['mid'] . '">View</a>';
-    		echo '</td></tr>';
-    	}
-    	echo '</table>';
-    }
-    else {
-    	echo 'No items in your inbox';
-    }
-    echo '<div><a href="compose.php">compose</a></div>';
-    echo '<div><a href="sent.php">sent</a></div>';
-    
+    echo '</table>';
+}
+else {
+    echo 'No items in your inbox';
+}
+echo '<div><a href="compose.php">compose</a></div>';
+echo '<div><a href="sent.php">sent</a></div>';
+{% endhighlight %}
 
 
 
@@ -184,67 +180,68 @@ Now, let's actually view one of the messages.
 
 **view.php**
 
-    
-    
-    Acting as {$currentUser}</h1>";
-    print "<h2>Viewing a single message: " . $_GET['id'] . "</h2>";
-    
-    $dsn = 'mysql:host=db-1.local;dbname=c3';
-    $PDO = new PDO($dsn, 'user', 'pass');
-    
-    $sql = "
-    select m.mid, m.seq, m.created_on, m.created_by, m.body, r.status from message2_recips r
-    inner join message2 m on m.mid=r.mid and m.seq=r.seq
-    where r.uid=? and m.mid=? and r.status in ('A', 'N')";
+{% highlight PHP %}
+<?php
+include ('currentuser.php');
+print "<h1>Acting as {$currentUser}</h1>";
+print "<h2>Viewing a single message: " . $_GET['id'] . "</h2>";
+
+$dsn = 'mysql:host=db-1.local;dbname=c3';
+$PDO = new PDO($dsn, 'user', 'pass');
+
+$sql = "
+select m.mid, m.seq, m.created_on, m.created_by, m.body, r.status from message2_recips r
+inner join message2 m on m.mid=r.mid and m.seq=r.seq
+where r.uid=? and m.mid=? and r.status in ('A', 'N')";
+$stmt = $PDO->prepare($sql);
+$args = array($currentUser, $_GET['id']);
+
+if (!$stmt->execute($args)) {
+    die('error');
+}
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if (count($rows)) {
+    /** get all of the people this is between **/
+    $sql = "select distinct(uid) as uid from message2_recips where mid=?";
     $stmt = $PDO->prepare($sql);
-    $args = array($currentUser, $_GET['id']);
-    
-    if (!$stmt->execute($args)) {
-    	die('error');
+    $args = array($_GET['id']);
+    $stmt->execute($args);
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $uids = array();
+    foreach ($results as $result) {
+        $uids[] = $result['uid'];
     }
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if (count($rows)) {
-    	/** get all of the people this is between **/
-    	$sql = "select distinct(uid) as uid from message2_recips where mid=?";
-    	$stmt = $PDO->prepare($sql);
-    	$args = array($_GET['id']);
-    	$stmt->execute($args);
-    	$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    	$uids = array();
-    	foreach ($results as $result) {
-    		$uids[] = $result['uid'];
-    	}
-    	$last = array_pop($uids);
-    
-    	print '<p>Conversation between ';
-    	print implode(', ', $uids) . ' and ' . $last;
-    	echo '.</p>';
-    
-    	print '<table><tr><th>Originator</th><th>When</th><th>Body</th></tr>';
-    	foreach ($rows as $row) {
-    		echo '<tr><td>' . $row['created_by'] . '</td><td>' . $row['created_on'];
-                    echo '</td><td>' . $row['body'] . '</td></tr>';
-    	}
-    	echo '</table>';
-    
-    	/** now update the message to viewed **/
-    	$sql = "update message2_recips set status='A' where status='N' and mid=? and uid=?";
-    	$stmt = $PDO->prepare($sql);
-    	$args = array($_GET['id'], $currentUser);
-    	$stmt->execute($args);
-    
-    	echo '<form action="post.php" method="post">';
-    	echo '<strong>Reply:</strong><br></br>';
-    	echo '<textarea name="body"></textarea><br></br>';
-    	echo '<input type="hidden" name="mid" value="' . $row['mid'] . '"></input>';
-    	echo '<input type="submit" value="reply"></input></form>';
+    $last = array_pop($uids);
+
+    print '<p>Conversation between ';
+    print implode(', ', $uids) . ' and ' . $last;
+    echo '.</p>';
+
+    print '<table><tr><th>Originator</th><th>When</th><th>Body</th></tr>';
+    foreach ($rows as $row) {
+        echo '<tr><td>' . $row['created_by'] . '</td><td>' . $row['created_on'];
+                echo '</td><td>' . $row['body'] . '</td></tr>';
     }
-    else {
-    	echo 'Cannot find this message';
-    }
-    echo '<div><a href="inbox.php">Inbox</a></div>';
-    echo '<div><a href="delete.php?id=' . $_GET['id'] . '">Delete</a></div>';
-    
+    echo '</table>';
+
+    /** now update the message to viewed **/
+    $sql = "update message2_recips set status='A' where status='N' and mid=? and uid=?";
+    $stmt = $PDO->prepare($sql);
+    $args = array($_GET['id'], $currentUser);
+    $stmt->execute($args);
+
+    echo '<form action="post.php" method="post">';
+    echo '<strong>Reply:</strong><br></br>';
+    echo '<textarea name="body"></textarea><br></br>';
+    echo '<input type="hidden" name="mid" value="' . $row['mid'] . '"></input>';
+    echo '<input type="submit" value="reply"></input></form>';
+}
+else {
+    echo 'Cannot find this message';
+}
+echo '<div><a href="inbox.php">Inbox</a></div>';
+echo '<div><a href="delete.php?id=' . $_GET['id'] . '">Delete</a></div>';
+{% endhighlight %}
 
 
 
@@ -275,21 +272,23 @@ Next, a table is built and all of the replies are listed.  An update statement i
 
 **delete.php**
 
-    
-    
-    PDO::ERRMODE_EXCEPTION));
-    
-    $mid = isset($_GET['id']) ? $_GET['id'] : 0;
-    $sql = "update message2_recips set status='D' where mid=? and status != 'D' and uid=?";
-    $stmt = $PDO->prepare($sql);
-    $args = array($mid, $currentUser);
-    
-    if (!$stmt->execute($args)) {
-    	die('error');
-    }
-    
-    die(header('Location: inbox.php'));
-    
+{% highlight PHP %}
+<?php
+include ('currentuser.php');
+$dsn = 'mysql:host=db-1.local;dbname=c3';
+$PDO = new PDO($dsn, 'user', 'pass', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+
+$mid = isset($_GET['id']) ? $_GET['id'] : 0;
+$sql = "update message2_recips set status='D' where mid=? and status != 'D' and uid=?";
+$stmt = $PDO->prepare($sql);
+$args = array($mid, $currentUser);
+
+if (!$stmt->execute($args)) {
+    die('error');
+}
+
+die(header('Location: inbox.php'));
+{% endhighlight %}
 
 
 
@@ -315,16 +314,16 @@ In order to view our sent items, the layout is pretty similar to the inbox.php f
 As with every other statement, the message ID, sequence, date, owner, status and boy are gathered.  The message table is joined onto the recips table.  Then, it has to be created by the current user.  To match up the proper row, the r.uid matches the m.created_by as current user.  The recip record must also not be deleted.  Finally, the sequence number is the maximum from the replies where it is not deleted status and the message reply belongs to the current user.  This will show both messages where multiple replies are received and the current user is the last sender - as well as messages where the user is the only sender (unlike the inbox).
 
 Next, we have to make a new message form.  This will submit to post.php - the same as the replies to a current message.
-**compose.php**
 
+**compose.php**
     
-    
-    <form action="post.php" method="post">
-    	To who (csv): <input type="text" name="uids"></input><br></br>
-    	Message: <textarea name="body"></textarea><br></br>
-    	<input type="submit" value="send"></input>
-    </form>
-    
+{% highlight HTML %}
+<form action="post.php" method="post">
+    To who (csv): <input type="text" name="uids"></input><br></br>
+    Message: <textarea name="body"></textarea><br></br>
+    <input type="submit" value="send"></input>
+</form>
+{% endhighlight %}
 
 
 
@@ -332,66 +331,74 @@ Finally, we will add messages using the post.php file.  It will handle replies a
 
 **post.php**
 
-    
-    
-    prepare($sql);
-    	$args = array($mid);
-    	if (!$stmt->execute($args)) {
-    		die('error');
-    	}
-    	$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    	/** get seq # **/
-    	$sql = "select max(seq)+1 as seq from message2 where mid=?";
-    	$args = array($mid);
-    	$stmt = $PDO->prepare($sql);
-    	$stmt->execute($args);
-    	$row = $stmt->fetch(PDO::FETCH_ASSOC);
-    	$seq = $row['seq'];
+{% highlight PHP %}
+<?php
+include ('currentuser.php');
+$dsn = 'mysql:host=db-1.local;dbname=c3';
+$PDO = new PDO($dsn, 'user', 'pass');
+ 
+$mid = isset($_POST['mid']) ? $_POST['mid'] : 0;
+$body = $_POST['body'];
+ 
+if (!empty($mid)) {
+    /** get the recips first **/
+    $sql = "SELECT distinct(uid) as uid FROM message2_recips m where mid=?";
+    $stmt = $PDO->prepare($sql);
+    $args = array($mid);
+    if (!$stmt->execute($args)) {
+        die('error');
     }
-    else {
-    	$seq = 1;
-    	$uids = explode(',', $_POST['uids']);
-    	$uids[] = $currentUser;
-    	$uids = array_unique($uids);
-    	$rows = array();
-    	foreach ($uids as $uid) {
-    		$rows[] = array('uid'=>$uid);
-    	}
-    }
-    
-    if (count($rows)) {
-    	$sql = "insert into message2 (mid, seq, created_on_ip, created_by, body) values (?, ?, ?, ?, ?)";
-    	$args = array($mid, $seq, '1.2.2.1', $currentUser, $body);
-    	$stmt = $PDO->prepare($sql);
-    	$stmt->execute($args);
-    
-    	if (empty($mid)) {
-    		$mid = $PDO->lastInsertId();
-    	}
-    
-    	$insertSql = "insert into message2_recips values ";
-    	$holders = array();
-    	$params = array();
-    	foreach ($rows as $row) {
-    		$holders[] = "(?, ?, ?, ?)";
-    		$params[] = $mid;
-    		$params[] = $seq;
-    		$params[] = $row['uid'];
-    		$params[] = $row['uid'] == $currentUser ? 'A' : 'N';
-    	}
-    	$insertSql .= implode(',', $holders);
-    	$stmt = $PDO->prepare($insertSql);
-    	$stmt->execute($params);
-    
-    	die(header('Location: view.php?id=' . $mid));
-    }
-    else {
-    	die('no recips found');
-    }
-    
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    /** get seq # **/
+    $sql = "select max(seq)+1 as seq from message2 where mid=?";
+    $args = array($mid);
+    $stmt = $PDO->prepare($sql);
+    $stmt->execute($args);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $seq = $row['seq'];
+}
+else {
+    $seq = 1;
+    $uids = explode(',', $_POST['uids']);
+    $uids[] = $currentUser;
+    $uids = array_unique($uids);
+    $rows = array();
+    foreach ($uids as $uid) {
+        $rows[] = array('uid'=>$uid);
+    }
+}
 
+if (count($rows)) {
+    $sql = "insert into message2 (mid, seq, created_on_ip, created_by, body) values (?, ?, ?, ?, ?)";
+    $args = array($mid, $seq, '1.2.2.1', $currentUser, $body);
+    $stmt = $PDO->prepare($sql);
+    $stmt->execute($args);
+
+    if (empty($mid)) {
+        $mid = $PDO->lastInsertId();
+    }
+
+    $insertSql = "insert into message2_recips values ";
+    $holders = array();
+    $params = array();
+    foreach ($rows as $row) {
+        $holders[] = "(?, ?, ?, ?)";
+        $params[] = $mid;
+        $params[] = $seq;
+        $params[] = $row['uid'];
+        $params[] = $row['uid'] == $currentUser ? 'A' : 'N';
+    }
+    $insertSql .= implode(',', $holders);
+    $stmt = $PDO->prepare($insertSql);
+    $stmt->execute($params);
+
+    die(header('Location: view.php?id=' . $mid));
+}
+else {
+    die('no recips found');
+}
+{% endhighlight %}
 
 This is one of the most important pieces of this puzzle, so let's analyze it carefully.  First, the current user is obtained and the connection is made.  Then, the message ID is retrieved from the POST request (if its a reply) or its set at 0 (for new messages from compose.php).  $body is retrieved from the body key of the POST arrray.
 
@@ -407,7 +414,7 @@ The combined statement is now executed and the user is directed to look at the m
 
 
 
-### Ending Thoughts
+#### Ending Thoughts
 
 
 While this is not yet a perfect/polished solution, I think it is further along the line.  Old message systems used to duplicate a lot of messages and not allow for multiple recipients.  I think this walks the line of being similar to the older systems but working with new paradigms.  Are there places where I could make this better?  Have any suggestions?  Please let me know. :)

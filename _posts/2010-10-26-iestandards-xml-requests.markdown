@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-10-26 14:10:45+00:00
 layout: post
-slug: iestandards-xml-requests
 title: IEStandards.xml requests
-wordpress_id: 681
-categories:
-- Internet Explorer
 tags:
 - internet explorer
 ---
@@ -19,11 +12,9 @@ The site I created uses an extensive amount of javascript.  For some reason, Int
 
 I did some research and found out that I needed to set IE8 to emulate IE8.  I did so by entering the following tag into the head of my document:
 
-
-    
-    
-    <meta content="IE=EmulateIE8" http-equiv="X-UA-Compatible">
-    
+{% highlight HTML %}
+<meta content="IE=EmulateIE8" http-equiv="X-UA-Compatible">
+{% endhighlight %}
 
 
 
@@ -34,8 +25,9 @@ I believe the solution is a two fold solution, now. It is necessary to use the m
 **IEStandards.xml**
 
     
-    
-    <ie8standardsmode></ie8standardsmode>
+{% highlight XML %}
+<ie8standardsmode></ie8standardsmode>
+{% endhighlight %}
     
 
 

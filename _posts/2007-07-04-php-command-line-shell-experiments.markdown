@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-04 21:33:35+00:00
 layout: post
-slug: php-command-line-shell-experiments
 title: PHP Command Line Shell Experiments
-wordpress_id: 28
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -16,46 +9,50 @@ Having been a shell, perl and batch scripter before I started PHP, I've always e
 
 I wanted to experiment with PHP's Interactive command line interface a little bit more - anyone can write a script that reads in STDIN and the like, but is there any use in having an interactive CL environment?  I tried out PHP's standard interactive, plus two additional php packages.
 
-<!-- more -->
 **What are our test cases?**
 
 We're going to execute three test scenarios in PHP to test out each of these shells.
 
 The first one:
 
-    
-    phpinfo ();
-
+{% highlight PHP %}
+<?php
+phpinfo ();
+{% endhighlight %}
 
 The Second:
 
-    
-    $a = 'test';
-    echo $a;
+{% highlight PHP %}
+<?php
+$a = 'test';
+echo $a;
+{% endhighlight %}
 
 
 And the third one is going to be a class creation, followed by var_dump()ing it out to the display.  Our file -- test.php:
 
-    
-    class TEST
+{% highlight PHP %}
+<?php
+class TEST
+{
+    protected $_val = 'test';
+
+    public function __construct()
     {
-      protected $_val = 'test';
-      public function __construct()
-      {
         $this->_val='constructor';
-      }
     }
-    ?>
+}
+{% endhighlight %}
 
 
 And we're going to execute the following:
 
-    
-    include 'test.php';
-    $a = new TEST();
-    var_dump($a);
-
-
+{% highlight PHP %}
+<?php
+include 'test.php';
+$a = new TEST();
+var_dump($a);
+{% endhighlight %}
 
 **First off, What does Plain Ol' PHP offer me?**
 

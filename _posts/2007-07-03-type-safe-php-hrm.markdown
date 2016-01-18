@@ -1,20 +1,13 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-03 00:42:53+00:00
 layout: post
-slug: type-safe-php-hrm
 title: Type-Safe PHP? Hrm...
-wordpress_id: 20
-categories:
-- PHP
 tags:
 - PHP
 ---
 
 As you can probably remember, lately I've been writing about PHP's object handling, patterns, etc.  - but I lightly glossed over the whole forced typing of variables - and how that relates to PHP.  While looking for solutions to this, I came across a great blog entry that solves this issue - but I've gotta bring up some counter points... Finally, I'm also wondering: what are the real important needs for a strongly typed object?
 
-<!-- more -->This most recent blog entry [here](http://jan.kneschke.de/2007/2/19/typesafe-objects-in-php) talks about type - safe variables in PHP.  A combination of reflection, documentation, and OO extension is used.  I would have to admit, I'm rather impressed by this entry - its a great way to solve that issue... that is, if it needed solving.
+This most recent blog entry [here](http://jan.kneschke.de/2007/2/19/typesafe-objects-in-php) talks about type - safe variables in PHP.  A combination of reflection, documentation, and OO extension is used.  I would have to admit, I'm rather impressed by this entry - its a great way to solve that issue... that is, if it needed solving.
 
 Now, I have to argue - part of **PHP's initial draw to beginning programmers** is the lack of forced typing of variables.  You can have a value of integer 3 and concatenate 'bananas' on to the end, and the variable then becomes a string with the literal string representation of the integer 3.  To **new programmers**, this is both amazing and cool - it helps reduce the number of syntax errors and provides for faster coding.
 

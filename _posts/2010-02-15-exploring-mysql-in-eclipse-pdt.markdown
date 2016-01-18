@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-02-15 16:08:38+00:00
 layout: post
-slug: exploring-mysql-in-eclipse-pdt
 title: Exploring MySQL in Eclipse PDT
-wordpress_id: 554
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- mysql
 tags:
 - Eclipse PDT
 - IDE and Web Dev Tools
@@ -20,7 +11,7 @@ As you probably know by now, I'm a huge fan of Eclipse PDT.  Well, I wanted to s
 
 
 
-## Get the SQL Explorer Plugin
+#### Get the SQL Explorer Plugin
 
 
 [![](http://aaronsaray.com/blog/wp-content/uploads/2010/01/1-150x56.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2010/01/1.jpg)
@@ -32,7 +23,7 @@ Install this software like you normally would.  Accept the license and you're re
 
 
 
-## Eclipse Uses JDBC
+#### Eclipse Uses JDBC
 
 
 Eclipse uses JDBC connections to connect to MySQL.  You can get this on the MySQL connectors page:
@@ -42,7 +33,7 @@ Simply unzip the connector into your Eclipse program directory and move on.
 
 
 
-## Open Eclipse
+#### Open Eclipse
 
 
 
@@ -52,7 +43,7 @@ Now, create a connection profile.  This is done by clicking on the Create New Co
 
 
 
-### What if I can't find my Driver in the list?
+##### What if I can't find my Driver in the list?
 
 
 There is a good chance that the driver may not be in the list by default.
@@ -70,7 +61,7 @@ Now you should be able to use the MySQL driver from the list.
 
 
 
-## Browsing the Database
+#### Browsing the Database
 
 
 

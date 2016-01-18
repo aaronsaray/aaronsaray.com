@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-19 17:02:54+00:00
 layout: post
-slug: two-new-useful-external-tools-for-eclipse
 title: Two New useful external tools for Eclipse
-wordpress_id: 50
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
 tags:
 - Eclipse PDT
 - IDE and Web Dev Tools
@@ -16,8 +8,6 @@ tags:
 ---
 
 In my posting about [Integrating PHPDocumentor into Eclipse](http://aaronsaray.com/blog/2007/07/04/build-phpdocumentor-into-eclipse/), I touched on External Tools a bit.  The combination of external batch files, the external tools extra options and the console has made my life easier.  I'm using two new additional batch files that I've written myself and integrated as external tools.  These include automated SVN release update and resource refresh and Apache application control (for those who can't run apache as a service on w32):
-
-<!-- more -->
 
 **SVN Update - resource refresh**
 

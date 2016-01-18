@@ -19,7 +19,7 @@ const FAILURE_IDENTITY_NOT_FOUND     = -1;
 const FAILURE_IDENTITY_AMBIGUOUS     = -2;
 const FAILURE_CREDENTIAL_INVALID     = -3;
 const FAILURE_UNCATEGORIZED          = -4;
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -50,5 +50,5 @@ public function isFailureUserBased()
     
     return false;
 }
-{% endhighlight %}    
+{% endhighlight %}
     

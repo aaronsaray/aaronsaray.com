@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-09-12 14:30:51+00:00
 layout: post
-slug: automatic-backup-with-svn-on-windows
 title: Automatic Backup with SVN on Windows
-wordpress_id: 153
-categories:
-- scripting
-- svn
-- windows
 tags:
 - scripting
 - svn
@@ -22,16 +13,11 @@ I was using a Windows machine as my file server - so I wrote some batch files.  
 
 The setup includes a computer that is always on with windows, svn command line, and 5 directories to monitor for backups.
 
-
-
-### First thing's first, do an SVN Checkout
-
+#### First thing's first, do an SVN Checkout
 
 The very first thing I did was make an SVN checkout in all of the five parent directories.  This way I can continue to use SVN add, svn commit without any other interaction.  Don't worry, we'll use recursion!
 
-
-
-### Create the full list of backups
+#### Create the full list of backups
 
 
 So, first thing's first: Create the list of directories that need to be monitored.  I made them in this txt file named 'svndirectories.txt':
@@ -46,8 +32,7 @@ So, first thing's first: Create the list of directories that need to be monitore
 Note, all of them are separated by a space.  This becomes important in our next batch script.
 
 
-
-### Schedule the SVN Add
+#### Schedule the SVN Add
 
 
 I added an SVN Add batch script at Midnight on sundays.  Actually, there are two batch files.  I made them separately so that I could invoke a scheduled task - but also run the "add" by hand if need be.
@@ -106,7 +91,7 @@ After all of these have been added, lets move on...
 
 
 
-### Schedule SVN Commit
+#### Schedule SVN Commit
 
 
 

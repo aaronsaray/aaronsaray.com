@@ -101,7 +101,7 @@ class Application_Model_Mail extends Zend_Mail
         return APPLICATION_PATH . '/views/scripts/email';
     }
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -132,7 +132,7 @@ $mail = new Application_Model_Mail();
 $mail->setBody(Application_Model_Mail::TYPE_HTML, 'forgotpassword', array('user'=>$user))
      ->setBody(Application_Model_Mail::TYPE_TEXT, 'forgotpassword', array('user'=>$user));
 $mail->send();
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

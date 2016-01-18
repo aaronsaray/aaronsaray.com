@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-10-04 16:07:05+00:00
 layout: post
-slug: ode-to-a-myspace-layout
 title: Ode to a MySpace Layout
-wordpress_id: 155
-categories:
-- Misc Web Design
 tags:
 - myspace
 ---

@@ -31,7 +31,7 @@ class Application_View_Helper_BodyScript extends Zend_View_Helper_HeadScript
         return call_user_func_array(array($this, 'headScript'), $args);
     }
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -43,4 +43,4 @@ And of course, this is simply called just like HeadScript
 {% highlight HTML %}
     <?php echo $this->bodyScript(); ?>
 </body>
-{% endhighlight %}    
+{% endhighlight %}

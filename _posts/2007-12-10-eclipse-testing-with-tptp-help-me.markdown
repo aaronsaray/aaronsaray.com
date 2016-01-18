@@ -1,16 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-12-10 05:45:55+00:00
 layout: post
-slug: eclipse-testing-with-tptp-help-me
 title: Eclipse Testing with TPTP - help me?
-wordpress_id: 87
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- programming
-- Test Driven Development
 tags:
 - Eclipse PDT
 - IDE and Web Dev Tools

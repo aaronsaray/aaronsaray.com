@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-08-17 13:42:58+00:00
 layout: post
-slug: easy-mcrypt-encryption-class
 title: Easy MCrypt encryption class
-wordpress_id: 695
-categories:
-- PHP
-- security
 tags:
 - PHP
 - security
@@ -19,55 +11,57 @@ For whatever reason, I can never remember the exact coding of MCrypt.  And maybe
 **easyMcrypt.php**
 
     
-    
-    class easyMcrypt
+{% highlight PHP %}
+<?php
+class easyMcrypt
+{
+    protected static $_openModules = array();
+
+    public static function encrypt($string, $key, $type, $mode)
     {
-    	protected static $_openModules = array();
-    
-    	public static function encrypt($string, $key, $type, $mode)
-    	{
-    		$module = self::_getModule($type, $mode);
-    		$iv = self::_alt_mcrypt_create_iv(mcrypt_enc_get_iv_size($module), MCRYPT_RAND);
-    		mcrypt_generic_init($module, $key, $iv);
-    		$data = mcrypt_generic($module, $string);
-    		mcrypt_generic_deinit($module);
-    		return $data;
-    	}
-    
-    	public static function decrypt($string, $key, $type, $mode)
-    	{
-    		$module = self::_getModule($type, $mode);
-    		$iv = self::_alt_mcrypt_create_iv(mcrypt_enc_get_iv_size($module), MCRYPT_RAND);
-    		mcrypt_generic_init($module, $key, $iv);
-    		$data = trim(mdecrypt_generic($module, $string));
-    		mcrypt_generic_deinit($module);
-    		return $data;
-    	}
-    
-    	protected static function _getModule($type, $mode)
-    	{
-    		if (!isset(self::$_openModules[$type][$mode])) {
-    			if (in_array($type, mcrypt_list_algorithms()) && in_array($mode, mcrypt_list_modes())) {
-    				self::$_openModules[$type][$mode] = mcrypt_module_open($type, '', $mode, '');
-    			}
-    			else {
-    				throw new exception("{$type} is not a valid algorithm");
-    			}
-    		}
-    
-    		return self::$_openModules[$type][$mode];
-    	}
-    
-    	/** borrowed from http://www.php.net/manual/en/function.mcrypt-create-iv.php#54925 **/
-    	protected static function _alt_mcrypt_create_iv($size)
-    	{
-    		$iv = '';
-    	    for($i = 0; $i < $size; $i++) {
-    	        $iv .= chr(rand(0,255));
-    	    }
-    	    return $iv;
-    	}
+        $module = self::_getModule($type, $mode);
+        $iv = self::_alt_mcrypt_create_iv(mcrypt_enc_get_iv_size($module), MCRYPT_RAND);
+        mcrypt_generic_init($module, $key, $iv);
+        $data = mcrypt_generic($module, $string);
+        mcrypt_generic_deinit($module);
+        return $data;
     }
+
+    public static function decrypt($string, $key, $type, $mode)
+    {
+        $module = self::_getModule($type, $mode);
+        $iv = self::_alt_mcrypt_create_iv(mcrypt_enc_get_iv_size($module), MCRYPT_RAND);
+        mcrypt_generic_init($module, $key, $iv);
+        $data = trim(mdecrypt_generic($module, $string));
+        mcrypt_generic_deinit($module);
+        return $data;
+    }
+
+    protected static function _getModule($type, $mode)
+    {
+        if (!isset(self::$_openModules[$type][$mode])) {
+            if (in_array($type, mcrypt_list_algorithms()) && in_array($mode, mcrypt_list_modes())) {
+                self::$_openModules[$type][$mode] = mcrypt_module_open($type, '', $mode, '');
+            }
+            else {
+                throw new exception("{$type} is not a valid algorithm");
+            }
+        }
+
+        return self::$_openModules[$type][$mode];
+    }
+
+    /** borrowed from http://www.php.net/manual/en/function.mcrypt-create-iv.php#54925 **/
+    protected static function _alt_mcrypt_create_iv($size)
+    {
+        $iv = '';
+        for($i = 0; $i < $size; $i++) {
+            $iv .= chr(rand(0,255));
+        }
+        return $iv;
+    }
+}
+{% endhighlight %}
     
 
 
@@ -79,15 +73,17 @@ At any rate then, a new Initialization Vector is generated.  In this case, I use
 For an example of how this is used:
 
     
-    
-    $string = 'Please encrypt me';
-    $key = 'this is my encryption key';
-    $type = 'tripledes';
-    $mode = 'ecb';
-    
-    $encrypted = easyMcrypt::encrypt($string, $key, $type, $mode);
-    var_dump($encrypted);
-    
-    $decrypted = easyMcrypt::decrypt($encrypted, $key, $type, $mode);
-    var_dump($decrypted);
+{% highlight PHP %}
+<?php
+$string = 'Please encrypt me';
+$key = 'this is my encryption key';
+$type = 'tripledes';
+$mode = 'ecb';
+
+$encrypted = easyMcrypt::encrypt($string, $key, $type, $mode);
+var_dump($encrypted);
+
+$decrypted = easyMcrypt::decrypt($encrypted, $key, $type, $mode);
+var_dump($decrypted);
+{% endhighlight %}
     

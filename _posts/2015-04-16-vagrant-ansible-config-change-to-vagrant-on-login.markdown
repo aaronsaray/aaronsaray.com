@@ -14,7 +14,7 @@ If you'd like to save some keystrokes after a `vagrant ssh` - you might want to 
 tasks:
   - name: Create redirect for bash login
     lineinfile: dest=/home/vagrant/.bash_login line="cd /vagrant" state=present create=yes
-{% endhighlight %}    
+{% endhighlight %}
 
 This simply puts a .bash_login file in the vagrant user home directory with one line: to change to the /vagrant directory.  
 

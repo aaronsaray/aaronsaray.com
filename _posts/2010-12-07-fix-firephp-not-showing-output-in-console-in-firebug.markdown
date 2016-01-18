@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-12-07 17:12:42+00:00
 layout: post
-slug: fix-firephp-not-showing-output-in-console-in-firebug
 title: 'Fix: FirePHP not showing output in console in Firebug'
-wordpress_id: 749
-categories:
-- IDE and Web Dev Tools
-- Misc Web Design
 tags:
 - IDE and Web Dev Tools
 - Misc Web Design

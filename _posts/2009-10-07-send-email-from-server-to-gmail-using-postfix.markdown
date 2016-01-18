@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-10-07 20:32:49+00:00
 layout: post
-slug: send-email-from-server-to-gmail-using-postfix
 title: Send email from server to gmail using postfix
-wordpress_id: 436
-categories:
-- linux
 tags:
 - email
 - linux

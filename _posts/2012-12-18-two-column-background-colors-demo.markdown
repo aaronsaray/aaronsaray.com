@@ -32,7 +32,7 @@ First, the markup.
     </div>
     <h2>Hello There Friend</h2>
 </body>
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -62,7 +62,7 @@ Then, the CSS.
     background: #f8b021;
     margin-left: 300px;
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

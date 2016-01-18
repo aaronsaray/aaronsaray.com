@@ -15,7 +15,7 @@ I finally tracked down that it was some default styles in Bootstrap that were ca
 #googlemap img[src^="http://maps.gstatic.com/"] {
   max-width: none;
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 And, we were good to go.  Proof:

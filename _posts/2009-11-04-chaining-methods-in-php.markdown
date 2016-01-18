@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-11-04 18:02:20+00:00
 layout: post
-slug: chaining-methods-in-php
 title: chaining methods in PHP
-wordpress_id: 473
-categories:
-- PHP
-- programming
 tags:
 - PHP
 - programming
@@ -18,47 +10,44 @@ I rarely find myself needing to chain methods in PHP - but its not an altogether
 
 At any rate, here is my test code that PHP method chaining works great:
 
-
-    
-    
-    class foo
+{% highlight PHP %}
+<?php
+class foo
+{
+    public function bar()
     {
-        public function bar()
-        {
-            print 'bar<br></br>';
-            return $this;
-        }
-    
-        public function splat()
-        {
-            print 'splat!<br></br>';
-            return $this;
-        }
-    
-        public function twin()
-        {
-            return $this->single();
-        }
-    
-        public function single()
-        {
-            print 'single<br></br>';
-            return $this;
-        }
-    
-        public function neato()
-        {
-            print 'neato';
-            return $this;
-        }
+        print 'bar<br></br>';
+        return $this;
     }
-    
-    $ohNo = new foo();
-    $ohNo->bar()->splat();
-    $ohNo->twin()->neato();
-    
 
+    public function splat()
+    {
+        print 'splat!<br></br>';
+        return $this;
+    }
 
+    public function twin()
+    {
+        return $this->single();
+    }
+
+    public function single()
+    {
+        print 'single<br></br>';
+        return $this;
+    }
+
+    public function neato()
+    {
+        print 'neato';
+        return $this;
+    }
+}
+
+$ohNo = new foo();
+$ohNo->bar()->splat();
+$ohNo->twin()->neato();
+{% endhighlight %}
 
 As expected, the output is:
 

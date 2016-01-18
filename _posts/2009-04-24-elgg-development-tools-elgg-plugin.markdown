@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-04-24 17:37:59+00:00
 layout: post
-slug: elgg-development-tools-elgg-plugin
 title: Elgg Development Tools - Elgg Plugin
-wordpress_id: 378
-categories:
-- elgg
-- open source
-- PHP
 tags:
 - elgg
 - open source
@@ -18,10 +9,7 @@ tags:
 
 After working some with the open source Community building application [Elgg](http://elgg.org), I found some settings to be irritating.  I had to keep hacking my plugins to get these settings activated the way I wanted.  Also, I really wanted to put useful settings in the same location.
 
-
-
-### Enter The Elgg Development Tools Plugin
-
+#### Enter The Elgg Development Tools Plugin
 
 This plugin has the following functionality:
 
@@ -43,8 +31,6 @@ This plugin has the following functionality:
 
 More about this after the file download:
 [Elgg Dev Tools](http://aaronsaray.com/blog/wp-content/uploads/2009/04/oht_elggdevtools151.zip)
-
-
 
 #### Integrates FirePHP
 

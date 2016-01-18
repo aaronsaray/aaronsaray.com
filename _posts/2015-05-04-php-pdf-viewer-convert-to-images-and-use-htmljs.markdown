@@ -81,7 +81,7 @@ class PDFViewer
         $imagick->writeImages($cacheLocation . '/rendered.jpg', true);
     }
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 Simply put, you'll call one function to get a list of PDFs - and then you can feed a PDF to the other function to make it write it to the cache - or read it from the cache.
 

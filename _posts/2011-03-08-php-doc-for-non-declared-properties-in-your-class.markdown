@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-03-08 20:00:48+00:00
 layout: post
-slug: php-doc-for-non-declared-properties-in-your-class
 title: PHP Doc for non declared properties in your class
-wordpress_id: 845
-categories:
-- Misc Web Design
-- PHP
 tags:
 - Misc Web Design
 - PHP
@@ -18,48 +10,47 @@ You may find while working with projects like Zend Framework that you have a num
 
 **Base class with getter/setters**
 
+{% highlight php %}
+<?php
+class base
+{
+    /**
+     * @var data storage
+     */
+    protected $_data = array();
     
-    
-    class base
-    {
-     /**
-      * @var data storage
-      */
-     protected $_data = array();
-    
-     /**
-      * setter method - used to store data in self::$_data
-      */
-     public function __set($name, $value)
-     { 
-      $this->_data[$name] = $value;
-     }
-    
-     /**
-      * getter method - retrieves info from self::$_data
-      */
-     public function __get($name)
-     {
-      return isset($this->_data[$name]) ? $this->_data[$name] : null;
-     }
+    /**
+     * setter method - used to store data in self::$_data
+     */
+    public function __set($name, $value)
+    { 
+        $this->_data[$name] = $value;
     }
     
-
+    /**
+     * getter method - retrieves info from self::$_data
+     */
+    public function __get($name)
+    {
+        return isset($this->_data[$name]) ? $this->_data[$name] : null;
+    }
+}
+{% endhighlight %}
+    
 
 
 Now, let's say we have an object of type Person which we know will have a first name and a last name.  However, its not defined in this class for some reason.
 
 **Class with @property definition**
 
-    
-    
-    class person extends base
-    {
-      @property string $first_name The user's first name
-      @property string $last_name The user's last name
-    }
-    
-
+{% highlight php %}
+<?php
+class person extends base
+{
+    @property string $first_name The user's first name
+    @property string $last_name The user's last name
+}
+{% endhighlight %}
 
 
 Now, when creating instance of this class, if your IDE supports PHPDoc, you will now have those previously undocumented and undefined properties available.

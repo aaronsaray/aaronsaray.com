@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-04-24 23:50:08+00:00
 layout: post
-slug: which-fires-first-error-handler-or-shutdown-function
 title: Which Fires First? Error Handler or Shutdown Function
-wordpress_id: 95
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -18,7 +11,20 @@ This got me to thinking about handling error redirection pages and sending messa
 
 I'm using PHP5.2 - this is the code I used to test:
 
+{% highlight PHP %}
+<?php
+function error_function() {
+    print 'error function';
+}
 
+function shutdown_function() {
+    print 'shutdown function';
+}
 
+set_error_handler('error_function');
+register_shutdown_function('shutdown_function');
+
+print 1/0;
+{% endhighlight %}
 
 So, as you can tell, the error handler happens FIRST and then the shutdown function

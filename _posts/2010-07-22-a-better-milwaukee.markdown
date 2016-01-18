@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-07-22 13:14:26+00:00
 layout: post
-slug: a-better-milwaukee
 title: A Better Milwaukee
-wordpress_id: 658
-categories:
-- photoshop
 tags:
 - photoshop
 ---

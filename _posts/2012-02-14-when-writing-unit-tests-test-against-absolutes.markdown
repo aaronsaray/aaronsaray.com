@@ -21,4 +21,4 @@ So, in other words, here's what you should do:
 $xmlString = "<xml><root><nodes><to><test></test></to></nodes></root></xml>";
 $service = new ClassToTest();
 $this->assertEquals($xmlString, $service->generatedXmlFromClass());
-{% endhighlight %}    
+{% endhighlight %}

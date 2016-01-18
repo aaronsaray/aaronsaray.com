@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-01-17 19:27:52+00:00
 layout: post
-slug: phpini-creator
 title: PHP.ini creator
-wordpress_id: 304
-categories:
-- open source
-- PHP
 tags:
 - open source
 - PHP
@@ -18,12 +10,11 @@ While listening to someone complain through twitter about their MySQL conf file,
 
 
 
-### Enter PHPIniCreator
+#### Enter PHPIniCreator
 
 
 
 As with most of my software, this is just a rough version to get the idea down on paper.  I plan to update this as well as give a working example sometime in the future.
-<!-- more -->
 
 **Features**
 

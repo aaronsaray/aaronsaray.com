@@ -18,7 +18,7 @@ In this case, however, I was found the following code:
 <script>
 document.writeln('<img class="album-cover" alt="" src="#" style="display:none;" />');
 </script>
-{% endhighlight %}    
+{% endhighlight %}
 
 
 When I viewed the network tab in chrome, turns out it was issuing another request to my URL for some reason.  Once this code was removed, it was good to go.

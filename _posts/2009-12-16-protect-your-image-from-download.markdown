@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-12-16 15:03:55+00:00
 layout: post
-slug: protect-your-image-from-download
 title: Protect Your Image from Download
-wordpress_id: 495
-categories:
-- CSS
-- html
-- Misc Web Design
 tags:
 - CSS
 - html
@@ -18,57 +9,42 @@ tags:
 
 I came across a great idea dealing with protecting image downloads from the site.  Now, this is not fool-proof.  There are lots of other ways to download the image, but this may stop the casual downloader.  Nope, its not disabling the right click or using java.  It requires one single transparent gif.  Let's see how.
 
-<!-- more -->
-
-
-
-## What is going to happen
-
+#### What is going to happen
 
 First of all, the user will see the image correctly.  If they choose to 'view image' or right click and download, they will receive the transparent gif instead.
 
-
-
-## The Image to Display
-
+#### The Image to Display
 
 This simple duck.  He is 300px wide and 206px tall.  This is important to know for this feature.
 ![duck](http://aaronsaray.com/blog/wp-content/uploads/2009/11/duck.jpg)
 
-
-
-## The Decoy Image
-
+#### The Decoy Image
 
 The decoy image is a transparent gif that is 1px by 1px.  Here it is.
 ![transparent](http://aaronsaray.com/blog/wp-content/uploads/2009/11/transparent.gif)
 Hah.  So, if you'd like to download it, click here: [transparent.gif](http://aaronsaray.com/blog/wp-content/uploads/2009/11/transparent.gif)
 
-
-
-## The code
-
+#### The code
 
 Here is the example code to make this work (I'll explain it right after)
 
-    
-    
-    <html>
-        <head>
-            <style type="text/css">
-                #img {
-                    background-image: url('duck.jpg');
-                    width: 300px;
-                    height: 206px;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Like my Image?</h1>
-            <img src="transparent.gif" id="img"></img>
-        </body>
-    </html>
-    
+{% highlight HTML %}
+<html>
+    <head>
+        <style type="text/css">
+            #img {
+                background-image: url('duck.jpg');
+                width: 300px;
+                height: 206px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Like my Image?</h1>
+        <img src="transparent.gif" id="img"></img>
+    </body>
+</html>
+{% endhighlight %}
 
 
 

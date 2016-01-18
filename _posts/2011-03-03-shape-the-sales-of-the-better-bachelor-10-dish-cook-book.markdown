@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-03-03 21:48:00+00:00
 layout: post
-slug: shape-the-sales-of-the-better-bachelor-10-dish-cook-book
 title: Shape the Sales of The Better Bachelor 10 Dish Cook Book
-wordpress_id: 858
-categories:
-- business
 tags:
 - business
 ---

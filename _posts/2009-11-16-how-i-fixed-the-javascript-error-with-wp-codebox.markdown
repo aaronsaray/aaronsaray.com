@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-11-16 20:36:04+00:00
 layout: post
-slug: how-i-fixed-the-javascript-error-with-wp-codebox
 title: How I fixed the Javascript error with wp-codebox
-wordpress_id: 464
-categories:
-- javascript
-- wordpress
 tags:
 - javascript
 - wordpress

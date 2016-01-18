@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-05-12 22:22:47+00:00
 layout: post
-slug: timetracker-timeclock
 title: Timetracker Timeclock
-wordpress_id: 120
-categories:
-- open source
-- PHP
 tags:
 - open source
 - PHP
@@ -22,6 +14,7 @@ You can download it here:
 [timetracker - timeclock 0.1](http://aaronsaray.com/blog/wp-content/uploads/2008/05/timetracker_01.zip)
 
 **Installation Instructions**
+
 After you upload the contents of the zip file to the root of your website (in future releases, I'll make it be available to any folder..), you can visit your website's domain.  This will launch the install script.
 
 The script will ask for MySQL credentials.  You need to have a hostname, user and password, and a database for the software to write to.

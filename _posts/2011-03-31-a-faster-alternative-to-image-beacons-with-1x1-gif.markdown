@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-03-31 13:51:24+00:00
 layout: post
-slug: a-faster-alternative-to-image-beacons-with-1x1-gif
 title: A faster alternative to image beacons with 1x1 gif
-wordpress_id: 878
-categories:
-- Misc Web Design
 tags:
 - Misc Web Design
 ---
@@ -15,6 +8,7 @@ tags:
 So it seems like a very common solution for tracking hit rates is the transparent 1x1 pixel gif.  Load this and parse your access logs: requests logged.
 
 The problem I have with this is two fold:
+
 a) it sends a 1x1 gif's worth of data to the server.  This should exist - it could be possible for browsers to show a broken image if the gif doesn't exist
 
 b) it requires a full data connection and transmission to do something so simple.
@@ -28,11 +22,10 @@ Let's put this in practice:
 
 Before:
 
-    
-    
-    var track = new Image();
-    track.src="/my/source/image/1x1.gif";
-    
+{% highlight javascript %}
+var track = new Image();
+track.src="/my/source/image/1x1.gif";
+{% endhighlight %}
 
 
 
@@ -40,19 +33,20 @@ And the corresponding image is sent.
 
 After:
 
-    
-    
-    var track = new Image();
-    track.src = "/track/this/page.php";
+{% highlight javascript %}
+var track = new Image();
+track.src = "/track/this/page.php";
+{% endhighlight %}
     
 
 
 
 **page.php**
 
-    
-    
-    die(header("HTTP/1.1 204 No Content"));
+{% highlight php %}
+<?php    
+die(header("HTTP/1.1 204 No Content"));
+{% endhighlight %}
     
 
 

@@ -1,15 +1,9 @@
 ---
-author: aaron
-comments: true
-date: 2007-08-03 14:04:17+00:00
 layout: post
-slug: friendly-reminders-about-testing-your-php-code
 title: Friendly reminders about testing your PHP code
-wordpress_id: 68
-categories:
+tags:
 - Misc Web Design
 - PHP
-tags:
 - Test Driven Development
 ---
 

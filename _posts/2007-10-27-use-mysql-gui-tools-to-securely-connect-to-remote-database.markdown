@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-10-27 17:20:17+00:00
 layout: post
-slug: use-mysql-gui-tools-to-securely-connect-to-remote-database
 title: Use MySQL Gui tools to securely connect to remote database
-wordpress_id: 80
-categories:
-- IDE and Web Dev Tools
-- SQL
-- windows
 tags:
 - IDE and Web Dev Tools
 - SQL
@@ -24,15 +15,13 @@ _Quick answer: _This requires us to tunnel from our machine to the webserver and
 
 Lets take a look on how we can accomplish this:
 
-<!-- more -->**Get Putty**
+**Get Putty**
 
 [Download Putty Here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).   PuTTY is a free implementation of Telnet and SSH for Win32 and Unix platforms, along with an `xterm` terminal emulator.
 
 **Configure a new SSH connection in Putty**
 
 We need to make a new connection in putty and configure it to do tunneling.
-
-
 
 	
   1. [![1.jpg](http://aaronsaray.com/blog/wp-content/uploads/2007/10/1.thumbnail.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2007/10/1.jpg) Create a connection to your webserver with the SSH protocol and proper port.

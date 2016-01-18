@@ -25,7 +25,7 @@ $router->addDefaultRoutes();
 foreach ($router->getRoutes() as $key=>$route) {
   $router->addRoute('hostname' . $key, $hostnameRoute->chain($route));
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

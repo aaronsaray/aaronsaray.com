@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-01-14 16:56:40+00:00
 layout: post
-slug: php-and-the-uuid
 title: PHP and the UUID
-wordpress_id: 293
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -20,7 +13,7 @@ My chosen UUID is V4 in PHP.  I checked out the [php.net/uniqid](http://php.net/
 
 
 
-### UUID is Hex
+#### UUID is Hex
 
 
 
@@ -29,10 +22,7 @@ So, lets make sure we fully understand our integer formats http://us2.php.net/ma
 The next thing I want to make sure is that PHP doesn't convert my hex to something base 10 - so lets format it properly with the sprintf() function.  Note the description of the last parameter:
 
 
-
-<blockquote>
-x - the argument is treated as an integer and presented as a hexadecimal number (with lowercase letters).
-</blockquote>
+    x - the argument is treated as an integer and presented as a hexadecimal number (with lowercase letters).
 
 
 
@@ -40,58 +30,44 @@ Excellent!  So, now we can deal with Hex solely - and PHP is amazing because any
 
 
 
-### The basic format of the UUID
+#### The basic format of the UUID
 
 
 
 The basic format of the UUID - and I'm talking real basic - is:
 
-########-####-####-############ where # is a hexadecimal number.
+    ########-####-####-############ where # is a hexadecimal number.
 
 Of course, those nodes actually mean something (per the rfc):
 
 UUID = time-low "-" time-mid "-" time-high-and-version "-" clock-seq-and-reserved clock-seq-low "-" node
 
 
-
-### What makes this v4?
-
-
+#### What makes this v4?
 
 RFC states:
 
 
+    The version 4 UUID is meant for generating UUIDs from truly-random or pseudo-random numbers.
 
-<blockquote>
- The version 4 UUID is meant for generating UUIDs from truly-random or pseudo-random numbers.
-
-   The algorithm is as follows:
-
-   o  Set the two most significant bits (bits 6 and 7) of the clock_seq_hi_and_reserved to zero and one, respectively.
-
-   o  Set the four most significant bits (bits 12 through 15) of the time_hi_and_version field to the 4-bit version number from Section 4.1.3.
-
-   o  Set all the other bits to randomly (or pseudo-randomly) chosen values.
-</blockquote>
-
+    The algorithm is as follows:
+    
+    o  Set the two most significant bits (bits 6 and 7) of the clock_seq_hi_and_reserved to zero and one, respectively.
+    
+    o  Set the four most significant bits (bits 12 through 15) of the time_hi_and_version field to the 4-bit version number from Section 4.1.3.
+    
+    o  Set all the other bits to randomly (or pseudo-randomly) chosen values.
 
 
 And 4.1.3 states the binary value of this:
 
-
-
-<blockquote>
-0     1     0     0       version 4: The randomly or pseudo-randomly generated version specified in this document.
-</blockquote>
-
+    0     1     0     0       version 4: The randomly or pseudo-randomly generated version specified in this document.
 
 
 So, what that all means is that we need to set those bits properly in each sub section after we've generated our random number - doesn't sound so bad.  Just use the bitwise operator.
 
 
-
-### PHP and generating the random number
-
+#### PHP and generating the random number
 
 
 Ok - first off, lets generate some random numbers with mt_rand().  The middle two sections are not a problem what so ever... we'll use use
@@ -106,34 +82,31 @@ Ok - first off, lets generate some random numbers with mt_rand().  The middle tw
 However, what about the next bigger one, the 8 digit one?  Well, I'm using a windows machine in 32 bit - so I did a bit of math here:
 
 
+{% highlight PHP %}
+<?php
+var_dump(0xffffffff);
+print mt_getmaxrand();
+{% endhighlight %}
     
-    
-    var_dump(0xffffffff);
-    print mt_getmaxrand();
-    
-
-
 
 Outputs were: 4294967295 and 2147483647 respectively, so I know we'll have to break that up.  Basically, we'll use 2 random numbers dash one random dash one random dash three random numbers.  sprintf will take care of the padding.
 
 
-
-### Ok, putting it all together
+#### Ok, putting it all together
 
 
 
 The best example of all of this - and what I used to kind of reverse-engineer for this article, was from the PHP manual, check it out:
 
 
-    
-    
-    sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-            mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
-            mt_rand( 0, 0x0fff ) | 0x4000,
-            mt_rand( 0, 0x3fff ) | 0x8000,
-            mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ) );
-    
-
+{% highlight PHP %}
+<?php
+sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
+        mt_rand( 0, 0x0fff ) | 0x4000,
+        mt_rand( 0, 0x3fff ) | 0x8000,
+        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ) );
+{% endhighlight %}
 
 
 Simple enough, proper sprintf format, all the random number generators in place, and then the bitwise operators to set the bits properly.

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-09-14 20:26:40+00:00
 layout: post
-slug: how-does-google-maps-api-present-location-on-whatscloseto-me
 title: How does Google Maps API present location on whatscloseto.me
-wordpress_id: 699
-categories:
-- Misc Web Design
 tags:
 - Misc Web Design
 ---

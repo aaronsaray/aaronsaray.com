@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-03-01 01:24:51+00:00
 layout: post
-slug: network-site-jemdiarycom-updated
 title: Network Site JEMDiary.com updated
-wordpress_id: 104
-categories:
-- news
 tags:
 - news
 ---

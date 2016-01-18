@@ -1,16 +1,9 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-12 02:42:13+00:00
 layout: post
-slug: show-the-right-files-in-php-explorer
 title: Show the right files in PHP Explorer
-wordpress_id: 48
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
 tags:
 - Eclipse PDT
+- IDE and Web Dev Tools
 ---
 
 After I installed Eclipse PDT, I had two project navigators.  I closed the native one and kept open the PHP Explorer.  PHP Explorer showed my php, css, js, etc, files.  It also puts a plus sign to the left of the filenames.  Using this view, we can expand the file to see the classes and functions inside of the file without opening it.
@@ -23,6 +16,6 @@ First, I unchecked my option .* files.  This fixed the issue - I was able to see
 
 I checked the box saying "name filter patterns" and put in the following string:
 
-**.cache, .settings, .svn, .project, .projectOptions**
+    **.cache, .settings, .svn, .project, .projectOptions**
 
 This seemed to do it for me.

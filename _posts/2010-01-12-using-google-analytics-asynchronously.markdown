@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-01-12 00:35:07+00:00
 layout: post
-slug: using-google-analytics-asynchronously
 title: Using Google Analytics Asynchronously
-wordpress_id: 537
-categories:
-- javascript
 tags:
 - google
 - javascript

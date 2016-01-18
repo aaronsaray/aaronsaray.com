@@ -1,16 +1,9 @@
 ---
-author: aaron
-comments: true
-date: 2007-06-26 03:08:55+00:00
 layout: post
-slug: when-to-be-oop-and-how-much-lesson-learned
 title: When to be OOP - and how much... Lesson Learned!
-wordpress_id: 16
-categories:
-- PHP
-- Website Monitoring Project
 tags:
 - PHP
+- Website Monitoring Project
 ---
 
 I just finished reading a snippet of a book about design patterns - of which Strategy, Adapter, Decorator and others were discussed.  It got me to thinking about my design patterns that I used in JEMDiary - and what I'll be using in this project.
@@ -19,7 +12,7 @@ The trouble comes when you start trying to figure out how implicit and explicit 
 
 Well here is what I'm going to do...
 
-<!-- more --> In JEMDiary, I started with my first MVC architecture.  I learned alot about separating business logic, display and navigation/redirection or "control".
+In JEMDiary, I started with my first MVC architecture.  I learned alot about separating business logic, display and navigation/redirection or "control".
 
 I ended up making a few core classes - which in hindsight should have been abstract classes - but they were just base classes.  Then, I extended each of those to be more specific, but still worker classes.  So, all of my database classes extended the main DB class, blah blah blah.  I re-invented the wheel, and basically had my own PEAR classes (but in this particular case they extended PDO ;)).
 
@@ -29,24 +22,22 @@ There was another directory called MVC.  Inside of here, every single main model
 
 So, an example of our write.php class could be a filename of ('/view/browser/write.php')
 
-    
-    $write = new JEMDiaryWrite_view_browser();
-    echo $write->output();
-
+{% highlight PHP %}
+<?php
+$write = new JEMDiaryWrite_view_browser();
+echo $write->output();
+{% endhighlight %}
 
 So, the model classes all had protected methods and variables... and were known to be extended by the view classes.  So, if our title of our module was set, it'd be set in model as a protected attribute and accessed through $this because we extended it.  So, it wasn't weird to end up seeing a class definition such as:
 
-    
-    class JEMDiaryWrite_view_browser extends JEMDiaryWrite
-
+{% highlight PHP %}
+<?php
+class JEMDiaryWrite_view_browser extends JEMDiaryWrite
+{% endhighlight %}
 
 The issue came from when I wanted to show the profile information in the read pages.  I had a read page display... but we can only extend one class at a time with PHP - so I wasn't able to extend the profile logic.  Instead, I had to create my own version of the profile object inside of the read view... - this was just stupid and redundant.
 
-
-
-### What could I have done better?  What will I do for this new project?
-
-
+##### What could I have done better?  What will I do for this new project?
 
 Well, I got 'protected-happy'... I wanted to protect everything all the time... which is an OK idea, but hard in concept.  One of the patterns I was just reading about was using data objects all the time.  So instead of having some protected array attributes, keep the logic private, but then create public objects.  This way they can have their attributes public, but not be coupled to the actual logic.  They can also "take responsibility" by having their own methods... Why is this important?  Take for example a row returned from a database.  It has a timestamp in mysql.  You may want to create this as a unix_timestamp.  You could create a new data object which would have this as one of its methods - so it could internally take control of that for you.
 

@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-01-23 15:14:54+00:00
 layout: post
-slug: eclipse-pdt-integrating-apache-bench-for-load-testing
 title: 'Eclipse PDT: Integrating Apache Bench for load testing'
-wordpress_id: 336
-categories:
-- apache
-- Eclipse PDT
-- IDE and Web Dev Tools
 tags:
 - apache
 - Eclipse PDT
@@ -18,40 +9,40 @@ tags:
 
 When I use an IDE, I expect for it to do everything I need for my project, from start to finish.  As you may have read in earlier entries, I enjoy using Eclipse PDT.  I think its time to include load testing into my arsenal of tools inside of eclipse.  I'm going to focus on apache's AB for this article.
 
-<!-- more -->
-
-
-
-### ab - a quick summary of some of the features
+#### ab - a quick summary of some of the features
 
 
 
 [ab](http://httpd.apache.org/docs/2.0/programs/ab.html) is a pretty versatile tool for load testing that comes with the standard apache http webserver install.  In order to get the best usage out of this tool, you should read up on the online manual.  However, we're going to cover a few of the features that are part of this demonstration here.
 
 **-c  Concurency**
+
 Number of requests to perform at one time.  This defaults to 1.  I tend to bump this up a bit in order to simulate a high traffic period.
 
 **-k  Keep Alive**
+
 Enable the HTTP keepAlive feature.  Default is no keep alive.  To do standard testing, you will want to keep this disabled.
 
 **-n  Number of Requests**
+
 The number of requests to do during this session.  Default is 1, so you PROBABLY want to create a higher number here.  Remember that the number of requests will be split accross your concurency setting.
 
 **-t timelimit**
+
 Instead of specifying a -n amount (with this option, it actually says '50,000' requests), you can specify an amount of time to test the requests.
 
 Well, there you have it.  Just the few top options that you need.  Now, lets look into eclipse.
 
 
 
-### Eclipse PDT - Add an External Tool
+#### Eclipse PDT - Add an External Tool
 
 
 In order to accomplish this task, we're going to have to create an external tool in Eclipse.  Remember, the output of the external tools gets routed to the console in eclipse, so its still all encapsulated in the IDE.
 
 
 
-#### First, Open External Tools Dialog
+##### First, Open External Tools Dialog
 
 
 After starting Eclipse PDT:
@@ -61,7 +52,7 @@ After starting Eclipse PDT:
 
 
 
-#### Configure the Program call External Tools
+##### Configure the Program call External Tools
 
 
 **Double click the Program Menu item.**
@@ -71,15 +62,17 @@ This new screen will bring up the external tools menu items.  So far, I've named
 
 
 
-#### Configuring the command line arguments
+##### Configuring the command line arguments
 
 
 For this setup, I'm going to stick with concurrency and with number of requests.  You may want to swap out the -n option with the -t.
 
 **Add in the -c argument.**
+
 You'll notice that you have the option to click on variables.  Eclipse has the ability to prompt for variables, so we'll set these settings interactively.  (You may find that you will end up creating some standard tests that do not require prompting, but for this exercise we're going to make it very interactive.)
 
 **Click the Variables button.**
+
 **Scroll down until you see string_prompt and select it.**  You'll notice that the arguments that you can specify are the prompt text and the default value.  **Fill in your prompt text and default value separated by a colon in the arguments box.**
 
 [![3](http://aaronsaray.com/blog/wp-content/uploads/2009/01/3-140x150.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2009/01/3.jpg)
@@ -96,7 +89,7 @@ You'll notice that you have the option to click on variables.  Eclipse has the a
 
 
 
-#### Running your External Program the First Time
+##### Running your External Program the First Time
 
 
 

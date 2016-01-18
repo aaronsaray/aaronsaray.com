@@ -24,7 +24,7 @@ This is the first time that I used an apple-touch icon and an open graph image. 
 
 {% highlight HTML %}
 <meta content="http://name-tag.me/apple-touch-icon.png" property="og:image">
-{% endhighlight %}    
+{% endhighlight %}
 
 Mod_expires / mod_deflate
 
@@ -63,7 +63,7 @@ Because there were specific layout elements in place here (and they had to work 
 <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -98,7 +98,7 @@ I defined the font I wanted to use using a utility called FontSquirrel:
     font-weight: normal;
     font-style: normal;
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -107,7 +107,7 @@ Then later, defiend it in the font-family declaration:
 
 {% highlight CSS %}
 font-family: DesyrelRegular, tahoma, verdana, arial, sans-serif;
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -123,7 +123,7 @@ header("Content-Description: File Transfer");
 header('Content-Disposition: attachment; filename="Hello My Name Is.png"');
 header("Content-Type: application/octet-stream");
 header("Content-Transfer-Encoding: binary");
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Lessons Learned

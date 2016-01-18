@@ -26,7 +26,7 @@ Here's an excerpt of the Ansible file.
 
 - name: install postfix
   apt: name=postfix state=present
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Of course, remember to copy over your required **postfix/main.cnf** file after you're done, too.

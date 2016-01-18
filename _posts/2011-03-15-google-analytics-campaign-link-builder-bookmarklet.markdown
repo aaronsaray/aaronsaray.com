@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-03-15 14:35:05+00:00
 layout: post
-slug: google-analytics-campaign-link-builder-bookmarklet
 title: Google Analytics Campaign Link Builder Bookmarklet
-wordpress_id: 861
-categories:
-- javascript
 tags:
 - javascript
 ---
@@ -21,26 +14,25 @@ So, here is the bookmarklet - feel free to drag it to your browser:
 
 For those of you who are more interested in the code, here is the uncompressed version:
 
-    
-    
-    function r(q,e,d)
-    {
-    	d = typeof(d) != "undefined" ? d : "";
-    	var x=prompt(q,d);
-    	if (x=="" && e) return r(q,e,d);
-    	if (x == null) throw new Error("Script exited");
-    	return x;
-    }
-    var l = r("Full URL of destination page:","URL Required", window.location),
-        p = {
-    	      "utm_source": r("Campaign source (referrer: google, citysearch, newsletter):", "Source required"),
-    		  "utm_medium": r("Campaign medium (cpc, banner, email):", "Medium required"),
-    		  "utm_term": r("Campaign term (identify the paid keyword):"),
-    		  "utm_content": r("Campaign content (used to differentiate ads):"),
-    		  "utm_campaign": r("Campaign name (product, promo code or slogan):","Campaign name required")
-    		},
-        t=[];
-    for (var d in p) t.push(encodeURIComponent(d) + "=" + encodeURIComponent(p[d]));
-    l += "?" + t.join("&");
-    alert(l);
-    
+{% highlight javascript %}
+function r(q,e,d)
+{
+    d = typeof(d) != "undefined" ? d : "";
+    var x=prompt(q,d);
+    if (x=="" && e) return r(q,e,d);
+    if (x == null) throw new Error("Script exited");
+    return x;
+}
+var l = r("Full URL of destination page:","URL Required", window.location),
+    p = {
+          "utm_source": r("Campaign source (referrer: google, citysearch, newsletter):", "Source required"),
+          "utm_medium": r("Campaign medium (cpc, banner, email):", "Medium required"),
+          "utm_term": r("Campaign term (identify the paid keyword):"),
+          "utm_content": r("Campaign content (used to differentiate ads):"),
+          "utm_campaign": r("Campaign name (product, promo code or slogan):","Campaign name required")
+        },
+    t=[];
+for (var d in p) t.push(encodeURIComponent(d) + "=" + encodeURIComponent(p[d]));
+l += "?" + t.join("&");
+alert(l);
+{% endhighlight %}

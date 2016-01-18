@@ -52,7 +52,7 @@ $('input[data-checkall-control]').each(function(){
         }
     });
 });
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -84,4 +84,4 @@ Here is an example of the input boxes that this would control.
         <th>Value 4</th>
     </tr>
 </table>
-{% endhighlight %}    
+{% endhighlight %}

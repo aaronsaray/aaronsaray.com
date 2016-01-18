@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-05 18:28:13+00:00
 layout: post
-slug: unobtrusive-js-to-stop-form-submission
 title: Unobtrusive JS to stop form submission
-wordpress_id: 31
-categories:
-- javascript
 tags:
 - javascript
 - YUI
@@ -17,37 +10,32 @@ On one of the sites at ("the triangle"), one of the programmers on my team had t
 
 Such good progress on separation of logic and markup, until now.  Well, I wasn't going to let this one sit.  While I can't make the changes to this code now (the site is in QA/integration), I can detail out how I would fix it... here's how:
 
-<!-- more -->To handle our form validation, we've previously been doing something like this:
+To handle our form validation, we've previously been doing something like this:
 
+{% highlight HTML %}
+<script type="text/javascript">
+function validate(formObject)
+{
+  /** logic - and our form failed**/
+  return false;
+}
+</script>
     
-    ...
-    <script type="text/javascript">
-    function validate(formObject)
-    {
-      /** logic - and our form failed**/
-      return false;
-    }
-    </script>
-    ...
-    <form action="login.php" onsubmit="return validate(this)" id="login" method="post">
-    ...
-
-
+<form action="login.php" onsubmit="return validate(this)" id="login" method="post">
+{% endhighlight %}
 
 We were doing pretty good with this example, except for that last onsubmit.  I want to take that action out of the markup.  After surfing around on google for a while and checking you the YUI library more, I found the stopEvent method in the event class.  This will be particularly useful because we're already using the YUI on this project.  This is how I put this into play:
 
-
+{% highlight javascript %}
+function validate(e)
+{
+    /** logic that fails **/
+    YAHOO.util.Event.stopEvent(e);
+}
+YAHOO.util.Event.addListener('someform','submit',validate);
+{% endhighlight %}
     
-    
-    function validate(e)
-    {
-      /** logic that fails **/
-       YAHOO.util.Event.stopEvent(e);
-    }
-    YAHOO.util.Event.addListener('someform','submit',validate);
-    
-
-
 
 Yay - success!  We were able to stop the event with this built in call from YUI.  Any future programming on that site will use that logic.
+
 (ps: sad note - I have the same issues on my own sites, so its not one specifically related to my work at ("the triangle").)

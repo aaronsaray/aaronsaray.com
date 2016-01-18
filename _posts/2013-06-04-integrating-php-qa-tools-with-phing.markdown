@@ -165,7 +165,7 @@ Let me post the phing build file, and then I'll go through step by step:
         </exec>
     </target>
 </project>
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

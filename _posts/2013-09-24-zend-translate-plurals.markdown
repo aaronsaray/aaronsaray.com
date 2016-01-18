@@ -17,7 +17,7 @@ But for those too lazy to click through...
 {% highlight PHP %}
 $translate = new Zend_Translate($options);
 echo $translate->translate(array('chicken', 'chickens', $numberOfChickens));
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Yup.  Very simple.  

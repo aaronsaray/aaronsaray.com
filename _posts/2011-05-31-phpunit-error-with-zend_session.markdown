@@ -25,7 +25,7 @@ Instead, add the following line:
 {% highlight PHP %}
 <?php
 Zend_Session::$_unitTestEnabled = true;
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

@@ -1,44 +1,28 @@
 ---
-author: aaron
-comments: true
-date: 2009-11-02 15:52:21+00:00
 layout: post
-slug: firebug-for-internet-explorer
 title: Firebug for Internet Explorer
-wordpress_id: 488
-categories:
-- IDE and Web Dev Tools
 tags:
 - IDE and Web Dev Tools
 ---
 
 During the creation of my websites, I develop solely in Firefox.  When it comes to testing, I run it through [IE tester](http://my-debugbar.com/wiki/IETester/HomePage).  One thing that I really miss is my [Firebug](http://getfirebug.com/).
 
-
-
-### Enter Firebug Lite
-
+#### Enter Firebug Lite
 
 Firebug Lite is a stripped down version of Firebug.  For the details of the current release, look at the [firebug lite features](http://getfirebug.com/lite.html).
 
 For my code, I decided to only include the firebug lite code from their distribution when not in production.  This is how I do it in my code:
 
-
-    
-    
-    if (!ENVIRONMENT_LIVE && strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false) {
-        echo '<script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js" type="text/javascript"></script>';
-    }
-    
-
-
+{% highlight PHP %}
+<?php
+if (!ENVIRONMENT_LIVE && strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false) {
+    echo '<script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js" type="text/javascript"></script>';
+}
+{% endhighlight %}
 
 In this case, whenever the code is not in production and the agent is a version of Internet Explorer, the code is loaded.
 
-
-
-### Issues with Firebug Lite
-
+#### Issues with Firebug Lite
 
 Regular Firebug has spoiled me.  The lite version has a few issues:
 

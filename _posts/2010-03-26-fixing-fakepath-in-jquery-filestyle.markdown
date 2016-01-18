@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-03-26 19:25:15+00:00
 layout: post
-slug: fixing-fakepath-in-jquery-filestyle
 title: Fixing c:\fakepath in filestyle jquery plugin
-wordpress_id: 574
-categories:
-- javascript
-- jquery
 tags:
 - javascript
 - jquery
@@ -20,24 +12,18 @@ As a quick fix, however, I made the following changes to FileStyle:
 
 **BEFORE**
 
-    
-    
-    //snip
-                $(self).bind("change", function() {
-                    filename.val($(self).val());
-                });
-    
-    //snip
-    
-
-
+{% highlight javascript %}
+$(self).bind("change", function() {
+    filename.val($(self).val());
+});
+{% endhighlight %}
 
 **AFTER**
 
-    
-    
-                $(self).bind("change", function() {
-                	var s = $(self).val().replace(/(c:\\)*fakepath/i, '');
-                    filename.val(s);
-                });
+{% highlight javascript %}
+$(self).bind("change", function() {
+    var s = $(self).val().replace(/(c:\\)*fakepath/i, '');
+    filename.val(s);
+});
+{% endhighlight %}
     

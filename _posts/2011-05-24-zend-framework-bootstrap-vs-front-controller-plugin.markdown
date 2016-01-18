@@ -33,7 +33,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
   }
   // ...
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -53,7 +53,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
   }
   // ...
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -74,7 +74,7 @@ class Application_Plugin_ViewSettings extends Zend_Controller_Plugin_Abstract
     $view->prependStylesheet('/css/main.css');
   }
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

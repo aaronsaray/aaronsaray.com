@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-21 23:13:30+00:00
 layout: post
-slug: master-the-run-as-option-in-eclipse-pdt-with-php
 title: Master the 'Run As' option in Eclipse PDT with PHP
-wordpress_id: 58
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- PHP
 tags:
 - Eclipse PDT
 - IDE and Web Dev Tools
@@ -17,8 +8,6 @@ tags:
 ---
 
 Most of my development in Eclipse PDT with the results tested outside of it - using firefox.  PDT has a few options in the Run... menu:
-
-
 
 	
   * PHP Script
@@ -32,8 +21,9 @@ Most of my development in Eclipse PDT with the results tested outside of it - us
 
 So, lets take some time to look into how each one of these works, what are their configurations and what could be the benefit of using one above the other.
 
-<!-- more -->
+
 _Quick Note: unfortunately, wordpress kept eating the back slashes in this entry... sorry!_
+
 **First Things First - We're not covering debugging**
 
 One of the biggest reasons to use Eclipse PDT's built in 'run as...' option would be for local debugging (and also possibly remote debugging for one of the options...).  However, we're going to skip past this feature (I will be writing more on it a different posting), and just examine the PHP script's behavior.  I want to know how the script responds and what environment/information I have available.  And of course - we want to make sure that we're going to be using a predictable interpreter for our PHP - no testing will make sense if its a different interpreter than we plan to run it with.
@@ -53,22 +43,24 @@ The last thing I'm checking is the [php version](http://us2.php.net/manual/en/fu
 
 Lets move on to the script:
 
-    
-    ";
-    
-    print "_SERVER: ";
-    var_dump($_SERVER);
-    print "\n<br></br>";
-    
-    print "_ENV: ";
-    var_dump($_ENV);
-    print "\n<br></br>";
-    
-    print "phpversion():";
-    print phpversion();
-    
-    ?>
-
+{% highlight PHP %}
+<?php
+/**
+ * my test script to run in eclipse
+ */
+print "PHP_SAPI: " . PHP_SAPI . "\n<br />";
+ 
+print "_SERVER: ";
+var_dump($_SERVER);
+print "\n<br />";
+ 
+print "_ENV: ";
+var_dump($_ENV);
+print "\n<br />";
+ 
+print "phpversion():";
+print phpversion();
+{% endhighlight %}
 
 Nice and simple and sweet.
 
@@ -400,9 +392,10 @@ Sure enough, everything from 'web browser output' echoed to the console.
 
 Well, how can I get messages to the console?  The next thing I tried was generating an error... well an E_NOTICE actually:
 
-    
-    echo $testvar;
-
+{% highlight PHP %}
+<?php
+echo $testvar;
+{% endhighlight %}
 
 I added that to the bottom.  Sure enough, our output is the same in the Browser Output, but the console has this:
 

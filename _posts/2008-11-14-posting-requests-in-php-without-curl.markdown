@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-11-14 20:28:51+00:00
 layout: post
-slug: posting-requests-in-php-without-curl
 title: Posting Requests in PHP without CURL
-wordpress_id: 262
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -16,40 +9,31 @@ Can it be done? YES!  Luckily, functions like file_get_contents() support stream
 
 In this example, I want to post to my form my login credentials of username "aaron" and password "chicken".  This will be posting to the URL of http://test.com/login.do.php.  I'll show the code first, and then lets talk about what it does.
 
+{% highlight PHP %}
+<?php
+$args = array ('username'=>'aaron', 'password'=>'chicken');
+$uri = 'http://test.com/login.do.php';
 
+$opts = array('http'=>array('method'=>'POST', 'header'=>'Content-Type: application/x-www-form-urlencoded', 'content'=>http_build_query($args)));
 
+$context = stream_context_create($opts);
 
-    
-    
-    $args = array ('username'=>'aaron', 'password'=>'chicken');
-    $uri = 'http://test.com/login.do.php';
-    
-    $opts = array('http'=>array('method'=>'POST', 'header'=>'Content-Type: application/x-www-form-urlencoded', 'content'=>http_build_query($args)));
-    
-    $context = stream_context_create($opts);
-    
-    $result = file_get_contents($uri, false, $context);
-    
-    print $result;
-    
+$result = file_get_contents($uri, false, $context);
 
+print $result;
+{% endhighlight %}
 
-
-Lets disect line by line:
+Lets dissect line by line:
 
 The first line dealing with $args is setting up our post parameters.  The next line is our uri target.  If this was an HTML form, it might look like this:
 
-
-    
-    
-    <form action="http://test.com/login.do.php" method="POST">
-    Username: <input name="username"></input><br></br>
-    Password: <input name="password"></input><br></br>
-    <input type="submit"></input>
-    </form>
-    
-
-
+{% highlight HTML %}
+<form action="http://test.com/login.do.php" method="POST">
+Username: <input name="username"></input><br></br>
+Password: <input name="password"></input><br></br>
+<input type="submit"></input>
+</form>
+{% endhighlight %}
 
 The next line is the $opts array.  This will be the options that we send to the stream context.  The array is keyed by the type of stream we're creating here - in this case 'http'.  This points to an array of options.  First, the method of the request, in this case "POST".  Next, the header that must be sent in order to submit the request.  For the most part, your browser handles sending this - but we have to specify it here.  It simply is keying the request to let it know that its a form submission.  The final key is the content key - which is what is submitted in a typical request below the headers.  Here we're using PHP's http_build_query() to save ourselves some time.
 

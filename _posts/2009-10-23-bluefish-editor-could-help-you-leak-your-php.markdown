@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-10-23 19:06:41+00:00
 layout: post
-slug: bluefish-editor-could-help-you-leak-your-php
 title: Bluefish Editor could help you leak your PHP!
-wordpress_id: 453
-categories:
-- IDE and Web Dev Tools
-- PHP
 tags:
 - ide and
 - IDE and Web Dev Tools
@@ -18,8 +10,9 @@ tags:
 The [BlueFish](http://bluefish.openoffice.nl/index.html) editor is a primarily linux based visual editor for various web languages.  Visit the site for more...
 
 One thing I had noticed about a few projects I was working on was the presence of files named things like:
-index.php~
-settings.php~
+
+    index.php~
+    settings.php~
 
 After opening them up, I noticed that they were straight PHP code.  The settings file particularly was intriguing - as it had db credentials in it.  These were in our deployment... so anyone who surfed to http://domain.com/settings.php~ could see our code.  Not good.
 

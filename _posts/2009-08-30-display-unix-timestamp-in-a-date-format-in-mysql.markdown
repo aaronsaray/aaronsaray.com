@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-08-30 20:03:31+00:00
 layout: post
-slug: display-unix-timestamp-in-a-date-format-in-mysql
 title: Display unix timestamp in a date format in MySQL
-wordpress_id: 333
-categories:
-- mysql
 tags:
 - mysql
 ---

@@ -65,7 +65,7 @@ class Application_Form_Test extends Zend_Form
         ));
     }
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -86,7 +86,7 @@ echo '<a href="/help.html" target="_blank">Need help?</a>';
 
 $errors = $this->element->getMessages();
 if (!empty($errors)) echo $this->formErrors($this->element->getMessages());
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

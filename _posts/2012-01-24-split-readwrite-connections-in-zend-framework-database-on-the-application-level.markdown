@@ -77,7 +77,7 @@ class Application_Model_SplitReadWriteDatabaseConnection extends Zend_Db_Table_A
         $this->_readDB = null;
     }
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -108,7 +108,7 @@ $this->bootstrap('db');
 $db = $this->getResource('db');
 Zend_Registry::set('DbWriteConnection', $db);
 return $db;
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

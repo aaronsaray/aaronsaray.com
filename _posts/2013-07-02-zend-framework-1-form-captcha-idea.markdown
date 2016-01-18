@@ -12,7 +12,7 @@ In a Zend_Form, we might do this:
 {% highlight PHP %}
 $captcha = new Application_Validate_CaptchaHiddenField();
 $this->addElement('captcha', 'userdetect', array('captcha'=>$captcha));
-{% endhighlight %}    
+{% endhighlight %}
 
 To create this empty captcha field, our validator looks like this:
 
@@ -42,7 +42,7 @@ class Application_Validate_CaptchaHiddenField extends Zend_Captcha_Word
         return '';
     }
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Basically, what this does is generate a blank word - and not put any rendered design around the form field.  So, as captchas go, if the entered item does not match the generated word, it fails.  In this case, the entered item (anything) doesn't match "" (nothing), so it would fail.

@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-05 02:25:57+00:00
 layout: post
-slug: security-issue-with-subversion-deployment
 title: Security Issue with Subversion Deployment?
-wordpress_id: 30
-categories:
-- apache
-- svn
 tags:
 - apache
 - svn
@@ -16,7 +8,7 @@ tags:
 
 I use Subversion (SVN) for source control and deployment both for JEMDiary and at ("the triangle"). While working on my local copy of one of the websites, I got to thinking about the .svn folder and all of its files.  The .svn folder is a local cache/db of the file changes in order to support diffs, reverts, and to give cues about file changes and the need to commit.  I started poking around inside of the folder - and discovered the text-base folder.  Inside of there, every one of my recently changed files were in there with an extension of .svn-base.  Could this be a security issue - was I showing my code to the whole world?  Lets figure this out:
 
-<!-- more --> **Can I see the PHP content?**
+**Can I see the PHP content?**
 
 Well the very first thing I did was surf on my local apache instance to one of the files inside of that folder - and it executed the PHP code!  I actually thought I'd be able to see the content, but this still wasn't the best thing to see happen. (Its never a good thing when PHP files outside of your standard directory scheme and planning can execute... this should NEVER happen).  Ok - so there is a chance for an issue here - but I'm more curious on why its executing.
 
@@ -37,9 +29,9 @@ So how do we protect against our remnant .svn folder's content from being execut
 With our apache config, we should be able to deny access to the .svn directory.  We have two ways to finish this.  First, if you have access to your apache config file (or if you really really want to do this with your .htaccess file - although the apache config would be a better place to put it because it only gets parsed on startup - not every page load), use mod_access and do the following:
 
     
-    <code><directory>
-     Deny from all
-    </directory></code>
+    <directory>
+        Deny from all
+    </directory>
 
 
 The Directory directive, used with the tilde, allows for a sort of 'regular expression' (check the manual for more).  You could also use the DirectoryMatch directive.  With our current directive, we're going to throw the user into a 403 error.  No matter what url (website.com/.svn... or website.com/images/.svn...), they will all be denied.
@@ -47,7 +39,7 @@ The Directory directive, used with the tilde, allows for a sort of 'regular expr
 Another way to do this is to use a mod_rewrite rule - this way we can do a 404 or just redirect them to a nicer place.  Lets redirect the user back to the index page:
 
     
-    <code>RewriteRule .svn/* /</code>
+    RewriteRule .svn/* /
 
 
 **Either way you solve it, solve it!**

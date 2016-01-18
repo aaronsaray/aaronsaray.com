@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-01-11 16:45:56+00:00
 layout: post
-slug: zend_db-fill-in-multiple-placeholders
 title: Zend_db fill in multiple placeholders
-wordpress_id: 762
-categories:
-- zend framework
 tags:
 - zend framework
 ---
@@ -16,8 +9,8 @@ I've been using Zend_db to create a query which does a simple search on three co
 
 For example, see this statement:
 
-
-    
-    
-    $select->where('email like ? OR first_name like ? OR last_name like ?', array('%' . $q . '%'));
+{% highlight php %}
+<?php
+$select->where('email like ? OR first_name like ? OR last_name like ?', array('%' . $q . '%'));
+{% endhighlight %}
     

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-22 00:52:12+00:00
 layout: post
-slug: symbolic-linking-in-windows
 title: Symbolic Linking in Windows?
-wordpress_id: 59
-categories:
-- windows
 tags:
 - windows
 ---

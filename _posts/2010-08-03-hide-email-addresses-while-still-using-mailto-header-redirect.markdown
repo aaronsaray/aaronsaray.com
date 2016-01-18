@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-08-03 14:56:14+00:00
 layout: post
-slug: hide-email-addresses-while-still-using-mailto-header-redirect
 title: 'Hide Email Addresses while still using mailto: Header Redirect'
-wordpress_id: 669
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -16,29 +9,26 @@ Everyone I've spoken to recently no longer puts mailto:// links in their code fo
 
 Let's say you have the website http://blahblah.com - and on that website, user joe would like to have his email address of joe@blahblah.com accessible via a mailto:// link.  He doesn't want people to use a contact form - but doesn't want spam either.  I would form his e-mail link in the following manner:
 
-
-    
-    
-    And, if you would like to contact joe, you can <a href="email.php?user=joe">email joe</a> directly.
-    
-
+{% highlight HTML %}
+And, if you would like to contact joe, you can <a href="email.php?user=joe">email joe</a> directly.
+{% endhighlight %}
 
 
 The content of the PHP file would be the following:
 
     
-    
-    $user = isset($_GET['user']) ? $_GET['user'] : '';
-    
-    if ($user) {
-    	$email = $user . '@' . $_SERVER['SERVER_NAME'];
-    	header("Location: mailto://{$email}");
-    }
-    else {
-    	header('HTTP/1.0 404 Not Found');
-    }
-    
+{% highlight PHP %}
+<?php
+$user = isset($_GET['user']) ? $_GET['user'] : '';
 
+if ($user) {
+    $email = $user . '@' . $_SERVER['SERVER_NAME'];
+    header("Location: mailto://{$email}");
+}
+else {
+    header('HTTP/1.0 404 Not Found');
+}
+{% endhighlight %}
 
 
 This simply forms the proper e-mail address from the user get parameter and sends back a different redirect.  The thought is simple email scrapers will not detect it as an email address and will leave the 'link' alone.

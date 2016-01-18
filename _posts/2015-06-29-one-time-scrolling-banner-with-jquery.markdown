@@ -15,7 +15,7 @@ The mark-up is very simple.  Just a div, and a UL of terms:
 
 {% highlight html %}
 <div id="hero">Let's make software <ul id="scroller"><li>stream-lined.</li><li>effective.</li><li>simple.</li></ul></div>
-{% endhighlight %}    
+{% endhighlight %}
 
 Next, let's look at the very small amount of CSS required:
     
@@ -57,6 +57,6 @@ function scroller(element)
 }
 
 scroller($('#hero ul li:first-child'));
-{% endhighlight %}    
+{% endhighlight %}
 
 Let's look over the pieces here first.  (Just a reminder - if you're making a bigger project, you might want to encapsulate this functionality into a module.)  First, get a reference to the scoller UL.  Since the function is ran multiple times, I don't want to search for that item each time.  Next, call the scroller() function with an element: the first element in the scroller ul.  The function gets the next sibling, and if it exists, sets a time-out to animate it to the next position - afterwards it calls itself. (Yay recursion). 

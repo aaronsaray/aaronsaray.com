@@ -13,7 +13,7 @@ I was looking at mock objects in PHPUnit the other day and started to get confus
 {% highlight PHP %}
 <?php
 $myMock = $this->getMock('myObject');
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -26,7 +26,7 @@ Try this:
 {% highlight PHP %}
 <?php
 $myMock = $this->getMockBuilder('myObject')->setMethods(array('onlyMethodToMock'))->getMock();
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -37,7 +37,7 @@ Oh, and to make it easier, in PHP Unit 3.6, it's all built in as a second parame
 {% highlight PHP %}
 <?php
 $myMock = $this->getMock('myObject', array('onlyMethodToMock'));
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Sweet.

@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-09-01 14:23:11+00:00
 layout: post
-slug: useful-eclipse-plugin-find-a-file-name-in-project-immediately
 title: 'Useful Eclipse Plugin: Find a file name in project immediately'
-wordpress_id: 178
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
 tags:
 - Eclipse PDT
 - IDE and Web Dev Tools
@@ -16,18 +8,12 @@ tags:
 
 Unfortunately, at #superdev, there are times when the include_path in PHP is calculated.  It is not always clear where to find a file.  Other times there are just too many places to find the file.  Because of this - and Eclipse PDT's inability to find a file from an include or include_once statement when you ctrl click it, I needed to find a tool to find files fast.
 
-
-
-### Don't be Lazy - use 'Teh Google'
-
+#### Don't be Lazy - use 'Teh Google'
 
 So for the longest time, I would determine what classes or functions were being used from the included file, and then do a search of the code base for "function functionName()" because I knew it would find that file ... eventually.
 
 Well, turns out, there is a better way.
 
-
-
-### Goto File Eclipse Plugin
-
+#### Goto File Eclipse Plugin
 
 [![](http://aaronsaray.com/blog/wp-content/uploads/2008/08/screenshot-300x177.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2008/08/screenshot.jpg)I found this great plugin for eclipse: [GotoFile @ muermann.org](http://muermann.org/gotofile/).  I wish I had thought that this could be done - and searched earlier! heh.  Turns out this plugin adds a new menu to your search menu by which you can launch the dialog window.  Then, just start typing the name of the file and it live searches for you.  When you finally find it, just double click it - and it'll open up the file it found in your project.  It appears to work for any file in your project - which is amazing.  For more features and details, check out hte [GotoFile Eclipse Plugin Home Page](http://muermann.org/gotofile/).

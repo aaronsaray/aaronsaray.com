@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-02-23 16:18:35+00:00
 layout: post
-slug: securing-wordpress-what-my-oops-reminded-me
 title: Securing Wordpress - what my 'oops' reminded me
-wordpress_id: 90
-categories:
-- Misc Web Design
-- security
-- wordpress
 tags:
 - security
 - wordpress

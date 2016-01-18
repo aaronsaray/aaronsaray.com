@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-11-25 20:04:19+00:00
 layout: post
-slug: block-and-allow-ip-with-iptables-simple-script
 title: Block and Allow IP with iptables - simple script
-wordpress_id: 502
-categories:
-- linux
-- scripting
 tags:
 - linux
 - scripting
@@ -27,6 +19,7 @@ Usage for both of these is of course really simple.  Say 123.1.2.3 is the IP in 
 
 
 **blockip.sh**
+
 Blocks the IP using iptables
 
     
@@ -43,6 +36,7 @@ Blocks the IP using iptables
 
 
 **allowip.sh**
+
 Removes the entry from iptables
 
     

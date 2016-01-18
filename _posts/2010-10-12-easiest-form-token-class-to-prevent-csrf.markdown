@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-10-12 14:59:50+00:00
 layout: post
-slug: easiest-form-token-class-to-prevent-csrf
 title: Easiest Form Token class to prevent CSRF
-wordpress_id: 693
-categories:
-- PHP
-- security
 tags:
 - PHP
 - security
@@ -20,46 +12,45 @@ I've been using a very simple system with my sites.  This isn't meant to be the 
 
 So, let's check out the class:
 
+{% highlight PHP %}
+<?php
+class formtoken
+{
+    const FIELDNAME = 'tok';
+    const DO_NOT_CLEAR = FALSE;
 
-    
-    
-    class formtoken
+    public static function getField()
     {
-    	const FIELDNAME = 'tok';
-    	const DO_NOT_CLEAR = FALSE;
-    
-    	public static function getField()
-    	{
-    		$token = self::_generateToken();
-    		return "<input type="hidden" name="" . self::FIELDNAME . "" value="{$token}"></input>";
-    	}
-    
-    	public static function validateToken($request, $clear = true)
-    	{
-    		$valid = false;
-    		$posted = isset($request[self::FIELDNAME]) ? $request[self::FIELDNAME] : '';
-    
-    		if (!empty($posted)) {
-    			if (isset($_SESSION['formtoken'][$posted])) {
-    				 if ($_SESSION['formtoken'][$posted] >= time() - 7200) {
-    				 	$valid = true;
-    				 }
-    				 if ($clear) unset($_SESSION['formtoken'][$posted]);
-    			}
-    		}
-    
-    		return $valid;
-    	}
-    
-    	protected static function _generateToken()
-    	{
-    		$time = time();
-    		$token = sha1(mt_rand(0, 1000000));
-    		$_SESSION['formtoken'][$token] = $time;
-    		return $token;
-    	}
+        $token = self::_generateToken();
+        return "<input type="hidden" name="" . self::FIELDNAME . "" value="{$token}"></input>";
     }
-    
+
+    public static function validateToken($request, $clear = true)
+    {
+        $valid = false;
+        $posted = isset($request[self::FIELDNAME]) ? $request[self::FIELDNAME] : '';
+
+        if (!empty($posted)) {
+            if (isset($_SESSION['formtoken'][$posted])) {
+                 if ($_SESSION['formtoken'][$posted] >= time() - 7200) {
+                    $valid = true;
+                 }
+                 if ($clear) unset($_SESSION['formtoken'][$posted]);
+            }
+        }
+
+        return $valid;
+    }
+
+    protected static function _generateToken()
+    {
+        $time = time();
+        $token = sha1(mt_rand(0, 1000000));
+        $_SESSION['formtoken'][$token] = $time;
+        return $token;
+    }
+}
+{% endhighlight %}
 
 
 
@@ -78,14 +69,12 @@ Let's see how we might implement this.
 **formWeWantToTokenize.php**
 
     
-    
-    <form action="process.php" method="post">
-    <label>What is your name? <input name="name"></input></label>
-    <input type="submit"></input>
-    
-    </form>
-    
-
+{% highlight HTML %}
+<form action="process.php" method="post">
+<label>What is your name? <input name="name"></input></label>
+<input type="submit"></input>
+</form>
+{% endhighlight %}
 
 
 The only PHP call in this form is to formtoken::getField() which will return the hidden input with the generated token value.
@@ -94,11 +83,13 @@ Now, the processor must check that this is good to go:
 **process.php**
 
     
-    
-    if (formtoken::validateToken($_POST)) {
-     /** do other stuff **/
-    }
-    else {
-     die('The form is not valid or has expired.');
-    }
-    
+{% highlight PHP %}
+<?php
+if (formtoken::validateToken($_POST)) {
+    /** do other stuff **/
+}
+else {
+    die('The form is not valid or has expired.');
+}
+{% endhighlight %}
+

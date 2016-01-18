@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-10-07 21:48:52+00:00
 layout: post
-slug: how-desktopini-saved-me-from-myself
 title: How desktop.ini saved me from myself
-wordpress_id: 208
-categories:
-- windows
 tags:
 - windows
 ---

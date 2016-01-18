@@ -32,7 +32,7 @@ Now, we're going to change the way we assign messages in the controller.  Make a
 {% highlight PHP %}
 <?php
 $this->_helper->flashMessenger->addMessage(array('success'=>'The update was successful'));
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -63,7 +63,7 @@ class Zend_View_Helper_FlashMessages extends Zend_View_Helper_Abstract
         return $output;
     }
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -80,7 +80,7 @@ I technically put this call in my layout towards the top of my content:
 {% highlight PHP %}
 <?php
 echo $this->flashMessages();
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

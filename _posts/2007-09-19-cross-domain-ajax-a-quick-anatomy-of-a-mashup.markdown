@@ -1,17 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-09-19 20:40:07+00:00
 layout: post
-slug: cross-domain-ajax-a-quick-anatomy-of-a-mashup
 title: Cross Domain AJAX - A quick anatomy of a mashup
-wordpress_id: 75
-categories:
-- AJAX
-- apache
-- javascript
-- Misc Web Design
-- security
 tags:
 - AJAX
 - apache

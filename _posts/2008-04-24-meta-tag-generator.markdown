@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-04-24 23:44:16+00:00
 layout: post
-slug: meta-tag-generator
 title: Meta Tag Generator
-wordpress_id: 100
-categories:
-- html
-- open source
 tags:
 - html
 - open source

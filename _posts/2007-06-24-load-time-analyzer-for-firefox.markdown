@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-06-24 19:39:10+00:00
 layout: post
-slug: load-time-analyzer-for-firefox
 title: Load Time Analyzer for Firefox
-wordpress_id: 13
-categories:
-- IDE and Web Dev Tools
 tags:
 - IDE and Web Dev Tools
 - performance
@@ -18,8 +11,6 @@ So, I started looking at a few load time analyzers for my sites - and I found an
 My test site will be [JEMDiary](http://www.jemdiary.com) -  mainly because I know ALOT about it. ;)  I could have used a local website, I'm sure - but a remote site was going to give a better load time analysis.  JEMDiary's homepage is a static HTML file (generated periodically behind the scenes).  It loads a few external js and css files, and a set of images as well.  The images in the images directory send headers to cache themselves, and so do the css and js files (interestingly, if the front page had specific profile images, they would not be cached...)  At any rate, I wanted to test a fresh load on the site, and then a cached one - and see what I can determine from these load times.
 
 Lets go...
-
-<!-- more -->
 
 [Load Time Analyzer - Firefox Add-on.](https://addons.mozilla.org/en-US/firefox/addon/3371)
 
@@ -39,6 +30,4 @@ The important thing to notice is that you can determine state changes and indivi
 
 There was some confusion on all of the extra items that I could view.  There was also no documentation.  I did like the fact that I could click on the resources and view them myself as well.  The other thing I don't like is the fact that the results and times seem to add up.  I would like to be able to enable that feature, not have it the default behavior... sometimes you forget to reset the timer... so it becomes annoying.
 
-
-
-### So, all in all - it looks like some useful features, but it could take some work at making it more user-friendly.
+So, all in all - it looks like some useful features, but it could take some work at making it more user-friendly.

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-22 14:20:08+00:00
 layout: post
-slug: how-to-use-php-to-generate-downloadable-content
 title: How to use PHP to generate downloadable content
-wordpress_id: 61
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -16,11 +9,10 @@ I was looking at some code I had written about 3 years ago - how sad!  I was cre
 
 Instead, I should have done it the smart way - with the proper use of the header command.
 
-
-    
-    header('Content-type: application/pdf');
-    header('Content-Disposition: attachment; filename="filename.pdf"');
-    
-
+{% highlight PHP %}
+<?php
+header('Content-type: application/pdf');
+header('Content-Disposition: attachment; filename="filename.pdf"');
+{% endhighlight %}
 
 Of course, check out and read the entire header manual page for more.

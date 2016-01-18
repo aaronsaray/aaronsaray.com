@@ -17,7 +17,7 @@ In any view, the Zend View Helper 'escape' is available.  Whenever displaying us
 {% highlight PHP %}
 <?php
 echo '<p>Hello ' . $this->escape($user->getName()) . '!</p>';
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -39,7 +39,7 @@ $validators = array(
     'name'=> 'Alpha'
 );
 $filteredInput = new Zend_Filter_Input($filters, $validators, $_POST);
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

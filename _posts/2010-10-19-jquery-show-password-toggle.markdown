@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-10-19 14:21:23+00:00
 layout: post
-slug: jquery-show-password-toggle
 title: jQuery show password toggle
-wordpress_id: 697
-categories:
-- javascript
-- jquery
 tags:
 - javascript
 - jquery
@@ -22,45 +14,43 @@ For testing, I submit this HTML code.  (Note: the CSS for the password box is th
 
 
     
+{% highlight HTML %}
+<html>
+    <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        #password {
+            border: 1px solid #f00;
+        }
+    </style>
+    </head>
+    <body>
+        <input class="showpassword" type="password" name="password" id="password"></input>
+    </body>
+</html>
+{% endhighlight %}
     
-    <html>
-    	<head>
-    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-    	<style type="text/css">
-    		#password {
-    			border: 1px solid #f00;
-    		}
-    	</style>
-    	</head>
-    	<body>
-    		<input class="showpassword" type="password" name="password" id="password"></input>
-    	</body>
-    </html>
-    
-
-
 
 Now, the javascript is pretty simple.  Just find the class, grab the input, and add a checkbox after it.  The checkbox will then, once clicked, remove that input and add in the opposite input type.
-
-
     
-    
-    $(function(){
-    	$(".showpassword").each(function(index,input) {
-        	var $input = $(input);
-    		$('<label class="showpasswordlabel"></label>').append(
-    	      	$("<input type="checkbox" class="showpasswordcheckbox"></input>").click(function() {
-    	        	var change = $(this).is(":checked") ? "text" : "password";
-    	            var rep = $("<input type="" + change + ""></input>")
-    	                .attr("id", $input.attr("id"))
-    	                .attr("name", $input.attr("name"))
-    	                .attr('class', $input.attr('class'))
-    	                .val($input.val())
-    	                .insertBefore($input);
-    	            $input.remove();
-    	            $input = rep;
-    	         })
-    		).append($("<span></span>").text("Show password")).insertAfter($input);
-        });
+{% highlight javascript %}
+$(function(){
+    $(".showpassword").each(function(index,input) {
+        var $input = $(input);
+        $('<label class="showpasswordlabel"></label>').append(
+            $("<input type="checkbox" class="showpasswordcheckbox"></input>").click(function() {
+                var change = $(this).is(":checked") ? "text" : "password";
+                var rep = $("<input type="" + change + ""></input>")
+                    .attr("id", $input.attr("id"))
+                    .attr("name", $input.attr("name"))
+                    .attr('class', $input.attr('class'))
+                    .val($input.val())
+                    .insertBefore($input);
+                $input.remove();
+                $input = rep;
+             })
+        ).append($("<span></span>").text("Show password")).insertAfter($input);
     });
+});
+{% endhighlight %}
     

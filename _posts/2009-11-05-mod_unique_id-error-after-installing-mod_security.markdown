@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-11-05 17:17:10+00:00
 layout: post
-slug: mod_unique_id-error-after-installing-mod_security
 title: mod_unique_id error after installing mod_security
-wordpress_id: 493
-categories:
-- apache
 tags:
 - apache
 ---

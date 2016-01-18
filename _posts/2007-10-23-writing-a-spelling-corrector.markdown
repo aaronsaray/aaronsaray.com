@@ -1,12 +1,8 @@
 ---
-author: aaron
-comments: true
-date: 2007-10-23 15:03:35+00:00
 layout: post
-slug: writing-a-spelling-corrector
 title: Writing a Spelling Corrector
 wordpress_id: 79
-categories:
+tags:
 - programming
 ---
 

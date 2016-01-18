@@ -1,20 +1,13 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-19 21:29:36+00:00
 layout: post
-slug: a-better-understanding-of-error-reporting-in-php
 title: A Better Understanding of Error Reporting in PHP
-wordpress_id: 51
-categories:
-- PHP
 tags:
 - PHP
 ---
 
 While working on a website for ("the triangle"), I came to a page running locally that just stopped - blank.  This particular website was not using output buffering - so there is no excuse for a blank page.  For whatever reason (laziness, stupidity, thursdayness), I haven't checked my php.ini file for error reporting in the last few months... and for whatever reason a long time ago, I decided to go back to standard error reporting.  Well unfortunately, this means months of developing has gone by on this particular set of websites that I was possibly missing errors (nevermind everything has successfully went through QA...hrm...)  At any rate, I jumped out to PHP's website - eager and ready to copy a quick fix for my error reporting issue.  As I was getting ready to copy an error_reporting() line, I realized: I don't fully understand what I want to do here...Well, thats never good - copying code and not fully understanding it... so lets fix this.  Lets talk about error reporting.
 
-<!-- more -->**Where to error report**
+**Where to error report**
 
 First, error reporting can be set in three places: your php.ini file (which globally applies to all scripts that are ran with a php binary that uses that ini file), your apache configuration (httpd.conf, vhost container or .htaccess file which applies to those particular scripts ran under that instance of apache or vhost) and using the [error_reporting](http://php.net/error_reporting)() during your PHP script (which applies to that script as well as any included scripts during that one-time execution).
 
@@ -38,13 +31,19 @@ For those familiar with bitwise operators, the last paragraph probably seemed pr
 
 Well, as I said above, I'm assuming that you're not displaying errors on the production box, so we could - theoretically - use the same error reporting on the production box as well as the development box.  However, if you're handling alot of hits, writing alot of errors to the log file might start to overwhelm - so I would suggest using:
 
+{% highlight PHP %}
+<?php
 error_reporting(E_ALL)
+{% endhighlight %}
 
 It still reports all of the major errors, but it doesn't report errors such as notice and strict.  You should catch these during development... its not worth overloading your log files in live.  (HOWEVER - if you're using registered_globals = on, you should add in E_NOTICE to your error reporting.  It is possible that a script of yours could have an unset variable which gets set by a crafted post/get request - this would be a no - no.  If using registered_globals - which you shouldn't be - use the E_NOTICE on production too.)
 
 On the development box, this is without question - use all error reporting.  You need to know about every single error.  I'm of the opinion that code should never go to production in a state that PHP is able to report an error of it.  Use:
 
+{% highlight PHP %}
+<?php
 error_reporting(E_ALL | E_STRICT)
+{% endhighlight %}
 
 E_ALL is set and any thing that is E_STRICT is also set (as E_ALL doesn't include E_STRICT)
 
@@ -58,7 +57,9 @@ Well it might be necessary to write code that has limited backwards compatibilil
 
 From time to time, using 3rd party code, I've found that they will allow various E_STRICT and E_NOTICE errors to exist in their application.  Because we often update these code bases, I didn't want to go through and fix all of the code each time.  Instead, I put an .htaccess file in that directory (or you could use your httpd.conf file using the  attribute) with the following line:
 
-php_value error_reporting 6135
+
+    php_value error_reporting 6135
+    
 
 I got that value from printing out the value of E_ALL & ~E_NOTICE.
 

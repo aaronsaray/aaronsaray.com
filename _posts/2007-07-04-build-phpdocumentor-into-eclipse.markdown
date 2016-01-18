@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-04 22:58:23+00:00
 layout: post
-slug: build-phpdocumentor-into-eclipse
 title: Build PHPDocumentor into Eclipse
-wordpress_id: 29
-categories:
-- Eclipse PDT
-- PHP
 tags:
 - Eclipse PDT
 - PHP

@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-06-06 22:43:11+00:00
 layout: post
-slug: jemgames-launched
 title: JEMGames Launched
-wordpress_id: 140
-categories:
-- news
 tags:
 - news
 ---

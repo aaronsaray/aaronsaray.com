@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-06-03 01:40:16+00:00
 layout: post
-slug: php-script-configuration-class-with-logic-built-in
 title: PHP Script Configuration Class with Logic built in
-wordpress_id: 136
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -16,43 +9,39 @@ Sometimes we have static configuration options, such as the name of the company 
 
 For this article, I wanted to build on my previous article [here](http://aaronsaray.com/blog/2008/05/31/php-script-configuration-options-class-constants-or-mysql/), and make a config class that could still get all of this information from a static method, while making decisions to create accurate config options.
 
-<!-- more -->
-
 Ok, let's take a look at the code:
 
+{% highlight PHP %}
+<?php
+class config
+{
+    private static $instance = null;
 
-    
-    
-    class config
+    private static $item1 = 'item 1 value';
+
+    private static $item2 = '';
+
+    public static function get($item)
     {
-        private static $instance = null;
-    
-        private static $item1 = 'item 1 value';
-    
-        private static $item2 = '';
-    
-        public static function get($item)
-        {
-            if (is_null(self::$instance)) self::$instance = new self;
-    
-            return self::$$item;
+        if (is_null(self::$instance)) self::$instance = new self;
+
+        return self::$$item;
+    }
+
+    private function __construct()
+    {
+        if (true) {
+            self::$item2 = 'item2';
         }
-    
-        private function __construct()
-        {
-            if (true) {
-                self::$item2 = 'item2';
-            }
-            else {
-                self::$item2 = 'other value';
-            }
+        else {
+            self::$item2 = 'other value';
         }
     }
-    
-    print config::get('item2');
-    
+}
 
-
+print config::get('item2');
+{% endhighlight %}
+    
 
 We have a class called config that we can access our variables from with the get() static method.  Notice how this time, we cannot access the variables directly - we have to use the method - so this is an improvement.
 
@@ -66,4 +55,4 @@ Next, the get() method returns the variable name from the current class that was
 
 Finally, the constructor is private because it will only be called from the static get() function - which is a part of the class.  As you see in the constructor, any logic is done in order to populate the values up above.
 
-This is the type of configuration option I've been using going forward.  If there are any suggestions on how to make it more effecient, I'm all ears!
+This is the type of configuration option I've been using going forward.  If there are any suggestions on how to make it more efficient, I'm all ears!

@@ -14,7 +14,7 @@ $this->addElement('submit', 'submitbutton', array(
     'ignore'=>true,
     'label'=>'Submit This',
 ));
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -26,7 +26,7 @@ But, you'll notice you have both a DT and a DD from the standard view helpers of
 <?php
 $element = $this->getElement('submitbutton');
 $element->setDecorators(array('ViewHelper', array('HtmlTag', array('tag'=>'dd', 'id'=>$element->getName() . '-element'))));
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

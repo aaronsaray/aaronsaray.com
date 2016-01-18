@@ -26,7 +26,7 @@ class Application_Model_DbTable_User extends Zend_Db_Table_Abstract
 {
     protected $_name = 'user';
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 
@@ -47,7 +47,7 @@ class Application_Model_User
     return $this->firstName . ' ' . $this->lastName;
   }
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -72,7 +72,7 @@ class Application_Model_UserService
     return $user;
   }
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

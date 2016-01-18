@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-20 23:21:15+00:00
 layout: post
-slug: live-combined-error-reporting-for-apache-and-php-during-development
 title: Live Combined Error Reporting for Apache and PHP during Development
-wordpress_id: 52
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- scripting
 tags:
 - apache
 - Eclipse PDT
@@ -23,7 +14,7 @@ Another thing I knew would be nice to see would be the apache error log.  As I'm
 
 Luckily, I was able to find a utility that made life easier - and of course - integrates into eclipse.  Lets configure:
 
-<!-- more -->**The meat: a perl script**
+**The meat: a perl script**
 
 A perl script called logtail ([author's website](http://www.fourmilab.ch/webtools/logtail/):   - and [here is the file](http://aaronsaray.com/blog/wp-content/uploads/2007/07/logtailtar.gz) in case the website ever goes down), is used to enhance the 'last -f' command type output used on the *nix platform.  since I'm developing on Win32, I don't have the 'last -f' command natively - and was happy to see this perl script could run without it.  I installed w32 perl and was able to launch this script successfully.
 

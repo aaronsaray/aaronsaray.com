@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-04-05 14:39:04+00:00
 layout: post
-slug: count-lines-of-code-in-eclipse
 title: Count lines of code in Eclipse
-wordpress_id: 840
-categories:
-- Eclipse PDT
-- IDE and Web Dev Tools
 tags:
 - Eclipse PDT
 - IDE and Web Dev Tools

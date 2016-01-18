@@ -1,20 +1,11 @@
 ---
-author: aaron
-comments: true
-date: 2009-04-07 14:59:24+00:00
 layout: post
-slug: quick-reference-simple-mysql-performance-monitoring
 title: 'Quick Reference: Simple MySQL Performance Monitoring'
-wordpress_id: 317
-categories:
-- mysql
 tags:
 - mysql
 ---
 
 There are a few quick ways to monitor MySQL performance.  This isn't much of an in-depth reference, just a quick reminder.  Lets look:
-
-
 
 #### mysqladmin status
 
@@ -26,8 +17,6 @@ Shows a quick status:
     mysqladmin status
     Uptime: 102594  Threads: 1  Questions: 39  Slow queries: 0  Opens: 12  Flush tables: 1  Open tables: 0  Queries per second avg: 0.000
     
-
-
 
 
 

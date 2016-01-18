@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-02-22 16:12:16+00:00
 layout: post
-slug: jquery-form-plugin-does-not-submit-submit-buttons-named-submit
 title: jQuery form plugin does not submit submit buttons named submit
-wordpress_id: 847
-categories:
-- javascript
-- jquery
 tags:
 - javascript
 - jquery

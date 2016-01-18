@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-07-13 20:18:08+00:00
 layout: post
-slug: using-google-charts-to-make-qr-codes
 title: Using Google Charts to make QR Codes
-wordpress_id: 652
-categories:
-- javascript
-- jquery
-- Misc Web Design
 tags:
 - javascript
 - jquery
@@ -20,12 +11,9 @@ tags:
 
 To implement, I made a quick line of jQuery to generate my QR Codes.  Of course, I did this after the page loaded :)  My goal was to generate a QR code for the page that the user is currently viewing.  Pretty simple:
 
-
-    
-    
-    $("#qrImage").attr('src', 'http://chart.apis.google.com/chart?chs=150x150&cht;=qr&chl;=' + escape(window.location.href) + '&choe;=UTF-8');
-    
-
+{% highlight javascript %}
+$("#qrImage").attr('src', 'http://chart.apis.google.com/chart?chs=150x150&cht;=qr&chl;=' + escape(window.location.href) + '&choe;=UTF-8');
+{% endhighlight %}
 
 
 You can find all of the details and other parameters here: [http://code.google.com/apis/chart/docs/gallery/qr_codes.html](http://code.google.com/apis/chart/docs/gallery/qr_codes.html)

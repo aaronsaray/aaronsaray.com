@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-03-02 15:27:22+00:00
 layout: post
-slug: my-progression-through-forgot-passwords
 title: My Progression through Forgot Passwords
-wordpress_id: 298
-categories:
-- PHP
-- programming
-- security
 tags:
 - PHP
 - programming
@@ -20,31 +11,22 @@ I thought I'd take some time to look at the 3 main ways that I've handled forgot
 
 _Disclaimer: there is a lot of bad code in here - and thats on purpose!  This is a historical piece... :)_
 
-
-
-### The n00b Times: send the password back to them
-
-
+#### The n00b Times: send the password back to them
 
 The very first 'forgot password' attempt I made was a long time ago on a website about computer security.  This was really quite funny because this was the least secure way to do it.  Users would request their password, and I'd send them their password, in clear text, to their email.  Not very secure!  Side note: this means I had to be able to decrypt their passwords to send it back to them - and newbie me actually skipped that step - just a plain varchar of their password.  OOPS.
 
-
-
-### The non-scalable times: hash the time away
-
-
+##### The non-scalable times: hash the time away
 
 The next step in my programming mutuation was at least more secure: send the hash through email and let them reset their password.  This way, I never send their password through the email - and never actually stored it in a decrypt-able (is that a word?) state.  Of course, I did it wrong again:
 
 **Um, don't do this:**
 
+{% highlight PHP %}
+<?php
+mysql_query("Insert into resets (userID, key) values($userID, '" . md5(time()) . "');
+mail($to, 'Password reset', "Please click this link to reset your pass: http://website.com/resetpass.php?key=" . md5(time()));
+{% endhighlight %}
     
-    
-    mysql_query("Insert into resets (userID, key) values($userID, '" . md5(time()) . "');
-    mail($to, 'Password reset', "Please click this link to reset your pass: http://website.com/resetpass.php?key=" . md5(time()));
-    
-
-
 
 You DO see all the problems, right?
 
@@ -55,9 +37,7 @@ Of course, the next issue was that it was pretty easy to guess a password reset 
 Then, I didn't store the key - so theoretically, the first line could be a different time than the url that was sent to the user - especially if there was a high sql load!
 
 
-
-
-### Better Hash - not based out of Amsterdam
+##### Better Hash - not based out of Amsterdam
 
 
 
@@ -65,24 +45,20 @@ The next thing I realized was that I had to make this hash a bit more unique, so
 
 **still not good enough!**
 
-    
-    
-    $time = time();
-    $key = md5("{$userID}{$time}");
-    mysql_query("Insert into resets (userID, key) values($userID, '$key');
-    mail($to, 'Password reset', "Please click this link to reset your pass: http://website.com/resetpass.php?key=$key");
-    
-
+{% highlight PHP %}
+<?php
+$time = time();
+$key = md5("{$userID}{$time}");
+mysql_query("Insert into resets (userID, key) values($userID, '$key');
+mail($to, 'Password reset', "Please click this link to reset your pass: http://website.com/resetpass.php?key=$key");
+{% endhighlight %}
 
 
 At least I fixed the key - um - sorta.  However, if you knew the user id - you could at least make a better educated guess at this hash - especially if you knew the time was.  Point being, it was a step up, but not my final resting place.
 
 **Break: Some of you might wonder why I didn't just use a uniqid() and md5 that... well... yah... but we all make mistakes when we first start out right? ;)  Just trying to help out any new programmers not to make the same mistakes**
 
-
-
-### What are you doing now?
-
+##### What are you doing now?
 
 
 Ok - so for something thats pretty secure like that, I wanted to have a very long, extremely random string.  I thought of sending mt_rand()'s next to each other and hexadecimalling them - or md5ing them.  But I settled on something hopefully with even more of a chance not to be guessed: base64 encoding.
@@ -91,17 +67,15 @@ What?
 
 Well, let me show you.
 
-
+{% highlight PHP %}
+<?php
+$forEncode = '';
+for ($i=0; $i<300; $i++) {
+    $forEncode .= chr(rand(1,255));
+}
+$key = strtr(base64_encode($forEncode), '+/=', '-_.');
+{% endhighlight %}
     
-    
-    $forEncode = '';
-    for ($i=0; $i<300; $i++) {
-    	$forEncode .= chr(rand(1,255));
-    }
-    $key = strtr(base64_encode($forEncode), '+/=', '-_.');
-    
-
-
 
 Granted, I left out the mailing and mysql storage, but you get the idea.  Real quick, a run-down:
 

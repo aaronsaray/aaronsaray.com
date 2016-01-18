@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-04-24 23:34:22+00:00
 layout: post
-slug: php-shared-host-session-file-browser-script
 title: PHP Shared Host - Session File Browser Script
-wordpress_id: 98
-categories:
-- open source
-- PHP
-- security
 tags:
 - open source
 - PHP

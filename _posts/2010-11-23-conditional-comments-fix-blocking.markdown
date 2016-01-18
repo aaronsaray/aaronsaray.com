@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-11-23 18:09:52+00:00
 layout: post
-slug: conditional-comments-fix-blocking
 title: Conditional Comments - fix blocking
-wordpress_id: 711
-categories:
-- html
-- Internet Explorer
 tags:
 - html
 - internet explorer
@@ -22,11 +14,9 @@ Sweet read, huh?
 For those who aren't actually going to read it, conditional comments block downloads until it's done processing.  So, instead, start out your <head> with this:
 
 
+{% highlight html %}
+<!--[if IE]><![endif]-->
+{% endhighlight %}
     
-    
-    
-    
-
-
 
 After that, you should be home free.

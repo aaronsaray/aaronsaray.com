@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-04-24 23:45:36+00:00
 layout: post
-slug: js-tool-security-auditing-in-javascript
 title: JS Tool - Security Auditing in Javascript
-wordpress_id: 101
-categories:
-- javascript
-- security
 tags:
 - javascript
 - open source

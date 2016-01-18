@@ -15,4 +15,4 @@ jQuery.validator.addMethod("twitterhandle", function(value) {
          var result = pattern.test(value);
          return result;
     }, "Twitter handle only - no spaces, @, and not a URL.");
-{% endhighlight %}    
+{% endhighlight %}

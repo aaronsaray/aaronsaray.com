@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-08-23 18:36:36+00:00
 layout: post
-slug: using-eclipse-pdt-check-out-this-wiki
 title: Using Eclipse PDT? Check out this wiki
-wordpress_id: 167
-categories:
-- Eclipse PDT
 tags:
 - Eclipse PDT
 ---

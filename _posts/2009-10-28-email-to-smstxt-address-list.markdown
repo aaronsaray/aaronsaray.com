@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-10-28 16:40:06+00:00
 layout: post
-slug: email-to-smstxt-address-list
 title: Email to SMS/TXT address list
-wordpress_id: 469
-categories:
-- programming
 tags:
 - programming
 ---

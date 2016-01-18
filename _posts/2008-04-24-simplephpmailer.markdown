@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2008-04-24 23:48:48+00:00
 layout: post
-slug: simplephpmailer
 title: SimplePHPMailer
-wordpress_id: 103
-categories:
-- open source
-- PHP
 tags:
 - open source
 - PHP

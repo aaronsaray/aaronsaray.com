@@ -15,7 +15,7 @@ However, this can be a problem.  When creating a third-party javascript widget, 
 for (x in myArray) {
     doSomethingWith(myArray[x]);
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Well, since each array - on creation - has the methods from the prototype being extended, I now have extra items in my array.  This was causing an error because my function was not expecting a function to be passed in, only a string.

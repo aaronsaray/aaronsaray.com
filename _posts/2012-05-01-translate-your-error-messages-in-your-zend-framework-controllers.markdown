@@ -30,7 +30,7 @@ public function dosomethingAction()
   }
   // life is ok here!
 }
-{% endhighlight %}    
+{% endhighlight %}
     
 
 

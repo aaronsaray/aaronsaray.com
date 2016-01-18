@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2011-03-01 15:17:10+00:00
 layout: post
-slug: facebook-connect-an-unknown-error-occurred-but-why
 title: 'Facebook connect: An unknown error occurred. - but why??'
-wordpress_id: 836
-categories:
-- Misc Web Design
 tags:
 - Misc Web Design
 ---

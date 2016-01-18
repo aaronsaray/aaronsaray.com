@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-25 22:12:23+00:00
 layout: post
-slug: force-log-messages-using-tortoise-svn
 title: Force Log Messages using Tortoise SVN
-wordpress_id: 62
-categories:
-- svn
-- windows
 tags:
 - svn
 - windows
@@ -16,7 +8,7 @@ tags:
 
 Everyone knows that standard SVN has its list of 6 or 8 standard hooks - but what if you're 1) lazy, 2) busy, 3) don't have access to the SVN server?  Using one of the popular win32 shell integrated svn clients, [TortoiseSVN](http://tortoisesvn.tigris.org/), we can still force commit log messages easily:
 
-<!-- more -->SVN objects support properties.  For example, if you'd like to ignore a set of files, you might set the svn ignore property.  [TortoiseSVN has its own set of properties](http://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug-propertypage.html) that begin with the tsvn: prefix.
+SVN objects support properties.  For example, if you'd like to ignore a set of files, you might set the svn ignore property.  [TortoiseSVN has its own set of properties](http://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-dug-propertypage.html) that begin with the tsvn: prefix.
 
 The property we're going to set is tsvn:logminsize.  Choose the top level of your current working copy and choose tortoisesvn > properties.  Click add and choose tsvn:logminsize from the drop down.  Then, enter in a numeric value in the property content box.   Click apply recursively, click ok - and commit these changes.
 

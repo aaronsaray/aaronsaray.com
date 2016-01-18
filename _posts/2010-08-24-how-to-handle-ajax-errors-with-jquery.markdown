@@ -1,15 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-08-24 14:12:20+00:00
 layout: post
-slug: how-to-handle-ajax-errors-with-jquery
 title: How to handle AJAX errors with jQuery
-wordpress_id: 684
-categories:
-- AJAX
-- javascript
-- jquery
 tags:
 - AJAX
 - jquery
@@ -23,29 +14,27 @@ Now, the error attribute should be used for actual errors, not logical errors.  
 
 I wrote a generic function to handle the errors.  This could be name spaced I suppose or added to your standard library.  In this case, it just alerts the error.  (On some other sites, I generate a new modal box.)
 
-
-    
-    
-    function ajaxError(request, type, errorThrown)
-    {
-    	var message = "There was an error with the AJAX request.\n";
-    	switch (type) {
-    		case 'timeout':
-    			message += "The request timed out.";
-    			break;
-    		case 'notmodified':
-    			message += "The request was not modified but was not retrieved from the cache.";
-    			break;
-    		case 'parsererror':
-    			message += "XML/Json format is bad.";
-    			break;
-    		default:
-    			message += "HTTP Error (" + request.status + " " + request.statusText + ").";
-    	}
-    	message += "\n";
-    	alert(message);
+{% highlight javascript %}
+function ajaxError(request, type, errorThrown)
+{
+    var message = "There was an error with the AJAX request.\n";
+    switch (type) {
+        case 'timeout':
+            message += "The request timed out.";
+            break;
+        case 'notmodified':
+            message += "The request was not modified but was not retrieved from the cache.";
+            break;
+        case 'parsererror':
+            message += "XML/Json format is bad.";
+            break;
+        default:
+            message += "HTTP Error (" + request.status + " " + request.statusText + ").";
     }
-    
+    message += "\n";
+    alert(message);
+}
+{% endhighlight %}
 
 
 
@@ -54,36 +43,36 @@ In this function, an error message is generated based on the error type.  The on
 Here is an example of this in use:
 **ajax.php**
 
+{% highlight PHP %}
+<?php
+header('HTTP/1.1 503 Service Unavailable');    
+{% endhighlight %}
     
+And, here is the test page.  When the user clicks the xx link, it will generate a request to ajax.php.  This will generate a 503 error and the error handler will take over.
     
-    
-    
-    And, here is the test page.  When the user clicks the xx link, it will generate a request to ajax.php.  This will generate a 503 error and the error handler will take over.
-    
-    
-    
-    
-    <html>
-    	<head>
-    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-    	</head>
-    	<body>
-    		<a href="#" id="test">xx</a>
-    		<script type="text/javascript">
-    			$(function(){
-    				$("#test").click(function(){
-    					$.ajax({
-    						url: "ajax.php",
-    						success: function(){
-    							alert('retrieved');
-    						},
-    						error: ajaxError
-    					});
-    
-    					return false;
-    				});
-    			});
-    		</script>
-    	</body>
-    </html>
+{% highlight HTML %}
+<html>
+    <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <a href="#" id="test">xx</a>
+        <script type="text/javascript">
+            $(function(){
+                $("#test").click(function(){
+                    $.ajax({
+                        url: "ajax.php",
+                        success: function(){
+                            alert('retrieved');
+                        },
+                        error: ajaxError
+                    });
+
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>
+{% endhighlight %}
     

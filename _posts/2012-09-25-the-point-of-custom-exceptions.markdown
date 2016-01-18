@@ -20,7 +20,7 @@ Anyway, let's look at this in practice.
 {% highlight PHP %}
 <?php
 class API_500error_Exception extends exception {}
-{% endhighlight %}    
+{% endhighlight %}
     
 
 
@@ -40,7 +40,7 @@ catch (API_500error_Exception $a5e) {
 catch (Exception $e) {
   echo "Unfortunately, there was an unknown error on this page.";
 }
-{% endhighlight %}    
+{% endhighlight %}
 
 
 

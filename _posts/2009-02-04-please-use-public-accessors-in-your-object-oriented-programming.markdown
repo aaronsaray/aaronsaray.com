@@ -1,14 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2009-02-04 18:04:03+00:00
 layout: post
-slug: please-use-public-accessors-in-your-object-oriented-programming
 title: Please Use Public Accessors in your Object Oriented Programming
-wordpress_id: 321
-categories:
-- PHP
-- programming
 tags:
 - PHP
 - programming
@@ -16,10 +8,8 @@ tags:
 
 I really hate to see people accessing and designing objects with public attributes.  So many times I've seen this backfire.  Lets take a few examples and see why this matters:
 
-<!-- more -->
 
-
-### The Simple Book Class
+#### The Simple Book Class
 
 
 
@@ -27,35 +17,34 @@ Well first, lets say we're dealing with books.  We need to know the title, autho
 
 **Bad Example**
 
-    
-    
-    class Book
-    {
-        public $title;
-        public $author;
-        public $pageCount;
-    
-        public function __construct()
-        {
-            //for testing, populate
-            $this->title = 'PHP Design and Programming';
-            $this->author = 'Aaron Saray';
-            $this->pageCount = 333;
-        }
-    }
-    
-    $book = new Book();
-    print $book->title . ' was written by ' . $book->author
-          . ' and has ' . $book->pageCount . ' pages';
-    
+{% highlight PHP %}
+<?php
+class Book
+{
+    public $title;
+    public $author;
+    public $pageCount;
 
+    public function __construct()
+    {
+        //for testing, populate
+        $this->title = 'PHP Design and Programming';
+        $this->author = 'Aaron Saray';
+        $this->pageCount = 333;
+    }
+}
+
+$book = new Book();
+print $book->title . ' was written by ' . $book->author
+      . ' and has ' . $book->pageCount . ' pages';
+{% endhighlight %}
 
 
 This works fine and outputs our information.  However, this is not good practice.  You should be using public accessors.
 
 
 
-### The Book Class with Accessors
+#### The Book Class with Accessors
 
 
 
@@ -63,50 +52,47 @@ I used to think that was stupid to write an accessor for every variable.  I mean
 
 **Book Done Right**
 
-    
-    
-    class BookWithAccessors
-    {
-        protected $title;
-        protected $author;
-        protected $pageCount;
-    
-        public function __construct()
-        {
-            //for testing, populate
-            $this->title = 'PHP Design and Programming';
-            $this->author = 'Aaron Saray';
-            $this->pageCount = 333;
-        }
-    
-        public function getTitle()
-        {
-            return $this->title;
-        }
-    
-        public function getAuthor()
-        {
-            return $this->author;
-        }
-    
-        public function getPageCount()
-        {
-            return $this->pageCount;
-        }
-    }
-    
-    $book = new BookWithAccessors();
-    print $book->getTitle() . ' was written by ' . $book->getAuthor()
-          . ' and has ' . $book->getPageCount() . ' pages';
-    
+{% highlight PHP %}
+<?php
+class BookWithAccessors
+{
+    protected $title;
+    protected $author;
+    protected $pageCount;
 
+    public function __construct()
+    {
+        //for testing, populate
+        $this->title = 'PHP Design and Programming';
+        $this->author = 'Aaron Saray';
+        $this->pageCount = 333;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    public function getPageCount()
+    {
+        return $this->pageCount;
+    }
+}
+
+$book = new BookWithAccessors();
+print $book->getTitle() . ' was written by ' . $book->getAuthor()
+      . ' and has ' . $book->getPageCount() . ' pages';
+{% endhighlight %}
 
 
 Ok - so far still seems like a lot more code for the same results.  You'll notice I added the public methods and changed the public attributes to protected.
 
-
-
-### Proof that it was a good idea
+#### Proof that it was a good idea
 
 
 
@@ -116,63 +102,62 @@ Note, in this example, the code to print out the details about the book does not
 
 **New Features**
 
-    
-    
-    class Author
-    {
-        protected $firstName;
-        protected $lastName;
-    
-        public function __construct()
-        {
-            //for testing, populate
-            $this->firstName = 'Aaron';
-            $this->lastName = 'Saray';
-        }
-    
-        public function getFullName()
-        {
-            return $this->firstName . ' ' . $this->lastName;
-        }
-    }
-    
-    class BookProvesMyPoint
-    {
-        protected $title;
-        protected $author;
-        protected $pageCount;
-        const WHITE_PAGES = 10;
-    
-        public function __construct()
-        {
-            //for testing, populate
-            $this->title = 'PHP Design and Programming';
-            $this->author = new Author();
-            $this->pageCount = 333;
-        }
-    
-        public function getTitle()
-        {
-            return $this->title;
-        }
-    
-        public function getAuthor()
-        {
-            return $this->author->getFullName();
-        }
-    
-        public function getPageCount()
-        {
-            return $this->pageCount + self::WHITE_PAGES;
-        }
-    }
-    
-    $book = new BookProvesMyPoint();
-    
-    print $book->getTitle() . ' was written by ' . $book->getAuthor()
-          . ' and has ' . $book->getPageCount() . ' pages';
-    
+{% highlight PHP %}
+<?php
+class Author
+{
+    protected $firstName;
+    protected $lastName;
 
+    public function __construct()
+    {
+        //for testing, populate
+        $this->firstName = 'Aaron';
+        $this->lastName = 'Saray';
+    }
+
+    public function getFullName()
+    {
+        return $this->firstName . ' ' . $this->lastName;
+    }
+}
+
+class BookProvesMyPoint
+{
+    protected $title;
+    protected $author;
+    protected $pageCount;
+    const WHITE_PAGES = 10;
+
+    public function __construct()
+    {
+        //for testing, populate
+        $this->title = 'PHP Design and Programming';
+        $this->author = new Author();
+        $this->pageCount = 333;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author->getFullName();
+    }
+
+    public function getPageCount()
+    {
+        return $this->pageCount + self::WHITE_PAGES;
+    }
+}
+
+$book = new BookProvesMyPoint();
+
+print $book->getTitle() . ' was written by ' . $book->getAuthor()
+      . ' and has ' . $book->getPageCount() . ' pages';
+{% endhighlight %}
 
 
 So, the point is - use good OO habbit by using public accessors!

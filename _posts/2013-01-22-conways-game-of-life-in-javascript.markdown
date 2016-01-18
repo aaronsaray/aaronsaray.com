@@ -14,7 +14,7 @@ The canvas was really simple:
 <h1>Conway's Game of Life</h1>
 <h2>Using Javascript and Canvas</h2>
 <canvas width="500" id="mainBoard" height="500"></canvas>
-{% endhighlight %}    
+{% endhighlight %}
 
 And now the javascript used in this document:
 
@@ -179,7 +179,7 @@ And now the javascript used in this document:
     var game = new GOL();
     game.start();
 })();
-{% endhighlight %}    
+{% endhighlight %}
 
 
 Let me know your thoughts!

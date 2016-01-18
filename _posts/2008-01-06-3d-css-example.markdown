@@ -1,16 +1,10 @@
 ---
-author: aaron
-comments: true
-date: 2008-01-06 23:59:23+00:00
 layout: post
-slug: 3d-css-example
 title: 3D CSS Example
 wordpress_id: 89
-categories:
-- CSS
-- Misc Web Design
 tags:
 - CSS
+- Misc Web Design
 ---
 
 This example is a proof-of-concept I worked on years ago when people first started talking about making 3D games with no images - CSS only.

@@ -1,21 +1,11 @@
 ---
-author: aaron
-comments: true
-date: 2007-07-04 20:11:05+00:00
 layout: post
-slug: pear-installation-woes
 title: PEAR Installation Woes
-wordpress_id: 27
-categories:
-- PHP
 tags:
 - PHP
 ---
 
 I've found the need to do some installs from some PEAR channels, so I jumped into my command line on PHP 5.2.0 and windows xp sp2.  I ran c:\php5.2\go-pear - which would launch the go-pear.bat file.  I executed with standard permissions, and the unthinkable happened - a PEAR FAILURE.  OH NO!  But I was able to get around it.  Lets look at the details of the error, and my lazy man's way of solving it:
-
-<!-- more -->
-
     
     1-8, 'all' or Enter to continue:
     Beginning install...
@@ -25,7 +15,6 @@ I've found the need to do some installs from some PEAR channels, so I jumped int
     Warning: Cannot use a scalar value as an array in phar://go-pear.phar/PEAR/Command.php on line 268
     
     Warning: Cannot use a scalar value as an array in phar://go-pear.phar/PEAR/Command.php on line 268
-
 
 
 And it just went worse from there!  It finally ended with an installation failure message.

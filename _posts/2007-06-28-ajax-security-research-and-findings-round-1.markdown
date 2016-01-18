@@ -1,25 +1,15 @@
 ---
-author: aaron
-comments: true
-date: 2007-06-28 00:31:51+00:00
 layout: post
-slug: ajax-security-research-and-findings-round-1
 title: AJAX Security Research and Findings - Round 1
-wordpress_id: 18
-categories:
-- AJAX
-- PHP
 tags:
 - AJAX
 - security
+- PHP
 ---
 
 ("the triangle") wants to keep implementing more and more AJAX based systems - but no one ever took time to research into the security issues with this.  I did a proof of concept one time with a zip-code function when Big Boy was working there, and from there, they just thought it was amazing.  Most recently, some AJAX functionality was proposed for our LIVE public web servers... but I was very hesitant.  I don't know enough about the security and best practices for AJAX requests to be able to securely design and code something for the internet - especially when the end result is connecting to the iSeries and HIPAA data.  I requested a research project - and its finally been approved.  I've spent a few hours and come up with a few ideas and best practices so far.  Ok, I'll be honest, one best practice and 2 ideas - of which I'll prove/disprove here:
 
-<!-- more -->
-
-**If 1000 users are using an AJAX application, you can increase your load 10-fold.  Its time to cache your AJAX results and requests.
-**
+**If 1000 users are using an AJAX application, you can increase your load 10-fold.  Its time to cache your AJAX results and requests.**
 
 This was a quote that was in a white paper I was reading.  The writer did have a good point, however.  If you tend to have 1000 users on your website, your server is successful at handling that load.  Load up  a multi-facet AJAX app, and you might be having each one of those visitors making 10 calls per page to retrieve information.  There are two _best practices_ to keep in mind when designing AJAX applications.
 
@@ -32,47 +22,44 @@ Create a global scope ajaxCache array in javascript.  Then, create each request 
 I thought about this - can we reject all requests to a specific AJAX processing file, such as 'ajaxresponse.php' until we've visited http://ourdomain.com/ajax.php - well lets see.  The first thought was an HTTP referrer - but we know this can be easily spoofed.  Whats the next most accurate and persistent tool at our disposal for PHP?  Sessions.  So, the final result would be to check if a session variable was set - any would do.  -- if set, do our processing -- if not, just exit.  I did not want to start the session myself - because if the script could start the session, it surely could be called remotely.  (As usual, after writing down my findings, I'm finding out this proof of concept is pretty far out there - and wrong - and not really worth anything - but lets move on).  Anyway, I knew I had to send the cookie with the PHP session ID in the request, because the xmlhttprequest object doesn't send it by default.  (edit: true, but it would be available in the $_COOKIE array to the ajax processing script anyway, oops!)  I also know that session_id() generates a blank string if no session is started, otherwise it prints the current session id.
 
 Anyway, here is my code for this proof of concept:
+
 **ajaxresponse.php**
 
-    
-    
-    var_dump($_COOKIE);
-    echo session_id();
-    
-
-
+{% highlight PHP %}
+<?php
+var_dump($_COOKIE);
+echo session_id();
+{% endhighlight %}
 
 **ajax.php:**
 
-    
-    
-    /**
-     * start the session right away
-     */
-    session_start();
-    
-    /**
-     * print out the rest of the page
-     */
-    ?>
-    <script type="text/javascript">
-    			function testAjax()
-    			{
-    				xmlHttp=new XMLHttpRequest();
-    				xmlHttp.onreadystatechange=function() {
-      					if(xmlHttp.readyState==4) {
-        					alert(xmlHttp.responseText);
-        				}
-      				}
-      				xmlHttp.open("GET","ajaxresponse.php",true);
-    				xmlHttp.setRequestHeader("Cookie", "PHPSESSID=<?php print session_id(); ?>");
-        			xmlHttp.send(null);
-    			}
-    		</script>
-    
-    	<button onclick="testAjax()">Test Ajax</button>
-    
+{% highlight PHP %}
+<?php
+/**
+ * start the session right away
+ */
+session_start();
 
+/**
+ * print out the rest of the page
+ */
+?>
+<script type="text/javascript">
+    function testAjax()
+    {
+        xmlHttp=new XMLHttpRequest();
+        xmlHttp.onreadystatechange=function() {
+            if(xmlHttp.readyState==4) {
+                alert(xmlHttp.responseText);
+            }
+        }
+        xmlHttp.open("GET","ajaxresponse.php",true);
+        xmlHttp.setRequestHeader("Cookie", "PHPSESSID=<?php print session_id(); ?>");
+        xmlHttp.send(null);
+    }
+</script>
+<button onclick="testAjax()">Test Ajax</button>
+{% endhighlight %}
 
 Loading this page shows an button to launch our ajax testing function as well as our current session id.  When clicked, we see the server response - our var_dump of our cookies and then the session ID.  When I run this script, I notice that, even though I've sent my session cookie properly, the session ID doesn't exist (I guess I kind of knew this because I didn't force PHP to start the session).
 
@@ -80,31 +67,29 @@ _Well, can I make this useful?_
 
 Well, I modified our code.  The ajax.php file just removed the cookie sending header.  I changed my ajaxresponse.php file to this:
 
-    
-    
-    session_start();
-    if (isset($_SESSION['ajax'])) print 'ajax';
-    
-
+{% highlight PHP %}
+<?php
+session_start();
+if (isset($_SESSION['ajax'])) print 'ajax';
+{% endhighlight %}
 
 If our session value of 'ajax' is set, we'll print 'ajax' (or process our request).  Otherwise, we'll do nothing.  Running it the first time, I get a blank alert.  Yay!
 
 I then modified ajax.php to begin like this...
 
-    
-    
-    /**
-     * start the session right away
-     */
-    session_start();
-    
-    $_SESSION['ajax'] = true;
-    
-    /**
-     * print out the rest of the page
-     */
-    
+{% highlight PHP %}
+<?php
+/**
+ * start the session right away
+ */
+session_start();
 
+$_SESSION['ajax'] = true;
+
+/**
+ * print out the rest of the page
+ */
+{% endhighlight %}
 
 I reloaded the ajax.php page, clicked the button and yep - it sure alerted ('ajax').
 

@@ -1,12 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2010-06-13 22:00:24+00:00
 layout: post
-slug: twitter-anywhere-platform-web414-presentation
 title: 'Twitter @anywhere platform: web414 presentation'
-wordpress_id: 636
-categories:
+tags:
 - learning
 ---
 

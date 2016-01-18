@@ -1,13 +1,6 @@
 ---
-author: aaron
-comments: true
-date: 2010-09-29 19:08:05+00:00
 layout: post
-slug: removing-www-just-not-for-seo
 title: Removing WWW - just not for SEO
-wordpress_id: 709
-categories:
-- apache
 tags:
 - apache
 ---
@@ -23,6 +16,7 @@ It seems now - especially with the changes in the Google Webmaster Panel (where 
 However, I'm still lazy.  I hate saying "double you double you double you dot the better bachelor dot com" Get rid of that other stuff...
 
 So here's the real meat of the article, however.  I used to do this in my .htaccess file for each domain:
+
 **the old way**
 
     
