@@ -5,7 +5,9 @@ tags:
 - PHP
 ---
 
-Well, my boss at #superdev - who can only be compared to a more energetic version of the squirrel from hoodwinked[caption id="attachment_142" align="alignright" width="150" caption="#superdev boss"][![#superdev boss](http://aaronsaray.com/blog/wp-content/uploads/2008/07/squirrel-150x109.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2008/07/squirrel.jpg)[/caption] asked me to start putting together some thoughts here and there on some proper PHP coding.  I thought I'd start out the series with this article, Programming without E_NOTICE.
+[![#superdev boss](/uploads/2008/squirrel-150x109.jpg)](/uploads/2008/squirrel.jpg){: .thumbnail}
+
+Well, my boss at #superdev - who can only be compared to a more energetic version of the squirrel from hoodwinked asked me to start putting together some thoughts here and there on some proper PHP coding.  I thought I'd start out the series with this article, Programming without E_NOTICE.
 
 Ok.
 
@@ -84,7 +86,9 @@ if ($isAdmin) {
 
 Other suitable predefined values include: '', NULL, 0, array().
 
-<a href="http://aaronsaray.com/blog/wp-content/uploads/2008/07/false_pos.jpg"><img src="http://aaronsaray.com/blog/wp-content/uploads/2008/07/false_pos-150x100.jpg" alt="" title="false_pos" width="150" height="100" class="alignright size-thumbnail wp-image-146" /></a><em>One Caveat:</em> Be careful with predefining your values, however, so that you don't use a legitimate value when not expecting it.  For example, if you assigned $locationOfString = 0 and then did a stristr(), you could legitimately get a 0 returned.  This might cause issues with your code that might be difficult to track down-such as false positives.
+[![false positive](/uploads/2008/false_pos-150x100.jpg)](/uploads/2008/false_pos.jpg){: .thumbnail}
+
+_One Caveat:_ Be careful with predefining your values, however, so that you don't use a legitimate value when not expecting it.  For example, if you assigned $locationOfString = 0 and then did a stristr(), you could legitimately get a 0 returned.  This might cause issues with your code that might be difficult to track down-such as false positives.
 
 _If you're really lazy and don't like spending all those extra lines, here's a tip:_
 

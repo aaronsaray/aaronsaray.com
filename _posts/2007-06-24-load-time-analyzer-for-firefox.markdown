@@ -20,11 +20,11 @@ First of all, when the plugin is installed, it automatically enables itself, and
 
 The following is the results for loading the page brand new.  You'll notice it took 1750ms to load the front static html page (Um, my particular host sucks at mysql - so the internal pages take alot more than that - anyone want to help spring for a vps or dedicated server? heh).
 
-[![Load Time Analyzer - Test 1](http://aaronsaray.com/blog/wp-content/uploads/2007/06/test-1-load-time-analyzer.thumbnail.png)](http://aaronsaray.com/blog/wp-content/uploads/2007/06/test-1-load-time-analyzer.png)
+[![Load Time Analyzer - Test 1](/uploads/2007/test-1-load-time-analyzer.thumbnail.png)](/uploads/2007/test-1-load-time-analyzer.png){: .thumbnail}
 
 Then, I went to a different website, and came back.  You can see the difference in the speed for cached items.  437ms - so much better.
 
-[![Load Time Analyzer - Test 2](http://aaronsaray.com/blog/wp-content/uploads/2007/06/test-2-load-time-analyzer.thumbnail.png)](http://aaronsaray.com/blog/wp-content/uploads/2007/06/test-2-load-time-analyzer.png)
+[![Load Time Analyzer - Test 2](/uploads/2007/test-2-load-time-analyzer.thumbnail.png)](/uploads/2007/test-2-load-time-analyzer.png){: .thumbnail}
 
 The important thing to notice is that you can determine state changes and individual resource speeds and load time.  I like that ALOT.
 

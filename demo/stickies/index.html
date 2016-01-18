@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Stickies</title>
+    </head>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            background: #ffffff;
+            color: #000000;
+            margin: 0px;
+            font-size: 1rem;
+            height: 90%; /** have to fix this **/
+        }
+        header {
+            background: #336699;
+            color: #ffffff;
+            width: 100%;
+            height: 3rem;
+            position: fixed;
+        }
+        header h1 {
+            margin: 0.7rem 0 0 1rem;
+            font-size: 1.4rem;
+        }
+        #content {
+            padding-top: 3rem;
+            height: 100%;
+        }
+        #application_interaction {
+            position: fixed;
+            right: 0;
+            top: 3rem;
+            padding: 0.2rem;
+        }
+        #controls {
+            text-align: right;
+        }
+        #controls a {
+            color: #6699ff;
+            text-decoration: none;
+            display: inline-block;
+            border: 0.1rem solid #6699ff;
+            border-radius: 1.3rem;
+            width: 1.2rem;
+            text-align: center;
+        }
+        #controls a:hover {
+            color: #336699;
+            border-color: #336699;
+            background: #ddeeff;
+        }
+        #controls a.toggled_on:hover {
+            border-color: #6699ff;
+        }
+        #controls a.toggled_on {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: #6699ff;
+            color: #ffffff;
+        }
+        #help_window {
+            width: 20rem;
+            background: #6699ff;
+            color: #ffffff;
+            padding: 0.5rem;
+            display:none;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            border-top-left-radius: 1rem;
+        }
+        #help_window h2 {
+            margin: 0;
+        }
+        #help_window li {
+            margin-top: 0.5rem;
+        }
+        #startup_instruction {
+            color: #bbbbbb;
+            width: 22rem;
+            text-align: center;
+            position: absolute;
+            left: calc(50% - 11rem);
+            top: 10rem;
+        }
+        .note {
+            padding: 1rem;
+            position: absolute;
+            height: auto;
+        }
+        .delete {
+            position: absolute;
+            top: 0;
+            right: 0.2rem;
+            text-decoration: none;
+            font-weight: bold;
+            opacity: 0.2;
+        }
+        .delete:hover {
+            opacity: 1;
+        }
+        .note .ui-icon-refresh {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0.2;
+            cursor: alias
+        }
+        .colorpicker {
+            position: absolute;
+            top: 1.1rem;
+            right: 0.2rem;
+            width: 0.6rem;
+            height: 0.7rem;
+            border: 0.1rem solid #000000;
+            opacity: 0.2;
+        }
+        .colorpicker div {
+            width: 5rem;
+            position: absolute;
+            display: none;
+        }
+        .colorpicker div span {
+            width: 0.6rem;
+            height: 0.6rem;
+            display: table-cell;
+            cursor: pointer;
+        }
+        .colorpicker:hover {
+            opacity: 1;
+            width: 3.8rem;
+        }
+        .colorpicker:hover div {
+            display: table-row;
+        }
+        .content:focus {
+            outline-width: 0px
+        }
+        #confirm_delete {
+            display: none;
+        }
+
+        .ui-icon-gripsmall-diagonal-se {
+            opacity: 0.2
+        }
+        .ui-dialog {
+            font-size: 0.8rem;
+            padding:0px;
+        }
+        .ui-dialog-titlebar {
+            background-image: none;
+            background-color: #336699;
+            color: #ffffff;
+        }
+        .ui-corner-all {
+            border-radius: 0;
+        }
+        .ui-dialog-titlebar-close {
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script>
+        /**
+         * Create the namespace
+         */
+        var Sticky = Sticky || {};
+        Sticky.Models = Sticky.Models || {};
+        Sticky.Services = Sticky.Services || {};
+
+        /**
+         * Generate the main application
+         *
+         * The application handles getting data for first population, adding handlers, and basic user interface things
+         * It passes off the actual actions to controllers, View, though.
+         */
+        Sticky.Application = function() {
+
+            /**
+             * Create an instance of the Controller for this app
+             */
+            var _controller = new Sticky.Controller();
+
+            /**
+             * The main bootstrap / running product.
+             */
+            this.run = function()
+            {
+                _bindControls();
+                _controller.action('listNotes');
+            };
+
+            /**
+             * Binds the interface application interactions
+             * @private
+             */
+            function _bindControls()
+            {
+                /** toggle the help window **/
+                $('#show_help').click(function() {
+                    $('#help_window').toggle(100);
+                    $('#show_help').toggleClass('toggled_on');
+                    return false;
+                });
+
+                /** button to kick off adding a note **/
+                $('#add_note').click(function(){
+                    _controller.action('addNote');
+                    return false;
+                });
+
+                /**
+                 * this section adds handlers to the notes themselves
+                 */
+                var $content = $('#content');
+
+                /** handles deleting a note **/
+                $content.on('click', '.delete', function() {
+                    var note = $(this).parent().data('note');
+                    $('#confirm_delete').dialog({
+                        resizable: false,
+                        draggable: false,
+                        modal: true,
+                        buttons: {
+                            "Yes, Delete it": function() {
+                                _controller.action('removeNote', note);
+                                $(this).dialog('close');
+                            },
+                            Cancel: function() {
+                                $(this).dialog('close');
+                            }
+                        }
+                    });
+
+                    return false;
+                });
+
+                /** color picking **/
+                $content.on('click', '.colorpicker span', function() {
+                    var $this = $(this);
+                    var $noteElement = $this.parents('.note');
+                    var note = $noteElement.data('note');
+                    var color = $this.css('backgroundColor');
+                    $noteElement.css('backgroundColor', color);
+                    note.updateAttributes({
+                        background: color
+                    });
+                    _controller.action('saveNote', note);
+                });
+
+                $content.on('click', '.rotate', function() {
+                    alert('rotation is not yet supported');
+                });
+
+                /** handles making editable content **/
+                $content.on('click', '.content', function() {
+                    var $this = $(this);
+                    $this.attr('contentEditable', true).focus();
+                    $this.parent().draggable('disable');
+                });
+
+                /** handles making non editable and draggable then after done editing **/
+                $content.on('blur', '.content', function() {
+                    var $this = $(this);
+                    var $parent = $this.parent();
+                    $this.attr('contentEditable', false);
+                    $parent.draggable('enable');
+                    window.getSelection().removeAllRanges();
+
+                    var note = $parent.data('note');
+                    note.content = $this.html();
+                    note.updateAttributes({
+                        height: "auto",
+                        "min-height": $this.height() + 'px'
+                    });
+
+                    _controller.action('saveNote', note);
+                });
+
+                /** handles the resize handler **/
+                // note I rewrite height here so that it can continue to scroll if htey type more.
+                $content.on('sticky-resize-end', '.note', function(event, note, top, left, width, height) {
+                    note.updateAttributes({
+                        top: top + 'px',
+                        left: left + 'px',
+                        width: width + 'px',
+                        "min-height": height + 'px',
+                        height: "auto"
+                    });
+
+                    _controller.action('saveNote', note);
+                });
+
+                /** handles the moving handler **/
+                $content.on('sticky-move-end', '.note', function(event, note, top, left) {
+                    note.updateAttributes({
+                        top: top + 'px',
+                        left: left + 'px',
+                    });
+
+                    _controller.action('saveNote', note);
+                });
+            }
+        };
+
+        /**
+         * The main controller
+         */
+        Sticky.Controller = function()
+        {
+            /**
+             * An instance of the view
+             */
+            var _view = new Sticky.View();
+
+            /**
+             * An instance of the service
+             */
+            var _service = new Sticky.Services.Note();
+
+            /**
+             * The main action
+             *
+             * @param {string} the action to do
+             * @param {mixed} the parameters for the call
+             */
+            this.action = function(action, params)
+            {
+                switch (action) {
+                    case 'addNote':
+                        _addNote();
+                        break;
+                    case 'removeNote':
+                        _removeNote(params);
+                        break;
+                    case 'saveNote':
+                        _saveNote(params);
+                        break;
+                    case 'listNotes':
+                        _listNotes();
+                        break;
+                    default:
+                        throw action + ' was not defined';
+                }
+            };
+
+
+            /**
+             * Executes adding a sticky note
+             * @private
+             */
+            function _addNote()
+            {
+                var note = _service.create();
+                _service.save(note);
+                _view.placeNote(note);
+            }
+
+            /**
+             * remove the sticky note
+             *
+             * @param {Sticky.Models.Note} The note
+             * @private
+             */
+            function _removeNote(note)
+            {
+                _service.remove(note);
+                _view.removeNote(note);
+            }
+
+            /**
+             * Save the sticky note
+             *
+             * Right now, all it does is log that it did
+             *
+             * @param {Sticky.Models.Note}
+             */
+            function _saveNote(note)
+            {
+                _service.save(note);
+            }
+
+            /**
+             * Get all the notes and place them on the page
+             */
+            function _listNotes()
+            {
+                var items = _service.list();
+                $.each(_service.list(), function(index, note) {
+                    _view.placeNote(note);
+                });
+            }
+        };
+
+        /**
+         * The Sticky Note Service
+         */
+        Sticky.Services.Note = function()
+        {
+            /**
+             * To create a mode
+             */
+            this.create = function()
+            {
+                return new Sticky.Models.Note();
+            };
+
+            /**
+             * to save a note
+             *
+             * @param {Sticky.Models.Note} note
+             */
+            this.save = function(note)
+            {
+                var storageKey = 'note.' + note.id;
+                localStorage.setItem(storageKey, JSON.stringify(note));
+            };
+
+            /**
+             * Removes a note
+             *
+             * @param {Sticky.Models.Note} note
+             */
+            this.remove = function(note)
+            {
+                var storageKey = 'note.' + note.id;
+                localStorage.removeItem(storageKey);
+            };
+
+            /**
+             * Gets all of the notes in an array of notes
+             */
+            this.list = function()
+            {
+                var returnArray = [];
+                var currentNote;
+                var currentObjectFromStorage = {};
+                for (var x in localStorage) {
+                    currentObjectFromStorage = JSON.parse(localStorage[x]);
+                    currentNote = this.create();
+                    currentNote.id = currentObjectFromStorage.id;
+                    currentNote.updateAttributes(currentObjectFromStorage.attributes);
+                    currentNote.content = currentObjectFromStorage.content;
+                    returnArray.push(currentNote);
+                }
+
+                return returnArray;
+            };
+        };
+
+        /**
+         * The Sticky Note Model
+         */
+        Sticky.Models.Note = function() {
+
+            /**
+             * This is the attributes of this sticky note
+             */
+            this.attributes = {
+                top: '100px',
+                left: '100px',
+                width: '200px',
+                "min-height": "0",
+                height: "auto",
+                background: '#EAEBA4'
+            };
+
+            /**
+             * The content of the sticky
+             * @type {string}
+             */
+            this.content = 'This is a sticky note';
+
+            /**
+             * The internal id of the sticky note
+             * @todo fix this - needs to be a unique id
+             * @type {number}
+             */
+            this.id = Date.now();
+
+            /**
+             * Merge in new attributes
+             *
+             * @param {object} the attributes to merge in
+             */
+            this.updateAttributes = function(attributes) {
+                $.extend(this.attributes, attributes);
+            };
+        };
+
+        /**
+         * The main view for the screen
+         */
+        Sticky.View = function()
+        {
+            /**
+             * Retrieve the content window space
+             */
+            var _$contentWindow = $('#content');
+
+            /**
+             * Holds whether startup instructions are shown on the screen
+             */
+            var _startupInstructionsShown = true;
+
+            /**
+             * holds the amount of shown notes
+             */
+            var _notesShown = 0;
+
+            /**
+             * Used to place the note into the view / screen
+             *
+             * This handles adding the third party plugins to the note, but it does none of the actual
+             * model updates and savings.
+             *
+             * @param {Sticky.Models.Note} Note
+             */
+            this.placeNote = function(Note)
+            {
+                var $renderedNote = _renderNote(Note);
+                $('#content').append($renderedNote); // note - need to attach first before doing draggable otherwise it forces them relative
+
+                $renderedNote.draggable({
+                    containment: "#content",
+                    cursor: "move",
+                    addClasses: false,
+                    opacity: 0.5,
+                    stop: function(event, ui) {
+                        var $target = $(event.target);
+                        $target.trigger('sticky-move-end', [
+                            $target.data('note'),
+                            ui.position.top,
+                            ui.position.left
+                        ]);
+                    }
+                }).resizable({
+                    containment: "#content",
+                    handles: "n, ne, nw, s, se, sw, e, w",
+                    stop: function(event, ui) {
+                        var $target = $(event.target);
+                        $target.css('minHeight', ui.size.height + 'px');
+                        $target.css('height', 'auto');  // this is done to make sure it can still expand when typing more.
+                        $target.trigger('sticky-resize-end', [
+                            $target.data('note'),
+                            ui.position.top,
+                            ui.position.left,
+                            ui.size.width,
+                            ui.size.height
+                        ]);
+                    }
+                });
+
+                _notesShown++;
+
+                _removeInstructionsIfExist();
+            };
+
+            /**
+             * Used to remove the note from the view/screen
+             *
+             * @param {Sticky.Models.Note} Note
+             */
+            this.removeNote = function(Note)
+            {
+                var noteElement = $('#note_' + Note.id);
+                noteElement.remove();
+                _notesShown--;
+
+                _addInstructionsIfNotExist();
+            };
+
+            /**
+             * Removes the instructions if they're shown
+             * @private
+             */
+            function _removeInstructionsIfExist()
+            {
+                if (_notesShown) {
+                    $('#startup_instruction').hide();
+                }
+            }
+
+            /**
+             * Adds back the instructions if they're not already there
+             * @private
+             */
+            function _addInstructionsIfNotExist()
+            {
+                if (!_notesShown) {
+                    $('#startup_instruction').show();
+                }
+            }
+
+            /**
+             * Will get a jquery rendered note object
+             *
+             * @param {Sticky.Models.Note} note
+             */
+            function _renderNote(note)
+            {
+                var styleArray = $.map(note.attributes, function(value, key) {
+                    return key + ': ' + value
+                });
+                var style = styleArray.join(';');
+
+                var returnNote = $('<div class="note" style="' + style + '" id="note_' + note.id + '" data-id="' + note.id + '"><a href="#" class="delete" title="Delete">x</a>' +
+                    '<span class="ui-icon ui-icon-refresh rotate"></span>' +
+                    '<span class="colorpicker" title="Pick color"><div><span style="background-color: #ABD9A1"></span><span style="background-color: #EAEBA4"></span><span style="background-color: #f2d07d"></span><span style="background-color: #f3aa69"></span><span style="background-color: #f28772"></span></div></span>' +
+                    '<div class="content">' + note.content + '</div></div>');
+                returnNote.data('note', note);
+                return returnNote;
+            }
+        };
+
+        $(function(){
+            (new Sticky.Application()).run();
+        });
+    </script>
+    <body>
+        <header>
+            <h1>Stickies</h1>
+        </header>
+        <div id="content">
+            <div id="application_interaction">
+                <div id="controls">
+                    <a href="#" id="add_note">+</a>
+                    <a href="#" id="show_help">?</a>
+                </div>
+                <div id="help_window">
+                    <h2>Quick Help</h2>
+                    <ul>
+                        <li>To add a new sticky note, click the <strong>+</strong> icon at the top right.</li>
+                        <li>There is no more help.  Figure it out.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="startup_instruction">
+            <h2>You don't have any stickies yet.</h2>
+            <p>Click the New Sticky link to get started.</p>
+        </div>
+        <div id="confirm_delete" title="Delete This Sticky">
+            <p>Are you sure you'd like to delete this sticky?</p>
+        </div>
+    </body>
+</html>

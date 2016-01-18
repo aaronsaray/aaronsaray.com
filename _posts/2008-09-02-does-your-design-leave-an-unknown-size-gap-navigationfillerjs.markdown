@@ -12,7 +12,9 @@ If you've ever worked with a customer's CMS pages and heard the term "Oh but I w
 #### Enter navigationFiller.js
 
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2008/09/1-150x99.png)With this js file and some configuration in the HTML, you can solve the problem of having that blank space below the navigation bar.  For example, see our before screen...
+[![](/uploads/2008/1-150x99.png)](/uploads/2008/1-150x99.png){: .thumbnail}
+
+With this js file and some configuration in the HTML, you can solve the problem of having that blank space below the navigation bar.  For example, see our before screen...
 
 Minus it being very very ugly and boring, you'll see the huge blank space below the list on the left - or the 'navigation' links - if they were a tags.  Now, lets imagine that the content on the right side may be variable lengths - this is where navigationFiller.js falls in.
 
@@ -20,7 +22,9 @@ navigationFiller.js will calculate the available space and fill with images from
 
 
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2008/09/2-150x99.png)See the after picture - of our equally as AWESOME demo pics?
+[![](/uploads/2008/2-150x99.png)](/uploads/2008/2-150x99.png){: .thumbnail}
+
+See the after picture - of our equally as AWESOME demo pics?
 
 This is from a simple script include and then some configuration options.  The script has public methods for populating the images that you want to use.
 
@@ -65,4 +69,4 @@ I have a huge todo list - so this is more of a proof of concept.  It should be n
 
 #### Download!
 
-You can download it here: [Navigation Filler Zip (with Examples)](http://aaronsaray.com/blog/wp-content/uploads/2008/09/navigationfiller.zip)
+You can download it here: [Navigation Filler Zip (with Examples)](/uploads/2008/navigationfiller.zip)

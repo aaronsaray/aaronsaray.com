@@ -16,3 +16,16 @@ Code will be highlighted using the fluid syntax and highlighter plugin for Jekyl
     {% endhighlight %}
     
 Where CSS can be any supported language.  The initial indent of the code should be no spaces.
+
+
+Images with thumbnails will be embedded like this:
+
+    [![Load Time Analyzer - Test 2](/uploads/2007/test-2-load-time-analyzer.thumbnail.png)](/uploads/2007/test-2-load-time-analyzer.png){: .thumbnail}
+
+The last part is part of kramdown and is required for a class.
+
+Linking internally to blogs will be done with the internal post link system:
+
+    [here]({% post_url 2007-06-24-load-time-analyzer-for-firefox %})
+    
+    

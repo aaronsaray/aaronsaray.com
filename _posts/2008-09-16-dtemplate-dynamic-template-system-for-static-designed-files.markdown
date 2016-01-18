@@ -66,4 +66,4 @@ I've included a really simple frames website as an example with the download.  T
 #### The download
 
 
-[dtemplate.zip](http://aaronsaray.com/blog/wp-content/uploads/2008/09/dtemplate.zip)
+[dtemplate.zip](/uploads/2008/dtemplate.zip)

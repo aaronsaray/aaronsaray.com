@@ -12,7 +12,7 @@ Well just to prove it was possible, I decided to code it up today.  It does the 
 
 The first thing I wanted to do was create a quick proof of concept, so its not pretty.  The code is ok but it might be redundant.  Additionally, it has no UI - you have to set variables in the code itself.  Still as a proof of concept that took one hour, that isn't too bad.
 
-[Proof of concept files are here.](http://aaronsaray.com/blog/wp-content/uploads/2007/07/phpscriptinstaller_poc.zip)
+[Proof of concept files are here.](/uploads/2007/phpscriptinstaller_poc.zip)
 
 #### For my test project to package, I created HelloWorld Version 2
 

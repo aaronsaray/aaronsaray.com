@@ -11,16 +11,16 @@ In the same way that car companies each have their strengths and weaknesses, web
 
 I don’t want to bore you with the history of browsers, where the big players came from and why.  Let’s just compare the 4 main ones to get an idea of what’s out there.
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/4763_ie7bellissimo.jpg)**Internet Explorer – Microsoft**
+[![](/uploads/2008/4763_ie7bellissimo.jpg)](){: .thumbnail}**Internet Explorer – Microsoft**
 Microsoft installs Internet Explorer by default with every version of Windows.  Since most PCs have Windows, most users are familiar with Internet Explorer – it’s their first way onto the internet.  Since Microsoft owns Windows and Internet Explorer, and installs them together, Internet Explorer is very integrated with Windows.  There have been security issues because of this integration in the past.  Internet Explorer was also available for Mac for a period of time.  Finally, Microsoft tried to exercise its market dominance by creating their own standards and generating their own interpretation of CSS, JS and HTML.  Because of this, Internet Explorer sometimes generates web pages out of compliance with the standards that were built for HTML, CSS and JS.  I generally recommend against using Internet Explorer – especially for the casual web surfer who isn’t as familiar with their computer.
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/firefox.jpg)**FireFox – Mozilla**
+[![](/uploads/2008/firefox.jpg)](){: .thumbnail}**FireFox – Mozilla**
 FireFox is an open source browser with roots from the Mozilla corporation (Think ‘netscape’).  FireFox has versions of itself available for many different operating systems, including Windows, Linux and Mac.  Generally, FireFox has been more secure than Internet Explorer because of its separation from the operating system as well as its open source available for audit.  This may not always be the case, however.  Also, FireFox tends to be more rigid to standards and renders HTML, CSS and JS more accurately than Internet Explorer.  I recommend FireFox for the casual surfer because of its security features.  Advanced surfers may also appreciate its plugin based system where they can add extra features to their browser easily.
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/safari_logo.jpg)**Safari – Macintosh**
+[![](/uploads/2008/safari_logo.jpg)](){: .thumbnail}**Safari – Macintosh**
 In the same way that Internet Explorer was a default for Windows, Safari is the default for Mac.  Safari always seemed to be behind when it came to supporting features of the internet and sticking with standards, but that seems to be less the case lately.  Additionally, Safari is now available for other platforms like Windows.
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/opera_logo.jpg)**Opera**
+[![](/uploads/2008/opera_logo.jpg)](){: .thumbnail}**Opera**
 With roots as the third party browser with both professional and free-ad-supported versions, Opera has always been a unique feature promoter.  Opera’s support of standards is growing stronger each release – keep an eye out to watch for the newest versions of Opera – and their expansion to mobile devices.
 
 **What Does This Mean To Me?**

@@ -18,6 +18,6 @@ Yeh, not great, but it was a start.
 
 I've attached the AIR application - and a zip with the source in it.  If I find time later, I might come back and rewrite it to be 1) prettier and 2) more useful. hah!
 
-Adobe Air Application: [logfilewatcher.air](http://aaronsaray.com/blog/wp-content/uploads/2008/08/logfilewatcher.air)
+Adobe Air Application: [logfilewatcher.air](/uploads/2008/logfilewatcher.air)
 
-Adobe Air Source files: [logfilewatcher.zip](http://aaronsaray.com/blog/wp-content/uploads/2008/08/logfilewatcher.zip)
+Adobe Air Source files: [logfilewatcher.zip](/uploads/2008/logfilewatcher.zip)

@@ -105,7 +105,7 @@ top.html contains this text:
 
 This is an interesting piece of code.  First off, lets start with what we know.  We know we need and address bar that they're used to seeing - but it has to have the website they expect to be visiting's URL in itself.  It also should function like a normal address bar (It shouldn't just be a picture, it should allow for users to type in it and possibly navigate away from our site.).
 
-The first CSS styles the address bar like our classic theme would.  The go.jpg is actually an image of the go button we normally see: <img src="http://aaronsaray.com/blog/wp-content/uploads/2007/07/go.jpg" alt="go.jpg" />
+The first CSS styles the address bar like our classic theme would.  The go.jpg is actually an image of the go button we normally see: ![go.jpg](/uploads/2007/go.jpg)
 
 The address bar itself is an input field, and its populated with our proper website URL.  It even has a note in their about this being a promotion, so the user may think that they are logging in to get their sale and discount.  On submit ('enter'), we return the value from the javascript function.  As we had learned earlier, we can always stop something on our website by returning false - so the form field never is submitted because our javascript returns false.
 

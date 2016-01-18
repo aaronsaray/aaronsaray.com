@@ -14,7 +14,9 @@ With our recent upgrade to php at "the triangle," I felt it was time to start wo
 
 #### Get XDebug
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/xdebug-logo.png)I went to xdebug.org and acquired my version of the debugger dll for windows.  I'm using Windows XP, Apache 2.2.8 and PHP 5.2.5 for this article.  The Xdebug I downloaded was [XDebug 2.03 Against PHP 5.2.5](http://xdebug.org/link.php?url=xdebug203-52-win).  (I thought about getting the binary snapshot of 2.1dev... but finally decided against it - smartly.)
+[![](/uploads/2008/xdebug-logo.png)](/uploads/2008/xdebug-logo.png){: .thumbnail} 
+
+I went to xdebug.org and acquired my version of the debugger dll for windows.  I'm using Windows XP, Apache 2.2.8 and PHP 5.2.5 for this article.  The Xdebug I downloaded was [XDebug 2.03 Against PHP 5.2.5](http://xdebug.org/link.php?url=xdebug203-52-win).  (I thought about getting the binary snapshot of 2.1dev... but finally decided against it - smartly.)
 
 I modified my php.ini file to load in the extension file.  On windows, this is a TS type - or thread safe.  Also remember, this is a zend extension, not a normal extension.  At the end of my php.ini file, I started with this:
 
@@ -307,14 +309,14 @@ Not very exciting... so lets look at our tools for Windows...
 #### WinCacheGrind
 
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/wincachegrind-150x91.gif)](http://aaronsaray.com/blog/wp-content/uploads/2008/05/wincachegrind.gif)[WinCacheGrind](http://sourceforge.net/projects/wincachegrind/) is the windows version of the software that can parse these profile files and generate useable statistics.  Since development has ceased in 2005, this project isn't a very likely candidate for doing profiling.  You can see from the screenshot that our very simple script generates only a few details - but the actual UI is very limited - with not a lot of features (or maybe kcachegrind has spoiled me)...
+[![](/uploads/2008/wincachegrind-150x91.gif)](/uploads/2008/wincachegrind.gif){: .thumbnail}[WinCacheGrind](http://sourceforge.net/projects/wincachegrind/) is the windows version of the software that can parse these profile files and generate useable statistics.  Since development has ceased in 2005, this project isn't a very likely candidate for doing profiling.  You can see from the screenshot that our very simple script generates only a few details - but the actual UI is very limited - with not a lot of features (or maybe kcachegrind has spoiled me)...
 
 
 
 #### KcacheGrind
 
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/kcachegrind-150x108.gif)](http://aaronsaray.com/blog/wp-content/uploads/2008/05/kcachegrind.gif)KcacheGrind is a linux based utility in KDE.  Since I'm on windows, I had to acquire the [KDE4Win](http://www.winkde.org/pub/kde/ports/win32/readme.html).  Once installed, I could run any KDE app that had been ported into this release - so I fired up KcacheGrind.
+[![](/uploads/2008/kcachegrind-150x108.gif)](/uploads/2008/kcachegrind.gif){: .thumbnail}KcacheGrind is a linux based utility in KDE.  Since I'm on windows, I had to acquire the [KDE4Win](http://www.winkde.org/pub/kde/ports/win32/readme.html).  Once installed, I could run any KDE app that had been ported into this release - so I fired up KcacheGrind.
 
 As you can see from the screenshot, there are a lot more features available.  I did run into two issues, however.  First, every time I loaded a new profile file when I currently had one open, kcachegrind would crash.  The other was the lack of the 'dot' program from the graphviz package (which hasn't been ported over to KDE4 yet as far as I know...)
 
@@ -365,15 +367,15 @@ We're done doing our config - let's fire up eclipse.
 
 First off, make a new project in eclipse.  Then, a new PHP file.  I'm going to continue using my same code and name it test.php.  On my machine http://localhost/test.php will launch this script.
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/1-150x133.gif)](http://aaronsaray.com/blog/wp-content/uploads/2008/05/1.gif)In Eclipse PDT, click the Window menu and choose preferences.  Expand the General item and click on Web Browser.  Here it probably says use internal web browser.  In my experience on Windows, the internal browser is MSIE... and I want to use firefox.  Check use external web browser - and make sure there is a check next to default system web browser (mine is FireFox, so I'm good to go.  You could also choose the external browser you wanted to use if it is listed here....)
+[![](/uploads/2008/1-150x133.gif)](/uploads/2008/1.gif){: .thumbnail}In Eclipse PDT, click the Window menu and choose preferences.  Expand the General item and click on Web Browser.  Here it probably says use internal web browser.  In my experience on Windows, the internal browser is MSIE... and I want to use firefox.  Check use external web browser - and make sure there is a check next to default system web browser (mine is FireFox, so I'm good to go.  You could also choose the external browser you wanted to use if it is listed here....)
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/2-150x133.gif)](http://aaronsaray.com/blog/wp-content/uploads/2008/05/2.gif)Next, expand the PHP item and click on Debug.  For the PHP Debugger, you'll have to choose 'Xdebug' - mine was set to zend debugger.  Next, choose the server that will be running the php.  I didn't have one, so I had to click on PHP Servers and add one with http://localhost.
+[![](/uploads/2008/2-150x133.gif)](/uploads/2008/2.gif){: .thumbnail}Next, expand the PHP item and click on Debug.  For the PHP Debugger, you'll have to choose 'Xdebug' - mine was set to zend debugger.  Next, choose the server that will be running the php.  I didn't have one, so I had to click on PHP Servers and add one with http://localhost.
 
 Click OK and you're good to go with your debugger set up.
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/3-150x116.gif)](http://aaronsaray.com/blog/wp-content/uploads/2008/05/3.gif)Next, you have to set up a debugging project script.  Click the Run Menu and click on 'open debug dialog'.  Double click the PHP web Page option to generate a new_configuration.  You could change this to any name you want.  You should make sure that XDebug is selected with the proper server.  You can click on browse to locate the file you want to start debugging with.  Notice, you'll be browsing through open projects.  In my case, I'm choosing test.php.  If you had a larger project, you might just start with it's index.php file.  I like to mark 'break at first line' just in case I forget to make break points.  Finally, uncheck 'auto generate' under the URL if the URL isn't correct.  Click Close.
+[![](/uploads/2008/3-150x116.gif)](/uploads/2008/3.gif){: .thumbnail}Next, you have to set up a debugging project script.  Click the Run Menu and click on 'open debug dialog'.  Double click the PHP web Page option to generate a new_configuration.  You could change this to any name you want.  You should make sure that XDebug is selected with the proper server.  You can click on browse to locate the file you want to start debugging with.  Notice, you'll be browsing through open projects.  In my case, I'm choosing test.php.  If you had a larger project, you might just start with it's index.php file.  I like to mark 'break at first line' just in case I forget to make break points.  Finally, uncheck 'auto generate' under the URL if the URL isn't correct.  Click Close.
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2008/05/4-150x116.gif)](http://aaronsaray.com/blog/wp-content/uploads/2008/05/4.gif)Eclipse will try to open up the PHP Debug perspective when you launch a debugging task.  This is ok to do - and probably very helpful.  If it prompts for it to open, choose to allow it.
+[![](/uploads/2008/4-150x116.gif)](/uploads/2008/4.gif){: .thumbnail}Eclipse will try to open up the PHP Debug perspective when you launch a debugging task.  This is ok to do - and probably very helpful.  If it prompts for it to open, choose to allow it.
 
 Now, when you're ready to run your script, click the Run menu and choose 'debug'.  If this doesn't work, you might have to do it from your debug dialog box once.
 
@@ -499,7 +501,7 @@ Nope - no go. It still keeps running and opens TWO windows.
 
 
 
-#### so whats the verdict?
+#### So what's the verdict?
 
 
 XDebug is awesome.  Enhanced var_dump() and error messages, built in stack tracing, tracing and profiling, and remote debugging.  It is pretty amazing - albeit slightly incompatible with the newest PDT/Xdebug.  KcacheGrind is the only way to fly when it comes to viewing cachegrind output files - wincachegrind is useless.  Too bad my KDE4Win + kcachegrind keeps dying.  All in all, I am keeping xdebug in my setup.

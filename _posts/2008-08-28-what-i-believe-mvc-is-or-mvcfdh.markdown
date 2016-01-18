@@ -8,7 +8,7 @@ tags:
 
 There are many interpretations of MVC - there are less definitions but more implementations.  I want to cover what I personally do when using PHP for MVC.  I call it MVCFDH.
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2008/08/mvc.jpg)
+[![](/uploads/2008/mvc.jpg)](/uploads/2008/mvc.jpg){: .thumbnail}
 
 #### What is MVC?
 

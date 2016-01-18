@@ -7,7 +7,7 @@ tags:
 
 Sometimes we have static configuration options, such as the name of the company or the location of a particular partner's website.  Other times, there are more dynamic configuration options - such as the current location's URL or database connection credentials.
 
-For this article, I wanted to build on my previous article [here](http://aaronsaray.com/blog/2008/05/31/php-script-configuration-options-class-constants-or-mysql/), and make a config class that could still get all of this information from a static method, while making decisions to create accurate config options.
+For this article, I wanted to build on my previous article [here]({% post_url 2008-05-31-php-script-configuration-options-class-constants-or-mysql %}), and make a config class that could still get all of this information from a static method, while making decisions to create accurate config options.
 
 Ok, let's take a look at the code:
 

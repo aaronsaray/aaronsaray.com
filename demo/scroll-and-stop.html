@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style>
+      #hero {
+          margin: 5rem auto;
+          font-size: 5rem;
+          width: 60rem;
+          font-family: sans-serif;
+      }
+      #hero ul {
+          vertical-align: top;
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          display: block;
+          height: 6rem;
+          overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hero">Let's make software <ul id="scroller"><li>stream-lined.</li><li>effective.</li><li>simple.</li></ul></div>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      var $scrollingUL = $('#scroller');
+
+      function scroller(element)
+      {
+          var $nextSibling = $(element).next();
+          if ($nextSibling.length) {
+              setTimeout(function() {
+                  $scrollingUL.animate({
+                      scrollTop: $scrollingUL.scrollTop() + $nextSibling.height()
+                  }, 400, function() {
+                      scroller($nextSibling);
+                  })
+              }, 5000);
+
+          }
+      }
+
+      scroller($('#hero ul li:first-child'));
+    </script>
+  </body>
+</html>
