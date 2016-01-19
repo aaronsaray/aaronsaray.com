@@ -14,7 +14,7 @@ A few days (ok, a bunch of days) ago, [someone](https://twitter.com/mathewpeters
 #### Quality
 
 
-First of all, I'm looking for bugs.  You'd be surprised of the number of submissions to revision control I've seen with PHP or Javascript errors in them.  I always suggest using a lint tool before committing your changes (or uploading them via FTP, or whatever you happen to use to deploy code).  I've written about [PHP Lint](http://aaronsaray.com/blog/2008/09/21/svn-pre-commit-duty-lint-your-php/) before - and don't forget our friend [JSLint](http://jslint.com).
+First of all, I'm looking for bugs.  You'd be surprised of the number of submissions to revision control I've seen with PHP or Javascript errors in them.  I always suggest using a lint tool before committing your changes (or uploading them via FTP, or whatever you happen to use to deploy code).  I've written about PHP Lint before - and don't forget our friend [JSLint](http://jslint.com).
 
 Quality also comes from sticking to a set of coding standards.  In my projects, we have a coding standard that we stick with (it's a combination of PEAR and Zend Framework - but either of those really works).  If the code strays from this too much, I will bring it up.  (Please don't confuse 'sticking to standards' as architecture - I'll chat about that later.)
 

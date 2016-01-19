@@ -12,7 +12,7 @@ One debate that the guys on my team have been having revolves around the combina
 #### Use a CDN
 
 
-Remember, you can always use the CDN for your very familiar and shared libraries.  (I [think about this](http://aaronsaray.com/blog/2009/02/26/rely-on-google-for-your-javascript/) a lot.)  And of course, if your CDN fails, you can always fall back [locally](http://aaronsaray.com/blog/2009/11/30/auto-failover-for-cdn-based-javascript/).  But when you do this, you're generating another HTTP call which can slow down your site, right?  I used to be somewhat against this idea, but with the proliferation of sites using the shared CDNs, we don't actually have to issue that next HTTP.  A lot of your visitors might actually have this cached right on their system now and don't need to make that round trip.
+Remember, you can always use the CDN for your very familiar and shared libraries.  (I [think about this]({% post_url 2009-02-26-rely-on-google-for-your-javascript %}) a lot.)  And of course, if your CDN fails, you can always fall back [locally]({% post_url 2009-11-30-auto-failover-for-cdn-based-javascript %}).  But when you do this, you're generating another HTTP call which can slow down your site, right?  I used to be somewhat against this idea, but with the proliferation of sites using the shared CDNs, we don't actually have to issue that next HTTP.  A lot of your visitors might actually have this cached right on their system now and don't need to make that round trip.
 
 #### Combine Intelligently
 

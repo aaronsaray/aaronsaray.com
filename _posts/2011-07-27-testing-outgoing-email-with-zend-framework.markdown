@@ -6,7 +6,7 @@ tags:
 - zend framework
 ---
 
-I was creating a new application with Zend Framework at work the other day and I started using my technique that I described [here](http://aaronsaray.com/blog/2010/08/31/how-i-test-email-recipients-when-i-develop/) by adding the original email in my email address using the + sign.  However, the current organization I'm at has a mailserver (Exchange?) that is either configured not to allow this or just doesn't have this functionality built in.  So, this won't work.  I solved this with a new implementation of the mail class.  
+I was creating a new application with Zend Framework at work the other day and I started using my technique that I described [here]({% post_url 2010-08-31-how-i-test-email-recipients-when-i-develop %}) by adding the original email in my email address using the + sign.  However, the current organization I'm at has a mailserver (Exchange?) that is either configured not to allow this or just doesn't have this functionality built in.  So, this won't work.  I solved this with a new implementation of the mail class.  
 
 
 

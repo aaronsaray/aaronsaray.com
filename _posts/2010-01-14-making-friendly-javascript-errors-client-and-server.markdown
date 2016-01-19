@@ -5,7 +5,7 @@ tags:
 - javascript
 ---
 
-The more I look at my code I wrote in my earlier posts about the [unknown _popupControl() function](http://aaronsaray.com/blog/2009/09/29/unknown-function-_popupcontrol/) and the [Javascript Error Handler](http://aaronsaray.com/blog/2009/09/23/javascript-error-handler/), I see opportunities to leverage these errors into useful user interactions.
+The more I look at my code I wrote in my earlier posts about the [unknown _popupControl() function]({% post_url 2009-09-29-unknown-function-_popupcontrol %}) and the [Javascript Error Handler]({% post_url 2009-09-23-javascript-error-handler %}), I see opportunities to leverage these errors into useful user interactions.
 
 #### Doing a service for your visitor
 
@@ -20,7 +20,7 @@ There are two ways to go about handling these javascript errors: client side and
 
 Client side javascript error handling requires a bit more front-end programming.  It also shows a lot of your cards to the outside world.  By looking at the code in the javascript portion of your page, visitors could see all types of errors that you're trying to detect.  While I don't think this is a deterrent to using this method, you may feel otherwise.
 
-First things first - if you can't remember, check out my [Javascript Error Handler and Logger](http://aaronsaray.com/blog/2009/09/23/javascript-error-handler/) entry to see the code I'll be expanding on.
+First things first - if you can't remember, check out my [Javascript Error Handler and Logger]({% post_url 2009-09-23-javascript-error-handler %}) entry to see the code I'll be expanding on.
 
 My new code is going to look something like this:
 

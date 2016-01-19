@@ -11,25 +11,25 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 
 [1.mp4](/uploads/2013/1.mp4) -
-[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/1.pdf)
+[Download Slides](/uploads/2013/1.pdf)
 
 [2.mp4](/uploads/2013/2.mp4) - 
-[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/2.pdf)
+[Download Slides](/uploads/2013/2.pdf)
 
 [3.mp4](/uploads/2013/3.mp4) -
-[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/3.pdf)
+[Download Slides](/uploads/2013/3.pdf)
 
 [4.mp4](/uploads/2013/4.mp4) -
-[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/4.pdf)
+[Download Slides](/uploads/2013/4.pdf)
 
 [5.mp4](/uploads/2013/5.mp4) -
-[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/5.pdf)
+[Download Slides](/uploads/2013/5.pdf)
 
 [6.mp4](/uploads/2013/6.mp4) -
-[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/6.pdf)
+[Download Slides](/uploads/2013/6.pdf)
 
 [7.mp4](/uploads/2013/7.mp4) -
-[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/7.pdf)
+[Download Slides](/uploads/2013/7.pdf)
 
 
 [Download sourcecode.zip](/uploads/2013/sourcecode.zip)

@@ -7,7 +7,7 @@ tags:
 
 Hello all.  It's been quite the long time since I updated my blog.  I know, I know, this is a huge problem, considering this is a cardinal sin according to my talk at [MKEPUG](http://www.mkepug.org/events/12607927/) about getting job offers.  That was wrong, I know.  However, things have been pretty busy.  Let's see...
 
-A) Finished up my presentation for Zend about [Zend Filter](http://aaronsaray.com/blog/2011/07/20/zend-filter-presentation/)
+A) Finished up my presentation for Zend about Zend Filter
 
 B) Studying for the Linux+ exam (While I'm still doing some college classes, I also keep up on my [certifications](http://aaronsaray.com/resume/).)
 

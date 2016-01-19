@@ -15,7 +15,7 @@ b) they must have a server component
 
 c) they work in all browsers (hhahaah - this example only works in Chrome at the moment).
 
-What am I talking about?  An online photobooth, with mimimum javascript, HTML5, CSS, minimal images, that accesses your webcam and allows you to download your creations.  Yup, take a shot of yourself, and maybe drag some sunglasses onto it or something.  Want to see what I'm talking about?  Check it out here: <a href="http://aaronsaray.com/demo/onlinephotobooth">Online PhotoBooth</a>.
+What am I talking about?  An online photobooth, with mimimum javascript, HTML5, CSS, minimal images, that accesses your webcam and allows you to download your creations.  Yup, take a shot of yourself, and maybe drag some sunglasses onto it or something.  Want to see what I'm talking about?  Check it out here: [Online PhotoBooth](/demo/onlinephotobooth).
 
 Now, let's check it out.
 
@@ -23,7 +23,8 @@ Now, let's check it out.
 
 My goals were simple:
 
-<a href="http://aaronsaray.com/wp-content/uploads/2013/06/1.png"><img src="http://aaronsaray.com/wp-content/uploads/2013/06/1-300x140.png" alt="First Screen" width="300" height="140" class="alignright size-medium wp-image-1556" /></a>
+[![first screen](/uploads/2013/1-300x140.png)](/uploads/2013/1.png){: .thumbnail}
+
 
 - No flash / use HTML5 only
 - Minimal amount of javascript: don't you DARE import jQuery if you don't need to
@@ -64,7 +65,9 @@ The first part of the HTML document is as follows:
 
 First, the class of `modal` and `needAllow` are on the body.  The modal that is used for this application is purely css.  It activates/deactivates based on the classes on the body.  We'll look at that more in the css and the javascript.  Next of course is the header.  I have this separate because I'm not going to blur out the header with the modal - just the body content.
 
-<a href="http://aaronsaray.com/wp-content/uploads/2013/06/2.png"><img src="http://aaronsaray.com/wp-content/uploads/2013/06/2-300x146.png" alt="Screenshot" width="300" height="146" class="alignright size-medium wp-image-1557" /></a>Following that is the video.  You'll see that the video element is set to autoplay.  If this is not true, when you send webcam to it, it will still require you to click 'play' to show the content.  Below that is a hint to take a screenshot.  When the user hovers over the video with the mouse, the icon changes to a small camera, and a click handler watches for a click.  You'll see that in the css and javascript.
+[![second screen](/uploads/2013/2-300x146.png)](/uploads/2013/2.png){: .thumbnail}
+
+Following that is the video.  You'll see that the video element is set to autoplay.  If this is not true, when you send webcam to it, it will still require you to click 'play' to show the content.  Below that is a hint to take a screenshot.  When the user hovers over the video with the mouse, the icon changes to a small camera, and a click handler watches for a click.  You'll see that in the css and javascript.
 
 Finally, the video filters are input buttons of type radio.  This allows CSS3 filters to be applied to the streaming video.  As a bonus, this same filter setting is applied to the screenshot.  
 
@@ -92,7 +95,9 @@ The next section of the HTML document has the content for when a screenshot is t
 
 The canvas element is where the captured screenshot will go.  Then, the input field allows the user to name the file before they download it.  If its not changed, the placeholder content is used for the filename.  The download button allows the user to download.  At the very bottom, the closeScreenshot link is put in the top righthand corner to close the screenshot.  Fun fact: it also resets all the content on this page when that happens.
 
-<a href="http://aaronsaray.com/wp-content/uploads/2013/06/3.png"><img src="http://aaronsaray.com/wp-content/uploads/2013/06/3-300x135.png" alt="Decoration" width="300" height="135" class="alignright size-medium wp-image-1558" /></a>The screenshot decoration div allows for a list of draggable items that can be placed on the canvas.  You'll notice its using the HTML5 draggable attribute.  This allows drag handlers to be written so that no additional javascript libraries are required.  I initially wanted the image to also be contentEditable - but in Chrome, there is a bug that does not allow images to get resize handles when applied this.  Most editors have a work around for that.  Instead, I added a mousewheel handler to this to handle resizing.  More on that later.
+[![third screen](/uploads/2013/3-300x135.png)](/uploads/2013/3.png){: .thumbnail}
+
+The screenshot decoration div allows for a list of draggable items that can be placed on the canvas.  You'll notice its using the HTML5 draggable attribute.  This allows drag handlers to be written so that no additional javascript libraries are required.  I initially wanted the image to also be contentEditable - but in Chrome, there is a bug that does not allow images to get resize handles when applied this.  Most editors have a work around for that.  Instead, I added a mousewheel handler to this to handle resizing.  More on that later.
 
 Finally, the HTML document ends with the following two message divs:
 
@@ -831,8 +836,8 @@ _toggleScreenshotModal() is responsible for showing the modal and applying the p
 
 The _resizeDecoration method just determines if the delta change of the mousewheel is positive or negative, and then applies that transformation to the target element.  The width and height need to be changed equally, however, so the ratio is calculated ot make sure this is done properly.
 
-Finally, on to _downloadImage().  I've seen a lot of people send the base64 string to a php script via iframe (ajax won't prompt a download dialog, but iframe will)- but I didn't want to do that.  This creates a new canvas (because I don't want to modify my current displayed one by adding decorations to it), and clones the image that was drawn to that canvas.  Next, it loops through each decoration and places it as a drawn image on my new canvas.  Next, the toDataURL() method is called to return the base64 image data which is passed to the byteArray.  The byteArray is passed to an HTML5 Blob with the proer mime type created.  Then, a URL is created from that blob that will prompt an octet-stream download.  The filename is retrieved from the input box or from the placeholder, and the download link is created, and then clicked.  This prompts the user for a download.
+Finally, on to _downloadImage().  I've seen a lot of people send the base64 string to a php script via iframe (ajax won't prompt a download dialog, but iframe will)- but I didn't want to do that.  This creates a new canvas (because I don't want to modify my current displayed one by adding decorations to it), and clones the image that was drawn to that canvas.  Next, it loops through each decoration and places it as a drawn image on my new canvas.  Next, the toDataURL() method is called to return the base64 image data which is passed to the byteArray.  The byteArray is passed to an HTML5 Blob with the proper mime type created.  Then, a URL is created from that blob that will prompt an octet-stream download.  The filename is retrieved from the input box or from the placeholder, and the download link is created, and then clicked.  This prompts the user for a download.
 
 #### The end!
 
-I'm sure I could do this better.  Remember, the filters are not actually applied. I could make it more cross browser and more able to be on different display sizes.  But overall, I wanted to prove it could be done.  Remember, you can check it out at <a href="http://aaronsaray.com/demo/onlinephotobooth">Online Photo Booth</a>.
+I'm sure I could do this better.  Remember, the filters are not actually applied. I could make it more cross browser and more able to be on different display sizes.  But overall, I wanted to prove it could be done.  
