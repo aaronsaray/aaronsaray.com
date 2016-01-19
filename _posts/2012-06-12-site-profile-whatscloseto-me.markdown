@@ -25,4 +25,4 @@ No monetization options built in - plus the result list LOOKS like google ads - 
 
 Nowadays, Google does this good enough on its own - I would need more features than just this - plus not being able to change your location sucks.  (Even though I'm in Milwaukee, the screenshots will show I'm in the big MO).
 
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-201600-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-201600.png)
+[![](/uploads/2012/Screenshot-at-2012-03-14-201600-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-201600.png){: .thumbnail}

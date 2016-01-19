@@ -19,7 +19,7 @@ My goodness - the first feedback I got was an implication that my work isn't goo
 
 I'm sure there was no offense meant by the comment.  People are people - but I immediately felt on defense.  I felt like my work was being attacked.  No one in that room could even get close to doing what I do, yet that work was under attack as not good enough.  Or, that's how I felt.  I was overly defensive and a bit angry.
 
-[![lightbulb](http://aaronsaray.com/wp-content/uploads/2013/09/lightbulb-195x300.jpg)](http://aaronsaray.com/wp-content/uploads/2013/09/lightbulb.jpg)Later on, looking back at events like this (which have happened many times), I started to get an idea why a lot of the really smart programmers I know aren't entrepreneurs.  
+Later on, looking back at events like this (which have happened many times), I started to get an idea why a lot of the really smart programmers I know aren't entrepreneurs.  
 
 As a programmer, you're not allowed to fail.  Failure is a bug.  Bugs are not allowed in software.  Software is either 1 or 0.  It works or it doesn't.  No one is satisfied if say... 90% of the blog posts you post using Wordpress work.  The other 10% just go away.  That's a bug and not allowed.  However, that's not the same with business.  There are wins and losses.  Entrepreneurs know that some ideas will succeed, while most fail.  That's just part of the game.  That's at huge odds to what programmers do.
 

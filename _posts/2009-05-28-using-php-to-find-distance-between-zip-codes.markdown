@@ -9,7 +9,7 @@ Today marked the second time I had to write this code from scratch.  To save my 
 
 #### Get Your Zips
 
-I found a great resource at [ibegin.com](http://geocoder.ibegin.com/downloads.php) - a download of 5 digit zip codes, city, state and county name, and their latitude and longitude.  (Just in case it's unavailable, I have archived it [here](http://aaronsaray.com/blog/wp-content/uploads/2009/05/zip5.zip).)
+I found a great resource at [ibegin.com](http://geocoder.ibegin.com/downloads.php) - a download of 5 digit zip codes, city, state and county name, and their latitude and longitude.  (Just in case it's unavailable, I have archived it [here](/uploads/2009/zip5.zip).)
 
 #### Import your Zips
 

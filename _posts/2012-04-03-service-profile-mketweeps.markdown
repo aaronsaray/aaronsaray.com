@@ -25,4 +25,4 @@ Lessons learned:
 -Personal account: I should have followed people that replied to the bot.  I generally ignored all the tweets even.  Pay more attention!
 
 _screenshots_
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-18-203832-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-18-203832.png)
+[![](/uploads/2012/Screenshot-at-2012-03-18-203832-150x150.png)](/uploads/2012/Screenshot-at-2012-03-18-203832.png){: .thumbnail}

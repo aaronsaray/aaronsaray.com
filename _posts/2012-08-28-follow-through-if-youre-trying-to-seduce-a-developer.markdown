@@ -7,7 +7,7 @@ tags:
 
 I remember a scene from [A night at the roxbury](http://www.imdb.com/title/tt0120770/) where the less-than-slick brothers take some girls back to their room and have a problem closing the deal.  One of them keeps saying pickup lines while he has the girl sitting on his bed.  She basically says OK - we're past this.  He just can't seem to close the deal - no matter how much she wants him to.
 
-![](http://aaronsaray.com/wp-content/uploads/2012/07/kiss-300x137.png)That reminds me of what happens sometimes when I watch recruiters and other business people when it comes to seducing developers to projects.  They pitch a great idea, get a little bit of interest, and ... that's about it.  They offer things but never follow through.
+That reminds me of what happens sometimes when I watch recruiters and other business people when it comes to seducing developers to projects.  They pitch a great idea, get a little bit of interest, and ... that's about it.  They offer things but never follow through.
 
 I've been hearing for the longest time that it's very hard to recruit for PHP developers in our area.  Then I've seen offers from recruiters for jobs to those uninterested.  But the recruiters never follow through.  Let me explain.
 

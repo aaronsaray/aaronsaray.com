@@ -7,7 +7,7 @@ tags:
 - Misc Web Design
 ---
 
-[caption id="" align="alignright" width="150" caption="QR Code for this page"]![QR Code for this page](http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=http://aaronsaray.com/blog/2010/07/13/using-google-charts-to-make-qr-codes/&choe=UTF-8)[/caption]Google Charts is my hero yet again.  This time, I happened to notice that they have a chart in their API for QR Codes.  Considering I was just searching google for a PHP class to do this, I was pretty ecstatic.
+Google Charts is my hero yet again.  This time, I happened to notice that they have a chart in their API for QR Codes.  Considering I was just searching google for a PHP class to do this, I was pretty ecstatic.
 
 To implement, I made a quick line of jQuery to generate my QR Codes.  Of course, I did this after the page loaded :)  My goal was to generate a QR code for the page that the user is currently viewing.  Pretty simple:
 

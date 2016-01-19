@@ -35,6 +35,8 @@ Last but not least, check out the thesaurus.  Also, from time to time, I used re
 
 #### The Examples
 
-The left picture is the original design.  The right picture is the trimmed version.
+The left picture is the original design.  The second picture is the trimmed version.
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2008/09/toomuchtext-300x196.png)](http://aaronsaray.com/blog/wp-content/uploads/2008/09/toomuchtext.png) - [![](http://aaronsaray.com/blog/wp-content/uploads/2008/09/lesstext-300x196.png)](http://aaronsaray.com/blog/wp-content/uploads/2008/09/lesstext.png)
+[![](/uploads/2008/toomuchtext-300x196.png)](/uploads/2008/toomuchtext.png){: .thumbnail}
+
+[![](/uploads/2008/lesstext-300x196.png)](/uploads/2008/lesstext.png){: .thumbnail}

@@ -11,7 +11,9 @@ So I visit [Stack Overflow](http://stackoverflow.com) often.  But I'm getting de
 
 Why?
 
-[![stackoverflow-logo](http://aaronsaray.com/wp-content/uploads/2013/07/stackoverflow-logo-300x89.png)](http://aaronsaray.com/wp-content/uploads/2013/07/stackoverflow-logo.png)**A) Off topic posts are closed**
+[![stackoverflow-logo](/uploads/2013/stackoverflow-logo-300x89.png)](/uploads/2013/stackoverflow-logo.png){: .thumbnail}
+
+**A) Off topic posts are closed**
 Not sure what makes an off topic or non-informative post... but I've answered two or three now that were closed after I posted my answer.  All that work, now the question is gone.  The best explanation I got is that it wasn't in Q/A format... So???  Sometimes discussion is good.  If this really is a problem, move it to a discussion section then...
 
 **B) Useless answers up voted**

@@ -9,6 +9,6 @@ Finished presenting today at [MidwestPHP](http://midwestphp.org) 2013.  My talk 
 
 You can download the slides and files below.
 
-[Midwest PHP 2013 Slides](http://aaronsaray.com/wp-content/uploads/2013/03/Midwest-PHP-2013.pdf)
+[Midwest PHP 2013 Slides](/uploads/2013/Midwest-PHP-2013.pdf)
 
-[Zip of code](http://aaronsaray.com/wp-content/uploads/2013/03/midwestphp.zip)
+[Zip of code](/uploads/2013/midwestphp.zip)

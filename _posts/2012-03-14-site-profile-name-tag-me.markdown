@@ -137,7 +137,7 @@ RIP Name-Tag.me!
 
 _Screenshots / Downloads_
 
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-150408-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-150408.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-150425-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-150425.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-150450-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-150450.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Hello-My-Name-Is-Aaron-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Hello-My-Name-Is-Aaron.png)
+[![](/uploads/2012/Screenshot-at-2012-03-14-150408-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-150408.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-150425-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-150425.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-150450-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-150450.png){: .thumbnail}
+[![](/uploads/2012/Hello-My-Name-Is-Aaron-150x150.png)](/uploads/2012/Hello-My-Name-Is-Aaron.png){: .thumbnail}

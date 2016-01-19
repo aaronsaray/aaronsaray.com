@@ -16,7 +16,7 @@ Here's the idea (...knowing my experience in web development and programming...)
 **Would you contract me for a 1-on-1 code review via skype or google hangout?**
 
 Here's how it would work:
-[![I Like Code!](http://aaronsaray.com/wp-content/uploads/2013/07/hithere-300x104.png)](http://aaronsaray.com/wp-content/uploads/2013/07/hithere.png)
+[![I Like Code!](/uploads/2013/hithere-300x104.png)](/uploads/2013/hithere.png){: .thumbnail}
 
 
 

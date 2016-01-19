@@ -31,9 +31,9 @@ Overall, it was a good project.  I didn't sell as many as I'd like but I paid fo
 
 _Screenshots:_
 
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/1-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/1.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/2-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/2.png)
+[![](/uploads/2012/1-150x150.png)](/uploads/2012/1.png){: .thumbnail}
+[![](/uploads/2012/2-150x150.png)](/uploads/2012/2.png){: .thumbnail}
 
 **Bonus! Download the cookbook free!**
 
-[10dish Cookbook](http://aaronsaray.com/wp-content/uploads/2012/03/10dish.pdf)
+[10dish Cookbook](/uploads/2012/10dish.pdf)

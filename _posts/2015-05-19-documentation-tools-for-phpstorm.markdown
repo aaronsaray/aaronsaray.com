@@ -20,7 +20,7 @@ Second, [install apiDoc](http://apidocjs.com/#install) using npm.
 Next, Go to the **PHPStorm preferences > Tools > Remote SSH External Tools**.
 
 Click the **+** button to add a new tool:
-[![Screenshot 2015-04-05 18.15.42](http://aaronsaray.com/wp-content/uploads/2015/04/Screenshot-2015-04-05-18.15.42-150x150.png)](http://aaronsaray.com/wp-content/uploads/2015/04/Screenshot-2015-04-05-18.15.42.png)
+[![Screenshot 2015-04-05 18.15.42](/uploads/2015/Screenshot-2015-04-05-18.15.42-150x150.png)](/uploads/2015/Screenshot-2015-04-05-18.15.42.png){: .thumbnail}
 
   * Enter php doc as the name.  You can group it differently if you'd like.
 
@@ -38,4 +38,6 @@ Click OK and you're good to go for phpdocumentor.
 
 The same configuration can be done with apiDoc.  For parameters, I used "-i /path/to/api.php -o /path/to/api/doc/output".   
 
-[![Screenshot 2015-04-05 18.21.11](http://aaronsaray.com/wp-content/uploads/2015/04/Screenshot-2015-04-05-18.21.11-300x282.png)](http://aaronsaray.com/wp-content/uploads/2015/04/Screenshot-2015-04-05-18.21.11.png)After you save this, you now have external tools available to use in PHPStorm.  You simply have to click on the Tools menu, hover over External tools, and choose your tool from the menu.  (Note, if you have used vagrant, it may ask you to confirm you'd like to use the current vagrant instance each time you run the tool.)  Also, if you chose a different group for the commands, the menu will be different.
+[![Screenshot 2015-04-05 18.21.11](/uploads/2015/Screenshot-2015-04-05-18.21.11-300x282.png)](/uploads/2015/Screenshot-2015-04-05-18.21.11.png){: .thumbnail}
+
+After you save this, you now have external tools available to use in PHPStorm.  You simply have to click on the Tools menu, hover over External tools, and choose your tool from the menu.  (Note, if you have used vagrant, it may ask you to confirm you'd like to use the current vagrant instance each time you run the tool.)  Also, if you chose a different group for the commands, the menu will be different.

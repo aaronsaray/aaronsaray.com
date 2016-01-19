@@ -8,9 +8,9 @@ tags:
 I know - this is a bit non standard of a blog post for me... but bear with me. :)
 
 A fellow kayaker took this picture of Milwaukee.
-[![](http://aaronsaray.com/blog/wp-content/uploads/2010/07/before-300x77.png)](http://aaronsaray.com/blog/wp-content/uploads/2010/07/before.png)
+[![](/uploads/2010/before-300x77.png)](/uploads/2010/before.png){: .thumbnail}
 
 I thought it could look a little better.
-[![](http://aaronsaray.com/blog/wp-content/uploads/2010/07/after-300x77.png)](http://aaronsaray.com/blog/wp-content/uploads/2010/07/after.png)
+[![](/uploads/2010/after-300x77.png)](/uploads/2010/after.png){: .thumbnail}
 
-I've also attached the [PSD file](http://aaronsaray.com/blog/wp-content/uploads/2010/07/mkepsd.psd).  If you have any suggestions on how I could have done this better/faster, please let me know. :)  I'm still trying to learn how to touch up photos better.
+I've also attached the [PSD file](/uploads/2010/mkepsd.psd).  If you have any suggestions on how I could have done this better/faster, please let me know. :)  I'm still trying to learn how to touch up photos better.

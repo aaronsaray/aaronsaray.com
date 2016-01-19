@@ -31,7 +31,7 @@ Obviously, the sleep() method is the culprit here, but I want to prove it!  Lets
 
 Here is the output.
 
-[![AB results](http://aaronsaray.com/wp-content/uploads/2013/02/2.png)](http://aaronsaray.com/wp-content/uploads/2013/02/2.png)
+[![AB results](/uploads/2013/2.png)](/uploads/2013/2.png){: .thumbnail}
 
 The important numbers on this page are the time taken for the test, the requests per second, the time per request, the connection times and the percentage of requests served within a certain time.
 
@@ -57,7 +57,7 @@ slowRunningFunction();
 
 Now, lets look at the results.
 
-[![AB Results](http://aaronsaray.com/wp-content/uploads/2013/02/4.png)](http://aaronsaray.com/wp-content/uploads/2013/02/4.png)
+[![AB Results](/uploads/2013/4.png)](/uploads/2013/4.png){: .thumbnail}
 
 Now, if you look at the key metrics, you can see I've made considerable changes to the speed.  I could even ratchet up the number of requests and concurrency.  
 

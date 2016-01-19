@@ -21,7 +21,7 @@ And this is where we begin!
 #### Selecting the Source
 
 
-[![Choose Source](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-1-300x214.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-1.png)
+[![Choose Source](/uploads/2015/fusion-1-300x214.png)](/uploads/2015/fusion-1.png){: .thumbnail}
 
 I chose to use a Google Drive Spreadsheet.
 
@@ -30,7 +30,7 @@ I chose to use a Google Drive Spreadsheet.
 #### Validating the Layout
 
 
-[![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-2-300x214.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-2.png)
+[![](/uploads/2015/fusion-2-300x214.png)](/uploads/2015/fusion-2.png){: .thumbnail}
 
 Yup, everything looks good.  I really like the option of choosing the header / label row too.  Sometimes you might want to make a report from data farther down on a street.
 
@@ -39,7 +39,7 @@ Yup, everything looks good.  I really like the option of choosing the header / l
 #### Adding the Meta Data
 
 
-[![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-3-300x217.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-3.png)
+[![](/uploads/2015/fusion-3-300x217.png)](/uploads/2015/fusion-3.png){: .thumbnail}
 
 I think its important to give attribution to sources when you use them.  Here, I did so with MKE Biz Journal.
 
@@ -50,21 +50,21 @@ Click Finish!
 #### The first result
 
 
-[![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-4-300x202.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-4.png)
+[![](/uploads/2015/fusion-4-300x202.png)](/uploads/2015/fusion-4.png){: .thumbnail}
 
 As you can tell - it's pretty boring right now.  But, let's make it a little bit more user friendly.  I've decided to rename the columns to 'Source Data', 'Cards' and 'Building Locations.'  When I clicked on the locations tab, however, it decided to do all the geo-location:
 
-[![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-5-300x193.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-5.png)
+[![](/uploads/2015/fusion-5-300x193.png)](/uploads/2015/fusion-5.png){: .thumbnail}
 
 That only took a little while - and then I had my map.  But it was WAY zoomed out.  ** AND ** I couldn't find my locations anywhere.  Turns out there is an option on the left to select which column you want to map. It had defaulted to "Name" - so I chose address - and then it re-geocoded.  This actually re-focused it - closer to Wisconsin, but that's not perfect yet.  Turns out, I had to center and zoom the map manually - but that was fine.  
 
 There are other map configuration options too.  The default placeholder was a simple dot - but I wanted the familiar balloon.  So, I chose that option.  On the left hand, choose Feature Map -> Choose feature styles.  You'll see something like this:
 
-[![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-6-300x275.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-6.png)
+[![](/uploads/2015/fusion-6-300x275.png)](/uploads/2015/fusion-6.png){: .thumbnail}
 
 The next thing I wanted to do was configure the info window.  This is on the left side too: Feature Map -> Change Info Window.  I decided I would want the name, address, values and picture to be in the info window.  By default, it renders all of the information automatically like shown below:
 
-[![](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-7-300x230.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-7.png)
+[![](/uploads/2015/fusion-7-300x230.png)](/uploads/2015/fusion-7.png){: .thumbnail}
 
 I decided to write my own HTML to customize the view.  You can click on the custom tab and do the following:
 
@@ -81,7 +81,9 @@ I decided to write my own HTML to customize the view.  You can click on the cust
 {% endhighlight %}
 
 
-[![fusion-8](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-8-300x164.png)](http://aaronsaray.com/wp-content/uploads/2015/04/fusion-8.png)Ugh - inline style.  But, what can ya do?
+[![fusion-8](/uploads/2015/fusion-8-300x164.png)](/uploads/2015/fusion-8.png){: .thumbnail}
+
+Ugh - inline style.  But, what can ya do?
 
 Anyway, this makes a pretty good looking info window for our purposes.
 

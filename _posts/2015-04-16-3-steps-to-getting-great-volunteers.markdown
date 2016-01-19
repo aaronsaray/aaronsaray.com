@@ -7,7 +7,7 @@ tags:
 
 **If you run a volunteer organization, you might be turning away valuable volunteers!  Let me give you 3 useful ways to lock in these volunteers - now!**
 
-![living](http://aaronsaray.com/wp-content/uploads/2015/04/living-300x200.jpg)First of all, a little background.  I just called a volunteer organization and offered to work with the team.  The person who answered the phone was very confused, very gruff, and in the end, told me to email someone before hurrying off the phone.  Needless to say, if that's the caliber of person that runs the organization, I don't want to participate!  
+First of all, a little background.  I just called a volunteer organization and offered to work with the team.  The person who answered the phone was very confused, very gruff, and in the end, told me to email someone before hurrying off the phone.  Needless to say, if that's the caliber of person that runs the organization, I don't want to participate!  
 
 So, let's get into the tips - to make sure you never have to worry about getting volunteers again.
 
@@ -16,7 +16,7 @@ So, let's get into the tips - to make sure you never have to worry about getting
 
 
 
-![shopper](http://aaronsaray.com/wp-content/uploads/2015/04/shopper-300x232.jpg)The first steps to solving a problem is identifying it.  Sometimes, when you're so close to a specific task or process, it's hard to identify the weaknesses.  If you find yourself confused about why your on-boarding, marketing or attraction system is not working, it might be time to do a secret shopper program.  Find a trusted colleague or a friend of a friend who can play the part: give them the standard material, and see what happens.  
+The first steps to solving a problem is identifying it.  Sometimes, when you're so close to a specific task or process, it's hard to identify the weaknesses.  If you find yourself confused about why your on-boarding, marketing or attraction system is not working, it might be time to do a secret shopper program.  Find a trusted colleague or a friend of a friend who can play the part: give them the standard material, and see what happens.  
 
 In the end, you may even actually get a new volunteer! - But even if you don't, you'll get valuable advice from their brand new experience.  They might tell you that your handout material or call to action on your website didn't connect with them.  Perhaps they're even confused on what they would be doing if they chose to volunteer.  They might even be scared thinking they don't have the right skills to be successful.  Grab all this information - and make small, incremental changes to your program!
 
@@ -36,7 +36,7 @@ If you can't seem to get that information directly, it's ok to be a spy.  Jump o
 
 
 
-![phone](http://aaronsaray.com/wp-content/uploads/2015/04/phone-300x200.jpg)The genesis of this article came from that phone call I mentioned above.  I really felt rubbed the wrong way, but I'm persistent.  I'm going to call at a different time, email, and continue my volunteering streak.  But, not everyone is like me.  You don't want to lose any volunteers, not even 1!  
+The genesis of this article came from that phone call I mentioned above.  I really felt rubbed the wrong way, but I'm persistent.  I'm going to call at a different time, email, and continue my volunteering streak.  But, not everyone is like me.  You don't want to lose any volunteers, not even 1!  
 
 So, what concerns do volunteers have when they call?  Let's figure it out:
 

@@ -20,13 +20,13 @@ I'm using GoDaddy.  I decided to forward my domain.
 
 First, select your domain in the domain manager.  Then, choose the forward domain option at the top of the list.
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2010/05/post1.png)](http://aaronsaray.com/blog/wp-content/uploads/2010/05/post1.png)
+[![](/uploads/2010/post1.png)](/uploads/2010/post1.png){: .thumbnail}
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2010/05/post2.png)](http://aaronsaray.com/blog/wp-content/uploads/2010/05/post2.png)
+[![](/uploads/2010/post2.png)](/uploads/2010/post2.png){: .thumbnail}
 
 On the popup, choose the advanced option link.  Make sure to choose temporarily forward the domain.  This is needed because at some point, we'll be redirecting this domain's nameservers to bit.ly again to natively do this URL forwarding.  Enter "http://bit.ly" in the box and click ok.
 
-[![](http://aaronsaray.com/blog/wp-content/uploads/2010/05/post3.png)](http://aaronsaray.com/blog/wp-content/uploads/2010/05/post3.png)
+[![](/uploads/2010/post3.png)](/uploads/2010/post3.png){: .thumbnail}
 
 #### Try it out
 

@@ -30,7 +30,7 @@ This plugin has the following functionality:
 
 
 More about this after the file download:
-[Elgg Dev Tools](http://aaronsaray.com/blog/wp-content/uploads/2009/04/oht_elggdevtools151.zip)
+[Elgg Dev Tools](/uploads/2009/oht_elggdevtools151.zip)
 
 #### Integrates FirePHP
 

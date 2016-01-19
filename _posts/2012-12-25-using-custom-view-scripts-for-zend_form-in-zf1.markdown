@@ -93,7 +93,7 @@ if (!empty($errors)) echo $this->formErrors($this->element->getMessages());
 
 This generates the following output when printing the form.
 
-![](http://aaronsaray.com/wp-content/uploads/2012/11/Screenshot.png)
+[![](/uploads/2012/Screenshot.png)](/uploads/2012/Screenshot.png){: .thumbnail}
 
 **There is something important to note here:**  The link was not a required element of the form, it was only needed for display.  (Side note: there is always more than one way to solve each problem.  It is quite possible that I could have prepended a decorator onto this element to potentially accomplish this task too.)
 

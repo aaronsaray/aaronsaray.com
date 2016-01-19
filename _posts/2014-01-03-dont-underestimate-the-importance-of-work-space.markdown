@@ -5,7 +5,7 @@ tags:
 - business
 ---
 
-[![Cubicles](http://aaronsaray.com/wp-content/uploads/2013/12/455596_95352020-300x201.jpg)](http://aaronsaray.com/wp-content/uploads/2013/12/455596_95352020.jpg)I've read the articles and studies about workers creating their own work spaces and I think it's a great idea.  (In fact, the company should too - it [increases efficiency by 32%!](http://www.medicalnewstoday.com/articles/200208.php))  But, I never really realized how important it was until recently.
+I've read the articles and studies about workers creating their own work spaces and I think it's a great idea.  (In fact, the company should too - it [increases efficiency by 32%!](http://www.medicalnewstoday.com/articles/200208.php))  But, I never really realized how important it was until recently.
 
 There have been a lot of office space movement in the last few months at my current employer.  I never worried too much about what will happen - what happens, happens.  However, I thought there wasn't enough communication about the specifics.  I didn't go much past that.
 

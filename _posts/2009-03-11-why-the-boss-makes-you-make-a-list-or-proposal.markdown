@@ -10,7 +10,7 @@ From time to time, I've been asked to make a list of my design ideas, or to deve
 #### Why Make the List/Proposal
 
 
-![Todo List](http://aaronsaray.com/blog/wp-content/uploads/2009/01/134049_to_do_list____or_not_to_do-lis.jpg)
+[![Todo List](/uploads/2009/134049_to_do_list____or_not_to_do-lis.jpg)](/uploads/2009/134049_to_do_list____or_not_to_do-lis.jpg){: .thumbnail}
 
 ##### Thinking/Planning
 

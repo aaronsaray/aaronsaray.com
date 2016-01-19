@@ -6,7 +6,9 @@ tags:
 - programming
 ---
 
-[![Beginning of Life](http://aaronsaray.com/wp-content/uploads/2014/10/seedling-300x199.jpg)](http://aaronsaray.com/wp-content/uploads/2014/10/seedling.jpg)I think it's pretty awesome that my daily job is making **something** out of **nothing**.  Before we start programming, there is just a blank page.  Because of the words, phrases, numbers, and language we put on that page, something new is born.  It can be as simple as a plain page with a nice design or as complex as an algorithm to decide what your next suggested video on Youtube should be.  With a few keystrokes, a beautiful application can be born - and with the same keystrokes, the most thoughtful piece of code can now become bug riddled, error prone, and nearly useless.
+[![Beginning of Life](/uploads/2014/seedling-300x199.jpg)](/uploads/2014/seedling.jpg){: .thumbnail}
+
+I think it's pretty awesome that my daily job is making **something** out of **nothing**.  Before we start programming, there is just a blank page.  Because of the words, phrases, numbers, and language we put on that page, something new is born.  It can be as simple as a plain page with a nice design or as complex as an algorithm to decide what your next suggested video on Youtube should be.  With a few keystrokes, a beautiful application can be born - and with the same keystrokes, the most thoughtful piece of code can now become bug riddled, error prone, and nearly useless.
 
 This is the world I grew up in.  This is the world I live in now.
 
@@ -22,7 +24,9 @@ I have had a chance to work with some people who manufacture physical objects la
 
 One of the struggles I've ran into working with people with a manufacturing background comes from these two different root working mindsets.  I ask many questions and request even the most 'basic' things to be defined for me.  Let me put it another way: I expect to be told what material for the bolt, what type of thread, what head configuration, what length, etc, because it is **not** pre-built in my world.  On the flip side, there are a known and common set of bolts in manufacturing.  It seems ludicrous to ask so many questions when you should just be able to pick the best bolt for the job from the collection of standard bolts.
 
-[![3D-Printer](http://aaronsaray.com/wp-content/uploads/2014/10/3D-Printer-300x239.jpg)](http://aaronsaray.com/wp-content/uploads/2014/10/3D-Printer.jpg)Sometimes, the assumption is made that there is just a collection of things in programming that can be pieced together - and like I said, 20% of the time there is - but, it's not this way for 80% of it.  One must be detailed when they ask for a programming solution.
+[![3D-Printer](/uploads/2014/3D-Printer-300x239.jpg)](/uploads/2014/3D-Printer.jpg){: .thumbnail}
+
+Sometimes, the assumption is made that there is just a collection of things in programming that can be pieced together - and like I said, 20% of the time there is - but, it's not this way for 80% of it.  One must be detailed when they ask for a programming solution.
 
 I'm encouraged by the popularity of 3D printing lately, though.  This really is a new way of manufacturing that aligns quite nicely with programming.  Instead of assembling some pieces in an creative way, the manufacturer is literally being presented with a blank slate.  They must define the specifics of everything they want, in detail, down to the last millimeter.  This is very akin to the detail that we've needed all along in programming.
 

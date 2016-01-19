@@ -26,7 +26,7 @@ This plugin has the following functionality:
 
 
 More about this after the file download:
-[Elgg Generate Groups](http://aaronsaray.com/blog/wp-content/uploads/2009/05/oht_elgggengroups15.zip)
+[Elgg Generate Groups](/uploads/2009/oht_elgggengroups15.zip)
 
 
 ##### Creates Groups

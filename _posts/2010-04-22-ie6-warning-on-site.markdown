@@ -74,4 +74,4 @@ Finally, we have a bit of css
 
 
 The finished product looks something like this:
-[![](http://aaronsaray.com/blog/wp-content/uploads/2010/04/untitled-300x34.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2010/04/untitled.jpg)
+[![](/uploads/2010/untitled-300x34.jpg)](/uploads/2010/untitled.jpg){: .thumbnail}

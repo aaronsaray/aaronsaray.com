@@ -9,8 +9,8 @@ So I tried my very first photoshop touch up of a girl I found online.  Turns out
 
 #### Before
 
-[![before](http://aaronsaray.com/blog/wp-content/uploads/2009/10/before-275x300.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2009/10/before.jpg)
+[![before](/uploads/2009/before-275x300.jpg)](/uploads/2009/before.jpg){: .thumbnail}
 
 #### After
 
-[![after](http://aaronsaray.com/blog/wp-content/uploads/2009/10/after-275x300.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2009/10/after.jpg)
+[![after](/uploads/2009/after-275x300.jpg)](/uploads/2009/after.jpg){: .thumbnail}

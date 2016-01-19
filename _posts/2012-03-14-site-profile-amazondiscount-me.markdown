@@ -20,5 +20,5 @@ Lessons Learned:
 
 _Screenshots:_
 
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-165821-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-165821.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-165827-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-165827.png)
+[![](/uploads/2012/Screenshot-at-2012-03-14-165821-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-165821.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-165827-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-165827.png){: .thumbnail}

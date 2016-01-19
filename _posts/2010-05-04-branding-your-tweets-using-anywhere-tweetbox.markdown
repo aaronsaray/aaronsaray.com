@@ -63,4 +63,4 @@ Add the bookmark to your browser.  I added mine to my firefox bookmark toolbar. 
 
 The first time you use the tweet box, it will prompt you to connect to your website. After this is done, you can use this easily.  My branded tweets show that its from AaronSaray.com nicely.  See?
 
-![](http://aaronsaray.com/blog/wp-content/uploads/2010/05/tweet.jpg)
+[![](/uploads/2010/tweet.jpg)](/uploads/2010/tweet.jpg){: .thumbnail}

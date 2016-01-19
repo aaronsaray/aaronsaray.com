@@ -7,7 +7,7 @@ tags:
 
 Just finished a talk at the [Wisconsin Midrange Computer Professional Association](http://www.wmcpa.org/) and wanted to share the info.  This particular talk was an introduction to PHP.
 
-The slides can be downloaded [Here](http://aaronsaray.com/wp-content/uploads/2013/01/WMCPA-Intro-PHP.pdf).
+The slides can be downloaded [Here](/uploads/2013/WMCPA-Intro-PHP.pdf).
 
 
 

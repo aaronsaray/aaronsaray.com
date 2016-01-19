@@ -48,7 +48,7 @@ In order to accomplish this task, we're going to have to create an external tool
 After starting Eclipse PDT:
 **Click the Run menu, select the External Tools menu option and click the External Tools Dialog... option.**
 
-[![1](http://aaronsaray.com/blog/wp-content/uploads/2009/01/1-150x118.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2009/01/1.jpg)
+[![1](/uploads/2009/1-150x118.jpg)](/uploads/2009/1.jpg){: .thumbnail}
 
 
 
@@ -58,7 +58,7 @@ After starting Eclipse PDT:
 **Double click the Program Menu item.**
 This new screen will bring up the external tools menu items.  So far, I've named my External Tool 'AB Load Testing' and filled in the path to my ab.exe and working directory.
 
-[![2](http://aaronsaray.com/blog/wp-content/uploads/2009/01/2-300x240.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2009/01/2.jpg)
+[![2](/uploads/2009/2-300x240.jpg)](/uploads/2009/2.jpg){: .thumbnail}
 
 
 
@@ -75,7 +75,7 @@ You'll notice that you have the option to click on variables.  Eclipse has the a
 
 **Scroll down until you see string_prompt and select it.**  You'll notice that the arguments that you can specify are the prompt text and the default value.  **Fill in your prompt text and default value separated by a colon in the arguments box.**
 
-[![3](http://aaronsaray.com/blog/wp-content/uploads/2009/01/3-140x150.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2009/01/3.jpg)
+[![3](/uploads/2009/3-140x150.jpg)](/uploads/2009/3.jpg){: .thumbnail}
 
 **Repeat the process with the -n option.**  I selected _ -n ${string_prompt:Number of requests?:40}_.
 
@@ -83,7 +83,7 @@ You'll notice that you have the option to click on variables.  Eclipse has the a
 
 **Click the Common tab, check external tools under the favorites menu.**
 
-![4](http://aaronsaray.com/blog/wp-content/uploads/2009/01/4.jpg)
+[![4](/uploads/2009/4.jpg)](/uploads/2009/4.jpg){: .thumbnail}
 
 **Click Apply, Click Close**.  This saves your external program.
 
@@ -95,15 +95,15 @@ You'll notice that you have the option to click on variables.  Eclipse has the a
 
 **Click the external tools drop down and select AB Load Testing.**
 
-![5](http://aaronsaray.com/blog/wp-content/uploads/2009/01/5.jpg)
+[![5](/uploads/2009/5.jpg)](/uploads/2009/5.jpg){: .thumbnail}
 
 You should start to receive your prompts.  Fill in the items as appropriate.
 
-![6](http://aaronsaray.com/blog/wp-content/uploads/2009/01/6.jpg)
+[![6](/uploads/2009/6.jpg)](/uploads/2009/6.jpg){: .thumbnail}
 
 And, as you can see, after it is completed, you will see the output in the console.
 
-[![7](http://aaronsaray.com/blog/wp-content/uploads/2009/01/7-300x77.jpg)](http://aaronsaray.com/blog/wp-content/uploads/2009/01/7.jpg)
+[![7](/uploads/2009/7-300x77.jpg)](/uploads/2009/7.jpg){: .thumbnail}
 
 For example, my output was this:
 

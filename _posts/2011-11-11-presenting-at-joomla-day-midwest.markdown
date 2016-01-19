@@ -19,7 +19,7 @@ E) ... and now, I'm presenting about
 
 [Cloud Hosting and SaaS at Joomla Day Midwest](http://joomladaymidwest.org/speakers/aaron-saray-wisconsin.html).  
 
-**Update!  Presentation can be downloaded:** [Here (PDF)](http://aaronsaray.com/wp-content/uploads/2011/11/Harnessing_the_Cloud_for_SaaS_Hosted_Platfor.pdf)
+**Update!  Presentation can be downloaded:** [Here (PDF)](/uploads/2011/Harnessing_the_Cloud_for_SaaS_Hosted_Platfor.pdf)
 
 Hope to see people out there.  Make sure to DM me on [Twitter](http://twitter.com/aaronsaray) if you want a discount code (Yup, you'd be a super late-bird but still save $25!).
 

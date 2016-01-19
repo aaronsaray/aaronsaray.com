@@ -8,7 +8,9 @@ tags:
 - scripting
 ---
 
-[![android](http://aaronsaray.com/wp-content/uploads/2013/05/android.png)](http://aaronsaray.com/wp-content/uploads/2013/05/android.png)Most of the development I do that needs to be tested on android is on a local subnet.  Generally, this is because I am running the servers in virtual machines that mimic the production environment.  When I want to test these websites via the android emulator, it would be nice to be able to surf to them locally (without putting them in a public QA environment) - as well as have the ability to use Android Chrome's USB Debugging.  (If you're not familiar with Chrome USB debugging, its the process where you connect your phone via USB to your computer, and then you can use your computer's Chrome development tools to inspect and alter items on the mobile chrome.  We can do this on the emulator too!)
+[![android](/uploads/2013/android.png)](/uploads/2013/android.png){: .thumbnail}
+
+Most of the development I do that needs to be tested on android is on a local subnet.  Generally, this is because I am running the servers in virtual machines that mimic the production environment.  When I want to test these websites via the android emulator, it would be nice to be able to surf to them locally (without putting them in a public QA environment) - as well as have the ability to use Android Chrome's USB Debugging.  (If you're not familiar with Chrome USB debugging, its the process where you connect your phone via USB to your computer, and then you can use your computer's Chrome development tools to inspect and alter items on the mobile chrome.  We can do this on the emulator too!)
 
 
 
@@ -18,7 +20,7 @@ tags:
 
 First, make sure to install your [Android Emulator](http://developer.android.com/sdk/index.html).  Once you have installed the emulator and the packages you want, you can create an instance of an AVD file for your chosen android version.  In this example, Chrome that I'm providing works only with Android 4.1 and above.  Next, make sure you select the **shared GPU** setting on the device setup, and choose **Arm emulation** from the type.  For me, the x86 version made the emulator much faster - but this Chrome I have won't work (note: you can't easily get Google Chrome on the emulator... not sure why).  If you do not use shared GPU, chrome will render white pages instead of your websites.
 
-Once this is working, download this [chrome APK](http://aaronsaray.com/blog/wp-content/uploads/2013/05/chrome.apk).  With your emulator running, you want to push the file and install it on your emulator.  Do the following:
+Once this is working, download this [chrome APK](/uploads/2013/chrome.apk).  With your emulator running, you want to push the file and install it on your emulator.  Do the following:
 
 
     

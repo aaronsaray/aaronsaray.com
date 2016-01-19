@@ -11,7 +11,7 @@ Finally, after a bit of research, I came across the idea of using text-justify..
 
 This screenshot is my final output:
 
-[![Screenshot](http://aaronsaray.com/wp-content/uploads/2013/07/Screenshot-300x106.png)](http://aaronsaray.com/wp-content/uploads/2013/07/Screenshot.png)
+[![Screenshot](/uploads/2013/Screenshot-300x106.png)](/uploads/2013/Screenshot.png){: .thumbnail}
 
 So here's the markup:
 

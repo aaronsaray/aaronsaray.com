@@ -5,7 +5,9 @@ tags:
 - business
 ---
 
-![Angry Birds](http://aaronsaray.com/wp-content/uploads/2013/05/angry-birds.jpg)**Sorry for the mini-rant here...**
+[![Angry Birds](/uploads/2013/angry-birds.jpg)](/uploads/2013/angry-birds.jpg){: .thumbnail}
+
+**Sorry for the mini-rant here...**
 
 I've ran into a couple websites lately now that have disabled their comments sections.  They were technical articles - and I had feedback or questions.  I wanted to comment and join a conversation.  One had said they just don't accept comments anymore.  Others had said that they prefer the conversation goes to twitter.  
 

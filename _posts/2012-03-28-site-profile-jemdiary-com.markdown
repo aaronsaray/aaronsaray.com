@@ -44,16 +44,17 @@ It's almost sad to see something you've spent more than a decade with go away.  
 
 _Screenshots_
 
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162645-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162645.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162725-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162725.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162737-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162737.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162758-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162758.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162812-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162812.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162819-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162819.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162836-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162836.png)[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162846-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162846.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162854-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162854.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162906-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162906.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162917-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-162917.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-163004-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-163004.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-164457-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-164457.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-18-114756-150x132.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-18-114756.png)
+[![](/uploads/2012/Screenshot-at-2012-03-14-162645-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162645.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162725-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162725.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162737-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162737.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162758-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162758.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162812-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162812.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162819-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162819.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162836-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162836.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162846-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162846.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162854-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162854.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162906-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162906.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-162917-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162917.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-163004-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-163004.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-164457-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-164457.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-18-114756-150x132.png)](/uploads/2012/Screenshot-at-2012-03-18-114756.png){: .thumbnail}

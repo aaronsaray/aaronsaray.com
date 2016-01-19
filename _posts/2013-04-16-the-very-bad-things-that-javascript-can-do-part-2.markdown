@@ -33,7 +33,7 @@ And of course, at the very end of the email is some HTML or Javascript that they
 
 Now, for our example, we’re going to use the following banner:
 
-http://aaronsaray.com/wp-content/uploads/2013/03/award.png
+![](/uploads/2013/award.png)
 
 
 Now, lets run through some scenarios.

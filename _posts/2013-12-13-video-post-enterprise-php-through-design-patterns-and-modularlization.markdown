@@ -10,96 +10,28 @@ I created this Udemy course a while ago - but unfortunately they said it was too
 So, exactly like I'd present at a conference, here is a screencast of this presentation!
 
 
+[1.mp4](/uploads/2013/1.mp4) -
+[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/1.pdf)
 
-#### Part 1
+[2.mp4](/uploads/2013/2.mp4) - 
+[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/2.pdf)
 
+[3.mp4](/uploads/2013/3.mp4) -
+[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/3.pdf)
 
-[video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/1.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/1.pdf)
+[4.mp4](/uploads/2013/4.mp4) -
+[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/4.pdf)
 
+[5.mp4](/uploads/2013/5.mp4) -
+[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/5.pdf)
 
+[6.mp4](/uploads/2013/6.mp4) -
+[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/6.pdf)
 
-* * *
+[7.mp4](/uploads/2013/7.mp4) -
+[Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/7.pdf)
 
 
-
-
-
-#### Part 2
-
-
-[video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/2.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/2.pdf)
-
-
-
-* * *
-
-
-
-
-
-#### Part 3
-
-
-[video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/3.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/3.pdf)
-
-
-
-* * *
-
-
-
-
-
-#### Part 4
-
-
-[video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/4.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/4.pdf)
-
-
-
-* * *
-
-
-
-
-
-#### Part 5
-
-
-[video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/5.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/5.pdf)
-
-
-
-* * *
-
-
-
-
-
-#### Part 6
-
-
-[video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/6.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/6.pdf)
-
-
-
-* * *
-
-
-
-
-
-#### Part 7
-
-
-[video preload="none" mp4="http://aaronsaray.com/wp-content/uploads/2013/12/7.mp4"][/video][Download Slides](http://aaronsaray.com/wp-content/uploads/2013/12/7.pdf)
-
-
-
-* * *
-
-
-
-[Download sourcecode.zip](http://aaronsaray.com/wp-content/uploads/2013/12/sourcecode.zip)
+[Download sourcecode.zip](/uploads/2013/sourcecode.zip)
 
 Thanks for watching!  Make sure to check out [My Slideshare](http://slideshare.com/aaronsaray) for more (without audio) of my presentations too!

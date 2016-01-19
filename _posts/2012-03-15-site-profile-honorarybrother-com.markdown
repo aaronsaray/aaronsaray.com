@@ -33,7 +33,7 @@ From a SEO point of view, I wasn't really aware of the types of things that thes
 
 From a market point of view, I think it was potentially a risky area to enter.  Markets where 'emotion' are concerned are not my specialty.  I'm a programmer!
 
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-185705-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-185705.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-185713-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-185713.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-185842-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-185842.png)
-[![](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-190442-150x150.png)](http://aaronsaray.com/wp-content/uploads/2012/03/Screenshot-at-2012-03-14-190442.png)
+[![](/uploads/2012/Screenshot-at-2012-03-14-185705-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-185705.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-185713-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-185713.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-185842-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-185842.png){: .thumbnail}
+[![](/uploads/2012/Screenshot-at-2012-03-14-190442-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-190442.png){: .thumbnail}

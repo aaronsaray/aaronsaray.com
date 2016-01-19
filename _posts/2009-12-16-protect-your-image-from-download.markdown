@@ -16,13 +16,11 @@ First of all, the user will see the image correctly.  If they choose to 'view im
 #### The Image to Display
 
 This simple duck.  He is 300px wide and 206px tall.  This is important to know for this feature.
-![duck](http://aaronsaray.com/blog/wp-content/uploads/2009/11/duck.jpg)
+[![duck](/uploads/2009//duck.jpg)](/uploads/2009//duck.jpg){: .thumbnail}
 
 #### The Decoy Image
 
-The decoy image is a transparent gif that is 1px by 1px.  Here it is.
-![transparent](http://aaronsaray.com/blog/wp-content/uploads/2009/11/transparent.gif)
-Hah.  So, if you'd like to download it, click here: [transparent.gif](http://aaronsaray.com/blog/wp-content/uploads/2009/11/transparent.gif)
+The decoy image is a transparent gif that is 1px by 1px.  If you'd like to download it, click here: [transparent.gif](/uploads/2009/transparent.gif)
 
 #### The code
 
