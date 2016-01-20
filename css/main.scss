@@ -155,3 +155,24 @@ footer p {
 pre {
   overflow-x: auto;
 }
+#crazytime_video, #notfound_video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+}
+#not-found-link {
+  display: block;
+  text-align: center;
+}
+#not-found-link a {
+  color: #000000;
+  background: rgba(255,255,255,0.4);
+  display: inline-block;
+
+}
