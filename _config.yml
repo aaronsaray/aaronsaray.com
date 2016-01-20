@@ -7,8 +7,20 @@
 
 # Site settings
 title: Aaron Saray | Milwaukee Web Developer, PHP Programmer
+url: http://www.aaronsaray.com
 
 # Build settings
 markdown: kramdown
 permalink: /:year/:title
 exclude: [README.md, build.sh]
+
+# sitemap
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/404.html"
+        - "/feed.xml"
+        - "/Resume-Aaron_Saray.pdf"
+        - "/css/main.css"
+    include_posts:
+        - "/blog.html"
