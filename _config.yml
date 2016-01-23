@@ -12,7 +12,7 @@ url: http://www.aaronsaray.com
 # Build settings
 markdown: kramdown
 permalink: /:year/:title
-exclude: [README.md, build.sh]
+exclude: [README.md, build.sh, deploy.sh]
 
 # sitemap
 sitemap:
