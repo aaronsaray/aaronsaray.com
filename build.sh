@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-jekyll build
+jekyll build && terminal-notifier -title "Blog Built" -message "Jekyll has built the blog successfully"
+
