@@ -26,14 +26,12 @@ I hold a Bachelor of Science in Business Management from Cardinal Stritch Univer
 I hold the following certifications: Certified SCRUM Master, Zend Certified Engineer, Security+, Network+, A+, MCP 70-210 and NTC Open Source Web Developer Certificate.
 
 ### Professional Experience
-
-**PHP Web Developer / Owner / Freelance at 201 Creative, LLC.**
+ 
+ **Senior Software Engineer at iMoneza, LLC.** I began working at iMoneza February, 2016. iMoneza helps support digital publications through the implementation of a micropayments based paywall.  Primarily focus on javascript and PHP integrations of the core product.
  
 **CTO / Co-founder of Small Shops United, LLC.**  At SSU, we provide digital local loyalty products.  The product consists of a LAMP stack, web service interface with Android tablets, a queue system, and various BI related reporting systems and data analysis.
 
-**Web Development Manager at Liturgical Publications, Inc.** I worked at LPI from October, 2010 to February, 2015. I managed a team of 3 web developers, 2 web designers, 1 dev-ops programmer and administrator, and one QA associate. Together with the team, I was responsible for 5 full stack individual web properties averaging over 4 million hits per month. At LPi, I introduced a system of source control, project management, quoting, quality assurance and business analysis to the programming team. I was responsible for team hiring, budget, wage reviews and other HR related functions. My primary duties included mentorship, team growth and product quality.
-
-**Previous employers include** c21 Interactive/MarkForGov.com, Rogers POS, Delta Dental, Job Shouts, and EZ-Net. Work history beginning in 2001 is available upon request.
+**Previous experience includes** 201 Creative, LLC, Liturgical Publications, Inc., c21 Interactive/MarkForGov.com, Rogers POS, Delta Dental, Job Shouts, and EZ-Net. Work history beginning in 2001 is available upon request.
 
 ### Want More?
 
