@@ -35,4 +35,4 @@ I hold the following certifications: Certified SCRUM Master, Zend Certified Engi
 
 ### Want More?
 
-Feel free to [contact me](/contact) and let’s chat a little bit – or you could try [clicking here](https://www.google.com/#q=Aaron+Saray) and see what else you can find.
+For a real nice boring read, check out my [extended CV](/cv).  You should also feel free to [contact me](/contact) and let’s chat a little bit – or you could try [clicking here](https://www.google.com/#q=Aaron+Saray) and see what else you can find.
