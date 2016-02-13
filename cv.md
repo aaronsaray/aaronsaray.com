@@ -26,7 +26,7 @@ The Confident Coder.  A monthly column for PHP[architect] from [October, 2013](h
 
 [Columnist for the PHP channel of SitePoint](http://www.sitepoint.com/author/asaray/) Previously known as PHPMaster.com, the SitePoint PHP channel contains high quality content from noted PHP experts.  I wrote two articles: Debugging PHP Code with FirePHP and Giving Your First PHP Presentation.
 
-MKE PHP: Best People, Best Practices.  This article for PHP[architect] was co-authored by me in 2012.  In it, my writing partner and I explained the challenges and rewards of starting Milwaukee's first PHP user group.
+[MKE PHP: Best People, Best Practices](https://www.phparch.com/magazine/2012-2/january/)  This article for PHP[architect] was co-authored by me in 2012.  In it, my writing partner and I explained the challenges and rewards of starting Milwaukee's first PHP user group.
 
 #### Technical Editor
 
@@ -88,8 +88,64 @@ PHP to Save Time *(1/10) Milwaukee PHP Users Group, Milwaukee, WI*
 
 ### Education / Training
 
-@todo 
+Bachelor of Science in Business Management *Cardinal Stritch University (3/10 – 5/13). Delta Mu Delta Honors*
+
+Security+ *CompTIA (9/10)* 
+
+Network+ *CompTIA (12/09)* 
+
+Open Source Web Developer Certificate *NorthCentral Technical College (5/08)*
+
+Zend Certified Engineer (PHP5) *Zend (6/07)*
+
+A+ *CompTIA (11/05)*
+
+Management and Leadership Skills for Supervisors and Managers *Rockhurst University (2005)*
+
+Skillpath Customer Service, *SkillPath (5/05)*
+
+MCP 70-210: Installing, configuring and administering MS Windows 2000 Profesional *Microsoft Inc. (2003)*
+
+Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
 
-@todo
+iMoneza, LLC. Brookfield, WI. (2/16 - present)  
+*Senior Software Engineer*  
+iMoneza helps support digital publications through the implementation of a micropayments based paywall. Primarily focus on javascript and PHP integrations of the core product.  Responsible for creating Wordpress, Joomla, and Drupal plugins as well as core PHP libraries.  Javascript implementations include CommonJS/AMD and custom libraries.
+
+Small Shops United, LLC. Milwaukee, WI (7/15 - present)  
+*CTO / Co-founder*  
+At SSU, we provide digital local loyalty products. The product consists of a LAMP stack, web service interface with Android tablets, a queue system, and various BI related reporting systems and data analysis.
+
+201 Creative, LLC. New Berlin, WI (2/15 - 2/16)  
+*Owner*  
+I launched my own development business to cater to the needs of small and medium sized businesses.  In addition, I provided multiple clients with technical leadership and organization engagements and training.
+
+Liturgical Publications, Inc. New Berlin, WI (11/10 – 1/15)  
+*Web Development Manager*  
+Developed e-commerce deal of the day site in a limited time scope from basic business requirements. Continue to analyze competitors, business requirements, website analytics and user trends to build a fully featured user experience while consistently driving sales. Primarily developing in Zend Framework. Responsible for prioritizing team and technical assets to keep multiple full projects in active development. Active full size project load includes 4 complete independent sites with thousands of visitors a day. Responsible for team hiring, wage reviews, and other HR aspects. Currently specializing in mentorship, team growth and product quality.
+
+c21 Interactive / MarkForGov.com. Waukesha, WI (3/09 – 9/10)  
+*Lead Software Architect*  
+Analyzing business requirements to extend open source software, new development with PHP. Creating social networking software for political campaigns, interfacing with e-mail providers, SalesForce and other third parties. Transitioned from contract to hire and worked full-time until primary election.
+
+JobShouts, LLC. Tampa, FL (2/09 – 8/09)  
+*Director of Software Engineering*  
+Jobshouts.com is a free job board built for employers, recruiters & job seekers to connect through social media. Features job listings and Twitter integration. Developed on open source software using PHP5 and MySQL. Consulting with team to develop and extend open source application while actively participating in code development.
+
+102 Degrees, LLC. Greenfield, WI (2001 – 2009)  
+*Owner*  
+102 Degrees specialized in custom design web programming utilizing open source software; primarily within the LAMP stack. Longest running project, www.jemdiary.com, was created in 2001 and ran PHP5 through 2010. (Sole Proprietor formed LLC in 2007).
+
+Rogers Software Development. Fairbanks, AK (7/08 – 1/09)  
+*Programmer 3*  
+As a full-time level 3 programmer, led beginner and intermediate level programmer teams in the development of Point of Sale solutions software utilizing PHP, MySQL and Javascript. Analyzed business requirements and translated into detailed technical specifications. Aided in the development of standards, code review and analysis. Migrated a legacy code base “back office” to the most up to date framework, then deployed it with version control for the first time since its inception. Reported directly to development manager.
+
+Delta Dental of Wisconsin. Stevens Point, WI (2/06 – 7/08)  
+*Web Developer*  
+Provided Business Analysis, documentation, design, development and management of web products and interfaces for dental insurance processing. Programmed user interfaces which combined System i platform with LAMP stack (Linux, Apache, MySQL, PHP). Led development team in the design and development of a new services/features; specifically a new insurance line quoting service and online enrollment service, which continue to receive positive customer feedback. Created business user CMS and statistical reporting. Focused security analysis of code for HIPAA compliance. Clients included four state wide Insurance branches and nationwide individual sales. As a team lead, in this fulltime position, directed department efforts and coordinated outside consultants.
+
+EZ-Net, Inc. Oconto Falls, WI (8/01 – 2/06)  
+*Web Developer / Technical Support Supervisor*  
+EZ-Net is an ISP, offering a full range of internet, computer & network services and computer sales & service and consulting services. Full-time employment consisted of balancing two positions. Using LAMP stack, designed and developed internet and intranet interfaces, as well as maintained existing projects. Development and creation of scripting tools to perform system administration for internal sites and interfaced with billing systems. Managed all aDSL, cable and satellite internet service orders. Provided escalated support for complex technical issues and service disputes. Developed and authored a comprehensive troubleshooting guide which allowed full diagnosis support for new/existing internet installations as well as developed a custom setup kit which automatically configured end user’s equipment. Support included Windows 95/98/2000/NT, Mac OS 7 and above, select Netgear routers and Westell DSL modems for 5,000+ customer base. Provided documentation, research and development, customer service training, quality assurance and employee reviews.
