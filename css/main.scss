@@ -27,7 +27,12 @@ body > div {
   background-color: #ffffff;
   padding-bottom: 7rem;
 }
-
+blockquote {
+  margin-left: 0;
+  padding-left: 2rem;
+  border-left: 0.3rem solid #E2E2E2;
+  background: #f9f9f9;
+}
 .container {
   width: 80%;
   margin: auto;
