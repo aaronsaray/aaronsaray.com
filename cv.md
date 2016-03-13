@@ -114,9 +114,9 @@ iMoneza, LLC. Brookfield, WI. (2/16 - present)
 *Senior Software Engineer*  
 iMoneza helps support digital publications through the implementation of a micropayments based paywall. Primarily focus on javascript and PHP integrations of the core product.  Responsible for creating Wordpress, Joomla, and Drupal plugins as well as core PHP libraries.  Javascript implementations include CommonJS/AMD and custom libraries.
 
-Small Shops United, LLC. Milwaukee, WI (7/15 - present)  
+Small Shops United, LLC. Milwaukee, WI (7/15 - 3/16)  
 *CTO / Co-founder*  
-At SSU, we provide digital local loyalty products. The product consists of a LAMP stack, web service interface with Android tablets, a queue system, and various BI related reporting systems and data analysis.
+At SSU, we provide digital local loyalty products. The product consists of a LAMP stack, web service interface with Android tablets, a queue system, and various BI related reporting systems and data analysis.  The original founder and myself split ways amicably.
 
 201 Creative, LLC. New Berlin, WI (2/15 - 2/16)  
 *Owner*  
