@@ -2,10 +2,14 @@
 ---
 @charset "utf-8";
 
+/***********************************************************************************************************************
+ * general
+ **********************************************************************************************************************/
 @font-face {
   font-family: Raleway;
   src: url('/fonts/Raleway-Regular.ttf');
 }
+
 body {
   background: #272727;
   font-family: Raleway, "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
@@ -15,6 +19,11 @@ body {
   margin: 0;
   padding: 0;
 }
+body > div {
+  background-color: #ffffff;
+  padding-bottom: 7rem;
+}
+
 a, a:visited, a:active {
   color: blue;
   text-decoration: none;
@@ -23,124 +32,168 @@ a:hover {
   text-decoration: underline;
 }
 
-body > div {
-  background-color: #ffffff;
-  padding-bottom: 7rem;
-}
 blockquote {
   margin-left: 0;
   padding-left: 2rem;
   border-left: 0.3rem solid #E2E2E2;
   background: #f9f9f9;
 }
+
 .container {
   width: 80%;
   margin: auto;
 }
 
+
+
+/***********************************************************************************************************************
+ * Layout stuff
+ **********************************************************************************************************************/
 nav {
   box-shadow: 0 14px 14px -14px #eaeaea;
   line-height: 2.5rem;
-}
-nav ul {
-  padding: 0;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-}
-nav li {
-  list-style: none;
-  text-align: center;
-  flex-grow: 1;
-}
-nav a, nav a:visited, nav a:active {
-  color: #777777;
-  font-size: 0.8rem;
+
+  ul {
+    padding: 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  li {
+    list-style: none;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  a, a:visited, a:active {
+    color: #777777;
+    font-size: 0.8rem;
+  }
 }
 
-footer ul {
-  margin: 0;
-  padding: 3rem 0 1rem 0;
-  text-align: center;
+footer {
+  ul {
+    margin: 0;
+    padding: 3rem 0 1rem 0;
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 3rem;
+  }
+
+  a, a:visited {
+    color: #777777;
+    text-decoration: none;
+  }
+
+  p {
+    text-align: center;
+  }
 }
-footer li {
-  display: inline-block;
-  padding: 0 3rem;
-}
-footer a, footer a:visited {
-  color: #777777;
-  text-decoration: none;
-}
-footer p {
-  text-align: center;
-}
+
 
 .page-header {
   text-align: center;
   margin-bottom: 2rem;
-}
-.page-header h1 {
-  font-size: 2.3rem;
-  margin: 3rem 0 1.5rem 0;
-  font-weight: normal;
-}
-.page-header h2 {
-  color: #727272;
-  font-weight: normal;
-  margin: 0;
-  font-size: 1.5rem;
+
+  h1 {
+    font-size: 2.3rem;
+    margin: 3rem 0 1.5rem 0;
+    font-weight: normal;
+  }
+
+  h2 {
+    color: #727272;
+    font-weight: normal;
+    margin: 0;
+    font-size: 1.5rem;
+  }
 }
 
+
+/***********************************************************************************************************************
+ * Homepage stuff
+ **********************************************************************************************************************/
 #home {
   text-align: center;
-}
-#home h1 {
-  font-size: 4.5rem;
-  line-height: 4rem;
-  font-weight: normal;
-  margin: 11rem 0 6rem 0;
-}
-#home h2 {
-  color: #777777;
-  font-size: 2.5rem;
-  font-weight: normal;
-  margin: 0;
-}
-#home h3 {
-  margin: 0.4rem;
-  font-weight: normal;
-  font-size: 1rem;
-}
-.entry-list, .entry-list li, .entry-list h3 {
-  margin: 0;
-  padding: 0;
-}
-.entry-list li {
-  list-style: none;
-  margin-bottom: 0.6rem;
-}
-.entry-list h3, .entry h3 {
-  display: inline-block;
-  font-size: 1.3rem;
-}
-.entry-list span, .entry > span {
-  font-size: 0.8rem;
-  color: #aaaaaa;
-}
-.entry h4, .entry h5 {
-  font-size: 1.1rem;
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 4rem;
+    font-weight: normal;
+    margin: 11rem 0 6rem 0;
+  }
+
+  h2 {
+    color: #777777;
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0.4rem;
+    font-weight: normal;
+    font-size: 1rem;
+  }
 }
 
-.entry .thumbnail {
-  display: block;
-  margin: 1rem 0;
-  text-align: center;
+
+/***********************************************************************************************************************
+ * Entry items
+ **********************************************************************************************************************/
+.entry-list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin: 0 0 0.6rem 0;
+    padding: 0;
+
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+  }
 }
-.entry .thumbnail img {
-  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  padding: 5px;
+
+.entry {
+  h3 {
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+  h4, h5 {
+    font-size: 1.1rem;
+  }
+
+  .thumbnail {
+    display: block;
+    margin: 1rem 0;
+    text-align: center;
+
+    img {
+      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+      padding: 5px;
+    }
+  }
+}
+.entry > span {
+  font-size: 0.8rem;
+  color: #aaaaaa;
 }
 
 .rss-subscribe {
@@ -149,6 +202,9 @@ footer p {
 }
 
 
+/***********************************************************************************************************************
+ * syntax highlighting
+ **********************************************************************************************************************/
 @import "syntax-highlighting";
 
 .highlight {
@@ -160,6 +216,11 @@ footer p {
 pre {
   overflow-x: auto;
 }
+
+
+/***********************************************************************************************************************
+ * misc
+ **********************************************************************************************************************/
 #crazytime_video, #notfound_video {
   position: fixed;
   right: 0;
@@ -174,10 +235,10 @@ pre {
 #not-found-link {
   display: block;
   text-align: center;
-}
-#not-found-link a {
-  color: #000000;
-  background: rgba(255,255,255,0.4);
-  display: inline-block;
 
+  a {
+    color: #000000;
+    background: rgba(255,255,255,0.4);
+    display: inline-block;
+  }
 }
