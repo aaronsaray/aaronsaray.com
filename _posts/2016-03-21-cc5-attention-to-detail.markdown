@@ -18,7 +18,7 @@ As a Confident Coder, I'm certain you've repeated this phrase to yourself too, r
 
 If you aren't paying attention to detail, you might miss the mistake in the following bit of code:
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 if ($valueIsFour = 3) {
   // oh no!
@@ -31,7 +31,7 @@ The result of that `if` statement will always evaluate as true.  The programmer 
 
 It can be difficult to deal with nested quotes.  This can get especially bad when creating HTML from PHP.  Introduce variables, concatenation, and a lack of consistency to the mix, and you may have a problem.
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 echo '<a href="' . $link . "'>Click Me</a>';
 echo '<span id="' . $id . '" class="' . $class . '>"Hi!"</span>';
@@ -43,7 +43,7 @@ In both of these lines, attention to detail is critical.  In the first example, 
 
 Programmers are often called lazy.  I like to argue that we actually prefer efficiency.  But no matter what you call it, programmers generally will do the least amount of work possible.  One particularly useful tool we have in our arsenal is copy-and-paste.  Why would I retype a method declaration and a docblock if I can just copy from another one?
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 /**
  * Add sales tax
