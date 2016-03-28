@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+if [ -z "$1" ]; then
+	echo "please choose an article from _drafts"
+	exit
+fi
 
 if [ ! -f $1 ]; then
 	echo "$1 not found"
