@@ -39,6 +39,27 @@ blockquote {
   background: #f9f9f9;
 }
 
+hr {
+  height: 1px;
+  border: none;
+  background: #EAEAEA;
+  margin: 2rem;
+}
+
+table {
+  width: 100%;
+  margin: 1.5rem;
+  border-collapse: collapse;
+
+}
+th {
+  background: #f4f4f4;
+}
+td, th {
+  border: 1px solid #f4f4f4;
+  padding: 0.5rem;
+}
+
 .container {
   width: 80%;
   margin: auto;
