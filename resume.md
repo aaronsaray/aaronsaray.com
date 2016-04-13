@@ -17,7 +17,7 @@ As a technical editor, I’ve reviewed 3 books. These include PHPUnit Essentials
 
 ### Technical Public Speaking
 
-I’ve given more than 20 presentations ranging from conference keynote, to local user group, to industry conference workshop. Highlights include Keynote for MidwestPHP 2014, STEAM Day at Brown Deer Elementary 2014, Zend Filter Webinar for Zend.com, ThatConference 2012 and 2013, Milwaukee PHP Users Group 2010-2015 and Wisconsin Midrange Computer Professional Association Spring Conference 2013.
+I’ve given more than 20 presentations ranging from conference keynote, to local user group, to industry conference workshop. Highlights include Keynote for MidwestPHP 2014, STEAM Day at Brown Deer Elementary 2014, Zend Filter Webinar for Zend.com, ThatConference 2012 and 2013, Milwaukee PHP Users Group 2010-2016 and Wisconsin Midrange Computer Professional Association Spring Conference 2013.
 
 ### Education / Certifications
 
