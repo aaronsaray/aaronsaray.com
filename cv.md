@@ -38,6 +38,8 @@ Javascript Testing Beginners Guide (ISBN: 978-1849510004)
 
 ### Technical Public Speaking
 
+Help - My Site is Broken: Now What? *(4/16) Greater Milwaukee Area WordPress Meetup, Brookfield, WI*
+
 8 PHP Command Line Tips and Tricks *(4/16) Milwaukee PHP Users Group, Milwaukee, WI*
 
 How the Bad Guys are Hacking Your Website *(6/15) Milwaukee PHP Users Group, Milwaukee, WI*
