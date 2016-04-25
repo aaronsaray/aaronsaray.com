@@ -20,7 +20,7 @@ I personally find an unexpected data type very annoying.  (And, I've seen enough
 
 So, for example, let's imagine that we're going to be calling a third-party library.  It will return an array of elements more than 99% of the time.  Every once in a while, it may return `null` if no results were found.  We might be tempted to write code like this:
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 $results = $thirdPartyService->fetchAll();
 
@@ -35,7 +35,7 @@ This code will expect an array from the `fetchAll()` method.  Normally this has 
 
 Fortunately (or unfortunately), the code will still execute after this error.  But, having a warning like this is not a desired outcome.  Using the trust, but verify mantra, let's add a guard statement.
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 $results = $thirdPartyService->fetchAll();
 
@@ -52,7 +52,7 @@ In our new version of the code, the `$results` variable is now checked to make s
 
 A very popular way to pass information between websites is the JSON format.  A PHP script can easily consume JSON data using the `json_decode()` method.  Let's see an example of how we might consume a third party data source.
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 $jsonString = file_get_contents('http://thirdparty.org/feed.json');
 $jsonObject = json_decode($jsonString);
@@ -62,7 +62,7 @@ echo 'The name of the website we just consumed from:' . $jsonObject->name;
 
 Previously, we've determined the format of the JSON object and can trust that the `name` property will always be populated with the site name.  There was that scary word again: trust.  Can you guarantee that the JSON feed will never change the object property to `site_name` - what would happen then?  Consider this code:
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 $jsonString = file_get_contents('http://thirdparty.org/feed.json');
 $jsonObject = json_decode($jsonString);
@@ -79,7 +79,7 @@ In our trust, but verify programming style, this code will now verify that the e
 
 Let me show another example.  This one is actually inspired by a real event that happened while I was programming a third-party integration a few years ago.  The scenario is simple: call a third party service and it reveals how many minutes have passed since a specific event.  Then, I formulate that into a human readable version and display it.  (Please note, there are other ways to do this, but I've created this code in this manner to illustrate the issue as clear as possible.)
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 $minutesPassed = $thirdPartyService->minutesSinceEvent($eventID);
 
