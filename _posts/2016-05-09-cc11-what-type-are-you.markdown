@@ -16,7 +16,8 @@ Readers of this column know that I'm no stranger to opening up about my mistakes
 
 Fast forward a few years and I had begun to understand the importance and relevance of variable types from my forrays into other languages.  Now, while I like the loose-typed flexibility of PHP, I also appreciate the accuracy, predictability and consistency strong typed variables can bring.  
 
-I'm going to assume that you're familiar with weak and strong typing and have a general understanding of how PHP handles variables.  (For more background, check out Wikipedia articles about [Data Type|http://en.wikipedia.org/wiki/Data_type] and [Strong and Weak Typing|http://en.wikipedia.org/wiki/Strong_and_weak_typing].  This article's code examples will focus more on method type hinting and not casting of types.
+I'm going to assume that you're familiar with weak and strong typing and have a general understanding of how PHP handles variables.  
+(For more background, check out Wikipedia articles about [Data Type](http://en.wikipedia.org/wiki/Data_type) and [Strong and Weak Typing](http://en.wikipedia.org/wiki/Strong_and_weak_typing).  This article's code examples will focus more on method type hinting and not casting of types.
 
 #### What Types Can Be Hinted
 
@@ -28,7 +29,7 @@ As a Confident Coder, we know that we want our methods to be doing the least amo
 
 The following style illustrated in this example might be familiar to you:
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 
 function doSomething($value)
@@ -43,7 +44,7 @@ If I document my function (and now have a type-hinted signature), it will be the
 
 Note how the previous example can be refactored to require the proper data type:
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 
 function doSomething(array $value)
@@ -58,7 +59,7 @@ Imagine a code base where programmers can send any of their objects into your me
 
 This interface and class method help demonstrate this:
 
-{% highlight php %} 
+{% highlight php %}
 <?php
 
 class MyProcessorClass
