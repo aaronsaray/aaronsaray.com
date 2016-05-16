@@ -211,10 +211,11 @@ footer {
       padding: 5px;
     }
   }
-}
-.entry > span {
-  font-size: 0.8rem;
-  color: #aaaaaa;
+  &>span {
+    font-size: 0.8rem;
+    color: #aaaaaa;
+    margin-left: 0.5rem;
+  }
 }
 
 .rss-subscribe {
