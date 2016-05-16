@@ -4,7 +4,7 @@ timezone: America/Chicago
 
 markdown: kramdown
 permalink: /:year/:title
-exclude: [README.md, build.sh, deploy.sh, publish.sh]
+exclude: [README.md, build.sh, deploy.sh, publish.sh, alfred-launcher.command]
 
 sitemap:
     file: "/sitemap.xml"
