@@ -116,7 +116,7 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 iMoneza, LLC. Brookfield, WI. (2/16 - present)  
 *Senior Software Engineer*  
-iMoneza helps support digital publications through the implementation of a micropayments based paywall. Primarily focus on javascript and PHP integrations of the core product.  Responsible for creating Wordpress, Joomla, and Drupal plugins as well as core PHP libraries.  Javascript implementations include CommonJS/AMD and custom libraries.
+iMoneza helps support digital publications through the implementation of a micropayments based paywall. Primarily focus on javascript and PHP integrations of the core product.  Responsible for creating Wordpress, Joomla, and Drupal plugins as well as core PHP libraries.  Javascript implementations include CommonJS/AMD and custom libraries.  Also developed the Swagger / OpenAPI documentation and NodeJS standards library.
 
 Small Shops United, LLC. Milwaukee, WI (7/15 - 3/16)  
 *CTO / Co-founder*  
