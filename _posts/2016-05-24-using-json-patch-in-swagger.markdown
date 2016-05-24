@@ -23,7 +23,7 @@ Now, let's save you some boring story about choosing between these, and just say
 that wasn't before I made a complete spec in the swagger YAML I was working with.  I thought I'd share that just in case
 someone was looking to go the direction of JSON Patch themselves.
 
-{% highlight yaml %)
+{% highlight yaml %}
 paths:
   /users/{GUID}:
     patch:
