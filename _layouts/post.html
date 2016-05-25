@@ -10,6 +10,18 @@ layout: default
     <h3 itemprop="name headline">{{ page.title }}</h3>
     <span itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}.</span>
     <span>{{ page.tags | join: ', ' }}</span>
+    
+    {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
+    {% capture postDate %}{{page.date | date: '%s'}}{% endcapture %}
+    {% assign difference = now | minus: postDate %}
+    {% if difference > 47340000 %}
+      <div class="old-post">
+        This post is more than 18 months old. Since technology changes to rapidly, this content <em>may</em> be
+        out of date (but that's not always the case).  Please remember to verify any technical or programming information
+        with the current release.
+      </div>
+    {% endif %}
+    
     <div class="post-content" itemprop="articleBody">
       {{ content }}
     </div>
