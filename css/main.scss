@@ -212,6 +212,11 @@ footer {
       padding: 5px;
     }
   }
+  .inline img {
+    width: 100%;
+    max-width: 40rem;
+    margin: auto;
+  }
   &>span {
     font-size: 0.8rem;
     color: #aaaaaa;
