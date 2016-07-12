@@ -12,6 +12,16 @@ The preeminent showcase of Open Source Software is GitHub.  You can find my repo
 
 At GitHub, I've released various PHP and Javascript code including [FirePHP4Chrome](https://github.com/aaronsaray/FirePHP4Chrome), [jQuery Accordion Live Filter](https://github.com/aaronsaray/jquery-accordion-live-filter), and [MadMimi PHP API](https://github.com/aaronsaray/madmimi-api-php).  With over 20 public repositories, I am committed (PUN!) to OSS.
 
+### Community
+
+I enjoy participating in my local business and technical community.
+
+[WCTC Communications Advisory Board](http://wctc.edu).  I am a member of the advisory committee. This committee helps direct the curriculum of the communications and technical/programming programs.  Our goal is to bring real-life business experience in to help structure class work that is relevant to a student's work in the industry.
+
+[Milwaukee PHP Users Group](http://mkepug.org). I started the Milwaukee PHP user's group in 2010.  It has been meeting roughly every month since then.
+
+Various Other Meetup Leadership Roles.  I've participated in restarting, restructuring, and/or other assistance with the Fox Cities PHP Users group, the Milwaukee Web Design Meetup, and the Milwaukee Web Professionals meetup.
+
 ### Publications
 
 I am a prolific author, editor and blogger.  (Yes, blogger! On this site - [400+ technical and business entries](/blog) since 2007.)
@@ -118,9 +128,9 @@ iMoneza, LLC. Brookfield, WI. (2/16 - present)
 *Senior Software Engineer*  
 iMoneza helps support digital publications through the implementation of a micropayments based paywall. Primarily focus on javascript and PHP integrations of the core product.  Responsible for creating Wordpress, Joomla, and Drupal plugins as well as core PHP libraries.  Javascript implementations include CommonJS/AMD and custom libraries.  Also developed the Swagger / OpenAPI documentation and NodeJS standards library.
 
-Small Shops United, LLC. Milwaukee, WI (7/15 - 3/16)  
+Small Shops United, LLC. Milwaukee, WI (7/15 - present)  
 *CTO / Co-founder*  
-At SSU, we provide digital local loyalty products. The product consists of a LAMP stack, web service interface with Android tablets, a queue system, and various BI related reporting systems and data analysis.  The original founder and myself split ways amicably.
+At SSU, we provide digital local loyalty products. The product consists of a LAMP stack, web service interface with Android tablets, a queue system, and various BI related reporting systems and data analysis.  
 
 201 Creative, LLC. New Berlin, WI (2/15 - 2/16)  
 *Owner*  

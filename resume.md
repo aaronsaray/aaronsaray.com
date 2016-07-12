@@ -29,7 +29,7 @@ I hold the following certifications: Certified SCRUM Master, Zend Certified Engi
  
 **Senior Software Engineer at iMoneza, LLC.** I began working at iMoneza February, 2016. iMoneza helps support digital publications through the implementation of a micropayments based paywall.  Primarily focus on javascript and PHP integrations of the core product.
  
-**Previous experience includes** Small Shops United, LLC, 201 Creative, LLC, Liturgical Publications, Inc., c21 Interactive/MarkForGov.com, Rogers POS, Delta Dental, Job Shouts, and EZ-Net. Work history beginning in 2001 is available upon request.
+**Previous experience includes** Small Shops United, LLC; 201 Creative, LLC; Liturgical Publications, Inc.; c21 Interactive/MarkForGov.com; Rogers POS; Delta Dental; Job Shouts; and EZ-Net. Work history beginning in 2001 is available upon request.
 
 ### Want More?
 
