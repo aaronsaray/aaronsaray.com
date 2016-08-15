@@ -15,7 +15,7 @@ I've been hearing for the longest time that it's very hard to recruit for PHP de
 
 **Developer:** No Thanks.
 
-{{ crickets }}
+{ { crickets } }
 
 Hey - that's not follow through!
 
@@ -25,7 +25,7 @@ Here's another example.
 
 **Developer:** Cool, let me know.
 
-{{ same damn crickets }}
+{ { same damn crickets } }
 
 In both scenarios, the first party wants the developer for their team (the business owner is just more sly?? ;)) - But there is no follow through.
 
