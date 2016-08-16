@@ -17,13 +17,13 @@ This argument is simple: Front end or designers can't know the extreme complexit
 
 ```twig
 <ul>
- {% for thing in things %}
-   <li>{{ thing }}</li>
- {% endfor %}
+ {% raw %}{% for thing in things %}{% endraw %}
+   <li>{% raw %}{{ thing }}{% endraw %}</li>
+ {% raw %}{% endfor %}{% endraw %}
 </ul>
 ```
 
-So, in Twig, you have a for loop - which is very similar to a foreach in PHP - and a simple output statement in the loop.  What's troublesome to me is that the user now has to know that there are two syntaxes in Twig.  The `{%` which indicates a functional call and '{{' which indicates an output.
+So, in Twig, you have a for loop - which is very similar to a foreach in PHP - and a simple output statement in the loop.  What's troublesome to me is that the user now has to know that there are two syntaxes in Twig.  The brace-parenthesis which indicates a functional call and double-brace which indicates an output.
 
 ```php
 <ul>
@@ -44,6 +44,7 @@ I've heard the argument that we need to make sure we don't do logic inside of ou
 
 But, let me submit this bit of code in Twig:
 
+{% raw %}
 ```twig
 {% if loggedin %}
 You are logged in!
@@ -51,15 +52,18 @@ You are logged in!
 Please log in!
 {% endif %}
 ```
+{% endraw %}
 
 At the very basic level, this is a logical choice.  In fact, there's always going to be a small bit of logic in our views unless we really want to generate so many different views that there never is a choice - but then that's a lot of code duplication!
 
 **Templating Languages Make it Easier to Escape User Input**  
 I can't argue that some of the escaping is super cool - like this in Twig:
 
+{% raw %}
 ```twig
 Hola, mi nombre es {{ user.name|e }}
 ```
+{% endraw %}
 
 This is a super easy way of using the HTML escaping strategy in Twig.  But I'd argue against this reason of doing things because - well - because of reason number one.  If the consensus is that designers or front-end people don't have the necessary skillset to use PHP as their template language, you're assuming that they do have the skillset or will remember to escape all user input (boy - that sounds very programmery to me).  As a matter of fact, even disciplined back-end programmers forget or overlook proper escaping from time to time. :)
 
