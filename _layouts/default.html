@@ -13,6 +13,17 @@ layout: compress
   {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}">{% endif %}
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  {% if page.url == "/" %}
+  <script>
+    console.log(document.referrer);
+//    if (document.referrer == 'https://hire.aaronsaray.com')
+//      var head = document.querySelector('head'),
+//          link  = document.createElement('link');
+//      link.rel  = 'stylesheet';
+//      link.href = '/css/fadein.css';
+//      head.appendChild(link);
+  </script>
+  {% endif %}
 </head>
 <body>
   <div>
