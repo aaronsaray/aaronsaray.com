@@ -15,13 +15,13 @@ layout: compress
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   {% if page.url == "/" %}
   <script>
-    console.log(document.referrer);
-//    if (document.referrer == 'https://hire.aaronsaray.com')
-//      var head = document.querySelector('head'),
-//          link  = document.createElement('link');
-//      link.rel  = 'stylesheet';
-//      link.href = '/css/fadein.css';
-//      head.appendChild(link);
+    if (document.referrer == 'https://hire.aaronsaray.com/') {
+      var head = document.querySelector('head'),
+              link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/css/fadein.css';
+      head.appendChild(link);
+    }
   </script>
   {% endif %}
 </head>
