@@ -5,6 +5,8 @@ header: My résumé details years of diverse experience both professionally and 
 permalink: /resume/
 ---
 
+[Full CV](/cv){: .pull-right} [Download PDF](/Resume-Aaron_Saray.pdf){: .pull-right .right-spacing}
+
 ### Summary
 
 Project leader, mentor, and team manager focused on providing the best customer experience while ensuring growth and profit. Open source (LAMP) Web Developer with over a decade and a half of experience in business analysis, documentation, design, management and leadership. Highly skilled in development of applications utilizing PHP, MySQL, XML, Javascript, AJAX, and HTML. Experienced in design and development of training and technical documentation. Prolific conference speaker, technical blogger and author.
@@ -27,7 +29,7 @@ I hold the following certifications: Certified SCRUM Master, Zend Certified Engi
 
 ### Professional Experience
  
-**Senior Software Engineer at iMoneza, LLC.** I began working at iMoneza February, 2016. iMoneza helps support digital publications through the implementation of a micropayments based paywall.  Primarily focus on javascript and PHP integrations of the core product.
+**Senior Software Engineer at iMoneza, LLC.** I began working at iMoneza February, 2016. iMoneza helps support digital publications through the implementation of a micropayments based paywall.  Primarily focus on javascript and PHP integrations of the core product.  I also ushered in an Agile workflow and a scheduled code-review process.
  
 **Previous experience includes** Small Shops United, LLC; 201 Creative, LLC; Liturgical Publications, Inc.; c21 Interactive/MarkForGov.com; Rogers POS; Delta Dental; Job Shouts; and EZ-Net. Work history beginning in 2001 is available upon request.
 
