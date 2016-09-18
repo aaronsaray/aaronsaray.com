@@ -243,16 +243,16 @@ footer {
  **********************************************************************************************************************/
 @import "syntax-highlighting";
 
-.highlight {
-  line-height: 1.5;
-  margin: 2rem 0;
-  background: aliceblue;
-  padding: 0.1rem 1rem;
-}
-pre {
-  overflow-x: auto;
+.highlight, .highlight > pre {
+  margin: 0;
+  line-height: 1.5rem;
 }
 
+code.highlighter-rouge {
+  background: #343642;
+  color: #C1C2C3;
+  padding: 0.3rem;
+}
 
 /***********************************************************************************************************************
  * misc

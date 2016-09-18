@@ -8,13 +8,12 @@ If you haven't been following my [twitter](https://twitter.com/aaronsaray) feed 
 
 One of the goals of the project was to build in particular environment and application logging options, but not to just dump everything into your log files.  That can be overwhelming.  For more details, you should [RTFM](https://github.com/aaronsaray/PHProblemLogger), but the tldr; is you can do filtering and error handling like this:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $handler = new Handler(new Logger());
 $handler->server(function(array $payload) {
   return $payload;
 });
-{% endhighlight %}
+```
 
 This would filter the `$_SERVER` super global and basically return the entire thing.
 
@@ -27,14 +26,13 @@ The filtering functionality of the PHProblemLogger library takes a `Callable` fr
 **Get all of the contents of the array**  
 This first example, I just covered above.
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $filterAll = function(array $payload) {
   return $payload;
 };
 
 var_dump($filterAll($_SERVER));
-{% endhighlight %}
+```
 
 This is going to create something that looks similar to this:
 
@@ -52,14 +50,13 @@ Moving forward, I'm not going to include my `var_dump()` statement.
 **Get only one value**  
 In this example, I only want one of the values.
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $filterOnlyOne = function(array $payload) {
   return [
     'REMOTE_ADDR' => $payload['REMOTE_ADDR']
   ];
 };
-{% endhighlight %}
+```
 
 All I did is create a new array and pick a specific portion of my incoming array to return.
 
@@ -71,15 +68,14 @@ The output is rather predictable:
 **Filter out only one key**  
 Let's say we have a particularly delicate value in this incoming variable.  Yup, we don't want anyone to see `REMOTE_ADDR` (for some reason? Let's just use it for this example...)
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $filterOutRemoteAddr = function(array $payload) {
   if (array_key_exists('REMOTE_ADDR', $payload)) {
     unset($payload['REMOTE_ADDR']);
   }
   return $payload;
 };
-{% endhighlight %}
+```
 
 This will unset the value of my desired key if it exists in the payload.  (Remember, you don't want to unset something that might not be there!)
 
@@ -88,12 +84,11 @@ The output is basically the same as the first example, but 23 keys (because `REM
 **Return only a few keys**  
 I'm sure I could write my own function to handle this similar to how I've been doing the above ones - but I wanted to use something that's built into PHP.  (I'm going to be using `var_dump` again here, just for illustrative purposes.)  I want only keys `REMOTE_ADDR`, `HTTP_HOST` and `REMOTE_PORT` out of my payload.
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 var_dump(array_filter($_SERVER, function($key) {
   return in_array($key, ['REMOTE_ADDR', 'HTTP_HOST', 'REMOTE_PORT']);
 }, ARRAY_FILTER_USE_KEY));
-{% endhighlight %}
+```
 
 This is pretty cool because we're filtering our array using a built-in function.  `array_filter` removes an element if the callback returns false.  So, in this case, since we don't care about values - just keys - we use the `ARRAY_FILTER_USE_KEYS` flag as well.  
 
@@ -108,12 +103,12 @@ As you can probably guess now, this returned the following output:
 
 This is most likely because you're on a version of PHP less than 5.6.  Here is an alternative version of that filter that will work on an older version of PHP:
 
-{% highlight php %}
+```php?start_inline=1
 var_dump(array_filter($_SERVER, function($value) use (&$_SERVER) {
   $key = key($_SERVER);
   next($_SERVER);
   return in_array($key, ['REMOTE_ADDR', 'HTTP_HOST', 'REMOTE_PORT']);
 }));
-{% endhighlight %}
+```
 
 In this example, for versions less than PHP 5.6, we're passing by reference our `$_SERVER` variable.  By the time you do this, it might just make more sense to write your own function instead - probably a little easier to read.
