@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Startups - take note: Sometimes More Features Aren't Better
+title: "Startups - take note: Sometimes More Features Aren't Better"
 tags:
 - business
 ---
