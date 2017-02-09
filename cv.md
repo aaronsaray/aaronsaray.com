@@ -126,8 +126,8 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
 
-Dealer Inspire. Naperville, IL (10/16 to present)
-*Senior Software Engineer*
+Dealer Inspire. Naperville, IL (10/16 to present)  
+*Senior Software Engineer*  
 Dealer Inspire offers a multitude of products for the automotive dealership; everything from websites, online chat and customer management and digital advertisement.  I am rewriting an application from a full-stack Kohana application to a scaled, message-based API service using the Laravel 5 framework.  This application integrates with Salesforce, Google AdWords, Bing Ads, and Facebook Ads, providing a unified interface for managing a single budget and client over multiple ad networks.
 
 Wallit (formerly iMoneza, LLC). Brookfield, WI. (2/16 - 10/16)  
