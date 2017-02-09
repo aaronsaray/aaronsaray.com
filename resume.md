@@ -5,7 +5,7 @@ header: My résumé details years of diverse experience both professionally and 
 permalink: /resume/
 ---
 
-[Full CV](/cv){: .pull-right} [Download PDF](/Resume-Aaron_Saray.pdf){: .pull-right .right-spacing}
+[Full CV](/cv){: .pull-right}
 
 ### Summary
 
