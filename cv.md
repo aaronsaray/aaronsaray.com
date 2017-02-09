@@ -48,6 +48,8 @@ Javascript Testing Beginners Guide (ISBN: 978-1849510004)
 
 ### Technical Public Speaking
 
+Professional PHP Application: Show and Tell *(1/17) Milwaukee PHP Users Group, Milwaukee, WI*
+
 Help - My Site is Broken: Now What? *(4/16) Greater Milwaukee Area WordPress Meetup, Brookfield, WI*
 
 8 PHP Command Line Tips and Tricks *(4/16) Milwaukee PHP Users Group, Milwaukee, WI*
@@ -124,9 +126,13 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
 
-iMoneza, LLC. Brookfield, WI. (2/16 - present)  
+Dealer Inspire. Naperville, IL (10/16 to present)
+*Senior Software Engineer*
+Dealer Inspire offers a multitude of products for the automotive dealership; everything from websites, online chat and customer management and digital advertisement.  I am rewriting an application from a full-stack Kohana application to a scaled, message-based API service using the Laravel 5 framework.  This application integrates with Salesforce, Google AdWords, Bing Ads, and Facebook Ads, providing a unified interface for managing a single budget and client over multiple ad networks.
+
+Wallit (formerly iMoneza, LLC). Brookfield, WI. (2/16 - 10/16)  
 *Senior Software Engineer*  
-iMoneza helps support digital publications through the implementation of a micropayments based paywall. Primarily focus on javascript and PHP integrations of the core product.  Responsible for creating Wordpress, Joomla, and Drupal plugins as well as core PHP libraries.  Javascript implementations include CommonJS/AMD and custom libraries.  Also developed the Swagger / OpenAPI documentation and NodeJS standards library.  I was a primary driver to introduce the Agile workflow into the company and developed our scheduled weekly code-review process. 
+Wallit helps support digital publications through the implementation of a micropayments based paywall. Primarily focus on javascript and PHP integrations of the core product.  Responsible for creating Wordpress, Joomla, and Drupal plugins as well as core PHP libraries.  Javascript implementations include CommonJS/AMD and custom libraries.  Also developed the Swagger / OpenAPI documentation and NodeJS standards library.  I was a primary driver to introduce the Agile workflow into the company and developed our scheduled weekly code-review process. 
 
 Small Shops United, LLC. Milwaukee, WI (7/15 - present)  
 *CTO / Co-founder*  

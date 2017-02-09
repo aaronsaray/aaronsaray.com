@@ -29,7 +29,7 @@ I hold the following certifications: Certified SCRUM Master, Zend Certified Engi
 
 ### Professional Experience
  
-**Senior Software Engineer at iMoneza, LLC.** I began working at iMoneza February, 2016. iMoneza helps support digital publications through the implementation of a micropayments based paywall.  Primarily focus on javascript and PHP integrations of the core product.  I also ushered in an Agile workflow and a scheduled code-review process.
+**Senior Software Engineer at Dealer Inspire.** I began working at Dealer Inspire October, 2016.  Dealer Inspire provides a comprehensive suite of tools for automotive dealers.  I'm responsible for an API backed by PHP using the Laravel framework.  This application schedules, coordinates and integrates a single client's advertising budget and inventory system with Facebook Ads, Bing Ads and Google AdWords.
  
 **Previous experience includes** Small Shops United, LLC; 201 Creative, LLC; Liturgical Publications, Inc.; c21 Interactive/MarkForGov.com; Rogers POS; Delta Dental; Job Shouts; and EZ-Net. Work history beginning in 2001 is available upon request.
 
