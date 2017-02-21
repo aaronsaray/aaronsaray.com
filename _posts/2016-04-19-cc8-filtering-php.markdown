@@ -30,24 +30,22 @@ It's important to understand the two major use cases for `filter_var()` .  The t
 
 The following two blocks of code will demonstrate how `filter_var()` works precisely.  And since I mentioned email filtering as a pain-point during the last group talk I gave, let's take a look at the email functionality for `filter_var()`.
 
-{% highlight php %} 
-<?php
+```php?start_inline=1
 var_dump(filter_var('guy@smiley.com', FILTER_VALIDATE_EMAIL));
 var_dump(filter_var('not_an_email', FILTER_VALIDATE_EMAIL));
 
 var_dump(filter_var('guy@smiley.com', FILTER_SANITIZE_EMAIL));
 var_dump(filter_var('prob()lem@email.com', FILTER_SANITIZE_EMAIL));
-{% endhighlight %}
+```
 
 The output from this PHP is below:
 
-{% highlight php %} 
-<?php
+```php?start_inline=1
 string(14) "guy@smiley.com"
 bool(false)
 string(14) "guy@smiley.com"
 string(17) "problem@email.com"
-{% endhighlight %}
+```
 
 First, the validate filters are ran.  The first value is a valid email address so the boolean `true` is returned.  The second is not a valid email address, so `false` is returned.
 
