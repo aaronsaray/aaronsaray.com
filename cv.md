@@ -48,6 +48,8 @@ Javascript Testing Beginners Guide (ISBN: 978-1849510004)
 
 ### Technical Public Speaking
 
+Mastering Cross-Generational Communication. *(3/17) WCTC, Pewaukee, WI*
+
 Professional PHP Application: Show and Tell *(1/17) Milwaukee PHP Users Group, Milwaukee, WI*
 
 Help - My Site is Broken: Now What? *(4/16) Greater Milwaukee Area WordPress Meetup, Brookfield, WI*
