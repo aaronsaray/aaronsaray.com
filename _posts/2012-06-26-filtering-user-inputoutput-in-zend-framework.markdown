@@ -5,7 +5,6 @@ tags:
 - security
 - zend framework
 ---
-
 There are two areas where user input should be filtered: on display and on storage.  Luckily, Zend Framework provides tools for this...
 
 ### Filtering User Input in the View

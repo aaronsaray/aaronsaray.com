@@ -4,7 +4,6 @@ title: The Importance of Adding Auditing to Your Applications
 tags:
 - programming
 ---
-
 One of the things I learned while working at "The Triangle" was the "joy" of auditing.  From their point of view, auditing was extreme.  Think journalling and you have a pretty good idea.  Now, when we talk about auditing, make sure to understand this is referring to change tracking and not vulnerability or fault detection.
 
 So, auditing can be as extreme / verbose or as little as possible.  Let's talk about the most common types of auditing:

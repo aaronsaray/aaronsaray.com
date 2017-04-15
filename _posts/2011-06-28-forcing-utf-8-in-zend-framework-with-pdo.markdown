@@ -4,7 +4,6 @@ title: Forcing UTF-8 in Zend Framework with PDO
 tags:
 - zend framework
 ---
-
 For some reason, I just had the most horrible time making sure that my connection from my Zend Framework code was speaking UTF8 at my database.  Here are the key things to remember that I learned:
 
   * Make sure to have a collation of UTF8 on your database

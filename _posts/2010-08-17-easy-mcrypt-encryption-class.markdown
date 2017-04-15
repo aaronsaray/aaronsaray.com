@@ -5,7 +5,6 @@ tags:
 - PHP
 - security
 ---
-
 For whatever reason, I can never remember the exact coding of MCrypt.  And maybe that is a good thing - so I stop doing so much code duplication and start using a class I wrote.  For this reason, I'll save you the same frustrations and share how I do my encryption.
 
 **`easyMcrypt.php`**

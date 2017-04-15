@@ -4,7 +4,6 @@ title: The top 17 ways to help eliminate the Phishing threat
 tags:
 - security
 ---
-
 The following is the result of a research project I had done about phishing.  Its some best practices and suggestions based upon information from leading security professionals such as white hat security, McAfee, etc.  A combination of e-mail security, authentication methods and corporate identity standards are among the suggestions...  Here are the top solutions and methods of securing against Phishing:
 
 **Establish Corporate Outgoing Email Policy**

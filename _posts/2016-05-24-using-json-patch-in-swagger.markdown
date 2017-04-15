@@ -5,7 +5,6 @@ tags:
 - swagger
 - api
 ---
-
 I've been working with [Swagger](https://swagger.io), also known as the [OpenAPI Initiative](https://openapis.org/) lately,
 and I've come to the issue of issuing an update to an object.  I'm planning on using the HTTP verb PATCH (yes it is [a standard](https://tools.ietf.org/html/rfc5789) in case you forgot... like I did).
 

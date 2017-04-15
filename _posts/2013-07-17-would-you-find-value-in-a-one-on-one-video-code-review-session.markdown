@@ -8,7 +8,6 @@ categories:
 - learning
 - programming
 ---
-
 Hello friends - I'm trying to get an idea if this would be a good idea.  Let me know your thoughts in the comments.
 
 Here's the idea (...knowing my experience in web development and programming...)

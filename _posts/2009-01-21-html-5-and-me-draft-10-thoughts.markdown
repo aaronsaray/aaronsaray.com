@@ -4,7 +4,6 @@ title: HTML 5 and Me - Draft 10 thoughts
 tags:
 - html
 ---
-
 I thought I'd ramble on a bit about my thoughts on the HTML5 differences from HTML4 draft from working draft 10 in June 2008.  You can find it - or the newest one - here: [html5 diff](http://www.w3.org/TR/html5-diff/).
 
 I'm eagerly watching HTML5 and XHTML2 - to see who comes out victorious.  I'm hoping one wins and that we get a better standard - but regardless, here are my thoughts - somewhat sporadic:

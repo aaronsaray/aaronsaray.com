@@ -4,7 +4,6 @@ title: What is Website Hosting?
 tags:
 - learning
 ---
-
 What is website hosting and why do you need it?  Those are two very important questions.
 
 **Web Sites are Hosted on Computers**

@@ -5,7 +5,6 @@ tags:
 - PHP
 - programming
 ---
-
 I really hate to see people accessing and designing objects with public attributes.  So many times I've seen this backfire.  Lets take a few examples and see why this matters:
 
 ### The Simple Book Class

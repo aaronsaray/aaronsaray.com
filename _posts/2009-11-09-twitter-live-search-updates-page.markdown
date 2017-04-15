@@ -5,7 +5,6 @@ tags:
 - javascript
 - twitter
 ---
-
 I decided it would be kind of cool to make a page that combined a bunch of twitter hash tags or just tweets in general.  Here are the details...
 
 ### Twitter Search API

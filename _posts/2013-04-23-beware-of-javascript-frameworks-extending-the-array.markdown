@@ -4,7 +4,6 @@ title: Beware of Javascript frameworks extending the Array
 tags:
 - javascript
 ---
-
 Just a little fun for today... 
 
 MooTools, a common Javascript framework, is responsible for [extending an array](http://mootools.net/docs/core/Types/Array) in Javascript.  It adds a number of useful features to each array that is created.

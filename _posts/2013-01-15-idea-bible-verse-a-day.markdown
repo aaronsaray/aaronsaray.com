@@ -4,7 +4,6 @@ title: 'Idea: Bible Verse A Day'
 tags:
 - Ideas for Websites
 ---
-
 I did a bit of looking for websites that will service a Bible verse of the day via email, and I did not like what I found.  First, I felt that a lot of them were very confusing to use.  It wasn't immediately clear what you were there to do.  I didn't know where to put my email address, etc.  Finally, after reviewing a lot of the copy right information with bibles, I wonder if they weren't breaking the copyrights for a lot of the bibles they offered.
 
 So I came up with my own idea:

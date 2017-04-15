@@ -4,7 +4,6 @@ title: Why are there different web browsers?
 tags:
 - learning
 ---
-
 In the same way that not everyone drives a Honda, we find that we have different web browsers.  For the beginner to the Internet, this might come as a surprise.  Normally, they are only used to the default browser on their computer.  For example, Windows users are familiar with Internet Explorer.  Mac users might be familiar with Safari.
 
 In the same way that car companies each have their strengths and weaknesses, web browsers have the same.  Each one isn’t the same – they have different features – and even interpret the screen and content differently.  It is possible for one browser to display CSS different than another one.  Because of this, your website may not always look the exact same in each browser.  Considerable care can be taken to make sure that most of the site looks the same on most browsers.  You might use automobile road design as an example.  The incline of a driveway may be fine for most cars, like the Honda, but a Ferrari might rub its front end entering the driveway.  Generally, it’s acceptable to develop towards the majority – and hope for the best for the minority.

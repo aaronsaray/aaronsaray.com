@@ -5,7 +5,6 @@ tags:
 - javascript
 - jquery
 ---
-
 I was creating a page with two forms on it.  I ran into an issue where I would fill out one form, and it would fail validation.  Then, I tried to do the other form with passing fields, and it would keep invalidating the previous form on the same page.
 
 I had been doing this:

@@ -6,7 +6,6 @@ tags:
 - programming
 - security
 ---
-
 I came up with a great topic to write this blog entry about: filters and validators.  Then, I got to thinking - maybe I can get more feedback from other programmers I know.  I decided to send a note out to a few of my buddies and see what they thought as well.  
 
 **[Aaron Saray](http://aaronsaray.com)**

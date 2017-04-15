@@ -4,7 +4,6 @@ title: Follow Through if You're Trying to Seduce a Developer
 tags:
 - business
 ---
-
 I remember a scene from [A night at the roxbury](http://www.imdb.com/title/tt0120770/) where the less-than-slick brothers take some girls back to their room and have a problem closing the deal.  One of them keeps saying pickup lines while he has the girl sitting on his bed.  She basically says OK - we're past this.  He just can't seem to close the deal - no matter how much she wants him to.
 
 That reminds me of what happens sometimes when I watch recruiters and other business people when it comes to seducing developers to projects.  They pitch a great idea, get a little bit of interest, and ... that's about it.  They offer things but never follow through.

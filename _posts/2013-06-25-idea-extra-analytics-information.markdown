@@ -4,7 +4,6 @@ title: 'Idea: Extra Analytics Information'
 tags:
 - Ideas for Websites
 ---
-
 When browsing the documentation for chrome, I came across this:
 
 ```javascript

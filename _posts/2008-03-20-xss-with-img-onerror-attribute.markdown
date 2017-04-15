@@ -6,7 +6,6 @@ tags:
 - PHP
 - security
 ---
-
 So much of my time is spent worrying over the src or href tags on images and links - that I sometimes forget about the other attributes.
 
 Imagine being able to make an image which has no black-flagged content in the src but yet can still make a remote request, logging the user's cookie information?  Thats right - this can be done - using the 'onerror' attribute of an image.

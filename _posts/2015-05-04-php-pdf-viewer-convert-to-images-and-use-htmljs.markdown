@@ -6,7 +6,6 @@ tags:
 - jquery
 - PHP
 ---
-
 Well - I really couldn't think of a good title - it's really not catchy at all.
 
 Anyway... at my last job, we were contemplating making a PDF reading solution that would easily scale, work on multiple devices, and allow advertisements along side of them.  I left before we began this project, but it hasn't ever left my mind.

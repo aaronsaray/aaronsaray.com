@@ -6,7 +6,6 @@ tags:
 - programming
 - security
 ---
-
 I thought I'd take some time to look at the 3 main ways that I've handled forgotten passwords on my websites, why I did them that way, and if there was anything wrong.
 
 _Disclaimer: there is a lot of bad code in here - and thats on purpose!  This is a historical piece... :)_

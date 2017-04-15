@@ -4,7 +4,6 @@ title: 'Idea: CMS agnostic cloud storage plugin'
 tags:
 - Ideas for Websites
 ---
-
 So I've been looking into cloud storage a bit again - and I decided to do a bit of quick research on the top three CMS in my life: Drupal, Joomla, and Wordpress.  I wanted to see if my idea made sense...
 
 So first, here are the competitors:

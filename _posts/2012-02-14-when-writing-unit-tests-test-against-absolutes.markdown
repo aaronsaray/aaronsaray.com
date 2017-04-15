@@ -4,7 +4,6 @@ title: When writing unit tests, test against absolutes
 tags:
 - testing
 ---
-
 So, while chatting with one of the developers on my team, we started talking about testing an XML document creation process he had been working on.  He wrote a unit test and said "see, here is my class which generates the XML, and then here I use DomDocument to add the nodes I know it will have and test against that."
 
 Poor guy.  Poor, poor guy. I gave him the look of death.

@@ -4,7 +4,6 @@ title: PHP Script Configuration Options - Class Constants or MySQL
 tags:
 - PHP
 ---
-
 I'm trying to figure out the best way to do configuration options for my newest PHP scripts that I'm working on.  My requirements are simple:
 
 1) You cannot change the config option once it is loaded

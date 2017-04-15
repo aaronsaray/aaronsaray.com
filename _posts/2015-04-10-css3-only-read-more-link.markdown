@@ -4,7 +4,6 @@ title: CSS3 Only Read More Link
 tags:
 - CSS
 ---
-
 [![Screenshot 2015-04-05 19.48.23](/uploads/2015/Screenshot-2015-04-05-19.48.23-300x223.png)](/uploads/2015/Screenshot-2015-04-05-19.48.23.png){: .thumbnail}
 
 Want a CSS3 **ONLY** read more link?  I think I've created one that should do the trick.

@@ -5,7 +5,6 @@ tags:
 - professional tips
 - programming
 ---
-
 Estimates can be one of the hardest things to create as a developer.  The word estimate is a misnomer in our industry. It's almost as if they should be called "agreements" or "promises" according to some bosses.  Yet we all know that they are just that: an estimate of the amount of time, not a guarantee.  
 
 Estimates can also be toxic.  If you continually come in under estimate, some project managers will start to shrink your estimates without telling you.  Then, the time that you really do need that estimated time, those outside of the programmers group will think you went over.  The opposite is also true: go over your estimate continually, and you may be judged as a bad performer.

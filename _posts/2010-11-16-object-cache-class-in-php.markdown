@@ -5,7 +5,6 @@ tags:
 - PHP
 - programming
 ---
-
 While I'm infinitely happy that all uses of a class in PHP now are references, that's just not good enough.  Sometimes I want to use my newly created object in many different methods.  I have two options.  First, I could create it as a Singleton, and always call the instance getter.  Or, I could use an object cache.
 
 The object cache is design to store the references to the objects that you associate with it, as a static reference.  Then, later, when you call it, it will check its static um...self... to see if the object exists.  If so, it will return it.  Wala - no singletons.

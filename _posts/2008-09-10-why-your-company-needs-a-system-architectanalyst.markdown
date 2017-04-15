@@ -5,7 +5,6 @@ tags:
 - Misc Web Design
 - programming
 ---
-
 In this post, I'm going to cover what a System Architect/Analyst (SA from now on) is and why you need one.
 
 ### A System Architect/Analyst is...

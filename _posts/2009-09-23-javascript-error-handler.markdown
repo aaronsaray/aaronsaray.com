@@ -5,7 +5,6 @@ tags:
 - javascript
 - PHP
 ---
-
 A while ago, I saw a website that provided a javascript error reporting service.  You implemented some code and then they would send you reports on javascript errors on your site.  I thought, this can't be that hard.  So I went to work to create my own.  (It's now used on this website as well as some political website I've worked on recently.)
 
 ### Javascript's Error Handler

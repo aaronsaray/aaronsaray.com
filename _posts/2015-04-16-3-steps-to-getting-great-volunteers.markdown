@@ -4,7 +4,6 @@ title: 3 Steps to Getting Great Volunteers
 tags:
 - business
 ---
-
 **If you run a volunteer organization, you might be turning away valuable volunteers!  Let me give you 3 useful ways to lock in these volunteers - now!**
 
 First of all, a little background.  I just called a volunteer organization and offered to work with the team.  The person who answered the phone was very confused, very gruff, and in the end, told me to email someone before hurrying off the phone.  Needless to say, if that's the caliber of person that runs the organization, I don't want to participate!  

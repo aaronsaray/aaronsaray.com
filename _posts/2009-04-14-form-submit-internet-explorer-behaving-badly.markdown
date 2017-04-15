@@ -6,7 +6,6 @@ tags:
 - javascript
 - jquery
 ---
-
 I just want to make a micro blog here.  Just a tiny lil blog.
 
 ### Internet Explorer Does Not Submit Form on Enter

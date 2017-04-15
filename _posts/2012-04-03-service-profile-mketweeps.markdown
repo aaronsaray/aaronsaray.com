@@ -6,7 +6,6 @@ tags:
 - Misc Web Design
 - site profile
 ---
-
 Goal: I came up with an idea that I wanted to find local people in our area and mention them using a twitter bot.  Pretty simple.  Two requirements were they either had to use the word milwaukee in their profile or be from the milwaukee location, and they had to not have a blank profile.  The tweet contained a shout out to their name and as much of their profile as could be fit in the tweet.
 
 Technology used:

@@ -4,7 +4,6 @@ title: Posting Requests in PHP without CURL
 tags:
 - PHP
 ---
-
 Can it be done? YES!  Luckily, functions like file_get_contents() support stream contexts.
 
 In this example, I want to post to my form my login credentials of username "aaron" and password "chicken".  This will be posting to the URL of http://test.com/login.do.php.  I'll show the code first, and then lets talk about what it does.

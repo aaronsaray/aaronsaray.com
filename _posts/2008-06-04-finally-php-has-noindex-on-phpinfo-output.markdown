@@ -5,7 +5,6 @@ tags:
 - PHP
 - security
 ---
-
 ### Security Issue?
 
 A big issue with PHP security had been the developers creating a php info page and not removing it from a production site.  As you may know, phpinfo() will dump a ton of useful information (for the developer - as well as the cracker) to the screen:

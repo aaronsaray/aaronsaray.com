@@ -5,7 +5,6 @@ tags:
 - javascript
 - programming
 ---
-
 Recently, someone mentioned to me [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life) was a programming challenge at a code retreat they attended.  I had never heard of it so I went to take a look at the concept.  It seemed like a cool idea.  So, I decided to use Canvas and Javascript to create my own instance of it.  This is just my first draft of it - so take a look.  And, if I've done anything incorrectly, please please please! let me know.
 
 The canvas was really simple:

@@ -4,7 +4,6 @@ title: The anatomy of a phishing attack - advanced technique
 tags:
 - security
 ---
-
 So many phishing attempts lately are just purely pathetic - easy to guess and figure out, mis spelling and grammar issues and just poorly fashioned websites.  Although these will work on the novice web surfer, can a clever criminal actually create a phishing site/scenario that can trap the experienced members in your IT department?  In this article we're going to take apart a phishing proof of concept attempt I created at ("the triangle") (for privacy sake, however, I'm going to use another fake company as the example) which fooled (or at least surprised a good portion of the IT staff I showed it too).
 
 I leaped ahead with my phishing example.  I didn't take the time to create a fake phishing e-mail to my target.  Instead, I just told them about the URL -- they knew they were on a proof of concept, so they were willing to visit my website.  Our main company is wholesale peanut butter and jelly sandwhiches with a website at wholesalepbj.com.  My 'fake' URL that I provided the target with was from an e-mail from sales@wholesalepbj.com which told them about a new promotion we were running.  It told them to goto diamondquality-wholesalepbj.com for our "Diamond Quality" sale.  All they had to do was log in and get the discount.

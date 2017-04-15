@@ -4,7 +4,6 @@ title: hCard - should I care?
 tags:
 - Misc Web Design
 ---
-
 So lately, I've been looking into the semantic tools available on the web.  I want to make sure that my online identity is easily searchable and undeniably accurate.  Using semantic tools such as XFN, FOAF and hCard may help me.
 
 I can't help but seeing some of these and thinking 'flash in the pan' though.  What I really want to see is a big - or a giant - company come through and make use of these.  For example, LiveJournal is exporting FOAF information - but who cares?  Where can I actually find value out of that information that was previously consumed?  If I search 'Aaron Saray' on Google, will my friends show up along the sidebar?

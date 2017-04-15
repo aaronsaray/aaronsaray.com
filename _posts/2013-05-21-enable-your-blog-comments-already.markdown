@@ -4,7 +4,6 @@ title: Enable your blog comments already!
 tags:
 - business
 ---
-
 [![Angry Birds](/uploads/2013/angry-birds.jpg)](/uploads/2013/angry-birds.jpg){: .thumbnail}
 
 **Sorry for the mini-rant here...**

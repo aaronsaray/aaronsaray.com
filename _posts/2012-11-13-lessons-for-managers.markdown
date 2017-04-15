@@ -4,7 +4,6 @@ title: Lessons for Managers
 tags:
 - business
 ---
-
 I've been a manager before.  I've lead teams before.  However, it's important to understand the difference between the title of 'manager' and someone who actually manages.  This time around, I've been putting much more effort into managing, not just being the figure head.  And, I'm learning things.  I think these things not only apply to technology related teams, but teams in general.  
 
 Excuse me while I brain dump. :)

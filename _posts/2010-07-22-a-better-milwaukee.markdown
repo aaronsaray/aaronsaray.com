@@ -4,7 +4,6 @@ title: A Better Milwaukee
 tags:
 - photoshop
 ---
-
 I know - this is a bit non standard of a blog post for me... but bear with me. :)
 
 A fellow kayaker took this picture of Milwaukee.

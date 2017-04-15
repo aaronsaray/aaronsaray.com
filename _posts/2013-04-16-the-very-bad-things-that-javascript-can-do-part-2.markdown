@@ -6,7 +6,6 @@ tags:
 - javascript
 - security
 ---
-
 In part 1, I discussed the various arguments I run into about wanting to be overly security conscious with our sites in regard to third party javascript. In this entry, we’ll run through a few scenarios.
 
 In our scenarios here, we’re going to focus on a fake award site called “AwardSite” that gave our victim a winning notification. They are in the top 5% of 2013’s best websites. The servers have PHP and are apache servers.

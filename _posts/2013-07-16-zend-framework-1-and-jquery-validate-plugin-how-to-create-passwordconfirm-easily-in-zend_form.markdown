@@ -5,7 +5,6 @@ tags:
 - jquery
 - zend framework
 ---
-
 Perhaps this trend is going away, but it used to be a "good thing" to make people validate their passwords.  I did all kinds of silly things in Zend Framework Form and jQuery Validate plugin at first - but then I finally settled on a good solution.  It's quite simple actually...
 
 **Part of your Zend_Form class:**

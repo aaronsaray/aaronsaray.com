@@ -4,7 +4,6 @@ title: 'UX: On date range, mark only one in error'
 tags:
 - user experience
 ---
-
 In one of our applications, an event system requires a start and end date.  There is validation to check to make sure the end date is after the start date.
 
 A member of my team was creating the error messages for this routine and marked an error on both date input boxes with a message saying that the end date must be after the start date.  

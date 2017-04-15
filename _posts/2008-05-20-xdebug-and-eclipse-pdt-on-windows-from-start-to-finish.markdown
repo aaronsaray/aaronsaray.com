@@ -7,7 +7,6 @@ tags:
 - PHP
 - windows
 ---
-
 XDebug and Eclipse PDT on Windows - From Start to Finish
 
 With our recent upgrade to php at "the triangle," I felt it was time to start working on using a debugging and code profiling tool.  When I say felt like it was time... I meant our PHP version finally supported it. *sigh*.  Anyway, from start to finish, this is what I did in order to get Xdebug to integrate into my current eclipse PDT - as well as investigate the other features of xdebug.  I tried to detail all of the mistakes I made as well as what I figured out.  Let's go:

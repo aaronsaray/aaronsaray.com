@@ -4,7 +4,6 @@ title: 'The Observer Pattern in PHP: Refactored'
 tags:
 - PHP
 ---
-
 You may remember the article I wrote about the observer pattern in php - but it lacked some of PHP's advanced features.
 
 In this next example, I'm not going to explain the logic as much - read the original post for more - but I did comment it pretty thoroughly.  Here are the things that I added, however:

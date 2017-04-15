@@ -6,7 +6,6 @@ tags:
 - IDE and Web Dev Tools
 - svn
 ---
-
 In my posting about [Integrating PHPDocumentor into Eclipse]({% post_url 2007-07-04-build-phpdocumentor-into-eclipse %}), I touched on External Tools a bit.  The combination of external batch files, the external tools extra options and the console has made my life easier.  I'm using two new additional batch files that I've written myself and integrated as external tools.  These include automated SVN release update and resource refresh and Apache application control (for those who can't run apache as a service on w32):
 
 **SVN Update - resource refresh**

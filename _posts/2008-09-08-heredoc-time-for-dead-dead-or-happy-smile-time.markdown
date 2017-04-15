@@ -4,7 +4,6 @@ title: heredoc - time for dead-dead or happy-smile time?
 tags:
 - PHP
 ---
-
 PHP's heredoc - good or bad?  All silly titles aside, lets check out some points.
 
 _For those who are not aware, heredoc is the format of creating a large string in PHP that does not need quotation marks of any kind.  Read more of the points to understand more about it.  Here is an example:_

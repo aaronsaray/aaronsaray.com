@@ -5,7 +5,6 @@ tags:
 - CSS
 - PHP
 ---
-
 This is more of a proof of concept than anything else - as most of my scripts are ;)  But, lets say you have some files that have css in them, either external stylesheets, internal one with style tags or even style attributes - and you need to update the browser support.  Wouldn't it be great to have a tool that could look through these files and point out that there are incompatibilities?
 
 Well here is such a script!

@@ -6,7 +6,6 @@ tags:
 - IDE and Web Dev Tools
 - svn
 ---
-
 **Update: Looks like the plugin is no longer available at that link.**
 
 I generally don't like to be tied to a specific IDE when developing.  Additionally, I like to have my choice in using tools to manage my source control (tortoisesvn, svn command line, etc).  I just think this is the open-source way - it seems to be just a more free-spirited way of developing and managing projects.  With this in mind, I've been looking for ways to integrate my SVN into my current IDE (Eclipse PDT) but not limit myself from accessing my SVN repositories from the file system.  I've found a great plugin to help with this - so lets go over the specifics:

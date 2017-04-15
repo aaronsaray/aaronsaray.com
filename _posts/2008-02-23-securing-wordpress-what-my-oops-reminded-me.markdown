@@ -5,7 +5,6 @@ tags:
 - security
 - wordpress
 ---
-
 I don't want to admit it - but I messed up.  I didn't patch wordpress - and I was a victim of one of the released wp exploits.  _How could you let this happen?_ you ask.  Well, I was lazy.  But let this be a lesson to ya - don't forget - otherwise its a LOT harder to clean it up (it took me roughly 4 hours to fix which included 2 hours of ignoring my friend on the phone...)
 
 For good measure, I'll hook you up with some worthwhile links to help you secure your WP:

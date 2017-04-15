@@ -5,7 +5,6 @@ tags:
 - PHP
 - SQL
 ---
-
 A couple months ago, I was out in Rochester MN at IBM for a multi-day meeting about communication between the iSeries(system-i, i5, as400, whatever its called now a days) and PHP/Apache.  One of the things we talked about was our use of ODBC at ("the triangle") currently to which they asked a good question - Are we using prepared statements over odbc?  Well, right now, we're not, but I think we should.  As always, its up to me to show why we should be doing this.  Lets explore:
 
 Prepared statements have two benefits: 1) speed - they only require the statement to be compiled once and 2) security - after compilation, when parameters are bound to the statement, there is no chance for sql injection.  While #2 was a no-brainer, I still needed to be sure about #1.  I decided to write some tests.

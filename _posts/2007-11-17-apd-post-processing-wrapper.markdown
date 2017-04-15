@@ -6,7 +6,6 @@ tags:
 - PHP
 - Test Driven Development
 ---
-
 A while ago, I discovered the 'joys' of APD... and then moreso, the 'joys' of not being able to make heads or tails out of the output script.  After digging deeper, I saw that the original directory already had some PHP scripts to parse the output.  I ran those and wasn't very impressed.  Even more important, my boss wouldn't be impressed.  I needed to be able to make something that could be useful to integrate into a table (I finally used dojo to create a table...)
 
 At any rate, I thought I might save anyone some time by posting the code here:

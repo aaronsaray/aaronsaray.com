@@ -4,7 +4,6 @@ title: Mod Rewrite to index.php file, the easy way
 tags:
 - apache
 ---
-
 How many of you have written this before (or something very much like it):
     
     RewriteCond %{REQUEST_FILENAME} -s [OR]

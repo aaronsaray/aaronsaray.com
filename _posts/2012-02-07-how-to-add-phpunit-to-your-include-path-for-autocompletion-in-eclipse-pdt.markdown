@@ -5,7 +5,6 @@ tags:
 - Eclipse PDT
 - phpunit
 ---
-
 By default, PHPUnit is not part of the default installation of Eclipse PDT.  (Zend Studio is another beast, however...)
 
 It's easy to add the PHPUnit install to your include path however. 

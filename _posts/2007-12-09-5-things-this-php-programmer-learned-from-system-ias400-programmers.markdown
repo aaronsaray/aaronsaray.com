@@ -5,7 +5,6 @@ tags:
 - PHP
 - programming
 ---
-
 Working in a shop that has approximately 15 times more System-I as/400 iSeries (whatever you want to call it) programmers, I've been immersed into their culture, standards and mindset.
 
 As you can imagine, as a fresh new programmer for emerging web technologies, there was some struggle between me and the analysts for this older language.  However, as I stepped back and actually looked at their directions, suggestions and practice, I found 5 things that I actually should integrate into my methodology.

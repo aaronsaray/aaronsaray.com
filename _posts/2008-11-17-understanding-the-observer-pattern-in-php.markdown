@@ -5,7 +5,6 @@ tags:
 - PHP
 - programming
 ---
-
 For a while, I've been looking at plugin systems, but not really fully understanding the pattern behind them.  Don't get me wrong, I see how they work, but I didn't know the reason why - the theory or pattern behind it.  Well turns out, generally, they're based upon the observer pattern.  I decided to write my own observer pattern demonstration here.
 
 Our example is going to be very simple: post a message to twitter.  We're not going to work with any credentials or anything, just want to post a message.  I do want to add an observer that will shorten any url however.  In this example, we'll be making the logic classes stubs (you can create these later), and using '[url]' to stand for an URL we might replace.

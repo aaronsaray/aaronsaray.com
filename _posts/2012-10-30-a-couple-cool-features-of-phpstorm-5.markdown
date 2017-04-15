@@ -4,7 +4,6 @@ title: A couple cool features of PHPStorm 5
 tags:
 - IDE and Web Dev Tools
 ---
-
 As I've mentioned before, I've recently moved to [PHPStorm](http://www.jetbrains.com/phpstorm/).  I've done a little bit of configuration and I plan to start using it more now.  Here are a few things I really like:
 
 **Integration of Command Line Tools**

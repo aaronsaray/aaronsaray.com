@@ -4,7 +4,6 @@ title: PHP application plugins - force the interface
 tags:
 - PHP
 ---
-
 The other day I was experimenting with some PHP plugin scripts and trying to develop my own robust plugin system.  I started thinking: how can I guarantee that a 3rd party developer sticks to my plugin standards?
 
 Well the obvious answer is an interface.  But, I wanted to make sure that their plugin actually implemented it.

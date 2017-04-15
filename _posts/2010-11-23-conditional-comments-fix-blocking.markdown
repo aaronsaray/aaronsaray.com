@@ -5,7 +5,6 @@ tags:
 - html
 - internet explorer
 ---
-
 Ok - so I can't take any credit for this - but check out this blog post:
 [http://www.phpied.com/conditional-comments-block-downloads/](http://www.phpied.com/conditional-comments-block-downloads/)
 

@@ -6,7 +6,6 @@ tags:
 - javascript
 - Misc Web Design
 ---
-
 I've been researching caching and compression techniques for my external resources for some time.  My first design of [JEMDiary](http://jemdiary.com) was very greedy with HTTP connections.  Couple that with having a less-than-perfect host (Dreamhost bleh...), users could feel the burn.  I didn't like it because it would even take ME forever to use my own website.  I went on to discover many different key points I use when creating sites now - the Steps to Optimize Assets.
 
 ### Steps to Optimize Assets

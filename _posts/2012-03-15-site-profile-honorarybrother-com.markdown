@@ -6,7 +6,6 @@ tags:
 - Misc Web Design
 - site profile
 ---
-
 Goal: to create a site serving females that felt a specific male in their life deserved positive recognition.  Then, to monetize the recipient from one of two targeted ads.
 
 Technology:

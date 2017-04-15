@@ -4,7 +4,6 @@ title: PHP Command Line Shell Experiments
 tags:
 - PHP
 ---
-
 Having been a shell, perl and batch scripter before I started PHP, I've always enjoyed the CLI life.  I actually created an interactive or script-able interface for creating all of my projects at ("the triangle") - hopefully I'll link to it here when I write it up.
 
 I wanted to experiment with PHP's Interactive command line interface a little bit more - anyone can write a script that reads in STDIN and the like, but is there any use in having an interactive CL environment?  I tried out PHP's standard interactive, plus two additional php packages.

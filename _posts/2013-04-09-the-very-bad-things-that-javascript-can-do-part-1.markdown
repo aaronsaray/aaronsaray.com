@@ -5,7 +5,6 @@ tags:
 - javascript
 - security
 ---
-
 I have the argument a lot with product managers about allowing custom HTML and Javascript into our projects.  I don't want to do it.  I want to only put in predefined, sanitized information.  But more about my reasons after this... let's look at the arguments I get first...
 
 **Point:** Our clients are smart enough not to put in bad Javascript.

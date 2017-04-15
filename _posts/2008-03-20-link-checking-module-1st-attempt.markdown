@@ -4,7 +4,6 @@ title: Link Checking Module - 1st attempt
 tags:
 - PHP
 ---
-
 So I wrote some code the other day.  It sat in my code repository and I never tested it.  I was pretty certain it was going to be some good code, though.
 
 A few weeks later I came back to it and looked through it - and laughed!!  Anyone figure out where ALL the holes are in this code?

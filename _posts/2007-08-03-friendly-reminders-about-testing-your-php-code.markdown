@@ -6,7 +6,6 @@ tags:
 - PHP
 - Test Driven Development
 ---
-
 I was reading on a forum the other day about some benchmarks for PHP.  The guy had posted some results in ms measurements, and was getting upset about his erratic results.  There were some things that he was forgetting, however.
 
 First, not all tests are built to be accurate up to the ms.  Sometimes, they are ratio based.  For example, the tests you run on your development machine aren't going to perform the same as they would on the production machine (of course, in this example I'm assuming identical hardware and configuration).  There is differences in processes running, memory, etc.  The important thing to note is the ratio between a mean of tests in scenario 1 and scenario 2.

@@ -5,7 +5,6 @@ tags:
 - CSS
 - javascript
 ---
-
 While reading the blog post about [Enabling Javascript specific CSS](http://greatwebguy.com/programming/dom/enable-javascript-specific-css-with-one-line-of-jquery/) and the comments, I started thinking about my own ways to implement this.  And how to do it validly.
 
 ### Why Use Javascript Specific CSS

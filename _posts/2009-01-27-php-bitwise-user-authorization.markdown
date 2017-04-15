@@ -5,7 +5,6 @@ tags:
 - mysql
 - PHP
 ---
-
 After looking at the Windows model for controlling file access, I realized I could also do that for user authorization control.
 
 The code is pretty self explanatory, but after, you'll find a quick rundown.

@@ -4,7 +4,6 @@ title: How to throw an AMAZING meeting
 tags:
 - professional tips
 ---
-
 [![](/uploads/2008/11326425712-225x300.jpg)](/uploads/2008/11326425712-225x300.jpg){: .thumbnail}
 
 I've been to far more meetings than any one on earth should ever have had to by the time they're 25.  With that experience, however, I can start to pick out key points of running a great meeting or demonstration.  I know this is a different type of post for this blog, but I think its important.  There may be times that you're called on to conduct a meeting or demonstration, as a technical resource.  Follow these tips and your meeting will go along smooth, effeciently and successfully.

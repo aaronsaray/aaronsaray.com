@@ -4,7 +4,6 @@ title: My StackOverflow Rant
 tags:
 - learning
 ---
-
 Ugh.  I really want to contribute to the community.  I do!  If others before me wouldn't have done it, I wouldn't be where I am.  
 
 So I visit [Stack Overflow](http://stackoverflow.com) often.  But I'm getting depressed...

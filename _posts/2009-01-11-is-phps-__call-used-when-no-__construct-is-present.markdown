@@ -4,7 +4,6 @@ title: Is PHP's __call() used when no __construct is present?
 tags:
 - PHP
 ---
-
 Simple enough question.  Lets check out some test code:
 
 ```php?start_inline=1

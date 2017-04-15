@@ -5,7 +5,6 @@ tags:
 - javascript
 - jquery
 ---
-
 The other day I ran across an issue with the FileStyle jquery plugin.  Whenever a new file was chosen, windows and Internet Explorer would put c:\fakepath\ before the filename.  Turns out its not FileStyle's issue - but a security feature of Internet Explorer.
 
 As a quick fix, however, I made the following changes to FileStyle:

@@ -4,7 +4,6 @@ title: Zend Framework Static Router URLs Not Found in Zend Navigation
 tags:
 - zend framework
 ---
-
 For a CMS I've been working on, there are a number of custom routes that are added statically in a loop.  These point to specific ID's of articles on on the default module's page viewing controller/action.  Sometimes these routes need to appear in the Zend_Navigation output.  As you can probably guess, the logic used for this is similar to what you might experience when using the URL view helper.  But, for some reason, I could never get the URL's to be marked as active.
 
 Here is an example of the code that was being executed in the setup plugin:

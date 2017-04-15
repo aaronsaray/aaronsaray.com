@@ -5,7 +5,6 @@ tags:
 - AJAX
 - jquery
 ---
-
 Many times, the 'error' property of the jQuery [AJAX](http://api.jquery.com/category/ajax/) call is ignored.  Most often, you'll see just references to the success portion.
 
 The error attribute of the $.ajax() is a callback - and receives three parameters.  These are the XMLHttpRequest with the error, a type of error, and an error object, if one is thrown.  For the most part, the first two are the only parts.

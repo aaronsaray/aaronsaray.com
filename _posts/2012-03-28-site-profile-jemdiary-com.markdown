@@ -6,7 +6,6 @@ tags:
 - Misc Web Design
 - site profile
 ---
-
 JEMDiary
 
 Goal: In 2001, having an online diary was only being piloted by a few people.  Blogging was big, but considering it a 'diary' was not that popular.  Only a few competitors existed: myopendiary and teendiary.  I started my own online diary system for my own site.  After a year, a few friends saw what I was doing and asked if they could do it too.  I decided to launch JEMDiary for the three girls who wanted it as a free online diary system for all.  

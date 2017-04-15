@@ -5,7 +5,6 @@ tags:
 - phpunit
 - web tools
 ---
-
 I'm a huge fan of tools like PHPUnit.  Or any other tool that will help my project carry on.
 
 But, maybe it's because I've been using them for a long time that I always favored global installs vs composer based installs.  But, maybe that's wrong now?

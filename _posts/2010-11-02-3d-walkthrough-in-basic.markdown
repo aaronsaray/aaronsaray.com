@@ -4,7 +4,6 @@ title: 3D walkthrough in Basic
 tags:
 - open source
 ---
-
 Just had a blast from the past... found this a while ago.  This was a program I wrote way back in the days of Basic.  It was a basic 3D walk through.
     
     '  Added speed routines and antiflicker and take away waits.

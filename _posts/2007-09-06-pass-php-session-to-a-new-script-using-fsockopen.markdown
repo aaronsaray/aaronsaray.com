@@ -5,7 +5,6 @@ tags:
 - apache
 - PHP
 ---
-
 I was working on a script that opened up a new connection to the same server with fsockopen to process a php script.  It passed the variables needed through GET and then gathered the output.  Finally, it displayed the output on the screen under the current context.
 
 I ran into an issue where now I needed to set a session variable in my calling script, but make the same session information available to the called script (the called script starts its own session too).

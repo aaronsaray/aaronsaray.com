@@ -4,7 +4,6 @@ title: Ideas Online
 tags:
 - Ideas for Websites
 ---
-
 This idea is to create an idea repository.  I started out wanting to make this website - and instead just decided to list my ideas on this blog.  But, here goes.
 
 This idea site lets you submit any idea you have.  Wouldn't it be great if there was a website to do this... or wouldn't it be cool if my car could do that?  What if there was a sport that involved this... etc.

@@ -5,7 +5,6 @@ tags:
 - myspace
 - PHP
 ---
-
 So I'm sick of myspace... or so I say to myself.  So now I log in about half the time as I did before... and this is because I've made the following script.  It logs in and grabs each bulletin from your top bulletins.  Then, it creates an RSS feed from them.
 
 Lets check it out:

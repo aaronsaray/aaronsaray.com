@@ -5,7 +5,6 @@ tags:
 - PHP
 - web tools
 ---
-
 A while back, a colleague mentioned to me that he was moving his site from one webserver to another.  He hated having to FTP everything down, then reupload it.  Invariably, we've all done this - and forgot to apply proper file permissions, etc.
 
 ### Enter The Single PHP Script

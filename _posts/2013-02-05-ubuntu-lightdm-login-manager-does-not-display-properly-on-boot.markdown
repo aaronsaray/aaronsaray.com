@@ -4,7 +4,6 @@ title: 'Ubuntu: lightdm login manager does not display properly on boot'
 tags:
 - linux
 ---
-
 When I installed Ubuntu 11.10 and 12.04, I had the problem where the terminal would boot up until it said something about checking battery state, and then freeze.  If I flipped to a different terminal, I could sudo launch lightdm - and then login on the first terminal.  Obviously, this wasn't my first choice in fixing this, though.
 
 After doing a little bit more digging, I found it was a combination of issues with my nvidia configuration and boot time.  I'm not an ubuntu wiz, so I don't know the specifics really.  However, I was able to make the following fix to fix my issue:

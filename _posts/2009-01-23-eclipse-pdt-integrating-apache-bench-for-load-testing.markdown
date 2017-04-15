@@ -6,7 +6,6 @@ tags:
 - Eclipse PDT
 - IDE and Web Dev Tools
 ---
-
 When I use an IDE, I expect for it to do everything I need for my project, from start to finish.  As you may have read in earlier entries, I enjoy using Eclipse PDT.  I think its time to include load testing into my arsenal of tools inside of eclipse.  I'm going to focus on apache's AB for this article.
 
 ### ab - a quick summary of some of the features

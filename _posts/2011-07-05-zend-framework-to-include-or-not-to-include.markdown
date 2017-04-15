@@ -4,7 +4,6 @@ title: 'Zend Framework: to include or not to include'
 tags:
 - zend framework
 ---
-
 There are two ways of working with Zend Framework as a library in your project.  These are including it in your project repository and using a shared copy on the server (like PEAR).  Let us discuss both:
 
 ### Including Zend Framework In Your Project

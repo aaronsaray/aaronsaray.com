@@ -4,7 +4,6 @@ title: Should you use software you are making new again?
 tags:
 - programming
 ---
-
 Lately, I've been working on the "2.0" of a very old piece of software in our organization.  I rarely use this software - partially out of the pain caused to try to figure out how to navigate it and the associated slow user interface - and partially out of a different theory about new software development.  Let me explain.
 
 ### Building Incrementally is Easy

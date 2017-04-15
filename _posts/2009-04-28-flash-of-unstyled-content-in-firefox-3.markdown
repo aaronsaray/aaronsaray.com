@@ -6,7 +6,6 @@ tags:
 - html
 - javascript
 ---
-
 So I've heard of the [Flash of Unstyled Content](http://bluerobot.com/web/css/fouc.asp/) before - but never really had this problem.  I always use a LINK tag for my stylesheets.
 
 However, I just ran into it today - in FireFox even with a LINK tag...

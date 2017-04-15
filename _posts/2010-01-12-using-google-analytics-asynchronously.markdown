@@ -5,7 +5,6 @@ tags:
 - google
 - javascript
 ---
-
 I came across the following link on google's code pages:
 [http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html](http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html)
 

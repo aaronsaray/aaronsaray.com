@@ -4,7 +4,6 @@ title: PHP and the UUID
 tags:
 - PHP
 ---
-
 I've been thinking more and more about having unique ID's - especially with working with larger datasets - and I thought it was high time that I investigated the UUID.
 
 The first time I ever heard about these was actually Microsoft's implementation of the GUID in the CLSID sections of the windows registry.  However, if you check out the [RFC for UUID](http://tools.ietf.org/html/rfc4122), you'll see that's just one of the uses and types.

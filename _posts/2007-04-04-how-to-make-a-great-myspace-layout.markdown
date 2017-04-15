@@ -8,7 +8,6 @@ tags:
 - PHP
 - misc web design
 ---
-
 In this posting, I’m going to share the steps to making a slimmed down, cleaner, nicer layout for MySpace to help showcase your personal interests, your band, or your business.
 
 ### Always Develop Locally

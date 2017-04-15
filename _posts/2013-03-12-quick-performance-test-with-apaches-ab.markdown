@@ -5,7 +5,6 @@ tags:
 - apache
 - performance
 ---
-
 In a break from my normal type of tutorial, I just want to give a real quick overview and highlight of a fictitious "case study" to demonstrate the importance of load testing your application with apache's ab tool.
 
 'ab' is the Apache Benchmark tool.  It allows you to run concurrent tests, limit the amount of times you send requests, send specific headers, cookies, authorization, etc.  Basically, you can set up scenarios for load testing your code with nearly any scenario you can imagine - on one page - with just a little prep work.

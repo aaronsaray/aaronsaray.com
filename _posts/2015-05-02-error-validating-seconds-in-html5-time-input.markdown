@@ -5,7 +5,6 @@ tags:
 - html
 - html5
 ---
-
 Turns out, it's just another issue of RTFM - but maybe this will save you some headache!
 
 I was using a simple HTML5 input of time...

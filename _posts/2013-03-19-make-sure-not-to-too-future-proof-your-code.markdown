@@ -4,7 +4,6 @@ title: Make sure not to "too" future-proof your code
 tags:
 - programming
 ---
-
 When doing a bit of code review, I saw an incredibly ornately architected future-proof module written by one of my programmers on my team.  It had taken him roughly 3x as long as I had estimated, but the code was very complete.  It was created in such a way that every single portion of it was modular and could be interchanged quite easily.  
 
 However, remember, it did take him 3x as long as we estimated.

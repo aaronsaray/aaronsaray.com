@@ -5,7 +5,6 @@ tags:
 - IDE and Web Dev Tools
 - Misc Web Design
 ---
-
 When using [FirePHP](http://www.firephp.org/), I ran into this issue where I could not see the output of the debug information.  All the documents I found kept suggesting that I had not enabled the Console tab for this particular site.
 
 I had done so.

@@ -5,7 +5,6 @@ tags:
 - apache
 - svn
 ---
-
 I use Subversion (SVN) for source control and deployment both for JEMDiary and at ("the triangle"). While working on my local copy of one of the websites, I got to thinking about the .svn folder and all of its files.  The .svn folder is a local cache/db of the file changes in order to support diffs, reverts, and to give cues about file changes and the need to commit.  I started poking around inside of the folder - and discovered the text-base folder.  Inside of there, every one of my recently changed files were in there with an extension of .svn-base.  Could this be a security issue - was I showing my code to the whole world?  Lets figure this out:
 
 **Can I see the PHP content?**

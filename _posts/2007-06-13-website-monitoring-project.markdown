@@ -5,7 +5,6 @@ wordpress_id: 7
 tags:
 - Website Monitoring Project
 ---
-
 Recently, while working at ("the triangle"), I came across a project that I had to research.  This project's definition included finding an up-time monitoring system for our websites as well as a dead link finding feature.  So, after doing about 8 hours worth of searching, I didn't find anything that met our needs.  There were tons of dead link finders that could be ran on demand off your desktop platform, but very few that could be scheduled and ran remotely.  Additionally, it was hard to find any remote uptime monitoring systems that allowed the flexibility I was looking for - the ability to check for website up - to not give false positives, and to remotely test functionality (kind of like a remote unit test).
 
 Personally, lately my webhost just upgraded something, and now all of my PDO updates are also crashing.  I wanted to write a system that would determine what happened and what may fail on shared hosting as well... I think it would be something that you could install with a api-key on your hosting to remotely watch for changes.

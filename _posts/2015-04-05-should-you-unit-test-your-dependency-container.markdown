@@ -7,7 +7,6 @@ tags:
 - programming
 - testing
 ---
-
 I've been working with Pimple Dependency Injector lately, and I've come up with an interesting question.
 
 **Should I unit test my container?**

@@ -4,7 +4,6 @@ title: Preparing a Conference?  Tell Your Presenters This
 tags:
 - professional tips
 ---
-
 I've given a number of talks in the last few years.  Each time I go to a new place, I have to bring this giant bag of equipment and three or four versions of my presentation.  All too often, conferences don't detail enough of the specifics for their presenters.  Let me tell you, presenting and traveling can be stressful.  So, to help reduce stress and anxiety, there are a few things you can share with your presenters ahead of time.
 
 **The Room**

@@ -7,7 +7,6 @@ tags:
 - javascript
 - security
 ---
-
 So after searching the Internet for some cross domain AJAX stuff, I noticed two interesting articles.  The first was the specifics of writing these queries (located [here](http://fettig.net/weblog/2005/11/30/xmlhttprequest-subdomain-update/)).  Then, the next gave a breakdown of how this might be useful in a mash-up collaborative sense ([here](http://www.alexpooley.com/2007/08/07/how-to-cross-domain-javascript/)).
 
 The one missing point was how the collaboration should occur.  There is talk about same parent domain but I think everyone's forgetting about the DNS/webserver changes that need to happen.

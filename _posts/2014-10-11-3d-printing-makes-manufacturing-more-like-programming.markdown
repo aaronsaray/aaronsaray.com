@@ -5,7 +5,6 @@ tags:
 - business
 - programming
 ---
-
 [![Beginning of Life](/uploads/2014/seedling-300x199.jpg)](/uploads/2014/seedling.jpg){: .thumbnail}
 
 I think it's pretty awesome that my daily job is making **something** out of **nothing**.  Before we start programming, there is just a blank page.  Because of the words, phrases, numbers, and language we put on that page, something new is born.  It can be as simple as a plain page with a nice design or as complex as an algorithm to decide what your next suggested video on Youtube should be.  With a few keystrokes, a beautiful application can be born - and with the same keystrokes, the most thoughtful piece of code can now become bug riddled, error prone, and nearly useless.

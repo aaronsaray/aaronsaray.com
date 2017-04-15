@@ -5,7 +5,6 @@ tags:
 - Misc Web Design
 - PHP
 ---
-
 There are two things that really grate on me as a PHP developer.  First, people claiming that PHP is not powerful.  And second, those who don't actually work in the language, but have similar disciplines, trying to teach it.  Let me elaborate.
 
 ### PHP is easy to learn

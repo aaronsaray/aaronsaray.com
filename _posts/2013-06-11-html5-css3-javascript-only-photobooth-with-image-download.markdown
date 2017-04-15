@@ -6,7 +6,6 @@ tags:
 - html
 - javascript
 ---
-
 So I decided that I wanted to challenge the concepts I know about online photo booths.  What are those?
 
 a) they must be flash

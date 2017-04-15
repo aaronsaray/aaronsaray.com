@@ -11,7 +11,6 @@ categories:
 tags:
 - PHP
 ---
-
 I actually very much enjoy spreading “the word” on PHP. I go to a lot of conferences, and present a lot. One of the most interesting concepts I’ve developed lately, however, is not a presentation but more of a group coding session. This is how it goes…
 
 I put my IDE up on the projector and present a challenge to the group of PHP coders. We solve the problem presented on the screen using the most basics of HTML, CSS, and javascript. Who cares if it looks nice? We’re not doing client side validation here. But here’s the kicker: solve the problem using plain, vanilla PHP. No frameworks, no libraries, only plain PHP and probably php.net searches. So, I present the problem, and then the group chimes in. Inevitably, it starts out slow, but momentum builds. Before you know it, its a spirited discussion of pro’s and con’s of doing things in various ways. Once the problem is solved, I run a number of pre-arranged tests against the code, making sure it functions as specified, meets the criteria, and is secure.

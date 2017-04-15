@@ -4,7 +4,6 @@ title: Zend Translate Plurals
 tags:
 - zend framework
 ---
-
 I know it should be pretty common sense to RTFM - but sometimes you miss things.
 
 This one buggered me for a while...

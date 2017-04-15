@@ -6,7 +6,6 @@ tags:
 - IDE and Web Dev Tools
 - mysql
 ---
-
 As you probably know by now, I'm a huge fan of Eclipse PDT.  Well, I wanted to stop using MySQL GUI tools for a bit and explore Eclipse tools.
 
 ### Get the SQL Explorer Plugin

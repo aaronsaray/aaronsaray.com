@@ -5,7 +5,6 @@ tags:
 - testing
 - zend framework
 ---
-
 I love working in the Zend Framework view system.  One thing that bothers me, however, is that I must create a complex set of models when trying to send email.  I decided that I'd like to move all of this output for the mail class into my own view system as well.  
 
 Before we begin, it's important to know the goal. The goal is to create a version of Zend_Mail that can read in views for both HTML and Text emails. In addition, since I am such a Unit Testing Fool, I want to make sure my new changes are testable.  For once, you're going to see a fully documented class!  I'll post the code here and then review it afterward.

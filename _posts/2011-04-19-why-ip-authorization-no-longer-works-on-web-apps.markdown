@@ -6,7 +6,6 @@ tags:
 - programming
 - security
 ---
-
 The last time someone brought up authorizing certain actions by IP address - or I should say, limiting the amount of actions that can happen by one IP address.  I brushed that off without a second thought.  It didn't occur to me until later that the original owner of that idea may not have known all the reasons why I know this isn't a good idea.  So here's a quick rundown:
 
 **Dial Up**

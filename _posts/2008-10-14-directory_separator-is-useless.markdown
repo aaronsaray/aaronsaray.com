@@ -4,7 +4,6 @@ title: DIRECTORY_SEPARATOR is Useless!
 tags:
 - PHP
 ---
-
 The predefined PHP constant DIRECTORY_SEPARATOR is useless.
 
 When evaluated, the constant is as follows:

@@ -6,7 +6,6 @@ tags:
 - javascript
 - security
 ---
-
 Just saw this really cool example get submitted on one of my websites testing for CSRF:
 
 ```css

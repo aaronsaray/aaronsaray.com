@@ -4,7 +4,6 @@ title: Presenting at Joomla Day Midwest
 tags:
 - learning
 ---
-
 Hello all.  It's been quite the long time since I updated my blog.  I know, I know, this is a huge problem, considering this is a cardinal sin according to my talk at [MKEPUG](http://www.mkepug.org/events/12607927/) about getting job offers.  That was wrong, I know.  However, things have been pretty busy.  Let's see...
 
 A) Finished up my presentation for Zend about Zend Filter

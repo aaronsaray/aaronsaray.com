@@ -5,7 +5,6 @@ tags:
 - IDE and Web Dev Tools
 - Misc Web Design
 ---
-
 I just thought I'd drop some useful links and tools your way for those beginning and non-tool-cist peoples:
 
 [http://getfirebug.com/](http://getfirebug.com/)

@@ -5,7 +5,6 @@ tags:
 - html
 - jquery
 ---
-
 At work the other day, our designer created an interface that had multiple checkboxes, and then of course a check-all checkbox.  The thought was that if you check the check-all box, all items become checked.  When our QA person started testing the interface, I noticed that a child item unchecked let the check all box remain checked.  I explained to the programmer and QA person that this was not the desired outcome.  As soon as one checkbox is unchecked, the checkall should now be unchecked.  In addition, if you check all children by hand, the checkall should automatically check itself.  
 
 At first some people on the team seemed quizzical or argued.  They said that they didn't think this was the action that should happen.  I explained that the experience was that the checkbox checked meant all items are checked - if it was not checked, that meant at least one child was not checked.  I explained that this was the default action of this interface design.  

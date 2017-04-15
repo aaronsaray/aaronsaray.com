@@ -6,7 +6,6 @@ tags:
 - IDE and Web Dev Tools
 - PHP
 ---
-
 The [BlueFish](http://bluefish.openoffice.nl/index.html) editor is a primarily linux based visual editor for various web languages.  Visit the site for more...
 
 One thing I had noticed about a few projects I was working on was the presence of files named things like:

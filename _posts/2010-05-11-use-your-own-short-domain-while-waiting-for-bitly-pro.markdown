@@ -5,7 +5,6 @@ tags:
 - javascript
 - Misc Web Design
 ---
-
 If you've checked out [BitLy Pro](http://bitly.pro), you're probably pretty excited like I am.  I saw it and immediately registered **saray.me** for a short URL.  When I went to sign up, I found it was still in a queue system where you had to wait to get an invite.  In the mean time, I still want to start using my domain.
 
 After reading some of the documentation, I found that once you sign up for a bit.ly pro account, your existing bit.ly links that were created when you were logged in will be accessible via your short URL.  With this in mind, I decided to just continue to create my bit.ly links but redirect my domain to bit.ly for the time being.

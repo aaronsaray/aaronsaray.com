@@ -4,7 +4,6 @@ title: array_merge is useful - but with a caveat
 tags:
 - PHP
 ---
-
 So, the other day, I saw a horrible thing.  I saw two PHP associative arrays that needed to be combined into one, and the worst example of NOT using PHP's built in functions to combine them.  They weren't using [array_merge](http://php.net/array_merge) - instead they were looping through each value.
 
 That's what I thought until I did some testing.  There is a legitimate difference in the looping method vs the array_merge method.  This could be by design in your application, so don't get over-eager optimizing.  Lets take a look:

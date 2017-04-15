@@ -5,7 +5,6 @@ tags:
 - PHP
 - security
 ---
-
 A friend of mine posed a question: Do you know of any good PHP based vulnerability scanners?  I told him I did not (add any in the comments, if you know! :) ) - but it wouldn't be that hard to build one.  He asked me to give him a code example, so here goes:
 
 ### The Goals

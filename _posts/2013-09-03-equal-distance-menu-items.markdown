@@ -4,7 +4,6 @@ title: Equal distance menu items
 tags:
 - CSS
 ---
-
 I've been having this challenge - I really want to have menu items in the CMS to be equally distributed - but I don't want them to go over the edge of the page.  It's like, I want them to wrap.  I've been doing some work with display: table-cell.
 
 Finally, after a bit of research, I came across the idea of using text-justify... 

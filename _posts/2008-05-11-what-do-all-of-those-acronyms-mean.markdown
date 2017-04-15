@@ -4,7 +4,6 @@ title: What do all of those acronyms mean?
 tags:
 - learning
 ---
-
 Whether you’re looking at web hosting advertisements or speaking with an internet firm, you’re going to run into various acronyms.  If you’re not familiar with the industry, this can get confusing.  Let's check out the main ones to see what they really mean to you.
 
 **HTML** – HyperText Markup Language – HTML is the way that web pages determine what content means on them.  You can think of it like a template.  For example, if something needs to be emphasized on the page, a specific HTML template item marks it to show emphasized.  HTML itself does not do anything programmatic or exciting – it is simply used to organize your content.

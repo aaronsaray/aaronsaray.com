@@ -5,7 +5,6 @@ tags:
 - linux
 - scripting
 ---
-
 Normally I have multiple vm's running for various different projects - all of these are in VMWare Workstation instances I toggle between suspend and started.  I decided to create a script and an Ubuntu launcher icon for toggling the vms back and forth.
 
 First, check out the launcher I used:

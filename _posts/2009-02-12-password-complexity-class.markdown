@@ -5,7 +5,6 @@ tags:
 - PHP
 - security
 ---
-
 After many times of coding relatively the same thing, it becomes prudent to have a standard library for certain sets of processes.  Of course - that is why there are things like frameworks!  At any rate, one of the biggest things I run into is password complexity.  Each website has its own requirement for the security they want to implement.  So, let's talk about the requirements and then look at the code:
 
 ### The Requirements

@@ -4,7 +4,6 @@ title: 'PHP SPL autoload: 3 simple rules you must follow'
 tags:
 - PHP
 ---
-
 While working on a larger site that I may need to use many external libraries, I realized I need to come up with a better __autoload() function (for example, I think it was DOMPDF that had its own autoload function as well.  Last time I used that, I had to hack my own autoload to use their code as well to locate files).  I researched into [SPL autoload](http://us2.php.net/manual/en/function.spl-autoload-register.php) functionality, and I've found what I need.  Through some trial and error, I found out 3 absolutely necessary rules that need to be followed when building your custom autload functions, however.  Lets examine:
 
 ### Our Example ... so far

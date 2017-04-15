@@ -5,7 +5,6 @@ tags:
 - PHP
 - xml
 ---
-
 During one of my random dreams of how to become an internet millionaire, I thought about displaying the top youtube videos on an aesthetically pleasing backdrop.
 
 While I'm not feeling that artsie right now, I did code together a quick script to do this using SimpleXML:

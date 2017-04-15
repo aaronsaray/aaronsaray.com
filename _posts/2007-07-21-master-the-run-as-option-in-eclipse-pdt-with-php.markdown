@@ -6,7 +6,6 @@ tags:
 - IDE and Web Dev Tools
 - PHP
 ---
-
 Most of my development in Eclipse PDT with the results tested outside of it - using firefox.  PDT has a few options in the Run... menu:
 
   * PHP Script

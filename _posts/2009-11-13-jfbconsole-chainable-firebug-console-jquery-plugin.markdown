@@ -5,7 +5,6 @@ tags:
 - javascript
 - jquery
 ---
-
 I find myself wanting to document various different attributes mid development on my jquery code.  I have created the following function to help use FireBug's console access code effectively in the jQuery fashion.
 
 ```javascript

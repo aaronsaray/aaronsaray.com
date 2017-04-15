@@ -4,7 +4,6 @@ title: Car analogy to explain old browser support
 tags:
 - Misc Web Design
 ---
-
 I constantly look for ways to explain to non-technical people the daily challenges I must face and decisions I make.  I like using analogies.  One of the biggest ones I face where I work currently is the support of out-dated browsers. 
 
 To explain support for older browsers, I use the leaded/unleaded gasoline analogy.

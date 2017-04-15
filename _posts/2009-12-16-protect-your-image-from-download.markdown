@@ -6,7 +6,6 @@ tags:
 - html
 - Misc Web Design
 ---
-
 I came across a great idea dealing with protecting image downloads from the site.  Now, this is not fool-proof.  There are lots of other ways to download the image, but this may stop the casual downloader.  Nope, its not disabling the right click or using java.  It requires one single transparent gif.  Let's see how.
 
 ### What is going to happen

@@ -5,7 +5,6 @@ tags:
 - business
 - Misc Web Design
 ---
-
 I've heard the argument so many times
 
 "I'm just too busy to do my own website"

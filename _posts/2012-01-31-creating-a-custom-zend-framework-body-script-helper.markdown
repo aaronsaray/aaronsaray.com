@@ -5,7 +5,6 @@ tags:
 - javascript
 - zend framework
 ---
-
 It drives me nuts that the best practices with javascript that is not required for the initial rendering of your application is to be placed at the bottom of the document, yet frameworks (like Zend Framework) do not support that out of the box.  (I recently found out that Joomla also shares this problem.) 
 
 By default, in Zend Framework, the Zend View Helper of HeadScript allows additions to the header of the document (now, technically you could just call the headScript() output in the body of your layout, and this would fix it, but that's not very semantic, is it?).

@@ -4,7 +4,6 @@ title: 'Quick Reference: Simple MySQL Performance Monitoring'
 tags:
 - mysql
 ---
-
 There are a few quick ways to monitor MySQL performance.  This isn't much of an in-depth reference, just a quick reminder.  Lets look:
 
 ### mysqladmin status

@@ -4,7 +4,6 @@ title: Add Event Viewer to My Computer Right-Click
 tags:
 - windows
 ---
-
 Just wanted to note this awesome registry change that you could apply to get a right-click menu on my computer that allows direct access to the event viewer in windows xp.
 
 eventviewer.reg

@@ -4,7 +4,6 @@ title: Highlighting Source Files
 tags:
 - Misc Web Design
 ---
-
 I have been writing code snippets in this wordpress blog alot - and I wanted to possibly have the code highlighted.  One of the things that happened with code highlighting plugins I've noticed is that the code has to be valid (I've posted invalid PHP because stupid wordpress kept eating it) or one type of code (I post javascript/html combinations, with ellipses and such...), and so I finally decided to not highlight my code - unless I could find a really cool code highlighting plugin.  But along the way, I discovered some really cool tools that might be useful.
 
 The first place I looked at was the PHP functions of [highlight_file](http://us2.php.net/highlight_file) and [highlight_string](http://us2.php.net/manual/en/function.highlight-string.php).  While this is great for PHP... but didn't really do line numbers or anything.  This was ok, but I wanted a better solution - I'm a huge fan of line numbers (thank you IDEs!).  Well, this really cool script by Aidan called [PHP_highlight](http://aidanlister.com/repos/v/PHP_Highlight.php) is awesome!  It offers alot of cool features beyond the standard highlighting.

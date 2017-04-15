@@ -5,7 +5,6 @@ tags:
 - phpunit
 - Test Driven Development
 ---
-
 _First, I just want to say up front that this is not a discussion of "is 100% test coverage necessary" or a discussion about testing private methods.  This is simply how you may do it if you wanted to._
 
 ### Testing Protected/Private Attributes using PHPUnit

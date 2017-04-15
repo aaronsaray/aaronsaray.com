@@ -4,7 +4,6 @@ title: Localized dates in php
 tags:
 - PHP
 ---
-
 ### Date formats - How time makes pretty
 
 The PHP Date manual page has a ton of interesting features to format the date that you can display to the user.  However, when you look closer at it, there are actually some really useful modifiers that will help us with our date calculations as well.  For the longest time, I had just used the time() function and let the pieces fall.  This was OK when the offset was similar to my own timezone - but servers change locations - and websites have global audiences.  The date and gmdate functions can help with this.  Both functions take an optional timestamp parameter.  If you do not specify this, they'll calculate based off of the current date.  This actually becomes quite useful for our calculations... Lets jump in.

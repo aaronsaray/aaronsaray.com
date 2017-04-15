@@ -4,7 +4,6 @@ title: Ode to a MySpace Layout
 tags:
 - myspace
 ---
-
 [![](/uploads/2008/myspace-225x300.jpg)](/uploads/2008//myspace.jpg){: .thumbnail}
 
 *sigh* Things change... and so does MySpace.

@@ -4,7 +4,6 @@ title: Trim down your content - it is a MUST
 tags:
 - Misc Web Design
 ---
-
 A while ago, I was reading a usability book - and the author suggested that every time you create your content, remove half of the words.  Then remove half of them again.  So, by the time you're done, you really have 1/4th of your content - and it should still make sense.
 
 I didn't really think this was that useful, until I made my first version of project I was developing called Where Is The Band (the picture on the left).  As you can see, the general idea was the same, but it was very busy and verbose.  The new version (the picture on the right) shows the exact same interface, but measurably less content.

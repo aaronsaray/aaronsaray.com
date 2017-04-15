@@ -5,7 +5,6 @@ tags:
 - javascript
 - jquery
 ---
-
 The other day I was faced with an issue that I need to be able to keep the scroll position of a user in a overflow-y scrollable div.  Turns out - with a combination of javascript and local storage, this is pretty easy.
 
 **TWO NOTES** First, instead of using local storage, you could also use a cookie.  And second, my project already had jQuery in it - it's not required for this solution.

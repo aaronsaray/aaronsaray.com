@@ -5,7 +5,6 @@ tags:
 - jquery
 - Misc Web Design
 ---
-
 So I got permission at the beginning of March to add an Internet Explorer 6 deprecation message to one of the sites I'm working on.
 
 My goals are simple:

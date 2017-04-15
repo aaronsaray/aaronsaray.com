@@ -7,7 +7,6 @@ tags:
 - performance
 - programming
 ---
-
 I run into this question a lot.  Should my website have www in the domain name.  Should I be going to aaronsaray.com or www.aaronsaray.com??  That is to say, which should be the default home page domain?  Let's discuss...
 
 ### Take care of both

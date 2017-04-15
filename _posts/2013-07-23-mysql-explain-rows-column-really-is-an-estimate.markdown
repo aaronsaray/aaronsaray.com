@@ -4,7 +4,6 @@ title: MySQL Explain rows column really IS an estimate
 tags:
 - mysql
 ---
-
 Here is an interesting proof of concept that the 'rows' column of the explain output is actually an estimate, and not the real amount.  I KNEW it to be true, but somehow I didn't feel like it was right.  I always thought "the closer the rows # gets to the exact amount of retrieved data, the better.  Exact is what you strive for."  Turns out, that's not true.  The closer the number, the better, but its still just an estimation.  Sometimes its estimated accurately, other times its not.  See this example:
     
     mysql> select * from city;

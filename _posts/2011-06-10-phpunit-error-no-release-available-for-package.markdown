@@ -4,7 +4,6 @@ title: 'PHPUnit error: No release available for package'
 tags:
 - phpunit
 ---
-
 One of the steps to install PHPUnit is to execute the following pear commands:
     
     pear channel-discover pear.phpunit.de

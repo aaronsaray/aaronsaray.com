@@ -6,7 +6,6 @@ tags:
 - SQL
 - windows
 ---
-
 This particular example is going to be based on a connection from Windows XP using Putty, MySQL GUI tools and **Dreamhost**.
 
 _Quick summary of issue:_ I want to use MySQL Query Browser to access my database on my dreamhost account.  The database allows connections from the webserver only - nothing external.  I have an SSH account on the webserver.

@@ -5,7 +5,6 @@ tags:
 - javascript
 - Misc Web Design
 ---
-
 I hate filling out login forms to discover that half of my password is in the username box.  Lets talk about why - and then a solution.
 
 ### Why?

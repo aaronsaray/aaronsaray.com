@@ -4,7 +4,6 @@ title: What is a Domain Name?
 tags:
 - learning
 ---
-
 What is a domain name or a dot com name?  And why are they needed?  Let’s find out.
 
 **What is a Domain Name?**

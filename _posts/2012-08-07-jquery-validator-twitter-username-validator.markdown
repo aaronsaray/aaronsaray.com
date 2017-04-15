@@ -5,7 +5,6 @@ tags:
 - javascript
 - jquery
 ---
-
 If you use the [jQuery Validation](http://docs.jquery.com/Plugins/Validation) plugin, and of course, you follow an [amazing PHP Programmer](http://twitter.com/aaronsaray) and now have twitter boxes on all your forms, you might need to validate it some day.  I wrote this method for it.
 
 ```javascript

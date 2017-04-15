@@ -5,7 +5,6 @@ tags:
 - programming
 - zend framework
 ---
-
 There has been a lot of discussion on forums and throughout the object oriented PHP programming community about service classes.  This is just intensified by the Zend Framework model of development coupled with the changes in their design/architecture and vocal spokespeople.  I thought I'd throw my hat in the ring for this.
 
 _Disclaimer: I have been programming PHP for a decade.  I have been programming in general for nearly 2 decades now.  I am not a comp-sci university graduate, however._

@@ -6,7 +6,6 @@ tags:
 - jquery
 - mobile
 ---
-
 I have been making a number pad on a webpage for mobile browsers - and one problem I kept running into is double tap to zoom'ing when I didn't want it.
 
 So, basically, people were typing too fast on the screen's number buttons - and that would execute a zoom.  Turns out, with a little bit of jQuery, you can get rid of this annoying problem.  

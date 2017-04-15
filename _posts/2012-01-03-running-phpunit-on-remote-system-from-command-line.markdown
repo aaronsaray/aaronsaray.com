@@ -5,7 +5,6 @@ tags:
 - Eclipse PDT
 - phpunit
 ---
-
 If I need to run PHPUnit on a remote system against a code suite, I will write a simple shell script like the following to do it for me.  (Bonus points, you can even include this as an External Tool in eclipse to do it right from your project).
     
     #!/bin/bash

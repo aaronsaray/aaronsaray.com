@@ -4,7 +4,6 @@ title: Why the Boss makes YOU make a List or Proposal
 tags:
 - professional tips
 ---
-
 From time to time, I've been asked to make a list of my design ideas, or to develop a better proposal for an idea I have.  This really irritated me: didn't he believe me?  Didn't he trust my ideas?  But in the constant battle to become a better businessman, I've taken a bit of time to think about why this happens.  He's not out to get me, right?  Yours isn't either.  Lets take a look at the Why - with a bonus section: how you should respond, as a boss, to reduce the potential animosity amongst your team members.
 
 ### Why Make the List/Proposal

@@ -4,7 +4,6 @@ title: 'Using MySQL Bit Field as a Flag Field: Not a Good Idea'
 tags:
 - mysql
 ---
-
 The last time I created a char(1) for a flag field, I remembered the MySQL BIT field - so I did a bit of investigation.  I thought, well if I can make a bit field of one bit that is either 0/1, I can save data space in my db.
 
 I created the table like this:

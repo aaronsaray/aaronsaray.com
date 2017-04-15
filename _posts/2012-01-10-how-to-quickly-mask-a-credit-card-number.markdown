@@ -5,7 +5,6 @@ tags:
 - PHP
 - programming
 ---
-
 So, often I have to show a masked credit card on the screen.  However, I really want to go the extra mile and show the user a secure, fully masked credit card number that still reflects their original card.  For example, if their credit card number is only 15 numbers long, I shouldn't show a 16 character long string.  So, I've developed this code snippet:
     
 ```php?start_inline=1

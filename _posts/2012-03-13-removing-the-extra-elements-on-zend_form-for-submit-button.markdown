@@ -4,7 +4,6 @@ title: Removing the extra elements on Zend_Form for Submit Button
 tags:
 - zend framework
 ---
-
 Have you ever used Zend Form, created a submit button, and had a few extra tags that were just throwing you off?  I know you have...  You probably did it like me:
    
 ```php?start_inline=1

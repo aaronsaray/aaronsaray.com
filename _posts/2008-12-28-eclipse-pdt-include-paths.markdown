@@ -4,7 +4,6 @@ title: Eclipse PDT - Include Paths
 tags:
 - Eclipse PDT
 ---
-
 When troubleshooting a different problem the other day, I re-entered the world of eclipse include paths.  For those of you who are not familiar, the eclipse include path is located as the last option of a eclipse PDT PHP project.
 
 ### What is the Include Paths option used for?

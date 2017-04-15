@@ -5,7 +5,6 @@ tags:
 - javascript
 - twitter
 ---
-
 With Twitter's new @anywhere features, it's now possible to brand your tweets from your own web page.  While I still like using Tweetdeck or Seesmic for my actual interaction on twitter, I have started tweeting a bit from my own web page as well.
 
 @anywhere features an interactive tweetbox that you can embed on your website.  The javascript call allows you to add your own content to the box - just waiting for the user to hit TWEET. (Of course, they have to connect to your website.)  In order to leverage this for my own website, and brand my tweets from AaronSaray.com, I decided that I could use this box in my browser sidebar.  Here are the steps - in case you want to do it yourself!

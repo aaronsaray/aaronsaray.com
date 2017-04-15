@@ -5,7 +5,6 @@ tags:
 - PHP
 - security
 ---
-
 So, if you're not familiar with CSRF, check out this blog post about [AJAX Security]({% post_url 2007-06-28-ajax-security-research-and-findings-round-1 %}).  Some of the steps talking about Cross Site Request Forgeries will help you understand the problem.
 
 I've been using a very simple system with my sites.  This isn't meant to be the end-all be-all of super secure tokenizing - but it's good enough to stop the most common CSRF's.  Some other peer reviews of this code suggested that I wasn't doing enough to stop collisions and generate enough uniqueness in the tokens.  I understand the concern about this - but I am not encrypting CC or SSN here - we're just generating tokens to somewhat validify a form submission.

@@ -4,7 +4,6 @@ title: mod_unique_id error after installing mod_security
 tags:
 - apache
 ---
-
 After installing my mod_security module for apache, I could not restart my apache server.  I kept getting the following error:
 
     [alert] (EAI 2)Name or service not known: mod_unique_id: unable to find IPv4 address of "mn-ws"

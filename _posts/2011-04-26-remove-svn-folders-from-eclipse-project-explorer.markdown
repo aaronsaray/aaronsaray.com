@@ -6,7 +6,6 @@ tags:
 - IDE and Web Dev Tools
 - svn
 ---
-
 It had been irritating to me seeing the .svn folders littered throughout my project workspace.  In addition, they all show up in the search results... this can be irritating with the svn-base files that show the old version of the file before a commit.
 
 Well never fear: there is a quick solution.  

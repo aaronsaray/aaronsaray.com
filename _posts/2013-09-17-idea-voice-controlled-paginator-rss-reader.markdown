@@ -4,7 +4,6 @@ title: 'Idea: Voice Controlled Paginator / RSS Reader'
 tags:
 - Ideas for Websites
 ---
-
 I've been thinking about this idea for a while...
 
 Basically, get a RSS reader type website - so maybe even like feedly (or make a chrome extension for it, like I've done before)... and parse RSS feeds.  

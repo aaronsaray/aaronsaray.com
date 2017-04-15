@@ -6,7 +6,6 @@ tags:
 - PHP
 - security
 ---
-
 Round 2, and the final round, is complete! The previous article [here]({% post_url 2007-06-28-ajax-security-research-and-findings-round-1 %}) talked about my initial findings. Well, I was able to try some proofs of concepts on my javascript finding, and I put together our top level recommendations for (”the triangle”). Lets see:
 
 First off...

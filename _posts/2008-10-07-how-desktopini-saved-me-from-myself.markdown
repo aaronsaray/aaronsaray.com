@@ -4,7 +4,6 @@ title: How desktop.ini saved me from myself
 tags:
 - windows
 ---
-
 When working at "the triangle" we used junction points on windows to link to repositories that we needed to run the code base - but weren't necessary for the project.  (see [creating junction points on windows with linkd.exe](http://support.microsoft.com/kb/205524).)
 
 The problem I ran into was thinking I could delete my whole folder with all of the repositories after the project was done.  Unfortunately, because they were junction points, they would also delete the source of the links.

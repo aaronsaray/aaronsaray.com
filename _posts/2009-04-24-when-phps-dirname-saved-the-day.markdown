@@ -5,7 +5,6 @@ tags:
 - PHP
 - scripting
 ---
-
 Now, I won't bore you with the actual details of how I came across this - lets just skip to the explanation and example:
 
 First, even when it makes 'sense', you should not be using relative paths in your command line PHP scripts.  I am so used to writing web PHP that I fell into this bad habit.
