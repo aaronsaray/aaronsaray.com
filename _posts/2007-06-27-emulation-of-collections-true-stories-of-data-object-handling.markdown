@@ -28,7 +28,6 @@ class Collection
 }
 ```
 
-
 This spurred me into thinking about data objects further (and my previous post about such).
 
 **For example, I have an article - and I want to save its title, body and author in an object... how could I do this best?**
@@ -139,7 +138,6 @@ $article = new DatedArticle(new ByLinedArticle(new Article()));
 $article = new ByLinedArticle(new DatedArticle(new Article()));
 ```
 
-
 ### Bonus tip - Make use of the Null Object
 
 Another programming paradigm refers to the null object.  In our case, instead of throwing an exception, lets say its perfectly acceptable to have nothing returned.  In this case, we're going to list trackbacks.  Why not just make a null object and have it return that?
@@ -174,11 +172,9 @@ foreach ($trackBacks as $t) {
 }
 ```
 
-
 In this case, we'll output nothing to the screen - which is perfectly fine.   However, you might not want to allow 'null' as a valid case... or its allowed, but it usually means there's a bug.  You may also not have the go ahead to modify all of the code to start handling exceptions.
 
 ### You can use Null Objects as a troubleshooting tool.
-
 
 Now, lets say in our example, we know that each article should have an author, but we're not going to 'crash' if there is none.  We just will show the article with no by-line - but we CERTAINLY want to know about it.
 
@@ -201,6 +197,7 @@ class Collection
         return $this->$property = $value;
     }
 }
+
 class PrePopulatedExample
 {
     public $title = 'test title';
@@ -216,9 +213,10 @@ class PrePopulatedExample
         return $this->collection->$property;
     }
 }
+
 class NullObject
-{
-}
+{}
+
 $article = new PrePopulatedExample(new Collection());
 
 print $article->title;
@@ -234,11 +232,9 @@ Why would we do it this way than just using a smart isset() call?  Well, now we 
 
 Lets modify NullObject and our creation of null object.
 
-
     /** Collection::__get **/
                 return new NullObject(debug_backtrace());
     /** moving on **/
-
 
 ```php?start_inline=1
 class NullObject
@@ -258,11 +254,7 @@ As you can see, I can now log a big backtrace to some sort of logging/reporting 
 
 All in all, its important to not over-complicate the situation, but there are many possibilities for using a good OO model.
 
-
-
 ### UPDATE: Bonus Tip #2!
-
-
 
 Who's guilty of code like this? I know I am!
 
@@ -272,7 +264,6 @@ if ($article->author != '') {
     print ' written by: ' . $article->author;
 }
 ```
-
 
 Well, in this instance with our last example, we'll get this error:
 
@@ -286,6 +277,5 @@ public function __toString()
     return '';
 }
 ```
-
 
 And we're all set.  Hacky?  a little bit...

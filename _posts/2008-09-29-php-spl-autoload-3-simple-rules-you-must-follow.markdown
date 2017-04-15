@@ -7,11 +7,9 @@ tags:
 
 While working on a larger site that I may need to use many external libraries, I realized I need to come up with a better __autoload() function (for example, I think it was DOMPDF that had its own autoload function as well.  Last time I used that, I had to hack my own autoload to use their code as well to locate files).  I researched into [SPL autoload](http://us2.php.net/manual/en/function.spl-autoload-register.php) functionality, and I've found what I need.  Through some trial and error, I found out 3 absolutely necessary rules that need to be followed when building your custom autload functions, however.  Lets examine:
 
-
 ### Our Example ... so far
 
-**index.php**
-
+**`index.php`**
 ```php?start_inline=1    
 class FW
 {
@@ -26,13 +24,9 @@ spl_autoload_register('FW::autoload');
 new Test();
 ```
     
-
 **existing files:**
 
-
   * includes/Test.php
-
-
 
 ### Always check if the file is readable
 
@@ -73,8 +67,7 @@ function __autoload($class)
 
 Lets add to our example.
 
-**index.php**
-
+**`index.php`**
 ```php?start_inline=1
 class FW
 {
@@ -95,21 +88,14 @@ spl_autoload_register('FW::autoload2');
 new Test2();
 ```
 
-
 **existing files:**
-
 
   * includes/Test.php
 
-
   * test/Test2.php
-
-
 
 Now, our example will try to execute the first autoload function.  It will exit this function after finding a false answer for is_readable.  Then, according to our spl_autoload_register function, the autoload2 function gets executed, finds the file and loads it.
 
-
 ### Unregister functions you don't need
-
 
 The amazing function spl_autoload_unregister() is amazing.  Remember, the more autoload functions you have loaded, the longer it will take to find (or not find!) your file.  If there is only a specific block of code that requires an additional autoload functionality - add it - then remove it when done - so the script can continue.  The performance 'hit' for removing something from a stack is far less than invoking a function (and at least one other call like is_readable()).

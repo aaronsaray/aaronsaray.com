@@ -16,7 +16,6 @@ I've found the need to do some installs from some PEAR channels, so I jumped int
     
     Warning: Cannot use a scalar value as an array in phar://go-pear.phar/PEAR/Command.php on line 268
 
-
 And it just went worse from there!  It finally ended with an installation failure message.
 
 **How I solved this issue without messing with the holy binary of PEAR**

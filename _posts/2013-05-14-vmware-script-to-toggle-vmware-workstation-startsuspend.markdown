@@ -11,9 +11,6 @@ Normally I have multiple vm's running for various different projects - all of th
 First, check out the launcher I used:
 
 **File location: /home/aaron/.local/share/applications/vmware-myproject.desktop**
-
-
-    
     
     [Desktop Entry]
     Name=VMWare MyProject Toggle
@@ -25,14 +22,8 @@ First, check out the launcher I used:
     Terminal=false
     Type=Application
     Categories=Programming;IDE;
-    
-
-
 
 The bash toggle script checks to see if the current VM is running, and then does the appropriate action depending on if it was found or not.
-
-
-    
     
     #!/bin/bash
     
@@ -45,8 +36,5 @@ The bash toggle script checks to see if the current VM is running, and then does
     else
       vmrun start "$VM"
     fi
-    
-
-
 
 So, when I start my day, all I have to do is type the name of my project and hit enter on the launcher.  When the day is done, no need to find the VM's small X on the tab - I just run the toggle again and its suspended.

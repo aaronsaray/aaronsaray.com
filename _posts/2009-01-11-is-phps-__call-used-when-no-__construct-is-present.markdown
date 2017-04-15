@@ -23,15 +23,10 @@ class TEST
  
 new TEST('hi');
 ```
-    
 
 Ran the first time, the output was:
 
-
     constructed with: hi
-    
-
-
 
 Ran without a constructor?
 

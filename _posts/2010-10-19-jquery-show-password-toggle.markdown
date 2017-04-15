@@ -11,8 +11,6 @@ More and more people are requesting that their passwords not be masked - or that
 The solution is simple: Make a dupe of the element but make it from scratch.  Instead of having type password, have type text.  Tie this to a checkbox and you're good to go.  In my solution (which I can't help but feel I've adapted from somewhere... but I can't just remember where the original code idea came from), I automatically find inputs with a specific class, and add a checkbox to show the password.  This way, it doesn't happen to all of them - yet it is still relatively automatic for those that need it.
 
 For testing, I submit this HTML code.  (Note: the CSS for the password box is there so you can verify that the box still looks the same when you change types).
-
-
     
 ```html
 <html>
@@ -29,7 +27,6 @@ For testing, I submit this HTML code.  (Note: the CSS for the password box is th
     </body>
 </html>
 ```
-    
 
 Now, the javascript is pretty simple.  Just find the class, grab the input, and add a checkbox after it.  The checkbox will then, once clicked, remove that input and add in the opposite input type.
     

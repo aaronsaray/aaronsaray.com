@@ -13,8 +13,6 @@ First, even when it makes 'sense', you should not be using relative paths in you
 ### Show Me Why dirname() is your hero
 
 Imagine a directory structure on windows like this:
-
-    
     
     C:\DEVELOPMENT\local>dir
      Volume in drive C has no label.
@@ -28,48 +26,33 @@ Imagine a directory structure on windows like this:
     04/23/2009  08:40 PM    <dir>          testdirname
                    0 File(s)                    0 bytes
                    4 Dir(s)  67,484,995,584 bytes free
-    
-
-
 
 We have two files:
 
-**testdirname/script.php**
-
-```php?start_inline=1
+**`testdirname/script.php`**
+```php
+<?php
 require_once '../includes/include.php';
 print "I've done ran, ya'll.";
 ```
 
-
-**includes/include.php**
-
-```php?start_inline=1
+**`includes/include.php`**
+```php
+<?php
 print "I'm an include!\n";
 ```
 
 Now, let's run the script as it is:
-
-    
     
     C:\DEVELOPMENT\local\testdirname>php script.php
     I'm an include!
     I've done ran, ya'll.
-    
-
-
 
 Not too bad - but note how we're actually in the script.php's working directory.  What if we wanted to run it in a different directory?
-
-
-    
     
     C:\DEVELOPMENT\local>php testdirname\script.php
     
     Warning: require_once(../includes/include.php): failed to open stream: No such file or directory in C:\DEVELOPMENT\local\testdirname\script.php on line 2
-    
-
-
 
 Well this makes sense because I programmed with that relative path.
 
@@ -79,20 +62,12 @@ Instead, change the require line in script.php to this:
 require_once dirname(__FILE__) . '/../includes/include.php';
 ```
 
-
-
-
 This way, it always gets the full directory of the file itself (__FILE__ constant) - and THEN you can path to the file any which way you'd like.
 
 Let's check the output:
-
-    
     
     C:\DEVELOPMENT\local>php testdirname\script.php
     I'm an include!
     I've done ran, ya'll.
-    
-
-
 
 Yep - I KNOW - Simple.  Its embarrassing to say it bit me - but it did :)

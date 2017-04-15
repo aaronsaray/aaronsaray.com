@@ -14,7 +14,6 @@ A big issue with PHP security had been the developers creating a php info page a
 phpinfo();
 ```
 
-
 I can't imagine how many versions of that are out on various servers...
 
 Actually, let's take a look with this [google query](http://www.google.com/search?q=phpinfo&btnG=Search&hl=en&client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&hs=su2&sa=2)...

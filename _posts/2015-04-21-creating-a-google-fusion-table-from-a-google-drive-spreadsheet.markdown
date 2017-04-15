@@ -20,24 +20,17 @@ And this is where we begin!
 
 ### Selecting the Source
 
-
 [![Choose Source](/uploads/2015/fusion-1-300x214.png)](/uploads/2015/fusion-1.png){: .thumbnail}
 
 I chose to use a Google Drive Spreadsheet.
 
-
-
 ### Validating the Layout
-
 
 [![](/uploads/2015/fusion-2-300x214.png)](/uploads/2015/fusion-2.png){: .thumbnail}
 
 Yup, everything looks good.  I really like the option of choosing the header / label row too.  Sometimes you might want to make a report from data farther down on a street.
 
-
-
 ### Adding the Meta Data
-
 
 [![](/uploads/2015/fusion-3-300x217.png)](/uploads/2015/fusion-3.png){: .thumbnail}
 
@@ -45,10 +38,7 @@ I think its important to give attribution to sources when you use them.  Here, I
 
 Click Finish!
 
-
-
 ### The first result
-
 
 [![](/uploads/2015/fusion-4-300x202.png)](/uploads/2015/fusion-4.png){: .thumbnail}
 
@@ -68,7 +58,6 @@ The next thing I wanted to do was configure the info window.  This is on the lef
 
 I decided to write my own HTML to customize the view.  You can click on the custom tab and do the following:
 
-
 ```html
 <div style="height: 11em; overflow-y: auto" class="googft-info-window">
     <img src="{Image}" style="float:right; height: 10em; margin-left: 0.5em"></img>
@@ -80,18 +69,13 @@ I decided to write my own HTML to customize the view.  You can click on the cust
 </div>
 ```
 
-
 [![fusion-8](/uploads/2015/fusion-8-300x164.png)](/uploads/2015/fusion-8.png){: .thumbnail}
 
 Ugh - inline style.  But, what can ya do?
 
 Anyway, this makes a pretty good looking info window for our purposes.
 
-
-
 ### Final Part
-
-
 
 Click Tools -> Publish and choose to change the visibility.  You must make this public so you can share it or embed it.  I chose the option to make it visible to anyone with a link.
 

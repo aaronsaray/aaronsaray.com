@@ -9,10 +9,7 @@ Raise your hand if you've ever been told how to do your job... Yep.  It's happen
 
 First we'll cover stakeholders, business owners, and project planners.  Let's identify what we're doing when we pitch a project to the executors.  Let me define the problem with this approach.  Then, we'll move on to technical executors and discuss how to combat and effectively resolve these types of propositions.
 
-
-
 ### Stakeholder - You know your business
-
 
 As a business owner or project lead, you know your business better than any single other person involved in the project.  No one can deny that you've spent countless hours deep in the heart of it.  You're the one who is pitching this project because you've noticed a problem or defined a new feature that will make your baby even better.  It can be frustrating hearing others who haven't been eyeballs deep in this realm try to solve your problems for you.  However, it's time to let go...
 
@@ -24,10 +21,7 @@ That isn't to say that you can't suggest solutions that you've heard others have
 
 You will find that you now have more time to concentrate on your project, develop more enhancements and think of more problem's solutions - Let them solve the problem - you just need to define it.
 
-
-
 ### Executors, creators, programmers - Be Confident in your skill, communicate your understanding
-
 
 While asking for programmers and designers to be confident seems like a no brainer, sometimes it needs to be reiterated.  And then, I would tack on this: communicate this confidence in measurable means.  Simply saying "I'm the best, this is why you hired me" is not good enough.  You know you're the best, and the hiring personnel know you are... now its time to remind them that they picked you for a reason.  Since you are 'the best', you are ready to solve any problem they can pose.  Remember, the business needs to propose the problems.  It is your job to creatively solve them.
 
@@ -35,10 +29,7 @@ Now, sometimes the stake holders will come with just solutions.  "I need feature
 
 Any programmer can program.  Anyone can solve problems in just the bare minimum way.  However, understanding 'why' helps you use your experience to leverage better quality solutions, more efficiently.  It can be difficult to separate requirements from suggestions, but this is the true sign of an amazing executor, a rockstar programmer.  Your job is not just to make what the boss asks for, but to exceed those expectations and build something truly amazing.  I bet 95% of you can agree: you almost always know of a more cool, exciting, and efficient way to make a feature than what is suggested.  Take this time to learn the root of the request so you can bring those amazing ideas into fruition.
 
-
-
 ### It's no one's fault - and it's a long road
-
 
 Often when I bring up these two points, I hear comments like "Oh well now you're just making excuse for side XX."  That's completely untrue.  I think it would be completely irresponsible to recognize that the success of any project or organization rests fully on short term as well as long term goals.  What I am addressing here is short term solutions.  Adapt to the other party's communication style and goal orientation.  By doing so, you help move the project forward baby steps.  But, moving forward comfortable baby steps - is still forward motion.  Now, the long term of this is to recognize when certain behaviors are repeated over and over - and start to correct them.  
 

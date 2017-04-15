@@ -43,7 +43,6 @@ class Application_Validate_CaptchaHiddenField extends Zend_Captcha_Word
 }
 ```
 
-
 Basically, what this does is generate a blank word - and not put any rendered design around the form field.  So, as captchas go, if the entered item does not match the generated word, it fails.  In this case, the entered item (anything) doesn't match "" (nothing), so it would fail.
 
 Mind you, smarter bots can process CSS... so this isn't perfect.  Also, we've seen spam that actually seems to originate from humans, so this is only the first line of defense.

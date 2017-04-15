@@ -19,27 +19,17 @@ The very first thing I did was make an SVN checkout in all of the five parent di
 
 ### Create the full list of backups
 
-
 So, first thing's first: Create the list of directories that need to be monitored.  I made them in this txt file named 'svndirectories.txt':
-
-    
     
     D:\pictures D:\storage\videos\misc D:\storage\files\art D:\storage\files\NeverAgain D:\storage\files\Therapee
-    
-
-
 
 Note, all of them are separated by a space.  This becomes important in our next batch script.
 
-
 ### Schedule the SVN Add
-
 
 I added an SVN Add batch script at Midnight on sundays.  Actually, there are two batch files.  I made them separately so that I could invoke a scheduled task - but also run the "add" by hand if need be.
 
 The first file, addsvn.bat:
-
-    
     
     @echo off
     
@@ -64,14 +54,8 @@ The first file, addsvn.bat:
     
     
     :END
-    
-
-
 
 That will force an add of each file passed in on the command line.  Then, the batch file that I made to be ran from the scheduler will read in the folders from the text file, and run this script.  Here is 'scheduled_addsvn.bat':
-
-
-    
     
     @echo off
     REM - This is what should be scheduled to add files to svn repos
@@ -81,27 +65,18 @@ That will force an add of each file passed in on the command line.  Then, the ba
     
     REM - call the addsvn program with all the directories
     addsvn %value%
-    
-
-
 
 Theoretically, I could have called it with the entire line of files after it, but I wanted to call them separately to handle errors better.
 
 After all of these have been added, lets move on...
 
-
-
 ### Schedule SVN Commit
-
-
 
 Just in case I made a huge addition of files, I let an hour pass between scheduled add and scheduled commits.  Additionally, I ran the commit every day instead of every week.  I figured I'd make more changes than I would make additions.
 
 So first, read in all of the directories again and run the commit.  Then, the file to schedule.  These are pretty much similar, just different commands:
 
 commitsvn.bat:
-
-    
     
     @echo off
     
@@ -126,13 +101,8 @@ commitsvn.bat:
     
     
     :END
-    
-
-
 
 scheduled_commitsvn.bat:
-
-    
     
     @echo off
     REM - This is what should be scheduled to commit files to svn repos
@@ -143,7 +113,4 @@ scheduled_commitsvn.bat:
     REM - call the addsvn program with all the directories
     commitsvn %value%
     
-
-
-
 This has worked out pretty well for me.  If you see anything I could do better, please let me know!

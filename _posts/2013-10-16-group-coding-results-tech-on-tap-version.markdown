@@ -20,7 +20,6 @@ Recently, I was invited up to [Tech on Tap](http://www.techontap.org/) in Applet
 
 So, without further delay, here is the challenge:
 
-
     Challenge: Send a plain text email to a website owner.
      
     The following fields are required:
@@ -31,16 +30,15 @@ So, without further delay, here is the challenge:
     Special Challenge Instructions:
     Should never generate the Webpage Expired message.
     
-    
 Now, I’m not going to post what the group came up with. That’s not a good reflection of a final product (it was a new and exciting experience, plus I did not allow time to refactor – so it was what it was.)
 
 However, here is my quick and dirty version of doing this in plain PHP. I made sure to do this in under 30 minutes, play the TV and music loudly (to mimic distractions like that are in a group setting) and even had an IM conversation. There are a number of refactors I’d do now that I look at this after I did it but I wanted to be fair and show you exactly what I would have made. :)
 
 **Please note: those who randomly troll for code – this is not the best code example – it was a ‘challenge’**
 
-**index.php**
-
-```php?start_inline=1
+**`index.php`**
+```php
+<?php
 session_start();
  
 // helpful constant for my session
@@ -90,9 +88,9 @@ function getErrorForField($fieldName)
 
 and then the processing page
 
-**process.php**
-
-```php?start_inline=1
+**`process.php`**
+```php
+<?php
 // sanity constants
 const NAME_MAX_LENGTH = 100;
 const MESSAGE_MAX_LENGTH = 65000;

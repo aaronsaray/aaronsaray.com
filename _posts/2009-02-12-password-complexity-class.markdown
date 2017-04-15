@@ -8,49 +8,31 @@ tags:
 
 After many times of coding relatively the same thing, it becomes prudent to have a standard library for certain sets of processes.  Of course - that is why there are things like frameworks!  At any rate, one of the biggest things I run into is password complexity.  Each website has its own requirement for the security they want to implement.  So, let's talk about the requirements and then look at the code:
 
-
 ### The Requirements
-
 
 There are many different requirements that I've come across, but lets focus on the ones that I have defined in this class:
 
-
-
-
   * Minimum Password Length
-
 
   * Maximum Password Length
 
-
   * Require a Lowercase/Uppercase/Mixed case
-
 
   * Require a number
 
-
   * Require a special character
-
 
   * Require a password that is different than the last one
 
-
   * A password that does not contain a username
 
-
   * A password that has enough unique characters
-
-
 
 Those are all of the needs I plan to address.  Additionally, there are some features like getting the standard password settings (which is max/min length, an upper a lower and a number) and the strict setting which is all of the requirements.
 
 **Those of you who look at performance** might notice a few things that are not super efficient - such as having multiple calls to preg_match instead of combining them into a single function and using reflection and call_user_func_array instead of hardcoding the function names.  In most reusable libraries, performance should be king.  However, in this particular module, I think its used far less than most other bits of code, so I optimized for easy maintenance and upkeep.
 
-
-
 ### The Code
-
-
 
 Well, lets take a look at the class:
 
@@ -232,9 +214,7 @@ else {
 }
 ```
 
-
 You might also try using the getComplexityStandard() method or creating your own complexity setting.  For example, if you wanted to create a site that was really lax and only required min/max and lower and uppercase, you could call the complexity routine like this:
-
 
 ```php?start_inline=1
 /** not recommended!! **/

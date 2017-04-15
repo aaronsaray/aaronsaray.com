@@ -8,9 +8,7 @@ tags:
 
 If you've ever worked with a customer's CMS pages and heard the term "Oh but I want some images underneath the links" - you need this script.  Whether your using old style tables or the coolest CSS tricks, filling in space to the bottom of the page can be useful.
 
-
 ### Enter navigationFiller.js
-
 
 [![](/uploads/2008/1-150x99.png)](/uploads/2008/1-150x99.png){: .thumbnail}
 
@@ -20,8 +18,6 @@ Minus it being very very ugly and boring, you'll see the huge blank space below 
 
 navigationFiller.js will calculate the available space and fill with images from your pre-configured list.
 
-
-
 [![](/uploads/2008/2-150x99.png)](/uploads/2008/2-150x99.png){: .thumbnail}
 
 See the after picture - of our equally as AWESOME demo pics?
@@ -30,9 +26,7 @@ This is from a simple script include and then some configuration options.  The s
 
 Its easy - lets see how:
 
-
 ### How to Use
-
 
 First thing's first, include the js file in the head of your document.
 
@@ -42,9 +36,7 @@ First thing's first, include the js file in the head of your document.
 </head>
 ```
 
-
 Next, configure your options.  First, you must make a new instance of the object.  Then, you can add images 1 by 1.  The order you add them is the order they may appear.  Check out this javascript:
-
 
 ```javascript
 var oFiller = new navigationFiller();
@@ -55,7 +47,6 @@ oFiller.add('3.gif');
 /** add using your normal onload() handler **/
 window.onload = function() {oFiller.create('fillerDiv');}
 ```
-    
 
 As you can see, you finally run the oFiller.create() function with the ID of the div that you wish to populate with these images.
 

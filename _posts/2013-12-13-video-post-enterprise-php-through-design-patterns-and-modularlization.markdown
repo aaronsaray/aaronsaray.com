@@ -9,7 +9,6 @@ I created this Udemy course a while ago - but unfortunately they said it was too
 
 So, exactly like I'd present at a conference, here is a screencast of this presentation!
 
-
 [1.mp4](/uploads/2013/1.mp4) -
 [Download Slides](/uploads/2013/1.pdf)
 
@@ -30,7 +29,6 @@ So, exactly like I'd present at a conference, here is a screencast of this prese
 
 [7.mp4](/uploads/2013/7.mp4) -
 [Download Slides](/uploads/2013/7.pdf)
-
 
 [Download sourcecode.zip](/uploads/2013/sourcecode.zip)
 

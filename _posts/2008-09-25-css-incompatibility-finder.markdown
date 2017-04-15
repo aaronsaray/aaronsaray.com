@@ -92,7 +92,6 @@ class cssCompat
      */
     protected $_cssParts = array();
 
-
     /**
      * supported attributes - used for array diffing to find the items
      * list the items that are diff between the available versions
@@ -108,8 +107,6 @@ class cssCompat
                                     'max-height'    => array('ff2', 'ff3'),
                                     'max-width'     => array('ff2', 'ff3')
                                   );
-
-
 
     ###########################################################################     ########################################################################### 
 
@@ -215,7 +212,6 @@ class cssCompat
     }
 
     ###########################################################################     ########################################################################### 
-
 
     /**
      * quick string searching alg for finding unsupported content
@@ -397,5 +393,3 @@ Off the top of my head, here are some todos:
     @todo point to the actual incompatibility
     @todo handle multiple version compares
     @todo add in many more supported attributes
-
-

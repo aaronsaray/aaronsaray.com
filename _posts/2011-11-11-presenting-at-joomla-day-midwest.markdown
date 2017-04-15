@@ -25,29 +25,16 @@ Hope to see people out there.  Make sure to DM me on [Twitter](http://twitter.co
 
 Oh - and make sure you stay tuned.  New topics coming out shortly on the blog including:
 
-
-
-
   * More PHPUnit testing methodologies
-
 
   * Leadership for PHP Programmers
 
-
   * Filters for Zend Framework
-
 
   * Writing good auditing for your applications
 
-
   * ACL's in PHP and Zend Framework
-
 
   * Masking Credit Card Information
 
-
   * and more!
-
-
-
-

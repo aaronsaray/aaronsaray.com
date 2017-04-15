@@ -14,11 +14,11 @@ However, when I ran the following code in a unit test, I got an error that class
 ```php?start_inline=1
 class QueueFakeTest extends AbstractTestCase 
 {
-    public function testCanAssertPushed()
-    {
-        Queue::fake();
-        Queue::assertPushed('my-job');
-    }
+  public function testCanAssertPushed()
+  {
+    Queue::fake();
+    Queue::assertPushed('my-job');
+  }
 }
 ```
 
@@ -29,19 +29,20 @@ Time to look at my composer file...
 **`composer.json`**
 ```json
 {
-    "require": {
-        "laravel/framework": "5.4.*",
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~6.0",
-    }
+  "require": {
+    "laravel/framework": "5.4.*",
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.0",
+  }
 }
 ```
 
 Obviously, I've snipped out portions of it. But yep, I was requiring PHPUnit 6, but in Laravel 5.4 (at least 5.4.16), the header in in `QueueFake` reveals the problem:
 
 **`vendor/laravel/framework/...../Fakes/QueueFake.php`**
-```php?start_inline=1
+```php
+<?php
 namespace Illuminate\Support\Testing\Fakes;
 
 use Illuminate\Contracts\Queue\Queue;
@@ -78,16 +79,16 @@ The updated list, as far as I can tell, is this:
 ```php?start_inline=1
 class_alias(\PHPUnit\Framework\Assert::class,'PHPUnit_Framework_Assert');
 class_alias(
-    \PHPUnit\Framework\ExpectationFailedException::class, 
-    'PHPUnit_Framework_ExpectationFailedException'
+  \PHPUnit\Framework\ExpectationFailedException::class, 
+  'PHPUnit_Framework_ExpectationFailedException'
 );
 class_alias(
-    \PHPUnit\Framework\Constraint\LogicalNot::class, 
-    'PHPUnit_Framework_Constraint_Not'
+  \PHPUnit\Framework\Constraint\LogicalNot::class, 
+  'PHPUnit_Framework_Constraint_Not'
 );
 class_alias(
-    \PHPUnit\Framework\Constraint\Constraint::class, 
-    'PHPUnit_Framework_Constraint'
+  \PHPUnit\Framework\Constraint\Constraint::class, 
+  'PHPUnit_Framework_Constraint'
 );
 ```
 

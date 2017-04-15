@@ -12,7 +12,6 @@ By default, in Zend Framework, the Zend View Helper of HeadScript allows additio
 
 I've created my own solution.  Now, I put headScript() items only in the head when necessary, and I add everything else to my new custom bodyScript() handler.  This is simply extending the headScript() handler for a different position.
 
-
 ```php?start_inline=1
 class Application_View_Helper_BodyScript extends Zend_View_Helper_HeadScript
 {
@@ -32,12 +31,9 @@ class Application_View_Helper_BodyScript extends Zend_View_Helper_HeadScript
 }
 ```
 
-
-
 You'll notice it simply is simply extending the headScript item and calling it the bodyScript.  The only other thing to note is that the regKey variable is different from the headScript() version.  This is to keep them separate when building the registered entities for this helper.
 
 And of course, this is simply called just like HeadScript
-
     
 ```html
     <?php echo $this->bodyScript(); ?>

@@ -28,19 +28,15 @@ So how do we protect against our remnant .svn folder's content from being execut
 
 With our apache config, we should be able to deny access to the .svn directory.  We have two ways to finish this.  First, if you have access to your apache config file (or if you really really want to do this with your .htaccess file - although the apache config would be a better place to put it because it only gets parsed on startup - not every page load), use mod_access and do the following:
 
-    
     <directory>
         Deny from all
     </directory>
-
 
 The Directory directive, used with the tilde, allows for a sort of 'regular expression' (check the manual for more).  You could also use the DirectoryMatch directive.  With our current directive, we're going to throw the user into a 403 error.  No matter what url (website.com/.svn... or website.com/images/.svn...), they will all be denied.
 
 Another way to do this is to use a mod_rewrite rule - this way we can do a 404 or just redirect them to a nicer place.  Lets redirect the user back to the index page:
 
-    
     RewriteRule .svn/* /
-
 
 **Either way you solve it, solve it!**
 

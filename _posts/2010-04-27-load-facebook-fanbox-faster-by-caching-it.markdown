@@ -38,8 +38,7 @@ In the end, it was a success.  A cron job is ran every hour to get the content o
 
 The cron script:
 
-**build_facebook_fanbox.php**
-
+**`build_facebook_fanbox.php`**
 ```php?start_inline=1
 $builder = new facebook_fanbox();
 $builder->getHTML();
@@ -50,8 +49,7 @@ This is pretty self explanatory.  The class is instantiated.  A request is made 
 
 Next, I'm going to cover parts of the class and supporting files individually.
 
-**fanbox.php**
-
+**`fanbox.php`**
 ```php?start_inline=1
 class facebook_fanbox
 {

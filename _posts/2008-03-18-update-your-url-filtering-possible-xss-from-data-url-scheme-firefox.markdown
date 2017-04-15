@@ -24,10 +24,8 @@ First off, this is just an example - so it's pretty simple.  But I could make a 
 ```
 
 Which, when base64 encoded is
-
     
     PHNjcmlwdD5hbGVydCgiY29va2llIHN0ZWFsOiAiK2RvY3VtZW50LmNvb2tpZSk7d2luZG93LmxvY2F0aW9uLmhyZWY9J2h0dHA6Ly93d3cuZ29vZ2xlLmNvbSc7PC9zY3JpcHQ+
-
 
 Put it all together:
 
@@ -35,12 +33,9 @@ Put it all together:
 <a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgiY29va2llIHN0ZWFsOiAiK2RvY3VtZW50LmNvb2tpZSk7d2luZG93LmxvY2F0aW9uLmhyZWY9J2h0dHA6Ly93d3cuZ29vZ2xlLmNvbSc7PC9zY3JpcHQ+">Google.com</a>
 ```
 
-
-
 Now, I've tested this example in Firefox 2 which supports this scheme - and it alerts the cookie.  With IE 7, no such luck.
 
 *Disclaimer* It should be noted, I think this is NOT an issue with Firefox's handling of the specification.  See #6:
-
     
     6. Security
     

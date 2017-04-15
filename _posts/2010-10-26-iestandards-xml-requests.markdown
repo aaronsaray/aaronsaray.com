@@ -16,20 +16,14 @@ I did some research and found out that I needed to set IE8 to emulate IE8.  I di
 <meta content="IE=EmulateIE8" http-equiv="X-UA-Compatible">
 ```
 
-
-
 Problem solved. It worked for the user and we moved on.  However, it appears that IE was actually sending an additional request now... or at least I think that was happening.  I was seeing the 404's for the IEStandards.xml file.
 
 I believe the solution is a two fold solution, now. It is necessary to use the meta tag AND have the resulting IEStandards.xml file in place.
 
 **IEStandards.xml**
 
-    
 ```xml
 <ie8standardsmode></ie8standardsmode>
 ```
-    
-
-
 
 I think this is the complete solution - before I had just "patched" it.  The documents always made it seem like it was one or the other - not both. Anyone know if I'm correct?

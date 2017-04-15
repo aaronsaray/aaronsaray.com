@@ -14,9 +14,7 @@ With all of this in mind,  a new project spawned in my mind.  This project will 
 
 ### There are five main categories to consider for my upcoming project:
 
-
 #### Refine the Idea
-
 
 The idea is to provide a service that will monitor websites remotely, possibly bring in local debug information, and will look for broken links.  These three features need to be ran remotely, scheduled, and generate reports.  I want to embrace the open source community and possibly build a platform for more remote testing solutions - but I also want to be able to support my own development and side projects (yah 102 D's is in deficit right now...).
 
@@ -67,7 +65,6 @@ There are many standards that need to mesh for any project to work well.  With t
 - pro plugins - Although I can allow for hosting and subscriptions, I can also sell advanced plugins - I should be in the perfect place to develop these - its my coding so I should have it down, and also I'll have all the feedback from users on what they really want.
 
 - increase community - I've not developed a community since hackingzone.org.  It would be nice to increase the support around this project.
-
 
 ### Final Notes
 

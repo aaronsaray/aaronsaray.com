@@ -14,18 +14,11 @@ After we made the changes, they all agreed that the new functionality was as exp
 
 So I created a snippet of jQuery to handle this featureset for the team in a generic method.  You'll see this below.
 
-
 ### Instructions
-
-
 
 Create a checkbox that is your checkall control.  Give it a data attribute of 'checkall-control' and have the value be the group name of the children checkboxes.  On each child box that should be controlled by the checkall, give it a data attribute of 'checkall-group' witht he name of the group that it belongs to.  Then, the jQuery will handle the rest.
 
-
-
 ### The Code
-
-
 
 Here is the jQuery snippet to handle the requested functionality.
 
@@ -54,11 +47,7 @@ $('input[data-checkall-control]').each(function(){
 });
 ```
 
-
-
 Here is an example of the input boxes that this would control.
-
-
     
 ```html
 <table>

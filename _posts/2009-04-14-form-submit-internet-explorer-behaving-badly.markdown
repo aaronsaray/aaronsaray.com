@@ -21,7 +21,6 @@ $('input').keydown(function(e){
     }
 });
 ```
- 
     
 ### Button Element Not Submitting in Internet Explorer
 
@@ -35,6 +34,5 @@ In IE - don't forget to add type="submit"
 <button>Works in FF</button>
 <button type="submit">Works and is probably what you SHOULD do</button>
 ```
-
 
 That is all.

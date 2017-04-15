@@ -9,21 +9,13 @@ While searching for employment, I realize I can't be super picky - but my househ
 
 **Features**
 
-
-
-
   * Takes hourly or yearly wage.  If amount is 200 or greater, assumes its a yearly amount.
-
 
   * Shows wages in yearly, monthly and hourly
 
-
   * Shows Gross, Company Net (assuming 25% tax bracket relatively), Independent Net (assuming 25% + 15.3% tax for medicare/social security, etc)
 
-
   * Configurable to take in other rates of tax
-
-
 
 **Here's the bookmarklet** - drag it to your book mark bar:
 

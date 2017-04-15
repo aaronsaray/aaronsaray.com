@@ -8,24 +8,16 @@ tags:
 You may remember the article I wrote about the observer pattern in php - but it lacked some of PHP's advanced features.
 
 In this next example, I'm not going to explain the logic as much - read the original post for more - but I did comment it pretty thoroughly.  Here are the things that I added, however:
-
-
 	
   * Type hinting in functions
-
 	
   * Abstract classes
-
 	
   * Interfaces
-
 	
   * A registry of observers
 
-
-
 So, here is the code:
-
 
 ```php?start_inline=1
 /**
@@ -177,7 +169,6 @@ interface iObserver
  * tells which observers are associated with with observable
  */
 $globalObservers = array('twitterTransportObservable'=>array('urlShortenerObserver'));
-
 
 $tweeter = new twitterTransportObservable();
 

@@ -14,11 +14,7 @@ So, **it is very important to get your estimates right.**  So, how do we do this
 
 I follow three steps when estimating: Preliminary research, Planning, and Saying no.
 
-
-
 ### Preliminary Research
-
-
 
 If you want to become a great estimator, there is no magical way to do this but to know how long it takes you to do something.  That's the advice everyone gives... if you want to estimate, look at last time you did XYZ feature and use that as a guide.  But what if you haven't had to submit an estimate for that style of feature before?
 
@@ -26,11 +22,7 @@ How easy is it to just pump out a block of code or a feature on your software wi
 
 Instead, **always estimate all of your tasks** even if you're not required to submit one.  Then, track your time and at the end of the project compare your totals.  This research is yours and yours alone.  You will learn to become a better estimator and know your skillset and timelines best this way.
 
-
-
 ### Planning
-
-
 
 When I create an estimate, I try to break down the tasks into hours/days measurements.  I don't quote anything less than 2 to 4 hours.  Anything over 2 weeks, I find a way to break that up into subtasks.  This planning gives me a good handle on how my project will run. It also serves as a sort of road map.
 
@@ -38,20 +30,12 @@ Now, be honest: how many times have you thought a task will be done "in no time"
 
 The great tool here is that we often understimate - and the 20% column USUALLY covers that.  However, I like to look at those numbers during/after the project and use those to learn to refactor my estimates for the future.  If I'm consistently in "worst case" column, something is going wrong!
 
-
-
 ### Just say No
-
-
 
 Or, ... slap "scope creep."  It can be really hard to say no to a boss or a project manager when they ask for more features.  But, I implore you: for the sanity of your estimation scores and your reputation, say no.  Say no respectfully.  Say no with facts.  But say no.  Do not let additional things get in there.
 
 However, sometimes its unavoidable.  Whatever happens, **put a number on that 'yes'**.  That extra work doesn't come cheap.  You didn't estimate it.  Give an off-the-cuff estimate addition.  "Yes, I will do what you want, even though it wasn't part of my original plan.  It will add on approximately 3 hours.  Are you ok with this?"  And make sure to document this!
 
-
-
 ### Good Luck
-
-
 
 Good luck!  Estimation is not a science.  But I can tell you, after many years of this, if you really pay attention to your skills and speed, you'll get a good idea of what you can do and how long it will take you.

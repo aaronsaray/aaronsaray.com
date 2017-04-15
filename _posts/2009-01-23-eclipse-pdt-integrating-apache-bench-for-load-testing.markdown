@@ -11,8 +11,6 @@ When I use an IDE, I expect for it to do everything I need for my project, from 
 
 ### ab - a quick summary of some of the features
 
-
-
 [ab](http://httpd.apache.org/docs/2.0/programs/ab.html) is a pretty versatile tool for load testing that comes with the standard apache http webserver install.  In order to get the best usage out of this tool, you should read up on the online manual.  However, we're going to cover a few of the features that are part of this demonstration here.
 
 **-c  Concurency**
@@ -33,37 +31,25 @@ Instead of specifying a -n amount (with this option, it actually says '50,000' r
 
 Well, there you have it.  Just the few top options that you need.  Now, lets look into eclipse.
 
-
-
 ### Eclipse PDT - Add an External Tool
-
 
 In order to accomplish this task, we're going to have to create an external tool in Eclipse.  Remember, the output of the external tools gets routed to the console in eclipse, so its still all encapsulated in the IDE.
 
-
-
 #### First, Open External Tools Dialog
-
 
 After starting Eclipse PDT:
 **Click the Run menu, select the External Tools menu option and click the External Tools Dialog... option.**
 
 [![1](/uploads/2009/1-150x118.jpg)](/uploads/2009/1.jpg){: .thumbnail}
 
-
-
 #### Configure the Program call External Tools
-
 
 **Double click the Program Menu item.**
 This new screen will bring up the external tools menu items.  So far, I've named my External Tool 'AB Load Testing' and filled in the path to my ab.exe and working directory.
 
 [![2](/uploads/2009/2-300x240.jpg)](/uploads/2009/2.jpg){: .thumbnail}
 
-
-
 #### Configuring the command line arguments
-
 
 For this setup, I'm going to stick with concurrency and with number of requests.  You may want to swap out the -n option with the -t.
 
@@ -87,11 +73,7 @@ You'll notice that you have the option to click on variables.  Eclipse has the a
 
 **Click Apply, Click Close**.  This saves your external program.
 
-
-
 #### Running your External Program the First Time
-
-
 
 **Click the external tools drop down and select AB Load Testing.**
 
@@ -106,8 +88,6 @@ And, as you can see, after it is completed, you will see the output in the conso
 [![7](/uploads/2009/7-300x77.jpg)](/uploads/2009/7.jpg){: .thumbnail}
 
 For example, my output was this:
-
-    
     
     This is ApacheBench, Version 2.0.40-dev <$Revision: 1.146 $> apache-2.0
     Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -152,8 +132,5 @@ For example, my output was this:
       98%   1000
       99%   1000
      100%   1000 (longest request)
-    
-
-
 
 Do you have any other cool ways of customizing this external tool?

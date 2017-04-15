@@ -10,8 +10,7 @@ I love working in the Zend Framework view system.  One thing that bothers me, ho
 
 Before we begin, it's important to know the goal. The goal is to create a version of Zend_Mail that can read in views for both HTML and Text emails. In addition, since I am such a Unit Testing Fool, I want to make sure my new changes are testable.  For once, you're going to see a fully documented class!  I'll post the code here and then review it afterward.
 
-**application/models/Mail.php**
-
+**`application/models/Mail.php`**
 ```php?start_inline=1
 /**
  * Zend_Mail override
@@ -101,9 +100,6 @@ class Application_Model_Mail extends Zend_Mail
     }
 }
 ```
-    
-
-
 
 Starting out the class, you'll see I created it as a single class in a single file.  The first two docblocks just define what this file does and what the class goal is.  Next, the model extends the Zend_Mail class.  For the most part, all of the features are perfect in the Zend_Mail class for our goal.  
 
@@ -123,7 +119,6 @@ Finally, the views and layouts are rendered and applied.  The setBody specific c
 
 This is how you might use this:
 
-
 ```php?start_inline=1
 $mail = new Application_Model_Mail();
 // ...
@@ -131,7 +126,5 @@ $mail->setBody(Application_Model_Mail::TYPE_HTML, 'forgotpassword', array('user'
      ->setBody(Application_Model_Mail::TYPE_TEXT, 'forgotpassword', array('user'=>$user));
 $mail->send();
 ```
-
-
 
 This would load the layout from **APPLICATION_PATH/layouts/scripts/emailtext.phtml** and **APPLICATION_PATH/layouts/scripts/emailhtml.phtml**.  Then, the views would be rendered from **APPLICATION_PATH/views/scripts/email.forgotpasswordhtml.phtml** and **APPLICATION_PATH/views/scripts/email.forgotpasswordtext.phtml**

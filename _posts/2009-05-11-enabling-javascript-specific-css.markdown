@@ -14,7 +14,6 @@ Believe it or not, we still have visitors to our websites that disable javascrip
 
 Before this method we're going to talk about, the only way to display stuff to users without javascript was to use the NOSCRIPT tag.  Luckily, this takes it one step further.  You are not limited to using that tag.  Instead, CSS attributes can be added to items that you would like to be visible (or invisible) if no javascript is enabled.  Conversely, other stylings can take affect if javascript is on.  One of the commentors on the previous link suggests using this technique to limit the visibility of icons that represent more dynamic behavior when javascript is disabled.  Other usability enhancements include expanding hidden content automatically if no javascript controls are available.
 
-
 ### How are people doing this?
 
 The consensus after comments and edits appears to be to create the following type of code (this is just for an example)
@@ -43,11 +42,9 @@ The consensus after comments and edits appears to be to create the following typ
 </html>
 ```
 
-
 Basically, when javascript is enabled, it replaces the html's class of 'nojs' with 'js'  - then any of the CSS qualified with '.js' is executed.
 
 Not a bad idea.
-
 
 ### How I Would Do It
 

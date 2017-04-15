@@ -13,7 +13,6 @@ This is how I did it:
 
 ### Take out assumptions
 
-
 Part of the extra wording I did was to explain "what would happen."  The hope is, however, that if a user is taking the time to sign up for your website, they already _trust_ you enough to know that you'll do those things you've promised.  So, there is no need for me to spit out all of this information right away.  (see: If you have a page, we'll search for it! - they should trust that this happens already).
 
 ### Trust Common Sense
@@ -31,7 +30,6 @@ In areas where I didn't know what to cut, I decided I must have enough whitespac
 ### Thesaurus.com and Lingo/Slang
 
 Last but not least, check out the thesaurus.  Also, from time to time, I used real words that people use - not the proper written words.  This helped shorten the content.
-
 
 ### The Examples
 

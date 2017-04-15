@@ -19,18 +19,10 @@ So here's the real meat of the article, however.  I used to do this in my .htacc
 
 **the old way**
 
-    
-    
     RewriteCond %{HTTP_HOST} ^www.thebetterbachelor.com$ [NC]
     RewriteRule ^(.*)$ http://thebetterbachelor.com/$1 [R=301,L]
-    
-
-
 
 This would make sure that the domain redirected with a 301 and was not processed anywhere else.  However, after doing some more research, and running into the non www website at [no-www.org](no-www.org/faq.php?q=class_b), there is a better solution.  Let's do it this way from now on:
-
-
-    
     
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]

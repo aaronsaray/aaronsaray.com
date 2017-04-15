@@ -35,10 +35,9 @@ Recently I've been noticing the recruiters follow through a little with a respon
 
 **Computer "people" are not the same as you.**  Every group of people has their own traits, but in the programmer world, these can be at odds with bubbly owners and recruiters (not all of us, mind you!).  Now, I don't want to offend with generalities - this is all my own experience.  But, I've noticed a higher percentage of nervousness, a greater fear of the unknown, and a high propensity to do anything to avoid situations with failure.  
 
-So here's my advice: ** Follow Through **
+So here's my advice: **Follow Through**
 
 Let's do the scenarios again.
-
 
 Recruiter: *emails* here's a great job for you if you're looking
 

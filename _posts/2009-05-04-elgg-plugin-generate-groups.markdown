@@ -11,23 +11,16 @@ The [Elgg Generate Users Plugin](http://community.elgg.org/pg/plugins/aszepeshaz
 
 This plugin has the following functionality:
 
-
   * Creates Groups
-
 
   * Adds Group Images
 
-
   * Joins existing members to groups
-
 
   * Fills in some group descriptions
 
-
-
 More about this after the file download:
 [Elgg Generate Groups](/uploads/2009/oht_elgggengroups15.zip)
-
 
 #### Creates Groups
 

@@ -11,7 +11,6 @@ There seems to be confusion over what is the right way to design a website or...
 
 ### Enter your date of birth (mm/dd/yyyy) {calendar}
 
-
 Who in their right mind is going to load up the calendar, page back years upon years (and mind you, a lot of the calendars are month based, not year based scrollers) and find the exact month and location.  A designer recently at ("the triangle") put this field near a birth date field.  This is a waste of resources.  The feature needs to be tested and it takes up clutter.  Think logically.  _My advice: Try the feature yourself - are you really going to use it?_
 
 ### Page 1: enter frequency (yearly, monthly).  Page 2: enter frequency (annual, month)

@@ -14,8 +14,6 @@ I was looking at mock objects in PHPUnit the other day and started to get confus
 $myMock = $this->getMock('myObject');
 ```
 
-
-
 Now, the entire object was an empty mock.  I had to define each one.  
 
 **Define your methods to mock only, instead.**
@@ -25,16 +23,11 @@ Try this:
 ```php?start_inline=1
 $myMock = $this->getMockBuilder('myObject')->setMethods(array('onlyMethodToMock'))->getMock();
 ```
-    
-
-
 
 Oh, and to make it easier, in PHP Unit 3.6, it's all built in as a second parameter of the getMock() call:
-
 
 ```php?start_inline=1
 $myMock = $this->getMock('myObject', array('onlyMethodToMock'));
 ```
-
 
 Sweet.

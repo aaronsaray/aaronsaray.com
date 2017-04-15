@@ -6,9 +6,6 @@ tags:
 ---
 
 Here is an interesting proof of concept that the 'rows' column of the explain output is actually an estimate, and not the real amount.  I KNEW it to be true, but somehow I didn't feel like it was right.  I always thought "the closer the rows # gets to the exact amount of retrieved data, the better.  Exact is what you strive for."  Turns out, that's not true.  The closer the number, the better, but its still just an estimation.  Sometimes its estimated accurately, other times its not.  See this example:
-
-
-    
     
     mysql> select * from city;
     +----+-------------+
@@ -89,25 +86,13 @@ Here is an interesting proof of concept that the 'rows' column of the explain ou
             Extra: Using where
     3 rows in set (0.00 sec)
     
-
-
-
 hahah!  3 rows in city is what it estimates...
 
-Interstingly enough, however, if you add an index...
-
-
-    
+Interestingly enough, however, if you add an index...
     
     ALTER TABLE `city` ADD INDEX `name_idx` (`name` ASC);
-    
-
-
 
 It is reflected accurately now.
-
-
-    
     
     *************************** 1. row ***************************
                id: 1
@@ -120,4 +105,3 @@ It is reflected accurately now.
               ref: NULL
              rows: 2
             Extra: Using index
-    

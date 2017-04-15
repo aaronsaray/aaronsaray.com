@@ -25,7 +25,6 @@ The next step in my programming mutuation was at least more secure: send the has
 mysql_query("Insert into resets (userID, key) values($userID, '" . md5(time()) . "');
 mail($to, 'Password reset', "Please click this link to reset your pass: http://website.com/resetpass.php?key=" . md5(time()));
 ```
-    
 
 You DO see all the problems, right?
 
@@ -35,10 +34,7 @@ Of course, the next issue was that it was pretty easy to guess a password reset 
 
 Then, I didn't store the key - so theoretically, the first line could be a different time than the url that was sent to the user - especially if there was a high sql load!
 
-
 #### Better Hash - not based out of Amsterdam
-
-
 
 The next thing I realized was that I had to make this hash a bit more unique, so I ended up adding the userID to the time as a prefix... (should also point out that one time I also went with generating a hash based off of their userID and then sending a timestamp as a separate parameter... its relatively the same thing as this example)
 
@@ -51,13 +47,11 @@ mysql_query("Insert into resets (userID, key) values($userID, '$key');
 mail($to, 'Password reset', "Please click this link to reset your pass: http://website.com/resetpass.php?key=$key");
 ```
 
-
 At least I fixed the key - um - sorta.  However, if you knew the user id - you could at least make a better educated guess at this hash - especially if you knew the time was.  Point being, it was a step up, but not my final resting place.
 
 **Break: Some of you might wonder why I didn't just use a uniqid() and md5 that... well... yah... but we all make mistakes when we first start out right? ;)  Just trying to help out any new programmers not to make the same mistakes**
 
 #### What are you doing now?
-
 
 Ok - so for something thats pretty secure like that, I wanted to have a very long, extremely random string.  I thought of sending mt_rand()'s next to each other and hexadecimalling them - or md5ing them.  But I settled on something hopefully with even more of a chance not to be guessed: base64 encoding.
 
@@ -72,7 +66,6 @@ for ($i=0; $i<300; $i++) {
 }
 $key = strtr(base64_encode($forEncode), '+/=', '-_.');
 ```
-    
 
 Granted, I left out the mailing and mysql storage, but you get the idea.  Real quick, a run-down:
 

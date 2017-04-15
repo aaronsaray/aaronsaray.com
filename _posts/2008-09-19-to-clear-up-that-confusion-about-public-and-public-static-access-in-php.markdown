@@ -7,7 +7,6 @@ tags:
 
 Apparently, a few programmers I know have been getting confused about access of public, public static variables in PHP classes.  I've written this example code with the following comments to explain what will work - and what won't.
 
-
 ```php?start_inline=1
 class TEST
 {

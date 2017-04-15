@@ -9,10 +9,7 @@ tags:
 
 As you probably know by now, I'm a huge fan of Eclipse PDT.  Well, I wanted to stop using MySQL GUI tools for a bit and explore Eclipse tools.
 
-
-
 ### Get the SQL Explorer Plugin
-
 
 [![](/uploads/2010/1-150x56.jpg)](/uploads/2010/1.jpg){: .thumbnail}
 The first thing to do is to get the Eclipse SQL Explorer plugin.  You can get that at the update URL:
@@ -21,21 +18,14 @@ The first thing to do is to get the Eclipse SQL Explorer plugin.  You can get th
 Install this software like you normally would.  Accept the license and you're ready to go with the plugin.  I would recommend letting Eclipse restart after the installation.
 [![](/uploads/2010/2-300x33.jpg)](/uploads/2010/2.jpg){: .thumbnail}
 
-
-
 ### Eclipse Uses JDBC
-
 
 Eclipse uses JDBC connections to connect to MySQL.  You can get this on the MySQL connectors page:
 [Connector](http://www.mysql.com/products/connector/)
 
 Simply unzip the connector into your Eclipse program directory and move on.
 
-
-
 ### Open Eclipse
-
-
 
 [![](/uploads/2010/3-125x150.jpg)](/uploads/2010/3.jpg){: .thumbnail}
 
@@ -43,10 +33,7 @@ Next, Open eclipse (if its not already open.)  First step is to choose the SQL E
 
 Now, create a connection profile.  This is done by clicking on the Create New Connection Profile link.  From here, name your connection, choose your adapter and fill in the proper credentials.  (If you're not familiar with this style credentials, you can visit this website:  [http://www.connectionstrings.com](http://www.connectionstrings.com/)
 
-
-
 #### What if I can't find my Driver in the list?
-
 
 There is a good chance that the driver may not be in the list by default.
 Follow the following steps.
@@ -63,11 +50,7 @@ Follow the following steps.
 
 Now you should be able to use the MySQL driver from the list.
 
-
-
 ### Browsing the Database
-
-
 
 [![](/uploads/2010/6-150x37.jpg)](/uploads/2010/6.jpg){: .thumbnail}
 

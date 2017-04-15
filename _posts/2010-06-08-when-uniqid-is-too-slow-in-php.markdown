@@ -36,16 +36,11 @@ foreach ($start as $key=>$startval) {
 ```
 
 The results:
-
-    
     
     uniqid: 1.1227629184723
     mt_rand: 0.0030300617218018
     sha1/mt_rand: 0.0076968669891357
     
-
-
-
 As you can see, sha1/mt_rand combination is so much faster.  In fact, **140x**!  While this is still micro-optimization, running that 6 times to me makes a difference.
 
 Your thoughts?  Is this still unique enough for form tokens?

@@ -6,9 +6,6 @@ tags:
 ---
 
 How many of you have written this before (or something very much like it):
-
-
-    
     
     RewriteCond %{REQUEST_FILENAME} -s [OR]
     RewriteCond %{REQUEST_FILENAME} -l [OR]
@@ -16,9 +13,6 @@ How many of you have written this before (or something very much like it):
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^.*$ - [NC,L]
     RewriteRule ^.*$ index.php [NC,L]
-    
-
-
 
 You might recognize something like this from the Zend Framework .htaccess file.  Basically, the point is to say if something doesn't exist, point it to the index.php file.  Well, there is a simpler way to do this - I can't believe I didn't know this till now...
 
@@ -26,10 +20,4 @@ You might recognize something like this from the Zend Framework .htaccess file. 
 
 All of that configuration now becomes this:
 
-    
-    
     FallbackResource /index.php
-    
-
-
-

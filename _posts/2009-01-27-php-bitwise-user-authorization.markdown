@@ -35,7 +35,6 @@ if ($myTestUser) {
 }
 ```
 
-
 First off, the capital lettered variables are our section permission markers.  These need to expand by the power of 2.  This way, our bitwise operators work out well.
 
 Next, our test user's permissions are the summation of all the sections/permissions that they should have access to.  Its important to note that $ADMIN might be better labeled as $ADMINSECTION to not give the idea of hierarchy, but just access.
@@ -49,17 +48,10 @@ if ($isADMIN || || $isSuperUser || $section1LeaderAccess) {
 }
 ```
 
-
 The one thing that I had to get over was the notion of a hierarchy in the actual values.  Really, the hierarchy is business rule based, so the actual values do not matter.  For example, if the $admin variable is less than the $superuser, I would think that it would mean the $admin was above.  But technically, in our model, we could develop a $superadmin which could be 128 - without having to re-architect the whole system.
 
 The only thing that keeps tripping me up is how to add a new permission, and then auto apply them to each user with so and so setting.  So, for example, every $admin user should also have access to the new $section3leader variable.  Is there a better way to code around this than doing an update query like this?
-
-
-    
     
     update userPermission set permission = permission+128 where permission & 1 > 0
-    
-
-
 
 Seems like there would be a better way to do it... any thoughts?

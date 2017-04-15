@@ -30,7 +30,6 @@ Code bases, for the most part, are more of a living/moving entity than a stable 
 
 It is important for the SA to understand some of the company's strategic plans for future development and planning.  This way they can make design suggestions about existing projects' architecture to afford for easy upgrading to the future planned additions.  This familiarity is accomplished by working somewhat with the management team or decision makers as well as the project managers.
 
-
 ### Why You Need One
 
 **Heads off problems ahead of time.**
@@ -52,7 +51,6 @@ Time and time again, analysis is cut short because there are not enough resource
 **Reduces work for managers.**
 
 Since the SA knows both the future plans of the business as well as has an eye for the technical solutions, they can jump in and resolve a lot of questions before they have to get queued against a manager.  This is not to say that an SA should be at all responsible for personnel issues or anything - but they can help make snap decisions with the notion of what is best for the company and the architecture.
-
 
 ### Do you agree?
 

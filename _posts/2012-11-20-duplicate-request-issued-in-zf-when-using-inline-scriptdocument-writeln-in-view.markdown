@@ -20,5 +20,4 @@ document.writeln('<img class="album-cover" alt="" src="#" style="display:none;" 
 </script>
 ```
 
-
 When I viewed the network tab in chrome, turns out it was issuing another request to my URL for some reason.  Once this code was removed, it was good to go.

@@ -25,14 +25,8 @@ A knee jerk reaction was to ignore that install and install it to the filesystem
 Perhaps by now, you're seeing the flaw in my reasoning.  I gotta admit - I was still being old-school and stubborn.
 
 So, on my most recent project, I use apt-get to install PHPUnit.  All was good and fine until I did a --version on the command line tool - for some unknown reason.
-
-
-    
     
     PHPUnit 3.7.28 by Sebastian Bergmann.
-    
-
-
 
 Ruh roh - all this time, I had been looking at the docs for the newest 4.x version of the platform, 4.6 stable.  
 

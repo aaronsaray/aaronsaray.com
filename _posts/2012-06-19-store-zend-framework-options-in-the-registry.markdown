@@ -20,8 +20,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
   
   // ...
 ```
-    
-
 
 First, the method is named that way on purpose.  This way, later on in the bootstrap, if I really wanted to get the output of the registry version of the options, I could call $this->getOptionsRegistry().  It's much more clear that I'm getting that version than just the array version from $this->getOptions().  This is the reason why there is a return statement at the end as well.  That return statement tests my input as well.  If it doesn't return the right result, I know there was a problem storing it in the registry.
 

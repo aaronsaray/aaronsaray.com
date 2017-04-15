@@ -32,7 +32,6 @@ $this->addElement('password', 'confirm_password', array(
 ));
 ```
 
-
 First thing, add the password field.  Use a validator to make sure that its of the proper length, and require it.  By default, jQuery Validate plugin will also do required on class of 'required' - so this helps out immensely. 
 
 Second, create your confirm password.  Again, use the required and length validators.  Then, add the 'identical' validator.  As a parameter, pass the 'token' keyed array to the element name that it must be identical to.  Finally, pass the parameter 'equalTo' to the addElement() method list to put it in the HTML.  jQuery validator will use this attribute to determine what html ID to target for identical form values.

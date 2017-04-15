@@ -23,15 +23,13 @@ I thought about this - can we reject all requests to a specific AJAX processing 
 
 Anyway, here is my code for this proof of concept:
 
-**ajaxresponse.php**
-
+**`ajaxresponse.php`**
 ```php?start_inline=1
 var_dump($_COOKIE);
 echo session_id();
 ```
 
-**ajax.php:**
-
+**`ajax.php`**
 ```php?start_inline=1
 /**
  * start the session right away

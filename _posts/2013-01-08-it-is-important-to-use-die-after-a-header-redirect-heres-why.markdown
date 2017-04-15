@@ -14,7 +14,6 @@ if (!$auth) {
 }
 ```
 
-
 Of course, there was much more, but this is the part that made me smile.  Here's why.
 
 **Always, always use a die() statement after a header redirect.**
@@ -28,7 +27,6 @@ However, on action pages, such as a record delete, the page will process the ent
 **Now here's the real fun part.**
 
 I thought to myself: what if my browser started ignoring the redirect headers.  Would I be able to see the content of the page?  **Theoretically, yes.**  So I wrote the following code for a Google Chrome extension:
-
 
 ```javascript
 chrome.webRequest.onHeadersReceived.addListener(
@@ -49,9 +47,6 @@ chrome.webRequest.onHeadersReceived.addListener(
 );
 ```
 
-
-
-
 Unfortunately, what I found out is that there is an open bug to actually allow this functionality to work.  It currently doesn't allow you to edit the responseHeaders yet.  (I even disabled all other extensions, just in case, as Google documentation suggests that only one extension can modify responseHeaders.)  
 
 Further research says that the API of declarativeWebRequest should allow for this - but this is currently in dev/beta release channels only, so I didn't pursue.  But the important part is to note that its probably rather easily attainable from the browser.
@@ -64,9 +59,6 @@ First, my "secure" page:
 header('Location: /login.php');
 echo 'Secure Stuff Here';
 ```
-    
-
-
 
 And now, my consumer:
 
@@ -84,9 +76,6 @@ $context = stream_context_create($opts);
 $stream = fopen($url, 'r', false, $context);
 var_dump(stream_get_contents($stream));
 ```
-    
-
-
 
 Sure enough, the output of my var_dump() was "Secure Stuff Here" as a string.
 

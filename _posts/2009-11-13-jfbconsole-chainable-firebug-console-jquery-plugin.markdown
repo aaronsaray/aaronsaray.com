@@ -80,5 +80,4 @@ Usage is pretty simple.  For example, say I wanted to log something about the cu
 var newClone = $("#cloneable").log('Cloning this').clone();
 ```
 
-
 This will display a reference to this object as well as the message 'Cloning this' in the Firebug console as a log type.

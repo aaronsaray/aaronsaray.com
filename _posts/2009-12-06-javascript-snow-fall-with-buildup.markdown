@@ -41,7 +41,6 @@ The HTML would be pretty simple.  I had to have three snow lines - oh and I want
 </html>
 ```
 
-
 We'll be referring to these elements a little bit later.
 
 ### Use CSS to Position Everything
@@ -86,7 +85,6 @@ body {
 }
 ```
 
-
 First, give the body some background color, get rid of paddings and set a height of 100%.  The next section is the tree placement.  This is pretty simple.
 
 For each class of snowblock, they are absolutely positioned at the bottom with 100% width.  I gave them each 40px height.  Each image is 50px tall, but I wanted an acceptable gutter just in case.
@@ -104,7 +102,6 @@ First off, I put the following javascript include tags in the HTML
 <script src="snowstorm.js" type="text/javascript"></script>
 ```
     
-
 After loading jquery and the premade script, the following javascript is executed:
 
 ```javascript
@@ -125,7 +122,6 @@ $(function(){
     setTimeout(function(){setInterval('upSnow()', 2000)}, 5000);
 });
 ```
-    
 
 First, the upSnow() function is generated.  This will randomly pick an ID between snow1 and snow3 and inch it up 1px.  The child div's height is also increased by 1 pixel.
 
@@ -135,10 +131,7 @@ Finally, a timeout and an interval are set.  The first timeout is used to set th
 
 After 5 seconds, the anonymous function fires off the setInterval request to run the upSnow() function every two seconds.
 
-
-
 ### See it in Action
-
 
 Seems to me, people like to SEE this stuff in action.  Weird.  Anyway, here ya go:
 [/demo/snow/](/demo/snow/)

@@ -8,8 +8,7 @@ I'm a huge fan of the service architecture paradigm - and that means that I use 
 
 So, this is what I did (I'll explain afterward):
 
-**src/Entity/EntityInterface.php**  
-
+**`src/Entity/EntityInterface.php`**  
 ```php?start_inline=1
 namespace app\Entity;
 
@@ -17,14 +16,14 @@ interface EntityInterface
 {}
 ```
 
-**src/Service/AbstractService.php**  
-
+**`src/Service/AbstractService.php`**  
 ```php?start_inline=1
 namespace app\Service;
 
 abstract class AbstractService
 {
-  public function __construct(Doctrine\ORM\EntityManager $entityManager, Psr\Log\LoggerInterface $logger)
+  public function __construct(
+    Doctrine\ORM\EntityManager $entityManager, Psr\Log\LoggerInterface $logger)
   {
     $this->entityManager = $entityManager;
     $this->logger = $logger;

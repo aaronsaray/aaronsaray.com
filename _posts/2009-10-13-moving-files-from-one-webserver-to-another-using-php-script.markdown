@@ -114,9 +114,7 @@ $migrate = new php_migrate_site();
 $migrate->go();
 ```
 
-
 ### How it can be better
-
 
 There are a number of ways to make this better - in case anyone has the time to do it!
 
@@ -125,7 +123,6 @@ There are a number of ways to make this better - in case anyone has the time to 
 The first obvious thing is user friendly interface options.  The script should present a form and ask for the credentials. It should submit to itself to start the verification process.
 
 #### Error Checking
-
 
 It should check to make sure PHP has the FTP module enabled.  It should also connect to the ftp server first to verify credentials.
 

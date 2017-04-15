@@ -104,14 +104,11 @@ class Application_Test_TestTimesListener implements PHPUnit_Framework_TestListen
 }
 ```
 
-
-
 First of all, the class must implement the PHPUnit_Framework_TestListener interface.  That's why at the end you'll see all the extra empty methods piled on.  Let's dive into the code:
 
 Define a constant of the number of whole seconds.  Next, define the endTest method which will receive a float of how many seconds/milliseconds that test took to run.  If it takes longer than our limit, print an error using the test name.  The _printError() method uses some control characters to change the font color red.  
 
 There you go!  Now, during your normal execution of unit tests, you may see a few warnings for long running tests in red.  Go and correct those to keep your tests running smooth and fast.
-
 
 Please note: a while ago, I ran into a blog entry about this.  It wasn't clear to me at the time, so I didn't book mark it.  However, I wanted to mention that this isn't 100% only my work.  Credit to where credit is due.
 

@@ -10,33 +10,21 @@ So I got permission at the beginning of March to add an Internet Explorer 6 depr
 
 My goals are simple:
 
-
-
-
   * Do not pump the message out to search engines or anyone without IE6
-
 
   * Remind strongly but do not hinder the usage of the site
 
-
-
 So, I felt the best way to do this was through a conditional comment.  In the head of the document, the first thing I inserted is this:
-
 
 ```html
 <!--[if lte IE 6]>
 <script type="text/javascript" src="/js/ie6warning.js"></script>
 <![endif]-->    
 ```
-    
-    
-
-
 
 So, any browser that is Internet Explorer will understand this conditional comment.  If it is Less Than or Equal to IE 6, it will load that javascript.
 
 The javascript contains the following content:
-
     
 ```javascript
 $(function(){
@@ -44,7 +32,6 @@ $(function(){
     $("#hd").prepend(ieDiv);
 });
 ```
-    
 
 As you can tell, I'm using jQuery.  However, the concept should translate to other javascript implementations as well.  Basically, a message is created with a warning image.  Then, the header element gets this box prepended to it.
 
@@ -69,9 +56,6 @@ Finally, we have a bit of css
     margin: 0;
 }
 ```
-    
-
-
 
 The finished product looks something like this:
 [![](/uploads/2010/untitled-300x34.jpg)](/uploads/2010/untitled.jpg){: .thumbnail}

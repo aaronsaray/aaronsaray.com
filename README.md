@@ -25,6 +25,15 @@ Code will be highlighted using the markdown indication and highlighter plugin fo
     
 Where CSS can be any supported language.  The initial indent of the code should be no spaces.
 
+Code should be indented with only two spaces, and should make every effort not cause the 
+code block to need to scroll at largest allowed viewing.
+
+Code files that refer to the entire file should begin with that language's first tag.
+Others may make use of `start_inline=1`
+
+So if a PHP file is the entire file, it should have `<?php` to begin.  If it's
+an excerpt, the definition should use `start_inline=1`.
+
 Images with thumbnails will be embedded like this:
 
     [![Load Time Analyzer - Test 2](/uploads/2007/test-2-load-time-analyzer.thumbnail.png)](/uploads/2007/test-2-load-time-analyzer.png){: .thumbnail}

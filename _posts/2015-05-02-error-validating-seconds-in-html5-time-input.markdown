@@ -29,6 +29,3 @@ Hopefully it saves you some time too - in the end, this is what I changed my inp
 ```html
 <input step="1" type="time" name="the-time">
 ```
-
-
-

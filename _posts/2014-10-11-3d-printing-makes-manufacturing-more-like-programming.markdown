@@ -14,11 +14,7 @@ This is the world I grew up in.  This is the world I live in now.
 
 Ok, glamor aside, it follows the whole 80/20 rule.  80% of what I do is unique, has never been done before in that manner.  20% is shared, copied and pre-built.  So, you can say that, for the most part, I create unique things.
 
-
-
     Before I go on, let me make sure to say that I have the utmost respect for manufacturing.  So many of the luxuries I take for granted are impossible without the manufacturing behind them.  This is not a disposition about better/worse, it's a comparison.
-
-
 
 I have had a chance to work with some people who manufacture physical objects lately.  The way they view the business world is somewhat inverse of mine.  (Of course, this is just a generality) somewhere around 80% of the needed parts and solutions have been made.  The 20% where they add value is the assembling of these pieces of pre-built material together in new and different ways.  Think about it this way: a screw, a bolt, a metal bracket, all of these things have already been made. You just go order/buy them.  It's the combination of how they interact and are assembled which makes the product unique and whole.  So 80% of the product is already made.
 
@@ -31,4 +27,3 @@ Sometimes, the assumption is made that there is just a collection of things in p
 I'm encouraged by the popularity of 3D printing lately, though.  This really is a new way of manufacturing that aligns quite nicely with programming.  Instead of assembling some pieces in an creative way, the manufacturer is literally being presented with a blank slate.  They must define the specifics of everything they want, in detail, down to the last millimeter.  This is very akin to the detail that we've needed all along in programming.
 
 I think we'll see that as more manufactures adopt the 3D printing model, they'll be more likely to understand the intricacies of programming requirements and draw some parallels.  In the mean time, since 3D printing is making an actual item (and not just electronic output), even the knowledge of this process should help programmers help bridge the gap.
-

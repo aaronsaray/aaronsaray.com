@@ -11,15 +11,8 @@ I've always found it annoying when programmers create systems where you create y
 
 The two options were:
 
-
-
-
-
   * **If I create an account, it should already log me in.**
 
-
   * **I don't mind logging in after I create my account (it proves I know my password)**
-
-
 
 Overwhelmingly (ok only 78% but still...) response has been in favor of creating an account and logging in automatically.  I think that we should take the extra step when creating applications to make this process streamlined for users.

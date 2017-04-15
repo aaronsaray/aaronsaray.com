@@ -23,5 +23,4 @@ Next frame: the design becomes crisp, properly colored, and a lense flare or a s
 
 Last frame: shows thought guy from first frame with giant smile in front of a huge mansion and a private jet with a shirt with the logo from the design.  "With our help, your project maeks you a billion dollars*"  then have small print "this may be an exaggeration" - or something like this.
 
-
 At any rate, I'm sure the idea would evolve - but I think this would be a fun use of parallax to demonstrate the process of creating a website in a fun, unique, and potentially funny/quirky way.

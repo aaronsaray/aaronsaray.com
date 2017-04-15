@@ -24,15 +24,11 @@ Click the **+** button to add a new tool:
 
   * Enter php doc as the name.  You can group it differently if you'd like.
 
-
   * Leave most of the options at defaults.  I chose to leave it as Current Vagrant.  (if you don't have this option, you might not have vagrant installed in this project.  You may want to choose a default remote interpreter instead.)
-
 
   * I entered phpdocumentor as the program because I have it installed as a global command.  This might be something like "php path/to/phpdoc/bin" if you have it installed with composer.
 
-
   * Finally, I put my parameters in the parameters input box.  You can set your own based on the phpdocumentor cli options, but mine basically says the source code directory (-d) and the output location (-t)
-
 
 Click OK and you're good to go for phpdocumentor.
 

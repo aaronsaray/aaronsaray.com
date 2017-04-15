@@ -25,17 +25,10 @@ In this case, whenever the code is not in production and the agent is a version 
 
 Regular Firebug has spoiled me.  The lite version has a few issues:
 
-
-
-
   * The inspect feature is somewhat quirky.  Sometimes it clicks links instead of selecting the DOM element.  It also has a delay.
-
 
   * The CSS view shows the whole entire computed style, not just items you've added.
 
-
   * You can't do any inline editing of elements in the DOM tree.
-
-
 
 Overall, its a real nice addition to my IE debugging back.

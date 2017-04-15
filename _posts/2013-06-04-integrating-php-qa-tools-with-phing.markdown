@@ -167,8 +167,6 @@ Let me post the phing build file, and then I'll go through step by step:
 </project>
 ```
 
-
-
 Ok, first thing's first: the project tag.  By default, I'm running the help target.  If you scroll down, you'll see that all help does is call an exec out to phing with the -l command.  This gets all targets and displays them as output.  Self generating help.  Nice.
 
 Next, setting up a bunch of properties.  
@@ -189,5 +187,4 @@ Next, phpmd is more like phpcs in its generation of return levels.
 
 Finally, you'll see I have no checking for phpunit - that's because phpunit is installed by default on all of my servers.  If not on yours, you'll have to modify it to be similar to phpcs style.
 
-Finally, you'll see a task called 'reports' - which is what I run when I want to check on the quality of the projects.  That way, I don't have to remember the names of the tasks.  I can call 'build' to build, 'deploy' (not shown) to deploy, and 'reports' to generate all available reports.
-
+Finally (again), you'll see a task called 'reports' - which is what I run when I want to check on the quality of the projects.  That way, I don't have to remember the names of the tasks.  I can call 'build' to build, 'deploy' (not shown) to deploy, and 'reports' to generate all available reports.

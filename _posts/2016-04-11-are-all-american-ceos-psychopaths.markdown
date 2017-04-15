@@ -16,7 +16,7 @@ tags:
   
 ---
   
-# Executive Summary  
+### Executive Summary  
 
 When one imagines a Psychopath, generally the mind will quickly fill with images of crazy individuals bent on lunatic deeds.  One of those words that all seem to have formed a connotation of; psychopathy is often mischaracterized and misidentified. The purpose of this paper is to properly identify the psychopathy condition and remove the misconceptions.  Then, conclusions will be drawn between the behavior of American business leaders and the properties of the psychopathy condition.  Analysis of literature will be used to provide definitions and demonstrate examples.
 
@@ -34,7 +34,7 @@ Research suggests that a small amount of American CEOs are true psychopaths.  Th
 
 This paper ends with two recommendations.  The first is to implement screening for both personality traits and family history of psychological disorders.  The other suggests to deal with an identified psychopath in business by coaching, ethical reviews, and championship of new products.  It is concluded that a corporate psychopath can be leveraged and does not need to lead to illegal behaviors.
 
-## Introduction
+#### Introduction
 
 Psychopathy could stand as one of the most mischaracterized psychological conditions in modern society.  It seems that any unknown or misunderstood individual who acts strangely or violently gets labeled as a psychopath.  The connotation of this term has strayed very far from the true clinical definition.  This paper will define psychopathy and suggest correlations of these traits and the American business executive.  This will lead to the obvious research question requiring analysis of these correlations.
 
@@ -46,35 +46,35 @@ If a psychopath is bent on consummating a primitive goal which lacks violence, t
 
 This gentle correlation brings a more direct question.  Did the pressure of the American business place breed a perfect platform for the corporate psychopath?  The dissection of this question leads to a far more troubling assumption and the basis of the research question of this paper: Do American CEO's tend to exhibit dangerous psychopathic tendencies?
 
-## Literature Review
+#### Literature Review
 
 It can be particularly challenging to develop authoritative sources for the definition of psychopathy.  There are two reasons for this difficulty.  First, when describing and identifying psychopathy, the holistic condition needs to be analyzed.  To avoid being misleading, both the violent and nonviolent subsets of this condition need to be researched.  However, since non-criminal psychopaths possess traits that allow blending into society, it can be very difficult to study the condition (Hall & Benning, 2007).  There exists considerable research on the "corporate psychopath" (Boddy, 2011; Gudmundsson & Southey, 2011), however, which leads to the ability to synthesize by comparison the base traits of the condition of psychopathy.
 
 For this paper, literature is reviewed to provide the basis for most of the discussion.  The terms psychopathy, sociopathy, and psychosis are defined and analyzed.  The "corporate psychopath" is discovered and reviewed.  Examples of psychopathic CEOs as well as normal CEOs are compared to the psychopath condition.
 
-## Definition of Psychopathy
+#### Definition of Psychopathy
 
 The underlying condition of psychopathy is commonly studied by observing the traits of individuals who are considered to be psychopaths.  A psychopath is generally thought to have shallow emotions, reduced fear, and lack of empathy (Bond, 2007).  Other research suggests there are more characteristics besides the emotional.  High stress tolerance and lack of guilt also seem to be prominent mental characteristics of a psychopath (Bond, 2007).  Additional research suggests that egocentricity, superficial charm, impulsivity, and manipulative tendencies round out the description of the psychopath (Munoz, Khan & Cordwell, 2011).  These predispositions act as a mask that can easily hide the nonviolent psychopath.  These may also lead to the success of the "corporate psychopath," described later.
 
 Recent study has identified links to psychopathy in children.  In a recent New York Times article, reporter Jennifer Kahn describes a chilling interview with the family of a child recently diagnosed as a psychopath.  The child exhibited behaviors of a much older, more malevolent individual.  One particular incident detailed a sibling accidentally causing a video game to be discontinued.  The antagonist child was met with a quiet whisper from the psychopathic child: "I'm coming for you" (2012).  Research suggests that younger children with psychopathic tendencies also lie for no reason (Kahn, 2012).  Psychopathy in children is becoming increasingly identified and studied (Dolan & Rennie, 2006; Murrie et al., 2007) with an effort to curb these behaviors as the children develop into adults.
 
-## Definition of Sociopathy
+#### Definition of Sociopathy
 
 Among researchers, it can be difficult to get a clear definition of the differences between psychopathy and sociopathy.  For the purposes of this paper, it is important to attempt to define the differences between the two conditions due to the presumed inability for a sociopath to achieve high order in society, such as the position of a Chief Executive Officer.  The sociopath shares a number of traits with the psychopath.  These include the emotional and mental psychopathic attributes.  Sociopaths differ, as the name suggests, in the social realm.  Interacting with people can be particularly troublesome.  The sociopath seems not to fit into society that well, has problems with the very basic rules and laws, and has difficulty keeping commitments and developing personal relationships.  It is intriguing to note that the sociopath is apparently aware of these differences, but pays no mind (Mealey, 1997).
 
 Another characteristic difference between the psychopath and sociopath leads nicely into the research topic of this paper. Mealey suggests that there may be a distinction between the economic classes of these two conditions.  Generally, the sociopath is in a far lower economic class than the psychopath (Mealey, 1997).  It is unclear if this is a result of choice or the inability to meld into society and achieve success on the part of the sociopath.
 
-## Definition of Psychosis
+#### Definition of Psychosis
 
 During informal communication this author had with colleagues, there was a general lack of knowledge regarding the difference of psychopath, sociopath, and psychosis.  Colleagues tended to confuse the terms and use them interchangeably.  For this reason, psychosis was also researched.  It is essential to clearly rule out this condition from further analysis due to its extreme differences.  Psychosis is a condition in which the subject's reality has changed so drastically that it is no longer based on truth or nature.  Individuals with psychosis are more prone to misjudging events that are happening around them.  Hallucinations are also very prevalent with psychosis (Kapur, 2003).  It is highly unlikely that a psychopath, or sociopath for that matter, would also suffer from psychosis (Animated Dissection of Anatomy for Medicine, 2012).
 
-## Role of the Chief Executive Officer
+#### Role of the Chief Executive Officer
 
 Researching the exact roles and responsibilities of the Chief Executive Officer (CEO) is equally as challenging as finding defining literature between psychopath and sociopath behavior.  The CEO is a position that has a conceptual focus on leadership of the company but is vague in definition of responsibilities.  Many researchers agree that the CEO functions as the leader of the company (Glick, 2011; Boatright, 2009; Buchholtz & Ribbens, 1994).  After further analysis, literature suggests a multitude of different responsibilities.  Some propose that a CEO is the visionary, director, disturbance handler, and protector of the company.  Furthermore, the CEO may play the part of the resource allocator, and in some cases, the chief strategist of the company (Glick, 2011).
 
 In his book, Nahavandi details multiple leadership styles including directive and charismatic (2012).  In some companies, the CEO may apply some or all of these styles.  Directive leadership involves the leader dictating to each subordinate what tasks are required, in detail.  Charismatic leadership is demonstrated by those who use emotion and communication skills to acquire leaders, sometimes regardless of the technical knowledge or prowess of the leader.  At Apple, deceased CEO Steve Jobs employed a charismatic style.  While employees may have complained about the exacting detail required by Jobs or his seeming lack of empathy to the stresses when a product was not perfect, they still loved working for him.  Others simply felt he was a genius and adored working for him (Burrows, 2011).  This is clearly the application of the charismatic leadership style.  Of these two potential leadership styles, charismatic leadership is most commonly applied by the psychopath leader.
 
-## American and European/Asian CEO Differences
+#### American and European/Asian CEO Differences
 
 The American CEO differs from the European or Asian CEO in many ways.  The American CEO tends to be more publicly available and inclined to participate in charity events and socioeconomic booster activities.  The American CEO role may encompass creating a better public perception of the leadership and company in general.  European and Asian CEOs tend to be more focused on the mechanics of business and make fewer voyages into the public eye (Pollach & Kerbler, 2011).
 
@@ -86,7 +86,7 @@ The most common traits of Korean CEOs of successful companies also differ from c
 
 Indian CEOs share the most traits with the American CEO by far.  However, as American CEOs have to work to develop favorable public perception, the Indian CEO tends to invest that time in information gathering.  For the Indian CEO, more emphasis is put on foresight and vision, similar to the American CEO, and less on developing high regard for the company itself (American Society for Training & Development, 2005).
 
-## Data Analysis and Method
+#### Data Analysis and Method
 
 Due to the time constraints of this paper, an expanded literature review was used as the method of research.  The method will also include organization of facts and traits among the various psychological conditions examined.  This will be compared and contrasted with traits of the American CEO.  With the baseline from the literature review, additional pieces detailing closer ties to the research question were discovered and are cited.
 
@@ -139,7 +139,7 @@ The term "corporate psychopath" refers to an individual immersed in the business
 
 Implementing the concepts in transformational leadership can create success in a company.  The three core building blocks of this style are charisma and inspiration, intellectual stimulation, and individual consideration (Nahavandi, 2012).  For this paper, the concept of focus is charisma and inspiration.  Nahavandi states that transformational leaders, when employing charismatic influence, can engender a strong desire to follow and accomplish the leader's goals and reduce resistance to ideas from the leader (2012).  If individual consideration is discarded, or at least the focus is removed from it, a business fostering transformational leadership can play host to a psychopath.  The acceptance of charismatic leadership plays directly into the psychopath's traits and strengths.
 
-## Findings
+#### Findings
 
 The direction of the literature review directly leads to a few distinct findings.  When comparing the American CEO and the psychopath, the overlapping characteristics were found to be less common than this author originally hypothesized.  However, the similarities are explicit enough to continue with exploring a positive answer for the research question.
 
@@ -159,7 +159,7 @@ Each of the following CEO examples show the danger of this condition.  The dange
 
 After the biography and company history, key choices that each CEO made will be analyzed.  These will be compared to the traits exhibited by psychopaths.  The goal is to show that there is an overwhelming amount of signs along the way to the culmination of each CEO's tenure.
 
-## Robert Maxwell
+#### Robert Maxwell
 
 Robert Maxwell, originally named Jan Ludvik Hoch, was born in Czechoslovakia in 1923.  Maxwell grew up in extreme poverty.  His orthodox Jewish parents were killed by the Nazis; he narrowly escaped concentration camps ("Robert Maxwell: A Profile," 2011). Maxwell described himself as "self-educated."  He had tremendous drive and ambition.  Throughout his career, he enjoyed much success and eluded the consequences of his many mistakes and setbacks.
 
@@ -179,7 +179,7 @@ Robert Maxwell made a number of decisions that aligned with the traits of a psyc
 
 _Table_ _4__: Actions of Robert Maxwell and the corresponding psychopathy traits_
 
-## Bernie Madoff
+#### Bernie Madoff
 
 Bernard Lawrence "Bernie" Madoff was born in New York in 1938.  Madoff got his start by creating his own investment firm using money he earned from working as a lifeguard and sprinkler installer ("The Madoff Files: Bernie's Billions," 2009).  He continued to run this investment firm until 2008, when he was arrested.
 
@@ -199,7 +199,7 @@ Madoff clearly exhibited the traits of a psychopath.  The business decisions he 
 
 _Table_ _5__: Actions of Bernie Madoff and the corresponding psychopathy traits_
 
-## Kenneth Lay
+#### Kenneth Lay
 
 Kenneth Lay, CEO of the now defunct American energy conglomerate Enron, is another example of an American CEO psychopath.  Kenneth Lay was born in 1942 in Missouri.  Kenneth Lay's father, Omer Lay, was a salesman and part-time baptist minister.  Omer Lay moved the family from place to place while Kenneth grew, always in search of the next best sales opportunity.  Unfortunately, financial stability was never achieved for Omer Lay and his family (Texas State Historical Association, 2012).
 
@@ -221,19 +221,19 @@ There is much evidence that Kenneth Lay was a psychopath.  The way he chose to c
 
 _Table_ _6__: Actions of Kenneth Lay and the corresponding psychopathy traits_
 
-## American CEO Psychopath Example Summary
+#### American CEO Psychopath Example Summary
 
 Literature suggested that the rate of psychopaths is between 1 and 4% in the business place.  Maxwell, Madoff, and Lay are three examples of this group.  With further research, a number of other CEOs can be found with similar stories.  However, the amount is not overwhelmingly large.  It is not clear if this proves the maximum of 4% psychopathic leaders, or that the highly functioning psychopath is just exceedingly versed in escaping public justice.
 
 The American CEO psychopath has been proven to exhibit dangerous tendencies.  These actions, especially in cases of Maxwell, Madoff, and Lay, harm those who have put faith and trust in the leadership of the company and its investments.  Furthermore, these actions are not only dangerous, they are also illegal.
 
-## Will American CEO Psychopaths Break the Law?
+#### Will American CEO Psychopaths Break the Law?
 
 The American CEO psychopath leads a life which is patterned in dangerous, selfish, and harmful choices.  Does that mean that all American CEO psychopaths will break the law and make illegal choices?  In cases where there is no oversight or mentoring, which is discussed later, this author hypothesizes that the psychopath will absolutely progress to illegal actions.
 
 American business laws are created in such a way to enforce the American notion of ethics on capitalistic business.  The hallmarks of successful businesses are hard work, ethical choices, and fairness.  Unfortunately, the psychopath shares very few traits with the laws enacted to protect businesses and consumers.  The psychopath has no concept of fairness and equality.  Instead, a deep greed, selfishness, and desire drives the psychopath.  Since the psychopath either does not comprehend the concepts or believes they do not apply to him or her, the concepts get ignored.  As more decisions get made that ignore the basics of the law system, the results of such decisions will continue to approach illegal business practices.  That is to say, the psychopath didn't specifically begin working to purposely break laws, the psychopath just found it easier to accomplish tasks sometimes outside of the confines of the law.  If left unfettered, the decisions will continue to drift towards the single goal of putting the psychopath ahead, and farther from the ethics required by American laws.  The American CEO psychopath left to work on their own will always end up breaking the law.
 
-## Is Every American CEO A Psychopath?
+#### Is Every American CEO A Psychopath?
 
 The ramifications of a company being led by a psychopath are quite concerning and grave.  However, the landscape of corporate leadership in America should not be hastily branded as a wasteland of selfishness and corruption.  Not every American CEO is a psychopath.  If this were the case, no American CEOs exhibiting self-sacrifice, compassion, and ethics could be found.
 
@@ -245,7 +245,7 @@ Bill Gates, co-founder and former CEO of Microsoft Corporation, is another great
 
 The tales of CEO villainy have been grossly over exaggerated in the last few decades.  The previous three examples are just a demonstration of the wealth of non-psychopathic American CEOs.  By quickly reviewing Fortune 500 companies, one would be able to find many additional quality examples. There is hope that a company can be ran by a successful visionary without the influence of a self-destructive psychopath.  To mitigate the risks of the American CEO psychopath and end up with an exemplary one like Jung, Ellison, or Gates, see the recommendations portion of this paper.
 
-## Recommendations
+#### Recommendations
 
 The picture of the psychopathic American CEO has been painted quite bleak.  There are two recommendations to deal with this phenomenon that can offer some hope.  First, individuals applying for the position can be screened for psychopathic tendencies, traits, and genetics.  If the CEO is already in power, the other recommendation suggests a positive outcome with coaching and mentoring.
 
@@ -263,7 +263,7 @@ There are a number of traits of the psychopath that are very useful for business
 
 The American CEO psychopath has a bad reputation, rightfully so.  With proper planning and screening, businesses can avoid hiring psychopaths to this position.  After a psychopath has been employed, there are still ways to thrive.  Instead of ignoring and discouraging these traits, proper mentoring and coaching should be applied.  This way, the psychopath can continue to be a functioning member of society and the business can enjoy success.
 
-## References
+#### References
 
 American Society for Training & Development. (2005). Ceo traits help drive india's growth. _T D_, _59_(9), 18.
 

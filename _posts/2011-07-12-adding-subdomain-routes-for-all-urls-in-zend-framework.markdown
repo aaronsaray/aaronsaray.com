@@ -26,16 +26,11 @@ foreach ($router->getRoutes() as $key=>$route) {
 }
 ```
 
-
-
 First, the router is retrieved again.  Next, the hostname route is created. In this case, our domain is example.com.  I want to have a parameter called sitename in my controllers.  Next, I force the router to add its default routes right now.  Normally this is done after custom routes.  Finally, each route that now exists, the default routes, the custom ones you've written, etc, are all looped through.  A new route is added which is basically named after that route with the prefix of 'hostname'.  The route is a chained version of the original with the hostname.
 
 Now, when visiting site1.example.com/blog/add, the parameters array in the controller will be:
-
-    
     
     'sitename'=>'site1',
     'controller'=>'blog',
     'action'=>'add'
     'module'=>'default'
-    

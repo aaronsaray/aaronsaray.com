@@ -24,8 +24,6 @@ function slowRunningFunction()
 slowRunningFunction();
 ```
 
-
-
 Obviously, the sleep() method is the culprit here, but I want to prove it!  Lets test with a concurecy of 5 connections for a total of 20 tests.  (Each connection should run probably 4 times if everything is even).
 
 Here is the output.
@@ -49,9 +47,6 @@ function slowRunningFunction()
     
 slowRunningFunction();
 ```
-    
-
-
 
 Now, lets look at the results.
 
@@ -59,10 +54,6 @@ Now, lets look at the results.
 
 Now, if you look at the key metrics, you can see I've made considerable changes to the speed.  I could even ratchet up the number of requests and concurrency.  
 
-
-
 ### The moral of the story
 
-
 The code may look good on the surface, but its always important to know the facts of load testing.  At the very least, use a tool like ab to test your load on your sites.
-

@@ -13,8 +13,6 @@ First off, every single example I found seemed to be in visual basic scripting. 
 The one thing to note is that Outlook interface is restricted via built in security controls (at least on Outlook 2003, the version I am testing on) (I didn't actually look into these settings though...).  Because of this, when you first access Outlook, you get a popup asking for permission to access Outlook.  You can choose how long you want to allow access to Outlook.  Then, when you go and send it, you get prompted again.  (I don't actually need to send the messages in my test environment, but I'd like to see what they look like.  I am most likely going to comment out the send() call).
 
 Here is what the code looks like:
-
-    
     
     if (!defined('olMailItem')) define("olMailItem",0);
     
@@ -35,8 +33,6 @@ Here is what the code looks like:
     $myItem->Display();
     
     $myItem->Send();
-    
-
 
 First off, we define a constant that is used to point to a new mail message (new contacts, new tasks, etc, all have their own number).
 

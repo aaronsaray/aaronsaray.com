@@ -55,5 +55,4 @@ It appears you can even make changes to the menu system - I haven't tried this y
 
 A lot of stock functionality comes in the form of plugins.  The plugin repository has a lot more to choose from too.
 
-
 Now, with all of that, there are some things I don't like.  The largest complaint I have is not being able to have multiple projects open in the same editor window.  I work in a lot of projects throughout the day - and switching back and forth - or having two windows open - is annoying.  But besides that, it's pretty decent.

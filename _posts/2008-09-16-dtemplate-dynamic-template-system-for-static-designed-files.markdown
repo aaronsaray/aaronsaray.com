@@ -17,7 +17,6 @@ The purpose of dtemplate was to read in an existing design from a designer or a 
 
 dtemplate takes existing URLs and rewrites them to be used in the template.  The template then reads in the xhtml files, looks for any specified IDs or classes, and replaces the content.  It finally renders the content out to the screen.  Any non .html file gets rewritten to be found in the new directory.
 
-
 ### Implementation Steps
 
 Its easy to put dtemplate into use.  If all else fails, check out the comments in the files.
@@ -30,16 +29,13 @@ In order to have the content be read in by the template file correctly, you must
 
 The last line of the .htaccess file specifies the real URL of the site.  In our example, its http://myrx8.local.  You need to change this to be your site.  Put this in the root of the site.
 
-
 #### Add additional files
 
 Place the **dtemplate_controller.php**, **dtemplate folder** and the **verify folder** in the root of the site.
 
 #### Verify each xhtml file
 
-
 Before surfing to the site, you should visit **http://yoursite.com/verify** and upload each file, and check for any id's and classes that you'd like to replace.  This way you know if the file will parse fine and if the required classes and IDs are located in the file.
-
 
 #### Modify the dtemplate_build_content() function in dtemplate_controller.php
 
@@ -48,7 +44,6 @@ This function is made to replace any content for your file.  It is commented - p
 #### Surf!
 
 You should be good to go!  If you want, you can remove the 'verify' folder.
-
 
 ### Example
 
@@ -62,8 +57,6 @@ I've included a really simple frames website as an example with the download.  T
 
 - is pretty rewrite intensive.
 
-
 ### The download
-
 
 [dtemplate.zip](/uploads/2008/dtemplate.zip)

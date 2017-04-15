@@ -41,7 +41,6 @@ Your computer would always have to be on.  Do you have a gas generator?  Do you 
 
 Are you a computer administrator?  Do you know about all the various security holes and compromises?  In the same way that personal computers have threats from viruses, servers have different threats.  Since these computers are always on and usually unmanned, keeping up with all of these changes can easily get out of control – unless you’re a skilled admin.
 
-
 You do need to have website hosting for your website.  Once you know the requirements of your website, your firm should be able to help you acquire hosting.  Fees may vary – and it is OK to shop around.  However, as always, fees sometimes do correlate to the level of quality (you’d hate to purchase web hosting and then find out that the webhost goes down and offline often!).
 
 _If you’re working on a project with 102 Degrees, we can offer hosting for you._

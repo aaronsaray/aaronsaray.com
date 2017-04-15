@@ -44,6 +44,4 @@ Here is the example code to make this work (I'll explain it right after)
 </html>
 ```
 
-
-
 First off, I insert my image element with an ID for quick reference later.  Next, the src attribute of the image is the transparent gif.  This will make the item 1px by 1px with a transparent content.  Then, the CSS sets the duck as the background image.  This will be show initially as a 1px portion from the top left of the duck image.  But then, the css resizes the image element to the size of the duck picture, the background image.  This stretches the transparent gif to that size as well.  Now, the full background image can peek through the stretched transparent gif.  Simple as that!

@@ -16,17 +16,11 @@ The first thing I wanted to do was create a quick proof of concept, so its not p
 
 ### For my test project to package, I created HelloWorld Version 2
 
-
 It has a index.php file which instantiates a class then echos an output method.  There are two folders, one contains a template file which str_replace() is executed against - the other folder contains a php file that contains the main logic.  Very simple but demonstrates multiple file types and multiple directories.
-
-
 
 ### The next step was to create the packager class.  
 
-
 There were a bunch of things I didn't account for in this quick poc, but it came together quite nicely.  You set the base folder in the code, and the name of your output installer file (we're just dumping it into the root of your base folder).  There is error checking in the class to make sure that files exist, we're not overwriting them, etc.  When the packager.php class is executed, we store the base folder and the output file.  Next, DirectoryIterator SPL class is used to go through the base folder.  When directories are found, we add them to an array.  When files are found, we add their base64 encoded content (which contains no quotation marks - do you see where I'm going with that?) to the array.  The function is recursive so it makes a multidimentional array of this content.  The array is then processed to create a directory listing and a file listing.  Finally, an installer template has the two variables replaced, and we send it out.  The final output is one php file with our list of directories and file contents in it - when ran it will create all of the directories and files for the project.  You would then need to make sure to remove the file and you'd be all set.
-
-
 
 ### What are the pitfalls?
 

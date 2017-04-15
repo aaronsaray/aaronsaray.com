@@ -16,15 +16,11 @@ Anyway, let's look at this in practice.
 
 **Here is our custom exception.**  Maybe if our target api returns error 500, we throw this exception.  Doesn't mean our site is kaput - we just can't use this API.
 
-    
 ```php?start_inline=1
 class API_500error_Exception extends exception {}
 ```
-    
-
 
 **and then...** here is our code
-
     
 ```php?start_inline=1
 $service = new API_Service();
@@ -39,9 +35,6 @@ catch (Exception $e) {
   echo "Unfortunately, there was an unknown error on this page.";
 }
 ```
-
-
-
 
 Here, in this code example, we do a number of things with the service.  We put a try/catch around those things.  If its a known custom exception, we can do certain things, but allow the code to continue.  Note, if the exception does not match the custom exception, the parent of 'Exception' will finally be caught. (You could also put a custom exception handler in your code so you wouldn't have to define this condition.)
 

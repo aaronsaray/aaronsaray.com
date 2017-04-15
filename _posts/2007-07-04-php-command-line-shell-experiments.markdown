@@ -26,7 +26,6 @@ $a = 'test';
 echo $a;
 ```
 
-
 And the third one is going to be a class creation, followed by var_dump()ing it out to the display.  Our file -- test.php:
 
 ```php?start_inline=1
@@ -41,7 +40,6 @@ class TEST
 }
 ```
 
-
 And we're going to execute the following:
 
 ```php?start_inline=1
@@ -53,12 +51,8 @@ var_dump($a);
 **First off, What does Plain Ol' PHP offer me?**
 
 On Windows?  Hrm... lets see.  I've been looking over the [PHP manual page for command line](http://us.php.net/manual/en/features.commandline.php) options and decided to run php interactively:
-
-
     
     c:\php -a
-
-
 
 This test failed on all accounts - by that I mean - there was no display what so ever... so I scoured the manual pages - and found out that sometimes on windowsxp you need to execute a "-n" as well. (while this doesn't make any sense, I was willing to try it.)
 
@@ -78,17 +72,13 @@ They all passed with flying colors.  The more interesting thing is the verbose o
        '_val' => 'constructor',
     ))
 
-
 There was an issue, however.  When you create a request that throws a fatal error, you're doen for... The shell exits:
-
     
     >> $a->_val = 'blah';
     
     Fatal error: Cannot access protected property TEST::$_val in C:\php5.2\PEAR\php-shell-cmd.php(121) : eval()'d code on line 1
     
     C:\DEVELO~1\temp>
-
-
 
 This sucks because it may take you a few commands to get to your specific location - and then if you do something wrong (or if you're troubleshooting), you're kicked out - and have to start again.  It seems to me that we should be able to trap those errors (at the very least, not exit the shell... restart it at the VERY LEAST).
 

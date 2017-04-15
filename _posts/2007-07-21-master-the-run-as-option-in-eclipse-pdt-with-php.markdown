@@ -9,18 +9,13 @@ tags:
 
 Most of my development in Eclipse PDT with the results tested outside of it - using firefox.  PDT has a few options in the Run... menu:
 
-	
   * PHP Script
 
-	
   * PHP Webpage
-
 	
   * Web Browser
 
-
 So, lets take some time to look into how each one of these works, what are their configurations and what could be the benefit of using one above the other.
-
 
 _Quick Note: unfortunately, wordpress kept eating the back slashes in this entry... sorry!_
 
@@ -67,8 +62,6 @@ Nice and simple and sweet.
 
 The first test - a kind of control - is loading firefox and executing this command on my localhost.  Here is the output (formatted by me for easier reading - also removed a few items for privacy):
 
-    
-    
     PHP_SAPI: apache2handler
     _SERVER: array(32) {
       ["HTTP_HOST"]=>
@@ -186,7 +179,6 @@ The first test - a kind of control - is loading firefox and executing this comma
     
     phpversion():5.2.0
 
-
 Ok - great.  Now we have our standard info.  Lets move on to Eclipse's interface.
 
 **Run As - PHP Script**
@@ -197,7 +189,6 @@ At any rate, I went to the Run As menu option, right clicked on the PHP Script i
 
 When I ran the script, two things happened.  First, the console view opened up - and remained blank throughout the execution of my script.  Then, the Browser Output view opened as well and contained the output of my script.  Lets look over the output here:
 
-    
     X-Powered-By: PHP/5.2.0
     Set-Cookie: ZendDebuggerCookie=127.0.0.1%3A10000%3A0||004|77742D65|1003; path=/
     Content-type: text/html
@@ -378,14 +369,11 @@ When I ran the script, two things happened.  First, the console view opened up -
     
     phpversion():5.2.0
 
-
 As you can tell, this executed this request as the CGI version - or the command line version of it in Windows, if you want to think of it that way.  It is kind of cool how eclipse interprets the web browser output - but I'm confused... What if I was trying to print to standard output... shouldn't it have gone to console? (also notice it opens up IE to display this... not my default browser with is FF)
 
 Just to verify my question, I went to my own Command Line and ran this:
-
     
     C:\Documents and Settings\Aaron>c:\php5.2\php.exe c:\DEVELOPMENT\temp\runas\index.php
-
 
 Sure enough, everything from 'web browser output' echoed to the console.
 
@@ -396,20 +384,14 @@ echo $testvar;
 ```
 
 I added that to the bottom.  Sure enough, our output is the same in the Browser Output, but the console has this:
-
-
     
     Notice: C:/DEVELOPMENT/temp/runas/index.php line 18 - Undefined variable: testvar
-
-
 
 Cool!  Errors appear in the console... but why isn't it being displayed in my browser output then? I know I have display_errors on... but duh!  Right now, I'm pointed to a different binary - which is probably using a different php.ini file.  Lets take a look...
 
 I went all the way down into the plugins folder, the zend debugger folder ( which is where the php executable the run as item was pointing to), and found both a php4 and php5 folder with binaries in each.  The PHP.ini files for each just contained one line:
-
     
     zend_extension_ts=.ZendDebugger.dll
-
 
 Interesting... well I wasn't totally sold yet... so lets throw a display_errors = true)in there.
 

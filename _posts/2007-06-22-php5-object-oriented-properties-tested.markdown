@@ -76,7 +76,6 @@ Lets move on to another one of the common complaints...
 
 ### Are the overload methods of a class, the getters and setters, for example, able to be modified in their scope?
 
-
 Lets start out with a basic example of overloading a class.  Our __get() method will allow us to get any value our method allows us to by referring to it as a public object attribute, and __set() will allow... well the opposite.
 
 ```php?start_inline=1
@@ -105,7 +104,6 @@ class classTest
     }
 }
 ```
-
 
 Lets verify that this will work:
 
@@ -165,7 +163,6 @@ private function __set($item, $value)
 }
 ```
 
-
 And, our output?
 
     object(classTest)#1 (1) { ["_protectedVars:protected"]=>  array(1) { ["constructMessage"]=>  string(59) "I have been constructed at: Thu, 21 Jun 2007 19:29:32 -0500" } }
@@ -196,8 +193,6 @@ protected function __set($item, $value)
 }
 ```
 
-
-
 And our test call:
 
 ```php?start_inline=1
@@ -205,7 +200,6 @@ $myClassTest = new classTest();
 $myClassTest->newMessage = 'yay!';
 var_dump($myClassTest);
 ```
-
 
 Results in:
 
@@ -237,7 +231,6 @@ So we can restrict that... lets see if its possible to restrict this to only ext
 
 _Update:  I still haven't figured out a way to do this... I am open to comments!_
 
-
 ### Can we use overloading methods to pass by reference, and get rid of the __set() method?
 
 To be honest, I haven't seen this in many conversations, but I was curious.
@@ -262,7 +255,6 @@ I first tried putting the reference character (ampersand) in front of the $this.
 $myItem = $myClassTest->constructMessage;
 ```
 
-
 What about putting the ampersand after the =?  Then you get this error!
 
 **Notice:** Indirect modification of overloaded property classTest::$constructMessage has no effect in **C:\DEVELOPMENT\temp\methodtest.php **on line **30**
@@ -270,7 +262,6 @@ What about putting the ampersand after the =?  Then you get this error!
 It looks like there is no escaping the __set magic method...
 
 ### Well, it seems that the OO model isn't perfect... 
-
 
 There is some work to be done - but its going good so far.  Stay tuned for future OOP PHP  tutorials (or POOP - PHP Object Oriented Programming) tutorials ;)
 

@@ -15,7 +15,6 @@ I have a specific project at the top of my PHP Explorer called _release.  It has
 
 I wanted to automate this process so I wrote a batch file which basically looks like this [edited for privacy for ("the triangle")]
 
-    
     @echo off
     echo Starting Update
     echo.
@@ -30,8 +29,6 @@ I wanted to automate this process so I wrote a batch file which basically looks 
     echo ========================================================
     echo.
     echo ------- Complete -------
-    
-
 
 Then, I added a new External Tool by going to the drop down for external tools.  I then created a new one called 'Update Releases' and pathed to the batch file I just created.  I clicked the refresh tab and choose 'refresh specific resource' - and chose my _release project.  Finally, I clicked the common tab and put a check mark to the left of 'display in the favorites menu' to the left of external tools.
 
@@ -42,7 +39,6 @@ Now, when you click the external tool, now all of the releases will update, the 
 For whatever reason, we cannot run Apache as a service as ("the triangle") so we have to start it in a minimized dos window.  Because of that, I put the request in a batch file that I start whenever I want to use my local apache instance.  From time to time, I edit the apache config in the PDT installation and want to restart the browser.  Well, to be more efficient, I wanted to create and control everything from inside of eclipse.  I created a batch file to restart apache - basically which means closing it and reopening it.  The problem was that it would leave open the last window that was open, and create a new one with apache running.  Finally, I was able to figure out how to close that window and be able to start the new version successfully.
 
 First, check out apache.bat - our main apache launching batch file
-
     
     @echo off
     
@@ -55,18 +51,13 @@ First, check out apache.bat - our main apache launching batch file
     
     exit
     
-
-
 The first line just deletes the sqlite files that are left over.  Then, we start apache with the -w switch which holds the window open for the process.  Finally, the 'exit' command will be executed when the process is killed so that the window will close that launched that batch file.
 
 Check out restartapache.bat - which is the command that we execute using the external tools option in eclipse.
-
     
     @echo off
     taskkill /im apache.exe /t /f
     start C:\tools\apache.bat
-    
-
 
 The first line uses the taskkill command to kill all apache.exe and child processes.  When this is done, it will close out that window (remember our 'exit' command?).  Finally, it will use windows' start command to launch a new window and apache instance.
 

@@ -40,5 +40,4 @@ Just add the class to the pulldown - and you should be good to go.
 
 ### Ok Let Me Download It!
 
-
 OK here: [Elgg Friends AutoComplete](/uploads/2009/oht_elggfriendsautocomplete.zip)

@@ -36,14 +36,13 @@ function ajaxError(request, type, errorThrown)
 }
 ```
 
-
-
 In this function, an error message is generated based on the error type.  The only error that gets extra information is the default type - which is 'error'.  It then retrieves the HTTP Status code and the Status Text.
 
 Here is an example of this in use:
-**ajax.php**
 
-```php?start_inline=1
+**`ajax.php`**
+```php
+<?php
 header('HTTP/1.1 503 Service Unavailable');    
 ```
     
@@ -74,4 +73,3 @@ And, here is the test page.  When the user clicks the xx link, it will generate 
     </body>
 </html>
 ```
-    

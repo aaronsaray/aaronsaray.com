@@ -14,5 +14,3 @@ Basically, the need is that on the ground sales people need to be able to track 
 The owner would configure a campaign and the user would login to their campaign.  There would be very simple buttons: yes I distributed the item here, no I didn't, they were interested (contact info) no they were not.  As well as foursquare checkin. 
 
 The foursquare option would be hit immediately when someone went to the venue.  It would either return results, and allow a checkin, and populate the location contact CRM form... or say this area does not exist in foursquare and ask the user to populate the data by hand.  After that is done, they would also hae the option to publish and check in to foursquare.
-
-

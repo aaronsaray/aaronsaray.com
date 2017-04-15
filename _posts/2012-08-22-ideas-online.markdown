@@ -18,5 +18,3 @@ Users would gain points for how many ideas they submitted, and for voting on ide
 Visitors could browse ideas by seeing what is trending upwards, checking out tags, or seeing the highest/lowest ranked ideas.
 
 For ideas that have already been done, someone could put "this has been done" with a link to where the proof is.  The poster would be notified.  If it was indeed the right implementation, they could 'accept' it - or reject it.
-
-

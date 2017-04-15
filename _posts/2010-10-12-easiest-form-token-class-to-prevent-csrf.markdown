@@ -51,8 +51,6 @@ class formtoken
 }
 ```
 
-
-
 In the class, two constants are defined.  The first will be the field name that is used to generate the token form hidden input.  The second is a constant for when I don't want to clear the session token.  (This is useful in cases where the first AJAX request has been validated to be new, so we can trust all future ones with that token.)
 
 The next method, getField(), generates the token.  It calls a protected method to get the actual content of the token.  Then, a hidden input, with the class constant used to name the field, is created and returned.
@@ -65,9 +63,7 @@ The request is checked to make sure it has the token.  Then, it verifies it exis
 
 Let's see how we might implement this.
 
-**formWeWantToTokenize.php**
-
-    
+**`formWeWantToTokenize.php`**
 ```html
 <form action="process.php" method="post">
 <label>What is your name? <input name="name"></input></label>
@@ -75,14 +71,13 @@ Let's see how we might implement this.
 </form>
 ```
 
-
 The only PHP call in this form is to formtoken::getField() which will return the hidden input with the generated token value.
 
 Now, the processor must check that this is good to go:
-**process.php**
 
-    
-```php?start_inline=1
+**`process.php`**
+```php
+<?php
 if (formtoken::validateToken($_POST)) {
     /** do other stuff **/
 }
@@ -90,4 +85,3 @@ else {
     die('The form is not valid or has expired.');
 }
 ```
-

@@ -20,12 +20,9 @@ I wanted to have a script that would create a page with 1 to many twitter search
 
 I decided to use javascript instead of PHP for a couple reasons:
 
-
   * Javascript would initiate the search from the user's browser... this means that I would not get black listed from twitter's search API.  I personally did not have to worry about an api limit on my server either!
 
-
   * PHP would require a full page reload every few seconds in order to display the newest data.  Alternatively, I could use ajax to repoll the PHP code for the new tweets - but I might as well just do all javascript then...
-
 
 #### The Javascript
 
@@ -74,7 +71,6 @@ $(document).ready(function() {
     setInterval(getResults, 3000);
 });
 ```
-
 
 Let me step through it... On page load, the content above is executed.  The first thing done is to call getResults() with a parameter of 1.  Then, I'll set getResults() to be called every 3 seconds after that using setInteral().
 

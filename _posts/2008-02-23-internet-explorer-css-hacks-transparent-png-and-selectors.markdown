@@ -11,30 +11,19 @@ First off, lets look at some common css selectors - and how we can use them to i
 
 **IE 6 and below**
 
-    
     * html {}
 
-
-
 **IE 7 and below**
-
     
     *:first-child+html {} * html {}
 
-
-
 **IE 7 only**
-
     
     *:first-child+html {}
 
-
-
 **IE 7 and modern browsers only**
-
     
     html>body {}
-
 
 _** I can't tell you how many times I wished for the parent/child selector option in IE 6.  I've written way too many 'ul ul ul li ul' type strings_
 
@@ -42,17 +31,8 @@ Next, lets check out the behavior for transparent GIFs:
 
 First off, use the conditional comment to bring in the stylesheet only when needed.
 
-    
-    
-    
-    
-
-
-
 Then, the actual behavior:
 
-    
-    
     * html img {
     position:relative;
     behavior: expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",
@@ -62,9 +42,6 @@ Then, the actual behavior:
     this.runtimeStyle.backgroundImage = "none")),this.pngSet=true)
     );
     }
-    
-
-
 
 The original article (I'll link it at the end) references HTML .png as well - but I don't give my png files a class of png... so its not worth it.
 

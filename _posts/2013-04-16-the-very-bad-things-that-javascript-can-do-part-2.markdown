@@ -13,7 +13,6 @@ In our scenarios here, we’re going to focus on a fake award site called “Awa
 
 Perhaps they send an email like this:
 
-
     Hello and congratulations!  Your site, http://victimsite.com, has won the prestigious Best of 2013 award from AwardSite.com!  
      
     Did you know you made it into the top 5%?  We're impressed, and you should be proud!
@@ -28,17 +27,13 @@ Perhaps they send an email like this:
     Fake Guy
     AwardSite.com
 
-
 And of course, at the very end of the email is some HTML or Javascript that they are prompted to put into their site.
 
 Now, for our example, we’re going to use the following banner:
 
 ![](/uploads/2013/award.png)
 
-
 Now, lets run through some scenarios.
-
-
 
 ### Hit Counter / Target Determination
 
@@ -161,7 +156,6 @@ This is bad, but there are some potential problems. What if… the form doesn’
 var f = document.forms[1];
 ```
 
-
 OK, but lets just say its distracting to the visitor when the form is submitting. It takes them away from what they’re doing – of course they’re going to report it. Well, we can force the form to be ajax, and then submit.
 
 ```javascript
@@ -174,6 +168,3 @@ f.submit();
 ### So what does all this mean?
 
 Now that you’ve seen the examples of what can happen, I hope it turns on a light that we need to be more vigilant about what we allow clients to put into your hosted applications.
-
-
-        

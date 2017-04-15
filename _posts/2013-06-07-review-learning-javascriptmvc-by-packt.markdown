@@ -31,5 +31,3 @@ jQueryMX was covered next.  I like the helpers it provides for the class and mod
 The last chapter is kind of a case-study.  It includes talk about planning, wireframing, and building an application.  (This is reminiscent of my own book where I did the same thing.)  I really liked this long chapter as it showed me more in-depth how I would use all the tools together.
 
 Overall, I give the book 8.5 stars out of 10.  Very clear, easy to follow, just could have used some more detail here and there.  
-
-

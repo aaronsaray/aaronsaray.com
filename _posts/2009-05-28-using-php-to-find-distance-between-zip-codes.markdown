@@ -14,8 +14,6 @@ I found a great resource at [ibegin.com](http://geocoder.ibegin.com/downloads.ph
 ### Import your Zips
 
 The table I'm using was created with this SQL:
-
-    
     
     CREATE TABLE  `zipgeo` (
       `zip5` char(5) NOT NULL,
@@ -25,9 +23,6 @@ The table I'm using was created with this SQL:
       `lon` double NOT NULL,
       `county` varchar(250) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-    
-
-
 
 The following is the code used to import this .csv file into the table:
 
@@ -95,7 +90,6 @@ function degrees_difference($lat1, $lon1, $lat2, $lon2)
 }
 ```
 
-
 This will return the distance in miles between one lat/long combination and another.
 
 ```php?start_inline=1
@@ -145,15 +139,11 @@ This last statement gets the zips within that many miles.
 
 ### How Should I Use These?
 
-
 Because I'm not about to do the calculations based on the earth's curvature in my SQL statement, I can have some misleading results.  Since the distance - especially as the difference in location grows - is elongated by the curvature, the initial query using the between statement should actually request a larger mileage than expected.  Then, this result set should be looped through and compared using the function which computes using the curvature to get a more accurate result set.
 
 So, basically, if I were going to get all locations within 50 miles of 12345:
 
-
   * Run query to get all results within 65 miles of 12345
 
-
   * loop each result through next function which computes distance between 12345 and result's zip.  If its 50 or less, keep it.
-
-
+  

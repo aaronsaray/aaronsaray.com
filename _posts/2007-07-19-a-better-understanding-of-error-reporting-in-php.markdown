@@ -55,10 +55,8 @@ Well it might be necessary to write code that has limited backwards compatibilil
 
 From time to time, using 3rd party code, I've found that they will allow various E_STRICT and E_NOTICE errors to exist in their application.  Because we often update these code bases, I didn't want to go through and fix all of the code each time.  Instead, I put an .htaccess file in that directory (or you could use your httpd.conf file using the  attribute) with the following line:
 
-
     php_value error_reporting 6135
     
-
 I got that value from printing out the value of E_ALL & ~E_NOTICE.
 
 Although not a perfect solution, at least this restricts these errors in this 3rd party code that I'm not responsible for.  I'm able to use it without getting peppered with errors.

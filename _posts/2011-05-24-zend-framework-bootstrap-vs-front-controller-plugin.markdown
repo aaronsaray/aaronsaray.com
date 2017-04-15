@@ -34,12 +34,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 }
 ```
 
-
-
 Now, afterward, make sure front controller plugins are defined, and then create a front controller plugin.
 
 **After: application/Bootstrap.php**
-
     
 ```php?start_inline=1
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
@@ -52,9 +49,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
   // ...
 }
 ```
-    
-
-
 
 **After: application/plugins/ViewSetup.php**
 
@@ -72,8 +66,5 @@ class Application_Plugin_ViewSettings extends Zend_Controller_Plugin_Abstract
   }
 }
 ```
-    
-
-
 
 Remember, always remove non-essential code from the bootstrap process.

@@ -18,11 +18,7 @@ In my **edit.html.twig** file, I had the following:
 {% endraw %}
 ```
 
-
-
 It wasn't grabbing my output in the custom template.  The template excerpt looked like this...
-
-
     
 ```twig
 {% raw %}
@@ -38,18 +34,14 @@ It wasn't grabbing my output in the custom template.  The template excerpt looke
 {% endraw %}
 ```
 
-
-
 In this case, the form variable passed to form_label did not have my custom variable on it.  _Caveat: it looks like its a form render view object, but I don't quite yet follow why this matters..._  Anyway, I tried using **form.get('label')** but that didn't work.
 
 Turns out, the **_context** array had the values for this particular element.  So, I modified:
-
     
 ```twig
 {% raw %}
 {{ form_label(form, _context['label']) }}
 {% endraw %}
 ```
-
 
 Yay!  That got the standard label - or the custom label I set.  Success.

@@ -15,7 +15,6 @@ That's what I thought until I did some testing.  There is a legitimate differenc
 $ar1 = array('a'=>'ay', 'b'=>'bee', 'c'=>'see');
 $ar2 = array('d'=>'dee', 'e'=>'ee', 'f'=>'ef');
 ```
-    
 
 Well, first off, lets try my way - with array_merge:
 
@@ -24,11 +23,9 @@ $ar2 = array_merge($ar1, $ar2);
 var_dump($ar2);
 ```
     
-    
     array(6) { ["a"]=>  string(2) "ay" ["b"]=>  string(3) "bee"
     ["c"]=>  string(3) "see" ["d"]=>  string(3) "dee"
     ["e"]=>  string(2) "ee" ["f"]=>  string(2) "ef" }
-    
 
 Ok - decent.  Now lets try it their way:
 
@@ -38,15 +35,10 @@ foreach ($ar1 as $k=>$v) {
 }
 var_dump($ar2);
 ```
-    
-
 
     array(6) { ["d"]=>  string(3) "dee" ["e"]=>  string(2) "ee"
     ["f"]=>  string(2) "ef" ["a"]=>  string(2) "ay"
     ["b"]=>  string(3) "bee" ["c"]=>  string(3) "see" }
-    
-
-
 
 **The array is in a different order.**
 

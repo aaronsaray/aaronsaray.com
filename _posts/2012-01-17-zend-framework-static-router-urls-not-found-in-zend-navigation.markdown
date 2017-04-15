@@ -35,12 +35,9 @@ $route = new Zend_Controller_Router_Route_Static(
 $router->addRoute('custom2', $route);
 ```
 
-
 Well, it turns out that its impossible for the URL handler to know which route to use.  It can match it, sure, but it doesn't know how to recompile it (that's my best guess at least...).  So, in order to tell it to form it in the default way, I added the 'route'=>'default' attribute to the arrays and this seemed to work.
 
 So now, for example, this is what you'll find:
-
-
 
        array(
            'module'=>'default',
@@ -50,7 +47,4 @@ So now, for example, this is what you'll find:
            'route'=>'default'
        )
     
-
-
-
 Hope this helps someone else out!  If you know exactly why this works, feel free to comment.

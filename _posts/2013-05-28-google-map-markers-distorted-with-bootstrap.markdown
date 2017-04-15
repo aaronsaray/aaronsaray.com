@@ -17,7 +17,6 @@ I finally tracked down that it was some default styles in Bootstrap that were ca
 }
 ```
 
-
 And, we were good to go.  Proof:
 
 ![after](/uploads/2013/after.png)

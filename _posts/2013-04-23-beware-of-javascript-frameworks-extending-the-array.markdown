@@ -17,7 +17,6 @@ for (x in myArray) {
 }
 ```
 
-
 Well, since each array - on creation - has the methods from the prototype being extended, I now have extra items in my array.  This was causing an error because my function was not expecting a function to be passed in, only a string.
 
 So that's why this is bad.  So don't do that in Javascript, ok? Thanks! :)

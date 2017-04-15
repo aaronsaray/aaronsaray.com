@@ -35,8 +35,6 @@ class base
     }
 }
 ```
-    
-
 
 Now, let's say we have an object of type Person which we know will have a first name and a last name.  However, its not defined in this class for some reason.
 
@@ -49,6 +47,5 @@ class person extends base
     @property string $last_name The user's last name
 }
 ```
-
 
 Now, when creating instance of this class, if your IDE supports PHPDoc, you will now have those previously undocumented and undefined properties available.

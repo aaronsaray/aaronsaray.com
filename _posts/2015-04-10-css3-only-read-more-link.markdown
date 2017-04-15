@@ -76,7 +76,6 @@ input[type=checkbox]:checked + section {
 }
 ```
 
-
 The section style is just for this demo.  The really user-configurable sections are the .has-read-more width and the .has-read-more section height.  Oh, and the content I suppose of 'read more' could be changed (think: inline data image?)
 
 I want to give credit to these two articles that helped inspire me: [css deck](http://cssdeck.com/labs/css-only-showhide) and [css fade out](https://css-tricks.com/text-fade-read-more/).

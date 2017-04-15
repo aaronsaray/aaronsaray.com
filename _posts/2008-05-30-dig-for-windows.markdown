@@ -14,8 +14,6 @@ Visit the [www.isc.org/sw/bind/index.php](http://www.isc.org/sw/bind/index.php) 
 ### Create folder and Extract necessary Files
 
 Create a folder called 'dig' - or just push all the dlls and exe's into your windows/system32 folder.  Extract the following:
-
-    
     
     dig.exe
     libbind9.dll
@@ -23,12 +21,9 @@ Create a folder called 'dig' - or just push all the dlls and exe's into your win
     libisc.dll
     libisccfg.dll
     liblwres.dll
-    
-
 
 ### Run Dig
 
-   
     c:\>dig
     
     ; <<>> DiG 9.4.2 <<>>
@@ -74,7 +69,6 @@ Create a folder called 'dig' - or just push all the dlls and exe's into your win
     ;; WHEN: Tue May 27 10:49:05 2008
     ;; MSG SIZE  rcvd: 433
     
-
 Yay!
 
 Thanks to Todd Keup @ [magnifisites](http://www.magnifisites.com/) for this tip.

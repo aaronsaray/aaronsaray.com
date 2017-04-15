@@ -13,17 +13,11 @@ I had been doing this:
 ```javascript
 $('form').validate();
 ```
-    
-
-
 
 Instead, I found that I needed to loop through each form on the page and validate each single one in their own context. I replaced it with this code:
-
-
     
 ```javascript
 $('form').each(function(){
      $(this).validate();
 });
 ```
-    

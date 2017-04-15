@@ -30,7 +30,6 @@ Then, you can remove - or comment - the code block that starts with
 if (isset($_COOKIE['clickheat']))
 ```
 
-
 all the way down to the end of that IF statement... it ends at these lines:
 
 ```php?start_inline=1
@@ -38,6 +37,5 @@ all the way down to the end of that IF statement... it ends at these lines:
     $__action = 'login';
 }
 ```
-
 
 This should now allow the script to use your authentication system and not its own.

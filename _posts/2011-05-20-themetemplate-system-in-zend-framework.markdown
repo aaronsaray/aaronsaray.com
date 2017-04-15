@@ -13,8 +13,7 @@ Since themeing is something that is only specific to the view system that is ren
 
 However, we do have to register our front controller plugin using the bootstrap class.  First, I'm going to register my new plugin.  The plugin will be called Template.  It will be located at application/plugins/Theme.php.  (Note: the default ZF loader knows this location).
 
-**application/bootstrap.php**
-
+**`application/bootstrap.php`**
 ```php?start_inline=1
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
@@ -59,9 +58,9 @@ Any specific content is placed in these folders instead.
 
 Our plugin will be called Application_Plugin_Theme.  I'll register a routeShutdown hook because this is one of the last things we have to do or figure out.  Certainly don't want to do it on every call in the loop nor do I want to do it before a redirect could occur.
 
-**application/plugins/Theme.php**
-
-```php?start_inline=1 
+**`application/plugins/Theme.php`**
+```php
+<?php
 class Application_Plugin_Theme extends Zend_Controller_Plugin_Abstract
 {
   public function routeShutdown($request)
@@ -70,7 +69,6 @@ class Application_Plugin_Theme extends Zend_Controller_Plugin_Abstract
     $theme = new stdClass;
     $theme->foldername = 'simple';
     Zend_Registry::set('theme', $theme);
-
 
     $bootstrap = Zend_Controller_Front::getInstance()->getParam('bootstrap');
     $view = $bootstrap->bootstrap('View')->getResource('View');
@@ -123,9 +121,9 @@ class Application_View_Helper_Theme
 
 Now, modify the front controller plugin to "add" not "set" a new helper script path.  Add the following code:
 
-**application/plugins/Theme.php**
-
-```php?start_inline=1 
+**`application/plugins/Theme.php`**
+```php
+<?php
   public function routeShutdown($request)
   {
     /**SNIP**/
@@ -152,4 +150,3 @@ echo '<img src='" . $this->theme('/images/smiley.gif') . '" alt="smiley">';
 ```
 
 This will render the theme URL of /themes/simple/images/smiley.gif.
-

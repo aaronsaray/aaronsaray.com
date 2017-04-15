@@ -15,5 +15,4 @@ To implement, I made a quick line of jQuery to generate my QR Codes.  Of course,
 $("#qrImage").attr('src', 'http://chart.apis.google.com/chart?chs=150x150&cht;=qr&chl;=' + escape(window.location.href) + '&choe;=UTF-8');
 ```
 
-
 You can find all of the details and other parameters here: [http://code.google.com/apis/chart/docs/gallery/qr_codes.html](http://code.google.com/apis/chart/docs/gallery/qr_codes.html)

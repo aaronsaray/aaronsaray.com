@@ -55,11 +55,9 @@ Finally, include the javascript and configure the tweetbox.  I chose not to prep
 
 ### Add Book Mark
 
-
 Add the bookmark to your browser.  I added mine to my firefox bookmark toolbar.  Then, I right clicked and chose properties.  I checked the 'load this in the sidebar' option.
 
 ### Use It!
-
 
 The first time you use the tweet box, it will prompt you to connect to your website. After this is done, you can use this easily.  My branded tweets show that its from AaronSaray.com nicely.  See?
 

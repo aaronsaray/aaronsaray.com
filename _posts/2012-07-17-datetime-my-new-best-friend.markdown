@@ -12,8 +12,5 @@ $firstDate = new DateTime('01/12/2012 10:00:00');
 $secondDate = new DateTime('2012-01-01 23:23:23');
 echo $firstDate > $secondDate ? "First Date is Newer" : "Second date is newer";
 ```
-    
-
-
 
 What do you think the output will be? How EASY is that?!

@@ -63,7 +63,6 @@ The output I got was last than exciting - actually quite disappointing.  I ran t
 
 **Time:** 1.5614490509033
 
-
 **PreparedStatement:** SELECT t.*, u.* FROM tinterests t inner join tuser u on t.IID=u.userID WHERE IID > ?
 
 **Time:** 1.5006070137024
@@ -114,6 +113,5 @@ print "<strong>Results for ODBC test</strong>";
 print "<fieldset><legend>Un-Prepared</legend>Statement: " . TEST_UNPREPARED_SQL . "Time: " . $timeUnprepared . "</fieldset>";
 print "<fieldset><legend>Prepared</legend>Statement: " . TEST_PREPARED_SQL . "Time: " . $timePrepared . "</fieldset>";
 ```
-
 
 I'll post the results when I have a chance to test it on the test data.

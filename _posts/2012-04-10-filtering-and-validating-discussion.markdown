@@ -67,10 +67,6 @@ As a side note, I would like to add that it is important that you make it easy o
 
 Wow - great way of putting it Eric - "storing in the browser" - that notion of safely storing your data whatever that may mean makes for a nice rule-of-thumb. 
 
-
-
 ### Final Thoughts
-
-
 
 I thought I'd publish this conversation so that other's could see how a few professionals approach filtering and validating too.  Any thoughts?  Feel free to add comments below.

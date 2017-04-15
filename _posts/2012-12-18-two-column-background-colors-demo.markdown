@@ -16,7 +16,6 @@ To solve this, I create a container of known dimensions.  Then, I size add a wid
 For this example, I colored each background color different.  In practice, you'll want to make sure that **#container** has the same background color as **#primary**
 
 First, the markup.
-
     
 ```html
 <body>
@@ -34,11 +33,7 @@ First, the markup.
 </body>
 ```
 
-
-
-
 Then, the CSS.
-
     
 ```css
 #container {
@@ -63,8 +58,5 @@ Then, the CSS.
     margin-left: 300px;
 }
 ```
-    
-
-
 
 Either column can have any length of interior content.  Try it out!

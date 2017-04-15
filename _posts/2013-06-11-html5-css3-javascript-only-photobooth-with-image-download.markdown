@@ -25,7 +25,6 @@ My goals were simple:
 
 [![first screen](/uploads/2013/1-300x140.png)](/uploads/2013/1.png){: .thumbnail}
 
-
 - No flash / use HTML5 only
 - Minimal amount of javascript: don't you DARE import jQuery if you don't need to
 - Minimal css

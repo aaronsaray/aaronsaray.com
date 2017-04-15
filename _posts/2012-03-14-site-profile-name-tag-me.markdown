@@ -9,7 +9,6 @@ tags:
 
 **Note: I have shut down name-tag.me.  These notes were taken before I pulled the plug.**
 
-
 The goal was to make a "hello my name is" style name tag without the use of images but with a handwritten font.  
 
 Trouble I ran into:
@@ -29,9 +28,6 @@ This is the first time that I used an apple-touch icon and an open graph image. 
 Mod_expires / mod_deflate
 
 I also used mod_expires and mod_deflate to compress and cache images/css/javascript out for a year.  I also turned off ETags as I find that pretty annoying.  Here are entries from the apache config:
-
-
-    
     
     SetOutputFilter DEFLATE
     
@@ -47,15 +43,11 @@ I also used mod_expires and mod_deflate to compress and cache images/css/javascr
     #turn off etags
     FileETag none
     
-
-
-
 Because of this too, I decided to 'version' my css and javascript files.  At the time of writing, I had version 3 of css and version 2 of javascript.  Some people will add parameters at the end of the URLs but other caches/proxies can't handle that properly.  So, I decided to actually just change the name of the file itself.  3.css and 2.js, say hello to the world!
 
 Browser sniffing body tag.  
 
 Because there were specific layout elements in place here (and they had to work exactly), I had to sniff browsers.  I did that with this famous line:
-
 
 ```html
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
@@ -64,8 +56,6 @@ Because there were specific layout elements in place here (and they had to work 
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 ```
-
-
 
 This was important because some browsers made the name tag misshapen so I had to change their CSS.
 
@@ -85,7 +75,6 @@ Rounded corners
 
 In order to get rounded corners, but with all browsers covered, I used jQuery Corners plugin.  I really wanted to use CSS border-radius but I also wanted this to work in IE... oh well.
 
-
 TTF Font
 
 I defined the font I wanted to use using a utility called FontSquirrel:
@@ -100,17 +89,11 @@ I defined the font I wanted to use using a utility called FontSquirrel:
 }
 ```
     
-
-
-
-Then later, defiend it in the font-family declaration:
+Then later, defined it in the font-family declaration:
 
 ```css
 font-family: DesyrelRegular, tahoma, verdana, arial, sans-serif;
 ```
-    
-
-
 
 Image Download
 
@@ -123,7 +106,6 @@ header('Content-Disposition: attachment; filename="Hello My Name Is.png"');
 header("Content-Type: application/octet-stream");
 header("Content-Transfer-Encoding: binary");
 ```
-
 
 Lessons Learned
 

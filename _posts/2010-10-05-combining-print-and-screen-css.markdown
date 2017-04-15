@@ -23,5 +23,4 @@ input.userinfo {
 }
 ```
 
-
 The style is to put a solid border on that particular input.  However, when media type is print, just don't show it at all.  No more double requests for stylesheets.

@@ -15,8 +15,6 @@ There are two ways to iterate through arrays that I want to focus on: the loop s
 
 If you’re like me, you’re already scanning through the article, looking for code and bold type.  So, here you go.
 
-
-
 ### Best Practice: Use Loops When Not Changing Array Values
 
 ```php?start_inline=1
@@ -30,9 +28,7 @@ for ($i = 0; $i < $length; $i++) {
 print '</ul>';
 ```
 
-
 Here, I have an array cleverly named $array.  I do not wish to change the values in the array, only display them in a nice unordered list.  I’m not sure how many elements there are, but they all belong in this list.  So, I can use a loop to iterate through each element and print each value out.
-
 
 ### Best Practice: Use Array Manipulation Function To Change Array Values
 
@@ -44,14 +40,9 @@ array_walk($array, function(&$value, $key) {
 });
 ```
 
-
 In this example, I want $array to contain all the same letters, just uppercase.  I’ll be using this array some other time, but I need the values changed immediately.  In cases like this, use the array_walk() method to pass in the array to a function to do the manipulation.  Since I’ve passed $value by reference, any manipulation I do to the value will be applied directly back to the array.
-	
-
 
 ### Challenge: Create a New Array of Uppercase Values and a Random Number
-
-
 
 For this challenge, what would be the best practice?  Should I create a loop or use an array manipulation method?  Below, I’ll show both ways to do it.  Which is best?
 
@@ -68,17 +59,12 @@ foreach ($array as $letter) {
 }
 ```
 
-
-
 The first way uses the array manipulation method array_map().  This method creates a new array from the values returned from each element of the manipulated array.  Pretty nice, simple code.  The second way initializes a new array, then loops through each original array element individually, appending to the new array.  The first way is the better way to do this.
 I already hear the arguments!  Both ways work!  They do, I understand that, but this is about treating the array right.  Treat the array with the proper method to create the best, most efficient code.  If given a chance to create my own loop in PHP versus using a loop created in the core using C, I’m going to opt for the latter.  There is a reason why these methods exist; for scenarios like this.
 
 But, if you’d like to just ruffle my feathers a little bit, I encourage you to send me your most confusing, poorly treated array code.  For example…
 
-
-
 ### This Is Not The Best:
-
 
 ```php?start_inline=1
 $array = ['a', 'b', 'c', 'd', 'e'];
@@ -90,7 +76,4 @@ array_walk($array, function($value, $key) {
 print '</ul>';
 ```
 
-
-
 It’s not the best, it’s not what the method was designed for, but PHP allows it.  And in the end, maybe if you **can** do it, you’re ok to do it.  But for me, I’m going to keep writing code that treats arrays right.
-

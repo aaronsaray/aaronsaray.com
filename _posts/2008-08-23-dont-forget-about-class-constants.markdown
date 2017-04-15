@@ -26,17 +26,13 @@ class MYCLASS
 }
 ```
 
-
 Basically, you'll see that they are being smart and using constants for some specific flags.  However, they're cluttering the global namespace with constants that probably won't be used outside of the class (even if they ARE, we have a way to work around that.)
 
 Now, lets take a look at the alternative.
 
-
 ### The Good Code
 
-
 Lets use the class constant.
-
 
 ```php?start_inline=1
 class MYCLASS
@@ -53,12 +49,9 @@ class MYCLASS
 }
 ```
 
-
 Now, you'll see there is no congestion in the global name space.
 
-
 ### But what if you need that Constant's value?
-
 
 The great thing about constants in classes in this specific example is that you can access them like static variables outside of the class.  For example:
 

@@ -10,15 +10,9 @@ Out of some sheer boredom, I started looking at the top 25 used passwords (from 
 
 I decided to test one of my applications using six common ones:
 
-    
-    
     password, 123456, 12345678, qwerty, abc123, letmein
-    
-
-
 
 First, I had an application that I tested that was not salting passwords and was only using md5.  I thought it would be interesting to get the md5's and then write a quick query against them.
-
 
 ```mysql
 select md5('password'), md5('123456'), md5('12345678'), md5('qwerty'), md5('abc123'), md5('letmein');
@@ -28,11 +22,9 @@ select id from user where `password` in (
 );
 ```
 
-
 Found some good results.  
 
 Then, I decided to move on to my sha1 salted application.  First, I just thought I'd want to see if there any users that matched.  Surely, there wouldn't be, right?
-
 
 ```mysql
 select * from user where password in (
@@ -44,10 +36,8 @@ select * from user where password in (
     sha1(concat('letmein', passwordSalt))
 );
 ```
-    
 
 Drat, there were some.  So curiosity got the best of me... I want to know who is who now...
-
   
 ```mysql
 select 'password', user.* from user where password = sha1(concat('password', passwordSalt))
@@ -62,7 +52,6 @@ select 'abc123', user.* from user where password = sha1(concat('abc123', passwor
 union
 select 'letmein', user.* from user where password = sha1(concat('letmein', passwordSalt))
 ```
-    
 
 Yup, found the culprits and their passwords.  
 

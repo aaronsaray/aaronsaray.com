@@ -15,91 +15,55 @@ There are many mind-mapping tools out there - some open source and some not (som
 
 I broke down my idea into bullet points and main headings:
 
-	
   * Plugin based site monitoring
-
 	
     * Make a set of default plugins
-
 	
       * Uptime Monitoring
-
 	
       * HTTP Response
-
 	
       * Broken Links
-
 	
       * Tests hosted with xml results
-
-
-
 	
   * Logging
-
 	
     * log results to...
-
 	
       * mysql
-
 	
       * sqlite
-
 	
       * flat file
-
 	
       * syslog/event viewer (depending on OS?)
-
-
-
-
 	
   * Alerting
-
 	
     * email
-
 	
     * web page
-
 	
     * RSS / XML
-
 	
     * REST services?
-
-
-
 	
   * Schedule
-
 	
     * alert scheduling
-
 	
     * plug in scheduling
-
 	
     * cron/img loading?
-
-
-
 	
   * Self tests
-
 	
     * Connection diagnostics
-
 	
     * Versions of PHP/mysql
-
 	
     * updates to the system itself
-
-
 
 Additionally, I took apart each one of these modules and listed out my concerns on each... and the things I'd need to learn and figure out - so more indepth.
 
@@ -108,93 +72,57 @@ The commonalities I came up with was the Self tests are very important (ie: don'
 ### I have to make my lists of things to do...
 
 So, so far, I've built a list of things to research into before I actually start:
-
 	
   * Refactoring of PHP
 
-	
     * concepts and possible automated methods?
-
-
 	
   * Best IDE to use
-
 	
     * Zend Studio
-
 	
     * PDT
-
 	
       * tutorials for each
-
-
-
 	
   * Debugging in the IDE
-
 	
   * Test writing using TDD
-
 	
     * IDE integration?
-
-
 	
   * Community tracking software
-
 	
     * trac
-
 	
     * subversion public/private repositories
-
 	
     * wiki and message board support
-
-
 	
   * User testing interfaces
 
-	
     * auto fill form module for firefox
 
-	
     * selenium?
 
-
-	
   * PHP Doc / JS Doc
 
-	
     * I already know these - but automated extras?
-
 	
     * docbook tutorials?
-
 	
     * Is there one for CSS?
-
-
 	
   * Coding Standards
-
 	
     * review PEAR coding standards and possibly adopt for me
-
-
 
 So this is a large list of items that I have to do before I actually start on the coding.
 
 So far, I've been researching into PHP Refactoring.  I plan to move on to researching any automated PHP refactoring, and then more.  My immediate to-do list is:
-
 	
   * Automated PHP refactoring
-
 	
   * IDE trials coupled with debugging in the IDE
-
 	
   * Unit testing (PHPUnit or Simple test)
-
-

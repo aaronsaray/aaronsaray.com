@@ -13,9 +13,7 @@ Let's say you have the website http://blahblah.com - and on that website, user j
 And, if you would like to contact joe, you can <a href="email.php?user=joe">email joe</a> directly.
 ```
 
-
 The content of the PHP file would be the following:
-
     
 ```php?start_inline=1
 $user = isset($_GET['user']) ? $_GET['user'] : '';
@@ -28,7 +26,6 @@ else {
     header('HTTP/1.0 404 Not Found');
 }
 ```
-
 
 This simply forms the proper e-mail address from the user get parameter and sends back a different redirect.  The thought is simple email scrapers will not detect it as an email address and will leave the 'link' alone.
 

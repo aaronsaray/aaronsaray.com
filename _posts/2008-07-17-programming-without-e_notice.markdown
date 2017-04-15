@@ -128,7 +128,6 @@ if ($myArray['kakaw']) {
 $myArray['chunky'] = 'soup';
 ```
 
-
 As with variables, you should use isset().  I would caution against using array_key_exists().  Isset is a language construct whereas array_key_exists() is not - so isset is immensely faster.  The only time you might want to use array_key_exists is when you have an array of keys.  Otherwise, isset() supports everything you need.
 
 _Bonus!_  In that previous example, to write to the chunky key, you don't even have to define $myArray.  In this example, $arrayKaBob is defined into an array automatically, and then the key is set:

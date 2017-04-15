@@ -118,5 +118,4 @@ After running the test a few times, I was actually surprised.  There really wasn
     
     * * *
 
-
 So as you can see, there's no real proof that in PHP the order of your for loop matters.

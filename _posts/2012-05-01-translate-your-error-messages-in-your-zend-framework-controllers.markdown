@@ -16,7 +16,6 @@ Side note: There is some argument as to whether the translation should be handle
 
 Let's check out some code in an action
 
-
 ```php?start_inline=1
 public function dosomethingAction()
 {
@@ -30,9 +29,5 @@ public function dosomethingAction()
   // life is ok here!
 }
 ```
-    
-
-
 
 It may be easy to forget that we want to translate all of our output.  Don't forget the error messages in the controller!
-

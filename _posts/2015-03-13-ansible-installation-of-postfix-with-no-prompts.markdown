@@ -13,8 +13,6 @@ Here's what you're looking for:
 [Ansible debconf module](http://docs.ansible.com/debconf_module.html), and questions to answer: **postfix/mailname** and **postfix/main_mailer_type**.
 
 Here's an excerpt of the Ansible file.
-
-
     
 ```yaml
 ---
@@ -27,6 +25,5 @@ Here's an excerpt of the Ansible file.
 - name: install postfix
   apt: name=postfix state=present
 ```
-
 
 Of course, remember to copy over your required **postfix/main.cnf** file after you're done, too.

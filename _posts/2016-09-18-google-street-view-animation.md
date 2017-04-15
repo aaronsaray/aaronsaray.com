@@ -14,12 +14,12 @@ My goals were simple: Create a full screen street view of the Hoan Bridge in Mil
 
 So, here is the code I created:
 
-**HTML** is pretty simple - just create a standard page with an element that you'll use.  Then, include the two javascript files: one is from Google and the other holds our code. (You'll notice that you may want to add your own API key to the javascript request to Google.  Also of interest, the callback GET parameter is the name of a global function that will be ran once Google finishes loading and initializing the scripts.  My [codepen]((http://codepen.io/aaronsaray/pen/wzWREY) shows a different way to do this.)
+The HTML is pretty simple - just create a standard page with an element that you'll use.  Then, include the two javascript files: one is from Google and the other holds our code. (You'll notice that you may want to add your own API key to the javascript request to Google.  Also of interest, the callback GET parameter is the name of a global function that will be ran once Google finishes loading and initializing the scripts.  My [codepen]((http://codepen.io/aaronsaray/pen/wzWREY) shows a different way to do this.)
 
 ```html
 <div id="view"></div>        
 <script src="main.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=your-api-key-here&callback=initialize" type="text/javascript"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initialize&key=YOUR-KEY"></script>
 ```
 
 Next, the CSS.  The CSS really has two main parts.  The first is setting the view element and the body to 100% width/height.  I wanted a full-browser-window view.  The second part has to do with the fade in.  In order to have it fade in, the whole browser window is black.  Then, a class with a CSS animation and fade in effect is applied.  That makes the animation look better and not be so jumpy when it begins/the google maps is loading.

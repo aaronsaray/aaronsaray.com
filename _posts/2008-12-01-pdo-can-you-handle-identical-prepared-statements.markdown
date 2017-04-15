@@ -20,21 +20,14 @@ public function prep($statement)
     }
 }
 ```
-    
 
 I end up storing the last statement and do a quick compare.  My concern comes from [MySQL's admission](http://dev.mysql.com/doc/refman/5.0/en/sql-syntax-prepared-statements.html) of this:
 "If a prepared statement with the given name already exists, it is deallocated implicitly before the new statement is prepared."
 
 So, not knowing the internal workings of PDO, I wonder how they handle it.  Do they...
-
-
-
 	
   * Create each prepared statement with the same name, causing them to be deallocated each time
-
 	
   * Create each one with a random name, so that there are never any deallocations unless you unset the statement?
-
-
 
 Anyone have any insight?

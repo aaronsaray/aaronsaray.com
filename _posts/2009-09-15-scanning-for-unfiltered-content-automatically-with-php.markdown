@@ -12,22 +12,15 @@ A friend of mine posed a question: Do you know of any good PHP based vulnerabili
 
 I have only 2 goals to accomplish with this quick script:
 
-
   * Should handle multiple forms on a web page
-
 
   * Should be able to submit a payload and automatically review if it is shown unfiltered.
 
-
-
 Since this is just a quick script, we do know a few things however:
-
 
   * It will not handle javascript based forms that set the action to something different.
 
-
   * It doesn't specifically help identify which form field is the vulnerable one.
-
 
 But with that, its not that bad.
 
@@ -35,8 +28,7 @@ But with that, its not that bad.
 
 I have two really simple pages for our test site, the form itself and the 'login' page.
 
-**testform.html**
-
+**`testform.html`**
 ```html
 <html>
     <head>
@@ -53,10 +45,8 @@ I have two really simple pages for our test site, the form itself and the 'login
     </body>
 </html>
 ```
-    
 
-**testsubmit.php**
-
+**`testsubmit.php`**
 ```php?start_inline=1
 if ($_POST['username'] == 'MYUSER' && $_POST['password'] == 'MYPASS') {
     print 'you have logged in';
@@ -66,12 +56,9 @@ else {
 }
 ```
 
-
 As you can see, if the login credentials are not correct, it prints the unfiltered username onto the screen.  Obviously, this is a very simple example.
 
-
 ### The PHP Script
-
 
 The comments should help the interpretation of this script, so I won't ramble...
 

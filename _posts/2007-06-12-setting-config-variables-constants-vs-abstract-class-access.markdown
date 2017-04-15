@@ -182,7 +182,6 @@ class FWCONFIG
 }
 ```
 
-
 ### So - whats the best way to do it? (and any lessons learned?)
 
 There are good arguments for both sides: Use constants because we shouldn't have to edit our config options (well unless we have a plug-in architecture that allows for some of the internal config options to be reset), don't use a class because its bloaty and requires the user to always create an instance of your class (but they can create their own configuration options without having to edit your code or even really know how it works...)

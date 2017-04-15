@@ -17,7 +17,6 @@ Normally, when you click the random link on jemdiary ([jemdiary.com/read/random]
     		order by rand()
     		limit 1
 
-
 This, unfortunately is going to be slow because of the order by portion of the query.  Using what I learned in that blog post, I was able to modify the sql to take advantage of their speedy query.  Its important to know that I have only deleted a few rows from the user-database.  About 3% are missing.  The rest have just been inactivated (eh... design changes as time goes on ya know ;)).  So, I didn't implement the balancing algorithm.  Additionally, I added a few extra items in for testing, so I could make sure that my users were actually validating correctly.  See this sql:
 
     select u.userID, u.userName, s.globalPasswordProtect, s.allowRandom

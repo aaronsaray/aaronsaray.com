@@ -27,10 +27,7 @@ class Application_Model_DbTable_User extends Zend_Db_Table_Abstract
 }
 ```
 
-
-
 Next, I'm going to create a User object.  (You may notice some examples make the business object extend Zend_Db_Table_Rowset or similar classes.  This is coupling our object way too tightly to this particular data retrieval.  Our business object model shouldn't know about that!)
-
 
 ```php?start_inline=1
 
@@ -47,13 +44,9 @@ class Application_Model_User
 }
 ```
     
-
-
 In this example, I've added some business logic - creating a full name.
 
 Finally the service class would be needed to be created.  In our example, I'm going to demonstrate retrieving user row #100
-
-
     
 ```php?start_inline=1
 class Application_Model_UserService
@@ -70,8 +63,6 @@ class Application_Model_UserService
   }
 }
 ```
-    
-
 
 Of course, as you add more functionality to this service class, some of this logic an be removed to re-usable functions with your standard refactoring methods.  (For example, caching the instance of the dbtable, etc).  This example also doesn't handle issues where maybe that value isn't handled.
 

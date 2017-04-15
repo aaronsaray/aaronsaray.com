@@ -17,7 +17,6 @@ The canvas was really simple:
 ```
 
 And now the javascript used in this document:
-
     
 ```javascript
 (function(){
@@ -180,6 +179,5 @@ And now the javascript used in this document:
     game.start();
 })();
 ```
-
 
 Let me know your thoughts!
