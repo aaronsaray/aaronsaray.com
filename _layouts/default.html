@@ -6,18 +6,7 @@ layout: compress
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if page.url == "/" %}
-  <script>
-    if (document.referrer == 'https://hire.aaronsaray.com/') {
-      var head = document.querySelector('head'),
-              link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = '/css/fadein.css';
-      head.appendChild(link);
-    }
-  </script>
-  {% endif %}
+  <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -26,30 +15,34 @@ layout: compress
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 </head>
 <body>
-  <div>
-    <header class="container">
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="https://github.com/aaronsaray" target="_blank">Open Source</a></li>
-          <li><a href="/resume">Resume</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      {{ content }}
-    </main>
-  </div>
-  <footer>
-    <ul>
-      <li><a href="https://github.com/aaronsaray">GitHub</a></li>
-      <li><a href="https://twitter.com/aaronsaray">Twitter</a></li>
-      <li><a href="https://linkedin.com/in/aaronsaray">LinkedIn</a></li>
-    </ul>
-    <p>&copy; 2016 Aaron Saray</p>
-  </footer>
-  <script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-2186364-4","auto"),ga("send","pageview");</script>
+<header>
+  <nav>
+    <a href="/">Aaron Saray</a>
+    <a href="/contact">Contact</a>
+  </nav>
+</header>
+<main>
+  {% unless layout.suppress_header %}
+  <section id="hero">
+    {% if page.header %}
+    <p>{{ page.header }}</p>
+    {% else %}
+    <h1>Aaron Saray is a PHP Web Developer</h1>
+    <h3>in Milwaukee, WI</h3>
+    {% endif %}
+  </section>
+  {% endunless %}
+  {{ content }}
+</main>
+<footer>
+  <ul>
+    <li><a href="https://github.com/aaronsaray">GitHub</a></li>
+    <li><a href="https://twitter.com/aaronsaray">Twitter</a></li>
+    <li><a href="https://linkedin.com/in/aaronsaray">LinkedIn</a></li>
+    <li><a href="/resume" title="My Web Programmer Resume">Resume</a></li>
+  </ul>
+  <p>&copy; 2017 Aaron Saray</p>
+</footer>
+<script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-2186364-4","auto"),ga("send","pageview");</script>
 </body>
 </html>

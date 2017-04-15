@@ -1,15 +1,14 @@
 ---
-layout: page
+layout: default
 title: Blog posts by Aaron Saray
-header: "My Blog: Technical and Business knowledge, with less grammar correctness than my books."
+header: "All entries of my technical and business blog."
 ---
-<ul class="entry-list">
+<section class="entries">
     {% for post in site.posts %}
-        <li>
-            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-            <span>{{ post.date | date: "%b %-d, %Y" }}.</span>
-            <span>{{ post.tags | join: ', ' }}</span>
-        </li>
+    {% include blog-post.html post=post excerpt=true %}
     {% endfor %}
-</ul>
-<p class="rss-subscribe">Grab <a href="{{ "/feed.xml" | prepend: site.baseurl }}">the RSS</a></p>
+</section>
+
+<p class="last-cta">
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}">Get the RSS</a>
+</p>

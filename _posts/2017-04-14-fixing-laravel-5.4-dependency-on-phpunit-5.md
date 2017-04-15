@@ -24,8 +24,9 @@ class QueueFakeTest extends AbstractTestCase
 
 After looking into the actual code for `assertPushed` I see a dependency of the PHPUnit non-namespaced class.  This is PHPUnit 4 land.  You might remember, in PHPUnit 5, they namespaced their classes, but added aliases so that it'd still be backwards compatible.  Well, this was removed in PHPUnit 6.
 
-Time to look at my `composer.json` file...
+Time to look at my composer file...
 
+**`composer.json`**
 ```json
 {
     "require": {
@@ -39,8 +40,7 @@ Time to look at my `composer.json` file...
 
 Obviously, I've snipped out portions of it. But yep, I was requiring PHPUnit 6, but in Laravel 5.4 (at least 5.4.16), the header in in `QueueFake` reveals the problem:
 
-**vendor/laravel/framework/...../Fakes/QueueFake.php**
-
+**`vendor/laravel/framework/...../Fakes/QueueFake.php`**
 ```php?start_inline=1
 namespace Illuminate\Support\Testing\Fakes;
 

@@ -7,16 +7,23 @@ I'm either way too anal - or this is just because I forget things. You get to de
 
 ### Entries
 
-All entries, when using headers, should start with h4 (####) and only go as deep as h5 (#####).
+All entries, when using headers, should start with h3 (###) and only go as deep as h4 (####).
 
-Code will be highlighted using the fluid syntax and highlighter plugin for Jekyll as such:
+When referring to a filename for a code sample, put it above the code sample, use inline code 
+syntax and make it bold.  For example:
 
-    {% highlight CSS %}
+    **`test.html`**
+    ```html
+    <h1>hi!
+    ```
+
+Code will be highlighted using the markdown indication and highlighter plugin for Jekyll as such:
+
+    ```css
     Some code here
-    {% endhighlight %}
+    ```
     
 Where CSS can be any supported language.  The initial indent of the code should be no spaces.
-
 
 Images with thumbnails will be embedded like this:
 

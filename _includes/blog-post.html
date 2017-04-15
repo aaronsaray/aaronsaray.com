@@ -1,0 +1,29 @@
+<article>
+    <header>
+        <h2><a href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a></h2>
+    </header>
+    <section class="blog-content">
+        {% if include.excerpt %}
+        <p>
+            {{ include.post.excerpt | strip_html | truncatewords:75 }}
+            <a class="read-more" href="{{ include.post.url | prepend: site.baseurl }}">(more…)</a>
+        </p>
+        {% else %}
+            {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
+            {% capture postDate %}{{ include.post.date | date: '%s'}}{% endcapture %}
+            {% assign difference = now | minus: postDate %}
+            {% if difference > 47340000 %}
+            <div class="old-post">
+                This post is more than 18 months old. Since technology changes to rapidly, this content <em>may</em> be
+                out of date (but that's not always the case).  Please remember to verify any technical or programming information
+                with the current release.
+            </div>
+            {% endif %}
+            {{ include.content }}
+        {% endif %}
+    </section>
+    <footer>
+        <span>{{ include.post.date | date: "%b %-d, %Y" }}.</span>
+        <span>{{ include.post.tags | join: ', ' }}</span>
+    </footer>
+</article>

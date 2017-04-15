@@ -3,250 +3,188 @@
 @charset "utf-8";
 
 /***********************************************************************************************************************
- * general
+ * Colors (what little there are of them)
  **********************************************************************************************************************/
-@font-face {
-  font-family: Raleway;
-  src: url('/fonts/Raleway-Regular.ttf');
-}
-@font-face {
-  font-family: Raleway;
-  font-weight: bold;
-  src: url('/fonts/Raleway-SemiBold.ttf');
-}
+$standard-font-color: #333333;
+$standard-link-color: #336699;
+$standard-link-color-hover: #5599ff;
+$diminished-font-color: #666666;
 
-body {
-  background: #272727;
-  font-family: Raleway, "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
-  color: #454545;
-  line-height: 2rem;
-  font-size: 1rem;
-  margin: 0;
-  padding: 0;
-}
-body > div {
-  background-color: #ffffff;
-  padding-bottom: 7rem;
-}
-
-a, a:visited, a:active {
-  color: blue;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-blockquote {
-  margin-left: 0;
-  padding-left: 2rem;
-  border-left: 0.3rem solid #E2E2E2;
-  background: #f9f9f9;
-}
-
-hr {
-  height: 1px;
-  border: none;
-  background: #EAEAEA;
-  margin: 2rem;
-}
-
-table {
-  width: 100%;
-  margin: 1.5rem;
-  border-collapse: collapse;
-
-}
-th {
-  background: #f4f4f4;
-}
-td, th {
-  border: 1px solid #f4f4f4;
-  padding: 0.5rem;
-}
-
-.container {
+/***********************************************************************************************************************
+ * Mixins
+ **********************************************************************************************************************/
+@mixin container() {
   width: 80%;
+  max-width: 60rem;
   margin: auto;
 }
+
+/***********************************************************************************************************************
+ * Main Layout and general items
+ **********************************************************************************************************************/
+body {
+  margin: 0;
+  color: $standard-font-color;
+  background: #272727;
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-size: 1.37rem;
+  line-height: 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  & > header {
+    background: #ffffff;
+
+    nav {
+      @include container;
+      display: flex;
+      justify-content: space-between;
+      padding: 3rem 0 0.5rem 0;
+      border-bottom: 0.15rem solid #eeeeee;
+    }
+
+    a {
+      color: $standard-font-color;
+    }
+  }
+  
+  & > footer {
+    @include container;
+    padding: 3rem 0 1rem 0;
+    color: #454545;
+    text-align: center;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      justify-content: space-around;
+      margin: 0 0 2rem 0;
+      padding: 0;
+    }
+
+    a, a:visited {
+      color: #777777;
+      text-decoration: none;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+main {
+  padding: 3rem 0;
+  background: #ffffff;
+
+  & > * {
+    @include container;
+  }
+}
+
+a {
+  color: $standard-link-color;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 1.9rem;
+}
+
 .pull-right {
   float: right;
 }
-.right-spacing {
-  margin-right: 2rem;
+
+.leader {
+  padding: 1rem 0 2rem 0;
+  font-style: italic;
 }
 
+.last-cta {
+  text-align: center;
+  font-weight: bold;
+}
 
 /***********************************************************************************************************************
- * Layout stuff
+ * Hero / Header
  **********************************************************************************************************************/
-nav {
-  box-shadow: 0 14px 14px -14px #eaeaea;
-  line-height: 2.5rem;
+#hero {
+  line-height: 2.4rem;
 
-  ul {
-    padding: 0;
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
+  h1, h3 {
+    display: inline;
   }
-
-  li {
-    list-style: none;
-    text-align: center;
-    flex-grow: 1;
+  h1 {
+    padding-right: 0.6rem;
   }
-
-  a, a:visited, a:active {
-    color: #777777;
-    font-size: 0.8rem;
+  h1, h3, p {
+    font-size: 2rem;
   }
-}
-
-footer {
-  ul {
-    margin: 0;
-    padding: 3rem 0 1rem 0;
-    text-align: center;
-  }
-
-  li {
-    display: inline-block;
-    padding: 0 3rem;
-  }
-
-  a, a:visited {
-    color: #777777;
-    text-decoration: none;
-  }
-
   p {
-    text-align: center;
-    margin: 0;
-    padding: 1rem 0;
+    margin-top: 0;
   }
 }
 
-
-.page-header {
-  text-align: center;
+/***********************************************************************************************************************
+ * Blog display
+ **********************************************************************************************************************/
+article {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 2rem;
-
-  h1 {
-    font-size: 2.3rem;
-    margin: 3rem 0 1.5rem 0;
-    font-weight: normal;
+  
+  header {
+    order: 1;
   }
-
-  h2 {
-    color: #727272;
-    font-weight: normal;
-    margin: 0;
-    font-size: 1.5rem;
-  }
-}
-
-
-/***********************************************************************************************************************
- * Homepage stuff
- **********************************************************************************************************************/
-#home {
-  text-align: center;
-
-  h1 {
-    font-size: 4.5rem;
-    line-height: 4rem;
-    font-weight: normal;
-    margin: 11rem 0 6rem 0;
-  }
-
-  h2 {
-    color: #777777;
-    font-size: 2.5rem;
-    font-weight: normal;
-    margin: 0;
-  }
-
-  h3 {
-    margin: 0.4rem;
-    font-weight: normal;
-    font-size: 1rem;
-  }
-}
-
-
-/***********************************************************************************************************************
- * Entry items
- **********************************************************************************************************************/
-.entry-list {
-  margin: 0;
-  padding: 0;
-
-  li {
-    list-style: none;
-    margin: 0 0 0.6rem 0;
-    padding: 0;
-
-  }
-
-  h3 {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    font-size: 1.3rem;
-  }
-
-  span {
+  
+  footer {
+    order: 2;
     font-size: 0.8rem;
-    color: #aaaaaa;
-    margin-left: 0.5rem;
-  }
-}
-
-.entry {
-  h3 {
-    display: inline-block;
-    font-size: 1.3rem;
-  }
-  h4, h5 {
-    font-size: 1.1rem;
-  }
-
-  .thumbnail {
-    display: block;
-    margin: 1rem 0;
-    text-align: center;
-
-    img {
-      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-      box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-      padding: 5px;
+    padding: 0 0.1rem;
+    color: $diminished-font-color;
+    span:first-child {
+      padding-right: 1rem;
     }
   }
-  .inline img {
-    width: 100%;
-    max-width: 40rem;
-    margin: auto;
+  
+  section {
+    order: 3;
   }
-  &>span {
-    font-size: 0.8rem;
-    color: #aaaaaa;
-    margin-left: 0.5rem;
+
+  h2 {
+    font-size: 2rem;
+    margin: 0;
+    a, a:visited {
+      color: $standard-link-color;
+    }
+    a:hover {
+      color: $standard-link-color-hover;
+    }
   }
 }
+
+.read-more {
+  font-size: 1rem;
+  color: $diminished-font-color;
+  text-decoration: none;
+}
+
+.entries {
+  article:after {
+    content: '—';
+    text-align: center;
+    color: #e4e4e4;
+    order: 4;
+  }
+}
+
 .old-post {
   background: #fff4a5;
-  border: 2px solid #ffb710;
+  border: 0.15rem solid #ffb710;
   padding: 1rem 1.6rem;
-  margin: 0 1rem 1rem;
+  margin:3rem 0;
 }
-
-.rss-subscribe {
-  text-align: center;
-  font-size: 0.8rem;
-}
-
 
 /***********************************************************************************************************************
  * syntax highlighting
@@ -259,13 +197,13 @@ footer {
 }
 
 code.highlighter-rouge {
-  background: #343642;
-  color: #C1C2C3;
+  background: #eaeaea;
+  color: #343642;
   padding: 0.3rem;
 }
 
 /***********************************************************************************************************************
- * misc
+ * 404
  **********************************************************************************************************************/
 #notfound_video {
   position: fixed;
@@ -288,3 +226,72 @@ code.highlighter-rouge {
     display: inline-block;
   }
 }
+
+//
+//blockquote {
+//  margin-left: 0;
+//  padding-left: 2rem;
+//  border-left: 0.3rem solid #E2E2E2;
+//  background: #f9f9f9;
+//}
+//
+//hr {
+//  height: 1px;
+//  border: none;
+//  background: #EAEAEA;
+//  margin: 2rem;
+//}
+//
+//table {
+//  width: 100%;
+//  margin: 1.5rem;
+//  border-collapse: collapse;
+//
+//}
+//th {
+//  background: #f4f4f4;
+//}
+//td, th {
+//  border: 1px solid #f4f4f4;
+//  padding: 0.5rem;
+//}
+//
+
+
+//
+//.entry {
+//  h3 {
+//    display: inline-block;
+//    font-size: 1.3rem;
+//  }
+//  h4, h5 {
+//    font-size: 1.1rem;
+//  }
+//
+//  .thumbnail {
+//    display: block;
+//    margin: 1rem 0;
+//    text-align: center;
+//
+//    img {
+//      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+//      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+//      box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+//      padding: 5px;
+//    }
+//  }
+//  .inline img {
+//    width: 100%;
+//    max-width: 40rem;
+//    margin: auto;
+//  }
+//  &>span {
+//    font-size: 0.8rem;
+//    color: #aaaaaa;
+//    margin-left: 0.5rem;
+//  }
+//}
+
+
+//}
+//
