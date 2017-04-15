@@ -5,7 +5,7 @@ tags:
 - Eclipse PDT
 - PHP
 ---
-Well, maybe thats a little bit misleading - actually you're running PHPdocumentor as an external tool.
+Well, maybe that's a little bit misleading - actually you're running PHPdocumentor as an external tool.
 
 [This wiki article](http://www.plog4u.org/index.php/Using_PHPEclipse_:_Installation_:_Installing_the_phpDocumentor) gives the steps to configure the documenting package into your eclipse instance.   I've followed these instructions and find it almost near perfect.
 

@@ -40,4 +40,4 @@ track.src = "/track/this/page.php";
 die(header("HTTP/1.1 204 No Content"));
 ```
 
-(Note, this also could be done probably just with an apache configuration to not even envoke the PHP engine).
+(Note, this also could be done probably just with an apache configuration to not even invoke the PHP engine).

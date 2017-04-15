@@ -26,6 +26,6 @@ Every time I do a selection, I only get b's.  Maybe I'm doing something wrong.
 
 So it should be a supported version...
 
-Finally, I started to think - even if I got this to work, when I'm exporting data, would it have the 'b' in the identier field?  If so, that might make it harder to create imports/exports.  I really just want a 0/1,  a Y/N.  
+Finally, I started to think - even if I got this to work, when I'm exporting data, would it have the 'b' in the identifier field?  If so, that might make it harder to create imports/exports.  I really just want a 0/1,  a Y/N.  
 
 If anyone can show me what I'm doing wrong, that would be awesome.  For now, I'm sticking with char(1).

@@ -13,7 +13,7 @@ As you can imagine, as a fresh new programmer for emerging web technologies, the
 
 Generally, these programmers have progressed through their career under highly strict and audit-able programming and promoting to production environments.  Because of that, they tend to leave a lot of the actual text in their applications separate from their programming logic.  This allows them to get their application out in production, and then just change the data in the databases (or files as they call them.  Also in our environment, changing data is a lot easier than changing programming).
 
-PHP programmers should be used to this as well when creating multi language applications.  I learned that this could be useful in situations where I only have one language - especially when working with business users who aren't fully set on their wording until after the application hits production.  (Just recently, I changed 3 help texts for an application at work - and it took me about 3 minutes of database manipulation - rather than an hour of checking out code, modifying it, repromoting it, etc.)
+PHP programmers should be used to this as well when creating multi language applications.  I learned that this could be useful in situations where I only have one language - especially when working with business users who aren't fully set on their wording until after the application hits production.  (Just recently, I changed 3 help texts for an application at work - and it took me about 3 minutes of database manipulation - rather than an hour of checking out code, modifying it, re-promoting it, etc.)
 
 **2. Add additional logic situation by creating database driven action rules**
 

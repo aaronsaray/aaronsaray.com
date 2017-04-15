@@ -50,7 +50,7 @@ Next, I created a web page on my domain.  It has the following code:
     
 First off, make sure to change CONSUMER_KEY to the actual key from your applications settings page. Next, you can change the CSS in this page to match your theme if you want.  Since I'm loading this in the side bar, this is the simple layout I chose.
 
-Finally, include the javascript and configure the tweetbox.  I chose not to prepopulate my tweetbox with content.  However, you could if you wish...
+Finally, include the javascript and configure the tweetbox.  I chose not to pre-populate my tweetbox with content.  However, you could if you wish...
 
 ### Add Book Mark
 

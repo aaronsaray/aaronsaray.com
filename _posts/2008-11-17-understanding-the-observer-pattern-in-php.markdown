@@ -52,7 +52,7 @@ class twitterMessage
 
 ### The actual launching code
 
-We're going to jump a head here and show what code we'll be using to add the url shorterner as well as post the message.  It's really short - but it'll give us an idea of what class we need to create next:
+We're going to jump a head here and show what code we'll be using to add the url shortener as well as post the message.  It's really short - but it'll give us an idea of what class we need to create next:
 
 ```php?start_inline=1
 $tweeter = new twitterTransportObservable();
@@ -136,7 +136,7 @@ class urlShortenerObserver
 }
 ```
 
-Pretty simple class.  It has only one method, called notify() which accepts an object - of type twitterMessage.  The first line just creates a new urlShortener() - you remember from way up top?  Just a quick str_replace type method.  Then, the next line accesses the urlShortender::shorten() method - by passing in the public $message variable of the twitterMessage.  The return value is assigned to the twitterMessage::$message var.  And remember, since objects are passed by reference, when the next line of the the observable's class is called, the object will now be modified.
+Pretty simple class.  It has only one method, called notify() which accepts an object - of type twitterMessage.  The first line just creates a new urlShortener() - you remember from way up top?  Just a quick str_replace type method.  Then, the next line accesses the urlShortener::shorten() method - by passing in the public $message variable of the twitterMessage.  The return value is assigned to the twitterMessage::$message var.  And remember, since objects are passed by reference, when the next line of the the observable's class is called, the object will now be modified.
 
 ### Wrapping Up
 

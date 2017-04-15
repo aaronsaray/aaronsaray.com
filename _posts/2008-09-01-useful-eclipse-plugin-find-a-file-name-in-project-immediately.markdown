@@ -13,7 +13,7 @@ So for the longest time, I would determine what classes or functions were being 
 
 Well, turns out, there is a better way.
 
-### Goto File Eclipse Plugin
+### go to File Eclipse Plugin
 
 [![](/uploads/2008/screenshot-300x177.jpg)](/uploads/2008/screenshot.jpg){: .thumbnail}
 

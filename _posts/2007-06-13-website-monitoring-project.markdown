@@ -43,11 +43,11 @@ There are many standards that need to mesh for any project to work well.  With t
 
 - Frameworks frameworks frameworks - I know I want to deploy an MVC based solution - so should I be creating my own framework for this project, or using the existing ones (Zend, symphony, etc...)  What is the benefit?  Would it be more stable if its based on my framework only - or will there be issues with the external 3rd party frameworks updating and mine not?  Also, lets not kid ourselves - my skill is in PHP, then JS.  Should I use a JS framework?  Should I allow for it to update?  (Does it need to update? Are there ever vulnerabilities found in them?)
 
-- unit testing - I've not used PHPUnit yet... is this the project to whet my teeth on it?  There are alot of test cases I can imagine I could do  for this - but I'm still reading my Kent Beck book about Test Driven Development.  It would be a nice thing to show on the project site -- even better, we could write more tutorials and allow users to write their own tests for their plugins.
+- unit testing - I've not used PHPUnit yet... is this the project to whet my teeth on it?  There are a lot of test cases I can imagine I could do  for this - but I'm still reading my Kent Beck book about Test Driven Development.  It would be a nice thing to show on the project site -- even better, we could write more tutorials and allow users to write their own tests for their plugins.
 
 #### Host / Distribute
 
-- Dedicated hosting for the service - I've mentioned it alot - but I need to cover some of the bills - so maybe dedicatedly hosting the solution will help for some users.  I should be able to subscribe to the service.
+- Dedicated hosting for the service - I've mentioned it a lot - but I need to cover some of the bills - so maybe dedicated hosting of the solution will help for some users.  I should be able to subscribe to the service.
 
 - How to get the word out?  - besides SEO, what else could I do to get the web development and hosting community to know about my service?
 

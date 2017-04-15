@@ -23,7 +23,7 @@ var p = new Person("Aaron", "M");
 alert(p);
 ```
 
-When executed, this will alert a string of "Aaron" - as that is what the `toString` overriden method is doing.
+When executed, this will alert a string of "Aaron" - as that is what the `toString` overridden method is doing.
 
 **So let's make it more useful**
 
@@ -58,6 +58,6 @@ In this case, we're capturing the information and then creating a logic-injected
 
 **Take it easy there...**
 
-I'll admit it - I actually had an urge to take this further.  What if I used an underscore template inside of the `toString` method?  I could create templates on my objects and then just pass them directly to the HTML.  Everyting would be glorious!
+I'll admit it - I actually had an urge to take this further.  What if I used an underscore template inside of the `toString` method?  I could create templates on my objects and then just pass them directly to the HTML.  Everything would be glorious!
 
 But, on further reflection, I would advise against this.  I think the method is great for doing some simple data manipulation and combination (or filtering), but it should not be used to inject any HTML into the dom via a string rendering of itself. 

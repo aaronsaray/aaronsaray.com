@@ -18,7 +18,7 @@ The blog entry I posted has a great solution for implementing these typed variab
 
 **Too much overhead?**
 
-Now for every object that you create, you must extend another object, loading in more non-native PHP core code.  Then, you need to define each variable's type in comments (which, while you SHOULD do this type of documentation, I tend to do mine towards the end of the project), and you need to create a reflection object.  Now imagine dealing with database results as objects, and each reflection instance and each extended class you'd have to initialize.  It just seems to me that its alot of overhead (with smart programming, you might be able to initialize just one object and possibly cycle through its values, however... thus lowering the amount of times you'd need to init a new reflection class).
+Now for every object that you create, you must extend another object, loading in more non-native PHP core code.  Then, you need to define each variable's type in comments (which, while you SHOULD do this type of documentation, I tend to do mine towards the end of the project), and you need to create a reflection object.  Now imagine dealing with database results as objects, and each reflection instance and each extended class you'd have to initialize.  It just seems to me that its a lot of overhead (with smart programming, you might be able to initialize just one object and possibly cycle through its values, however... thus lowering the amount of times you'd need to init a new reflection class).
 
 **Lazy programmer?**
 

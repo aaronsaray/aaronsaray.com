@@ -15,7 +15,7 @@ So I created a snippet of jQuery to handle this featureset for the team in a gen
 
 ### Instructions
 
-Create a checkbox that is your checkall control.  Give it a data attribute of 'checkall-control' and have the value be the group name of the children checkboxes.  On each child box that should be controlled by the checkall, give it a data attribute of 'checkall-group' witht he name of the group that it belongs to.  Then, the jQuery will handle the rest.
+Create a checkbox that is your checkall control.  Give it a data attribute of 'checkall-control' and have the value be the group name of the children checkboxes.  On each child box that should be controlled by the checkall, give it a data attribute of 'checkall-group' with the name of the group that it belongs to.  Then, the jQuery will handle the rest.
 
 ### The Code
 

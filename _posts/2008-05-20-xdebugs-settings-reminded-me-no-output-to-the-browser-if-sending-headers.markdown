@@ -14,4 +14,4 @@ Because of these changes, some of the spaces that we had in our code are now sen
     <?php
     /** start second block of code **/
 
-I know it is bad – you know it is bad… *sigh*. But because of this, I’m not able to use Xdebug’s debugging feature on my ‘triangle’ code. I’d have to put through a project to REMOVE SPACES. Hah.
+I know it is bad – you know it is bad... *sigh*. But because of this, I'm not able to use Xdebug's debugging feature on my ‘triangle' code. I'd have to put through a project to REMOVE SPACES. Hah.

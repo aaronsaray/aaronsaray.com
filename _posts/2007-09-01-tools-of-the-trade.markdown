@@ -20,7 +20,7 @@ useful for css/javascript editing in eclipse - or as a standalone
 a nice gui browser for mysql - I know I know - us diehards - we shouldn't need this - but it is still nice (you can also get plugins for eclipse to do the same thing with jdbc)
 
 [Pietty](http://ntu.csie.org/~piaip/pietty/) + [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/)
-Pietty  - a putty plugin - allows for true transparency of putty windows  - amazingly cool - at first its in some oriental language - and when you first open it up - you can't read the screen when you first ssh somewhere.  Never fear: just goto the encoding menu option and choose utf-8 - otherwise works like a dream.  SSH to your heart's content.
+Pietty  - a putty plugin - allows for true transparency of putty windows  - amazingly cool - at first its in some oriental language - and when you first open it up - you can't read the screen when you first ssh somewhere.  Never fear: just go to the encoding menu option and choose utf-8 - otherwise works like a dream.  SSH to your heart's content.
 
 [Komodo]( http://www.activestate.com/products/komodo_ide/)
 If you don't like Eclipse or the long time it takes to load, you can use Komodo.  Plus, version 4 brings some lovely things to the table.  Thats right, Lovely (and thats not cuz they gave me a shirt either...)

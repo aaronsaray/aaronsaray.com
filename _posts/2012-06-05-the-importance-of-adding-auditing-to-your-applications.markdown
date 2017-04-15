@@ -4,11 +4,11 @@ title: The Importance of Adding Auditing to Your Applications
 tags:
 - programming
 ---
-One of the things I learned while working at "The Triangle" was the "joy" of auditing.  From their point of view, auditing was extreme.  Think journalling and you have a pretty good idea.  Now, when we talk about auditing, make sure to understand this is referring to change tracking and not vulnerability or fault detection.
+One of the things I learned while working at "The Triangle" was the "joy" of auditing.  From their point of view, auditing was extreme.  Think journaling and you have a pretty good idea.  Now, when we talk about auditing, make sure to understand this is referring to change tracking and not vulnerability or fault detection.
 
 So, auditing can be as extreme / verbose or as little as possible.  Let's talk about the most common types of auditing:
 
-**Full/Complete auditing:**  This is really similar to things like Journaling.  What happens is that on every change or action, a complete new record is added.  For example, if you edit a blog entry, a new revision of exactly the same record (but with applied changes) is created in the database.  This provides a very complete trail of what happened when.  
+**Full/Complete auditing:**  This is really similar to things like journaling.  What happens is that on every change or action, a complete new record is added.  For example, if you edit a blog entry, a new revision of exactly the same record (but with applied changes) is created in the database.  This provides a very complete trail of what happened when.  
 
 Sometimes that can be overkill...
 

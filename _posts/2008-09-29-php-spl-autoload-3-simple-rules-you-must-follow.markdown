@@ -4,7 +4,7 @@ title: 'PHP SPL autoload: 3 simple rules you must follow'
 tags:
 - PHP
 ---
-While working on a larger site that I may need to use many external libraries, I realized I need to come up with a better __autoload() function (for example, I think it was DOMPDF that had its own autoload function as well.  Last time I used that, I had to hack my own autoload to use their code as well to locate files).  I researched into [SPL autoload](http://us2.php.net/manual/en/function.spl-autoload-register.php) functionality, and I've found what I need.  Through some trial and error, I found out 3 absolutely necessary rules that need to be followed when building your custom autload functions, however.  Lets examine:
+While working on a larger site that I may need to use many external libraries, I realized I need to come up with a better __autoload() function (for example, I think it was DOMPDF that had its own autoload function as well.  Last time I used that, I had to hack my own autoload to use their code as well to locate files).  I researched into [SPL autoload](http://us2.php.net/manual/en/function.spl-autoload-register.php) functionality, and I've found what I need.  Through some trial and error, I found out 3 absolutely necessary rules that need to be followed when building your custom autoload functions, however.  Lets examine:
 
 ### Our Example ... so far
 
@@ -62,7 +62,7 @@ function __autoload($class)
 }
 ```
     
-**You cannot do this if you want to successfully use SPL autoload!**  Remember, now its possible to add in more autload functions.  Your surrounding framework code should be able to handle the error correctly if all the autoload functions fail to include the proper file.
+**You cannot do this if you want to successfully use SPL autoload!**  Remember, now its possible to add in more autoload functions.  Your surrounding framework code should be able to handle the error correctly if all the autoload functions fail to include the proper file.
 
 Lets add to our example.
 

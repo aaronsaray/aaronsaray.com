@@ -10,7 +10,7 @@ The PHP Date manual page has a ton of interesting features to format the date th
 
 ### date - the date on your current server
 
-The date() function's default timezone is based on your server's timezone (or php.ini's, etc...).  Regardless of where that timezone is set, it uses it to display/retrieve a localized version of the time.  For example, if it were noon in GMT, and your server was in central time, if you used date() to retrieve the time, it would display a time equavalent to noon - 6 hours - so 6am.  (Holy run-on sentence, batman!)
+The date() function's default timezone is based on your server's timezone (or php.ini's, etc...).  Regardless of where that timezone is set, it uses it to display/retrieve a localized version of the time.  For example, if it were noon in GMT, and your server was in central time, if you used date() to retrieve the time, it would display a time equivalent to noon - 6 hours - so 6am.  (Holy run-on sentence, batman!)
 
 When I say displays the time equivalent, this is because of the first parameter of date's behavior.  When you review the man page, you'll see many different ways to display the time - including some common RFC based ones.
 

@@ -101,7 +101,7 @@ First off, I put the following javascript include tags in the HTML
 <script src="snowstorm.js" type="text/javascript"></script>
 ```
     
-After loading jquery and the premade script, the following javascript is executed:
+After loading jquery and the pre-made script, the following javascript is executed:
 
 ```javascript
 function upSnow()

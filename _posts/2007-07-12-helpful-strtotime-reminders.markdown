@@ -62,9 +62,9 @@ This was the output:( with php 5.2)
     
     * * *
 
-Lets check out the important things here:As predicted, most of the results came out accurately.  "Now" came out as exactly today's date and time.  +1 day came out as one day (24 hours) exactly in the future.  mm/dd/yyyy and m/dd/yy formats come out as expected with a proper date but a zero time.  m/yyyy was not properly interpreted (which makes sense, how do you know if thats a month or a day...).  Finally, the plain year came out as that year's version of today's date - which is kind of helpful (in case you wanted to know what day july 11th was back in 1999).
+Lets check out the important things here:As predicted, most of the results came out accurately.  "Now" came out as exactly today's date and time.  +1 day came out as one day (24 hours) exactly in the future.  mm/dd/yyyy and m/dd/yy formats come out as expected with a proper date but a zero time.  m/yyyy was not properly interpreted (which makes sense, how do you know if that's a month or a day...).  Finally, the plain year came out as that year's version of today's date - which is kind of helpful (in case you wanted to know what day july 11th was back in 1999).
 
-I wasn't entirely certain of the second from last result however.  I did a quick check, however.... date('r', 0) comes back as the same time - so thats the proper value for a zero - or unknown date.
+I wasn't entirely certain of the second from last result however.  I did a quick check, however.... date('r', 0) comes back as the same time - so that's the proper value for a zero - or unknown date.
 
 Another cool note is that for versions of PHP less than 5.1, they did not support a negative timestamp on windows and some *nix distros.  My version on windows have moved pass this limitation though:
 

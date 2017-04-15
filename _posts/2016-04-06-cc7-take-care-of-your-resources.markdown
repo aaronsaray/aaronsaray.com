@@ -65,7 +65,7 @@ Because the data is highly normalized in this example, the name and the address 
 
 First, up to 5 results are retrieved from the main table.  On each iteration, another query is executed to get the results from the address table.  Finally, the full information is displayed.  So, for each result in the first table, an additional query must be ran each and every time.  As a Confident Coder, you don't like seeing that there is up to 5x more work, time and expense than is required to finish the job.
 
-Before I demonstrate a re-factored approach, let me give a bit of clarification.  I know that not all PHP programmers are familiar with other technologies.  That's fine.  It's alright to specialize, but you need to have some familiarity with other technologies and best practices.  A Confident Coder is not happy with knowing the bare minimum to finish the job.  Instead, do a bit of research or ask someone with a different skillset or discipline to help you.  
+Before I demonstrate a re-factored approach, let me give a bit of clarification.  I know that not all PHP programmers are familiar with other technologies.  That's fine.  It's alright to specialize, but you need to have some familiarity with other technologies and best practices.  A Confident Coder is not happy with knowing the bare minimum to finish the job.  Instead, do a bit of research or ask someone with a different skill-set or discipline to help you.  
 
 Now, let's take a look at the new code:
 

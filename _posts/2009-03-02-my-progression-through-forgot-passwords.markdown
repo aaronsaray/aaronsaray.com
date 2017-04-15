@@ -8,7 +8,7 @@ tags:
 ---
 I thought I'd take some time to look at the 3 main ways that I've handled forgotten passwords on my websites, why I did them that way, and if there was anything wrong.
 
-_Disclaimer: there is a lot of bad code in here - and thats on purpose!  This is a historical piece... :)_
+_Disclaimer: there is a lot of bad code in here - and that's on purpose!  This is a historical piece... :)_
 
 ### The n00b Times: send the password back to them
 
@@ -16,7 +16,7 @@ The very first 'forgot password' attempt I made was a long time ago on a website
 
 #### The non-scalable times: hash the time away
 
-The next step in my programming mutuation was at least more secure: send the hash through email and let them reset their password.  This way, I never send their password through the email - and never actually stored it in a decrypt-able (is that a word?) state.  Of course, I did it wrong again:
+The next step in my programming mutation was at least more secure: send the hash through email and let them reset their password.  This way, I never send their password through the email - and never actually stored it in a decrypt-able (is that a word?) state.  Of course, I did it wrong again:
 
 **Um, don't do this:**
 
@@ -52,7 +52,7 @@ At least I fixed the key - um - sorta.  However, if you knew the user id - you c
 
 #### What are you doing now?
 
-Ok - so for something thats pretty secure like that, I wanted to have a very long, extremely random string.  I thought of sending mt_rand()'s next to each other and hexadecimalling them - or md5ing them.  But I settled on something hopefully with even more of a chance not to be guessed: base64 encoding.
+Ok - so for something that's pretty secure like that, I wanted to have a very long, extremely random string.  I thought of sending mt_rand()'s next to each other and hexadecimalling them - or md5ing them.  But I settled on something hopefully with even more of a chance not to be guessed: base64 encoding.
 
 What?
 
@@ -68,6 +68,6 @@ $key = strtr(base64_encode($forEncode), '+/=', '-_.');
 
 Granted, I left out the mailing and mysql storage, but you get the idea.  Real quick, a run-down:
 
-First, start out wiht my blank string.  I plan to generate 300 random characters - so I create that for loop.  Then, I choose a random number between 1 and 255, corresponding to the ASCII table, and generate the chr() value of it.  Then that is added to my string.  I now have a string that has 300 characters of any character from 1 to 255 on the ascii chart.  Finally, I base64 encode it - and then replace the items in it that are not good to have in an URL.
+First, start out with my blank string.  I plan to generate 300 random characters - so I create that for loop.  Then, I choose a random number between 1 and 255, corresponding to the ASCII table, and generate the chr() value of it.  Then that is added to my string.  I now have a string that has 300 characters of any character from 1 to 255 on the ascii chart.  Finally, I base64 encode it - and then replace the items in it that are not good to have in an URL.
 
 How do YOU do it?

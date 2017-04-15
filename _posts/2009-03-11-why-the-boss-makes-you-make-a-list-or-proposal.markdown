@@ -46,8 +46,8 @@ Whether or not it was accepted immediately, mark some time on your calendar to f
 
 #### Don't forget it during a review
 
-During the performance review, make sure to take into account all of the hardwork the employee has done with writing lists and proposals.
+During the performance review, make sure to take into account all of the hard work the employee has done with writing lists and proposals.
 
 ### End Notes
 
-As you can see, I've come full circle.  I've went from thinking it was BS busy work to seeing the actual case. I think, if this tool is used correctly, it can be very benefial to the end product.
+As you can see, I've come full circle.  I've went from thinking it was BS busy work to seeing the actual case. I think, if this tool is used correctly, it can be very beneficial to the end product.

@@ -47,11 +47,11 @@ Well, I had talked about an issue where you could substitute the javascript obje
 </html>
 ```
 
-Yah - not an issue with the main browsers I use. I didn’t try it on other ones though - so it might still be an issue… who knows... I was just curious.
+Yah - not an issue with the main browsers I use. I didn't try it on other ones though - so it might still be an issue... who knows... I was just curious.
 
 **The recommendations**
 
-I got together a few of my final recommendations (yes, very devoid of anything worthwhile, heh.) This is my own AJAX recommendations I’m going to try to follow too.
+I got together a few of my final recommendations (yes, very devoid of anything worthwhile, heh.) This is my own AJAX recommendations I'm going to try to follow too.
 
 My Recommendations
 
@@ -85,7 +85,7 @@ My Recommendations
 	
   * All non time critical responses should be added to a cache, and then processed FIFO.
 	
-  * Time critical responses should create their own object. There shouldnâ‚¬â„¢t be a time where more than one time critical method is executing with proper planning.
+  * Time critical responses should create their own object. There shouldn't be a time where more than one time critical method is executing with proper planning.
 
 **User Interface**
 	

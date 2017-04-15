@@ -11,7 +11,7 @@ After reviewing the [Google Javascript API](http://code.google.com/apis/ajaxlibs
 
   * Proper caching done
 
-  * Shared javascript location - no need to redownload if multiple sites use same library
+  * Shared javascript location - no need to re-download if multiple sites use same library
 
   * Easy to include method, can be as specific as needed for versioning (you can include major, major.minor, etc.)
 

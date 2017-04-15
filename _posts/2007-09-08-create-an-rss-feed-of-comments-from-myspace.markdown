@@ -8,9 +8,9 @@ tags:
 - scripting
 - myspace
 ---
-Lately, I’ve been trying to find ways to reduce the amount of time I spend on stupid sites like myspace (nevermind the fact that the time it took to reduce this amount took me enough time to visit myspace 1x a day for another month – heh). At any rate, I’ve been using Google Reader alot more (I’m up to 180 or so feeds) and I thought: Why don’t I make an RSS feed o my comments – then I don’t have to go back to the site when someone sends me a comment. (Mind you, myspace does send you an e-mail when you receive a comment, but doesn’t include the content. JEMDiary does, however ;)) I searched the internet and found a few sites that are doing that for a service, and one guy who was giving away a regular expression. So, I took his idea and wrote my own php script for cron. Check it out here:
+Lately, I've been trying to find ways to reduce the amount of time I spend on stupid sites like myspace (nevermind the fact that the time it took to reduce this amount took me enough time to visit myspace 1x a day for another month – heh). At any rate, I've been using Google Reader a lot more (I'm up to 180 or so feeds) and I thought: Why don't I make an RSS feed o my comments – then I don't have to go back to the site when someone sends me a comment. (Mind you, myspace does send you an e-mail when you receive a comment, but doesn't include the content. JEMDiary does, however ;)) I searched the internet and found a few sites that are doing that for a service, and one guy who was giving away a regular expression. So, I took his idea and wrote my own php script for cron. Check it out here:
 
-You can take this script and modify the URL variable and run it on a PHP5 compatible host. You might also have to change the URL for your xml file. Then, just schedule the script to run every hour and feed the xml file URL to your reader. Do keep in mind that this will increase your profile views 1 for every hour (I myself don’t really care…)
+You can take this script and modify the URL variable and run it on a PHP5 compatible host. You might also have to change the URL for your xml file. Then, just schedule the script to run every hour and feed the xml file URL to your reader. Do keep in mind that this will increase your profile views 1 for every hour (I myself don't really care...)
 
 ```php?start_inline=1
 /**

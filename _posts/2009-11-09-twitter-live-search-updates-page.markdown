@@ -71,11 +71,11 @@ $(document).ready(function() {
 });
 ```
 
-Let me step through it... On page load, the content above is executed.  The first thing done is to call getResults() with a parameter of 1.  Then, I'll set getResults() to be called every 3 seconds after that using setInteral().
+Let me step through it... On page load, the content above is executed.  The first thing done is to call getResults() with a parameter of 1.  Then, I'll set getResults() to be called every 3 seconds after that using setInterval().
 
 getResults() creates a loop and loops through each of the search terms. Above, I'm only using one search term: "true blood".  Then, it calls getJson() from twitter's search api using the callback function.  This json is then organized by the unique twitter ID (just in case search terms overlap tweets, we won't get duplicates...) and is sent to the showResults() method.  Note that the 'first' variable is sent into that request.
 
-showResults() simply builds a list item with the proper content, links, etc.  The only thing really notable about this is the choice when first == 1.  This was done in this way to build the auto update functionality properly.  It was best to get the search terms and append them on the first query.  But, then as time went on, we need the newest content at the top (so we don't have to keep scrolling down...).  Then, thats why each interval call for getResults() does NOT send in '1' - meaning it will prepend and slowly fade the content into view.
+showResults() simply builds a list item with the proper content, links, etc.  The only thing really notable about this is the choice when first == 1.  This was done in this way to build the auto update functionality properly.  It was best to get the search terms and append them on the first query.  But, then as time went on, we need the newest content at the top (so we don't have to keep scrolling down...).  Then, that's why each interval call for getResults() does NOT send in '1' - meaning it will prepend and slowly fade the content into view.
 
 #### Add a little style
 

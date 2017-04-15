@@ -7,11 +7,11 @@ tags:
 ---
 I just finished reading a snippet of a book about design patterns - of which Strategy, Adapter, Decorator and others were discussed.  It got me to thinking about my design patterns that I used in JEMDiary - and what I'll be using in this project.
 
-The trouble comes when you start trying to figure out how implicit and explicit your OO design should become - for example, do you create a new object and rely on it to bring in its own db connection (and tightly couple it) or provide more public methods for it to explicitly create itself, passing in a db connection that hits an interfaced class instead.  Do you use the many strategy type patterns and keep a more loose architecture, or be more specific to yoru project and make it possibly more private (and more efficient)?
+The trouble comes when you start trying to figure out how implicit and explicit your OO design should become - for example, do you create a new object and rely on it to bring in its own db connection (and tightly couple it) or provide more public methods for it to explicitly create itself, passing in a db connection that hits an interfaced class instead.  Do you use the many strategy type patterns and keep a more loose architecture, or be more specific to your project and make it possibly more private (and more efficient)?
 
 Well here is what I'm going to do...
 
-In JEMDiary, I started with my first MVC architecture.  I learned alot about separating business logic, display and navigation/redirection or "control".
+In JEMDiary, I started with my first MVC architecture.  I learned a lot about separating business logic, display and navigation/redirection or "control".
 
 I ended up making a few core classes - which in hindsight should have been abstract classes - but they were just base classes.  Then, I extended each of those to be more specific, but still worker classes.  So, all of my database classes extended the main DB class, blah blah blah.  I re-invented the wheel, and basically had my own PEAR classes (but in this particular case they extended PDO ;)).
 

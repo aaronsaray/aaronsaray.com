@@ -8,7 +8,7 @@ As I was looking through some old code from Big Boy, I noticed a block of his co
 
 ### INI File and Constants
 
-Having dabbled in win32 programming back in the 3.1 era, I am very familiar with the .ini file.  I used to love to sneak little bits of 'hacks' into all my ini files ( even as far as making another person's file manager load into something else from accessing their win.ini... ;) )  PHP supports this with its [parse_ini_file](http://php.net/parse_ini_file) function.  This function lets you make standard .ini files - and will read them into a nice pretty array for you.  With an additional boolean flag, you can even make multidimentional arrays (check out the docs).  Basically, big boy was reading in an .ini file and then looping through sections, and variables and defining them... code example:
+Having dabbled in win32 programming back in the 3.1 era, I am very familiar with the .ini file.  I used to love to sneak little bits of 'hacks' into all my ini files ( even as far as making another person's file manager load into something else from accessing their win.ini... ;) )  PHP supports this with its [parse_ini_file](http://php.net/parse_ini_file) function.  This function lets you make standard .ini files - and will read them into a nice pretty array for you.  With an additional boolean flag, you can even make multidimensional arrays (check out the docs).  Basically, big boy was reading in an .ini file and then looping through sections, and variables and defining them... code example:
 
 ```php?start_inline=1
 $ini = parse_ini_file('values.ini', true);
@@ -23,7 +23,7 @@ As you can see, this now puts our config options into a nice set of constants fo
 
 ### Config using a static class and possible Singleton Pattern
 
-For my configuration options, I built a static class (which I used PHP5's autoload to make accessable) called CONFIG.  I then created a set of static methods, get and set (in hindsight, I could have modified these to use the magic methods for this class...), a singleton constructor and a logic module.  My logic module made a few decisions based on server configuration, location and site, allowing me to access those properties later.  I also could have made a mysql connection or a .ini file read in this if I wanted to.
+For my configuration options, I built a static class (which I used PHP5's autoload to make accessible) called CONFIG.  I then created a set of static methods, get and set (in hindsight, I could have modified these to use the magic methods for this class...), a singleton constructor and a logic module.  My logic module made a few decisions based on server configuration, location and site, allowing me to access those properties later.  I also could have made a mysql connection or a .ini file read in this if I wanted to.
 
 The get and set methods function the same way.  First, it will check to see if there is an instance of itself running with a static resource.  If not, we'll call the constructor (which will call the logic and make all of the decisions).  Then, after its either started for the first time, or available, we then get our copy of it and return our desired configuration option.  I made the values private, which allows us to return them with our get method but not allow them publicly editable (good programming design).   I also allow a user to create their own configuration class which is brought in via reflection to bring in other values into the class (this is where the main logic can happen for site specific config options).
 

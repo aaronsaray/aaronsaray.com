@@ -12,7 +12,7 @@ There are a number of performance arguments about combining assets to reduce HTT
 
 There are a number of reasons to do this:
 
-  * **Security:** In CSS, a number of class names and IDs are revealed.  And, if you're programming your code semantically, they should be pretty explanatory (see: verbose).  This exposes the names/interfaces/code structure and featureset of your administration interface to anyone who can look at the CSS.  Not Good.
+  * **Security:** In CSS, a number of class names and IDs are revealed.  And, if you're programming your code semantically, they should be pretty explanatory (see: verbose).  This exposes the names/interfaces/code structure and feature-set of your administration interface to anyone who can look at the CSS.  Not Good.
 
   * **Extra space / slows down the interwebs:** Let's face it, more than 99% of your userbase should be normal users, right?  Why add on all this extra CSS just for the 1% of users.  Keep it trim and fitting the 99% of users.  This is 19% better than Pareto's principle even!
 

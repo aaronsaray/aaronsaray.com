@@ -14,7 +14,7 @@ b) they must have a server component
 
 c) they work in all browsers (hhahaah - this example only works in Chrome at the moment).
 
-What am I talking about?  An online photobooth, with mimimum javascript, HTML5, CSS, minimal images, that accesses your webcam and allows you to download your creations.  Yup, take a shot of yourself, and maybe drag some sunglasses onto it or something.  Want to see what I'm talking about?  Check it out here: [Online PhotoBooth](/demo/onlinephotobooth).
+What am I talking about?  An online photobooth, with minimum javascript, HTML5, CSS, minimal images, that accesses your webcam and allows you to download your creations.  Yup, take a shot of yourself, and maybe drag some sunglasses onto it or something.  Want to see what I'm talking about?  Check it out here: [Online PhotoBooth](/demo/onlinephotobooth).
 
 Now, let's check it out.
 
@@ -69,7 +69,7 @@ Following that is the video.  You'll see that the video element is set to autopl
 
 Finally, the video filters are input buttons of type radio.  This allows CSS3 filters to be applied to the streaming video.  As a bonus, this same filter setting is applied to the screenshot.  
 
-**Special note:** Somehow, I totally didn't think about the fact that the filters are actually on top of the element and not applied to the canvas image itself (referenced later).  So the <em>only real big unfished bug</em> is the fact that a downloaded image does not have the filter applied to it.  I'd actually have to edit the pixels of the image.
+**Special note:** Somehow, I totally didn't think about the fact that the filters are actually on top of the element and not applied to the canvas image itself (referenced later).  So the <em>only real big unfinished bug</em> is the fact that a downloaded image does not have the filter applied to it.  I'd actually have to edit the pixels of the image.
 
 The next section of the HTML document has the content for when a screenshot is taken.  Obviously, this is hidden at load:
 
@@ -407,7 +407,7 @@ Now, moving on to the screenshot CSS.
 
 The screenshot window is not shown by default. It's loaded when a screenshot is taken.  Its positioned on top of the content - and the body modal class is added back.  At any rate, the close screenshot link is placed in the corner of the screenshot window.  The only other interesting css is the button.downloaded class which adds a checkmark after the content of the button if someone downloads something (and the css class is obviously added.)
 
-Finally, lets look at the dragable decorations CSS.
+Finally, lets look at the draggable decorations CSS.
 
 ```css
 #screenshotdecorations {
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }, false);
 ```
 
-The only thing noteable of course is that I'm going to scope the creation of my videoStream inside of the anon function.  Alrighty, let's move on:
+The only thing notable of course is that I'm going to scope the creation of my videoStream inside of the anon function.  Alrighty, let's move on:
 
 ```javascript
 /**

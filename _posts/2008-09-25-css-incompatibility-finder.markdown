@@ -380,9 +380,9 @@ catch (exception $e) {
 }
 ```
 
-Ok – thats the class and an example how to use it. I would be lying if I didn’t say the actual attribute searching is horrible! hahaha. But it could be expanded.
+Ok – that's the class and an example how to use it. I would be lying if I didn't say the actual attribute searching is horrible! hahaha. But it could be expanded.
 
-Off the top of my head, here are some todos:
+Off the top of my head, here are some todo's:
 
     @todo support selector differences
     @todo support attribute/value combo inequalities

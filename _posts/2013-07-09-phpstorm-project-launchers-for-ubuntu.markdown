@@ -22,4 +22,4 @@ Turns out, with PHPStorm.sh file, the next parameter is the URL for the director
     Type=Application
     Categories=Programming;IDE;
 
-Now, if you start to type something like "PHP" or "myproje" in the lense, you will be presented with this new icon.  You can launch multiple PHPStorm instances by opening multiple project links like this.  One "nice" thing is if you have the project open currently, it will switch to your instance of PHPStorm in that project instead of launching a new one.
+Now, if you start to type something like "PHP" or "myproje" in the lens, you will be presented with this new icon.  You can launch multiple PHPStorm instances by opening multiple project links like this.  One "nice" thing is if you have the project open currently, it will switch to your instance of PHPStorm in that project instead of launching a new one.

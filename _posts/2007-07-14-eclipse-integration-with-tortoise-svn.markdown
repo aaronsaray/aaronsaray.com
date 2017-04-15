@@ -20,9 +20,9 @@ First off, download the zip file.  Put the unzipped folder in your plugins direc
 
 **Configure the plugin**
 
-There isn't alot of documentation about the actual features of the plugin.  However, after some trial and error, I was able to get it to work successfully.  Unfortunately, we have the "What are these for" "extra parts" syndrome.  There are some fields I'm not sure what they are...
+There isn't a lot of documentation about the actual features of the plugin.  However, after some trial and error, I was able to get it to work successfully.  Unfortunately, we have the "What are these for" "extra parts" syndrome.  There are some fields I'm not sure what they are...
 
-First off, goto Window > preferences > tortoise.
+First off, go to Window > preferences > tortoise.
 
 Next, fill in the first field with the path to your tortoise executable.  Mine was:
 

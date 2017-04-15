@@ -9,7 +9,7 @@ While reading the blog post about [Enabling Javascript specific CSS](http://grea
 
 ### Why Use Javascript Specific CSS
 
-Believe it or not, we still have visitors to our websites that disable javascript.  It could be a configuration setting on purpose, a malfunction or even an older browser (or a mobile one...?)  At any rate, if you can make portions of your site accessible without javascript, you should do so.  (I know some would argue that you should always make your site accessible without javascript enabled... but thats a whole other discussion.)
+Believe it or not, we still have visitors to our websites that disable javascript.  It could be a configuration setting on purpose, a malfunction or even an older browser (or a mobile one...?)  At any rate, if you can make portions of your site accessible without javascript, you should do so.  (I know some would argue that you should always make your site accessible without javascript enabled... but that's a whole other discussion.)
 
 Before this method we're going to talk about, the only way to display stuff to users without javascript was to use the NOSCRIPT tag.  Luckily, this takes it one step further.  You are not limited to using that tag.  Instead, CSS attributes can be added to items that you would like to be visible (or invisible) if no javascript is enabled.  Conversely, other stylings can take affect if javascript is on.  One of the commentors on the previous link suggests using this technique to limit the visibility of icons that represent more dynamic behavior when javascript is disabled.  Other usability enhancements include expanding hidden content automatically if no javascript controls are available.
 

@@ -6,7 +6,7 @@ tags:
 ---
 [![](/uploads/2008/11326425712-225x300.jpg)](/uploads/2008/11326425712-225x300.jpg){: .thumbnail}
 
-I've been to far more meetings than any one on earth should ever have had to by the time they're 25.  With that experience, however, I can start to pick out key points of running a great meeting or demonstration.  I know this is a different type of post for this blog, but I think its important.  There may be times that you're called on to conduct a meeting or demonstration, as a technical resource.  Follow these tips and your meeting will go along smooth, effeciently and successfully.
+I've been to far more meetings than any one on earth should ever have had to by the time they're 25.  With that experience, however, I can start to pick out key points of running a great meeting or demonstration.  I know this is a different type of post for this blog, but I think its important.  There may be times that you're called on to conduct a meeting or demonstration, as a technical resource.  Follow these tips and your meeting will go along smooth, efficiently and successfully.
 
 ### Planning
 
@@ -14,7 +14,7 @@ I've been to far more meetings than any one on earth should ever have had to by 
 
 Outline the points you're going to cover.  Provide more elaboration on an outline that you refer to as your Internal outline.  Examples of this include writing a more thorough document for yourself or using the notes section for your powerpoint presentation (simply print out the slides with notes for yourself, give everyone else the slides only.)
 
-Send your outline out before the event.  Gauge the busyness of your audience to figure out when you should send it out.  Don't send it out 10 minutes before the meeting if you have people who are traveling or may be in other meetings.  Conversely, don't send it out too many days in advance - it may get lost in the pile of other things your atendees have to review.
+Send your outline out before the event.  Gauge the busyness of your audience to figure out when you should send it out.  Don't send it out 10 minutes before the meeting if you have people who are traveling or may be in other meetings.  Conversely, don't send it out too many days in advance - it may get lost in the pile of other things your attendees have to review.
 
 #### Test Technical Items
 
@@ -38,21 +38,21 @@ Some attendees may feel too nervous to shout out a question during your presenta
 
 #### Ask Questions
 
-Along the way, its fine to ask questions - or better yet - encourage questions.  Summarize a point and ask if there is any clarification needed on that point.  Its useful to remind people that they can ask questions - that this is an interactive presentation.  Don't be surprised if someone asks a questoin about the last point.  Sometimes its easy to become presentation-tranced and forget to ask the question.
+Along the way, its fine to ask questions - or better yet - encourage questions.  Summarize a point and ask if there is any clarification needed on that point.  Its useful to remind people that they can ask questions - that this is an interactive presentation.  Don't be surprised if someone asks a question about the last point.  Sometimes its easy to become presentation-tranced and forget to ask the question.
 
 #### "No" Questions vs "Yes" Questions
 
-This is particularly useful on telephone conversations - where you can't see any visual cues.  Try phrasing your questions to elicit answers only if the conditions are not satisfactory.  So, for example, instead of saying "Does everybody understand what was just demonstrated?" - and waiting for people to overlap and possibly not answer or interupt each other, rephrase: "Is there anyone that does not understand what was just demonstrated?  We can demonstrate it again."  You've provided an opening to receive only feedback from those who need it - while framing the question into a positive situation.  An attendee might be scared to say that they missed something - but would be willing to agree with your suggestion to do the demonstration again.
+This is particularly useful on telephone conversations - where you can't see any visual cues.  Try phrasing your questions to elicit answers only if the conditions are not satisfactory.  So, for example, instead of saying "Does everybody understand what was just demonstrated?" - and waiting for people to overlap and possibly not answer or interrupt each other, rephrase: "Is there anyone that does not understand what was just demonstrated?  We can demonstrate it again."  You've provided an opening to receive only feedback from those who need it - while framing the question into a positive situation.  An attendee might be scared to say that they missed something - but would be willing to agree with your suggestion to do the demonstration again.
 
 ### Finishing
 
 #### One more time - questions?
 
-Ask for questions.  Attendees may have been writing down questions, intent on not interupting your demonstration.
+Ask for questions.  Attendees may have been writing down questions, intent on not interrupting your demonstration.
 
 #### Thank them
 
-Thank your attendees for their time.  While you may have spent more time preparing and presenting, you did interupt their day to present your content.  Presenting and serving someone else is a highly regarded activity - so thank them for the opportunity by recognizing their important contribution and time.
+Thank your attendees for their time.  While you may have spent more time preparing and presenting, you did interrupt their day to present your content.  Presenting and serving someone else is a highly regarded activity - so thank them for the opportunity by recognizing their important contribution and time.
 
 #### Explain and Send Followup
 

@@ -14,7 +14,7 @@ As the class went on, I learned a little bit about strong typing variables and h
 
 Readers of this column know that I'm no stranger to opening up about my mistakes from my early career and describing how, in most cases, I'm the "silly" one.  This is one of those cases.  I didn't know much about types of variables because I was using a loosely typed language.  And since I was able to program a guest book with PHP, I certainly knew more than this Java professor.
 
-Fast forward a few years and I had begun to understand the importance and relevance of variable types from my forrays into other languages.  Now, while I like the loose-typed flexibility of PHP, I also appreciate the accuracy, predictability and consistency strong typed variables can bring.  
+Fast forward a few years and I had begun to understand the importance and relevance of variable types from my forays into other languages.  Now, while I like the loose-typed flexibility of PHP, I also appreciate the accuracy, predictability and consistency strong typed variables can bring.  
 
 I'm going to assume that you're familiar with weak and strong typing and have a general understanding of how PHP handles variables.  
 (For more background, check out Wikipedia articles about [Data Type](http://en.wikipedia.org/wiki/Data_type) and [Strong and Weak Typing](http://en.wikipedia.org/wiki/Strong_and_weak_typing).  This article's code examples will focus more on method type hinting and not casting of types.

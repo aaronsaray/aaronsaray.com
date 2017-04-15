@@ -6,7 +6,7 @@ tags:
 ---
 So, luckily, my current employer will pay and make arrangements for me to attend one major conference each year.  Last year I attended Mysqlconf, the year before, Zend Con.
 
-Which should I goto this year?  Here are the things to consider:
+Which should I go to this year?  Here are the things to consider:
 	
   * I don't have a US passport - so it has to be in the US - Unless there is enough lead time to get a passport (how much time does that take anymore these days?  Do I need to wear the mark of the beast now? *squints at Real-ID*)
 	

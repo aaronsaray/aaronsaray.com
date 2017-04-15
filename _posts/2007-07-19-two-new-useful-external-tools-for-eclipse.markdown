@@ -10,7 +10,7 @@ In my posting about [Integrating PHPDocumentor into Eclipse]({% post_url 2007-07
 
 **SVN Update - resource refresh**
 
-I have a specific project at the top of my PHP Explorer called _release.  It has all of the newest release folders and repos attached to it.  No matter what tag I'm working on, that one always has the newest code thats in production for this release.  Because promotes and updates go into it all the time, I usually have to remember to do the updates by hand in the file system (or actually now I can use the [tortoise plugin]({% post_url 2007-07-14-eclipse-integration-with-tortoise-svn %}) and then make sure to refresh the project to bring in any new files and update their properties.
+I have a specific project at the top of my PHP Explorer called _release.  It has all of the newest release folders and repos attached to it.  No matter what tag I'm working on, that one always has the newest code that's in production for this release.  Because promotes and updates go into it all the time, I usually have to remember to do the updates by hand in the file system (or actually now I can use the [tortoise plugin]({% post_url 2007-07-14-eclipse-integration-with-tortoise-svn %}) and then make sure to refresh the project to bring in any new files and update their properties.
 
 I wanted to automate this process so I wrote a batch file which basically looks like this [edited for privacy for ("the triangle")]
 

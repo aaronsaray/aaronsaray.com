@@ -22,7 +22,7 @@ Let me give an example.  Say, there are three social networks out there that do 
 
   2. Build a pluggable system for any network, then build a MySpace plugin
 
-  3. Build a system with a basic framework to allow plugable items, but hard code in the MySpace dependency
+  3. Build a system with a basic framework to allow pluggable items, but hard code in the MySpace dependency
 
 Obviously, you now know my desire would be #3.  Because, by the time you finished #2, MusicEar and defNotes may be out of business.  And #1 doesn't allow much flexibility for future networks that you don't know about yet.  
 

@@ -4,7 +4,7 @@ title: Tamper Data Firefox Extension - is it worth it?
 tags:
 - IDE and Web Dev Tools
 ---
-As you can probably tell from my last test of a firefox extension [here]({% post_url 2007-06-24-load-time-analyzer-for-firefox %}), I am constantly looking for new tools to make my job more accurate (see: lazier).  Another similar extension I came across is [Tamper Data](https://addons.mozilla.org/en-US/firefox/addon/966).  Tamper Data doesn't have alot of documentation, so it was harder to actually determine the uses of this extension.  Some tutorials on the net claimed that Tamper Data was better than Live Headers or Load Time Analyzer.  So, I decided to try it out.  Lets see some screenshots and some features:
+As you can probably tell from my last test of a firefox extension [here]({% post_url 2007-06-24-load-time-analyzer-for-firefox %}), I am constantly looking for new tools to make my job more accurate (see: lazier).  Another similar extension I came across is [Tamper Data](https://addons.mozilla.org/en-US/firefox/addon/966).  Tamper Data doesn't have a lot of documentation, so it was harder to actually determine the uses of this extension.  Some tutorials on the net claimed that Tamper Data was better than Live Headers or Load Time Analyzer.  So, I decided to try it out.  Lets see some screenshots and some features:
 
 **Lets Start Tamper Data**
 
@@ -42,4 +42,4 @@ The options here include the ability to tamper with the request or all items, ca
 
 **Is it worthwhile?**
 
-It all comes down to what you're looking to do.  IF you have a legitimate use in your testing (ie you're working directly with headers or you're vuln testing), this tool is a no brainer - get it!  However, if you're working on standard development, or just curious from time to time on your headers, you should go with the Load Time Analyzer instead - because of its advanced configuration options.  It does what it does better.
+It all comes down to what you're looking to do.  IF you have a legitimate use in your testing (ie you're working directly with headers or you're vuln testing), this tool is a no-brain-er - get it!  However, if you're working on standard development, or just curious from time to time on your headers, you should go with the Load Time Analyzer instead - because of its advanced configuration options.  It does what it does better.

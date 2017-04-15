@@ -9,7 +9,7 @@ When running YSlow the other day, I was reminded that I was loading 2 stylesheet
 
 **Combine your Print and Screen stylesheets using the @media tag**
 
-For example, in my print stylesheet, I wanted all input boxes with class 'userinfo' to be hidden.  Instead of doing that, I now have one stylesheet with this exerpt:
+For example, in my print stylesheet, I wanted all input boxes with class 'userinfo' to be hidden.  Instead of doing that, I now have one stylesheet with this excerpt:
 
 ```css
 input.userinfo {

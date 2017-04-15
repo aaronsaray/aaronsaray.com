@@ -8,7 +8,7 @@ I find it very difficult to find out information about my local elected official
 
 Any way, I came up with this website that one might call MyGovernment.io.  The goal is simple - to put this data into digestible formats.  There is very little useful information unless you're willing to search really deep and take notes.
 
-**Mission:** Our mission is to increase the transparence of our elected officials.  
+**Mission:** Our mission is to increase the transparency of our elected officials.  
 **Vision:** Our vision is to see a society of informed electorates.
 
 I'd start with a very simple location based solution.  Basically, we're going to use google maps to show your location and draw districts on your screen.  Then, on the right hand side, there are more details about your representatives.

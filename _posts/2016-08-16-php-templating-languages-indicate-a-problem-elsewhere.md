@@ -65,7 +65,7 @@ Hola, mi nombre es {{ user.name|e }}
 ```
 {% endraw %}
 
-This is a super easy way of using the HTML escaping strategy in Twig.  But I'd argue against this reason of doing things because - well - because of reason number one.  If the consensus is that designers or front-end people don't have the necessary skillset to use PHP as their template language, you're assuming that they do have the skillset or will remember to escape all user input (boy - that sounds very programmery to me).  As a matter of fact, even disciplined back-end programmers forget or overlook proper escaping from time to time. :)
+This is a super easy way of using the HTML escaping strategy in Twig.  But I'd argue against this reason of doing things because - well - because of reason number one.  If the consensus is that designers or front-end people don't have the necessary skill-set to use PHP as their template language, you're assuming that they do have the skill-set or will remember to escape all user input (boy - that sounds very programmery to me).  As a matter of fact, even disciplined back-end programmers forget or overlook proper escaping from time to time. :)
 
 **Some other argument**  
 Yup - there are a lot more arguments - and I don't need to get into the details.  
@@ -105,7 +105,7 @@ Another thing that this helps with is distilling complex information down into e
 
 In some systems, you might get a collection of books - and pass that to the view.  The view might be responsible for retrieving the author information.  Worst case scenario - there are additional calls to the data source *from the view* to get the author information.
 
-Instead, with the view model paradigm, all of that looping and data retrieval is done before the view file even gets ahold of it.  And instead of sending data objects to the view, we're probably just going to build a very simple array of data.
+Instead, with the view model paradigm, all of that looping and data retrieval is done before the view file even gets a hold of it.  And instead of sending data objects to the view, we're probably just going to build a very simple array of data.
 
 ### End Notes
 

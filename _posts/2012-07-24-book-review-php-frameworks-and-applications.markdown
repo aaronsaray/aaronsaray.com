@@ -21,6 +21,6 @@ But let me break it down why I like it...
 
   * It talks about testing things that we don't normally think through: front end, user acceptance, service layer API, and more
 
-  * It has a lot of realworld thoughts
+  * It has a lot of real-world thoughts
 
 It basically went through a lot of the things that a mid level PHP programmer needs to learn.  From proper architecture, testing, planning, and even talk about the risks of Technical Debt, this book had it all.  I think it's a great addition to anyone's bookshelf.

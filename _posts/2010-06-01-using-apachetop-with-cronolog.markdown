@@ -16,7 +16,7 @@ Pretty simple - just keeping my logs separated.
 
 ### My webtop.sh script
 
-In order to make it easier on myself, I now envoke apachetop with this bash script.
+In order to make it easier on myself, I now invoke apachetop with this bash script.
     
     #!/bin/bash
     apachetop -T 3600 -f "/etc/httpd/logs/`date +%Y`/`date +%m`/`date +%Y`-`date +%m`-`date +%d`-access_log"

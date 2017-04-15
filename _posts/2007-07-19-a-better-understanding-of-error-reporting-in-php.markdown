@@ -4,7 +4,7 @@ title: A Better Understanding of Error Reporting in PHP
 tags:
 - PHP
 ---
-While working on a website for ("the triangle"), I came to a page running locally that just stopped - blank.  This particular website was not using output buffering - so there is no excuse for a blank page.  For whatever reason (laziness, stupidity, thursdayness), I haven't checked my php.ini file for error reporting in the last few months... and for whatever reason a long time ago, I decided to go back to standard error reporting.  Well unfortunately, this means months of developing has gone by on this particular set of websites that I was possibly missing errors (nevermind everything has successfully went through QA...hrm...)  At any rate, I jumped out to PHP's website - eager and ready to copy a quick fix for my error reporting issue.  As I was getting ready to copy an error_reporting() line, I realized: I don't fully understand what I want to do here...Well, thats never good - copying code and not fully understanding it... so lets fix this.  Lets talk about error reporting.
+While working on a website for ("the triangle"), I came to a page running locally that just stopped - blank.  This particular website was not using output buffering - so there is no excuse for a blank page.  For whatever reason (laziness, stupidity, thursdayness), I haven't checked my php.ini file for error reporting in the last few months... and for whatever reason a long time ago, I decided to go back to standard error reporting.  Well unfortunately, this means months of developing has gone by on this particular set of websites that I was possibly missing errors (never-mind everything has successfully went through QA...hrm...)  At any rate, I jumped out to PHP's website - eager and ready to copy a quick fix for my error reporting issue.  As I was getting ready to copy an error_reporting() line, I realized: I don't fully understand what I want to do here...Well, that's never good - copying code and not fully understanding it... so lets fix this.  Lets talk about error reporting.
 
 **Where to error report**
 
@@ -28,7 +28,7 @@ For those familiar with bitwise operators, the last paragraph probably seemed pr
 
 **What error reporting should I be using?**
 
-Well, as I said above, I'm assuming that you're not displaying errors on the production box, so we could - theoretically - use the same error reporting on the production box as well as the development box.  However, if you're handling alot of hits, writing alot of errors to the log file might start to overwhelm - so I would suggest using:
+Well, as I said above, I'm assuming that you're not displaying errors on the production box, so we could - theoretically - use the same error reporting on the production box as well as the development box.  However, if you're handling a lot of hits, writing a lot of errors to the log file might start to overwhelm - so I would suggest using:
 
 ```php?start_inline=1
 error_reporting(E_ALL)
@@ -48,7 +48,7 @@ E_ALL is set and any thing that is E_STRICT is also set (as E_ALL doesn't includ
 
 From the PHP manual for E_STRICT: Enable to have PHP suggest changes to your code which will ensure the best interoperability and forward compatibility of your code.
 
-Well it might be necessary to write code that has limited backwards compatibililty - and this might generate E_STRICT errors.  I would suggest looking for a different way to accomplish your task, however.
+Well it might be necessary to write code that has limited backwards compatibility - and this might generate E_STRICT errors.  I would suggest looking for a different way to accomplish your task, however.
 
 **What if I'm using 3rd party code - and they don't code to the same standard as I?**
 

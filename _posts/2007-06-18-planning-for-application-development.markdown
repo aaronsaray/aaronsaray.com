@@ -64,7 +64,7 @@ I broke down my idea into bullet points and main headings:
 	
     * updates to the system itself
 
-Additionally, I took apart each one of these modules and listed out my concerns on each... and the things I'd need to learn and figure out - so more indepth.
+Additionally, I took apart each one of these modules and listed out my concerns on each... and the things I'd need to learn and figure out - so more in-depth.
 
 The commonalities I came up with was the Self tests are very important (ie: don't fail a test if there is no connection to the internet or if the versions of PHP don't match), alert specificity (ie: do we alert right away, or are there multiple tests performed on a failed test... so to reduce false positives), do we alert on successes, are alerts customized by plugin, agent configuration, etc).
 

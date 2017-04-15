@@ -12,7 +12,7 @@ When I use an IDE, I expect for it to do everything I need for my project, from 
 
 [ab](http://httpd.apache.org/docs/2.0/programs/ab.html) is a pretty versatile tool for load testing that comes with the standard apache http webserver install.  In order to get the best usage out of this tool, you should read up on the online manual.  However, we're going to cover a few of the features that are part of this demonstration here.
 
-**-c  Concurency**
+**-c  Concurrency**
 
 Number of requests to perform at one time.  This defaults to 1.  I tend to bump this up a bit in order to simulate a high traffic period.
 
@@ -22,7 +22,7 @@ Enable the HTTP keepAlive feature.  Default is no keep alive.  To do standard te
 
 **-n  Number of Requests**
 
-The number of requests to do during this session.  Default is 1, so you PROBABLY want to create a higher number here.  Remember that the number of requests will be split accross your concurency setting.
+The number of requests to do during this session.  Default is 1, so you PROBABLY want to create a higher number here.  Remember that the number of requests will be split across your concurrency setting.
 
 **-t timelimit**
 
@@ -64,7 +64,7 @@ You'll notice that you have the option to click on variables.  Eclipse has the a
 
 **Repeat the process with the -n option.**  I selected _ -n ${string_prompt:Number of requests?:40}_.
 
-**Finally, create the prompt for the URL to test.** (Remember, like I said, you might end up creating these more scripted by hardsetting these values in the future.)  I selected _${string_prompt:URL to test?}_.
+**Finally, create the prompt for the URL to test.** (Remember, like I said, you might end up creating these more scripted by hard-setting these values in the future.)  I selected _${string_prompt:URL to test?}_.
 
 **Click the Common tab, check external tools under the favorites menu.**
 

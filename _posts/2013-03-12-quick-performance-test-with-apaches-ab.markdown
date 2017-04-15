@@ -23,7 +23,7 @@ function slowRunningFunction()
 slowRunningFunction();
 ```
 
-Obviously, the sleep() method is the culprit here, but I want to prove it!  Lets test with a concurecy of 5 connections for a total of 20 tests.  (Each connection should run probably 4 times if everything is even).
+Obviously, the sleep() method is the culprit here, but I want to prove it!  Lets test with a concurrency of 5 connections for a total of 20 tests.  (Each connection should run probably 4 times if everything is even).
 
 Here is the output.
 

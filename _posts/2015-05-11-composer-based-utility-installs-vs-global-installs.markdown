@@ -31,6 +31,6 @@ Ruh roh - all this time, I had been looking at the docs for the newest 4.x versi
 
 Now, I think I finally get it.  Let me summarize for those who have been dense for years like me:
 
-- Harddrive space and bandwidth are cheap.  There is no need to share the install of a library for those reasons.
+- Hard-drive space and bandwidth are cheap.  There is no need to share the install of a library for those reasons.
 - Always read/document and test against a known version.  If you don't include the library as a declaration (I'm looking at you composer.lock file), you can't guarantee what version of the library you're using.
 - Don't be stubborn - change with the times.  Sometimes, when everyone's doing it someway (composer require phpunit/phpunit), there's a reason why

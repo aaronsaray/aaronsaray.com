@@ -11,7 +11,7 @@ After reading some of the documentation, I found that once you sign up for a bit
 
 ### Log In to Bit.Ly
 
-[Goto bit.ly](http://bit.ly) and login. (or create an account if you want).  This is necessary so that you can now create and track your links.
+[Go to bit.ly](http://bit.ly) and login. (or create an account if you want).  This is necessary so that you can now create and track your links.
 
 ### Modify your domain
 
@@ -29,7 +29,7 @@ On the popup, choose the advanced option link.  Make sure to choose temporarily 
 
 ### Try it out
 
-Now, goto [bit.ly](http://bit.ly) and shorten an URL.  I'm shortening **http://aaronsaray.com/blog**.  This is now: **http://bit.ly/cZqq0e**.  When I enter [http://saray.me/cZqq0e](http://saray.me/cZqq0e) into the browser, it serves the short URL from bit.ly.
+Now, go to [bit.ly](http://bit.ly) and shorten an URL.  I'm shortening **http://aaronsaray.com/blog**.  This is now: **http://bit.ly/cZqq0e**.  When I enter [http://saray.me/cZqq0e](http://saray.me/cZqq0e) into the browser, it serves the short URL from bit.ly.
 
 Yay!
 

@@ -22,7 +22,7 @@ I don't know...  Sorry, big let down!  But, let me try.
 
 I think it's the way they choose to create their code.  It seems to have a nice artistry to it.  You just feel good about the way the classes interact or how the methods are formatted.  You feel like when you scroll through the code, you can stop at any one point and immediately understand what is happening here.  It's the artistry in the code.
 
-If you get to know the programmer, it's the way they talk about programming.  If they talk about solving for the task or if they talk about creating something new.  Are they solving problems or creating something they're proud of?  How do they communicate about it?  Is it a love or a skillset?
+If you get to know the programmer, it's the way they talk about programming.  If they talk about solving for the task or if they talk about creating something new.  Are they solving problems or creating something they're proud of?  How do they communicate about it?  Is it a love or a skill-set?
 
 Does the programmer randomly learn and implement new things without thinking.  That's different than choosing to go out and learn more - this is more a byproduct.  Can they not help but absentmindedly try out the newest technology?  Do they refactor mid-stream while writing something that wasn't even complete yet?  
 

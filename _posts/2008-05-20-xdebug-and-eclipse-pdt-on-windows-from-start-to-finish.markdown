@@ -156,7 +156,7 @@ The next thing I wanted to set up was Xdebug's stack trace feature.  This will g
     xdebug.trace_output_dir = c:/tmp
     xdebug.trace_output_name = trace.%H
 
-The first line turns on tracing on every script (this is also useful because at "the triange" we use some PHP scripts to serve CSS), the next one collects return results from functions into the trace (on larger functions/projects, this might be slow...) and the third one adds where we want to put the script.  The last setting is to name the actual trace file.  In this case, I'm using the Host name.  There are additional naming cards available - check out the [documentation for these](http://xdebug.org/docs/execution_trace#trace_output_name).  I found hostname to be the most useful - or %R on occassion - which is the REQUEST_URI.
+The first line turns on tracing on every script (this is also useful because at "the triangle" we use some PHP scripts to serve CSS), the next one collects return results from functions into the trace (on larger functions/projects, this might be slow...) and the third one adds where we want to put the script.  The last setting is to name the actual trace file.  In this case, I'm using the Host name.  There are additional naming cards available - check out the [documentation for these](http://xdebug.org/docs/execution_trace#trace_output_name).  I found hostname to be the most useful - or %R on occasion - which is the REQUEST_URI.
 
 To generate my trace, I used this code:
 
@@ -232,7 +232,7 @@ Not very exciting... so lets look at our tools for Windows...
 
 ### WinCacheGrind
 
-[![](/uploads/2008/wincachegrind-150x91.gif)](/uploads/2008/wincachegrind.gif){: .thumbnail}[WinCacheGrind](http://sourceforge.net/projects/wincachegrind/) is the windows version of the software that can parse these profile files and generate useable statistics.  Since development has ceased in 2005, this project isn't a very likely candidate for doing profiling.  You can see from the screenshot that our very simple script generates only a few details - but the actual UI is very limited - with not a lot of features (or maybe kcachegrind has spoiled me)...
+[![](/uploads/2008/wincachegrind-150x91.gif)](/uploads/2008/wincachegrind.gif){: .thumbnail}[WinCacheGrind](http://sourceforge.net/projects/wincachegrind/) is the windows version of the software that can parse these profile files and generate usable statistics.  Since development has ceased in 2005, this project isn't a very likely candidate for doing profiling.  You can see from the screenshot that our very simple script generates only a few details - but the actual UI is very limited - with not a lot of features (or maybe kcachegrind has spoiled me)...
 
 ### KcacheGrind
 

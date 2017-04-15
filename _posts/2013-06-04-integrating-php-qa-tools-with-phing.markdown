@@ -172,7 +172,7 @@ Next, setting up a bunch of properties.
 
 Next, software metrics section.  This is not really quality based stuff, just a count. 
 
-In general, I delete the report directory for each tool, and then crecreate it.  Quiet = true allows me to not see an error if this is the first time.
+In general, I delete the report directory for each tool, and then re-create it.  Quiet = true allows me to not see an error if this is the first time.
 
 PHPLoc (Lines of Code) is ran next.  You'll notice I exclude the Zend Framework Library and the build files.  This is common throughout all sections now.  This particular item happens inside of a try/catch just in case phploc is not installed.  It nicely tells you the way to install the app if you're not sure.  What's nice about this is the exec nested command allows me to put all my arguments as elements, as well as execute a checkreturn - which transfers out exceptions.
 

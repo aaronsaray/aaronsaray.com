@@ -60,7 +60,7 @@ I'm eagerly watching HTML5 and XHTML2 - to see who comes out victorious.  I'm ho
 
   * Cool things that were removed: attributes align, alink, link,text,vlink,background,bgcolor, etc... all of that CSS based items.  The only thing that I have to work on myself is the size attribute which is now missing.  I used to use it to determine how many chars would display. Need to use css width instead - which I SHOULD have been doing anyway!
 
-  * Other API's that are introduced include persistent storage, dragable items and registering for specific protocols for a web based application. This will be cool to see how these are implemented beside things like gears and the dragable libraries already in JS.
+  * Other API's that are introduced include persistent storage, draggable items and registering for specific protocols for a web based application. This will be cool to see how these are implemented beside things like gears and the draggable libraries already in JS.
 
   * Another real cool thing - the getElementsByClassName() access for DOM based languages is now added.
   

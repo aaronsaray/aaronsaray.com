@@ -19,7 +19,7 @@ If you want to become a great estimator, there is no magical way to do this but 
 
 How easy is it to just pump out a block of code or a feature on your software with no timelimit or timeline?  Let me tell you - it is VERY easy and also VERY great.  It feels awesome to accomplish a task without a marketing, business, or even arbitrary limitation of time.  However, if you find yourself with this good fortune, do not rest!
 
-Instead, **always estimate all of your tasks** even if you're not required to submit one.  Then, track your time and at the end of the project compare your totals.  This research is yours and yours alone.  You will learn to become a better estimator and know your skillset and timelines best this way.
+Instead, **always estimate all of your tasks** even if you're not required to submit one.  Then, track your time and at the end of the project compare your totals.  This research is yours and yours alone.  You will learn to become a better estimator and know your skill-set and timelines best this way.
 
 ### Planning
 

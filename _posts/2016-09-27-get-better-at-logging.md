@@ -15,7 +15,7 @@ No it doesn't.  Storage is cheap.  Stop it.
 **Excuse 2: Logging to a disk is a bottleneck**  
 The majority of my fellow PHP developers are not working on projects where the logging to a file is going to be the bottleneck - or there isn't that much traffic that it matters.  And if that's a real big deal, use a different logging mechanism - logs don't just exist in the filesystem.  Stop that.
 
-**Excuse 3: The log file becomes too unweildy to find information in**  
+**Excuse 3: The log file becomes too unwieldy to find information in**  
 Well, I can't argue that a big logging file can be a problem - but that doesn't mean there aren't solutions for this.
 
 So what do we do?

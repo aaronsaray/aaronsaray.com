@@ -11,11 +11,11 @@ categories:
 tags:
 - PHP
 ---
-I actually very much enjoy spreading “the word” on PHP. I go to a lot of conferences, and present a lot. One of the most interesting concepts I’ve developed lately, however, is not a presentation but more of a group coding session. This is how it goes…
+I actually very much enjoy spreading “the word” on PHP. I go to a lot of conferences, and present a lot. One of the most interesting concepts I've developed lately, however, is not a presentation but more of a group coding session. This is how it goes...
 
-I put my IDE up on the projector and present a challenge to the group of PHP coders. We solve the problem presented on the screen using the most basics of HTML, CSS, and javascript. Who cares if it looks nice? We’re not doing client side validation here. But here’s the kicker: solve the problem using plain, vanilla PHP. No frameworks, no libraries, only plain PHP and probably php.net searches. So, I present the problem, and then the group chimes in. Inevitably, it starts out slow, but momentum builds. Before you know it, its a spirited discussion of pro’s and con’s of doing things in various ways. Once the problem is solved, I run a number of pre-arranged tests against the code, making sure it functions as specified, meets the criteria, and is secure.
+I put my IDE up on the projector and present a challenge to the group of PHP coders. We solve the problem presented on the screen using the most basics of HTML, CSS, and javascript. Who cares if it looks nice? We're not doing client side validation here. But here's the kicker: solve the problem using plain, vanilla PHP. No frameworks, no libraries, only plain PHP and probably php.net searches. So, I present the problem, and then the group chimes in. Inevitably, it starts out slow, but momentum builds. Before you know it, its a spirited discussion of pro's and con's of doing things in various ways. Once the problem is solved, I run a number of pre-arranged tests against the code, making sure it functions as specified, meets the criteria, and is secure.
 
-Recently, I was invited up to [Tech on Tap](http://www.techontap.org/) in Appleton to do this group coding challenge. We did the tasks, and had reasonable success. However, not that my way is ‘the best’ per se, but I promised that I’d send them my version of solving this problem in plain vanilla PHP. Nothing too over the top – just something I could knock out in 30 minutes max.
+Recently, I was invited up to [Tech on Tap](http://www.techontap.org/) in Appleton to do this group coding challenge. We did the tasks, and had reasonable success. However, not that my way is ‘the best' per se, but I promised that I'd send them my version of solving this problem in plain vanilla PHP. Nothing too over the top – just something I could knock out in 30 minutes max.
 
 So, without further delay, here is the challenge:
 
@@ -29,11 +29,11 @@ So, without further delay, here is the challenge:
     Special Challenge Instructions:
     Should never generate the Webpage Expired message.
     
-Now, I’m not going to post what the group came up with. That’s not a good reflection of a final product (it was a new and exciting experience, plus I did not allow time to refactor – so it was what it was.)
+Now, I'm not going to post what the group came up with. That's not a good reflection of a final product (it was a new and exciting experience, plus I did not allow time to refactor – so it was what it was.)
 
-However, here is my quick and dirty version of doing this in plain PHP. I made sure to do this in under 30 minutes, play the TV and music loudly (to mimic distractions like that are in a group setting) and even had an IM conversation. There are a number of refactors I’d do now that I look at this after I did it but I wanted to be fair and show you exactly what I would have made. :)
+However, here is my quick and dirty version of doing this in plain PHP. I made sure to do this in under 30 minutes, play the TV and music loudly (to mimic distractions like that are in a group setting) and even had an IM conversation. There are a number of refactors I'd do now that I look at this after I did it but I wanted to be fair and show you exactly what I would have made. :)
 
-**Please note: those who randomly troll for code – this is not the best code example – it was a ‘challenge’**
+**Please note: those who randomly troll for code – this is not the best code example – it was a ‘challenge'**
 
 **`index.php`**
 ```php
@@ -175,13 +175,13 @@ Note: I did not create a success page.
 
 ### The break down
 
-I believe this handled all of the issues. Looking back, I’d have liked to make it more usable – put the user data back in the form when there was an error, etc. But the main goals are achieved:
+I believe this handled all of the issues. Looking back, I'd have liked to make it more usable – put the user data back in the form when there was an error, etc. But the main goals are achieved:
 
 - This code will not generate an expired message
 - Never work with unsanitized data
 - Use the built in PHP tools that you have
 - Give context to errors
-- Don’t allow insane values – who has a name that is 6 billion chars long?
-- Like I said, I’d refactor and do this again. In fact, maybe some day that would be a good presentation – start out with a piece of code and refactor it until its relatively perfect?
+- Don't allow insane values – who has a name that is 6 billion chars long?
+- Like I said, I'd refactor and do this again. In fact, maybe some day that would be a good presentation – start out with a piece of code and refactor it until its relatively perfect?
 
 Feel free to comment/ask questions. Thanks!

@@ -59,7 +59,7 @@ Nope.  Didn't work either.  There was just no output what so ever - no error, no
 
 **~jk php shell**
 
-[This project](http://jan.kneschke.de/projects/php-shell) seemed to have alot of potential.  Its an interactive command line interface that allows tab completion, (we should remember that I'm working on windows - which doesn't have support for the readline extension in PHP - which is required for tab completion - Dang!!), verbose output, and more! (Sounds salesy right?).  Anyway, lets do the three tests.
+[This project](http://jan.kneschke.de/projects/php-shell) seemed to have a lot of potential.  Its an interactive command line interface that allows tab completion, (we should remember that I'm working on windows - which doesn't have support for the readline extension in PHP - which is required for tab completion - Dang!!), verbose output, and more! (Sounds salesy right?).  Anyway, lets do the three tests.
 
 They all passed with flying colors.  The more interesting thing is the verbose output.  For example, when we created our new class instance, it dumps (var_dump()s?) the internals to the screen as they would be AFTER construction... see so:
 
@@ -70,7 +70,7 @@ They all passed with flying colors.  The more interesting thing is the verbose o
        '_val' => 'constructor',
     ))
 
-There was an issue, however.  When you create a request that throws a fatal error, you're doen for... The shell exits:
+There was an issue, however.  When you create a request that throws a fatal error, you're done for... The shell exits:
     
     >> $a->_val = 'blah';
     

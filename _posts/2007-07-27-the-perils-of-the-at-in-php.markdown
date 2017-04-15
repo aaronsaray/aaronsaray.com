@@ -9,7 +9,7 @@ A lot of weird things have been happening ever since we introduced a new error h
 
 **What does the @ do?**
 
-For most PHPers, they will answer with: "it supresses the error on that statement."  This isn't entirely true.  It actually internally changes the error_reporting() value at that one statement.  Now, that one statement could also include many statements, if the statement is @require 'myfile.php'... (all actions that happen as that file parses will have error reporting turned off).
+For most PHPers, they will answer with: "it suppresses the error on that statement."  This isn't entirely true.  It actually internally changes the error_reporting() value at that one statement.  Now, that one statement could also include many statements, if the statement is @require 'myfile.php'... (all actions that happen as that file parses will have error reporting turned off).
 
 **Why is the @ harmful to performance**
 
@@ -29,7 +29,7 @@ error_reporting($errorReporting);
 unset($errorReporting);
 ```
     
-As you can see, even tho the internals of PHP are fast, thats a needless set of statements to call.
+As you can see, even tho the internals of PHP are fast, that's a needless set of statements to call.
 
 **When does the @ not function as expected?**
 

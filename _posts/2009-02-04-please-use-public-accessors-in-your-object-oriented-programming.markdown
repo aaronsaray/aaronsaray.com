@@ -144,4 +144,4 @@ print $book->getTitle() . ' was written by ' . $book->getAuthor()
       . ' and has ' . $book->getPageCount() . ' pages';
 ```
 
-So, the point is - use good OO habbit by using public accessors!
+So, the point is - use good OO habit by using public accessors!

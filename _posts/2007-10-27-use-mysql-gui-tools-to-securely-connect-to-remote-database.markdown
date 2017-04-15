@@ -30,7 +30,7 @@ In this case, it'll be our server 'dreamhost.server.com' on port 22 using SSH.
 
 We're going to make a tunnel from our local source port to our remote destination port at the server.  Choose a source port number that is not in use on your machine and put it in the source box.  Finally, put the _mysql_ server name, colon, mysql port in the destination box.
 
-In my example, I am using source of 9999, 'local' destination (thats local to the ssh server) of mysql.dreamhost.server.com:3306 (3306 being the standard mysql port).
+In my example, I am using source of 9999, 'local' destination (that's local to the ssh server) of mysql.dreamhost.server.com:3306 (3306 being the standard mysql port).
 	
 3) Next, click 'Open' (You might want to save the session for future reference), and then log in using your credentials (In the future, you might want to set up a public/private key to remove the need for you to interact with the login - you might also want to set up a new SSH user with no permissions to run any commands to increase security.  They only need to connect!)
 	

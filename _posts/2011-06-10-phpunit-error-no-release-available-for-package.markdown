@@ -15,7 +15,7 @@ I decided to execute a remote-list command - it was a thought that maybe I could
     
     pear remote-list -c phpunit
 
-This finally gave me a worthwhile error! "The value of the config option cache_dir (/tmp/pear/cache) is not a directory and attempts to creat the directory have failed"
+This finally gave me a worthwhile error! "The value of the config option cache_dir (/tmp/pear/cache) is not a directory and attempts to create the directory have failed"
 
 So, I finally was successful after the following two commands:
     

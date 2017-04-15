@@ -16,7 +16,7 @@ So without further rambling, lets get started with ... private constructors
 
 ### Our first code example.  Lets create a proper singleton pattern.
 
-While the term 'proper' is debatable, the most improper solution is NOT to make a non-existent or empty constructor.   Instead, lets make it protected.  We know that a protected method cannot be ran outside of the class context (hint hint ;)) but it can be extended by a child class.  (Note: I rarely ever use private variables anymore.  Tehre are instances, but most often, it appears to be sufficient to allow the variables to be private.  -- once again debatable).  Here's our example:
+While the term 'proper' is debatable, the most improper solution is NOT to make a non-existent or empty constructor.   Instead, lets make it protected.  We know that a protected method cannot be ran outside of the class context (hint hint ;)) but it can be extended by a child class.  (Note: I rarely ever use private variables anymore.  There are instances, but most often, it appears to be sufficient to allow the variables to be private.  -- once again debatable).  Here's our example:
 
 ```php?start_inline=1
 class classTest {
@@ -150,7 +150,7 @@ Our output is:
 
     object(stdClass)#1 (1) { ["test"]=>  string(4) "blah" }
 
-So we know, without having attributes defined, we can still assign them publicly.  So, maybe thats what my class is doing?  (see der note... this is all pointless right now - but I'm on a roll!!!)
+So we know, without having attributes defined, we can still assign them publicly.  So, maybe that's what my class is doing?  (see der note... this is all pointless right now - but I'm on a roll!!!)
 
 Lets put a very dirty hack in - and print out to the screen when the __set method is called.
 
@@ -204,7 +204,7 @@ Results in:
 
 **Fatal error**: Uncaught exception 'Exception' with message 'We can't set this because you're not extending it!' in C:\DEVELOPMENT\temp\methodtest.php:32 Stack trace: #0 C:\DEVELOPMENT\temp\methodtest.php(46): classTest->__set('newMessage', 'yay!') #1 {main} thrown in **C:\DEVELOPMENT\temp\methodtest.php** on line **32**
 
-Well, lets add on our extended class, and change our code that we're envoking:
+Well, lets add on our extended class, and change our code that we're invoking:
 
 ```php?start_inline=1
 class extenderClassTest extends classTest
@@ -248,7 +248,7 @@ public function __get($item)
 }
 ```
 
-I first tried putting the reference character (ampersand) in front of the $this... syntax error.  Infront of the _protectedVars - still no dice - syntax error.  Next, try putting an ampersand in front of __get(... nopers - no errors but doesn't work.  Lets check out our assignment code:
+I first tried putting the reference character (ampersand) in front of the $this... syntax error.  In front of the _protectedVars - still no dice - syntax error.  Next, try putting an ampersand in front of __get(... nopers - no errors but doesn't work.  Lets check out our assignment code:
 
 ```php?start_inline=1
 $myItem = $myClassTest->constructMessage;

@@ -29,7 +29,7 @@ Someone who wasn't familiar with that TLD may not understand that that is a web 
 
 Second, when using subdomains for your application, it can be more efficient to not send main 'application cookies' with the request.  If your main application is at aaronsaray.com, the session cookie would be of the domain aaronsaray.com - which would be sent to files.aaronsaray.com, images.aaronsaray.com, etc.  If I wanted to eek every last bit of performance out of having assets on a different subdomain, I wouldn't want the browser to recognize these subdomains and send the cookie.  If I had www.aaronsaray.com, and set the cookie to belong to that domain, requests to images.aaronsaray.com would not receive that cookie.
 
-Finally, auto completion, both user and tool, factor in.  In my browser address bar, I typed in kjkjerjrr and hit enter.  My browser politely informed me that no record was found for http://www.kjkjerjrr.com/.  Then, tell my mom to goto aaronsaray.com.  I will give you a million dollars if you can get that lady not to type WWW in front of every URL she ever hears.  Although it will resolve fine, it does require another redirect to get to the proper content.  On her dialup, that is noticeable!
+Finally, auto completion, both user and tool, factor in.  In my browser address bar, I typed in kjkjerjrr and hit enter.  My browser politely informed me that no record was found for http://www.kjkjerjrr.com/.  Then, tell my mom to go to aaronsaray.com.  I will give you a million dollars if you can get that lady not to type WWW in front of every URL she ever hears.  Although it will resolve fine, it does require another redirect to get to the proper content.  On her dialup, that is noticeable!
 
 ### In support of no-www
 
@@ -67,7 +67,7 @@ Once you pick your www or not-www domain name, stick with it.  Always provide li
 
 ### What do I choose?
 
-Well, there are two strong camps here.  The [yes-www.org](http://web.archive.org/web/20080107105728/www.yes-www.org/www-is-not-deprecated/) and the [no-www.org](http://no-www.org/) both have compelling reasons.  But, after looking at some of my web high performance heros like facebook and yahoo, I've decided:
+Well, there are two strong camps here.  The [yes-www.org](http://web.archive.org/web/20080107105728/www.yes-www.org/www-is-not-deprecated/) and the [no-www.org](http://no-www.org/) both have compelling reasons.  But, after looking at some of my web high performance heroes like facebook and yahoo, I've decided:
 
 **From now on, my new websites will have the WWW based domain as their primary address.**
 

@@ -28,7 +28,7 @@ I use the software just enough to understand what the goal is that it's solving.
 
 What this does is allows me to break from the mold that every power user falls into - the fear of change.  If you use the old software too much, you might fall into that manner.  For example, on this project, the old version had a search term and a location search box.  They were separate and worked in tandem some of the time.  I saw this, but I didn't ever use it.  I never learned what happened if you put in a search term but not a location.  I never learned what happened when you did both.  Instead, I created a single box moving forward and said "people should type whatever they want in here."  If its a location, I'll find that location.  If its a search term, I'll search that.  If its a combination, I'll parse that out too.
 
-The stakeholders were a little confused at first.  But, once they realized what was done, they loved it.  It's funny - now it's already like second nature to them.  Not only do they want what I built, but there are complaints that it doesn't do enough "magic."  If I would have been a power user of the old version, I would not have drempt up this new way of doing things.
+The stakeholders were a little confused at first.  But, once they realized what was done, they loved it.  It's funny - now it's already like second nature to them.  Not only do they want what I built, but there are complaints that it doesn't do enough "magic."  If I would have been a power user of the old version, I would not have dreamt up this new way of doing things.
 
 ### There are negatives...
 

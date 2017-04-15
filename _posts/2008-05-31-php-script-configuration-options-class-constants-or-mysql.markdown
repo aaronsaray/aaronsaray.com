@@ -37,7 +37,7 @@ public static function get($item)
 }
 ```
 
-Turns out, that method of accessing an item points to it as being a static variable and not a constant (nevermind the fact that self::item1 would work...)
+Turns out, that method of accessing an item points to it as being a static variable and not a constant (never-mind the fact that self::item1 would work...)
 
 I have to end up using the constant() function.  Here is my finished testing script:
 

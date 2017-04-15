@@ -22,7 +22,7 @@ It can be difficult when cutting losses effects people.  However, think about it
 
 #### I've cut my losses
 
-The most notable one I can think of was JEMGames.  I bought this package for game hosting. It included some premade PHP code, 1000 flash games, and a gaming system for keeping high scores.  I created this site and promoted the crap out of it.  However, this was a system that many others in the market had - so there was very high competition.  In the end, I found that I was not getting even remotely enough traffic to justify hosting costs.  I terminated the project and archived the games.
+The most notable one I can think of was JEMGames.  I bought this package for game hosting. It included some pre-made PHP code, 1000 flash games, and a gaming system for keeping high scores.  I created this site and promoted the crap out of it.  However, this was a system that many others in the market had - so there was very high competition.  In the end, I found that I was not getting even remotely enough traffic to justify hosting costs.  I terminated the project and archived the games.
 
 A few days ago, I revisited some of my archived projects.  I saw the 1000 flash games from JEMGames.  I was faced with a choice - continue to store them and possibly re-try this idea later - or just delete them and call it a loss.  It was hard to do because I knew I had paid money for this bundle.  In the end, I just deleted the content of this site.  I knew that I really wasn't going to be fully excited to give it a go again, so I decided to cut my losses.  I learned a lot from that venture and I consider that knowledge where the money was spent.
 
