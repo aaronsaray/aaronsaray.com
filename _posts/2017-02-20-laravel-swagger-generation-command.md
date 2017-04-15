@@ -13,8 +13,7 @@ So, check out this little bit of code - maybe you'll find it useful in your proj
 
 **`app/Console/Commands/Swagger/Generate.php`**  
 
-```php
-<?php
+```php?start_inline=1
 /**
  * Generate the swagger docs
  */

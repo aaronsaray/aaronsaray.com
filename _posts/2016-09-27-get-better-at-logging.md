@@ -24,8 +24,7 @@ I submit this as the answer: two log files, one of all the details, and one with
 
 Here is an example of a logging system I have in place.
 
-```php
-<?php
+```php?start_inline=1
 /**
  * Set up error log (WARNING) (logs/error.log) and activity log (logs/activity.log)
  * 

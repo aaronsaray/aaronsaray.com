@@ -8,7 +8,7 @@ I'm a big fan of [PHP DotEnv](https://github.com/vlucas/phpdotenv) for creating 
 
 Now, this is kind of nit-picky, but I never liked the instructions from phpdotenv on how to initialize their code.  This is what they say to do:
 
-```php
+```php?start_inline=1
 $dotenv = new Dotenv\Dotenv(__DIR__);
 $dotenv->load();
 ```
@@ -17,6 +17,6 @@ Ok - so that's not that big of a deal. But, since programmers are lazy and we li
 
 Now, my PHP code looks super simple - just like this:
 
-```php
+```php?start_inline=1
 (new Dotenv\Dotenv(__DIR__))->load();
 ```

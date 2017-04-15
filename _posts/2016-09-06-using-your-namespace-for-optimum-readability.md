@@ -9,8 +9,7 @@ I love [namespaces in PHP](http://php.net/manual/en/language.namespaces.php) as 
 As you know, you can use fully qualified names of classes, but programmers are lazy, so we like to use aliases or just fully import the class.  `MyApp\Service\User` becomes `User` or if you're fancy, `MyApp\Service\User as UserService` yields a better result.  
 Often times, my IDE does some of this work for me.  But let's imagine I let it do that - and I have two User named items, a service and a form.  How often does this happen?
 
-```php
-<?php
+```php?start_inline=1
 use MyApp\Service\User;
 
 class Controller
@@ -23,8 +22,7 @@ Ugh - just not all that readable.  What's the first User?  A service? A model?  
 
 What I've been doing lately is importing my namespaces in my application a step up.  It makes for a more readable solution.  Imagine this code now with my solution:
 
-```php
-<?php
+```php?start_inline=1
 use MyApp\Service;
 use MyApp\Form;
 

@@ -12,8 +12,7 @@ At first it seemed like it was randomly dropping the connection.  Then, I notice
 
 So - since I was using Doctrine, I had some helpers from their DBAL. I made the following function:
 
-```php 
-<?php
+```php?start_inline=1
 /** @var \Doctrine\ORM\EntityManager $em */
 $em = $container['em'];
 
@@ -38,8 +37,7 @@ This function takes the entity manager into the current context.  It's very simp
 
 Now, let's see how this is actually used.  The following code is in my gearman-worker.php file which is one of the workers that is registered with gearman.
 
-```php
-<?php
+```php?start_inline=1
 $worker = new GearmanWorker();
 
 $worker->addFunction('send-message', function(GearmanJob $job) use ($messageService) {

@@ -25,7 +25,7 @@ This argument is simple: Front end or designers can't know the extreme complexit
 
 So, in Twig, you have a for loop - which is very similar to a foreach in PHP - and a simple output statement in the loop.  What's troublesome to me is that the user now has to know that there are two syntaxes in Twig.  The brace-parenthesis which indicates a functional call and double-brace which indicates an output.
 
-```php
+```php?start_inline=1
 <ul>
 <?php foreach ($things as $thing) : ?>
   <li><?= $thing ?></li>

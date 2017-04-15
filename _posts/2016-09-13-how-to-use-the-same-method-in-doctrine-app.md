@@ -10,8 +10,7 @@ So, this is what I did (I'll explain afterward):
 
 **src/Entity/EntityInterface.php**  
 
-```php
-<?php
+```php?start_inline=1
 namespace app\Entity;
 
 interface EntityInterface
@@ -20,8 +19,7 @@ interface EntityInterface
 
 **src/Service/AbstractService.php**  
 
-```php
-<?php
+```php?start_inline=1
 namespace app\Service;
 
 abstract class AbstractService
