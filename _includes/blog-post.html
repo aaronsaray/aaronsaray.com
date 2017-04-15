@@ -1,12 +1,12 @@
-<article>
+<article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-        <h2 id="{{ include.post.id | slugify }}"><a href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a></h2>
+        <h2 itemprop="name headline" id="{{ include.post.id | slugify }}"><a href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a></h2>
     </header>
-    <section class="blog-content">
+    <section class="blog-content" itemprop="articleBody">
         {% if include.excerpt %}
         <p>
             {{ include.post.excerpt | strip_html | truncatewords:75 }}
-            <a class="read-more" href="{{ include.post.url | prepend: site.baseurl }}">(more…)</a>
+            <a class="read-more" href="{{ include.post.url | prepend: site.baseurl }}" title="Read the rest of this post">(more…)</a>
         </p>
         {% else %}
             {% capture now %}{{'now' | date: '%s'}}{% endcapture %}
@@ -23,7 +23,7 @@
         {% endif %}
     </section>
     <footer>
-        <span>{{ include.post.date | date: "%b %-d, %Y" }}.</span>
+        <time datetime="{{ include.post.date | date: '%FT%T%:z' }}" itemprop="datePublished">{{ include.post.date | date: "%b %-d, %Y" }}.</time>
         <span>{{ include.post.tags | join: ', ' }}</span>
     </footer>
 </article>

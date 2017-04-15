@@ -92,6 +92,10 @@ h3 {
   font-size: 1.9rem;
 }
 
+abbr {
+  border-bottom: 0.01rem dotted #e0e0e0;
+}
+
 blockquote {
   margin-left: 0;
   padding-left: 2rem;
@@ -150,7 +154,7 @@ article {
     font-size: 0.8rem;
     padding: 0 0.1rem;
     color: $diminished-font-color;
-    span:first-child {
+    time {
       padding-right: 1rem;
     }
   }

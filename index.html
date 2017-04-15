@@ -2,12 +2,12 @@
 layout: default
 meta_description: Milwaukee PHP Web Developer, Open Source Programmer and Development Manager
 ---
-<p class="leader">Here are some things he has to say:</p>
+<p class="leader">Here are <abbr title="{{ site.posts | size }} technical and business blog posts">some things</abbr> he has to say:</p>
 <section class="entries">
   {% for post in site.posts limit: 5 %}
   {% include blog-post.html post=post excerpt=true %}
   {% endfor %}
   <p class="last-cta">
-    <a href="/blog">See All Posts</a>
+    <a href="/blog" title="See all {{ site.posts | size }} posts">See All Posts</a>
   </p>
 </section>
