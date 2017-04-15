@@ -10,7 +10,7 @@ The other day I was faced with an issue that I need to be able to keep the scrol
 
 **TWO NOTES** First, instead of using local storage, you could also use a cookie.  And second, my project already had jQuery in it - it's not required for this solution.
 
-{% highlight javascript %}
+```javascript
 var $blockList = $('.block-list');
 if ($blockList.length && window.localStorage) {
     $(window).on('unload', function () {
@@ -23,7 +23,7 @@ if ($blockList.length && window.localStorage) {
         $blockList.scrollTop(position);
     }
 }
-{% endhighlight %}
+```
 
 In this example, the div (or really any element) has a class of 'block-list' to be used by this snippet.  Here's the outline of the functionality:
 

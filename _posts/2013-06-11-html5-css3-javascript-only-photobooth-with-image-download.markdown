@@ -19,7 +19,7 @@ What am I talking about?  An online photobooth, with mimimum javascript, HTML5, 
 
 Now, let's check it out.
 
-#### Goals
+### Goals
 
 My goals were simple:
 
@@ -35,11 +35,11 @@ My goals were simple:
 
 Did I accomplish them?  Heck yeah I did.  Let's see what's up.
 
-#### HTML5 Document
+### HTML5 Document
 
 The first part of the HTML document is as follows:
 
-{% highlight HTML %}
+```html
 <body class="modal needAllow">
     <header>
         <h1>Online Photo Booth</h1>
@@ -61,7 +61,7 @@ The first part of the HTML document is as follows:
         <p>The Online PhotoBooth is a completely free, 100% HTML5 (this means NO FLASH!) photo booth and webcam tool online.</p>
         <p>Take snapshots, apply filters, and share with your friends!</p>
     </div>
-{% endhighlight %}
+```
 
 First, the class of `modal` and `needAllow` are on the body.  The modal that is used for this application is purely css.  It activates/deactivates based on the classes on the body.  We'll look at that more in the css and the javascript.  Next of course is the header.  I have this separate because I'm not going to blur out the header with the modal - just the body content.
 
@@ -75,7 +75,7 @@ Finally, the video filters are input buttons of type radio.  This allows CSS3 fi
 
 The next section of the HTML document has the content for when a screenshot is taken.  Obviously, this is hidden at load:
 
-{% highlight HTML %}
+```html
 <div id="screenshot">
     <canvas id="mycanvas"></canvas>
     <div>
@@ -91,7 +91,7 @@ The next section of the HTML document has the content for when a screenshot is t
         <a href="#" id="closeScreenshot">x</a>
     </div>
 </div>
-{% endhighlight %}
+```
 
 The canvas element is where the captured screenshot will go.  Then, the input field allows the user to name the file before they download it.  If its not changed, the placeholder content is used for the filename.  The download button allows the user to download.  At the very bottom, the closeScreenshot link is put in the top righthand corner to close the screenshot.  Fun fact: it also resets all the content on this page when that happens.
 
@@ -101,7 +101,7 @@ The screenshot decoration div allows for a list of draggable items that can be p
 
 Finally, the HTML document ends with the following two message divs:
 
-{% highlight HTML %}
+```html
         <div id="allowMessage">
             <div id="upArrow"></div>
             <p>I need access to the webcam to start.</p>
@@ -116,17 +116,17 @@ Finally, the HTML document ends with the following two message divs:
         <script src="main.js"></script>
     </body>
 </html>
-{% endhighlight %}
+```
 
 The first is the allow message that hovers over the top of everything when the class <em>needAllow</em> is on the body.  This lets the user know that they need to click the allow button on the browser.  Additionally, the 'up arrow' is just a div on this screen.  The red arrow will be created using only CSS.
 
 The browser required div is for times when the browser is not identified as Chrome OR it is chrome, but an older version, and one of the required features does not exist.  You'll notice the chrome logo is embedded.  I didn't want to hit the server for this very small image.
 
-#### The CSS
+### The CSS
 
 Now, let's take a look at the CSS.
 
-{% highlight CSS %}
+```css
 video, canvas {
 	display: inline-block;
 	*display: inline;
@@ -188,11 +188,11 @@ body {
 img {
 	vertical-align: middle;
 }
-{% endhighlight %}
+```
 
 The styles here are mainly just grabbed from HTML5 boilerplate - I stripped out all the stuff that I wasn't using.  This isn't that exciting.  Let's look at application specific css next:
 
-{% highlight CSS %}
+```css
 header {
 	text-align: center;
 }
@@ -214,11 +214,11 @@ footer a {
 	color: #135;
 	margin-right: 0.8em;
 }
-{% endhighlight %}
+```
 
 This is just the setup for the site.  Nothing special here.
 
-{% highlight CSS %}
+```css
 #vidcontainer {
 	width: 19em;
 	height: 18em;
@@ -245,11 +245,11 @@ This is just the setup for the site.  Nothing special here.
 #vidcontainer:hover #screenshotHint {
 	display: block;
 }
-{% endhighlight %}
+```
 
 The video container information is defined.  The video is set up to have a small image of a webcam as the background before it is initialized with streaming content.  The video itself has a small image of a camera icon as the pointer when you hover over it - as kind of a reminder that you can take a screenshot.  The screenshot hint is designed to appear below the video - and only appears on hover.
 
-{% highlight CSS %}
+```css
 #allowMessage {
 	display: none;
 }
@@ -289,13 +289,13 @@ The video container information is defined.  The video is set up to have a small
 	top: 2em;
 	left: -0.7em;
 }
-{% endhighlight %}
+```
 
 This is the css for the allow message.  Basically, it is not displayed unless the <em>needAllow</em> class is above it.  Then it positions itself absolutely centered and near the top.  The <em>modal</em> css uses webkit filters to gray out the content, blur it, and then shrink it a tiny bit.  This gives a good 3d modal look.  Finally, the up arrow is using CSS to create a triangle shape using borders.  After it, another rectangle is added to be the base of the arrow.  There was no need to actually have this in the HTML using this technique.
 
 Now, chrome message CSS is pretty simple.  Show it on top if its required.
 
-{% highlight CSS %}
+```css
 #browserRequired {
 	position: absolute;
 	top: 0;
@@ -308,11 +308,11 @@ Now, chrome message CSS is pretty simple.  Show it on top if its required.
 #browserRequired p {
 	margin: 0.7em;
 }
-{% endhighlight %}
+```
 
 Next, the filters:
 
-{% highlight CSS %}
+```css
 .needAllow #videofilters {
 	display: none;
 }
@@ -358,13 +358,13 @@ Next, the filters:
 	box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
 	background-color:#e0e0e0;
 }
-{% endhighlight %}
+```
 
 Here I am not displaying the filters until the user has access to the camera.  Then, the video filters are basically a set of radio buttons.  I don't want more than one filter at a time.  Finally, the other css there is a combination of styles from twitter bootstrap and somewhere else that basically set the labels as 'buttons' for the radio input buttons.  When a radio button is checked, the label looks selected.
 
 Now, moving on to the screenshot CSS.
 
-{% highlight CSS %}
+```css
 #screenshot {
 	display: none;
 	position: absolute;
@@ -405,13 +405,13 @@ Now, moving on to the screenshot CSS.
 #screenshot button.downloaded:after {
 	content: "\2713";
 }
-{% endhighlight %}
+```
 
 The screenshot window is not shown by default. It's loaded when a screenshot is taken.  Its positioned on top of the content - and the body modal class is added back.  At any rate, the close screenshot link is placed in the corner of the screenshot window.  The only other interesting css is the button.downloaded class which adds a checkmark after the content of the button if someone downloads something (and the css class is obviously added.)
 
 Finally, lets look at the dragable decorations CSS.
 
-{% highlight CSS %}
+```css
 #screenshotdecorations {
 	position: relative;
 	border: 0.2em dashed #ccc;
@@ -428,19 +428,19 @@ Finally, lets look at the dragable decorations CSS.
 	top: 0.3em;
 	left: 0.3em;
 }
-{% endhighlight %}
+```
 
 So I kind of cheated - I was getting tired - this only took me about a day... and I knew I'd only have sunglasses.  But basically, I just made a gutter for the decorations, and absolutely positioned the one that I have.  Nothing big.
 
 That's it - now lets look at the javascript.  I promise, for what it is... it's small!
 
-#### Javascript
+### Javascript
 
 Remember, the goal was to use the least amount of javascript.  I'm going to start a little bit different than normal - I'm going to start at the bottom of the document.
 
 First, a Javascript base64 to ByteArray function (because you can't do this natively) - got this from a github entry.
 
-{% highlight javascript %}
+```javascript
 /**
  * source: https://github.com/danguer/blog-examples/blob/master/js/base64-binary.js
  * base64 to binary
@@ -498,13 +498,13 @@ var Base64Binary = {
 		return uarray;
 	}
 };
-{% endhighlight %}
+```
 
 This is important for later: we need to create a base64 from canvas image into a ByteArray to pass to an HTML5 blob.
 
 And here we go: On load, check to see if this is chrome.  If its not warn them.  Either way, continue on.
 
-{% highlight javascript %}
+```javascript
 document.addEventListener('DOMContentLoaded', function() {
 	if (!window.chrome) {
 		photoBooth.showBrowserWarning();
@@ -515,11 +515,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		videoStream.initCam();
 	})();
 }, false);
-{% endhighlight %}
+```
 
 The only thing noteable of course is that I'm going to scope the creation of my videoStream inside of the anon function.  Alrighty, let's move on:
 
-{% highlight javascript %}
+```javascript
 /**
  * set up namespace
  */
@@ -538,11 +538,11 @@ photoBooth.showBrowserWarning = function() {
 photoBooth.hidePermissionReminder = function() {
 	document.body.className = "";
 }
-{% endhighlight %}
+```
 
 The comments make it pretty simple.  I'm creating the namespace and adding a few helper functions.  Next, here is the constructor and ALL of the methods.  Don't worry, I'll go through them - but I thought splitting it up would make it more confusing.
 
-{% highlight javascript %}
+```javascript
 /**
  * Constructor
  * This handles the manipulation of the current video stream
@@ -812,7 +812,7 @@ photoBooth.videoStream = function() {
 		link.dispatchEvent(event);
 	};
 };
-{% endhighlight %}
+```
 
 Whew!  Let's start with initCam().  Note: this is the only public method in this whole object/class.  First, I get the getUserMedia function and the window.URL pointer.  These differ between HTML5 compatible browsers. (Yes I know I'm only supporting Chrome at this time, but I wanted to make it future compatible if I expand this functionality.)  It continues - if I don't have getUserMedia() access, it shows the warning and quits.  We can't move on from here anyway!
 
@@ -838,6 +838,6 @@ The _resizeDecoration method just determines if the delta change of the mousewhe
 
 Finally, on to _downloadImage().  I've seen a lot of people send the base64 string to a php script via iframe (ajax won't prompt a download dialog, but iframe will)- but I didn't want to do that.  This creates a new canvas (because I don't want to modify my current displayed one by adding decorations to it), and clones the image that was drawn to that canvas.  Next, it loops through each decoration and places it as a drawn image on my new canvas.  Next, the toDataURL() method is called to return the base64 image data which is passed to the byteArray.  The byteArray is passed to an HTML5 Blob with the proper mime type created.  Then, a URL is created from that blob that will prompt an octet-stream download.  The filename is retrieved from the input box or from the placeholder, and the download link is created, and then clicked.  This prompts the user for a download.
 
-#### The end!
+### The end!
 
 I'm sure I could do this better.  Remember, the filters are not actually applied. I could make it more cross browser and more able to be on different display sizes.  But overall, I wanted to prove it could be done.  

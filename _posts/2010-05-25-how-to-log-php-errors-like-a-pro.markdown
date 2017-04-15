@@ -9,20 +9,19 @@ The error log can be fun to parse through and figure out what happened.  Ok, so 
 
 
 
-#### Create an Error Handling Class
+### Create an Error Handling Class
 
 
 All of my error handling is going to be pretty much uniform.  In order to do this, I want to share a lot of code.  I'm going to do this by creating a class and having my error handling methods a part of it.  I plan on gathering data from both standard PHP errors and uncaught PHP Exceptions.
 
 
 
-##### First, PHP Errors
+#### First, PHP Errors
 
 
 The first thing I want to do is grab my PHP errors.  I'll make the following code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class errorhandlers
 {
     public static function error_handler($errno, $errstr, $errfile, $errline, $errcontext)
@@ -62,7 +61,7 @@ class errorhandlers
         }
     }
 }
-{% endhighlight %}
+```
 
 The first thing that is done is to grab all of the error context that PHP sends to the error handler.  That is what the 5 parameters are for.  I begin by making a string with this information in it.  The last parameter is actually an array, so I use var_dump().  Before that, however, the output buffering is initiated.  Then, the context is var_dump()'d.  Finally, to get a little bit more context, the command debug_print_backtrace() is used.  The contents of this output buffer is then added to the string.
 
@@ -74,13 +73,12 @@ The beFriendly() method simply redirects a user to a friendlier "ruh roh" type p
 
 
 
-##### Do something with uncaught exceptions
+#### Do something with uncaught exceptions
 
 
 To handle exceptions, the following method is added to the class:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 public static function exception_handler($exception)
 {
     $string = str_replace("\n", ' ', var_export($exception, TRUE));
@@ -94,21 +92,20 @@ public static function exception_handler($exception)
 
     self::beFriendly();
 }
-{% endhighlight %}
+```
 
 This is much more simple.  The exception details are exported to a string.  The new lines are removed because they play havoc with the error log grep'ing.  Then, as with the previous method, it is either displayed or logged and then the user is redirected possibly.
 
 
-##### Register the Error Handlers
+#### Register the Error Handlers
 
 
 The last thing to do is to register each of these error handlers.  That is done with this simple code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 set_error_handler(array('errorhandlers', 'error_handler'));
 set_exception_handler(array('errorhandlers', 'exception_handler'));
-{% endhighlight %}
+```
 
 
 And then, you're ready to go.  Happy error logging!

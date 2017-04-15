@@ -13,8 +13,7 @@ The Zend_Paginator class has a function called setFilter() that will accept a Ze
 
 So, for example, check out this code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class MyObject
 {
   public function __construct(array $items = array())
@@ -36,7 +35,7 @@ class MyObjectPopulator implements Zend_Filter_Interface
 // ...
 $paginator = new Zend_Paginator($adapter);
 $paginator->setFilter(new MyObjectPopulator());
-{% endhighlight %} 
+``` 
 
 
 

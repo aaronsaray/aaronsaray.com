@@ -8,8 +8,7 @@ tags:
 Apparently, a few programmers I know have been getting confused about access of public, public static variables in PHP classes.  I've written this example code with the following comments to explain what will work - and what won't.
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class TEST
 {
     /** public variable **/
@@ -53,4 +52,4 @@ var_dump(TEST::$pubvarstatic);
  
 /** for testing static method statictest() **/
 TEST::statictest();
-{% endhighlight %}
+```

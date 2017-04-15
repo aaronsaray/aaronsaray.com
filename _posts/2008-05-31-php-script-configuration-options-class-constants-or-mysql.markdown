@@ -20,7 +20,7 @@ Non-Requirements:
 with this in mind, lets figure out what may work best:
 
 
-#### Class Constants
+### Class Constants
 
 I'm going to call my class 'config' with the method of 'get' - simple enough.  (I thought about using magic methods and overloading - but bleh - let us just keep it simple)...
 
@@ -38,20 +38,18 @@ When I was building my get method, I kept running into an error:
 
 The first way I tried to do it was as so:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 public static function get($item)
 {
     return self::$item;
 }
-{% endhighlight %}
+```
 
 Turns out, that method of accessing an item points to it as being a static variable and not a constant (nevermind the fact that self::item1 would work...)
 
 I have to end up using the constant() function.  Here is my finished testing script:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class config
 {
     const item1 = 'test';
@@ -70,14 +68,14 @@ class config
 print config::item1;
 
 print config::get('item1');
-{% endhighlight %}
+```
 
 As you can see, I can still access the items 'illegally' by going the class constant route - but I made sure that the get() method works as well.
 
 Doesn't look too bad...
 
 
-#### Enter MySQL
+### Enter MySQL
 
 Ok - so I wanted to try to do it with MySQL - to make it even more dynamic.  This script becomes drastically more complex:
 

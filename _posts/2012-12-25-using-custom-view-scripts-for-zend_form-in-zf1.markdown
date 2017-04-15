@@ -9,7 +9,7 @@ To start out, I realize that a lot has changed in Zend Framework 2 regarding Zen
 
 
 
-#### The Purpose of Zend Form
+### The Purpose of Zend Form
 
 
 I think it's important to start out with the purpose of the Zend Form component.  Often, I run into developers who look at Zend Form as a giant helper class.  They don't distance the concept of the logic and the view.  In fact, Zend Form is really a complete HTML form generation package, complete with separate logic and views.
@@ -20,7 +20,7 @@ The purpose of the view component of the Zend Form is to develop a quick way of 
 
 
 
-#### The Process
+### The Process
 
 
 When a Zend Form is created, the programmer defines various containers for data.  These have additional logic applied to them via validators (Remember, validators can be instantiated by themselves, so they are not restricted to the Zend Form only).  Additionally, elements have filters applied.  These are used to filter the data.  Finally, elements hold a set of decorators to apply various changes to the final values of the containers, when rendered (this is different from filters - this is only executed when the form is rendered using views).  
@@ -35,7 +35,7 @@ Perhaps you have some very unique situations where you have to render an element
 
 
 
-#### Show me some code
+### Show me some code
 
 
 
@@ -43,8 +43,7 @@ Let's start with a simple example rendering an element of the form using a custo
 
 First, the Zend Form.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Form_Test extends Zend_Form
 {
     public function init()
@@ -65,15 +64,14 @@ class Application_Form_Test extends Zend_Form
         ));
     }
 }
-{% endhighlight %}
+```
     
 
 
 
 And now, the view script.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 echo $this->formLabel($this->element->getName(), $this->element->getLabel());
 
 echo $this->{$this->element->helper}(
@@ -86,7 +84,7 @@ echo '<a href="/help.html" target="_blank">Need help?</a>';
 
 $errors = $this->element->getMessages();
 if (!empty($errors)) echo $this->formErrors($this->element->getMessages());
-{% endhighlight %}
+```
     
 
 
@@ -101,7 +99,7 @@ This handles just a simple element.  However, since both elements of the Zend Fo
 
 
 
-#### Final thoughts
+### Final thoughts
 
 
 It is important to know that the Zend Form package in Zend Framework 1 is a conglomeration of logic and views, but they are not required to be tightly coupled.  Think of it as the standard car you can get when you start to purchase your new vehicle.  You can change colors, options, and even trims.  The view changes all around it - but it always starts out the same.  And, of course, keep your core form very logic oriented only.  There should never be content in the form that is used purely for display only.

@@ -9,7 +9,7 @@ tags:
 After many times of coding relatively the same thing, it becomes prudent to have a standard library for certain sets of processes.  Of course - that is why there are things like frameworks!  At any rate, one of the biggest things I run into is password complexity.  Each website has its own requirement for the security they want to implement.  So, let's talk about the requirements and then look at the code:
 
 
-#### The Requirements
+### The Requirements
 
 
 There are many different requirements that I've come across, but lets focus on the ones that I have defined in this class:
@@ -48,14 +48,13 @@ Those are all of the needs I plan to address.  Additionally, there are some feat
 
 
 
-#### The Code
+### The Code
 
 
 
 Well, lets take a look at the class:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Password
 {
     /** constants - are arbritrary numbers - but used for bitwise **/
@@ -210,12 +209,11 @@ class Password
         return true;
     }
 }
-{% endhighlight %}
+```
 
 Most of this code is pretty self explanatory.  And an example of how we might use this:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $newPass = 'Turk3y*';
 $oldPass = 'monkeyS3!';
 $username = 'aaronsaray';
@@ -232,15 +230,14 @@ else {
     }
     print '</ul>';
 }
-{% endhighlight %}
+```
 
 
 You might also try using the getComplexityStandard() method or creating your own complexity setting.  For example, if you wanted to create a site that was really lax and only required min/max and lower and uppercase, you could call the complexity routine like this:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /** not recommended!! **/
 $PASSWORD->setComplexity(Password::REQUIRE_MIN + Password::REQUIRE_MAX + Password::REQUIRE_LOWERCASE + Password::REQUIRE_UPPERCASE);
-{% endhighlight %}
+```
     

@@ -20,13 +20,13 @@ Also, not all development is new.  If you ever have to work on legacy code, you 
 
 One of the challenges requires the group to build an email form.  I sit at the keyboard and request that the group tells me what to type.  When necessary, I pose questions and hints like: "Don't forget we have to validate that the email address is correct."  One time I posed this question and was answered with a lengthy silence.  Then, someone timidly asked: "Can we import Zend_Validate?"  I said no - that's a framework tool!  Then I heard comments rumblings about not being experts at regular expressions.  One more hint from me and we were on our way: "don't reinvent the wheel," I said.  "Check out php.net/filter_var."  
 
-#### What is filter_var
+### What is filter_var
 
 The mumbling in the group turned to elated sighs when the programmers using iPads got more familiar with the function `filter_var()` in PHP.  This particular function is pretty straight forward: it filters or sanitizes a variable based on some criteria.  
 
 It's important to understand the two major use cases for `filter_var()` .  The two types of filters most used are validate and sanitize (there is a third called callback which functions in a similar method to sanitize).  The validate type of filters are used to validate if a variable is of the type given as a flag to the command.  `filter_var()` will return a boolean representing whether the input was valid according to the rules set by the filter flag.  Sanitize filters function differently.  `filter_var()` will  return a sanitized version of the input variable according to the rules represented by the sanitize flag passed in.
 
-#### Some examples
+### Some examples
 
 The following two blocks of code will demonstrate how `filter_var()` works precisely.  And since I mentioned email filtering as a pain-point during the last group talk I gave, let's take a look at the email functionality for `filter_var()`.
 

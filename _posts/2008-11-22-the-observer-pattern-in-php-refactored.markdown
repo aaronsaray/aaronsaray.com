@@ -27,8 +27,7 @@ In this next example, I'm not going to explain the logic as much - read the orig
 So, here is the code:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * twitter transport from "library" - on successful tweet will print it out
  */
@@ -194,4 +193,4 @@ if (isset($globalObservers['twitterTransportObservable'])) {
 $message = new twitterMessage("this is my message [url]");
 
 $tweeter->postMessage($message);
-{% endhighlight %}
+```

@@ -17,7 +17,7 @@ Well, I had talked about an issue where you could substitute the javascript obje
 
 **javascripttest.html**
 
-{% highlight html %}
+```html
 <html>
     <body>
         <script type="text/javascript">
@@ -29,12 +29,12 @@ Well, I had talked about an issue where you could substitute the javascript obje
         <iframe src="http://release.local/test.html"></iframe>
     </body>
 </html>
-{% endhighlight %}
+```
 
 
 **test.html**
 
-{% highlight html %}
+```html
 <html>
     <body>
         <script type="text/javascript">
@@ -49,7 +49,7 @@ Well, I had talked about an issue where you could substitute the javascript obje
         <a href="#" onclick="clicker()">bleh</a>
     </body>
 </html>
-{% endhighlight %}
+```
 
 
 Yah - not an issue with the main browsers I use. I didn’t try it on other ones though - so it might still be an issue… who knows... I was just curious.

@@ -10,7 +10,7 @@ I was creating a new application with Zend Framework at work the other day and I
 
 
 
-#### Goals/Objectives
+### Goals/Objectives
 
 
 
@@ -29,15 +29,14 @@ I was creating a new application with Zend Framework at work the other day and I
 
 
 
-#### The Solution: A new class Application_Model_Mail
+### The Solution: A new class Application_Model_Mail
 
 
 I decided to make a new model called Mail which will extend the Zend_Mail class.  Everything will work the same except for the to addresses.  See this code:
 
 **application/models/Mail.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Model_Mail extends Zend_Mail
 {
     public function addTo($email, $name='')
@@ -58,7 +57,7 @@ class Application_Model_Mail extends Zend_Mail
         $email = $testEmail;
     }
 }
-{% endhighlight %}
+```
     
 
 

@@ -10,7 +10,7 @@ For the most part, this is left unused by a lot of javascript libraries I've see
 
 Take, for example, this code:
 
-{% highlight javascript %}
+```javascript
 function Person(name, gender) {
   this.name = name;
   this.gender = gender;
@@ -21,7 +21,7 @@ Person.prototype.toString = function personToString() {
 
 var p = new Person("Aaron", "M");
 alert(p);
-{% endhighlight %}
+```
 
 When executed, this will alert a string of "Aaron" - as that is what the `toString` overriden method is doing.
 
@@ -29,7 +29,7 @@ When executed, this will alert a string of "Aaron" - as that is what the `toStri
 
 Let's add some logic in this function.  We're going to make a person function that has a first + last name, and a gender.  When we use it, we want to have the full name plus a prefix of Mr or Ms.
 
-{% highlight javascript %}
+```javascript
 function Person(firstName, lastName, gender) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -52,7 +52,7 @@ Person.prototype.toString = function personToString() {
 
 var hero = new Person("Wonder", "Woman", "F");
 document.querySelector('#name').innerHTML = hero;
-{% endhighlight %}
+```
 
 In this case, we're capturing the information and then creating a logic-injected `toString()` method.  When this particular code is ran, an element with the ID of `name` gets populated with `Ms. Wonder Woman` - hooray!
 

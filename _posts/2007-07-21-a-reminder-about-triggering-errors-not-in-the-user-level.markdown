@@ -9,8 +9,7 @@ I had a function in some of my code that I wanted to trigger a notice error on c
 
 From the comments on the manual page, I was able to grab a pre-made function that I stripped down.  It prints out the error type as well as the error string.  My test script also generates an error.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 function my_error_handler($errno, $errstr, $errfile, $errline){
     switch($errno){
         case E_ERROR:                  print "Error";                  break;
@@ -33,14 +32,13 @@ function my_error_handler($errno, $errstr, $errfile, $errline){
 }
  
 set_error_handler('my_error_handler');
-{% endhighlight %}
+```
 
 Now, when I do the following:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 trigger_error('test error', E_USER_NOTICE);
-{% endhighlight %}
+```
 
 Our output is predictable:
     
@@ -49,10 +47,9 @@ Our output is predictable:
 
 However, I was forgetting to put the USER in that error:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 trigger_error('test error', E_NOTICE);
-{% endhighlight %}
+```
 
 And my error:
 

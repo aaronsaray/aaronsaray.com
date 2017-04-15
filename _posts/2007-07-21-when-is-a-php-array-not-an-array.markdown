@@ -7,8 +7,7 @@ tags:
 
 Arrays, return variables, expressions, OH MY!  I recently learned a lesson about array functions in PHP not returning what I thought they would.  I had a function that returned the value of array_shift()... and then used it in another function.  Unfortunately, this generated a strict error and was causing some issues... As usual, I put together a proof of concept.  Lets check out the code example, the error, and then why:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class TEST
 {
     private $__data = '';
@@ -38,7 +37,7 @@ function testFunction()
 }
  
 var_dump(testFunction());
-{% endhighlight %}
+```
 
 When I execute this, I get a strict error:
 
@@ -51,7 +50,6 @@ First off, [this bug page](http://bugs.php.net/bug.php?id=33466) is from another
 
 Turns out that the way to fix this issue is going to be using [pass by reference](http://us.php.net/language.references.pass).  One quick modification and we're good:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 public function &getArray()
-{% endhighlight %}
+```

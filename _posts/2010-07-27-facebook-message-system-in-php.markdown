@@ -13,7 +13,7 @@ I was recently faced with a task: Make our message system like facebook's.  OK -
 
 
 
-#### Define the requirements
+### Define the requirements
 
 
 It's easy to say that the system should be like Facebook's.  However, how does FB actually handle the messages?  What does the user really experience in the UI/UX?  Let's define some requirements:
@@ -52,14 +52,14 @@ It's easy to say that the system should be like Facebook's.  However, how does F
 
 
 
-#### So there are the specs, lets do this
+### So there are the specs, lets do this
 
 
 In order to demonstrate some of these features and practices, I'm going to have to jump ahead to the final product.  I will do my best to explain why I came up with those things, however
 
 
 
-##### Create the MySQL tables
+#### Create the MySQL tables
 
 
 In order to keep the normalized feel of all of this, we'll need to create two tables.  The first table will be for the message itself.  It will contain the originator or author, when it was created, where it was created (IP), and the body of the message.  Side note: The tables will all be prefixed with a '2' because this is my second time trying to do this... hopefully this time is successful! :)
@@ -104,17 +104,16 @@ This table has the MID/SEQ identifier to point to the message that the users are
 
 
 
-##### Creating the PHP
+#### Creating the PHP
 
 
 For demonstration purposes, we're going to include a file called currentuser.php.  All this does is set the $currentUser variable to an integer.  In your full featured product, you'd probably use some sort of authentication/session system.  Here it is:
 
 **currentuser.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $currentUser = 1;
-{% endhighlight %}
+```
     
     
 Now, the first view of the user will probably be their inbox.  If they have no messages to view, it has to say so.
@@ -123,8 +122,7 @@ Second note: I am not really using valid HTML or pretty pages either.  The focus
     
 **inbox.php**
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 include ('currentuser.php');
 print "<h1>Acting as {$currentUser}</h1>";
 print "<h2>Inbox</h2>";
@@ -164,7 +162,7 @@ else {
 }
 echo '<div><a href="compose.php">compose</a></div>';
 echo '<div><a href="sent.php">sent</a></div>';
-{% endhighlight %}
+```
 
 
 
@@ -180,8 +178,7 @@ Now, let's actually view one of the messages.
 
 **view.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 include ('currentuser.php');
 print "<h1>Acting as {$currentUser}</h1>";
 print "<h2>Viewing a single message: " . $_GET['id'] . "</h2>";
@@ -241,7 +238,7 @@ else {
 }
 echo '<div><a href="inbox.php">Inbox</a></div>';
 echo '<div><a href="delete.php?id=' . $_GET['id'] . '">Delete</a></div>';
-{% endhighlight %}
+```
 
 
 
@@ -272,8 +269,7 @@ Next, a table is built and all of the replies are listed.  An update statement i
 
 **delete.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 include ('currentuser.php');
 $dsn = 'mysql:host=db-1.local;dbname=c3';
 $PDO = new PDO($dsn, 'user', 'pass', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
@@ -288,7 +284,7 @@ if (!$stmt->execute($args)) {
 }
 
 die(header('Location: inbox.php'));
-{% endhighlight %}
+```
 
 
 
@@ -317,13 +313,13 @@ Next, we have to make a new message form.  This will submit to post.php - the sa
 
 **compose.php**
     
-{% highlight HTML %}
+```html
 <form action="post.php" method="post">
     To who (csv): <input type="text" name="uids"></input><br></br>
     Message: <textarea name="body"></textarea><br></br>
     <input type="submit" value="send"></input>
 </form>
-{% endhighlight %}
+```
 
 
 
@@ -331,8 +327,7 @@ Finally, we will add messages using the post.php file.  It will handle replies a
 
 **post.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 include ('currentuser.php');
 $dsn = 'mysql:host=db-1.local;dbname=c3';
 $PDO = new PDO($dsn, 'user', 'pass');
@@ -398,7 +393,7 @@ if (count($rows)) {
 else {
     die('no recips found');
 }
-{% endhighlight %}
+```
 
 This is one of the most important pieces of this puzzle, so let's analyze it carefully.  First, the current user is obtained and the connection is made.  Then, the message ID is retrieved from the POST request (if its a reply) or its set at 0 (for new messages from compose.php).  $body is retrieved from the body key of the POST arrray.
 
@@ -414,7 +409,7 @@ The combined statement is now executed and the user is directed to look at the m
 
 
 
-#### Ending Thoughts
+### Ending Thoughts
 
 
 While this is not yet a perfect/polished solution, I think it is further along the line.  Old message systems used to duplicate a lot of messages and not allow for multiple recipients.  I think this walks the line of being similar to the older systems but working with new paradigms.  Are there places where I could make this better?  Have any suggestions?  Please let me know. :)

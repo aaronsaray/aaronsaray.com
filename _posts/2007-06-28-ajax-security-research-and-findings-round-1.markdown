@@ -25,16 +25,14 @@ Anyway, here is my code for this proof of concept:
 
 **ajaxresponse.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 var_dump($_COOKIE);
 echo session_id();
-{% endhighlight %}
+```
 
 **ajax.php:**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * start the session right away
  */
@@ -59,7 +57,7 @@ session_start();
     }
 </script>
 <button onclick="testAjax()">Test Ajax</button>
-{% endhighlight %}
+```
 
 Loading this page shows an button to launch our ajax testing function as well as our current session id.  When clicked, we see the server response - our var_dump of our cookies and then the session ID.  When I run this script, I notice that, even though I've sent my session cookie properly, the session ID doesn't exist (I guess I kind of knew this because I didn't force PHP to start the session).
 
@@ -67,18 +65,16 @@ _Well, can I make this useful?_
 
 Well, I modified our code.  The ajax.php file just removed the cookie sending header.  I changed my ajaxresponse.php file to this:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 session_start();
 if (isset($_SESSION['ajax'])) print 'ajax';
-{% endhighlight %}
+```
 
 If our session value of 'ajax' is set, we'll print 'ajax' (or process our request).  Otherwise, we'll do nothing.  Running it the first time, I get a blank alert.  Yay!
 
 I then modified ajax.php to begin like this...
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * start the session right away
  */
@@ -89,7 +85,7 @@ $_SESSION['ajax'] = true;
 /**
  * print out the rest of the page
  */
-{% endhighlight %}
+```
 
 I reloaded the ajax.php page, clicked the button and yep - it sure alerted ('ajax').
 

@@ -5,14 +5,14 @@ tags:
 - PHP
 ---
 
-#### Date formats - How time makes pretty
+### Date formats - How time makes pretty
 
 
 The PHP Date manual page has a ton of interesting features to format the date that you can display to the user.  However, when you look closer at it, there are actually some really useful modifiers that will help us with our date calculations as well.  For the longest time, I had just used the time() function and let the pieces fall.  This was OK when the offset was similar to my own timezone - but servers change locations - and websites have global audiences.  The date and gmdate functions can help with this.  Both functions take an optional timestamp parameter.  If you do not specify this, they'll calculate based off of the current date.  This actually becomes quite useful for our calculations... Lets jump in.
 
 
 
-#### date - the date on your current server
+### date - the date on your current server
 
 
 
@@ -26,7 +26,7 @@ How do we not do that??
 
 
 
-#### gmdate - the date in Greenwich Mean Time
+### gmdate - the date in Greenwich Mean Time
 
 
 
@@ -38,7 +38,7 @@ So, now we know we have two functions that do rather similar things, its time to
 
 
 
-#### time - current time measured in seconds
+### time - current time measured in seconds
 
 
 
@@ -48,7 +48,7 @@ Ok - display and content - we've got them.  Now, lets tie it all together in som
 
 
 
-#### Date Storage, User Information, and Display
+### Date Storage, User Information, and Display
 
 
 
@@ -60,7 +60,7 @@ Finally, the user's offset.  You should store this with the user record.  For ex
 
 
 
-#### A real life code example
+### A real life code example
 
 
 
@@ -69,10 +69,9 @@ Ok, lets see our code now in practice.
 First off, Aaron comes to the website at 7:30p jan 5th, 2009 Central (1:30AM on january 6th, 2009 GMT).  He posts an entry.
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 mysql_query("insert into entries (title, body, authorID, datePosted) values ('$clean_title', '$clean_body', $authorID, time());
-{% endhighlight %}
+```
 
 
 
@@ -102,8 +101,7 @@ Its also important to see my user row:
 Lets see some code for displaying that entry localized for when I wrote it:
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $authorID = 12;
 $entryID = 1;
 $author = new Author($authorID);
@@ -113,7 +111,7 @@ $datePosted = $author->gmtOffset * 3600 + $dst + $entry->datePosted;
 
 print "{$entry->title}<hr></hr>{$entry->body}<br></br><em>Posted at ";
 print gmdate("M/d/Y h:i:sa", $datePosted);
-{% endhighlight %}
+```
 
 
 Lets do a quick run down of this code:

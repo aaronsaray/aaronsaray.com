@@ -11,7 +11,7 @@ Its very important to plan and design out all of the main ideas of the projects 
 
 There are many mind-mapping tools out there - some open source and some not (some as simple as notepad ;)) - and maybe "next time" I'll use some - but my tool for this project is a 5 subject notebook.  [A previous entry of mine]({% post_url 2007-06-13-website-monitoring-project %}) detailed out the questions I've been needing to answer to move forward with this project...  and I'm making progress.  The next step in my planning is actually making a bulleted list of the items that I'm going to have to address when working on this project.  I had a high level outline listed above, but I went into more detail now.
 
-#### The first thing: define the idea.
+### The first thing: define the idea.
 
 I broke down my idea into bullet points and main headings:
 
@@ -105,7 +105,7 @@ Additionally, I took apart each one of these modules and listed out my concerns 
 
 The commonalities I came up with was the Self tests are very important (ie: don't fail a test if there is no connection to the internet or if the versions of PHP don't match), alert specificity (ie: do we alert right away, or are there multiple tests performed on a failed test... so to reduce false positives), do we alert on successes, are alerts customized by plugin, agent configuration, etc).
 
-#### I have to make my lists of things to do...
+### I have to make my lists of things to do...
 
 So, so far, I've built a list of things to research into before I actually start:
 

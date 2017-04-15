@@ -7,7 +7,7 @@ tags:
 
 There are a few quick ways to monitor MySQL performance.  This isn't much of an in-depth reference, just a quick reminder.  Lets look:
 
-#### mysqladmin status
+### mysqladmin status
 
 
 Shows a quick status:
@@ -20,7 +20,7 @@ Shows a quick status:
 
 
 
-#### mysqladmin processlist
+### mysqladmin processlist
 
 
 Show the active processes and what they're doing:
@@ -39,7 +39,7 @@ Show the active processes and what they're doing:
 
 
 
-#### mysqladmin extended
+### mysqladmin extended
 
 
 This is short for extended-status, which shows you pretty much everything you want to know about the current system.
@@ -76,7 +76,7 @@ Add iterations or relative comparisons with '-i' and '-r'.  For example, the fol
 
 
 
-#### Other Resources
+### Other Resources
 
 
 [MySQL.com's explanation of some performance monitoring options](http://www.mysql.com/news-and-events/newsletter/2004-01/a0000000301.html)

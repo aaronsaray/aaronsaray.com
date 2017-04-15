@@ -12,7 +12,7 @@ tags:
 
 If my team from work reads this, they're going to be dumbfounded.  "We thought Aaron trusted us!?"  Let me be clear, I do trust people.  I just don't trust programmers!  Ok, I'm kidding a bit here.  What I mean to say is that, as a Confident Coder, you should never blindly trust code and data.  Let me illustrate this with some examples.
 
-#### Verifying a Data Type
+### Verifying a Data Type
 
 In PHP, sometimes a variable is not the expected data type.  If you are expecting a different data type, the code you've written may halt with an error.  Or even worse, it will be a functional bug with unknown results and the code will still continue to execute.  
 
@@ -20,14 +20,13 @@ I personally find an unexpected data type very annoying.  (And, I've seen enough
 
 So, for example, let's imagine that we're going to be calling a third-party library.  It will return an array of elements more than 99% of the time.  Every once in a while, it may return `null` if no results were found.  We might be tempted to write code like this:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $results = $thirdPartyService->fetchAll();
 
 foreach ($results as $result) {
   echo $result['name'] . '<br>';
 }
-{% endhighlight %}
+```
 
 This code will expect an array from the `fetchAll()` method.  Normally this has an array of results to loop through.  However, in the very rare case that there are no results found, `null` is passed to the `foreach` loop.  This will give us an error:
 
@@ -35,8 +34,7 @@ This code will expect an array from the `fetchAll()` method.  Normally this has 
 
 Fortunately (or unfortunately), the code will still execute after this error.  But, having a warning like this is not a desired outcome.  Using the trust, but verify mantra, let's add a guard statement.
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $results = $thirdPartyService->fetchAll();
 
 if (is_array($results)) {
@@ -44,26 +42,24 @@ if (is_array($results)) {
   	echo $result['name'] . '<br>';
 	}
 }
-{% endhighlight %}
+```
 
 In our new version of the code, the `$results` variable is now checked to make sure it is of a type that the `foreach` loop can process.  If it is `null`, the loop never has a chance to evaluate.
 
-#### Monitor Third Party Input
+### Monitor Third Party Input
 
 A very popular way to pass information between websites is the JSON format.  A PHP script can easily consume JSON data using the `json_decode()` method.  Let's see an example of how we might consume a third party data source.
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $jsonString = file_get_contents('http://thirdparty.org/feed.json');
 $jsonObject = json_decode($jsonString);
 
 echo 'The name of the website we just consumed from:' . $jsonObject->name;
-{% endhighlight %}
+```
 
 Previously, we've determined the format of the JSON object and can trust that the `name` property will always be populated with the site name.  There was that scary word again: trust.  Can you guarantee that the JSON feed will never change the object property to `site_name` - what would happen then?  Consider this code:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $jsonString = file_get_contents('http://thirdparty.org/feed.json');
 $jsonObject = json_decode($jsonString);
 
@@ -73,21 +69,20 @@ if (isset($jsonObject->name)) {
 else {
 	// log that the json decoding has failed
 }
-{% endhighlight %}
+```
 
 In our trust, but verify programming style, this code will now verify that the expected property is set.  If not, we'll notify and log an error so we can come and update the code.
 
 Let me show another example.  This one is actually inspired by a real event that happened while I was programming a third-party integration a few years ago.  The scenario is simple: call a third party service and it reveals how many minutes have passed since a specific event.  Then, I formulate that into a human readable version and display it.  (Please note, there are other ways to do this, but I've created this code in this manner to illustrate the issue as clear as possible.)
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $minutesPassed = $thirdPartyService->minutesSinceEvent($eventID);
 
 $hours = floor($minutesPassed / 60);
 $minutes = $minutesPassed - (60 * $hours);
 
 echo "Time elapsed: {$hours}:{$minutes}";
-{% endhighlight %}
+```
 
 This worked well for me: the hours and minutes were separated by a colon, a very familiar time elapsed format.  The `$minutesPassed` variable was always an integer of minutes.  So, if the value I received from the third party was `90`, `1:30` was displayed.
 

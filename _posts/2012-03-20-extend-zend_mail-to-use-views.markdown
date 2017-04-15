@@ -12,8 +12,7 @@ Before we begin, it's important to know the goal. The goal is to create a versio
 
 **application/models/Mail.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * Zend_Mail override
  * 
@@ -101,7 +100,7 @@ class Application_Model_Mail extends Zend_Mail
         return APPLICATION_PATH . '/views/scripts/email';
     }
 }
-{% endhighlight %}
+```
     
 
 
@@ -125,14 +124,13 @@ Finally, the views and layouts are rendered and applied.  The setBody specific c
 This is how you might use this:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $mail = new Application_Model_Mail();
 // ...
 $mail->setBody(Application_Model_Mail::TYPE_HTML, 'forgotpassword', array('user'=>$user))
      ->setBody(Application_Model_Mail::TYPE_TEXT, 'forgotpassword', array('user'=>$user));
 $mail->send();
-{% endhighlight %}
+```
 
 
 

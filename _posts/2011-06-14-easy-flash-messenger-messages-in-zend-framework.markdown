@@ -9,7 +9,7 @@ Through reading a few blog posts over the last year and my own trial and error, 
 
 
 
-#### Objective
+### Objective
 
 
 
@@ -22,29 +22,27 @@ Through reading a few blog posts over the last year and my own trial and error, 
 
 
 
-#### Using FlashMessenger in the Controller
+### Using FlashMessenger in the Controller
 
 
 Now, we're going to change the way we assign messages in the controller.  Make an array of the message with a key of the type, and a value of the message.  You may want to use 'success' and 'failure':
 **in some controller...**
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $this->_helper->flashMessenger->addMessage(array('success'=>'The update was successful'));
-{% endhighlight %}
+```
 
 
 
 
 
-#### Next, create a View Helper
+### Next, create a View Helper
 
 
 Create the following view helper. I placed mine here: application/views/helpers/FlashMessages.php
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Zend_View_Helper_FlashMessages extends Zend_View_Helper_Abstract
 {
     public function flashMessages()
@@ -63,7 +61,7 @@ class Zend_View_Helper_FlashMessages extends Zend_View_Helper_Abstract
         return $output;
     }
 }
-{% endhighlight %}
+```
     
 
 
@@ -72,15 +70,14 @@ The output is initially blank.  This is because we will always 'blindly' call th
 
 
 
-#### Use this in Your View
+### Use this in Your View
 
 
 I technically put this call in my layout towards the top of my content:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 echo $this->flashMessages();
-{% endhighlight %}
+```
     
 
 

@@ -8,8 +8,7 @@ tags:
 
 I've been wondering if I should be concerned about re-preparing a prepared statement when using PDO.  Right now, I use code like this when preparing a statement:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 public function prep($statement)
 {
     if ($statement != $this->_lastPrepared) {
@@ -20,7 +19,7 @@ public function prep($statement)
         $this->_ps = $this->db->prepare($statement);
     }
 }
-{% endhighlight %}
+```
     
 
 I end up storing the last statement and do a quick compare.  My concern comes from [MySQL's admission](http://dev.mysql.com/doc/refman/5.0/en/sql-syntax-prepared-statements.html) of this:

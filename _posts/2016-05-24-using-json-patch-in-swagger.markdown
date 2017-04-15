@@ -23,7 +23,7 @@ Now, let's save you some boring story about choosing between these, and just say
 that wasn't before I made a complete spec in the swagger YAML I was working with.  I thought I'd share that just in case
 someone was looking to go the direction of JSON Patch themselves.
 
-{% highlight yaml %}
+```yaml
 paths:
   /users/{GUID}:
     patch:
@@ -75,7 +75,7 @@ definitions:
      from: 
       type: string 
       description: A string containing a JSON Pointer value.
-{% endhighlight %}
+```
 
 As you can probably tell, this isn't a complete spec, but it covers the area that we're interested in (you'll notice it doesn't define the User
 object, but that's fine for this demonstration.)  

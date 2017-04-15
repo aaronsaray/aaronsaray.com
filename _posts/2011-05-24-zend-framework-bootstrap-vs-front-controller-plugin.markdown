@@ -19,8 +19,7 @@ Let's see this in practice.
 
 **Before: application/Bootstrap.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
   protected function _initViewSettings()
@@ -33,7 +32,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
   }
   // ...
 }
-{% endhighlight %}
+```
 
 
 
@@ -42,8 +41,7 @@ Now, afterward, make sure front controller plugins are defined, and then create 
 **After: application/Bootstrap.php**
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
   protected function _initFrontControllerPlugins()
@@ -53,15 +51,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
   }
   // ...
 }
-{% endhighlight %}
+```
     
 
 
 
 **After: application/plugins/ViewSetup.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Plugin_ViewSettings extends Zend_Controller_Plugin_Abstract
 {
   public function routeShutdown($request)
@@ -74,7 +71,7 @@ class Application_Plugin_ViewSettings extends Zend_Controller_Plugin_Abstract
     $view->prependStylesheet('/css/main.css');
   }
 }
-{% endhighlight %}
+```
     
 
 

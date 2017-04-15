@@ -9,7 +9,7 @@ tags:
 
 I've been researching caching and compression techniques for my external resources for some time.  My first design of [JEMDiary](http://jemdiary.com) was very greedy with HTTP connections.  Couple that with having a less-than-perfect host (Dreamhost bleh...), users could feel the burn.  I didn't like it because it would even take ME forever to use my own website.  I went on to discover many different key points I use when creating sites now - the Steps to Optimize Assets.
 
-#### Steps to Optimize Assets
+### Steps to Optimize Assets
 
 
 There are a few steps I live by when I design my websites now.
@@ -36,7 +36,7 @@ These are my main rules.  This article, however, is going to focus on how I deal
 
 
 
-#### Preparing CSS for deployment
+### Preparing CSS for deployment
 
 
 The first thing I do is create that subdomain.  For my site example.com, users can visit http://example.com for the content.  I create a subdomain called assets.example.com which is where I expect to get my content from.  I generally create a server alias in the main config.  This technically means that duplicate content could be served at both assets.example.com and example.com.  I finish up by adding the following lines to the .htaccess file:
@@ -73,9 +73,9 @@ Next, I'll create a file called dev.php in the assets folder where I plan to tes
 
 So, now when I load my website, I can do the following to load my source css:
 
-{% highlight HTML %}
+```html
 <link href="http://assets.example.com/css/dev.php" type="text/css" rel="stylesheet"></link>
-{% endhighlight %}
+```
     
 
 
@@ -85,8 +85,7 @@ Of course, when the website is built and deployed, we will be using a different 
 Next, lets talk about compression of the CSS.  I use [CSS Tidy](http://csstidy.sourceforge.net/) to compress my code.  The code to invoke this is pretty simple.
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 require 'csstidy-1.3/class.csstidy.php';
 $cssSource = file_get_contents('/var/www/public_source/main.css');
 
@@ -98,7 +97,7 @@ $css->parse($cssSource);
 $cssFinished = $css->print->plain();
 
 file_put_contents('/var/www/html/css/main.1.css', $cssFinished);
-{% endhighlight %}
+```
     
 
 You'll notice that I named the file **main.1.css**.  The number will be explained later (its used for caching).

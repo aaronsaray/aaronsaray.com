@@ -10,7 +10,7 @@ While listening to someone complain through twitter about their MySQL conf file,
 
 
 
-#### Enter PHPIniCreator
+### Enter PHPIniCreator
 
 
 

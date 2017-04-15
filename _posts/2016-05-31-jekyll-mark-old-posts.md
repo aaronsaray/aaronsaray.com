@@ -17,7 +17,7 @@ the notification in the proper location in your theme.  Instead, I decided to ju
 
 Here's the liquid code:
 
-{% highlight html %}
+```html
 {% raw %}
 {% capture now %}{{'now' | date: '%s'}}{% endcapture %}  
 {% capture postDate %}{{page.date | date: '%s'}}{% endcapture %}  
@@ -30,7 +30,7 @@ Here's the liquid code:
   </div>  
 {% endif %}  
 {% endraw %}
-{% endhighlight %}  
+```  
 
 First, capture the current date and the post date as unix timestamps.  Then, do a calculation to figure out the difference.
 I'm using a separate variable here because it makes it easier to do math, comparison, and it converts nicely to an integer from a string.

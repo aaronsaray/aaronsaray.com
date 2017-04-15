@@ -11,11 +11,11 @@ On a recent project, the dev team installed [Twitter Bootstrap](http://twitter.g
 
 I finally tracked down that it was some default styles in Bootstrap that were causing the issue.  I added this rule to our css:
 
-{% highlight CSS %}
+```css
 #googlemap img[src^="http://maps.gstatic.com/"] {
   max-width: none;
 }
-{% endhighlight %}
+```
 
 
 And, we were good to go.  Proof:

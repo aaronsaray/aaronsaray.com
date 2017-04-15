@@ -10,9 +10,9 @@ Turns out, it's just another issue of RTFM - but maybe this will save you some h
 
 I was using a simple HTML5 input of time...
 
-{% highlight html %}
+```html
 <input type="time" name="the-time">
-{% endhighlight %}
+```
 
 At first, the user would enter something like "4:00 PM" - which I'd convert to 15:59:59 on the backend.  When I reloaded the page, it now reflected "3:59:59 PM" in the input field.
 
@@ -26,9 +26,9 @@ Well, turns out that every number field in html5 spec is using step=1 on the inp
 
 Hopefully it saves you some time too - in the end, this is what I changed my input field to - and it worked!
 
-{% highlight html %}
+```html
 <input step="1" type="time" name="the-time">
-{% endhighlight %}
+```
 
 
 

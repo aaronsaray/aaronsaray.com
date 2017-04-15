@@ -13,8 +13,7 @@ By default, in Zend Framework, the Zend View Helper of HeadScript allows additio
 I've created my own solution.  Now, I put headScript() items only in the head when necessary, and I add everything else to my new custom bodyScript() handler.  This is simply extending the headScript() handler for a different position.
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_View_Helper_BodyScript extends Zend_View_Helper_HeadScript
 {
     /**
@@ -31,7 +30,7 @@ class Application_View_Helper_BodyScript extends Zend_View_Helper_HeadScript
         return call_user_func_array(array($this, 'headScript'), $args);
     }
 }
-{% endhighlight %}
+```
 
 
 
@@ -40,7 +39,7 @@ You'll notice it simply is simply extending the headScript item and calling it t
 And of course, this is simply called just like HeadScript
 
     
-{% highlight HTML %}
+```html
     <?php echo $this->bodyScript(); ?>
 </body>
-{% endhighlight %}
+```

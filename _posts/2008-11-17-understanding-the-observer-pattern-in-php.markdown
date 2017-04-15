@@ -13,14 +13,13 @@ Our example is going to be very simple: post a message to twitter.  We're not go
 Lets start in:
 
 
-#### Our two logic classes
+### Our two logic classes
 
 
 
 Remember, we're just going to have some blank stub logic classes here.  They are for demonstration purposes only.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class twitterTransport
 {
     public function __construct()
@@ -37,15 +36,14 @@ class urlShortener
         return str_replace('[url]', '[u]', $message);
     }
 }
-{% endhighlight %}
+```
 
 
 Pretty simple, the first class all it does is post to twitter with a public method called tweet().  This accepts an object of the twitter message (which we'll list next!).  It prints out the message so you know what we would have sent to twitter.  The url shortening class - all it is is your logic to shorten urls inside of a message.  In this case, pretty simple.
 
 Ok - as promised, here is our twitter message class:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class twitterMessage
 {
     public $message = '';
@@ -55,21 +53,20 @@ class twitterMessage
         $this->message = $message;
     }
 }
-{% endhighlight %}
+```
 
 
-#### The actual launching code
+### The actual launching code
 
 
 We're going to jump a head here and show what code we'll be using to add the url shorterner as well as post the message.  It's really short - but it'll give us an idea of what class we need to create next:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $tweeter = new twitterTransportObservable();
 $tweeter->registerObserver('PREPOST', new urlShortenerObserver());
 $message = new twitterMessage("this is my message [url]");
 $tweeter->postMessage($message);
-{% endhighlight %}
+```
 
 Ok good.  First off, we create a new instance of twitterTransportObservable.  By the keyword Observable, we can tell that this class is something that will "do something we can watch" or observe.  Any time a class is Observable, it has to have a method to add watchers to itself - or registerObserver().  In our example, we're sending in a type - "PREPOST" - so before we post the message, and a new object.
 
@@ -82,12 +79,11 @@ Finally, we're calling postMessage() sending in our twitter message.  Remember, 
 So far so good.
 
 
-#### Looking at the Observable Class
+### Looking at the Observable Class
 
 So now we know we need to build twitterTransportObservable.  I'm going to post the code here, but don't worry, we'll take it apart, step by step:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class twitterTransportObservable
 {
     protected $_observers = array();
@@ -117,7 +113,7 @@ class twitterTransportObservable
         }
     }
 }
-{% endhighlight %}
+```
 
 
 Ok - pretty big - lets go slow:
@@ -136,14 +132,13 @@ Whew, that was a lot - but we have one more part left:
 
 
 
-#### The Observer class
+### The Observer class
 
 
 
 We have another class that is used to observe or watch the observable classes.  In this case, we wanted to have any URLs shortened before we posted a message to twitter... so we registered this observer with PREPOST.  During the Observable's _notify() function, we called this observerable class's notify() method.  So, lets finally take a look at the code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class urlShortenerObserver
 {
     public function notify($object)
@@ -152,23 +147,22 @@ class urlShortenerObserver
         $object->message = $urlShortener->shorten($object->message);
     }
 }
-{% endhighlight %}
+```
 
 Pretty simple class.  It has only one method, called notify() which accepts an object - of type twitterMessage.  The first line just creates a new urlShortener() - you remember from way up top?  Just a quick str_replace type method.  Then, the next line accesses the urlShortender::shorten() method - by passing in the public $message variable of the twitterMessage.  The return value is assigned to the twitterMessage::$message var.  And remember, since objects are passed by reference, when the next line of the the observable's class is called, the object will now be modified.
 
 
-#### Wrapping Up
+### Wrapping Up
 
 Ok - well this was a pretty simple example of this behavior.  There are definitely more complex ways and more business logic intense scenarios to use the observer in.  Another thing we didn't do is use many of PHP's OO properties - but we could always refactor and do that in the future.
 
 
 
-#### All the code
+### All the code
 
 In case you want to run it yourself:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class twitterTransport
 {
     public function __construct()
@@ -240,5 +234,5 @@ $tweeter = new twitterTransportObservable();
 $tweeter->registerObserver('PREPOST', new urlShortenerObserver());
 $message = new twitterMessage("this is my message [url]");
 $tweeter->postMessage($message);
-{% endhighlight %}
+```
 

@@ -16,9 +16,8 @@ Basically, I told him that he can't necessarily know what the output of DomDocum
 So, in other words, here's what you should do:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $xmlString = "<xml><root><nodes><to><test></test></to></nodes></root></xml>";
 $service = new ClassToTest();
 $this->assertEquals($xmlString, $service->generatedXmlFromClass());
-{% endhighlight %}
+```

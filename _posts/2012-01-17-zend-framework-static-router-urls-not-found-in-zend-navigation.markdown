@@ -9,8 +9,7 @@ For a CMS I've been working on, there are a number of custom routes that are add
 
 Here is an example of the code that was being executed in the setup plugin:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $route = new Zend_Controller_Router_Route_Static(
    'custom-url-1',
    array(
@@ -34,7 +33,7 @@ $route = new Zend_Controller_Router_Route_Static(
 );
                 
 $router->addRoute('custom2', $route);
-{% endhighlight %}
+```
 
 
 Well, it turns out that its impossible for the URL handler to know which route to use.  It can match it, sure, but it doesn't know how to recompile it (that's my best guess at least...).  So, in order to tell it to form it in the default way, I added the 'route'=>'default' attribute to the arrays and this seemed to work.

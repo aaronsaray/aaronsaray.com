@@ -20,21 +20,19 @@ The real life example of this could come in the form of a Zend Framework example
 
 First, for Zend Framework, I'm going to make a connection using ZF's database services.  This will be used later for loose-coupling in the service:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Model_DbTable_User extends Zend_Db_Table_Abstract
 {
     protected $_name = 'user';
 }
-{% endhighlight %}
+```
 
 
 
 Next, I'm going to create a User object.  (You may notice some examples make the business object extend Zend_Db_Table_Rowset or similar classes.  This is coupling our object way too tightly to this particular data retrieval.  Our business object model shouldn't know about that!)
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 
 class Application_Model_User
 {
@@ -47,7 +45,7 @@ class Application_Model_User
     return $this->firstName . ' ' . $this->lastName;
   }
 }
-{% endhighlight %}
+```
     
 
 
@@ -57,8 +55,7 @@ Finally the service class would be needed to be created.  In our example, I'm go
 
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Model_UserService
 {
   public function getUserById($id)
@@ -72,7 +69,7 @@ class Application_Model_UserService
     return $user;
   }
 }
-{% endhighlight %}
+```
     
 
 

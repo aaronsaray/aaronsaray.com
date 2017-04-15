@@ -6,14 +6,13 @@ tags:
 - security
 ---
 
-#### Security Issue?
+### Security Issue?
 
 A big issue with PHP security had been the developers creating a php info page and not removing it from a production site.  As you may know, phpinfo() will dump a ton of useful information (for the developer - as well as the cracker) to the screen:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 phpinfo();
-{% endhighlight %}
+```
 
 
 I can't imagine how many versions of that are out on various servers...
@@ -22,12 +21,12 @@ Actually, let's take a look with this [google query](http://www.google.com/searc
 
 More than a million returns (granted they're not all phpinfo() calls... but it gives you a good idea...)
 
-#### There is Hope
+### There is Hope
 
 With the release of [5.2.1](http://php.net/ChangeLog-5.php#5.2.1) of PHP, phpinfo() now outputs the following meta tag:
 
-{% highlight HTML %}
+```html
 <meta content="NOINDEX,NOFOLLOW,NOARCHIVE" name="ROBOTS"></meta>
-{% endhighlight %}
+```
 
 This will slowly but surely stop compliant robots (see: google, yahoo... not crackerMcCrackenstein.com) from archiving these... yes!

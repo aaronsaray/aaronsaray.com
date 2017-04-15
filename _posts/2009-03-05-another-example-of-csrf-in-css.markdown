@@ -9,9 +9,9 @@ tags:
 
 Just saw this really cool example get submitted on one of my websites testing for CSRF:
 
-{% highlight CSS %}
+```css
 #logo{background:url(deletepost.process.php?id=12345&userID;=12345);
-{% endhighlight %}
+```
     
 Just another great example of why you should
 

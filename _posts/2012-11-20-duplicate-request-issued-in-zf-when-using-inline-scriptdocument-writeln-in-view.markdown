@@ -14,11 +14,11 @@ I finally thought it must be hitting the page one more time (I've had a problem 
 
 In this case, however, I was found the following code:
 
-{% highlight HTML %}
+```html
 <script>
 document.writeln('<img class="album-cover" alt="" src="#" style="display:none;" />');
 </script>
-{% endhighlight %}
+```
 
 
 When I viewed the network tab in chrome, turns out it was issuing another request to my URL for some reason.  Once this code was removed, it was good to go.

@@ -14,10 +14,10 @@ How to do Zend Translate Plurals in ZF 1.x...  [Very simply, the manual](http://
 But for those too lazy to click through...
 
 
-{% highlight PHP %}
+```php?start_inline=1
 $translate = new Zend_Translate($options);
 echo $translate->translate(array('chicken', 'chickens', $numberOfChickens));
-{% endhighlight %}
+```
 
 
 Yup.  Very simple.  

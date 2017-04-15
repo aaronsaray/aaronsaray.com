@@ -9,7 +9,7 @@ There are two types of resumes out there: employed resumes vs unemployed resumes
 
 
 
-#### The Employed Resume
+### The Employed Resume
 
 
 
@@ -17,7 +17,7 @@ This is the resume that you'll see most often with people who haven't had to sea
 
 
 
-#### The Unemployed Resume
+### The Unemployed Resume
 
 
 
@@ -25,7 +25,7 @@ This is kind of a rare beast.  And, when someone makes one of these, they genera
 
 
 
-#### Why does this matter?
+### Why does this matter?
 
 
 
@@ -33,7 +33,7 @@ One of the biggest problems I've seen is that people create these bragging style
 
 
 
-#### What should you do?
+### What should you do?
 
 
 
@@ -41,7 +41,7 @@ It's fine to create an employed resume.  This is sometimes useful if you're doin
 
 
 
-#### Final Thoughts
+### Final Thoughts
 
 
 

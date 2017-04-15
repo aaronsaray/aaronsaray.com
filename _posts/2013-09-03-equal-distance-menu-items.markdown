@@ -15,7 +15,7 @@ This screenshot is my final output:
 
 So here's the markup:
 
-{% highlight HTML %}
+```html
 <div id="main">
     <h1>My Website</h1>
     <nav>
@@ -37,11 +37,11 @@ So here's the markup:
 
     <p>Hi there buddy.</p>
 </div>
-{% endhighlight %}
+```
 
 And then the CSS
 
-{% highlight CSS %}
+```css
 body {
     background: #f4f4f4;
 }
@@ -67,5 +67,5 @@ nav ul:after {
     width: 100%; 
     height: 0 
 }
-{% endhighlight %}
+```
     

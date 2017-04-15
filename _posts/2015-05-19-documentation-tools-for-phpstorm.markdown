@@ -11,7 +11,7 @@ So, when it came to generating this documentation, I wanted to make sure that I 
 
 Let's have a quick look:
 
-#### Setting up the Tools
+### Setting up the Tools
 
 First, [install phpDocumentor](http://www.phpdoc.org/docs/latest/getting-started/installing.html) to your virtual machine.  I happened to have mine installed as a global binary on this project vm.
 

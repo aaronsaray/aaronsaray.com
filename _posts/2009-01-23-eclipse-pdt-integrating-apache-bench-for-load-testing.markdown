@@ -9,7 +9,7 @@ tags:
 
 When I use an IDE, I expect for it to do everything I need for my project, from start to finish.  As you may have read in earlier entries, I enjoy using Eclipse PDT.  I think its time to include load testing into my arsenal of tools inside of eclipse.  I'm going to focus on apache's AB for this article.
 
-#### ab - a quick summary of some of the features
+### ab - a quick summary of some of the features
 
 
 
@@ -35,14 +35,14 @@ Well, there you have it.  Just the few top options that you need.  Now, lets loo
 
 
 
-#### Eclipse PDT - Add an External Tool
+### Eclipse PDT - Add an External Tool
 
 
 In order to accomplish this task, we're going to have to create an external tool in Eclipse.  Remember, the output of the external tools gets routed to the console in eclipse, so its still all encapsulated in the IDE.
 
 
 
-##### First, Open External Tools Dialog
+#### First, Open External Tools Dialog
 
 
 After starting Eclipse PDT:
@@ -52,7 +52,7 @@ After starting Eclipse PDT:
 
 
 
-##### Configure the Program call External Tools
+#### Configure the Program call External Tools
 
 
 **Double click the Program Menu item.**
@@ -62,7 +62,7 @@ This new screen will bring up the external tools menu items.  So far, I've named
 
 
 
-##### Configuring the command line arguments
+#### Configuring the command line arguments
 
 
 For this setup, I'm going to stick with concurrency and with number of requests.  You may want to swap out the -n option with the -t.
@@ -89,7 +89,7 @@ You'll notice that you have the option to click on variables.  Eclipse has the a
 
 
 
-##### Running your External Program the First Time
+#### Running your External Program the First Time
 
 
 

@@ -69,7 +69,7 @@ Wow - great way of putting it Eric - "storing in the browser" - that notion of s
 
 
 
-#### Final Thoughts
+### Final Thoughts
 
 
 

@@ -17,7 +17,7 @@ For me, the real reason I feel connected to the necessity of brushing my teeth c
 
 How did the dentist get me to wholeheartedly convert?  He kept giving me different reasons until he found a reason that connected.  He overwhelmingly presented reasons until I had no choice but to agree.
 
-#### Make the Reasons Overwhelming
+### Make the Reasons Overwhelming
 
 I know you know how to code better than you did on your last project.  But, there are deadlines, the client or boss needs it now, and you just don't have enough time.  The priority is the project and we must accomplish the task immediately.  You should unit test, but you have too many other projects going on.  You know it's important, but you're willing to risk the potential bugs to get the project in the client's hands sooner.  You know you should be using dependency injection, but you don't have the time to refactor all of your code.  Or even more humbling (or humiliating), you know about dependency injection, but you haven't had the time to learn about it yet.  So, it won't make its way into this release.
 
@@ -27,7 +27,7 @@ Understanding this key point is important to comprehending how we make decisions
 
 Put yourself on the opposite side.  When someone asked you to do something that you didn't agree with and wouldn't do, why didn't you satisfy this person?  Their reasons weren't compelling and overwhelming.  You weren't convinced, and even though their request was legitimate and valid, you decided not to proceed.
 
-#### Applying Overwhelming Reasons in the Real World
+### Applying Overwhelming Reasons in the Real World
 
 So, I want to pick a real-life example of one of the methodologies I believe in.  I am going to investigate the process of choosing to move to a model of dependency injection.  In order to invest time, I have to answer this question: What are the reasons that it is a good idea?
 
@@ -39,8 +39,7 @@ Third, using a dependency injection data connection allows me to switch between 
 
 Woah!  Let me see if I understand this.  If I create my services or models using an injected data source, I can reduce the amount of code I have to write for conversions?  Let's demonstrate this before and after situation with some very simple code.
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 class Service\User
 {
   private $db;
@@ -50,14 +49,13 @@ class Service\User
   }
 
   // more code here
-{% endhighlight %}
+```
 
 In the original code, no dependency injection is being used.  I like to use the user service whenever I can because I trust it, understand it, and it makes my life easier.  However, to write a conversion from MSSql to MySql, I'm going to have to initialize a different adapter and create a new service as well.  
 
 Let's compare this to our new code:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 class Service\User
 {
   private $db;
@@ -67,19 +65,18 @@ class Service\User
 	}
 
 	// more code here
-{% endhighlight %}
+```
 
 Sure, this is a level of uncoupled code that is good.  And, this is going to be great for testing.  But, let's demonstrate through some very simple use-case code where this concept really shines when dealing with conversions.
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $oldService = new Service\User(new Adapter\MSSql());
 $newService = new Service\User(new Adapter\MySql());
 
 foreach ($oldService->fetchAll() as $userModel) {
 	$newService->save($userModel);
 }
-{% endhighlight %}
+```
 
 This code demonstrates how we can continue to use the same service code for different data sources in a familiar way.  If I know how to use the user service with MSSql, I know how to use it with MySql.
 

@@ -9,7 +9,7 @@ So the other night I was thinking about using xdebug on my PHP code.  I then tot
 
 **What if I extended my MySQL class to capture unique queries so I could run explain on them later?**
 
-#### You should profile your queries when you write them
+### You should profile your queries when you write them
 
 
 Well, you really should.  Check out the [Explain Mysql Page](http://dev.mysql.com/doc/refman/5.0/en/using-explain.html) for more information on how to do this.  However, this is not always possible.
@@ -28,7 +28,7 @@ Either way, you may not have been able to do the optimization ahead of time.
 
 
 
-#### Collect your queries
+### Collect your queries
 
 
 So the next thought I had was to extend my database classes to capture these queries.  My goal is to grab all of the queries that are uniquely ran on my site and profile them.
@@ -39,7 +39,7 @@ For those non-prepared statements, I think you could use tools like PHP's [Simil
 
 
 
-#### Automate it
+### Automate it
 
 
 
@@ -47,7 +47,7 @@ The last thought I had is to automate the process.  Wait until there is a signif
 
 
 
-#### Your thoughts
+### Your thoughts
 
 
 Does something like this already exist?  Is this a good way to retroactively deal with the situation? I'm curious what you think.

@@ -7,11 +7,11 @@ tags:
 
 For those of us who develop on windows, we can sometimes feel linux tool envy.  One particular tool is the 'dig' command.  Well, luckily, you can get this to run on windows easily:
 
-#### Download Bind from ISC
+### Download Bind from ISC
 
 Visit the [www.isc.org/sw/bind/index.php](http://www.isc.org/sw/bind/index.php) download page to download the Windows binary version.
 
-#### Create folder and Extract necessary Files
+### Create folder and Extract necessary Files
 
 Create a folder called 'dig' - or just push all the dlls and exe's into your windows/system32 folder.  Extract the following:
 
@@ -26,7 +26,7 @@ Create a folder called 'dig' - or just push all the dlls and exe's into your win
     
 
 
-#### Run Dig
+### Run Dig
 
    
     c:\>dig

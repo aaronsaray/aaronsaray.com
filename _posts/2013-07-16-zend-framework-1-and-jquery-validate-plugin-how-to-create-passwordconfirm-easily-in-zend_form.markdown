@@ -10,8 +10,7 @@ Perhaps this trend is going away, but it used to be a "good thing" to make peopl
 
 **Part of your Zend_Form class:**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $this->addElement('password', 'password', array(
     'label'        =>'New Password:',
     'required'    =>true,
@@ -31,7 +30,7 @@ $this->addElement('password', 'confirm_password', array(
    'class'        =>'required password',
    'equalTo'    =>'#password', 
 ));
-{% endhighlight %}
+```
 
 
 First thing, add the password field.  Use a validator to make sure that its of the proper length, and require it.  By default, jQuery Validate plugin will also do required on class of 'required' - so this helps out immensely. 

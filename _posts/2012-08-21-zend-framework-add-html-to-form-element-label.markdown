@@ -9,10 +9,9 @@ By default, the labels of form elements in Zend Form are escaped.  Sometimes, li
 
 **Example:**
 
-{% highlight PHP %}
-<?php 
+```php?start_inline=1 
 $this->getElement('agreetos)->getDecorator('Label')->setOption('escape', false);
-{% endhighlight %}
+```
     
 
 So, there you go - you can now add a link to that label.

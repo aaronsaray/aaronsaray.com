@@ -8,7 +8,7 @@ tags:
 
 I find myself wanting to document various different attributes mid development on my jquery code.  I have created the following function to help use FireBug's console access code effectively in the jQuery fashion.
 
-{% highlight javascript %}
+```javascript
  /**
   * JConsoleFB 0.1
   *
@@ -72,13 +72,13 @@ I find myself wanting to document various different attributes mid development o
          };
      }
  });
-{% endhighlight %}
+```
 
 Usage is pretty simple.  For example, say I wanted to log something about the current element I'm going to clone.  I may do this:
 
-{% highlight javascript %}
+```javascript
 var newClone = $("#cloneable").log('Cloning this').clone();
-{% endhighlight %}
+```
 
 
 This will display a reference to this object as well as the message 'Cloning this' in the Firebug console as a log type.

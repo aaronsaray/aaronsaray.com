@@ -26,8 +26,7 @@ Next, create a method in your bootstrap called _initWriteConnection() or somethi
 
 Finally, time to extend the Zend_Db_Table_Abstract
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Model_SplitReadWriteDatabaseConnection extends Zend_Db_Table_Abstract
 {
     /**
@@ -77,7 +76,7 @@ class Application_Model_SplitReadWriteDatabaseConnection extends Zend_Db_Table_A
         $this->_readDB = null;
     }
 }
-{% endhighlight %}
+```
 
 
 
@@ -102,13 +101,12 @@ Any other ways that I can make this better?
 PS, if you'd like to test this, but don't actually have two different database credential connections (but want to be ready for later), make the _initWriteConnection() method contain the following code:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $this->bootstrap('db');
 $db = $this->getResource('db');
 Zend_Registry::set('DbWriteConnection', $db);
 return $db;
-{% endhighlight %}
+```
 
 
 

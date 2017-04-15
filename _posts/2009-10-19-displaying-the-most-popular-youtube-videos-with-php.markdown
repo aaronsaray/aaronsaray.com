@@ -10,8 +10,7 @@ During one of my random dreams of how to become an internet millionaire, I thoug
 
 While I'm not feeling that artsie right now, I did code together a quick script to do this using SimpleXML:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 function embed($src)
 {
     return '<object width="560" height="340"><param name="movie" value="' .
@@ -37,6 +36,6 @@ foreach ($xml->entry as $entry) {
     echo "</td></tr>";
 }
 echo '</table>';
-{% endhighlight %}
+```
 
 **Real brief analysis:** The function embed() is used to generate the code to embed the video.  The first step is loading the file with simplexml_load_file().  (Do keep in mind to make sure you can <a href="http://www.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen">remotely open a file</a> in php.ini).  Next, I generated the title and created a header based on the last time the xml file was updated.  The final step was to create a table and generate a loop to display each embedded video with a link to its source (see usage of the embed() function there? yeah....).

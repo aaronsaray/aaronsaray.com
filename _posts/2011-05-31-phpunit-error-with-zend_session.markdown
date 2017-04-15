@@ -22,10 +22,9 @@ However, there is a better way!!
 Instead, add the following line:
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 Zend_Session::$_unitTestEnabled = true;
-{% endhighlight %}
+```
 
 
 

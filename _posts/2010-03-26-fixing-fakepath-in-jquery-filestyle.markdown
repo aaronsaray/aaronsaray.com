@@ -12,18 +12,18 @@ As a quick fix, however, I made the following changes to FileStyle:
 
 **BEFORE**
 
-{% highlight javascript %}
+```javascript
 $(self).bind("change", function() {
     filename.val($(self).val());
 });
-{% endhighlight %}
+```
 
 **AFTER**
 
-{% highlight javascript %}
+```javascript
 $(self).bind("change", function() {
     var s = $(self).val().replace(/(c:\\)*fakepath/i, '');
     filename.val(s);
 });
-{% endhighlight %}
+```
     

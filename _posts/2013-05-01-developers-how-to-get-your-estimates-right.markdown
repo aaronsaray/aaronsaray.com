@@ -16,7 +16,7 @@ I follow three steps when estimating: Preliminary research, Planning, and Saying
 
 
 
-#### Preliminary Research
+### Preliminary Research
 
 
 
@@ -28,7 +28,7 @@ Instead, **always estimate all of your tasks** even if you're not required to su
 
 
 
-#### Planning
+### Planning
 
 
 
@@ -40,7 +40,7 @@ The great tool here is that we often understimate - and the 20% column USUALLY c
 
 
 
-#### Just say No
+### Just say No
 
 
 
@@ -50,7 +50,7 @@ However, sometimes its unavoidable.  Whatever happens, **put a number on that 'y
 
 
 
-#### Good Luck
+### Good Luck
 
 
 

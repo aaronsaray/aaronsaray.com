@@ -27,21 +27,19 @@ In this example, we need to detect if the current request was issued as a POST. 
 
 After doing a number of code reviews, I've noticed a common methodology that some PHP developers use to test if the current request is POST.  
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 if (!empty($_POST['firstname'])) {
   // assume this was a post and move forward
 }
-{% endhighlight %}
+```
 
 In this case, the programmer knows that the previous page will have a form that has a field named `firstname` and that this will be sent on a posted form.  However, there is a flaw in this method.  What if the first name field in the form is blank?  Recognizing this, the next iteration that is common is the following:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 if (isset($_POST['firstname'])) {
   // assume this was a post and move forward
 }
-{% endhighlight %}
+```
 
 This iteration checks to make sure that the post variable of `firstname` was indeed set, but it may be blank.  
 
@@ -49,12 +47,11 @@ But, as confident coders, we're not OK with this yet, are we?  I'm not.  I don't
 
 Let me submit the final iteration:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
   // this is a post so move forward
 }
-{% endhighlight %}
+```
 
 First, we validate that the super global `$_SERVER` array has the key of `REQUEST_METHOD`.  It is not a good idea to test a value against an array key without validating that the key actually exists.  Using `isset()` first will determine that the key exists before we attempt to test the value.  (Please note that `isset()` will return false if the key does exist but the value is NULL.  In this particular case, that's fine.)  Next, we check to make sure that the request method is identical to `POST` exactly.
 

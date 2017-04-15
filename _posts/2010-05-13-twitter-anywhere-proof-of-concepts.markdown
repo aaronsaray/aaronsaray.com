@@ -8,11 +8,11 @@ tags:
 
 First off, let me just remind you to not be an idiot like I was.  I simply found the documentation <a href="http://dev.twitter.com/anywhere/begin">here</a> and <a href="http://platform.twitter.com/js-api.html">here</a> and went to town.  After hours of trying to figure out exactly what was going on, I stumbled across some very interesting comments in the news group: The @anywhere api is not in chirp_preview anymore - but its not done either.  So some of the stuff won't work - and that wasn't my fault!  Dang!  However, I was able to create a few proof of concept things.  I'm going to cover connecting to your application, showing the connection/authentication system, and retrieving information about other users via your authenticated account.
 
-#### First, set up the HTML
+### First, set up the HTML
 
 The following is the snippet of HTML I used for my demonstration.
 
-{% highlight HTML %}
+```html
 <html>
 	<head>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -30,13 +30,13 @@ The following is the snippet of HTML I used for my demonstration.
 		</div>
 	</body>
 </html>
-{% endhighlight %}
+```
 
 This is pretty simple, create a document, load jquery and load the twitter api using your api key, and then create some placeholder boxes.  Let's check out the first set of javascript.
 
-#### The Javascript for Authentication and User Information
+### The Javascript for Authentication and User Information
 
-{% highlight javascript %}
+```javascript
 twttr.anywhere.config({
     assetHost: "twitter-anywhere.s3.amazonaws.com"
 });
@@ -60,7 +60,7 @@ twttr.anywhere(function(T) {
         showUserInfo(T);
     }
 });
-{% endhighlight %}
+```
 
 To access the twitter @anywhere functionality, there is a global object called twttr.  Then, call the anywhere method and passing in a variable - in this case T.  T refers to the current instance of the @anywhere object.
 
@@ -72,7 +72,7 @@ All that functionality only happens when the user uses the connect button. The p
 
 Next, lets look at the other code bits that we reference in this snippet.
 
-{% highlight javascript %}
+```javascript
 $("#signoutlink").live("click", function () {
     twitterSignout();
 });
@@ -94,17 +94,17 @@ function showUserInfo(T)
     $('#connectedUser').append("Logged in as " + profileImageTag + " @" + screenName);
     T.hovercards();
 }
-{% endhighlight %}
+```
 
 First, the link with the id of 'signoutlink' is now bound with jquery to the method twitterSignout().  Whenever the previous bit of javascript creates this link, and it gets clicked, the twitterSignout() method will be called.   twitterSignout() simply calls the @anywhere signOut() method, hides the disconnect link, shows the connect button, and clears the information about the previously logged in user.
 
 The showUserInfo() method's content is a copy from the JS API documentation.  All it does is access the currentUser of the T (twitter @anywhere instance) and retrieve that data.  It then populates it into the div with the ID 'connectedUser'.  One thing I do extra is call the hovercards() method.  hovercards() parses the document and highlights every twitter handle and creates a hover-card or popup.  I thought this would be a nice edition for the user information.
 
-#### The Javascript for Interacting with Other Users
+### The Javascript for Interacting with Other Users
 
 The HTML still has an input box and button I need to add javascript for.  For the proof of concept, all we're going to do is search the user by their username and alert a few bits of information about them.
 
-{% highlight javascript %}
+```javascript
 $("#doSearch").click(function(){
     var username = $("#searchUser").val();
     if (!username) {
@@ -125,12 +125,12 @@ $("#doSearch").click(function(){
         });
     });
 });
-{% endhighlight %}
+```
 
 Once the button with the id 'doSearch' is clicked, the value of the input with the ID of 'searchUser' is evaluated.  If empty, it tells the user to actually do something - or search someone! duh!  Then, the twitter @anywhere instance is executed again.  The first step is to make sure that the current visitor really is an authenticated user.  If not, tell them they need to be.  You've seen this code before in the upper snippet.
 
 Next, the User.find() method is executed on the content of that username.  The twitter user object is passed into the callback.  The call back tells how many friends and followers the searched user has, whether the current user is following the searched user, and what that person's last status was (it uses their name to start out the sentence.).
 
-#### Ending Thoughts
+### Ending Thoughts
 
 I'm looking forward to what Twitter comes up with. So far, I'm super impatient.  I was ready to make my full fledged application today - but was stuck by lack of documentation and lack of features.  However, I'm sure when it's done, it will be great.  I'll post something when it's finished with a more indepth tutorial.

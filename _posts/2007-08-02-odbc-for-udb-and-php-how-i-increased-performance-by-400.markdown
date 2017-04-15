@@ -14,8 +14,7 @@ To test this, you can use the [odbc_connect](http://php.net/odbc_connect) consta
 
 **Remember, try the test once with the constant, and once without.**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $dsn = 'DRIVER={iSeries Access ODBC Driver};SYSTEM=SYS1;';
 $username = 'USERNAME';
 $password = 'PASSWORD';
@@ -32,7 +31,7 @@ while ($row = odbc_fetch_array($result)) {
 $stop = microtime(true);
  
 print $stop - $start;
-{% endhighlight %}
+```
 
 Of course, remember to swap out the proper credentials and make a legitimate sql call for testing.
 

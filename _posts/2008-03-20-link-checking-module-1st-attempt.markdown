@@ -9,8 +9,7 @@ So I wrote some code the other day.  It sat in my code repository and I never te
 
 A few weeks later I came back to it and looked through it - and laughed!!  Anyone figure out where ALL the holes are in this code?
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class linkChecker
 {
     protected $_links = array();
@@ -90,4 +89,4 @@ class checkableLink
  
 class linkException extends exception
 {}
-{% endhighlight %}
+```

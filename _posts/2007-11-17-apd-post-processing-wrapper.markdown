@@ -13,8 +13,7 @@ At any rate, I thought I might save anyone some time by posting the code here:
 
 This is the main APD parsing class.  As you can see, it has configurations that were local to my machine.  You'll need to edit these yourself if you plan to use the script... otherwise just learn from the main processing methods.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * the main APD logic class
  */
@@ -384,4 +383,4 @@ class APD
         return $return;
     }
 }
-{% endhighlight %}
+```

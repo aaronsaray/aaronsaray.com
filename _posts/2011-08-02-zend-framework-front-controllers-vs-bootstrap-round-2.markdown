@@ -11,7 +11,7 @@ There was some discussion on Twitter regarding the original version of my articl
 
 
 
-#### When Initializing Site in Front Controller, Use the Proper Hook
+### When Initializing Site in Front Controller, Use the Proper Hook
 
 
 So I started examining my example code.  I noticed how I added a lot of code to the routeStartup().  My initial thought was that almost everything should be here.  Perhaps I define routes depending on the permission of the current user.  I need to initialize my ACL right away to know if I can allow access to other resources.  I also wanted to make sure the view was available because certain controllers could update or modify it.
@@ -38,7 +38,7 @@ Well this doesn't sound too bad until I realized that I initialized my view sett
 
 
 
-#### What Should Go Where in the Front Controller Plugin Site Initialization
+### What Should Go Where in the Front Controller Plugin Site Initialization
 
 
 First, **routeStartup** should have all the resources that will always, always be used no matter what.  It is also a place to initialize things that may cause the site to redirect, handle errors, logging, or permissions of routes.  Things like the view settings should not be initialized here.
@@ -49,14 +49,14 @@ Finally, **dispatchLoopShutdown** would be for initializing other resources that
 
 
 
-#### What Problems Can This Cause?
+### What Problems Can This Cause?
 
 
 There are two possible problems I've ran into with this.  First, the programmer can make a mistake by putting the wrong resource in the wrong hook.  This will happen from time to time.  Not the end of the world!  The second problem is a bit more deeper: Using PHPUnit to test Controllers.  When testing controllers, the test will extend Zend_Test_PHPUnit_ControllerTestCase.  This class has a setUp() method that re-initializes the request on each test method call.  This means that the bootstrap is reset.  All of the examples show running your bootstrap again in there instead.  However, if you bootstrap each method with your bootstrap, and then the controllertestcase class resets the front controller request, only half the of the request is valid.  This is confusing yet and something I'm aiming to fix in my test classes.  I'll post more when I have this figured out.  Long and short of it, the Zend_Test_PHPUnit_ControllerTestCase class seems to be set up requiring/expecting that your bootstrap is in the traditional version.
 
 
 
-#### What's your input?
+### What's your input?
 
 
 Do you see positives or negatives of this setup?  Would love to hear your thoughts. 

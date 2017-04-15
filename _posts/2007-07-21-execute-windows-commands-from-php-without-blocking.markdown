@@ -16,12 +16,11 @@ Using exec, passthru, etc, I was able to execute my windows process.  However, i
 
 Using the Com object in windows:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $runCommand = 'calc.exe';
 $WshShell = new COM("WScript.Shell");
 $oExec = $WshShell->Run($runCommand, 7, false);
-{% endhighlight %}
+```
 
 Of course if you wanted to run the command on *nix, you could use the standard shell_exec calls or whatever using the send to background operator "&".
 

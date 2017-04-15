@@ -10,8 +10,7 @@ You may find while working with projects like Zend Framework that you have a num
 
 **Base class with getter/setters**
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 class base
 {
     /**
@@ -35,7 +34,7 @@ class base
         return isset($this->_data[$name]) ? $this->_data[$name] : null;
     }
 }
-{% endhighlight %}
+```
     
 
 
@@ -43,14 +42,13 @@ Now, let's say we have an object of type Person which we know will have a first 
 
 **Class with @property definition**
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 class person extends base
 {
     @property string $first_name The user's first name
     @property string $last_name The user's last name
 }
-{% endhighlight %}
+```
 
 
 Now, when creating instance of this class, if your IDE supports PHPDoc, you will now have those previously undocumented and undefined properties available.

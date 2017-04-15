@@ -9,8 +9,7 @@ So, since I want to save some keystrokes, I rarely will go back to the Front Con
 
 So, when you create a default Zend Application, the bootstrapper will read in your config.ini file that you specify and handle that in the bootstrap parent class.  You can get these options by calling the $this->getOptions() method. I prefer to work with these as a Zend_Config object as well (by default, they are just a plain array.) Since I want to always have this available in the Registry, I've made the following method part of my Bootstrap class in all my applications:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
   protected function _initOptionsRegistry()
@@ -20,7 +19,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
   }
   
   // ...
-{% endhighlight %}
+```
     
 
 

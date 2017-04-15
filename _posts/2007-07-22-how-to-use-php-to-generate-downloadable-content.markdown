@@ -9,10 +9,9 @@ I was looking at some code I had written about 3 years ago - how sad!  I was cre
 
 Instead, I should have done it the smart way - with the proper use of the header command.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 header('Content-type: application/pdf');
 header('Content-Disposition: attachment; filename="filename.pdf"');
-{% endhighlight %}
+```
 
 Of course, check out and read the entire header manual page for more.

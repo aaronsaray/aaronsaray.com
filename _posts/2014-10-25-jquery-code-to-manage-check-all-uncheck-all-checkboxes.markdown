@@ -15,7 +15,7 @@ After we made the changes, they all agreed that the new functionality was as exp
 So I created a snippet of jQuery to handle this featureset for the team in a generic method.  You'll see this below.
 
 
-#### Instructions
+### Instructions
 
 
 
@@ -23,13 +23,13 @@ Create a checkbox that is your checkall control.  Give it a data attribute of 'c
 
 
 
-#### The Code
+### The Code
 
 
 
 Here is the jQuery snippet to handle the requested functionality.
 
-{% highlight javascript %}
+```javascript
 $('input[data-checkall-control]').each(function(){
     var $checkAll = $(this);
     var $children = $('input[data-checkall-group="' + $checkAll.data('checkall-control') + '"]');
@@ -52,7 +52,7 @@ $('input[data-checkall-control]').each(function(){
         }
     });
 });
-{% endhighlight %}
+```
 
 
 
@@ -60,7 +60,7 @@ Here is an example of the input boxes that this would control.
 
 
     
-{% highlight HTML %}
+```html
 <table>
     <tr>
         <th><label><input type="checkbox" data-checkall-control="group1">Check All</label></th>
@@ -84,4 +84,4 @@ Here is an example of the input boxes that this would control.
         <th>Value 4</th>
     </tr>
 </table>
-{% endhighlight %}
+```

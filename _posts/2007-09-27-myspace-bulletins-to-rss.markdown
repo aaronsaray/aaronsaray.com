@@ -10,8 +10,7 @@ So I'm sick of myspace... or so I say to myself.  So now I log in about half the
 
 Lets check it out:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 set_time_limit(0);
 $ch = curl_init();
 //
@@ -163,7 +162,7 @@ foreach ($tds[0] as $td) {
 $fp = fopen('/yourhosthere/myspace/bulletins.xml', 'w');
 fputs($fp, $rss->asXML());
 fclose($fp);
-{% endhighlight %}
+```
 
 This code was heavily inspired from another blog posting - but I can't seem to remember their page anymore :(
 

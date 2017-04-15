@@ -13,8 +13,7 @@ First, open up **index.php** in your editor.  Find the statement where it checks
 Above the isset() call and below the clickheat config include, put your custom code.  The important line is to define CLICKHEAD_ADMIN.
 For example, you could do this:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 include CLICKHEAT_CONFIG;
 
 if ($_SESSION['userIsAdmin']) {
@@ -23,24 +22,22 @@ if ($_SESSION['userIsAdmin']) {
 else {
     die(header('/normalLoginPage.php'));
 }
-{% endhighlight %}
+```
     
 Then, you can remove - or comment - the code block that starts with
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 if (isset($_COOKIE['clickheat']))
-{% endhighlight %}
+```
 
 
 all the way down to the end of that IF statement... it ends at these lines:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
     }
     $__action = 'login';
 }
-{% endhighlight %}
+```
 
 
 This should now allow the script to use your authentication system and not its own.

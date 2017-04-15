@@ -10,8 +10,7 @@ I found an interesting article about the parameters of the advanced search URL f
 
 You can find the code here:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * Google Utilities Script
  *
@@ -241,4 +240,4 @@ $search = new google_searchString();
 $search->searchTerms = 'test page';
  
 print $search->getString();
-{% endhighlight %}
+```

@@ -22,9 +22,9 @@ Open Graph integration.
 
 This is the first time that I used an apple-touch icon and an open graph image.  Since the only images on the site were my signature portion (and link to my main website) and share icons, that was the preview that showed up when you shared it on Facebook.  I added the meta property of og:image which pointed to the image.
 
-{% highlight HTML %}
+```html
 <meta content="http://name-tag.me/apple-touch-icon.png" property="og:image">
-{% endhighlight %}
+```
 
 Mod_expires / mod_deflate
 
@@ -57,13 +57,13 @@ Browser sniffing body tag.
 Because there were specific layout elements in place here (and they had to work exactly), I had to sniff browsers.  I did that with this famous line:
 
 
-{% highlight HTML %}
+```html
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
 <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
-{% endhighlight %}
+```
 
 
 
@@ -90,7 +90,7 @@ TTF Font
 
 I defined the font I wanted to use using a utility called FontSquirrel:
 
-{% highlight CSS %}
+```css
 @font-face {
     font-family: 'DesyrelRegular';
     src: url('desyrel-webfont.eot');
@@ -98,16 +98,16 @@ I defined the font I wanted to use using a utility called FontSquirrel:
     font-weight: normal;
     font-style: normal;
 }
-{% endhighlight %}
+```
     
 
 
 
 Then later, defiend it in the font-family declaration:
 
-{% highlight CSS %}
+```css
 font-family: DesyrelRegular, tahoma, verdana, arial, sans-serif;
-{% endhighlight %}
+```
     
 
 
@@ -116,14 +116,13 @@ Image Download
 
 I was able to use the same ttf font in my image downloading.  I used imagettftext to position the items.  I then sent the following headers:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 header("Cache-Control: public");
 header("Content-Description: File Transfer");
 header('Content-Disposition: attachment; filename="Hello My Name Is.png"');
 header("Content-Type: application/octet-stream");
 header("Content-Transfer-Encoding: binary");
-{% endhighlight %}
+```
 
 
 Lessons Learned

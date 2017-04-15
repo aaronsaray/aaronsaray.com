@@ -12,11 +12,11 @@ When I was growing up, having chocolate milk was a huge treat.  My mom would mix
 
 I was visiting a friend the first time I found out about this amazing invention.  My friend's dad was beginning to pour some chocolate milk for me and he said the phrase "Say when" implying I should say when to stop the flow of rich, delicious pre-mixed chocolate milk into my glass.  Well, let me tell you, I was so excited about this new discovery, I wanted to have as much as I possibly could.  I would not say 'when' ever!  I ended up having an extremely full glass of chocolate milk surrounded by a few drops spilled on the table.  I wasn't going to stop the flow of milk, no matter what!
 
-#### Restricting the Flow
+### Restricting the Flow
 
 There are two ways we might receive a larger flow of data than we're expecting.  Both can cause a denial of service from exhausting resources.  The first is because a user is just extremely passionate or excited about our service and is over-using it.  The second is from malicious intent.  
 
-#### The Friend
+### The Friend
 
 I'm sure you've been here before.  Some great feature was available on a website after you click a link and you want to use it quickly.  Perhaps you want to pre-load a lot of Vimeo videos?  Instead of clicking through each one individually, you open up each one in a new tab in your browser.  Now instead of one video ever few seconds, you're now loading 10 videos all at once.  You're super excited to see all of these videos; and you've 'hacked' the system to get your content sooner.
 
@@ -28,14 +28,13 @@ To do this type of checking, you might track via session, IP, user account or ge
 
 As a Confident Coder, you're constantly building sanity checks and balances into your application.  You want to serve the most amount of users without degrading the user experience.  
 
-#### The Foe
+### The Foe
 
 The second reason to sanity check information comes from purposeful directed denial of service attacks.  A malicious user may take time to figure out how your application works and then generate requests that use the most amount of resources possible in an effort to degrade performance or restrict access.  
 
 For example, imagine a scenario where you accept 3 email addresses in a web form to send notification emails to.  Via AJAX, the email addresses are validated for format as well as whether they belong to the customer database in Salesforce.  Note this following example code:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 /**
  * @return true if valid email and customer
  */
@@ -50,7 +49,7 @@ foreach ($emails as $email) {
 	$respones[$email] = validateEmail($email);
 }
 echo json_encode($responses);
-{% endhighlight %}
+```
 
 This very simple script checks to make sure that the email address is valid, and if it is, uses our `SalesForce` class to determine if the email belongs to a customer.  `SalesForce` opens a SOAP request to our salesforce instance.
 
@@ -58,10 +57,10 @@ Now, the assumption is that the form on the web site will only send up to 3 emai
 
 So, if only up to three email addresses could be sent via the form, some sanity checking could be done with a loop like this:
 
-{% highlight php %} 
+```php?start_inline=1 
 <?php
 for ($count = 1; $count <= 3; $count++) {
-{% endhighlight %}
+```
 
 This allows one to three instances of the email to be validated.  Do remember that we'll then have to check that the array element exists because this loop is ran three times - even if there is only one email being sent.  (You could break out of the loop if you wanted to early, however.)
 
@@ -69,7 +68,7 @@ But, there is still a flaw with this.  We know that a legitimate request is 1 to
 
 Instead, a Confident Coder is confident of the legitimate bounds of his or her application.  Data out of bounds is not ran until a bounds is reached, it is simply discarded.  So, if we receive 100 email addresses, the proper response is not to run three and discard the rest.  The code should halt the execution immediately.  Note the following code suggestion:
 
-{% highlight php %} 
+```php?start_inline=1 
 <?php
 // function validateEmail($email) ... function concludes here ...
 
@@ -79,7 +78,7 @@ if (count($_GET['emails')) > 3) {
 }
 
 // continue with loop here...
-{% endhighlight %}
+```
 
 In this case, we've determined that if the amount of emails being submitted is more than three, the script should not execute any other command and will return an error condition.
 

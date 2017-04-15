@@ -11,19 +11,18 @@ Well, my boss at #superdev - who can only be compared to a more energetic versio
 
 Ok.
 
-#### How does it happen?
+### How does it happen?
 
 E_NOTICE errors are generally generated when variables that haven't been declared are read.  But Aaron - why is this an error?  I thought PHP did not require you to define your variables a head of time?  Well, buddy, thanks for asking!  PHP does not require you to define your variables ahead of time - when you write to them.  However, it does suggest that you define them with some value before you read them.  One of the main reasons why this is important is the registered globals feature... "feature"... that PHP had prior to PHP6.
 
 Image this code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 if ($admin) {
     print "super secret stuff";
 }
 ?>
-{% endhighlight %}
+```
 
 Well, every time you run this script, no super secret stuff will be printed.  However, if you have registered globals on, and then pass in a get variable, such as:
 
@@ -35,7 +34,7 @@ Anyways, that's the history of why this notice was generated.
 
 Now, lets move on to the real meat:
 
-#### Uninstantiated Variables
+### Uninstantiated Variables
 
 Lets take a common decision tree:
 
@@ -43,36 +42,33 @@ _If my variable has been set to something, print something else.  If my admin va
 
 I've seen code do this like this:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 if ($isAdmin) {
     print "<div id='menu'>blahb lah blah</div>";
 }
 ?>
-{% endhighlight %}
+```
 
 Also, other times I've seen this:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 if (!$normalUser) {
     print "<div id='menu'>blah blalhickity blah</div>";
 }
 ?>
-{% endhighlight %}
+```
 
 Both of these are bound to generate E_NOTICE errors if not used properly.  We'll use the first example.  Think about this:
 
 Is there ever a case where $isAdmin won't be set?  You know that an unset variable will evaluate to false - but php will generate that E_NOTICE on you.
 
-#### How to fix this?
+### How to fix this?
 
 There are two ways that you can fix this type of error:
 
 **First, predefine every variable to a blank or null** before you could even use it.  This is especially good for those who still have registered globals on.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 
 /** top of script **/
 $isAdmin = FALSE;
@@ -82,7 +78,7 @@ areTheyAdmin();
 
 if ($isAdmin) {
     /** continues **/
-{% endhighlight %}
+```
 
 Other suitable predefined values include: '', NULL, 0, array().
 
@@ -92,38 +88,34 @@ _One Caveat:_ Be careful with predefining your values, however, so that you don'
 
 _If you're really lazy and don't like spending all those extra lines, here's a tip:_
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $a = '';
 $b = '';
 $c = '';
-{% endhighlight %}
+```
 
 **OR**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $a = $b = $c = '';
-{% endhighlight %}
+```
 
 **The second style: using isset().**
 
 Isset will return whether the variable is set to any value or not.  If it is not, it returns false, and then your if statement exits right away.  No calculation is done on an unset variable.  Example:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 areTheyAdmin();
 
 if (isset($isAdmin) && $isAdmin) {
     /** continue some stuff here for admin dude **/
-{% endhighlight %}
+```
 
-#### What else does this affect?
+### What else does this affect?
 
 This also affects array keys that are unset.  You can view array keys the exact same as variables - you shouldn't read from an unset one - but you can write to one that doesn't exist yet.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 
 $myArray = array('something'=>"another");
 
@@ -134,22 +126,21 @@ if ($myArray['kakaw']) {
 
 /** good to go boy **/
 $myArray['chunky'] = 'soup';
-{% endhighlight %}
+```
 
 
 As with variables, you should use isset().  I would caution against using array_key_exists().  Isset is a language construct whereas array_key_exists() is not - so isset is immensely faster.  The only time you might want to use array_key_exists is when you have an array of keys.  Otherwise, isset() supports everything you need.
 
 _Bonus!_  In that previous example, to write to the chunky key, you don't even have to define $myArray.  In this example, $arrayKaBob is defined into an array automatically, and then the key is set:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $arrayKaBob['key master'] = 'gate keeper';
-{% endhighlight %}
+```
 
-#### Well what if I just use the @?
+### Well what if I just use the @?
 
 Don't.  Seriously.  Look <a href="/2007/07/27/the-perils-of-the-at-in-php/">here</a>.
 
-#### Wrapping it Up
+### Wrapping it Up
 
 Ok - so that about wraps it up - any comments are welcome. :)

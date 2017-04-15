@@ -10,8 +10,7 @@ So one of the things that really bothered me about the Zend ACL implementation i
 
 **Acl.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Model_Acl extends Zend_Acl
 {
  // snippy
@@ -24,7 +23,7 @@ class Application_Model_Acl extends Zend_Acl
         return $inherits;
     }  
 }
-{% endhighlight %}
+```
 
 
 

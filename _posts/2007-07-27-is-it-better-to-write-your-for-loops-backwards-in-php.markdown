@@ -10,8 +10,7 @@ After listening to a javascript internals optimization talk, I wanted to see how
 
 I'm not entirely solid with my testing method.  My idea was to make a forward loop and a backward loop.  Each would do one PHP action.  I'd run the test 10 times to get an idea what the mean was - did forward loops win or did backward ones win?  This is the code I used:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $var = 1;
  
 for ($j=0; $j < 10; $j++) {
@@ -44,7 +43,7 @@ for ($j=0; $j < 10; $j++) {
     }
     print '<br /><hr />';
 }    
-{% endhighlight %}
+```
 
 After running the test a few times, I was actually surprised.  There really wasn't that much of a difference.  Here's an example of the output for one of my tests:
 

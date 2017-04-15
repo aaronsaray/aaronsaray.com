@@ -17,8 +17,7 @@ Side note: There is some argument as to whether the translation should be handle
 Let's check out some code in an action
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 public function dosomethingAction()
 {
   if (!Zend_Auth::getInstance()->hasIdentity()) {
@@ -30,7 +29,7 @@ public function dosomethingAction()
   }
   // life is ok here!
 }
-{% endhighlight %}
+```
     
 
 

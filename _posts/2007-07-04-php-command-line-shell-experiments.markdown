@@ -15,24 +15,21 @@ We're going to execute three test scenarios in PHP to test out each of these she
 
 The first one:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 phpinfo ();
-{% endhighlight %}
+```
 
 The Second:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $a = 'test';
 echo $a;
-{% endhighlight %}
+```
 
 
 And the third one is going to be a class creation, followed by var_dump()ing it out to the display.  Our file -- test.php:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class TEST
 {
     protected $_val = 'test';
@@ -42,17 +39,16 @@ class TEST
         $this->_val='constructor';
     }
 }
-{% endhighlight %}
+```
 
 
 And we're going to execute the following:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 include 'test.php';
 $a = new TEST();
 var_dump($a);
-{% endhighlight %}
+```
 
 **First off, What does Plain Ol' PHP offer me?**
 

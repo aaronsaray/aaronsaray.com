@@ -10,28 +10,26 @@ _First, I just want to say up front that this is not a discussion of "is 100% te
 
 
 
-#### Testing Protected/Private Attributes using PHPUnit
+### Testing Protected/Private Attributes using PHPUnit
 
 
 PHPUnit has this built in - simply use PHPUnit_Framework_Assert::readAttribute().  So, for example, lets say our object User has a protected role id of 1.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 public function testUserRoleIsOne()
 {  
   $user = new User();
   $this->assertEquals(1, PHPUnit_Framework_Assert::readAttribute($user, '_roleId'));
 }
-{% endhighlight %}
+```
 
 
-#### Testing Protected/Private Methods in PHPUnit
+### Testing Protected/Private Methods in PHPUnit
 
 
 This method is mainly reflection based.  The PHPUnit component is really only the testing. Lets say a protected method _getKey() of the User object returns a value of 'mysuperawesomekey'
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 public function testRetrieveKeyFromUser()
 {
     $user = new User();
@@ -42,7 +40,7 @@ public function testRetrieveKeyFromUser()
     
     $this->assertEquals('mysuperawesomekey', $method->invokeArgs($user, array()));
 }
-{% endhighlight %}
+```
     
 
 

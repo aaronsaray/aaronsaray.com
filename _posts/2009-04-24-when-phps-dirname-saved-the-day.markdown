@@ -10,7 +10,7 @@ Now, I won't bore you with the actual details of how I came across this - lets j
 
 First, even when it makes 'sense', you should not be using relative paths in your command line PHP scripts.  I am so used to writing web PHP that I fell into this bad habit.
 
-#### Show Me Why dirname() is your hero
+### Show Me Why dirname() is your hero
 
 Imagine a directory structure on windows like this:
 
@@ -36,19 +36,17 @@ We have two files:
 
 **testdirname/script.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 require_once '../includes/include.php';
 print "I've done ran, ya'll.";
-{% endhighlight %}
+```
 
 
 **includes/include.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 print "I'm an include!\n";
-{% endhighlight %}
+```
 
 Now, let's run the script as it is:
 
@@ -77,10 +75,9 @@ Well this makes sense because I programmed with that relative path.
 
 Instead, change the require line in script.php to this:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 require_once dirname(__FILE__) . '/../includes/include.php';
-{% endhighlight %}
+```
 
 
 

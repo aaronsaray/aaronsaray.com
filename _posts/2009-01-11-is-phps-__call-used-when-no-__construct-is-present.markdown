@@ -7,8 +7,7 @@ tags:
 
 Simple enough question.  Lets check out some test code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class TEST
 {
     public function __construct($arguments)
@@ -23,7 +22,7 @@ class TEST
 }
  
 new TEST('hi');
-{% endhighlight %}
+```
     
 
 Ran the first time, the output was:

@@ -11,8 +11,7 @@ I thought I'd take a few minutes to just outline strtotime examples again, as a 
 
 [Strtotime](http://us.php.net/strtotime) is a useful function that converts english based strings to unix timestamps.  These can range from iso date formats ("2007-07-11") to proper written dates ('July 11th, 2007') to descriptive range based dates ("+3 days").   The output is always a unix timestamp compatible with the date() functions.  While the manual doesn't give all the possible combinations, it does give some useful examples.  Well, in order to test and predict the behavior of this tool, I tried out a few more date combinations to see what would happen.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 print "date('r', strtotime('now'))";
 print date('r', strtotime('now'));
 print "<hr></hr>";
@@ -36,7 +35,7 @@ print "<hr></hr>";
 print "date('r', strtotime('1999'))";
 print date('r', strtotime('1999'));
 print "<hr></hr>";
-{% endhighlight %}
+```
 
 This was the output:( with php 5.2)
 
@@ -70,10 +69,9 @@ I wasn't entirely certain of the second from last result however.  I did a quick
 
 Another cool note is that for versions of PHP less than 5.1, they did not support a negative timestamp on windows and some *nix distros.  My version on windows have moved pass this limitation though:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 print date('r', -100);
-{% endhighlight %}
+```
 
 The output:
 

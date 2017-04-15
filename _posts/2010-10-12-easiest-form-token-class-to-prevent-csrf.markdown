@@ -12,8 +12,7 @@ I've been using a very simple system with my sites.  This isn't meant to be the 
 
 So, let's check out the class:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class formtoken
 {
     const FIELDNAME = 'tok';
@@ -50,7 +49,7 @@ class formtoken
         return $token;
     }
 }
-{% endhighlight %}
+```
 
 
 
@@ -69,12 +68,12 @@ Let's see how we might implement this.
 **formWeWantToTokenize.php**
 
     
-{% highlight HTML %}
+```html
 <form action="process.php" method="post">
 <label>What is your name? <input name="name"></input></label>
 <input type="submit"></input>
 </form>
-{% endhighlight %}
+```
 
 
 The only PHP call in this form is to formtoken::getField() which will return the hidden input with the generated token value.
@@ -83,13 +82,12 @@ Now, the processor must check that this is good to go:
 **process.php**
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 if (formtoken::validateToken($_POST)) {
     /** do other stuff **/
 }
 else {
     die('The form is not valid or has expired.');
 }
-{% endhighlight %}
+```
 

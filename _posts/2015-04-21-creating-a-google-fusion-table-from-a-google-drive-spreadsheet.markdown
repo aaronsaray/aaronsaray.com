@@ -18,7 +18,7 @@ Next, I scanned a tutorial about Fusion tables located here: [About Fusion Table
 
 And this is where we begin!
 
-#### Selecting the Source
+### Selecting the Source
 
 
 [![Choose Source](/uploads/2015/fusion-1-300x214.png)](/uploads/2015/fusion-1.png){: .thumbnail}
@@ -27,7 +27,7 @@ I chose to use a Google Drive Spreadsheet.
 
 
 
-#### Validating the Layout
+### Validating the Layout
 
 
 [![](/uploads/2015/fusion-2-300x214.png)](/uploads/2015/fusion-2.png){: .thumbnail}
@@ -36,7 +36,7 @@ Yup, everything looks good.  I really like the option of choosing the header / l
 
 
 
-#### Adding the Meta Data
+### Adding the Meta Data
 
 
 [![](/uploads/2015/fusion-3-300x217.png)](/uploads/2015/fusion-3.png){: .thumbnail}
@@ -47,7 +47,7 @@ Click Finish!
 
 
 
-#### The first result
+### The first result
 
 
 [![](/uploads/2015/fusion-4-300x202.png)](/uploads/2015/fusion-4.png){: .thumbnail}
@@ -69,7 +69,7 @@ The next thing I wanted to do was configure the info window.  This is on the lef
 I decided to write my own HTML to customize the view.  You can click on the custom tab and do the following:
 
 
-{% highlight html %}
+```html
 <div style="height: 11em; overflow-y: auto" class="googft-info-window">
     <img src="{Image}" style="float:right; height: 10em; margin-left: 0.5em"></img>
     <b>{Name}</b><br>
@@ -78,7 +78,7 @@ I decided to write my own HTML to customize the view.  You can click on the cust
     2015: ${2015}<br>
     <span style="color: #aaa">2014: ${2014}</span><br>
 </div>
-{% endhighlight %}
+```
 
 
 [![fusion-8](/uploads/2015/fusion-8-300x164.png)](/uploads/2015/fusion-8.png){: .thumbnail}
@@ -89,7 +89,7 @@ Anyway, this makes a pretty good looking info window for our purposes.
 
 
 
-#### Final Part
+### Final Part
 
 
 

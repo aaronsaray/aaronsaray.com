@@ -9,8 +9,7 @@ Today, Big Boy sent me an e-mail at work talking about emulation of collections 
 
 Big Boy sent this code example:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Collection
 {
     public function __get($property)
@@ -27,7 +26,7 @@ class Collection
         $this->$property = $value;
     }
 }
-{% endhighlight %}
+```
 
 
 This spurred me into thinking about data objects further (and my previous post about such).
@@ -36,8 +35,7 @@ This spurred me into thinking about data objects further (and my previous post a
 
 With bigboy's method, I decided to run this test.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $article = new Collection();
 
 $article->title = 'my test title';
@@ -45,7 +43,7 @@ $article->body = 'My test body';
 var_dump($article);
 
 $myval =  $article->postedDate;
-{% endhighlight %}
+```
 
 As I was hoping, I got the desired response:
 
@@ -63,8 +61,7 @@ At any rate, another thing to keep in mind is that **we can now extend our colle
 
 Following our example above, we have two solutions for this - simple OO extension or write an adaptor class.  Lets try both.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class DatedArticle extends Collection
 {
     public function getDate()
@@ -85,7 +82,7 @@ $article->title = 'my test title';
 $article->body = 'My test body';
 
 print $article->title . ' was posted on ' . $article->getDate();
-{% endhighlight %}
+```
 
 As expected, this prints out:
 
@@ -97,8 +94,7 @@ The next way is to make DateArticle an adapter class.
 
 Our modified code looks like this:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class AdapterDatedArticle
 {
     public $collection;
@@ -124,7 +120,7 @@ $article->title = 'my test title';
 $article->body = 'My test body';
 
 print $article->title . ' was posted on ' . $article->getDate();
-{% endhighlight %}
+```
 
 It functions exactly the same.
 
@@ -132,25 +128,23 @@ It functions exactly the same.
 
 When you start extending classes, some of the coding becomes far more implicit.  Because of this, it can be confusing (although somewhat more compact) code.  On the other hand, when doing a more explicit adapter pattern, you appear to generate more code - but its easier to follow?
 
-#### Which is the best way to do it?
+### Which is the best way to do it?
 
 I'm going the adapter route... The reason is because I've learned some hard lessons on JEMDiary with too much extending - as well as I like explicit code.  It helps your team members jump in and figure out everything easier.  Finally, here's the kicker: If made correctly, Adaptor Patterns don't need to be executed in a specific order.
 
 The following two lines of code are the same (if corresponding classes are made correctly)
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $article = new DatedArticle(new ByLinedArticle(new Article()));
 $article = new ByLinedArticle(new DatedArticle(new Article()));
-{% endhighlight %}
+```
 
 
-#### Bonus tip - Make use of the Null Object
+### Bonus tip - Make use of the Null Object
 
 Another programming paradigm refers to the null object.  In our case, instead of throwing an exception, lets say its perfectly acceptable to have nothing returned.  In this case, we're going to list trackbacks.  Why not just make a null object and have it return that?
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Collection
 {
     public function __get($property)
@@ -178,20 +172,19 @@ $trackBacks = $article->trackbacks;
 foreach ($trackBacks as $t) {
     print $t->title;
 }
-{% endhighlight %}
+```
 
 
 In this case, we'll output nothing to the screen - which is perfectly fine.   However, you might not want to allow 'null' as a valid case... or its allowed, but it usually means there's a bug.  You may also not have the go ahead to modify all of the code to start handling exceptions.
 
-#### You can use Null Objects as a troubleshooting tool.
+### You can use Null Objects as a troubleshooting tool.
 
 
 Now, lets say in our example, we know that each article should have an author, but we're not going to 'crash' if there is none.  We just will show the article with no by-line - but we CERTAINLY want to know about it.
 
 Lets modify the code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Collection
 {
     public function __get($property)
@@ -232,7 +225,7 @@ print $article->title;
 if (!($article->author instanceof NullObject)) {
     print ' written by: ' . $article->author;
 }
-{% endhighlight %}
+```
 
 _WOAH!! You just made this far more complicated!!_.  Yes.  Moving on...
 First, we made our adapter class pre-populate some items.  We're assuming that this class failed to load in an author.  As the objects trickle down, we find no author - so we return a new NullObject.  Later on, we check to make sure that its not an instance of the Null Object.  If it _IS_ an instance, well, Null Object was created.  Otherwise, we're good to go on using it.
@@ -247,8 +240,7 @@ Lets modify NullObject and our creation of null object.
     /** moving on **/
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class NullObject
 {
     public function __construct($debug)
@@ -260,7 +252,7 @@ class NullObject
         /** do some complex logging here **/
     }
 }
-{% endhighlight %}
+```
 
 As you can see, I can now log a big backtrace to some sort of logging/reporting function.  Plus, the website still functions correctly.
 
@@ -268,19 +260,18 @@ All in all, its important to not over-complicate the situation, but there are ma
 
 
 
-#### UPDATE: Bonus Tip #2!
+### UPDATE: Bonus Tip #2!
 
 
 
 Who's guilty of code like this? I know I am!
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 print $article->title;
 if ($article->author != '') {
     print ' written by: ' . $article->author;
 }
-{% endhighlight %}
+```
 
 
 Well, in this instance with our last example, we'll get this error:
@@ -289,13 +280,12 @@ Well, in this instance with our last example, we'll get this error:
 
 Instead, lets just add in this special little magic method into NullObject:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 public function __toString()
 {
     return '';
 }
-{% endhighlight %}
+```
 
 
 And we're all set.  Hacky?  a little bit...

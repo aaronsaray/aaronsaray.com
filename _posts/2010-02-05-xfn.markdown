@@ -9,14 +9,14 @@ While I continue to look at the semantic web, I can't help but scratch my head a
 
 
 
-#### XHTML Friends Network
+### XHTML Friends Network
 
 
 XFN ([website here](http://gmpg.org/xfn/)) aims to build relationships between people on the internet using specific attribute values in the link tags.  Once again, this particular method has a list of types of relationships that can be applied to build an N-N relationship.
 
 
 
-##### Should I use it?
+#### Should I use it?
 
 
 I myself am not planning on using it (well... yet).  Most of my websites are not strongly 'friend' oriented.  Instead, they are content based.  There are some relationships built on pages like the [JEMDiary](http://jemdiary.com) friends page... but nothing too extreme.
@@ -25,7 +25,7 @@ Should you use it?  Well... maybe.
 
 
 
-##### Its kind of niche
+#### Its kind of niche
 
 
 One of the biggest 'arguments' for the implementation of XFN has been the 'blog-roll' instances on the sides of blogs.  Blogs themselves are not niche - but this 'friends list' kind of is.  I think only a small portion of users actually keep an updated blog-roll.  Blogs are so widespread - especially now with media company based and editorial blogs - that keeping a 'friends list' would be nearly impossible.  So that niche is dying.
@@ -36,14 +36,14 @@ So, should you implement it?  Hrm...
 
 
 
-##### Users Must Be Disciplined
+#### Users Must Be Disciplined
 
 
 If you're not the author of the XFN, your users may be.  This means that they have to share the same discipline and understanding of the concept as you do.  Take these three specific values for the attribute: "friend, met, colleague."  When you finally study the specification, it makes sense.  However, the likeliness of some user specifying their relationship incorrectly with XFN without having read the instructions is great.
 
 
 
-##### It probably doesn't hurt
+#### It probably doesn't hurt
 
 
 Except for the reason stated above (users may mis-label their relationships), there is only one scenario that I can see where I can see a problem: the potential for two sources to list different information about a relationship.  But besides that, I look at XFN as sort of an after thought.  I may implement it on some of my social network based sites - but very sparsely.

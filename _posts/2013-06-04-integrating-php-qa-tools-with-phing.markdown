@@ -13,7 +13,7 @@ I have really found a great joy lately in phing scripts.  I know, really nerdy. 
 
 Let me post the phing build file, and then I'll go through step by step:
 
-{% highlight XML %}
+```xml
 <project default="help" name="myproject">
     <property override="true" name="basedir" value="."></property>
     <property override="true" name="reportsdir" value="${basedir}/build/reports"></property>
@@ -165,7 +165,7 @@ Let me post the phing build file, and then I'll go through step by step:
         </exec>
     </target>
 </project>
-{% endhighlight %}
+```
 
 
 

@@ -12,7 +12,7 @@ When running YSlow the other day, I was reminded that I was loading 2 stylesheet
 
 For example, in my print stylesheet, I wanted all input boxes with class 'userinfo' to be hidden.  Instead of doing that, I now have one stylesheet with this exerpt:
 
-{% highlight CSS %}
+```css
 input.userinfo {
   border: 1px solid #000
 }
@@ -21,7 +21,7 @@ input.userinfo {
         display: none;
     }
 }
-{% endhighlight %}
+```
 
 
 The style is to put a solid border on that particular input.  However, when media type is print, just don't show it at all.  No more double requests for stylesheets.

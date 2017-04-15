@@ -31,7 +31,7 @@ While searching for employment, I realize I can't be super picky - but my househ
 
 **The UnMinified version**:
 
-{% highlight javascript %}
+```javascript
 function bookmarklet()
 {
     var independentTax = 15.3;
@@ -49,5 +49,5 @@ function bookmarklet()
         alert(output);
     }
 }
-{% endhighlight %}
+```
     

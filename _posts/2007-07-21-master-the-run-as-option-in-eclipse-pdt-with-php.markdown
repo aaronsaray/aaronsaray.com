@@ -43,8 +43,7 @@ The last thing I'm checking is the [php version](http://us2.php.net/manual/en/fu
 
 Lets move on to the script:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * my test script to run in eclipse
  */
@@ -60,7 +59,7 @@ print "\n<br />";
  
 print "phpversion():";
 print phpversion();
-{% endhighlight %}
+```
 
 Nice and simple and sweet.
 
@@ -392,10 +391,9 @@ Sure enough, everything from 'web browser output' echoed to the console.
 
 Well, how can I get messages to the console?  The next thing I tried was generating an error... well an E_NOTICE actually:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 echo $testvar;
-{% endhighlight %}
+```
 
 I added that to the bottom.  Sure enough, our output is the same in the Browser Output, but the console has this:
 

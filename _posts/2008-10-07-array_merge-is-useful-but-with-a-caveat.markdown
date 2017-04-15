@@ -11,20 +11,18 @@ That's what I thought until I did some testing.  There is a legitimate differenc
 
 **Example Arrays**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $ar1 = array('a'=>'ay', 'b'=>'bee', 'c'=>'see');
 $ar2 = array('d'=>'dee', 'e'=>'ee', 'f'=>'ef');
-{% endhighlight %}
+```
     
 
 Well, first off, lets try my way - with array_merge:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $ar2 = array_merge($ar1, $ar2);
 var_dump($ar2);
-{% endhighlight %}
+```
     
     
     array(6) { ["a"]=>  string(2) "ay" ["b"]=>  string(3) "bee"
@@ -34,13 +32,12 @@ var_dump($ar2);
 
 Ok - decent.  Now lets try it their way:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 foreach ($ar1 as $k=>$v) {
     $ar2[$k]=$v;
 }
 var_dump($ar2);
-{% endhighlight %}
+```
     
 
 

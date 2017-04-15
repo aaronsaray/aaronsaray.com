@@ -13,13 +13,12 @@ The object cache is design to store the references to the objects that you assoc
 Before I show you the code, I wanted to point out that this has already been done now (perhaps more efficiently?) in SPL: [http://www.php.net/manual/en/class.splobjectstorage.php](http://www.php.net/manual/en/class.splobjectstorage.php).
 
 
-#### The Object Cache Class
+### The Object Cache Class
 
 
 This is the very simple code in the class found in **objectCache.php**.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class objectCache
 {
     protected static $_storage = array();
@@ -44,19 +43,18 @@ class objectCache
         if (self::exists($type, $id)) unset(self::$_storage[$type][$id]);
     }
 }
-{% endhighlight %}   
+```   
 
 
 
 For example.  If we want to make a new user from the User class, and then later retrieve more information, this might be used:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $uid = 12;
 $user = new User($uid);
 objectCache::set('user', $uid, $user);
 //...snippie...
 $uid = 12;
 $user = objectCache::exists('user', $uid) ? objectCache::get('user', $uid) : false;
-{% endhighlight %}   
+```   
     

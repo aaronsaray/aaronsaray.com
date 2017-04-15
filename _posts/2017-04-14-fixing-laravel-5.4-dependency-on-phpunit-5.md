@@ -63,8 +63,8 @@ In order to fix this, I decided to add class aliases to this bootstrap file.
 
 ```php?start_inline=1
 /**
- * Laravel has some testing helpers that are using the non-namespaced PHPUnit classes, 
- * but these were removed in PHPUnit 6
+ * Laravel has some testing helpers that are using the non-namespaced PHPUnit 
+ * classes, but these were removed in PHPUnit 6
  */
 class_alias(\PHPUnit\Framework\Assert::class,'PHPUnit_Framework_Assert');
 ```
@@ -77,9 +77,18 @@ The updated list, as far as I can tell, is this:
 
 ```php?start_inline=1
 class_alias(\PHPUnit\Framework\Assert::class,'PHPUnit_Framework_Assert');
-class_alias(\PHPUnit\Framework\ExpectationFailedException::class, 'PHPUnit_Framework_ExpectationFailedException');
-class_alias(\PHPUnit\Framework\Constraint\LogicalNot::class, 'PHPUnit_Framework_Constraint_Not');
-class_alias(\PHPUnit\Framework\Constraint\Constraint::class, 'PHPUnit_Framework_Constraint');
+class_alias(
+    \PHPUnit\Framework\ExpectationFailedException::class, 
+    'PHPUnit_Framework_ExpectationFailedException'
+);
+class_alias(
+    \PHPUnit\Framework\Constraint\LogicalNot::class, 
+    'PHPUnit_Framework_Constraint_Not'
+);
+class_alias(
+    \PHPUnit\Framework\Constraint\Constraint::class, 
+    'PHPUnit_Framework_Constraint'
+);
 ```
 
 Then, you should be able to continue using Laravel 5.4 with PHPUnit 6.

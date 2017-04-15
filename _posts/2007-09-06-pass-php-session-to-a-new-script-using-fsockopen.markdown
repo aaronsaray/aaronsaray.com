@@ -20,10 +20,9 @@ There is a cookie named after our session with our session id.  When my called s
 
 I needed to send the cookie name and session id to the script.  Remember, this only works because these two scripts are on the same server/domain.  I used this code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $out .= "Cookie: " . session_name() . "=" . session_id() . "; path=/\r\n";
-{% endhighlight %}
+```
 
 **Close your session before you re-open it**
 

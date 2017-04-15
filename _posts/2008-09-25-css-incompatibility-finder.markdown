@@ -10,8 +10,7 @@ This is more of a proof of concept than anything else - as most of my scripts ar
 
 Well here is such a script!
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * CSS Compat class
  * @author Aaron D Saray
@@ -112,9 +111,7 @@ class cssCompat
 
 
 
-    ############################################################################
-    ############################################################################
-
+    ###########################################################################     ########################################################################### 
 
     /**
      * empty constructor...
@@ -217,9 +214,7 @@ class cssCompat
         $this->_search();
     }
 
-    ############################################################################
-    ############################################################################
-
+    ###########################################################################     ########################################################################### 
 
 
     /**
@@ -388,7 +383,7 @@ try {
 catch (exception $e) {
     print $e->getMessage();
 }
-{% endhighlight %}
+```
 
 Ok – thats the class and an example how to use it. I would be lying if I didn’t say the actual attribute searching is horrible! hahaha. But it could be expanded.
 

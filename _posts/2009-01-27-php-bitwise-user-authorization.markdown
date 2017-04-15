@@ -10,8 +10,7 @@ After looking at the Windows model for controlling file access, I realized I cou
 
 The code is pretty self explanatory, but after, you'll find a quick rundown.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $ADMIN = 1;
 $SUPERUSER = 2;
 $SECTION1LEADER = 4;
@@ -34,7 +33,7 @@ if ($SUPERUSER & $myTestUser) {
 if ($myTestUser) {
     print 'is normal user.<br />';
 }
-{% endhighlight %}
+```
 
 
 First off, the capital lettered variables are our section permission markers.  These need to expand by the power of 2.  This way, our bitwise operators work out well.
@@ -43,13 +42,12 @@ Next, our test user's permissions are the summation of all the sections/permissi
 
 Now, when checking access to the sections, we just use the bitwise and operator.  See how we use just one qualifier?  This is nicer coding (because of the access additions earlier) than older code ideas:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $isADMIN = true;
 if ($isADMIN || || $isSuperUser || $section1LeaderAccess) {
     print 'section 1!';
 }
-{% endhighlight %}
+```
 
 
 The one thing that I had to get over was the notion of a hierarchy in the actual values.  Really, the hierarchy is business rule based, so the actual values do not matter.  For example, if the $admin variable is less than the $superuser, I would think that it would mean the $admin was above.  But technically, in our model, we could develop a $superadmin which could be 128 - without having to re-architect the whole system.

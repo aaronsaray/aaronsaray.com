@@ -12,7 +12,7 @@ Such good progress on separation of logic and markup, until now.  Well, I wasn't
 
 To handle our form validation, we've previously been doing something like this:
 
-{% highlight HTML %}
+```html
 <script type="text/javascript">
 function validate(formObject)
 {
@@ -22,18 +22,18 @@ function validate(formObject)
 </script>
     
 <form action="login.php" onsubmit="return validate(this)" id="login" method="post">
-{% endhighlight %}
+```
 
 We were doing pretty good with this example, except for that last onsubmit.  I want to take that action out of the markup.  After surfing around on google for a while and checking you the YUI library more, I found the stopEvent method in the event class.  This will be particularly useful because we're already using the YUI on this project.  This is how I put this into play:
 
-{% highlight javascript %}
+```javascript
 function validate(e)
 {
     /** logic that fails **/
     YAHOO.util.Event.stopEvent(e);
 }
 YAHOO.util.Event.addListener('someform','submit',validate);
-{% endhighlight %}
+```
     
 
 Yay - success!  We were able to stop the event with this built in call from YUI.  Any future programming on that site will use that logic.

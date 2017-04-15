@@ -10,8 +10,7 @@ I rarely find myself needing to chain methods in PHP - but its not an altogether
 
 At any rate, here is my test code that PHP method chaining works great:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class foo
 {
     public function bar()
@@ -47,7 +46,7 @@ class foo
 $ohNo = new foo();
 $ohNo->bar()->splat();
 $ohNo->twin()->neato();
-{% endhighlight %}
+```
 
 As expected, the output is:
 

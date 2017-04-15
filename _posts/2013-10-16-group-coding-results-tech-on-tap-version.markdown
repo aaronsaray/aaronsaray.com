@@ -40,8 +40,7 @@ However, here is my quick and dirty version of doing this in plain PHP. I made s
 
 **index.php**
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 session_start();
  
 // helpful constant for my session
@@ -87,14 +86,13 @@ function getErrorForField($fieldName)
 </form>
 </body>
 </html>
-{% endhighlight %}
+```
 
 and then the processing page
 
 **process.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 // sanity constants
 const NAME_MAX_LENGTH = 100;
 const MESSAGE_MAX_LENGTH = 65000;
@@ -174,11 +172,11 @@ $message .= $clean['message'];
 mail(WEBSITE_OWNER_TO_ADDRESS, $subject, $message, "From: {$from}");
  
 die(header('Location: success.php'));
-{% endhighlight %}
+```
 
 Note: I did not create a success page.
 
-#### The break down
+### The break down
 
 I believe this handled all of the issues. Looking back, I’d have liked to make it more usable – put the user data back in the form when there was an error, etc. But the main goals are achieved:
 

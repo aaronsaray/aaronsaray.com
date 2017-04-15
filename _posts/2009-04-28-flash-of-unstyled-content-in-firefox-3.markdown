@@ -11,13 +11,13 @@ So I've heard of the [Flash of Unstyled Content](http://bluerobot.com/web/css/fo
 
 However, I just ran into it today - in FireFox even with a LINK tag...
 
-#### Fixing Flash of Unstyled Content in Firefox
+### Fixing Flash of Unstyled Content in Firefox
 
 Simple really - I was loading way too much javascript before my stylesheet (not my fault on the large amount of js!!) - and the delay was causing the flash.  I moved the link to the very first part of the content - and presto - good to go.
 
 So, **instead of**
     
-{% highlight HTML %}
+```html
 <head>
     <script src="#"></script>
     <script src="#"></script>
@@ -25,13 +25,13 @@ So, **instead of**
     <script src="#"></script>
     <link href="#" type="text/css" rel="stylesheet"></link>
 </head>
-{% endhighlight %}
+```
     
 
 **Just move it to the top:**
 
     
-{% highlight HTML %}
+```html
 <head>
     <link href="#" type="text/css" rel="stylesheet"></link>
     <script src="#"></script>
@@ -39,6 +39,6 @@ So, **instead of**
     <script src="#"></script>
     <script src="#"></script>
 </head>
-{% endhighlight %}
+```
     
 ... next battle, getting rid of sooo much js ;)

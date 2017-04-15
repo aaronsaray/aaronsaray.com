@@ -18,7 +18,7 @@ For this example, I colored each background color different.  In practice, you'l
 First, the markup.
 
     
-{% highlight HTML %}
+```html
 <body>
     <h1>Hi There Buddy</h1>
     <div id="container">
@@ -32,7 +32,7 @@ First, the markup.
     </div>
     <h2>Hello There Friend</h2>
 </body>
-{% endhighlight %}
+```
 
 
 
@@ -40,7 +40,7 @@ First, the markup.
 Then, the CSS.
 
     
-{% highlight CSS %}
+```css
 #container {
     border: 1px solid #000;
     width: 500px;
@@ -62,7 +62,7 @@ Then, the CSS.
     background: #f8b021;
     margin-left: 300px;
 }
-{% endhighlight %}
+```
     
 
 

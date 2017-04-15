@@ -12,14 +12,13 @@ Side note: some schools of thought want to go the extra mile for security and ne
 So, with Zend_Auth, the authenticate() method returns a Zend_Auth_Result.  This, of course, has the isValid() method which everyone is familiar with.  However, there are a number of reasons why this could return false.  Whatever reason generated the invalid response will be returned by the getCode() method.  These include:
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 const FAILURE                        =  0;
 const FAILURE_IDENTITY_NOT_FOUND     = -1;
 const FAILURE_IDENTITY_AMBIGUOUS     = -2;
 const FAILURE_CREDENTIAL_INVALID     = -3;
 const FAILURE_UNCATEGORIZED          = -4;
-{% endhighlight %}
+```
     
 
 
@@ -31,8 +30,7 @@ When I generate error messages for the user, I tend to make a method called isFa
 This is usually a very simple method:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * Used to determine if this is a user failure or an internal failure on our part
  * 
@@ -50,5 +48,5 @@ public function isFailureUserBased()
     
     return false;
 }
-{% endhighlight %}
+```
     

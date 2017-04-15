@@ -8,7 +8,7 @@ tags:
 
 In this post, I'm going to cover what a System Architect/Analyst (SA from now on) is and why you need one.
 
-#### A System Architect/Analyst is...
+### A System Architect/Analyst is...
 
 **A top level programmer with a lot of experience.**
 
@@ -31,7 +31,7 @@ Code bases, for the most part, are more of a living/moving entity than a stable 
 It is important for the SA to understand some of the company's strategic plans for future development and planning.  This way they can make design suggestions about existing projects' architecture to afford for easy upgrading to the future planned additions.  This familiarity is accomplished by working somewhat with the management team or decision makers as well as the project managers.
 
 
-#### Why You Need One
+### Why You Need One
 
 **Heads off problems ahead of time.**
 
@@ -54,6 +54,6 @@ Time and time again, analysis is cut short because there are not enough resource
 Since the SA knows both the future plans of the business as well as has an eye for the technical solutions, they can jump in and resolve a lot of questions before they have to get queued against a manager.  This is not to say that an SA should be at all responsible for personnel issues or anything - but they can help make snap decisions with the notion of what is best for the company and the architecture.
 
 
-#### Do you agree?
+### Do you agree?
 
 I'd love to see any comments talking about if you agree with this summary/description, if you've recently acquired an SA and any positive or negatives you've seen, or if you have other things I missed.  Thanks!

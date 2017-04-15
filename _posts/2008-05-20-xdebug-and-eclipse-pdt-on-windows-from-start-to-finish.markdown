@@ -12,7 +12,7 @@ XDebug and Eclipse PDT on Windows - From Start to Finish
 
 With our recent upgrade to php at "the triangle," I felt it was time to start working on using a debugging and code profiling tool.  When I say felt like it was time... I meant our PHP version finally supported it. *sigh*.  Anyway, from start to finish, this is what I did in order to get Xdebug to integrate into my current eclipse PDT - as well as investigate the other features of xdebug.  I tried to detail all of the mistakes I made as well as what I figured out.  Let's go:
 
-#### Get XDebug
+### Get XDebug
 
 [![](/uploads/2008/xdebug-logo.png)](/uploads/2008/xdebug-logo.png){: .thumbnail} 
 
@@ -47,18 +47,17 @@ Just for fun, jump out and do a phpinfo().  You should find the following lines:
 Additionally, in the modules section, xdebug will be listed.  This will show all of the standard debugger options - some of which we'll be discussing further down in this article.
 
 
-#### var_dump() - the first xdebug feature
+### var_dump() - the first xdebug feature
 
 
 Supposedly, when you install xdebug, it pretties up the output of var_dump.
 
 My first test script was to see if xdebug was really doing what it claimed:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $arrayName = range(0,5);
 var_dump($arrayName);
-{% endhighlight %}
+```
 
 Loaded it up - and ... no.  It looked exactly the same as it did before.  Nothing special.
 
@@ -84,7 +83,7 @@ Now, the var_dump() looks great:
 
 
 
-#### OOOh and Errors are Pretty
+### OOOh and Errors are Pretty
 
 
 Another feature of the module is to beautify your error messages - well not just beautify them but add extra information to them.
@@ -93,10 +92,9 @@ By default, when you generate an error in your php with xdebug installed, you'll
 
 I used the following code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 print $a;
-{% endhighlight %}
+```
 
 which prompted this error:
 
@@ -134,13 +132,12 @@ Looks pretty cool.  Xdebug has the ability to show extra variables, including th
 
 I then used this code for testing:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $b = 'test';
 if ($b) {
     print $a;
 }
-{% endhighlight %}
+```
 
 
 After executing it, I got this error:
@@ -189,7 +186,7 @@ As you can see, this is helpful to me to know that $b had a value - and that we 
 There are more settings for xdebug's error dumping routine - check them out at [the variable display pages at xdebug.org](http://xdebug.org/docs/display).
 
 
-#### Tracing isn't just for tattoo artists anymore
+### Tracing isn't just for tattoo artists anymore
 
 
 The next thing I wanted to set up was Xdebug's stack trace feature.  This will give useful information about which functions were called, how many times, and their memory usage.  Xdebug integrates additional commands into the php script to start and stop tracing whenever needed.  However, if you use auto_prepend files, you may want to turn on tracing immediately/automatically.  I added the following settings to my php.ini:
@@ -210,8 +207,7 @@ The first line turns on tracing on every script (this is also useful because at 
 
 To generate my trace, I used this code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 function tester($element)
 {
     return trim($element);
@@ -222,7 +218,7 @@ $a = ' test ';
 $b = tester($a);
 
 print "XX{$b}XX";
-{% endhighlight %}
+```
 
 
 
@@ -248,7 +244,7 @@ This generated this trace:
 As you can tell, simple - but could be useful when you have a larger application to trace through.
 
 
-#### Profiling with XDebug
+### Profiling with XDebug
 
 
 Xdebug allows for code profiling as well.  This will be useful to determine which functions are taking longer than others to run - in a way identifying the bottlenecks of your script.
@@ -306,14 +302,14 @@ Not very exciting... so lets look at our tools for Windows...
 
 
 
-#### WinCacheGrind
+### WinCacheGrind
 
 
 [![](/uploads/2008/wincachegrind-150x91.gif)](/uploads/2008/wincachegrind.gif){: .thumbnail}[WinCacheGrind](http://sourceforge.net/projects/wincachegrind/) is the windows version of the software that can parse these profile files and generate useable statistics.  Since development has ceased in 2005, this project isn't a very likely candidate for doing profiling.  You can see from the screenshot that our very simple script generates only a few details - but the actual UI is very limited - with not a lot of features (or maybe kcachegrind has spoiled me)...
 
 
 
-#### KcacheGrind
+### KcacheGrind
 
 
 [![](/uploads/2008/kcachegrind-150x108.gif)](/uploads/2008/kcachegrind.gif){: .thumbnail}KcacheGrind is a linux based utility in KDE.  Since I'm on windows, I had to acquire the [KDE4Win](http://www.winkde.org/pub/kde/ports/win32/readme.html).  Once installed, I could run any KDE app that had been ported into this release - so I fired up KcacheGrind.
@@ -321,7 +317,7 @@ Not very exciting... so lets look at our tools for Windows...
 As you can see from the screenshot, there are a lot more features available.  I did run into two issues, however.  First, every time I loaded a new profile file when I currently had one open, kcachegrind would crash.  The other was the lack of the 'dot' program from the graphviz package (which hasn't been ported over to KDE4 yet as far as I know...)
 
 
-#### Debugging with PDT - or - why I have two monitors...
+### Debugging with PDT - or - why I have two monitors...
 
 
 First, lets clarify my expectations of this debugger.  The debugger must work with my version of PHP, must at least SHOW me values of items (being able to change them on the fly is better), allow for break points and use firefox (I like my [webdeveloper extension](http://chrispederick.com/work/web-developer/)... what?).
@@ -329,7 +325,7 @@ First, lets clarify my expectations of this debugger.  The debugger must work wi
 XDebug promises all of that.  Let's check it out.
 
 
-#### XDebug PHP.ini settings
+### XDebug PHP.ini settings
 
 
 In order to support xdebug's integration with PDT, its a feature called remote debugging.  This is normally handled by a debugging client (which PDT plays).  The php.ini file has to be modified to allow for remote debugging, however:
@@ -362,7 +358,7 @@ We're done doing our config - let's fire up eclipse.
 
 
 
-#### XDebug Eclipse PDT Settings
+### XDebug Eclipse PDT Settings
 
 
 First off, make a new project in eclipse.  Then, a new PHP file.  I'm going to continue using my same code and name it test.php.  On my machine http://localhost/test.php will launch this script.
@@ -382,7 +378,7 @@ Now, when you're ready to run your script, click the Run menu and choose 'debug'
 
 
 
-#### OK - cool - but what am I seeing here?
+### OK - cool - but what am I seeing here?
 
 
 In my screenshot, I've got most of the tabs still available.  The debug tab lists what test is being executed and gives debugging controls.  There is a variables tab which shows you the values of the variables at any one point.  The breakpoints tab will show you what breakpoints you have created (if you haven't ever done that, just double click next to a line of code - and a breakpoint will be created).
@@ -396,7 +392,7 @@ Firefox should have opened up with the contents of your script.
 
 
 
-#### So - now I've gotta complain
+### So - now I've gotta complain
 
 
 This seems broken to me.  I've noticed that I do not receive any output to the firefox instance - as well as to the debug output.  Matter of fact, when I launch the instance, I get this URL:
@@ -420,7 +416,7 @@ So... so far, it looks like it has all kinds of cool features up until the point
 
 
 
-#### Some Updates From XDebug's Mailing list
+### Some Updates From XDebug's Mailing list
 
 
 
@@ -474,7 +470,7 @@ So the debug output and the actual freezing of the firefox seem like known issue
 
 
 
-#### Lets try an Older Version - TA DA!!
+### Lets try an Older Version - TA DA!!
 
 
 
@@ -501,7 +497,7 @@ Nope - no go. It still keeps running and opens TWO windows.
 
 
 
-#### So what's the verdict?
+### So what's the verdict?
 
 
 XDebug is awesome.  Enhanced var_dump() and error messages, built in stack tracing, tracing and profiling, and remote debugging.  It is pretty amazing - albeit slightly incompatible with the newest PDT/Xdebug.  KcacheGrind is the only way to fly when it comes to viewing cachegrind output files - wincachegrind is useless.  Too bad my KDE4Win + kcachegrind keeps dying.  All in all, I am keeping xdebug in my setup.

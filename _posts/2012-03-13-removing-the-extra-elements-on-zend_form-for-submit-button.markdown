@@ -8,13 +8,12 @@ tags:
 Have you ever used Zend Form, created a submit button, and had a few extra tags that were just throwing you off?  I know you have...  You probably did it like me:
 
    
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $this->addElement('submit', 'submitbutton', array(
     'ignore'=>true,
     'label'=>'Submit This',
 ));
-{% endhighlight %}
+```
     
 
 
@@ -22,11 +21,10 @@ $this->addElement('submit', 'submitbutton', array(
 But, you'll notice you have both a DT and a DD from the standard view helpers of HtmlTag.  But, the DT usually contains the label attribute.  In this case, the label element is part of the input now.  It stead of being silly and using CSS to hide that empty DT, let's just get rid of it... add the following to your code:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $element = $this->getElement('submitbutton');
 $element->setDecorators(array('ViewHelper', array('HtmlTag', array('tag'=>'dd', 'id'=>$element->getName() . '-element'))));
-{% endhighlight %}
+```
     
 
 

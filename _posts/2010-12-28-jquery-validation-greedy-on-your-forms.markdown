@@ -10,9 +10,9 @@ I was creating a page with two forms on it.  I ran into an issue where I would f
 
 I had been doing this:
 
-{% highlight javascript %}
+```javascript
 $('form').validate();
-{% endhighlight %}
+```
     
 
 
@@ -21,9 +21,9 @@ Instead, I found that I needed to loop through each form on the page and validat
 
 
     
-{% highlight javascript %}
+```javascript
 $('form').each(function(){
      $(this).validate();
 });
-{% endhighlight %}
+```
     

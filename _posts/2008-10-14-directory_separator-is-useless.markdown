@@ -20,7 +20,6 @@ I also ran across a case one time where - through some strange fate of mangled p
 
 One final note - someone on the PHP.net manual page suggested this function - if you really MUST use getcwd() - and in the case you're using 'explode()' to figure out something about the path:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 return gstr_replace('\\', '/', getcwd());
-{% endhighlight %}
+```

@@ -12,11 +12,11 @@ _I should mention... I'm just learning this particular integration, plus this is
 
 In my **edit.html.twig** file, I had the following:
 
-{% highlight twig %}
+```twig
 {% raw %}
 {{ form_row(form.myItem, {'label': 'My special label'}) }}
 {% endraw %}
-{% endhighlight %}
+```
 
 
 
@@ -24,7 +24,7 @@ It wasn't grabbing my output in the custom template.  The template excerpt looke
 
 
     
-{% highlight twig %}
+```twig
 {% raw %}
 {% block field_row %}
      <div class="{{ div_class }}">
@@ -36,7 +36,7 @@ It wasn't grabbing my output in the custom template.  The template excerpt looke
     </div>
 {% endblock field_row %}
 {% endraw %}
-{% endhighlight %}
+```
 
 
 
@@ -45,11 +45,11 @@ In this case, the form variable passed to form_label did not have my custom vari
 Turns out, the **_context** array had the values for this particular element.  So, I modified:
 
     
-{% highlight twig %}
+```twig
 {% raw %}
 {{ form_label(form, _context['label']) }}
 {% endraw %}
-{% endhighlight %}
+```
 
 
 Yay!  That got the standard label - or the custom label I set.  Success.

@@ -16,8 +16,7 @@ I wanted to get a working good proof on a sql connection and language I was most
 
 Here is my test code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 set_time_limit(0);
 
 define('USERID', 'root');
@@ -56,7 +55,7 @@ print '<strong>Results for test</strong>';
 
 print '<fieldset>Un-PreparedStatement: ' . TEST_UNPREPARED_SQL . "Time: " . $timeUnprepared . "";
 print "<fieldset><legend>Prepared</legend>Statement: " . TEST_PREPARED_SQL . "Time: " . $timePrepared . "</fieldset>";
-{% endhighlight %}
+```
 
 The output I got was last than exciting - actually quite disappointing.  I ran the tests a few times, but got relatively the same numbers:
 
@@ -77,8 +76,7 @@ _Maybe am I not doing a proper test?_  If anyone has any input, please let me kn
 
 I do plan on testing the odbc prep statements at ("the triangle") too.  This is what I'm going to use to test the performance (as usual, some of the specific business information has been removed).
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * Test for prepared statements on odbc
  */
@@ -115,7 +113,7 @@ print "<strong>Results for ODBC test</strong>";
 
 print "<fieldset><legend>Un-Prepared</legend>Statement: " . TEST_UNPREPARED_SQL . "Time: " . $timeUnprepared . "</fieldset>";
 print "<fieldset><legend>Prepared</legend>Statement: " . TEST_PREPARED_SQL . "Time: " . $timePrepared . "</fieldset>";
-{% endhighlight %}
+```
 
 
 I'll post the results when I have a chance to test it on the test data.

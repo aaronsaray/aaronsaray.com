@@ -13,8 +13,7 @@ Anyway... at my last job, we were contemplating making a PDF reading solution th
 
 I decided to do a quick proof of concept.  Turns out Imagick with PHP will convert PDF to jpeg really quick and easy.  So, I wrote the following PHP class to work with this.
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 namespace AaronSaray;
 
 class PDFViewer
@@ -81,13 +80,13 @@ class PDFViewer
         $imagick->writeImages($cacheLocation . '/rendered.jpg', true);
     }
 }
-{% endhighlight %}
+```
 
 Simply put, you'll call one function to get a list of PDFs - and then you can feed a PDF to the other function to make it write it to the cache - or read it from the cache.
 
 Finally, add in a little jQuery:
 
-{% highlight javascript %}
+```javascript
 $(function() {
     $('#pdf img:first-child').show();
     $('#pdf').on('click', function() {
@@ -100,7 +99,7 @@ $(function() {
         nextImage.fadeIn();
     })
 });
-{% endhighlight %}
+```
 
 This simply will skip through the images one by one on click - and restart from the beginning.  Not particularly pretty, but it's just a proof of concept.
 

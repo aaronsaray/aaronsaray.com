@@ -8,7 +8,7 @@ tags:
 
 A friend of mine posed a question: Do you know of any good PHP based vulnerability scanners?  I told him I did not (add any in the comments, if you know! :) ) - but it wouldn't be that hard to build one.  He asked me to give him a code example, so here goes:
 
-#### The Goals
+### The Goals
 
 I have only 2 goals to accomplish with this quick script:
 
@@ -31,13 +31,13 @@ Since this is just a quick script, we do know a few things however:
 
 But with that, its not that bad.
 
-#### The example website we're reviewing
+### The example website we're reviewing
 
 I have two really simple pages for our test site, the form itself and the 'login' page.
 
 **testform.html**
 
-{% highlight HTML %}
+```html
 <html>
     <head>
         <title>Test Login Form, yo</title>
@@ -52,32 +52,30 @@ I have two really simple pages for our test site, the form itself and the 'login
         </form>
     </body>
 </html>
-{% endhighlight %}
+```
     
 
 **testsubmit.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 if ($_POST['username'] == 'MYUSER' && $_POST['password'] == 'MYPASS') {
     print 'you have logged in';
 }
 else {
     print "{$_POST['username']} did not authenticate correctly.";
 }
-{% endhighlight %}
+```
 
 
 As you can see, if the login credentials are not correct, it prints the unfiltered username onto the screen.  Obviously, this is a very simple example.
 
 
-#### The PHP Script
+### The PHP Script
 
 
 The comments should help the interpretation of this script, so I won't ramble...
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /** set target, payload **/
 $target = 'http://localhost/testform.html';
 $payload = '<script>alert("word!");</script>';
@@ -120,6 +118,6 @@ foreach ($forms as $form) {
     $count = substr_count($submittedFormContents, $payload);
     print "Times payload found: {$count}<br></br>";
 }
-{% endhighlight %}
+```
 
 As you can see, still very simple, but it lays the groundwork.  Combine this with my [link checking code](/blog/2008/03/19/link-checking-module-1st-attempt/) and you could make a pretty decent start on a PHP vulnerability scanner.

@@ -9,12 +9,12 @@ I just ran into this a bunch - works fine in FireFox ... of course.
 
 Well apparently, Internet Explorer won't allow you to have a trailing comma in a array or object definition.  Let me show you:
 
-{% highlight javascript %}
+```javascript
 functionCall({
         options: {1,2,3},
         others: {1,2,3},
 });
-{% endhighlight %}
+```
     
 
 

@@ -9,15 +9,14 @@ One of the worst things with CAPTCHAs are actually having to solve them.  One of
 
 In a Zend_Form, we might do this:
 
-{% highlight PHP %}
+```php?start_inline=1
 $captcha = new Application_Validate_CaptchaHiddenField();
 $this->addElement('captcha', 'userdetect', array('captcha'=>$captcha));
-{% endhighlight %}
+```
 
 To create this empty captcha field, our validator looks like this:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Validate_CaptchaHiddenField extends Zend_Captcha_Word
 {
     /**
@@ -42,7 +41,7 @@ class Application_Validate_CaptchaHiddenField extends Zend_Captcha_Word
         return '';
     }
 }
-{% endhighlight %}
+```
 
 
 Basically, what this does is generate a blank word - and not put any rendered design around the form field.  So, as captchas go, if the entered item does not match the generated word, it fails.  In this case, the entered item (anything) doesn't match "" (nothing), so it would fail.

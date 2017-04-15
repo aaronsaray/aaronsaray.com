@@ -13,7 +13,7 @@ This is the rough translation of the Pareto principle.  You may also hear it cal
 
 
 
-#### Users think your software sucks
+### Users think your software sucks
 
 
 How many times have you found yourself starting to feel ashamed and downtrodden about your favorite project you're working on?  You start hearing comments on your forums, tweets, and e-mails about how horrible of a job you are doing.  Some people find it even necessary to threaten you: "If you continue to suck, I will no longer use your software!" - oh noes.  Really?
@@ -26,7 +26,7 @@ It's easy to hear the bad and think you need to change your ways.  However, when
 
 
 
-#### Your Software is Buggy
+### Your Software is Buggy
 
 
 My software isn't perfect.  Maybe it would be if I could thoroughly test each portion of it.  However, time doesn't allow for that.  Instead, I get about 80% self-testing - and then I release it.  More often than not, bugs are found - just in a delayed fashion and on edge case scenarios.  When investigating the bugs, they're real: they just aren't that common in the general use of the product.
@@ -35,14 +35,14 @@ This is to say, that 80% of the use of your software is probably the 80% that yo
 
 
 
-#### 80% of your support calls were solved
+### 80% of your support calls were solved
 
 
 This is the biggest issue with people who run a call center.  (Trust me, I know.  I asked for 95% when I managed.  Big mistake!).  Instead, when you aim for the 80%, you're going to make the most impact.  This isn't to say that you would give up on the remaining 20%, but count it as a win with 80.  Then, as time permits, go back and continue to work the long tail.
 
 
 
-#### Your examples were measurement of output, not effort
+### Your examples were measurement of output, not effort
 
 
 Good catch!  For the most part, I'm talking about measurement of output.  80% of this is solved, 20% of that is unsolved, etc.  The principle purely says it's the effort that we should be focusing, the cause, not necessarily the output.  I think this is a great measurement or borderline for most things, not just cause and effect.

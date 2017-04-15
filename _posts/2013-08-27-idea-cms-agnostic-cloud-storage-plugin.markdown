@@ -11,7 +11,7 @@ So first, here are the competitors:
 
 
 
-#### Drupal Cloud Storage
+### Drupal Cloud Storage
 
 
   * [Cloud Files](https://drupal.org/project/cloud_files)
@@ -35,7 +35,7 @@ So first, here are the competitors:
 
 
 
-#### Joomla Cloud Storage
+### Joomla Cloud Storage
 
 
 
@@ -60,7 +60,7 @@ So first, here are the competitors:
 
 
 
-#### Wordpress Cloud Storage
+### Wordpress Cloud Storage
 
 
 
@@ -96,7 +96,7 @@ So, here's the idea
 
 
 
-#### Build the core, add on the plugins
+### Build the core, add on the plugins
 
 
 

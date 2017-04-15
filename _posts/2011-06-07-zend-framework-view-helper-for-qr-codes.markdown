@@ -9,13 +9,12 @@ Google Charts has a QR code generation service ([here are the details](http://co
 
 
 
-#### The Code for Google QR Code
+### The Code for Google QR Code
 
 
 Place the following code in your view helpers location.  For example... **application/views/helpers/GoogleQRCode.php**.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Zend_View_Helper_GoogleQRCode extends Zend_View_Helper_Abstract
 {
     public function googleQRCode($data, $width = 100, $height = 100)
@@ -30,7 +29,7 @@ class Zend_View_Helper_GoogleQRCode extends Zend_View_Helper_Abstract
         return $url;
     }
 }
-{% endhighlight %}
+```
 
 
 
@@ -42,13 +41,12 @@ To use this in your view, you may have the following code:
 **application/views/scripts/index/index.phtml**
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 echo '<h2>Find Me Online</h2>';
 echo '<img src="';
 echo $this->googleQRCode('http://aaronsaray.com/contact');
 echo '">';
-{% endhighlight %}
+```
 
 
 

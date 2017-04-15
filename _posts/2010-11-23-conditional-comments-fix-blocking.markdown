@@ -14,9 +14,9 @@ Sweet read, huh?
 For those who aren't actually going to read it, conditional comments block downloads until it's done processing.  So, instead, start out your <head> with this:
 
 
-{% highlight html %}
+```html
 <!--[if IE]><![endif]-->
-{% endhighlight %}
+```
     
 
 After that, you should be home free.

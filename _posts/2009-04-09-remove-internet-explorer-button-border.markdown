@@ -9,16 +9,16 @@ Internet Explorer provides an additional border to any BUTTON element in the pag
 
 The solution was to add a span around the button:
 
-{% highlight CSS %}
+```css
 button {
     border: 0px;
 }
 .button {
     border: 1px solid #fff;
 }
-{% endhighlight %}
+```
 
-{% highlight HTML %}
+```html
 <span class="button"><button>My Button</button></span>
-{% endhighlight %}
+```
     

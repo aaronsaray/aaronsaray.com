@@ -11,8 +11,7 @@ For whatever reason, I can never remember the exact coding of MCrypt.  And maybe
 **easyMcrypt.php**
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class easyMcrypt
 {
     protected static $_openModules = array();
@@ -61,7 +60,7 @@ class easyMcrypt
         return $iv;
     }
 }
-{% endhighlight %}
+```
     
 
 
@@ -73,8 +72,7 @@ At any rate then, a new Initialization Vector is generated.  In this case, I use
 For an example of how this is used:
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $string = 'Please encrypt me';
 $key = 'this is my encryption key';
 $type = 'tripledes';
@@ -85,5 +83,5 @@ var_dump($encrypted);
 
 $decrypted = easyMcrypt::decrypt($encrypted, $key, $type, $mode);
 var_dump($decrypted);
-{% endhighlight %}
+```
     

@@ -7,7 +7,7 @@ tags:
 
 Theme systems are very common in projects written on Drupal, Joomla, and Wordpress.  I didn't see much out of the box support for themes in Zend Framework at first.  However, I was wrong.  It's pretty easy.  The only real decision I had to make is if I want to make themes that extend a default theme - or themes that are simple and on their own / totally encapsulated.  I will do the encapsulated version - but give some pointers on how you would do the other version, too!
 
-#### Make a Front Controller Plugin
+### Make a Front Controller Plugin
 
 Since themeing is something that is only specific to the view system that is rendered by a web page request, we'll make a front controller plugin.  I'm not creating this functionality in the bootstrap class because command line scripts don't need to run this, only web requests (which happen to begin with the front controller).
 
@@ -15,8 +15,7 @@ However, we do have to register our front controller plugin using the bootstrap 
 
 **application/bootstrap.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 	protected function _initFrontControllerPlugin()
@@ -25,11 +24,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		$front->registerPlugin(new Application_Plugin_Theme());
 	}
 }
-{% endhighlight %}
+```
 
 This method simply registers a new plugin named Application_Plugin_Theme() to the front.  
 
-#### Pick your Theme
+### Pick your Theme
 
 I'm going to create only one theme for this demonstration.  
 
@@ -38,7 +37,7 @@ I'm going to create only one theme for this demonstration.
 
 For the purpose of our demo, we'll just hardcode this as the 'chosen' theme.  You may have some sort of theme management solution.
 
-#### Plan your file system
+### Plan your file system
 
 Next, I know that I'm going to have multiple view folders: one for each theme.  Additionally, I'm going to have to have different folders inside of the public folder to support this.
 
@@ -56,14 +55,13 @@ Instead, if we're going to create assets for My Simple Theme, the folder paths w
 
 Any specific content is placed in these folders instead.
 
-#### Create the Front Controller Plugin
+### Create the Front Controller Plugin
 
 Our plugin will be called Application_Plugin_Theme.  I'll register a routeShutdown hook because this is one of the last things we have to do or figure out.  Certainly don't want to do it on every call in the loop nor do I want to do it before a redirect could occur.
 
 **application/plugins/Theme.php**
 
-{% highlight PHP %}
-<?php 
+```php?start_inline=1 
 class Application_Plugin_Theme extends Zend_Controller_Plugin_Abstract
 {
   public function routeShutdown($request)
@@ -82,7 +80,7 @@ class Application_Plugin_Theme extends Zend_Controller_Plugin_Abstract
     $layout->setLayoutPath(APPLICATION_PATH . '/layouts/' . $theme->foldername);
   }
 }
-{% endhighlight %}
+```
 
 The first three lines of this are the theme management hardcoded portion I created.  It is important later, however, in the view helper we're going to create to have access to the $theme object --- hence the Zend_Registry call.
 
@@ -97,7 +95,7 @@ With this plugin, now all items will load from their proper folders.  Just as an
     layout: application/layouts/simple/layout.phtml
     view: application/views/simple/scripts/blog/viewAll.phtml
 
-#### Last step: View Helper
+### Last step: View Helper
 
 Since there are different public assets depending on what template that was used, we created the multiple folders in the public folder.  For example, you may have
 public/simple/images, public/simple/js, etc.
@@ -110,8 +108,7 @@ Since this view helper is going to be shared among all of our views, however, we
 
 Create a new Helper called Application_View_Helper_Theme inside of the file: application/views/helpers/Theme.php
 
-{% highlight PHP %}
-<?php 
+```php?start_inline=1 
 class Application_View_Helper_Theme
 {  
   public function theme($url)
@@ -122,14 +119,13 @@ class Application_View_Helper_Theme
     return $baseURL . $url;
   }
 }
-{% endhighlight %}
+```
 
 Now, modify the front controller plugin to "add" not "set" a new helper script path.  Add the following code:
 
 **application/plugins/Theme.php**
 
-{% highlight PHP %}
-<?php 
+```php?start_inline=1 
   public function routeShutdown($request)
   {
     /**SNIP**/
@@ -137,7 +133,7 @@ Now, modify the front controller plugin to "add" not "set" a new helper script p
     /**ADD THIS BELOW HERE **/
     $view->addScriptPath(APPLICATION_PATH . '/views/scripts');
   }  
-{% endhighlight %}
+```
 
 Now, your zend framework project will look in the regular scripts folder as well as your theme folder for view helpers.
 
@@ -145,17 +141,15 @@ How might we use this?
 
 **Old view:**
 
-{% highlight PHP %}
-<?php 
+```php?start_inline=1 
 echo '<img src="/images/smiley.gif" alt="smiley">';
-{% endhighlight %}
+```
 
 **New view:**
 
-{% highlight PHP %}
-<?php 
+```php?start_inline=1 
 echo '<img src='" . $this->theme('/images/smiley.gif') . '" alt="smiley">';
-{% endhighlight %}
+```
 
 This will render the theme URL of /themes/simple/images/smiley.gif.
 

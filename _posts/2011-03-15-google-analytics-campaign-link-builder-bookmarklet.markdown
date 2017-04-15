@@ -14,7 +14,7 @@ So, here is the bookmarklet - feel free to drag it to your browser:
 
 For those of you who are more interested in the code, here is the uncompressed version:
 
-{% highlight javascript %}
+```javascript
 function r(q,e,d)
 {
     d = typeof(d) != "undefined" ? d : "";
@@ -35,4 +35,4 @@ var l = r("Full URL of destination page:","URL Required", window.location),
 for (var d in p) t.push(encodeURIComponent(d) + "=" + encodeURIComponent(p[d]));
 l += "?" + t.join("&");
 alert(l);
-{% endhighlight %}
+```

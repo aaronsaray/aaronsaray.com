@@ -17,18 +17,16 @@ Anyway, let's look at this in practice.
 **Here is our custom exception.**  Maybe if our target api returns error 500, we throw this exception.  Doesn't mean our site is kaput - we just can't use this API.
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class API_500error_Exception extends exception {}
-{% endhighlight %}
+```
     
 
 
 **and then...** here is our code
 
     
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $service = new API_Service();
 try {
   $service->connect();
@@ -40,7 +38,7 @@ catch (API_500error_Exception $a5e) {
 catch (Exception $e) {
   echo "Unfortunately, there was an unknown error on this page.";
 }
-{% endhighlight %}
+```
 
 
 

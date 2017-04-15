@@ -10,16 +10,15 @@ One of the under-utilized features of PHPUnit probably is the listeners interfac
 
 **excerpt from phpunit.xml**
 
-{% highlight XML %}
+```xml
 <listeners>
     <listener class="Application_Test_TestTimesListener" file="scripts/TestTimesLimitListener.php"></listener>
 </listeners>
-{% endhighlight %}
+```
 
 This simply says to invoke the listener from TestTimesLimitListener.php - which class name is Application_test_TestTimesListener.  Here is the code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * Listener Class for test times
  * 
@@ -103,7 +102,7 @@ class Application_Test_TestTimesListener implements PHPUnit_Framework_TestListen
      */
     public function endTestSuite(PHPUnit_Framework_TestSuite $suite) {}	
 }
-{% endhighlight %}
+```
 
 
 

@@ -14,7 +14,7 @@ Most of the development I do that needs to be tested on android is on a local su
 
 
 
-#### The Steps for the Emulator
+### The Steps for the Emulator
 
 
 
@@ -71,7 +71,7 @@ Almost done with the emulator - last step is to open Chrome and enable the USB D
 
 
 
-#### Steps for Scripting the Chrome Debugger and Host File
+### Steps for Scripting the Chrome Debugger and Host File
 
 
 

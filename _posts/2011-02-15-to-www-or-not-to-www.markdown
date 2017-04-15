@@ -12,14 +12,14 @@ I run into this question a lot.  Should my website have www in the domain name. 
 
 
 
-#### Take care of both
+### Take care of both
 
 
 Regardless of how you choose, people will always find a way to visit both the www and the non-www versions of your site.  It is imperative that you handle both cases.  There is nothing less professional than someone going to www.aaronsaray.com and not finding anything - but aaronsaray.com would work flawlessly.
 
 
 
-#### In support of WWW
+### In support of WWW
 
 
 So far, I've come up with two arguments for having the WWW on your domain.  
@@ -52,7 +52,7 @@ Finally, auto completion, both user and tool, factor in.  In my browser address 
 
 
 
-#### In support of no-www
+### In support of no-www
 
 
 The first statement I can think of is to undo the first argument for the WWW section - using the www shows it is a web address.  I would suggest an alternative that alleviates this problem:
@@ -90,7 +90,7 @@ vs
 
 
 
-#### Pick one -and enforce it
+### Pick one -and enforce it
 
 
 Once you pick your www or not-www domain name, stick with it.  Always provide links with that exact domain match.  Visit tools like the Google Webmaster Tools to identify the primary domain.  Finally, add the redirect in your Apache configuration (or use .htaccess)
@@ -116,7 +116,7 @@ Once you pick your www or not-www domain name, stick with it.  Always provide li
 
 
 
-#### What do I choose?
+### What do I choose?
 
 
 Well, there are two strong camps here.  The [yes-www.org](http://web.archive.org/web/20080107105728/www.yes-www.org/www-is-not-deprecated/) and the [no-www.org](http://no-www.org/) both have compelling reasons.  But, after looking at some of my web high performance heros like facebook and yahoo, I've decided:

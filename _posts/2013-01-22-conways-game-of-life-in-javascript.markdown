@@ -10,16 +10,16 @@ Recently, someone mentioned to me [Conway's Game of Life](http://en.wikipedia.or
 
 The canvas was really simple:
 
-{% highlight HTML %}
+```html
 <h1>Conway's Game of Life</h1>
 <h2>Using Javascript and Canvas</h2>
 <canvas width="500" id="mainBoard" height="500"></canvas>
-{% endhighlight %}
+```
 
 And now the javascript used in this document:
 
     
-{% highlight javascript %}
+```javascript
 (function(){
 
     /**
@@ -179,7 +179,7 @@ And now the javascript used in this document:
     var game = new GOL();
     game.start();
 })();
-{% endhighlight %}
+```
 
 
 Let me know your thoughts!

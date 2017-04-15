@@ -9,11 +9,11 @@ When reviewing some javascript security ideas, I came across the document.URL pr
 
 Check it out with this code:
 
-{% highlight javascript %}
+```javascript
 alert(document.URL);
 alert(document.location.href);
 document.URL = 'http://google.com';
 document.location.href = 'http://yahoo.com';
-{% endhighlight %}
+```
 
 The results are simple: you will get the current location twice - and then an error.  If you comment out the document.URL line, it will redirect to yahoo.

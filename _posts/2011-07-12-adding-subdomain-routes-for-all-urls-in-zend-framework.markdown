@@ -15,8 +15,7 @@ In my example, I'm going to make sure that the following code is at the very end
 
 Use the following code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $router = Zend_Controller_Front::getInstance()->getRouter();
 
 $hostnameRoute = new Zend_Controller_Router_Route_Hostname(":sitename.example.com");
@@ -25,7 +24,7 @@ $router->addDefaultRoutes();
 foreach ($router->getRoutes() as $key=>$route) {
   $router->addRoute('hostname' . $key, $hostnameRoute->chain($route));
 }
-{% endhighlight %}
+```
 
 
 

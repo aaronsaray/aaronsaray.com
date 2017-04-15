@@ -11,8 +11,7 @@ For this article, I wanted to build on my previous article [here]({% post_url 20
 
 Ok, let's take a look at the code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class config
 {
     private static $instance = null;
@@ -40,7 +39,7 @@ class config
 }
 
 print config::get('item2');
-{% endhighlight %}
+```
     
 
 We have a class called config that we can access our variables from with the get() static method.  Notice how this time, we cannot access the variables directly - we have to use the method - so this is an improvement.

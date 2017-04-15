@@ -16,21 +16,19 @@ For most PHPers, they will answer with: "it supresses the error on that statemen
 
 When I went to ZendCon 2006, I heard a talk about performance (I forget who it was now! :( ) - but they explained how the @ works.  Basically, think of every time you execute a @'d statement, this is what happens internally:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 @print 'hello';
-{% endhighlight %}
+```
 
 is really something like...
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $errorReporting = error_reporting();
 error_reporting(0);
 print 'hello';
 error_reporting($errorReporting);
 unset($errorReporting);
-{% endhighlight %}
+```
     
 As you can see, even tho the internals of PHP are fast, thats a needless set of statements to call.
 
@@ -38,12 +36,11 @@ As you can see, even tho the internals of PHP are fast, thats a needless set of 
 
 When you define a custom error handler, the @ doesn't stop the error reporting.  Instead, it sets error_reporting() to 0, but still executes the custom error handler.  Of course, you can still facilitate the @ sign in your custom error handler by doing as so:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 if (error_reporting() === 0) {
     return false;
 }
-{% endhighlight %}
+```
     
 What this does is exits the error handler right away (not so good - what if this was a fatal error?? - you're now allowing the script to continue) and at least populates the $php_errmsg variable (return false allows this to happen).
 
@@ -54,40 +51,36 @@ I can't think of a legitimate, quality use for calling functions with the @.  No
 Require
 Bad:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 @require('myfile.php') or die('file was not included');
-{% endhighlight %}
+```
     
 Better:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 if (file_exists('myfile.php')) {
     require('myfile.php');
 }
 else {
     trigger_error('Could not include myfile.php', E_USER_ERROR);
 }
-{% endhighlight %}
+```
     
 Of course, make sure to read all about the caveats of [file_exists](http://us3.php.net/manual/en/function.is-readable.php).
 
 Undeclared Variable Manipulation
 Bad:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $value = @$myarray[0];
 if ($value) {
     print 'do something';
 }
-{% endhighlight %}
+```
 
 Better:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $value = null;
 if (isset($myarray[0])) {
     $value = $myarray[0];
@@ -95,5 +88,5 @@ if (isset($myarray[0])) {
 if ($value) {
     print 'do something';
 }
-{% endhighlight %}
+```
     

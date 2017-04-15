@@ -31,19 +31,17 @@ For those familiar with bitwise operators, the last paragraph probably seemed pr
 
 Well, as I said above, I'm assuming that you're not displaying errors on the production box, so we could - theoretically - use the same error reporting on the production box as well as the development box.  However, if you're handling alot of hits, writing alot of errors to the log file might start to overwhelm - so I would suggest using:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 error_reporting(E_ALL)
-{% endhighlight %}
+```
 
 It still reports all of the major errors, but it doesn't report errors such as notice and strict.  You should catch these during development... its not worth overloading your log files in live.  (HOWEVER - if you're using registered_globals = on, you should add in E_NOTICE to your error reporting.  It is possible that a script of yours could have an unset variable which gets set by a crafted post/get request - this would be a no - no.  If using registered_globals - which you shouldn't be - use the E_NOTICE on production too.)
 
 On the development box, this is without question - use all error reporting.  You need to know about every single error.  I'm of the opinion that code should never go to production in a state that PHP is able to report an error of it.  Use:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 error_reporting(E_ALL | E_STRICT)
-{% endhighlight %}
+```
 
 E_ALL is set and any thing that is E_STRICT is also set (as E_ALL doesn't include E_STRICT)
 

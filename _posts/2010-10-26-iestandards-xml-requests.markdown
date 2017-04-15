@@ -12,9 +12,9 @@ The site I created uses an extensive amount of javascript.  For some reason, Int
 
 I did some research and found out that I needed to set IE8 to emulate IE8.  I did so by entering the following tag into the head of my document:
 
-{% highlight HTML %}
+```html
 <meta content="IE=EmulateIE8" http-equiv="X-UA-Compatible">
-{% endhighlight %}
+```
 
 
 
@@ -25,9 +25,9 @@ I believe the solution is a two fold solution, now. It is necessary to use the m
 **IEStandards.xml**
 
     
-{% highlight XML %}
+```xml
 <ie8standardsmode></ie8standardsmode>
-{% endhighlight %}
+```
     
 
 

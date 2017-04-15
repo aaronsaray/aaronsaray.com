@@ -9,8 +9,7 @@ I just profiled some of my code and found out that the biggest chunk of my proce
 
 The first thought is to just use one ID per page.  However, I didn't want to change too much of my code.  It's working - so lets just make it work faster.  I did some thinking and realized that maybe my unique id didn't need to be THAT unique - just not super predictable.  A sha1() hash of a random number should do the trick.  And it should be faster.  Just to verify, I did my own benchmark using this code:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 $start = $stop = array();
 
 $start['uniqid'] = microtime(TRUE);
@@ -34,7 +33,7 @@ $stop['sha1/mt_rand'] = microtime(TRUE);
 foreach ($start as $key=>$startval) {
     echo "{$key}: " . ($stop[$key] - $startval) . "<br></br>";
 }
-{% endhighlight %}
+```
 
 The results:
 

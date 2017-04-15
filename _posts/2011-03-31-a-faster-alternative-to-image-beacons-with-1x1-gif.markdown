@@ -22,10 +22,10 @@ Let's put this in practice:
 
 Before:
 
-{% highlight javascript %}
+```javascript
 var track = new Image();
 track.src="/my/source/image/1x1.gif";
-{% endhighlight %}
+```
 
 
 
@@ -33,20 +33,19 @@ And the corresponding image is sent.
 
 After:
 
-{% highlight javascript %}
+```javascript
 var track = new Image();
 track.src = "/track/this/page.php";
-{% endhighlight %}
+```
     
 
 
 
 **page.php**
 
-{% highlight php %}
-<?php    
+```php?start_inline=1    
 die(header("HTTP/1.1 204 No Content"));
-{% endhighlight %}
+```
     
 
 

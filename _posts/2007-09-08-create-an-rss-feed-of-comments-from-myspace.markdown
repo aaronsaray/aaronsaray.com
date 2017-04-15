@@ -14,8 +14,7 @@ Lately, I’ve been trying to find ways to reduce the amount of time I spend on 
 
 You can take this script and modify the URL variable and run it on a PHP5 compatible host. You might also have to change the URL for your xml file. Then, just schedule the script to run every hour and feed the xml file URL to your reader. Do keep in mind that this will increase your profile views 1 for every hour (I myself don’t really care…)
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 /**
  * get a list of your comments on myspace
  * and then make an rss feed out of them
@@ -205,7 +204,7 @@ $rss = new myspaceCommentToRss($URL);
  
 /** output the xml for the rss feed **/
 $rss->outputXML();
-{% endhighlight %}
+```
 
 Legacy note: 
 

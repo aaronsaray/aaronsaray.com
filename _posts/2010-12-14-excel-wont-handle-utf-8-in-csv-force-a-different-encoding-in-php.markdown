@@ -10,7 +10,6 @@ When generating a CSV file with PHP in the UTF-8 encoding, Microsoft Excel freak
 
 Instead of outputing with encoding of UTF-8, change it on the fly to Windows-1251.  This can be accomplished with mb_convert_encoding().  Check it out:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $csvOutput .= mb_convert_encoding(implode(',', $value), 'Windows-1251', 'UTF-8');
-{% endhighlight %}
+```

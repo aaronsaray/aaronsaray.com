@@ -13,7 +13,7 @@ My chosen UUID is V4 in PHP.  I checked out the [php.net/uniqid](http://php.net/
 
 
 
-#### UUID is Hex
+### UUID is Hex
 
 
 
@@ -30,20 +30,20 @@ Excellent!  So, now we can deal with Hex solely - and PHP is amazing because any
 
 
 
-#### The basic format of the UUID
+### The basic format of the UUID
 
 
 
 The basic format of the UUID - and I'm talking real basic - is:
 
-    ########-####-####-############ where # is a hexadecimal number.
+    ########-####-####-########### where # is a hexadecimal number.
 
 Of course, those nodes actually mean something (per the rfc):
 
 UUID = time-low "-" time-mid "-" time-high-and-version "-" clock-seq-and-reserved clock-seq-low "-" node
 
 
-#### What makes this v4?
+### What makes this v4?
 
 RFC states:
 
@@ -67,7 +67,7 @@ And 4.1.3 states the binary value of this:
 So, what that all means is that we need to set those bits properly in each sub section after we've generated our random number - doesn't sound so bad.  Just use the bitwise operator.
 
 
-#### PHP and generating the random number
+### PHP and generating the random number
 
 
 Ok - first off, lets generate some random numbers with mt_rand().  The middle two sections are not a problem what so ever... we'll use use
@@ -82,31 +82,29 @@ Ok - first off, lets generate some random numbers with mt_rand().  The middle tw
 However, what about the next bigger one, the 8 digit one?  Well, I'm using a windows machine in 32 bit - so I did a bit of math here:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 var_dump(0xffffffff);
 print mt_getmaxrand();
-{% endhighlight %}
+```
     
 
 Outputs were: 4294967295 and 2147483647 respectively, so I know we'll have to break that up.  Basically, we'll use 2 random numbers dash one random dash one random dash three random numbers.  sprintf will take care of the padding.
 
 
-#### Ok, putting it all together
+### Ok, putting it all together
 
 
 
 The best example of all of this - and what I used to kind of reverse-engineer for this article, was from the PHP manual, check it out:
 
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
         mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
         mt_rand( 0, 0x0fff ) | 0x4000,
         mt_rand( 0, 0x3fff ) | 0x8000,
         mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ) );
-{% endhighlight %}
+```
 
 
 Simple enough, proper sprintf format, all the random number generators in place, and then the bitwise operators to set the bits properly.

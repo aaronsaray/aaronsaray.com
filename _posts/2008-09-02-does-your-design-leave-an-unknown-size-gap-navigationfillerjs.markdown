@@ -9,7 +9,7 @@ tags:
 If you've ever worked with a customer's CMS pages and heard the term "Oh but I want some images underneath the links" - you need this script.  Whether your using old style tables or the coolest CSS tricks, filling in space to the bottom of the page can be useful.
 
 
-#### Enter navigationFiller.js
+### Enter navigationFiller.js
 
 
 [![](/uploads/2008/1-150x99.png)](/uploads/2008/1-150x99.png){: .thumbnail}
@@ -31,22 +31,22 @@ This is from a simple script include and then some configuration options.  The s
 Its easy - lets see how:
 
 
-#### How to Use
+### How to Use
 
 
 First thing's first, include the js file in the head of your document.
 
-{% highlight HTML %}
+```html
 <head>
 <script src="navigationFiller.js" type="text/javascript"></script>
 </head>
-{% endhighlight %}
+```
 
 
 Next, configure your options.  First, you must make a new instance of the object.  Then, you can add images 1 by 1.  The order you add them is the order they may appear.  Check out this javascript:
 
 
-{% highlight javascript %}
+```javascript
 var oFiller = new navigationFiller();
 oFiller.add('1.gif');
 oFiller.add('2.gif');
@@ -54,19 +54,19 @@ oFiller.add('3.gif');
 
 /** add using your normal onload() handler **/
 window.onload = function() {oFiller.create('fillerDiv');}
-{% endhighlight %}
+```
     
 
 As you can see, you finally run the oFiller.create() function with the ID of the div that you wish to populate with these images.
 
-#### So What Happens?
+### So What Happens?
 
 If you have a div with an ID passed to the oFiller.create() in the above example, the script will calculate the height of the current document, and the location of the div, and then load images in until there is no more room left.  It will not extend past the height of the existing document.
 
-#### Bugs or Limitations?
+### Bugs or Limitations?
 
 I have a huge todo list - so this is more of a proof of concept.  It should be noted that it only works with FireFox at this point.  Also, the code is sloppy and possibly buggy.  You can see the top of the js file for my expanded todo list.
 
-#### Download!
+### Download!
 
 You can download it here: [Navigation Filler Zip (with Examples)](/uploads/2008/navigationfiller.zip)

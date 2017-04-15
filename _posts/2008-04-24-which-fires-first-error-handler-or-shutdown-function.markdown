@@ -11,8 +11,7 @@ This got me to thinking about handling error redirection pages and sending messa
 
 I'm using PHP5.2 - this is the code I used to test:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 function error_function() {
     print 'error function';
 }
@@ -25,6 +24,6 @@ set_error_handler('error_function');
 register_shutdown_function('shutdown_function');
 
 print 1/0;
-{% endhighlight %}
+```
 
 So, as you can tell, the error handler happens FIRST and then the shutdown function

@@ -7,11 +7,11 @@ tags:
 
 Today marked the second time I had to write this code from scratch.  To save my self time - and hopefully you too! - I'm going to post what I've developed.
 
-#### Get Your Zips
+### Get Your Zips
 
 I found a great resource at [ibegin.com](http://geocoder.ibegin.com/downloads.php) - a download of 5 digit zip codes, city, state and county name, and their latitude and longitude.  (Just in case it's unavailable, I have archived it [here](/uploads/2009/zip5.zip).)
 
-#### Import your Zips
+### Import your Zips
 
 The table I'm using was created with this SQL:
 
@@ -31,8 +31,7 @@ The table I'm using was created with this SQL:
 
 The following is the code used to import this .csv file into the table:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 set_time_limit(0);
 $mysqlhost = 'localhost';
 $mysqluser = 'user';
@@ -71,16 +70,15 @@ if (count($inserts)) {
 }
 
 print 'done';
-{% endhighlight %}
+```
 
 This imported a nice set of 41755 zip code rows.
 
-#### Distance Calculations
+### Distance Calculations
 
 Now, I should give a disclaimer: this is just code that you can use.  It is not the 'cleanest' or best organized.  When I implement this code for my employer, I will be making a few changes, including it in a class, etc.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 function degrees_difference($lat1, $lon1, $lat2, $lon2)
 {
     $theta = $lon1 - $lon2;
@@ -95,13 +93,12 @@ function degrees_difference($lat1, $lon1, $lat2, $lon2)
 
     return $distance;
 }
-{% endhighlight %}
+```
 
 
 This will return the distance in miles between one lat/long combination and another.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 function difference_between($firstzip, $secondzip)
 {
     $query = "select zip5, lat, lon from zipgeo where zip5 in ({$firstzip}, {$secondzip})";
@@ -112,12 +109,11 @@ function difference_between($firstzip, $secondzip)
 
     return degrees_difference($firstzips['lat'], $firstzips['lon'], $secondzips['lat'], $secondzips['lon']);
 }
-{% endhighlight %}
+```
 
 This code gets the latitude and longitude for two zip codes and then executes that last function.  Note: it doesn't matter what order the zip codes are - the distance from A to B is always the same as B to A.
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 function get_zips_within($zip, $miles)
 {
     $milesperdegree = 69;
@@ -143,11 +139,11 @@ function get_zips_within($zip, $miles)
 
     return $zips;
 }
-{% endhighlight %}
+```
 
 This last statement gets the zips within that many miles.
 
-#### How Should I Use These?
+### How Should I Use These?
 
 
 Because I'm not about to do the calculations based on the earth's curvature in my SQL statement, I can have some misleading results.  Since the distance - especially as the difference in location grows - is elongated by the curvature, the initial query using the between statement should actually request a larger mileage than expected.  Then, this result set should be looped through and compared using the function which computes using the curvature to get a more accurate result set.

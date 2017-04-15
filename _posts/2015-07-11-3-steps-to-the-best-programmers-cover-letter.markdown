@@ -12,7 +12,7 @@ I've had a lot of [experience](/resume) hiring programmers, so I thought I'd tak
 
 
 
-#### The Connection Letter
+### The Connection Letter
 
 
 
@@ -22,7 +22,7 @@ When a hiring manager reviews your resume with a cover letter - they have two ch
 
 
 
-#### The Three Steps
+### The Three Steps
 
 
 
@@ -32,7 +32,7 @@ So, let's get into the three steps - or three parts of the **connection letter**
 
 
 
-##### Step 1: Grab Attention
+#### Step 1: Grab Attention
 
 
 
@@ -46,7 +46,7 @@ First step is to connect with the need.  You may want to talk about the work loa
 
 
 
-##### Step 2: Indirectly Fit Their Need
+#### Step 2: Indirectly Fit Their Need
 
 
 
@@ -60,7 +60,7 @@ The second reason this statement irks me is because of the quality vs quantity a
 
 
 
-##### Step 3: Confidently Submit Yourself
+#### Step 3: Confidently Submit Yourself
 
 
 
@@ -70,7 +70,7 @@ You've worked hard to get to this point, so it's time to show it.  Instead of as
 
 
 
-##### Bonus Step: The PS
+#### Bonus Step: The PS
 
 
 
@@ -80,7 +80,7 @@ The best way to put this is something that just mentions the referral had good t
 
 
 
-##### End Notes
+#### End Notes
 
 
 

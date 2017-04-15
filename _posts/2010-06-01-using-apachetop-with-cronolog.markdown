@@ -8,7 +8,7 @@ tags:
 I love ApacheTop.  I love Cronolog.  After I installed cronolog and used it in my apache configuration, however, I found it more and more difficult to use apachetop.  I stopped using it.  Well, I finally came up with a bash script that eases my frustration with calling the proper path names for apachetop.  Check it out:
 
 
-#### My httpd.conf customlog
+### My httpd.conf customlog
 
 
 The entry in httpd.conf vhost contains this line:
@@ -23,7 +23,7 @@ Pretty simple - just keeping my logs separated.
 
 
 
-#### My webtop.sh script
+### My webtop.sh script
 
 
 In order to make it easier on myself, I now envoke apachetop with this bash script.

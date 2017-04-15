@@ -14,7 +14,7 @@ For testing, I submit this HTML code.  (Note: the CSS for the password box is th
 
 
     
-{% highlight HTML %}
+```html
 <html>
     <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
@@ -28,12 +28,12 @@ For testing, I submit this HTML code.  (Note: the CSS for the password box is th
         <input class="showpassword" type="password" name="password" id="password"></input>
     </body>
 </html>
-{% endhighlight %}
+```
     
 
 Now, the javascript is pretty simple.  Just find the class, grab the input, and add a checkbox after it.  The checkbox will then, once clicked, remove that input and add in the opposite input type.
     
-{% highlight javascript %}
+```javascript
 $(function(){
     $(".showpassword").each(function(index,input) {
         var $input = $(input);
@@ -52,5 +52,5 @@ $(function(){
         ).append($("<span></span>").text("Show password")).insertAfter($input);
     });
 });
-{% endhighlight %}
+```
     

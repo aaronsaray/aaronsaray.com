@@ -14,7 +14,7 @@ Now, the error attribute should be used for actual errors, not logical errors.  
 
 I wrote a generic function to handle the errors.  This could be name spaced I suppose or added to your standard library.  In this case, it just alerts the error.  (On some other sites, I generate a new modal box.)
 
-{% highlight javascript %}
+```javascript
 function ajaxError(request, type, errorThrown)
 {
     var message = "There was an error with the AJAX request.\n";
@@ -34,7 +34,7 @@ function ajaxError(request, type, errorThrown)
     message += "\n";
     alert(message);
 }
-{% endhighlight %}
+```
 
 
 
@@ -43,14 +43,13 @@ In this function, an error message is generated based on the error type.  The on
 Here is an example of this in use:
 **ajax.php**
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 header('HTTP/1.1 503 Service Unavailable');    
-{% endhighlight %}
+```
     
 And, here is the test page.  When the user clicks the xx link, it will generate a request to ajax.php.  This will generate a 503 error and the error handler will take over.
     
-{% highlight HTML %}
+```html
 <html>
     <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
@@ -74,5 +73,5 @@ And, here is the test page.  When the user clicks the xx link, it will generate 
         </script>
     </body>
 </html>
-{% endhighlight %}
+```
     

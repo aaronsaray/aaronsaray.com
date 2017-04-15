@@ -9,8 +9,7 @@ I've been using Zend_db to create a query which does a simple search on three co
 
 For example, see this statement:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 $select->where('email like ? OR first_name like ? OR last_name like ?', array('%' . $q . '%'));
-{% endhighlight %}
+```
     

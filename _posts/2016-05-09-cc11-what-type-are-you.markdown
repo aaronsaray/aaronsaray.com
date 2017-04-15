@@ -19,24 +19,23 @@ Fast forward a few years and I had begun to understand the importance and releva
 I'm going to assume that you're familiar with weak and strong typing and have a general understanding of how PHP handles variables.  
 (For more background, check out Wikipedia articles about [Data Type](http://en.wikipedia.org/wiki/Data_type) and [Strong and Weak Typing](http://en.wikipedia.org/wiki/Strong_and_weak_typing).  This article's code examples will focus more on method type hinting and not casting of types.
 
-#### What Types Can Be Hinted
+### What Types Can Be Hinted
 
 As of PHP 5.5, the following types can be hinted: classes, interfaces, arrays, and callable.  Resources, Traits and Scalar types are not currently allowed at this time.  When hinting objects, one important thing to remember is that any class or interface that makes up the entire object can be hinted.  This means child classes can still satisfy a parent class hint.
 
-#### Why To Hint
+### Why To Hint
 
 As a Confident Coder, we know that we want our methods to be doing the least amount of work as possible.  I'd rather not have to handle converting data types.  
 
 The following style illustrated in this example might be familiar to you:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 
 function doSomething($value)
 {
   $value = (array) $value;
 
-{% endhighlight %}
+```
 
 Since it was unclear what data type the parameter will be, it was cast to an array.  Other examples might use functions like `is_array()` to determine if this parameter is of the required type.
 
@@ -44,12 +43,11 @@ If I document my function (and now have a type-hinted signature), it will be the
 
 Note how the previous example can be refactored to require the proper data type:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 
 function doSomething(array $value)
 
-{% endhighlight %}
+```
 
 This will now require the incoming variable to be type array.
 
@@ -59,8 +57,7 @@ Imagine a code base where programmers can send any of their objects into your me
 
 This interface and class method help demonstrate this:
 
-{% highlight php %}
-<?php
+```php?start_inline=1
 
 class MyProcessorClass
 {
@@ -75,7 +72,7 @@ interface MyPluginInterface
   public function doSomething();
 }
 
-{% endhighlight %}
+```
 
 Since the `process()` method will always be calling the `doSomething()` method of any object passed as a parameter, the interface defines the `doSomething()` method.  This means that any class implementing this interface must have that method.  And since the `process()` method has type-hinted its parameter to be that interface, we can be assured that any object, no matter what base class it is, will at least have that callable method because it will be forced to implement the interface.
 

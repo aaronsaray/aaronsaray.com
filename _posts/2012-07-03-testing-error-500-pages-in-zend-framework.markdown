@@ -11,8 +11,7 @@ For the most part, ZF can capture any of your hard errors.  It will generate an 
 
 Well, if we generate an error that would make a FATAL or 500 error in our test unit suite, something bad will happen.  However, you can still trigger the **exception** that is triggered during normal operation to test your controller.  My error controller is default/error/error and has a h1 of Error 500.  This is how I test that controller:
 
-{% highlight PHP %}
-<?php
+```php?start_inline=1
 class Application_Test_Default_Controller_ErrorController extends Zend_Test_PHPUnit_ControllerTestCase
 {
   // ...
@@ -23,7 +22,7 @@ class Application_Test_Default_Controller_ErrorController extends Zend_Test_PHPU
     $this->assertAction('error');
     $this->assertQueryContentContains('//h1', 'Error 500');
   // ...
-{% endhighlight %}
+```
 
 
 It grabs the response item that is part of the Zend_Test extension of PHPUnit.  Next, set the error that would be thrown.  Finally, dispatch any page.  Instead of that page, the front controller plugin that is the default error handler should grab it and redirect it to the error page.  

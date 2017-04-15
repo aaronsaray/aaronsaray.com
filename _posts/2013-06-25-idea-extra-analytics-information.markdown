@@ -7,9 +7,9 @@ tags:
 
 When browsing the documentation for chrome, I came across this:
 
-{% highlight javascript %}
+```javascript
 window.performance.getEntries();
-{% endhighlight %}
+```
     
 
 This gives a dump of all the connection and timing information available to the Javascript Timing and Resource API.  
