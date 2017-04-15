@@ -59,12 +59,12 @@ I decided to write my own HTML to customize the view.  You can click on the cust
 
 ```html
 <div style="height: 11em; overflow-y: auto" class="googft-info-window">
-    <img src="{Image}" style="float:right; height: 10em; margin-left: 0.5em"></img>
-    <b>{Name}</b><br>
-    {Address}<br>
-    <hr>
-    2015: ${2015}<br>
-    <span style="color: #aaa">2014: ${2014}</span><br>
+  <img src="{Image}" style="float:right; height: 10em; margin-left: 0.5em"></img>
+  <b>{Name}</b><br>
+  {Address}<br>
+  <hr>
+  2015: ${2015}<br>
+  <span style="color: #aaa">2014: ${2014}</span><br>
 </div>
 ```
 

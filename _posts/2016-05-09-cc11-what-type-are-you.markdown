@@ -6,7 +6,7 @@ tags:
 ---
 > This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
 
-### Episode 10: What Type Are You?
+### Episode 11: What Type Are You?
 
 When I went to a University for a Computer Science degree, a required class was Introduction to Java Programming.  I remember the first thing the professor taught seemed very confusing at the time.  I can still hear his voice very clearly: "So to begin with, we'll type... string string equals new string."  
 
@@ -19,22 +19,21 @@ Fast forward a few years and I had begun to understand the importance and releva
 I'm going to assume that you're familiar with weak and strong typing and have a general understanding of how PHP handles variables.  
 (For more background, check out Wikipedia articles about [Data Type](http://en.wikipedia.org/wiki/Data_type) and [Strong and Weak Typing](http://en.wikipedia.org/wiki/Strong_and_weak_typing).  This article's code examples will focus more on method type hinting and not casting of types.
 
-### What Types Can Be Hinted
+#### What Types Can Be Hinted
 
 As of PHP 5.5, the following types can be hinted: classes, interfaces, arrays, and callable.  Resources, Traits and Scalar types are not currently allowed at this time.  When hinting objects, one important thing to remember is that any class or interface that makes up the entire object can be hinted.  This means child classes can still satisfy a parent class hint.
 
-### Why To Hint
+#### Why To Hint
 
 As a Confident Coder, we know that we want our methods to be doing the least amount of work as possible.  I'd rather not have to handle converting data types.  
 
 The following style illustrated in this example might be familiar to you:
 
 ```php?start_inline=1
-
 function doSomething($value)
 {
   $value = (array) $value;
-
+  // ...
 ```
 
 Since it was unclear what data type the parameter will be, it was cast to an array.  Other examples might use functions like `is_array()` to determine if this parameter is of the required type.
@@ -44,9 +43,7 @@ If I document my function (and now have a type-hinted signature), it will be the
 Note how the previous example can be refactored to require the proper data type:
 
 ```php?start_inline=1
-
 function doSomething(array $value)
-
 ```
 
 This will now require the incoming variable to be type array.
@@ -58,7 +55,6 @@ Imagine a code base where programmers can send any of their objects into your me
 This interface and class method help demonstrate this:
 
 ```php?start_inline=1
-
 class MyProcessorClass
 {
   function process(MyPluginInterface $yourPlugin)
@@ -76,7 +72,7 @@ interface MyPluginInterface
 
 Since the `process()` method will always be calling the `doSomething()` method of any object passed as a parameter, the interface defines the `doSomething()` method.  This means that any class implementing this interface must have that method.  And since the `process()` method has type-hinted its parameter to be that interface, we can be assured that any object, no matter what base class it is, will at least have that callable method because it will be forced to implement the interface.
 
-### End Notes
+#### End Notes
 
 Confident Coders know and appreciate the balance between the ease-of-use of our beloved loosely-typed language and the accuracy and standards enforced by strong typing.  It is incredibly important to understand the unique value that type-hinting inside a loosely typed language can add to your programming.  Learn to balance and embrace the flexibility of PHP with the benefits that type-hinting can add.
 

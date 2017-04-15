@@ -215,6 +215,19 @@ article {
   margin: auto;
 }
 
+table {
+  width: 100%;
+  margin: 1.5rem;
+  border-collapse: collapse;
+}
+th {
+  background: #f4f4f4;
+}
+td, th {
+  border: 1px solid #cecece;
+  padding: 0.5rem;
+}
+
 /***********************************************************************************************************************
  * syntax highlighting
  **********************************************************************************************************************/
@@ -255,19 +268,3 @@ code.highlighter-rouge {
     display: inline-block;
   }
 }
-
-//
-//table {
-//  width: 100%;
-//  margin: 1.5rem;
-//  border-collapse: collapse;
-//
-//}
-//th {
-//  background: #f4f4f4;
-//}
-//td, th {
-//  border: 1px solid #f4f4f4;
-//  padding: 0.5rem;
-//}
-//

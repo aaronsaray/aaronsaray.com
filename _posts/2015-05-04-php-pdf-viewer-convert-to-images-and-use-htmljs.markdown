@@ -17,67 +17,68 @@ namespace AaronSaray;
 
 class PDFViewer
 {
-    /**
-     * @const string the location of the PDF files in relation to this class
-     */
-    const PDF_DIR = '/pdf';
+  /**
+   * @const string the location of the PDF files in relation to this class
+   */
+  const PDF_DIR = '/pdf';
 
-    /**
-     * @const string the cache location
-     */
-    const CACHE_DIR = '/pdf/cache';
+  /**
+   * @const string the cache location
+   */
+  const CACHE_DIR = '/pdf/cache';
 
-    /**
-     * Get the PDF files
-     * @return array
-     */
-    public function getPDFList()
-    {
-        return glob(__DIR__ . self::PDF_DIR . '/*.pdf');
+  /**
+   * Get the PDF files
+   * @return array
+   */
+  public function getPDFList()
+  {
+    return glob(__DIR__ . self::PDF_DIR . '/*.pdf');
+  }
+
+  /**
+   * Creates an image list by either processing the pdf or 
+   * retrieving them from the cache
+   *
+   * @param $filename
+   * @return array
+   * @throws \Exception
+   */
+  public function getImageList($filename)
+  {
+    $filePath = __DIR__ . self::PDF_DIR . "/{$filename}";
+    if (!is_readable($filePath)) {
+      throw new \Exception($filePath . ' was not readable.');
     }
 
-    /**
-     * Creates an image list by either processing the pdf or retrieving them from the cache
-     *
-     * @param $filename
-     * @return array
-     * @throws \Exception
-     */
-    public function getImageList($filename)
-    {
-        $filePath = __DIR__ . self::PDF_DIR . "/{$filename}";
-        if (!is_readable($filePath)) {
-            throw new \Exception($filePath . ' was not readable.');
-        }
+    $dirName = substr(basename($filePath), 0, -4);
+    $cacheLocation = __DIR__ . self::CACHE_DIR . "/{$dirName}";
+    $globPattern = $cacheLocation . '/*.jpg';
 
-        $dirName = substr(basename($filePath), 0, -4);
-        $cacheLocation = __DIR__ . self::CACHE_DIR . "/{$dirName}";
-        $globPattern = $cacheLocation . '/*.jpg';
-
-        $files = glob($globPattern);
-        if (empty($files)) {
-            $this->processFileToImageCache($filePath, $cacheLocation);
-            $files = glob($globPattern);
-        }
-
-        return $files;
+    $files = glob($globPattern);
+    if (empty($files)) {
+      $this->processFileToImageCache($filePath, $cacheLocation);
+      $files = glob($globPattern);
     }
 
-    /**
-     * Write a rendered PDF to the cache.
-     *
-     * @param $filePath
-     * @param $cacheLocation
-     */
-    protected function processFileToImageCache($filePath, $cacheLocation)
-    {
-        if (!is_dir($cacheLocation)) mkdir($cacheLocation);
+    return $files;
+  }
 
-        $imagick = new \Imagick();
-        $imagick->setResolution(150,150);
-        $imagick->readImage($filePath);
-        $imagick->writeImages($cacheLocation . '/rendered.jpg', true);
-    }
+  /**
+   * Write a rendered PDF to the cache.
+   *
+   * @param $filePath
+   * @param $cacheLocation
+   */
+  protected function processFileToImageCache($filePath, $cacheLocation)
+  {
+    if (!is_dir($cacheLocation)) mkdir($cacheLocation);
+
+    $imagick = new \Imagick();
+    $imagick->setResolution(150,150);
+    $imagick->readImage($filePath);
+    $imagick->writeImages($cacheLocation . '/rendered.jpg', true);
+  }
 }
 ```
 
@@ -87,20 +88,19 @@ Finally, add in a little jQuery:
 
 ```javascript
 $(function() {
-    $('#pdf img:first-child').show();
-    $('#pdf').on('click', function() {
-        var visibleImage = $('img:visible', $(this));
-        var nextImage = visibleImage.next();
-        if (nextImage.length == 0) {
-            nextImage = $(visibleImage.siblings()[0]);
-        }
-        visibleImage.fadeOut();
-        nextImage.fadeIn();
-    })
+  $('#pdf img:first-child').show();
+  $('#pdf').on('click', function() {
+    var visibleImage = $('img:visible', $(this));
+    var nextImage = visibleImage.next();
+    if (nextImage.length == 0) {
+      nextImage = $(visibleImage.siblings()[0]);
+    }
+    visibleImage.fadeOut();
+    nextImage.fadeIn();
+  })
 });
 ```
 
 This simply will skip through the images one by one on click - and restart from the beginning.  Not particularly pretty, but it's just a proof of concept.
 
 Check out the demo [here](/demo/pdf-viewer).
-

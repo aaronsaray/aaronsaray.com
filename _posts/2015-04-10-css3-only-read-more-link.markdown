@@ -4,9 +4,9 @@ title: CSS3 Only Read More Link
 tags:
 - CSS
 ---
-[![Screenshot 2015-04-05 19.48.23](/uploads/2015/Screenshot-2015-04-05-19.48.23-300x223.png)](/uploads/2015/Screenshot-2015-04-05-19.48.23.png){: .thumbnail}
-
 Want a CSS3 **ONLY** read more link?  I think I've created one that should do the trick.
+
+[![Screenshot 2015-04-05 19.48.23](/uploads/2015/Screenshot-2015-04-05-19.48.23-300x223.png)](/uploads/2015/Screenshot-2015-04-05-19.48.23.png){: .thumbnail}
 
 The concept is simple: background image that is a gradient, a height limit, and a read more link that really is a checkbox - so you can track the stage. (Fun fact: I tried using a:active selector - doh!  That's only while you're clicking a link.)
 

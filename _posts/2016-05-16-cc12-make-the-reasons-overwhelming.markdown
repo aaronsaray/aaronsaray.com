@@ -17,7 +17,7 @@ For me, the real reason I feel connected to the necessity of brushing my teeth c
 
 How did the dentist get me to wholeheartedly convert?  He kept giving me different reasons until he found a reason that connected.  He overwhelmingly presented reasons until I had no choice but to agree.
 
-### Make the Reasons Overwhelming
+#### Make the Reasons Overwhelming
 
 I know you know how to code better than you did on your last project.  But, there are deadlines, the client or boss needs it now, and you just don't have enough time.  The priority is the project and we must accomplish the task immediately.  You should unit test, but you have too many other projects going on.  You know it's important, but you're willing to risk the potential bugs to get the project in the client's hands sooner.  You know you should be using dependency injection, but you don't have the time to refactor all of your code.  Or even more humbling (or humiliating), you know about dependency injection, but you haven't had the time to learn about it yet.  So, it won't make its way into this release.
 
@@ -27,7 +27,7 @@ Understanding this key point is important to comprehending how we make decisions
 
 Put yourself on the opposite side.  When someone asked you to do something that you didn't agree with and wouldn't do, why didn't you satisfy this person?  Their reasons weren't compelling and overwhelming.  You weren't convinced, and even though their request was legitimate and valid, you decided not to proceed.
 
-### Applying Overwhelming Reasons in the Real World
+#### Applying Overwhelming Reasons in the Real World
 
 So, I want to pick a real-life example of one of the methodologies I believe in.  I am going to investigate the process of choosing to move to a model of dependency injection.  In order to invest time, I have to answer this question: What are the reasons that it is a good idea?
 
@@ -45,7 +45,7 @@ class Service\User
   private $db;
 
   public function __construct() {
-		$this->db = new Adapter\MSSql();
+    $this->db = new Adapter\MSSql();
   }
 
   // more code here
@@ -61,10 +61,10 @@ class Service\User
   private $db;
 
   public function __construct($adapter) {
-		$this->db = $adapter;
-	}
+    $this->db = $adapter;
+  }
 
-	// more code here
+  // more code here
 ```
 
 Sure, this is a level of uncoupled code that is good.  And, this is going to be great for testing.  But, let's demonstrate through some very simple use-case code where this concept really shines when dealing with conversions.
@@ -74,7 +74,7 @@ $oldService = new Service\User(new Adapter\MSSql());
 $newService = new Service\User(new Adapter\MySql());
 
 foreach ($oldService->fetchAll() as $userModel) {
-	$newService->save($userModel);
+  $newService->save($userModel);
 }
 ```
 
@@ -82,7 +82,7 @@ This code demonstrates how we can continue to use the same service code for diff
 
 Now we've found it.  This particular reason is not only compelling, but strengthened even further by its proximity to the overwhelmingly large collection of reasons.  I now have no choice but to start doing dependency injection immediately.
 
-### End Notes
+#### End Notes
 
 This particular dialog illustrated a good exercise in self reflection.  I think if we're honest with ourselves, we all have had internal conversations like this.  But, as a Confident Coder, you now have the power of overwhelming reason in your arsenal for making the process, code and product better.
 

@@ -21,7 +21,7 @@ Then, the user would go to edit the time to say... "3:30:00 PM" and they'd get t
 
 "Please enter a valid value.  The two nearest valid values are..." - that didn't make any sense to me.
 
-Well, turns out that every number field in html5 spec is using step=1 on the input fields - however, time is using step=60 - as in 60 seconds.  (I guess the authors preferred minutes over seconds).  [The spec](https://html.spec.whatwg.org/multipage/forms.html#time-state-(type=time)) clearly defines this - but I guess I just missed that part.
+Well, turns out that every number field in html5 spec is using `step=1` on the input fields - however, time is using `step=60` - as in 60 seconds.  (I guess the authors preferred minutes over seconds).  [The spec](https://html.spec.whatwg.org/multipage/forms.html#time-state-(type=time)) clearly defines this - but I guess I just missed that part.
 
 Hopefully it saves you some time too - in the end, this is what I changed my input field to - and it worked!
 

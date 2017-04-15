@@ -14,15 +14,14 @@ Going to church at a young age helped me be a better programmer.
 
 Now, let me explain.  One of the core principles of my religious upbringing was to be a good steward of my money, resources and time.  If I let this simple concept be your guide, the understanding was that I will be rewarded with happiness, love and success.  Basically, if one took care of things, you'd receive the same in return.  But how does this translate into being a Confident Coder of PHP?
 
-### Don't Use More Than You Need
+#### Don't Use More Than You Need
 
 To help illustrate this point, let's imagine that we have PHP installed on a server that charges per CPU cycle.  Perhaps my program has a simple loop that executes until an array is fully iterated through.
 
 ```php?start_inline=1 
-<?php
 $values = array(1, 2, 3, 4, 5);
 for ($i = 0; $i < count($values); $i++) {
-	echo "I am on line {$values[$i]} in my program.\n";
+  echo "I am on line {$values[$i]} in my program.\n";
 }
 ```
 
@@ -31,33 +30,31 @@ This will execute the loop while $i is less than the number of elements in the a
 Because I want to take care of my environment and not waste processing power and money, I'm going to rewrite my code like this:
 
 ```php?start_inline=1 
-<?php
 $values = array(1, 2, 3, 4, 5);
 $valuesArrayCount = count($values);
 for ($i = 0; $i < $valuesArrayCount; $i++) {
-	echo "I am on line {$values[$i]} in my program.\n";
+  echo "I am on line {$values[$i]} in my program.\n";
 }
 ```
 
 In this new code, I opted to count the values only one time.  Now, instead of executing a function on each loop, it just does one simple comparison calculation.  I took care not to execute commands that weren't necessary.  And by removing this extra function call, the total loop is also slightly faster.  And speedy execution is one thing a Confident Coder can really appreciate.
 
-### Don't be the guest who won't leave
+#### Don't be the guest who won't leave
 
 It's pretty difficult to be a successful PHP programmer without having at least some database skills.  One of the most common pairing is with MySQL.  I've too often seen programs where the usage of different technologies have not been optimized.  With MySQL in particular, PHP programmers can become the guest who won't leave: wasting time and server connections.  Let me demonstrate with some code.
 
-```php?start_inline=1 
-<?php
+```php?start_inline=1
 $sql = "select name, address_id from main_table limit 5";
 $mysqli = new mysqli();
 if ($result = $mysqli->query($sql)) {
-	while ($mainRow = $result->fetch_assoc()) {
-		$addressQuery = "select city, state from address_table where id={$mainRow['address_id']}";
-		if ($addressResult = $mysqli->query($addressQuery)) {
-			if ($addressRow = $addressResult->fetch_assoc()) {
-				echo "{$mainRow['name']} in {$addressRow['city']}, {$addressRow['state']}\n";
-			}
-		}
-	}
+  while ($mainRow = $result->fetch_assoc()) {
+    $addressQuery = "select city, state from address_table where id={$mainRow['address_id']}";
+    if ($addressResult = $mysqli->query($addressQuery)) {
+      if ($addressRow = $addressResult->fetch_assoc()) {
+        echo "{$mainRow['name']} in {$addressRow['city']}, {$addressRow['state']}\n";
+      }
+    }
+  }
 }
 ```
 
@@ -69,19 +66,18 @@ Before I demonstrate a re-factored approach, let me give a bit of clarification.
 
 Now, let's take a look at the new code:
 
-```php?start_inline=1 
-<?php
+```php?start_inline=1
 $sql = "select t.name, a.city, a.state from main_table t inner join address_table a on t.address_id=a.id limit 5";
 $mysqli = new mysqli();
 if ($result = $mysqli->query($sql)) {
-	while ($row = $result->fetch_assoc()) {
-		echo "{$row['name']} in {$row['city']}, {$row['state']}\n";
-	}
+  while ($row = $result->fetch_assoc()) {
+    echo "{$row['name']} in {$row['city']}, {$row['state']}\n";
+  }
 }
 ```
 
 MySQL is made to handle relationship data.  This is why the JOIN command exists.  So, let's make use of it!  Instead of making up to 6 calls to the database, now only one query is made.  I rely on MySQL to handle the data relationships for me.  Instead of being the guest who will never leave the MySQL connection, one query and I'm done!  I've taken care not to waste resources.  And, as usual, a byproduct of this is that the whole program is now faster too.
 
-### End Notes
+#### End Notes
 
 Taking care of your resources in your code is a lot like vehicle or home maintenance.  You don't need to do it, and you'll be fine -- for a while.  However, time will break down all things.  Proper maintenance and care will make sure you'll get more life and better performance out of your car, home, and even code!  

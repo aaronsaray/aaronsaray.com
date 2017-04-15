@@ -12,9 +12,13 @@ If you'd like to save some keystrokes after a `vagrant ssh` - you might want to 
 ```yaml
 tasks:
   - name: Create redirect for bash login
-    lineinfile: dest=/home/vagrant/.bash_login line="cd /vagrant" state=present create=yes
+    lineinfile: 
+      dest=/home/vagrant/.bash_login 
+      line="cd /vagrant" 
+      state=present 
+      create=yes
 ```
 
-This simply puts a .bash_login file in the vagrant user home directory with one line: to change to the /vagrant directory.  
+This simply puts a `.bash_login` file in the vagrant user home directory with one line: to change to the `/vagrant` directory.  
 
-You could make this even more dynamic by making the mapped folder root in vagrant a variable, and then pass that to the ansible extra_vars if you wanted.
+You could make this even more dynamic by making the mapped folder root in vagrant a variable, and then pass that to the ansible `extra_vars` if you wanted.

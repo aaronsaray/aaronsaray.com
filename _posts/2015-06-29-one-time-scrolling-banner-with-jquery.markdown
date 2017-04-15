@@ -13,23 +13,30 @@ So, I don't have a need for it for this particular site - but maybe you do?  Che
 The mark-up is very simple.  Just a div, and a UL of terms:
 
 ```html
-<div id="hero">Let's make software <ul id="scroller"><li>stream-lined.</li><li>effective.</li><li>simple.</li></ul></div>
+<div id="hero">
+  Let's make software 
+  <ul id="scroller">
+    <li>stream-lined.</li>
+    <li>effective.</li>
+    <li>simple.</li>
+  </ul>
+</div>
 ```
 
 Next, let's look at the very small amount of CSS required:
     
 ```css
 #hero {
-    font-size: 5rem;
+  font-size: 5rem;
 }
 #hero ul {
-    vertical-align: top;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: block;
-    height: 6rem;
-    overflow: hidden;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: block;
+  height: 6rem;
+  overflow: hidden;
 }
 ```
 
@@ -42,17 +49,16 @@ var $scrollingUL = $('#scroller');
 
 function scroller(element)
 {
-    var $nextSibling = $(element).next();
-    if ($nextSibling.length) {
-        setTimeout(function() {
-            $scrollingUL.animate({
-                scrollTop: $scrollingUL.scrollTop() + $nextSibling.height()
-            }, 400, function() {
-                scroller($nextSibling);
-            })
-        }, 5000);
-
-    }
+  var $nextSibling = $(element).next();
+  if ($nextSibling.length) {
+    setTimeout(function() {
+      $scrollingUL.animate({
+        scrollTop: $scrollingUL.scrollTop() + $nextSibling.height()
+      }, 400, function() {
+        scroller($nextSibling);
+      })
+    }, 5000);
+  }
 }
 
 scroller($('#hero ul li:first-child'));
