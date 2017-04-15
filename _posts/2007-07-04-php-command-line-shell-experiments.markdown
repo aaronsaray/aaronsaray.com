@@ -50,7 +50,7 @@ var_dump($a);
 **First off, What does Plain Ol' PHP offer me?**
 
 On Windows?  Hrm... lets see.  I've been looking over the [PHP manual page for command line](http://us.php.net/manual/en/features.commandline.php) options and decided to run php interactively:
-    
+
     c:\php -a
 
 This test failed on all accounts - by that I mean - there was no display what so ever... so I scoured the manual pages - and found out that sometimes on windowsxp you need to execute a "-n" as well. (while this doesn't make any sense, I was willing to try it.)
@@ -63,7 +63,6 @@ Nope.  Didn't work either.  There was just no output what so ever - no error, no
 
 They all passed with flying colors.  The more interesting thing is the verbose output.  For example, when we created our new class instance, it dumps (var_dump()s?) the internals to the screen as they would be AFTER construction... see so:
 
-    
     >> include 'test.php';
     
     >> $a = new TEST();

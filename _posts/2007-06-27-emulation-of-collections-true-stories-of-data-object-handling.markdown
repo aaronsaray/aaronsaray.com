@@ -49,8 +49,7 @@ As I was hoping, I got the desired response:
     
     
     **Fatal error:** Uncaught exception 'Exception' with message 'Property postedDate was not found in the Collection.' in C:\DEVELOPMENT\temp\collection.php:10 Stack trace: #0 C:\DEVELOPMENT\temp\collection.php(25): Collection->__get('postedDate') #1 {main} thrown in C:\DEVELOPMENT\temp\collection.php on line 10
-    
-    
+
 Ok, so it works... but the exception message isn't that helpful to me.  True, I know where the variable is, but lets face it, I'm lazy.  So, _what was the collection that caused the issue?_
 
 I tried some experiments with the get_class() function - but wasn't able to retrieve the actual name of the instance variable (any takers on how this can be done?).

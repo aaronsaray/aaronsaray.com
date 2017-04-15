@@ -7,7 +7,7 @@ tags:
 I came across [this blog posting](http://jan.kneschke.de/projects/mysql/order-by-rand) about optimizing order by rand() and decided to make my queries better.  Here is my real life example on how to optimize this query:
 
 Normally, when you click the random link on jemdiary ([jemdiary.com/read/random](http://www.jemdiary.com/read/random)), you are retrieving a user's username to view their diary.  This user has to have their account flagged to allow random reads, and not be globally password protected.  Finally, they need to be an active user.  The settings are in the Tsettings table, the users are in the Tuser table.  See my current sql statement:
-    
+
     select u.userID, u.userName
     		from Tuser u
     		inner join TuserSettings s

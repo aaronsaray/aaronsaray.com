@@ -9,7 +9,7 @@ As I was looking through some old code from Big Boy, I noticed a block of his co
 ### INI File and Constants
 
 Having dabbled in win32 programming back in the 3.1 era, I am very familiar with the .ini file.  I used to love to sneak little bits of 'hacks' into all my ini files ( even as far as making another person's file manager load into something else from accessing their win.ini... ;) )  PHP supports this with its [parse_ini_file](http://php.net/parse_ini_file) function.  This function lets you make standard .ini files - and will read them into a nice pretty array for you.  With an additional boolean flag, you can even make multidimentional arrays (check out the docs).  Basically, big boy was reading in an .ini file and then looping through sections, and variables and defining them... code example:
-    
+
 ```php?start_inline=1
 $ini = parse_ini_file('values.ini', true);
 foreach ($ini as $section=>$sectionArray) {
