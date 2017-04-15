@@ -14,15 +14,15 @@ For example, see this configuration:
 
 ```ruby
 local.vm.provision "ansible" do |ansible|
-    ansible.playbook = "ansible/playbook.yml"
-    ansible.host_key_checking = true
-    ansible.sudo = true
+  ansible.playbook = "ansible/playbook.yml"
+  ansible.host_key_checking = true
+  ansible.sudo = true
     
-    ansible.host_key_checking = false
-    ansible.extra_vars = {
-        server_name: local.vm.hostname,
-        server_env: "development"
-    }
+  ansible.host_key_checking = false
+  ansible.extra_vars = {
+    server_name: local.vm.hostname,
+    server_env: "development"
+  }
 end
 ```
 
@@ -30,9 +30,9 @@ The first three lines in this particular configuration are used for every config
 
 ```ruby
 def shared_ansible_config(ansible)
-    ansible.playbook = "ansible/playbook.yml"
-    ansible.host_key_checking = true
-    ansible.sudo = true
+  ansible.playbook = "ansible/playbook.yml"
+  ansible.host_key_checking = true
+  ansible.sudo = true
 end
 ```
 
@@ -40,13 +40,13 @@ Then, I called this function while passing in the configuration object to it in 
 
 ```ruby
 local.vm.provision "ansible" do |ansible|
-    shared_ansible_config ansible
+  shared_ansible_config ansible
     
-    ansible.host_key_checking = false
-    ansible.extra_vars = {
-        server_name: local.vm.hostname,
-        server_env: "development"
-    }
+  ansible.host_key_checking = false
+  ansible.extra_vars = {
+    server_name: local.vm.hostname,
+    server_env: "development"
+  }
 end
 ```
 

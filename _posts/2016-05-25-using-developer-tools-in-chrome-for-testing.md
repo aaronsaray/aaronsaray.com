@@ -17,11 +17,11 @@ complicated as it sounds.  And, you don't have to be a developer to delve into t
 
 First, open Google Chrome.  Then...
 
-**Windows** Hit F12 and you should see developer tools.
+**Windows** Hit `F12` and you should see developer tools.
 
-**Mac** Hit Shift-Command-I and you should see developer tools.
+**Mac** Hit `Shift-Command-I` and you should see developer tools.
 
-If neither of these is working, click the hamburger menu on the right hand side of chrome, go to 'More Tools' and choose 'Developer Tools.'
+If neither of these is working, click the hamburger menu on the right hand side of Chrome, go to `More Tools` and choose `Developer Tools.`
 
 [![Menu Option](/uploads/2016/developer-tools-testing-1.jpg)](/uploads/2016/developer-tools-testing-1.jpg){: .thumbnail .inline}
 

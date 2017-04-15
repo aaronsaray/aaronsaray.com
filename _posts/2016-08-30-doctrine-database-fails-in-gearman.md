@@ -17,19 +17,19 @@ So - since I was using Doctrine, I had some helpers from their DBAL. I made the 
 $em = $container['em'];
 
 $dbWakeUp = function() use ($em) {
-    try {
-        if (!$em->getConnection()->ping()) {
-            $em->getConnection()->close();
-            $em->getConnection()->connect();
-        }
+  try {
+    if (!$em->getConnection()->ping()) {
+      $em->getConnection()->close();
+      $em->getConnection()->connect();
     }
-    catch (\PDOException $pe) {
-        $em->getConnection()->close();
-        $em->getConnection()->connect();
-        if (!$em->getConnection()->ping()) {
-            throw $pe;
-        }
+  }
+  catch (\PDOException $pe) {
+    $em->getConnection()->close();
+    $em->getConnection()->connect();
+    if (!$em->getConnection()->ping()) {
+      throw $pe;
     }
+  }
 };
 ```
 

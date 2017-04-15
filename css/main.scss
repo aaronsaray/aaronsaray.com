@@ -197,6 +197,24 @@ article {
   margin:3rem 0;
 }
 
+.thumbnail {
+  display: block;
+  margin: 1rem 0;
+  text-align: center;
+  
+  img {
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    padding: 5px;
+  } 
+}
+.inline img {
+  max-width: 40rem;
+  max-height: 20rem;
+  margin: auto;
+}
+
 /***********************************************************************************************************************
  * syntax highlighting
  **********************************************************************************************************************/
@@ -239,20 +257,6 @@ code.highlighter-rouge {
 }
 
 //
-//blockquote {
-//  margin-left: 0;
-//  padding-left: 2rem;
-//  border-left: 0.3rem solid #E2E2E2;
-//  background: #f9f9f9;
-//}
-//
-//hr {
-//  height: 1px;
-//  border: none;
-//  background: #EAEAEA;
-//  margin: 2rem;
-//}
-//
 //table {
 //  width: 100%;
 //  margin: 1.5rem;
@@ -265,44 +269,5 @@ code.highlighter-rouge {
 //td, th {
 //  border: 1px solid #f4f4f4;
 //  padding: 0.5rem;
-//}
-//
-
-
-//
-//.entry {
-//  h3 {
-//    display: inline-block;
-//    font-size: 1.3rem;
-//  }
-//  h4, h5 {
-//    font-size: 1.1rem;
-//  }
-//
-//  .thumbnail {
-//    display: block;
-//    margin: 1rem 0;
-//    text-align: center;
-//
-//    img {
-//      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-//      -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-//      box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-//      padding: 5px;
-//    }
-//  }
-//  .inline img {
-//    width: 100%;
-//    max-width: 40rem;
-//    margin: auto;
-//  }
-//  &>span {
-//    font-size: 0.8rem;
-//    color: #aaaaaa;
-//    margin-left: 0.5rem;
-//  }
-//}
-
-
 //}
 //

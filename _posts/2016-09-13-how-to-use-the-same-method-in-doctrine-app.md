@@ -23,8 +23,9 @@ namespace app\Service;
 abstract class AbstractService
 {
   public function __construct(
-    Doctrine\ORM\EntityManager $entityManager, Psr\Log\LoggerInterface $logger)
-  {
+    Doctrine\ORM\EntityManager $entityManager, 
+    Psr\Log\LoggerInterface $logger
+  ) {
     $this->entityManager = $entityManager;
     $this->logger = $logger;
   }
@@ -34,7 +35,10 @@ abstract class AbstractService
     $status = $this->entityManager->contains($entity) ? 'Updated' : 'Added';
     $this->entityManager->persist($entity);
     $this->entityManager->flush($entity);
-    $this->logger->info(sprintf('%s entity %s', $status, get_class($entity)), ['entity'=>$entity]);
+    $this->logger->info(
+      sprintf('%s entity %s', $status, get_class($entity)), 
+      ['entity' => $entity]
+    );
     
     return $this;
   }

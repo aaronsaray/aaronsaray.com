@@ -13,7 +13,7 @@ For example:
 
 `cd my-plugin-with-git && git archive -o my-plugin.zip HEAD` 
 
-This will make a zip file of all your code, minus the .git folder, in the current working directory.  Use that to upload your plugin.
+This will make a zip file of all your code, minus the `.git` folder, in the current working directory.  Use that to upload your plugin.
 
 **Bonus Tip**
 
@@ -23,8 +23,8 @@ In PHPStorm, you can add this as an external command easily.  Do the following s
   - Go to Tools > External Tools
   - Click the **+** sign to add a new command
   - Fill in the fields as you see fit - but the important ones are:
-    - Program: git
-    - Parameters: archive - $ProjectName$.zip HEAD
-    - Working Directory: $ProjectFileDir$
+    - Program: `git`
+    - Parameters: `Archive - $ProjectName$.zip HEAD`
+    - Working Directory: `$ProjectFileDir$`
 
 This will give you an option to right-click on the project and choose your external tool from the `External Tools > Your Item Name` menu to create a zip archive in the root of your project.

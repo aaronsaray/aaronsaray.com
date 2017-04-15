@@ -12,20 +12,22 @@ Turns out, since my workflow is almost 100% from the same laptop, a simple edit 
 
 **Did you know about the config option pushURL?** Now you will!
 
-I've decided to do this to keep my copies in sync: Add a pushURL for both BitBucket and GitHub.
+I've decided to do this to keep my copies in sync: Add a pushURL for both BitBucket and GitHub.  Here is the before version:
 
-**.git/config** (before)   
-    
-    [remote "origin"]
-        url = git@bitbucket.org:account/wordpress-plugin.git
+**`.git/config`**
+```
+[remote "origin"]
+    url = git@bitbucket.org:account/wordpress-plugin.git
+```
         
-and now add a pushURL for both your repos.
+and now add a pushURL for both your repos.  Here is the after version:
 
-**.git/config** (after)  
-    
-    [remote "origin"]
-        url = git@bitbucket.org:account/wordpress-plugin.git
-        pushURL = git@bitbucket.org:account/wordpress-plugin.git
-        pushURL = git@github.com:account/wordpress-plugin.git
+**`.git/config`**
+```
+[remote "origin"]
+    url = git@bitbucket.org:account/wordpress-plugin.git
+    pushURL = git@bitbucket.org:account/wordpress-plugin.git
+    pushURL = git@github.com:account/wordpress-plugin.git
+```
         
 And there you have it - when you do a git push - now you should see it go to both repos.  This solution may not be the best for your workflow, but it certainly has saved *me* a lot of time.

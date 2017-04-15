@@ -17,19 +17,18 @@ the notification in the proper location in your theme.  Instead, I decided to ju
 
 Here's the liquid code:
 
-```html
-{% raw %}
-{% capture now %}{{'now' | date: '%s'}}{% endcapture %}  
+```liquid
+{% raw %}{% capture now %}{{'now' | date: '%s'}}{% endcapture %}  
 {% capture postDate %}{{page.date | date: '%s'}}{% endcapture %}  
 {% assign difference = now | minus: postDate %}  
 {% if difference > 47340000 %}  
   <div class="old-post">  
-    This post is more than 18 months old. Since technology changes to rapidly, this content <em>may</em> be
-    out of date (but that's not always the case).  Please remember to verify any technical or programming information
+    This post is more than 18 months old. Since technology changes to rapidly, 
+    this content <em>may</em> be out of date (but that's not always the case).  
+    Please remember to verify any technical or programming information
     with the current release.
   </div>  
-{% endif %}  
-{% endraw %}
+{% endif %}{% endraw %}
 ```  
 
 First, capture the current date and the post date as unix timestamps.  Then, do a calculation to figure out the difference.
