@@ -18,7 +18,7 @@ But, I realized I was piling too much stuff into the method.  Let's think of thi
 
   2. Front Controller plugin launches before we determine the route and initializes all items for this admin page.
 
-  3. ACL Plugin or Admin Controller init() method determine that the user doesn't have access to this page and sends a redirect.
+  3. ACL Plugin or Admin Controller `init()` method determine that the user doesn't have access to this page and sends a redirect.
 
   4. User is redirected to site.com/login and the entire process from #2 begins again.
 

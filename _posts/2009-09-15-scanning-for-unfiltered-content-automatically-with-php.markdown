@@ -30,28 +30,28 @@ I have two really simple pages for our test site, the form itself and the 'login
 **`testform.html`**
 ```html
 <html>
-    <head>
-        <title>Test Login Form, yo</title>
-    </head>
-    <body>
-        <h1>Oh HAI!</h1>
-        <p>Login or no?</p>
-        <form action="http://localhost/testsubmit.php" method="post" name="login">
-            Username: <input type="text" name="username"></input><br></br>
-            Password: <input type="password" name="password"></input><br></br>
-            <input type="submit"></input>
-        </form>
-    </body>
+  <head>
+    <title>Test Login Form, yo</title>
+  </head>
+  <body>
+    <h1>Oh HAI!</h1>
+    <p>Login or no?</p>
+    <form action="http://localhost/testsubmit.php" method="post" name="login">
+      Username: <input type="text" name="username"></input><br></br>
+      Password: <input type="password" name="password"></input><br></br>
+      <input type="submit"></input>
+    </form>
+  </body>
 </html>
 ```
 
 **`testsubmit.php`**
 ```php?start_inline=1
 if ($_POST['username'] == 'MYUSER' && $_POST['password'] == 'MYPASS') {
-    print 'you have logged in';
+  print 'you have logged in';
 }
 else {
-    print "{$_POST['username']} did not authenticate correctly.";
+  print "{$_POST['username']} did not authenticate correctly.";
 }
 ```
 
@@ -75,34 +75,41 @@ $doc->loadHTML($targetContent);
 $forms = $doc->getElementsByTagName('form');
 
 foreach ($forms as $form) {
-    $submitInputs = array();
-    $submitTo = $form->getAttribute('action') ? $form->getAttribute('action') : $target;
-    $submitMethod = $form->getAttribute('method') ? $form->getAttribute('method') : 'GET';
+  $submitInputs = array();
+  $submitTo = $form->getAttribute('action') 
+              ? $form->getAttribute('action') 
+              : $target;
+  $submitMethod = $form->getAttribute('method') 
+                ? $form->getAttribute('method') 
+                : 'GET';
 
-    /** get all inputs so we can set the values **/
-    $tagsToParse = array('input', 'textarea');
-    foreach ($tagsToParse as $tag) {
-        $retrieved = $form->getElementsByTagName($tag);
-        foreach ($retrieved as $item) {
-            /** get the value - we want to retain whats in there just in case... **/
-            $value = $item->getAttribute('value') ? $item->getAttribute('value') : '';
-            $value .= $payload;
-            $submitInputs[$item->getAttribute('name')] = $value;
-        }
+  /** get all inputs so we can set the values **/
+  $tagsToParse = array('input', 'textarea');
+  foreach ($tagsToParse as $tag) {
+    $retrieved = $form->getElementsByTagName($tag);
+    foreach ($retrieved as $item) {
+      /** get the value - we want to retain whats in there just in case... **/
+      $value = $item->getAttribute('value') ? $item->getAttribute('value') : '';
+      $value .= $payload;
+      $submitInputs[$item->getAttribute('name')] = $value;
     }
+  }
 
-    print '<h2>Submitting payload to form: ' . $form->getAttribute('name') . '</h2>';
+  print '<h2>Submitting payload to form: ' . $form->getAttribute('name') . '</h2>';
 
-    /** got our content, prepare for submission, get submitted content **/
-    $opts = array('http'=>array('method'=>strtoupper($submitMethod),
-                                'header'=>'Content-Type: application/x-www-form-urlencoded',
-                                'content'=>http_build_query($submitInputs)));
-    $context = stream_context_create($opts);
-    $submittedFormContents = file_get_contents($submitTo, false, $context);
+  /** got our content, prepare for submission, get submitted content **/
+  $opts = array(
+    'http'=>array('method'=>strtoupper($submitMethod),
+                  'header'=>'Content-Type: application/x-www-form-urlencoded',
+                  'content'=>http_build_query($submitInputs)
+                  )
+  );
+  $context = stream_context_create($opts);
+  $submittedFormContents = file_get_contents($submitTo, false, $context);
 
-    /** find the payload ? **/
-    $count = substr_count($submittedFormContents, $payload);
-    print "Times payload found: {$count}<br></br>";
+  /** find the payload ? **/
+  $count = substr_count($submittedFormContents, $payload);
+  print "Times payload found: {$count}<br></br>";
 }
 ```
 

@@ -16,17 +16,17 @@ Well first, lets say we're dealing with books.  We need to know the title, autho
 ```php?start_inline=1
 class Book
 {
-    public $title;
-    public $author;
-    public $pageCount;
+  public $title;
+  public $author;
+  public $pageCount;
 
-    public function __construct()
-    {
-        //for testing, populate
-        $this->title = 'PHP Design and Programming';
-        $this->author = 'Aaron Saray';
-        $this->pageCount = 333;
-    }
+  public function __construct()
+  {
+    //for testing, populate
+    $this->title = 'PHP Design and Programming';
+    $this->author = 'Aaron Saray';
+    $this->pageCount = 333;
+  }
 }
 
 $book = new Book();
@@ -38,39 +38,39 @@ This works fine and outputs our information.  However, this is not good practice
 
 ### The Book Class with Accessors
 
-I used to think that was stupid to write an accessor for every variable.  I mean, if I have $title, why do I have to write a function called getTitle()?  Well, what if the way title is retrieved is changed?  Anyways, lets look at the proper way to write this class:
+I used to think that was stupid to write an accessor for every variable.  I mean, if I have `$title`, why do I have to write a function called `getTitle()`?  Well, what if the way title is retrieved is changed?  Anyways, lets look at the proper way to write this class:
 
 **Book Done Right**
 
 ```php?start_inline=1
 class BookWithAccessors
 {
-    protected $title;
-    protected $author;
-    protected $pageCount;
+  protected $title;
+  protected $author;
+  protected $pageCount;
 
-    public function __construct()
-    {
-        //for testing, populate
-        $this->title = 'PHP Design and Programming';
-        $this->author = 'Aaron Saray';
-        $this->pageCount = 333;
-    }
+  public function __construct()
+  {
+    //for testing, populate
+    $this->title = 'PHP Design and Programming';
+    $this->author = 'Aaron Saray';
+    $this->pageCount = 333;
+  }
 
-    public function getTitle()
-    {
-        return $this->title;
-    }
+  public function getTitle()
+  {
+    return $this->title;
+  }
 
-    public function getAuthor()
-    {
-        return $this->author;
-    }
+  public function getAuthor()
+  {
+    return $this->author;
+  }
 
-    public function getPageCount()
-    {
-        return $this->pageCount;
-    }
+  public function getPageCount()
+  {
+    return $this->pageCount;
+  }
 }
 
 $book = new BookWithAccessors();
@@ -91,51 +91,51 @@ Note, in this example, the code to print out the details about the book does not
 ```php?start_inline=1
 class Author
 {
-    protected $firstName;
-    protected $lastName;
+  protected $firstName;
+  protected $lastName;
 
-    public function __construct()
-    {
-        //for testing, populate
-        $this->firstName = 'Aaron';
-        $this->lastName = 'Saray';
-    }
+  public function __construct()
+  {
+    //for testing, populate
+    $this->firstName = 'Aaron';
+    $this->lastName = 'Saray';
+  }
 
-    public function getFullName()
-    {
-        return $this->firstName . ' ' . $this->lastName;
-    }
+  public function getFullName()
+  {
+    return $this->firstName . ' ' . $this->lastName;
+  }
 }
 
 class BookProvesMyPoint
 {
-    protected $title;
-    protected $author;
-    protected $pageCount;
-    const WHITE_PAGES = 10;
+  protected $title;
+  protected $author;
+  protected $pageCount;
+  const WHITE_PAGES = 10;
 
-    public function __construct()
-    {
-        //for testing, populate
-        $this->title = 'PHP Design and Programming';
-        $this->author = new Author();
-        $this->pageCount = 333;
-    }
+  public function __construct()
+  {
+    //for testing, populate
+    $this->title = 'PHP Design and Programming';
+    $this->author = new Author();
+    $this->pageCount = 333;
+  }
 
-    public function getTitle()
-    {
-        return $this->title;
-    }
+  public function getTitle()
+  {
+    return $this->title;
+  }
 
-    public function getAuthor()
-    {
-        return $this->author->getFullName();
-    }
+  public function getAuthor()
+  {
+    return $this->author->getFullName();
+  }
 
-    public function getPageCount()
-    {
-        return $this->pageCount + self::WHITE_PAGES;
-    }
+  public function getPageCount()
+  {
+    return $this->pageCount + self::WHITE_PAGES;
+  }
 }
 
 $book = new BookProvesMyPoint();

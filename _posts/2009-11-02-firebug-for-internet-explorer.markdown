@@ -14,7 +14,7 @@ For my code, I decided to only include the firebug lite code from their distribu
 
 ```php?start_inline=1
 if (!ENVIRONMENT_LIVE && strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false) {
-    echo '<script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js" type="text/javascript"></script>';
+  echo '<script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js" type="text/javascript"></script>';
 }
 ```
 

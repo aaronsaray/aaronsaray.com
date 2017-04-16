@@ -26,7 +26,7 @@ Show the active processes and what they're doing:
 
 ### mysqladmin extended
 
-This is short for extended-status, which shows you pretty much everything you want to know about the current system.
+This is short for `extended-status`, which shows you pretty much everything you want to know about the current system.
 
     mysqladmin extended
     +-----------------------------------+----------+
@@ -43,7 +43,7 @@ This is short for extended-status, which shows you pretty much everything you wa
     | Uptime                            | 102658   |
     +-----------------------------------+----------+
 
-Add iterations or relative comparisons with '-i' and '-r'.  For example, the following updates the list every 10 seconds with relative numbers (shows change well).
+Add iterations or relative comparisons with `-i` and `-r`.  For example, the following updates the list every 10 seconds with relative numbers (shows change well).
     
     mysqladmin extended -i10 -r
     

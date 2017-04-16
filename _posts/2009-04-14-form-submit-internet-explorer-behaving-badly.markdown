@@ -13,11 +13,11 @@ I just want to make a micro blog here.  Just a tiny lil blog.
 Correct!  Instead, I load my page with this jquery
 
 ```javascript
-$('input').keydown(function(e){
-    if (e.keyCode == 13) {
-        $(this).parents('form').submit();
-        return false;
-    }
+$('input').keydown(function(e) {
+  if (e.keyCode == 13) {
+    $(this).parents('form').submit();
+    return false;
+  }
 });
 ```
     
@@ -27,7 +27,7 @@ Correct!  Mainly because I was lazy.
 
 But in FireFox  works fine for a submit.
 
-In IE - don't forget to add type="submit"
+In IE - don't forget to add `type="submit"`
 
 ```html
 <button>Works in FF</button>

@@ -38,7 +38,8 @@ In the end, it was a success.  A cron job is ran every hour to get the content o
 The cron script:
 
 **`build_facebook_fanbox.php`**
-```php?start_inline=1
+```php
+<?php
 $builder = new facebook_fanbox();
 $builder->getHTML();
 $builder->write();
@@ -49,50 +50,51 @@ This is pretty self explanatory.  The class is instantiated.  A request is made 
 Next, I'm going to cover parts of the class and supporting files individually.
 
 **`fanbox.php`**
-```php?start_inline=1
+```php
+<?php
 class facebook_fanbox
 {
-	const USER_AGENT = 'Firefox XXXXXXXXXXXX';
-	const FANBOX_URL = 'http://www.connect.facebook.com/connect/connect.php?api_key=xxx&channel_url=xxx&id=xxx&name=&width=280&connections=8&stream=0&logobar=1';
+  const USER_AGENT = 'Firefox XXXXXXXXXXXX';
+  const FANBOX_URL = 'http://www.connect.facebook.com/connect/connect.php?api_key=xxx&channel_url=xxx&id=xxx&name=&width=280&connections=8&stream=0&logobar=1';
 
-	protected $_html, $_fanCount = 0, $_fans = array(), $_pageInfo, $_output;
+  protected $_html, $_fanCount = 0, $_fans = array(), $_pageInfo, $_output;
 
-	public function getHTML()
-	{
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_USERAGENT, self::USER_AGENT);
-		curl_setopt($ch, CURLOPT_URL, self::FANBOX_URL);
-		curl_setopt($ch, CURLOPT_FAILONERROR, TRUE); // if 400+, error out - don't want this
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		$this->_html = curl_exec($ch);
+  public function getHTML()
+  {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_USERAGENT, self::USER_AGENT);
+    curl_setopt($ch, CURLOPT_URL, self::FANBOX_URL);
+    curl_setopt($ch, CURLOPT_FAILONERROR, TRUE); // if 400+, error out - don't want this
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $this->_html = curl_exec($ch);
 
-		if ($this->_html === false) {
-			throw new exception(curl_errno($ch) . ': ' . curl_error($ch));
-		}
+    if ($this->_html === false) {
+      throw new exception(curl_errno($ch) . ': ' . curl_error($ch));
+    }
 
-		curl_close($ch);
+    curl_close($ch);
 
-		/**
-		 * write out to temp cache to review
-		 */
-		$file = '/tmp/fanbox.html';
-		file_put_contents($file, $this->_html);
-	}
+    /**
+     * write out to temp cache to review
+     */
+    $file = '/tmp/fanbox.html';
+    file_put_contents($file, $this->_html);
+  }
 }
 ```
 
-First, there are two constants.  The first USER_AGENT is just the full user agent that we use to request the content of the fanbox.  Remember, it was rejecting CURL's user agent.  The other constant is the FANBOX_URL which is the entire URL that is loaded.  I retrieved this by reviewing the requests in the net::console window of firebug.  Yours will contain your API Key and channel information.
+First, there are two constants.  The first `USER_AGENT` is just the full user agent that we use to request the content of the fanbox.  Remember, it was rejecting CURL's user agent.  The other constant is the FANBOX_URL which is the entire URL that is loaded.  I retrieved this by reviewing the requests in the net::console window of firebug.  Yours will contain your API Key and channel information.
 
-The getHTML() function simply opens up a connection and retrieves the HTML.  If there are any errors, it fails.  Finally, it writes it out to a cache file in the tmp directory.  I do this just in case I want to compare later on to make sure my final output matched what I retrieved.
+The `getHTML()` function simply opens up a connection and retrieves the HTML.  If there are any errors, it fails.  Finally, it writes it out to a cache file in the tmp directory.  I do this just in case I want to compare later on to make sure my final output matched what I retrieved.
 
 Moving on, I added the following method:
 
 ```php?start_inline=1
 public function write()
 {
-    $this->_parseHTML();
-    $this->_buildOutput();
-    $this->_writeOutput();
+  $this->_parseHTML();
+  $this->_buildOutput();
+  $this->_writeOutput();
 }
 ```
 
@@ -101,18 +103,18 @@ This is pretty self explanatory. It just calls three internal methods, which I'l
 ```php?start_inline=1
 protected function _parseHTML()
 {
-    $fancountExp = '/<span class="total">(.*?)<\/span>/';
-    $fanExp ='/<div class="grid_item">(<(a|span).*?<\/(a|span)>)<\/div>/';
-    $pageExp ='/<div class="connect_top clearfix">(<a.*?<\/a>)/';
+  $fancountExp = '/<span class="total">(.*?)<\/span>/';
+  $fanExp ='/<div class="grid_item">(<(a|span).*?<\/(a|span)>)<\/div>/';
+  $pageExp ='/<div class="connect_top clearfix">(<a.*?<\/a>)/';
 
-    preg_match_all($fancountExp , $this->_html, $fanCount);
-    $this->_fanCount = $fanCount[1][0];
+  preg_match_all($fancountExp , $this->_html, $fanCount);
+  $this->_fanCount = $fanCount[1][0];
 
-    preg_match_all($fanExp, $this->_html, $fans);
-    $this->_fans = $fans[1];
+  preg_match_all($fanExp, $this->_html, $fans);
+  $this->_fans = $fans[1];
 
-    preg_match_all($pageExp, $this->_html, $pageInfo);
-    $this->_pageInfo = $pageInfo[1][0];
+  preg_match_all($pageExp, $this->_html, $pageInfo);
+  $this->_pageInfo = $pageInfo[1][0];
 }
 ```
 
@@ -121,37 +123,42 @@ Here, there are just three regular expressions used to parse out various bits of
 ```php?start_inline=1
 protected function _buildOutput()
 {
-    $params = array('count'=>$this->_fanCount, 'fans'=>$this->_fans, 'page'=>$this->_pageInfo);
-    $this->_output = view::get('facebook/fanboxtemplate', $params);
+  $params = array(
+    'count' => $this->_fanCount, 
+    'fans' => $this->_fans, 
+    'page' => $this->_pageInfo
+  );
+  $this->_output = view::get('facebook/fanboxtemplate', $params);
 }
 ```
 
-This is pretty simple.  It builds a parameter array of the values we've identified before.  Then, this is passed into the helper function I have to generate the view.  (The specifics of the helper function won't be covered here.  However, all it does is include the file specified in the first parameter, and assign all the values in the next parameter to an internal $vars array.)  This output is then assigned to an internal variable.
+This is pretty simple.  It builds a parameter array of the values we've identified before.  Then, this is passed into the helper function I have to generate the view.  (The specifics of the helper function won't be covered here.  However, all it does is include the file specified in the first parameter, and assign all the values in the next parameter to an internal `$vars` array.)  This output is then assigned to an internal variable.
 
 In order to understand how we're re-parsing the content, lets take a quick look at the stripped down HTML file.  (This is a smaller version and is only meant as demonstration).
 
 ```html
 <div class="fan_box">
-    <?php echo $vars['page']; ?><br />
-    <div class="connect_button">
-        <a href="#" id="FBbecomeFan" class="FBbutton FBbutton_Gray FBActionButton">
-            <span class="FBbutton_Text"><span class="FBbutton_Icon FBbutton_IconNoSpriteMap">
-            </span>Become a Fan</span>
-        </a>
-    </div>
+  <?php echo $vars['page']; ?><br />
+  <div class="connect_button">
+    <a href="#" id="FBbecomeFan" class="FBbutton FBbutton_Gray FBActionButton">
+      <span class="FBbutton_Text">
+      <span class="FBbutton_Icon FBbutton_IconNoSpriteMap">
+      </span>Become a Fan</span>
+    </a>
+  </div>
 
-    <div class="connections">
-        <?php echo $vars['count']; ?> Fans
+  <div class="connections">
+    <?php echo $vars['count']; ?> Fans
 
-        <div class="connections_grid">
-            <?php
-            foreach ($vars['fans'] as $fan) {
-                $fan = str_ireplace('<img', '<img alt="facebook profile icon"', $fan);
-                print $fan;
-            }
-            ?>
-        </div>
-    </div>
+    <div class="connections_grid">
+      <?php
+      foreach ($vars['fans'] as $fan) {
+        $fan = str_ireplace('<img', '<img alt="facebook profile icon"', $fan);
+        print $fan;
+      }
+      ?>
+     </div>
+  </div>
 </div>
 ```
 
@@ -162,8 +169,8 @@ Finally, the last function is pretty simple:
 ```php?start_inline=1
 protected function _writeOutput()
 {
-	$file = APPLICATION_PATH . '/views/partials/facebookfanbox.phtml';
-	file_put_contents($file, $this->_output);
+  $file = APPLICATION_PATH . '/views/partials/facebookfanbox.phtml';
+  file_put_contents($file, $this->_output);
 }
 ```
 

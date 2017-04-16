@@ -8,7 +8,7 @@ The more I look at my code I wrote in my earlier posts about the [unknown _popup
 
 ### Doing a service for your visitor
 
-After your javascript is tried and tested and error free, there are still chances that errors can be logged using my utility.  These usually are the result of Spyware that is left on the user's machine.  Sometimes some removal processes don't capture all of it.  The _popupControl() method was one such remnant.
+After your javascript is tried and tested and error free, there are still chances that errors can be logged using my utility.  These usually are the result of Spyware that is left on the user's machine.  Sometimes some removal processes don't capture all of it.  The `_popupControl()` method was one such remnant.
 
 I thought that instead of just ignoring these issues, I could gently alert the user to the issue.  Perhaps, I could even get affiliate commissions for a product that I know for sure removes these threats.
 
@@ -24,32 +24,37 @@ My new code is going to look something like this:
 
 ```javascript
 window.onerror = function (message, url, line) {
-    /** log message **/
-    var i = new Image();
-    i.src = 'error.php?url=' + escape(url) + '&message;=' + escape(message) + '&line;=' + line;
+  /** log message **/
+  var i = new Image();
+  i.src = 'error.php?url=' 
+        + escape(url) 
+        + '&message;=' 
+        + escape(message) 
+        + '&line;=' 
+        + line;
 
-    if (message.indexOf('spywareWindowGenerator')) {
-        var d = document.createElement('div');
-        d.innerHTML = 'Sounds like you got spyware';
-        document.body.appendChild(d);
-    }
-    else if (message.indexOf('otherbaddie')) {
-        var d = document.createElement('div');
-        d.innerHTML = 'Sounds like you got some other baddie';
-        document.body.appendChild(d);
-    }
+  if (message.indexOf('spywareWindowGenerator')) {
+    var d = document.createElement('div');
+    d.innerHTML = 'Sounds like you got spyware';
+    document.body.appendChild(d);
+  }
+  else if (message.indexOf('otherbaddie')) {
+    var d = document.createElement('div');
+    d.innerHTML = 'Sounds like you got some other baddie';
+    document.body.appendChild(d);
+  }
 }
 ```
 
 I'll break it down:
 
-First, the standard logging service is initiated on error.  The error.php file will log the javascript error for further research later.
+First, the standard logging service is initiated on error.  The **`error.php`** file will log the javascript error for further research later.
 
-Next, I evaluate the actual message that was sent to the error handler.  In this example, I'm looking for two possible issues, a reference to the function _spywareWindowGenerator() and a reference to someOtherBaddie().  Both of these functions are not defined in my code and can be considered to be remnants of the spyware infestation.
+Next, I evaluate the actual message that was sent to the error handler.  In this example, I'm looking for two possible issues, a reference to the function `_spywareWindowGenerator()` and a reference to `someOtherBaddie()`.  Both of these functions are not defined in my code and can be considered to be remnants of the spyware infestation.
 
-The first 'if' statement checks for the existence of 'spywareWindowGenerator' in the message.  If it exists, it creates a new DIV HTML element.  Then, it populates it with a message regarding this error.  (Note, you could also load an image, create link, etc.).  Finally, just for demonstration purpose, that DIV is added to the end of the body and is displayed.
+The first if statement checks for the existence of `spywareWindowGenerator` in the message.  If it exists, it creates a new `div` HTML element.  Then, it populates it with a message regarding this error.  (Note, you could also load an image, create link, etc.).  Finally, just for demonstration purpose, that DIV is added to the end of the body and is displayed.
 
-The second if statement is simply checking for the case of 'otherBaddie' - and will do a similar process.
+The second if statement is simply checking for the case of `otherBaddie` - and will do a similar process.
 
 Like I mentioned before, this lays all of your cards out on the table - could potentially make your page load longer (especially if you have a lot of spyware you're tracking), but be most versatile.
 
@@ -61,15 +66,20 @@ First, the modified javascript for our error handler now looks like this:
 
 ```javascript
 window.onerror = function (message, url, line) {
-    /** log message **/
-    var i = new Image();
-    i.src = 'error.php?url=' + escape(url) + '&message;=' + escape(message) + '&line;=' + line;
+  /** log message **/
+  var i = new Image();
+  i.src = 'error.php?url=' 
+        + escape(url) 
+        + '&message;=' 
+        + escape(message) 
+        + '&line;=' 
+        + line;
 
-    /** now check to see if we have something to show **/
-    if (i.height) {
-        /** add it to the page **/
-        document.body.appendChild(i);
-    }
+  /** now check to see if we have something to show **/
+  if (i.height) {
+    /** add it to the page **/
+    document.body.appendChild(i);
+  }
 }
 ```
 
@@ -77,7 +87,7 @@ The first part is the standard logging mechanism that we're used to.  However, a
 
 This means that we put a little bit more of the responsibility for determining the message to display to the user on the back end.  At first it seems like it could be a little less verbose - as it is just an image.  However, we could expand the javascript error handler to detect what 'link' it could display based on the image dimensions, etc.  (This is for a different entry if need be...)
 
-Next, I had to edit my error.php file.  It now contains this code:
+Next, I had to edit my **`error.php`** file.  It now contains this code:
 
 ```php?start_inline=1 
 $keys = array();
@@ -90,18 +100,20 @@ $keys['otherBadGuy'] = 'otherBadGuy.png';
 
 $imageToShow = '';
 foreach ($keys as $substring=>$image) {
-    if (stripos($_GET['message'], $substring) !== false) {
-        $imageToShow = $image;
-    }
+  if (stripos($_GET['message'], $substring) !== false) {
+    $imageToShow = $image;
+  }
 }
 
 if (!empty($imageToShow)) {
-    header('Content-Type: image/png');
-    readfile($imageToShow);
-    die();
+  header('Content-Type: image/png');
+  readfile($imageToShow);
+  die();
 }
 else {
-    error_log("{$_GET['message']} occured on line {$_GET['line']} of URL {$_GET['url']}");
+  error_log(
+    "{$_GET['message']} occured on line {$_GET['line']} of URL {$_GET['url']}"
+  );
 }
 ```
 
@@ -110,7 +122,3 @@ The first step is to determine all of the key words that could appear in javascr
 The next bit of code looks through and searches the message for any of the possibilities.  If it finds one, it sets the image to be the associated value for that key.
 
 Finally, the PHP code checks to see if there is an image to show.  If so, it sends the proper header and reads the file to the output buffer.  Otherwise, it assumes it is an error that we're not familiar with and logs it.
-
-In this example, I used the following two images just for testing.
-
-[gallery]

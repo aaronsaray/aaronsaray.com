@@ -11,6 +11,6 @@ I was messing around the other day and came up with this Javascript function.  I
 ```javascript
 function figureBeforeTax(amount, tax)
 {
-    return Math.round((amount)*(100 / (100 + ((tax/100)*100)))*100)/100;
+  return Math.round((amount)*(100 / (100 + ((tax/100)*100)))*100)/100;
 }
 ```

@@ -35,47 +35,54 @@ Next, I embedded this script in the head of the page:
 
 ```javascript
 $(document).ready(function() {
-    var items = new Array;
-    var $list = $("#list");
-    function getResults(first)
-    {
-        var terms = ['true blood'];
-        jQuery.each(terms, function(){
-            var query = "http://search.twitter.com/search.json?callback=?&q;=" + escape(this);
-            $.getJSON(query, function(data){
-                $.each(data.results, function(i, item) {
-                    if (!items[item.id]) {
-                        items[item.id] = 1;
-                        showResult(item, first);
-                    }
-                });
-            });
+  var items = new Array;
+  var $list = $("#list");
+  function getResults(first)
+  {
+    var terms = ['true blood'];
+    jQuery.each(terms, function(){
+      var query = "http://search.twitter.com/search.json?callback=?&q;=" 
+                + escape(this);
+      $.getJSON(query, function(data){
+        $.each(data.results, function(i, item) {
+          if (!items[item.id]) {
+            items[item.id] = 1;
+            showResult(item, first);
+          }
         });
+      });
+    });
+  }
+  function showResult(item, first)
+  {
+    var d = new Date(item.created_at);
+    var t = $("<table><tr><td class="profile"><a href="http://twitter.com/" 
+          + item.from_user + "" target="_blank"><img src="" 
+          + item.profile_image_url + ""></img><br></br>@" + item.from_user 
+          + "</a></td><td class="string">" + item.text 
+          + "</td></tr><tr class="details"><td>From: " 
+          + $('<textarea></textarea>').html(item.source).val() + "</td><td>" 
+          + d + "</td></tr></table>");
+    if (first == 1) {
+      $list.append(t);
+      t.show();
     }
-    function showResult(item, first)
-    {
-        var d= new Date(item.created_at);
-        var t = $("<table><tr><td class="profile"><a href="http://twitter.com/" + item.from_user + "" target="_blank"><img src="" + item.profile_image_url + ""></img><br></br>@" + item.from_user + "</a></td><td class="string">" + item.text + "</td></tr><tr class="details"><td>From: " + $('<textarea></textarea>').html(item.source).val()+ "</td><td>" + d + "</td></tr></table>");
-        if (first == 1) {
-            $list.append(t);
-            t.show();
-        }
-        else {
-            $list.prepend(t);
-            t.slideDown('slow');
-        }
+    else {
+      $list.prepend(t);
+      t.slideDown('slow');
     }
-    getResults(1);
+  }
+  getResults(1);
 
-    setInterval(getResults, 3000);
+  setInterval(getResults, 3000);
 });
 ```
 
-Let me step through it... On page load, the content above is executed.  The first thing done is to call getResults() with a parameter of 1.  Then, I'll set getResults() to be called every 3 seconds after that using setInterval().
+Let me step through it... On page load, the content above is executed.  The first thing done is to call `getResults()` with a parameter of `1`.  Then, I'll set `getResults()` to be called every 3 seconds after that using `setInterval()`.
 
-getResults() creates a loop and loops through each of the search terms. Above, I'm only using one search term: "true blood".  Then, it calls getJson() from twitter's search api using the callback function.  This json is then organized by the unique twitter ID (just in case search terms overlap tweets, we won't get duplicates...) and is sent to the showResults() method.  Note that the 'first' variable is sent into that request.
+`getResults()` creates a loop and loops through each of the search terms. Above, I'm only using one search term: "true blood".  Then, it calls `getJson()` from twitter's search api using the callback function.  This json is then organized by the unique twitter ID (just in case search terms overlap tweets, we won't get duplicates...) and is sent to the `showResults()` method.  Note that the `first` variable is sent into that request.
 
-showResults() simply builds a list item with the proper content, links, etc.  The only thing really notable about this is the choice when first == 1.  This was done in this way to build the auto update functionality properly.  It was best to get the search terms and append them on the first query.  But, then as time went on, we need the newest content at the top (so we don't have to keep scrolling down...).  Then, that's why each interval call for getResults() does NOT send in '1' - meaning it will prepend and slowly fade the content into view.
+`showResults()` simply builds a list item with the proper content, links, etc.  The only thing really notable about this is the choice when `first == 1`.  This was done in this way to build the auto update functionality properly.  It was best to get the search terms and append them on the first query.  But, then as time went on, we need the newest content at the top (so we don't have to keep scrolling down...).  Then, that's why each interval call for `getResults()` does NOT send in `1` - meaning it will prepend and slowly fade the content into view.
 
 #### Add a little style
 
@@ -83,39 +90,42 @@ Just for some good effects, I added this simple set of styles to the document.
 
 ```css
 h1 {
-    text-align: center;
+  text-align: center;
 }
 body {
-    color: #222;
-    background-color: #f4f4f4;
+  color: #222;
+  background-color: #f4f4f4;
 }
 .profile {
-    width: 140px;
-    text-align: center;
+  width: 140px;
+  text-align: center;
 }
 .string {
-    width: 440px;
- }
+  width: 440px;
+}
 .details {
-    font-size: 70%;
+  font-size: 70%;
 }
 table {
-    display: none;
-    border-collapse: collapse;
-    width: 600px;
-    margin: 0 auto 20px auto;
+  display: none;
+  border-collapse: collapse;
+  width: 600px;
+  margin: 0 auto 20px auto;
 }
 td {
-    background-color: #fff;
-    padding: 5px;
+  background-color: #fff;
+  padding: 5px;
 }
 table, td {
-    border: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
-a img { border: none; height: 48px }
+a img { 
+  border: none; 
+  height: 48px 
+}
 a {
-    color: #1133ff;
-    text-decoration: none;
+  color: #1133ff;
+  text-decoration: none;
 }
 ```
     
@@ -123,7 +133,7 @@ This is simply responsible for creating a nice look to the tweets.
 
 #### Finally, the HTML
 
-Since the javascript $list variable referred to it, lets put it in.  Here is the content of the body tag:
+Since the javascript `$list` variable referred to it, lets put it in.  Here is the content of the body tag:
     
 ```html
 <h1>True Blood</h1>
@@ -134,4 +144,4 @@ A simple title for the top of the page - and then the target element that the ja
 
 ### Using this
 
-Minus a few changes to the css, this is a pretty much plug-n-play solution.  Want to change the search term?  Change the "var terms = []" line.  Add in another element and the search will happen for both items, and append them together.  Best of all, the load on your server is very small.
+Minus a few changes to the css, this is a pretty much plug-n-play solution.  Want to change the search term?  Change the `var terms = []` line.  Add in another element and the search will happen for both items, and append them together.  Best of all, the load on your server is very small.

@@ -61,7 +61,7 @@ Instead, change the require line in script.php to this:
 require_once dirname(__FILE__) . '/../includes/include.php';
 ```
 
-This way, it always gets the full directory of the file itself (__FILE__ constant) - and THEN you can path to the file any which way you'd like.
+This way, it always gets the full directory of the file itself (`__FILE__` constant) - and THEN you can path to the file any which way you'd like.
 
 Let's check the output:
     

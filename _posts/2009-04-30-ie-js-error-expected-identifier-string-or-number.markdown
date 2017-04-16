@@ -10,8 +10,8 @@ Well apparently, Internet Explorer won't allow you to have a trailing comma in a
 
 ```javascript
 functionCall({
-        options: {1,2,3},
-        others: {1,2,3},
+  options: {1,2,3},
+  others: {1,2,3},
 });
 ```
 

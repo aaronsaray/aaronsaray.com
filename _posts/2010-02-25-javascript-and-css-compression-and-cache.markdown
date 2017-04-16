@@ -26,22 +26,24 @@ These are my main rules.  This article, however, is going to focus on how I deal
 
 ### Preparing CSS for deployment
 
-The first thing I do is create that subdomain.  For my site example.com, users can visit http://example.com for the content.  I create a subdomain called assets.example.com which is where I expect to get my content from.  I generally create a server alias in the main config.  This technically means that duplicate content could be served at both assets.example.com and example.com.  I finish up by adding the following lines to the .htaccess file:
+The first thing I do is create that subdomain.  For my site `example.com`, users can visit `http://example.com` for the content.  I create a subdomain called `assets.example.com` which is where I expect to get my content from.  I generally create a server alias in the main config.  This technically means that duplicate content could be served at both `assets.example.com` and `example.com`.  I finish up by adding the following lines to the **`.htaccess`** file:
     
-    #make sure assets load properly
-    RewriteCond %{HTTP_HOST} ^assets.example.com
-    RewriteCond %{REQUEST_URI} !^/css
-    RewriteCond %{REQUEST_URI} !^/js
-    RewriteCond %{REQUEST_URI} !^/images
-    RewriteRule ^(.*)$ http://example.com/$1 [R=301,L]
+```apache
+#make sure assets load properly
+RewriteCond %{HTTP_HOST} ^assets.example.com
+RewriteCond %{REQUEST_URI} !^/css
+RewriteCond %{REQUEST_URI} !^/js
+RewriteCond %{REQUEST_URI} !^/images
+RewriteRule ^(.*)$ http://example.com/$1 [R=301,L]
+```
 
-This make sure that if the host is assets.example.com and the content is not coming form the css, js or images folder, to redirect with a 301 to the main domain.  This will stop duplicate content.
+This make sure that if the host is `assets.example.com` and the content is not coming form the `css`, `js` or `images` folder, to redirect with a 301 to the main domain.  This will stop duplicate content.
 
 Enough about this, what about my CSS?
 
-I actually hold my css in a different folder in my architecture - not some place that is world readable.  I usually call it the public_source folder - which is at the same level in the source tree as say the www or html folder.  In this example, I'm going to call my example file **main.css**.  So it is actually located at /var/www/public_source/main.css.
+I actually hold my css in a different folder in my architecture - not some place that is world readable.  I usually call it the `public_source` folder - which is at the same level in the source tree as say the `www` or `html` folder.  In this example, I'm going to call my example file **`main.css`**.  So it is actually located at **`/var/www/public_source/main.css`**.
 
-Next, I'll create a file called dev.php in the assets folder where I plan to test my css from.  So, this file is located at /var/www/html/css/dev.php.  It may contain this content:
+Next, I'll create a file called dev.php in the assets folder where I plan to test my css from.  So, this file is located at **`/var/www/html/css/dev.php`**.  It may contain this content:
 
     header ('Content-type: text/css');
     readfile('/var/www/public_source/main.css');
@@ -70,16 +72,18 @@ $cssFinished = $css->print->plain();
 file_put_contents('/var/www/html/css/main.1.css', $cssFinished);
 ```
 
-You'll notice that I named the file **main.1.css**.  The number will be explained later (its used for caching).
+You'll notice that I named the file **`main.1.css`**.  The number will be explained later (its used for caching).
 
-So, the CSS is read, compressed and cleaned, and outputted to a location that the webserver can serve it from.  Now, instead of using dev.php as the source, we'll use main.1.css.  Congratulations - a smaller CSS file!
+So, the CSS is read, compressed and cleaned, and outputted to a location that the webserver can serve it from.  Now, instead of using dev.php as the source, we'll use **`main.1.css`**.  Congratulations - a smaller CSS file!
 
-The final thing to do is adjust the caching of this script.  Whenever we change the CSS on the development platform, we're reading it in new using dev.php.  However, when this is built and deployed, it should be a built version (or compressed) of the file.  This means every code deploy requires this build system.  And with release numbers on main software, we're also going to increment our file name.  So our second deployment of the software package (if the CSS source has changed) will now be built using main.2.css - and the link statement will be pointed towards that.
+The final thing to do is adjust the caching of this script.  Whenever we change the CSS on the development platform, we're reading it in new using **`dev.php`**.  However, when this is built and deployed, it should be a built version (or compressed) of the file.  This means every code deploy requires this build system.  And with release numbers on main software, we're also going to increment our file name.  So our second deployment of the software package (if the CSS source has changed) will now be built using **`main.2.css`** - and the link statement will be pointed towards that.
 
 The caching then can make the assumption that this file will never change.  The CSS may change but the file is a new name then.  And since we can't just load portions of a file whenever there is a change, even a small change in a non-cached file will make the entire file load.  So with this in mind, I cache my CSS files for one year.  I put the following in my config:
     
-    ExpiresActive On
-    #1 yr
-    ExpiresByType text/css A31536000
+```apache
+ExpiresActive On
+#1 yr
+ExpiresByType text/css A31536000
+```
 
 This means that the file will be cached one year from the first time it is accessed.

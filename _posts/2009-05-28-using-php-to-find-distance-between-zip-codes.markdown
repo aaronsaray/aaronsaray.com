@@ -14,14 +14,16 @@ I found a great resource at [ibegin.com](http://geocoder.ibegin.com/downloads.ph
 
 The table I'm using was created with this SQL:
     
-    CREATE TABLE  `zipgeo` (
-      `zip5` char(5) NOT NULL,
-      `city` varchar(250) NOT NULL,
-      `state` varchar(250) NOT NULL,
-      `lat` double NOT NULL,
-      `lon` double NOT NULL,
-      `county` varchar(250) NOT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+```sql
+CREATE TABLE  `zipgeo` (
+  `zip5` char(5) NOT NULL,
+  `city` varchar(250) NOT NULL,
+  `state` varchar(250) NOT NULL,
+  `lat` double NOT NULL,
+  `lon` double NOT NULL,
+  `county` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+```
 
 The following is the code used to import this .csv file into the table:
 
@@ -39,28 +41,30 @@ $fields = array('zip5', 'city', 'state', 'lat', 'lon', 'county');
 $contents = file('zip5.csv');
 
 $buffer = 100;
-$basestatement = "insert into {$mysqltable} (`" . implode("`, `", $fields) . "`) VALUES ";
+$basestatement = "insert into {$mysqltable} (`" 
+               . implode("`, `", $fields) 
+               . "`) VALUES ";
 
 $counter = 0;
 $inserts = array();
 foreach ($contents as $line) {
-    $linefields = explode(',', $line);
-    $linefields = array_map('trim', $linefields);
-    $linefields = array_map('mysql_real_escape_string', $linefields);
-    $inserts[] = "('" . implode("', '", $linefields) . "')";
-    $counter++;
+  $linefields = explode(',', $line);
+  $linefields = array_map('trim', $linefields);
+  $linefields = array_map('mysql_real_escape_string', $linefields);
+  $inserts[] = "('" . implode("', '", $linefields) . "')";
+  $counter++;
 
-    if ($counter == $buffer) {
-        $query = $basestatement . implode(',', $inserts);
-        mysql_query($query) or die(mysql_error());
-        $counter = 0;
-        $inserts = array();
-    }
+  if ($counter == $buffer) {
+    $query = $basestatement . implode(',', $inserts);
+    mysql_query($query) or die(mysql_error());
+    $counter = 0;
+    $inserts = array();
+  }
 }
 
 if (count($inserts)) {
-    $query = $basestatement . implode(',', $inserts);
-    mysql_query($query);
+  $query = $basestatement . implode(',', $inserts);
+  mysql_query($query);
 }
 
 print 'done';
@@ -75,17 +79,17 @@ Now, I should give a disclaimer: this is just code that you can use.  It is not 
 ```php?start_inline=1
 function degrees_difference($lat1, $lon1, $lat2, $lon2)
 {
-    $theta = $lon1 - $lon2;
-    $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +
-            cos(deg2rad($lat1)) * cos(deg2rad($lat2)) *
-            cos(deg2rad($theta));
+  $theta = $lon1 - $lon2;
+  $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +
+          cos(deg2rad($lat1)) * cos(deg2rad($lat2)) *
+          cos(deg2rad($theta));
 
-    $dist = acos($dist);
-    $dist = rad2deg($dist);
+  $dist = acos($dist);
+  $dist = rad2deg($dist);
 
-    $distance = $dist * 60 * 1.1515;
+  $distance = $dist * 60 * 1.1515;
 
-    return $distance;
+  return $distance;
 }
 ```
 
@@ -94,13 +98,18 @@ This will return the distance in miles between one lat/long combination and anot
 ```php?start_inline=1
 function difference_between($firstzip, $secondzip)
 {
-    $query = "select zip5, lat, lon from zipgeo where zip5 in ({$firstzip}, {$secondzip})";
-    $result = mysql_query($query) or die(mysql_error());
+  $query = "select zip5, lat, lon from zipgeo where zip5 in ({$firstzip}, {$secondzip})";
+  $result = mysql_query($query) or die(mysql_error());
 
-    $firstzips = mysql_fetch_array($result);
-    $secondzips = mysql_fetch_array($result);
+  $firstzips = mysql_fetch_array($result);
+  $secondzips = mysql_fetch_array($result);
 
-    return degrees_difference($firstzips['lat'], $firstzips['lon'], $secondzips['lat'], $secondzips['lon']);
+  return degrees_difference(
+    $firstzips['lat'], 
+    $firstzips['lon'], 
+    $secondzips['lat'], 
+    $secondzips['lon']
+  );
 }
 ```
 
@@ -109,28 +118,28 @@ This code gets the latitude and longitude for two zip codes and then executes th
 ```php?start_inline=1
 function get_zips_within($zip, $miles)
 {
-    $milesperdegree = 69;
-    $degreesdiff = $miles / $milesperdegree;
+  $milesperdegree = 69;
+  $degreesdiff = $miles / $milesperdegree;
 
-    $query = "select lat, lon from zipgeo where zip5={$zip}";
-    $result = mysql_query($query);
-    $latlong = mysql_fetch_assoc($result);
+  $query = "select lat, lon from zipgeo where zip5={$zip}";
+  $result = mysql_query($query);
+  $latlong = mysql_fetch_assoc($result);
 
-    $lat1 = $latlong['lat'] - $degreesdiff;
-    $lat2 = $latlong['lat'] + $degreesdiff;
-    $lon1 = $latlong['lon'] - $degreesdiff;
-    $lon2 = $latlong['lon'] + $degreesdiff;
+  $lat1 = $latlong['lat'] - $degreesdiff;
+  $lat2 = $latlong['lat'] + $degreesdiff;
+  $lon1 = $latlong['lon'] - $degreesdiff;
+  $lon2 = $latlong['lon'] + $degreesdiff;
 
-    $query = "select * from zipgeo where lat between {$lat1} and {$lat2} and lon between {$lon1} and {$lon2}";
+  $query = "select * from zipgeo where lat between {$lat1} and {$lat2} and lon between {$lon1} and {$lon2}";
 
-    $result = mysql_query($query);
+  $result = mysql_query($query);
 
-    $zips = array();
-    while ($row = mysql_fetch_assoc($result)) {
-        $zips[] = $row;
-    }
+  $zips = array();
+  while ($row = mysql_fetch_assoc($result)) {
+    $zips[] = $row;
+  }
 
-    return $zips;
+  return $zips;
 }
 ```
 
@@ -144,5 +153,5 @@ So, basically, if I were going to get all locations within 50 miles of 12345:
 
   * Run query to get all results within 65 miles of 12345
 
-  * loop each result through next function which computes distance between 12345 and result's zip.  If its 50 or less, keep it.
+  * loop each result through next function which computes distance between 12345 and result's zip.  If it's 50 or less, keep it.
   

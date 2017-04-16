@@ -23,32 +23,32 @@ Next, I created a web page on my domain.  It has the following code:
 
 ```html
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>Twitter</title>
-        <style type="text/css">
-            body {
-                background-color: #f3f3f3;
-            }
-        </style>
-        <script src="http://platform.twitter.com/anywhere.js?id=CONSUMER_KEY&v=1" type="text/javascript"></script>
-    </head>
-    <body>
-        <div id="custom-tweetbox"></div>
-        <script type="text/javascript">
-        twttr.anywhere(onAnywhereLoad);
-        function onAnywhereLoad(twitter) {
-            twitter("#custom-tweetbox").tweetBox({
-                label: "<span style='color: #aaa'>Tweet this:</span>",
-                height: 90,
-                width: 200
-            });
-        };
+  <head>
+    <title>Twitter</title>
+    <style type="text/css">
+      body {
+        background-color: #f3f3f3;
+      }
+    </style>
+    <script src="http://platform.twitter.com/anywhere.js?id=CONSUMER_KEY&v=1" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="custom-tweetbox"></div>
+    <script type="text/javascript">
+      twttr.anywhere(onAnywhereLoad);
+      function onAnywhereLoad(twitter) {
+        twitter("#custom-tweetbox").tweetBox({
+          label: "<span style='color: #aaa'>Tweet this:</span>",
+          height: 90,
+          width: 200
+        });
+      };
     </script>
-    </body>
+  </body>
 </html>
 ```
     
-First off, make sure to change CONSUMER_KEY to the actual key from your applications settings page. Next, you can change the CSS in this page to match your theme if you want.  Since I'm loading this in the side bar, this is the simple layout I chose.
+First off, make sure to change `CONSUMER_KEY` to the actual key from your applications settings page. Next, you can change the CSS in this page to match your theme if you want.  Since I'm loading this in the side bar, this is the simple layout I chose.
 
 Finally, include the javascript and configure the tweetbox.  I chose not to pre-populate my tweetbox with content.  However, you could if you wish...
 

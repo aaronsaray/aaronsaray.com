@@ -27,19 +27,19 @@ Here is the example code to make this work (I'll explain it right after)
 
 ```html
 <html>
-    <head>
-        <style type="text/css">
-            #img {
-                background-image: url('duck.jpg');
-                width: 300px;
-                height: 206px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Like my Image?</h1>
-        <img src="transparent.gif" id="img"></img>
-    </body>
+  <head>
+    <style type="text/css">
+      #img {
+        background-image: url('duck.jpg');
+        width: 300px;
+        height: 206px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Like my Image?</h1>
+    <img src="transparent.gif" id="img"></img>
+  </body>
 </html>
 ```
 

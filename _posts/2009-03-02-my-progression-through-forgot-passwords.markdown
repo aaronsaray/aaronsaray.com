@@ -21,8 +21,15 @@ The next step in my programming mutation was at least more secure: send the hash
 **Um, don't do this:**
 
 ```php?start_inline=1
-mysql_query("Insert into resets (userID, key) values($userID, '" . md5(time()) . "');
-mail($to, 'Password reset', "Please click this link to reset your pass: http://website.com/resetpass.php?key=" . md5(time()));
+mysql_query(
+  "Insert into resets (userID, key) values($userID, '" . md5(time()) . "'
+);
+mail(
+  $to, 
+  'Password reset', 
+  "Please click this link to reset your pass: http://website.com/resetpass.php?key="
+    . md5(time())
+);
 ```
 
 You DO see all the problems, right?
@@ -43,16 +50,21 @@ The next thing I realized was that I had to make this hash a bit more unique, so
 $time = time();
 $key = md5("{$userID}{$time}");
 mysql_query("Insert into resets (userID, key) values($userID, '$key');
-mail($to, 'Password reset', "Please click this link to reset your pass: http://website.com/resetpass.php?key=$key");
+mail(
+  $to, 
+  'Password reset', 
+  "Please click this link to reset your pass: "
+    . "http://website.com/resetpass.php?key=$key"
+);
 ```
 
 At least I fixed the key - um - sorta.  However, if you knew the user id - you could at least make a better educated guess at this hash - especially if you knew the time was.  Point being, it was a step up, but not my final resting place.
 
-**Break: Some of you might wonder why I didn't just use a uniqid() and md5 that... well... yah... but we all make mistakes when we first start out right? ;)  Just trying to help out any new programmers not to make the same mistakes**
+**Break: Some of you might wonder why I didn't just use a `uniqid()` and `md5` that... well... yah... but we all make mistakes when we first start out right? ;)  Just trying to help out any new programmers not to make the same mistakes**
 
 #### What are you doing now?
 
-Ok - so for something that's pretty secure like that, I wanted to have a very long, extremely random string.  I thought of sending mt_rand()'s next to each other and hexadecimalling them - or md5ing them.  But I settled on something hopefully with even more of a chance not to be guessed: base64 encoding.
+Ok - so for something that's pretty secure like that, I wanted to have a very long, extremely random string.  I thought of sending `mt_rand()`'s next to each other and hexadecimalling them - or md5ing them.  But I settled on something hopefully with even more of a chance not to be guessed: base64 encoding.
 
 What?
 
@@ -61,13 +73,13 @@ Well, let me show you.
 ```php?start_inline=1
 $forEncode = '';
 for ($i=0; $i<300; $i++) {
-    $forEncode .= chr(rand(1,255));
+  $forEncode .= chr(rand(1,255));
 }
 $key = strtr(base64_encode($forEncode), '+/=', '-_.');
 ```
 
 Granted, I left out the mailing and mysql storage, but you get the idea.  Real quick, a run-down:
 
-First, start out with my blank string.  I plan to generate 300 random characters - so I create that for loop.  Then, I choose a random number between 1 and 255, corresponding to the ASCII table, and generate the chr() value of it.  Then that is added to my string.  I now have a string that has 300 characters of any character from 1 to 255 on the ascii chart.  Finally, I base64 encode it - and then replace the items in it that are not good to have in an URL.
+First, start out with my blank string.  I plan to generate 300 random characters - so I create that for loop.  Then, I choose a random number between 1 and 255, corresponding to the ASCII table, and generate the `chr()` value of it.  Then that is added to my string.  I now have a string that has 300 characters of any character from 1 to 255 on the ascii chart.  Finally, I base64 encode it - and then replace the items in it that are not good to have in an URL.
 
 How do YOU do it?

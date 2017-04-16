@@ -32,7 +32,7 @@ Last but not least, check out the thesaurus.  Also, from time to time, I used re
 
 ### The Examples
 
-The left picture is the original design.  The second picture is the trimmed version.
+The top picture is the original design.  The second picture is the trimmed version.
 
 [![](/uploads/2008/toomuchtext-300x196.png)](/uploads/2008/toomuchtext.png){: .thumbnail}
 

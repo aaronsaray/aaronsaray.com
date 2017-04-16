@@ -23,89 +23,98 @@ As a proof of concept, I developed the following PHP script.  Currently, the ftp
  */
 class php_migrate_site
 {
-    /**
-     * @var string the full filename of this file
-     */
-    protected $_self;
+  /**
+   * @var string the full filename of this file
+   */
+  protected $_self;
  
-    /**
-     * @var string The base directory of our files to move
-     */
-    protected $_basedir;
+  /**
+   * @var string The base directory of our files to move
+   */
+  protected $_basedir;
  
-    /**
-     * @var array the array of SPLFileInfo objects from self::$_basedir
-     */
-    protected $_files = array();
+  /**
+   * @var array the array of SPLFileInfo objects from self::$_basedir
+   */
+  protected $_files = array();
  
-    /**
-     * @var resource The connection to the ftp server for the new files
-     */
-    protected $_ftpConnection;
+  /**
+   * @var resource The connection to the ftp server for the new files
+   */
+  protected $_ftpConnection;
  
-    /**
-     * Constructor sets time limit, gets self, sets credentials
-     */
-    public function __construct()
-    {
-        set_time_limit(0);
- 
-        $this->_self = __FILE__;
- 
-        $this->_basedir = 'C:/DEVELOPMENT/local';
-        $this->_ftp = array('username'=>'test', 'password'=>'', 'hostname'=>'localhost');
-    }
+  /**
+   * Constructor sets time limit, gets self, sets credentials
+   */
+  public function __construct()
+  {
+    set_time_limit(0);
+
+    $this->_self = __FILE__;
+
+    $this->_basedir = 'C:/DEVELOPMENT/local';
+    $this->_ftp = array('username'=>'test', 'password'=>'', 'hostname'=>'localhost');
+  }
         
-    /**
-     * main public method to launch process
-     */
-    public function go()
-    {
-          $this->_loadFiles();
-          $this->_makeFTPConnection();
-          $this->_copyFiles();
+  /**
+   * main public method to launch process
+   */
+  public function go()
+  {
+    $this->_loadFiles();
+    $this->_makeFTPConnection();
+    $this->_copyFiles();
+  }
+
+  /**
+   * Loads all of the files from basedir using a 
+   * recursive directory iterator from SPL
+   */
+  protected function _loadFiles()
+  {
+    $this->_files = new RecursiveIteratorIterator(
+      new RecursiveDirectoryIterator($this->_basedir),
+      RecursiveIteratorIterator::SELF_FIRST
+    );
+  }
+
+  /**
+   * Connects to ftp server and stores connection to self::$_ftpConnection
+   */
+  protected function _makeFTPConnection()
+  {
+    $this->_ftpConnection = ftp_connect($this->_ftp['hostname']) 
+                          or die('could not connect');
+    ftp_login(
+      $this->_ftpConnection, 
+      $this->_ftp['username'], 
+      $this->_ftp['password']
+    );
+  }
+
+  /**
+   * Copies files from local to ftp - applies permissions to them.
+   */
+  protected function _copyFiles()
+  {
+    foreach ($this->_files as $file) {
+      $localFileName = $file->getPath() . DIRECTORY_SEPARATOR . $file->getFilename();
+      $remoteFileName = str_ireplace($this->_basedir, '', $localFileName);
+
+      /** don't move self **/
+      if ($localFileName == $this->_self) continue;
+
+      if ($file->isDir()) {
+        ftp_mkdir($this->_ftpConnection, $remoteFileName);
+      }
+      else {
+        ftp_put($this->_ftpConnection, $remoteFileName, $localFileName, FTP_BINARY);
+      }
+
+      $chmod = substr(sprintf('%o', $file->getPerms()), -4);
+      ftp_chmod($this->_ftpConnection, $chmod, $remoteFileName);
     }
-
-    /**
-     * Loads all of the files from basedir using a recursive directory iterator from SPL
-     */
-    protected function _loadFiles()
-    {
-        $this->_files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($this->_basedir),RecursiveIteratorIterator::SELF_FIRST);
-    }
-
-    /**
-     * Connects to ftp server and stores connection to self::$_ftpConnection
-     */
-    protected function _makeFTPConnection()
-    {
-        $this->_ftpConnection = ftp_connect($this->_ftp['hostname']) or die('could not connect');
-        ftp_login($this->_ftpConnection, $this->_ftp['username'], $this->_ftp['password']);
-    }
-
-    /**
-     * Copies files from local to ftp - applies permissions to them.
-     */
-    protected function _copyFiles()
-    {
-        foreach ($this->_files as $file) {
-            $localFileName = $file->getPath() . DIRECTORY_SEPARATOR . $file->getFilename();
-            $remoteFileName = str_ireplace($this->_basedir, '', $localFileName);
-
-            /** don't move self **/
-            if ($localFileName == $this->_self) continue;
-
-            if ($file->isDir()) {
-                ftp_mkdir($this->_ftpConnection, $remoteFileName);
-            }
-            else {
-                ftp_put($this->_ftpConnection, $remoteFileName, $localFileName, FTP_BINARY);
-            }
-
-            $chmod = substr(sprintf('%o', $file->getPerms()), -4);
-            ftp_chmod($this->_ftpConnection, $chmod, $remoteFileName);
-        }
-    }
+  }
 }
 
 /** create new instance and run php_migrate_site::go() method **/
@@ -127,7 +136,7 @@ It should check to make sure PHP has the FTP module enabled.  It should also con
 
 #### More FTP Options
 
-The passive and active options should be able to be set.  It should also allow for the target destination to be in a subfolder.  Some hosts require it to be in public_html - so you'd have to chdir there first.
+The passive and active options should be able to be set.  It should also allow for the target destination to be in a subfolder.  Some hosts require it to be in `public_html` - so you'd have to chdir there first.
 
 #### Database
 

@@ -4,9 +4,11 @@ title: 'Book Review: Expert PHP 5 Tools'
 tags:
 - PHP
 ---
-[![](/uploads/2010/8389_MockupCover-243x300.jpg)](/uploads/2010/8389_MockupCover.jpg){: .thumbnail}
+Where was this book 4 years ago?  Or even 2 years ago?  (Uh - it was published in 4/2010... so... just in the author's head apparently).  
 
-Where was this book 4 years ago?  Or even 2 years ago?  (Uh - it was published in 4/2010... so... just in the author's head apparently).  Anyway, I digress.  I want to tell you about the book Expert PHP 5 Tools from Packt Publishing.  At a beginner or intermediate position in my career, this would have been my bible.  It is clearly written and introduces topics cleanly and easily.  (As an author myself, I want to say KUDOS to this guy - Dirk Merkel - you did a great job.)  From design, coding, testing and deployment, this book touches on it all.  You'll find out about coding standards (what they are, and why they're needed), Documentation with phpDocumentor, Eclipse PDT - and Zend Studio - and a comparison of both, Source control with SVN - as well as some tips (nothing like the SVN redbook - but that's not what this is supposed to be!) - Debugging options, PHP frameworks overview, PHPUnit and Phing.  It rounds out the topic with continuous integration systems like XINC and PHPUnderControl.  Overall, I've never seen a book touch on so many topics that any PHP programmer should know.
+[![](/uploads/2010/8389_MockupCover-243x300.jpg)](/uploads/2010/8389_MockupCover.jpg){: .thumbnail}{: .pull-right}
+
+Anyway, I digress.  I want to tell you about the book Expert PHP 5 Tools from Packt Publishing.  At a beginner or intermediate position in my career, this would have been my bible.  It is clearly written and introduces topics cleanly and easily.  (As an author myself, I want to say KUDOS to this guy - Dirk Merkel - you did a great job.)  From design, coding, testing and deployment, this book touches on it all.  You'll find out about coding standards (what they are, and why they're needed), Documentation with phpDocumentor, Eclipse PDT - and Zend Studio - and a comparison of both, Source control with SVN - as well as some tips (nothing like the SVN redbook - but that's not what this is supposed to be!) - Debugging options, PHP frameworks overview, PHPUnit and Phing.  It rounds out the topic with continuous integration systems like XINC and PHPUnderControl.  Overall, I've never seen a book touch on so many topics that any PHP programmer should know.
 
 **Where it's good:**
 

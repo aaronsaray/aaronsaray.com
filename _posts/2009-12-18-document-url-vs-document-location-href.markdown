@@ -4,7 +4,7 @@ title: document.URL vs document.location.href
 tags:
 - javascript
 ---
-When reviewing some javascript security ideas, I came across the document.URL property.  Turns out that my normal way of retrieving the location (document.location.href) is both a getter and a setter.  The document.URL is just a getter.
+When reviewing some javascript security ideas, I came across the `document.URL` property.  Turns out that my normal way of retrieving the location (`document.location.href`) is both a getter and a setter.  The `document.URL` is just a getter.
 
 Check it out with this code:
 
@@ -15,4 +15,4 @@ document.URL = 'http://google.com';
 document.location.href = 'http://yahoo.com';
 ```
 
-The results are simple: you will get the current location twice - and then an error.  If you comment out the document.URL line, it will redirect to yahoo.
+The results are simple: you will get the current location twice - and then an error.  If you comment out the `document.URL` line, it will redirect to yahoo.

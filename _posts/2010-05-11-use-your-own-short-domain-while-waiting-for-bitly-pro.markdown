@@ -19,23 +19,23 @@ I'm using GoDaddy.  I decided to forward my domain.
 
 First, select your domain in the domain manager.  Then, choose the forward domain option at the top of the list.
 
-[![](/uploads/2010/post1.png)](/uploads/2010/post1.png){: .thumbnail}
+[![](/uploads/2010/post1.png)](/uploads/2010/post1.png){: .thumbnail}{: .inline}
 
-[![](/uploads/2010/post2.png)](/uploads/2010/post2.png){: .thumbnail}
+[![](/uploads/2010/post2.png)](/uploads/2010/post2.png){: .thumbnail}{: .inline}
 
-On the popup, choose the advanced option link.  Make sure to choose temporarily forward the domain.  This is needed because at some point, we'll be redirecting this domain's nameservers to bit.ly again to natively do this URL forwarding.  Enter "http://bit.ly" in the box and click ok.
+On the popup, choose the advanced option link.  Make sure to choose temporarily forward the domain.  This is needed because at some point, we'll be redirecting this domain's nameservers to bit.ly again to natively do this URL forwarding.  Enter `http://bit.ly` in the box and click ok.
 
-[![](/uploads/2010/post3.png)](/uploads/2010/post3.png){: .thumbnail}
+[![](/uploads/2010/post3.png)](/uploads/2010/post3.png){: .thumbnail}{: .inline}
 
 ### Try it out
 
-Now, go to [bit.ly](http://bit.ly) and shorten an URL.  I'm shortening **http://aaronsaray.com/blog**.  This is now: **http://bit.ly/cZqq0e**.  When I enter [http://saray.me/cZqq0e](http://saray.me/cZqq0e) into the browser, it serves the short URL from bit.ly.
+Now, go to [bit.ly](http://bit.ly) and shorten an URL.  I'm shortening `http://aaronsaray.com/blog`.  This is now: `http://bit.ly/cZqq0e`.  When I enter [http://saray.me/cZqq0e](http://saray.me/cZqq0e) into the browser, it serves the short URL from bit.ly.
 
 Yay!
 
 #### Timesaving Feature
 
-Since I do continue to get my bit.ly links with http://bit.ly instead of http://saray.me in the beginning, I decided to make a Firefox bookmarklet to replace this for me.  It's pretty simple.  All it does is take bit.ly and replace with saray.me.
+Since I do continue to get my bit.ly links with `http://bit.ly` instead of `http://saray.me` in the beginning, I decided to make a Firefox bookmarklet to replace this for me.  It's pretty simple.  All it does is take `bit.ly` and replace with `saray.me`.
 
 ```javascript
 var x=prompt('Bit.ly URL');alert(x.replace('bit.ly','saray.me'));

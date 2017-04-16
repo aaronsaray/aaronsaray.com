@@ -12,7 +12,7 @@ The WTAI protocol is a robust set of specs to add additional functionality to we
 
 #### Dial a Phone Number
 
-The first number we're going to Dial is 414.555.1212.  From a usability point of view, you should also clearly label your link.  The format for this link is:
+The first number we're going to dial is `414.555.1212`.  From a usability point of view, you should also clearly label your link.  The format for this link is:
     
     wtai://wp/mc;#########     
 

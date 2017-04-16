@@ -13,32 +13,33 @@ Before I show you the code, I wanted to point out that this has already been don
 
 ### The Object Cache Class
 
-This is the very simple code in the class found in **objectCache.php**.
+This is the very simple code in the class found in this file:
 
+**`objectCache.php`**
 ```php?start_inline=1
 class objectCache
 {
-    protected static $_storage = array();
+  protected static $_storage = array();
 
-    public static function exists($type, $id)
-    {
-        return isset(self::$_storage[$type][$id]);
-    }
+  public static function exists($type, $id)
+  {
+    return isset(self::$_storage[$type][$id]);
+  }
 
-    public static function set($type, $id, $obj)
-    {
-        self::$_storage[$type][$id] = $obj;
-    }
+  public static function set($type, $id, $obj)
+  {
+    self::$_storage[$type][$id] = $obj;
+  }
 
-    public static function get($type, $id)
-    {
-        return self::$_storage[$type][$id];
-    }
+  public static function get($type, $id)
+  {
+    return self::$_storage[$type][$id];
+  }
 
-    public static function clear($type, $id)
-    {
-        if (self::exists($type, $id)) unset(self::$_storage[$type][$id]);
-    }
+  public static function clear($type, $id)
+  {
+    if (self::exists($type, $id)) unset(self::$_storage[$type][$id]);
+  }
 }
 ```   
 

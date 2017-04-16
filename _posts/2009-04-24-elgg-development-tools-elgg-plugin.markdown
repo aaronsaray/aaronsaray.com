@@ -29,11 +29,11 @@ The package includes the latest distribution of FirePHP.  When you enable FirePH
 
 ### Turn off View Caching
 
-Normally, you have to either run the update.php script or enable/disable your plugin.  During development, this got super irritating.  Instead, enable this option.  It will make the site run a bit slower, but you won't have to keep enabling/disabling the plugin when you add new views.
+Normally, you have to either run the **`update.php`** script or enable/disable your plugin.  During development, this got super irritating.  Instead, enable this option.  It will make the site run a bit slower, but you won't have to keep enabling/disabling the plugin when you add new views.
 
 ### Display Errors
 
-By default, Elgg hides the errors in the .htaccess file.  This will turn them back on without editing the elgg installation.
+By default, Elgg hides the errors in the **`.htaccess`** file.  This will turn them back on without editing the elgg installation.
 
 ### Other Useful Dev Settings
 

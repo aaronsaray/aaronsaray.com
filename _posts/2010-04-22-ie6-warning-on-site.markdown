@@ -27,8 +27,8 @@ The javascript contains the following content:
     
 ```javascript
 $(function(){
-    var ieDiv = $("<div id="ie6warning"><img src="/images/ie6logo.gif" alt="ie"></img><div><h3>Did you know that your browser is out of date?</h3><p>To get the best possible experience using our website we recommend that you upgrade your browser to a newer version.<br></br>The current version is <a href="http://microsoft.com/ie">Internet Explorer 8</a>.  The upgrade is free.  <em>(If you're using a PC at work you should contact your IT administrator.)</em> You may also try some other popular Internet browsers like <a href="http://getfirefox.com">Firefox</a> or <a href="http://google.com/chrome">Google Chrome</a>.</div></div>");
-    $("#hd").prepend(ieDiv);
+  var ieDiv = $("<div id="ie6warning"><img src="/images/ie6logo.gif" alt="ie"></img><div><h3>Did you know that your browser is out of date?</h3><p>To get the best possible experience using our website we recommend that you upgrade your browser to a newer version.<br></br>The current version is <a href="http://microsoft.com/ie">Internet Explorer 8</a>.  The upgrade is free.  <em>(If you're using a PC at work you should contact your IT administrator.)</em> You may also try some other popular Internet browsers like <a href="http://getfirefox.com">Firefox</a> or <a href="http://google.com/chrome">Google Chrome</a>.</div></div>");
+  $("#hd").prepend(ieDiv);
 });
 ```
 
@@ -39,20 +39,20 @@ Finally, we have a bit of css
 ```css
 /** ie 6 warning **/
 #ie6warning {
-    background-color: #FFFFDD;
-    padding: 20px;
+  background-color: #FFFFDD;
+  padding: 20px;
 }
 #ie6warning img {
-    float: left;
-    margin: 12px 0 12px 5px;
+  float: left;
+  margin: 12px 0 12px 5px;
 }
 #ie6warning div {
-    margin-left: 140px;
-    padding-left: 27px;
-    border-left: 1px solid #aaa;
+  margin-left: 140px;
+  padding-left: 27px;
+  border-left: 1px solid #aaa;
 }
 #ie6warning h3, #ie6warning p {
-    margin: 0;
+  margin: 0;
 }
 ```
 

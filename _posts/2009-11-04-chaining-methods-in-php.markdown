@@ -12,34 +12,34 @@ At any rate, here is my test code that PHP method chaining works great:
 ```php?start_inline=1
 class foo
 {
-    public function bar()
-    {
-        print 'bar<br></br>';
-        return $this;
-    }
+  public function bar()
+  {
+    print 'bar<br></br>';
+    return $this;
+  }
 
-    public function splat()
-    {
-        print 'splat!<br></br>';
-        return $this;
-    }
+  public function splat()
+  {
+    print 'splat!<br></br>';
+    return $this;
+  }
 
-    public function twin()
-    {
-        return $this->single();
-    }
+  public function twin()
+  {
+    return $this->single();
+  }
 
-    public function single()
-    {
-        print 'single<br></br>';
-        return $this;
-    }
+  public function single()
+  {
+    print 'single<br></br>';
+    return $this;
+  }
 
-    public function neato()
-    {
-        print 'neato';
-        return $this;
-    }
+  public function neato()
+  {
+    print 'neato';
+  return $this;
+  }
 }
 
 $ohNo = new foo();
@@ -54,4 +54,4 @@ As expected, the output is:
     single
     neato
 
-Each of these methods are pretty self explanatory.  The only one that is slightly different is the twin()/single() methods.  Note how the twin() method is returning the value of another method directly.  The chain remains solid and connected.
+Each of these methods are pretty self explanatory.  The only one that is slightly different is the `twin()`/`single()` methods.  Note how the `twin()` method is returning the value of another method directly.  The chain remains solid and connected.

@@ -12,9 +12,9 @@ My chosen UUID is V4 in PHP.  I checked out the [php.net/uniqid](http://php.net/
 
 ### UUID is Hex
 
-So, lets make sure we fully understand our integer formats http://us2.php.net/manual/en/language.types.integer.php specifically our hexadecimal format: 0[xX][0-9a-fA-F]+  From this, we should start to think of our min and max ranges for our UUID in hex: between 0 and 0xFF...(many f's).
+So, lets make sure we fully understand our integer formats [http://us2.php.net/manual/en/language.types.integer.php](php.net/integer) specifically our hexadecimal format: `0[xX][0-9a-fA-F]+`  From this, we should start to think of our min and max ranges for our UUID in hex: between `0` and `0xFF...(many f's)`.
 
-The next thing I want to make sure is that PHP doesn't convert my hex to something base 10 - so lets format it properly with the sprintf() function.  Note the description of the last parameter:
+The next thing I want to make sure is that PHP doesn't convert my hex to something base 10 - so lets format it properly with the `sprintf()` function.  Note the description of the last parameter:
 
     x - the argument is treated as an integer and presented as a hexadecimal number (with lowercase letters).
 
@@ -28,7 +28,7 @@ The basic format of the UUID - and I'm talking real basic - is:
 
 Of course, those nodes actually mean something (per the rfc):
 
-UUID = time-low "-" time-mid "-" time-high-and-version "-" clock-seq-and-reserved clock-seq-low "-" node
+UUID = `time-low` "-" `time-mid` "-" `time-high-and-version` "-" `clock-seq-and-reserved` `clock-seq-low` "-" `node`
 
 ### What makes this v4?
 
@@ -70,11 +70,11 @@ Outputs were: 4294967295 and 2147483647 respectively, so I know we'll have to br
 The best example of all of this - and what I used to kind of reverse-engineer for this article, was from the PHP manual, check it out:
 
 ```php?start_inline=1
-sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
-        mt_rand( 0, 0x0fff ) | 0x4000,
-        mt_rand( 0, 0x3fff ) | 0x8000,
-        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ) );
+sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+        mt_rand(0, 0x0fff) | 0x4000,
+        mt_rand(0, 0x3fff) | 0x8000,
+        mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff));
 ```
 
 Simple enough, proper sprintf format, all the random number generators in place, and then the bitwise operators to set the bits properly.

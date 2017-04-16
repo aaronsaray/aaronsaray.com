@@ -25,20 +25,25 @@ While searching for employment, I realize I can't be super picky - but my househ
 ```javascript
 function bookmarklet()
 {
-    var independentTax = 15.3;
-    var taxBracket = 25;
-    var amount = prompt('amount:');
-    if (amount) {
-        if (amount < 200) {
-            amount *= 2080; // 40 hrs a week/ 52 weeks
-        }
-        var output = "Gross: $" + amount + "/yr - $" + Math.round(amount/12) + "/mo - $" + Math.round(amount/2080) + "/hr\n";
-        var taxminus = amount * (taxBracket/100);
-        output += "Cmp Net: $" + Math.round(amount-taxminus) + "/yr - $" + Math.round((amount-taxminus)/12) + "/mo - $" + Math.round((amount-taxminus)/2080) + "/hr\n";
-        taxminus = amount * ((taxBracket+independentTax)/100);
-        output += "Ind Net: $" + Math.round(amount-taxminus) + "/yr - $" + Math.round((amount-taxminus)/12) + "/mo - $" + Math.round((amount-taxminus)/2080) + "/hr";
-        alert(output);
+  var independentTax = 15.3;
+  var taxBracket = 25;
+  var amount = prompt('amount:');
+  if (amount) {
+    if (amount < 200) {
+      amount *= 2080; // 40 hrs a week/ 52 weeks
     }
+    var output = "Gross: $" + amount + "/yr - $" + Math.round(amount/12) 
+               + "/mo - $" + Math.round(amount/2080) + "/hr\n";
+    var taxminus = amount * (taxBracket/100);
+    output += "Cmp Net: $" + Math.round(amount-taxminus) + "/yr - $" 
+           + Math.round((amount-taxminus)/12) + "/mo - $" 
+           + Math.round((amount-taxminus)/2080) + "/hr\n";
+    taxminus = amount * ((taxBracket+independentTax)/100);
+    output += "Ind Net: $" + Math.round(amount-taxminus) + "/yr - $" 
+           + Math.round((amount-taxminus)/12) + "/mo - $" 
+           + Math.round((amount-taxminus)/2080) + "/hr";
+    alert(output);
+  }
 }
 ```
     

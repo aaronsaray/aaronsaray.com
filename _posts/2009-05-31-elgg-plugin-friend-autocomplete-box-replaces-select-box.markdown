@@ -22,11 +22,18 @@ echo elgg_view('input/pulldown', array('name'=>'friends', 'options_values'=>$fri
 
 This generates a pull down that will have the option text the friend name, and the option value - the friend GUID.
 
-To use this plugin, enable it - and then modify the elgg_view statement like so:
+To use this plugin, enable it - and then modify the `elgg_view` statement like so:
 
 ```php?start_inline=1    
 $friends = amazing_function_formats_this($_SESSION['user']->getFriends());
-echo elgg_view('input/pulldown', array('class'=>'OHT_ElggFriendsAutocomplete', 'name'=>'friends', 'options_values'=>$friends);
+echo elgg_view(
+  'input/pulldown', 
+  array(
+    'class' => 'OHT_ElggFriendsAutocomplete', 
+    'name'  => 'friends', 
+    'options_values' => $friends
+  )
+);
 ```
 
 ### What Happens?

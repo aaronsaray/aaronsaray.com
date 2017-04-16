@@ -39,13 +39,19 @@ Follow the following steps.
 
 [![](/uploads/2010/5-150x122.jpg)](/uploads/2010/5.jpg){: .thumbnail}
 
-1) On the connection profile screen, click the 'Add/Edit' button
-2) Select the MysQL driver in the list.
-3) Click the Edit button on the right hand side.
-4) If you do not see your driver in the list of Java Class Paths, click on the Extra Class Path tab.
-5) Browse to find your most recent driver download and select that jar file.
-6) Click on the list drivers button.  com.mysql.jdbc.Driver should appear in the Driver Class Name box.  If not, select it.
-7) Click OK and then OK again to return to the connection profile box
+* On the connection profile screen, click the 'Add/Edit' button
+
+* Select the MysQL driver in the list.
+
+* Click the Edit button on the right hand side.
+
+* If you do not see your driver in the list of Java Class Paths, click on the Extra Class Path tab.
+
+* Browse to find your most recent driver download and select that jar file.
+
+* Click on the list drivers button.  com.mysql.jdbc.Driver should appear in the Driver Class Name box.  If not, select it.
+
+* Click OK and then OK again to return to the connection profile box
 
 Now you should be able to use the MySQL driver from the list.
 

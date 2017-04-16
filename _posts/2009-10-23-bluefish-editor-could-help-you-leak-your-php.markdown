@@ -13,7 +13,7 @@ One thing I had noticed about a few projects I was working on was the presence o
     index.php~
     settings.php~
 
-After opening them up, I noticed that they were straight PHP code.  The settings file particularly was intriguing - as it had db credentials in it.  These were in our deployment... so anyone who surfed to http://domain.com/settings.php~ could see our code.  Not good.
+After opening them up, I noticed that they were straight PHP code.  The settings file particularly was intriguing - as it had db credentials in it.  These were in our deployment... so anyone who surfed to `http://domain.com/settings.php~` could see our code.  Not good.
 
 I talked with the other developers to see why this was happening.  The most irritating response I received was "just add it as a php mime type so we don't have to worry about it."  Grrarr!
 

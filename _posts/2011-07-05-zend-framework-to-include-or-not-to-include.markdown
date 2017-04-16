@@ -8,7 +8,7 @@ There are two ways of working with Zend Framework as a library in your project. 
 
 ### Including Zend Framework In Your Project
 
-The first method is to include the Zend Framework library folder in your zend framework project's library folder (uh....).  So, for each project on your server that is built on Zend Framework, the following path has a copy of Zend Framework:  /root/to/your/app/library/Zend.  This means each project has at least the entire size of the Zend Framework in it.  Pros/Cons?
+The first method is to include the Zend Framework library folder in your zend framework project's library folder (uh....).  So, for each project on your server that is built on Zend Framework, the following path has a copy of Zend Framework:  `/root/to/your/app/library/Zend`.  This means each project has at least the entire size of the Zend Framework in it.  Pros/Cons?
 
   * **Pro:** Can control the exact version of Zend Framework with this project.  A server zend-framework upgrade won't potentially hose up your project.
 
@@ -22,7 +22,7 @@ The first method is to include the Zend Framework library folder in your zend fr
 
 ### Using Zend Framework as a server wide install
 
-Like PEAR, Zend Framework can be installed on the server in a shared location.  You may install your Zend Framework Library folder into a different path, for example: /root/to/shared/code/Zend.  Then, your PHP has to be configured to have that in its include path.  Pros/Cons?
+Like PEAR, Zend Framework can be installed on the server in a shared location.  You may install your Zend Framework Library folder into a different path, for example: `/root/to/shared/code/Zend`.  Then, your PHP has to be configured to have that in its include path.  Pros/Cons?
 
   * **Pro:** Any project at any location on your server has access to Zend Framework.  As you know, you can only pick pieces of ZF to use, like the PDF functionality.  May make it easier to transition project from legacy code to ZF.
 

@@ -9,8 +9,8 @@ The javascript function setTimeout can be used to execute a function after a spe
 ```javascript
 function myTime(x)
 {
-    alert(x);
-    alert(new Date());
+  alert(x);
+  alert(new Date());
 }
 alert(new Date());
 ```
@@ -21,7 +21,7 @@ Incorrect usage:
 setTimeout(myTime(), 5000);
 ```
 
-When this is run, the script executes an alert that shows the current time.  After this is dismissed, immediately the myTime() function is executed and another alert shows the current time.
+When this is run, the script executes an alert that shows the current time.  After this is dismissed, immediately the `myTime()` function is executed and another alert shows the current time.
 
 The proper way to do this is to make sure the function is not called immediately, and is referenced in callback pattern:
 

@@ -12,13 +12,13 @@ In order to control that scope, its important to enclose the bookmarklet in its 
 
 Example of the Bad Behavior
 
-I have a page that creates a global variable named "counter".  It starts out at value 3.  A VERY COMPLEX function changes the value of counter.  Finally, a button will show me the value of "counter" at any time.
+I have a page that creates a global variable named `counter`.  It starts out at value 3.  A VERY COMPLEX function changes the value of counter.  Finally, a button will show me the value of "counter" at any time.
     
 ```javascript
 var counter = 3;
 function addToCounter()
 {
-    counter++;
+  counter++;
 }
 addToCounter();
 ```
@@ -27,7 +27,7 @@ addToCounter();
 <button onclick="alert(counter)">Show Counter</button>
 ```
 
-Now, lets say I have a bookmarklet that sets a counter variable for its own usage.  It alerts the counter value whenever its used.  And, to be safe, I redefine 'counter' with the 'var' statement:
+Now, lets say I have a bookmarklet that sets a counter variable for its own usage.  It alerts the counter value whenever its used.  And, to be safe, I redefine `counter` with the `var` statement:
 
 ```html
 <a href="javascript:var counter=100;alert(counter)">Bookmarklet</a>

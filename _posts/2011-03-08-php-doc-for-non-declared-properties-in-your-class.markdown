@@ -12,26 +12,26 @@ You may find while working with projects like Zend Framework that you have a num
 ```php?start_inline=1
 class base
 {
-    /**
-     * @var data storage
-     */
-    protected $_data = array();
+  /**
+   * @var data storage
+   */
+  protected $_data = array();
     
-    /**
-     * setter method - used to store data in self::$_data
-     */
-    public function __set($name, $value)
-    { 
-        $this->_data[$name] = $value;
-    }
+  /**
+   * setter method - used to store data in self::$_data
+   */
+  public function __set($name, $value)
+  { 
+    $this->_data[$name] = $value;
+  }
     
-    /**
-     * getter method - retrieves info from self::$_data
-     */
-    public function __get($name)
-    {
-        return isset($this->_data[$name]) ? $this->_data[$name] : null;
-    }
+  /**
+   * getter method - retrieves info from self::$_data
+   */
+  public function __get($name)
+  {
+    return isset($this->_data[$name]) ? $this->_data[$name] : null;
+  }
 }
 ```
 
@@ -42,8 +42,8 @@ Now, let's say we have an object of type Person which we know will have a first 
 ```php?start_inline=1
 class person extends base
 {
-    @property string $first_name The user's first name
-    @property string $last_name The user's last name
+  // @property string $first_name The user's first name
+  // @property string $last_name The user's last name
 }
 ```
 

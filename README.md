@@ -44,4 +44,6 @@ Linking internally to blogs will be done with the internal post link system:
 
     [here]({% post_url 2007-06-24-load-time-analyzer-for-firefox %})
     
-    
+Files should always be code and bold.  For example:
+
+**`filename.php`**

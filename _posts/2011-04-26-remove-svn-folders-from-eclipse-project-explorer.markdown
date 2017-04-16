@@ -6,7 +6,7 @@ tags:
 - IDE and Web Dev Tools
 - svn
 ---
-It had been irritating to me seeing the .svn folders littered throughout my project workspace.  In addition, they all show up in the search results... this can be irritating with the svn-base files that show the old version of the file before a commit.
+It had been irritating to me seeing the .svn folders littered throughout my project workspace.  In addition, they all show up in the search results... this can be irritating with the `svn-base` files that show the old version of the file before a commit.
 
 Well never fear: there is a quick solution.  
 
@@ -14,4 +14,4 @@ Well never fear: there is a quick solution.
 * Choose Properties and then select resource.  Add a resource filter of type 'exclude'
 * Enter the .svn folder name and click OK.  
 
-You should no longer see the .svn resources in your project.
+You should no longer see the `.svn` resources in your project.

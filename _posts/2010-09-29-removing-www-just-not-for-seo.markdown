@@ -8,7 +8,7 @@ I used to think that I had to remove the WWW from my URL's to stop having duplic
 
 Wrong.
 
-(Remember, there used to be an issue with this with the trailing slash too - ie http://thebetterbachelor.com/10dish and http://thebetterbachelor.com/10dish/ would be duplicates)
+(Remember, there used to be an issue with this with the trailing slash too - ie `http://thebetterbachelor.com/10dish` and `http://thebetterbachelor.com/10dish/` would be duplicates)
 
 It seems now - especially with the changes in the Google Webmaster Panel (where you can choose the WWW or the non-www to be the primary index), and by articles such as [this one](http://www.practicalecommerce.com/articles/444-SEO-The-Duplicate-Content-Penalty), the www's no longer need apply.
 
@@ -18,11 +18,14 @@ So here's the real meat of the article, however.  I used to do this in my .htacc
 
 **the old way**
 
-    RewriteCond %{HTTP_HOST} ^www.thebetterbachelor.com$ [NC]
-    RewriteRule ^(.*)$ http://thebetterbachelor.com/$1 [R=301,L]
+```apache
+RewriteCond %{HTTP_HOST} ^www.thebetterbachelor.com$ [NC]
+RewriteRule ^(.*)$ http://thebetterbachelor.com/$1 [R=301,L]
+```
 
 This would make sure that the domain redirected with a 301 and was not processed anywhere else.  However, after doing some more research, and running into the non www website at [no-www.org](no-www.org/faq.php?q=class_b), there is a better solution.  Let's do it this way from now on:
     
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-    
+```apache
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+```

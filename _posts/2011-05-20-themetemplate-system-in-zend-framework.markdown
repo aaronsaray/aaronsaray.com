@@ -10,21 +10,21 @@ Theme systems are very common in projects written on Drupal, Joomla, and Wordpre
 
 Since themeing is something that is only specific to the view system that is rendered by a web page request, we'll make a front controller plugin.  I'm not creating this functionality in the bootstrap class because command line scripts don't need to run this, only web requests (which happen to begin with the front controller).
 
-However, we do have to register our front controller plugin using the bootstrap class.  First, I'm going to register my new plugin.  The plugin will be called Template.  It will be located at application/plugins/Theme.php.  (Note: the default ZF loader knows this location).
+However, we do have to register our front controller plugin using the bootstrap class.  First, I'm going to register my new plugin.  The plugin will be called Template.  It will be located at `application/plugins/Theme.php`.  (Note: the default ZF loader knows this location).
 
 **`application/bootstrap.php`**
 ```php?start_inline=1
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
-	protected function _initFrontControllerPlugin()
-	{
-		$front = $this->bootstrap('frontcontroller')->getresource('frontcontroller');
-		$front->registerPlugin(new Application_Plugin_Theme());
-	}
+  protected function _initFrontControllerPlugin()
+  {
+    $front = $this->bootstrap('frontcontroller')->getresource('frontcontroller');
+    $front->registerPlugin(new Application_Plugin_Theme());
+  }
 }
 ```
 
-This method simply registers a new plugin named Application_Plugin_Theme() to the front.  
+This method simply registers a new plugin named `Application_Plugin_Theme()` to the front.  
 
 ### Pick your Theme
 
@@ -55,7 +55,7 @@ Any specific content is placed in these folders instead.
 
 ### Create the Front Controller Plugin
 
-Our plugin will be called Application_Plugin_Theme.  I'll register a routeShutdown hook because this is one of the last things we have to do or figure out.  Certainly don't want to do it on every call in the loop nor do I want to do it before a redirect could occur.
+Our plugin will be called `Application_Plugin_Theme`.  I'll register a routeShutdown hook because this is one of the last things we have to do or figure out.  Certainly don't want to do it on every call in the loop nor do I want to do it before a redirect could occur.
 
 **`application/plugins/Theme.php`**
 ```php
@@ -79,9 +79,9 @@ class Application_Plugin_Theme extends Zend_Controller_Plugin_Abstract
 }
 ```
 
-The first three lines of this are the theme management hardcoded portion I created.  It is important later, however, in the view helper we're going to create to have access to the $theme object --- hence the Zend_Registry call.
+The first three lines of this are the theme management hardcoded portion I created.  It is important later, however, in the view helper we're going to create to have access to the $theme object --- hence the `Zend_Registry` call.
 
-First, access the bootstrap.  Next, set the base path of the main view object by including the theme folder name in it.  Notice how this is setBasePath() - if you wanted to create a system where templates inherit other ones, you may use addBasePath().  The setBasePath() resets the paths array internally and then adds the paths for /scripts and /helpers.
+First, access the bootstrap.  Next, set the base path of the main view object by including the theme folder name in it.  Notice how this is `setBasePath()` - if you wanted to create a system where templates inherit other ones, you may use `addBasePath()`.  The `setBasePath()` resets the paths array internally and then adds the paths for `/scripts` and `/helpers`.
 
 Next, if you are using layouts, which I'm sure you are, you basically do the same thing with the layout object.
 
@@ -95,7 +95,7 @@ With this plugin, now all items will load from their proper folders.  Just as an
 ### Last step: View Helper
 
 Since there are different public assets depending on what template that was used, we created the multiple folders in the public folder.  For example, you may have
-public/simple/images, public/simple/js, etc.
+`public/simple/images`, `public/simple/js`, etc.
 
 Since this view helper is going to be shared among all of our views, however, we can put it up a level, outside of the theme root.  The views folder may now look like this:
 
@@ -103,8 +103,9 @@ Since this view helper is going to be shared among all of our views, however, we
     application/views/simple/helpers
     application/views/simple/scripts
 
-Create a new Helper called Application_View_Helper_Theme inside of the file: application/views/helpers/Theme.php
+Create a new Helper called `Application_View_Helper_Theme` inside of the file: 
 
+**`application/views/helpers/Theme.php`**
 ```php?start_inline=1 
 class Application_View_Helper_Theme
 {  
@@ -148,4 +149,4 @@ echo '<img src="/images/smiley.gif" alt="smiley">';
 echo '<img src='" . $this->theme('/images/smiley.gif') . '" alt="smiley">';
 ```
 
-This will render the theme URL of /themes/simple/images/smiley.gif.
+This will render the theme URL of `/themes/simple/images/smiley.gif`.

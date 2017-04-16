@@ -7,11 +7,11 @@ tags:
 - performance
 - programming
 ---
-I run into this question a lot.  Should my website have www in the domain name.  Should I be going to aaronsaray.com or www.aaronsaray.com??  That is to say, which should be the default home page domain?  Let's discuss...
+I run into this question a lot.  Should my website have www in the domain name.  Should I be going to `aaronsaray.com` or `www.aaronsaray.com`??  That is to say, which should be the default home page domain?  Let's discuss...
 
 ### Take care of both
 
-Regardless of how you choose, people will always find a way to visit both the www and the non-www versions of your site.  It is imperative that you handle both cases.  There is nothing less professional than someone going to www.aaronsaray.com and not finding anything - but aaronsaray.com would work flawlessly.
+Regardless of how you choose, people will always find a way to visit both the www and the non-www versions of your site.  It is imperative that you handle both cases.  There is nothing less professional than someone going to `www.aaronsaray.com` and not finding anything - but `aaronsaray.com` would work flawlessly.
 
 ### In support of WWW
 
@@ -27,9 +27,9 @@ Someone who wasn't familiar with that TLD may not understand that that is a web 
     Aaron Saray
     www.Saray.me
 
-Second, when using subdomains for your application, it can be more efficient to not send main 'application cookies' with the request.  If your main application is at aaronsaray.com, the session cookie would be of the domain aaronsaray.com - which would be sent to files.aaronsaray.com, images.aaronsaray.com, etc.  If I wanted to eek every last bit of performance out of having assets on a different subdomain, I wouldn't want the browser to recognize these subdomains and send the cookie.  If I had www.aaronsaray.com, and set the cookie to belong to that domain, requests to images.aaronsaray.com would not receive that cookie.
+Second, when using subdomains for your application, it can be more efficient to not send main 'application cookies' with the request.  If your main application is at aaronsaray.com, the session cookie would be of the domain `aaronsaray.com` - which would be sent to `files.aaronsaray.com`, `images.aaronsaray.com`, etc.  If I wanted to eek every last bit of performance out of having assets on a different subdomain, I wouldn't want the browser to recognize these subdomains and send the cookie.  If I had `www.aaronsaray.com`, and set the cookie to belong to that domain, requests to `images.aaronsaray.com` would not receive that cookie.
 
-Finally, auto completion, both user and tool, factor in.  In my browser address bar, I typed in kjkjerjrr and hit enter.  My browser politely informed me that no record was found for http://www.kjkjerjrr.com/.  Then, tell my mom to go to aaronsaray.com.  I will give you a million dollars if you can get that lady not to type WWW in front of every URL she ever hears.  Although it will resolve fine, it does require another redirect to get to the proper content.  On her dialup, that is noticeable!
+Finally, auto completion, both user and tool, factor in.  In my browser address bar, I typed in kjkjerjrr and hit enter.  My browser politely informed me that no record was found for `http://www.kjkjerjrr.com/`.  Then, tell my mom to go to `aaronsaray.com`.  I will give you a million dollars if you can get that lady not to type WWW in front of every URL she ever hears.  Although it will resolve fine, it does require another redirect to get to the proper content.  On her dialup, that is noticeable!
 
 ### In support of no-www
 

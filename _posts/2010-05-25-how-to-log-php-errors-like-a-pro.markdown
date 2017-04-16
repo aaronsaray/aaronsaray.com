@@ -17,52 +17,52 @@ The first thing I want to do is grab my PHP errors.  I'll make the following cod
 ```php?start_inline=1
 class errorhandlers
 {
-    public static function error_handler($errno, $errstr, $errfile, $errline, $errcontext)
-    {
-        $string = "ErrorNo: {$errno}:: {$errstr} || {$errfile} on {$errline} || ";
-        ob_start();
-        var_dump($errcontext);
-        debug_print_backtrace();
-        $string .= ob_get_clean();
+  public static function error_handler($errno, $errstr, $errfile, $errline, $errcontext)
+  {
+    $string = "ErrorNo: {$errno}:: {$errstr} || {$errfile} on {$errline} || ";
+    ob_start();
+    var_dump($errcontext);
+    debug_print_backtrace();
+    $string .= ob_get_clean();
 
-        if (ENVIRONMENT == 'DEV') {
-            print $string;
-        }
-        else {
-            error_log($string);
-        }
-
-        switch ($errno) {
-            case E_NOTICE:
-            case E_USER_NOTICE:
-                //do nothing
-                break;
-
-            default:
-                self::beFriendly();
-                break;
-        }
+    if (ENVIRONMENT == 'DEV') {
+      print $string;
+    }
+    else {
+       error_log($string);
     }
 
-    protected static function beFriendly()
-    {
-        /**
-         * kind of hacky
-         */
-        if (ENVIRONMENT != 'DEV') {
-            die(header("Location: /error"));
-        }
+    switch ($errno) {
+      case E_NOTICE:
+      case E_USER_NOTICE:
+        //do nothing
+        break;
+
+      default:
+        self::beFriendly();
+        break;
     }
+  }
+
+  protected static function beFriendly()
+  {
+    /**
+     * kind of hacky
+     */
+    if (ENVIRONMENT != 'DEV') {
+      die(header("Location: /error"));
+    }
+  }
 }
 ```
 
-The first thing that is done is to grab all of the error context that PHP sends to the error handler.  That is what the 5 parameters are for.  I begin by making a string with this information in it.  The last parameter is actually an array, so I use var_dump().  Before that, however, the output buffering is initiated.  Then, the context is var_dump()'d.  Finally, to get a little bit more context, the command debug_print_backtrace() is used.  The contents of this output buffer is then added to the string.
+The first thing that is done is to grab all of the error context that PHP sends to the error handler.  That is what the 5 parameters are for.  I begin by making a string with this information in it.  The last parameter is actually an array, so I use `var_dump()`.  Before that, however, the output buffering is initiated.  Then, the context is `var_dump()`'d.  Finally, to get a little bit more context, the command `debug_print_backtrace()` is used.  The contents of this output buffer is then added to the string.
 
-The reason I am using ob_start() and not using the parameters / functions to return the data is because of a recursion issue that can happen with var_export()/var_dump() in certain contexts.  I'm not sure what happened, but it was an infinite type of recursion - so I chose this method.
+The reason I am using `ob_start()` and not using the parameters / functions to return the data is because of a recursion issue that can happen with `var_export()`/`var_dump()` in certain contexts.  I'm not sure what happened, but it was an infinite type of recursion - so I chose this method.
 
-The final two steps of that method are pretty straight forward.  If we are working in our development environment, print the error information to the screen.  Otherwise, log it to the standard error log.  (This is better than using ini_set() with display errors because of the extra context I'm adding with the debug_print_backtrace()).  Finally, if not a NOTICE type error, call the beFriendly() static protected method.
+The final two steps of that method are pretty straight forward.  If we are working in our development environment, print the error information to the screen.  Otherwise, log it to the standard error log.  (This is better than using `ini_set()` with display errors because of the extra context I'm adding with the `debug_print_backtrace()`).  Finally, if not a `NOTICE` type error, call the `beFriendly()` static protected method.
 
-The beFriendly() method simply redirects a user to a friendlier "ruh roh" type page if we're not in the development environment.
+The `beFriendly()` method simply redirects a user to a friendlier "ruh roh" type page if we're not in the development environment.
 
 #### Do something with uncaught exceptions
 
@@ -71,16 +71,16 @@ To handle exceptions, the following method is added to the class:
 ```php?start_inline=1
 public static function exception_handler($exception)
 {
-    $string = str_replace("\n", ' ', var_export($exception, TRUE));
+  $string = str_replace("\n", ' ', var_export($exception, TRUE));
 
-    if (ENVIRONMENT == 'DEV') {
-        print $string;
-    }
-    else {
-        error_log($string);
-    }
+  if (ENVIRONMENT == 'DEV') {
+    print $string;
+  }
+  else {
+    error_log($string);
+  }
 
-    self::beFriendly();
+  self::beFriendly();
 }
 ```
 

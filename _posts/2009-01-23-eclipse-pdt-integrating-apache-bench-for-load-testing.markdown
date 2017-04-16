@@ -12,19 +12,19 @@ When I use an IDE, I expect for it to do everything I need for my project, from 
 
 [ab](http://httpd.apache.org/docs/2.0/programs/ab.html) is a pretty versatile tool for load testing that comes with the standard apache http webserver install.  In order to get the best usage out of this tool, you should read up on the online manual.  However, we're going to cover a few of the features that are part of this demonstration here.
 
-**-c  Concurrency**
+**`-c`  Concurrency**
 
 Number of requests to perform at one time.  This defaults to 1.  I tend to bump this up a bit in order to simulate a high traffic period.
 
-**-k  Keep Alive**
+**`-k`  Keep Alive**
 
 Enable the HTTP keepAlive feature.  Default is no keep alive.  To do standard testing, you will want to keep this disabled.
 
-**-n  Number of Requests**
+**`-n`  Number of Requests**
 
 The number of requests to do during this session.  Default is 1, so you PROBABLY want to create a higher number here.  Remember that the number of requests will be split across your concurrency setting.
 
-**-t timelimit**
+**`-t` timelimit**
 
 Instead of specifying a -n amount (with this option, it actually says '50,000' requests), you can specify an amount of time to test the requests.
 
@@ -50,21 +50,21 @@ This new screen will bring up the external tools menu items.  So far, I've named
 
 #### Configuring the command line arguments
 
-For this setup, I'm going to stick with concurrency and with number of requests.  You may want to swap out the -n option with the -t.
+For this setup, I'm going to stick with concurrency and with number of requests.  You may want to swap out the `-n` option with the `-t`.
 
-**Add in the -c argument.**
+**Add in the `-c` argument.**
 
 You'll notice that you have the option to click on variables.  Eclipse has the ability to prompt for variables, so we'll set these settings interactively.  (You may find that you will end up creating some standard tests that do not require prompting, but for this exercise we're going to make it very interactive.)
 
 **Click the Variables button.**
 
-**Scroll down until you see string_prompt and select it.**  You'll notice that the arguments that you can specify are the prompt text and the default value.  **Fill in your prompt text and default value separated by a colon in the arguments box.**
+**Scroll down until you see `string_prompt` and select it.**  You'll notice that the arguments that you can specify are the prompt text and the default value.  **Fill in your prompt text and default value separated by a colon in the arguments box.**
 
 [![3](/uploads/2009/3-140x150.jpg)](/uploads/2009/3.jpg){: .thumbnail}
 
-**Repeat the process with the -n option.**  I selected _ -n ${string_prompt:Number of requests?:40}_.
+**Repeat the process with the -n option.**  I selected `-n ${string_prompt:Number of requests?:40}`.
 
-**Finally, create the prompt for the URL to test.** (Remember, like I said, you might end up creating these more scripted by hard-setting these values in the future.)  I selected _${string_prompt:URL to test?}_.
+**Finally, create the prompt for the URL to test.** (Remember, like I said, you might end up creating these more scripted by hard-setting these values in the future.)  I selected `${string_prompt:URL to test?}`.
 
 **Click the Common tab, check external tools under the favorites menu.**
 
