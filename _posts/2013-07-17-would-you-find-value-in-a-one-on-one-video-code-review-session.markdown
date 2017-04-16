@@ -2,20 +2,20 @@
 layout: post
 slug: would-you-find-value-in-a-one-on-one-video-code-review-session
 title: Would You Find Value in a One on One Video Code Review Session?
-wordpress_id: 1589
-categories:
+tags:
 - business
 - learning
 - programming
 ---
 Hello friends - I'm trying to get an idea if this would be a good idea.  Let me know your thoughts in the comments.
 
+[![I Like Code!](/uploads/2013/hithere-300x104.png)](/uploads/2013/hithere.png){: .thumbnail}{: .pull-right}
+
 Here's the idea (...knowing my experience in web development and programming...)
  
 **Would you contract me for a 1-on-1 code review via skype or google hangout?**
 
 Here's how it would work:
-[![I Like Code!](/uploads/2013/hithere-300x104.png)](/uploads/2013/hithere.png){: .thumbnail}
 
   * Application form takes care of contact information, scheduling, payment, short description of the product, and a way to access the source code.
 

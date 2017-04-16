@@ -16,25 +16,25 @@ So here's the markup:
 
 ```html
 <div id="main">
-    <h1>My Website</h1>
-    <nav>
-        <ul>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-            <li><a href="#">asdf asdf asdf</a></li>
-        </ul>
-    </nav>
+  <h1>My Website</h1>
+  <nav>
+    <ul>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+      <li><a href="#">asdf asdf asdf</a></li>
+    </ul>
+  </nav>
 
-    <p>Hi there buddy.</p>
+  <p>Hi there buddy.</p>
 </div>
 ```
 
@@ -42,29 +42,28 @@ And then the CSS
 
 ```css
 body {
-    background: #f4f4f4;
+  background: #f4f4f4;
 }
 #main {
-    background: #fff;
-    width: 800px;
-    margin: auto;
+  background: #fff;
+  width: 800px;
+  margin: auto;
 }
 nav ul {
-    text-align:justify;
-    padding: 0px;
+  text-align:justify;
+  padding: 0px;
 }
 nav li {
-    list-style-type: none;
-    display: inline;
+  list-style-type: none;
+  display: inline;
 }
 nav li > a {
-    display: inline-block
+  display: inline-block
 }
 nav ul:after { 
-    content: ' '; 
-    display: inline-block; 
-    width: 100%; 
-    height: 0 
+  content: ' '; 
+  display: inline-block; 
+  width: 100%; 
+  height: 0 
 }
 ```
-    

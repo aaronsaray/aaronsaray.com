@@ -6,7 +6,7 @@ tags:
 ---
 One of the newer programmers on my team asked me the other day why I hired him.  I said "I saw you had a natural talent, and have potential."  We both kind of laughed because we knew his skill level at the time was very low.  He was not that experienced.  But, he had more questions about how I can detect talent and potential versus just someone who has really polished looking code.
 
-[![talented](/uploads/2013/talented.jpg)](/uploads/2013/talented.jpg){: .thumbnail}
+[![talented](/uploads/2013/talented.jpg)](/uploads/2013/talented.jpg){: .thumbnail}{: .pull-right}
 
 I've been thinking about this a lot.  I mean, I hate to say "I can just feel it," - I made sure not to REALLY say that when I talked about [what I look for in code review]({% post_url 2012-10-18-what-i-look-for-in-a-code-review %}), so then what is it?
 

@@ -23,26 +23,28 @@ Here is the jQuery snippet to handle the requested functionality.
 
 ```javascript
 $('input[data-checkall-control]').each(function(){
-    var $checkAll = $(this);
-    var $children = $('input[data-checkall-group="' + $checkAll.data('checkall-control') + '"]');
+  var $checkAll = $(this);
+  var $children = $('input[data-checkall-group="' 
+                + $checkAll.data('checkall-control') 
+                + '"]');
  
-    $checkAll.on('click', function() {
-        if ($checkAll.is(':checked')) {
-            $children.prop('checked', true);
-        }
-        else {
-            $children.prop('checked', false);
-        }
-    });
+  $checkAll.on('click', function() {
+    if ($checkAll.is(':checked')) {
+      $children.prop('checked', true);
+    }
+    else {
+      $children.prop('checked', false);
+    }
+  });
  
-    $children.on('click', function() {
-        if ($children.filter(':checked').length == $children.length) {
-            $checkAll.prop('checked', true);
-        }
-        else {
-            $checkAll.prop('checked', false);
-        }
-    });
+  $children.on('click', function() {
+    if ($children.filter(':checked').length == $children.length) {
+      $checkAll.prop('checked', true);
+    }
+    else {
+      $checkAll.prop('checked', false);
+    }
+  });
 });
 ```
 
@@ -50,26 +52,38 @@ Here is an example of the input boxes that this would control.
     
 ```html
 <table>
-    <tr>
-        <th><label><input type="checkbox" data-checkall-control="group1">Check All</label></th>
-        <th>Option</th>
-    </tr>
+  <tr>
+    <th>
+      <label>
+        <input type="checkbox" data-checkall-control="group1">Check All
+      </label>
+    </th>
+    <th>Option</th>
+  </tr>
  
-    <tr>
-        <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="1"></th>
-        <th>Value 1</th>
-    </tr>
-    <tr>
-        <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="2"></th>
-        <th>Value 2</th>
-    </tr>
-    <tr>
-        <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="3"></th>
-        <th>Value 3</th>
-    </tr>
-    <tr>
-        <th><input data-checkall-group="group1" type="checkbox" name="checkme[]" value="4"></th>
-        <th>Value 4</th>
-    </tr>
+  <tr>
+    <th>
+      <input data-checkall-group="group1" type="checkbox" name="checkme[]" value="1">
+    </th>
+    <th>Value 1</th>
+  </tr>
+  <tr>
+    <th>
+      <input data-checkall-group="group1" type="checkbox" name="checkme[]" value="2">
+    </th>
+    <th>Value 2</th>
+  </tr>
+  <tr>
+    <th>
+      <input data-checkall-group="group1" type="checkbox" name="checkme[]" value="3">
+    </th>
+    <th>Value 3</th>
+  </tr>
+  <tr>
+    <th>
+      <input data-checkall-group="group1" type="checkbox" name="checkme[]" value="4">
+    </th>
+    <th>Value 4</th>
+  </tr>
 </table>
 ```

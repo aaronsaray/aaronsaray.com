@@ -1,13 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2013-10-16 00:08:14+00:00
 layout: post
 slug: group-coding-results-tech-on-tap-version
 title: 'Group Coding Results: Tech on Tap Version'
-wordpress_id: 1646
-categories:
-- PHP
 tags:
 - PHP
 ---
@@ -46,41 +40,52 @@ const SESSION_NAMESPACE = 'CONTACT_MESSAGE_ERRORS';
 // retrieves the error for me
 function getErrorForField($fieldName)
 {
-	return isset($_SESSION[SESSION_NAMESPACE][$fieldName]) ? $_SESSION[SESSION_NAMESPACE][$fieldName] : '';
+  return isset($_SESSION[SESSION_NAMESPACE][$fieldName]) 
+         ? $_SESSION[SESSION_NAMESPACE][$fieldName] 
+         : '';
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<style>
-		label {
-			display: block;
-			margin-bottom: 1em;
-		}
-		textarea {
-			vertical-align: middle;
-		}
-	</style>
+  <style>
+    label {
+      display: block;
+      margin-bottom: 1em;
+    }
+    textarea {
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
-<h1>Contact Us</h1>
-<form action="process.php" method="post">
-	<label>
-		Your name: <input name="name" required type="text">
-		<?php $error = getErrorForField('name'); if ($error) echo '<span class="error">' . $error . '</span>'; ?>
+  <h1>Contact Us</h1>
+  <form action="process.php" method="post">
+    <label>
+      Your name: <input name="name" required type="text">
+      <?php 
+        $error = getErrorForField('name'); 
+        if ($error) echo '<span class="error">' . $error . '</span>'; 
+      ?>
+    </label>
+    <label>
+      Your email: <input name="email" required type="email">
+      <?php 
+        $error = getErrorForField('email'); 
+        if ($error) echo '<span class="error">' . $error . '</span>'; 
+      ?>
+    </label>
+    <label>
+      Tell us this:<textarea name="message" required></textarea>
+      <?php 
+        $error = getErrorForField('message'); 
+        if ($error) echo '<span class="error">' . $error . '</span>'; 
+      ?>
+    </label>
+    <label>
+      Now, click send: <input type="submit" value="Send Message">
 	</label>
-	<label>
-		Your email: <input name="email" required type="email">
-		<?php $error = getErrorForField('email'); if ($error) echo '<span class="error">' . $error . '</span>'; ?>
-	</label>
-	<label>
-		Tell us this:<textarea name="message" required></textarea>
-		<?php $error = getErrorForField('message'); if ($error) echo '<span class="error">' . $error . '</span>'; ?>
-	</label>
-	<label>
-		Now, click send: <input type="submit" value="Send Message">
-	</label>
-</form>
+  </form>
 </body>
 </html>
 ```
@@ -104,16 +109,17 @@ const WEBSITE_OWNER_TO_ADDRESS = 'aaron@aaronsaray.com';
 session_start();
 $_SESSION[SESSION_NAMESPACE] = array();
  
-// method will store any errors in the session and then take back to the processing page
+// method will store any errors in the session 
+// and then take back to the processing page
 function storeErrorsAndRedirect(array $errors = array())
 {
-	$_SESSION[SESSION_NAMESPACE] = $errors;
-	die(header('Location: index.php'));
+  $_SESSION[SESSION_NAMESPACE] = $errors;
+  die(header('Location: index.php'));
 }
  
 // not a post
 if (!isset($_SERVER['REQUEST_METHOD']) || $_SERVER['REQUEST_METHOD'] !== 'POST') {
-	storeErrorsAndRedirect();
+  storeErrorsAndRedirect();
 }
  
 // initialize my error storage
@@ -122,40 +128,45 @@ $clean = array();
  
 // name must be set and not too long
 if (empty($_POST['name'])) {
-	$errors['name'] = 'A name is required.';
+  $errors['name'] = 'A name is required.';
 }
 else if (strlen($_POST['name']) > NAME_MAX_LENGTH) {
-	$errors['name'] = 'This name is a bit too long - is that your real name?';
+  $errors['name'] = 'This name is a bit too long - is that your real name?';
 }
 else {
-	$clean['name'] = filter_var($_POST['name'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
+  $clean['name'] = filter_var(
+                              $_POST['name'], 
+                              FILTER_SANITIZE_STRING, 
+                              FILTER_FLAG_STRIP_LOW
+                              );
 }
  
 // must be set and then be a valid email
 if (empty($_POST['email'])) {
-	$errors['email'] = 'An email is required.';
+  $errors['email'] = 'An email is required.';
 }
 else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-	$errors['email'] = 'Please enter a valid email.';
+  $errors['email'] = 'Please enter a valid email.';
 }
 else {
-	$clean['email'] = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+  $clean['email'] = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 }
  
 // must be not empty and not too long
 if (empty($_POST['message'])) {
-	$errors['message'] = 'Please enter a valid message.';
+  $errors['message'] = 'Please enter a valid message.';
 }
 else if (strlen($_POST['message']) > MESSAGE_MAX_LENGTH) {
-	$errors['message'] = 'Can you shorten the message just a little bit? Perhaps a phone call would work?';
+  $errors['message'] = 'Can you shorten the message just a little bit? '
+                     . 'Perhaps a phone call would work?';
 }
 else {
-	$clean['message'] = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+  $clean['message'] = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 }
  
 // if errors, store and get outttah here
 if (!empty($errors)) {
-	storeErrorsAndRedirect($errors);
+  storeErrorsAndRedirect($errors);
 }
  
 // now we have good, clean data, generate the message

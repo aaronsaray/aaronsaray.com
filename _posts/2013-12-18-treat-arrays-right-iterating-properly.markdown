@@ -22,7 +22,7 @@ $array = ['a', 'b', 'c', 'd', 'e'];
 $length = count($array);
 print '<ul>';
 for ($i = 0; $i < $length; $i++) {
-    print "<li>{$array[$i]}</li>";
+  print "<li>{$array[$i]}</li>";
 }
 print '</ul>';
 ```
@@ -35,7 +35,7 @@ Here, I have an array cleverly named $array.  I do not wish to change the values
 $array = ['a', 'b', 'c', 'd', 'e'];
 
 array_walk($array, function(&$value, $key) {
-    $value = strtoupper($value);
+  $value = strtoupper($value);
 });
 ```
 
@@ -48,13 +48,13 @@ For this challenge, what would be the best practice?  Should I create a loop or 
 ```php?start_inline=1
 $array = ['a', 'b', 'c', 'd', 'e'];
 
-$uppercase = array_map(function($value){
-    return strtoupper($value) . rand(1,1000);
+$uppercase = array_map(function($value) {
+  return strtoupper($value) . rand(1,1000);
 }, $array);
 
 $secondUppercase = [];
 foreach ($array as $letter) {
-    $secondUppercase[] = strtoupper($letter) . rand(1,1000);
+  $secondUppercase[] = strtoupper($letter) . rand(1,1000);
 }
 ```
 
@@ -70,7 +70,7 @@ $array = ['a', 'b', 'c', 'd', 'e'];
 
 print '<ul>';
 array_walk($array, function($value, $key) {
-    print "<li>{$value}</li>";
+  print "<li>{$value}</li>";
 });
 print '</ul>';
 ```

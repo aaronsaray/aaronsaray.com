@@ -1,13 +1,7 @@
 ---
-author: aaron
-comments: true
-date: 2013-04-02 13:53:04+00:00
 layout: post
 slug: firephp4chrome-chrome-extension
 title: FirePHP4Chrome Chrome Extension
-wordpress_id: 1477
-categories:
-- Google Chrome
 tags:
 - Google Chrome
 ---

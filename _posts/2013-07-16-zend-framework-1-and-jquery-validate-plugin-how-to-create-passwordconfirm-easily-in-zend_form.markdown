@@ -11,23 +11,31 @@ Perhaps this trend is going away, but it used to be a "good thing" to make peopl
 
 ```php?start_inline=1
 $this->addElement('password', 'password', array(
-    'label'        =>'New Password:',
-    'required'    =>true,
-    'validators'=>array(
-        array('StringLength', false, array(self::PASSWORD_MIN_LENGTH, self::PASSWORD_MAX_LENGTH))
-    ),
-    'class'        =>'required password',
+  'label'      => 'New Password:',
+  'required'   => true,
+  'validators' => array(
+    array(
+      'StringLength', 
+      false, 
+      array(self::PASSWORD_MIN_LENGTH, self::PASSWORD_MAX_LENGTH)
+    )
+  ),
+  'class'      => 'required password',
 ));
         
 $this->addElement('password', 'confirm_password', array(
-    'label'        =>'Confirm password:',
-    'required'    =>true,
-    'validators'=>array(
-        array('StringLength', false, array(self::PASSWORD_MIN_LENGTH, self::PASSWORD_MAX_LENGTH)),
-        array('identical', false, array('token'=>'password'))
+  'label'      => 'Confirm password:',
+  'required'   => true,
+  'validators' => array(
+    array(
+      'StringLength', 
+      false, 
+      array(self::PASSWORD_MIN_LENGTH, self::PASSWORD_MAX_LENGTH)
     ),
-   'class'        =>'required password',
-   'equalTo'    =>'#password', 
+    array('identical', false, array('token'=>'password'))
+  ),
+  'class'      => 'required password',
+  'equalTo'    => '#password', 
 ));
 ```
 

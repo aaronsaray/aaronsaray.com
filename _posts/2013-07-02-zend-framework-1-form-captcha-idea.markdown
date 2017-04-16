@@ -18,27 +18,27 @@ To create this empty captcha field, our validator looks like this:
 ```php?start_inline=1
 class Application_Validate_CaptchaHiddenField extends Zend_Captcha_Word
 {
-    /**
-     * Render the captcha - we want it to be blank
-     *
-     * @param  Zend_View_Interface $view
-     * @param  mixed $element
-     * @return string
-     */
-    public function render(Zend_View_Interface $view = null, $element = null)
-    {
-        return '';
-    }
+  /**
+   * Render the captcha - we want it to be blank
+   *
+   * @param  Zend_View_Interface $view
+   * @param  mixed $element
+   * @return string
+   */
+  public function render(Zend_View_Interface $view = null, $element = null)
+  {
+    return '';
+  }
 
-    /**
-     * Overwrite Generate new random word to be blank so only blank is accepted
-     *
-     * @return string
-     */
-    protected function _generateWord()
-    {
-        return '';
-    }
+  /**
+   * Overwrite Generate new random word to be blank so only blank is accepted
+   *
+   * @return string
+   */
+  protected function _generateWord()
+  {
+    return '';
+  }
 }
 ```
 

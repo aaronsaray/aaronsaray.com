@@ -28,7 +28,7 @@ Our websites list the following android OS and screen size combinations as the t
 
 So, using this information, I decided to download Android 4.4 and 4.3.
 
-Mount the ISO to a new VM, choose linux, other linux, 32bit, give it 6gb of space fixed, and boot it up.  (you can find installation instructions here: http://www.android-x86.org/documents/installhowto )
+Mount the ISO to a new VM, choose linux, other linux, 32bit, give it 6gb of space fixed, and boot it up.  (you can find installation instructions here: [http://www.android-x86.org/documents/installhowto](http://www.android-x86.org/documents/installhowto) )
 
 By default, it is a tablet-ish size.  Instead, I want to push some other sizes into the virtualbox, so I'll use vboxmanage to tell the virtual machine that I have some custom video modes available.
     
@@ -37,13 +37,13 @@ By default, it is a tablet-ish size.  Instead, I want to push some other sizes i
     
 And so on for the rest of your sizes.
 
-The last step is to add these entry items to GRUB.  On boot, choose the second option, the debug menu item, which will take you to the single user prompt.  Then, mount the directory and modify the grub.lst file.
+The last step is to add these entry items to GRUB.  On boot, choose the second option, the debug menu item, which will take you to the single user prompt.  Then, mount the directory and modify the `grub.lst` file.
     
     mkdir /boot
     mount /dev/sda1 /boot
     vi /boot/grub/menu.lst
     
-Copy the first three lines and name them to reflect the video size.  Next, find the kernel line and scroll over til you find video=-16.  After this, add 
+Copy the first three lines and name them to reflect the video size.  Next, find the kernel line and scroll over til you find `video=-16`.  After this, add 
 
     UVESA_MODE=360x640 
     
@@ -59,4 +59,4 @@ PS: bonus tip - want these to honor your system hosts file?  try this:
 
     vboxmanage modifyvm "Android 4.4" --natdnshostresolver1 on
     
-PPS: Also, try making your grub menu.lst delay 30 instead of 6 - so you have enough time to pick the right menu perhaps?
+PPS: Also, try making your grub `menu.lst` delay 30 instead of 6 - so you have enough time to pick the right menu perhaps?

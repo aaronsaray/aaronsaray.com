@@ -9,7 +9,7 @@ PHPStorm has an option to install an icon for your Unity Dash on ubuntu - you ca
 
 Turns out, with PHPStorm.sh file, the next parameter is the URL for the directory/project to open.  So I made a number of launchers and played them in my applications directory.  Let me show you how:
 
-**File: /home/aaron/.local/share/applications/phpstorm-myproject.desktop**
+**`/home/aaron/.local/share/applications/phpstorm-myproject.desktop`**
     
     [Desktop Entry]
     Name=PHP MyProject
