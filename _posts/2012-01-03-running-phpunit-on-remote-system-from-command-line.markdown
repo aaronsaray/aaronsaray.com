@@ -7,9 +7,11 @@ tags:
 ---
 If I need to run PHPUnit on a remote system against a code suite, I will write a simple shell script like the following to do it for me.  (Bonus points, you can even include this as an External Tool in eclipse to do it right from your project).
     
-    #!/bin/bash
-    
-    ssh developmentserver "cd /var/www/tests && phpunit $1"
+```bash
+#!/bin/bash
+
+ssh developmentserver "cd /var/www/tests && phpunit $1"
+```
 
 So, two things you should know: I'm using shared keys and have my .ssh/config file set up to have developmentserver as a name for the connection. 
 

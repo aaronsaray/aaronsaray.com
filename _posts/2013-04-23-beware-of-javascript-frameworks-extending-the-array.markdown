@@ -12,7 +12,7 @@ However, this can be a problem.  When creating a third-party javascript widget, 
 
 ```javascript
 for (x in myArray) {
-    doSomethingWith(myArray[x]);
+  doSomethingWith(myArray[x]);
 }
 ```
 

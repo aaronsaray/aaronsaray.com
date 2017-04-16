@@ -5,15 +5,11 @@ tags:
 - business
 - Misc Web Design
 ---
-I've heard the argument so many times
-
-"I'm just too busy to do my own website"
-
-This usually is followed by pleading statements leading to the fact that no one is paying them to do their own website - like their current workload is paying them.
+I've heard the argument so many times: "I'm just too busy to do my own website"  This usually is followed by pleading statements leading to the fact that no one is paying them to do their own website - like their current workload is paying them.
 
 **False!**
 
-[![](/uploads/2012/http.png)](/uploads/2012/http.png){: .thumbnail}
+[![](/uploads/2012/http.png)](/uploads/2012/http.png){: .thumbnail}{: .pull-right}
 
 And here's why... Let's say you're working at a fast food restaurant making $1 more than minimum wage.  The company will allow you to work as much extra as you want - so maybe you're working 60 or 70 hours.  You're making "decent" money, but you're too busy to go back to college.  You've heard that if you get a college degree, you could enter the business world, and make 2,3, even 5 times more money than you are now.  But you're just ... too busy.
 

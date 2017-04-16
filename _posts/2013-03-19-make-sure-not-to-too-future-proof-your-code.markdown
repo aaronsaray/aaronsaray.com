@@ -26,6 +26,6 @@ Let me give an example.  Say, there are three social networks out there that do 
 
 Obviously, you now know my desire would be #3.  Because, by the time you finished #2, MusicEar and defNotes may be out of business.  And #1 doesn't allow much flexibility for future networks that you don't know about yet.  
 
-So, how would one do that?  That's where the balance comes in.  But, I can think of some ways.  Say, when you want to create a new instance of the social network class, call a factory method.  This first iteration, all it does is return new MySpace().  In the future, if you implement a new network, you can then modify that factory method to return the proper class.  
+So, how would one do that?  That's where the balance comes in.  But, I can think of some ways.  Say, when you want to create a new instance of the social network class, call a factory method.  This first iteration, all it does is return `new MySpace()`.  In the future, if you implement a new network, you can then modify that factory method to return the proper class.  
 
 The balance comes from honestly assessing what the future may look like.  Look at your client and customer base.  What is the likelihood of that customer base using the other methods? If its not very high, don't future-program for it.  

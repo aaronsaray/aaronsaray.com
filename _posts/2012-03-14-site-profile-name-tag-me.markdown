@@ -24,23 +24,25 @@ This is the first time that I used an apple-touch icon and an open graph image. 
 <meta content="http://name-tag.me/apple-touch-icon.png" property="og:image">
 ```
 
-Mod_expires / mod_deflate
+**Mod_expires / mod_deflate**
 
 I also used mod_expires and mod_deflate to compress and cache images/css/javascript out for a year.  I also turned off ETags as I find that pretty annoying.  Here are entries from the apache config:
     
-    SetOutputFilter DEFLATE
-    
-    ExpiresActive On
-    
-    ExpiresByType image/png A31536000
-    ExpiresByType image/x-icon A31536000
-    ExpiresByType application/x-icon A31536000
-    ExpiresByType application/javascript A31536000
-    ExpiresByType application/x-javascript A31536000
-    ExpiresByType text/css A31536000
-    
-    #turn off etags
-    FileETag none
+```apache
+SetOutputFilter DEFLATE
+
+ExpiresActive On
+
+ExpiresByType image/png A31536000
+ExpiresByType image/x-icon A31536000
+ExpiresByType application/x-icon A31536000
+ExpiresByType application/javascript A31536000
+ExpiresByType application/x-javascript A31536000
+ExpiresByType text/css A31536000
+
+#turn off etags
+FileETag none
+```
     
 Because of this too, I decided to 'version' my css and javascript files.  At the time of writing, I had version 3 of css and version 2 of javascript.  Some people will add parameters at the end of the URLs but other caches/proxies can't handle that properly.  So, I decided to actually just change the name of the file itself.  3.css and 2.js, say hello to the world!
 
@@ -80,11 +82,11 @@ I defined the font I wanted to use using a utility called FontSquirrel:
 
 ```css
 @font-face {
-    font-family: 'DesyrelRegular';
-    src: url('desyrel-webfont.eot');
-    src: local('☺'), url('desyrel-webfont.woff') format('woff'), url('desyrel-webfont.ttf') format('truetype'), url('desyrel-webfont.svg#webfontOicIDNk6') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'DesyrelRegular';
+  src: url('desyrel-webfont.eot');
+  src: local('☺'), url('desyrel-webfont.woff') format('woff'), url('desyrel-webfont.ttf') format('truetype'), url('desyrel-webfont.svg#webfontOicIDNk6') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 ```
     

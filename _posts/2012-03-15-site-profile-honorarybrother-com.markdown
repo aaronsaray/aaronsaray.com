@@ -18,7 +18,7 @@ The process was simple.  It would prompt the girl for the "brother's" name and e
 
 From a database point of view, I used my favorite layer: PDO. :)  I just really like the prepared statement idea of making sure there is no sql injection.
 
-Another real cool thing was that the certificates were created with AJAX requests.  I used Zend_Json to send back messages.
+Another real cool thing was that the certificates were created with AJAX requests.  I used `Zend_Json` to send back messages.
 
 This was also one of the first applications that I used the test email feature I've blogged about before.  If the application_env was 'development', I put 'his email' after my email username with a + sign.
 

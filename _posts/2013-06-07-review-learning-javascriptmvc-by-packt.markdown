@@ -4,9 +4,9 @@ title: 'Review: Learning JavaScriptMVC by Packt'
 tags:
 - javascript
 ---
-[![learning javascriptmvc](/uploads/2013/learning-javascriptmvc-240x300.jpg)](http://link.packtpub.com/hFZPlQ){: .thumbnail}
-
 Someone from Packt reached out to me the other day to ask if I'd do a review of a newly published book called [Learning JavascriptMVC](http://link.packtpub.com/hFZPlQ).  I said sure.  So, they gave me a free e-book to read.  Let me give my honest review:
+
+[![learning javascriptmvc](/uploads/2013/learning-javascriptmvc-240x300.jpg)](http://link.packtpub.com/hFZPlQ){: .thumbnail}{: .pull-right}
 
 Starts out describing the JavaScriptMVC framework:
 - DocumentJS
@@ -25,7 +25,7 @@ DocumentJS: the book is good: it describes it well.  However, I feel like the to
 
 Next, FuncUnit.  My experience is in using jsunit, so I wanted to see how FuncUnit stacked up.  However, it's been quite some time since I used JSUnit...  I really liked the way that FuncUnit seems to work as a robust unit testing system.  The book describes integration with Selenium and PhantomJS too, which is nice.  To me, it seems like funcunit could be used to integrate into the scaffolding of your entire app too, so not to have to duplicate environments.
 
-jQueryMX was covered next.  I like the helpers it provides for the class and model.  The book describes the class helper very well.  The model one I thought could use some more clarification.  It also describes the various other parts of mvc including controller, view, etc.  Overall, just enough detail.  Myself, I would have liked to see more indepth here for the core parts of jQueryMX as that really is the core of your app, too, right?  However, the extra helpers including things like $.Range and $.Route, $.Observe, $.Drag, etc, were covered well.
+jQueryMX was covered next.  I like the helpers it provides for the class and model.  The book describes the class helper very well.  The model one I thought could use some more clarification.  It also describes the various other parts of mvc including controller, view, etc.  Overall, just enough detail.  Myself, I would have liked to see more indepth here for the core parts of jQueryMX as that really is the core of your app, too, right?  However, the extra helpers including things like `$.Range` and `$.Route`, `$.Observe`, `$.Drag`, etc, were covered well.
 
 The last chapter is kind of a case-study.  It includes talk about planning, wireframing, and building an application.  (This is reminiscent of my own book where I did the same thing.)  I really liked this long chapter as it showed me more in-depth how I would use all the tools together.
 

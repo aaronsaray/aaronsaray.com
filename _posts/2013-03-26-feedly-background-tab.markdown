@@ -8,7 +8,7 @@ After transitioning away from the doomed Google Reader to Feedly, I found it to 
 
 After doing some research, I found a bunch of people actually had that problem.  So I decided to make a chrome extension.
 
-With "Feedly Background Tab" you can press the keyboard key **b** and it will open the current viewing story in a background tab.
+With "Feedly Background Tab" you can press the keyboard key `b` and it will open the current viewing story in a background tab.
 
 [Google Chrome Extension](https://chrome.google.com/webstore/detail/feedly-background-tab/gjlijkhcebalcchkhgaiflaooghmoegk)
 

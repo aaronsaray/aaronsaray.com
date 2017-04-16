@@ -6,4 +6,4 @@ tags:
 ---
 This means that: how to translate between PHP and System-i lingo.
 
-Download the slides here: [WMCPA - This means That](/uploads/2013/WMCPA-This-means-That.pdf)
+Download the slides here: [WMCPA - This Means That](/uploads/2013/WMCPA-This-means-That.pdf)

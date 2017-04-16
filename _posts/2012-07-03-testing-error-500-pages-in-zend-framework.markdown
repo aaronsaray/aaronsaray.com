@@ -14,13 +14,15 @@ Well, if we generate an error that would make a FATAL or 500 error in our test u
 class Application_Test_Default_Controller_ErrorController extends Zend_Test_PHPUnit_ControllerTestCase
 {
   // ...
-    $response = $this->getResponse();
-    $response->setException(new Zend_Controller_Exception('testing application error', 500));
-    $this->dispatch('/');
-    $this->assertController('error');
-    $this->assertAction('error');
-    $this->assertQueryContentContains('//h1', 'Error 500');
+  $response = $this->getResponse();
+  $response->setException(
+    new Zend_Controller_Exception('testing application error', 500)
+  );
+  $this->dispatch('/');
+  $this->assertController('error');
+  $this->assertAction('error');
+  $this->assertQueryContentContains('//h1', 'Error 500');
   // ...
 ```
 
-It grabs the response item that is part of the Zend_Test extension of PHPUnit.  Next, set the error that would be thrown.  Finally, dispatch any page.  Instead of that page, the front controller plugin that is the default error handler should grab it and redirect it to the error page.  
+It grabs the response item that is part of the `Zend_Test` extension of PHPUnit.  Next, set the error that would be thrown.  Finally, dispatch any page.  Instead of that page, the front controller plugin that is the default error handler should grab it and redirect it to the error page.  

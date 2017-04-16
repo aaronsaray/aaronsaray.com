@@ -7,9 +7,9 @@ tags:
 ---
 I've been making a push to have more of my projects multi-lingual.  However, one thing I kept forgetting about was those super-rare error messages that have to come from the Controller.  For the most part, all of your errors should be handled by your validators in your forms.  However, from time to time, there needs to be an error handled in your controller.  
 
-Enter Zend_Translate!  Here is what I suggest:
+Enter `Zend_Translate`!  Here is what I suggest:
 
-Create a Zend Translate instance for your entire project.  Store this in the Zend_Registry (I tend to do this in the bootstrap because every item, whether it be CLI or web, needs the ability to translate output).  Then, create your situation where you might have to add an error message.  Finally, translate the message before it is added to the persistent storage.
+Create a Zend Translate instance for your entire project.  Store this in the `Zend_Registry` (I tend to do this in the bootstrap because every item, whether it be CLI or web, needs the ability to translate output).  Then, create your situation where you might have to add an error message.  Finally, translate the message before it is added to the persistent storage.
 
 Side note: There is some argument as to whether the translation should be handled in the controller or when you are trying to show the view.  In this example I will just be showing / suggesting in the controller.  However, that is a good discussion to have... perhaps this should only happen in the views... :)
 

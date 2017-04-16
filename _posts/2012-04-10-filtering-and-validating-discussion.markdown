@@ -52,9 +52,9 @@ Finally, a question I have for the group - what practices do you follow regardin
 
 **[Aaron Saray](http://aaronsaray.com)**
 
-I have two thoughts.  First, we always talk about escaping output when it comes to the user.  However, there always seems to be a bit of confusion when the actual escaping should happen.  Don't you indeed escape potentially unsafe data going to your database (see: mysql_real_escape_string()) but you also escape it going outwards (htmlentities, etc)... So the question is where do you draw the line with escaping?  Could one argue that you could do htmlentities before you store the data too?
+I have two thoughts.  First, we always talk about escaping output when it comes to the user.  However, there always seems to be a bit of confusion when the actual escaping should happen.  Don't you indeed escape potentially unsafe data going to your database (see: `mysql_real_escape_string()`) but you also escape it going outwards (`htmlentities`, etc)... So the question is where do you draw the line with escaping?  Could one argue that you could do htmlentities before you store the data too?
 
-Jeremy - in regards to your primitive checking.  I've never come across a good standard for doing that checking.  However, I've been known to write special methods per class... something like "_checkSanity()" with enough domain knowledge and type knowledge to filter out unwanted data.  I'm sure that's not the best way to do it, however.  I generally would trigger a failure than to filter the content.
+Jeremy - in regards to your primitive checking.  I've never come across a good standard for doing that checking.  However, I've been known to write special methods per class... something like `_checkSanity()` with enough domain knowledge and type knowledge to filter out unwanted data.  I'm sure that's not the best way to do it, however.  I generally would trigger a failure than to filter the content.
 
 **[Eric Lightbody](http://ericlightbody.com)**
 

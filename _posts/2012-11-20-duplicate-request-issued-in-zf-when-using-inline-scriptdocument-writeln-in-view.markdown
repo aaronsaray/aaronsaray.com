@@ -5,9 +5,7 @@ tags:
 - PHP
 - zend framework
 ---
-This is a weird one...
-
-I had a form in the body of my page.  Every time I would submit it, the csrf token would not match.  
+This is a weird one...  I had a form in the body of my page.  Every time I would submit it, the csrf token would not match.  
 
 I finally thought it must be hitting the page one more time (I've had a problem like this before when image sources didn't load...)... and sure enough, same issue.
 
