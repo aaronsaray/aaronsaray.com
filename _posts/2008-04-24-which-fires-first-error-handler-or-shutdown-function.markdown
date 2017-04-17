@@ -12,11 +12,11 @@ I'm using PHP5.2 - this is the code I used to test:
 
 ```php?start_inline=1
 function error_function() {
-    print 'error function';
+  print 'error function';
 }
 
 function shutdown_function() {
-    print 'shutdown function';
+  print 'shutdown function';
 }
 
 set_error_handler('error_function');

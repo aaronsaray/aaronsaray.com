@@ -17,11 +17,11 @@ With all of this in mind,  a new project spawned in my mind.  This project will 
 
 The idea is to provide a service that will monitor websites remotely, possibly bring in local debug information, and will look for broken links.  These three features need to be ran remotely, scheduled, and generate reports.  I want to embrace the open source community and possibly build a platform for more remote testing solutions - but I also want to be able to support my own development and side projects (yah 102 D's is in deficit right now...).
 
--Plug in based - I want the solution to be plug in based.  This will allow for my main line of development to be on the framework and reporting of the application - and users can develop their own plugins.  I will implement the core features as core plugins - which will actually allow the users to disable the core features if they don't want them.
+- Plug in based - I want the solution to be plug in based.  This will allow for my main line of development to be on the framework and reporting of the application - and users can develop their own plugins.  I will implement the core features as core plugins - which will actually allow the users to disable the core features if they don't want them.
 
 - two things I have to think about with this are: - I haven't ever built anything plugin based yet... I need to start investigating other plugin implementations and learn from them and two - plugins are usually disk based reads - is there going to be any performacne issues to watch out for?
 
--MVC - I want to build this with a Model View Controller architecture.  This is the best design paradigm I've seen.
+- MVC - I want to build this with a Model View Controller architecture.  This is the best design paradigm I've seen.
 
 - things: Should I allow for the plugins to be non-mvc?  Do you need to understand MVC to be able to build a plugin?  Aren't there going to be model - only based plugins?
 

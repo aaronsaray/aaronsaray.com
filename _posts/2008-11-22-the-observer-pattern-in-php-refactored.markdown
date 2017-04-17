@@ -24,11 +24,11 @@ So, here is the code:
  */
 class twitterTransport
 {
-    public function __construct()
-    { /** logic here **/ }
+  public function __construct()
+  { /** logic here **/ }
  
-    public function tweet(twitterMessage $object)
-    { /** logic here **/  print $object->message . ' was just tweeted'; }
+  public function tweet(twitterMessage $object)
+  { /** logic here **/  print $object->message . ' was just tweeted'; }
 }
 
 /**
@@ -36,23 +36,24 @@ class twitterTransport
  */
 class urlShortener
 {
-    public function shorten($message)
-    {
-        return str_replace('[url]', '[u]', (string) $message);
-    }
+  public function shorten($message)
+  {
+    return str_replace('[url]', '[u]', (string) $message);
+  }
 }
 
 /**
- * twitter message class - very simple - just holds the message inside itself as a string
+ * twitter message class - very simple - 
+ * just holds the message inside itself as a string
  */
 class twitterMessage
 {
-    public $message = '';
+  public $message = '';
 
-    public function __construct($message)
-    {
-        $this->message = (string) $message;
-    }
+  public function __construct($message)
+  {
+    $this->message = (string) $message;
+  }
 }
 
 /**
@@ -64,24 +65,24 @@ class twitterMessage
  */
 class urlShortenerObserver implements iObserver
 {
-    /**
-     * Tells the type of observing this will do
-     * @return string
-     */
-    public static function getType()
-    {
-        return 'PREPOST';
-    }
+  /**
+   * Tells the type of observing this will do
+   * @return string
+   */
+  public static function getType()
+  {
+    return 'PREPOST';
+  }
 
-    /**
-     * The notification method - is called when a PREPOST is done. shortens url
-     * @param twitterMessage $object
-     */
-    public function notify($object)
-    {
-        $urlShortener = new urlShortener();
-        $object->message = $urlShortener->shorten($object->message);
-    }
+  /**
+   * The notification method - is called when a PREPOST is done. shortens url
+   * @param twitterMessage $object
+   */
+  public function notify($object)
+  {
+    $urlShortener = new urlShortener();
+    $object->message = $urlShortener->shorten($object->message);
+  }
 }
 
 /**
@@ -91,20 +92,20 @@ class urlShortenerObserver implements iObserver
  */
 class twitterTransportObservable extends observable
 {
-    /**
-     * post a message to twitter, notifying any observers
-     * @param twitterMessage $object
-     * @see twitterTransport
-     */
-    public function postMessage(twitterMessage $object)
-    {
-        $this->_notify('PREPOST', $object);
+  /**
+   * post a message to twitter, notifying any observers
+   * @param twitterMessage $object
+   * @see twitterTransport
+   */
+  public function postMessage(twitterMessage $object)
+  {
+    $this->_notify('PREPOST', $object);
 
-        $sender = new twitterTransport();
-        $sender->tweet($object);
+    $sender = new twitterTransport();
+    $sender->tweet($object);
 
-        $this->_notify('POSTED', $sender);
-    }
+    $this->_notify('POSTED', $sender);
+  }
 }
 
 /**
@@ -113,41 +114,43 @@ class twitterTransportObservable extends observable
  */
 abstract class observable
 {
-    /**
-     * @var array the observer classes
-     */
-    protected $_observers = array();
+  /**
+   * @var array the observer classes
+   */
+  protected $_observers = array();
 
-    /**
-     * used for registering observers, or adding them to the array
-     *
-     * Keep in mind, this adds them in the same order as they're added to
-     * the array, so that may affect the final outcome
-     *
-     * @param string $type The type of observer, hook name
-     * @param object $observer The observer class
-     */
-    public function registerObserver($type, iObserver $observer)
-    {
-        if (empty($type)) throw new exception("type was empty when registering " . get_class($observer));
-        if (!isset($this->_observers[$type])) $this->_observers[$type] = array();
-        $this->_observers[$type][] = $observer;
+  /**
+   * used for registering observers, or adding them to the array
+   *
+   * Keep in mind, this adds them in the same order as they're added to
+   * the array, so that may affect the final outcome
+   *
+   * @param string $type The type of observer, hook name
+   * @param object $observer The observer class
+   */
+  public function registerObserver($type, iObserver $observer)
+  {
+    if (empty($type)) {
+      throw new exception("type was empty when registering " . get_class($observer));
     }
+    if (!isset($this->_observers[$type])) $this->_observers[$type] = array();
+    $this->_observers[$type][] = $observer;
+  }
 
-    /**
-     * used to notify self of actions of a certain type, launches observers
-     *
-     * @param string $type The Type of observer, the hook
-     * @param object $object The observer object
-     */
-    protected function _notify($type, $object)
-    {
-        if (isset($this->_observers[$type])) {
-            foreach ($this->_observers[$type] as $observer) {
-                $observer->notify($object);
-            }
-        }
+  /**
+   * used to notify self of actions of a certain type, launches observers
+   *
+   * @param string $type The Type of observer, the hook
+   * @param object $object The observer object
+   */
+  protected function _notify($type, $object)
+  {
+    if (isset($this->_observers[$type])) {
+      foreach ($this->_observers[$type] as $observer) {
+        $observer->notify($object);
+      }
     }
+  }
 }
 
 /**
@@ -155,8 +158,8 @@ abstract class observable
  */
 interface iObserver
 {
-    public function notify($object);
-    public static function getType();
+  public function notify($object);
+  public static function getType();
 }
 
 /**
@@ -175,9 +178,11 @@ $tweeter = new twitterTransportObservable();
  * assign all observers from our globalObservers
  */
 if (isset($globalObservers['twitterTransportObservable'])) {
-    foreach ($globalObservers['twitterTransportObservable'] as $observer) {
-        $tweeter->registerObserver(call_user_func(array($observer, 'getType')), new $observer);
-    }
+  foreach ($globalObservers['twitterTransportObservable'] as $observer) {
+    $tweeter->registerObserver(
+      call_user_func(array($observer, 'getType')), new $observer
+    );
+  }
 }
 
 $message = new twitterMessage("this is my message [url]");

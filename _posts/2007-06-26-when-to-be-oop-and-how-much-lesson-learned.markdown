@@ -15,11 +15,11 @@ In JEMDiary, I started with my first MVC architecture.  I learned a lot about se
 
 I ended up making a few core classes - which in hindsight should have been abstract classes - but they were just base classes.  Then, I extended each of those to be more specific, but still worker classes.  So, all of my database classes extended the main DB class, blah blah blah.  I re-invented the wheel, and basically had my own PEAR classes (but in this particular case they extended PDO ;)).
 
-Then, I moved on to develop my core directory layout.  I decided to put my control modules inside of the folder named 'view' with a specific view underneath it.  The reason I did this is because I assumed certain views might have different functionality (IE, you might not be able to do everything on your WAP view...).  So, I ended up making the file /view/browser/write.php - which was the controller for the browser view.  Inside of there, we made our decisions on whether to show a display, process a write or do a redirect.  The decision to show a view was a view class instantiation, the processing was a base model class.
+Then, I moved on to develop my core directory layout.  I decided to put my control modules inside of the folder named **`view`** with a specific view underneath it.  The reason I did this is because I assumed certain views might have different functionality (IE, you might not be able to do everything on your WAP view...).  So, I ended up making the file **`/view/browser/write.php`** - which was the controller for the browser view.  Inside of there, we made our decisions on whether to show a display, process a write or do a redirect.  The decision to show a view was a view class instantiation, the processing was a base model class.
 
-There was another directory called MVC.  Inside of here, every single main model class was there in PHP files named after their class name (like PEAR).  Then, folders named after each of the base model classes had either more model, or a view folder with a view named class in it.  The directory separator was an underscore (like PEAR).
+There was another directory called **`MVC`**.  Inside of here, every single main model class was there in PHP files named after their class name (like PEAR).  Then, folders named after each of the base model classes had either more model, or a view folder with a view named class in it.  The directory separator was an underscore (like PEAR).
 
-So, an example of our write.php class could be a filename of ('/view/browser/write.php')
+So, an example of our **`write.php`** class could be a filename of **`/view/browser/write.php`**
 
 ```php?start_inline=1
 $write = new JEMDiaryWrite_view_browser();

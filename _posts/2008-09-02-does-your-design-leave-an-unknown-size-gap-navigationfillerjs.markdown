@@ -51,7 +51,7 @@ As you can see, you finally run the oFiller.create() function with the ID of the
 
 ### So What Happens?
 
-If you have a div with an ID passed to the oFiller.create() in the above example, the script will calculate the height of the current document, and the location of the div, and then load images in until there is no more room left.  It will not extend past the height of the existing document.
+If you have a `div` with an ID passed to the `oFiller.create()` in the above example, the script will calculate the height of the current document, and the location of the `div`, and then load images in until there is no more room left.  It will not extend past the height of the existing document.
 
 ### Bugs or Limitations?
 

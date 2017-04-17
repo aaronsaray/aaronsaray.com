@@ -1,6 +1,6 @@
 <article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-        <h2 itemprop="name headline" id="{{ include.post.id | slugify }}"><a href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a></h2>
+        <h2 itemprop="name headline" id="post-{{ include.post.id | slugify }}"><a href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a></h2>
     </header>
     <section class="blog-content" itemprop="articleBody">
         {% if include.excerpt %}

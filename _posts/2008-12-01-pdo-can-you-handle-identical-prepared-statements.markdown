@@ -10,13 +10,13 @@ I've been wondering if I should be concerned about re-preparing a prepared state
 ```php?start_inline=1
 public function prep($statement)
 {
-    if ($statement != $this->_lastPrepared) {
-        /**
-         * Store our clear text statement, and then our object
-         */
-        $this->_lastPrepared = $statement;
-        $this->_ps = $this->db->prepare($statement);
-    }
+  if ($statement != $this->_lastPrepared) {
+    /**
+     * Store our clear text statement, and then our object
+     */
+    $this->_lastPrepared = $statement;
+    $this->_ps = $this->db->prepare($statement);
+  }
 }
 ```
 

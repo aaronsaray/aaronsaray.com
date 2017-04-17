@@ -13,34 +13,32 @@ I'm not entirely solid with my testing method.  My idea was to make a forward lo
 $var = 1;
  
 for ($j=0; $j < 10; $j++) {
-    $time_start = microtime(true);
-    for ($i=0; $i < 100000; $i++) {
-        $var = 1;
-    }
-    $time_end = microtime(true);
-    $timef = $time_end - $time_start;
-    print "{$timef} - forward<br />";
+  $time_start = microtime(true);
+  for ($i=0; $i < 100000; $i++) {
+    $var = 1;
+  }
+  $time_end = microtime(true);
+  $timef = $time_end - $time_start;
+  print "{$timef} - forward<br />";
  
+  $time_start = microtime(true);
+  for ($i=100000; 0 < $i; $i--) {
+    $var = 1;
+  }
+  $time_end = microtime(true);
+  $timeb = $time_end - $time_start;
+  print "{$timeb} - backward<br />";
  
-    $time_start = microtime(true);
-    for ($i=100000; 0 < $i; $i--) {
-        $var = 1;
-    }
-    $time_end = microtime(true);
-    $timeb = $time_end - $time_start;
-    print "{$timeb} - backward<br />";
- 
- 
-    if ($timef > $timeb) {
-        print '<strong>Backward Wins</strong>';
-    }
-    else if ($timef < $timeb) {
-        print '<strong>Forward Wins</strong>';
-    }
-    else {
-        print 'ARE YOU KIDDING ME?';
-    }
-    print '<br /><hr />';
+  if ($timef > $timeb) {
+    print '<strong>Backward Wins</strong>';
+  }
+  else if ($timef < $timeb) {
+    print '<strong>Forward Wins</strong>';
+  }
+  else {
+    print 'ARE YOU KIDDING ME?';
+  }
+  print '<br /><hr />';
 }    
 ```
 

@@ -20,9 +20,9 @@ with this in mind, lets figure out what may work best:
 
 ### Class Constants
 
-I'm going to call my class 'config' with the method of 'get' - simple enough.  (I thought about using magic methods and overloading - but bleh - let us just keep it simple)...
+I'm going to call my class `config` with the method of `get` - simple enough.  (I thought about using magic methods and overloading - but bleh - let us just keep it simple)...
 
-For this test, I'm going to have 5 configuration items, all named item1 - item 5.
+For this test, I'm going to have 5 configuration items, all named `item1` - `item 5`.
 
 When I was building my get method, I kept running into an error:
 
@@ -33,27 +33,27 @@ The first way I tried to do it was as so:
 ```php?start_inline=1
 public static function get($item)
 {
-    return self::$item;
+  return self::$item;
 }
 ```
 
-Turns out, that method of accessing an item points to it as being a static variable and not a constant (never-mind the fact that self::item1 would work...)
+Turns out, that method of accessing an item points to it as being a static variable and not a constant (never-mind the fact that `self::item1` would work...)
 
-I have to end up using the constant() function.  Here is my finished testing script:
+I have to end up using the `constant()` function.  Here is my finished testing script:
 
 ```php?start_inline=1
 class config
 {
-    const item1 = 'test';
-    const item2 = 'test';
-    const item3 = 'test';
-    const item4 = 'test';
-    const item5 = 'test';
+  const item1 = 'test';
+  const item2 = 'test';
+  const item3 = 'test';
+  const item4 = 'test';
+  const item5 = 'test';
 
-    public static function get($item)
-    {
-        return constant("self::$item");
-    }
+  public static function get($item)
+  {
+    return constant("self::$item");
+  }
 }
 
 /** illegal **/
@@ -62,7 +62,7 @@ print config::item1;
 print config::get('item1');
 ```
 
-As you can see, I can still access the items 'illegally' by going the class constant route - but I made sure that the get() method works as well.
+As you can see, I can still access the items 'illegally' by going the class constant route - but I made sure that the `get()` method works as well.
 
 Doesn't look too bad...
 
@@ -72,7 +72,7 @@ Ok - so I wanted to try to do it with MySQL - to make it even more dynamic.  Thi
 
 1) need to form some sort of singleton pattern as to not make more than one connection to the db.
 
-2) don't want to create a new object - would like to keep using the static get() method.
+2) don't want to create a new object - would like to keep using the static `get()` method.
 
 3) need to manage mysql credentials (which I originally wanted to store in my config class as elements to reference) in the config class...
 

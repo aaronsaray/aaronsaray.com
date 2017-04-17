@@ -5,7 +5,7 @@ tags:
 - apache
 - PHP
 ---
-I was working on a script that opened up a new connection to the same server with fsockopen to process a php script.  It passed the variables needed through GET and then gathered the output.  Finally, it displayed the output on the screen under the current context.
+I was working on a script that opened up a new connection to the same server with `fsockopen` to process a php script.  It passed the variables needed through GET and then gathered the output.  Finally, it displayed the output on the screen under the current context.
 
 I ran into an issue where now I needed to set a session variable in my calling script, but make the same session information available to the called script (the called script starts its own session too).
 
@@ -25,7 +25,7 @@ $out .= "Cookie: " . session_name() . "=" . session_id() . "; path=/\r\n";
 
 **Close your session before you re-open it**
 
-Doh!  I passed my cookie values, and my apache/php kept freezing.  I forgot to close my session before I posted to the open fsock connection.  Do this using [session_write_close()](http://php.net/session_write_close).
+Doh!  I passed my cookie values, and my apache/php kept freezing.  I forgot to close my session before I posted to the open fsock connection.  Do this using [`session_write_close()`](http://php.net/session_write_close).
 
 **All in all, it wasn't as hard as I thought**
 

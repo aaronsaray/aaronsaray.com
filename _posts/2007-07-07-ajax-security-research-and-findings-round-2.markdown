@@ -14,36 +14,36 @@ First off...
 
 Well, I had talked about an issue where you could substitute the javascript object across frames. Well I tried this example. Load up javascripttest.html and click the link. Nope, no dice in IE 6 and 7, FF 1.5 and 2. Whew.
 
-**javascripttest.html**
+**`javascripttest.html`**
 ```html
 <html>
-    <body>
-        <script type="text/javascript">
-            function Object() {
-                this.hacked = 'test2';
-            }
-            document.Object = Object;
-        </script>
-        <iframe src="http://release.local/test.html"></iframe>
-    </body>
+  <body>
+    <script type="text/javascript">
+      function Object() {
+        this.hacked = 'test2';
+      }
+      document.Object = Object;
+    </script>
+    <iframe src="http://release.local/test.html"></iframe>
+  </body>
 </html>
 ```
 
-**test.html**
+**`test.html`**
 ```html
 <html>
-    <body>
-        <script type="text/javascript">
-            function clicker() {
-                var test = {};
-                var test2 = new Object();
-        
-                alert (test.hacked);
-                alert (test2.hacked);
-            }
-        </script>
-        <a href="#" onclick="clicker()">bleh</a>
-    </body>
+  <body>
+    <script type="text/javascript">
+      function clicker() {
+        var test = {};
+        var test2 = new Object();
+       
+        alert (test.hacked);
+        alert (test2.hacked);
+      }
+    </script>
+    <a href="#" onclick="clicker()">bleh</a>
+  </body>
 </html>
 ```
 

@@ -16,13 +16,15 @@ I always work locally when I design web pages. For example, when I worked on the
 
 I also suggest viewing the source of the myspace page and commenting / removing a specific javascript call:
 
+```javascript
 oas_ad(“www.myspace.com/viewprofile,11013005″,”Leaderboard2”);
+```
 
 This appears to generate the top ad on your profile. I found it better and easier on my eyes to take a screenshot of the ad, and use that.
 
 ### What Do I have to keep?
 
-You have to keep the ad at the top; that's why I suggested taking a screedshot. Place this ad in the center of your page. That appears to be the only real big key item to keep.
+You have to keep the ad at the top; that's why I suggested taking a screenshot. Place this ad in the center of your page. That appears to be the only real big key item to keep.
 
 ### What SHOULD I keep?
 
@@ -46,28 +48,28 @@ The first CSS I added is this:
 
 ```css
 .main {
-    position: absolute;
-    left: 50%;
-    top: 125px;
-    width: 1000px;
-    z-index: 1;
-    margin-left: -500px;
+  position: absolute;
+  left: 50%;
+  top: 125px;
+  width: 1000px;
+  z-index: 1;
+  margin-left: -500px;
 }
 
 .maintable {
-    width: 1000px;
-    height: 800px;
-    cellpadding: 0px;
-    cellspacing: 0px;
-    background-color: 000000;
+  width: 1000px;
+  height: 800px;
+  cellpadding: 0px;
+  cellspacing: 0px;
+  background-color: 000000;
 }
 ```
 
 OK – but you said you were going to use Well-Formed HTML – I see problems!
 
-Right-o you do. The first thing you'll notice is that there are no IDs referenced in this css. With a name like ‘main' you can pretty much assume there's only one version. The next thing you'll notice is the lack of pound signs in front of the css hex colors. The reason for this is that MySpace filters out the # symbol for whatever reason. So, we can't reference elements by id's and we can't use properly declared hex values. Luckily for us, most browsers will interpret that 6 digit number as hex. Whew!
+Right-o you do. The first thing you'll notice is that there are no IDs referenced in this css. With a name like `main` you can pretty much assume there's only one version. The next thing you'll notice is the lack of pound signs in front of the css hex colors. The reason for this is that MySpace filters out the `#` symbol for whatever reason. So, we can't reference elements by id's and we can't use properly declared hex values. Luckily for us, most browsers will interpret that 6 digit number as hex. Whew!
 
-The screen size (width elements) are based on the normal screen size. Technically, MySpace's layout is only 800px wide, but I tend to design for 1000px. So I made mine that wide. If you go with an 800px layout, margin-left would be negative half of that... so -400px.
+The screen size (width elements) are based on the normal screen size. Technically, MySpace's layout is only `800px` wide, but I tend to design for `1000px`. So I made mine that wide. If you go with an `800px` layout, `margin-left` would be negative half of that... so `-400px`.
 
 It is also important to apply a height to the table initially to block out all the content. Depending on the length of your new content, you may not need to do this. I set mine to what works. Finally, make sure to have a background color or image in order to block out the content.
 
@@ -75,11 +77,11 @@ Next, the equivalent HTML (in the Who I'd like to meet section)
 
 ```html
 <div class="main">
-    <table class="maintable">
-        <tr><td valign="top">
-            <!-- content here -->
-        </td></tr>
-    </table>
+  <table class="maintable">
+    <tr><td valign="top">
+      <!-- content here -->
+    </td></tr>
+  </table>
 </div>
 ```
 
@@ -97,7 +99,7 @@ Sometimes the comments still end up showing through onto your front page, so ins
 
 ### Now, take a quick preview!
 
-You should be able to open this page up locally in a webbrowser, and see your brand – new ... BLANK myspace page. You have the ad, and that's about it.
+You should be able to open this page up locally in a web browser, and see your brand – new ... BLANK myspace page. You have the ad, and that's about it.
 
 ### What should be my next steps?
 
@@ -105,7 +107,7 @@ I opened up a new page in Gimp (like photoshop) and started creating my layout, 
 
 ```css
 a img {
-    border: none;
+  border: none;
 }
 ```
 
@@ -117,8 +119,8 @@ You can still have a user comment on your profile by providing the typical comme
 
 ```html
 <form method="post" action="http://comments.myspace.com/index.cfm?fuseaction=user.ConfirmComment">
-    <input type="hidden" name="friendID" value="##yourfriendidnum##">
-    <textarea name="f_comments"></textarea><input type="submit" />
+  <input type="hidden" name="friendID" value="##yourfriendidnum##">
+  <textarea name="f_comments"></textarea><input type="submit" />
 </form>
 ```
 
@@ -132,34 +134,36 @@ You may have noticed that you no longer have your top friends or a listing of yo
 
 If you don't know PHP and don't have an understanding of programming, this part may be a bit greek.
 
-The first thing I wanted to do was get my friend count. Locally I was able to use file_get_contents() with a remote URL. My hosting provider had allow_url_fopen turned off however. So I had to create my own hacked up function (side note: I should point out that I usually code a lot nicer than this – but in the spirit of myspace, I hacked everything together too). I created the function get_contents to use in place of file_get_contents();
+The first thing I wanted to do was get my friend count. Locally I was able to use `file_get_contents()` with a remote URL. My hosting provider had `allow_url_fopen` turned off however. So I had to create my own hacked up function (side note: I should point out that I usually code a lot nicer than this – but in the spirit of myspace, I hacked everything together too). I created the function `get_contents()` to use in place of `file_get_contents()`
 
 ```php?start_inline=1
 function get_contents($url)
 {
-    $parts = explode('/', $url, 2);
-    $fp = fsockopen($parts[0], 80, $errno, $errstr, 30);
-    if (!$fp) {
-        die();
-    } else {
-        $out = "GET /{$parts[1]} HTTP/1.1\r\n";
-        $out .= "Host: {$parts[0]}\r\n";
-        $out .= "Connection: Close\r\n\r\n";
-        $f = '';
-        fwrite ($fp, $out);
-        while (!feof($fp)) {
-            $f .= fgets($fp, 128);
-        }
-        fclose($fp);
+  $parts = explode('/', $url, 2);
+  $fp = fsockopen($parts[0], 80, $errno, $errstr, 30);
+  if (!$fp) {
+    die();
+  } else {
+    $out = "GET /{$parts[1]} HTTP/1.1\r\n";
+    $out .= "Host: {$parts[0]}\r\n";
+    $out .= "Connection: Close\r\n\r\n";
+    $f = '';
+    fwrite ($fp, $out);
+    while (!feof($fp)) {
+      $f .= fgets($fp, 128);
     }
-    return $f;
+    fclose($fp);
+  }
+  return $f;
 }
 ```
 
 The first thing I do is read in the profile page (yay – the content is still there – its just been hidden with CSS).
 
 ```php?start_inline=1
-$f = get_contents ('profile.myspace.com/index.cfm?fuseaction=user.viewprofile&amp;friendid=#######');
+$f = get_contents(
+  'profile.myspace.com/index.cfm?fuseaction=user.viewprofile&amp;friendid=#######'
+);
 ```
 
 ### Remote Text Isn't Allowed! – Use an image
@@ -201,15 +205,15 @@ $items = array_reverse($matches[1]);
 
 First off, it gets all the full paths for the images, then it aggregates them in a reverse array. I reversed it because my most important friend is first... and when I reverse it, the least important one is written the image first (possibly being overwritten).
 
-Once again, read in each file's content. You could use the gd's createimagejpg with remote URLs ... but I couldn't. (random side note: yes, I am not allowing for non jpgs... it might crash.) I had to end up using wget through passthru() call (dumb: why have remote urls off but allow system calls?). I did this:
+Once again, read in each file's content. You could use the GD's `createimagejpg()` with remote URLs ... but I couldn't. (random side note: yes, I am not allowing for non jpgs... it might crash.) I had to end up using `wget` through `passthru()` call (dumb: why have remote urls off but allow system calls?). I did this:
 
 ```php?start_inline=1
 foreach ($items as $item) {
-    passthru ("wget {$item}");
+  passthru ("wget {$item}");
 }
 ```
 
-Then I read them all in using glob(*.jpg) into an array that we iterate through... but first: create your image to be used as the main item.
+Then I read them all in using `glob(*.jpg)` into an array that we iterate through... but first: create your image to be used as the main item.
 
 ```php?start_inline=1
 $mainpic = imagecreatetruecolor(450, 170);
@@ -217,22 +221,22 @@ $fill = imagecolorallocate($mainpic, 16, 16, 16);
 imagefill($mainpic, 0, 0, $fill);
 ```
 
-Of course, now that I have an array of jpg files, the importance is no longer available by the array_reverse() call – so I just do a quick shuffle() on the array.
+Of course, now that I have an array of jpg files, the importance is no longer available by the `array_reverse()` call – so I just do a quick `shuffle()` on the array.
 
 Finally, the final loop:
 
 ```php?start_inline=1
 foreach ($jpgs as $jpg) {
-    $pic = imagecreatefromjpeg($jpg);
-    $size = getimagesize($jpg);
-    $x = rand(1, 380);
-    $y = rand(1, 120);
-    imagecopymerge($mainpic, $pic, $x, $y, 0, 0, $size[0],$size[1], 100);
-    unlink($jpg);
+  $pic = imagecreatefromjpeg($jpg);
+  $size = getimagesize($jpg);
+  $x = rand(1, 380);
+  $y = rand(1, 120);
+  imagecopymerge($mainpic, $pic, $x, $y, 0, 0, $size[0],$size[1], 100);
+  unlink($jpg);
 }
 ```
 
-We create a new GD image from each, get their size into the size array, generate a random x,y coordinate 50px less than our main picture (cuz we don't want to totally write them off the screen!) We finally merge them in with the original image, and delete our wget version (you wouldn't have to do this with the remote url option).
+We create a new GD image from each, get their size into the size array, generate a random x,y coordinate `50px` less than our main picture (cuz we don't want to totally write them off the screen!) We finally merge them in with the original image, and delete our wget version (you wouldn't have to do this with the remote url option).
 
 And ...drum roll please... the friend collage.
 

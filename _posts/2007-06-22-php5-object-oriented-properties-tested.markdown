@@ -10,7 +10,7 @@ _I'm using PHP 5.2.0 on Windows XP for these tests._
 
 ### var_dump() will be our friend
 
-We're going to use var_dump() to demonstrate all of our properties - its the best printable version of testing I've found so far.
+We're going to use `var_dump()` to demonstrate all of our properties - its the best printable version of testing I've found so far.
 
 So without further rambling, lets get started with ... private constructors
 
@@ -20,28 +20,27 @@ While the term 'proper' is debatable, the most improper solution is NOT to make 
 
 ```php?start_inline=1
 class classTest {
+  protected static $_self = null;
 
-    protected static $_self = null;
+  protected $_myVar = 'initial value';
 
-    protected $_myVar = 'initial value';
+  protected function __construct()
+  {
+    $this->_myVar = 'I have been constructed at: ' . date('r');
+  }
 
-    protected function __construct()
-    {
-        $this->_myVar = 'I have been constructed at: ' . date('r');
+  public function getInstance()
+  {
+    if (!(self::$_self instanceof self)) {
+      self::$_self = new self();
     }
 
-    public function getInstance()
-    {
-        if (!(self::$_self instanceof self)) {
-            self::$_self = new self();
-        }
-
-        return self::$_self;
-    }
+    return self::$_self;
+  }
 }
 ```
 
-A quick explanation: In the future examples, we're going to set $_myVar, a protected var, to show our progress and as a good reference to what happened.  In this first example, we have a protected constructor and a singleton pattern 'getInstance' function - a public static function that will return a new instance of 'self'.
+A quick explanation: In the future examples, we're going to set `$_myVar`, a protected var, to show our progress and as a good reference to what happened.  In this first example, we have a protected constructor and a singleton pattern `getInstance` function - a public static function that will return a new instance of `self`.
 
 Lets run this code:
 
@@ -49,11 +48,13 @@ Lets run this code:
 $myClassTest = new classTest();
 ```
 
-**Fatal error**:  Call to protected classTest::__construct() from invalid context in **C:\DEVELOPMENT\temp\methodtest.php** on line **22**
+Error:
 
-Ok great - this means that we can't run this construct - we can't create a new 'classTest' from outside of the class - this is awesome.  This stops us from making new instances - so we'll moving to our singleton.  Our constructor can still be called on allowed class creation.  The reason this is important is that could reduce your code refactoring.  Say, for example, you wish to refactor your base database class to be singleton, but the connection is created in the constructor, its a small change - create a singleton instance method, and make the constructor non-public.
+    **Fatal error**:  Call to protected classTest::__construct() from invalid context in **C:\DEVELOPMENT\temp\methodtest.php** on line **22**
 
-Lets move on.  How do we get the same instance of this class?  And lets make sure it ran?  Finally, lets make sure that we're really singleton-y?  Well, lets call an instance of the class, var dump it, sleep a bit, and call it again.  To prove it, our first call should dump our protected variable with a timestamp when it was constructed.  The second call should give the exact message...
+Ok great - this means that we can't run this construct - we can't create a new `classTest` from outside of the class - this is awesome.  This stops us from making new instances - so we'll moving to our singleton.  Our constructor can still be called on allowed class creation.  The reason this is important is that could reduce your code refactoring.  Say, for example, you wish to refactor your base database class to be singleton, but the connection is created in the constructor, its a small change - create a singleton instance method, and make the constructor non-public.
+
+Let's move on.  How do we get the same instance of this class?  And let's make sure it ran?  Finally, lets make sure that we're really singleton-y?  Well, lets call an instance of the class, var dump it, sleep a bit, and call it again.  To prove it, our first call should dump our protected variable with a timestamp when it was constructed.  The second call should give the exact message...
 
 ```php?start_inline=1
 $myClassTest = classTest::getInstance();
@@ -65,42 +66,43 @@ var_dump($newMyClassTest);
 
 Our output?
 
-object(classTest)#1 (1) { ["_myVar:protected"]=>  string(59) "I have been constructed at: Thu, 21 Jun 2007 19:00:17 -0500" }
-
-object(classTest)#1 (1) { ["_myVar:protected"]=> string(59) "I have been constructed at: Thu, 21 Jun 2007 19:00:17 -0500" }
+    object(classTest)#1 (1) { ["_myVar:protected"]=>  string(59) "I have been constructed at: Thu, 21 Jun 2007 19:00:17 -0500" }
+    
+    object(classTest)#1 (1) { ["_myVar:protected"]=> string(59) "I have been constructed at: Thu, 21 Jun 2007 19:00:17 -0500" }
 
 This proves that our singleton method works.  Yay!.
 
-Lets move on to another one of the common complaints...
+Let's move on to another one of the common complaints...
 
 ### Are the overload methods of a class, the getters and setters, for example, able to be modified in their scope?
 
-Lets start out with a basic example of overloading a class.  Our __get() method will allow us to get any value our method allows us to by referring to it as a public object attribute, and __set() will allow... well the opposite.
+Let's start out with a basic example of overloading a class.  Our `__get()` method will allow us to get any value our method allows us to by referring to it as a public object attribute, and `__set()` will allow... well the opposite.
 
 ```php?start_inline=1
 class classTest
 {
-    protected $_protectedVars = array();
+  protected $_protectedVars = array();
 
-    public function __construct()
-    {
-        $this->_protectedVars['constructMessage'] = 'I have been constructed at: ' . date('r');
-    }
+  public function __construct()
+  {
+    $this->_protectedVars['constructMessage'] = 'I have been constructed at: ' 
+                                              . date('r');
+  }
 
-    public function __get($item)
-    {
-        if (isset($this->_protectedVars[$item])) {
-            return $this->_protectedVars[$item];
-        }
-        else {
-            throw new exception ("Don't be silly, [{$this}] is not in the protected vars");
-        }
+  public function __get($item)
+  {
+    if (isset($this->_protectedVars[$item])) {
+      return $this->_protectedVars[$item];
     }
+    else {
+      throw new exception ("Don't be silly, [{$this}] is not in the protected vars");
+    }
+  }
     
-    public function __set($item, $value)
-    {
-        $this->_protectedVars[$item] = $value;
-    }
+  public function __set($item, $value)
+  {
+    $this->_protectedVars[$item] = $value;
+  }
 }
 ```
 
@@ -115,15 +117,15 @@ $myClassTest->newMessage = 'yay!';
 var_dump($myClassTest);
 ```
 
-It seems to me that we should make a new instance of the class, see the protected array with one key 'constructMessage'.  Then, we can refer to the key, because of the 'magic' of our method __get(), and print it.  Finally, our super magic method will allow us to set that protected variable through the class.  Standard overloading.  Lets see what happens.
+It seems to me that we should make a new instance of the class, see the protected array with one key `constructMessage`.  Then, we can refer to the key, because of the 'magic' of our method `__get()`, and print it.  Finally, our super magic method will allow us to set that protected variable through the class.  Standard overloading.  Lets see what happens.
 
 Output:
 
-object(classTest)#1 (1) { ["_protectedVars:protected"]=>  array(1) { ["constructMessage"]=>  string(59) "I have been constructed at: Thu, 21 Jun 2007 19:17:21 -0500" } }
+    object(classTest)#1 (1) { ["_protectedVars:protected"]=>  array(1) { ["constructMessage"]=>  string(59) "I have been constructed at: Thu, 21 Jun 2007 19:17:21 -0500" } }
 
 I have been constructed at: Thu, 21 Jun 2007 19:17:21 -0500
 
-object(classTest)#1 (1) { ["_protectedVars:protected"]=> array(2) { ["constructMessage"]=> string(59) "I have been constructed at: Thu, 21 Jun 2007 19:17:21 -0500" ["newMessage"]=> string(4) "yay!" } }
+    object(classTest)#1 (1) { ["_protectedVars:protected"]=> array(2) { ["constructMessage"]=> string(59) "I have been constructed at: Thu, 21 Jun 2007 19:17:21 -0500" ["newMessage"]=> string(4) "yay!" } }
 
 Yes - it worked!  Thank you 'magic overloading' - but this isn't the question.  The question is, can we have public getters, but not public setters.
 
@@ -132,7 +134,7 @@ I changed the function...
 ```php?start_inline=1
 private function __set($item, $value)
 {
-    $this->_protectedVars[$item] = $value;
+  $this->_protectedVars[$item] = $value;
 }
 ```
 
@@ -152,13 +154,13 @@ Our output is:
 
 So we know, without having attributes defined, we can still assign them publicly.  So, maybe that's what my class is doing?  (see der note... this is all pointless right now - but I'm on a roll!!!)
 
-Lets put a very dirty hack in - and print out to the screen when the __set method is called.
+Let's put a very dirty hack in - and print out to the screen when the `__set()` method is called.
 
 ```php?start_inline=1
 private function __set($item, $value)
 {
-    print "set was called";
-    $this->_protectedVars[$item] = $value;
+  print "set was called";
+  $this->_protectedVars[$item] = $value;
 }
 ```
 
@@ -178,17 +180,17 @@ Well, then the question becomes... can we hack together this functionality?  YES
 
 So, our objective is not to allow the setter to be executed unless we've extended the class and have an instance of the extended class (um... not exactly our solution, YET, but lets work on it...  If you see our example, this allows us to invoke the setter still 'publicly' - just not directly yet)
 
-Lets replace __set with this version (note: we're still gonna make it 'protected' - not so much because it matters but maybe to give a hint on the scope of this method)
+Let's replace `__set()` with this version (note: we're still gonna make it 'protected' - not so much because it matters but maybe to give a hint on the scope of this method)
 
 ```php?start_inline=1
 protected function __set($item, $value)
 {
-    if (get_parent_class($this)) {
-        $this->_protectedVars[$item] = $value;
-    }
-    else {
-        throw new exception("We can't set this because you're not extending it!");
-    }
+  if (get_parent_class($this)) {
+    $this->_protectedVars[$item] = $value;
+  }
+  else {
+    throw new exception("We can't set this because you're not extending it!");
+  }
 }
 ```
 
@@ -202,17 +204,17 @@ var_dump($myClassTest);
 
 Results in:
 
-**Fatal error**: Uncaught exception 'Exception' with message 'We can't set this because you're not extending it!' in C:\DEVELOPMENT\temp\methodtest.php:32 Stack trace: #0 C:\DEVELOPMENT\temp\methodtest.php(46): classTest->__set('newMessage', 'yay!') #1 {main} thrown in **C:\DEVELOPMENT\temp\methodtest.php** on line **32**
+    **Fatal error**: Uncaught exception 'Exception' with message 'We can't set this because you're not extending it!' in C:\DEVELOPMENT\temp\methodtest.php:32 Stack trace: #0 C:\DEVELOPMENT\temp\methodtest.php(46): classTest->__set('newMessage', 'yay!') #1 {main} thrown in **C:\DEVELOPMENT\temp\methodtest.php** on line **32**
 
 Well, lets add on our extended class, and change our code that we're invoking:
 
 ```php?start_inline=1
 class extenderClassTest extends classTest
 {
-    public function __construct()
-    {
-        $this->_protectedVars['constructMessage'] = 'This was made from the extender';
-    }
+  public function __construct()
+  {
+    $this->_protectedVars['constructMessage'] = 'This was made from the extender';
+  }
 }
 
 $myClassTest = new extenderClassTest();
@@ -234,31 +236,31 @@ _Update:  I still haven't figured out a way to do this... I am open to comments!
 
 To be honest, I haven't seen this in many conversations, but I was curious.
 
-Lets focus on this code of 'classTest':
+Let's focus on this code of `classTest`:
 
 ```php?start_inline=1
 public function __get($item)
 {
-    if (isset($this->_protectedVars[$item])) {
-        return $this->_protectedVars[$item];
-    }
-    else {
-        throw new exception ("Don't be silly, [{$this}] is not in the protected vars");
-    }
+  if (isset($this->_protectedVars[$item])) {
+    return $this->_protectedVars[$item];
+  }
+  else {
+    throw new exception ("Don't be silly, [{$this}] is not in the protected vars");
+  }
 }
 ```
 
-I first tried putting the reference character (ampersand) in front of the $this... syntax error.  In front of the _protectedVars - still no dice - syntax error.  Next, try putting an ampersand in front of __get(... nopers - no errors but doesn't work.  Lets check out our assignment code:
+I first tried putting the reference character (ampersand) in front of the `$this`... syntax error.  In front of the `_protectedVars` - still no dice - syntax error.  Next, try putting an ampersand in front of __get(... nopers - no errors but doesn't work.  Lets check out our assignment code:
 
 ```php?start_inline=1
 $myItem = $myClassTest->constructMessage;
 ```
 
-What about putting the ampersand after the =?  Then you get this error!
+What about putting the ampersand after the `=`?  Then you get this error!
 
-**Notice:** Indirect modification of overloaded property classTest::$constructMessage has no effect in **C:\DEVELOPMENT\temp\methodtest.php **on line **30**
+    **Notice:** Indirect modification of overloaded property classTest::$constructMessage has no effect in **C:\DEVELOPMENT\temp\methodtest.php **on line **30**
 
-It looks like there is no escaping the __set magic method...
+It looks like there is no escaping the `__set()` magic method...
 
 ### Well, it seems that the OO model isn't perfect... 
 

@@ -7,7 +7,7 @@ tags:
 ---
 There are many interpretations of MVC - there are less definitions but more implementations.  I want to cover what I personally do when using PHP for MVC.  I call it MVCFDH.
 
-[![](/uploads/2008/mvc.jpg)](/uploads/2008/mvc.jpg){: .thumbnail}
+[![](/uploads/2008/mvc.jpg)](/uploads/2008/mvc.jpg){: .thumbnail}{: .pull-right}
 
 ### What is MVC?
 

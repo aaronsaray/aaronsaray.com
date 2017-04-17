@@ -13,11 +13,11 @@ With our recent upgrade to php at "the triangle," I felt it was time to start wo
 
 ### Get XDebug
 
-[![](/uploads/2008/xdebug-logo.png)](/uploads/2008/xdebug-logo.png){: .thumbnail} 
+[![](/uploads/2008/xdebug-logo.png)](/uploads/2008/xdebug-logo.png){: .thumbnail}{: .pull-right}
 
-I went to xdebug.org and acquired my version of the debugger dll for windows.  I'm using Windows XP, Apache 2.2.8 and PHP 5.2.5 for this article.  The Xdebug I downloaded was [XDebug 2.03 Against PHP 5.2.5](http://xdebug.org/link.php?url=xdebug203-52-win).  (I thought about getting the binary snapshot of 2.1dev... but finally decided against it - smartly.)
+I went to [xdebug.org](http://xdebug.org) and acquired my version of the debugger dll for windows.  I'm using Windows XP, Apache 2.2.8 and PHP 5.2.5 for this article.  The Xdebug I downloaded was [XDebug 2.03 Against PHP 5.2.5](http://xdebug.org/link.php?url=xdebug203-52-win).  (I thought about getting the binary snapshot of 2.1dev... but finally decided against it - smartly.)
 
-I modified my php.ini file to load in the extension file.  On windows, this is a TS type - or thread safe.  Also remember, this is a zend extension, not a normal extension.  At the end of my php.ini file, I started with this:
+I modified my **`php.ini`** file to load in the extension file.  On windows, this is a TS type - or thread safe.  Also remember, this is a zend extension, not a normal extension.  At the end of my **`php.ini`** file, I started with this:
     
     ;Xdebug stuff
     zend_extension_ts="c:\php\ext\php_xdebug-2.0.3-5.2.5.dll"
@@ -25,7 +25,7 @@ I modified my php.ini file to load in the extension file.  On windows, this is a
 
 Ok - good to go - restarted apache and everything worked fine.
 
-Just for fun, jump out and do a phpinfo().  You should find the following lines:
+Just for fun, jump out and do a `phpinfo()`.  You should find the following lines:
 
     This program makes use of the Zend Scripting Language Engine:
     Zend Engine v2.2.0, Copyright (c) 1998-2007 Zend Technologies
@@ -35,7 +35,7 @@ Additionally, in the modules section, xdebug will be listed.  This will show all
 
 ### var_dump() - the first xdebug feature
 
-Supposedly, when you install xdebug, it pretties up the output of var_dump.
+Supposedly, when you install xdebug, it pretties up the output of `var_dump`.
 
 My first test script was to see if xdebug was really doing what it claimed:
 
@@ -46,19 +46,19 @@ var_dump($arrayName);
 
 Loaded it up - and ... no.  It looked exactly the same as it did before.  Nothing special.
 
-After looking around in my php.ini, I noticed one thing that I had changed from the default setting.  I normally turn off html errors because I don't have the manual installed or click through to a web manual.  Well, I had it turned off now.  I enabled it with this setting in my php.ini file
+After looking around in my **`php.ini`**, I noticed one thing that I had changed from the default setting.  I normally turn off html errors because I don't have the manual installed or click through to a web manual.  Well, I had it turned off now.  I enabled it with this setting in my php.ini file
     
     html_errors = On
     
-Now, the var_dump() looks great:
+Now, the `var_dump()` looks great:
 
-**array**
-  0 => int 0
-  1 => int 1
-  2 => int 2
-  3 => int 3
-  4 => int 4
-  5 => int 5
+    **array**
+      0 => int 0
+      1 => int 1
+      2 => int 2
+      3 => int 3
+      4 => int 4
+      5 => int 5
 
 ### OOOh and Errors are Pretty
 
@@ -74,25 +74,25 @@ print $a;
 
 which prompted this error:
 
-<table cellpadding="1" cellspacing="0" border="1" dir="ltr" >
-<tr >( ! ) Notice: Undefined variable: a in C:\code\default\htdocs\test.php on line _2_</tr>
-<tr >Call Stack</tr>
-<tr >#TimeMemoryFunctionLocation</tr>
-<tr >
-<td style="background-color: #eeeeec" align="center" >1
-</td>
-<td style="background-color: #eeeeec" align="center" >0.0005
-</td>
-<td style="background-color: #eeeeec" align="right" >49328
-</td>
-<td style="background-color: #eeeeec" >{main}(  )
-</td>
-<td style="background-color: #eeeeec" title="C:\code\default\htdocs\test.php" >..\test.php**:**0
-</td></tr>
+    <table cellpadding="1" cellspacing="0" border="1" dir="ltr" >
+    <tr >( ! ) Notice: Undefined variable: a in C:\code\default\htdocs\test.php on line _2_</tr>
+    <tr >Call Stack</tr>
+    <tr >#TimeMemoryFunctionLocation</tr>
+    <tr >
+    <td style="background-color: #eeeeec" align="center" >1
+    </td>
+    <td style="background-color: #eeeeec" align="center" >0.0005
+    </td>
+    <td style="background-color: #eeeeec" align="right" >49328
+    </td>
+    <td style="background-color: #eeeeec" >{main}(  )
+    </td>
+    <td style="background-color: #eeeeec" title="C:\code\default\htdocs\test.php" >..\test.php**:**0
+    </td></tr>
+    
+    </table>
 
-</table>
-
-Looks pretty cool.  Xdebug has the ability to show extra variables, including the super globals, in this dump.  For the most part, however, I'm only interested in my local scope variables - I don't need to know what $_SERVER['HOST_NAME'] is if I have an undefined variable.  I added this setting to my php.ini:
+Looks pretty cool.  Xdebug has the ability to show extra variables, including the super globals, in this dump.  For the most part, however, I'm only interested in my local scope variables - I don't need to know what `$_SERVER['HOST_NAME']` is if I have an undefined variable.  I added this setting to my php.ini:
     
     xdebug.show_local_vars = 1
     
@@ -101,69 +101,71 @@ I then used this code for testing:
 ```php?start_inline=1
 $b = 'test';
 if ($b) {
-    print $a;
+  print $a;
 }
 ```
 
 After executing it, I got this error:
 
-<table cellpadding="1" cellspacing="0" border="1" dir="ltr" >
-<tr >( ! ) Notice: Undefined variable: a in C:\code\default\htdocs\test.php on line _5_</tr>
-<tr >Call Stack</tr>
-<tr >#TimeMemoryFunctionLocation</tr>
-<tr >
-<td style="background-color: #eeeeec" align="center" >1
-</td>
-<td style="background-color: #eeeeec" align="center" >0.0010
-</td>
-<td style="background-color: #eeeeec" align="right" >49864
-</td>
-<td style="background-color: #eeeeec" >{main}(  )
-</td>
-<td style="background-color: #eeeeec" title="C:\code\default\htdocs\test.php" >..\test.php**:**0
-</td></tr>
-
-<tr >Variables in local scope (#1)</tr>
-<tr >
-<td style="background-color: #eeeeec" >$a
-</td>
-<td colspan="2" style="background-color: #eeeeec" >_Undefined_
-</td></tr>
-<tr >
-<td colspan="2" align="right" style="background-color: #eeeeec" valign="top" >
+    <table cellpadding="1" cellspacing="0" border="1" dir="ltr" >
+    <tr >( ! ) Notice: Undefined variable: a in C:\code\default\htdocs\test.php on line _5_</tr>
+    <tr >Call Stack</tr>
+    <tr >#TimeMemoryFunctionLocation</tr>
+    <tr >
+    <td style="background-color: #eeeeec" align="center" >1
+    </td>
+    <td style="background-color: #eeeeec" align="center" >0.0010
+    </td>
+    <td style="background-color: #eeeeec" align="right" >49864
+    </td>
+    <td style="background-color: #eeeeec" >{main}(  )
+    </td>
+    <td style="background-color: #eeeeec" title="C:\code\default\htdocs\test.php" >..\test.php**:**0
+    </td></tr>
     
-    $b =
-
-</td>
-<td colspan="4" style="background-color: #eeeeec" >
+    <tr >Variables in local scope (#1)</tr>
+    <tr >
+    <td style="background-color: #eeeeec" >$a
+    </td>
+    <td colspan="2" style="background-color: #eeeeec" >_Undefined_
+    </td></tr>
+    <tr >
+    <td colspan="2" align="right" style="background-color: #eeeeec" valign="top" >
+        
+        $b =
     
-    <small>string</small> <font color="#cc0000">'test'</font> <i>(length=4)</i>
+    </td>
+    <td colspan="4" style="background-color: #eeeeec" >
+        
+        <small>string</small> <font color="#cc0000">'test'</font> <i>(length=4)</i>
+        
     
+    </td></tr>
+    </table>
 
-</td></tr>
-</table>
-
-As you can see, this is helpful to me to know that $b had a value - and that we were in the if statement because of $b's value.
+As you can see, this is helpful to me to know that `$b` had a value - and that we were in the if statement because of `$b`'s value.
 
 There are more settings for xdebug's error dumping routine - check them out at [the variable display pages at xdebug.org](http://xdebug.org/docs/display).
 
 ### Tracing isn't just for tattoo artists anymore
 
-The next thing I wanted to set up was Xdebug's stack trace feature.  This will give useful information about which functions were called, how many times, and their memory usage.  Xdebug integrates additional commands into the php script to start and stop tracing whenever needed.  However, if you use auto_prepend files, you may want to turn on tracing immediately/automatically.  I added the following settings to my php.ini:
+The next thing I wanted to set up was Xdebug's stack trace feature.  This will give useful information about which functions were called, how many times, and their memory usage.  Xdebug integrates additional commands into the php script to start and stop tracing whenever needed.  However, if you use `auto_prepend` files, you may want to turn on tracing immediately/automatically.  I added the following settings to my **`php.ini`**:
 
-    xdebug.auto_trace = 1
-    xdebug.collect_return = 1
-    xdebug.trace_output_dir = c:/tmp
-    xdebug.trace_output_name = trace.%H
+```ini
+xdebug.auto_trace = 1
+xdebug.collect_return = 1
+xdebug.trace_output_dir = c:/tmp
+xdebug.trace_output_name = trace.%H
+```
 
-The first line turns on tracing on every script (this is also useful because at "the triangle" we use some PHP scripts to serve CSS), the next one collects return results from functions into the trace (on larger functions/projects, this might be slow...) and the third one adds where we want to put the script.  The last setting is to name the actual trace file.  In this case, I'm using the Host name.  There are additional naming cards available - check out the [documentation for these](http://xdebug.org/docs/execution_trace#trace_output_name).  I found hostname to be the most useful - or %R on occasion - which is the REQUEST_URI.
+The first line turns on tracing on every script (this is also useful because at "the triangle" we use some PHP scripts to serve CSS), the next one collects return results from functions into the trace (on larger functions/projects, this might be slow...) and the third one adds where we want to put the script.  The last setting is to name the actual trace file.  In this case, I'm using the Host name.  There are additional naming cards available - check out the [documentation for these](http://xdebug.org/docs/execution_trace#trace_output_name).  I found hostname to be the most useful - or `%R` on occasion - which is the `REQUEST_URI`.
 
 To generate my trace, I used this code:
 
 ```php?start_inline=1
 function tester($element)
 {
-    return trim($element);
+  return trim($element);
 }
 
 $a = ' test ';
@@ -191,13 +193,15 @@ As you can tell, simple - but could be useful when you have a larger application
 
 Xdebug allows for code profiling as well.  This will be useful to determine which functions are taking longer than others to run - in a way identifying the bottlenecks of your script.
 
-In order to get profiling enabled, I added these settings to my php.ini file.
+In order to get profiling enabled, I added these settings to my **`php.ini`** file.
     
-    xdebug.profiler_enable = 1
-    xdebug.profiler_output_dir = c:/tmp
-    xdebug.profiler_output_name = cachegrind.out.%H%R
+```ini
+xdebug.profiler_enable = 1
+xdebug.profiler_output_dir = c:/tmp
+xdebug.profiler_output_name = cachegrind.out.%H%R
+```
 
-The first setting enables profiling.  You can add a setting called xdebug.profile_enable_trigger if you wanted to generate profiles only for selected scripts.  I wanted to be able to catch everything, so I left that one out.  The profile files will be sent to c:/tmp.  Finally, the files will be named cachegrind.out with HTTP_HOST (%H) and REQUEST_URI (%R).  For more options on naming, check out the xdebug documentation page for [profile file names](http://xdebug.org/docs/all_settings#trace_output_name) (these are the same as the trace file output).
+The first setting enables profiling.  You can add a setting called `xdebug.profile_enable_trigger` if you wanted to generate profiles only for selected scripts.  I wanted to be able to catch everything, so I left that one out.  The profile files will be sent to `c:/tmp`.  Finally, the files will be named `cachegrind.out` with `HTTP_HOST (%H)` and `REQUEST_URI (%R)`.  For more options on naming, check out the xdebug documentation page for [profile file names](http://xdebug.org/docs/all_settings#trace_output_name) (these are the same as the trace file output).
 
 I'm going to use the same bit of code and generate a profile:
     
@@ -250,26 +254,30 @@ XDebug promises all of that.  Let's check it out.
 
 In order to support xdebug's integration with PDT, its a feature called remote debugging.  This is normally handled by a debugging client (which PDT plays).  The php.ini file has to be modified to allow for remote debugging, however:
     
-    xdebug.remote_enable=On
-    xdebug.remote_host=localhost
-    xdebug.remote_port=9000
-    xdebug.remote_handler="dbgp"
+```ini
+xdebug.remote_enable=On
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.remote_handler="dbgp"
+```
     
-The first line tells the remote debugger to enable.  Next, you can specify the host.  This can either be a hostname or an IP address.  (Yes, I tried putting multiple hostnames... no go!)  Next, you can specify the port that the requests will come through on.  Finally, the remote handler is the type of protocol the client that you will be using has.  Eclipse PDT uses 'dbgp'.
+The first line tells the remote debugger to enable.  Next, you can specify the host.  This can either be a hostname or an IP address.  (Yes, I tried putting multiple hostnames... no go!)  Next, you can specify the port that the requests will come through on.  Finally, the remote handler is the type of protocol the client that you will be using has.  Eclipse PDT uses `dbgp`.
 
-To allow for us to see our output immediately, we must make sure that implicit_flush is on in our php.ini (normally the debugger holds the script 'hostage' - and so no debugging gets sent out regularly).
+To allow for us to see our output immediately, we must make sure that `implicit_flush` is on in our **`php.ini`** (normally the debugger holds the script 'hostage' - and so no debugging gets sent out regularly).
 
-    implicit_flush = On
+```ini
+implicit_flush = On
+```
     
-We're done doing our config - let's fire up eclipse.
+We're done doing our config - let's fire up Eclipse.
 
 ### XDebug Eclipse PDT Settings
 
-First off, make a new project in eclipse.  Then, a new PHP file.  I'm going to continue using my same code and name it test.php.  On my machine http://localhost/test.php will launch this script.
+First off, make a new project in eclipse.  Then, a new PHP file.  I'm going to continue using my same code and name it **`test.php`**.  On my machine `http://localhost/test.php` will launch this script.
 
 [![](/uploads/2008/1-150x133.gif)](/uploads/2008/1.gif){: .thumbnail}In Eclipse PDT, click the Window menu and choose preferences.  Expand the General item and click on Web Browser.  Here it probably says use internal web browser.  In my experience on Windows, the internal browser is MSIE... and I want to use firefox.  Check use external web browser - and make sure there is a check next to default system web browser (mine is FireFox, so I'm good to go.  You could also choose the external browser you wanted to use if it is listed here....)
 
-[![](/uploads/2008/2-150x133.gif)](/uploads/2008/2.gif){: .thumbnail}Next, expand the PHP item and click on Debug.  For the PHP Debugger, you'll have to choose 'Xdebug' - mine was set to zend debugger.  Next, choose the server that will be running the php.  I didn't have one, so I had to click on PHP Servers and add one with http://localhost.
+[![](/uploads/2008/2-150x133.gif)](/uploads/2008/2.gif){: .thumbnail}Next, expand the PHP item and click on Debug.  For the PHP Debugger, you'll have to choose 'Xdebug' - mine was set to zend debugger.  Next, choose the server that will be running the php.  I didn't have one, so I had to click on PHP Servers and add one with `http://localhost`.
 
 Click OK and you're good to go with your debugger set up.
 
@@ -291,11 +299,9 @@ Firefox should have opened up with the contents of your script.
 
 ### So - now I've gotta complain
 
-This seems broken to me.  I've noticed that I do not receive any output to the firefox instance - as well as to the debug output.  Matter of fact, when I launch the instance, I get this URL:
+This seems broken to me.  I've noticed that I do not receive any output to the firefox instance - as well as to the debug output.  Matter of fact, when I launch the instance, I get this URL: `http://localhost/test.php?XDEBUG_SESSION_START=ECLIPSE_DBGP&KEY;=121121990330716`
 
-    http://localhost/test.php?XDEBUG_SESSION_START=ECLIPSE_DBGP&KEY;=121121990330716
-
-This looks fine to me - but then it just sits there.  I finally have to stop my debug job in eclipse... and two more windows open up with the contents of 'DEBUG SESSION ENDED' and an URL of: http://localhost/test.php?XDEBUG_SESSION_STOP_NO_EXEC=ECLIPSE_DBGP&KEY;=121121990330716
+This looks fine to me - but then it just sits there.  I finally have to stop my debug job in eclipse... and two more windows open up with the contents of 'DEBUG SESSION ENDED' and an URL of: `http://localhost/test.php?XDEBUG_SESSION_STOP_NO_EXEC=ECLIPSE_DBGP&KEY;=121121990330716`
 
 I'm never actually able to see any output on my firefox until the script is stopped - and the debugging task never seems to end.
 
@@ -360,10 +366,12 @@ I found the [older version (2.0.2)](http://xdebug.org/link.php?url=xdebug202-52-
 
 I used this version and I don't see the output until the script has finished - even after it had passed a print statement.  Also, the debugger output still goes into the firefox new window - but this time only one time.
 
-My next thought was maybe the output_buffering size was too large - so I made this change to my output buffering setting in my php.ini
+My next thought was maybe the `output_buffering` size was too large - so I made this change to my output buffering setting in my **`php.ini`**
     
-    output_buffering = Off
-    
+```ini
+output_buffering = Off
+```    
+
 After making this change, **I was able to see my items** on the fly.  It even stopped trying to load the page.  It still did make a new popup, though.
 
 My last attempt was to use the newer version with my modified php.ini.
@@ -372,4 +380,4 @@ Nope - no go. It still keeps running and opens TWO windows.
 
 ### So what's the verdict?
 
-XDebug is awesome.  Enhanced var_dump() and error messages, built in stack tracing, tracing and profiling, and remote debugging.  It is pretty amazing - albeit slightly incompatible with the newest PDT/Xdebug.  KcacheGrind is the only way to fly when it comes to viewing cachegrind output files - wincachegrind is useless.  Too bad my KDE4Win + kcachegrind keeps dying.  All in all, I am keeping xdebug in my setup.
+XDebug is awesome.  Enhanced `var_dump()` and error messages, built in stack tracing, tracing and profiling, and remote debugging.  It is pretty amazing - albeit slightly incompatible with the newest PDT/Xdebug.  KcacheGrind is the only way to fly when it comes to viewing cachegrind output files - wincachegrind is useless.  Too bad my KDE4Win + kcachegrind keeps dying.  All in all, I am keeping xdebug in my setup.

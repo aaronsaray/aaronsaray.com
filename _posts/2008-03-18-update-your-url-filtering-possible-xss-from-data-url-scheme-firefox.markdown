@@ -8,9 +8,9 @@ tags:
 ---
 In regards to the Data in URL scheme ([RFC here](http://www.ietf.org/rfc/rfc2397.txt)), I've found an interesting issue with the way firefox handles it which could lead to some XSS I think.
 
-First of all, if you're not aware of the feature, let me explain.  Browsers are built to decode information in the URL (for the purpose of this blog, I'm JUST focusing on base64) with a specific URL handler: data:text/html;base64,
+First of all, if you're not aware of the feature, let me explain.  Browsers are built to decode information in the URL (for the purpose of this blog, I'm JUST focusing on base64) with a specific URL handler: `data:text/html;base64,`
 
-With this, you can add specific payloads to the URLs (think a very very small .com or .exe file) or specify the actual image data for an image tag (think single PHP scripts with no image directory - neeto!)
+With this, you can add specific payloads to the URLs (think a very very small `.com` or `.exe` file) or specify the actual image data for an image tag (think single PHP scripts with no image directory - neeto!)
 
 Well, because Firefox supports this action, you can now create javascript payloads in the URL too.  Please check your HTML/URL filtering routines to make sure you filter against this malicious link type.
 
@@ -19,7 +19,10 @@ Lets see an example:
 First off, this is just an example - so it's pretty simple.  But I could make a request to a remote server through an image.src or an ajax call.  Here, I'm just alerting the cookie to the screen (note, if this wasn't an alert, the average user would not notice.)
 
 ```html
-<script>alert("cookie steal: "+document.cookie);window.location.href='http://www.google.com';</script>
+<script>
+  alert("cookie steal: "+document.cookie);
+  window.location.href='http://www.google.com';
+</script>
 ```
 
 Which, when base64 encoded is

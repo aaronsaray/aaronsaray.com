@@ -13,6 +13,8 @@ One thing I remember being pounded into my head is to not create CSS classes aft
 .red { color: red }
 ```
 
+and ... 
+
 ```html
 <span class="red">There was an error!</span>
 ```
@@ -24,6 +26,8 @@ Instead, I was always encouraged to give the class something more descriptive, s
 ```css
 .error { color: red; }
 ```
+
+and...
 
 ```html
 <span class="error">There was an error!</span>
@@ -40,7 +44,7 @@ Of course, during design, I went to the dark side right away:
 .mediumGrey { color: #212122 }
 ```
 
-Now, I know I should come up with some descriptive name, perhaps something like "userLoggedIn" or something, but I plan on using these classes in different areas as well.  They might not be dependent on the user being logged in - just might look better that way.  I didn't want to make a lot of duplicate CSS code either.
+Now, I know I should come up with some descriptive name, perhaps something like `userLoggedIn` or something, but I plan on using these classes in different areas as well.  They might not be dependent on the user being logged in - just might look better that way.  I didn't want to make a lot of duplicate CSS code either.
 
 The compromise: be semi descriptive.
 

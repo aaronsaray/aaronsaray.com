@@ -24,12 +24,11 @@ One of the biggest reasons to use Eclipse PDT's built in 'run as...' option woul
 
 **How to test this:**
 
-Well, I've created a quick PHP script to test what information I may have available to me.  First off, its output is printed, which will echo the output to the webpage or the console equally.  However, whereas the webpage will interpret the   
-tag correctly and make a line break, the console won't... and will require a new line (\n).  As I'm not entirely certain yet if I'll have the chance to 'view source' these documents (which would render \n's in a predictable fashion), I'm going to use both line break types.
+Well, I've created a quick PHP script to test what information I may have available to me.  First off, its output is printed, which will echo the output to the webpage or the console equally.  However, whereas the webpage will interpret the tag correctly and make a line break, the console won't... and will require a new line (`\n`).  As I'm not entirely certain yet if I'll have the chance to 'view source' these documents (which would render `\n`'s in a predictable fashion), I'm going to use both line break types.
 
 The first thing I'm going to check is the [php sapi version](http://us.php.net/php-sapi-name). This will give me a heads up on how the PHP is being ran - either as a module from apache or as a command line script.
 
-Next, I'm going to check [$_SERVER/$_ENV](http://us2.php.net/reserved.variables). These both are reserved variables that will contain a wealth of information (and not always the same information or array keys per instance...) and will help determine more about the interpreter that is being used.  Remember, php.ini settings apply to the population of these globals... I had to modify my php.ini file to have this:
+Next, I'm going to check [`$_SERVER`/`$_ENV`](http://us2.php.net/reserved.variables). These both are reserved variables that will contain a wealth of information (and not always the same information or array keys per instance...) and will help determine more about the interpreter that is being used.  Remember, **`php.ini`** settings apply to the population of these globals... I had to modify my **`php.ini`** file to have this:
 
 `variables_order = "EGPCS"`
 
@@ -376,7 +375,7 @@ Just to verify my question, I went to my own Command Line and ran this:
 
 Sure enough, everything from 'web browser output' echoed to the console.
 
-Well, how can I get messages to the console?  The next thing I tried was generating an error... well an E_NOTICE actually:
+Well, how can I get messages to the console?  The next thing I tried was generating an error... well an `E_NOTICE` actually:
 
 ```php?start_inline=1
 echo $testvar;
@@ -386,19 +385,19 @@ I added that to the bottom.  Sure enough, our output is the same in the Browser 
     
     Notice: C:/DEVELOPMENT/temp/runas/index.php line 18 - Undefined variable: testvar
 
-Cool!  Errors appear in the console... but why isn't it being displayed in my browser output then? I know I have display_errors on... but duh!  Right now, I'm pointed to a different binary - which is probably using a different php.ini file.  Lets take a look...
+Cool!  Errors appear in the console... but why isn't it being displayed in my browser output then? I know I have `display_errors` on... but duh!  Right now, I'm pointed to a different binary - which is probably using a different php.ini file.  Lets take a look...
 
-I went all the way down into the plugins folder, the zend debugger folder ( which is where the php executable the run as item was pointing to), and found both a php4 and php5 folder with binaries in each.  The PHP.ini files for each just contained one line:
+I went all the way down into the plugins folder, the zend debugger folder ( which is where the php executable the run as item was pointing to), and found both a `php4` and `php5` folder with binaries in each.  The **`php.ini`** files for each just contained one line:
     
     zend_extension_ts=.ZendDebugger.dll
 
-Interesting... well I wasn't totally sold yet... so lets throw a display_errors = true)in there.
+Interesting... well I wasn't totally sold yet... so lets throw a `display_errors = true`)in there.
 
 This didn't seem to help.  Oh well...  (Edit: not entirely sure why this didn't work.... It seems like it should have...)
 
 Lets experiment with the other binaries option.  When selecting this option, I had two binaries to choose from... the PHP5 one and the PHP4 one I just mentioned.  To test, I ran the script with the PHP4 binary chosen - and it executed exactly the same / as expected, but displayed a different php version (4.4... duh!).  Finally, I went to the 'installed php executables' button and added my own binary into the list.  I ran the script with my binary - and nothing happened!  I have a sneaking suspicion that this has to do with the lack of the zend_debugger being installed on my default PHP binary and ini file.
 
-I moved my ZendDebug.dll file from the eclipse to my standard installation... added the line to my php.ini - and then I was able to get the console to appear as well as the browser output.  Because my php.ini file has error display on, I was able to see my php error in the browser output as well... I'm still a little bit confused why this didn't work... anyway, moving on.
+I moved my **`ZendDebug.dll`** file from the eclipse to my standard installation... added the line to my **`php.ini`** - and then I was able to get the console to appear as well as the browser output.  Because my **`php.ini`** file has error display on, I was able to see my php error in the browser output as well... I'm still a little bit confused why this didn't work... anyway, moving on.
 
 Run as a php script is an ok way to test run a command line based PHP script from eclipse.  The console coupled with the browser output (although confusingly not the same as a real console output) is helpful.  I find the biggest drawback the browser output option.  I'd have liked to see all of the output in the console instead.  Its also important to remember that - in order to take advantage of this functionality in PDT - you must have the zenddebugger active for your php binary.  Another drawback is having to set up an individual configuration for each script you'd like to run.  You can, however, right click on a script in your project and run it - but it automatically creates a new configuration for that script then.  Also, it automatically checks the 'run with debug info' which is more of a console emulation output than anything else.  I think this is more confusing to display because you're not using 'debug as' - you're using run as - and three different views open up.
 
@@ -412,9 +411,9 @@ First, I made a new file in the same directory called phpinfo.php and put a simp
 
 Lets make our new configuration.  Open up the run dialog again.  Right click on the php webpage option and choose new.
 
-The first drop down is the server.  If you have servers set up, use the one that will work best for you.  I hadn't had any set up so it was set to default web server.  I clicked the configure button to make sure - and it was pointed to http://locahost which is fine for this exercise.
+The first drop down is the server.  If you have servers set up, use the one that will work best for you.  I hadn't had any set up so it was set to default web server.  I clicked the configure button to make sure - and it was pointed to `http://locahost` which is fine for this exercise.
 
-The next two options deal with the file to run and the URL.  First, select your file from your project - I selected my index.php file.  Unfortunately, the auto-generated link at the bottom wasn't correct.  My project is not my htdocs root - so I had an extra folder in there.  So, I had to uncheck the autogenerate URL button - and change the URL to match what it should be (in this case: http://localhost/runas/index.php).
+The next two options deal with the file to run and the URL.  First, select your file from your project - I selected my index.php file.  Unfortunately, the auto-generated link at the bottom wasn't correct.  My project is not my htdocs root - so I had an extra folder in there.  So, I had to uncheck the autogenerate URL button - and change the URL to match what it should be (in this case: `http://localhost/runas/index.php`).
 
 The advanced tab had the 'Open in Browser' option checked.  Leave this checked (if you don't, all you get is the debug output view, and its not really that useful).  Finally, lets run it.
 

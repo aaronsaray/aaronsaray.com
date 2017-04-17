@@ -15,7 +15,7 @@ Luckily, I was able to find a utility that made life easier - and of course - in
 
 **The meat: a perl script**
 
-A perl script called logtail ([author's website](http://www.fourmilab.ch/webtools/logtail/):   - and [here is the file](/uploads/2007/logtailtar.gz) in case the website ever goes down), is used to enhance the 'last -f' command type output used on the *nix platform.  since I'm developing on Win32, I don't have the 'last -f' command natively - and was happy to see this perl script could run without it.  I installed w32 perl and was able to launch this script successfully.
+A perl script called logtail ([author's website](http://www.fourmilab.ch/webtools/logtail/):   - and [here is the file](/uploads/2007/logtailtar.gz) in case the website ever goes down), is used to enhance the `last -f` command type output used on the *nix platform.  since I'm developing on Win32, I don't have the `last -f` command natively - and was happy to see this perl script could run without it.  I installed w32 perl and was able to launch this script successfully.
 
 I should stop right now to say why a PHP fanboy is using a perl script - and I think its just because that's the best solution for the problem at hand.  I am far more comfortable with Perl's socket management than PHP.
 

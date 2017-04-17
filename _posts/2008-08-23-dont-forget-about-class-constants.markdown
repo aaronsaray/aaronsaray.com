@@ -16,12 +16,12 @@ define('MYCLASS_FLAG_OFF', '0');
 
 class MYCLASS
 {
-    public function __construct($var)
-    {
-        if ($var == MYCLASS_FLAG_ON) {
-            print 'it is on';
-        }
+  public function __construct($var)
+  {
+    if ($var == MYCLASS_FLAG_ON) {
+      print 'it is on';
     }
+  }
 }
 ```
 
@@ -36,15 +36,15 @@ Lets use the class constant.
 ```php?start_inline=1
 class MYCLASS
 {
-    const FLAG_ON = 1;
-    const FLAG_OFF = 0;
+  const FLAG_ON = 1;
+  const FLAG_OFF = 0;
     
-    public function __construct($var)
-    {
-        if ($var == self::FLAG_ON) {
-            print 'it is on';
-        }
+  public function __construct($var)
+  {
+    if ($var == self::FLAG_ON) {
+      print 'it is on';
     }
+  }
 }
 ```
 
@@ -57,7 +57,7 @@ The great thing about constants in classes in this specific example is that you 
 ```php?start_inline=1
 $var = magicVarGettingFunction();
 if ($var == MYCLASS::FLAG_ON) {
-    print 'it is on';
+  print 'it is on';
 }
 ```
     

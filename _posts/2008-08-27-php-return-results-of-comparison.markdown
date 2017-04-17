@@ -11,11 +11,11 @@ PHP allows you to get the result of a comparison in a variable.  Any variable yo
 ```php?start_inline=1
 function isGreaterThanFour($testVar)
 {
-    return $testVar > 4;
+  return $testVar > 4;
 }
 
 if (isGreaterThanFour(5)) {
-    print 'yay!';
+  print 'yay!';
 }
 ```
 

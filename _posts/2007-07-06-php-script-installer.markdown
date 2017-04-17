@@ -15,11 +15,11 @@ The first thing I wanted to do was create a quick proof of concept, so its not p
 
 ### For my test project to package, I created HelloWorld Version 2
 
-It has a index.php file which instantiates a class then echos an output method.  There are two folders, one contains a template file which str_replace() is executed against - the other folder contains a php file that contains the main logic.  Very simple but demonstrates multiple file types and multiple directories.
+It has a **`index.php`** file which instantiates a class then echos an output method.  There are two folders, one contains a template file which `str_replace()` is executed against - the other folder contains a php file that contains the main logic.  Very simple but demonstrates multiple file types and multiple directories.
 
 ### The next step was to create the packager class.  
 
-There were a bunch of things I didn't account for in this quick poc, but it came together quite nicely.  You set the base folder in the code, and the name of your output installer file (we're just dumping it into the root of your base folder).  There is error checking in the class to make sure that files exist, we're not overwriting them, etc.  When the packager.php class is executed, we store the base folder and the output file.  Next, DirectoryIterator SPL class is used to go through the base folder.  When directories are found, we add them to an array.  When files are found, we add their base64 encoded content (which contains no quotation marks - do you see where I'm going with that?) to the array.  The function is recursive so it makes a multidimensional array of this content.  The array is then processed to create a directory listing and a file listing.  Finally, an installer template has the two variables replaced, and we send it out.  The final output is one php file with our list of directories and file contents in it - when ran it will create all of the directories and files for the project.  You would then need to make sure to remove the file and you'd be all set.
+There were a bunch of things I didn't account for in this quick poc, but it came together quite nicely.  You set the base folder in the code, and the name of your output installer file (we're just dumping it into the root of your base folder).  There is error checking in the class to make sure that files exist, we're not overwriting them, etc.  When the **`packager.php`** class is executed, we store the base folder and the output file.  Next, `DirectoryIterator` SPL class is used to go through the base folder.  When directories are found, we add them to an array.  When files are found, we add their base64 encoded content (which contains no quotation marks - do you see where I'm going with that?) to the array.  The function is recursive so it makes a multidimensional array of this content.  The array is then processed to create a directory listing and a file listing.  Finally, an installer template has the two variables replaced, and we send it out.  The final output is one php file with our list of directories and file contents in it - when ran it will create all of the directories and files for the project.  You would then need to make sure to remove the file and you'd be all set.
 
 ### What are the pitfalls?
 
@@ -31,7 +31,7 @@ I didn't use the recursiveDirectoryIterator - if I was going to rely on SPL, I s
 
 _File Permissions_
 
-The only file permission check I did was to make sure I could write to the install file directory, but we know that that could even be fooled (check the man page).  I also didn't check any of the file permissions on any of the files.  If I stick with SPL, the splFileInfo object has a method for getting file permissions - so this would be a good thing to import into the script.
+The only file permission check I did was to make sure I could write to the install file directory, but we know that that could even be fooled (check the man page).  I also didn't check any of the file permissions on any of the files.  If I stick with SPL, the `splFileInfo` object has a method for getting file permissions - so this would be a good thing to import into the script.
 
 _Install Script Output Directory_
 
@@ -43,13 +43,13 @@ I also didn't take into account hard/soft links in the file system.  I would hop
 
 _File limiting / masking_
 
-Right now, we bring in every single file.  However, in cases where we're using SVN (.svn folder), it might be useful to have a mask that we can apply that tells us which files not to include.
+Right now, we bring in every single file.  However, in cases where we're using SVN (**`.svn`** folder), it might be useful to have a mask that we can apply that tells us which files not to include.
 
 _Size Restrictions_
 
 This is an issue on many levels.  First of all, when something is base64 encoded, it is approximately 30% larger in size.  Take a large 5mb pdf and encode it - and you've got a sizable memory allocation.  My script takes everything into memory and stores it.  It might be more efficient to write each file after encoding it - this might require more filesystem writes and filesystem handles open, but it would save on memory.
 
-Also, what is the largest size one php file should be?  I don't know if there is a top level limit.  And when the file gets larger, I might need to put a set_time_limit() call.
+Also, what is the largest size one php file should be?  I don't know if there is a top level limit.  And when the file gets larger, I might need to put a `set_time_limit()` call.
 
 _Directory names_
 

@@ -16,367 +16,374 @@ Well here is such a script!
  */
 class cssCompat
 {
-    /**
-     * used for determing type of file passed in
-     * @var integer
-     */
-    const CSS_FILE = 1;
+  /**
+   * used for determing type of file passed in
+   * @var integer
+   */
+  const CSS_FILE = 1;
 
-    /**
-     * used for determining type of file passed in
-     * @var integer
-     */
-    const MIXED_FILE = 2;
+  /**
+   * used for determining type of file passed in
+   * @var integer
+   */
+  const MIXED_FILE = 2;
 
-    /**
-     * whether to print out files that are compatible?
-     * @var boolean
-     */
-    const PRINT_OK_FILES = FALSE;
+  /**
+   * whether to print out files that are compatible?
+   * @var boolean
+   */
+  const PRINT_OK_FILES = FALSE;
 
-    /**
-     * called multiple times tracker?
-     * @var integer
-     */
-    protected $_timesProcessed = 0;
+  /**
+   * called multiple times tracker?
+   * @var integer
+   */
+  protected $_timesProcessed = 0;
 
-    /**
-     * global tracker of incompats
-     * @var integer
-     */
-    protected $_incompatCount = 0;
+  /**
+   * global tracker of incompats
+   * @var integer
+   */
+  protected $_incompatCount = 0;
 
-    /**
-     * Available versions of browsers
-     * @var array
-     */
-    protected $_available = array(
-                                    'ff'=>array(2,3),
-                                    'ie'=>array(6,7)
-                                 );
+  /**
+   * Available versions of browsers
+   * @var array
+   */
+  protected $_available = array(
+                                'ff'=>array(2,3),
+                                'ie'=>array(6,7)
+                               );
 
-    /**
-     * The current browser version of the imported css
-     * @var array
-     */
-    protected $_current = array('browser'=>NULL, 'version'=>NULL);
+  /**
+   * The current browser version of the imported css
+   * @var array
+   */
+  protected $_current = array('browser'=>NULL, 'version'=>NULL);
 
-    /**
-     * The target version of the CSS to test for
-     * @var array
-     */
-    protected $_target = array('browser'=>NULL, 'version'=>NULL);
+  /**
+   * The target version of the CSS to test for
+   * @var array
+   */
+  protected $_target = array('browser'=>NULL, 'version'=>NULL);
 
-    /**
-     * the source css file to read in
-     * @var string
-     */
-    protected $_sourceFile = '';
+  /**
+   * the source css file to read in
+   * @var string
+   */
+  protected $_sourceFile = '';
 
-    /**
-     * The type of file we're reading
-     * @var integer
-     */
-    protected $_sourceFileType = 0;
+  /**
+   * The type of file we're reading
+   * @var integer
+   */
+  protected $_sourceFileType = 0;
 
-    /**
-     * The content to parse
-     * @var mixed
-     */
-    protected $_content = FALSE;
+  /**
+   * The content to parse
+   * @var mixed
+   */
+  protected $_content = FALSE;
 
-    /**
-     * css parts array of all the definitions
-     * @var array
-     */
-    protected $_cssParts = array();
+  /**
+   * css parts array of all the definitions
+   * @var array
+   */
+  protected $_cssParts = array();
 
-    /**
-     * supported attributes - used for array diffing to find the items
-     * list the items that are diff between the available versions
-     * not a GREAT way to do this but...
-     * @var array
-     */
-    protected $_supportedAttributes = array(
-                                    'opacity'       => array('ff2', 'ff3'),
-                                    '-moz-border'   => array('ff2', 'ff3'),
-                                    'behavior'      => array('ie6', 'ie7'),
-                                    'min-height'    => array('ff2', 'ff3'),
-                                    'min-width'     => array('ff2', 'ff3'),
-                                    'max-height'    => array('ff2', 'ff3'),
-                                    'max-width'     => array('ff2', 'ff3')
-                                  );
+  /**
+   * supported attributes - used for array diffing to find the items
+   * list the items that are diff between the available versions
+   * not a GREAT way to do this but...
+   * @var array
+   */
+  protected $_supportedAttributes = array(
+                                  'opacity'       => array('ff2', 'ff3'),
+                                  '-moz-border'   => array('ff2', 'ff3'),
+                                  'behavior'      => array('ie6', 'ie7'),
+                                  'min-height'    => array('ff2', 'ff3'),
+                                  'min-width'     => array('ff2', 'ff3'),
+                                  'max-height'    => array('ff2', 'ff3'),
+                                  'max-width'     => array('ff2', 'ff3')
+                                );
 
-    ###########################################################################     ########################################################################### 
+  ###########################################################################  
+  
+  /**
+   * empty constructor...
+   */
+  public function __construct()
+  {}
 
-    /**
-     * empty constructor...
-     */
-    public function __construct()
-    {}
+  /**
+   * if more than one time, print the # of times called
+   */
+  public function __destruct()
+  {
+    if ($this->_timesProcessed > 1) {
+      print "=============\nTotal Incompatibilities: {$this->_incompatCount}\n";
+    }
+  }
 
-    /**
-     * if more than one time, print the # of times called
-     */
-    public function __destruct()
-    {
-        if ($this->_timesProcessed > 1) {
-            print "=============\nTotal Incompatibilities: {$this->_incompatCount}\n";
-        }
+  /**
+   * used to set the current browser version of the css
+   * @param string $browser
+   * @param integer $version
+   */
+  public function setCurrent($browser, $version)
+  {
+    if ($this->_isValidVersion($browser, $version)) {
+      $this->_current['browser'] = $browser;
+      $this->_current['version'] = $version;
+      print "Setting current version to: {$browser} {$version}\n";
+    }
+  }
+
+  /**
+   * used to set the target browser version of the css
+   * @param string $browser
+   * @param integer $version
+   */
+  public function setTarget($browser, $version)
+  {
+    if ($this->_isValidVersion($browser, $version)) {
+      $this->_target['browser'] = $browser;
+      $this->_target['version'] = $version;
+      print "Setting target version to: {$browser} {$version}\n";
+    }
+  }
+
+  /**
+   * set the source css file
+   * @param string $file
+   */
+  public function setSourceFile($file)
+  {
+    if (is_readable($file)) {
+      $this->_sourceFile = $file;
+
+      $ext = '';
+      $location = strrpos($file, '.');
+      if ($location !== FALSE) {
+        $ext = substr($file, $location+1);
+      }
+      if ($ext == 'css') {
+        $this->setFileType(cssCompat::CSS_FILE);
+      }
+      else {
+        $this->setFileType(cssCompat::MIXED_FILE);
+      }
+
+      $this->_content = file_get_contents($file);
+      if ($this->_content === FALSE) {
+        throw new exception("Unable to get contents of file: {$file}");
+      }
+    }
+    else {
+      throw new exception("{$file} is not readable.");
+    }
+  }
+
+  /**
+   * sets the file type to a css or non
+   * @param integer $type The type of file
+   */
+  public function setFileType($type)
+  {
+    if ($type == self::CSS_FILE || $type == self::MIXED_FILE) {
+      $this->_sourceFileType = $type;
+    }
+    else {
+      throw new exception("Type {$type} is not a proper file type.");
+    }
+  }
+
+  /**
+   * starts processing the comparison
+   */
+  public function process()
+  {
+    $this->_timesProcessed++;
+    $this->_checkProcessSanity();
+    $this->_search();
+  }
+
+  ###########################################################################  
+  
+  /**
+   * quick string searching alg for finding unsupported content
+   */
+  protected function _search()
+  {
+    $current = $this->_buildArray(
+      $this->_current['browser'], 
+      $this->_current['version']
+    );
+    $target = $this->_buildArray(
+      $this->_target['browser'], 
+      $this->_target['version']
+    );
+
+    $searchItems = array_diff($current, $target);
+
+    $output = "Searching {$this->_sourceFile} (";
+    switch ($this->_sourceFileType) {
+      case self::CSS_FILE:
+        $output .= "css";
+        break;
+      case self::MIXED_FILE:
+        $output .= "mixed content";
+        break;
+    }
+    $output .= " file)\n";
+
+    $incompats = 0;
+
+    $contentArray = $this->_getContent();
+
+    foreach ($searchItems as $item) {
+      $times = 0;
+      foreach ($contentArray as $content) {
+        $times += substr_count($content, $item);
+      }
+      if ($times) {
+        $incompats += $times;
+        $output .= "{$item} was found {$times} time" 
+                . ($times > 1 ? 's' : '') . "\n";
+      }
     }
 
-    /**
-     * used to set the current browser version of the css
-     * @param string $browser
-     * @param integer $version
-     */
-    public function setCurrent($browser, $version)
-    {
-        if ($this->_isValidVersion($browser, $version)) {
-            $this->_current['browser'] = $browser;
-            $this->_current['version'] = $version;
-            print "Setting current version to: {$browser} {$version}\n";
-        }
+    if ($incompats || self::PRINT_OK_FILES) {
+      print $output;
+      print "Incompatibilities found: {$incompats}\n\n";
     }
 
-    /**
-     * used to set the target browser version of the css
-     * @param string $browser
-     * @param integer $version
-     */
-    public function setTarget($browser, $version)
-    {
-        if ($this->_isValidVersion($browser, $version)) {
-            $this->_target['browser'] = $browser;
-            $this->_target['version'] = $version;
-            print "Setting target version to: {$browser} {$version}\n";
-        }
-    }
+    $this->_incompatCount += $incompats;
+  }
 
-    /**
-     * set the source css file
-     * @param string $file
-     */
-    public function setSourceFile($file)
-    {
-        if (is_readable($file)) {
-            $this->_sourceFile = $file;
-
-            $ext = '';
-            $location = strrpos($file, '.');
-            if ($location !== FALSE) {
-                $ext = substr($file, $location+1);
-            }
-            if ($ext == 'css') {
-                $this->setFileType(cssCompat::CSS_FILE);
-            }
-            else {
-                $this->setFileType(cssCompat::MIXED_FILE);
-            }
-
-            $this->_content = file_get_contents($file);
-            if ($this->_content === FALSE) {
-                throw new exception("Unable to get contents of file: {$file}");
-            }
-        }
-        else {
-            throw new exception("{$file} is not readable.");
-        }
-    }
-
-    /**
-     * sets the file type to a css or non
-     * @param integer $type The type of file
-     */
-    public function setFileType($type)
-    {
-        if ($type == self::CSS_FILE || $type == self::MIXED_FILE) {
-            $this->_sourceFileType = $type;
-        }
-        else {
-            throw new exception("Type {$type} is not a proper file type.");
-        }
-    }
-
-    /**
-     * starts processing the comparison
-     */
-    public function process()
-    {
-        $this->_timesProcessed++;
-
-        $this->_checkProcessSanity();
-
-        $this->_search();
-    }
-
-    ###########################################################################     ########################################################################### 
-
-    /**
-     * quick string searching alg for finding unsupported content
-     */
-    protected function _search()
-    {
-        $current = $this->_buildArray($this->_current['browser'], $this->_current['version']);
-        $target = $this->_buildArray($this->_target['browser'], $this->_target['version']);
-
-        $searchItems = array_diff($current, $target);
-
-        $output = "Searching {$this->_sourceFile} (";
-        switch ($this->_sourceFileType) {
-            case self::CSS_FILE:
-                $output .= "css";
-                break;
-            case self::MIXED_FILE:
-                $output .= "mixed content";
-                break;
-        }
-        $output .= " file)\n";
-
-        $incompats = 0;
-
-        $contentArray = $this->_getContent();
-
-        foreach ($searchItems as $item) {
-            $times = 0;
-            foreach ($contentArray as $content) {
-                $times += substr_count($content, $item);
-            }
-            if ($times) {
-                $incompats += $times;
-                $output .= "{$item} was found {$times} time" . ($times > 1 ? 's' : '') . "\n";
-            }
-        }
-
-        if ($incompats || self::PRINT_OK_FILES) {
-            print $output;
-            print "Incompatibilities found: {$incompats}\n\n";
-        }
-
-        $this->_incompatCount += $incompats;
-    }
-
-    protected function _getContent()
-    {
-        if ($this->_sourceFileType == cssCompat::CSS_FILE) {
-            return array($this->_content);
-        }
- 
-        /**
-         * must be a mixed file type - so parse out the content of style tags
-         */
-        $return = array();
-        preg_match_all("%<style\b[^>]*>(.*?)</style>|style\w*=['|\"](.*?)['|\"]%si", $this->_content, $matches);
- 
-        /** <style> **/
-        if(isset($matches[1])) {
-            foreach ($matches[1] as $content) {
-                if (trim($content)) $return[] = trim($content);
-            }
-        }
- 
-        /** style="" **/
-        if(isset($matches[2])) {
-            foreach ($matches[2] as $content) {
-                if (trim($content)) $return[] = trim($content);
-            }
-        }
- 
-        return $return;
+  protected function _getContent()
+  {
+    if ($this->_sourceFileType == cssCompat::CSS_FILE) {
+      return array($this->_content);
     }
  
     /**
-     * build an array of features for the requested browser/version
-     * @param string $browser The browser
-     * @param integer $version The version of the browser
-     * @return array The combined array format
+     * must be a mixed file type - so parse out the content of style tags
      */
-    protected function _buildArray($browser, $version)
-    {
-        $key = $browser . $version;
-        $return = array();
-        foreach ($this->_supportedAttributes as $attribute=>$vals) {
-            if (in_array($key, $vals)) {
-                $return[] = $attribute;
-            }
-        }
+    $return = array();
+    preg_match_all(
+      "%<style\b[^>]*>(.*?)</style>|style\w*=['|\"](.*?)['|\"]%si", 
+      $this->_content, 
+      $matches
+    );
  
-        return $return;
+    /** <style> **/
+    if(isset($matches[1])) {
+      foreach ($matches[1] as $content) {
+        if (trim($content)) $return[] = trim($content);
+      }
     }
  
- 
-    /**
-     * makes sure required items are set before continuing.
-     */
-    protected function _checkProcessSanity()
-    {
-        if (is_null($this->_current['browser']) || is_null($this->_current['version'])) {
-            throw new exception("Current browser information needs to be set.");
-        }
-        if (is_null($this->_target['browser']) || is_null($this->_target['version'])) {
-            throw new exception("Target browser information needs to be set.");
-        }
-        if ($this->_content === FALSE) {
-            throw new exception("No content has been set.");
-        }
+    /** style="" **/
+    if(isset($matches[2])) {
+      foreach ($matches[2] as $content) {
+        if (trim($content)) $return[] = trim($content);
+      }
     }
  
-    /**
-     * verifies that the browser / version are in the available list
-     *
-     * @param string $browser
-     * @param integer $version
-     * @return boolean
-     */
-    protected function _isValidVersion($browser, $version)
-    {
-        $b = strtolower($browser);
-        if (!isset($this->_available[$b])) {
-            throw new exception("{$browser} is not an available browser.");
-            return false;
-        }
+    return $return;
+  }
  
-        if (!in_array((int) $version, $this->_available[$b])) {
-            throw new exception("{$version} is not a valid version of {$browser}");
-            return false;
-        }
- 
-        return true;
+  /**
+   * build an array of features for the requested browser/version
+   * @param string $browser The browser
+   * @param integer $version The version of the browser
+   * @return array The combined array format
+   */
+  protected function _buildArray($browser, $version)
+  {
+    $key = $browser . $version;
+    $return = array();
+    foreach ($this->_supportedAttributes as $attribute=>$vals) {
+      if (in_array($key, $vals)) {
+        $return[] = $attribute;
+      }
     }
+ 
+    return $return;
+  }
+ 
+  /**
+   * makes sure required items are set before continuing.
+   */
+  protected function _checkProcessSanity()
+  {
+    if (is_null($this->_current['browser']) || is_null($this->_current['version'])) {
+      throw new exception("Current browser information needs to be set.");
+    }
+    if (is_null($this->_target['browser']) || is_null($this->_target['version'])) {
+      throw new exception("Target browser information needs to be set.");
+    }
+    if ($this->_content === FALSE) {
+      throw new exception("No content has been set.");
+    }
+  }
+ 
+  /**
+   * verifies that the browser / version are in the available list
+   *
+   * @param string $browser
+   * @param integer $version
+   * @return boolean
+   */
+  protected function _isValidVersion($browser, $version)
+  {
+    $b = strtolower($browser);
+    if (!isset($this->_available[$b])) {
+      throw new exception("{$browser} is not an available browser.");
+      return false;
+    }
+
+    if (!in_array((int) $version, $this->_available[$b])) {
+      throw new exception("{$version} is not a valid version of {$browser}");
+      return false;
+    }
+ 
+    return true;
+  }
 }
  
 try {
-    /** file exts to allow **/
-    $exts = array('css', 'html', 'htm', 'php', 'phtml', 'inc');
+  /** file exts to allow **/
+  $exts = array('css', 'html', 'htm', 'php', 'phtml', 'inc');
  
-    /** ignore svn **/
-    $ignore = '.svn';
+  /** ignore svn **/
+  $ignore = '.svn';
  
-    /** where to start **/
-    $path = '/office';
+  /** where to start **/
+  $path = '/office';
  
-    $css = new cssCompat();
+  $css = new cssCompat();
  
-    /** current and targets **/
-    $css->setCurrent('ff', 2);
-    $css->setTarget('ie', 7);
+  /** current and targets **/
+  $css->setCurrent('ff', 2);
+  $css->setTarget('ie', 7);
  
-    /** now we do the loop **/
-    $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
-    foreach($files as $name => $file) {
-        if (strpos($name, $ignore) === false) {
-            $parts = explode('.', $name);
-            $ext = $parts[count($parts)-1];
-            if (in_array($ext, $exts)) {
-                $css->setSourceFile($name);
-                $css->process();
-            }
-        }
- 
+  /** now we do the loop **/
+  $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
+  foreach($files as $name => $file) {
+    if (strpos($name, $ignore) === false) {
+      $parts = explode('.', $name);
+      $ext = $parts[count($parts)-1];
+      if (in_array($ext, $exts)) {
+        $css->setSourceFile($name);
+        $css->process();
+      }
     }
+  }
 }
 catch (exception $e) {
-    print $e->getMessage();
+  print $e->getMessage();
 }
 ```
 

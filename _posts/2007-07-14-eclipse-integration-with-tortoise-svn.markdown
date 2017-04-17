@@ -26,7 +26,7 @@ First off, go to Window > preferences > tortoise.
 
 Next, fill in the first field with the path to your tortoise executable.  Mine was:
 
-_C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe_
+**`C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe`**
 
 Finally, blank out the other two fields and click ok.  I honestly have no idea what they're used for... there didn't seem to be any difference between having them filled and not.   _If you know what they're for, feel free to leave a comment._
 

@@ -54,10 +54,10 @@ $page = curl_exec($ch);
 preg_match("/<a href=\"(.*?)\">Skip this Advertisement/", $page, $redirpage);
  
 if (isset($redirpage[1])) {
-	curl_setopt($ch, CURLOPT_REFERER,"http://login.myspace.com/index.cfm?fuseaction=login.process&amp;MyToken={$token}");
-	curl_setopt($ch, CURLOPT_URL,$redirpage[1]);
-	curl_setopt($ch, CURLOPT_POST, 0);
-	$page = curl_exec($ch);
+  curl_setopt($ch, CURLOPT_REFERER,"http://login.myspace.com/index.cfm?fuseaction=login.process&amp;MyToken={$token}");
+  curl_setopt($ch, CURLOPT_URL,$redirpage[1]);
+  curl_setopt($ch, CURLOPT_POST, 0);
+  $page = curl_exec($ch);
 }
  
 //
@@ -65,11 +65,9 @@ if (isset($redirpage[1])) {
 //
 if(strpos($page,"You Must Be Logged-In to do That!") !== false){
 // login error
-    print 'login error';
-    return 2;
+  print 'login error';
+  return 2;
 }
- 
- 
  
 //
 // LOGGED IN, now let's play
@@ -91,8 +89,6 @@ if(strpos($page,"You Must Be Logged-In to do That!") !== false){
 //curl_close($ch);
 @unlink("/tmp/cookiejar-$randnum");
  
- 
- 
 //comment this
 //$page = file_get_contents('src.txt');
  
@@ -101,9 +97,6 @@ preg_match('/<h5 class="heading">\s+My Bulletin Space\s+<\/h5>\s+<div style="pad
 // cuz i suck
 preg_match_all('/<tr>(.*?)<\/tr>/s', $found[2], $tds);
 array_shift($tds[0]);
- 
- 
- 
  
 $rss = new simpleXMLElement('<rss version="2.0"></rss>');
  
@@ -117,46 +110,39 @@ $channel->addChild('lastBuildDate', date('r'));
 sleep(2);
  
 foreach ($tds[0] as $td) {
-    sleep(1);
-    preg_match('/href=\'(.*?)\'/', $td, $match);
-    //$match[1] is the url
-	curl_setopt($ch, CURLOPT_URL,$match[1]);
-	curl_setopt($ch, CURLOPT_POST, 0);
-	$page = curl_exec($ch);
+  sleep(1);
+  preg_match('/href=\'(.*?)\'/', $td, $match);
+  //$match[1] is the url
+  curl_setopt($ch, CURLOPT_URL,$match[1]);
+  curl_setopt($ch, CURLOPT_POST, 0);
+  $page = curl_exec($ch);
  
-	preg_match('/<table id="betterb">(.*?)<\/table>/s', $page, $bul);
+  preg_match('/<table id="betterb">(.*?)<\/table>/s', $page, $bul);
  
+  array_shift($bul);
  
-	array_shift($bul);
+  $bul = preg_replace('/<\/?t[r|d|h].*?>/', '', $bul[0]);
  
-	$bul = preg_replace('/<\/?t[r|d|h].*?>/', '', $bul[0]);
+  //build subject
+  preg_match("/Subject:(.*?)Body/s", $bul, $titlematch);
+  $title= trim(htmlentities(strip_tags($titlematch[1])));
  
-	//build subject
-	preg_match("/Subject:(.*?)Body/s", $bul, $titlematch);
-    $title= trim(htmlentities(strip_tags($titlematch[1])));
+  //build title
+  preg_match("/Date:(.*?)Subject/s", $bul, $datematch);
+  $predate= htmlentities(strip_tags($datematch[1]));
+  $pubdate = date('r', strtotime($predate));
  
-    //build title
-	preg_match("/Date:(.*?)Subject/s", $bul, $datematch);
-    $predate= htmlentities(strip_tags($datematch[1]));
-    $pubdate = date('r', strtotime($predate));
+  $item = $channel->addChild('item');
  
-    $item = $channel->addChild('item');
+  $bul = trim($bul);
+  $bul = html_entity_decode($bul);
+  $bul = html_entity_decode($bul);
+  $bul = htmlentities($bul);
  
- 
-    $bul = trim($bul);
-    $bul = html_entity_decode($bul);
-    $bul = html_entity_decode($bul);
-    $bul = htmlentities($bul);
- 
- 
- 
- 
-    $item->addChild('title', "Bulletin from: " . $title);
-    $item->addChild('description', $bul);
-	$item->addChild('pubDate', $pubDate);
- 
+  $item->addChild('title', "Bulletin from: " . $title);
+  $item->addChild('description', $bul);
+  $item->addChild('pubDate', $pubDate);
 }
- 
  
 $fp = fopen('/yourhosthere/myspace/bulletins.xml', 'w');
 fputs($fp, $rss->asXML());

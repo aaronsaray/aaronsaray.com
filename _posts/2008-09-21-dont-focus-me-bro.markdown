@@ -11,7 +11,7 @@ I hate filling out login forms to discover that half of my password is in the us
 
 #### Slow Loading Pages
 
-Slow loading pages, or sites with a lot of content on the login page (see: a no-no for login pages), take a while to finish loading the content.  The 'onload' handler is usually the whole on-load and not just the domloaded event.  Tons of extra content delay the onload handler.
+Slow loading pages, or sites with a lot of content on the login page (see: a no-no for login pages), take a while to finish loading the content.  The `onload` handler is usually the whole on-load and not just the domloaded event.  Tons of extra content delay the onload handler.
 
 #### Dialup
 
@@ -25,32 +25,32 @@ People who jump the gun - like me (and 93% of everyone else) are clicking in the
 
 #### Quickly: activeElement
 
-Firefox 3, and IE4+ support activeElement.  (there are other ways around this for other browsers - see the end of this article).  Check to see if the body is the active element - before focusing the username.  If it is, means that they haven't started typing anywhere.
+Firefox 3, and IE4+ support `activeElement`.  (there are other ways around this for other browsers - see the end of this article).  Check to see if the body is the active element - before focusing the username.  If it is, means that they haven't started typing anywhere.
 
 #### Give me an example?
 
-Ok!  You should use a better 'onload' handler - but I'm being lazy just for this example.
+Ok!  You should use a better `onload` handler - but I'm being lazy just for this example.
 
 ```javascript
 function loginFormInit()
 {
-    if (document.activeElement == document.body) {
-        document.getElementById('username').focus();
-    }
+  if (document.activeElement == document.body) {
+    document.getElementById('username').focus();
+  }
 }
 ```
 
 ```javascript
 <body onload="loginFormInit()">
-    <h1>Login</h1>
-    <form>
-        username: <input type="text" id="username" name="username"></input><br></br>
-        password: <input type="password" id="password" name="password"></input><br></br>
-        <input type="submit"></input>
-    </form>
+  <h1>Login</h1>
+  <form>
+    username: <input type="text" id="username" name="username"></input><br></br>
+    password: <input type="password" id="password" name="password"></input><br></br>
+    <input type="submit"></input>
+  </form>
 </body>
 ```
 
 #### Oh Noes! I need to support more than IE4 and FF3
 
-No worries, citizen!  If you need to support something else, besides those two lovely browsers, you could write a function to getElementsByTagName('input') and add an onfocus element.  That element could set a global variable to 'true'.  Finally, your onload function could check to make sure that that variable is not true - and then do the focus.
+No worries, citizen!  If you need to support something else, besides those two lovely browsers, you could write a function to `getElementsByTagName('input')` and add an `onfocus` element.  That element could set a global variable to `true`.  Finally, your `onload` function could check to make sure that that variable is not true - and then do the focus.
