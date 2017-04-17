@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 3D CSS Example
-wordpress_id: 89
 tags:
 - CSS
 - Misc Web Design

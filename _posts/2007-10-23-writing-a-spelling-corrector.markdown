@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Writing a Spelling Corrector
-wordpress_id: 79
 tags:
 - programming
 ---

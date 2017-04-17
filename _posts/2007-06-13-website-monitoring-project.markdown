@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Website Monitoring Project
-wordpress_id: 7
 tags:
 - Website Monitoring Project
 ---

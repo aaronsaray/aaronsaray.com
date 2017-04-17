@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'Zend Framework ACL: Inherits Including'
-wordpress_id: 1259
 tags:
 - zend framework
 ---
