@@ -31,7 +31,7 @@ The blog entry page was clean, had good code highlighting, but seemed a bit hard
 
 ### The New Design
 
-Well, the first thing I did was decide that I wanted a more readable font.  After reviewing other web-fonts, I figured I'd just go with standard web browser based fonts.  These days, user agents make more of them available to the web.  So, I opted for some built in serif fonts.  I chose serif becuase monitors and phones have higher resolutions than they used to - so the idea that sans-serif fonts are easier to read for text on them - I just don't buy that anymore.
+Well, the first thing I did was decide that I wanted a more readable font.  After reviewing other web-fonts, I figured I'd just go with standard web browser based fonts.  These days, user agents make more of them available to the web.  So, I opted for some built in serif fonts.  I chose serif because monitors and phones have higher resolutions than they used to - so the idea that sans-serif fonts are easier to read for text on them - I just don't buy that anymore.
 
 Next, I restricted the maximum width of the pages.  This was to stop it from creating forever-wide pages for people with wide monitors.  Yes, it's nice to have a giant monitor, but most people with them either don't maximize their browser or appreciate the reading experience being curated I'm sure.
 
