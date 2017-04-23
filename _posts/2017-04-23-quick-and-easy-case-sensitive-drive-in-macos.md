@@ -5,9 +5,9 @@ tags:
 - misc web design
 - mac
 ---
-> A quick note: I chose solution #2 when writing this, but even after a few hours of testing, I might be not suggesting this solution anymore.  I'll update this in about a week or so.
-
 One of my projects involves Google AdWords.  I was dealing with ad groups in AdWords and I realized I had made a few case mistakes with the filenames.  I had files named `Adgroup.php` instead of `AdGroup.php`.  I went and changed the file name, but, since my project is managed with git, I couldn't commit the changes.  My Mac drive was not case sensitive. I guess it never occurred to me before that this would be a problem.  (Come to think of it, though, maybe one time over the last few years I did have something fail on a linux host, but it was working fine on my Mac.  This was most likely the culprit.)
+
+> A quick note: I chose solution #2 when writing this, but even after a few hours of testing, I might be not suggesting this solution anymore.  I'll update this in about a week or so.
 
 ### Solution 1
 
