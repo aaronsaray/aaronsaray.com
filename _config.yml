@@ -4,7 +4,7 @@ timezone: America/Chicago
 
 markdown: kramdown
 permalink: /:year/:title
-exclude: [README.md, workflow-tools]
+exclude: [README.md, workflow-tools, .DS_Store]
 
 sitemap:
     file: "/sitemap.xml"
