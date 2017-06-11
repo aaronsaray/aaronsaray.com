@@ -22,6 +22,10 @@ All this does is move a file from the drafts folder to the post's folder, but it
 This sets the published date for the UI and for ordering.  The command is `bp` which will give a list of items from the 
 drafts folder.  This functionality is provided by the `Blog Publish Draft.alfredworkflow` file.
 
+### Pushing to Production
+
+The jekyll site will be built to `_site` and then an rsync command will make sure the updated entries exist on
+the remote server. Notifications will be issued along the way.  This is provided by the `Blog Update:Submit.alfredworkflow` file.
 
 ## Writing Standards
 
