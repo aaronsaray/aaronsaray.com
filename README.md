@@ -1,6 +1,28 @@
 # aaronsaray.com
 Source for AaronSaray.com
 
+## Writing Process
+
+I forget too many things, so I take notes for myself.  Don't lie - you wish you would do the same...
+
+### Create a New Entry
+
+`Blog Write.alfredworkflow` provides the `bw` command which accepts a parameter of a filename for the new draft.  It puts the file
+in the `_drafts` folder as a markdown file (specifying `.md` when creating the new file is not required).
+The file is git added.  (I version my drafts just in case of a filesystem failure and a back-up failure.)
+
+### Save Progress
+
+When done writing, run `bs` which will blog save - which is basically committing and adding all changed files and pushing them to master.
+This is not the same as publishing.  `Blog Save.alfredworkflow` provides this functionality.
+
+### Publish Draft
+
+All this does is move a file from the drafts folder to the post's folder, but it prepends a date onto the filename. 
+This sets the published date for the UI and for ordering.  The command is `bp` which will give a list of items from the 
+drafts folder.  This functionality is provided by the `Blog Publish Draft.alfredworkflow` file.
+
+
 ## Writing Standards
 
 I'm either way too anal - or this is just because I forget things. You get to decide!
