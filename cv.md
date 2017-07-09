@@ -106,6 +106,8 @@ PHP to Save Time *(1/10) Milwaukee PHP Users Group, Milwaukee, WI*
 
 ### Education / Training
 
+Google Mobile Sites Certification *Google (7/17)*
+
 Google AdWords Certified Specialist *Google (6/17)*
 
 Bachelor of Science in Business Management *Cardinal Stritch University (3/10 – 5/13). Delta Mu Delta Honors*
