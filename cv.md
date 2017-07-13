@@ -106,6 +106,8 @@ PHP to Save Time *(1/10) Milwaukee PHP Users Group, Milwaukee, WI*
 
 ### Education / Training
 
+Google Analytics Certification *Google (7/17)*
+
 Google Mobile Sites Certification *Google (7/17)*
 
 Google AdWords Certified Specialist *Google (6/17)*
