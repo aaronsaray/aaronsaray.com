@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use the $this-fail() method with Mockery::on()
+title: Use the $this->fail() method with Mockery::on()
 tags:
 - php
 - testing
