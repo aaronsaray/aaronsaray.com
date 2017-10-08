@@ -71,6 +71,13 @@ body {
     p {
       font-size: 0.8rem;
     }
+    
+    img {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }
 
