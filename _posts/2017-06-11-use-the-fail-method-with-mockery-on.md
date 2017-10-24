@@ -48,8 +48,6 @@ $mockedClass->shouldReceive('process')->once()
       $this->fail('Property is not 12.');
     }
     return true;
-    }
-    return $valid;
   })->andReturn(true);
 ```
 
