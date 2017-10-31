@@ -134,9 +134,13 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
 
-**Dealer Inspire. Naperville, IL (10/16 to present)**  
+**Dealer Inpsire. Naperville, IL (10/17 - present)**  
+*Director of Product Engineering*  
+Dealer Inspire provides a full suite of software for automotive dealerships. As the Director of Product Engineering, I oversee two products: Online Shopper and Fuel. Online Shopper allows customers to find, customize, finance and finish an entire purchase of an automobile. It features real-time financing quotes, integrates with inventory and provides customized incentives and accessories. Fuel automatically manages online advertising between AdWords and Bing, while integrating with Facebook lead forms. With budget constraints, automated ROI bid adjustments and live inventory integration, Fuel keeps ads up to date and optimizes their performance. My job is to build up my development team, remove obstacles and keep everyone informed. This means I split my time between mentoring and coaching for technical and career paths, leading status meetings and working to stream-line integration of multiple products.
+
+**Dealer Inspire. Naperville, IL (10/16 to 10/17)**  
 *Senior Software Engineer*  
-Dealer Inspire offers a multitude of products for the automotive dealership; everything from websites, online chat and customer management and digital advertisement.  I am rewriting an application from a full-stack Kohana application to a scaled, message-based API service using the Laravel 5 framework.  This application integrates with Salesforce, Google AdWords, Bing Ads, and Facebook Ads, providing a unified interface for managing a single budget and client over multiple ad networks.
+Originally hired as a Senior Developer before my 2017 promotion, I was rewriting an application from a full-stack Kohana application to a scaled, message-based API service using the Laravel 5 framework.  This application integrates with Salesforce, Google AdWords, Bing Ads, and Facebook Ads, providing a unified interface for managing a single budget and client over multiple ad networks.
 
 **Wallit (formerly iMoneza, LLC). Brookfield, WI. (2/16 - 10/16)**  
 *Senior Software Engineer*  

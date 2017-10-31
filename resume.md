@@ -29,7 +29,7 @@ I hold the following certifications: Certified SCRUM Master, Zend Certified Engi
 
 ### Professional Experience
  
-**Senior Software Engineer at Dealer Inspire.** I began working at Dealer Inspire October, 2016.  Dealer Inspire provides a comprehensive suite of tools for automotive dealers.  I'm responsible for an API backed by PHP using the Laravel framework.  This application schedules, coordinates and integrates a single client's advertising budget and inventory system with Facebook Ads, Bing Ads and Google AdWords.
+**Director of Product Engineering at Dealer Inspire.** I began working at Dealer Inspire October, 2016, as a Senior PHP Developer. In October 2017, I was promoted.  Dealer Inspire provides a comprehensive suite of tools for automotive dealers.  I'm responsible for technical mentorship and career path enrichment of my development team. My time is split between two products and teams: Online Shopper, which facilitates purchase, customization and financing of a vehicle completely online; and Fuel, a tool which optimizes and automates advertising via real-time inventory feeds on AdWords and Bing.
  
 **Previous experience includes** Small Shops United, LLC; 201 Creative, LLC; Liturgical Publications, Inc.; c21 Interactive/MarkForGov.com; Rogers POS; Delta Dental; Job Shouts; and EZ-Net. Work history beginning in 2001 is available upon request.
 
