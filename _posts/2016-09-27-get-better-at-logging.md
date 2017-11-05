@@ -2,7 +2,7 @@
 layout: post
 title: Get Better at Logging
 tags:
-- php
+- PHP
 - misc web development
 ---
 Have you ever submitted a debug log for a piece of desktop software?  I'm always enthralled at the sheer amount of information that is included in some of these error reports.  It reminds me that I don't do enough logging.  As a matter of fact, I think most PHP developers don't do enough logging.

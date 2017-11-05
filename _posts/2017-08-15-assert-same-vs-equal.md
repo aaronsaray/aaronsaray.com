@@ -2,7 +2,7 @@
 layout: post
 title: AssertSame vs AssertEqual in PHPUnit
 tags:
-- php
+- PHP
 - phpunit
 - testing
 ---

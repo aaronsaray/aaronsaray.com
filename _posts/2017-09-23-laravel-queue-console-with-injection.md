@@ -2,7 +2,7 @@
 layout: post
 title: Use Dependency Injection in Laravel Console Commands
 tags:
-- php
+- PHP
 - laravel
 - testing
 ---

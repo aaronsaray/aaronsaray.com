@@ -2,7 +2,7 @@
 layout: post
 title: Issue 404 Not Found Middleware After Pagination Limit
 tags:
-- php
+- PHP
 - laravel
 ---
 A pet-peeve of mine is pagination that doesn't work properly.  One that I ran into lately with Laravel is related to the pagination system it has built in.  I was able to request pages that were larger than the last page with no discernible error.  So, I decided to write a middleware to handle this issue for all of my content.

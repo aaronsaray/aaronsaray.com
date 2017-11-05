@@ -1,0 +1,15 @@
+---
+layout: default
+suppress_header: true
+---
+<section id="hero">
+    <p>Entries with the tag "{{ page.tag }}"</p>
+</section>
+<section class="entries">
+    {% for post in page.posts %}
+    {% include blog-post.html post=post excerpt=true %}
+    {% endfor %}
+</section>
+<p class="last-cta">
+    <a href="/blog">Go to All Posts</a>
+</p>

@@ -2,7 +2,7 @@
 layout: post
 title: Fun with Giant Integers in PHP
 tags:
-- php
+- PHP
 ---
 If you deal with integers, you validate them, right?  You make sure they're a valid integer?  Well, what about the value `9223372036854775808`?  That's right, that's one more than the `PHP_INT_MAX` on a 64 bit system.  
 

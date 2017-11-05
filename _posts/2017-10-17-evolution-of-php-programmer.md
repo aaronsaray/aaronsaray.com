@@ -2,7 +2,7 @@
 layout: post
 title: The Evolution of PHP Programmers
 tags:
-- php
+- PHP
 - misc web development
 - programming
 ---

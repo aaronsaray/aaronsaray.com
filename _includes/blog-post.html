@@ -24,6 +24,10 @@
     </section>
     <footer>
         <time datetime="{{ include.post.date | date: '%FT%T%:z' }}" itemprop="datePublished">{{ include.post.date | date: "%b %-d, %Y" }}.</time>
-        <span>{{ include.post.tags | join: ', ' }}</span>
+        <span>
+            {% for tag in include.post.tags %}
+                <a href="/tag/{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last == true %}, {% endunless %}</a>
+            {% endfor %}
+        </span>
     </footer>
 </article>

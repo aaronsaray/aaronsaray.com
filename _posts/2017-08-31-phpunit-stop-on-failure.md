@@ -2,7 +2,7 @@
 layout: post
 title: PHPUnit Stop On Failure
 tags:
-- php
+- PHP
 - phpunit
 ---
 From time to time, I get thrown onto a project that has many, many errors in the unit tests.  It can be hard to try to figure out what to fix first with so many errors on the screen.  Sadly, I've had my scroll-back buffer filled many times.

@@ -2,7 +2,7 @@
 layout: post
 title: My MadMimi API PHP Library
 tags:
-- php
+- PHP
 - api
 ---
 At [Small Shops United](https://www.smallshopsunited.com), we use MadMimi for our email list software.  I took a look at the PHP libraries that were available and found them extremely out of date, lacking, and just plain not working in certain areas.  

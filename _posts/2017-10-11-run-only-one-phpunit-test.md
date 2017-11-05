@@ -2,7 +2,7 @@
 layout: post
 title: Run A Single PHPUnit Test Only
 tags:
-- php
+- PHP
 - phpunit
 - testing
 ---

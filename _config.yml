@@ -22,7 +22,7 @@ sass:
 compress_html:
    clippings: all
 
-tag_page_layout: page
+tag_page_layout: page_tags
 tag_page_dir: tag
 
 gems:

@@ -2,7 +2,7 @@
 layout: post
 title: Doctrine Database Connection Fails in Gearman Worker
 tags:
-- php
+- PHP
 - doctrine
 - gearman
 ---

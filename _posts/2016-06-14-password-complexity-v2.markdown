@@ -2,7 +2,7 @@
 layout: post
 title: Password Complexity v2
 tags:
-- php
+- PHP
 - user experience
 ---
 Every year, they come out with a list of the top 20 most used passwords and it makes me wonder... how many users on any one of my websites are using those passwords?  

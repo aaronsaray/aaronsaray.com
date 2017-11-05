@@ -2,7 +2,7 @@
 layout: post
 title: PHPUnit Test Helpers for Mockery and Non-Public Properties
 tags:
-- php
+- PHP
 - phpunit
 ---
 I've written a few helpful methods and systems that help out my unit testing.  There are many arguments for and against these tools (don't test protected methods, don't introduce global namespace methods, etc) - and those are discussions for another day - but perhaps these might help you out in the mean time.

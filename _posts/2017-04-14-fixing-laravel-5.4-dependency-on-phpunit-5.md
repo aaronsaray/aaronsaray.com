@@ -2,7 +2,7 @@
 layout: post
 title: Fixing Laravel 5.4's Dependency on PHPUnit 5
 tags:
-- php
+- PHP
 - testing
 - phpunit
 - laravel

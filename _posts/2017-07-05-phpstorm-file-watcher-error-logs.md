@@ -2,7 +2,7 @@
 layout: post
 title: PHPStorm File Watcher for Immediate Error Log Alerts
 tags:
-- php
+- PHP
 - phpstorm
 ---
 When PHP errors happen, often times there is an error log.  This might be in the PHP error log itself or in a log file.  For example, in one of my Laravel projects, I have two log files, one for errors and one for info or debug level information.

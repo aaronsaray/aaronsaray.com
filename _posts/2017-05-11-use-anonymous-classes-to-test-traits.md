@@ -2,7 +2,7 @@
 layout: post
 title: Use Anonymous Classes to Test Traits
 tags:
-- php
+- PHP
 - phpunit
 - testing
 ---

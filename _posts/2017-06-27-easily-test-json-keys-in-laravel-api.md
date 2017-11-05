@@ -2,7 +2,7 @@
 layout: post
 title: Easily Test JSON Keys in Laravel API Response
 tags:
-- php
+- PHP
 - phpunit
 - laravel
 ---
