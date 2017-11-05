@@ -13,6 +13,9 @@ layout: compress
   {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}">{% endif %}
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  {% if page.tag %}
+    <link rel="alternate" type="application/rss+xml" title="Entries tagged {{page.tag}} on {{ site.title }}" href="{{ site.url}}{{site.baseurl}}/tag/{{ page.tag | slugify }}.xml">
+  {% endif %}
 </head>
 <body>
 <header>
