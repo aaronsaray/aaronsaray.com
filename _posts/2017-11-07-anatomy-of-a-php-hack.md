@@ -2,7 +2,7 @@
 layout: post
 title: Anatomy of a PHP Hack
 tags:
-- php
+- PHP
 - security
 ---
 It's hard to come up with a title for this - but - basically I found some rogue code the other day that I thought was pretty interesting. I was fixing a "hacked" website when I came across the source of the symptoms of the hack.  One file had the following code in it:

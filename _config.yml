@@ -29,5 +29,9 @@ tag_feed_dir: tag
 tag_page_data:
   sitemap: false
   
+paginate: 10
+paginate_path: "/blog/page-:num"
+  
 gems:
   - jekyll/tagging
+  - jekyll-paginate
