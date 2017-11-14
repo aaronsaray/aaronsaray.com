@@ -48,10 +48,6 @@ Javascript Testing Beginners Guide (ISBN: 978-1849510004)
 
 ### Technical Public Speaking
 
-Dissecting a WordPress Hack *(11/17) Madison PHP Meetup, Madison, WI*
-
-Dissecting a WordPress Hack *(11/17) Milwaukee PHP Meetup, Milwaukee, WI*
-
 Wireframes and prototypes: What good are they? *(11/17) Hack-it Bracket, Northwestern Mutual/The Commons, Milwaukee, WI*
 
 Mastering Cross-Generational Communication. *(3/17) WCTC, Pewaukee, WI*
