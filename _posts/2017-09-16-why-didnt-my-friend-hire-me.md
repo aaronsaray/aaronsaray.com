@@ -2,7 +2,7 @@
 layout: post
 title: Why Didn't My Friend Hire Me?
 tags:
-- business
+- Business
 ---
 I've been in the position to hire a lot of programmers over the last few years.  This is a great responsibility; one that doesn't come without a bunch of unique situations, especially when it deals with colleagues and friends.
 

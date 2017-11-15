@@ -2,7 +2,7 @@
 layout: post
 title: "I Made A Professional Connection: Now What?"
 tags:
-- business
+- Business
 ---
 I'm very lucky to receive multiple LinkedIn requests to connect each week. I rarely accept them, unless I happen to recognize or know the person.  Also, if they have a compelling message and I think they might follow up, then fine, too.  But that's where it usually ends...
 

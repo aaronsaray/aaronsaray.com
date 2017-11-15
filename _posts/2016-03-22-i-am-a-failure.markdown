@@ -2,7 +2,7 @@
 layout: post
 title: I am a Failure
 tags:
-- business
+- Business
 ---
 > Fair warning - I normally don't write too personally in this blog - but this one is something different.  Something I think people need to read.
 

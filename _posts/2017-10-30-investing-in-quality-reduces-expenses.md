@@ -2,7 +2,7 @@
 layout: post
 title: How Writing Good-Quality Code Reduces Expenses
 tags:
-- business
+- Business
 ---
 There's a reason why we want to build high-quality code - actually there are man.  But in the end, it boils down to this one point.  **Good Quality Code Reduces Costs.**
 

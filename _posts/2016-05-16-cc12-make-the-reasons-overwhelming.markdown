@@ -3,7 +3,7 @@ layout: post
 title: Make the Reasons Overwhelming
 tags:
 - PHP
-- business
+- Business
 ---
 > This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
 

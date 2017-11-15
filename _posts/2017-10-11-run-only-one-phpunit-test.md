@@ -3,8 +3,8 @@ layout: post
 title: Run A Single PHPUnit Test Only
 tags:
 - PHP
-- phpunit
-- testing
+- PHPUnit
+- Testing
 ---
 Often times, I find myself targeting a single file with PHPUnit by specifying the file after the binary in the command line:
 

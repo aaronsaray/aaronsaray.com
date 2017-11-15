@@ -2,7 +2,7 @@
 layout: post
 title: "Startups - take note: Sometimes More Features Aren't Better"
 tags:
-- business
+- Business
 ---
 > The real reason we're not successful or getting a bunch of sales, is because we're missing feature X, Y and Z! Add them immediately!
 

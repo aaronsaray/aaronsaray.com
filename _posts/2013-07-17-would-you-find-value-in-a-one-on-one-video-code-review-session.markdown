@@ -3,7 +3,7 @@ layout: post
 slug: would-you-find-value-in-a-one-on-one-video-code-review-session
 title: Would You Find Value in a One on One Video Code Review Session?
 tags:
-- business
+- Business
 - learning
 - programming
 ---

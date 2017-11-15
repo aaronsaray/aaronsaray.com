@@ -2,7 +2,7 @@
 layout: post
 title: Creating a Google Fusion Table from a Google Drive Spreadsheet
 tags:
-- business
+- Business
 - Misc Web Design
 ---
 Wow!  Enter [Google Fusion Tables](https://support.google.com/fusiontables/answer/2571232) - an easy way to show, manipulate, sort and display data. 

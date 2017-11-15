@@ -3,7 +3,7 @@ layout: post
 title: Studly Words in Laravel
 tags:
 - PHP
-- laravel
+- Laravel
 ---
 In Laravel, the `Support\Str` class has a lot of useful methods for switching formats of strings between each other.  I needed to take a hyphenated slug and change it to title case words.  In Laravel land, I think this is referred to as "Studly" - because I found something very similar called `Str::studly()`.  This converts underline or hyphenated words into a single string with capital letters.  I wanted to not concatenate all of these.
 

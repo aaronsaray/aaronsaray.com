@@ -2,7 +2,7 @@
 layout: post
 title: The Chicken or the Egg of Hacking Your Software
 tags:
-- business
+- Business
 - security
 ---
 Today I was faced with an interesting quandary about whether I should write the code to exploit an application vulnerability in our software at work. This vulnerability is not necessarily a "security" one, but more-so a known-risk: it was theorized that someone with enough knowledge could bypass a mechanism in our software.

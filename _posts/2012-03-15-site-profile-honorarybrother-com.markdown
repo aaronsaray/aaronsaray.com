@@ -2,7 +2,7 @@
 layout: post
 title: 'Site Profile: honorarybrother.com'
 tags:
-- business
+- Business
 - Misc Web Design
 - site profile
 ---

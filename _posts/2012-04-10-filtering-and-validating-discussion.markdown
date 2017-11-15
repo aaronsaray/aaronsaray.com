@@ -2,7 +2,7 @@
 layout: post
 title: Filtering and Validating Discussion
 tags:
-- business
+- Business
 - programming
 - security
 ---

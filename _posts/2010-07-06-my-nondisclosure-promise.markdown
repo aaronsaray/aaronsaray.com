@@ -2,7 +2,7 @@
 layout: post
 title: My NonDisclosure Promise
 tags:
-- business
+- Business
 ---
 As you may remember, I wrote a piece about why I do not sign any NDAs [here]({% post_url 2010-03-05-aaron-on-ndas %}).  I've had some time to reflect on that entry, and I want to move forward.  I want to give any client I work with my new "promise" - the Non Disclosure Promise.  Let me tell you a bit more why I choose not to sign NDAs, and what I can offer you instead.
 

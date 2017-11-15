@@ -2,7 +2,7 @@
 layout: post
 title: Enable your blog comments already!
 tags:
-- business
+- Business
 ---
 **Sorry for the mini-rant here...**
 

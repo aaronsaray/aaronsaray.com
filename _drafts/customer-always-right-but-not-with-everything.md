@@ -2,7 +2,7 @@
 layout: post
 title: The Customer is Always Right, But Not With Everything
 tags:
-- business
+- Business
 ---
 You've heard the phrase "The customer is always right" before.  I think you'll find an equal amount of articles online saying that that sentiment is still and always true vs the fact that the customer doesn't know what's best for them and they're not right.  (You'll even hear stories about how some "great" companies like Apple ignore the customer desire and that's how they became successful.) But they're not really digging further into the customer relationship.
 

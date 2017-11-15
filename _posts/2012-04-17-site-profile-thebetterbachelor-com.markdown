@@ -2,7 +2,7 @@
 layout: post
 title: 'Site profile: thebetterbachelor.com'
 tags:
-- business
+- Business
 - Misc Web Design
 - site profile
 ---

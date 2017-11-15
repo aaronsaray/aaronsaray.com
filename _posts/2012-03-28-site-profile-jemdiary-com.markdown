@@ -2,7 +2,7 @@
 layout: post
 title: 'Site profile: jemdiary.com'
 tags:
-- business
+- Business
 - Misc Web Design
 - site profile
 ---

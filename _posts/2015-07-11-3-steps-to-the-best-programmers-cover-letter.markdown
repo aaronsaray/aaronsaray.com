@@ -2,7 +2,7 @@
 layout: post
 title: 3 Steps to the Best Programmer's Cover Letter
 tags:
-- business
+- Business
 - programming
 ---
 > The other day I found myself giving advice and revisions to a fellow PHP programmer about his cover letter for his next job application.  That really inspired me to help out and write this entry.
