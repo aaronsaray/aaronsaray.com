@@ -16,11 +16,11 @@ At GitHub, I've released various PHP and Javascript code including [FirePHP4Chro
 
 I enjoy participating in my local business and technical community.
 
-[WCTC Communications Advisory Board](http://wctc.edu).  I am a member of the advisory committee. This committee helps direct the curriculum of the communications and technical/programming programs.  Our goal is to bring real-life business experience in to help structure class work that is relevant to a student's work in the industry.
-
 [Milwaukee PHP Users Group](http://mkepug.org). I started the Milwaukee PHP user's group in 2010.  It has been meeting roughly every month since then.
 
 Various Other Meetup Leadership Roles.  I've participated in restarting, restructuring, and/or other assistance with the Fox Cities PHP Users group, the Milwaukee Web Design Meetup, and the Milwaukee Web Professionals meetup.
+
+[WCTC Communications Advisory Board](http://wctc.edu).  From 2016 to 2018, I was a member of the advisory committee. This committee helps direct the curriculum of the communications and technical/programming programs.
 
 ### Publications
 
