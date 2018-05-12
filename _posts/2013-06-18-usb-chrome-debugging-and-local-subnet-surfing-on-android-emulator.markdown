@@ -17,7 +17,7 @@ Most of the development I do that needs to be tested on android is on a local su
 
 First, make sure to install your [Android Emulator](http://developer.android.com/sdk/index.html).  Once you have installed the emulator and the packages you want, you can create an instance of an AVD file for your chosen android version.  In this example, Chrome that I'm providing works only with Android 4.1 and above.  Next, make sure you select the **shared GPU** setting on the device setup, and choose **Arm emulation** from the type.  For me, the x86 version made the emulator much faster - but this Chrome I have won't work (note: you can't easily get Google Chrome on the emulator... not sure why).  If you do not use shared GPU, chrome will render white pages instead of your websites.
 
-Once this is working, download this [chrome APK](/uploads/2013/chrome.apk).  With your emulator running, you want to push the file and install it on your emulator.  Do the following:
+Once this is working, download this [chrome APK](/uploads/2013/chrome.apk.zip) and unzip it.  With your emulator running, you want to push the file and install it on your emulator.  Do the following:
     
 ```bash
 adb remount
