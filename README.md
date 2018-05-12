@@ -73,3 +73,7 @@ Linking internally to blogs will be done with the internal post link system:
 Files should always be code and bold.  For example:
 
 **`filename.php`**
+
+## Plugins
+
+Plugins should be added to `Gemfile` and then run `bundle install`.
