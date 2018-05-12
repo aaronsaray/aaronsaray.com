@@ -7,15 +7,6 @@ markdown: kramdown
 permalink: /:year/:title
 exclude: [README.md, workflow-tools, .DS_Store, LICENSE]
 
-sitemap:
-    file: "/sitemap.xml"
-    exclude:
-        - "/404.html"
-        - "/feed.xml"
-        - "/css/main.css"
-    include_posts:
-        - "/blog.html"
-
 sass:
     style: compressed
     
