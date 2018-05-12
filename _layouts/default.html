@@ -20,8 +20,8 @@ layout: compress
 <body>
 <header>
   <nav>
-    <a href="/">Aaron Saray</a>
-    <a href="/contact">Contact</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/">Aaron Saray</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/contact">Contact</a>
   </nav>
 </header>
 <main>
@@ -42,7 +42,7 @@ layout: compress
     <li><a href="https://github.com/aaronsaray">GitHub</a></li>
     <li><a href="https://twitter.com/aaronsaray">Twitter</a></li>
     <li><a href="https://linkedin.com/in/aaronsaray">LinkedIn</a></li>
-    <li><a href="/resume" title="My Web Programmer Resume">Resume</a></li>
+    <li><a href="{{ site.url }}{{ site.baseurl }}/resume" title="My Web Programmer Resume">Resume</a></li>
   </ul>
   <p>
     &copy; {{ site.time | date: '%Y' }} <a xmlns:cc="http://creativecommons.org/ns" href="https://aaronsaray.com" property="cc:attributionName" rel="cc:attributionURL">Aaron Saray</a>. All content is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
