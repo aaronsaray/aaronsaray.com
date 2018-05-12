@@ -1,6 +1,12 @@
 # aaronsaray.com
 Source for AaronSaray.com
 
+## Running Jekyll
+
+`bundle exec jekyll $command`
+
+Where `$command` is things like `serve` or `build`.
+
 ## Writing Process
 
 I forget too many things, so I take notes for myself.  Don't lie - you wish you would do the same...
