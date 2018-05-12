@@ -10,13 +10,13 @@ header: "All entries of my technical and business blog."
 </section>
 <section class="pagination">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}">⬅ Newer</a>
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">⬅ Newer</a>
     {% else %}
     <span>⬅ Newer</span>
     {% endif %}
     |
     {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}">Older ➡</a>
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older ➡</a>
     {% else %}
     <span>Older ➡</span>
     {% endif %}
