@@ -5,7 +5,14 @@ timezone: America/Chicago
 
 markdown: kramdown
 permalink: /:year/:title
-exclude: [README.md, workflow-tools, .DS_Store, LICENSE, Gemfile, Gemfile.lock]
+exclude: 
+  - README.md
+  - workflow-tools
+  - .DS_Store
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - CNAME
 
 sass:
     style: compressed
