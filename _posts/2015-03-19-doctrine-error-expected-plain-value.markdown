@@ -2,7 +2,7 @@
 layout: post
 title: 'Doctrine Error: Expected Plain Value'
 tags:
-- doctrine
+- php
 ---
 I'm so used to PHP's liberal allowance for single and double quotes, that I forget that other languages and tool-sets don't play that way.  Case in point, my most recent error:
     

@@ -2,7 +2,7 @@
 layout: post
 title: 'Zend Framework: Bootstrap vs Front Controller Plugin'
 tags:
-- zend framework
+- zend-framework
 ---
 Today I was reviewing some old code I wrote in Zend Framework.  One of the things I was doing in the `Bootstrap.php` file was creating an function called `_initViewSettings()`.  In here I set a bunch of values for the xhtml version, the css files to include, etc.  Now I realize my mistake:
 

@@ -1,9 +1,8 @@
 ---
 layout: post
-slug: firephp4chrome-chrome-extension
 title: FirePHP4Chrome Chrome Extension
 tags:
-- Google Chrome
+- google
 ---
 I use Chrome almost exclusively now.  One thing that drove me nuts was the lack of support for FirePHP in the console of Chrome.  Google even released some extensions for it - but they either didn't work or were out of date.  So I created my own.
 

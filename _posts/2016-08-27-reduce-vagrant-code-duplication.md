@@ -2,7 +2,7 @@
 layout: post
 title: Reduce Vagrant code duplication by using functions
 tags:
-- vagrant
+- linux
 ---
 I use [Vagrant](https://vagrantup.com) for most of my server management.  One thing I noticed is that my `Vagrantfile` can get pretty large - especially if I have multiple environments that share the same configuration.
 

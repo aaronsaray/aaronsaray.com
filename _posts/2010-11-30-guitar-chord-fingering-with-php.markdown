@@ -2,7 +2,7 @@
 layout: post
 title: Guitar Chord fingering with PHP
 tags:
-- open source
+- programming
 ---
 After cleaning up some old files in my archive, I found this snippet of code I made a while ago.  
 

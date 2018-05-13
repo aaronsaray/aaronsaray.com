@@ -2,7 +2,7 @@
 layout: post
 title: Android Emulation - in VirtualBox - 400% faster!
 tags:
-- android
+- mobile
 ---
 I've been working with my QA department to determine a faster, better way to test our pages in android browsers.  The android emulator just seems to take a long time to load, to render pages, and is clunky to use.  (True, I may not have learned about all of the options in the emulator, and I may be able to squeak a little bit of performance out of it.)  
 

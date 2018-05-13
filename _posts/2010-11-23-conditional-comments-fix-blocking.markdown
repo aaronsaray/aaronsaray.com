@@ -3,7 +3,7 @@ layout: post
 title: Conditional Comments - fix blocking
 tags:
 - html
-- internet explorer
+- misc-web
 ---
 Ok - so I can't take any credit for this - but check out this blog post:
 [http://www.phpied.com/conditional-comments-block-downloads/](http://www.phpied.com/conditional-comments-block-downloads/)

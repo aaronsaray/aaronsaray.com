@@ -3,7 +3,7 @@ layout: post
 title: Write Security Triggers Against SQL Injection
 tags:
 - security
-- SQL
+- sql
 ---
 An interesting idea that a colleague told me about was a 'security trigger' in any application that has a SQL type storage engine.  The trick is to make sure that your admin account is not ID #1 and that your administrative username isn't one of the most common ones:
 

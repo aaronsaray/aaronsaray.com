@@ -2,7 +2,7 @@
 layout: post
 title: Send e-mail from outlook using PHP
 tags:
-- PHP
+- php
 - windows
 ---
 While working on some code at ("the triangle"), I run into some issues with the `mail()` function.  On our linux qa and production servers, we can use the `mail()` function no problem - but on my development platform, windowsxp, I cannot with our current configuration.  Normally, you can put in the smtp server in the **`php.ini`** file, but our setup doesn't allow this.  We have an exchange server who's relaying settings restrict it to a few IPs within our organization.  Our development boxes are on the same subnet as everyone else's, therefore using the same DHCP pool.  Because of security issues, networking doesn't want to open up the relay to that subnet block, which is smart.  However, they didn't want to give me a static IP on a different subnet or they didn't want to do my suggestion of reserving a pool for our dev boxes (why not? grrrr...).  At any rate, we do use outlook with our exchange - so why not use PHP to send it out through outlook?  Lets see how:

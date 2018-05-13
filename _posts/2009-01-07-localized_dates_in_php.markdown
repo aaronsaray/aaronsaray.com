@@ -2,7 +2,7 @@
 layout: post
 title: Localized dates in php
 tags:
-- PHP
+- php
 ---
 ### Date formats - How time makes pretty
 

@@ -2,8 +2,7 @@
 layout: post
 title: 'Don''t Always Lead: Sometimes Just Be Great'
 tags:
-- Business
-- professional tips
+- business
 ---
 What is the measurement of a good career?  Promotion?  Raises?  Running a project / leading a team?  Usually all of this.  However, the most traditional measurement of success in a career is moving upward.  Time to run a department, time to lead a team, etc.  However, I submit a very radical idea: Sometimes just be great, don't lead.  
 

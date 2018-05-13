@@ -3,7 +3,7 @@ layout: post
 title: Split Read/Write Connections in Zend Framework Database on the Application Level
 tags:
 - mysql
-- zend framework
+- zend-framework
 ---
 I'm no sys admin, so I can't be sure, but I've seen lots of issues with using things like MySQL Proxy to fully separate the write and read queries in an application.  Maybe it works, I don't know... but I do know that if I can separate the connections in my code, that saves my Admin time... it doesn't appear to give that much of a hit to performance either!  Do keep in mind that this is only working at the table level in Zend Framework.  If you use their database system, this should do the trick.  If you do a lot of getting the adapter yourself, this won't help you at all!
 

@@ -2,7 +2,7 @@
 layout: post
 title: 'Book Review: Expert PHP 5 Tools'
 tags:
-- PHP
+- php
 ---
 Where was this book 4 years ago?  Or even 2 years ago?  (Uh - it was published in 4/2010... so... just in the author's head apparently).  
 

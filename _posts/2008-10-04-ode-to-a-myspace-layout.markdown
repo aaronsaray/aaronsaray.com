@@ -2,7 +2,7 @@
 layout: post
 title: Ode to a MySpace Layout
 tags:
-- myspace
+- news
 ---
 *sigh* Things change... and so does MySpace.
 

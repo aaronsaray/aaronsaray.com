@@ -3,7 +3,7 @@ layout: post
 title: To WWW or not to WWW
 tags:
 - apache
-- Misc Web Design
+- misc-web
 - performance
 - programming
 ---

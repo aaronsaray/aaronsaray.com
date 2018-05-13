@@ -4,7 +4,7 @@ title: Auto Failover for CDN based Javascript
 tags:
 - javascript
 - jquery
-- Misc Web Design
+- misc-web
 ---
 Using my [javascript error reporter](/blog/2009/09/23/javascript-error-handler) code helps me get a better understanding of what my clients are experiencing when visiting my website.  One thing I did notice was the failures from time to time of Google's CDN based jQuery.
 

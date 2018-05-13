@@ -2,7 +2,7 @@
 layout: post
 title: Cross Domain AJAX - A quick anatomy of a mashup
 tags:
-- AJAX
+- ajax
 - apache
 - javascript
 - security

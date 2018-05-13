@@ -2,8 +2,8 @@
 layout: post
 title: Translate Your Error Messages in Your Zend Framework Controllers
 tags:
-- Misc Web Design
-- zend framework
+- misc-web
+- zend-framework
 ---
 I've been making a push to have more of my projects multi-lingual.  However, one thing I kept forgetting about was those super-rare error messages that have to come from the Controller.  For the most part, all of your errors should be handled by your validators in your forms.  However, from time to time, there needs to be an error handled in your controller.  
 

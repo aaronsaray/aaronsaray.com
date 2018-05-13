@@ -2,7 +2,7 @@
 layout: post
 title: Government Website Idea
 tags:
-- Ideas for Websites
+- business
 ---
 I find it very difficult to find out information about my local elected officials.  Even the federal website for congress mentions that there is no central database of email addresses and contact information for their members - which is just crazy to me.  
 

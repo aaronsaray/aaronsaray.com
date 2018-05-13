@@ -2,9 +2,9 @@
 layout: post
 title: XDebug and Eclipse PDT on Windows - From Start to Finish
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- PHP
+- eclipse-pdt
+- ide-and-web-dev-tools
+- php
 - windows
 ---
 XDebug and Eclipse PDT on Windows - From Start to Finish

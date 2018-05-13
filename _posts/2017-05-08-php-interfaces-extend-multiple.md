@@ -2,7 +2,7 @@
 layout: post
 title: PHP Interfaces Can Extend Multiple Interfaces
 tags:
-- PHP
+- php
 ---
 Every PHP programmer knows you can't extend multiple classes with PHP.  You can only do one - which is fine.  In fact, if you need more shared code, make sure to focus on using [traits](http://php.net/manual/en/language.oop5.traits.php) instead.
 

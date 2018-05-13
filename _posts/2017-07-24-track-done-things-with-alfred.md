@@ -2,7 +2,7 @@
 layout: post
 title: Track the Things You've Done Today with Alfred
 tags:
-- Business
+- business
 ---
 For our agile workflow, it's important to provide a check-in each day.  What did you do yesterday, what do you plan on doing today, do you have any blockers?  My biggest challenge is actually remembering what I did "yesterday" - especially after the weekend.
 

@@ -2,7 +2,7 @@
 layout: post
 title: Laravel Command to Generate Swagger Documentation
 tags:
-- PHP
+- php
 - laravel
 ---
 If you're not using [Swagger](http://swagger.io/) (or OpenAPI) yet to document your APIs, you should start.  It's pretty simple to get started - especially in PHP.  I recommend using the [swagger-php](https://github.com/zircote/swagger-php) package - it's pretty easy.  Just use annotations, and then generate the Swagger definition when you're done.

@@ -2,8 +2,8 @@
 layout: post
 title: Validate Request Parameter Not Present in Laravel 5.4
 tags:
-- PHP
-- Laravel
+- php
+- laravel
 ---
 You can make use of guarded or fillable attributes in Eloquent models in Laravel to help control what values you might allow to be updated via your API.  But, I wanted to go a step further and actually stop certain values from being passed in.  You could go pretty wild with this and try to block everything, but that's not what I did. I made this validator.
 

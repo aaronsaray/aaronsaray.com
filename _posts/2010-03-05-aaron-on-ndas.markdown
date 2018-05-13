@@ -2,7 +2,7 @@
 layout: post
 title: Aaron on NDAs
 tags:
-- Business
+- business
 ---
 From time to time, I get approached with a new project from an excited business person.  They are just bursting to tell me all about it, to see if I can help them out (or even make it for them), and looking for some clarification on their next steps.  This inevitably is hindered by my reluctance to answer their first email.  You know that email.  The one that includes the attached Non Disclosure Agreement.
 

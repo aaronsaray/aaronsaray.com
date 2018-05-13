@@ -2,9 +2,8 @@
 layout: post
 title: Remove .svn folders from Eclipse Project Explorer
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- svn
+- eclipse-pdt
+- ide-and-web-dev-tools
 ---
 It had been irritating to me seeing the .svn folders littered throughout my project workspace.  In addition, they all show up in the search results... this can be irritating with the `svn-base` files that show the old version of the file before a commit.
 

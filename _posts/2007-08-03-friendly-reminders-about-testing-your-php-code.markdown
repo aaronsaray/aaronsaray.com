@@ -2,8 +2,8 @@
 layout: post
 title: Friendly reminders about testing your PHP code
 tags:
-- Misc Web Design
-- PHP
+- misc-web
+- php
 - testing
 ---
 I was reading on a forum the other day about some benchmarks for PHP.  The guy had posted some results in ms measurements, and was getting upset about his erratic results.  There were some things that he was forgetting, however.

@@ -2,7 +2,7 @@
 layout: post
 title: Keep your Admin Interface CSS Separate
 tags:
-- CSS
+- css
 - performance
 - security
 ---

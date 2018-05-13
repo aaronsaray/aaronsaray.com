@@ -2,7 +2,7 @@
 layout: post
 title: Easy Flash Messenger Messages in Zend Framework
 tags:
-- zend framework
+- zend-framework
 ---
 Through reading a few blog posts over the last year and my own trial and error, I've developed a way of using the `flashMessenger` Helper in ZF that works out really well for me.  (Note: if anyone knows the original blog post that I got some of the view helper from, please comment!).
 

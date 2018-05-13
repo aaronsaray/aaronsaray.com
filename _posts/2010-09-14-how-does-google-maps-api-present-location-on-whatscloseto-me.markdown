@@ -2,7 +2,7 @@
 layout: post
 title: How does Google Maps API present location on whatscloseto.me
 tags:
-- Misc Web Design
+- misc-web
 ---
 I get a few questions here and there about the location detection on [whatscloseto.me](http://whatscloseto.me).  Sometimes it seems really near - other times it seems way off.
 

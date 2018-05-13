@@ -2,7 +2,7 @@
 layout: post
 title: Getting variable values from nested twig / symfony custom template
 tags:
-- PHP
+- php
 - symfony
 ---
 Today, I was working with a custom form themed symfony / twig project.  The previous developer had developed a bootstrap based theme (yes, this is an older Symfony project at this moment - I think this is a bundled theme now).  I was struggling with the block `field_row` item.  Inside of this, there was a call to `form_label` passing in just the form view again.  I was setting a custom label on the form_row() call in the main template, but nothing was happening.

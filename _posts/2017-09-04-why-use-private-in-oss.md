@@ -2,7 +2,7 @@
 layout: post
 title: Why Use Private in Open Source Software
 tags:
-- PHP
+- php
 - programming
 ---
 As a PHP programmer, I struggle to understand the reason for private methods and properties.  Now, don't get me wrong, **I know** the official explanation for them: "Use this to hide properties and methods from child classes" - but why?  There have been a number of times when I've done stuff that is way more of a cluster-fnck because of private methods that I couldn't slightly modify.  

@@ -2,7 +2,7 @@
 layout: post
 title: Add a Case-Sensitive Disk in MacOS
 tags:
-- macos
+- misc-web
 ---
 In an earlier entry [here]({% post_url 2017-04-23-quick-and-easy-case-sensitive-drive-in-macos %}), I described the need for a case-sensitive disk in my development set up.  I've enjoyed using my SD-based drive, but I wanted to change to using my own drive for two reasons: a) I have 1TB drive, so I have plenty of space and b) the SD is slower than the SSD - at least last time I tested it was.  
 

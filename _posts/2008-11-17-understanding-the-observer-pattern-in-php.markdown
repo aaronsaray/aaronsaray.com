@@ -2,7 +2,7 @@
 layout: post
 title: Understanding the Observer Pattern in PHP
 tags:
-- PHP
+- php
 - programming
 ---
 For a while, I've been looking at plugin systems, but not really fully understanding the pattern behind them.  Don't get me wrong, I see how they work, but I didn't know the reason why - the theory or pattern behind it.  Well turns out, generally, they're based upon the observer pattern.  I decided to write my own observer pattern demonstration here.

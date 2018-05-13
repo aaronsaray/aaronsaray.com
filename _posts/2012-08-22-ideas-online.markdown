@@ -2,7 +2,7 @@
 layout: post
 title: Ideas Online
 tags:
-- Ideas for Websites
+- business
 ---
 This idea is to create an idea repository.  I started out wanting to make this website - and instead just decided to list my ideas on this blog.  But, here goes.
 

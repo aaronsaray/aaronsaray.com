@@ -2,7 +2,7 @@
 layout: post
 title: DIRECTORY_SEPARATOR is Useless!
 tags:
-- PHP
+- php
 ---
 The predefined PHP constant `DIRECTORY_SEPARATOR` is useless.
 

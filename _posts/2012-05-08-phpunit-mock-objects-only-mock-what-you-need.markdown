@@ -2,7 +2,7 @@
 layout: post
 title: 'PHPUnit Mock Objects: Only Mock What You Need'
 tags:
-- PHP
+- php
 - phpunit
 - testing
 ---

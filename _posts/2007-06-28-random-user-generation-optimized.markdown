@@ -2,7 +2,7 @@
 layout: post
 title: Random user generation - optimized
 tags:
-- SQL
+- sql
 ---
 I came across [this blog posting](http://jan.kneschke.de/projects/mysql/order-by-rand) about optimizing order by `rand()` and decided to make my queries better.  Here is my real life example on how to optimize this query:
 

@@ -2,7 +2,7 @@
 layout: post
 title: 'Idea: Extra Analytics Information'
 tags:
-- Ideas for Websites
+- business
 ---
 When browsing the documentation for chrome, I came across this:
 

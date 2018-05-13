@@ -3,7 +3,7 @@ layout: post
 title: Create Google Advanced Search String
 tags:
 - google
-- PHP
+- php
 ---
 I found an interesting article about the parameters of the advanced search URL for google.  Just for fun, I tested out their concepts and they were all true.  I figured maybe there was a reason to do this as a PHP class (I think I was just bored...).
 

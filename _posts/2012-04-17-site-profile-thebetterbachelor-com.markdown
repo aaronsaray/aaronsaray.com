@@ -2,9 +2,8 @@
 layout: post
 title: 'Site profile: thebetterbachelor.com'
 tags:
-- Business
-- Misc Web Design
-- site profile
+- business
+- misc-web
 ---
 Goal: to create a bachelor cookbook and sell it to other bachelors online.  The price of the cookbook was to be very cheap so that it wasn't too much of a risk.  The book itself was supposed to be picture rich and very verbose.  It showed how to accomplish tasks that other books assumed a person knew.
 

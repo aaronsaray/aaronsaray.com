@@ -2,7 +2,7 @@
 layout: post
 title: Load Time Analyzer for Firefox
 tags:
-- IDE and Web Dev Tools
+- ide-and-web-dev-tools
 - performance
 ---
 So, I started looking at a few load time analyzers for my sites - and I found an interesting plugin for firefox.  I wasn't too entirely sure what I was going to find - but I figured I'd try it out and figure out if it was useful.

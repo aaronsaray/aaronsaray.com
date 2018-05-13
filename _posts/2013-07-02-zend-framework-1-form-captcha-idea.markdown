@@ -2,7 +2,7 @@
 layout: post
 title: Zend Framework 1 Form Captcha Idea
 tags:
-- zend framework
+- zend-framework
 ---
 One of the worst things with CAPTCHAs are actually having to solve them.  One of the things my team and I use for our projects is the hidden field CAPTCHA.  This is a technique that adds a field to a form, but uses CSS to hide it.  If that form value is filled in, we can guess that the submitter was a bot reading the HTML - and not an actual user.  
 

@@ -2,7 +2,7 @@
 layout: post
 title: Facebook Message System - in PHP
 tags:
-- PHP
+- php
 ---
 **Update: I've gotten a lot of comments on this code.  This was a simple proof of concept at the time when Facebook was creating messages like this.  They no longer do it in this manner.  I also am not supporting any updates to this code.  Thanks for your interest!**
 

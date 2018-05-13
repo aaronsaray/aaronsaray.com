@@ -2,7 +2,7 @@
 layout: post
 title: What I believe MVC is - or MVCFDH
 tags:
-- PHP
+- php
 - programming
 ---
 There are many interpretations of MVC - there are less definitions but more implementations.  I want to cover what I personally do when using PHP for MVC.  I call it MVCFDH.

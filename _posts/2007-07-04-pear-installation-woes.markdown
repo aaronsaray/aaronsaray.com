@@ -2,7 +2,7 @@
 layout: post
 title: PEAR Installation Woes
 tags:
-- PHP
+- php
 ---
 I've found the need to do some installs from some PEAR channels, so I jumped into my command line on PHP 5.2.0 and windows xp sp2.  I ran `c:\php5.2\go-pear` - which would launch the **`go-pear.bat`** file.  I executed with standard permissions, and the unthinkable happened - a PEAR FAILURE.  OH NO!  But I was able to get around it.  Lets look at the details of the error, and my lazy man's way of solving it:
 

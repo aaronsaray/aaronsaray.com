@@ -4,7 +4,6 @@ title: Send email from server to gmail using postfix
 tags:
 - email
 - linux
-- postfix
 ---
 The other day I ran into this problem where postfix insisted on delivering mail... as it was supposed to do!  As it was configured!  But this isn't what I wanted.  Let me explain what was happening:
 

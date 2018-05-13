@@ -2,8 +2,8 @@
 layout: post
 title: ODBC for UDB and PHP - How I increased performance by 400%
 tags:
-- PHP
-- SQL
+- php
+- sql
 ---
 In our current setup at ("the triangle"), we have to use odbc connections to access our db2-udb database - and I don't like it.  But we have to stick with it - and that's the way life is.  The main reason I don't like it is the immense overhead and time it takes to execute queries.  Well, I did some research and found out some interesting things.  The most important of which was a cursor setting that allowed me to gain up to 400% performance.  Find out how:
 

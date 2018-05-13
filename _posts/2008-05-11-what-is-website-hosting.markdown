@@ -2,7 +2,7 @@
 layout: post
 title: What is Website Hosting?
 tags:
-- learning
+- business
 ---
 What is website hosting and why do you need it?  Those are two very important questions.
 

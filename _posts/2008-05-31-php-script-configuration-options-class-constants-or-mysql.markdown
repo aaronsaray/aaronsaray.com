@@ -2,7 +2,7 @@
 layout: post
 title: PHP Script Configuration Options - Class Constants or MySQL
 tags:
-- PHP
+- php
 ---
 I'm trying to figure out the best way to do configuration options for my newest PHP scripts that I'm working on.  My requirements are simple:
 

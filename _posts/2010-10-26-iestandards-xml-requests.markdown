@@ -2,7 +2,7 @@
 layout: post
 title: IEStandards.xml requests
 tags:
-- internet explorer
+- misc-web
 ---
 The other day, I saw some 404 errors for the file **`IEStandards.xml`** in my error logs.  After a little research, I found some links [here](http://blogs.msdn.com/b/ie/archive/2009/07/01/ie-compatibility-list-pruning.aspx) and [here](http://blogs.msdn.com/b/askie/archive/2009/03/23/understanding-compatibility-modes-in-internet-explorer-8.aspx) that lead me to believe that I had done something wrong.
 Let me explain...

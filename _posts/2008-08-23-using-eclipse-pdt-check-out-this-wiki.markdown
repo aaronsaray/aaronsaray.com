@@ -2,7 +2,7 @@
 layout: post
 title: Using Eclipse PDT? Check out this wiki
 tags:
-- Eclipse PDT
+- eclipse-pdt
 ---
 Are you a huge fan of Eclipse PDT as I am?
 

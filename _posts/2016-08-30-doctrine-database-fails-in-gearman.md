@@ -2,9 +2,7 @@
 layout: post
 title: Doctrine Database Connection Fails in Gearman Worker
 tags:
-- PHP
-- doctrine
-- gearman
+- php
 ---
 One of the things that was really bothering me when I first started using [Gearman](http://gearman.org/) was my consistently failing [doctrine database](http://www.doctrine-project.org/) connection.
 

@@ -2,7 +2,7 @@
 layout: post
 title: Another example of CSRF - in CSS
 tags:
-- CSS
+- css
 - javascript
 - security
 ---

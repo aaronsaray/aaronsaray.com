@@ -2,8 +2,8 @@
 layout: post
 title: Eclipse Integration with Tortoise SVN
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
+- eclipse-pdt
+- ide-and-web-dev-tools
 - svn
 ---
 **Update: Looks like the plugin is no longer available at that link.**

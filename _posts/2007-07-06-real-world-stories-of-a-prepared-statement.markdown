@@ -2,8 +2,8 @@
 layout: post
 title: Real world stories of a prepared statement
 tags:
-- PHP
-- SQL
+- php
+- sql
 ---
 A couple months ago, I was out in Rochester MN at IBM for a multi-day meeting about communication between the iSeries(system-i, i5, as400, whatever its called now a days) and PHP/Apache.  One of the things we talked about was our use of ODBC at ("the triangle") currently to which they asked a good question - Are we using prepared statements over odbc?  Well, right now, we're not, but I think we should.  As always, its up to me to show why we should be doing this.  Lets explore:
 

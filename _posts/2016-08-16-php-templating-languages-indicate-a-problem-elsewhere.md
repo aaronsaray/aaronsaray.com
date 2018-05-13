@@ -2,7 +2,7 @@
 layout: post
 title: PHP Templating Languages Indicate a Problem Elsewhere
 tags:
-- PHP
+- php
 ---
 I can't help but think a lot of PHP applications have a problem.  These beautifully crafted, object oriented, highly engineered applications are still making one vital mistake.  And that's using one of the [various](http://twig.sensiolabs.org/) [templating](http://platesphp.com/) [libraries](http://www.smarty.net/) or languages that PHP has.
 

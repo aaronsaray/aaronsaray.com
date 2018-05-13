@@ -2,7 +2,7 @@
 layout: post
 title: To clear up that confusion about public and public static access in PHP
 tags:
-- PHP
+- php
 ---
 Apparently, a few programmers I know have been getting confused about access of public, public static variables in PHP classes.  I've written this example code with the following comments to explain what will work - and what won't.
 

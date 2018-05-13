@@ -2,7 +2,7 @@
 layout: post
 title: Posting Requests in PHP without CURL
 tags:
-- PHP
+- php
 ---
 Can it be done? YES!  Luckily, functions like `file_get_contents()` support stream contexts.
 

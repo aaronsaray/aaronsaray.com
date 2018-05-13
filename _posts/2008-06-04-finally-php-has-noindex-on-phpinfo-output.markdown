@@ -2,7 +2,7 @@
 layout: post
 title: Finally - PHP has NoIndex on phpinfo output
 tags:
-- PHP
+- php
 - security
 ---
 ### Security Issue?

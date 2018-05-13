@@ -2,7 +2,7 @@
 layout: post
 title: My Progression through Forgot Passwords
 tags:
-- PHP
+- php
 - programming
 - security
 ---

@@ -2,8 +2,8 @@
 layout: post
 title: How I test email recipients when I develop
 tags:
-- Misc Web Design
-- PHP
+- misc-web
+- php
 ---
 When developing an application, there are usually various different environments that you run the code in.  First is the development environment.  Next, you have the QA or test environment, staging, and then live or production.  It stands to reason that if you are using outgoing e-mail in your application, and your application is in production, it should send to the proper recipients.  However, what do you do in testing and development?
 

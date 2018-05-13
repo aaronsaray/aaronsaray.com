@@ -2,7 +2,7 @@
 layout: post
 title: When PHP's dirname() saved the day
 tags:
-- PHP
+- php
 - scripting
 ---
 Now, I won't bore you with the actual details of how I came across this - lets just skip to the explanation and example:

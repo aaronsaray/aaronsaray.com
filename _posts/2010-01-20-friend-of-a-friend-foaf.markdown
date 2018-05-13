@@ -2,7 +2,7 @@
 layout: post
 title: 'Friend of a Friend: FOAF'
 tags:
-- Misc Web Design
+- misc-web
 ---
 So I added my own FOAF link on my home page.  
 

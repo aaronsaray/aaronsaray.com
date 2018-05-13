@@ -2,8 +2,7 @@
 layout: post
 title: What I look for in a code review
 tags:
-- learning
-- professional tips
+- business
 - programming
 ---
 A few days (ok, a bunch of days) ago, [someone](https://twitter.com/mathewpeterson) asked me on twitter what I look for when I do a code review.  Pretty certain I was tweeting that I was either... a) doing a code review or b) annoyed at doing a code review. heh.  I thought for a bit, and I think I've distilled the list of things I look for.  Now, mind you, I don't set out with my checkbox list or a manual, I just look at the code and "feel" it.  Yes, that sounds crazy.  I understand.  But, subconsciously, I think I'm doing the following things when I do code reviews:

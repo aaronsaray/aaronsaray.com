@@ -3,7 +3,7 @@ layout: post
 title: Composer-based Utility Installs vs Global Installs
 tags:
 - phpunit
-- web tools
+- php
 ---
 I'm a huge fan of tools like PHPUnit.  Or any other tool that will help my project carry on.
 

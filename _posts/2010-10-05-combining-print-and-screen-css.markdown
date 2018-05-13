@@ -2,8 +2,8 @@
 layout: post
 title: Combining Print and Screen CSS
 tags:
-- CSS
-- Misc Web Design
+- css
+- misc-web
 ---
 When running YSlow the other day, I was reminded that I was loading 2 stylesheets when only one would suffice.  So, let this be a reminder to you - and a quick excerpt at my own solution:
 

@@ -2,8 +2,8 @@
 layout: post
 title: Name CSS Classes More Descriptive
 tags:
-- CSS
-- Misc Web Design
+- css
+- misc-web
 ---
 One thing I remember being pounded into my head is to not create CSS classes after their physical attributes.  So, for example, if your error text is red, do not call the class red.  Instead, be more descriptive of the content.
 

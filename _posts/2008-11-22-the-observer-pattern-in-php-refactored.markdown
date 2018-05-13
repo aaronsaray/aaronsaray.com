@@ -2,7 +2,7 @@
 layout: post
 title: 'The Observer Pattern in PHP: Refactored'
 tags:
-- PHP
+- php
 ---
 You may remember the article I wrote about the observer pattern in php - but it lacked some of PHP's advanced features.
 

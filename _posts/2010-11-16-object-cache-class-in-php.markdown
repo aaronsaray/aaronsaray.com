@@ -2,7 +2,7 @@
 layout: post
 title: Object Cache Class in PHP
 tags:
-- PHP
+- php
 - programming
 ---
 While I'm infinitely happy that all uses of a class in PHP now are references, that's just not good enough.  Sometimes I want to use my newly created object in many different methods.  I have two options.  First, I could create it as a Singleton, and always call the instance getter.  Or, I could use an object cache.

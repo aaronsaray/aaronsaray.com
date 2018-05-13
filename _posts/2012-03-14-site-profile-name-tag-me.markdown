@@ -2,9 +2,8 @@
 layout: post
 title: 'Site Profile: name-tag.me'
 tags:
-- Business
-- Misc Web Design
-- site profile
+- business
+- misc-web
 ---
 **Note: I have shut down name-tag.me.  These notes were taken before I pulled the plug.**
 

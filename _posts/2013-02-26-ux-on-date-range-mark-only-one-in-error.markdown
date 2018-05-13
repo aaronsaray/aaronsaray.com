@@ -2,7 +2,8 @@
 layout: post
 title: 'UX: On date range, mark only one in error'
 tags:
-- user experience
+- misc-web
+- ux
 ---
 In one of our applications, an event system requires a start and end date.  There is validation to check to make sure the end date is after the start date.
 

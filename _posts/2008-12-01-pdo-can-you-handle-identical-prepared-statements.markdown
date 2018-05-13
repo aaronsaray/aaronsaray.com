@@ -3,7 +3,7 @@ layout: post
 title: PDO - can you handle identical prepared statements?
 tags:
 - mysql
-- PHP
+- php
 ---
 I've been wondering if I should be concerned about re-preparing a prepared statement when using PDO.  Right now, I use code like this when preparing a statement:
 

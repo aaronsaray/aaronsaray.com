@@ -2,7 +2,7 @@
 layout: post
 title: My Meetmeme card
 tags:
-- Misc Web Design
+- misc-web
 ---
 I received a set of cards from [meetmeme.com](http://meetmeme.com).  In addition to my cards, they also provide the following URL:
 [http://mtme.me/c89ab](http://mtme.me/c89ab)

@@ -2,7 +2,7 @@
 layout: post
 title: It is important to use die() after a header redirect - here's why
 tags:
-- PHP
+- php
 - security
 ---
 I was doing some code challenge review for an open web developer position I have for my team, and I came across one piece of code that made me smile.

@@ -4,7 +4,7 @@ title: Using Google Charts to make QR Codes
 tags:
 - javascript
 - jquery
-- Misc Web Design
+- misc-web
 ---
 Google Charts is my hero yet again.  This time, I happened to notice that they have a chart in their API for QR Codes.  Considering I was just searching google for a PHP class to do this, I was pretty ecstatic.
 

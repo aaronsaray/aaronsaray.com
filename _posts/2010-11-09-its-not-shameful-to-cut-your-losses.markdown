@@ -2,7 +2,7 @@
 layout: post
 title: It's not shameful to cut your losses
 tags:
-- Business
+- business
 ---
 One thing I've learned about the entrepreneurial spirit is that it leads to failure.  With figures as high as 90% of businesses fail, this is something you have to get used to.  Even leaders like Robert Kiyosaki mention that knowledge is what makes money - and that knowledge is gained by failure.  You've heard the sayings before, learn from your failures...
 

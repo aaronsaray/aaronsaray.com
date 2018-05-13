@@ -2,9 +2,9 @@
 layout: post
 title: AJAX Security Research and Findings - Round 1
 tags:
-- AJAX
+- ajax
 - security
-- PHP
+- php
 ---
 ("the triangle") wants to keep implementing more and more AJAX based systems - but no one ever took time to research into the security issues with this.  I did a proof of concept one time with a zip-code function when Big Boy was working there, and from there, they just thought it was amazing.  Most recently, some AJAX functionality was proposed for our LIVE public web servers... but I was very hesitant.  I don't know enough about the security and best practices for AJAX requests to be able to securely design and code something for the internet - especially when the end result is connecting to the iSeries and HIPAA data.  I requested a research project - and its finally been approved.  I've spent a few hours and come up with a few ideas and best practices so far.  Ok, I'll be honest, one best practice and 2 ideas - of which I'll prove/disprove here:
 

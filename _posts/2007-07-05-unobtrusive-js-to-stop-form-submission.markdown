@@ -3,7 +3,6 @@ layout: post
 title: Unobtrusive JS to stop form submission
 tags:
 - javascript
-- YUI
 ---
 On one of the sites at ("the triangle"), one of the programmers on my team had this strange attachment to the Yahoo User Interface libraries - but I guess that was a good thing as it taught him a good lesson - use unobtrusive javascript.  Recently, I had to go through and clean up some of the code (and do a security audit), and I discovered his usage of the YUI library functions.  I was particularly impressed with his usage of the onclick handler for some radio buttons we had and how he was able to send an array of their IDs to the function.  Pretty sweet stuff.  However, there was one area where he wasn't following the unobtrusive paradigm.  I took a quick glance at it - and fell for the same shortcoming.  We were using a return function on our form submissions.
 

@@ -2,7 +2,7 @@
 layout: post
 title: PHP - Return results of comparison
 tags:
-- PHP
+- php
 ---
 A useful reminder: you can make use of returning the results of comparisons for is*() functions.  Let me explain that further...
 

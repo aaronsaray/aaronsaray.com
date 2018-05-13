@@ -2,7 +2,7 @@
 layout: post
 title: How to Log PHP Errors like a Pro
 tags:
-- PHP
+- php
 ---
 The error log can be fun to parse through and figure out what happened.  Ok, so if you just read that and agreed, you need to move on.  This is not for you.  That's not fun.  However, you CAN make error gathering easier on yourself by including the right information in the error log.  To top it off, you can present your users with something that is a bit more 'friendly' than the standard error display or blank page.  Let's check it out.
 

@@ -2,9 +2,9 @@
 layout: post
 title: The Evolution of PHP Programmers
 tags:
-- PHP
-- misc web development
-- Programming
+- php
+- misc-web
+- programming
 ---
 I think around 2015, there was a big splash of good training online for PHP.  Frameworks upgraded/changed, helped programmers write better code faster earlier than that.  Before that, it was a lot of RTFM.  So, before, in the earlier days (maybe somewhat still today), I think PHP developers did this:
 

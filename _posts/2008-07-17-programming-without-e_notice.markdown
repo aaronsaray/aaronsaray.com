@@ -2,7 +2,7 @@
 layout: post
 title: Programming without E_Notice
 tags:
-- PHP
+- php
 ---
 Well, my boss at #superdev - who can only be compared to a more energetic version of the squirrel from hoodwinked asked me to start putting together some thoughts here and there on some proper PHP coding.  I thought I'd start out the series with this article, Programming without `E_NOTICE`.
 

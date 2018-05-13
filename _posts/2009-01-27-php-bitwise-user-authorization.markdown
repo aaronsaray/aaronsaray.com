@@ -3,7 +3,7 @@ layout: post
 title: PHP Bitwise User Authorization
 tags:
 - mysql
-- PHP
+- php
 ---
 After looking at the Windows model for controlling file access, I realized I could also do that for user authorization control.
 

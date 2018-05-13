@@ -2,7 +2,7 @@
 layout: post
 title: Why are there different web browsers?
 tags:
-- learning
+- business
 ---
 In the same way that not everyone drives a Honda, we find that we have different web browsers.  For the beginner to the Internet, this might come as a surprise.  Normally, they are only used to the default browser on their computer.  For example, Windows users are familiar with Internet Explorer.  Mac users might be familiar with Safari.
 

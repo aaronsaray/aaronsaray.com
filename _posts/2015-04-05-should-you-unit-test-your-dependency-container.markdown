@@ -2,7 +2,7 @@
 layout: post
 title: Should you unit test your dependency container?
 tags:
-- PHP
+- php
 - phpunit
 - programming
 - testing

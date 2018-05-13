@@ -2,7 +2,7 @@
 layout: post
 title: Flash of Unstyled Content - in FireFox 3
 tags:
-- CSS
+- css
 - html
 - javascript
 ---

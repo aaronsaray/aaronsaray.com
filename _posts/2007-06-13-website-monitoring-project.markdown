@@ -2,7 +2,7 @@
 layout: post
 title: Website Monitoring Project
 tags:
-- Website Monitoring Project
+- misc-web
 ---
 Recently, while working at ("the triangle"), I came across a project that I had to research.  This project's definition included finding an up-time monitoring system for our websites as well as a dead link finding feature.  So, after doing about 8 hours worth of searching, I didn't find anything that met our needs.  There were tons of dead link finders that could be ran on demand off your desktop platform, but very few that could be scheduled and ran remotely.  Additionally, it was hard to find any remote uptime monitoring systems that allowed the flexibility I was looking for - the ability to check for website up - to not give false positives, and to remotely test functionality (kind of like a remote unit test).
 
@@ -24,7 +24,7 @@ The idea is to provide a service that will monitor websites remotely, possibly b
 
 - things: Should I allow for the plugins to be non-mvc?  Do you need to understand MVC to be able to build a plugin?  Aren't there going to be model - only based plugins?
 
-- Open source but make money off of it - Although Open Source projects are magnificent, they still cost money and time.  I want to have the open source version of the files out there and allow for other people to build off of them but I still want to host the service for those who don't want to implement it.  I'm figuring for hosting the service, I should be able to recover some of the costs through subscriptions.
+ but make money off of it - Although Open Source projects are magnificent, they still cost money and time.  I want to have the open source version of the files out there and allow for other people to build off of them but I still want to host the service for those who don't want to implement it.  I'm figuring for hosting the service, I should be able to recover some of the costs through subscriptions.
 
 - things: if we're going to allow an open source distributable, do I want to build in update notifications?  What if a bug is found in my software?  We want to force this on them asap.
 

@@ -2,7 +2,7 @@
 layout: post
 title: What do I need to get a website?
 tags:
-- learning
+- business
 ---
 This article covers the basics of what you need to know to get your business on the Internet fast and successfully.
 

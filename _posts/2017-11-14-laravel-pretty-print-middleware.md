@@ -2,9 +2,8 @@
 layout: post
 title: Laravel Pretty Print JSON Middleware
 tags:
-- PHP
-- Laravel
-- JSON
+- php
+- laravel
 ---
 For testing, I tend to use [Postman](https://www.getpostman.com/) - which gives you the option to view your API JSON responses in a preview mode (interactive), pretty and raw.  But, the other day I heard someone saying sometimes they just want to invoke pretty print in their JSON responses without having to use an external tool and set up a whole environment.
 

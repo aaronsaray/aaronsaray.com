@@ -2,7 +2,7 @@
 layout: post
 title: 'WMCPA: Intro to PHP Talk Presentation, Notes, Links'
 tags:
-- PHP
+- php
 ---
 Just finished a talk at the [Wisconsin Midrange Computer Professional Association](http://www.wmcpa.org/) and wanted to share the info.  This particular talk was an introduction to PHP.
 

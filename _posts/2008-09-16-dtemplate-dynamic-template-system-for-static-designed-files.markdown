@@ -2,9 +2,8 @@
 layout: post
 title: 'dtemplate: dynamic template system for static designed files'
 tags:
-- Misc Web Design
-- open source
-- PHP
+- misc-web
+- php
 ---
 One of the biggest time wasters I deal with is parsing out static web designs given to me by designers.  They don't know programming, so they design it with static HTML in mind.  Even if you're using a tool like dreamweaver, updating static pages can be a hassle.  Then, a lot of times, they have to remove their 'lorem ipsum' text and send it to me - and then I continue to chop it up.  Now, I'm talking about smaller 5 to 10 page sites here, not huge sites like [JEMDiary](http://jemdiary.com) or something.  However, that idea birthed...
 

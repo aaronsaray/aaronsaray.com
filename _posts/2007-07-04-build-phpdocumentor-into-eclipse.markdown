@@ -2,8 +2,8 @@
 layout: post
 title: Build PHPDocumentor into Eclipse
 tags:
-- Eclipse PDT
-- PHP
+- eclipse-pdt
+- php
 ---
 Well, maybe that's a little bit misleading - actually you're running PHPdocumentor as an external tool.
 

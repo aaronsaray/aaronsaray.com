@@ -2,8 +2,8 @@
 layout: post
 title: Tools of the trade
 tags:
-- IDE and Web Dev Tools
-- Misc Web Design
+- ide-and-web-dev-tools
+- misc-web
 ---
 I just thought I'd drop some useful links and tools your way for those beginning and non-tool-cist peoples:
 

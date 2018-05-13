@@ -2,8 +2,8 @@
 layout: post
 title: Duplicate request issued in ZF when using inline script/document.writeln in view
 tags:
-- PHP
-- zend framework
+- php
+- zend-framework
 ---
 This is a weird one...  I had a form in the body of my page.  Every time I would submit it, the csrf token would not match.  
 

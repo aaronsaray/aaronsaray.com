@@ -3,7 +3,7 @@ layout: post
 title: Export Git Project
 tags:
 - git
-- PHPStorm
+- phpstorm
 ---
 I manage any WordPress plugins I create using git.  In order to create a distribution of those, I need to zip up the source code and use that to upload to the marketplace (or directly upload).  This was easy with SVN - I just used an svn export command and there we go.
 

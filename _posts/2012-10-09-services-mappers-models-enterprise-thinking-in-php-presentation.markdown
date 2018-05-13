@@ -2,8 +2,7 @@
 layout: post
 title: 'Services, Mappers, Models: Enterprise Thinking in PHP {presentation}'
 tags:
-- Milwaukee PHP Users Group
-- PHP
+- php
 - programming
 ---
 One thing I'm really passionate about is using PHP in enterprise situations.  I obviously care about [Design Patterns](/book) in PHP.  I've also done a lot of technical review of other books about refactoring away from bad code.  

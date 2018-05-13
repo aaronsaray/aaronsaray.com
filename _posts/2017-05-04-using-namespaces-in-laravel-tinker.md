@@ -2,7 +2,7 @@
 layout: post
 title: Using Namespaces in Laravel Tinker
 tags:
-- PHP
+- php
 - laravel
 ---
 I hate to admit it, but I do like [Laravel's Tinker](https://github.com/laravel/tinker) package.  Sometimes, just testing out your relationships on the command line before you go further is super helpful.

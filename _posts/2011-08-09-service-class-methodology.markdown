@@ -3,7 +3,7 @@ layout: post
 title: Service Class Methodology
 tags:
 - programming
-- zend framework
+- zend-framework
 ---
 There has been a lot of discussion on forums and throughout the object oriented PHP programming community about service classes.  This is just intensified by the Zend Framework model of development coupled with the changes in their design/architecture and vocal spokespeople.  I thought I'd throw my hat in the ring for this.
 

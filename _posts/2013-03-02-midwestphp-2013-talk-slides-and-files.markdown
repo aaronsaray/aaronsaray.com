@@ -2,7 +2,7 @@
 layout: post
 title: 'MidwestPHP 2013 Talk: Slides and Files'
 tags:
-- PHP
+- php
 ---
 Finished presenting today at [MidwestPHP](http://midwestphp.org) 2013.  My talk on Enterprise PHP Architecture through Design Patterns and Modularization went great - at least I hope!  
 

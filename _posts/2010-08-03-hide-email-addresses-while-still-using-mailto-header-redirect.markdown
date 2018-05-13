@@ -2,7 +2,7 @@
 layout: post
 title: 'Hide Email Addresses while still using mailto: Header Redirect'
 tags:
-- PHP
+- php
 ---
 Everyone I've spoken to recently no longer puts `mailto://` links in their code for fear that the owner of that address will get more spam.  However, there are still legitimate uses for a link like this.  In order to foil very simple email parsing bots, I've come up with the following script.
 

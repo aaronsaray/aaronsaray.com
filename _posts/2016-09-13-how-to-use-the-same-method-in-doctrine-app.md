@@ -2,7 +2,7 @@
 layout: post
 title: How to Use the Same Method for Add/Update in a Doctrine App
 tags:
-- PHP
+- php
 ---
 I'm a huge fan of the service architecture paradigm - and that means that I use services in my controllers to handle persistence.  I wanted to abstract the add and update methods from my services and put them into an abstract class.  In addition, I didn't want to have to specify the exact method - I just wanted to call `save` on the entity.  Finally, I wanted to log it properly and verbosely.
 

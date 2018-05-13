@@ -2,8 +2,8 @@
 layout: post
 title: Show the right files in PHP Explorer
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
+- eclipse-pdt
+- ide-and-web-dev-tools
 ---
 After I installed Eclipse PDT, I had two project navigators.  I closed the native one and kept open the PHP Explorer.  PHP Explorer showed my php, css, js, etc, files.  It also puts a plus sign to the left of the filenames.  Using this view, we can expand the file to see the classes and functions inside of the file without opening it.
 

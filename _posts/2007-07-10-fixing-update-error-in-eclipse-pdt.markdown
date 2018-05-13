@@ -2,8 +2,8 @@
 layout: post
 title: Fixing update error in eclipse PDT
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
+- eclipse-pdt
+- ide-and-web-dev-tools
 ---
 The last time I downloaded Eclipse PDT for PHP, (located at [zend.com/pdt](http://zend.com/pdt)), everything was great.  That is, until I wanted to run the updates.  It stopped with an error and would never update my PDT.  Luckily, one of the consultants from ("the triangle") had the same issues - and he was able to tell me what was up:
 

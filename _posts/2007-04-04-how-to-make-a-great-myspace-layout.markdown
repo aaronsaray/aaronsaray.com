@@ -2,11 +2,10 @@
 layout: post
 title: How to make a Great MySpace Layout
 tags:
-- CSS
+- css
 - html
-- myspace
-- PHP
-- misc web design
+- php
+- misc-web
 ---
 In this posting, I'm going to share the steps to making a slimmed down, cleaner, nicer layout for MySpace to help showcase your personal interests, your band, or your business.
 

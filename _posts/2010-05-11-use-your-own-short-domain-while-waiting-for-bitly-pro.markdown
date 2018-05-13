@@ -3,7 +3,7 @@ layout: post
 title: Use your own short domain while waiting for BitLy Pro
 tags:
 - javascript
-- Misc Web Design
+- misc-web
 ---
 If you've checked out [BitLy Pro](http://bitly.pro), you're probably pretty excited like I am.  I saw it and immediately registered **saray.me** for a short URL.  When I went to sign up, I found it was still in a queue system where you had to wait to get an invite.  In the mean time, I still want to start using my domain.
 

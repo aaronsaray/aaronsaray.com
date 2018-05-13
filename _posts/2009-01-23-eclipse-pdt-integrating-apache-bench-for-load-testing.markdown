@@ -3,8 +3,8 @@ layout: post
 title: 'Eclipse PDT: Integrating Apache Bench for load testing'
 tags:
 - apache
-- Eclipse PDT
-- IDE and Web Dev Tools
+- eclipse-pdt
+- ide-and-web-dev-tools
 ---
 When I use an IDE, I expect for it to do everything I need for my project, from start to finish.  As you may have read in earlier entries, I enjoy using Eclipse PDT.  I think its time to include load testing into my arsenal of tools inside of eclipse.  I'm going to focus on apache's AB for this article.
 

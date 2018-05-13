@@ -2,8 +2,7 @@
 layout: post
 title: Modifying Clickheat to use your authentication
 tags:
-- PHP
-- web tools
+- php
 ---
 A nice free open source alternative to Crazy Egg is [ClickHeat](http://www.labsmedia.com/clickheat/index.html).  One of my clients wanted this implemented but didn't want to have to log in again using different criteria.  I looked at the code and saw it was surprisingly easy to edit to allow a different authentication method.  Let's check it out:
 

@@ -3,7 +3,7 @@ layout: post
 title: PHPUnit error with Zend_Session
 tags:
 - phpunit
-- zend framework
+- zend-framework
 ---
 Running a test, I ran into this error:
     

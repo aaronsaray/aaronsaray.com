@@ -2,7 +2,7 @@
 layout: post
 title: PHP Script Configuration Class with Logic built in
 tags:
-- PHP
+- php
 ---
 Sometimes we have static configuration options, such as the name of the company or the location of a particular partner's website.  Other times, there are more dynamic configuration options - such as the current location's URL or database connection credentials.
 

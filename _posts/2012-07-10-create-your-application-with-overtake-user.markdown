@@ -2,7 +2,7 @@
 layout: post
 title: Create your application with "overtake user"
 tags:
-- Misc Web Design
+- misc-web
 - programming
 ---
 A couple years ago, I developed this concept I call "Overtake User."  Basically, in every application I build, I build in the ability for the currently logged-in support specialist or admin to become someone else.  Now, this is different than just viewing the user's information and records.  This actually let's the current user become the other user.  This is helpful also for scenarios where the user is "seeing something strange" but you can't see it.  If you literally "become" them, you can see it. It also removes the need to ever ask the user for their password to log in as them (or to force a password change so you can).  For the most part, this has allowed me to troubleshoot most issues besides the actual authentication systems.

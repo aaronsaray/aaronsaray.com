@@ -2,7 +2,7 @@
 layout: post
 title: CSS3 Only Read More Link
 tags:
-- CSS
+- css
 ---
 Want a CSS3 **ONLY** read more link?  I think I've created one that should do the trick.
 

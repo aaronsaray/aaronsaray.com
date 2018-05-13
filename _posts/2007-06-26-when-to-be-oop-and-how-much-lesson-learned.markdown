@@ -2,8 +2,8 @@
 layout: post
 title: When to be OOP - and how much... Lesson Learned!
 tags:
-- PHP
-- Website Monitoring Project
+- php
+- misc-web
 ---
 I just finished reading a snippet of a book about design patterns - of which Strategy, Adapter, Decorator and others were discussed.  It got me to thinking about my design patterns that I used in JEMDiary - and what I'll be using in this project.
 

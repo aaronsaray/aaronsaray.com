@@ -2,7 +2,7 @@
 layout: post
 title: Zend Filter Presentation
 tags:
-- zend framework
+- zend-framework
 ---
 Thanks to [Zend](http://zend.com) and their community organizers for the opportunity to do a webinar today.  
 

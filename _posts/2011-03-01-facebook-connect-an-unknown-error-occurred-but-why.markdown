@@ -2,7 +2,7 @@
 layout: post
 title: 'Facebook connect: An unknown error occurred. - but why??'
 tags:
-- Misc Web Design
+- misc-web
 ---
 I had been working with the facebook connect javascript API on one site and transferred over the code to another site.  I changed the app ID and clicked connect.  Every time I got a popup saying an unknown error occurred and they were taking a look into it.
 

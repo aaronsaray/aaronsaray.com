@@ -2,7 +2,7 @@
 layout: post
 title: Namespacing is important - even in PHP
 tags:
-- PHP
+- php
 ---
 Perl, Java and xml people are very aware of what a namespace is... even [wikipedia](http://en.wikipedia.org/wiki/Namespace_(computer_science)) tells us they are.  But, certain languages, such as PHP, don't support namespaces yet.  (However, thank you Dmitry for [your proposal](http://aspn.activestate.com/ASPN/Mail/Message/php-dev/3519062).)  But are namespaces really important?  PHP has made it this far without them, so why should you be concerned?  Well, lets see:
 

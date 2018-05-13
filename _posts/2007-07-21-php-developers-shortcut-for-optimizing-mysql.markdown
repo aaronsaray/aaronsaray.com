@@ -2,8 +2,8 @@
 layout: post
 title: PHP developer's shortcut for optimizing mysql
 tags:
-- PHP
-- SQL
+- php
+- sql
 ---
 PHP developers, raise your hand if you run an explain on each MySQL statement you write and use in your apps!  Anyone?  Ok... 1... 2... that's it?  Yah, I tend to forget that too, but luckily PHP allows us to cheat.  Thanks PHP!
 

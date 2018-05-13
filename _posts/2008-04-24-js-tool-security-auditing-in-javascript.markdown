@@ -3,7 +3,6 @@ layout: post
 title: JS Tool - Security Auditing in Javascript
 tags:
 - javascript
-- open source
 - security
 ---
 JSTool was a trial run of combining many different scripts from the open source community into a security and auditing script.  

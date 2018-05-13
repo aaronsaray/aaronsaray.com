@@ -2,7 +2,7 @@
 layout: post
 title: The point of custom exceptions
 tags:
-- PHP
+- php
 - programming
 ---
 I tend to want to use [PHP Exceptions](http://us.php.net/manual/en/language.exceptions.php) when I can.  But, I don't just leave them as is.  I tend to have a large custom exception library.  These exceptions extend the base Exception class in PHP - that's about it.

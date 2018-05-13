@@ -2,7 +2,7 @@
 layout: post
 title: ThatConference Slides
 tags:
-- PHP
+- php
 ---
 I'm currently at [ThatConference](http://thatconference.com) here at the Kalahari Resort, in Wisconsin Dells.
 

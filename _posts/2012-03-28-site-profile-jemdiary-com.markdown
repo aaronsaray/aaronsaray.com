@@ -2,9 +2,8 @@
 layout: post
 title: 'Site profile: jemdiary.com'
 tags:
-- Business
-- Misc Web Design
-- site profile
+- business
+- misc-web
 ---
 JEMDiary was one of my longest running websites, from way early in the century.
 

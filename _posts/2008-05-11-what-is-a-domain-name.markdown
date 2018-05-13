@@ -2,7 +2,7 @@
 layout: post
 title: What is a Domain Name?
 tags:
-- learning
+- business
 ---
 What is a domain name or a dot com name?  And why are they needed?  Let's find out.
 

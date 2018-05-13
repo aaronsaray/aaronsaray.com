@@ -2,7 +2,7 @@
 layout: post
 title: chaining methods in PHP
 tags:
-- PHP
+- php
 - programming
 ---
 I rarely find myself needing to chain methods in PHP - but its not an altogether bad idea.  The only caveat that is necessary is that your code must be written in such a way that a method can fail, but other methods can still continue.  For example, you couldn't have one method return false... that would break the chain.  You also couldn't have a method depending on the actions of the previous method to be successful if it is allowed to legitimately fail.  There is no intermediate step to check 'is it valid to continue?'

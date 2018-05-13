@@ -2,7 +2,7 @@
 layout: post
 title: HTML5, CSS3, Javascript ONLY Photobooth with Image Download
 tags:
-- CSS
+- css
 - html
 - javascript
 ---

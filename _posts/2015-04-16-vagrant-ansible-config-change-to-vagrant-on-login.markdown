@@ -2,8 +2,7 @@
 layout: post
 title: 'Vagrant / Ansible config: change to /vagrant on login'
 tags:
-- server
-- web tools
+- linux
 ---
 While those familiar with the specifics of linux and bash are probably very familiar with the various login sequence files, this might help someone!
 

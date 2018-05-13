@@ -2,7 +2,7 @@
 layout: post
 title: When you Create Your Account, Please log in.
 tags:
-- Misc Web Design
+- misc-web
 ---
 I've always found it annoying when programmers create systems where you create your account and then you're not logged in.  Maybe I'm lazy?  I decided to do a poll on a popular social networking site.  The poll went like this:
 

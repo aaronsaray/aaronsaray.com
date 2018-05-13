@@ -2,8 +2,8 @@
 layout: post
 title: PHP Doc for non declared properties in your class
 tags:
-- Misc Web Design
-- PHP
+- misc-web
+- php
 ---
 You may find while working with projects like Zend Framework that you have a number of publicly available properties of your classes that are not defined and documented.  They might be part of a getter/setter magic method or just purely dynamic.  Well, using PHPDoc, there is a cool tag called [property](http://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDocumentor/tutorial_tags.property.pkg.html) that helps.  For example...
 

@@ -3,7 +3,7 @@ layout: post
 title: Creating a custom Zend Framework Body Script helper
 tags:
 - javascript
-- zend framework
+- zend-framework
 ---
 It drives me nuts that the best practices with javascript that is not required for the initial rendering of your application is to be placed at the bottom of the document, yet frameworks (like Zend Framework) do not support that out of the box.  (I recently found out that Joomla also shares this problem.) 
 

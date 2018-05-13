@@ -2,8 +2,8 @@
 layout: post
 title: Use Dependency Injection in Laravel Console Commands
 tags:
-- PHP
-- Laravel
+- php
+- laravel
 - testing
 ---
 It's important to unit test your application code - even your console commands.  So many times, I've seen people using the `Artisan` facade inside of console commands to either queue up new commands or call a different command.  This makes it more difficult to unit test the application - you have to rely more on fakery (requiring you to reset your application each time then) and/or integration tests.

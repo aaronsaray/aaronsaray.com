@@ -2,7 +2,7 @@
 layout: post
 title: 'Idea: Voice Controlled Paginator / RSS Reader'
 tags:
-- Ideas for Websites
+- business
 ---
 I've been thinking about this idea for a while...
 

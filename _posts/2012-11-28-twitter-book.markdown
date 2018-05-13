@@ -2,7 +2,7 @@
 layout: post
 title: Twitter Book
 tags:
-- Ideas for Websites
+- business
 ---
 This idea is about the concept of grouping tweets in a meaningful way.
 

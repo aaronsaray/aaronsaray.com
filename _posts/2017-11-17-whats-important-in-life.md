@@ -2,8 +2,7 @@
 layout: post
 title: Deciding What's Important in Life
 tags:
-- Business
-- Life
+- business
 ---
 I've made a horrible mistake...
 

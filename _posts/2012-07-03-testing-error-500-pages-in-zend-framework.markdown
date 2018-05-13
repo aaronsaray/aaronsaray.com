@@ -4,7 +4,7 @@ title: Testing Error 500 Pages in Zend Framework
 tags:
 - phpunit
 - testing
-- zend framework
+- zend-framework
 ---
 For the most part, ZF can capture any of your hard errors.  It will generate an error 500.  You've seen them, don't lie... I've seen them way too many times.  However, in my production application, I capture these with a specific controller.  And because I love Unit Testing, I want to make sure that I test my implementation of my omg-this-is-broken setup.
 

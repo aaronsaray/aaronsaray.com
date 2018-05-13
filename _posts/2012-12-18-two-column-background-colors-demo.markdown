@@ -2,9 +2,9 @@
 layout: post
 title: Two Column Background Colors Demo
 tags:
-- CSS
+- css
 - html
-- Misc Web Design
+- misc-web
 ---
 I often run across this problem and I have to solve it each time.  I finally decided to blog about it.
 

@@ -3,7 +3,7 @@ layout: post
 title: Extend Zend_Mail to use Views
 tags:
 - testing
-- zend framework
+- zend-framework
 ---
 I love working in the Zend Framework view system.  One thing that bothers me, however, is that I must create a complex set of models when trying to send email.  I decided that I'd like to move all of this output for the mail class into my own view system as well.  
 

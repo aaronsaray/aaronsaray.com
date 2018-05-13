@@ -2,8 +2,7 @@
 layout: post
 title: Quick and Easy Case Sensitive Drive in MacOS
 tags:
-- misc web design
-- macos
+- misc-web
 ---
 One of my projects involves Google AdWords.  I was dealing with ad groups in AdWords and I realized I had made a few case mistakes with the filenames.  I had files named `Adgroup.php` instead of `AdGroup.php`.  I went and changed the file name, but, since my project is managed with git, I couldn't commit the changes.  My Mac drive was not case sensitive. Oops, forgot about that.
 

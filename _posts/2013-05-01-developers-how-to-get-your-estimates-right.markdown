@@ -2,7 +2,7 @@
 layout: post
 title: 'Developers: How to get your estimates right'
 tags:
-- professional tips
+- business
 - programming
 ---
 Estimates can be one of the hardest things to create as a developer.  The word estimate is a misnomer in our industry. It's almost as if they should be called "agreements" or "promises" according to some bosses.  Yet we all know that they are just that: an estimate of the amount of time, not a guarantee.  

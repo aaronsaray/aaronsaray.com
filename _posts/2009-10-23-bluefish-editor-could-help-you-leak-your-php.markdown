@@ -2,8 +2,8 @@
 layout: post
 title: Bluefish Editor could help you leak your PHP!
 tags:
-- IDE and Web Dev Tools
-- PHP
+- ide-and-web-dev-tools
+- php
 ---
 The [BlueFish](http://bluefish.openoffice.nl/index.html) editor is a primarily linux based visual editor for various web languages.  Visit the site for more...
 

@@ -2,7 +2,7 @@
 layout: post
 title: 'Video post: Enterprise PHP through Design Patterns and Modularlization'
 tags:
-- PHP
+- php
 ---
 I created this Udemy course a while ago - but unfortunately they said it was too short and the audio was too poor.  In order to post the course, I'd need to add another 10 minutes of fluff and get a better microphone.  I decided just to share with you.
 

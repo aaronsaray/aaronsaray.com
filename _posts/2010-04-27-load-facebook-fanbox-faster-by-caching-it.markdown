@@ -2,8 +2,7 @@
 layout: post
 title: Load Facebook Fanbox Faster by Caching it
 tags:
-- facebook
-- PHP
+- php
 ---
 I wasn't in favor of the Facebook fanbox on the site I was working on... but that's what the client wanted - and that is what they get.  I added it and moved on.  Well, later, I started noticing a bit of errors in my Javascript Error log.  I looked back at the newest edition: the fanbox.  Depending on where I was connecting from, that box would take another 3 to 20 seconds to load.  During that time, it was causing my page to appear to keep loading.  My fear was that other web users would think the page is not done loading and have a bad experience on the web site.
 

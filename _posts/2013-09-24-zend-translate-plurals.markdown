@@ -2,7 +2,7 @@
 layout: post
 title: Zend Translate Plurals
 tags:
-- zend framework
+- zend-framework
 ---
 I know it should be pretty common sense to RTFM - but sometimes you miss things.
 

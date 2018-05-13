@@ -1,19 +1,24 @@
 ---
 layout: default
 suppress_header: true
-tag: tag
 ---
 <section id="hero">
-    <p>Entries with the tag "{{ page.tag }}"</p>
+    <p>Entries with the tag "{{ page.slug }}"</p>
 </section>
 <section class="entries">
-    {% for post in page.posts %}
-    {% include blog-post.html post=post excerpt=true %}
-    {% endfor %}
+    {% if site.tags[page.slug] %}
+        {% for post in site.tags[page.slug] %}
+            {% include blog-post.html post=post excerpt=true %}
+        {% endfor %}
+    {% else %}
+        <p>There are no posts in this tag.</p>
+    {% endif %}
 </section>
 <p class="last-cta">
     <a href="{{ site.baseurl }}/blog">Go to All Posts</a>
 </p>
+<!--
 <p class="last-cta">
-    <small><a type="application/atom+xml" href="{{ site.baseurl }}/tag/{{ page.tag | slugify }}.xml">Get the RSS for {{ page.tag }}</a></small>
+    <small><a type="application/atom+xml" href="{{ site.baseurl }}/tag/{{ page.slug }}.xml">Get the RSS for {{ page.slug }}</a></small>
 </p>
+-->

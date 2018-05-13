@@ -2,8 +2,8 @@
 layout: post
 title: Eclipse Testing with TPTP - help me?
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
+- eclipse-pdt
+- ide-and-web-dev-tools
 - programming
 - testing
 ---

@@ -3,7 +3,7 @@ layout: post
 title: XSS with Img OnError attribute
 tags:
 - javascript
-- PHP
+- php
 - security
 ---
 So much of my time is spent worrying over the src or href tags on images and links - that I sometimes forget about the other attributes.

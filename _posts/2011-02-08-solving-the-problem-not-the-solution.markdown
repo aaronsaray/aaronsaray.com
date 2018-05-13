@@ -2,7 +2,7 @@
 layout: post
 title: Solving the Problem, Not the Solution
 tags:
-- Business
+- business
 ---
 Raise your hand if you've ever been told how to do your job... Yep.  It's happened more than once - and I'm sure you already had a flash of red and maybe some warmth come to your face even hearing that phrase.  In my current position, I run into scenarios where people seem to think they have the best solution for the problem.  And, you know, they may be right, but it's not their job.  This is generally a problem that either technically minded stake holders or completely ill-informed users have.  Let's dig deeper, however.
 

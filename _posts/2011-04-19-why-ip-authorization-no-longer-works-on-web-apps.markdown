@@ -2,7 +2,7 @@
 layout: post
 title: Why IP Authorization No Longer Works on Web Apps
 tags:
-- Misc Web Design
+- misc-web
 - programming
 - security
 ---

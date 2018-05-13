@@ -23,6 +23,19 @@ compress_html:
 paginate: 10
 paginate_path: "/blog/page-:num"
 
+collections:
+  my_tags:
+    output: true
+    permalink: /tag/:name/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: page_tags
+
 plugins:
   - github-pages
   - jekyll-sitemap

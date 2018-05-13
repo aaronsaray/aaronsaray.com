@@ -2,8 +2,8 @@
 layout: post
 title: 3D CSS Example
 tags:
-- CSS
-- Misc Web Design
+- css
+- misc-web
 ---
 This example is a proof-of-concept I worked on years ago when people first started talking about making 3D games with no images - CSS only.
 

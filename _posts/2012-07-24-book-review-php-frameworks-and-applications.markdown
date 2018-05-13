@@ -2,10 +2,8 @@
 layout: post
 title: 'Book Review: PHP Frameworks and Applications'
 tags:
-- learning
-- PHP
+- php
 - programming
-- review
 ---
 I just finished glancing over [Real-World Solutions for Developing High-Quality PHP Frameworks and Applications.](http://www.amazon.com/gp/product/0470872497/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0470872497&linkCode=as2&tag=aarsar-20)  I gotta say it...
 

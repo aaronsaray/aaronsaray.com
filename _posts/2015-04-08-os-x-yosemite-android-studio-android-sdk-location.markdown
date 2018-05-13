@@ -2,7 +2,7 @@
 layout: post
 title: OS X Yosemite Android Studio Android SDK location
 tags:
-- android
+- mobile
 ---
 No long rambling here.  Just can't believe it took me this long to find this.  Seriously, all the documentation I found was wrong.
 

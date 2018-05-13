@@ -2,7 +2,7 @@
 layout: post
 title: 'SVN Pre-commit duty: Lint your PHP'
 tags:
-- PHP
+- php
 - svn
 ---
 We've all been there before, committing code - and then realizing that it was broken (hrm - our unit test didn't catch it?  or... "what unit test?" if you're in another environment).  Well, there is a solution.

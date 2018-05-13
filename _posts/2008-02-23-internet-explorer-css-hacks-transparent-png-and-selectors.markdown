@@ -2,7 +2,7 @@
 layout: post
 title: Internet Explorer CSS Hacks - Transparent PNG and Selectors
 tags:
-- CSS
+- css
 ---
 As a reference for myself, I wanted to jot these things down.
 

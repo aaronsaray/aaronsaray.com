@@ -3,7 +3,7 @@ layout: post
 title: Is it better to write your 'for' loops backwards in PHP?
 tags:
 - performance
-- PHP
+- php
 ---
 After listening to a javascript internals optimization talk, I wanted to see how these concepts could relate to PHP.  The biggest thing that stuck out to me was the order of the for loops in javascript.  According to the talk, loops written backwards (or using the deincrement operator instead of the increment one...) was a lot faster.  They said comparing a value to zero was faster than comparing a value to another value.  With the backward loop, you were always comparing to zero.  I decided to try these tests on php:
 

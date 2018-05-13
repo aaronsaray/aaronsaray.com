@@ -2,8 +2,8 @@
 layout: post
 title: Want to come work with me?  Let's do some PHP!
 tags:
-- Misc Web Design
-- PHP
+- misc-web
+- php
 ---
 Do you like to be challenged, learn new things, and have a supportive team?  Well, let's chat a bit.  I'm building a team and I'm looking for great PHP developers to join it.  
 

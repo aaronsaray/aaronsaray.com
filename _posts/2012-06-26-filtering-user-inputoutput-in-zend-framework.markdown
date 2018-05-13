@@ -3,7 +3,7 @@ layout: post
 title: Filtering User Input/Output in Zend Framework
 tags:
 - security
-- zend framework
+- zend-framework
 ---
 There are two areas where user input should be filtered: on display and on storage.  Luckily, Zend Framework provides tools for this...
 

@@ -2,7 +2,7 @@
 layout: post
 title: Using Developer Tools in Chrome for Testing
 tags:
-- misc web design
+- misc-web
 - testing
 ---
 In a perfect world, when testing your website you'd have a giant device library, a number of different internet connection speeds,

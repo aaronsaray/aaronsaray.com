@@ -2,8 +2,8 @@
 layout: post
 title: Exploring MySQL in Eclipse PDT
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
+- eclipse-pdt
+- ide-and-web-dev-tools
 - mysql
 ---
 As you probably know by now, I'm a huge fan of Eclipse PDT.  Well, I wanted to stop using MySQL GUI tools for a bit and explore Eclipse tools.

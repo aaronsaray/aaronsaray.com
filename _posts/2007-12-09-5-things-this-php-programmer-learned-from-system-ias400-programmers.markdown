@@ -2,7 +2,7 @@
 layout: post
 title: 5 Things this PHP programmer learned from System-i/as400 programmers
 tags:
-- PHP
+- php
 - programming
 ---
 Working in a shop that has approximately 15 times more System-I as/400 iSeries (whatever you want to call it) programmers, I've been immersed into their culture, standards and mindset.

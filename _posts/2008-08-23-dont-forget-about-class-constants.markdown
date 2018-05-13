@@ -2,7 +2,7 @@
 layout: post
 title: Don't forget about Class Constants!
 tags:
-- PHP
+- php
 ---
 Constants can be great.  They can stand for things like web services keys, integers, flags, etc.  Basically, anything that you aren't going to be changing in your script - and most likely things that don't change much outside of the script either.  However, I've seen people use them in the global name space far too many times.  A great alternative is the class constant.  Lets check out some examples:
 

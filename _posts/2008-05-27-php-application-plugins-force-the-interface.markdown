@@ -2,7 +2,7 @@
 layout: post
 title: PHP application plugins - force the interface
 tags:
-- PHP
+- php
 ---
 The other day I was experimenting with some PHP plugin scripts and trying to develop my own robust plugin system.  I started thinking: how can I guarantee that a 3rd party developer sticks to my plugin standards?
 

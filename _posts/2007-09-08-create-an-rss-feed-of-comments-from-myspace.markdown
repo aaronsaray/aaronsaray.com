@@ -2,10 +2,9 @@
 layout: post
 title: Create an RSS feed of comments from myspace
 tags:
-- Misc Web Design
-- PHP
+- misc-web
+- php
 - scripting
-- myspace
 ---
 Lately, I've been trying to find ways to reduce the amount of time I spend on stupid sites like myspace (nevermind the fact that the time it took to reduce this amount took me enough time to visit myspace 1x a day for another month – heh). At any rate, I've been using Google Reader a lot more (I'm up to 180 or so feeds) and I thought: Why don't I make an RSS feed o my comments – then I don't have to go back to the site when someone sends me a comment. (Mind you, myspace does send you an e-mail when you receive a comment, but doesn't include the content. JEMDiary does, however ;)) I searched the internet and found a few sites that are doing that for a service, and one guy who was giving away a regular expression. So, I took his idea and wrote my own php script for cron. Check it out here:
 

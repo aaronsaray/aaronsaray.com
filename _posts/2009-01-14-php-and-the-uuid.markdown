@@ -2,7 +2,7 @@
 layout: post
 title: PHP and the UUID
 tags:
-- PHP
+- php
 ---
 I've been thinking more and more about having unique ID's - especially with working with larger datasets - and I thought it was high time that I investigated the UUID.
 

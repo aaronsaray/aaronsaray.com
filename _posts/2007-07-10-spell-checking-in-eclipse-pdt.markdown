@@ -2,10 +2,10 @@
 layout: post
 title: Spell Checking in Eclipse PDT
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- SQL
-- Website Monitoring Project
+- eclipse-pdt
+- ide-and-web-dev-tools
+- sql
+- misc-web
 ---
 Although I'd like to pretend that my side jobs always are pure programming, but alas, not the case.  There are times when the users send word docs to me and I have to convert them to html.  Now, even these word docs might have spelling mistakes - but that's just not 'acceptable' to them - I should correct those issues too!  Whats up with that?  But anyway, I now have a good plugin to do spellchecking in eclipse - that won't break on code (well not sorta...).  This supports spell checking as you type, language specific options, and more.  At any rate, lets check out eclipse's built in spelling feature, and then see why this plugin I found is better:  
 

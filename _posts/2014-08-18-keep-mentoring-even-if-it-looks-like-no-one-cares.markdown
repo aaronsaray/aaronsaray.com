@@ -2,8 +2,7 @@
 layout: post
 title: Keep Mentoring, Even If It Looks Like No One Cares
 tags:
-- Business
-- professional tips
+- business
 ---
 I've had a lot of people come to me for various mentoring opportunities.  They'll ask for help, follow up once or twice, and then just disappear.  I'm left wondering: _Did I make a measurable impact on their lives?_  
 

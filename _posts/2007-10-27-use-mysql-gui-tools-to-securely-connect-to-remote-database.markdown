@@ -2,8 +2,8 @@
 layout: post
 title: Use MySQL Gui tools to securely connect to remote database
 tags:
-- IDE and Web Dev Tools
-- SQL
+- ide-and-web-dev-tools
+- sql
 - windows
 ---
 This particular example is going to be based on a connection from Windows XP using Putty, MySQL GUI tools and **Dreamhost**.

@@ -2,7 +2,7 @@
 layout: post
 title: Emulation of Collections - true stories of data object handling
 tags:
-- PHP
+- php
 ---
 Today, Big Boy sent me an e-mail at work talking about emulation of collections in his .net programming.  He included a code sample (after the break).  This got me thinking about how I am planning on handling data going forward.  Do I want to handle data as keyed arrays, objects, complex objects, or... ?  Additionally, I started thinking about the Null Object programming pattern, and how this can fit into my data handling pattern.  I've made an interesting discovery - and am going to set my paradigm going forward using these complex objects.  Here's how...
 

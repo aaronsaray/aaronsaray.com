@@ -2,7 +2,7 @@
 layout: post
 title: PHProblemLogger Filter Strategies
 tags:
-- PHP
+- php
 ---
 If you haven't been following my [twitter](https://twitter.com/aaronsaray) feed or my [open source on github](https://github.com/aaronsaray), you might not have seen that I recently released [PHProblemLogger](https://github.com/aaronsaray/PHProblemLogger), an environment and run-time logger designed to help log everything during an error condition.  
 

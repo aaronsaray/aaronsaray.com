@@ -2,7 +2,7 @@
 layout: post
 title: Use the $this->fail() method with Mockery::on()
 tags:
-- PHP
+- php
 - testing
 - mockery
 ---

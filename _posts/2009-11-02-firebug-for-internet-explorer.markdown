@@ -2,7 +2,7 @@
 layout: post
 title: Firebug for Internet Explorer
 tags:
-- IDE and Web Dev Tools
+- ide-and-web-dev-tools
 ---
 During the creation of my websites, I develop solely in Firefox.  When it comes to testing, I run it through [IE tester](http://my-debugbar.com/wiki/IETester/HomePage).  One thing that I really miss is my [Firebug](http://getfirebug.com/).
 

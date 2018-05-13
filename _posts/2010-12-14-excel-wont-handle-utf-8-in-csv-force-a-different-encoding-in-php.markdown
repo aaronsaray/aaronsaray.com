@@ -2,7 +2,7 @@
 layout: post
 title: Excel won't handle UTF-8 in CSV?  Force a different encoding in PHP
 tags:
-- PHP
+- php
 - programming
 ---
 When generating a CSV file with PHP in the UTF-8 encoding, Microsoft Excel freaks out.  It just doesn't show the proper encoding.  Thank you Microsoft!  However, I did find a way to handle this encoding and make it compatible for Windows/Microsoft Excel.

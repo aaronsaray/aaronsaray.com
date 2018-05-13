@@ -4,7 +4,7 @@ title: PHP PDF Viewer - Convert to Images and use HTML/JS
 tags:
 - javascript
 - jquery
-- PHP
+- php
 ---
 Well - I really couldn't think of a good title - it's really not catchy at all.
 

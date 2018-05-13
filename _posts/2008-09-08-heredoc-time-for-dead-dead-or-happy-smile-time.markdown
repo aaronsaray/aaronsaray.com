@@ -2,7 +2,7 @@
 layout: post
 title: heredoc - time for dead-dead or happy-smile time?
 tags:
-- PHP
+- php
 ---
 PHP's heredoc - good or bad?  All silly titles aside, lets check out some points.
 

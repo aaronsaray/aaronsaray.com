@@ -2,7 +2,7 @@
 layout: post
 title: Anonymous Self-Executing Functions in JavaScript and PHP
 tags:
-- PHP
+- php
 - Javascript
 ---
 I've used the anonymous self-executing paradigm a few times in JavaScript over the years.  Something like this:

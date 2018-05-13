@@ -2,7 +2,7 @@
 layout: post
 title: Convert from VMWare Player to VMWare Server
 tags:
-- IDE and Web Dev Tools
+- ide-and-web-dev-tools
 - windows
 ---
 At superdev, we have a distribution of a gentoo image made with vmware workstation.  This works fine in vmware player - but not the free vmware server - and I wanted to have vmware server running so I could have more than one server running on my windows laptop.  Well, there are two small simple edits I had to do - and it was all good.

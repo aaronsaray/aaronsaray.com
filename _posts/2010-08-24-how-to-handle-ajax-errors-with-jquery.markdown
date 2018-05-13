@@ -2,7 +2,7 @@
 layout: post
 title: How to handle AJAX errors with jQuery
 tags:
-- AJAX
+- ajax
 - jquery
 ---
 Many times, the `error` property of the jQuery [AJAX](http://api.jquery.com/category/ajax/) call is ignored.  Most often, you'll see just references to the success portion.

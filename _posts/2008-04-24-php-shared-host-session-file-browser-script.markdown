@@ -2,8 +2,7 @@
 layout: post
 title: PHP Shared Host - Session File Browser Script
 tags:
-- open source
-- PHP
+- php
 - security
 ---
 PHP stores its session information into flat files unencrypted by default. 			

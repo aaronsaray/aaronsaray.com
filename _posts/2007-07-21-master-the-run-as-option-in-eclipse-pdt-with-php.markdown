@@ -2,9 +2,9 @@
 layout: post
 title: Master the 'Run As' option in Eclipse PDT with PHP
 tags:
-- Eclipse PDT
-- IDE and Web Dev Tools
-- PHP
+- eclipse-pdt
+- ide-and-web-dev-tools
+- php
 ---
 Most of my development in Eclipse PDT with the results tested outside of it - using firefox.  PDT has a few options in the Run... menu:
 

@@ -3,7 +3,7 @@ layout: post
 title: Pass PHP session to a new script using fsockopen
 tags:
 - apache
-- PHP
+- php
 ---
 I was working on a script that opened up a new connection to the same server with `fsockopen` to process a php script.  It passed the variables needed through GET and then gathered the output.  Finally, it displayed the output on the screen under the current context.
 

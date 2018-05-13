@@ -2,7 +2,7 @@
 layout: post
 title: Make interfaces Useful, not featureful
 tags:
-- Misc Web Design
+- misc-web
 ---
 ### There seem to be two schools of design lately: Feature rich, RIA designs and simplicity.
 
