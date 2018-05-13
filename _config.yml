@@ -20,13 +20,6 @@ sass:
 compress_html:
    clippings: all
 
-tag_page_layout: page_tags
-tag_page_dir: tag
-tag_feed_layout: feed_tags
-tag_feed_dir: tag
-tag_page_data:
-  sitemap: false
-  
 paginate: 10
 paginate_path: "/blog/page-:num"
 
@@ -34,7 +27,5 @@ plugins:
   - github-pages
   - jekyll-sitemap
   - jekyll-paginate
-  - jekyll/tagging # this does not match the plugin name in the Gemfile on purpose apparently
-  ## also that one might not work ^
 
   

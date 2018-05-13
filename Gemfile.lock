@@ -144,8 +144,6 @@ GEM
     jekyll-sitemap (1.2.0)
       jekyll (~> 3.3)
     jekyll-swiss (0.4.0)
-    jekyll-tagging (1.1.0)
-      nuggets
     jekyll-theme-architect (0.1.1)
       jekyll (~> 3.5)
       jekyll-seo-tag (~> 2.0)
@@ -211,7 +209,6 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-    nuggets (1.5.0)
     octokit (4.9.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.1)
@@ -251,7 +248,6 @@ DEPENDENCIES
   jekyll (~> 3.7.3)
   jekyll-paginate
   jekyll-sitemap
-  jekyll-tagging
 
 BUNDLED WITH
    1.16.1
