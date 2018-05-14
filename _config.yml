@@ -27,6 +27,9 @@ collections:
   my_tags:
     output: true
     permalink: /tag/:name/
+  my_tags_xml:
+    output: true
+    permalink: "/tag/:name.xml"
 
 defaults:
   -
@@ -35,10 +38,14 @@ defaults:
       type: my_tags
     values:
       layout: page_tags
+  -
+    scope:
+      path: ""
+      type: my_tags_xml
+    values:
+      layout: feed_tags
 
 plugins:
   - github-pages
   - jekyll-sitemap
   - jekyll-paginate
-
-  
