@@ -29,9 +29,9 @@ I hold the following certifications: Certified SCRUM Master, Zend Certified Engi
 
 ### Professional Experience
  
-**Director of Product Engineering at Dealer Inspire.** I began working at Dealer Inspire October, 2016, as a Senior PHP Developer. In October 2017, I was promoted.  Dealer Inspire provides a comprehensive suite of tools for automotive dealers.  I'm responsible for technical mentorship and career path enrichment of my development team. My time is split between two products and teams: Online Shopper, which facilitates purchase, customization and financing of a vehicle completely online; and Fuel, a tool which optimizes and automates advertising via real-time inventory feeds on AdWords and Bing.
+**Senior Director of Product Engineering at Dealer Inspire.** I began at Dealer Inspire October, 2016, as a Senior PHP Developer. In October 2017, I was promoted to Director, and in May 2018 I was promoted to Senior Director.  Dealer Inspire provides a comprehensive suite of tools for automotive dealers.  I'm responsible for technical mentorship and career path enrichment of my development team. I assist the VP of Engineering in developing processes, procedures and best practices for all of the development teams.  My time is split between four product teams: Online Shopper, which facilitates purchase, customization and financing of a vehicle completely online; Fuel, a tool which optimizes and automates advertising via real-time inventory feeds on AdWords and Bing; AdBuilder, an internal tool for building HTML5-based ads; and an upcoming project that is still under wraps.
  
-**Previous experience includes** Small Shops United, LLC; 201 Creative, LLC; Liturgical Publications, Inc.; c21 Interactive/MarkForGov.com; Rogers POS; Delta Dental; Job Shouts; and EZ-Net. Work history beginning in 2001 is available upon request.
+**Previous experience includes** Small Shops United, LLC; iMoneza/Wallit, LLC; 201 Creative, LLC; Liturgical Publications, Inc.; c21 Interactive/MarkForGov.com; Rogers POS; Delta Dental; Job Shouts; and EZ-Net. Work history beginning in 2001 is available upon request.
 
 ### Want More?
 

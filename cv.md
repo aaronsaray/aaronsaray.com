@@ -136,9 +136,13 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
 
-**Dealer Inpsire. Naperville, IL (10/17 - present)**  
+**Dealer Inpsire. Naperville, IL (10/17 - 5/17)**  
 *Director of Product Engineering*  
-Dealer Inspire provides a full suite of software for automotive dealerships. As the Director of Product Engineering, I oversee two products: Online Shopper and Fuel. Online Shopper allows customers to find, customize, finance and finish an entire purchase of an automobile. It features real-time financing quotes, integrates with inventory and provides customized incentives and accessories. Fuel automatically manages online advertising between AdWords and Bing, while integrating with Facebook lead forms. With budget constraints, automated ROI bid adjustments and live inventory integration, Fuel keeps ads up to date and optimizes their performance. My job is to build up my development team, remove obstacles and keep everyone informed. This means I split my time between mentoring and coaching for technical and career paths, leading status meetings and working to stream-line integration of multiple products.
+The Senior Director of Product Engineering works with the VP of Engineering to develop processes, procedures and best practices for all of the development teams. I oversee four products: Online Shopper, Fuel, AdBuilder and an upcoming beta product. Online Shopper allows customers to find, customize, finance and finish an entire purchase of an automobile. It features real-time financing quotes, integrates with inventory and provides customized incentives and accessories. Fuel automatically manages online advertising between AdWords and Bing, while integrating with Facebook lead forms. With budget constraints, automated ROI bid adjustments and live inventory integration, Fuel keeps ads up to date and optimizes their performance. The AdBuilder tool is an internal product that builds HTML5 ads for various ad platforms. It integrates templates with inventory feeds and ships updates to FUEL via a REST API.  It uses single sign on using Auth0, one of the first applications of our product suite to use it.
+
+**Dealer Inpsire. Naperville, IL (10/17 - 5/17)**  
+*Director of Product Engineering*  
+As the Director of Product Engineering, I oversee two products: Online Shopper and Fuel.  My job is to build up my development team, remove obstacles and keep everyone informed. This means I split my time between mentoring and coaching for technical and career paths, leading status meetings and working to stream-line integration of multiple products.
 
 **Dealer Inspire. Naperville, IL (10/16 to 10/17)**  
 *Senior Software Engineer*  

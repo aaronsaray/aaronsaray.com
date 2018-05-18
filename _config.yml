@@ -13,6 +13,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - CNAME
+  - .idea
 
 sass:
     style: compressed
