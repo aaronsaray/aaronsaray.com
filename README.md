@@ -31,6 +31,12 @@ This sets the published date for the UI and for ordering.  The command is `bp` w
 drafts folder.  This functionality is provided by the `Blog Publish Draft.alfredworkflow` file.  This then commits the change
 and pushes it to master.  When pushed to master, Github Pages will build the new site.
 
+### Creating New Tag
+
+Because of the way Jekyll on Github Pages works, we can't use the tagging plugins.  So, we have to build our own.  This is done from collections.
+In order to create a new tag, run the `bt tag-name` workflow command where `tag-name` is the new tag you wish to add to the system. (This will
+create a template for the xml and for the pages).  This is provied by `Blog New Tag.alfredworkflow` file.
+
 ## Writing Standards
 
 I'm either way too anal - or this is just because I forget things. You get to decide!
