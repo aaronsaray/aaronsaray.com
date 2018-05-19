@@ -7,6 +7,8 @@ Source for AaronSaray.com
 
 Where `$command` is things like `serve` or `build`.
 
+I've added a `.bash_profile` alias for `jek` to shortcut the above.
+
 ## Writing Process
 
 I forget too many things, so I take notes for myself.  Don't lie - you wish you would do the same...
@@ -24,14 +26,10 @@ This is not the same as publishing.  `Blog Save.alfredworkflow` provides this fu
 
 ### Publish Draft
 
-All this does is move a file from the drafts folder to the post's folder, but it prepends a date onto the filename. 
+This moves a file from the drafts folder to the posts folder and it prepends a date onto the filename. 
 This sets the published date for the UI and for ordering.  The command is `bp` which will give a list of items from the 
-drafts folder.  This functionality is provided by the `Blog Publish Draft.alfredworkflow` file.
-
-### Pushing to Production
-
-The jekyll site will be built to `_site` and then an rsync command will make sure the updated entries exist on
-the remote server. Notifications will be issued along the way.  This is provided by the `Blog Update:Submit.alfredworkflow` file.
+drafts folder.  This functionality is provided by the `Blog Publish Draft.alfredworkflow` file.  This then commits the change
+and pushes it to master.  When pushed to master, Github Pages will build the new site.
 
 ## Writing Standards
 
