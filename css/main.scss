@@ -242,6 +242,16 @@ td, th {
   padding: 0.5rem;
 }
 
+/** This is necessary for filenames above code blocks that cause the screen to scroll **/
+p > strong > code {
+  display: block;
+  overflow: auto;
+  &.highlighter-rouge {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
 /***********************************************************************************************************************
  * Pagination
  **********************************************************************************************************************/
@@ -265,9 +275,15 @@ td, th {
  **********************************************************************************************************************/
 @import "syntax-highlighting";
 
+/** some of this is stupid cuz of the plugins that are too frivilous with their classes **/
+
 .highlight, .highlight > pre {
   margin: 0;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+.highlight > pre.highlight {
+  padding: 0;
 }
 
 code.highlighter-rouge {
