@@ -20,6 +20,11 @@ $diminished-font-color: #666666;
 }
 
 /***********************************************************************************************************************
+ * Breakpoints
+ **********************************************************************************************************************/
+$breakpoint-tablet: 768px;
+
+/***********************************************************************************************************************
  * Main Layout and general items
  **********************************************************************************************************************/
 body {
@@ -29,6 +34,10 @@ body {
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size: 1.37rem;
   line-height: 2rem;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
@@ -290,7 +299,12 @@ code.highlighter-rouge {
   background: #eaeaea;
   color: #343642;
   padding: 0.3rem;
+  @media (max-width: $breakpoint-tablet) {
+    word-break: break-word;
+  }
 }
+
+
 
 /***********************************************************************************************************************
  * 404
