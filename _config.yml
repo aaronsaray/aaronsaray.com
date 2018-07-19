@@ -50,3 +50,4 @@ plugins:
   - github-pages
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-redirect-from

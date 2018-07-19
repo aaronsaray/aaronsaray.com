@@ -247,6 +247,7 @@ DEPENDENCIES
   github-pages (>= 183)
   jekyll (~> 3.7.3)
   jekyll-paginate
+  jekyll-redirect-from
   jekyll-sitemap
 
 BUNDLED WITH
