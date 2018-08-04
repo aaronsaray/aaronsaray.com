@@ -215,6 +215,35 @@ article {
   margin:3rem 0;
 }
 
+#blog-subscribe {
+  font-size: 1rem;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 0.8rem;
+  }
+  text-align: center;
+  margin-top: 1.2rem;
+  background: #f5f5f5;
+  form {
+    display: inline;
+    input {
+      @media (max-width: $breakpoint-tablet) {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+  a:before {
+    display: inline-block;
+    content:"";
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.1rem;
+    vertical-align: text-top;
+    background-size: 1rem;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICAgIGlkPSJSU1NpY29uIiAgICAgdmlld0JveD0iMCAwIDggOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiPiAgPHRpdGxlPlJTUyBmZWVkIGljb248L3RpdGxlPiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4gICAgLmJ1dHRvbiB7c3Ryb2tlOiBub25lOyBmaWxsOiBvcmFuZ2U7fSAgICAuc3ltYm9sIHtzdHJva2U6IG5vbmU7IGZpbGw6IHdoaXRlO30gIDwvc3R5bGU+ICA8cmVjdCAgIGNsYXNzPSJidXR0b24iIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHJ4PSIxLjUiIC8+ICA8Y2lyY2xlIGNsYXNzPSJzeW1ib2wiIGN4PSIyIiBjeT0iNiIgcj0iMSIgLz4gIDxwYXRoICAgY2xhc3M9InN5bWJvbCIgZD0ibSAxLDQgYSAzLDMgMCAwIDEgMywzIGggMSBhIDQsNCAwIDAgMCAtNCwtNCB6IiAvPiAgPHBhdGggICBjbGFzcz0ic3ltYm9sIiBkPSJtIDEsMiBhIDUsNSAwIDAgMSA1LDUgaCAxIGEgNiw2IDAgMCAwIC02LC02IHoiIC8+PC9zdmc+')
+  }
+}
+
 .thumbnail {
   display: block;
   margin: 1rem 0;
