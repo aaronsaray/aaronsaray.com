@@ -359,3 +359,23 @@ code.highlighter-rouge {
     display: inline-block;
   }
 }
+#not-found-mute-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  height: 2rem;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  
+  &:hover {
+    filter: invert(1);
+  }
+  
+  img {
+    height: 100%;
+    &:last-child {
+      display: none;
+    }
+  }
+}

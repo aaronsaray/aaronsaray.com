@@ -1,4 +1,18 @@
 ---
 layout: notfound
 ---
-<video autoplay="" id="notfound_video"><source src="/video/404.mp4" type="video/mp4"></video>
+<video autoplay="" muted id="notfound_video"><source src="/video/404.mp4" type="video/mp4"></video>
+<button id="not-found-mute-button">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA%2FPjxzdmcgaGVpZ2h0PSIxMDI0IiB3aWR0aD0iODk2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMjggMzg0SDB2MjU2aDEyOGwyNTYgMTkyaDY0VjE5MmgtNjRMMTI4IDM4NHpNODY0IDQxNmwtNjQtNjQtOTYgOTYtOTYtOTYtNjMgNjMuNSA5NSA5Ni41LTk2IDk2IDY0IDY0IDk2LTk2IDk2IDk2IDY0LTY0LTk2LTk2TDg2NCA0MTZ6Ii8%2BPC9zdmc%2B">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA%2FPjxzdmcgaGVpZ2h0PSIxMDI0IiB3aWR0aD0iODk2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMjggMzg0SDB2MjU2aDEyOGwyNTYgMTkyaDY0VjE5MmgtNjRMMTI4IDM4NHpNNTM4LjUxIDQyMS40OWMtMTIuNDk2LTEyLjQ5Ny0zMi43NTgtMTIuNDk3LTQ1LjI1NSAwLTEyLjQ5NiAxMi40OTYtMTIuNDk2IDMyLjc1OCAwIDQ1LjI1NSAyNC45OTQgMjQuOTkzIDI0Ljk5NCA2NS41MTYgMCA5MC41MS0xMi40OTYgMTIuNDk2LTEyLjQ5NiAzMi43NTggMCA0NS4yNTUgMTIuNDk3IDEyLjQ5NiAzMi43NTkgMTIuNDk2IDQ1LjI1NSAwQzU4OC40OTcgNTUyLjUyMSA1ODguNDk3IDQ3MS40NzcgNTM4LjUxIDQyMS40OXpNNjI5LjAyIDMzMC45ODFjLTEyLjQ5NS0xMi40OTctMzIuNzU4LTEyLjQ5Ny00NS4yNTUgMC0xMi40OTUgMTIuNDk2LTEyLjQ5NSAzMi43NTggMCA0NS4yNTUgNzQuOTgxIDc0Ljk4IDc0Ljk4MSAxOTYuNTQ4IDAgMjcxLjUyOC0xMi40OTUgMTIuNDk3LTEyLjQ5NSAzMi43NiAwIDQ1LjI1NiAxMi40OTcgMTIuNDk2IDMyLjc2IDEyLjQ5NiA0NS4yNTUgMEM3MjguOTk0IDU5My4wNDYgNzI4Ljk5NCA0MzAuOTU1IDYyOS4wMiAzMzAuOTgxek03MTkuNTI5IDI0MC40NzFjLTEyLjQ5Ny0xMi40OTctMzIuNzYtMTIuNDk3LTQ1LjI1NSAwLTEyLjQ5NiAxMi40OTYtMTIuNDk2IDMyLjc1OCAwIDQ1LjI1NSAxMjQuOTY4IDEyNC45NjggMTI0Ljk2OCAzMjcuNTggMCA0NTIuNTQ4LTEyLjQ5NiAxMi40OTctMTIuNDk2IDMyLjc1OSAwIDQ1LjI1NSAxMi40OTUgMTIuNDk3IDMyLjc1OCAxMi40OTcgNDUuMjU1IDBDODY5LjQ5IDYzMy41NjcgODY5LjQ5IDM5MC40MzIgNzE5LjUyOSAyNDAuNDcxeiIvPjwvc3ZnPg%3D%3D">
+</button>
+<script>
+    document.querySelector('#not-found-mute-button').addEventListener('click', function() {
+        this.blur();
+        Array.prototype.forEach.call(this.children, function(child){
+            child.style.display = window.getComputedStyle(child).display == 'none' ? 'inline' : 'none';
+        });
+        let v = document.querySelector('#notfound_video');
+        v.muted = !v.muted;
+    });
+</script>
