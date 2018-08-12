@@ -3,12 +3,11 @@ layout: post
 title: Coders be Confident, Not Cocky
 tags:
 - php
+- business
 ---
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+In the last decade or two, the US proliferation of low quality reality television shows has been unstoppable.  "Big Brother" would be ashamed by some of his siblings.  There are shows that follow famous people (although, I'm not entirely certain why some of them are famous), shows that involve the audience, shows that support nerds; basically anything you can imagine!  I pretend I'm above this, I surely don't fall into the category of people who sit at home and pine over "The Bachelor."  I normally flip the channel right past these shows.
 
 ### Episode 6: Confident, Not Cocky
-
-In the last decade or two, the US proliferation of low quality reality television shows has been unstoppable.  "Big Brother" would be ashamed by some of his siblings.  There are shows that follow famous people (although, I'm not entirely certain why some of them are famous), shows that involve the audience, shows that support nerds; basically anything you can imagine!  I pretend I'm above this, I surely don't fall into the category of people who sit at home and pine over "The Bachelor."  I normally flip the channel right past these shows.
 
 Except that one time that my curiosity got the best of me.
 
@@ -49,3 +48,5 @@ That is your job as a Confident Coder.  Work hard, learn your craft, and confide
 #### End Notes
 
 I've dedicated a good portion of my life to mastery in PHP and web technology.  It encourages me to share my knowledge via blogs, conferences, meetups, this column, etc, to encourage the next generation of programmers.  I'm confident I'm making a positive impact on the world.  But, even as I humbly continue down my path, I'm surprised by the sheer amount of information out there that I still have to learn.  I could never be cocky.  Like you, I've put in the work, though.  I will present my work with the proper amount of confidence, that of a Confident Coder.
+
+> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.

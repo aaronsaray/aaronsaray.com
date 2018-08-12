@@ -4,11 +4,9 @@ title: Descriptive Naming Schemes
 tags:
 - php
 ---
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+There are two reactions to reading a new section of code for the first time.  Sadly, one of the most common seems to be of confusion, dismay, followed possibly by some sort of expletive (or many, depending on the length of the code).  The other is one of the most beautiful reactions, the most flattering, the most sought after reaction: "Oh, that makes sense" or "That's cool."
 
 ### Episode 2: Descriptive Naming Schemes
-
-There are two reactions to reading a new section of code for the first time.  Sadly, one of the most common seems to be of confusion, dismay, followed possibly by some sort of expletive (or many, depending on the length of the code).  The other is one of the most beautiful reactions, the most flattering, the most sought after reaction: "Oh, that makes sense" or "That's cool."
 
 As a Confident Coder, the code that we strive to write should illicit that second response as much as possible.  Whereas some languages benefit from minification, PHP does not.  Code should be efficient, but that doesn't mean obfuscated and confusing.  This is where proper descriptive naming schemes come in.  
 
@@ -77,3 +75,5 @@ function addPrimaryToMembersIfMissing($primary, $members)
 Now, I feel confident that this code block reads clearly and is not so confusing.  I can read the code from start to finish without having to make any inferences on what each variable name means and what this function is primarily responsible for.
 
 You have a great amount of freedom when choosing names for methods and variables.  There are many code standards which will give you pointers on how to name your items, though.  Remember to consider how your methods and variables read in the code.  Does your choice in naming require explanation?  If so, refactor until it reads like a sentence using verbs and nouns.  Then, you can confidently hand your code over to anyone with the knowledge that you'll get the prized response: "Oh, that makes sense."
+
+> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.

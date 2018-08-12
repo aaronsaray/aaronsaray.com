@@ -3,6 +3,7 @@ layout: post
 title: How to discover talent, not just skill
 tags:
 - programming
+- management
 ---
 One of the newer programmers on my team asked me the other day why I hired him.  I said "I saw you had a natural talent, and have potential."  We both kind of laughed because we knew his skill level at the time was very low.  He was not that experienced.  But, he had more questions about how I can detect talent and potential versus just someone who has really polished looking code.
 

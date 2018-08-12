@@ -4,11 +4,9 @@ title: Array Key Accuracy
 tags:
 - php
 ---
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+Bugs in code suck.  It's bad enough when you misspell a function or forget a semi-colon.  That's embarrassing and annoying.  But what's worse is when you write code that seems to work fine, is syntactically correct, yet still has a bug.  You know you did it right, but somehow it's also wrong.  That's not good.  That makes me paranoid and second guess the rest of my work.  That doesn't help me be a Confident Coder at all.
 
 ### Episode 3: Array Key Accuracy
-
-Bugs in code suck.  It's bad enough when you misspell a function or forget a semi-colon.  That's embarrassing and annoying.  But what's worse is when you write code that seems to work fine, is syntactically correct, yet still has a bug.  You know you did it right, but somehow it's also wrong.  That's not good.  That makes me paranoid and second guess the rest of my work.  That doesn't help me be a Confident Coder at all.
 
 #### Enter the Array
 One of the areas that I've seen this happen before is with array key and values.  Things can be written in proper PHP, but the actual execution fails.  And by fails, I don't mean provides a cool fatal error message or exception.  I just mean it didn't run the proper process or the assumed value of a calculation was different.  
@@ -69,3 +67,5 @@ if (array_key_exists('offset', $settings) {
 
 #### End Notes
 Accuracy is important in programming.  A Confident Coder is never happy with "it's good enough." That generally means this code will work until it doesn't.  That's no way to build a robust, strong application.  Programming accurately and using the right methods may take more investment and time.  But, in the end, accuracy always wins out.  
+
+> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.

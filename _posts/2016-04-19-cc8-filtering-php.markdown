@@ -4,11 +4,9 @@ title: Filtering PHP
 tags:
 - php
 ---
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+I like to think that I'm somewhat of a PHP purist.  And, when I travel to user groups, one of my favorite talks to give is named "Tell Aaron What To Do."  Basically, the goal is to solve two problems I pose using plain HTML and PHP.  Oh, and do it with core PHP, no frameworks, no libraries, just plain vanilla PHP.  At the end, I'll run a number of integration and security tests against the code the group has written to see if we were successful.
 
 ### Episode 8: filter_var to the Rescue!
-
-I like to think that I'm somewhat of a PHP purist.  And, when I travel to user groups, one of my favorite talks to give is named "Tell Aaron What To Do."  Basically, the goal is to solve two problems I pose using plain HTML and PHP.  Oh, and do it with core PHP, no frameworks, no libraries, just plain vanilla PHP.  At the end, I'll run a number of integration and security tests against the code the group has written to see if we were successful.
 
 > I don't have anything against frameworks.  I've used Zend Framework as the basis for a number of projects.  However, I find that too many people rely on frameworks for every single little thing, and that can be bad!
 > 
@@ -56,3 +54,5 @@ The next example is using the sanitize filter.  The third line of output is iden
 Confident Coders know they don't need to reinvent the wheel.  PHP has a number of methods to solve a lot of problems for us, so make sure to take advantage of them.  I would recommend checking out the documentation for `filter_var()` on php.net.  Additionally, check out the 'Types of Filters' manual page: [http://php.net/filter.filters.php](http://php.net/filter.filters.php).  
 
 One last caveat I'd like to mention: make sure you understand the filter flag you have implemented.  Sometimes the descriptions in the manual aren't that clear.  Read through the comments on the pages to find out what other programmers have ran into.  For the most part, they will solve your filtering problems.  If not, there's always regular expressions!
+
+> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.

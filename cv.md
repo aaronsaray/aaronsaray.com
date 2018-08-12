@@ -4,7 +4,7 @@ title: CV of Aaron Saray
 header: My CV contains detailed information relevant to my entire professional career.
 permalink: /cv/
 ---
-If you're looking for the abridged version, ie, [the resume](/resume) this is not it! :)  Instead, this CV contains my professional history since 2001.
+If you're looking for the abridged version, ie, [the resume](/resume), this is not it! :)  Instead, this CV contains my professional history since 2001.
 
 ### Open Source
 
@@ -28,7 +28,7 @@ I am a prolific author, editor and blogger.  (Yes, blogger! On this site - [400+
 
 #### Author
 
-[33 Things I Wish Somebody Would Have Told Me](http://33thingsbook.com/) This book details - you guessed it - 33 things that I wish someone would have mentioned to be before or during my programming and management career.  A more conversational read, this shares lessons I've learned "the hard way" in a language or technical disipline-agnostic format.
+[33 Things I Wish Somebody Would Have Told Me]({% post_url 2017-11-13-33-things-book %}) This book details - you guessed it - 33 things that I wish someone would have mentioned to be before or during my programming and management career.  A more conversational read, this shares lessons I've learned "the hard way" in a language or technical disipline-agnostic format.
 
 [WROX: Professional PHP Design Patterns](http://saray.me/look-at-this-guy) (ISBN: 978-0470496701) This book helps bridge the divide between the traditional design pattern books and the average PHP developer.  Learn how to apply all the true, time-tested patterns in object-oriented PHP.
 
@@ -136,11 +136,11 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
 
-**Dealer Inpsire. Naperville, IL (10/17 - 5/17)**  
-*Director of Product Engineering*  
+**Dealer Inspire. Naperville, IL (5/18 - present)**  
+*Senior Director of Product Engineering*  
 The Senior Director of Product Engineering works with the VP of Engineering to develop processes, procedures and best practices for all of the development teams. I oversee four products with 12 direct reports: Online Shopper, Fuel, AdBuilder and an upcoming beta product. Online Shopper allows customers to find, customize, finance and finish an entire purchase of an automobile. It features real-time financing quotes, integrates with inventory and provides customized incentives and accessories. Fuel automatically manages online advertising between AdWords and Bing, while integrating with Facebook lead forms. With budget constraints, automated ROI bid adjustments and live inventory integration, Fuel keeps ads up to date and optimizes their performance. The AdBuilder tool is an internal product that builds HTML5 ads for various ad platforms. It integrates templates with inventory feeds and ships updates to FUEL via a REST API.  It uses single sign on using Auth0, one of the first applications of our product suite to use it.
 
-**Dealer Inpsire. Naperville, IL (10/17 - 5/17)**  
+**Dealer Inspire. Naperville, IL (10/17 - 5/18)**  
 *Director of Product Engineering*  
 As the Director of Product Engineering, I oversee two products: Online Shopper and Fuel.  My job is to build up my development team, remove obstacles and keep everyone informed. This means I split my time between mentoring and coaching for technical and career paths, leading status meetings and working to stream-line integration of multiple products.
 

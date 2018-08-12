@@ -4,11 +4,9 @@ title: Take Care of Your Resources
 tags:
 - php
 ---
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+I'm going to say something that I never thought I'd say in my life.  In fact, I'm not sure that a single programmer has ever said this!  Ready?  
 
 ### Episode 7: Take Care of Resources, They Will Take Care of You
-
-I'm going to say something that I never thought I'd say in my life.  In fact, I'm not sure that a single programmer has ever said this!  Ready?  
 
 Going to church at a young age helped me be a better programmer.
 
@@ -81,3 +79,5 @@ MySQL is made to handle relationship data.  This is why the JOIN command exists.
 #### End Notes
 
 Taking care of your resources in your code is a lot like vehicle or home maintenance.  You don't need to do it, and you'll be fine -- for a while.  However, time will break down all things.  Proper maintenance and care will make sure you'll get more life and better performance out of your car, home, and even code!  
+
+> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.

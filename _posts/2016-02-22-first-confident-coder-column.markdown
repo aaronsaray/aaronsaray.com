@@ -4,11 +4,9 @@ title: First Confident Coder Column
 tags:
 - php
 ---
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+Sweaty palms, a fast heart rate and an overwhelming sense of dread.  
 
 ### Welcome
-
-Sweaty palms, a fast heart rate and an overwhelming sense of dread.  
 
 What could have brought on this primal fight or flight reflex at 2p.m. in an air conditioned cubicle under the slightly annoying buzz of fluorescent lamps?  One small phrase, three simple words from your boss or the lead architect: "Code Review Time."
 
@@ -59,3 +57,5 @@ First, we validate that the super global `$_SERVER` array has the key of `REQUES
 #### End Notes
 
 Now, I am confident that I can determine if this was request was indeed a POST.  And, in the spirit of confident coding for peer review, please feel free to send me your thoughts, questions, or critiques.  If you'd like me to cover something in an upcoming column, don't be afraid to ask.  
+
+> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.

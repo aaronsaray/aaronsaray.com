@@ -3,6 +3,7 @@ layout: post
 title: Lessons Learned from Conducting more than 200 Technical Interviews
 tags:
 - business
+- management
 ---
 Too often we find a team leader or a manager and just expect they'll be able to hire new employees effectively.  After all, they're successful, they should be able to clone themselves, right?
 

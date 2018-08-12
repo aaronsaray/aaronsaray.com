@@ -4,6 +4,7 @@ title: Rockstar Coders are Ruining Your Business
 tags:
 - programming
 - business
+- management
 ---
 It's such a cliche by now - "We need a rockstar programmer" or "only code ninjas should apply" - but this choice in your job want-ad is ruining your business. Let me tell you why.
 

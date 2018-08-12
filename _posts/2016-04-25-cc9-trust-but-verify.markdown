@@ -4,11 +4,9 @@ title: Trust, But Verify
 tags:
 - php
 ---
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+"Trust falls" are a team-building activity that some of my friends have had to endure.  I've been threatened with this exercise a few times.  But, I've never had to do it.  Luckily, I've been able to convince my team members I will participate without having to test their bicep and shoulder strength.  Or, perhaps I'm just not trusting enough.  (I once worked at a place that had a few employees that were really good friends and would force-trust-fall on each other.  When a group of colleagues were walking in a row, one would just throw himself backwards into the person behind him surprising them and shouting "trust fall!"  This was the only "trust fall" that I was forced to participate in.)  
 
 ### Episode 9: Trust, But Verify
-
-"Trust falls" are a team-building activity that some of my friends have had to endure.  I've been threatened with this exercise a few times.  But, I've never had to do it.  Luckily, I've been able to convince my team members I will participate without having to test their bicep and shoulder strength.  Or, perhaps I'm just not trusting enough.  (I once worked at a place that had a few employees that were really good friends and would force-trust-fall on each other.  When a group of colleagues were walking in a row, one would just throw himself backwards into the person behind him surprising them and shouting "trust fall!"  This was the only "trust fall" that I was forced to participate in.)  
 
 If my team from work reads this, they're going to be dumbfounded.  "We thought Aaron trusted us!?"  Let me be clear, I do trust people.  I just don't trust programmers!  Ok, I'm kidding a bit here.  What I mean to say is that, as a Confident Coder, you should never blindly trust code and data.  Let me illustrate this with some examples.
 
@@ -91,3 +89,5 @@ This third party saw how I was using the information and liked what they saw.  T
 #### End Notes
 
 Confident Coders know there is a difference between being trusting and confident.  Confident programming is knowing how a process or method should work.  Trust is implied in code, but trust can never be guaranteed.  Confident Coders know to follow the defensive programming mantra of trust, but verify to guarantee more accurate code.
+
+> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.

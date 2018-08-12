@@ -4,11 +4,9 @@ title: Attention to Detail
 tags:
 - php
 ---
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+Every leader has a particular methodology or key point they focus on.  Whether it be a small detail, a general philosophy or a repeated phrase, you know that if you are near that leader, you will become very familiar with their demand.  In my team, my demand is to pay attention to detail.
 
 ### Episode 5: Attention to Detail
-
-Every leader has a particular methodology or key point they focus on.  Whether it be a small detail, a general philosophy or a repeated phrase, you know that if you are near that leader, you will become very familiar with their demand.  In my team, my demand is to pay attention to detail.
 
 During some of the first code reviews with my team, I would chant this mantra over and over.  Pay attention to detail!  I would say it, I would write it, and sometimes you'd hear me yelling it from my office.  At first, I think it angered my team.  Then, they started using it to mock me.  Now, they've found appreciation for it - and I hear them using it with each other.
 
@@ -68,3 +66,5 @@ In order to save time, the first method named `addSalesTax` and its comment decl
 ### End Notes
 
 We work in an industry with 1's and 0's - there is right, and anything else is wrong.  Something not precisely right is a bug.  Our work demands detail.  It's fun to be the fastest or most innovative programmer out there.  But true Confident Coders know that accuracy is the most important.  They pay attention to detail.
+
+> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.

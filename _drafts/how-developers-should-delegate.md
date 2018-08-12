@@ -3,6 +3,7 @@ layout: post
 title: How Developers Should Delegate
 tags:
 - business
+- management
 ---
 As a manager, I spend a lot of time delegating.  I delegate small tasks so that I can spend more time adding value to the process and project. The value I bring is my ability to see the larger picture, use my experience as a guide, things like that. If I'm doing too many little things, I can't do what I'm good at.
 
