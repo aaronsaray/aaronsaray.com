@@ -114,8 +114,8 @@ abbr {
 }
 
 blockquote {
-  margin-left: 0;
-  padding-left: 2rem;
+  margin: 0;
+  padding: 0 2rem;
   border-left: 0.3rem solid #E2E2E2;
   background: #f9f9f9;
 }
@@ -226,7 +226,7 @@ article {
     input {
       @media (max-width: $breakpoint-tablet) {
         display: block;
-        margin: auto;
+        margin: 0 auto 0.3rem;
       }
     }
   }
