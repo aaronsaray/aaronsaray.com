@@ -87,3 +87,15 @@ Files should always be code and bold.  For example:
 ## Plugins
 
 Plugins should be added to `Gemfile` and then run `bundle install`.
+
+## Date Consideration
+
+In order to make sure that the xml files have a valid date on them, I had to change a few things.  Things to note:
+- jekyll dates posts in utc
+- the time is 00:00:00-5 (or whatever my timezone is at the time)
+- This makes it look like its from the day before
+- This displays the wrong actual date in utc parsed feeds
+- It also confuses automated systems trying to email out things that happened today, like mailchimp, because it looks like yesterday
+
+In order to fix this, I'm adding the hour of 20:00:00 to all of the feeds.  This means it will have a sane value ahead of 8am by far (the automated systems for mailing)
+as well as for any other process, it looks like part of the day.
