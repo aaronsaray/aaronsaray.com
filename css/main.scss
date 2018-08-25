@@ -6,6 +6,7 @@
  * Colors (what little there are of them)
  **********************************************************************************************************************/
 $standard-font-color: #44423E;
+$lighter-font-color: #504e4a;
 $standard-link-color: #336699;
 $standard-link-color-hover: #5599ff;
 $diminished-font-color: #666666;
@@ -140,14 +141,20 @@ blockquote {
 #hero {
   line-height: 2.4rem;
 
-  h1, h3 {
+  h1, h2 {
     display: inline;
   }
   h1 {
     padding-right: 0.6rem;
   }
-  h1, h3, p {
+  h1, h2, p {
     font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin: 0;
+    color: $lighter-font-color;
   }
   p {
     margin-top: 0;
