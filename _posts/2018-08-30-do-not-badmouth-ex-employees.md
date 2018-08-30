@@ -7,7 +7,7 @@ tags:
 ---
 Sometimes an employee becomes an ex-employee because they did a poor job.  Their quality or output was just not up to par.  Otherwise, they backstab, do fiendish things, basically try to screw you.  Either way, you can get pretty strong feelings about this ex-employee. Pretty _bad_ feelings.
 
-Don't give into the temptation to badmouth that employee.  Maybe you want to vent or maybe your team was wronged by the last employee, so there's a lot of negativity.  Some people even think its a form of bonding to let the team work through these bad feelings by badmouthing that person.  Please don't do this.
+Don't give into the temptation to badmouth that employee.  Maybe you want to vent or maybe your team was wronged by the last employee, so there's a lot of negativity.  Some people even think it's a form of bonding to let the team work through these bad feelings by badmouthing that person.  Please don't do this.
 
 **Complaining about an ex-employee is never good.**
 
@@ -15,7 +15,7 @@ First, while you think might be helping the team bond and heal, you're not. Peop
 
 Another reason it's bad to talk like this is because your existing employees will start to develop a picture of you.  At first you might seem like you're 'one of us' - but in the end, they're looking for leadership. Or, if they're peers, they're looking to you for trust and to keep them empowered, to add positive things to their experience.  What happens now is they start to think that you're the kind of person who holds a grudge, who talks bad about people all the time (even if they're doing it themselves, people expect better out of others).  They might be afraid that should they decide to leave, you're going to drag their name through the mud.
 
-What should you do instead?  It's pretty simple: Summarize the situation, then move on. 
+What should you do instead?  It's pretty simple: **Summarize the situation, then move on.** 
 
 When the employee leaves or is fired, be honest, transparent and summarize the situation.  Then, move on to the next point of business.  If you are near a conversation that was not initiated by you, jump in and summarize the situation, then suggest an alternate topic and move the conversation on.
 
