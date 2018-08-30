@@ -4,6 +4,9 @@ title: CV of Aaron Saray
 header: My CV contains detailed information relevant to my entire professional career.
 permalink: /cv/
 ---
+
+{% include resume-hero.html %}
+
 If you're looking for the abridged version, ie, [the resume](/resume), this is not it! :)  Instead, this CV contains my professional history since 2001.
 
 ### Open Source

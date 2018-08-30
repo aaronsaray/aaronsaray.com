@@ -1,9 +1,11 @@
 ---
 layout: page
 title: Resume of Aaron Saray
-header: My résumé details years of diverse experience both professionally and technically.
+header: My résumé details more than a decade and a half of diverse technical and management experience.
 permalink: /resume/
 ---
+
+{% include resume-hero.html %}
 
 [Full CV](/cv){: .pull-right}
 

@@ -51,6 +51,9 @@ body {
       justify-content: space-between;
       padding: 2rem 0 0.5rem 0;
       border-bottom: 0.15rem solid #eeeeee;
+      span a:first-child {
+        margin-right: 2rem;
+      }
     }
 
     a {
@@ -386,5 +389,22 @@ code.highlighter-rouge {
     &:last-child {
       display: none;
     }
+  }
+}
+
+/***********************************************************************************************************************
+ * Resume Block
+ **********************************************************************************************************************/
+.resume-hero {
+  font-size: 1.3rem;
+  padding: 1rem;
+  background: #e7ffdc;
+  border: 2px solid #43de43;
+  
+  p {
+    margin: 0;
+  }
+  a:last-of-type {
+    font-weight: bold;
   }
 }
