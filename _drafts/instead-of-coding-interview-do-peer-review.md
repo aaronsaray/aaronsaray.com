@@ -2,7 +2,8 @@
 layout: post
 title: Stop Interactive Code Challenges During Interviews, Do This Instead
 tags:
-- php
+- business
+- management
 ---
 Interactive coding challenges during an interview are common place these days.  The idea is that you'll get an idea of the type and quality of work a candidate will produce by watching them code during an interview.
 
