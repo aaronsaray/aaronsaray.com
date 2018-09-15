@@ -89,11 +89,21 @@ Now that I've done that, it's time to create my quick website locally.  I'm just
 </html>
 ```
 
-This simple page will just be our home page for now.  Now it's time to initialize this page as our git repo and push it.  These instructions come directly from GitHub.
+This simple page will just be our home page for now.  
+
+To handle our custom domain, we need to create a `CNAME` file in github so it doesn't reset our domain.  To do this, create a new file and put your custom url.
+
+**`dist/CNAME`**
+```
+morebetterfaster.io
+```
+
+Now it's time to initialize this page as our git repo and push it.  These instructions come directly from GitHub.
 
 ```bash
 git init
 git add dist/index.html
+git add dist/CNAME
 git commit -m "first commit"
 git remote add origin git@github.com:morebetterfaster/website.git
 git push -u origin master
