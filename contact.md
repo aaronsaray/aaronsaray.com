@@ -5,6 +5,8 @@ header: Send me a note. I will respond I promise. (I’m nice like that.)
 permalink: /contact/
 ---
 
+Yes, I **am** accepting new contract work.  Let's chat.
+
 It's simple, really.  
 
 - Open up your email thingie 

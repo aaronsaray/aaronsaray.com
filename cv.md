@@ -139,7 +139,11 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
 
-**Dealer Inspire. Naperville, IL (5/18 - present)**  
+**More Better Faster. Milwaukee, WI (10/18 - present)**  
+*Owner, Programmer, Consultant*  
+PHP, NodeJS, React project work on demand. Business and technical process improvement and engineering manager training from over a decade and a half of experience.
+
+**Dealer Inspire. Naperville, IL (5/18 - 9/18)**  
 *Senior Director of Product Engineering*  
 The Senior Director of Product Engineering works with the VP of Engineering to develop processes, procedures and best practices for all of the development teams. I oversee four products with 12 direct reports: Online Shopper, Fuel, AdBuilder and an upcoming beta product. Online Shopper allows customers to find, customize, finance and finish an entire purchase of an automobile. It features real-time financing quotes, integrates with inventory and provides customized incentives and accessories. Fuel automatically manages online advertising between AdWords and Bing, while integrating with Facebook lead forms. With budget constraints, automated ROI bid adjustments and live inventory integration, Fuel keeps ads up to date and optimizes their performance. The AdBuilder tool is an internal product that builds HTML5 ads for various ad platforms. It integrates templates with inventory feeds and ships updates to FUEL via a REST API.  It uses single sign on using Auth0, one of the first applications of our product suite to use it.
 
