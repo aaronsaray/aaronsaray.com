@@ -17,4 +17,4 @@ That's where I realized the flaw that most password lock out mechanisms have: th
 
 The point of a password lock out mechanism is to stop brute force or dictionary attempts.  Using the same incorrect password should never allow the user to login, therefore it should only be considered one instance of a wrong password.  If you want a three time lock out, use three unique passwords, not three entries.
 
-I think its just good user experience and care without lowering your security mechanism quality.
+I think it's just good user experience and care without lowering your security mechanism quality.
