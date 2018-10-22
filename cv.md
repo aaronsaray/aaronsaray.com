@@ -15,9 +15,11 @@ The preeminent showcase of Open Source Software is GitHub.  You can find my repo
 
 At GitHub, I've released various PHP and Javascript code including [FirePHP4Chrome](https://github.com/aaronsaray/FirePHP4Chrome), [jQuery Accordion Live Filter](https://github.com/aaronsaray/jquery-accordion-live-filter), and [MadMimi PHP API](https://github.com/aaronsaray/madmimi-api-php).  With over 20 public repositories, I am committed (PUN!) to OSS.
 
-### Community
+### Community & Volunteering
 
 I enjoy participating in my local business and technical community.
+
+[Open Sourcing Mental Illness](https://osmihelp.org) content editor 2018-10 to current.
 
 [Milwaukee PHP Users Group](http://mkepug.org). I started the Milwaukee PHP user's group in 2010.  It has been meeting roughly every month since then.
 
