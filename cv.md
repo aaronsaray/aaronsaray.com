@@ -53,6 +53,8 @@ Javascript Testing Beginners Guide (ISBN: 978-1849510004)
 
 ### Technical Public Speaking
 
+Why Does Everyone Think I'm a Jerk? Secrets of Constructive Critisism. *(11/18) Milwaukee Code Camp, Milwaukee, WI*
+
 Wireframes and prototypes: What good are they? *(11/17) Hack-it Bracket, Northwestern Mutual/The Commons, Milwaukee, WI*
 
 Mastering Cross-Generational Communication. *(3/17) WCTC, Pewaukee, WI*
