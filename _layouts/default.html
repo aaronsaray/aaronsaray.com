@@ -22,7 +22,11 @@ layout: compress
   <nav>
     <a href="{{ site.baseurl }}/">Aaron Saray</a>
     <span>
-      <a href="{{ site.baseurl }}/resume">Resume</a>
+      <form action="https://www.google.com/search" method="get" class="search">
+        <input type="text" name="q" required placeholder="Search using Google">
+        <input type="hidden" name="as_sitesearch" value="www.aaronsaray.com">
+        <button type="reset">&times;</button>
+      </form>
       <a href="{{ site.baseurl }}/contact">Contact</a>
     </span>
   </nav>

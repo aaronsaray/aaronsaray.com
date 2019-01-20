@@ -54,6 +54,54 @@ body {
       span a:first-child {
         margin-right: 2rem;
       }
+      .search {
+        display: inline;
+        position: relative;
+        @media (max-width: $breakpoint-tablet) {
+          margin-right: 0.5rem;
+        }
+        margin-right: 1rem;
+        
+        input {
+          border: 1px solid #d8d8d8;
+          height: 1rem;
+          vertical-align: middle;
+          @media (max-width: $breakpoint-tablet) {
+            width: 7rem;
+          }
+          width: 8.2rem;
+          padding: 0.2rem;
+          &:focus {
+            outline: none;
+          }
+          
+          & ~ button {
+            display: none;
+            position: absolute;
+            @media (max-width: $breakpoint-tablet) {
+              top: 4px;
+            }
+            top: 8px;
+            right: 8px;
+            line-height: 1rem;
+            background: #e25866;
+            border: none;
+            border-radius: 100%;
+            color: white;
+            width: 1rem;
+            height: 1rem;
+            padding: 0;
+            font-size: 0.8rem;
+            cursor: pointer;
+            &:focus {
+              outline: none;
+            }
+          }
+          &:valid ~ button {
+            display: inline;
+          }
+        }
+      }
     }
 
     a {
