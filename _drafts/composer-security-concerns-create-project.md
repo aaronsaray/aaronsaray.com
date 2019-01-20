@@ -22,3 +22,11 @@ You might have noticed that this was demonstrated using the `create-project` fun
 **Is this only a Mac problem?**
 
 Naw, I just thought it'd be fun to demonstrate this using the Mac's `say` command. Really, it could execute any command.
+
+### This Isn't the End
+
+There are more opportunities to take advantage of in the Composer ecosystem.  Imagine someone creating a [custom installer plugin](https://getcomposer.org/doc/articles/custom-installers.md) and dropping it into packages that you trust. 
+
+What about someone creating autoloading classmaps that conflict with your project or some of its dependencies.  What will composer do then? Will it load your code or theirs?
+
+The big thing here is to make sure you review your projects.  And don't just trust that they're ok because tons of people use them.  Remember, this has [happened before with npm packages](https://www.theregister.co.uk/2018/11/26/npm_repo_bitcoin_stealer/) - it can happen to your packages as well.
