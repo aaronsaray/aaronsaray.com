@@ -13,7 +13,7 @@ But, there is a security concern lurking around the corner.  Try creating this p
 
 What did you hear?  This project created some files on your local machine, and then executed the `say` command to speak to you.  I doubt that was something you had wanted to happen.  Using the `say` command was just a demonstration.  Technically, we could execute a lot of commands, actually.  Good thing you're [not running composer as root](https://getcomposer.org/root), right?
 
-This functionality is made possibly by the [scripts functionality](https://getcomposer.org/doc/articles/scripts.md#command-events) built into composer.  Commonly used to execute PHP code and do system cleanup, there are no real limitations.  Luckily, we're all reviewing the source code of our open source projects, before we install them, right?
+This functionality is made possibly by the [scripts functionality](https://getcomposer.org/doc/articles/scripts.md#command-events) built into composer.  Commonly used to execute PHP code and do system cleanup, there are no real limitations.  Luckily, we're all reviewing the source code of our open source projects, before we install them, right?  Speaking of reviewing source, you can review the source [of this example right here](https://github.com/aaronsaray/composer-mac-security-demonstration).
 
 **But Aaron, this seems like a big problem! Am I hostage to all packages I install?**
 
