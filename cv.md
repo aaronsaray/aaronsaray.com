@@ -145,7 +145,7 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 **More Better Faster. Milwaukee, WI (10/18 - present)**  
 *Owner, Programmer, Consultant*  
-PHP, NodeJS, React project work on demand. Business and technical process improvement and engineering manager training from over a decade and a half of experience.
+PHP, NodeJS, React project work on demand. Business and technical process improvement and [engineering manager training](https://thedevmanager.com) from over a decade and a half of experience.
 
 **Dealer Inspire. Naperville, IL (5/18 - 9/18)**  
 *Senior Director of Product Engineering*  

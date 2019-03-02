@@ -133,6 +133,10 @@ body {
       font-size: 0.8rem;
     }
     
+    div {
+      font-weight: bold;
+    }
+    
     img {
       opacity: 0.5;
       &:hover {
@@ -454,5 +458,22 @@ code.highlighter-rouge {
   }
   a:last-of-type {
     font-weight: bold;
+  }
+}
+
+/***********************************************************************************************************************
+ * The dev manager advertisement
+ **********************************************************************************************************************/
+.thedevmanager-ad {
+  margin-bottom: 2rem;
+  background-color: #ffa700;
+  padding: 1rem;
+  color: white;
+  p {
+    margin: 0;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
   }
 }

@@ -4,6 +4,18 @@ suppress_header: true
 ---
 {% include blog-post.html post=page content=content %}
 
+{% if page.tags contains 'business' %}
+  {% assign devmanager = true %}
+{% endif %}
+
+{% if page.tags contains 'management' %}
+  {% assign devmanager = true %}
+{% endif %}
+
+{% if devmanager %}
+    {% include dev-manager.html %}
+{% endif %}
+
 <p class="last-cta">
     <a href="{{ site.baseurl }}/blog#post-{{ page.id | slugify }}">Return to All Posts</a>
 </p>
