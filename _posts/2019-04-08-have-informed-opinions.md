@@ -13,7 +13,7 @@ Whether we're talking about world view, politics or tech, it's important to be i
 
 Just a few reminders:
 
-**PHPUnit is dumb, I wan't Codeception.** Have you used PHPUnit before? Also, how long ago? Did you keep up with the changes?  How is your choice of Codeception informed? I'm not saying one tool is better than the other, but make sure you're making judgements based on current, informed information.  Don't say PHPUnit sucks if you haven't built out a current project in it.  Don't show distain towards Codeception if you've never introduced it fully.
+**PHPUnit is dumb, I want Codeception.** Have you used PHPUnit before? Also, how long ago? Did you keep up with the changes?  How is your choice of Codeception informed? I'm not saying one tool is better than the other, but make sure you're making judgements based on current, informed information.  Don't say PHPUnit sucks if you haven't built out a current project in it.  Don't show distain towards Codeception if you've never introduced it fully.
 
 **Laravel framework is slow, give me Symfony** Are you sure you're not practicing premature optimization?  What does "slow" mean? Are you faster programming Laravel vs Symfony? This is for any framework, or toolset, basically.  What measurements are you using? Are you measuring the right thing? (Business goals vs technical performance)  Have you used both extensively?  Did you just get your opinion from a "trusted" person's tweet?  Did you configure everything properly?
 
