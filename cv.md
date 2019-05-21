@@ -19,9 +19,9 @@ At GitHub, I've released various PHP and Javascript code including [FirePHP4Chro
 
 I enjoy participating in my local business and technical community.
 
-[Open Sourcing Mental Illness](https://osmihelp.org) content editor 2018-10 to current.
+[Open Sourcing Mental Illness](https://osmihelp.org) content editor, writer 2018 to 2019.
 
-[Milwaukee PHP Users Group](http://mkepug.org). I started the Milwaukee PHP user's group in 2010.  It has been meeting roughly every month since then.
+[Milwaukee PHP Users Group](http://mkepug.org). I started the Milwaukee PHP user's group in 2010.  With about 11 meetups per year, we closed it up in 2019.
 
 Various Other Meetup Leadership Roles.  I've participated in restarting, restructuring, and/or other assistance with the Fox Cities PHP Users group, the Milwaukee Web Design Meetup, and the Milwaukee Web Professionals meetup.
 
@@ -29,7 +29,7 @@ Various Other Meetup Leadership Roles.  I've participated in restarting, restruc
 
 ### Publications
 
-I am a prolific author, editor and blogger.  (Yes, blogger! On this site - [400+ technical and business entries](/blog) since 2007.)
+I am a prolific author, editor and blogger.  (Yes, blogger! On this site - [500+ technical and business entries](/blog) since 2007.)
 
 #### Author
 
@@ -145,7 +145,7 @@ Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 **More Better Faster. Milwaukee, WI (10/18 - present)**  
 *Owner, Programmer, Consultant*  
-PHP, NodeJS, React project work on demand. Business and technical process improvement and [engineering manager training](https://thedevmanager.com) from over a decade and a half of experience.
+[PHP, NodeJS, React project work](https://morebetterfaster.io) on demand and team augmentation. Business and technical process improvement and [engineering manager training](https://thedevmanager.com) from over a decade and a half of experience.
 
 **Dealer Inspire. Naperville, IL (5/18 - 9/18)**  
 *Senior Director of Product Engineering*  
