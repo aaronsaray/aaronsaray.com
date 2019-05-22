@@ -163,7 +163,11 @@ Originally hired as a Senior Developer before my 2017 promotion, I was rewriting
 *Senior Software Engineer*  
 Wallit helps support digital publications through the implementation of a micropayments based paywall. Primarily focus on javascript and PHP integrations of the core product.  Responsible for creating Wordpress, Joomla, and Drupal plugins as well as core PHP libraries.  Javascript implementations include CommonJS/AMD and custom libraries.  Also developed the Swagger / OpenAPI documentation and NodeJS standards library.  I was a primary driver to introduce the Agile workflow into the company and developed our scheduled weekly code-review process. 
 
-**Small Shops United, LLC. Milwaukee, WI (7/15 - present)**  
+**Small Shops United, LLC. Milwaukee, WI (1/18 - present)**  
+*Special Advisor*  
+SSU provides digital local loyalty products. I work with the CEO and technical team to evaluate technical solutions and validate products and vendors.  
+
+**Small Shops United, LLC. Milwaukee, WI (7/15 - 12/17)**  
 *CTO / Co-founder*  
 At SSU, we provide digital local loyalty products. The product consists of a LAMP stack, web service interface with Android tablets, a queue system, and various BI related reporting systems and data analysis.  
 
