@@ -12,6 +12,8 @@ Then, I decided to take it one step further: I didn't really want to run a backe
 
 I created [chickenfacts.io](https://chickenfacts.io), a single page application with a JSON API.  This is how I did it (you can find the code on [GitHub](https://github.com/aaronsaray/chickenfacts.io)).
 
+[![Chicken Facts](/uploads/2019/chickenfactslogo.thumbnail.png)](https://chickenfacts.io){: .thumbnail}
+
 ### Jekyll
 
 First, I decided to use the static site generator [Jekyll](https://jekyllrb.com).  This is the same software that I use to build my own blog.  Jekyll takes markdown and html and creates flat files to be served.
@@ -24,7 +26,7 @@ The "API" is really just a set of flat files that are generated with Jekyll as w
 
 Here's an example:
 
-*`_posts/2019-06-02-6.html`*  
+**`_posts/2019-06-02-6.html`**  
 ```
 ---
 layout: json
@@ -38,6 +40,7 @@ This, and all of its siblings, are brought into the `page` variable when they're
 
 Then, I created the layout called `json` with the following markup:
 
+{% raw %}
 ```
 ---
 ---
@@ -48,6 +51,8 @@ Then, I created the layout called `json` with the following markup:
   "published": {{ page.date | date: "%Y-%m-%d" | jsonify }}
 }
 ```
+{% endraw %}
+
 
 This basically takes the information from the post/page, and then generates a file output of it.  By default, it would be in a posts folder with an html extension.  I changed that in the *`_config.yml`* file:
 
@@ -60,7 +65,7 @@ defaults:
       permalink: "/api/v1/facts/:title.json"
 ```
 
-Now, file *`_posts/2019-06-02-6.html`* is created in the `/api/v1/facts/22.json` file with the following content:
+Now, file **`_posts/2019-06-02-6.html`** is created in the `/api/v1/facts/22.json` file with the following content:
 
 ```json
 { 
@@ -186,7 +191,7 @@ With this configuration, I told netlify to execute `jekyll build` as the build c
 
 The only thing I had to do was add a redirect on any non-existent URL to the base index file.  I did that with the following configuration:
 
-*`netlify.toml`*  
+**`netlify.toml`**  
 ```
 [[redirects]]
   from = "/*"
