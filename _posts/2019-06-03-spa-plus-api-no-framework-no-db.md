@@ -176,7 +176,7 @@ Finally, the app.  Like I said, I just decided to support the most recent evergr
     .catch(function(err) {
       error(err);
     });
-})({{ site.posts | size }});
+})({% raw %}{{ site.posts | size }}{% endraw %}});
 ```
 
 A couple things to note, here.  First of all, this is an anonymous self executing function.  The reason there is front matter yaml in here is I wanted to pass in the total amount of posts that are available.  This way I can pick a random value that will exist.
