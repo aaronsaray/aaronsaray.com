@@ -16,6 +16,11 @@ layout: compress
   {% if page.tag %}
     <link rel="alternate" type="application/atom+xml" title="Entries tagged {{page.tag}} on {{ site.title }}" href="{{ site.baseurl }}/tag/{{ page.tag | slugify }}.xml">
   {% endif %}
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:site_name" content="AaronSaray.com">
+  <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+  <meta property="og:description" content="{% if page.meta_description %}{{ page.meta_description }}{% endif %}{% if page.excerpt %}{{ page.excerpt | strip_html | truncatewords:20 }}{% endif %}">
+  <meta property="og:type" content="article">
 </head>
 <body>
 <header>
@@ -47,7 +52,7 @@ layout: compress
 </main>
 <footer>
   <ul>
-    <li><a href="https://github.com/aaronsaray" title="Aaron Saray, Open Source on GitHub">GitHub</a></li>
+    <li><a href="https://aaronsaray.github.io" title="Aaron Saray, Open Source on GitHub">GitHub</a></li>
     <li><a href="https://codepen.io/aaronsaray/" title="HTML, CSS, and Javascript code on CodePen">CodePen</a></li>
     <li><a href="https://twitter.com/aaronsaray" title="Technical Articles and Development Management by Aaron Saray on Twitter">Twitter</a></li>
     <li><a href="https://linkedin.com/in/aaronsaray" title="Web Developer, Director of Product Engineering Aaron Saray on LinkedIn">LinkedIn</a></li>

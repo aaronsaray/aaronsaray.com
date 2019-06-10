@@ -3,6 +3,7 @@ layout: page
 title: CV of Aaron Saray
 header: My CV contains detailed information relevant to my entire professional career.
 permalink: /cv/
+meta_description: Full Curriculum Vitae of Aaron Saray.
 ---
 
 {% include resume-hero.html %}
@@ -11,7 +12,7 @@ If you're looking for the abridged version, ie, [the resume](/resume), this is n
 
 ### Open Source
 
-The preeminent showcase of Open Source Software is GitHub.  You can find my repositories at [github.com/aaronsaray](https://github.com/aaronsaray).  
+The preeminent showcase of Open Source Software is GitHub.  You can find my repositories at [aaronsaray.github.io](https://aaronsaray.github.io).  
 
 At GitHub, I've released various PHP and Javascript code including [FirePHP4Chrome](https://github.com/aaronsaray/FirePHP4Chrome), [jQuery Accordion Live Filter](https://github.com/aaronsaray/jquery-accordion-live-filter), and [MadMimi PHP API](https://github.com/aaronsaray/madmimi-api-php).  With over 20 public repositories, I am committed (PUN!) to OSS.
 

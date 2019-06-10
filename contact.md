@@ -2,6 +2,7 @@
 layout: page
 title: Contact Aaron Saray
 header: Send me a note. I will respond I promise. (I’m nice like that.)
+meta_description: Contact Aaron Saray.
 permalink: /contact/
 ---
 
