@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Expression #1 of SELECT list is not in GROUP By clause
+title: "Expression #1 of SELECT list is not in GROUP By clause"
 tags:
 - mysql
 ---
