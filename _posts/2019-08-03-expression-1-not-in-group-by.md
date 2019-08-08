@@ -29,13 +29,13 @@ id, first, last, day
 
 Let's say you wrote a MySQL query like this:
 
-```mysql
+```sql
 select first, last from my_table group by last
 ```
 
 We know from the data that this will return `aaron` and `saray` - but MySQL doesn't.  Imagine this example:
 
-```mysql
+```sql
 select day, last from my_table group by last
 ```
 
@@ -61,7 +61,7 @@ I recommend doing this: **use [any_value()](https://dev.mysql.com/doc/refman/5.7
 
 So, for example, our first query would now look like this:
 
-```mysql
+```sql
 select any_value(first), last from my_table group by last;
 ```
 
