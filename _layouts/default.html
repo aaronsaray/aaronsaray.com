@@ -68,6 +68,6 @@ layout: compress
 {% if jekyll.environment == "production" %}
 <script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-2186364-4","auto"),ga("send","pageview");</script>
 {% endif %}
-<script>!function(r){var t=r.querySelector(".credits-as");t&&t.addEventListener("dblclick",function(t){if(!r.getElementById("credits-as-script")){var e=r.createElement("script");e.setAttribute("id","credits-as-script"),e.type="text/javascript",e.src="https://aaronsaray.github.io/credits/credits-as.js",r.querySelector("head").appendChild(e)}})}(document);</script>
+<script>!function(i){var t=i.querySelector(".credits-as"),r=!1;t&&t.addEventListener("click",function(t){if(r){if(!i.getElementById("credits-as-script")){var e=i.createElement("script");e.setAttribute("id","credits-as-script"),e.type="text/javascript",e.src="https://aaronsaray.github.io/credits/credits-as.js",i.querySelector("head").appendChild(e)}}else r=!0,setTimeout(function(){r=!1},500)})}(document);</script>
 </body>
 </html>
