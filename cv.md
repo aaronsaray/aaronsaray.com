@@ -20,6 +20,8 @@ At GitHub, I've released various PHP and Javascript code including [FirePHP4Chro
 
 I enjoy participating in my local business and technical community.
 
+Community volunteer for [i.c.Stars](http://milwaukee.icstars.org), 2019 to present.
+
 [Open Sourcing Mental Illness](https://osmihelp.org) content editor, writer 2018 to 2019.
 
 [Milwaukee PHP Users Group](http://mkepug.org). I started the Milwaukee PHP user's group in 2010.  With about 11 meetups per year, we closed it up in 2019.
@@ -53,6 +55,8 @@ Pro PHP App Performance (ISBN: 978-1430227274)
 Javascript Testing Beginners Guide (ISBN: 978-1849510004)
 
 ### Technical Public Speaking
+
+The Freelance Economy Panel *(10/19) FallX19 Fall Experiment, Milwaukee, WI*
 
 Why Does Everyone Think I'm a Jerk? Secrets of Constructive Critisism. *(11/18) Milwaukee Code Camp, Milwaukee, WI*
 
