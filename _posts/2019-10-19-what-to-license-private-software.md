@@ -36,8 +36,8 @@ Do not license your closed source software.  If you must specify something, use 
 
 Normally I link out to references inline, but this particular article would benefit from a references list.
 
-[What does no license mean](https://choosealicense.com/no-permission/) 
-[Open Source Casebook / Trademark Reference](https://google.github.io/opencasebook/trademarks/) 
-[SPDX License List](https://spdx.org/licenses/) 
-[Creative Commons License List](https://creativecommons.org/) 
+[What does no license mean](https://choosealicense.com/no-permission/)  
+[Open Source Casebook / Trademark Reference](https://google.github.io/opencasebook/trademarks/)  
+[SPDX License List](https://spdx.org/licenses/)  
+[Creative Commons License List](https://creativecommons.org/)  
 [Some other non-lawyers talk licensing](https://softwareengineering.stackexchange.com/questions/68134/best-existing-license-for-closed-source-code)  
