@@ -165,6 +165,7 @@ class Car extends Model
   public const TRIMS = [
     self::TRIM_SE,
     self::TRIM_XLT,
+    self::TRIM_SPORT,
   ];
   
   protected $guarded = [];
