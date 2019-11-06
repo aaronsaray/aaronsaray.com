@@ -245,7 +245,7 @@ For a while, Sqlite didn't support foreign keys.  Old timers will remember this 
 
 However, there are a couple of things to remember.  Sqlite can be compiled without Foreign Key Support or it can be turned off.  Luckily, most recent copies of Sqlite are configured and supporting this feature.
 
-But let's take a look at a scenario where this will cause failure. Imagine that your Sqlite is configured not to use foreign keys (and let's be honest, how many times have you checked to see if it was configured this way.)  
+But let's take a look at a scenario where this will cause failure. Imagine that your Sqlite is configured not to use foreign keys (and let's be honest, how many times have you checked to see if it was configured this way? ... yeah me either)  
 
 Our data migration:
 
