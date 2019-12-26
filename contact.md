@@ -8,7 +8,7 @@ permalink: /contact/
 
 Yes, I **am** accepting new contract work.  Let's chat.
 
-It's simple, really.  
+It's quite simple, really.  
 
 - Open up your email thingie 
 - Type my first name
