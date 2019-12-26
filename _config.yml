@@ -15,6 +15,9 @@ exclude:
   - CNAME
   - .idea
   - email-signature.html
+  - vendor-bundle
+  - jekyll
+  - preview
 
 sass:
     style: compressed

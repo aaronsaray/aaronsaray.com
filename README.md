@@ -3,11 +3,11 @@ Source for [AaronSaray.com](https://aaronsaray.com)
 
 ## Running Jekyll
 
-`bundle exec jekyll $command`
+`./jekyll $command`
 
 Where `$command` is things like `serve` or `build`.
 
-I've added a `.bash_profile` alias for `jek` to shortcut the above.
+Commonly, I will want to preview my work, so I've added `./preview` which launches the Jekyll Docker container with incremental builds running a server and showing drafts.  I will find this at [aaronsaray.test:4000](http://aaronsaray.test:4000) because of a DNSMasq entry. (Otherwise it's localhost).
 
 ## Writing Process
 
