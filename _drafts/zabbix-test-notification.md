@@ -1,6 +1,6 @@
 ---
 layout: post
-title: here is the title
+title: How to make a Zabbix Test Notification
 tags:
-- php
+- zabbix
 ---
