@@ -147,6 +147,9 @@ MCP 70-210: Installing, configuring and administering MS Windows 2000 Profesiona
 Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
+**Talimer. Milwaukee, WI (1/20 - present)**
+*Chief Technology Officer*
+Freelancer's first is the Talimer motto. As the CTO, I work with marketing, strategy and operations to develop technology to support our unique process and vision.
 
 **More Better Faster. Milwaukee, WI (10/18 - present)**  
 *Owner, Programmer, Consultant*  
