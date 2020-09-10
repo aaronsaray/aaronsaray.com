@@ -2,6 +2,7 @@
 layout: post
 title: 3 Types of Developers and How to Manage Them
 tags:
+- business
 - management
 ---
 > This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**.

@@ -2,6 +2,7 @@
 layout: post
 title: Make Face-to-Face Work
 tags:
+- business
 - management
 ---
 > This is part of a series of articles from the retired The Dev Manager website.

@@ -2,6 +2,7 @@
 layout: post
 title: A Manager Must Always Be Perfect
 tags:
+- business
 - management
 ---
 Oh, what a scary thought: a manager must always be perfect. But, stick with me here.

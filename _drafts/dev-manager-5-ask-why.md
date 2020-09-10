@@ -2,6 +2,7 @@
 layout: post
 title: Sometimes Just Ask Why
 tags:
+- business
 - management
 ---
 > This is part of a series of articles from the retired The Dev Manager website.
