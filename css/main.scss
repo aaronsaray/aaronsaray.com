@@ -155,6 +155,14 @@ main {
   }
 }
 
+hr {
+  color: #eeeeee;
+  background-color: #eeeeee;
+  border-color: #eeeeee;
+  border-style: solid;
+  margin: 2rem 0;
+}
+
 a {
   color: $standard-link-color;
   text-decoration: none;
@@ -180,11 +188,6 @@ blockquote {
   float: right;
 }
 
-.leader {
-  padding: 1rem 0 2rem 0;
-  font-style: italic;
-}
-
 .last-cta {
   text-align: center;
   font-weight: bold;
@@ -196,23 +199,9 @@ blockquote {
 #hero {
   line-height: 2.4rem;
 
-  h1, h2 {
-    display: inline;
-  }
-  h1 {
-    padding-right: 0.6rem;
-  }
   h1, h2, p {
-    font-size: 2rem;
-  }
-  h3 {
-    font-size: 1.6rem;
-    font-weight: normal;
-    margin: 0;
-    color: $lighter-font-color;
-  }
-  p {
     margin-top: 0;
+    font-size: 2rem;
   }
 }
 
@@ -277,6 +266,12 @@ article {
 .old-post {
   background: #fff4a5;
   border: 0.15rem solid #ffb710;
+  padding: 1rem 1.6rem;
+  margin:3rem 0;
+}
+.update-post {
+  background: #92cbfc;
+  border: 0.15rem solid #639cc3;
   padding: 1rem 1.6rem;
   margin:3rem 0;
 }
@@ -459,22 +454,5 @@ code.highlighter-rouge {
   }
   a:last-of-type {
     font-weight: bold;
-  }
-}
-
-/***********************************************************************************************************************
- * The dev manager advertisement
- **********************************************************************************************************************/
-.thedevmanager-ad {
-  margin-bottom: 2rem;
-  background-color: #ffa700;
-  padding: 1rem;
-  color: white;
-  p {
-    margin: 0;
-  }
-  a {
-    color: white;
-    text-decoration: underline;
   }
 }

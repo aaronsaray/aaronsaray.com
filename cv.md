@@ -153,7 +153,7 @@ Freelancer's first is the Talimer motto. As the CTO, I work with marketing, stra
 
 **More Better Faster. Milwaukee, WI (10/18 - present)**  
 *Owner, Programmer, Consultant*  
-[PHP, NodeJS, React project work](https://morebetterfaster.io) on demand and team augmentation. Business and technical process improvement and [engineering manager training](https://thedevmanager.com) from over a decade and a half of experience.
+[PHP, NodeJS, React project work](https://morebetterfaster.io) on demand and team augmentation. Business and technical process improvement and engineering manager training from nearly 2 decades of experience.
 
 **Dealer Inspire. Naperville, IL (5/18 - 9/18)**  
 *Senior Director of Product Engineering*  

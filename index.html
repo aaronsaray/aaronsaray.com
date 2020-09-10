@@ -2,7 +2,15 @@
 layout: default
 meta_description: Milwaukee PHP Web Developer, Open Source Programmer and Development Manager
 ---
-<p class="leader">Here are <abbr title="{{ site.posts | size }} technical and business blog posts">some things</abbr> he has to say:</p>
+<section>
+  <p>Hello - I'm Aaron! I'm an Engineering Manager coach, a PHP and Laravel programmer and Node and Vue developer.</p>
+  <p>
+    I do contract work through my company <a href="https://morebetterfaster.com">More Better Faster</a>.  I'm the CTO of <a href="https://talimer.com">Talimer</a>. I like popcorn and short walks on the pavement.
+  </p>
+  <hr>
+  <p>Here are <abbr title="{{ site.posts | size }} technical and business blog posts">some things</abbr> I have to say:</p>
+</section>
+
 <section class="entries">
   {% for post in site.posts limit: 5 %}
   {% include blog-post.html post=post excerpt=true %}

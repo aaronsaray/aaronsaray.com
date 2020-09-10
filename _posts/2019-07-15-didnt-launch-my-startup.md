@@ -61,4 +61,4 @@ Just a small note on tech.  I got to experiment with some Mailchimp sign up func
 
 What's next is publishing this blog entry, letting the mailing list know what's up, and closing down the landing page.  But that's not the end for me.
 
-Ideas come all the time. It's important not to let a failure-to-launch cause you to fail to come up with other new ideas.  While I'm a bit let down about this particular project, I'm still trucking along on other ones (like [The Dev Manager](https://thedevmanager.com)).  Thanks for reading.
+Ideas come all the time. It's important not to let a failure-to-launch cause you to fail to come up with other new ideas.  While I'm a bit let down about this particular project, I'm still trucking along on other ones (like The Dev Manager).  Thanks for reading.
