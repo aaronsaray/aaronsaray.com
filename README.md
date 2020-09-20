@@ -99,3 +99,11 @@ In order to make sure that the xml files have a valid date on them, I had to cha
 
 In order to fix this, I'm adding the hour of 20:00:00 to all of the feeds.  This means it will have a sane value ahead of 8am by far (the automated systems for mailing)
 as well as for any other process, it looks like part of the day.
+
+## Automations
+
+A RSS feed is generated on every build at `/feed.xml`.  
+
+Mailchimp has a campaign called Aaron Saray Blog Entries which watches this and sends daily at 8AM when a new entry is found.
+
+If a new feed item is found, IFTTT posts a tweet to `@aaronsaray`.
