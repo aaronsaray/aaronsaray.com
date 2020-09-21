@@ -19,8 +19,9 @@ layout: compress
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:site_name" content="AaronSaray.com">
   <meta property="og:url" content="{{ page.url | prepend: site.url }}">
-  <meta property="og:description" content="{% if page.meta_description %}{{ page.meta_description }}{% endif %}{% if page.excerpt %}{{ page.excerpt | strip_html | truncatewords:20 }}{% endif %}">
+  <meta property="og:description" content="{% if page.meta_description %}{{ page.meta_description }}{% endif %}{% if page.excerpt %}{{ page.excerpt | strip_html | truncatewords:20 }}...{% endif %}">
   <meta property="og:type" content="article">
+  <meta property="og:image" content="{{ site.url }}/me.jpg">
 </head>
 <body>
 <header>
