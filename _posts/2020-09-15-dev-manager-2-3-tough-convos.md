@@ -5,7 +5,7 @@ tags:
 - business
 - management
 ---
-> This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**.
+> This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry one? [Click here]({% post_url 2020-09-10-dev-manager-1-3-books %})
 
 When you manage a team, the conversations you have change a lot. No longer are you justifying your own estimates or explaining your coding decisions. Now, you’re responsible for many different estimates, many different decisions, and many different personalities.
 
@@ -52,3 +52,5 @@ There are some key words in there that really helped. I mentioned that I don’t
 As you navigate the Dev Manager path, you’ll have many difficult conversations. It’s important to take time to understand that your point of view needs to be different now. It’s not about you, it’s about them. You used to communicate 20% of the time, now you’re communicating 80% of the work day.
 
 Conversations with upper management can be difficult, but they shouldn’t be stressful. Take a minute, put yourself in their shoes, breath, and then answer.
+
+> To move on to entry 3 of the Dev Manager Crash course, [click here]({% post_url 2020-09-21-dev-manager-3-3-types-of-devs %}).

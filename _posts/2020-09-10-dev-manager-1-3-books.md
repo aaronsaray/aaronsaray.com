@@ -41,3 +41,5 @@ Get the book: [Being Geek: The Software Developer’s Career Handbook](https://a
 Now, stop reading all your spammy emails like this one and get out one of these books! A quote from Margaret Fuller (or maybe it was [W. Fusselman](https://quoteinvestigator.com/2012/10/29/reader-leader)?) sums up today’s lesson:
 
 *“Today a reader, tomorrow a leader.”*
+
+> To move on to entry 2 of the Dev Manager Crash course, [click here]({% post_url 2020-09-15-dev-manager-2-3-tough-convos %}).
