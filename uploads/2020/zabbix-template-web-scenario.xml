@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-10-10T00:08:57Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Website Up</template>
+            <name>Template Website Up</name>
+            <description>Template adds website scenario down trigger and graphs</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <httptests>
+                <httptest>
+                    <name>Check Homepage</name>
+                    <steps>
+                        <step>
+                            <name>Visit home page</name>
+                            <url>https://{HOST.NAME}</url>
+                            <follow_redirects>NO</follow_redirects>
+                        </step>
+                    </steps>
+                </httptest>
+            </httptests>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template Website Up:web.test.fail[Check Homepage].min(#2)}&gt;0</expression>
+            <name>Homepage failed 2+ times</name>
+            <priority>DISASTER</priority>
+        </trigger>
+    </triggers>
+    <graphs>
+        <graph>
+            <name>Speed and Failure</name>
+            <show_triggers>NO</show_triggers>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>FILLED_REGION</drawtype>
+                    <color>199C0D</color>
+                    <item>
+                        <host>Template Website Up</host>
+                        <key>web.test.in[Check Homepage,,bps]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <yaxisside>RIGHT</yaxisside>
+                    <item>
+                        <host>Template Website Up</host>
+                        <key>web.test.fail[Check Homepage]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>
