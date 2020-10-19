@@ -8,7 +8,7 @@ QuickPic.dev was a site for quick edits, crops and touch-ups in your browser. Af
 
 [![QuickPic.dev](/uploads/2020/quickpic-1.png)](/uploads/2020/quickpic-1-1.png){: .thumbnail}{: .inline}
 
-### Initial Idea/Motivation
+### Initial Idea / Motivation
 The initial idea was to have a website where you could easily drop in an image and resize it, crop it or meme it. This came out of a few thoughts I had:
 
 * I loved generating memes online, but I hated that they were always watermarked for advertising
