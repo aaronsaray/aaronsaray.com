@@ -31,7 +31,7 @@ Ideas are easy, implementation is hard.  That's why you should share your ideas 
 I learned to make an explainer video with [VideoScribe](https://www.videoscribe.co) which ended up being way more fun than I thought.  There was a significant learning curve, though.  It wasn't hard, just time-sucking.
 
 <div style="text-align: center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tFdguLPUaAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="width:650px;max-width:100%;height:315px" src="https://www.youtube.com/embed/tFdguLPUaAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 I created a single HTML-only landing page with [Netlify](https://netlify.com) and registered a quick domain. I didn't provision any advanced hosting because this was just a single, static page. I focused on the explainer video for the landing page, then described the details below.
