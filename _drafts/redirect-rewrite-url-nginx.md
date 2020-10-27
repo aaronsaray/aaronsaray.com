@@ -1,6 +1,6 @@
 ---
 layout: post
-title: here is the title
+title: Rewrite or Redirect URL with NGINX
 tags:
 - php
 ---
