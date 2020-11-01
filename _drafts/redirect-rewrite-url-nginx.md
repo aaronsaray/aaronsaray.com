@@ -7,7 +7,7 @@ tags:
 ---
 With a few steps, you can create redirects using your NGINX server configuration. Let's see how.
 
-> This is an article that originally appeared on RedirectURL, a site I built a while ago.  Find out the history of that [site here]({% post_url 2020-XX %})
+> This is an article that originally appeared on RedirectURL, a site I built a while ago.  Find out the history of that [site here]({% post_url 2020-10-31-redirecturl-experiment-is-done %})
 
 ### Locate Your NGINX Configuration File
 
