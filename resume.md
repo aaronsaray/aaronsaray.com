@@ -6,8 +6,6 @@ permalink: /resume/
 meta_description: Résumé of Aaron Saray.
 ---
 
-{% include resume-hero.html %}
-
 [Full CV](/cv){: .pull-right}
 
 ### Summary
@@ -32,7 +30,7 @@ I hold the following certifications: Certified SCRUM Master, Zend Certified Engi
 
 ### Professional Experience
 
-**CTO, Talimer, Inc.** Freelancers First is the Talimer motto. Responsible for developing software solutions to support the unique process and vision of the business.
+**Advisory CTO, Talimer, Inc.** Freelancers First is the Talimer motto. Responsible for developing software solutions to support the unique process and vision of the business.
 
 **Owner, Programmer, Consultant at More Better Faster, LLC** PHP, NodeJS, React project work on demand. Business and technical process improvement and engineering manager training from nearly two decades of experience.
  

@@ -6,8 +6,6 @@ permalink: /cv/
 meta_description: Full Curriculum Vitae of Aaron Saray.
 ---
 
-{% include resume-hero.html %}
-
 If you're looking for the abridged version, ie, [the resume](/resume), this is not it! :)  Instead, this CV contains my professional history since 2001.
 
 ### Open Source
@@ -147,7 +145,11 @@ MCP 70-210: Installing, configuring and administering MS Windows 2000 Profesiona
 Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
-**Talimer. Milwaukee, WI (1/20 - present)**
+**Talimer. Milwaukee, WI (11/20 - present)**
+*Advisory Chief Technology Officer*
+As the Advisory CTO at Talimer, I help review decisions regarding technology implementation. Additionally, I provide one of many reviews on the applicability of features for tech freelancers. 
+
+**Talimer. Milwaukee, WI (1/20 - 11/20)**
 *Chief Technology Officer*
 Freelancer's first is the Talimer motto. As the CTO, I work with marketing, strategy and operations to develop technology to support our unique process and vision.
 
