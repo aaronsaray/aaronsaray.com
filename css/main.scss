@@ -455,3 +455,20 @@ code.highlighter-rouge {
     font-weight: bold;
   }
 }
+
+/***********************************************************************************************************************
+ * Podcast CTA
+ **********************************************************************************************************************/
+.podcast-cta {
+  margin-bottom: 1.4rem;
+  border-top: 0.5rem solid #ff2d20;
+  color: #333333;
+  background-color:#209cda24;
+  div {
+    padding: 1rem 1.6rem;
+  }
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+}

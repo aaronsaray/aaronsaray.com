@@ -8,7 +8,7 @@ Never one to be afraid of pointing out my flaws, I think it's time to share what
 
 ### The Idea
 
-I've [learned a lot from doing 200+ interviews]({% post_url 2018-09-12-lessons-from-200-tech-interviews %}), and [complained about interactive code challenges]({% post_url 2018-10-28-instead-of-coding-interview-do-peer-review %}) before.  My suggestion was to have an interactive code review instead.  I wanted the candidate to not have the stress of trying to type in front of me, not to worry if they're "getting it right," and to put them into a situation that's very realistic to how I run most of my development teams: many, many code reviews.  So I put together a plan.
+I've [learned a lot from doing 200+ interviews]({% post_url 2018-09-12-lessons-from-200-tech-interviews %}), and [complained about interactive code challenges]({% post_url 2018-10-29-instead-of-coding-interview-do-peer-review %}) before.  My suggestion was to have an interactive code review instead.  I wanted the candidate to not have the stress of trying to type in front of me, not to worry if they're "getting it right," and to put them into a situation that's very realistic to how I run most of my development teams: many, many code reviews.  So I put together a plan.
 
 First, I would ask the candidate to specify which language they wanted to be "tested" on for their proficiency exam portion of the interview. I explained that, instead of writing code, we'd be reading and commenting on code together.  So, it just makes sense that they'd we'd use a language they were most comfortable with.
 
