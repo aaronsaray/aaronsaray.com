@@ -136,7 +136,7 @@ First, we'll use SimpleXML in PHP to read in the code coverage and get the root 
 
 Next, an image is created and colors are allocated.  A border is drawn with a rectangle and the first part of the label for coverage is written.
 
-Then, we figure out how wide the next text will be (its either 1, 2 or 3 digits plus a percentage sign).  With that we can subtract that width from the right (plus margin) and basically give us a right-aligned percentage value.  where 100% will fill the entire area, something like 6% will be right aligned.
+Then, we figure out how wide the next text will be (its either 1, 2 or 3 digits plus a percentage sign).  With that we can subtract that width from the right (plus margin) and basically give us a right-aligned percentage value.  Where 100% will fill the entire area, something like 6% will be right aligned.
 
 Finally the image is written to the filesystem (remember, this is committed during the Github action).  Then its destroyed from memory.
 
