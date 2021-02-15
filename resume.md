@@ -30,10 +30,10 @@ I hold the following certifications: Certified SCRUM Master, Zend Certified Engi
 
 ### Professional Experience
 
+**Owner, Programmer, Consultant at More Better Faster, LLC** PHP, NodeJS, React project work on demand. Business and technical process improvement and engineering manager training from nearly two decades of experience.
+
 **Advisory CTO, Talimer, Inc.** Freelancers First is the Talimer motto. Responsible for developing software solutions to support the unique process and vision of the business.
 
-**Owner, Programmer, Consultant at More Better Faster, LLC** PHP, NodeJS, React project work on demand. Business and technical process improvement and engineering manager training from nearly two decades of experience.
- 
 **Senior Director of Product Engineering at Dealer Inspire.** I began at Dealer Inspire October, 2016, as a Senior PHP Developer. In October 2017, I was promoted to Director, and in May 2018 I was promoted to Senior Director.  Dealer Inspire provides a comprehensive suite of tools for automotive dealers.  I'm responsible for technical mentorship and career path enrichment of my development team of 12 direct reports. I assist the VP of Engineering in developing processes, procedures and best practices for all of the development teams.  My time is split between four product teams: Online Shopper, which facilitates purchase, customization and financing of a vehicle completely online; Fuel, a tool which optimizes and automates advertising via real-time inventory feeds on AdWords and Bing; AdBuilder, an internal tool for building HTML5-based ads; and an upcoming project that is still under wraps.
  
 **Previous experience includes** Small Shops United, LLC; iMoneza/Wallit, LLC; 201 Creative, LLC; Liturgical Publications, Inc.; c21 Interactive/MarkForGov.com; Rogers POS; Delta Dental; Job Shouts; and EZ-Net. Work history beginning in 2001 is available upon request.

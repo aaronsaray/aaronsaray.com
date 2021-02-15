@@ -145,17 +145,17 @@ MCP 70-210: Installing, configuring and administering MS Windows 2000 Profesiona
 Foundations of Customer Service *NorthEast Wisconsin Technical College (2002)*
 
 ### Work Experience
-**Talimer. Milwaukee, WI (11/20 - present)**
+**More Better Faster. Milwaukee, WI (10/18 - present)**  
+*Owner, Programmer, Consultant*  
+[PHP, NodeJS, React project work](https://morebetterfaster.io) on demand and team augmentation. Business and technical process improvement and engineering manager training from nearly 2 decades of experience.
+
+**Talimer. Milwaukee, WI (11/20 - 2/21)**
 *Advisory Chief Technology Officer*
 As the Advisory CTO at Talimer, I help review decisions regarding technology implementation. Additionally, I provide one of many reviews on the applicability of features for tech freelancers. 
 
 **Talimer. Milwaukee, WI (1/20 - 11/20)**
 *Chief Technology Officer*
 Freelancer's first is the Talimer motto. As the CTO, I work with marketing, strategy and operations to develop technology to support our unique process and vision.
-
-**More Better Faster. Milwaukee, WI (10/18 - present)**  
-*Owner, Programmer, Consultant*  
-[PHP, NodeJS, React project work](https://morebetterfaster.io) on demand and team augmentation. Business and technical process improvement and engineering manager training from nearly 2 decades of experience.
 
 **Dealer Inspire. Naperville, IL (5/18 - 9/18)**  
 *Senior Director of Product Engineering*  
