@@ -17,13 +17,13 @@ To have a healthy group of developers, build yourself a team, not a family.
 
 ### Excuse for Poor Treatment?
 
-I've heard "we're a family, we'll get through this" when I belonged to a team that had a particularly unforgiving timeline.  I felt more so that I was trapped, like you are in a family, than in a team where I was appreciated.  I think others can say they've had similar experiences.
+I've heard "we're a family, we'll get through this" when I belonged to a team that had a particularly unforgiving timeline.  I felt more so that I was trapped, like "you are stuck in your family," than in a team where I was appreciated.  I think others can say they've had similar experiences.
 
 When you throw around "family," be careful not to imply - or even follow through with - not appreciating your developers or pushing them too far because you're stuck together.
 
 ### Not All Families Are the Same
 
-"You'll love this - it tastes just like cheese" exclaimed a friend.  They forgot that I don't like cheese! They made an assumption that they love I also loved.  If we followed through with their statement, the thing they want me to try, they're actually warning me I'd hate it!
+"You'll love this - it tastes just like cheese" exclaimed a friend.  They forgot that I don't like cheese! They made an assumption that what they love I also loved.  If we followed through with their statement, the thing they want me to try, they're actually warning me I'd hate it!
 
 Not all families are like yours. Not all families are the perfect picture of harmony and happiness. Some people have broken families or none at all.  Perhaps they can't stand their family. You could be drawing parallels to something that's not what you mean - or even worse, painful.
 
