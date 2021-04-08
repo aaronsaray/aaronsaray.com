@@ -90,6 +90,7 @@ class EditDogRequest extends FormRequest
 ```
 
 **`resources\dogs\edit.blade.php`**
+{% raw %}
 ```html
 <form action="{{ route('dogs.update', ['dog' => $dog]) }}" method="post">
   @csrf
@@ -101,6 +102,7 @@ class EditDogRequest extends FormRequest
   <button type="submit">Save</button>
 </form>
 ```
+{% endraw %}
 
 This is a very common set up I've seen a lot of times.  The logic is as follows:
 
@@ -124,6 +126,7 @@ When you validate your data, you're writing validation for known data that may a
 
 Ok, so let's demonstrate the problem.  I am a user and I want to shift the dog I'm editing to another user.  I bring up the view in my browser.  Then, I add another line with my developer tools.  See if you can spot it:
 
+{% raw %}
 ```html
 <form action="{{ route('dogs.update', ['dog' => $dog]) }}" method="post">
   @csrf
@@ -136,6 +139,7 @@ Ok, so let's demonstrate the problem.  I am a user and I want to shift the dog I
   <input type="hidden" name="owner_user_id" value="2">
 </form>
 ```
+{% endraw %}
 
 Yup, added a hidden form field setting the `owner_user_id` value to `2`.  
 
