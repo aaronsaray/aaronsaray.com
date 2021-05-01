@@ -4,6 +4,7 @@ title: Composer Security Concerns with Create Project
 tags:
 - php
 - security
+- composer
 ---
 One of the lesser known pieces of functionality from [Composer](https://getcomposer.org) is the ability to create a project from skeleton/scaffolding. This ability allows you to create a project structure, directory, files and requirements based on the suggested setup from the project maintainer.  A common [installation mechanism of Laravel](https://laravel.com/docs/5.7/installation) uses this functionality.  (Even [I use it](https://packagist.org/packages/aaronsaray/laravel-boot) to save time and set up my own custom configuration for new project skeletons.)
 

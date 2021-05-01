@@ -2,6 +2,7 @@
 layout: post
 title: TrackThings.com
 tags:
+- ideas
 - business
 ---
 Idea: TrackThings.com.  This website is made to track sales people and distribution of promotional materials.  It was initially thought of as a way to track on-the-ground sales distribution.  For example, if you had someone go to three businesses on one street, they could easily track where they went, and mark the interest for followup.

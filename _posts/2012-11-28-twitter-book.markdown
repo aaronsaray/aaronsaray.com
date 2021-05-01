@@ -3,6 +3,7 @@ layout: post
 title: Twitter Book
 tags:
 - business
+- ideas
 ---
 This idea is about the concept of grouping tweets in a meaningful way.
 

@@ -2,6 +2,7 @@
 layout: post
 title: 'Site Profile: amazondiscount.me'
 tags:
+- archived-projects
 - business
 - misc-web
 ---

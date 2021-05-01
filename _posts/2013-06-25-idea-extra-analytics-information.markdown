@@ -3,6 +3,7 @@ layout: post
 title: 'Idea: Extra Analytics Information'
 tags:
 - business
+- ideas
 ---
 When browsing the documentation for chrome, I came across this:
 

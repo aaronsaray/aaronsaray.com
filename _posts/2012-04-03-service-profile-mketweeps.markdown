@@ -2,6 +2,7 @@
 layout: post
 title: 'Service profile: mketweeps'
 tags:
+- archived-projects
 - business
 - misc-web
 ---

@@ -3,6 +3,7 @@ layout: post
 title: The End of QuickPic
 tags:
 - business
+- archived-projects
 ---
 QuickPic.dev was a site for quick edits, crops and touch-ups in your browser. After a year of stagnation, I think its time to move on - and share what I've learned.
 

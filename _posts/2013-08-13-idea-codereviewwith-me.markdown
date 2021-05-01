@@ -3,6 +3,7 @@ layout: post
 title: 'Idea: CodeReviewWith.Me'
 tags:
 - business
+- ideas
 ---
 I had this idea about doing interactive screen share and code review.  I wrote it about it earlier and even asked for feedback.
 

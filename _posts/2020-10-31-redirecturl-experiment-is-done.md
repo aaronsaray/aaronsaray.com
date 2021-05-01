@@ -3,6 +3,7 @@ layout: post
 title: The RedirectURL Experiment is Done
 tags:
 - business
+- archived-projects
 ---
 This is a tech and business blog, so I normally don't get too deep or emotional. But, I've got to talk a bit about my dream and what I've learned.
 

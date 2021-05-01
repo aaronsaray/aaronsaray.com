@@ -2,6 +2,7 @@
 layout: post
 title: 'Site profile: thebetterbachelor.com'
 tags:
+- archived-projects
 - business
 - misc-web
 ---

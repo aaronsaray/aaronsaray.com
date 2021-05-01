@@ -2,6 +2,7 @@
 layout: post
 title: 'Site Profile: honorarybrother.com'
 tags:
+- archived-projects
 - business
 - misc-web
 ---

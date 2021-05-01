@@ -2,6 +2,7 @@
 layout: post
 title: 'Site profile: whatscloseto.me'
 tags:
+- archived-projects
 - business
 - misc-web
 ---

@@ -3,6 +3,7 @@ layout: post
 title: The end of Possessor
 tags:
 - business
+- archived-projects
 ---
 Before I begin a [security](/tags/security) audit, I try to make sure that the client owns their website. Normally, this is pretty easy and obvious. However, sometimes it takes a little bit more work.  That's why I had thought of launching the tool called Possessor.
 

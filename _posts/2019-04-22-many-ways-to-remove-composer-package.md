@@ -3,6 +3,7 @@ layout: post
 title: The Many Ways to Remove a Composer Package
 tags:
 - php
+- composer
 ---
 Turns out there's a few different mechanisms to remove a package from your composer project.  It's important to understand what each method does and what its side effects are.
 
