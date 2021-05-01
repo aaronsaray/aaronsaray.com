@@ -3,7 +3,7 @@ layout: post
 title: Mark WIP Features for Better UX/Customer Acceptance
 tags:
 - testing
-- misc web
+- misc-web
 - javascript
 ---
 When you're trying to demo your **w**ork **i**n **p**rogress to a client, it can be difficult to know where to draw the line between working and non-working features.  On one hand, you want to show them some context so they can understand the current feature. But, then what happens when they invariably try to explore the context (which may not be done)?  Let me put that in a more concrete example.
