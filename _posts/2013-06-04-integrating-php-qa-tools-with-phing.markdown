@@ -3,7 +3,6 @@ layout: post
 title: Integrating PHP QA Tools with Phing
 tags:
 - ide-and-web-dev-tools
-- phing
 - phpunit
 ---
 If you're not familiar with having [PHP QA Tools](http://phpqatools.org/), go there right now!  And then come back and read this.

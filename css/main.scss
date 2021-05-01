@@ -347,6 +347,16 @@ p > strong > code {
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #eeeeee;
 }
+.tag-cloud {
+  text-align: center;
+  div {
+    margin-right: 1.5rem;
+    display: inline-block;
+  }
+  span {
+    font-size: 65%;
+  }
+}
 
 /***********************************************************************************************************************
  * syntax highlighting
