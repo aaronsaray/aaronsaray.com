@@ -25,7 +25,8 @@
     <footer>
         <time datetime="{{ include.post.date | date: '%FT%T%:z' }}" itemprop="datePublished">{{ include.post.date | date: "%b %-d, %Y" }}.</time>
         <span>
-            {% for tag in include.post.tags %}
+            {% assign sorted_tags = include.post.tags | sort %}
+            {% for tag in sorted_tags %}
                 <a href="/tag/{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last == true %}, {% endunless %}</a>
             {% endfor %}
         </span>
