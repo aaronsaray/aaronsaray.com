@@ -104,6 +104,7 @@ as well as for any other process, it looks like part of the day.
 
 A RSS feed is generated on every build at `/feed.xml`.  
 
-Mailchimp has a campaign called Aaron Saray Blog Entries which watches this and sends daily at 8AM when a new entry is found.
+## First Time Install
 
-If a new feed item is found, IFTTT posts a tweet to `@aaronsaray`.
+* `mkdir vendor-bundle` (to make sure it exists and is empty)
+* `./jekyll serve` (this will install what it needs)
