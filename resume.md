@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Resume of Aaron Saray
+title: Resume
 header: My résumé details more than a decade and a half of diverse technical and management experience.
 permalink: /resume/
 meta_description: Résumé of Aaron Saray.

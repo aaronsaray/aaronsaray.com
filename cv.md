@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CV of Aaron Saray
+title: CV
 header: My CV contains detailed information relevant to my entire professional career.
 permalink: /cv/
 meta_description: Full Curriculum Vitae of Aaron Saray.

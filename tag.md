@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tags for Aaron Saray's Blog 
+title: Blog Tags
 header: Tags for the Blog
 permalink: /tag/
 meta_description: Tags for Aaron Saray's Blog.

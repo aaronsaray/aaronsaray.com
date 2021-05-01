@@ -9,7 +9,17 @@ layout: compress
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>
+    {% if page.title %}
+      {% if page.layout == 'page_tags' %}
+        Blog entries tagged "{{ page.title | slugify }}"
+      {% else %}
+        {{ page.title }} | Aaron Saray
+      {% endif %}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
   {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}">{% endif %}
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
