@@ -108,3 +108,9 @@ A RSS feed is generated on every build at `/feed.xml`.
 
 * `mkdir vendor-bundle` (to make sure it exists and is empty)
 * `./jekyll serve` (this will install what it needs)
+
+## Tags
+
+Tags are slugs, should have a `_my_tags` and a `_my_tags_xml` entry.  In the tag named `.md` file, the content will be used for the blog tag page that lists all those tagged entries.
+
+Tags use og images which are in `/images/tag` and should be `1200x630` `jpeg` named after the slug of the tag.
