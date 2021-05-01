@@ -24,8 +24,10 @@ layout: compress
 
 {% if page.layout == 'page_tags' %}
   {% capture og_image %}/images/tag/{{ page.slug }}.jpg{% endcapture %}
+{% elsif page.layout == 'post' %}
+  {% capture og_image %}/images/tag/{{ page.tags[0] }}.jpg{% endcapture %}
 {% else %}
-  {% assign og_image = "/me.jpg" %}
+  {% assign og_image = "/images/og-me.jpg" %}
 {% endif %}
 <!DOCTYPE html>
 <html lang="en">
