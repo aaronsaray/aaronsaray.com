@@ -5,6 +5,14 @@ suppress_header: true
 <section id="hero">
     <p>Entries with the tag "{{ page.slug }}"</p>
 </section>
+<div class="tag-page-content">
+    {% assign tag_summary = page.content | strip %}
+    {% if tag_summary == "" %}
+        These entries have all been tagged with "{{ page.slug }}".
+    {% else %}
+        {{ page.content }}
+    {% endif %}
+</div>
 <section class="entries">
     {% if site.tags[page.slug] %}
         {% for post in site.tags[page.slug] %}
