@@ -5,7 +5,7 @@ header: Tags for the Blog
 permalink: /tag/
 meta_description: Tags for Aaron Saray's Blog.
 ---
-Click through to read blog entries about various topics from the tags page.
+My {{ site.posts | size }} blog entries fall into these various different topics:
 
 {% capture tags %}
   {% for tag in site.tags %}
