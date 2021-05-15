@@ -49,6 +49,9 @@ layout: compress
   <meta property="og:url" content="{{ page.url | prepend: site.url }}">
   <meta property="og:description" content="{{ page_description | escape }}">
   <meta property="og:image" content="{{ site.url }}{{ og_image }}">
+  {% if page.layout == 'post' %}
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% endif %}
 </head>
 <body>
 <header>
