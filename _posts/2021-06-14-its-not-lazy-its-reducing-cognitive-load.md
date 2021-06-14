@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Programmers Aren't Being Lazy: They're Reducing Cognitive Load
+title: "Programmers Aren't Being Lazy: They're Reducing Cognitive Load"
 tags:
 - business
 - programming
