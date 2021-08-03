@@ -48,6 +48,10 @@ The Confident Coder.  A monthly column for PHP[architect] from [October, 2013](h
 
 [MKE PHP: Best People, Best Practices](https://www.phparch.com/magazine/2012-2/january/)  This article for PHP[architect] was co-authored by me in 2012.  In it, my writing partner and I explained the challenges and rewards of starting Milwaukee's first PHP user group.
 
+#### Participant
+
+[No Compromises Podcast](https://show.nocompromises.io) A bi-weekly podcast with over 25 episodes focusing on Laravel and PHP programming concepts and dev team methodologies and strategies.
+
 #### Technical Editor
 
 PHPUnit Essentials (ISBN: 978-1783283439)
