@@ -18,7 +18,7 @@ At GitHub, I've released various PHP and Javascript code including [FirePHP4Chro
 
 I enjoy participating in my local business and technical community.
 
-Community volunteer for [i.c.Stars](http://milwaukee.icstars.org), 2019 to present.
+Community volunteer for [i.c.Stars](http://milwaukee.icstars.org), 2019 to 2020.
 
 [Open Sourcing Mental Illness](https://osmihelp.org) content editor, writer 2018 to 2019.
 
@@ -33,6 +33,10 @@ Various Other Meetup Leadership Roles.  I've participated in restarting, restruc
 I am a prolific author, editor and blogger.  (Yes, blogger! On this site - [500+ technical and business entries](/blog) since 2007.)
 
 #### Author
+
+[A Little Bit of Laravel](https://nocompromises.gumroad.com/l/little-laravel) A free e-book authored by Joel Clermont and I giving more than 15 Laravel-based tips and tricks with thorough explanation, rationale, and code examples.
+
+[Mastering Laravel Validation Rules](https://nocompromises.gumroad.com/l/laravel-validation) This ebook, co-authored with Joel Clermont, focuses on the validation system in the PHP framework Laravel.
 
 [33 Things I Wish Somebody Would Have Told Me]({% post_url 2017-11-13-33-things-book %}) This book details - you guessed it - 33 things that I wish someone would have mentioned to be before or during my programming and management career.  A more conversational read, this shares lessons I've learned "the hard way" in a language or technical disipline-agnostic format.
 
