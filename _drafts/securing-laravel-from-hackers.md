@@ -4,6 +4,7 @@ title: Securing Laravel from Hackers
 tags:
 - php
 - laravel
+- security
 ---
 Laravel is a great framework that is pretty secure by default. However, configuration mistakes or coding errors can still leave your app open for attack. Where do you go for help?
 

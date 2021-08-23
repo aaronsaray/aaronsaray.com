@@ -6,6 +6,15 @@ suppress_header: true
 
 {% if page.tags contains 'laravel' %}
     {% assign podcastcta = true %}
+    {% assign laravelhackercta = true %}
+{% endif %}
+
+{% if page.tags contains 'security' %}
+    {% assign laravelhackercta = true %}
+{% endif %}
+
+{% if laravelhackercta %}
+    {% include laravel-hacker-cta.html %}
 {% endif %}
 
 {% if podcastcta %}

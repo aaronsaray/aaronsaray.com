@@ -111,7 +111,7 @@ body {
   
   & > footer {
     @include container;
-    padding: 3rem 0 1rem 0;
+    padding: 2rem 0 1rem 0;
     color: #454545;
     text-align: center;
 
@@ -122,6 +122,10 @@ body {
       justify-content: space-around;
       margin: 0 0 2rem 0;
       padding: 0;
+    }
+
+    li {
+      padding: 0 1rem;
     }
 
     a, a:visited {
@@ -452,6 +456,28 @@ code.highlighter-rouge {
  **********************************************************************************************************************/
 .podcast-cta {
   margin-bottom: 1.4rem;
+
+  border-top: 0.5rem solid #3399cc;
+  color: #eaeaea;
+  background-color:#353535;
+  div {
+    padding: 1rem 1.5rem;
+  }
+  a {
+    color: #eeeeee;
+    text-decoration: underline;
+  }
+}
+
+/***********************************************************************************************************************
+ * Laravel Hacker CTA
+ **********************************************************************************************************************/
+.laravel-hacker-cta {
+  text-align: center;
+  margin-bottom: 1.4rem;
+  & + .podcast-cta {
+    margin-top: 3rem;
+  }
   border-top: 0.5rem solid #ff2d20;
   color: #333333;
   background-color:#209cda24;
