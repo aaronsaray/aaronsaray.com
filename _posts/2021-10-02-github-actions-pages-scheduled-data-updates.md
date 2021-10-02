@@ -54,7 +54,8 @@ First, I'll create a very simple HTML file with some Javascript.
     }).then(results => {
       const lastUpdated = new Date(results.timestamp);
       const updatedSpot = parseFloat(results.silver).toFixed(2);
-      document.querySelector('time').innerText = lastUpdated.toLocaleDateString() + ' ' + lastUpdated.toLocaleTimeString();
+      document.querySelector('time').innerText = lastUpdated.toLocaleDateString() 
+        + ' ' + lastUpdated.toLocaleTimeString();
       document.querySelector('data').innerText = updatedSpot;
     });
   </script>
