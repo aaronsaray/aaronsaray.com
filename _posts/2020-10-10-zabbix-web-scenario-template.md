@@ -16,7 +16,7 @@ But before that, here's my [Web Scenario Template to Download](/uploads/2020/zab
 * Click **Add**
 * You'll have to find it in the list again, and then click it so you can configure it.
 * Click the **Web Scenarios** tab, then click **Create web scenario** button.
-* For the name, enter `Check homepage` and leave the rest alone.
+* For the name, enter `Check Homepage` and leave the rest alone.
 * Click the **Steps** tab
 * Click the link labeled **add**.  Type `Visit home page` for the name.
 * For the URL type `https://{HOST.NAME}`.  Use http or https depending on what your host supports.  The `{HOST.NAME}` variable will come from the name of the host when you create it and the template is assigned to it.
