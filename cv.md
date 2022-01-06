@@ -30,9 +30,13 @@ Various Other Meetup Leadership Roles.  I've participated in restarting, restruc
 
 ### Publications
 
-I am a prolific author, editor and blogger.  (Yes, blogger! On this site - [500+ technical and business entries](/blog) since 2007.)
+I am a prolific author, editor and blogger.  (On this site - [600+ technical and business entries](/blog) since 2007.)
 
 #### Author
+
+[A Little Bit of Laravel](https://nocompromises.gumroad.com/l/securing-laravel) A free e-book I created (edited/reviewed by Joel Clermont) containing 7 steps to lock down and secure a Laravel application. Considered the intro material for the Secure Coding Laravel video course.
+
+[Secure Coding in Laravel Video Course](https://www.infosecinstitute.com/skills/) A 4.5 hour video course created teaching secure coding skills, proper configuration of Laravel and pentesting tools.  In addition, demonstrated many different attacks and how to defend against them.
 
 [A Little Bit of Laravel](https://nocompromises.gumroad.com/l/little-laravel) A free e-book authored by Joel Clermont and I giving more than 15 Laravel-based tips and tricks with thorough explanation, rationale, and code examples.
 
