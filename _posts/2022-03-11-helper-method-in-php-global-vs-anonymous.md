@@ -12,6 +12,7 @@ You might find yourself wanting to create a simple helper method in PHP.  These 
 
 ```php
 <?php
+
 function colonAndCombine(string $first, array $second): string
 {
   return $first . ':' . implode(',', $second);
@@ -43,6 +44,7 @@ Now, let's look at how we might make use of an anonymous method:
 
 ```php
 <?php
+
 $colonAndCombine = function (string $first, array $second): string
 {
   return $first . ':' . implode(',', $second);
