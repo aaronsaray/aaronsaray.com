@@ -54,7 +54,7 @@ The Confident Coder.  A monthly column for PHP[architect] from [October, 2013](h
 
 #### Participant
 
-[No Compromises Podcast](https://show.nocompromises.io) A bi-weekly podcast with over 25 episodes focusing on Laravel and PHP programming concepts and dev team methodologies and strategies.
+[No Compromises Podcast](https://show.nocompromises.io) A bi-weekly podcast with over 50 episodes focusing on Laravel and PHP programming concepts and dev team methodologies and strategies.
 
 #### Technical Editor
 
