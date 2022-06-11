@@ -63,6 +63,7 @@ We can do the same thing ourselves with our own interfaces to help make our code
 **`app/Contracts/ShouldNotQueue.php`**
 ```php
 <?php
+
 declare(strict_types=1);
 
 namespace App\Contracts;

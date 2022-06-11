@@ -35,7 +35,7 @@ and pushes it to master.  When pushed to master, Github Pages will build the new
 
 Because of the way Jekyll on Github Pages works, we can't use the tagging plugins.  So, we have to build our own.  This is done from collections.
 In order to create a new tag, run the `bt tag-name` workflow command where `tag-name` is the new tag you wish to add to the system. (This will
-create a template for the xml and for the pages).  This is provied by `Blog New Tag.alfredworkflow` file.
+create a template for the xml and for the pages).  This is provided by `Blog New Tag.alfredworkflow` file.
 
 ## Writing Standards
 
