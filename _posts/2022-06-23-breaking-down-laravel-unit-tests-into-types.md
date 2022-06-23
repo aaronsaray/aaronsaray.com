@@ -6,7 +6,7 @@ tags:
 - laravel
 - testing
 ---
-What's the difference between unit test, integration test, and feature test? Which should you use for what type of test? Is it just preference or does performance factor in when using Laravel? Let me give you my take from over a decade of unit testing experience.
+What's the difference between unit test, integration test, and a feature test? Which should you use for what type of test? Is it just preference or does performance factor in when using Laravel? Let me give you my take from over a decade of unit testing experience.
 
 First of all, let's talk about the definitions of these terms. We're going to focus on four terms: unit test, integration test, feature test and external test. There are even more (smoke test, e2e test, dusk tests, etc...) but we're going to focus on these because they fit nicely in our Laravel ecosystem.
 
@@ -82,7 +82,7 @@ Now, our gate is doing some sort of query against the database to determine if t
 * user under test has premium subscription: true
 * user under test has premium subscription and basic subscription: true
 * user under test has basic subscription: false
-* user under test has basic subscription, second user in db has premium subscription: true
+* user under test has basic subscription, second user in db has premium subscription: false
 
 That last bullet point is an example of things that should be tested (are we sure we're targeting the right user? What if our gate was just searching the first user, or any user, with premium) but are hard to really set up for a full end point test. Why would I need to do a search through a full end point with processed data, when really I just want to check one instance of the gate's logic.
 
