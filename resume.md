@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Resume
-header: My résumé details more than a decade and a half of diverse technical and management experience.
+header: My résumé details over two decades of diverse technical and management experience.
 permalink: /resume/
 meta_description: Résumé of Aaron Saray.
 ---
@@ -10,7 +10,7 @@ meta_description: Résumé of Aaron Saray.
 
 ### Summary
 
-Project leader, mentor, and team manager focused on providing the best customer experience while ensuring growth and profit. Open source (LAMP) Web Developer with over a decade and a half of experience in business analysis, documentation, design, management and leadership. Highly skilled in development of applications utilizing PHP, MySQL, XML, Javascript, AJAX, and HTML. Experienced in design and development of training and technical documentation. Prolific conference speaker, technical blogger and author.
+Project leader, mentor, and team manager focused on providing the best customer experience while ensuring growth and profit. Open source (LAMP) Web Developer with over two decades of experience in business analysis, documentation, design, management and leadership. Highly skilled in development of applications utilizing PHP, Laravel, MySQL, Javascript, Vue, CSS, and HTML. Experienced in design and development of training and technical documentation. Prolific conference speaker, technical blogger and author.
 
 ### Publications
 
@@ -26,7 +26,7 @@ I’ve given more than 20 presentations ranging from conference keynote, to loca
 
 I hold a Bachelor of Science in Business Management from Cardinal Stritch University. I graduated with Delta Mu Delta Honors.
 
-I hold the following certifications: Certified SCRUM Master, Zend Certified Engineer, Security+, Network+, A+, MCP 70-210 and NTC Open Source Web Developer Certificate.
+I hold the following certifications: Certified Laravel Developer, Certified SCRUM Master, Zend Certified Engineer, Security+, Network+, A+, MCP 70-210 and NTC Open Source Web Developer Certificate.
 
 ### Professional Experience
 
