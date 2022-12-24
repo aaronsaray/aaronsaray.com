@@ -79,6 +79,17 @@ layout: compress
   {% endunless %}
   {{ content }}
 </main>
+<aside class="fathom-cta">
+  <div>
+    I'm polite - I don't invade your privacy with trackers
+  </div>
+  <div>
+    <a href="{% post_url 2007-06-24-load-time-analyzer-for-firefox %}">
+      <img src="/images/fathom-logo.svg" alt="Fathom Analytics logo">
+      Find out how I did - and how you can, too
+    </a>
+  </div>
+</aside>
 <footer>
   <ul>
     <li><a href="https://aaronsaray.github.io" title="Aaron Saray, Open Source on GitHub">GitHub</a></li>
@@ -100,7 +111,6 @@ layout: compress
   </p>
 </footer>
 {% if jekyll.environment == "production" %}
-<script type="text/javascript">!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-2186364-4","auto"),ga("send","pageview");</script>
 <script src="https://fourty-thirty.aaronsaray.com/script.js" data-site="EHVVLSAC" defer></script>
 {% endif %}
 </body>
