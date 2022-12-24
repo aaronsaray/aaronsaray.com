@@ -62,11 +62,11 @@ Enter Fathom Analytics.
 
 And their founders, Paul and Jack, have bootstrapped the company and shared a lot publicly. They work within the Laravel community and have a proven track record of building reliable software with Fathom.
 
-Finally, and this is one of my favorite features, you can still load your analytics code even when people have turned on adblock. This isn't for advertising, so because of that, they've built a system that allows you to use a custom subdomain to host their analytics code.
+Finally, and this is one of my favorite features, you can still load your analytics code even when people have turned on (some) adblock apps. This isn't for advertising, so because of that, they've built a system that allows you to use a custom subdomain to host their analytics code.
 
 Fathom Analytics is not free - because you aren't the product.  But, you can get a free trial and try it out before you get started.  If you use my affiliate link, you will receive a $10 discount on your first invoice and I'll receive a commission.   I believe in this product - I use it on this website - as well as most websites I'm responsible for.).
 
 Get [Fathom Analytics](https://usefathom.com/ref/NGDXMB) now.  (affiliate link)
 
-> Oh - and they don't use cookies to track affiliates either. They're committed to privacy and security, and therefore have built their own affiliate tracking system.  This means it works when you use it - but doesn't necessarily track you long-term.
+> By the way... They're committed to privacy and security, and therefore have built their own affiliate tracking system.  This means it works when you use it - but doesn't necessarily track you long-term.
 
