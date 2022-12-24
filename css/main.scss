@@ -51,6 +51,9 @@ body {
       justify-content: space-between;
       padding: 2rem 0 0.5rem 0;
       border-bottom: 0.15rem solid #eeeeee;
+      a:first-child {
+        font-weight: bold;
+      }
       span a:first-child {
         margin-right: 2rem;
       }
@@ -66,10 +69,7 @@ body {
           border: 1px solid #d8d8d8;
           height: 1rem;
           vertical-align: middle;
-          @media (max-width: $breakpoint-tablet) {
-            width: 7rem;
-          }
-          width: 8.2rem;
+          width: 11rem;
           padding: 0.2rem;
           &:focus {
             outline: none;
