@@ -5,7 +5,7 @@ timezone: America/Chicago
 
 markdown: kramdown
 permalink: /:year/:title
-exclude: 
+exclude:
   - README.md
   - workflow-tools
   - .DS_Store
@@ -18,10 +18,12 @@ exclude:
   - vendor-bundle
   - jekyll
   - preview
+include:
+  - .well-known
 
 sass:
     style: compressed
-    
+
 compress_html:
    clippings: all
 
