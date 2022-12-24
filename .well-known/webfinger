@@ -1,0 +1,23 @@
+{
+  "subject": "acct:aaronsaray@phpc.social",
+  "aliases": [
+    "https://phpc.social/@aaronsaray",
+    "https://phpc.social/users/aaronsaray"
+  ],
+  "links": [
+     {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://phpc.social/@aaronsaray"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://phpc.social/users/aaronsaray"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://phpc.social/authorize_interaction?uri={uri}"
+    }
+  ]
+}
