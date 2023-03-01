@@ -74,4 +74,4 @@ Requirement documentation is a hard process, but it’s worth it. You learn a lo
 
 These documents have multiple parts that are a bit mix and match. Don’t worry too much about if you’ve built them correctly with the right sections - this comes with practice. It’s just about getting it all out of everyone’s heads and down on paper.
 
-I hope this page has helped explain my rationale and given you an example or guideline to follow. If you have any questions, please let me know. If you want some more guidance on what questions to ask during the requirements gathering phase, please check out my article outlining the best questions to ask during requirements gathering.
+I hope this page has helped explain my rationale and given you an example or guideline to follow. If you have any questions, please let me know. If you want some more guidance on what questions to ask during the [requirements gathering]({% post_url 2023-03-01-requirements-gathering-questions-to-ask %}) phase, please check out my entry outlining [the best questions to ask during requirements gathering]({% post_url 2023-03-01-requirements-gathering-questions-to-ask %}).
