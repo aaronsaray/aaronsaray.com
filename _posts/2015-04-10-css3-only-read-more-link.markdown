@@ -10,7 +10,7 @@ Want a CSS3 **ONLY** read more link?  I think I've created one that should do th
 
 The concept is simple: background image that is a gradient, a height limit, and a read more link that really is a checkbox - so you can track the stage. (Fun fact: I tried using a:active selector - doh!  That's only while you're clicking a link.)
 
-Want to check out a demo?  [See it in action here]({{ site.baseurl }}/demo/css-only-read-more.html).
+Want to check out a demo?  [See it in action here](https://codepen.io/aaronsaray/pen/dyqWPyV).
 
 Now, time for some code.
 
