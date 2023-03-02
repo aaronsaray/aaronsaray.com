@@ -133,4 +133,4 @@ After 5 seconds, the anonymous function fires off the setInterval request to run
 ### See it in Action
 
 Seems to me, people like to SEE this stuff in action.  Weird.  Anyway, here ya go:
-[/demo/snow/](/demo/snow/)
+[CodePen Demo](https://codepen.io/aaronsaray/pen/GRXmRYQ)

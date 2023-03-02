@@ -14,7 +14,7 @@ b) they must have a server component
 
 c) they work in all browsers (hhahaah - this example only works in Chrome at the moment).
 
-What am I talking about?  An online photobooth, with minimum javascript, HTML5, CSS, minimal images, that accesses your webcam and allows you to download your creations.  Yup, take a shot of yourself, and maybe drag some sunglasses onto it or something.  Want to see what I'm talking about?  Check it out here: [Online PhotoBooth]({{ site.baseurl }}/demo/onlinephotobooth).
+What am I talking about?  An online photobooth, with minimum javascript, HTML5, CSS, minimal images, that accesses your webcam and allows you to download your creations.  Yup, take a shot of yourself, and maybe drag some sunglasses onto it or something.  Want to see what I'm talking about?  Check it out here: **DEMO NO LONGER WORKS**.
 
 Now, let's check it out.
 
