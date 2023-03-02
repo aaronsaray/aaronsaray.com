@@ -102,5 +102,3 @@ $(function() {
 ```
 
 This simply will skip through the images one by one on click - and restart from the beginning.  Not particularly pretty, but it's just a proof of concept.
-
-Check out the full code [here](https://github.com/aaronsaray/aaronsaray.com/tree/master/demo/onlinephotobooth).
