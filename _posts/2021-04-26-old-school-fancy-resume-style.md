@@ -34,4 +34,4 @@ In the end, here's how it ended up looking:
 
 [![Old School Resume](/uploads/2021/resume-guy-smiley.thumb.png)](/uploads/2021/resume-guy-smiley.png){: .thumbnail}
 
-You can download the [PDF here](/uploads/2021/resume-guy-smiley.pdf) or see the [demo here](/demo/old-school-resume) or [on codepen](https://codepen.io/aaronsaray/pen/jOydvKx) to see how it was done.
+You can download the [PDF here](/uploads/2021/resume-guy-smiley.pdf) or see the [demo on codepen](https://codepen.io/aaronsaray/pen/jOydvKx) to see how it was done.
