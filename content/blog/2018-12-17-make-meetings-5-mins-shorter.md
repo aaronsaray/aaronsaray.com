@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Make Meetings 5 Minutes Shorter
+date: 2018-12-17
 tags:
 - business
 ---
 Having many meetings, one after another, is not only tiring, it's a recipe for memory disaster. You don't have enough time between meetings to finish notes, gather your thoughts or even use the bathroom.  Because of this, I've started doing something different:
+
+<!--more-->
 
 **Make 30 minute meetings 25 minutes long, make 1 hour long meetings 50 minutes.**
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: One-Tap Track Weight Daily in iOS Without an App
+date: 2022-11-14
 tags:
 - ios
 ---
 You don't need to install another app with more bloated requirements to track your weight daily in the Apple health app. You can do this with iOS Shortcuts.  Here's how:
+
+<!--more-->
 
 Open the Shortcuts App
 

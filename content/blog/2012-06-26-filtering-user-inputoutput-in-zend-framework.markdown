@@ -1,17 +1,19 @@
 ---
-layout: post
 title: Filtering User Input/Output in Zend Framework
+date: 2012-06-26
 tags:
 - security
 - zend-framework
 ---
 There are two areas where user input should be filtered: on display and on storage.  Luckily, Zend Framework provides tools for this...
 
+<!--more-->
+
 ### Filtering User Input in the View
 
 In any view, the Zend View Helper `escape` is available.  Whenever displaying user input, use it to escape and filter the output:
 
-```php?start_inline=1
+```php
 echo '<p>Hello ' . $this->escape($user->getName()) . '!</p>';
 ```
 
@@ -19,7 +21,7 @@ echo '<p>Hello ' . $this->escape($user->getName()) . '!</p>';
 
 The Zend Filter `Zend_Filter_Input` exists to filter this content.  You can also add validators to it.  In this case, I am posting a numeric ID called `key` and a string field called `name`.
 
-```php?start_inline=1
+```php
 $filters = array(
   '*'   => 'StringTrim',
   'key' => 'Digits'

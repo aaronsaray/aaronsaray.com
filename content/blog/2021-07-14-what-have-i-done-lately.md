@@ -1,10 +1,12 @@
 ---
-layout: post
 title: What Have I Been Working on Lately?
+date: 2021-07-14
 tags:
 - business
 ---
 I've been working on a lot of things lately - I thought it might be nice to do a quick run down of what those are.
+
+<!--more-->
 
 [More Better Faster](https://morebetterfaster.io/), my consulting company, has been taking off. I'm working with a few clients on implementing best practices and good processes.  While I do some development in these contracts, a lot of the time I'm focused on guiding teams into better practices or introducing new tooling.  I have worked on niching down a bit on Laravel-specific consulting with my [/laravel](https://morebetterfaster.io/laravel/) link.
 

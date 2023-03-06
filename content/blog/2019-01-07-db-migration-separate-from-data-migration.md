@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Keep Data Migrations Separate from Database Migration
+date: 2019-01-07
 tags:
 - php
 - laravel
 - mysql
 ---
 By now, you've probably written many database migrations in Laravel. But, then something else happens.  Perhaps your business model changed, your data attributes changed or you're just refactoring to a stronger architecture. Doesn't matter which, you're going to need to convert and migrate some data.
+
+<!--more-->
 
 Your first step might be to look at Laravel's [database seeding](https://laravel.com/docs/5.6/seeding) to seed in your new data or changed data.  But that's not what this is for. It's for new, supportive data, not for data migrations.  
 

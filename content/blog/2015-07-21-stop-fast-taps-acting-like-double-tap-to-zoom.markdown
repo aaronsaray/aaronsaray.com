@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Stop fast taps acting like double-tap-to-zoom
+date: 2015-07-21
 tags:
 - javascript
 - jquery
 - mobile
 ---
 I have been making a number pad on a webpage for mobile browsers - and one problem I kept running into is double tap to zoom'ing when I didn't want it.
+
+<!--more-->
 
 So, basically, people were typing too fast on the screen's number buttons - and that would execute a zoom.  Turns out, with a little bit of jQuery, you can get rid of this annoying problem.  
 

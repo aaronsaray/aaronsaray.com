@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Using PHP to find distance between Zip Codes
+date: 2009-05-28
 tags:
 - php
 ---
 Today marked the second time I had to write this code from scratch.  To save my self time - and hopefully you too! - I'm going to post what I've developed.
+
+<!--more-->
 
 ### Get Your Zips
 
@@ -27,7 +29,7 @@ CREATE TABLE  `zipgeo` (
 
 The following is the code used to import this .csv file into the table:
 
-```php?start_inline=1
+```php
 set_time_limit(0);
 $mysqlhost = 'localhost';
 $mysqluser = 'user';
@@ -76,7 +78,7 @@ This imported a nice set of 41755 zip code rows.
 
 Now, I should give a disclaimer: this is just code that you can use.  It is not the 'cleanest' or best organized.  When I implement this code for my employer, I will be making a few changes, including it in a class, etc.
 
-```php?start_inline=1
+```php
 function degrees_difference($lat1, $lon1, $lat2, $lon2)
 {
   $theta = $lon1 - $lon2;
@@ -95,7 +97,7 @@ function degrees_difference($lat1, $lon1, $lat2, $lon2)
 
 This will return the distance in miles between one lat/long combination and another.
 
-```php?start_inline=1
+```php
 function difference_between($firstzip, $secondzip)
 {
   $query = "select zip5, lat, lon from zipgeo where zip5 in ({$firstzip}, {$secondzip})";
@@ -115,7 +117,7 @@ function difference_between($firstzip, $secondzip)
 
 This code gets the latitude and longitude for two zip codes and then executes that last function.  Note: it doesn't matter what order the zip codes are - the distance from A to B is always the same as B to A.
 
-```php?start_inline=1
+```php
 function get_zips_within($zip, $miles)
 {
   $milesperdegree = 69;

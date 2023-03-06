@@ -1,14 +1,16 @@
 ---
-layout: post
 title: Store Zend Framework Options in the Registry
+date: 2012-06-19
 tags:
 - zend-framework
 ---
 So, since I want to save some keystrokes, I rarely will go back to the Front Controller and Bootstrap to get resources.  I also like to store them in the registry in a fashion that I see fit.  
 
+<!--more-->
+
 So, when you create a default Zend Application, the bootstrapper will read in your `config.ini` file that you specify and handle that in the bootstrap parent class.  You can get these options by calling the `$this->getOptions()` method. I prefer to work with these as a `Zend_Config` object as well (by default, they are just a plain array.) Since I want to always have this available in the Registry, I've made the following method part of my `Bootstrap` class in all my applications:
 
-```php?start_inline=1
+```php
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
   protected function _initOptionsRegistry()

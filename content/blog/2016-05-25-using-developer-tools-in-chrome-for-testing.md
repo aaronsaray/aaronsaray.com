@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Using Developer Tools in Chrome for Testing
+date: 2016-05-25
 tags:
 - misc-web
 - testing
@@ -9,6 +9,8 @@ In a perfect world, when testing your website you'd have a giant device library,
 and a bunch of users using the system simultaneously.  A perfect world?  Pfffft.  But, I can help you at least get close
 to this set of requirements for your test.  Let's see how we can use Google Chrome to simulate different devices and change
 our internet connection speeds.
+
+<!--more-->
 
 ### Getting to Developer Tools
 

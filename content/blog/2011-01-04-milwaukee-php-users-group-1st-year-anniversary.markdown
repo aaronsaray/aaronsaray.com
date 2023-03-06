@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Milwaukee PHP Users Group - 1st year anniversary
+date: 2011-01-04
 tags:
 - business
 ---

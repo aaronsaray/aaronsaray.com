@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The RedirectURL Experiment is Done
+date: 2020-10-31
 tags:
 - business
 - archived-projects
 ---
 This is a tech and business blog, so I normally don't get too deep or emotional. But, I've got to talk a bit about my dream and what I've learned.
+
+<!--more-->
 
 It's important to have dreams, to have goals, to have something to hope for. Especially during hard times (record unemployment, a pandemic, 11 different singing competition shows),
 you need to have something to look forward to.  One of my goals is to have a "side project" that generates some revenue.

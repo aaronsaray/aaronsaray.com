@@ -1,12 +1,14 @@
 ---
-layout: post
 title: The Importance of ToDo Tests
+date: 2021-03-22
 tags:
 - php
 - testing
 - phpunit
 ---
 I'm not a huge fan of `todo` comments in code because I think they're mainly forgotten. However, I don't have the same opinion for PHPUnit tests.  Let's talk about why - and how to easily add them in your code.
+
+<!--more-->
 
 ### Why Todo in PHPUnit?
 

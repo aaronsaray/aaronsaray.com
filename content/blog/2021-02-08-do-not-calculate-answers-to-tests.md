@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Do Not Calculate Answers to Your Unit Tests
+date: 2021-02-08
 tags:
 - php
 - phpunit
 - testing
 ---
 Since you're a programmer, you're always looking for ways to be a bit more efficient. Because of this, it can be easy to fall into the trap of being too programatic, too calculation-heavy in your unit tests. But, this isn't a test then - its just another block of quite fallible code.  Let's talk about why and show what to do instead.
+
+<!--more-->
 
 ### Example
 

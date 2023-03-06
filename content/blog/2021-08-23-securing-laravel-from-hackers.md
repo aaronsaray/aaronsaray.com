@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Securing Laravel from Hackers
+date: 2021-08-23
 tags:
 - php
 - laravel
 - security
 ---
 Laravel is a great framework that is pretty secure by default. However, configuration mistakes or coding errors can still leave your app open for attack. Where do you go for help?
+
+<!--more-->
 
 I've been working with PHP for over 20 years now. My framework of choice over the last few years has been Laravel. I love the way it helps enforce parts of the OWASP 12 factor app - things like using the environment variables to configure an application.  It also uses prepared statements by default.
 

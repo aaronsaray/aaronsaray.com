@@ -1,10 +1,12 @@
 ---
-layout: post
 title: How to Get More Feedback from Your Boss
+date: 2019-01-28
 tags:
 - business
 ---
 Feedback from your boss or superior is incredibly important. How do you know if you're getting all of the feedback they have for you, thought? Sometimes people are distracted - sometimes they don't know if they're pummeling you with too much information. 
+
+<!--more-->
 
 There's a simple sentence or phrase that you should use toward the end of the conversation with your boss that will answer this question.  
 

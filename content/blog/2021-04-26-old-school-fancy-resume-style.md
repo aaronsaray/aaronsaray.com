@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Old School Fancy Resume
+date: 2021-04-26
 tags:
 - html
 - css
 ---
 Remember when the biggest way to show off your quality as an applicant was to have a fancy resume? You'd have a heavy paper weight, fancy fonts and in some cases embossing.  I decided it might be fun to duplicate that as an HTML/CSS resume.
+
+<!--more-->
 
 I have a history of creating my resumes using HTML and CSS instead of desktop publishing projects.  You can find examples of my past [resumes in Github](https://github.com/aaronsaray/resume) if you're curious.
 

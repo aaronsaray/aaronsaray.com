@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Zend Framework Front Controllers vs Bootstrap: Round 2'
+date: 2011-08-02
 tags:
 - zend-framework
 ---
 There was some discussion on Twitter regarding the original version of my article about putting most of your site's setup in the front controller plugins in Zend Framework.  However, I haven't seen a lot of real reasons except for "that's what the example says" or "this is how I feel."  These suggestions I have are based on performance and logical reasons.  However, I could be wrong or maybe I was unclear. So I did a bit more research and I have just a few more notes.
+
+<!--more-->
 
 > This article is the follow-up to [the original article]({% post_url 2011-05-24-zend-framework-bootstrap-vs-front-controller-plugin %}).
 

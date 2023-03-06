@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Quick Honey Pots in Laravel
+date: 2018-08-18
 tags:
 - php
 - laravel
 ---
 When someone breaches the security of a web app, sometimes it's not discovered to weeks or months later.  There are a number of tools that specialize in intrusion detection, but they may be costly or difficult to set up.  Another idea is to use a [canary in the coal mine](https://www.smithsonianmag.com/smart-news/story-real-canary-coal-mine-180961570/) or a [honey pot](https://en.wikipedia.org/wiki/Honeypot_(computing)). Here we'll talk about the concept and then demonstrate some easy and quick methods.
+
+<!--more-->
 
 ### The Concept
 
@@ -55,7 +57,7 @@ If the user that is retrieved matches our criteria (in this case, its the the ID
 This can be registered in the following file:
 
 **`app/Providers/AppServiceProvider.php`**
-```php?start_inline=1
+```php
 // snip
 public function boot()
 {
@@ -110,7 +112,7 @@ This middleware is an **after** middleware.  First, it runs all of the things th
 This is registered globally:
 
 **`app/Http/Kernel.php`**
-```php?start_inline=1
+```php
 // snip
 class Kernel extends HttpKernel
 {

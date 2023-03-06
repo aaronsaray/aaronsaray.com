@@ -1,10 +1,12 @@
 ---
-layout: post
 title: PHP Templating Languages Indicate a Problem Elsewhere
+date: 2016-08-16
 tags:
 - php
 ---
 I can't help but think a lot of PHP applications have a problem.  These beautifully crafted, object oriented, highly engineered applications are still making one vital mistake.  And that's using one of the [various](http://twig.sensiolabs.org/) [templating](http://platesphp.com/) [libraries](http://www.smarty.net/) or languages that PHP has.
+
+<!--more-->
 
 So - why do we use these - and what's the problem/solution?
 
@@ -25,7 +27,7 @@ This argument is simple: Front end or designers can't know the extreme complexit
 
 So, in Twig, you have a for loop - which is very similar to a foreach in PHP - and a simple output statement in the loop.  What's troublesome to me is that the user now has to know that there are two syntaxes in Twig.  The brace-parenthesis which indicates a functional call and double-brace which indicates an output.
 
-```php?start_inline=1
+```php
 <ul>
 <?php foreach ($things as $thing) : ?>
   <li><?= $thing ?></li>

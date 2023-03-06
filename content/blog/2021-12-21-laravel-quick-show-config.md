@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Command to Quickly Show Config in Laravel
+date: 2021-12-21
 tags:
 - php
 - laravel
 ---
 What if you need to see your config quickly in Laravel from the command line? And you don't want to use Tinker? Let me show you how I do it...
+
+<!--more-->
 
 First of all, I'm not sure if I should even write this entry. I kind of feel like this is cheating or not a "best practice" but I can't put my finger on it.  Maybe it's because it's never really a good idea to be plastering secrets to the screen.  But anyway...
 

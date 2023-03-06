@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Scanning for Unfiltered Content Automatically with PHP
+date: 2009-09-15
 tags:
 - php
 - security
 ---
 A friend of mine posed a question: Do you know of any good PHP based vulnerability scanners?  I told him I did not (add any in the comments, if you know! :) ) - but it wouldn't be that hard to build one.  He asked me to give him a code example, so here goes:
+
+<!--more-->
 
 ### The Goals
 
@@ -46,7 +48,7 @@ I have two really simple pages for our test site, the form itself and the 'login
 ```
 
 **`testsubmit.php`**
-```php?start_inline=1
+```php
 if ($_POST['username'] == 'MYUSER' && $_POST['password'] == 'MYPASS') {
   print 'you have logged in';
 }
@@ -61,7 +63,7 @@ As you can see, if the login credentials are not correct, it prints the unfilter
 
 The comments should help the interpretation of this script, so I won't ramble...
 
-```php?start_inline=1
+```php
 /** set target, payload **/
 $target = 'http://localhost/testform.html';
 $payload = '<script>alert("word!");</script>';

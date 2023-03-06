@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Reminder That Target Blank Links Are Not Safe
+date: 2018-09-04
 tags:
 - javascript
 - html
 - security
 ---
 **tldr;** Remember to use `rel="noopener"` on `target="_blank"` links where you do not control the destination.
+
+<!--more-->
 
 When we consider sanitizing data, we think a lot about what's on our page. We want to make sure no javascript is inserted into our page. Once you get past our domain, though, all bets are off and we don't care.
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Google Map Markers Distorted with Bootstrap
+date: 2013-05-28
 tags:
 - css
 ---
 On a recent project, the dev team installed [Twitter Bootstrap](http://twitter.github.io/bootstrap/) as the base for our CSS.  For some reason, I was the only one seeing a problem with Google Maps.  Their Windows and Mac browsers of both Chrome and Firefox were displaying the marker fine.  (Part of me doesn't believe that entirely but....).  At any rate, my Chrome browser on ubuntu was not showing the marker properly.  This is what it looked like:
+
+<!--more-->
 
 [![before](/uploads/2013/before.png)](/uploads/2013/before.png){: .thumbnail}
 

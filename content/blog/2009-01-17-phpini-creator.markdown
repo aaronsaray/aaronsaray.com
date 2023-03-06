@@ -1,10 +1,12 @@
 ---
-layout: post
 title: PHP.ini creator
+date: 2009-01-17
 tags:
 - php
 ---
 While listening to someone complain through twitter about their MySQL conf file, I came up with a cool idea: what if I created a PHP.ini creator that would suggest changes to your php.ini file as well as generate an updated version?
+
+<!--more-->
 
 ### Enter PHPIniCreator
 

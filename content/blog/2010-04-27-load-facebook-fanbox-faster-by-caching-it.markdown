@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Load Facebook Fanbox Faster by Caching it
+date: 2010-04-27
 tags:
 - php
 ---
 I wasn't in favor of the Facebook fanbox on the site I was working on... but that's what the client wanted - and that is what they get.  I added it and moved on.  Well, later, I started noticing a bit of errors in my Javascript Error log.  I looked back at the newest edition: the fanbox.  Depending on where I was connecting from, that box would take another 3 to 20 seconds to load.  During that time, it was causing my page to appear to keep loading.  My fear was that other web users would think the page is not done loading and have a bad experience on the web site.
+
+<!--more-->
 
 I took a look at all the requests being generated with the firebug net request console and was completely blown away.  It was loading tons of javascript and CSS - all things we had no use for.  To top it off, it lowered my ySlow grade :)
 
@@ -88,7 +90,7 @@ The `getHTML()` function simply opens up a connection and retrieves the HTML.  I
 
 Moving on, I added the following method:
 
-```php?start_inline=1
+```php
 public function write()
 {
   $this->_parseHTML();
@@ -99,7 +101,7 @@ public function write()
 
 This is pretty self explanatory. It just calls three internal methods, which I'll cover next.
 
-```php?start_inline=1
+```php
 protected function _parseHTML()
 {
   $fancountExp = '/<span class="total">(.*?)<\/span>/';
@@ -119,7 +121,7 @@ protected function _parseHTML()
 
 Here, there are just three regular expressions used to parse out various bits of information from the retrieved HTML.  First, the fan count.  Then, all the fan boxes (which are a tags, span tags and img tags).  Finally, it gathers the page information itself.  This allows the owner of the page to change the page name - and our code not to break!  As you can see, it assigns all of the values to the class internally.  Let's look at the next method.
 
-```php?start_inline=1
+```php
 protected function _buildOutput()
 {
   $params = array(
@@ -165,7 +167,7 @@ The most notable thing about this example is that we replace the image tag from 
 
 Finally, the last function is pretty simple:
 
-```php?start_inline=1
+```php
 protected function _writeOutput()
 {
   $file = APPLICATION_PATH . '/views/partials/facebookfanbox.phtml';

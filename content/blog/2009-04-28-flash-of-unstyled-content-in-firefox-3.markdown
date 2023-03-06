@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Flash of Unstyled Content - in FireFox 3
+date: 2009-04-28
 tags:
 - css
 - html
 - javascript
 ---
 So I've heard of the [Flash of Unstyled Content](http://bluerobot.com/web/css/fouc.asp/) before - but never really had this problem.  I always use a `link` tag for my stylesheets.
+
+<!--more-->
 
 However, I just ran into it today - in FireFox even with a `link` tag...
 

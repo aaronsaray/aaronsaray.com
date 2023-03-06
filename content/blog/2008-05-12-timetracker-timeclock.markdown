@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Timetracker Timeclock
+date: 2008-05-12
 tags:
 - php
 ---
 The 102 Degrees Timeclock software package is a very simple interface for keeping track of time.  Instead of purchasing a timeclock, you could resurrect an old laptop and run this software on it.  With a very simple clean interface, even beginning computer users will feel comfortable. The timeclock has .csv generation for reporting - which can easily be opened in Microsoft Excel.  The entire interface is web based.
+
+<!--more-->
 
 [![Time tracker](/uploads/2008/timetracker-screenshot-300x133.gif)](/uploads/2008/timetracker-screenshot.gif){: .thumbnail}{: .pull-right}
 

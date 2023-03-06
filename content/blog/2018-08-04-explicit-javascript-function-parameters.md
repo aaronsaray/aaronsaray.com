@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Be Explicit with Your JS Function Parameters
+date: 2018-08-04
 tags:
 - javascript
 - react
 - nodejs
 ---
 During a code review, a coworker showed me a piece of code for a stateless React component that was similar to this:
+
+<!--more-->
 
 ```javascript
 const sizer = (props) => {

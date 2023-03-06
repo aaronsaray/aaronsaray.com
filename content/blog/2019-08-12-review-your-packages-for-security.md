@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Remember to Review Your Package Code for Security
+date: 2019-08-12
 tags:
 - php
 - laravel
 - security
 ---
 Open source software is wonderful for many reasons.  One of the best is we can see and inspect the software for vulnerabilities.  But, far too many people actually do this.  Let me demonstrate, using a Laravel package, how this lack of review might backfire and cause you grief.
+
+<!--more-->
 
 > It's important to note that this attack vector is not solely a problem with Laravel.  A lot of projects and code are configured to trust libraries from the package providers.
 
@@ -100,7 +102,7 @@ Just by downloading this newly publicly available log file, the attacker has use
 
 Imagine I have this very simple admin interface:
 
-```php?start_inline=1
+```php
 Route::get('admin', function () {
     return view('admin');
 })->middleware('auth');

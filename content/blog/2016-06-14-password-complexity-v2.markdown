@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Password Complexity v2
+date: 2016-06-14
 tags:
 - php
 - ux
 ---
 Every year, they come out with a list of the top 20 most used passwords and it makes me wonder... how many users on any one of my websites are using those passwords?  
+
+<!--more-->
 
 So my first thought is to go the route of using password complexity meters - maybe check to see that there is one letter, one number, there is a special symbol, a capital letter, etc... You've seen these.
 

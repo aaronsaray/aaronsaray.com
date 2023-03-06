@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Musings on GitHub
+date: 2018-05-28
 tags:
 - git
 - misc-web
 ---
-[GitHub](https://github.com) is one of the most useful tools I have in my arsenal.  With over 100 repositories (some of which are private), it's the best $7/mo I spend.  However, there are a couple things about GitHub you might not know.
+[Github](https://github.com) is one of the most useful tools I have in my arsenal.  With over 100 repositories (some of which are private), it's the best $7/mo I spend.  However, there are a couple things about GitHub you might not know.
+
+<!--more-->
 
 ### You Can Archive Repositories
 

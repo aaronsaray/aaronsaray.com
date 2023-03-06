@@ -1,6 +1,6 @@
 ---
-layout: post
 title: How to make a Great MySpace Layout
+date: 2007-04-04
 tags:
 - css
 - html
@@ -8,6 +8,8 @@ tags:
 - misc-web
 ---
 In this posting, I'm going to share the steps to making a slimmed down, cleaner, nicer layout for MySpace to help showcase your personal interests, your band, or your business.
+
+<!--more-->
 
 ### Always Develop Locally
 
@@ -135,7 +137,7 @@ If you don't know PHP and don't have an understanding of programming, this part 
 
 The first thing I wanted to do was get my friend count. Locally I was able to use `file_get_contents()` with a remote URL. My hosting provider had `allow_url_fopen` turned off however. So I had to create my own hacked up function (side note: I should point out that I usually code a lot nicer than this – but in the spirit of myspace, I hacked everything together too). I created the function `get_contents()` to use in place of `file_get_contents()`
 
-```php?start_inline=1
+```php
 function get_contents($url)
 {
   $parts = explode('/', $url, 2);
@@ -159,7 +161,7 @@ function get_contents($url)
 
 The first thing I do is read in the profile page (yay – the content is still there – its just been hidden with CSS).
 
-```php?start_inline=1
+```php
 $f = get_contents(
   'profile.myspace.com/index.cfm?fuseaction=user.viewprofile&amp;friendid=#######'
 );
@@ -169,7 +171,7 @@ $f = get_contents(
 
 Because of no remote text, I have to create an image with my friend count. In order to do that, I wrote a quick regular expression to find my friend count. Then, a new image is created with the GD library, filled with an off black background, and text added with a bluey color. Finally, its written out to a public directory so that I can add it as an item in my HTML part of my profile. Here is the code:
 
-```php?start_inline=1
+```php
 preg_match ('/<span class="redbtext">(\d+)<\/span>/', $f, $x);
 $friendcount = $x[1];
 $countpic = imagecreatetruecolor(300, 50);
@@ -196,7 +198,7 @@ I made a collage.
 
 I wrote a few regular expressions based on table layouts... but that just turned out really bad. I finally did another approach. It looks like they have an ID system set up for your friends links... so I wrote a regular expression based off of that. This is what it is:
 
-```php?start_inline=1
+```php
 $m = '<a href\="http.*?id\="ctl00_Main_ctl00_UserFriends.*?src=\"(.*?)\"';
 $c = preg_match_all('/' . $m . '/s', $f, $matches);
 $items = array_reverse($matches[1]);
@@ -206,7 +208,7 @@ First off, it gets all the full paths for the images, then it aggregates them in
 
 Once again, read in each file's content. You could use the GD's `createimagejpg()` with remote URLs ... but I couldn't. (random side note: yes, I am not allowing for non jpgs... it might crash.) I had to end up using `wget` through `passthru()` call (dumb: why have remote urls off but allow system calls?). I did this:
 
-```php?start_inline=1
+```php
 foreach ($items as $item) {
   passthru ("wget {$item}");
 }
@@ -214,7 +216,7 @@ foreach ($items as $item) {
 
 Then I read them all in using `glob(*.jpg)` into an array that we iterate through... but first: create your image to be used as the main item.
 
-```php?start_inline=1
+```php
 $mainpic = imagecreatetruecolor(450, 170);
 $fill = imagecolorallocate($mainpic, 16, 16, 16);
 imagefill($mainpic, 0, 0, $fill);
@@ -224,7 +226,7 @@ Of course, now that I have an array of jpg files, the importance is no longer av
 
 Finally, the final loop:
 
-```php?start_inline=1
+```php
 foreach ($jpgs as $jpg) {
   $pic = imagecreatefromjpeg($jpg);
   $size = getimagesize($jpg);
@@ -241,7 +243,7 @@ And ...drum roll please... the friend collage.
 
 Finally, the friends are written to a public directory:
 
-```php?start_inline=1
+```php
 imagepng ($mainpic, '../fs.png');
 ```
 

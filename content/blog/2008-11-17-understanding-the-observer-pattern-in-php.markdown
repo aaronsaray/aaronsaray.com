@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Understanding the Observer Pattern in PHP
+date: 2008-11-17
 tags:
 - php
 - programming
 ---
 For a while, I've been looking at plugin systems, but not really fully understanding the pattern behind them.  Don't get me wrong, I see how they work, but I didn't know the reason why - the theory or pattern behind it.  Well turns out, generally, they're based upon the observer pattern.  I decided to write my own observer pattern demonstration here.
+
+<!--more-->
 
 Our example is going to be very simple: post a message to twitter.  We're not going to work with any credentials or anything, just want to post a message.  I do want to add an observer that will shorten any url however.  In this example, we'll be making the logic classes stubs (you can create these later), and using `[url]` to stand for an URL we might replace.
 
@@ -15,7 +17,7 @@ Let's start in:
 
 Remember, we're just going to have some blank stub logic classes here.  They are for demonstration purposes only.
 
-```php?start_inline=1
+```php
 class twitterTransport
 {
   public function __construct()
@@ -38,7 +40,7 @@ Pretty simple, the first class all it does is post to twitter with a public meth
 
 Ok - as promised, here is our twitter message class:
 
-```php?start_inline=1
+```php
 class twitterMessage
 {
   public $message = '';
@@ -54,7 +56,7 @@ class twitterMessage
 
 We're going to jump a head here and show what code we'll be using to add the url shortener as well as post the message.  It's really short - but it'll give us an idea of what class we need to create next:
 
-```php?start_inline=1
+```php
 $tweeter = new twitterTransportObservable();
 $tweeter->registerObserver('PREPOST', new urlShortenerObserver());
 $message = new twitterMessage("this is my message [url]");
@@ -75,7 +77,7 @@ So far so good.
 
 So now we know we need to build `twitterTransportObservable`.  I'm going to post the code here, but don't worry, we'll take it apart, step by step:
 
-```php?start_inline=1
+```php
 class twitterTransportObservable
 {
   protected $_observers = array();
@@ -125,7 +127,7 @@ Whew, that was a lot - but we have one more part left:
 
 We have another class that is used to observe or watch the observable classes.  In this case, we wanted to have any URLs shortened before we posted a message to twitter... so we registered this observer with `PREPOST`.  During the Observable's `_notify()` function, we called this observerable class's `notify()` method.  So, lets finally take a look at the code:
 
-```php?start_inline=1
+```php
 class urlShortenerObserver
 {
   public function notify($object)
@@ -146,7 +148,7 @@ Ok - well this was a pretty simple example of this behavior.  There are definite
 
 In case you want to run it yourself:
 
-```php?start_inline=1
+```php
 class twitterTransport
 {
   public function __construct()

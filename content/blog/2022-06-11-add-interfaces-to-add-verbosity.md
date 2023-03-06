@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Add Interfaces to Laravel to Increase Code Readability and Verbosity
+date: 2022-06-11
 tags:
 - php
 - laravel
 ---
 There seems to be an endless debate: clearly written code doesn't need comments _vs_ comments are needed to explain code and give context.  I can see both sides of this debate, but there is a middle ground. Let me show you one way.
+
+<!--more-->
 
 The biggest concern I have with code I read is about the intent of the author, not the intent of the code.  Code is easy to read, what the author meant can be harder. That makes it harder to code review. Sometimes code is perfectly written to do a thing, but fails because it solved something elegantly that was not the intent.
 

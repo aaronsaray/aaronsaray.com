@@ -1,10 +1,12 @@
 ---
-layout: post
 title: How to Log PHP Errors like a Pro
+date: 2010-05-25
 tags:
 - php
 ---
 The error log can be fun to parse through and figure out what happened.  Ok, so if you just read that and agreed, you need to move on.  This is not for you.  That's not fun.  However, you CAN make error gathering easier on yourself by including the right information in the error log.  To top it off, you can present your users with something that is a bit more 'friendly' than the standard error display or blank page.  Let's check it out.
+
+<!--more-->
 
 ### Create an Error Handling Class
 
@@ -14,7 +16,7 @@ All of my error handling is going to be pretty much uniform.  In order to do thi
 
 The first thing I want to do is grab my PHP errors.  I'll make the following code:
 
-```php?start_inline=1
+```php
 class errorhandlers
 {
   public static function error_handler($errno, $errstr, $errfile, $errline, $errcontext)
@@ -68,7 +70,7 @@ The `beFriendly()` method simply redirects a user to a friendlier "ruh roh" type
 
 To handle exceptions, the following method is added to the class:
 
-```php?start_inline=1
+```php
 public static function exception_handler($exception)
 {
   $string = str_replace("\n", ' ', var_export($exception, TRUE));
@@ -90,7 +92,7 @@ This is much more simple.  The exception details are exported to a string.  The 
 
 The last thing to do is to register each of these error handlers.  That is done with this simple code:
 
-```php?start_inline=1
+```php
 set_error_handler(array('errorhandlers', 'error_handler'));
 set_exception_handler(array('errorhandlers', 'exception_handler'));
 ```

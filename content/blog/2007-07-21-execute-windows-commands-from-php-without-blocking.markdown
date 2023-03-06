@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Execute Windows Commands from PHP without blocking
+date: 2007-07-21
 tags:
 - php
 - windows
 ---
 When researching for my [live error reporting posting]({% post_url 2007-07-20-live-combined-error-reporting-for-apache-and-php-during-development %}), I tried running some [`exec`](http://us.php.net/manual/en/function.exec.php) and [`passthru`](http://us.php.net/manual/en/function.passthru.php) command tests by starting up calc.exe.  While they executed the command correctly, I got some weird results in my script ... which I suppose now make sense.  Lets see how we can start programs in Windows, and not run into the same issues that I did.
+
+<!--more-->
 
 **What happened?**
 
@@ -15,7 +17,7 @@ Using `exec`, `passthru`, etc, I was able to execute my windows process.  Howeve
 
 Using the Com object in windows:
 
-```php?start_inline=1
+```php
 $runCommand = 'calc.exe';
 $WshShell = new COM("WScript.Shell");
 $oExec = $WshShell->Run($runCommand, 7, false);

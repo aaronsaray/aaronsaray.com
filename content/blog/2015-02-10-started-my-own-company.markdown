@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Started my own company
+date: 2015-02-10
 tags:
 - business
 ---

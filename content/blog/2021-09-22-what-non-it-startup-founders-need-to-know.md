@@ -1,10 +1,12 @@
 ---
-layout: post
 title: What Non-IT Startup Founders Need to Know
+date: 2021-09-22
 tags:
 - business
 ---
 If you're going to try to launch a startup that has a website or app as its main product, and you don't have a technical co-founder, you should read this blog entry. It'll save you a lot of time, headaches, and a ton of money.
+
+<!--more-->
 
 ## What am I going to learn?
 

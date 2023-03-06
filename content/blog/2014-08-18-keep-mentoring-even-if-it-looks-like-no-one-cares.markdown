@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Keep Mentoring, Even If It Looks Like No One Cares
+date: 2014-08-18
 tags:
 - business
 - management
 ---
 I've had a lot of people come to me for various mentoring opportunities.  They'll ask for help, follow up once or twice, and then just disappear.  I'm left wondering: _Did I make a measurable impact on their lives?_  
+
+<!--more-->
 
 One of my favorite requests has to do with resumes.  I hire a number of technical people and I see a lot of resumes.  When a person in my network is looking to get a new job, it's not uncommon that they'll send me their resume to review.  I'll give a bit of feedback, let them know my thoughts, and then move on.  Sometimes, I'll actually get the chance to see the resume after my feedback... sadly, more often than not, there's almost no change.
 

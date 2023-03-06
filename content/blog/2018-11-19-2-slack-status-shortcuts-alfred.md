@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 2 Ways to Use Afred to Set Status on Slack
+date: 2018-11-19
 tags:
 - business
 ---
 I'm a huge fan of [Alfred](https://alfredadd.com) - but I had to upgrade to get the pro version to get workflows.  Because I use Slack a lot, I've been trying to set up status automation and workflows.  When using my phone, I have an automated system that sets my status. You can find that [here](https://github.com/aaronsaray/phone-status).  But, what about using Alfred for some automation?
+
+<!--more-->
 
 ### The Slash Command
 

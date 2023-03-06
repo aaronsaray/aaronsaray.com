@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Network Site JEMDiary.com updated
+date: 2007-03-01
 tags:
 - news
 ---

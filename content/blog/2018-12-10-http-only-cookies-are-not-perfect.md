@@ -1,12 +1,14 @@
 ---
-layout: post
 title: HTTP Only Cookies Aren't Perfectly Secure
+date: 2018-12-10
 tags:
 - php
 - javascript
 - security
 ---
 When you're creating cookies on your server side application, it's good security practice to flag the cookie as HTTP Only.  This way, it instructs the browser that it should sandbox this cookie from the client side scripts.  It still will send it between client and server on each subsequent request, but javascript can't access it directly.
+
+<!--more-->
 
 With most things, one single mechanism isn't the only way to secure your website.  Security is multi layer in depth strategies.  That's important to understand when you are using HTTP Only cookies.
 

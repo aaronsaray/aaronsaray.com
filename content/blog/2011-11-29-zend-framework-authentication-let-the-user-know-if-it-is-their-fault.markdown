@@ -1,16 +1,18 @@
 ---
-layout: post
 title: 'Zend Framework Authentication: Let the user know if it is their fault'
+date: 2011-11-29
 tags:
 - zend-framework
 ---
 One of the things that is irritating is logging into a website with credentials that you know are right, only to have it fail.  Then, later, you find that the site was malfunctioning.  By then, maybe you requested a new password, or had to at least waste time looking up your old password.  With `Zend_Auth`, however, we can prevent user's from having that issue.
 
+<!--more-->
+
 Side note: some schools of thought want to go the extra mile for security and never give the visitor any extra information than what is required.  I believe this to some extent.  I will say the username or password is wrong (I won't say that the username exists, but the password is wrong.)  However, I don't think it's out of line to alert the user if your system is having authentication issues. 
 
 So, with `Zend_Auth`, the `authenticate()` method returns a `Zend_Auth_Result`.  This, of course, has the `isValid()` method which everyone is familiar with.  However, there are a number of reasons why this could return false.  Whatever reason generated the invalid response will be returned by the `getCode()` method.  These include:
     
-```php?start_inline=1
+```php
 const FAILURE                        =  0;
 const FAILURE_IDENTITY_NOT_FOUND     = -1;
 const FAILURE_IDENTITY_AMBIGUOUS     = -2;
@@ -24,7 +26,7 @@ When I generate error messages for the user, I tend to make a method called `isF
 
 This is usually a very simple method:
 
-```php?start_inline=1
+```php
 /**
  * Used to determine if this is a user failure or an internal failure on our part
  * 

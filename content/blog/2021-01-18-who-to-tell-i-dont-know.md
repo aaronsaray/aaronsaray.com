@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Who Do I Tell "I don't know" To?
+date: 2021-01-18
 tags:
 - business
 ---
 When interviewing a junior programmer a couple weeks ago, I was asked a very insightful question: "Who can I tell 'I don't know' to?"  At first, I wasn't sure what they were exactly aiming at with the question.  But, as I formulated an answer, I realized this was a great question.  Let me share a longer version of the answer with you.
+
+<!--more-->
 
 ### It's OK To Say You Don't Know
 

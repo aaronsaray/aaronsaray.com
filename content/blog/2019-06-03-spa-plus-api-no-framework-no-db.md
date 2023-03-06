@@ -1,12 +1,14 @@
 ---
-layout: post
 title: SPA No Framework, API No Database
+date: 2019-06-03
 tags:
 - php
 - javascript
 - jekyll
 ---
 The average webpage seems to contain tons of bloat and increase in size - and this is no good.  I decided that I wanted to create a proof-of-concept website that would act like a single page application that didn't require a framework like Vue or React.  I only need to support the latest evergreen browsers.
+
+<!--more-->
 
 Then, I decided to take it one step further: I didn't really want to run a backend service and spin up some hosting.  Sure, I could use something like Firebase, but I really just wanted to host everything for free on Netlify.
 

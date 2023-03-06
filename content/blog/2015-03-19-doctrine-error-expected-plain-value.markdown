@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Doctrine Error: Expected Plain Value'
+date: 2015-03-19
 tags:
 - php
 ---
 I'm so used to PHP's liberal allowance for single and double quotes, that I forget that other languages and tool-sets don't play that way.  Case in point, my most recent error:
+
+<!--more-->
     
     [Syntax Error] Expected PlainValue, got ''' at position 378 in class My\Bundle\App\Entity\ItemDefinition.
 

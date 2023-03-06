@@ -1,6 +1,6 @@
 ---
-layout: post
 title: 'SimplePHPMailer: now with required fields'
+date: 2010-08-10
 tags:
 - php
 ---

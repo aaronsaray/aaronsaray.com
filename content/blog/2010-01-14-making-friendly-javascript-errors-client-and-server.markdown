@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Making Friendly Javascript Errors - Client and Server
+date: 2010-01-14
 tags:
 - javascript
 ---
 The more I look at my code I wrote in my earlier posts about the [unknown _popupControl() function]({% post_url 2009-09-29-unknown-function-_popupcontrol %}) and the [Javascript Error Handler]({% post_url 2009-09-23-javascript-error-handler %}), I see opportunities to leverage these errors into useful user interactions.
+
+<!--more-->
 
 ### Doing a service for your visitor
 
@@ -89,7 +91,7 @@ This means that we put a little bit more of the responsibility for determining t
 
 Next, I had to edit my **`error.php`** file.  It now contains this code:
 
-```php?start_inline=1 
+```php 
 $keys = array();
 $keys['_spywareWindowGenerator'] = 'badSypware.png';
 $keys['otherBadGuy'] = 'otherBadGuy.png';

@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Host PHPUnit Code Coverage Image in Your Repo
+date: 2020-12-15
 tags:
 - php
 - testing
 - git
 ---
 I'm a sucker for those little badges at the top of the README files in Github repos. I know you can get them from external services, but could I host my own? Let's find out.
+
+<!--more-->
 
 **tldr;** You can host your PHPUnit code coverage as an image in your Github repo using Github actions.  You can see my example repository [here](https://github.com/aaronsaray/php-test-coverage-image-from-gh-actions).  
 It looks a little like this: ![Preview](https://raw.githubusercontent.com/aaronsaray/php-test-coverage-image-from-gh-actions/main/docs/code-coverage.png)

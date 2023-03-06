@@ -1,16 +1,18 @@
 ---
-layout: post
 title: Commenting is More than Opinion
+date: 2016-03-14
 tags:
 - php
 ---
 In an earlier column, I discussed the advantage of using longer and more verbose variable and method names.  When you program using this more descriptive style, the code is easier to understand and more maintainable.  However, a short and concise method with a revealing name may not always be sufficient when it comes to complex processes.  To fill this gap, PHP has comments.  
 
+<!--more-->
+
 ### Episode 4: Commenting is more than just giving your opinion
 
 There are two different reasons why you might create comments in your code: automated code documentation systems and explanation of complex concepts or processes.  But first, let me share with you my favorite comment ever:
 
-```php?start_inline=1
+```php
 // do the magic
 ```
 
@@ -28,7 +30,7 @@ When creating comments for the automated code documentation systems, it is impor
 
 As a programmer learns PHP, their take on complex methods and the value of commenting follows a predictable path.  First, there are no comments.  Everything is a jumble of code that will make any other programmer's head spin.  Then, they will inevitably learn about commenting - and then go overboard!  You'll see stuff like this:
 
-```php?start_inline=1
+```php
 /** add the two numbers here **/
 function addTwoNumbers($first, $second)
 {

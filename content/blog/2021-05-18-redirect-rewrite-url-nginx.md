@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Rewrite or Redirect URL with NGINX
+date: 2021-05-18
 tags:
 - nginx
 - misc-web
 ---
 With a few steps, you can create redirects using your NGINX server configuration. Let's see how.
+
+<!--more-->
 
 > This is an article that originally appeared on RedirectURL, a site I built a while ago.  Find out the history of that [site here]({% post_url 2020-10-31-redirecturl-experiment-is-done %})
 

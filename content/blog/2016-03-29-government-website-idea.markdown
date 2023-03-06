@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Government Website Idea
+date: 2016-03-29
 tags:
 - business
 ---
 I find it very difficult to find out information about my local elected officials.  Even the federal website for congress mentions that there is no central database of email addresses and contact information for their members - which is just crazy to me.  
+
+<!--more-->
 
 Any way, I came up with this website that one might call MyGovernment.io.  The goal is simple - to put this data into digestible formats.  There is very little useful information unless you're willing to search really deep and take notes.
 

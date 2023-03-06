@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Illustrating Why Fillable and Validated Matter in Laravel
+date: 2021-02-22
 tags:
 - php
 - laravel
 - security
 ---
 When given a choice of methods and ways to do something, it might not be clear which way is the best. As programmers, we tend to pick the easiest, then. However, the easiest can have security implications.  Let me illustrate why we should use more stringent controls in a Laravel project.
+
+<!--more-->
 
 ### Example Code
 

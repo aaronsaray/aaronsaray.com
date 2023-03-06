@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Put Your Salary Range in Your Job Posting, Please!
+date: 2019-01-14
 tags:
 - business
 - management
 ---
 Let's start out with the basic request or statement:
+
+<!--more-->
 
 **Please, put your salary range for an open position in your job posting.**
 

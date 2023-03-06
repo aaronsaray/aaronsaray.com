@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Use Anonymous Classes to Test Traits
+date: 2017-05-11
 tags:
 - php
 - phpunit
 - testing
 ---
 I'm guilty of creating stub-like classes in my tests to unit test traits, sometimes.  So, you end up with a special class inside your unit test file, perhaps at the bottom, that is empty but only extends the trait or something like that.  This is not a good idea, but it was my only way that I could figure out how to unit-test traits separately - especially if they were made of protected methods.  
+
+<!--more-->
 
 But there is a better way: use anonymous classes to test your trait.  
 
@@ -28,7 +30,7 @@ trait FilterToLCTrait
 
 And now, let's take a look at one of our tests in our test case.
 
-```php?start_inline=1
+```php
 $class = new class { use FilterToLCTrait; };
 $this->assertEquals('abc', $class->filterStringToLC('AbC'));
 ```
@@ -39,7 +41,7 @@ The only trouble you might have is if your trait has a protected method.  I tend
 
 Let's imagine now that the signature for the method has changed from `public` to `protected` - and we still want to test this smaller unit.
 
-```php?start_inline=1
+```php
 $class = new class { 
   use FilterToLCTrait; 
   public function proxyFilterStringToLC()

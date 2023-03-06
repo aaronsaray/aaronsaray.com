@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Creating a Google Fusion Table from a Google Drive Spreadsheet
+date: 2015-04-21
 tags:
 - business
 - misc-web
 ---
 Wow!  Enter [Google Fusion Tables](https://support.google.com/fusiontables/answer/2571232) - an easy way to show, manipulate, sort and display data. 
+
+<!--more-->
 
 I wanted to see how easy this actually was.  I was surfing around on one of my favorite websites, Milwaukee Biz Journal, and I saw this article: [MKE City Building Values](http://www.bizjournals.com/milwaukee/blog/real_estate/2015/04/find-out-the-values-of-some-of-the-major-downtown.html).  I thought, that slideshow seems like a great source of data I'd like to see in sortable, mappable information.
 

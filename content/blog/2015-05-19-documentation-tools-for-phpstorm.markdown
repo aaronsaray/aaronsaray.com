@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Documentation Tools for PHPStorm
+date: 2015-05-19
 tags:
 - phpstorm
 ---
 I like when projects have documentation, yet I hate writing it.  That's why I rely on [phpDocumentor](http://www.phpdoc.org/) to do most of my documentation for my project.  Recently, I've also discovered a new tool for documenting my API: [ApiDoc](http://apidocjs.com/).  I've also been relying heavily on vagrant for my projects.  
+
+<!--more-->
 
 So, when it came to generating this documentation, I wanted to make sure that I didn't have to do too much work.  So, I configured PHPStorm with external tools over SSH using vagrant configurations to do this.
 

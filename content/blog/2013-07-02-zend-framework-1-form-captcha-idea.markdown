@@ -1,21 +1,23 @@
 ---
-layout: post
 title: Zend Framework 1 Form Captcha Idea
+date: 2013-07-02
 tags:
 - zend-framework
 ---
 One of the worst things with CAPTCHAs are actually having to solve them.  One of the things my team and I use for our projects is the hidden field CAPTCHA.  This is a technique that adds a field to a form, but uses CSS to hide it.  If that form value is filled in, we can guess that the submitter was a bot reading the HTML - and not an actual user.  
 
+<!--more-->
+
 In a Zend_Form, we might do this:
 
-```php?start_inline=1
+```php
 $captcha = new Application_Validate_CaptchaHiddenField();
 $this->addElement('captcha', 'userdetect', array('captcha'=>$captcha));
 ```
 
 To create this empty captcha field, our validator looks like this:
 
-```php?start_inline=1
+```php
 class Application_Validate_CaptchaHiddenField extends Zend_Captcha_Word
 {
   /**

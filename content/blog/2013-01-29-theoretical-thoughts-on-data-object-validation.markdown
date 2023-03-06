@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Theoretical Thoughts on Data Object Validation
+date: 2013-01-29
 tags:
 - php
 - programming
 ---
 One of the things I struggle with is the validation of data objects.  I submit that there is such a thing as a dumb data object and a validation domain object.  The validation object could also be some sort of helper or a service I guess.  But, the point is, that the main data object doesn't have validation on it.  It has coupled objects that provide that validation.
+
+<!--more-->
 
 One caveat could be validation that restricts the values within known bounds.  A title can't be longer than 250 characters.  Price to produce can't be a negative amount.  Things like that.
 

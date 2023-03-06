@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Why Some Bosses May Hate Remote Work
+date: 2019-03-11
 tags:
 - business
 - management
 ---
 First, to start out, I need to make one thing abundantly clear: This piece is just a bunch of assumptions, generalizations and feelings. I've gathered these together after all of my own experiences.  That's why I add the most important auxiliary verb **may**.
+
+<!--more-->
 
 I think its important to understand some of these points, however, for two reasons.  First, if you're looking to jump to remote work, it's good to be educated about some of the pushback you might receive.  Second, if you're already remote working, your existing boss may not 100% appreciate that. It's good to understand some of these positions so you can help rectify some of the negative feelings.
 

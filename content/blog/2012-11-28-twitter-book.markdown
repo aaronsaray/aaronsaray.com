@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Twitter Book
+date: 2012-11-28
 tags:
 - business
 - ideas
 ---
 This idea is about the concept of grouping tweets in a meaningful way.
+
+<!--more-->
 
 The website TwitterBook would make collections of associated tweets.  Each collection is called a 'book' and has a title and a description.  Additionally, the collection has a unique link to identify that book and make it shareable.  
 

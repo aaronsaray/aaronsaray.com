@@ -1,10 +1,12 @@
 ---
-layout: post
 title: PHP application plugins - force the interface
+date: 2008-05-27
 tags:
 - php
 ---
 The other day I was experimenting with some PHP plugin scripts and trying to develop my own robust plugin system.  I started thinking: how can I guarantee that a 3rd party developer sticks to my plugin standards?
+
+<!--more-->
 
 Well the obvious answer is an interface.  But, I wanted to make sure that their plugin actually implemented it.
 
@@ -12,7 +14,7 @@ Well the obvious answer is an interface.  But, I wanted to make sure that their 
 
 I had previously only thought of `instanceof` as a way to verify if an object was of a specific type of class - but this can be extended to interfaces.  Let's check out my test code here:
     
-```php?start_inline=1
+```php
 interface pluginInterface
 {
   public function update();
@@ -53,7 +55,7 @@ So, let's say that every single `update()` method should do something to the obj
 
 See code:
 
-```php?start_inline=1
+```php
 interface pluginInterface
 {
   public function update(testObject $tO);
@@ -80,7 +82,7 @@ class testObject
 
 Sure!  Think about this: you install a 3rd party plugin, but you don't have time to review all of its code line by line.  Ok - so this malicious 3rd party plugin now wants to access your database connection and drop all of your records.   It expects to pass in the database connection to its update function... so it defines the function as this:
 
-```php?start_inline=1
+```php
 public function update(testObject $object, $dbConnection)
 ```
 

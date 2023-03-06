@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Host Static Website on GitHub Pages with SSL and WWW redirect
+date: 2018-10-01
 tags:
 - misc-web
 ---
 You may know that you can host a static site on [GitHub pages](https://pages.github.com/) - but what if you want to have a www redirect and also SSL?  This [isn't that hard](https://blog.github.com/2018-05-01-github-pages-custom-domains-https/) until you get to the www redirect.  That would require a subdomain and a second SSL cert, which they don't provide.  
+
+<!--more-->
 
 So, let me demonstrate how we can use GitHub Pages and Cloudflare to host your free GitHub pages website with SSL and www removal/redirect.  
 

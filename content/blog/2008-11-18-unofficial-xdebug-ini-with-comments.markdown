@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Unofficial xdebug ini - with comments!
+date: 2008-11-18
 tags:
 - php
 ---

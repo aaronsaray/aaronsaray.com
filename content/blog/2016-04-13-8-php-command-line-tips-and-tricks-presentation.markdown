@@ -1,6 +1,6 @@
 ---
-layout: post
 title: 8 PHP Command Line Tips and Tricks Presentation
+date: 2016-04-13
 tags:
 - php
 ---

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Why is Deleting Code OK but Fixing is Not?
+date: 2022-03-02
 tags:
 - programming
 - business
 ---
 One of the most painful things for programmers - whether you're in a startup or an established business - is leaving code alone that you know could be better. That should be better.  There are reasons for this - but what about when it comes to deleting code?
+
+<!--more-->
 
 First, we should talk about why we have to leave "crappy" code in place.  There's a difference between levels of crappy code.  There's code that 100% doesn't work. Then there's code that fails in certain situations, and we know the situations and the risks they bring. Then there's code that is ugly or out of standards, maybe even too complicated, but it works.  The problem with that code is that it's an opportunity cost based expense - that is, it's bad so when you do work on it, it takes too long, and you can't work on other things.
 

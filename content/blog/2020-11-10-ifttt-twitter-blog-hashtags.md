@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Tweeting Blogs with Hashtags Automatically with IFTTT Pro
+date: 2020-11-10
 tags:
 - javascript
 - twitter
 ---
 I've been trying to balance automation with interaction with my social media broadcasting. I want to automatically tweet new blog entries, yet I want to target hashtag trends. Luckily IFTTT Pro has launched and can help us do this.
+
+<!--more-->
 
 If you're not familiar with IFTTT Pro, you have to [check it out](https://ifttt.com/pro) - the regular IFTTT but with more features and scripting.  My idea was simple: use the existing applet I have to automatically tweet my blog entries but add hashtags. I could do that with the javascript that is now available with IFTTT Pro.
 

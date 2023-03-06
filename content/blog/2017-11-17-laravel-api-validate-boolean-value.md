@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Laravel 5.4 API/Request Validate Boolean
+date: 2017-11-17
 tags:
 - php
 - laravel
 ---
 For some API work in Laravel, I wanted to validate that the incoming request parameter was a boolean value.  At first I tried using the built in `boolean` slug validator but it didn't accept all of the 'boolean' values I wanted to use.  (Also there were weird scenarios where string values of `false` were triggering as true - like what I wrote about [here]({% post_url 2017-05-23-in-php-false-is-sometimes-true %}).
+
+<!--more-->
 
 In Laravel 5.4 (I mention this version because Laravel has recently updated so this validator format may not be the best anymore), I made the following validator:
 

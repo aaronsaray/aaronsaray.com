@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Internet Explorer CSS Hacks - Transparent PNG and Selectors
+date: 2008-02-23
 tags:
 - css
 ---
 As a reference for myself, I wanted to jot these things down.
+
+<!--more-->
 
 First off, lets look at some common css selectors - and how we can use them to identify styles for specific versions of IE.  (Note: I am way not into using hacks such as broken comments, etc, in CSS.  I'd rather write a selector)
 

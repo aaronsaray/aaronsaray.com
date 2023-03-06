@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'The Observer Pattern in PHP: Refactored'
+date: 2008-11-22
 tags:
 - php
 ---
 You may remember the article I wrote about the observer pattern in php - but it lacked some of PHP's advanced features.
+
+<!--more-->
 
 In this next example, I'm not going to explain the logic as much - read the original post for more - but I did comment it pretty thoroughly.  Here are the things that I added, however:
 	
@@ -18,7 +20,7 @@ In this next example, I'm not going to explain the logic as much - read the orig
 
 So, here is the code:
 
-```php?start_inline=1
+```php
 /**
  * twitter transport from "library" - on successful tweet will print it out
  */

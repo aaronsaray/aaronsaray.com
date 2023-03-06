@@ -1,16 +1,18 @@
 ---
-layout: post
 title: Moving files from one webserver to another using PHP script
+date: 2009-10-13
 tags:
 - php
 ---
 A while back, a colleague mentioned to me that he was moving his site from one webserver to another.  He hated having to FTP everything down, then reupload it.  Invariably, we've all done this - and forgot to apply proper file permissions, etc.
 
+<!--more-->
+
 ### Enter The Single PHP Script
 
 As a proof of concept, I developed the following PHP script.  Currently, the ftp credentials and path are hardset.  It simply grabs all the files in the specified directory including child directories, opens an FTP connection and puts them up there.  It finishes by applying the proper file permissions.  Without further rambling, here is the code:
 
-```php?start_inline=1
+```php
 /**
  * PHP Migrate Site
  * Proof of Concept

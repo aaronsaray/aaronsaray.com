@@ -1,12 +1,14 @@
 ---
-layout: post
 title: The Hardest Part of Mentoring is Knowing What and When to Share
+date: 2018-07-04
 tags:
 - business
 - programming
 - management
 ---
 I've written about [mentoring]({% post_url 2014-08-18-keep-mentoring-even-if-it-looks-like-no-one-cares %}) a [bunch]({% post_url 2016-03-28-cc6-confident-not-cocky %}) [before]({% post_url 2017-05-16-professional-connection-made-now-what %}) , so you know I'm a fan of it.  But, there's another aspect that has been bothering me lately.  The questions are simple:
+
+<!--more-->
 
 **When do I share? What do I share?**
 

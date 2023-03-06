@@ -1,6 +1,6 @@
 ---
-layout: post
 title: SimplePHPMailer
+date: 2008-04-24
 tags:
 - php
 ---

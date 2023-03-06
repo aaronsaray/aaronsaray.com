@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Export Git Project
+date: 2016-06-21
 tags:
 - git
 - phpstorm
 ---
 I manage any WordPress plugins I create using git.  In order to create a distribution of those, I need to zip up the source code and use that to upload to the marketplace (or directly upload).  This was easy with SVN - I just used an svn export command and there we go.
+
+<!--more-->
 
 Turns out there's a git command called [git archive](https://git-scm.com/docs/git-archive) which works basically the same way.  However, the cool thing about this is that it offers a built in ability to zip the file.  Either use the `--format` command line argument or just name your output path with `.tar` or `.zip` - and it'll do the proper compression for you.
 

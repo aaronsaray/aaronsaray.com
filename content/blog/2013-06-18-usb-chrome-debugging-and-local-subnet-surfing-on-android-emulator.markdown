@@ -1,12 +1,14 @@
 ---
-layout: post
 title: USB Chrome Debugging and Local subnet surfing on Android Emulator
+date: 2013-06-18
 tags:
 - linux
 - mobile
 - scripting
 ---
 Most of the development I do that needs to be tested on android is on a local subnet.  Generally, this is because I am running the servers in virtual machines that mimic the production environment.  When I want to test these websites via the android emulator, it would be nice to be able to surf to them locally (without putting them in a public QA environment) - as well as have the ability to use Android Chrome's USB Debugging.  
+
+<!--more-->
 
 [![android](/uploads/2013/android.png)](/uploads/2013/android.png){: .thumbnail}{: .pull-right}
 

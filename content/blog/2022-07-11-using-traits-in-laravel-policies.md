@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Use Traits in Laravel in Policies
+date: 2022-07-11
 tags:
 - php
 - laravel
 ---
 I love using [Policies](https://laravel.com/docs/9.x/authorization#creating-policies) in Laravel. A particularly useful feature is the interception of checks. But what if only some of our policies need that? That's where we can judiciously use traits.
+
+<!--more-->
 
 Let's take a look at a simple policy for a Company model.  I want to authorize a user to view a company. It should check to see if there is a relationship between the user and the company.  We're going to skip all the implementation of the policies into Laravel and our workflow - and just look at the policy itself.
 

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Service Class Methodology
+date: 2011-08-09
 tags:
 - programming
 - zend-framework
 ---
 There has been a lot of discussion on forums and throughout the object oriented PHP programming community about service classes.  This is just intensified by the Zend Framework model of development coupled with the changes in their design/architecture and vocal spokespeople.  I thought I'd throw my hat in the ring for this.
+
+<!--more-->
 
 > Disclaimer: I have been programming PHP for a decade.  I have been programming in general for nearly 2 decades now.  I am not a comp-sci university graduate, however.
 
@@ -19,7 +21,7 @@ The real life example of this could come in the form of a Zend Framework example
 
 First, for Zend Framework, I'm going to make a connection using ZF's database services.  This will be used later for loose-coupling in the service:
 
-```php?start_inline=1
+```php
 class Application_Model_DbTable_User extends Zend_Db_Table_Abstract
 {
   protected $_name = 'user';
@@ -28,7 +30,7 @@ class Application_Model_DbTable_User extends Zend_Db_Table_Abstract
 
 Next, I'm going to create a `User` object.  (You may notice some examples make the business object extend `Zend_Db_Table_Rowset` or similar classes.  This is coupling our object way too tightly to this particular data retrieval.  Our business object model shouldn't know about that!)
 
-```php?start_inline=1
+```php
 class Application_Model_User
 {
   public $id = 0;
@@ -46,7 +48,7 @@ In this example, I've added some business logic - creating a full name.
 
 Finally the service class would be needed to be created.  In our example, I'm going to demonstrate retrieving user row `#100`
     
-```php?start_inline=1
+```php
 class Application_Model_UserService
 {
   public function getUserById($id)

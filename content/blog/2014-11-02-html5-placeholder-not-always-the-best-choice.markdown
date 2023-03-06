@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 'HTML5 Placeholder: Not Always the Best Choice'
+date: 2014-11-02
 tags:
 - html
 - misc-web
 ---
 One of the applications my team develops is used by a group that we've determined to be very much beginners at computer usage and internet comprehension.  We attempt to make the product as intuitive as possible - while staying away from the newest trends.  I don't believe our place is to challenge their current notion of what websites do at this time.  We stay a bit behind the curve because they need to use this application to solve a task.  The task is already hard enough, we shouldn't be pushing them past their comfort zones.
+
+<!--more-->
 
 Because of a bug in the programming, we noticed we weren't trimming the user input for a search form.  A large amount of search terms began with at least one space.  So, we fixed that issue - we added trim.  
 

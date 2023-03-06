@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Auto Failover for CDN based Javascript
+date: 2009-12-01
 tags:
 - javascript
 - jquery
 - misc-web
 ---
 Using my [javascript error reporter](/blog/2009/09/23/javascript-error-handler) code helps me get a better understanding of what my clients are experiencing when visiting my website.  One thing I did notice was the failures from time to time of Google's CDN based jQuery.
+
+<!--more-->
 
 To solve this issue, I decided to keep a local copy as well.  For the most part, Google's version is going to be faster and have a better cache method.  However, I'd rather have an uncached version of it loaded into the user's browser than nothing at all!  So, in the very rare case that the user's browser fails to load the Google javascript, I load a local copy of it.
 

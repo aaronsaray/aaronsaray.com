@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The Perils of the AT in PHP
+date: 2007-07-27
 tags:
 - performance
 - php
 ---
 A lot of weird things have been happening ever since we introduced a new error handler at ("the triangle").  First of all, it took down our whole site for a good portion of time (oops!), then it created a large project for us to review our code.  Turns out a lot of the errors were just weird little things that we ignored.  However, there were a few times where the `@` operator [php.net/language.operators.errorcontrol.php](http://us3.php.net/manual/en/language.operators.errorcontrol.php) was a huge problem.  I, for once, don't think that the `@` operator should ever be used again.  Let me detail out what it does and why I don't think we should use it:
+
+<!--more-->
 
 **What does the @ do?**
 
@@ -15,13 +17,13 @@ For most PHPers, they will answer with: "it suppresses the error on that stateme
 
 When I went to ZendCon 2006, I heard a talk about performance (I forget who it was now! :( ) - but they explained how the @ works.  Basically, think of every time you execute a `@`'d statement, this is what happens internally:
 
-```php?start_inline=1
+```php
 @print 'hello';
 ```
 
 is really something like...
 
-```php?start_inline=1
+```php
 $errorReporting = error_reporting();
 error_reporting(0);
 print 'hello';
@@ -35,7 +37,7 @@ As you can see, even tho the internals of PHP are fast, that's a needless set of
 
 When you define a custom error handler, the `@` doesn't stop the error reporting.  Instead, it sets `error_reporting()` to `0`, but still executes the custom error handler.  Of course, you can still facilitate the `@` sign in your custom error handler by doing as so:
 
-```php?start_inline=1
+```php
 if (error_reporting() === 0) {
   return false;
 }
@@ -50,13 +52,13 @@ I can't think of a legitimate, quality use for calling functions with the `@`.  
 Require
 Bad:
 
-```php?start_inline=1
+```php
 @require('myfile.php') or die('file was not included');
 ```
     
 Better:
 
-```php?start_inline=1
+```php
 if (file_exists('myfile.php')) {
   require('myfile.php');
 }
@@ -70,7 +72,7 @@ Of course, make sure to read all about the caveats of [file_exists](http://us3.p
 Undeclared Variable Manipulation
 Bad:
 
-```php?start_inline=1
+```php
 $value = @$myarray[0];
 if ($value) {
   print 'do something';
@@ -79,7 +81,7 @@ if ($value) {
 
 Better:
 
-```php?start_inline=1
+```php
 $value = null;
 if (isset($myarray[0])) {
   $value = $myarray[0];

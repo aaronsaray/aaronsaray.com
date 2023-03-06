@@ -1,17 +1,19 @@
 ---
-layout: post
 title: Testing protected and private attributes and methods using PHPUnit
+date: 2011-08-16
 tags:
 - phpunit
 - testing
 ---
 > First, I just want to say up front that this is not a discussion of "is 100% test coverage necessary" or a discussion about testing private methods.  This is simply how you may do it if you wanted to.
 
+<!--more-->
+
 ### Testing Protected/Private Attributes using PHPUnit
 
 PHPUnit has this built in - simply use `PHPUnit_Framework_Assert::readAttribute()`.  So, for example, lets say our object User has a protected role id of `1`.
 
-```php?start_inline=1
+```php
 public function testUserRoleIsOne()
 {  
   $user = new User();
@@ -23,7 +25,7 @@ public function testUserRoleIsOne()
 
 This method is mainly reflection based.  The PHPUnit component is really only the testing. Lets say a protected method `_getKey()` of the User object returns a value of `mysuperawesomekey`
 
-```php?start_inline=1
+```php
 public function testRetrieveKeyFromUser()
 {
   $user = new User();

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Review: Learning JavaScriptMVC by Packt'
+date: 2013-06-07
 tags:
 - javascript
 ---
 Someone from Packt reached out to me the other day to ask if I'd do a review of a newly published book called [Learning JavascriptMVC](http://link.packtpub.com/hFZPlQ).  I said sure.  So, they gave me a free e-book to read.  Let me give my honest review:
+
+<!--more-->
 
 [![learning javascriptmvc](/uploads/2013/learning-javascriptmvc-240x300.jpg)](http://link.packtpub.com/hFZPlQ){: .thumbnail}{: .pull-right}
 

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 'Elgg Plugin: Friend AutoComplete Box Replaces Select Box'
+date: 2009-05-31
 tags:
 - elgg
 - php
 ---
 One of the most irritating things to me about the Elgg messaging plugin is the requirement to choose my friends from the select box.  This SHOULD be generated using the input/pulldown view in Elgg.  Unfortunately, they are doing it by hand.  However, I've patched my plugin to do it using the proper view.  Then, I wanted to have an Auto Complete type box to choose a friend.  With JQuery I was able to do this.  Check out the specs and download below:
+
+<!--more-->
 
 ### What This Plugin Solves:
 
@@ -15,7 +17,7 @@ This plugin extends the input/pulldown view in Elgg to create an Autocomplete bo
 
 Imagine you have a view in Elgg that uses the following code:
 
-```php?start_inline=1    
+```php    
 $friends = amazing_function_formats_this($_SESSION['user']->getFriends());
 echo elgg_view('input/pulldown', array('name'=>'friends', 'options_values'=>$friends);
 ```
@@ -24,7 +26,7 @@ This generates a pull down that will have the option text the friend name, and t
 
 To use this plugin, enable it - and then modify the `elgg_view` statement like so:
 
-```php?start_inline=1    
+```php    
 $friends = amazing_function_formats_this($_SESSION['user']->getFriends());
 echo elgg_view(
   'input/pulldown', 

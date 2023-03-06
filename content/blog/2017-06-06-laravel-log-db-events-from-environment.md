@@ -1,17 +1,19 @@
 ---
-layout: post
 title: Laravel Log Database Queries Based On Environment Variable
+date: 2017-06-06
 tags:
 - php
 - laravel
 ---
 A nice feature of Laravel is the ability to add a listener to the `DB` object's events (or SQL queries).  I've seen some people add this, then comment it out when it's done, then un-comment it if they need it again.  I don't like that - I don't want commented code in my files (also that's why we have version control).  
 
+<!--more-->
+
 Instead, let's set an environment variable (using DotEnv), populate a Config option, and use that to invoke the listening.
 
 First, add the following lines to your `AppServiceProvider::boot()` method:
 
-```php?start_inline=1
+```php
 if (Config::get('app.log_queries')) {
   DB::listen(function ($event) {
     Log::debug('app.log_queries log', [
@@ -26,7 +28,7 @@ If we have a configuration option named `app.log_queries` and it is truthy, we w
 
 Next, add the following line to your **`config/app.php`** file:
 
-```php?start_inline=1
+```php
 'log_queries' => env('LOG_QUERIES', false),
 ```
 

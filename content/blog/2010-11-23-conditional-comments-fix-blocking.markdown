@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Conditional Comments - fix blocking
+date: 2010-11-23
 tags:
 - html
 - misc-web
 ---
 Ok - so I can't take any credit for this - but check out this blog post:
 [http://www.phpied.com/conditional-comments-block-downloads/](http://www.phpied.com/conditional-comments-block-downloads/)
+
+<!--more-->
 
 Sweet read, huh?
 

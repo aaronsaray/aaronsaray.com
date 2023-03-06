@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Rewrite or Redirect URL with Apache
+date: 2020-11-23
 tags:
 - apache
 - misc-web
 ---
 Apache’s` mod_rewrite` module can create redirects with the proper configuration. Let’s dig in.
+
+<!--more-->
 
 > This is an article that originally appeared on RedirectURL, a site I built a while ago.  Find out the history of that [site here]({% post_url 2020-10-31-redirecturl-experiment-is-done %})
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Your team isn't the only special one
+date: 2022-08-08
 tags:
 - business
 ---
 I was watching [Bar Rescue](https://www.paramountnetwork.com/shows/bar-rescue) (please don't tell anyone) and a bartender said exactly the same thing about his job as a programmer I was just talking to... turns out they had a surprising thing in common.
+
+<!--more-->
 
 "Why are you still here?" This question was bellowed by the host of Bar Rescue.  "I love my team, they're special! We're like a family."  So, the bartender knew the bar was failing. They knew they'd lose their job. They stuck around because of the people they worked with, though. Mainly, now, to their own career detriment.
 

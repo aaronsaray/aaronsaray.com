@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Two Gotchas in Laravel Unit Testing
+date: 2019-05-20
 tags:
 - php
 - phpunit
 - laravel
 ---
 There's a struggle to balance the easy-to-use Laravel helpers and functions with very verbose, complicated methods in unit tests.  As I've been relying on Laravel's way of doing testing more, I've ran into a couple of gotchas that I should share.
+
+<!--more-->
 
 ### Eloquent is function isn't exact
 

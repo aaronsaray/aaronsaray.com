@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Engineering Managers Must Embrace Conflict
+date: 2021-07-08
 tags:
 - business
 - management
 ---
 Conflict seems like a dirty word. After all, we don’t want to have fights at work, right? For managers, reducing conflict seems to be the best choice. But is it?
+
+<!--more-->
 
 Our society thrives on conflict. We love it. Look at football, boxing and movies. No big arc for the movie? No rivalry for your favorite team? Suddenly everything gets boring.
 

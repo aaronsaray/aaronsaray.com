@@ -1,12 +1,14 @@
 ---
-layout: post
 title: How to Install a Composer package from a local zip
+date: 2021-11-08
 tags:
 - php
 - composer
 - laravel
 ---
 I use [Laravel Nova](https://nova.laravel.com) in a lot of my projects, but I've never liked the idea of storing the files in a local directory after download.  Yes, you can use credentials for a Composer-based install, true, but I wanted something that didn't require that.  Turns out you can install packages like Laravel Nova from a zip file locally.  Here's how.
+
+<!--more-->
 
 First of all, I should say that this is all covered in the [Composer repositories](https://getcomposer.org/doc/05-repositories.md) documentation section - but I never fully put it all together.  Maybe this example will save you some time as well.
 

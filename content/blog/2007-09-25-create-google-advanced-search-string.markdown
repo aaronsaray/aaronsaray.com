@@ -1,15 +1,17 @@
 ---
-layout: post
 title: Create Google Advanced Search String
+date: 2007-09-25
 tags:
 - google
 - php
 ---
 I found an interesting article about the parameters of the advanced search URL for google.  Just for fun, I tested out their concepts and they were all true.  I figured maybe there was a reason to do this as a PHP class (I think I was just bored...).
 
+<!--more-->
+
 You can find the code here:
 
-```php?start_inline=1
+```php
 /**
  * Google Utilities Script
  *

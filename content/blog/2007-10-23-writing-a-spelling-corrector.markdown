@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Writing a Spelling Corrector
+date: 2007-10-23
 tags:
 - programming
 ---

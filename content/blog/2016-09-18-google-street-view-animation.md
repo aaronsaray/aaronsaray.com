@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Google Street View Animation
+date: 2016-09-18
 tags:
 - javascript
 - css
 - google
 ---
 Today, while trying to think of a clever way to create a "hire Aaron" page (yup, [resume](/resume) is right [here](/resume)), I came up with an idea to animate a Google Street View page.  My initial goal was to animate a rotation and some travel down a road, but I've been unable to find a more seamless way of doing the horizontal travel. It looks like there is just going to be jumps in their photography - which of course makes sense. I wasn't expecting a perfect seamless set of photography, but the current version of it jumps too much and is just too unsettling to see animated.
+
+<!--more-->
 
 **But** I was able to make a pretty cool rotation script for a Google Street View Panorama.  You can [see it here](http://codepen.io/aaronsaray/pen/wzWREY) if you want. (Please note that the codepen version differs slightly because of the way that they sandbox and run their code.)
 

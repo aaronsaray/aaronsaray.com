@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Run A Single PHPUnit Test Only
+date: 2017-10-11
 tags:
 - php
 - phpunit
 - testing
 ---
 Often times, I find myself targeting a single file with PHPUnit by specifying the file after the binary in the command line:
+
+<!--more-->
 
 `vendor/bin/phpunit tests/MyTest.php`
 

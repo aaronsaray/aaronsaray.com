@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Running PHPUnit on Remote System from Command Line
+date: 2012-01-03
 tags:
 - eclipse-pdt
 - phpunit

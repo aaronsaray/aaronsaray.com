@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Jekyll Mark Old Posts
+date: 2016-05-31
 tags:
 - jekyll
 ---
 With technology changing so rapidly and people in such a big hurry, sometimes older suggestions or out of date recommendations
 are the first things that programmers run into.  You know you've fallen for it - a quick google search and you get your first
 result and you give it a shot; never mind that it's a blog entry from 7 years ago.
+
+<!--more-->
 
 Now, I would argue that that's your fault - you should be keeping an eye on the date.  But, I've decided that the best thing
 to do for visitors is to remind them that this content is older.

@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Composer-based Utility Installs vs Global Installs
+date: 2015-05-11
 tags:
 - phpunit
 - php
 - composer
 ---
 I'm a huge fan of tools like PHPUnit.  Or any other tool that will help my project carry on.
+
+<!--more-->
 
 But, maybe it's because I've been using them for a long time that I always favored global installs vs composer based installs.  But, maybe that's wrong now?
 

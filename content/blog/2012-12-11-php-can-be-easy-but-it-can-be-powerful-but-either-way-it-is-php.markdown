@@ -1,11 +1,13 @@
 ---
-layout: post
 title: PHP can be easy, but it can be powerful, but either way, it is PHP
+date: 2012-12-11
 tags:
 - misc-web
 - php
 ---
 There are two things that really grate on me as a PHP developer.  First, people claiming that PHP is not powerful.  And second, those who don't actually work in the language, but have similar disciplines, trying to teach it.  Let me elaborate.
+
+<!--more-->
 
 ### PHP is easy to learn
 

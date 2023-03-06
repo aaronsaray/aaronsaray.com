@@ -1,6 +1,6 @@
 ---
-layout: post
 title: SPL Documentation - Standard PHP Library
+date: 2008-12-05
 tags:
 - php
 ---

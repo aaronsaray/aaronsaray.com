@@ -1,14 +1,16 @@
 ---
-layout: post
 title: Emulation of Collections - true stories of data object handling
+date: 2007-06-27
 tags:
 - php
 ---
 Today, Big Boy sent me an e-mail at work talking about emulation of collections in his .net programming.  He included a code sample (after the break).  This got me thinking about how I am planning on handling data going forward.  Do I want to handle data as keyed arrays, objects, complex objects, or... ?  Additionally, I started thinking about the Null Object programming pattern, and how this can fit into my data handling pattern.  I've made an interesting discovery - and am going to set my paradigm going forward using these complex objects.  Here's how...
 
+<!--more-->
+
 Big Boy sent this code example:
 
-```php?start_inline=1
+```php
 class Collection
 {
   public function __get($property)
@@ -33,7 +35,7 @@ This spurred me into thinking about data objects further (and my previous post a
 
 With bigboy's method, I decided to run this test.
 
-```php?start_inline=1
+```php
 $article = new Collection();
 
 $article->title = 'my test title';
@@ -57,7 +59,7 @@ At any rate, another thing to keep in mind is that **we can now extend our colle
 
 Following our example above, we have two solutions for this - simple OO extension or write an adaptor class.  Lets try both.
 
-```php?start_inline=1
+```php
 class DatedArticle extends Collection
 {
   public function getDate()
@@ -90,7 +92,7 @@ The next way is to make `DateArticle` an adapter class.
 
 Our modified code looks like this:
 
-```php?start_inline=1
+```php
 class AdapterDatedArticle
 {
   public $collection;
@@ -131,7 +133,7 @@ I'm going the adapter route... The reason is because I've learned some hard less
 
 The following two lines of code are the same (if corresponding classes are made correctly)
 
-```php?start_inline=1
+```php
 $article = new DatedArticle(new ByLinedArticle(new Article()));
 $article = new ByLinedArticle(new DatedArticle(new Article()));
 ```
@@ -140,7 +142,7 @@ $article = new ByLinedArticle(new DatedArticle(new Article()));
 
 Another programming paradigm refers to the null object.  In our case, instead of throwing an exception, lets say its perfectly acceptable to have nothing returned.  In this case, we're going to list trackbacks.  Why not just make a null object and have it return that?
 
-```php?start_inline=1
+```php
 class Collection
 {
   public function __get($property)
@@ -179,7 +181,7 @@ Now, lets say in our example, we know that each article should have an author, b
 
 Lets modify the code:
 
-```php?start_inline=1
+```php
 class Collection
 {
   public function __get($property)
@@ -239,7 +241,7 @@ Let's modify `NullObject` and our creation of null object.
 
 And then this:
 
-```php?start_inline=1
+```php
 class NullObject
 {
   public function __construct($debug)
@@ -261,7 +263,7 @@ All in all, its important to not over-complicate the situation, but there are ma
 
 Who's guilty of code like this? I know I am!
 
-```php?start_inline=1
+```php
 print $article->title;
 if ($article->author != '') {
   print ' written by: ' . $article->author;
@@ -274,7 +276,7 @@ Well, in this instance with our last example, we'll get this error:
 
 Instead, lets just add in this special little magic method into `NullObject`:
 
-```php?start_inline=1
+```php
 public function __toString()
 {
   return '';

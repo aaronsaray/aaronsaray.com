@@ -1,12 +1,14 @@
 ---
-layout: post
 title: What Version of Laravel is This?
+date: 2019-04-29
 tags:
 - php
 - laravel
 - composer
 ---
 There are tons of ways to answer this question each with its own benefits.  Lets check out a few.
+
+<!--more-->
 
 ### Artisan
 

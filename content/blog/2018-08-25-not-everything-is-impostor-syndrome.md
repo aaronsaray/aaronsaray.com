@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Not Everything is Imposter Syndrome
+date: 2018-08-25
 tags:
 - business
 ---
 If you're not aware of what [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) is, let me share a quick synopsis.  Then I'll follow up with why I think the term is being abused.
+
+<!--more-->
 
 Imposter Syndrome is a condition in which someone feels like they're not good enough, a fraud, will never be successful and everyone's secretly waiting to take them down.  It's more than just low self esteem or a lack of confidence. It's a targeted feeling about one's own skills or experience that is completely opposite to the objective truth. It's a real thing and many people have admitted to experiencing this.  But, I think people are getting confused and are misusing this term.
 

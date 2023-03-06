@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Namespacing is important - even in PHP
+date: 2007-07-07
 tags:
 - php
 ---
 Perl, Java and xml people are very aware of what a namespace is... even [wikipedia](http://en.wikipedia.org/wiki/Namespace_(computer_science)) tells us they are.  But, certain languages, such as PHP, don't support namespaces yet.  (However, thank you Dmitry for [your proposal](http://aspn.activestate.com/ASPN/Mail/Message/php-dev/3519062).)  But are namespaces really important?  PHP has made it this far without them, so why should you be concerned?  Well, lets see:
+
+<!--more-->
 
 PHP should support namespaces, that's my main point here.  Right now, there is no logical way to support multiple common names (although PEAR has made good progress... but it kinda sucks when a class declaration is something like: `name_space_declaration_class` extends `other_namespace_class` ... it just gets cumbersome - plus everything still is in the global namespace).  PHP6 may come out with this support, but its yet to be seen (see Dmitry's proposal).  But in the mean time, are we restricted to long obtuse class names?
 

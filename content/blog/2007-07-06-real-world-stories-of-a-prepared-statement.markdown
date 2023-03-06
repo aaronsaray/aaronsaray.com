@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Real world stories of a prepared statement
+date: 2007-07-06
 tags:
 - php
 - sql
 ---
 A couple months ago, I was out in Rochester MN at IBM for a multi-day meeting about communication between the iSeries(system-i, i5, as400, whatever its called now a days) and PHP/Apache.  One of the things we talked about was our use of ODBC at ("the triangle") currently to which they asked a good question - Are we using prepared statements over odbc?  Well, right now, we're not, but I think we should.  As always, its up to me to show why we should be doing this.  Lets explore:
+
+<!--more-->
 
 Prepared statements have two benefits: 1) speed - they only require the statement to be compiled once and 2) security - after compilation, when parameters are bound to the statement, there is no chance for sql injection.  While #2 was a no-brain-er, I still needed to be sure about #1.  I decided to write some tests.
 
@@ -15,7 +17,7 @@ I wanted to get a working good proof on a sql connection and language I was most
 
 Here is my test code:
 
-```php?start_inline=1
+```php
 set_time_limit(0);
 
 define('USERID', 'root');
@@ -92,7 +94,7 @@ _Maybe am I not doing a proper test?_  If anyone has any input, please let me kn
 
 I do plan on testing the odbc prep statements at ("the triangle") too.  This is what I'm going to use to test the performance (as usual, some of the specific business information has been removed).
 
-```php?start_inline=1
+```php
 /**
  * Test for prepared statements on odbc
  */

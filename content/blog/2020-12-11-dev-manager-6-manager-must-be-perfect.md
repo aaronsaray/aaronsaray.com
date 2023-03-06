@@ -1,11 +1,13 @@
 ---
-layout: post
 title: A Manager Must Always Be Perfect
+date: 2020-12-11
 tags:
 - business
 - management
 ---
 Oh, what a scary thought: a manager must always be perfect. But, stick with me here.
+
+<!--more-->
 
 Throughout my career, I’ve had some pretty great bosses that I really looked up to. These were the men and women who made the choices that affected my work life. They had great power. They had my respect.
 

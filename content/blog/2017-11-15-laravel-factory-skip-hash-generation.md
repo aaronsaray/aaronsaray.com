@@ -1,11 +1,13 @@
 ---
-layout: post
 title: For Performance, Skip Generating Hashes in Laravel Factories
+date: 2017-11-15
 tags:
 - php
 - laravel
 ---
 This isn't a one-size-fits-all suggestion, but it's a start to help you think about how you actually interact with factories in Laravel.  They are used for test data, and are ran very often, multiple times in a row.  You don't need as much random information as you need.  (In fact, a lot of times I see people overusing Faker even.)
+
+<!--more-->
 
 I've generated a User Model factory.  It ends up looking something like this:
 

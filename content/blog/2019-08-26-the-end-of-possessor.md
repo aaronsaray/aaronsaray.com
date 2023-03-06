@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The end of Possessor
+date: 2019-08-26
 tags:
 - business
 - archived-projects
 ---
 Before I begin a [security](/tags/security) audit, I try to make sure that the client owns their website. Normally, this is pretty easy and obvious. However, sometimes it takes a little bit more work.  That's why I had thought of launching the tool called Possessor.
+
+<!--more-->
 
 Living at [possessor.app](https://possessor.app), this product would play the part of verifying website / domain ownership.  Like how you have to validate your domain for other tools, this would give you the chance to upload an HTML file or place a DNS record.  Then, it could periodically validate and verify ownership if you chose.  There would be an API so that you could integrate this service into your own app.
 

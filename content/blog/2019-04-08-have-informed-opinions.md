@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Have Informed Opinions
+date: 2019-04-08
 tags:
 - business
 - programming
 ---
 I don't want this to turn into a rant, but...
+
+<!--more-->
 
 **Please, have informed opinions.**
 

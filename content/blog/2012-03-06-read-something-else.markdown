@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Read Something Else
+date: 2012-03-06
 tags:
 - business
 ---
 Many years ago, a business mentor of mine told me that I should "read something else."  I didn't know what he meant so I asked for more.  He said I should go find some biographies, some history books, etc, and read those before I go to bed.  He said it would not only expand my mind and show me that my problems weren't that bad.  He also told me it would increase my vocabulary.  Well everyone knows that [geeks are smart](http://www.mediadump.com/hosted-id202-real-reasons-why-geeks-make-the-best-lovers.html), so I didn't think about it too much.  I just thought this was an old guy telling me how things used to work back in the day.  He didn't have the Discovery Channel growing up... what did he know?
+
+<!--more-->
 
 **As usual, I find that I was wrong again.**  I'm telling you now, read something else.  Let me tell you why:
 

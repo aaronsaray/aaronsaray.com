@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Try Your Process Before Tooling Your Process
+date: 2019-05-27
 tags:
 - programming
 ---
 I've known a lot of programmers who give a lot of concern to making the best product they can. They follow best practices, create amazing programs and demonstrate both quality and accuracy. It's quite amazing.  But when you look at their internal tooling, it's garbage.  What gives?
+
+<!--more-->
 
 I think part of this comes from developer's desire to script and programmatically handle processes that aren't interesting.  Or, perhaps it's because those processes are annoying or are distracting from the true desire: to create something amazing.  I think too many times programmers rush in to scripting and developing tools before they understand what the problem is.
 

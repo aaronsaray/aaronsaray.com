@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Validate Request Parameter Not Present in Laravel 5.4
+date: 2017-11-17
 tags:
 - php
 - laravel
 ---
 You can make use of guarded or fillable attributes in Eloquent models in Laravel to help control what values you might allow to be updated via your API.  But, I wanted to go a step further and actually stop certain values from being passed in.  You could go pretty wild with this and try to block everything, but that's not what I did. I made this validator.
+
+<!--more-->
 
 This is useful in two ways: first, whenever a field was deprecated and not used, I wanted to invalidate API calls with that value now.  All of my clients should have been moved over, but just in case, I wanted to stop the value from coming in.  The second way this is valuable is if you want to accept some values in a post, but not in a patch or vice versa. (If you kept validation in request files directly this might not be such a problem, but I opted to share/save my validation on my model to keep this all domain knowledge all in one area.)  Anyway, I ramble.
 
@@ -49,7 +51,7 @@ class NotPresentValidator
 
 This is then registered using `extendImplicit` on the `Validator` class in the app service provider:
 
-```php?start_inline=1
+```php
 Validator::extendImplicit('not_present', NotPresentValidator::class);
 ```
 

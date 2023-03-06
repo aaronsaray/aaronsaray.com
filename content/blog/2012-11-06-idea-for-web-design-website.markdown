@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Idea for Web Design Website
+date: 2012-11-06
 tags:
 - ideas
 - business
 ---
 So I've been looking at some [parallax plugins](http://jonraasch.com/blog/scrolling-parallax-jquery-plugin) with Javascript and CSS3 animations... and it got me to thinking: I have a great idea for a web site design firm.  
+
+<!--more-->
 
 I would use the parallax feature and have the user scroll down.  This could either be the home page or a "how we work" type page.  
 

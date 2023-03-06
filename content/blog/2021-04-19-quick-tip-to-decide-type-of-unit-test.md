@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 1 Quick Tip to Decide Which Type of Unit Test to Create
+date: 2021-04-19
 tags:
 - testing
 ---
 Should I be writing more unit tests? Integration Tests? End to End tests? I can't answer this completely, but I can give you one tip to help you decide 80% of the time.
+
+<!--more-->
 
 Quick definition for these types of tests.  **Unit test** is a type of test that takes the smallest self-contained block of code and tests it. It has predictable input and output that passes for each test.  **Integration test** is an extension of a unit test. It is a larger block or collection of blocks of code combined into some sort of business process that may integrate with other services (like a database). **End to End (E2E) Test** is a unit test that takes a system or user input, cycles that information through the entire application in one workflow, and validates the output or by product of that process.  As you can imagine, unit tests are the fastest, and e2e tend to be the slowest, most brittle.
 

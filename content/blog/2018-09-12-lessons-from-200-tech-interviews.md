@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Lessons Learned from Conducting more than 200 Technical Interviews
+date: 2018-09-12
 tags:
 - business
 - management
 ---
 Too often we find a team leader or a manager and just expect they'll be able to hire new employees effectively.  After all, they're successful, they should be able to clone themselves, right?
+
+<!--more-->
 
 Hiring is a skill that needs to be developed.  It's not just the interview, though.  It's the marketing of the job, the job description, the process and interview, the followup and the on-boarding of the employee.  Hiring is a whole discipline in itself.  Each of these areas warrants its own entry, but we're just going to focus on the interview process for this one.
 

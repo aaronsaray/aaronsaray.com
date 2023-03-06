@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Ansible Reboot Only If Required
+date: 2021-03-09
 tags:
 - linux
 - misc-web
 ---
 This quick tip will help you issue a reboot command during your Ansible playbook if a reboot is required.
+
+<!--more-->
 
 This has only been tested on Ansible 2.9.13 for a debian-based host system.
 

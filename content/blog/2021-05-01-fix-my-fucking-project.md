@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Bye Bye FixMyFuckingProject
+date: 2021-05-01
 tags:
 - archived-projects
 ---
 So, if you know me personally, you know I'm a bit profane. I tend to keep this out of my professional work. But, I noticed that this pattern of speaking was common among a core group of my previous clients: those who have a project spiraling out of control.  So, I decided to brand "Fix My Fucking Project" to their needs.
+
+<!--more-->
 
 I followed a pattern that is common for single-page brochure websites. I talked about the pains the client may be experiencing, and how I could help make it better. I put in some FAQs and calls to action.  When I first launched this, I got a number of contact forms (and meetings scheduled with Calendly).
 

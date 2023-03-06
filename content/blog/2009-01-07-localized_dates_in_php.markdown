@@ -1,12 +1,12 @@
 ---
-layout: post
 title: Localized dates in php
+date: 2009-01-07
 tags:
 - php
 ---
-### Date formats - How time makes pretty
-
 The PHP Date manual page has a ton of interesting features to format the date that you can display to the user.  However, when you look closer at it, there are actually some really useful modifiers that will help us with our date calculations as well.  For the longest time, I had just used the `time()` function and let the pieces fall.  This was OK when the offset was similar to my own timezone - but servers change locations - and websites have global audiences.  The date and gmdate functions can help with this.  Both functions take an optional timestamp parameter.  If you do not specify this, they'll calculate based off of the current date.  This actually becomes quite useful for our calculations... Let's jump in.
+
+<!--more-->
 
 ### date - the date on your current server
 
@@ -46,7 +46,7 @@ Ok, lets see our code now in practice.
 
 First off, Aaron comes to the website at `7:30p jan 5th, 2009 Central (1:30AM on january 6th, 2009 GMT)`.  He posts an entry.
 
-```php?start_inline=1
+```php
 mysql_query(
   "insert into entries (title, body, authorID, datePosted) "
   . "values ('$clean_title', '$clean_body', $authorID, time()
@@ -67,7 +67,7 @@ Its also important to see my user row:
 
 Lets see some code for displaying that entry localized for when I wrote it:
     
-```php?start_inline=1
+```php
 $authorID = 12;
 $entryID = 1;
 $author = new Author($authorID);

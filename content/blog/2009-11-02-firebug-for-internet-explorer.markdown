@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Firebug for Internet Explorer
+date: 2009-11-02
 tags:
 - ide-and-web-dev-tools
 ---
 During the creation of my websites, I develop solely in Firefox.  When it comes to testing, I run it through [IE tester](http://my-debugbar.com/wiki/IETester/HomePage).  One thing that I really miss is my [Firebug](http://getfirebug.com/).
+
+<!--more-->
 
 ### Enter Firebug Lite
 
@@ -12,7 +14,7 @@ Firebug Lite is a stripped down version of Firebug.  For the details of the curr
 
 For my code, I decided to only include the firebug lite code from their distribution when not in production.  This is how I do it in my code:
 
-```php?start_inline=1
+```php
 if (!ENVIRONMENT_LIVE && strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false) {
   echo '<script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js" type="text/javascript"></script>';
 }

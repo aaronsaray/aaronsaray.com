@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 3 Important Management Books to Read This Quarter
+date: 2020-09-10
 tags:
 - business
 - management
 ---
 > This is the beginning of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**.
+
+<!--more-->
 
 Welcome to the New Dev Manager Crash Course! Whether this is your first time managing a group of developers, or you’ve run the gamut a few times, I’m happy you’re here. My goal is to give you some useful tips and direction from my experience managing multiple development teams. I learned a lot of this the hard way, but hopefully you won’t have to!
 

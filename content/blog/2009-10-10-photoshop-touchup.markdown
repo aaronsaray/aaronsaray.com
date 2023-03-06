@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Photoshop Touchup
+date: 2009-10-10
 tags:
 - photoshop
 ---
 So I tried my very first photoshop touch up of a girl I found online.  Turns out she was used for a photoshop tutorial about the same concept.  I used my own process however.
+
+<!--more-->
 
 ### Before
 

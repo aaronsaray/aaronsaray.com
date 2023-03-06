@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Give Corrective Feedback Privately, Then Summarize Publicly
+date: 2018-08-12
 tags:
 - business
 - management
 ---
 > "If you have the question, chances are someone else in the group has it, too. Be brave: get the answer to your question with a by-product of serving others." 
+
+<!--more-->
 
 It's amazing how much this direction has impacted my career. I really took it to heart. I speak up and ask questions without fear because I know there are others just like me. This wisdom stretches beyond just questions, however. In groups, there are a lot of overlapping thoughts, situations and values: that's what makes group-work work.
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Which Conference Should I go to - Help me in 2008
+date: 2008-04-01
 tags:
 - programming
 ---
 So, luckily, my current employer will pay and make arrangements for me to attend one major conference each year.  Last year I attended Mysqlconf, the year before, Zend Con.
+
+<!--more-->
 
 Which should I go to this year?  Here are the things to consider:
 	

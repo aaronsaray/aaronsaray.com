@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Is PHP's __call() used when no __construct is present?
+date: 2009-01-11
 tags:
 - php
 ---
 Simple enough question.  Lets check out some test code:
 
-```php?start_inline=1
+<!--more-->
+
+```php
 class TEST
 {
   public function __construct($arguments)

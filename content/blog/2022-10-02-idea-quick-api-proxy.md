@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Idea - Quick API Proxy service
+date: 2022-10-02
 tags:
 - ideas
 ---
 I have a long history of sharing [ideas](/tag/ideas/) on this blog for services/sites/utilities. Here's the newest one: a very cheap service to proxy API requests that don't have open CORS requests / require an API key.
+
+<!--more-->
 
 Here's are the two problems... 
 

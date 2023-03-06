@@ -1,10 +1,12 @@
 ---
-layout: post
 title: First Confident Coder Column
+date: 2016-02-22
 tags:
 - php
 ---
 Sweaty palms, a fast heart rate and an overwhelming sense of dread.  
+
+<!--more-->
 
 ### Welcome
 
@@ -26,7 +28,7 @@ In this example, we need to detect if the current request was issued as a POST. 
 
 After doing a number of code reviews, I've noticed a common methodology that some PHP developers use to test if the current request is POST.  
 
-```php?start_inline=1
+```php
 if (!empty($_POST['firstname'])) {
   // assume this was a post and move forward
 }
@@ -34,7 +36,7 @@ if (!empty($_POST['firstname'])) {
 
 In this case, the programmer knows that the previous page will have a form that has a field named `firstname` and that this will be sent on a posted form.  However, there is a flaw in this method.  What if the first name field in the form is blank?  Recognizing this, the next iteration that is common is the following:
 
-```php?start_inline=1
+```php
 if (isset($_POST['firstname'])) {
   // assume this was a post and move forward
 }
@@ -46,7 +48,7 @@ But, as confident coders, we're not OK with this yet, are we?  I'm not.  I don't
 
 Let me submit the final iteration:
 
-```php?start_inline=1
+```php
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
   // this is a post so move forward
 }

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Intelligently combining Javascript
+date: 2012-10-02
 tags:
 - javascript
 - performance
 ---
 One debate that the guys on my team have been having revolves around the combination of Javascript and CSS files.  There are two schools of thought.   The **keep them separate** and the **BFF - Big Fun File** system.  There are pro's and cons to both... but as with everything, one particular way may not always be the best - we don't always have to stay in extremes-land.  Here are some thoughts.  Feel free to weigh in.
+
+<!--more-->
 
 ### Use a CDN
 

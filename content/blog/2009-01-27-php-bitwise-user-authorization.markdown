@@ -1,15 +1,17 @@
 ---
-layout: post
 title: PHP Bitwise User Authorization
+date: 2009-01-27
 tags:
 - mysql
 - php
 ---
 After looking at the Windows model for controlling file access, I realized I could also do that for user authorization control.
 
+<!--more-->
+
 The code is pretty self explanatory, but after, you'll find a quick rundown.
 
-```php?start_inline=1
+```php
 $ADMIN = 1;
 $SUPERUSER = 2;
 $SECTION1LEADER = 4;
@@ -40,7 +42,7 @@ Next, our test user's permissions are the summation of all the sections/permissi
 
 Now, when checking access to the sections, we just use the bitwise and operator.  See how we use just one qualifier?  This is nicer coding (because of the access additions earlier) than older code ideas:
 
-```php?start_inline=1
+```php
 $isADMIN = true;
 if ($isADMIN || || $isSuperUser || $section1LeaderAccess) {
   print 'section 1!';

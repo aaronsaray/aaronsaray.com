@@ -1,17 +1,19 @@
 ---
-layout: post
 title: Zend Framework View Helper for QR Codes
+date: 2011-06-07
 tags:
 - zend-framework
 ---
 Google Charts has a QR code generation service ([here are the details](http://code.google.com/apis/chart/image/docs/gallery/qr_codes.html)).  I decided that I wanted to create my own ZF View Helper to display these on my pages.  This version that I am going to show just returns the properly formatted URL for the charts API.  The view must create the img tag around it.  
+
+<!--more-->
 
 ### The Code for Google QR Code
 
 Place the following code in your view helpers location.  For example... 
 
 **`application/views/helpers/GoogleQRCode.php`**
-```php?start_inline=1
+```php
 class Zend_View_Helper_GoogleQRCode extends Zend_View_Helper_Abstract
 {
   public function googleQRCode($data, $width = 100, $height = 100)

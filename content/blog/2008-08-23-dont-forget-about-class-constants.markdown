@@ -1,16 +1,18 @@
 ---
-layout: post
 title: Don't forget about Class Constants!
+date: 2008-08-23
 tags:
 - php
 ---
 Constants can be great.  They can stand for things like web services keys, integers, flags, etc.  Basically, anything that you aren't going to be changing in your script - and most likely things that don't change much outside of the script either.  However, I've seen people use them in the global name space far too many times.  A great alternative is the class constant.  Lets check out some examples:
 
+<!--more-->
+
 ### The Bad Code
 
 First off, I can't tell you how many times I've seen code like this:
 
-```php?start_inline=1
+```php
 define('MYCLASS_FLAG_ON', '1');
 define('MYCLASS_FLAG_OFF', '0');
 
@@ -33,7 +35,7 @@ Now, lets take a look at the alternative.
 
 Lets use the class constant.
 
-```php?start_inline=1
+```php
 class MYCLASS
 {
   const FLAG_ON = 1;
@@ -54,7 +56,7 @@ Now, you'll see there is no congestion in the global name space.
 
 The great thing about constants in classes in this specific example is that you can access them like static variables outside of the class.  For example:
 
-```php?start_inline=1
+```php
 $var = magicVarGettingFunction();
 if ($var == MYCLASS::FLAG_ON) {
   print 'it is on';

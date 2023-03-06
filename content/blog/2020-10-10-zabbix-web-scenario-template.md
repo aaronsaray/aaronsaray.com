@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Website Up Web Scenario Template for Zabbix
+date: 2020-10-10
 tags:
 - zabbix
 ---
 I was pretty excited that [Zabbix 5.0 LTS](https://www.zabbix.com/whats_new_5_0) came out, so I decided to redo my whole install. One of the main reasons I use Zabbix is to monitor website homepage up or down status.  This time, I decided to make a template.  Below I'll detail how and what I did so you can make your own template for your own websites.
+
+<!--more-->
 
 But before that, here's my [Web Scenario Template to Download](/uploads/2020/zabbix-template-web-scenario.xml) so you can import it if you'd like to instead of following these steps.
 

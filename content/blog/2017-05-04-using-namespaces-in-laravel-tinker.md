@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Using Namespaces in Laravel Tinker
+date: 2017-05-04
 tags:
 - php
 - laravel
 ---
 I hate to admit it, but I do like [Laravel's Tinker](https://github.com/laravel/tinker) package.  Sometimes, just testing out your relationships on the command line before you go further is super helpful.
+
+<!--more-->
 
 One thing I don't like, though, is the amount of typing it takes when I'm trying to test out my various models.  My structure is something like `App\Models\Group\Model` - which can get quite annoying to type.  
 

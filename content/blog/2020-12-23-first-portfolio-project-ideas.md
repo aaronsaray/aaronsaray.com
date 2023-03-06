@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Coming Up With Your First Portfolio Project (with coding walkthrough)
+date: 2020-12-23
 tags:
 - javascript
 - html
@@ -8,6 +8,8 @@ tags:
 - business
 ---
 When talking to junior developers, I hear the same question over and over: "how can I demonstrate what I know, or show experience, if I haven't had any gigs yet?" Old-timers tell you to build a portfolio, but how do you do that? Where do you get ideas? How do you choose a project that's not overwhelming?  Let me explain my rationale as well as demonstrate how I might make my first portfolio project.
+
+<!--more-->
 
 ### Who Is This For?
 

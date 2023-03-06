@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Laravel Pretty Print JSON Middleware
+date: 2017-11-14
 tags:
 - php
 - laravel
 ---
 For testing, I tend to use [Postman](https://www.getpostman.com/) - which gives you the option to view your API JSON responses in a preview mode (interactive), pretty and raw.  But, the other day I heard someone saying sometimes they just want to invoke pretty print in their JSON responses without having to use an external tool and set up a whole environment.
+
+<!--more-->
 
 As you might already know, `json_encode` takes in encoding options - of which one of them is `JSON_PRETTY_PRINT` which basically handles pretty printing through line breaks and spaces.  Since I'm currently working in a Laravel project, I thought - what would be a good way of doing this? Is it really easy - a drop in solution?
 

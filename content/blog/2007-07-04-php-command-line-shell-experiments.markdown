@@ -1,10 +1,12 @@
 ---
-layout: post
 title: PHP Command Line Shell Experiments
+date: 2007-07-04
 tags:
 - php
 ---
 Having been a shell, perl and batch scripter before I started PHP, I've always enjoyed the CLI life.  I actually created an interactive or script-able interface for creating all of my projects at ("the triangle") - hopefully I'll link to it here when I write it up.
+
+<!--more-->
 
 I wanted to experiment with PHP's Interactive command line interface a little bit more - anyone can write a script that reads in `STDIN` and the like, but is there any use in having an interactive CL environment?  I tried out PHP's standard interactive, plus two additional php packages.
 
@@ -14,13 +16,13 @@ We're going to execute three test scenarios in PHP to test out each of these she
 
 The first one:
 
-```php?start_inline=1
+```php
 phpinfo();
 ```
 
 The Second:
 
-```php?start_inline=1
+```php
 $a = 'test';
 echo $a;
 ```
@@ -28,7 +30,7 @@ echo $a;
 And the third one is going to be a class creation, followed by `var_dump()`ing it out to the display.  Our file:
  
 **`test.php`**
-```php?start_inline=1
+```php
 class TEST
 {
   protected $_val = 'test';
@@ -42,7 +44,7 @@ class TEST
 
 And we're going to execute the following:
 
-```php?start_inline=1
+```php
 include 'test.php';
 $a = new TEST();
 var_dump($a);

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Reduce Vagrant code duplication by using functions
+date: 2016-08-27
 tags:
 - linux
 ---
 I use [Vagrant](https://vagrantup.com) for most of my server management.  One thing I noticed is that my `Vagrantfile` can get pretty large - especially if I have multiple environments that share the same configuration.
+
+<!--more-->
 
 Then it occurred to me - this is just a ruby file!  So, I decided to use a function to limit down some of my configuration.  
 

@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Two Column Background Colors Demo
+date: 2012-12-18
 tags:
 - css
 - html
 - misc-web
 ---
 I often run across this problem and I have to solve it each time.  I finally decided to blog about it.
+
+<!--more-->
 
 Here is the problem:  We have a two column layout.  We have a fixed width on at least one column.  We also know the width of the container.  We want the two columns to have different background colors (white can be considered a color, the background color, etc).  Finally, we want both columns to fill in completely with background color no matter the lengths of each content (which we do not know, and it alternates.)  
 

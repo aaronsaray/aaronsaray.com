@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Bookmarklet: Wage Calculator'
+date: 2009-01-28
 tags:
 - javascript
 ---
 While searching for employment, I realize I can't be super picky - but my household does have needs!  Because of this, I've developed a quick calculator / bookmarklet for the browser that I thought I'd share.  It allows you to enter a yearly or hourly amount, and it shows the corresponding amounts.  This tells you if that salary posting fits within your needs.
+
+<!--more-->
 
 **Features**
 

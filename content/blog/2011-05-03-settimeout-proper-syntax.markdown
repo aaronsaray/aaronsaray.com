@@ -1,10 +1,12 @@
 ---
-layout: post
 title: setTimeout proper syntax
+date: 2011-05-03
 tags:
 - javascript
 ---
 The javascript function setTimeout can be used to execute a function after a specified amount of delay.  It uses the javascript callback pattern.  Its important to use the callback pattern correctly, however, or you may get different results than you expect.  One example of this is the immediate execution of a function versus the callback execution.  Note this example:
+
+<!--more-->
 
 ```javascript
 function myTime(x)

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Requirements Gathering Questions to Ask
+date: 2023-03-01T11:00:00
 tags:
 - business
 ---
 Gathering requirements for a new project can get unwieldy and unorganized pretty easily. It's easy to get lost or go down a deep rabbit hole. You may be getting excited about the new project's technical challenges or be blindly following the client's explanation and description. How do you know you've covered everything, though? What if you're missing vital points?
+
+<!--more-->
 
 No project is exactly the same, so it's very difficult to make an exact blueprint of the questions you need to ask. However, there are many common patterns and themes in most projects. I've created a set of questions that form the basis of my requirements gathering conversation and I'll share them below.
 

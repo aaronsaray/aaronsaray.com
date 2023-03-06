@@ -1,10 +1,12 @@
 ---
-layout: post
 title: PHP and the UUID
+date: 2009-01-14
 tags:
 - php
 ---
 I've been thinking more and more about having unique ID's - especially with working with larger datasets - and I thought it was high time that I investigated the UUID.
+
+<!--more-->
 
 The first time I ever heard about these was actually Microsoft's implementation of the GUID in the CLSID sections of the windows registry.  However, if you check out the [RFC for UUID](http://tools.ietf.org/html/rfc4122), you'll see that's just one of the uses and types.
 
@@ -58,7 +60,7 @@ Ok - first off, lets generate some random numbers with mt_rand().  The middle tw
 
 However, what about the next bigger one, the 8 digit one?  Well, I'm using a windows machine in 32 bit - so I did a bit of math here:
 
-```php?start_inline=1
+```php
 var_dump(0xffffffff);
 print mt_getmaxrand();
 ```
@@ -69,7 +71,7 @@ Outputs were: 4294967295 and 2147483647 respectively, so I know we'll have to br
 
 The best example of all of this - and what I used to kind of reverse-engineer for this article, was from the PHP manual, check it out:
 
-```php?start_inline=1
+```php
 sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
         mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff),
         mt_rand(0, 0x0fff) | 0x4000,

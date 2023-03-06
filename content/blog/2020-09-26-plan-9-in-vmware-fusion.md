@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Run Plan 9 in VMWare Fusion (on Mac)
+date: 2020-09-26
 tags:
 - macos
 ---
 If you're not familiar with Plan 9 from Bell Labs, its about time you did. [Plan 9](https://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs) is one of the first GUI operating systems, the precursor to most of the experiences that we now take for granted.  I knew a bit about it, but I wanted to actually use it.  And, not having a computer laying around from the 1980s anymore, the next best thing was a virtual machine.
+
+<!--more-->
 
 For this blog entry, I'm going to be using VMWare Fusion 11 on MacOS Catalina.  That doesn't mean that this won't work on other virtualization services as well.
 

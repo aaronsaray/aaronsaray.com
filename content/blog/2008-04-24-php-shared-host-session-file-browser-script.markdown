@@ -1,11 +1,13 @@
 ---
-layout: post
 title: PHP Shared Host - Session File Browser Script
+date: 2008-04-24
 tags:
 - php
 - security
 ---
 PHP stores its session information into flat files unencrypted by default. 			
+
+<!--more-->
 
 [![Session File Browser](/uploads/2008/sessionfilebrowser-108x150.jpg)](/uploads/2008/sessionfilebrowser.jpg){: .thumbnail }{: .pull-right}
 

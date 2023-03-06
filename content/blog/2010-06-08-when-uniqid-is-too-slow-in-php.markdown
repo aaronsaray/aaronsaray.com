@@ -1,14 +1,16 @@
 ---
-layout: post
 title: When uniqid is too slow in PHP
+date: 2010-06-08
 tags:
 - php
 ---
 I just profiled some of my code and found out that the biggest chunk of my processing time was used by [`uniqid()`](http://php.net/uniqid).  I use this to generate form tokens to prevent cross site request forgeries.  On one page, I have 6 forms each with its own unique `uniqid()`.
 
+<!--more-->
+
 The first thought is to just use one ID per page.  However, I didn't want to change too much of my code.  It's working - so lets just make it work faster.  I did some thinking and realized that maybe my unique id didn't need to be THAT unique - just not super predictable.  A `sha1()` hash of a random number should do the trick.  And it should be faster.  Just to verify, I did my own benchmark using this code:
 
-```php?start_inline=1
+```php
 $start = $stop = array();
 
 $start['uniqid'] = microtime(TRUE);

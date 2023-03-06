@@ -1,10 +1,12 @@
 ---
-layout: post
 title: I Didn't Launch My Start Up - and That's OK.
+date: 2019-07-15
 tags:
 - business
 ---
 I deal with a lot of start-up founders. One thing that I've noticed from a lot of them is that they feel like no one understands the struggles they're going through. A lot have talked about being lonely or trying to find people to count on.  Because of this, I had an idea - I wanted to help them with an online tool.  I came up with the idea for StartUp Tribe.
+
+<!--more-->
 
 Here was the pitch:
 

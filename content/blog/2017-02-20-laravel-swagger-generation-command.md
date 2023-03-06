@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Laravel Command to Generate Swagger Documentation
+date: 2017-02-20
 tags:
 - php
 - laravel
 ---
 If you're not using [Swagger](http://swagger.io/) (or OpenAPI) yet to document your APIs, you should start.  It's pretty simple to get started - especially in PHP.  I recommend using the [swagger-php](https://github.com/zircote/swagger-php) package - it's pretty easy.  Just use annotations, and then generate the Swagger definition when you're done.
+
+<!--more-->
 
 Now, let's say you're totally immersed in the Laravel ecosystem - and you'd like to use `artisan` to generate your swagger docs.  Well, you can use a couple of the packages out there - but they really seem like bloat to me (a lot of features that I don't want.)  All I really want is one quick command that scans my `app` folder, and outputs the `swagger.json` file to my `public` directory.  Boom and done.
 

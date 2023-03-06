@@ -1,10 +1,12 @@
 ---
-layout: post
 title: ThatConference Slides
+date: 2012-08-14
 tags:
 - php
 ---
 I'm currently at [ThatConference](http://thatconference.com) here at the Kalahari Resort, in Wisconsin Dells.
+
+<!--more-->
 
 My talk is on wednesday at 1:00p.m.: your first five design patterns.
 

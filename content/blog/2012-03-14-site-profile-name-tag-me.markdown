@@ -1,12 +1,14 @@
 ---
-layout: post
 title: 'Site Profile: name-tag.me'
+date: 2012-03-14
 tags:
 - archived-projects
 - business
 - misc-web
 ---
 **Note: I have shut down name-tag.me.  These notes were taken before I pulled the plug.**
+
+<!--more-->
 
 The goal was to make a "hello my name is" style name tag without the use of images but with a handwritten font.  
 
@@ -100,7 +102,7 @@ Image Download
 
 I was able to use the same ttf font in my image downloading.  I used imagettftext to position the items.  I then sent the following headers:
 
-```php?start_inline=1
+```php
 header("Cache-Control: public");
 header("Content-Description: File Transfer");
 header('Content-Disposition: attachment; filename="Hello My Name Is.png"');

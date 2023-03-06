@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Having Lunch With Employees Isn't Enough
+date: 2021-05-08
 tags:
 - business
 - management
 ---
 > This advice is based primarily on an in-person team. I'm sure we could make this work with a remote team, too, somehow.
+
+<!--more-->
 
 Many bosses will go out to lunch with their team here and there. While even bosses need to eat, usually there is an underlying goal: to bond with the team.  When you go out to eat with an employee, you can escape the work confines and maybe have better and deeper conversations.  That, and you can joke around without feeling the weight of the workplace.
 

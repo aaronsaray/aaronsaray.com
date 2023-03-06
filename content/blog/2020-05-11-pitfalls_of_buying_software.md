@@ -1,10 +1,12 @@
 ---
-layout: post
 title: The Pitfalls of Buying Pre-Made Software
+date: 2020-05-11
 tags:
 - business
 ---
 When you're working on a project with a tight timeline, it can seem really attractive to buy pre-made software to save time. But, there are a number of problems and pitfalls to be aware of before you do this.
+
+<!--more-->
 
 ### Buying Software to Save Time
 

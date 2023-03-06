@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Using ApacheTop with Cronolog
+date: 2010-06-01
 tags:
 - apache
 ---
 I love ApacheTop.  I love Cronolog.  After I installed cronolog and used it in my apache configuration, however, I found it more and more difficult to use apachetop.  I stopped using it.  Well, I finally came up with a bash script that eases my frustration with calling the proper path names for apachetop.  Check it out:
+
+<!--more-->
 
 ### My httpd.conf customlog
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Don''t Always Lead: Sometimes Just Be Great'
+date: 2012-02-28
 tags:
 - business
 ---
 What is the measurement of a good career?  Promotion?  Raises?  Running a project / leading a team?  Usually all of this.  However, the most traditional measurement of success in a career is moving upward.  Time to run a department, time to lead a team, etc.  However, I submit a very radical idea: Sometimes just be great, don't lead.  
+
+<!--more-->
 
 What does this mean?  Well so often, we see great engineers get promoted to be our 'boss.'  However, when this happens, suddenly the department starts to slip, success is lost, and this engineer isn't as happy as he used to be.  Sometimes it's ok to just be great at your job.  Know that being the number one resource, the go-to for your skill, is good enough.  If your goal is seniority, demand it for your position. If your desire is more money, demand it.  Sometimes we think that getting to a leadership position is the only way to gain.  I would suggest to really look at this before you try to achieve it.
 

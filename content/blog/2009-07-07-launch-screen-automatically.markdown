@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Launch Screen Automatically
+date: 2009-07-07
 tags:
 - linux
 ---
 Because the internet in the Crown building is as good as... well my parents 19.2K dialup - which drops pretty much every 5 minutes, I've had to use GNU screen extensively.
+
+<!--more-->
 
 I've modified my `.bash_profile` page to have the following line:
     

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Deciding What's Important in Life
+date: 2017-11-17
 tags:
 - business
 ---
 I've made a horrible mistake...
+
+<!--more-->
 
 Making more money, getting a better job, proving I'm more successful than average from where I came from.  Release more software, follow more people on Twitter, start more businesses.
 

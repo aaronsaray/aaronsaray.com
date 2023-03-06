@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Does your design leave an unknown size gap? navigationFiller.js!
+date: 2008-09-02
 tags:
 - javascript
 - misc-web
 ---
 If you've ever worked with a customer's CMS pages and heard the term "Oh but I want some images underneath the links" - you need this script.  Whether your using old style tables or the coolest CSS tricks, filling in space to the bottom of the page can be useful.
+
+<!--more-->
 
 ### Enter navigationFiller.js
 

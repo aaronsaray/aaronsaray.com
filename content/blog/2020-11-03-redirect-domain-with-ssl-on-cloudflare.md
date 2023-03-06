@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Redirect Domain with SSL on Cloudflare
+date: 2020-11-03
 tags:
 - misc-web
 ---
 To redirect an entire domain with SSL to a single page, you can use the free account on Cloudflare. Let me show you how.
+
+<!--more-->
 
 ### Why?
 

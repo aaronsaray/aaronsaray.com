@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The End of QuickPic
+date: 2020-10-19
 tags:
 - business
 - archived-projects
 ---
 QuickPic.dev was a site for quick edits, crops and touch-ups in your browser. After a year of stagnation, I think its time to move on - and share what I've learned.
+
+<!--more-->
 
 [![QuickPic.dev](/uploads/2020/quickpic-1.png)](/uploads/2020/quickpic-1.png){: .thumbnail}{: .inline}
 

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: How I test email recipients when I develop
+date: 2010-08-31
 tags:
 - misc-web
 - php
 ---
 When developing an application, there are usually various different environments that you run the code in.  First is the development environment.  Next, you have the QA or test environment, staging, and then live or production.  It stands to reason that if you are using outgoing e-mail in your application, and your application is in production, it should send to the proper recipients.  However, what do you do in testing and development?
+
+<!--more-->
 
 ### The Old Way: One Email to Rule Them All
 
@@ -19,7 +21,7 @@ So, for my code, if not in production, I'm going to replace the outgoing e-mail 
 
 Here is a bit of code I use to accomplish this:
 
-```php?start_inline=1
+```php
 $to = 'outgoing@email.com';
 if (ENVIRONMENT != 'LIVE') {
   $parts = explode('@', 'test@aaronsaray.com');

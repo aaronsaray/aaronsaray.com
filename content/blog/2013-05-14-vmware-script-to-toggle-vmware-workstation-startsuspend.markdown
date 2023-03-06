@@ -1,11 +1,13 @@
 ---
-layout: post
 title: VMWare Script to Toggle VMWare Workstation start/suspend
+date: 2013-05-14
 tags:
 - linux
 - scripting
 ---
 Normally I have multiple vm's running for various different projects - all of these are in VMWare Workstation instances I toggle between suspend and started.  I decided to create a script and an Ubuntu launcher icon for toggling the vms back and forth.
+
+<!--more-->
 
 First, check out the launcher I used:
 

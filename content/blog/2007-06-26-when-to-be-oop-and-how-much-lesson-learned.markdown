@@ -1,11 +1,13 @@
 ---
-layout: post
 title: When to be OOP - and how much... Lesson Learned!
+date: 2007-06-26
 tags:
 - php
 - misc-web
 ---
 I just finished reading a snippet of a book about design patterns - of which Strategy, Adapter, Decorator and others were discussed.  It got me to thinking about my design patterns that I used in JEMDiary - and what I'll be using in this project.
+
+<!--more-->
 
 The trouble comes when you start trying to figure out how implicit and explicit your OO design should become - for example, do you create a new object and rely on it to bring in its own db connection (and tightly couple it) or provide more public methods for it to explicitly create itself, passing in a db connection that hits an interfaced class instead.  Do you use the many strategy type patterns and keep a more loose architecture, or be more specific to your project and make it possibly more private (and more efficient)?
 
@@ -21,14 +23,14 @@ There was another directory called **`MVC`**.  Inside of here, every single main
 
 So, an example of our **`write.php`** class could be a filename of **`/view/browser/write.php`**
 
-```php?start_inline=1
+```php
 $write = new JEMDiaryWrite_view_browser();
 echo $write->output();
 ```
 
 So, the model classes all had protected methods and variables... and were known to be extended by the view classes.  So, if our title of our module was set, it'd be set in model as a protected attribute and accessed through $this because we extended it.  So, it wasn't weird to end up seeing a class definition such as:
 
-```php?start_inline=1
+```php
 class JEMDiaryWrite_view_browser extends JEMDiaryWrite
 ```
 

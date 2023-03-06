@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Run NPM in Docker
+date: 2019-12-30
 tags:
 - nodejs
 - javascript
 - docker
 ---
 For the most part, I've containerized all of my dependencies inside of my Laravel projects. But, one thing was missing: npm.
+
+<!--more-->
 
 I would use docker images for nginx, php and mysql (I even had another one for unit tests for mysql).  But, I never got around to containerizing my node and npm dependencies.  I didn't think it was too big of a deal - mainly because I only used the compiled versions anyway - until I upgraded my local node version and some of my older project's dependencies broke. I could no longer run the `npm run dev` or similar commands. Oh no!
 

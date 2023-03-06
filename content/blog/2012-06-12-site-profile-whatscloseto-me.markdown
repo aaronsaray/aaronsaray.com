@@ -1,12 +1,14 @@
 ---
-layout: post
 title: 'Site profile: whatscloseto.me'
+date: 2012-06-12
 tags:
 - archived-projects
 - business
 - misc-web
 ---
 Goal: Clever named site that shows local establishments close to your location.  Was based on Google Ip location services.  The thought was just for people to think 'whats close to me' and type that up.
+
+<!--more-->
 
 Technology:
 

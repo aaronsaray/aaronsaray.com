@@ -1,11 +1,13 @@
 ---
-layout: post
 title: JfbConsole - chainable Firebug Console jQuery plugin
+date: 2009-11-13
 tags:
 - javascript
 - jquery
 ---
 I find myself wanting to document various different attributes mid development on my jquery code.  I have created the following function to help use FireBug's console access code effectively in the jQuery fashion.
+
+<!--more-->
 
 ```javascript
  /**

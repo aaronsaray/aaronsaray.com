@@ -1,10 +1,12 @@
 ---
-layout: post
 title: How to Find Sections of Code to Review
+date: 2017-11-14
 tags:
 - programming
 ---
 I'm a huge fan of code review and code walkthroughs.  I've been [asked before what I look for while reviewing code]({% post_url 2012-10-18-what-i-look-for-in-a-code-review %}) but I don't know if I've ever addressed ways to pick out what code to actually review.
+
+<!--more-->
 
 Your code base might be huge - so how do you know what to review?  You might periodically review code or do a pull-request-review process, but how do you know what to focus on or zero in on?  I've got a few tips.
 

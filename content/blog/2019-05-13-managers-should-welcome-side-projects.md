@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Managers Should Welcome Side Projects
+date: 2019-05-13
 tags:
 - business
 - management
 ---
 I worked with a client one time who didn't like when their employees had side projects.  "If they have free time, they should be spending it on our project! That's why they are salary!"
+
+<!--more-->
 
 There are so many things wrong with that statement.  But let's just focus on one area.  I disagree with this idea that side projects take away from the company's objectives.  Let's talk about some of the objections.
 

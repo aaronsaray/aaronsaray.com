@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Are programming surveys accurate?
+date: 2022-03-27
 tags:
 - programming
 ---
 Please indulge me on a bit of an open-ended question and discussion.  Recently I saw some "state of the XYZ" surveys where those were specific languages. The surveys were only answered by about 3,000 people each.  And then people spoke about them as authoritative references. But are these surveys actually accurate?
+
+<!--more-->
 
 First of all, let's talk about sample size.  3,000 people is a lot when it comes to a survey. I've ran my own survey and I eked out about half of that. So it's great for a survey, but does it really reflect the whole market?  How was this sample gathered? Was it purposefully built - or was it just people who decided to answer?  Who just happened to be in the arena where the survey was posed?
 

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Laravel 5 Middleware that Requires JSON
+date: 2019-03-18
 tags:
 - php
 - laravel
 ---
 Laravel has a built in request helper called `wantsJson()` that determines if the request is requesting JSON with the `Accept: application/json` header.  But, what if you want to only accept JSON responses?  I set up a Laravel middleware that rejects anything that isn't JSON.
+
+<!--more-->
 
 **`app/Http/Middleware/RequiresJson.php`**
 ```php

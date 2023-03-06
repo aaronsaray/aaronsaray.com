@@ -1,11 +1,13 @@
 ---
-layout: post
 title: TrackThings.com
+date: 2012-08-22
 tags:
 - ideas
 - business
 ---
 Idea: TrackThings.com.  This website is made to track sales people and distribution of promotional materials.  It was initially thought of as a way to track on-the-ground sales distribution.  For example, if you had someone go to three businesses on one street, they could easily track where they went, and mark the interest for followup.
+
+<!--more-->
 
 Basically, the need is that on the ground sales people need to be able to track what they distribute and who they talk to - and do it easily.  We would use GPS and foursquare to do two things: a) allow them to easily retrieve location data and not have to retype it - and b) allow them to check in.  Owners would be able to plot where users checked in and what the overall area interest was.  Additionally the information from foursquare would be used to populate the owner's crm.
 

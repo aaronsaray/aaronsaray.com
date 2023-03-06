@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Change the @author tag default in Eclipse PDT
+date: 2010-10-22
 tags:
 - eclipse-pdt
 ---
 When creating a docblock in Eclipse PDT, if commenting is enabled, a template is inserted.  This template references the `$user` variable which is usually set to whichever user you are logged into your machine with.  You can change this variable on the command line every time you launch Eclipse if you really wanted to:
+
+<!--more-->
     
     eclipse -vmargs -Duser.name="Aaron Saray"
 

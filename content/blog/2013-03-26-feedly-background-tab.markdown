@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Feedly Background Tab
+date: 2013-03-26
 tags:
 - google
 ---
 After transitioning away from the doomed Google Reader to Feedly, I found it to be awesome!  I only had one gripe with the shortcut key scenario... when you went to view the entire article in a new tab, it was always focused.  This meant I'd still have to middle click with my mouse to put my tabs in the background.
+
+<!--more-->
 
 After doing some research, I found a bunch of people actually had that problem.  So I decided to make a chrome extension.
 

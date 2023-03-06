@@ -1,10 +1,12 @@
 ---
-layout: post
 title: A Better Alternative to .gitkeep
+date: 2021-06-28
 tags:
 - git
 ---
 Since git does not store folders specifically (just path information), if you need an empty folder in your project that can be hard. Especially if that folder needs git to ignore any content inside of it. A community convention to solve this challenge has been the `.gitkeep` file. This is not part of the spec, combining that file with various `.gitignore` rules can solve this problem. But, there's a better way.
+
+<!--more-->
 
 Instead of having a `.gitkeep` file littering up your repository, you can use a `.gitignore` file in a different way.  
 

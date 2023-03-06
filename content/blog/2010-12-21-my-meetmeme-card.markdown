@@ -1,11 +1,13 @@
 ---
-layout: post
 title: My Meetmeme card
+date: 2010-12-21
 tags:
 - misc-web
 ---
 I received a set of cards from [meetmeme.com](http://meetmeme.com).  In addition to my cards, they also provide the following URL:
 [http://mtme.me/c89ab](http://mtme.me/c89ab)
+
+<!--more-->
 
 I thought this was a pretty cool idea but with two problems:
 

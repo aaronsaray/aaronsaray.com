@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Reasons Why Not to Use Doctrine with Laravel
+date: 2019-11-16
 tags:
 - php
 - laravel
 ---
 Currently, there are two pretty common packages for interacting with your database: Eloquent and Doctrine.  Eloquent is part of Laravel and Doctrine, while used often on its own, is usually referenced with Symfony.  If you've come to read this article, you're probably versed in Doctrine and wondering why you can't just - or shouldn't just - use it with your new Laravel project.
+
+<!--more-->
 
 There are a number of packages, like [Laravel Doctrine](https://www.laraveldoctrine.org/) that make it easy to interact and interject Doctrine into Laravel. So, it seems like this might be a pretty valid choice.  Why am I against it?  
 

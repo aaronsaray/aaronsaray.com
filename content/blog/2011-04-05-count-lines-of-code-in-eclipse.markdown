@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Count lines of code in Eclipse
+date: 2011-04-05
 tags:
 - eclipse-pdt
 - ide-and-web-dev-tools
 ---
 When searching for how to count the lines of code I had in my project, I ran into this [blog entry](http://www.binaryfrost.com/index.php?/archives/207-Easy-way-to-count-Lines-of-Code-in-Eclipse.html).  While its a good start, it still gave me some inaccurate counts.  I was getting inflated counts because of new lines.  So, here is my alternate solution:
+
+<!--more-->
 
   1. Open Eclipse and open your project
 

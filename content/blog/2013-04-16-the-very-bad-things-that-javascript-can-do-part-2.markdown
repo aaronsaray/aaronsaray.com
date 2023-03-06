@@ -1,12 +1,14 @@
 ---
-layout: post
 title: 'The very bad things that Javascript can do: Part 2'
+date: 2013-04-16
 tags:
 - html
 - javascript
 - security
 ---
 In part 1, I discussed the various arguments I run into about wanting to be overly security conscious with our sites in regard to third party javascript. In this entry, we'll run through a few scenarios.
+
+<!--more-->
 
 In our scenarios here, we're going to focus on a fake award site called “AwardSite” that gave our victim a winning notification. They are in the top 5% of 2013's best websites. The servers have PHP and are apache servers.
 
@@ -62,7 +64,7 @@ Then, the **`award.png`** file has the following PHP. (Please note, I've not wen
 
 Note: `updateSite()` is a function that writes an entry to the database using that siteID. I didn't think it was important enough to show that code too.
 
-```php?start_inline=1
+```php
 $siteID = isset ($_GET['compress']) ? $_GET['compress'] : null;
  
 if ($siteID) {

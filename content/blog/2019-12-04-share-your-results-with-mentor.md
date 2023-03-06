@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Share Your Results with Your Mentor
+date: 2019-12-04
 tags:
 - business
 ---
 A question I'm asked often is "how do I pay back my mentor?" (If you've read other entries, you know I'm a big [fan](https://www.aaronsaray.com/2018/what-i-learned-from-corp-gig) of [mentoring](https://www.aaronsaray.com/2019/dev-manager-one-on-one-coaching).)  Well, mentors have various reasons for doing their work, so not one solution fits all.  But, I can tell you one thing that they'll appreciate no matter what.
+
+<!--more-->
 
 Share your progress based on their advice.
 

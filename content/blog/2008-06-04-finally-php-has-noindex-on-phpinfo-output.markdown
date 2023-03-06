@@ -1,15 +1,15 @@
 ---
-layout: post
 title: Finally - PHP has NoIndex on phpinfo output
+date: 2008-06-04
 tags:
 - php
 - security
 ---
-### Security Issue?
-
 A big issue with PHP security had been the developers creating a php info page and not removing it from a production site.  As you may know, `phpinfo()` will dump a ton of useful information (for the developer - as well as the cracker) to the screen:
 
-```php?start_inline=1
+<!--more-->
+
+```php
 phpinfo();
 ```
 

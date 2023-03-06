@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Be careful with prepareForValidation in Laravel
+date: 2022-09-02
 tags:
 - php
 - laravel
 ---
 The [prepareForValidation()](https://laravel.com/docs/9.x/validation#preparing-input-for-validation) method is really useful in Laravel requests: it helps modify the incoming data so that validation might be easier.  But you need to be careful that you implement it correctly and don't mess up your data. Let me explain.
+
+<!--more-->
 
 In the documentation, `prepareForValidation()` indicates that you can use the `$this->merge()` method to merge in newly modified data.  This is a great way to update the data in one fell swoop.  Whatever you merge in overwrites the original incoming content, and then the validation can be done.
 

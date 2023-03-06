@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Morning Motivational Email to Text
+date: 2014-12-29
 tags:
 - php
 ---
 So I'm going to try this new thing - watch a motivational quick movie in the morning via youtube.  I made a playlist of videos and have put the following code in cron for 5:30 every morning.  It will send an email (which is actually email to txt on my phone) with a link to open the youtube player on my phone with a random item from my playlist.  Hope you find it useful!
 
-```php?start_inline=1
+<!--more-->
+
+```php
 /**
  * Get Random Video From Youtube Playlist and Email it
  *

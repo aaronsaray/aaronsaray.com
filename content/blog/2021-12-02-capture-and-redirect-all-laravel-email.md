@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Capture and redirect all Laravel email
+date: 2021-12-02
 tags:
 - php
 - laravel
 ---
 First off, if you can use something like [mailtrap](https://mailtrap.io/) I definitely recommend doing it. Mailtrap provides credentials and configuration so you can capture all of your email into a test inbox. But if that's not possible, there is another option - and it has to do with Laravel's mail events.
+
+<!--more-->
 
 When Laravel send a mail, it issues two events.  (This is valid for Laravel 8.x and some earlier versions.  Newer versions of Laravel may be using a different mailer system).  Those [mail events](https://laravel.com/docs/8.x/mail#events) are `MessageSending` and `MessageSent`.  If we listen to the `MessageSending` event, we can access the underlying mailer and customize it.
 

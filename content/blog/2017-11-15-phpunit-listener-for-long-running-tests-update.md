@@ -1,11 +1,13 @@
 ---
-layout: post
 title: PHPUnit Listener for Long Running Tests Update
+date: 2017-11-15
 tags:
 - php
 - phpunit
 ---
 I wrote instructions in 2011 to [add a PHPUnit Listener to Watch for Long Running Tests]({% post_url 2011-12-20-add-phpunit-listeners-to-watch-for-long-running-tests %}) which seem to be a bit out of date now.  But, here's a quick refresher:
+
+<!--more-->
 
 We want to add a listener to our PHPUnit tests that checks to see if any of the unit tests take longer than 2 seconds.  If so, we want to issue a warning to the screen to let us know so we can check it out.  If a unit test is taking longer than 2 seconds, there's probably something wrong.
 

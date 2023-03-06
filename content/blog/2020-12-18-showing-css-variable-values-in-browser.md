@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Seeing Calculated Values of CSS Variables in Browsers
+date: 2020-12-18
 tags:
 - misc-web
 - css
 ---
 CSS contains [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) or variables which make style reuse a breeze. But, when you use the inspector on your favorite browser, you only see a definition of the variable, not the value itself. If you want to see the value of the variable, it just takes an extra step or two in your favorite browser.  Let me show you how.
+
+<!--more-->
 
 In each of these examples, I've brought up the [No Compromises](https://nocompromises.io) website, brought up the inspector, and focused on the body's background color.  The `background-color: var(--light-color);` is what we'll be inspecting.  Other CSS variables are accessed in very similar ways.  All of these examples are generated on MacOS.
 

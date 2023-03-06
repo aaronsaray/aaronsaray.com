@@ -1,13 +1,13 @@
 ---
-layout: post
 title: The Dev Manager One on One Coaching
+date: 2019-05-06
 tags:
 - business
 - management
 ---
-<div class="update-post">
-    Not all things go as planned, and that's ok. Entrepreneurship is hard! I've decided to roll my Dev Management coaching back into AaronSaray.com.
-</div>
+> Not all things go as planned, and that's ok. Entrepreneurship is hard! I've decided to roll my Dev Management coaching back into AaronSaray.com.
+
+<!--more-->
 
 I'm proud to announce that I've launched One on One Coaching at The Dev Manager!
 

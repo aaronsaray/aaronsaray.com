@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Zend Framework: Bootstrap vs Front Controller Plugin'
+date: 2011-05-24
 tags:
 - zend-framework
 ---
 Today I was reviewing some old code I wrote in Zend Framework.  One of the things I was doing in the `Bootstrap.php` file was creating an function called `_initViewSettings()`.  In here I set a bunch of values for the xhtml version, the css files to include, etc.  Now I realize my mistake:
+
+<!--more-->
 
 **Do not include functions in the bootstrap.php file that will never be used by command line.**
 
@@ -17,7 +19,7 @@ Front controller plugins are launched whenever there is a request as a webpage. 
 Let's see this in practice.  Here's my before:
 
 **`application/Bootstrap.php`**
-```php?start_inline=1
+```php
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
   protected function _initViewSettings()
@@ -35,7 +37,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 Now, afterward, make sure front controller plugins are defined, and then create a front controller plugin.  After:
 
 **`application/Bootstrap.php`**
-```php?start_inline=1
+```php
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
   protected function _initFrontControllerPlugins()
@@ -49,7 +51,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 **`application/plugins/ViewSetup.php`**
 
-```php?start_inline=1
+```php
 class Application_Plugin_ViewSettings extends Zend_Controller_Plugin_Abstract
 {
   public function routeShutdown($request)

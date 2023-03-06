@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Homekit Notify If Door Open Too Long
+date: 2020-10-12
 tags:
 - iot
 ---
 I've finally come up with a couple of solutions to get a notification if a door has been open too long in my house. In
 Homekit, the automations are extended with Shortcuts, and that's what we'll use.
+
+<!--more-->
 
 So, to preface, I didn't really investigate into the Shortcuts option in Homekit automations until recently. I thought 
 it was just allowing me to create a Shortcut that allowed me to do home automation.  Turns out, while that's possible,

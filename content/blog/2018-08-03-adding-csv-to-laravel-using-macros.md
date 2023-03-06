@@ -1,17 +1,19 @@
 ---
-layout: post
 title: Adding CSV Responses to Laravel Using Macros
+date: 2018-08-03
 tags:
 - php
 - laravel
 ---
 Laravel has a lot of the most common functionality built into the framework.  However, decisions need to be made to balance the needs of the majority of use cases with the stability and agility that programmers need.  No one really wants a bloated library.  Because of this, you might find that you need functionality that is not directly built into Laravel.  When I started working with Laravel-based CSV responses, this was the case.  (This article is based on Laravel 5.6.)
 
+<!--more-->
+
 ### The Problem
 
 I’ve been building out API endpoints to handle JSON responses using the built-in method `Request::wantsJson` and the response type `JsonResponse` like this:
 
-```php?start_inline=1
+```php
 if ($request->wantsJson()) {
   return response()->json($myPayload);
 }
@@ -21,7 +23,7 @@ Now I need to build some reporting-based endpoints that respond to requests for 
 
 To keep my code consistent, I want to write the CSV response the same as the JSON one.  I imagine I’ll write something like this:
 
-```php?start_inline=1
+```php
 if ($request->wantsCsv()) {
   return response()->csv($myPayload);
 }
@@ -34,7 +36,7 @@ Luckily, the Laravel maintainers have implemented a way for us to extend built-i
 I decided to add my CSV functionality as a macro to both the request and response objects using my app service provider. I’m using [The League CSV](https://csv.thephpleague.com/) to easily handle my CSV response (if you’ve dealt with different line-endings, encodings, complicated escape sequences and found yourself spending tons of time, wise up sooner than I have and use this library instead).
 
 **AppServiceProvider.php** in the `boot()` method
-```php?start_inline=1
+```php
 Response::macro('csv', function (array $value, int $status = 200) 
 {
   if (empty($value)) throw new \DomainException('The CSV document must have content.');

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: A Better Milwaukee
+date: 2010-07-22
 tags:
 - photoshop
 ---
 Artsy? I know - this is a bit non standard of a blog post for me... but bear with me. :)
+
+<!--more-->
 
 A fellow kayaker took this picture of Milwaukee.
 [![](/uploads/2010/before-300x77.png)](/uploads/2010/before.png){: .thumbnail}

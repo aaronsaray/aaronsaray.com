@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Using custom view scripts for Zend_Form in ZF1
+date: 2012-12-25
 tags:
 - zend-framework
 ---
 To start out, I realize that a lot has changed in Zend Framework 2 regarding Zend_Form.  I think there have been a number of interesting changes, but perhaps those changes weren't explained that clearly either.  But I digress.  This piece is about Zend Framework 1.12.x Zend Form - and using view scripts for elements/the form.
+
+<!--more-->
 
 ### The Purpose of Zend Form
 
@@ -32,7 +34,7 @@ Let's start with a simple example rendering an element of the form using a custo
 
 First, the Zend Form.
 
-```php?start_inline=1
+```php
 class Application_Form_Test extends Zend_Form
 {
   public function init()
@@ -57,7 +59,7 @@ class Application_Form_Test extends Zend_Form
 
 And now, the view script.
 
-```php?start_inline=1
+```php
 echo $this->formLabel($this->element->getName(), $this->element->getLabel());
 
 echo $this->{$this->element->helper}(

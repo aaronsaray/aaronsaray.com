@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Bass Test App/Website
+date: 2019-04-15
 tags:
 - business
 - javascript
 - ideas
 ---
 I was calibrating my speakers the other day, so I searched and found a Bass Test YouTube video. Later on, I was thinking about the presentation I saw where some guys made a DJ system with [Tone.js](https://tonejs.github.io/) and I wondered if it made sense to make a bass test website and/or app.
+
+<!--more-->
 
 Now, I started down the path of making one myself. Then, I realized this was a very clever way of procrastinating. I think the idea still has merit to explore, but I'll just share the idea and what I thought of so far.  I don't think it makes sense for me to try to waste time building it.
 

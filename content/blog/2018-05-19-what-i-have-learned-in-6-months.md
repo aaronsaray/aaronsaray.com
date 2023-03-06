@@ -1,10 +1,12 @@
 ---
-layout: post
 title: What I've Learned in 6 Months
+date: 2018-05-19
 tags:
 - business
 ---
 Every mistake comes with a lesson or two...
+
+<!--more-->
 
 It's been about 6 months since I [wrote]({% post_url 2017-11-17-whats-important-in-life %}) about having to take a step back and figure out what's important in life.  I think its important that I share some findings and thoughts.
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: What "type" are you?
+date: 2016-05-09
 tags:
 - php
 ---
 When I went to a University for a Computer Science degree, a required class was Introduction to Java Programming.  I remember the first thing the professor taught seemed very confusing at the time.  I can still hear his voice very clearly: "So to begin with, we'll type... string string equals new string."  
+
+<!--more-->
 
 ### Episode 11: What Type Are You?
 
@@ -27,7 +29,7 @@ As a Confident Coder, we know that we want our methods to be doing the least amo
 
 The following style illustrated in this example might be familiar to you:
 
-```php?start_inline=1
+```php
 function doSomething($value)
 {
   $value = (array) $value;
@@ -40,7 +42,7 @@ If I document my function (and now have a type-hinted signature), it will be the
 
 Note how the previous example can be refactored to require the proper data type:
 
-```php?start_inline=1
+```php
 function doSomething(array $value)
 ```
 
@@ -52,7 +54,7 @@ Imagine a code base where programmers can send any of their objects into your me
 
 This interface and class method help demonstrate this:
 
-```php?start_inline=1
+```php
 class MyProcessorClass
 {
   function process(MyPluginInterface $yourPlugin)

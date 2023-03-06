@@ -1,16 +1,18 @@
 ---
-layout: post
 title: Setting Config Variables - Constants vs. Abstract Class Access
+date: 2007-06-12
 tags:
 - php
 ---
 As I was looking through some old code from Big Boy, I noticed a block of his code at the top of his initial control file and noticed a way he was using his configuration.  He was defining his from an INI file and setting constants in the code with a prefix identifier.  I then took a minute to look at my most recent framework to see how I was using my config - a static class instance with an internally held singleton pattern.  It got me starting to think of which was best... I have a new open source project coming up and I'd like to do the right thing.
 
+<!--more-->
+
 ### INI File and Constants
 
 Having dabbled in win32 programming back in the 3.1 era, I am very familiar with the `.ini` file.  I used to love to sneak little bits of 'hacks' into all my ini files ( even as far as making another person's file manager load into something else from accessing their win.ini... ;) )  PHP supports this with its [`parse_ini_file()`](http://php.net/parse_ini_file) function.  This function lets you make standard `.ini` files - and will read them into a nice pretty array for you.  With an additional boolean flag, you can even make multidimensional arrays (check out the docs).  Basically, big boy was reading in an `.ini` file and then looping through sections, and variables and defining them... code example:
 
-```php?start_inline=1
+```php
 $ini = parse_ini_file('values.ini', true);
 foreach ($ini as $section=>$sectionArray) {
   foreach ($sectionArray as $pointer=>$value) {
@@ -29,7 +31,7 @@ The `get()` and `set()` methods function the same way.  First, it will check to 
 
 Here, for reference is what I'm using currently... (note this one is slightly different than what I originally described... because I use a framework of classes)
 
-```php?start_inline=1
+```php
 /**
 * configuration
 *

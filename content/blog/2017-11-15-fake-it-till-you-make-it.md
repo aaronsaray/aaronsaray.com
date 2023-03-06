@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Fake It Till You Make It
+date: 2017-11-15
 tags:
 - business
 ---
 You've heard the saying before: "Fake it till you make it."  I agree with this philosophy - especially when it comes to getting a great programming job.  But, I think the way you 'fake' it is important.  It's important to fake it ethically.  Let's discuss.
+
+<!--more-->
 
 I caught a local tech school advising programmers to list their college experience as real experience.  "If the job says 2 years of experience," they said, "you are perfect for it. You have two years of experience here!"
 

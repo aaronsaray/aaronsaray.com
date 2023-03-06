@@ -1,12 +1,14 @@
 ---
-layout: post
 title: What License to Use for Private Software
+date: 2019-10-19
 tags:
 - business
 - misc-web
 - programming
 ---
 When it comes to Open Source Software, you have a number of choices to make for licensing your software.  When you provide a license for your software, you, as the copyright holder, are giving various types of permissions and warranties for the use of this software. You might even define the way it can be used and if modifications have to be submitted back to you. But, what do you "license" software that is closed, paid or private software that you don't want anyone else to use?
+
+<!--more-->
 
 > You should know that I am not a lawyer and I do not offer legal advice.  I may not even know what I'm talking about.  Please use this blog as reference, but don't refer to it as unequivocally authoritative for your license choice.
 

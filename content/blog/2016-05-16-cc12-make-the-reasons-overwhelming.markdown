@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Make the Reasons Overwhelming
+date: 2016-05-16
 tags:
 - php
 - business
 ---
 From a very young age, we're told to brush our teeth regularly.  We know we should, but it can be a struggle.  The reasons to invest our important play-time aren't always compelling.  (If they were, why would some parents have to check to make sure the children had brushed their teeth before bed?)  
+
+<!--more-->
 
 ### Episode 12: Make The Reasons Overwhelming
 
@@ -37,7 +39,7 @@ Third, using a dependency injection data connection allows me to switch between 
 
 Woah!  Let me see if I understand this.  If I create my services or models using an injected data source, I can reduce the amount of code I have to write for conversions?  Let's demonstrate this before and after situation with some very simple code.
 
-```php?start_inline=1
+```php
 class Service\User
 {
   private $db;
@@ -53,7 +55,7 @@ In the original code, no dependency injection is being used.  I like to use the 
 
 Let's compare this to our new code:
 
-```php?start_inline=1
+```php
 class Service\User
 {
   private $db;
@@ -67,7 +69,7 @@ class Service\User
 
 Sure, this is a level of uncoupled code that is good.  And, this is going to be great for testing.  But, let's demonstrate through some very simple use-case code where this concept really shines when dealing with conversions.
 
-```php?start_inline=1
+```php
 $oldService = new Service\User(new Adapter\MSSql());
 $newService = new Service\User(new Adapter\MySql());
 

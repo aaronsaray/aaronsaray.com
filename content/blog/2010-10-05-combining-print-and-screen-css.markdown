@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Combining Print and Screen CSS
+date: 2010-10-05
 tags:
 - css
 - misc-web
 ---
 When running YSlow the other day, I was reminded that I was loading 2 stylesheets when only one would suffice.  So, let this be a reminder to you - and a quick excerpt at my own solution:
+
+<!--more-->
 
 **Combine your Print and Screen stylesheets using the @media tag**
 

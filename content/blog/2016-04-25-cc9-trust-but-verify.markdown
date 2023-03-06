@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Trust, But Verify
+date: 2016-04-25
 tags:
 - php
 ---
 "Trust falls" are a team-building activity that some of my friends have had to endure.  I've been threatened with this exercise a few times.  But, I've never had to do it.  Luckily, I've been able to convince my team members I will participate without having to test their bicep and shoulder strength.  Or, perhaps I'm just not trusting enough.  (I once worked at a place that had a few employees that were really good friends and would force-trust-fall on each other.  When a group of colleagues were walking in a row, one would just throw himself backwards into the person behind him surprising them and shouting "trust fall!"  This was the only "trust fall" that I was forced to participate in.)  
+
+<!--more-->
 
 ### Episode 9: Trust, But Verify
 
@@ -18,7 +20,7 @@ I personally find an unexpected data type very annoying.  (And, I've seen enough
 
 So, for example, let's imagine that we're going to be calling a third-party library.  It will return an array of elements more than 99% of the time.  Every once in a while, it may return `null` if no results were found.  We might be tempted to write code like this:
 
-```php?start_inline=1
+```php
 $results = $thirdPartyService->fetchAll();
 
 foreach ($results as $result) {
@@ -32,7 +34,7 @@ This code will expect an array from the `fetchAll()` method.  Normally this has 
 
 Fortunately (or unfortunately), the code will still execute after this error.  But, having a warning like this is not a desired outcome.  Using the trust, but verify mantra, let's add a guard statement.
 
-```php?start_inline=1
+```php
 $results = $thirdPartyService->fetchAll();
 
 if (is_array($results)) {
@@ -48,7 +50,7 @@ In our new version of the code, the `$results` variable is now checked to make s
 
 A very popular way to pass information between websites is the JSON format.  A PHP script can easily consume JSON data using the `json_decode()` method.  Let's see an example of how we might consume a third party data source.
 
-```php?start_inline=1
+```php
 $jsonString = file_get_contents('http://thirdparty.org/feed.json');
 $jsonObject = json_decode($jsonString);
 
@@ -57,7 +59,7 @@ echo 'The name of the website we just consumed from:' . $jsonObject->name;
 
 Previously, we've determined the format of the JSON object and can trust that the `name` property will always be populated with the site name.  There was that scary word again: trust.  Can you guarantee that the JSON feed will never change the object property to `site_name` - what would happen then?  Consider this code:
 
-```php?start_inline=1
+```php
 $jsonString = file_get_contents('http://thirdparty.org/feed.json');
 $jsonObject = json_decode($jsonString);
 
@@ -73,7 +75,7 @@ In our trust, but verify programming style, this code will now verify that the e
 
 Let me show another example.  This one is actually inspired by a real event that happened while I was programming a third-party integration a few years ago.  The scenario is simple: call a third party service and it reveals how many minutes have passed since a specific event.  Then, I formulate that into a human readable version and display it.  (Please note, there are other ways to do this, but I've created this code in this manner to illustrate the issue as clear as possible.)
 
-```php?start_inline=1
+```php
 $minutesPassed = $thirdPartyService->minutesSinceEvent($eventID);
 
 $hours = floor($minutesPassed / 60);

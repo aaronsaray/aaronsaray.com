@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The Importance of Tracking Work Accomplishments
+date: 2017-09-25
 tags:
 - business
 - management
 ---
 Answer this question real quick: What was the most impressive thing you did 2 years ago at work?  Did you get the proper accolades for it? Or, possibly more important, did you get a performance-based wage increase or some other reward?  
+
+<!--more-->
 
 Perhaps you can't remember that task - or maybe it wasn't brought up during your review.  So, who is at fault for that?  The answer might not be something you want to admit - **it's you**.
 

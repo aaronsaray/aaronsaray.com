@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Easily Test JSON Keys in Laravel API Response
+date: 2017-06-27
 tags:
 - php
 - phpunit
@@ -8,11 +8,13 @@ tags:
 ---
 In my Laravel application, I have an end point that will retrieve a collection of Client models.  I have many other unit tests that validate that my repository returns the proper clients when requested, that my client model is sound.  My last test is a feature test checks that if I retrieve a list of clients from the end point there is proper pagination and client models exist.  I don't really need to test the exact values because I know this will work - from all my other tests.
 
+<!--more-->
+
 So, my goal is simple.  Call `/clients` and validate that the pagination is valid.  Additionally, validate that the returned data is in the format of a Client model.
 
 Let's see an excerpt of this test then:
 
-```php?start_inline=1
+```php
 public function testGetPaginationResult()
 {
   factory(Client::class, 15)->create();

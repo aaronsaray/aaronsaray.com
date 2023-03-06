@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Programming without E_Notice
+date: 2008-07-17
 tags:
 - php
 ---
 Well, my boss at #superdev - who can only be compared to a more energetic version of the squirrel from hoodwinked asked me to start putting together some thoughts here and there on some proper PHP coding.  I thought I'd start out the series with this article, Programming without `E_NOTICE`.
+
+<!--more-->
 
 Ok.
 
@@ -16,7 +18,7 @@ Ok.
 
 Image this code:
 
-```php?start_inline=1
+```php
 if ($admin) {
   print "super secret stuff";
 }
@@ -41,7 +43,7 @@ _If my variable has been set to something, print something else.  If my admin va
 
 I've seen code do this like this:
 
-```php?start_inline=1
+```php
 if ($isAdmin) {
   print "<div id='menu'>blahb lah blah</div>";
 }
@@ -50,7 +52,7 @@ if ($isAdmin) {
 
 Also, other times I've seen this:
 
-```php?start_inline=1
+```php
 if (!$normalUser) {
   print "<div id='menu'>blah blalhickity blah</div>";
 }
@@ -67,7 +69,7 @@ There are two ways that you can fix this type of error:
 
 **First, predefine every variable to a blank or null** before you could even use it.  This is especially good for those who still have registered globals on.
 
-```php?start_inline=1
+```php
 
 /** top of script **/
 $isAdmin = FALSE;
@@ -87,7 +89,7 @@ _One Caveat:_ Be careful with predefining your values, however, so that you don'
 
 _If you're really lazy and don't like spending all those extra lines, here's a tip:_
 
-```php?start_inline=1
+```php
 $a = '';
 $b = '';
 $c = '';
@@ -95,7 +97,7 @@ $c = '';
 
 **OR**
 
-```php?start_inline=1
+```php
 $a = $b = $c = '';
 ```
 
@@ -103,7 +105,7 @@ $a = $b = $c = '';
 
 `isset()` will return whether the variable is set to any value or not.  If it is not, it returns `false`, and then your if statement exits right away.  No calculation is done on an unset variable.  Example:
 
-```php?start_inline=1
+```php
 areTheyAdmin();
 
 if (isset($isAdmin) && $isAdmin) {
@@ -114,7 +116,7 @@ if (isset($isAdmin) && $isAdmin) {
 
 This also affects array keys that are unset.  You can view array keys the exact same as variables - you shouldn't read from an unset one - but you can write to one that doesn't exist yet.
 
-```php?start_inline=1
+```php
 $myArray = array('something'=>"another");
 
 /** bad boy **/
@@ -130,7 +132,7 @@ As with variables, you should use `isset()`.  I would caution against using `arr
 
 _Bonus!_  In that previous example, to write to the chunky key, you don't even have to define `$myArray`.  In this example, `$arrayKaBob` is defined into an array automatically, and then the key is set:
 
-```php?start_inline=1
+```php
 $arrayKaBob['key master'] = 'gate keeper';
 ```
 

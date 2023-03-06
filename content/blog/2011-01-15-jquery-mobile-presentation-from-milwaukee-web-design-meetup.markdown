@@ -1,6 +1,6 @@
 ---
-layout: post
 title: jQuery Mobile Presentation from Milwaukee Web Design Meetup
+date: 2011-01-15
 tags:
 - jquery
 ---

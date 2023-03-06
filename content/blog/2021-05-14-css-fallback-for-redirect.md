@@ -1,11 +1,13 @@
 ---
-layout: post
 title: CSS fallback for failed Javascript redirect
+date: 2021-05-14
 tags:
 - css
 - javascript
 ---
 For some analytic tools, an interstitial page may be required to load javascript and then redirect the user again.  Normally these page switches happen pretty fast and the user doesn't really notice or care. Some have a link to 'continue' the redirect just in case the Javascript fails.  But, what if we only wanted to show that link after a certain amount of time has elapsed, regardless of if the Javascript has failed or not?
+
+<!--more-->
 
 The conditions for failure may be that the javascript is taking too long to load it's resource, or that something in the javascript has thrown an error without proper error handling and the browser has stopped processing the rest of the javascript.  So, we want to show the link only later (we don't want to bother the user with this display unless we really have to) regardless of whether the javascript takes too long or completely crashes.
 

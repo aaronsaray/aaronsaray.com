@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Descriptive Naming Schemes
+date: 2016-03-02
 tags:
 - php
 ---
 There are two reactions to reading a new section of code for the first time.  Sadly, one of the most common seems to be of confusion, dismay, followed possibly by some sort of expletive (or many, depending on the length of the code).  The other is one of the most beautiful reactions, the most flattering, the most sought after reaction: "Oh, that makes sense" or "That's cool."
+
+<!--more-->
 
 ### Episode 2: Descriptive Naming Schemes
 
@@ -30,7 +32,7 @@ I don't know if I can answer that question.  I've given pointers in the last two
 #### An example to refactor
 In this example, the function listed is the last step of an insurance process.  It will add the primary insurance holder to the collection of dependents or members in the policy if the holder is not already part of the collection.
 
-```php?start_inline=1<?php
+```php<?php
 function lastStep($p, $ms)
 {
   $tmp = false;
@@ -54,7 +56,7 @@ Next, on to variables.  The variable `$tmp` is particularly troubling.  We're al
 
 Moving on: `$p`, `$ms` and `$m` are my last culprits.  If you know the reason for the method, you can probably guess these stand for primary, members and member.  But, if you are not familiar with the process, these naming choices are very confusing.  Let's refactor these into the proper names.  See the following updated code:
 
-```php?start_inline=1
+```php
 function addPrimaryToMembersIfMissing($primary, $members)
 {
   $isPrimaryFound = false;

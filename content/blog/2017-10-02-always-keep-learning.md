@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Always Keep Learning
+date: 2017-10-02
 tags:
 - business
 - misc-web
 ---
 The other day, an acquaintance of mine was complaining about never getting ahead in their career.  I didn't really feel like I knew enough about their area of expertise to give any advice - until I heard what they did when they got home.  During our conversation, they described their favorite TV shows, how involved they were with the outcomes; basically once they got home, 4 to 5 hours were spent on the couch watching TV.
+
+<!--more-->
 
 Now, I am a proponent of "doing other things" - relaxing, not burning out and expanding your mind in all kinds of ways.  But, this was just the same thing over and over.  I think I figured out one of the reasons why this person was not progressing in their career like they wanted to.
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: The Many Motivations of Money
+date: 2018-11-26
 tags:
 - business
 ---
 Motivation is a very hard thing to master. When used properly, you can get great things and enormous productivity. When misunderstood, a whole host of things appear to go wrong. Getting into all of the motivations of an employee or developer would take a book, one that I'm not ready to write yet! But, I wanted to focus on just one, money.  And, in that motivation, only three types of the many ways and mixes that people can be motivated by money.  
+
+<!--more-->
 
 It's important to understand, explain and analyze motivations to build a more productive team and a better product, company, or whatever your goal is. My aim is to talk through my assessment of some of these motivations with the hopes that it helps prompt the reader to analyze further and develop a deeper understanding on their own. This, surely, is not the one single manual for these parts of money motivation.
 

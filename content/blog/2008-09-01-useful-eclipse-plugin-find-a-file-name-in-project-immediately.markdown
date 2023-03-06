@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 'Useful Eclipse Plugin: Find a file name in project immediately'
+date: 2008-09-01
 tags:
 - eclipse-pdt
 - ide-and-web-dev-tools
 ---
 Unfortunately, at #superdev, there are times when the `include_path` in PHP is calculated.  It is not always clear where to find a file.  Other times there are just too many places to find the file.  Because of this - and Eclipse PDT's inability to find a file from an include or `include_once` statement when you ctrl click it, I needed to find a tool to find files fast.
+
+<!--more-->
 
 ### Don't be Lazy - use 'Teh Google'
 

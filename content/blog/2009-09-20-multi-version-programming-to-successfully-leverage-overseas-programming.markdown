@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Multi-Version Programming to Successfully Leverage Overseas Programming
+date: 2009-09-20
 tags:
 - business
 - programming
 ---
 Today, I read through the paper titled 'An Experimental Evaluation of the Assumption of Independence in Multi-Version Programming' (Find it [here](http://sunnyday.mit.edu/papers/nver-tse.pdf)).
+
+<!--more-->
 
 The basic concept is that in N programs written by N different programmers, they will have N*N bugs and inconsistencies.  However, the probability of them having the exact same fault is very small.  By executing the same programs at the same time and comparing the output to each other automatically, you can take the majority of exact same output and call that the bug-free result.  Those who have not matched the output of everyone else theoretically have a bug.
 

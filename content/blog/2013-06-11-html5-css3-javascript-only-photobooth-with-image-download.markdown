@@ -1,12 +1,14 @@
 ---
-layout: post
 title: HTML5, CSS3, Javascript ONLY Photobooth with Image Download
+date: 2013-06-11
 tags:
 - css
 - html
 - javascript
 ---
 So I decided that I wanted to challenge the concepts I know about online photo booths.  What are those?
+
+<!--more-->
 
 a) they must be flash
 

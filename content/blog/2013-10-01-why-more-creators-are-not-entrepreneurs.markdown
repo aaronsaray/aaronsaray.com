@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Why more creators are not entrepreneurs '
+date: 2013-10-01
 tags:
 - business
 ---
 The other day, I was presenting some of my hard work to a group of stakeholders in a meeting at work.  I went through the screens, showing all of the fruits of my months of labor.  
+
+<!--more-->
 
 And then it happened.  
 

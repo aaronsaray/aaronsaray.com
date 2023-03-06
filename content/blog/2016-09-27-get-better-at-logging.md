@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Get Better at Logging
+date: 2016-09-27
 tags:
 - php
 - misc-web
 ---
 Have you ever submitted a debug log for a piece of desktop software?  I'm always enthralled at the sheer amount of information that is included in some of these error reports.  It reminds me that I don't do enough logging.  As a matter of fact, I think most PHP developers don't do enough logging.
+
+<!--more-->
 
 Why don't we log more?
 
@@ -24,7 +26,7 @@ I submit this as the answer: two log files, one of all the details, and one with
 
 Here is an example of a logging system I have in place.
 
-```php?start_inline=1
+```php
 /**
  * Set up error log (WARNING) (logs/error.log) and activity log (logs/activity.log)
  * 

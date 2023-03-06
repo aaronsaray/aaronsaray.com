@@ -1,6 +1,6 @@
 ---
-layout: post
 title: No More "The Triangle"
+date: 2008-06-06
 tags:
 - misc-web
 ---

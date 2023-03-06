@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Named function or anonymous function for PHP helper
+date: 2022-03-11
 tags:
 - php
 ---
 The question is this: When creating a helper method in PHP, should you use a named function in the global scope, or an anonymous function assigned to a variable?
+
+<!--more-->
 
 Well first of all, let's define what these two choices are - so we understand why we're even asking the question.
 

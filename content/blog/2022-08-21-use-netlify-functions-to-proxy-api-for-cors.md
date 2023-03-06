@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Use Netlify functions to proxy an API without CORS
+date: 2022-08-21
 tags:
 - javascript
 ---
 You've got a great idea, there's a free API, and you've got free hosting on Netlify. You're ready to begin. You request your first bit of data and you hit that infamous CORS error: `Cross-Origin Request Blocked: The Same Origin Policy disallows
 reading the remote resource at https://some-url-here`. Ahh! So now, you have to build a complex backend to deal with this. Or do you? If it's just something simple, you can use Netlify's functions to proxy the request. Let's walk through how.
+
+<!--more-->
 
 First, let's break down what we want to do.  We want to make a website - for some reason - that shows the last time [chickenfacts.io](https://chickenfacts.io) was updated.  Luckily, there is an [API](https://github.com/aaronsaray/chickenfacts.io/blob/master/API.md) that you can retrieve.  Turns out you need to call the endpoint `https://chickenfacts.io/api/v1/facts.json` for a JSON return.  The field `last_counted` tells when the last update happened.
 

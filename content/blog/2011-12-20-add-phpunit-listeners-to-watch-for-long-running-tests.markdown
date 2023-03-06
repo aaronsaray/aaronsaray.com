@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Add PHPUnit Listeners to Watch for Long Running Tests
+date: 2011-12-20
 tags:
 - phpunit
 - testing
 ---
 One of the under-utilized features of PHPUnit probably is the listeners interface.  You can see the configuration options here: [php.net/appendixes.configuration.html](http://www.phpunit.de/manual/current/en/appendixes.configuration.html).  So, I decided that I want to use this to know if a Unit Test takes longer than 2 seconds to run.  That's super over-kill in my opinion, but that's my hard limit.  If it takes longer than 2 seconds to run, something is wrong!  So, I added the following to my configuration:
+
+<!--more-->
 
 **excerpt from `phpunit.xml`**
 
@@ -17,7 +19,7 @@ One of the under-utilized features of PHPUnit probably is the listeners interfac
 
 This simply says to invoke the listener from **`TestTimesLimitListener.php`** - which class name is `Application_test_TestTimesListener`.  Here is the code:
 
-```php?start_inline=1
+```php
 /**
  * Listener Class for test times
  * 

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: IEStandards.xml requests
+date: 2010-10-26
 tags:
 - misc-web
 ---
 The other day, I saw some 404 errors for the file **`IEStandards.xml`** in my error logs.  After a little research, I found some links [here](http://blogs.msdn.com/b/ie/archive/2009/07/01/ie-compatibility-list-pruning.aspx) and [here](http://blogs.msdn.com/b/askie/archive/2009/03/23/understanding-compatibility-modes-in-internet-explorer-8.aspx) that lead me to believe that I had done something wrong.
 Let me explain...
+
+<!--more-->
 
 The site I created uses an extensive amount of javascript.  For some reason, Internet Explorer was not allowing this site to function correctly - only on certain instances of IE8.  It was disallowing an AJAX submission and instead, redirecting the page with a popup warning information bar.  Grrr!
 

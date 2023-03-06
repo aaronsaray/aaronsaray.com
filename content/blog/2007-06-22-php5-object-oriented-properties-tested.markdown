@@ -1,10 +1,12 @@
 ---
-layout: post
 title: PHP5 Object Oriented Properties - Tested!
+date: 2007-06-22
 tags:
 - php
 ---
 I was recently reading an article (while researching for my website monitoring project), and there was a comment about PHP5's lack of flexibility in its Object Oriented usage.  Some people were arguing for it - and some against, the typical ranting that goes on in blog comments, etc.  Instead of joining the argument, I wanted to do my proof of concepts myself.  I'm going to explore (well I already know some of the answers - but it'll be exploration to YOU reader ;)) public/private constructors, magic methods, and maybe a few extras (we'll see when we get to the end!)
+
+<!--more-->
 
 _I'm using PHP 5.2.0 on Windows XP for these tests._
 
@@ -18,7 +20,7 @@ So without further rambling, lets get started with ... private constructors
 
 While the term 'proper' is debatable, the most improper solution is NOT to make a non-existent or empty constructor.   Instead, lets make it protected.  We know that a protected method cannot be ran outside of the class context (hint hint ;)) but it can be extended by a child class.  (Note: I rarely ever use private variables anymore.  There are instances, but most often, it appears to be sufficient to allow the variables to be private.  -- once again debatable).  Here's our example:
 
-```php?start_inline=1
+```php
 class classTest {
   protected static $_self = null;
 
@@ -44,7 +46,7 @@ A quick explanation: In the future examples, we're going to set `$_myVar`, a pro
 
 Lets run this code:
 
-```php?start_inline=1
+```php
 $myClassTest = new classTest();
 ```
 
@@ -56,7 +58,7 @@ Ok great - this means that we can't run this construct - we can't create a new `
 
 Let's move on.  How do we get the same instance of this class?  And let's make sure it ran?  Finally, lets make sure that we're really singleton-y?  Well, lets call an instance of the class, var dump it, sleep a bit, and call it again.  To prove it, our first call should dump our protected variable with a timestamp when it was constructed.  The second call should give the exact message...
 
-```php?start_inline=1
+```php
 $myClassTest = classTest::getInstance();
 var_dump($myClassTest);
 sleep(5);
@@ -78,7 +80,7 @@ Let's move on to another one of the common complaints...
 
 Let's start out with a basic example of overloading a class.  Our `__get()` method will allow us to get any value our method allows us to by referring to it as a public object attribute, and `__set()` will allow... well the opposite.
 
-```php?start_inline=1
+```php
 class classTest
 {
   protected $_protectedVars = array();
@@ -108,7 +110,7 @@ class classTest
 
 Lets verify that this will work:
 
-```php?start_inline=1
+```php
 $myClassTest = new classTest();
 var_dump($myClassTest);
 print "<br></br>";
@@ -131,7 +133,7 @@ Yes - it worked!  Thank you 'magic overloading' - but this isn't the question.  
 
 I changed the function...
 
-```php?start_inline=1
+```php
 private function __set($item, $value)
 {
   $this->_protectedVars[$item] = $value;
@@ -142,7 +144,7 @@ _But the output was the same!!_
 
 Then, I got to thinking... is PHP maybe erroring out - and not telling me?  Could it be that the magic method is private, its erroring out silently, but maybe still assigning the public attribute anyway?  (um der... in hindsight, it was the EXACT same output - in order for my next example to have been happening, the output would be different because it would be assigned as a public attribute, not a key to a protected variable)  Anyways, lets think about what PHP does here:
 
-```php?start_inline=1
+```php
 $o = (object) null;
 $o->test = 'blah';
 var_dump($o);
@@ -156,7 +158,7 @@ So we know, without having attributes defined, we can still assign them publicly
 
 Let's put a very dirty hack in - and print out to the screen when the `__set()` method is called.
 
-```php?start_inline=1
+```php
 private function __set($item, $value)
 {
   print "set was called";
@@ -182,7 +184,7 @@ So, our objective is not to allow the setter to be executed unless we've extende
 
 Let's replace `__set()` with this version (note: we're still gonna make it 'protected' - not so much because it matters but maybe to give a hint on the scope of this method)
 
-```php?start_inline=1
+```php
 protected function __set($item, $value)
 {
   if (get_parent_class($this)) {
@@ -196,7 +198,7 @@ protected function __set($item, $value)
 
 And our test call:
 
-```php?start_inline=1
+```php
 $myClassTest = new classTest();
 $myClassTest->newMessage = 'yay!';
 var_dump($myClassTest);
@@ -208,7 +210,7 @@ Results in:
 
 Well, lets add on our extended class, and change our code that we're invoking:
 
-```php?start_inline=1
+```php
 class extenderClassTest extends classTest
 {
   public function __construct()
@@ -238,7 +240,7 @@ To be honest, I haven't seen this in many conversations, but I was curious.
 
 Let's focus on this code of `classTest`:
 
-```php?start_inline=1
+```php
 public function __get($item)
 {
   if (isset($this->_protectedVars[$item])) {
@@ -252,7 +254,7 @@ public function __get($item)
 
 I first tried putting the reference character (ampersand) in front of the `$this`... syntax error.  In front of the `_protectedVars` - still no dice - syntax error.  Next, try putting an ampersand in front of __get(... nopers - no errors but doesn't work.  Lets check out our assignment code:
 
-```php?start_inline=1
+```php
 $myItem = $myClassTest->constructMessage;
 ```
 

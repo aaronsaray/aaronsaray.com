@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Understanding Company Productivity, High Performers and Amoebas
+date: 2021-02-14
 tags:
 - business
 ---
 I've seen a lot of high-performers enter slow-moving companies, make great progress, but then get upset. They can't seem to move the company along anymore. What's going on? Is it ok to move on? I've got a theory about all of this.
+
+<!--more-->
 
 So, the average slow-moving company is a huge amoeba-like blob moving forward with 100s of people slowly doing their work.  When a star performer comes in, they bust in from the back and work their way up the ranks.  Add a couple of these at the same time and you'll see the company start to speed up. But, only a little bit.
 

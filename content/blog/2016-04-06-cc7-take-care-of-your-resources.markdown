@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Take Care of Your Resources
+date: 2016-04-06
 tags:
 - php
 ---
 I'm going to say something that I never thought I'd say in my life.  In fact, I'm not sure that a single programmer has ever said this!  Ready?  
+
+<!--more-->
 
 ### Episode 7: Take Care of Resources, They Will Take Care of You
 
@@ -16,7 +18,7 @@ Now, let me explain.  One of the core principles of my religious upbringing was 
 
 To help illustrate this point, let's imagine that we have PHP installed on a server that charges per CPU cycle.  Perhaps my program has a simple loop that executes until an array is fully iterated through.
 
-```php?start_inline=1 
+```php 
 $values = array(1, 2, 3, 4, 5);
 for ($i = 0; $i < count($values); $i++) {
   echo "I am on line {$values[$i]} in my program.\n";
@@ -27,7 +29,7 @@ This will execute the loop while $i is less than the number of elements in the a
 
 Because I want to take care of my environment and not waste processing power and money, I'm going to rewrite my code like this:
 
-```php?start_inline=1 
+```php 
 $values = array(1, 2, 3, 4, 5);
 $valuesArrayCount = count($values);
 for ($i = 0; $i < $valuesArrayCount; $i++) {
@@ -41,7 +43,7 @@ In this new code, I opted to count the values only one time.  Now, instead of ex
 
 It's pretty difficult to be a successful PHP programmer without having at least some database skills.  One of the most common pairing is with MySQL.  I've too often seen programs where the usage of different technologies have not been optimized.  With MySQL in particular, PHP programmers can become the guest who won't leave: wasting time and server connections.  Let me demonstrate with some code.
 
-```php?start_inline=1
+```php
 $sql = "select name, address_id from main_table limit 5";
 $mysqli = new mysqli();
 if ($result = $mysqli->query($sql)) {
@@ -64,7 +66,7 @@ Before I demonstrate a re-factored approach, let me give a bit of clarification.
 
 Now, let's take a look at the new code:
 
-```php?start_inline=1
+```php
 $sql = "select t.name, a.city, a.state from main_table t inner join address_table a on t.address_id=a.id limit 5";
 $mysqli = new mysqli();
 if ($result = $mysqli->query($sql)) {

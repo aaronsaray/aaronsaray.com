@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Slowing Down My Blog Frequency
+date: 2013-10-16
 tags:
 - news
 ---
 So a couple years ago, I made a commitment to blog once a week for the foreseeable future.  I posted a new entry every Tuesday.  I kept to this pretty good.  I may have missed two or three Tuesdays over the course of many years.  I am proud of my goal, I did what I started out to do.
+
+<!--more-->
 
 However, sometimes things have to change.  I've decided to stop sticking with my rigid schedule for fear of diluting the quality of my content.  I'm just having a hard time coming up with new, technical entries so often.  I will post when I think of something new or I have something good to say, so you can be sure that the quality will remain consistent, just not as often.  I don't necessarily think of this as cutting my losses, more like catching my breath.
 

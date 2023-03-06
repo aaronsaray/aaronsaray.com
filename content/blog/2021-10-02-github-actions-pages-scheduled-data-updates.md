@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Using Github Actions & Pages to Publish Static Pages Based on Dynamic Data
+date: 2021-10-02
 tags:
 - github
 - html
 - javascript
 ---
 This article will break down how I use Github Actions and Github Pages to retrieve data from an API, commit the new data to my repo, and have Github pages rebuild and use that data - all on a schedule with no hands-on interaction.
+
+<!--more-->
 
 *Here's how it works* if you don't want to follow along and can figure it out based on the idea:
 

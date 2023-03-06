@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Rely on Google for your Javascript?
+date: 2009-02-26
 tags:
 - javascript
 - misc-web
 ---
 After reviewing the [Google Javascript API](http://code.google.com/apis/ajaxlibs/) project, I am torn.  Pro's and cons below... What do YOU think?
+
+<!--more-->
 
 **PRO**
 

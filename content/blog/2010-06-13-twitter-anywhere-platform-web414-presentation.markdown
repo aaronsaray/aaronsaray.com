@@ -1,6 +1,6 @@
 ---
-layout: post
 title: 'Twitter @anywhere platform: web414 presentation'
+date: 2010-06-13
 tags:
 - business
 ---

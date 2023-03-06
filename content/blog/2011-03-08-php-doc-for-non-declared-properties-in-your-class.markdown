@@ -1,15 +1,17 @@
 ---
-layout: post
 title: PHP Doc for non declared properties in your class
+date: 2011-03-08
 tags:
 - misc-web
 - php
 ---
 You may find while working with projects like Zend Framework that you have a number of publicly available properties of your classes that are not defined and documented.  They might be part of a getter/setter magic method or just purely dynamic.  Well, using PHPDoc, there is a cool tag called [property](http://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDocumentor/tutorial_tags.property.pkg.html) that helps.  For example...
 
+<!--more-->
+
 **Base class with getter/setters**
 
-```php?start_inline=1
+```php
 class base
 {
   /**
@@ -39,7 +41,7 @@ Now, let's say we have an object of type Person which we know will have a first 
 
 **Class with @property definition**
 
-```php?start_inline=1
+```php
 class person extends base
 {
   // @property string $first_name The user's first name

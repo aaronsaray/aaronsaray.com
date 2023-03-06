@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Search Goodreads Bookmarklet
+date: 2019-02-04
 tags:
 - javascript
 ---
 When people suggest books to you, it's common that they'll send you a link to Amazon. If it's a good book, I want to add it to my Goodreads list so I remember to read it later.  This has been a pretty manual process, and that bothered me.  I looked and found some Google Chrome extensions, but those didn't seem to work for me anymore.  So, I created my own bookmarklet.
+
+<!--more-->
 
 *tldr;* Drag this bookmarklet to your bookmark bar, click it when you're on an Amazon book page, and it'll open a new tab with the Goodreads page for that book. [Search Goodreads](javascript:(function(){let t=document.querySelector('#productDetailsTable');let i=t.innerHTML.match(/\d{3}\-\d{9,}/);if(i.length){let u='https://www.goodreads.com/search?q=' + i;window.open(u);}else{alert('Can not find ISBN');}})();)
 

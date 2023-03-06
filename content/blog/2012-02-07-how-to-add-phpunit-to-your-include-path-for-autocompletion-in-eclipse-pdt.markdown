@@ -1,11 +1,13 @@
 ---
-layout: post
 title: How to Add PHPUnit to your Include Path (for autocompletion) in Eclipse PDT
+date: 2012-02-07
 tags:
 - eclipse-pdt
 - phpunit
 ---
 By default, PHPUnit is not part of the default installation of Eclipse PDT.  (Zend Studio is another beast, however...)
+
+<!--more-->
 
 It's easy to add the PHPUnit install to your include path however. 
 

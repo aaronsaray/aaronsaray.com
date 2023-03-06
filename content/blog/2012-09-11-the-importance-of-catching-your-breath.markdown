@@ -1,10 +1,12 @@
 ---
-layout: post
 title: The Importance of Catching Your Breath
+date: 2012-09-11
 tags:
 - business
 ---
 Do it.  Catch your breath.  Sit in one spot.  Don't reach for your phone.  Look at the sky.  Clear your mind.
+
+<!--more-->
 
 Was it hard?  You bet it was!
 

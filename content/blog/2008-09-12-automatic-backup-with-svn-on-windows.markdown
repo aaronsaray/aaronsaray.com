@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Automatic Backup with SVN on Windows
+date: 2008-09-12
 tags:
 - scripting
 - svn
 - windows
 ---
 A while ago, I decided that I needed to have a better backup solution for my file server.  After doing some research on various systems, I let my inner programmer take over - in addition to my desire to NEVER LOSE ANYTHING - and I defaulted to use SVN.
+
+<!--more-->
 
 I was using a Windows machine as my file server - so I wrote some batch files.  I also had SVN installed on the machine.  The final touch was adding scheduled tasks.
 

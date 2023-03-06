@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Laravel Default Throttle Configuration and Common JWT Blacklist Vulnerable to Cache Attacks
+date: 2017-08-07
 tags:
 - php
 - laravel
 - security
 ---
 One thing I like about [Laravel](https://laravel.com/) is the amount of built-in functionality that is available.  But when this functionality is left in default configuration (much like many [default](https://snyk.io/blog/mongodb-hack-and-secure-defaults/) [configuration](https://krebsonsecurity.com/2015/02/spam-uses-default-passwords-to-hack-routers/) items getting hacked), there can be consequences.
+
+<!--more-->
 
 > Just a bit of a disclaimer: I'm not trying to say everything is broken and omg the developers are horrible. I'm saying _you_ should understand what you're using, why it's working, and how you could have problems if you don't put in the effort to configure and secure things properly.
 

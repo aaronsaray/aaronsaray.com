@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The point of custom exceptions
+date: 2012-09-25
 tags:
 - php
 - programming
 ---
 I tend to want to use [PHP Exceptions](http://us.php.net/manual/en/language.exceptions.php) when I can.  But, I don't just leave them as is.  I tend to have a large custom exception library.  These exceptions extend the base Exception class in PHP - that's about it.
+
+<!--more-->
 
 But why??
 
@@ -15,13 +17,13 @@ Anyway, let's look at this in practice.
 
 **Here is our custom exception.**  Maybe if our target api returns error 500, we throw this exception.  Doesn't mean our site is kaput - we just can't use this API.
 
-```php?start_inline=1
+```php
 class API_500error_Exception extends exception {}
 ```
 
 **and then...** here is our code
     
-```php?start_inline=1
+```php
 $service = new API_Service();
 try {
   $service->connect();

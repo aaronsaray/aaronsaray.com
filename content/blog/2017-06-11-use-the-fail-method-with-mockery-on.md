@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Use the $this->fail() method with Mockery::on()
+date: 2017-06-11
 tags:
 - php
 - testing
@@ -8,9 +8,11 @@ tags:
 ---
 When you have a more complex assertion you need to make on the parameters of a mocked object, you might use the `Mockery::on()` method.  It can be hard to tell how this fails, though, because if the assertion fails somewhere, the message is confusing - it basically says that there was no matching call to that method, which is _technically_ correct.
 
+<!--more-->
+
 Let's take a look at this example:
 
-```php?start_inline=1
+```php
 $mockedClass->shouldReceive('process')->once()
   ->with(\Mockery::on(function($parameter) {
     $valid = false;
@@ -38,7 +40,7 @@ This obviously is not clear - which thing failed?  Or even worse, imagine if the
 
 **Got the solution** from a tip from my coworker [Fred](https://github.com/fredjiles) - it has to do with using `$this->fail()` in PHPUnit (or the equivalent method in your test framework of choice).  Let's check out our new test with more verbose items.
 
-```php?start_inline=1
+```php
 $mockedClass->shouldReceive('process')->once()
   ->with(\Mockery::on(function($parameter) {
     if (! $parameter instanceof SomeClass) {
@@ -64,7 +66,7 @@ This is pretty easy to tell what the exact error was - and why it failed.
 
 As a bonus, you might also use the parameter hinting of the closure passed to `Mockery::on()` to get cut down on the testing you have to write.  Instead of checking for instances, just require the incoming item to be that instance.
 
-```php?start_inline=1
+```php
 $mockedClass->shouldReceive('process')->once()
   ->with(\Mockery::on(function(SomeClass $parameter) {
     if ($parameter->getProperty() != 12) {

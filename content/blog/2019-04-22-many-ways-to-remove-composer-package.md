@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The Many Ways to Remove a Composer Package
+date: 2019-04-22
 tags:
 - php
 - composer
 ---
 Turns out there's a few different mechanisms to remove a package from your composer project.  It's important to understand what each method does and what its side effects are.
+
+<!--more-->
 
 `composer remove my/package` This removes the package from the filesystem, removes it from `composer.json` and executes an **update** on all of the rest of the packages as part of it's dependency reconciliation.  This might not be what you want.
 

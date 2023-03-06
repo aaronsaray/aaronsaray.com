@@ -1,12 +1,14 @@
 ---
-layout: post
 slug: would-you-find-value-in-a-one-on-one-video-code-review-session
 title: Would You Find Value in a One on One Video Code Review Session?
+date: 2013-07-17
 tags:
 - business
 - programming
 ---
 Hello friends - I'm trying to get an idea if this would be a good idea.  Let me know your thoughts in the comments.
+
+<!--more-->
 
 [![I Like Code!](/uploads/2013/hithere-300x104.png)](/uploads/2013/hithere.png){: .thumbnail}{: .pull-right}
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Why Didn't My Friend Hire Me?
+date: 2017-09-16
 tags:
 - business
 ---
 I've been in the position to hire a lot of programmers over the last few years.  This is a great responsibility; one that doesn't come without a bunch of unique situations, especially when it deals with colleagues and friends.
+
+<!--more-->
 
 One of the biggest concerns I think friends and colleagues might have revolves around how the conversation should go if they weren't hired.  Perhaps it should be awkward now?  Maybe they don't like me?  
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Tell Shimo VPN to Connect with Applescript
+date: 2019-02-25
 tags:
 - macos
 ---
 For some clients, I have to VPN before I can push to their git repositories.  I've been using a few VPN clients, but I finally settled on one.  I'm a huge fan of [Shimo](https://www.shimovpn.com/) but one thing that bothered me was that I still had to click and remember to be on VPN when I wanted to push my changes.
+
+<!--more-->
 
 So, with some pointers from the great support team at Shimo/Mailbutler, I came up with the following solution: Create an applescript that checks to see if the VPN is connected, THEN push the changes.
 

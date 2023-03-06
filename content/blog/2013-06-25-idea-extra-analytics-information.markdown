@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 'Idea: Extra Analytics Information'
+date: 2013-06-25
 tags:
 - business
 - ideas
 ---
 When browsing the documentation for chrome, I came across this:
+
+<!--more-->
 
 ```javascript
 window.performance.getEntries();

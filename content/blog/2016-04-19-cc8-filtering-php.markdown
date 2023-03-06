@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Filtering PHP
+date: 2016-04-19
 tags:
 - php
 ---
 I like to think that I'm somewhat of a PHP purist.  And, when I travel to user groups, one of my favorite talks to give is named "Tell Aaron What To Do."  Basically, the goal is to solve two problems I pose using plain HTML and PHP.  Oh, and do it with core PHP, no frameworks, no libraries, just plain vanilla PHP.  At the end, I'll run a number of integration and security tests against the code the group has written to see if we were successful.
+
+<!--more-->
 
 ### Episode 8: filter_var to the Rescue!
 
@@ -28,7 +30,7 @@ It's important to understand the two major use cases for `filter_var()` .  The t
 
 The following two blocks of code will demonstrate how `filter_var()` works precisely.  And since I mentioned email filtering as a pain-point during the last group talk I gave, let's take a look at the email functionality for `filter_var()`.
 
-```php?start_inline=1
+```php
 var_dump(filter_var('guy@smiley.com', FILTER_VALIDATE_EMAIL));
 var_dump(filter_var('not_an_email', FILTER_VALIDATE_EMAIL));
 
@@ -38,7 +40,7 @@ var_dump(filter_var('prob()lem@email.com', FILTER_SANITIZE_EMAIL));
 
 The output from this PHP is below:
 
-```php?start_inline=1
+```php
 string(14) "guy@smiley.com"
 bool(false)
 string(14) "guy@smiley.com"

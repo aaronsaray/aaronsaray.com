@@ -1,11 +1,13 @@
 ---
-layout: post
 title: What I believe MVC is - or MVCFDH
+date: 2008-08-28
 tags:
 - php
 - programming
 ---
 There are many interpretations of MVC - there are less definitions but more implementations.  I want to cover what I personally do when using PHP for MVC.  I call it MVCFDH.
+
+<!--more-->
 
 [![](/uploads/2008/mvc.jpg)](/uploads/2008/mvc.jpg){: .thumbnail}{: .pull-right}
 

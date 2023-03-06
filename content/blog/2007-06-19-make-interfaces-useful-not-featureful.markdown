@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Make interfaces Useful, not featureful
+date: 2007-06-19
 tags:
 - misc-web
 ---
-### There seem to be two schools of design lately: Feature rich, RIA designs and simplicity.
+There seem to be two schools of design lately: Feature rich, RIA designs and simplicity.
+
+<!--more-->
 
 There seems to be confusion over what is the right way to design a website or... for that fact, a user interface.  With the technological abilities we have for interface design, more options are available.  Because of this, we tend to think that more is better.  There are others who ignore the fact that we have these advances, and go as simplistic as possible: two buttons and a form.  I advocate for a compromise... let me give examples:
 

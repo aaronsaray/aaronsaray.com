@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Newest Version of 102 Degrees Launched
+date: 2008-05-04
 tags:
 - news
 ---

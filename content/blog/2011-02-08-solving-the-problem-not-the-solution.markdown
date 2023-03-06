@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Solving the Problem, Not the Solution
+date: 2011-02-08
 tags:
 - business
 ---
 Raise your hand if you've ever been told how to do your job... Yep.  It's happened more than once - and I'm sure you already had a flash of red and maybe some warmth come to your face even hearing that phrase.  In my current position, I run into scenarios where people seem to think they have the best solution for the problem.  And, you know, they may be right, but it's not their job.  This is generally a problem that either technically minded stake holders or completely ill-informed users have.  Let's dig deeper, however.
+
+<!--more-->
 
 First we'll cover stakeholders, business owners, and project planners.  Let's identify what we're doing when we pitch a project to the executors.  Let me define the problem with this approach.  Then, we'll move on to technical executors and discuss how to combat and effectively resolve these types of propositions.
 

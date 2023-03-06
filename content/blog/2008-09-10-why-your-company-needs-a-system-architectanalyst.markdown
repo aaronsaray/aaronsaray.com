@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Why your company needs a System Architect/Analyst
+date: 2008-09-10
 tags:
 - misc-web
 - programming
 ---
 In this post, I'm going to cover what a System Architect/Analyst (SA from now on) is and why you need one.
+
+<!--more-->
 
 ### A System Architect/Analyst is...
 

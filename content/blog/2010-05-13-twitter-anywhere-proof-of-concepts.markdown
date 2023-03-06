@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Twitter @anywhere proof of concepts
+date: 2010-05-13
 tags:
 - javascript
 - twitter
 ---
 First off, let me just remind you to not be an idiot like I was.  I simply found the documentation <a href="http://dev.twitter.com/anywhere/begin">here</a> and <a href="http://platform.twitter.com/js-api.html">here</a> and went to town.  After hours of trying to figure out exactly what was going on, I stumbled across some very interesting comments in the news group: The @anywhere api is not in `chirp_preview` anymore - but its not done either.  So some of the stuff won't work - and that wasn't my fault!  Dang!  However, I was able to create a few proof of concept things.  I'm going to cover connecting to your application, showing the connection/authentication system, and retrieving information about other users via your authenticated account.
+
+<!--more-->
 
 ### First, set up the HTML
 

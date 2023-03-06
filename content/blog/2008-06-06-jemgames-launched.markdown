@@ -1,6 +1,6 @@
 ---
-layout: post
 title: JEMGames Launched
+date: 2008-06-06
 tags:
 - news
 ---

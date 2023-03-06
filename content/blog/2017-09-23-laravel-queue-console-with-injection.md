@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Use Dependency Injection in Laravel Console Commands
+date: 2017-09-23
 tags:
 - php
 - laravel
@@ -8,9 +8,11 @@ tags:
 ---
 It's important to unit test your application code - even your console commands.  So many times, I've seen people using the `Artisan` facade inside of console commands to either queue up new commands or call a different command.  This makes it more difficult to unit test the application - you have to rely more on fakery (requiring you to reset your application each time then) and/or integration tests.
 
+<!--more-->
+
 For example, you might have a large collection of items in an array inside of our `RunSomethingCommand` class.
 
-```php?start_inline=1
+```php
 public function handle()
 {
   foreach ($this->retrieveALot() as $items) {
@@ -27,7 +29,7 @@ Instead, you can import the console command contract into your console command u
 
 Now, let's take a look at our class, a little bit more expanded.
 
-```php?start_inline=1
+```php
 protected $artisan;
 
 public function __construct(Kernel $artisan)

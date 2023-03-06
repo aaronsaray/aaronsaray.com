@@ -1,15 +1,17 @@
 ---
-layout: post
 title: 'PHP SPL autoload: 3 simple rules you must follow'
+date: 2008-09-29
 tags:
 - php
 ---
 While working on a larger site that I may need to use many external libraries, I realized I need to come up with a better `__autoload()` function (for example, I think it was DOMPDF that had its own autoload function as well.  Last time I used that, I had to hack my own autoload to use their code as well to locate files).  I researched into [SPL autoload](http://us2.php.net/manual/en/function.spl-autoload-register.php) functionality, and I've found what I need.  Through some trial and error, I found out 3 absolutely necessary rules that need to be followed when building your custom autoload functions, however.  Lets examine:
 
+<!--more-->
+
 ### Our Example ... so far
 
 **`index.php`**
-```php?start_inline=1    
+```php    
 class FW
 {
   public static function autoload($class)
@@ -33,7 +35,7 @@ One great feature about the [`is_readable`](http://us3.php.net/is_readable) func
 
 I modified that autoload function to be like this:
 
-```php?start_inline=1    
+```php    
 public static function autoload($class)
 {
   if (is_readable($_SERVER['DOCUMENT_ROOT'] . "/includes/{$class}.php") {
@@ -52,7 +54,7 @@ I've seen this type of code a lot of times in autoload functions:
 
 **BAD!**
 
-```php?start_inline=1
+```php
 function __autoload($class)
 {
   if (is_readable($class . '.php')) {
@@ -69,7 +71,7 @@ function __autoload($class)
 Lets add to our example.
 
 **`index.php`**
-```php?start_inline=1
+```php
 class FW
 {
   public static function autoload($class)

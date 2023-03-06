@@ -1,10 +1,12 @@
 ---
-layout: post
 title: XFN - XHTML Friends Network
+date: 2010-02-05
 tags:
 - html
 ---
 While I continue to look at the semantic web, I can't help but scratch my head and say "why" about some of these technologies.  I feel like its still sadly lacking... with that, let me introduce...
+
+<!--more-->
 
 ### XHTML Friends Network
 

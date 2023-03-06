@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Two Quick Tips for Securing PHP Sessions
+date: 2016-02-11
 tags:
 - php
 - security
 ---
 Let's talk a little bit about session fixation in PHP.  Such a fun topic, right?  Tons to get into here.  But, let's just touch the surface on two VERY SIMPLE things you can be doing now to make sure that your website is safe.
+
+<!--more-->
 
 **Use Cookies**
 

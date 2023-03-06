@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Tools of the trade
+date: 2007-09-01
 tags:
 - ide-and-web-dev-tools
 - misc-web
 ---
 I just thought I'd drop some useful links and tools your way for those beginning and non-tool-cist peoples:
+
+<!--more-->
 
 [http://getfirebug.com/](http://getfirebug.com/)
 used for js/css/dom debugging - additionally, even Yahoo is building upon this.  I've used this a lot for AJAX request debugging as well.

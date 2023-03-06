@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Licensing of Code
+date: 2009-04-25
 tags:
 - programming
 ---

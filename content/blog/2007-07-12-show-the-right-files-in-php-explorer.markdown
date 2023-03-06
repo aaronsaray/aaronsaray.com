@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Show the right files in PHP Explorer
+date: 2007-07-12
 tags:
 - eclipse-pdt
 - ide-and-web-dev-tools
 ---
 After I installed Eclipse PDT, I had two project navigators.  I closed the native one and kept open the PHP Explorer.  PHP Explorer showed my php, css, js, etc, files.  It also puts a plus sign to the left of the filenames.  Using this view, we can expand the file to see the classes and functions inside of the file without opening it.
+
+<!--more-->
 
 The only issue was that, by default, I couldn't see my **`.htaccess`** and **`.htpasswd`** files.  On the bright side, using SVN, I couldn't see my **`.svn`** folders - which is exactly what I wanted.  Put, this put the issue into a different light - there must be some sort of filter that is restricting files that begin with a dot.
 

@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Symbolic Linking in Windows?
+date: 2007-07-22
 tags:
 - windows
 ---

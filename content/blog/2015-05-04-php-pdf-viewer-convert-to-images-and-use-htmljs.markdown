@@ -1,6 +1,6 @@
 ---
-layout: post
 title: PHP PDF Viewer - Convert to Images and use HTML/JS
+date: 2015-05-04
 tags:
 - javascript
 - jquery
@@ -8,11 +8,13 @@ tags:
 ---
 Well - I really couldn't think of a good title - it's really not catchy at all.
 
+<!--more-->
+
 Anyway... at my last job, we were contemplating making a PDF reading solution that would easily scale, work on multiple devices, and allow advertisements along side of them.  I left before we began this project, but it hasn't ever left my mind.
 
 I decided to do a quick proof of concept.  Turns out Imagick with PHP will convert PDF to jpeg really quick and easy.  So, I wrote the following PHP class to work with this.
 
-```php?start_inline=1
+```php
 namespace AaronSaray;
 
 class PDFViewer

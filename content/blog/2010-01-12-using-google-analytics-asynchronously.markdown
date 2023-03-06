@@ -1,11 +1,14 @@
 ---
-layout: post
 title: Using Google Analytics Asynchronously
+date: 2010-01-12
 tags:
 - google
 - javascript
 ---
 I came across the following link on google's code pages:
+
+<!--more-->
+
 [http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html](http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html)
 
 It basically details the asynchronous loading of google analytics.  I found this to be a very cool addition to an already powerful package that I rely on.

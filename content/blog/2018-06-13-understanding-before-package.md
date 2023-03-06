@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Understand the Tech Before Getting a Package
+date: 2018-06-13
 tags:
 - php
 - programming
 - javascript
 ---
 How often have you heard this phrase?
+
+<!--more-->
 
 > Is there a composer or a npm package for it?
 

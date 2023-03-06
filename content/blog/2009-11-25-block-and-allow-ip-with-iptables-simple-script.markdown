@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Block and Allow IP with iptables - simple script
+date: 2009-11-25
 tags:
 - linux
 - scripting
 ---
 As most developers are lazy, I'm a huge fan of scripts.  I've found myself lately having to add entries to iptables to block a single IP or a small subnet, so I made a quick script to make the job easier on myself.
+
+<!--more-->
 
 Usage for both of these is of course really simple.  Say `123.1.2.3` is the IP in question:
     

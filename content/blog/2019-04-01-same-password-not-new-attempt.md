@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Stop Considering the Same Password a New Password Attempt
+date: 2019-04-01
 tags:
 - programming
 - business
 ---
 One of the most rewarding things I've done as a programmer was watch a real life in person focus group use my application.  At first, I didn't enjoy it. But like most lessons, looking back, it was extremely valuable.  
+
+<!--more-->
 
 We had set up a scenario where we changed the user's password without telling them. This was supposed to fail the login, potentially lock them out, and offer for a password reset functionality.
 

@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Keep your Admin Interface CSS Separate
+date: 2012-05-16
 tags:
 - css
 - performance
 - security
 ---
 There are a number of performance arguments about combining assets to reduce HTTP requests and speed up your site.  I agree!  However, I do have to say that there is such a thing as overkill - to the detriment of speed and security... 
+
+<!--more-->
 
 **Keep your admin interface CSS separate from the rest of your CSS.**  
 

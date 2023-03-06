@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'IE JS Error: Expected identifier, string or number'
+date: 2009-04-30
 tags:
 - javascript
 ---
 I just ran into this a bunch - works fine in FireFox ... of course.
+
+<!--more-->
 
 Well apparently, Internet Explorer won't allow you to have a trailing comma in a array or object definition.  Let me show you:
 

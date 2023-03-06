@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Ansible Installation of Postfix with No Prompts
+date: 2015-03-13
 tags:
 - linux
 - scripting
 ---
 Using an Ansible configuration, I wanted to use postfix on ubuntu to send out mail.  However, I couldn't seem to figure out exactly how to get it to stop asking for input during the `apt-get install postfix` process.  Turns out, you can use **debconf** to set the values that are necessary for the install.  
+
+<!--more-->
 
 Here's what you're looking for:
 [Ansible debconf module](http://docs.ansible.com/debconf_module.html), and questions to answer: `postfix/mailname` and `postfix/main_mailer_type`.

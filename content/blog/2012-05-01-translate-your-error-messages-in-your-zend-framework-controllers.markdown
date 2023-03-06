@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Translate Your Error Messages in Your Zend Framework Controllers
+date: 2012-05-01
 tags:
 - misc-web
 - zend-framework
 ---
 I've been making a push to have more of my projects multi-lingual.  However, one thing I kept forgetting about was those super-rare error messages that have to come from the Controller.  For the most part, all of your errors should be handled by your validators in your forms.  However, from time to time, there needs to be an error handled in your controller.  
+
+<!--more-->
 
 Enter `Zend_Translate`!  Here is what I suggest:
 
@@ -15,7 +17,7 @@ Side note: There is some argument as to whether the translation should be handle
 
 Let's check out some code in an action
 
-```php?start_inline=1
+```php
 public function dosomethingAction()
 {
   if (!Zend_Auth::getInstance()->hasIdentity()) {

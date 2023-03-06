@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Stop Using Sqlite in Laravel Unit Tests
+date: 2019-11-06
 tags:
 - php
 - testing
 ---
 **tldr;** Using Sqlite in Laravel (or most PHP apps) for unit testing causes false positives in unit tests.  Things that work will not work when you move to production and use a different db like MySQL.  Instead, spin up a test database that is the same tech and engine as your application will be.
+
+<!--more-->
 
 First, let me start out saying I'm super happy to see that you're doing unit testing - way to go! Laravel has introduced a lot of developers to the world of unit testing by making testing utilities a first class part of the framework. This is great! But, we need to make sure that that our sense of security we're gaining from our unit tests is true.
 

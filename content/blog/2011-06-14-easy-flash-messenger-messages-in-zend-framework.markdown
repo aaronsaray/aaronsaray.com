@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Easy Flash Messenger Messages in Zend Framework
+date: 2011-06-14
 tags:
 - zend-framework
 ---
 Through reading a few blog posts over the last year and my own trial and error, I've developed a way of using the `flashMessenger` Helper in ZF that works out really well for me.  (Note: if anyone knows the original blog post that I got some of the view helper from, please comment!).
+
+<!--more-->
 
 ### Objective
 
@@ -16,7 +18,7 @@ Now, we're going to change the way we assign messages in the controller.  Make a
 
 **in some controller...**
     
-```php?start_inline=1
+```php
 $this->_helper->flashMessenger->addMessage(
     array('success'=>'The update was successful')
 );
@@ -56,7 +58,7 @@ The output is initially blank.  This is because we will always 'blindly' call th
 
 I technically put this call in my layout towards the top of my content:
 
-```php?start_inline=1
+```php
 echo $this->flashMessages();
 ```
 

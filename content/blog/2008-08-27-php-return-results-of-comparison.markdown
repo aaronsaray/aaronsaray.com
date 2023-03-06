@@ -1,14 +1,16 @@
 ---
-layout: post
 title: PHP - Return results of comparison
+date: 2008-08-27
 tags:
 - php
 ---
 A useful reminder: you can make use of returning the results of comparisons for is*() functions.  Let me explain that further...
 
+<!--more-->
+
 PHP allows you to get the result of a comparison in a variable.  Any variable you can return from a function.  My my amazing transitive skills, I say you can return the comparison of a variable.  Enough of this drivel - here's an example:
 
-```php?start_inline=1
+```php
 function isGreaterThanFour($testVar)
 {
   return $testVar > 4;

@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Stop Using Assert Database Has in Laravel
+date: 2020-04-24
 tags:
 - php
 - laravel
@@ -8,6 +8,8 @@ tags:
 - testing
 ---
 Please stop using `assertDatabaseHas` in Laravel.  There are many reasons why this is bad, and there are better options available.  Let's find out why.
+
+<!--more-->
 
 ### Theory
 
@@ -130,7 +132,7 @@ Here, we're grabbing the ID from the response, and then using the Car model to r
 
 Here's an even more vivid example of a test where we're updating a model:
 
-```php?start_inline=1
+```php
 public function testUpdateWorks()
 {
   $car = factory(Car::class)->create(['make' => 'Ford']);

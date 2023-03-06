@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Why Complaining About Bad Ex-Employees Never is Good
+date: 2018-08-30
 tags:
 - business
 - management
 ---
 Sometimes an employee becomes an ex-employee because they did a poor job.  Their quality or output was just not up to par.  Otherwise, they backstab, do fiendish things, basically try to screw you.  Either way, you can get pretty strong feelings about this ex-employee. Pretty _bad_ feelings.
+
+<!--more-->
 
 Don't give into the temptation to badmouth that employee.  Maybe you want to vent or maybe your team was wronged by the last employee, so there's a lot of negativity.  Some people even think it's a form of bonding to let the team work through these bad feelings by badmouthing that person.  Please don't do this.
 

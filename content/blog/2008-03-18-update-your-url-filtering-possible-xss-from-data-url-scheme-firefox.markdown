@@ -1,12 +1,14 @@
 ---
-layout: post
 title: 'Update your URL filtering: possible XSS from "Data" URL scheme - Firefox'
+date: 2008-03-18
 tags:
 - html
 - javascript
 - security
 ---
 In regards to the Data in URL scheme ([RFC here](http://www.ietf.org/rfc/rfc2397.txt)), I've found an interesting issue with the way firefox handles it which could lead to some XSS I think.
+
+<!--more-->
 
 First of all, if you're not aware of the feature, let me explain.  Browsers are built to decode information in the URL (for the purpose of this blog, I'm JUST focusing on base64) with a specific URL handler: `data:text/html;base64,`
 

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: The State of Security of Laravel Apps in 2021
+date: 2022-01-04
 tags:
 - php
 - laravel
 ---
 The State of Security of Laravel Apps in 2021 is a whitepaper based on the quiz submissions from Laravel programmers.
+
+<!--more-->
 
 > This is an entry I've written to preserve the content from The Laravel Hacker. Current Laravel security information can now be found on [masteringlaravel.io/security](https://masteringlaravel.io/security?ref=as)
 

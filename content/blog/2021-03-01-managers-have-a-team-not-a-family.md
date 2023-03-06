@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 3 Reasons to Stop Calling Your Dev Team a Family
+date: 2021-03-01
 tags:
 - business
 - management
 ---
 If you find yourself about to say "we're a family" to a new recruit joining your dev team, this entry is for you. Managers, you should stop considering or calling your team a family.  Here's three simple reasons why.
+
+<!--more-->
 
 ### Unconditional Love
 

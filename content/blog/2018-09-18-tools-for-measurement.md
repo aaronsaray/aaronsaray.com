@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Tools You Need for Measuring Everything and Anything
+date: 2018-09-18
 tags:
 - php
 - mysql
@@ -8,6 +8,8 @@ tags:
 - misc-web
 ---
 Measurement is important. Metrics, while not sexy, are concrete to a good business strategy. When you bring a problem to your superiors, they're going to want to know what is your measurement, what metrics did you use to determine this is a problem. With tasks I've given developers, I've always said "show me the metrics that your fix is better" versus just looking at the code.
+
+<!--more-->
 
 **Measurement is as important as good code.** 
 

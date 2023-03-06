@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Test Driven Development Book Review
+date: 2007-06-16
 tags:
 - testing
 ---
 ("the triangle") just recently purchased a book for the library at my request, [Test-Driven Development by example by Kent Beck](http://www.amazon.com/Test-Driven-Development-Addison-Wesley-Signature/dp/0321146530/ref=sr_1_1/105-6718214-8033249?ie=UTF8&s=books&qid=1182019016&sr=8-1).  The current Amazon price for this book is $35.  The book took me about 2 weeks of sporadic reading to finish.  The first section took the first week, the remaining 2 sections and appendix flew by.
+
+<!--more-->
 
 ### This book is an easy reader.
 

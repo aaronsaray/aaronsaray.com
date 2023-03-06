@@ -1,14 +1,16 @@
 ---
-layout: post
 title: heredoc - time for dead-dead or happy-smile time?
+date: 2008-09-08
 tags:
 - php
 ---
 PHP's heredoc - good or bad?  All silly titles aside, lets check out some points.
 
+<!--more-->
+
 _For those who are not aware, heredoc is the format of creating a large string in PHP that does not need quotation marks of any kind.  Read more of the points to understand more about it.  Here is an example:_
 
-```php?start_inline=1
+```php
 $sql = <<<sql
 SELECT a.*, b.*, c.*
 FROM
@@ -24,7 +26,7 @@ SQL;
 
 With heredoc, you do not need to escape quotes of any kind:
 
-```php?start_inline=1
+```php
 echo "<a href=\"blah.php\" onmouseover=\"hoverer('blah!')\">blah!</a>";
 /** becomes ... **/
 echo <<<link
@@ -38,7 +40,7 @@ While this is a 'valid' reason, I think this is just justification for sloppy or
 
 In order for the heredoc to recognize the closing marker, it must not be indented.  If it is indented, it won't recognize it as the end of the heredoc - and it continues.  This messes up coding standards that are based on indentation.
 
-```php?start_inline=1
+```php
 function tester()
 {
   $thing = TRUE:
@@ -60,7 +62,7 @@ Some editors are able to recognize the heredoc identifier and properly highlight
 
 For example, if you have to make an item plural if there is more than 1, with a normal string, you can stop mid creation, do a calculation, and continue on.  With heredoc you either need to make two of them - or you have to use temporary variables.
 
-```php?start_inline=1
+```php
 $trees = 12;
 print "I have found {$tree} tree" . ($trees != 1 ? "s" : "") . " in my backyard";
 

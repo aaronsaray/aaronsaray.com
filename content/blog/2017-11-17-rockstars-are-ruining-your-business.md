@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Rockstar Coders are Ruining Your Business
+date: 2017-11-17
 tags:
 - programming
 - business
 - management
 ---
 It's such a cliche by now - "We need a rockstar programmer" or "only code ninjas should apply" - but this choice in your job want-ad is ruining your business. Let me tell you why.
+
+<!--more-->
 
 First of all, let's talk about rockstars.  Most rockstars are jerks.  You've heard the stories: "I need a bowl of 10,000 green M&Ms only, I won't go on unless this is perfect."  They constantly complain, they make an entertaining splash, but most of them burn out.  You're left with their greatest hits - but no real new music.  They were great - but they had lots of breakups in their band, and in the end, no one really seemed that happy.
 

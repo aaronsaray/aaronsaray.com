@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Vagrant / Ansible config: change to /vagrant on login'
+date: 2015-04-16
 tags:
 - linux
 ---
 While those familiar with the specifics of linux and bash are probably very familiar with the various login sequence files, this might help someone!
+
+<!--more-->
 
 If you'd like to save some keystrokes after a `vagrant ssh` - you might want to add this line to your ansible config.  This will automatically change directory to the /vagrant folder when you log in.
 

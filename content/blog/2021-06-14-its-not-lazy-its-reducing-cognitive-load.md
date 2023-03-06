@@ -1,11 +1,13 @@
 ---
-layout: post
 title: "Programmers Aren't Being Lazy: They're Reducing Cognitive Load"
+date: 2021-06-14
 tags:
 - business
 - programming
 ---
 There's a common joke among programmers: I'm so lazy that I made this script to automate these tasks.  Efficiency and process are prized, but also sometimes mocked and ridiculed.  So, are programmers actually lazy - or is there something deeper here - have they been mislabeling something else?
+
+<!--more-->
 
 Cognitive Load is a multi-pronged psychological mechanism split into three distinct areas: intrinsic, extraneous and germane.  These have limitations based on something called working memory - or the ability to hold information temporarily.  Working memory capacity is limited - and therefore it can slow or disable various parts of the cognitive load process.  For example, if you're busy with continually reprocessing intrinsic things to a task, its very difficult to have the capacity to germanely create long-term memory.  This long-term memory is the basis of how you can make intelligent decisions in business moving forward.  
 

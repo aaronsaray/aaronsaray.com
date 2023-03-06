@@ -1,16 +1,18 @@
 ---
-layout: post
 title: Helpful strtotime reminders
+date: 2007-07-12
 tags:
 - php
 ---
 Today, Todd (one of the consultants that ("the triangle") uses) called me up to share a bit of a reminder and also tell me about an issue in the code that was in one of our older modules.  There was an issue with the strtotime function converting a year to a timestamp.
 
+<!--more-->
+
 I thought I'd take a few minutes to just outline `strtotime()` examples again, as a reminder:
 
 [`strtotime()`](http://us.php.net/strtotime) is a useful function that converts english based strings to unix timestamps.  These can range from iso date formats `2007-07-11` to proper written dates `July 11th, 2007` to descriptive range based dates `+3 days`. The output is always a unix timestamp compatible with the `date()` functions.  While the manual doesn't give all the possible combinations, it does give some useful examples.  Well, in order to test and predict the behavior of this tool, I tried out a few more date combinations to see what would happen.
 
-```php?start_inline=1
+```php
 print "date('r', strtotime('now'))";
 print date('r', strtotime('now'));
 print "<hr></hr>";
@@ -68,7 +70,7 @@ I wasn't entirely certain of the second from last result however.  I did a quick
 
 Another cool note is that for versions of PHP less than 5.1, they did not support a negative timestamp on windows and some *nix distros.  My version on windows have moved pass this limitation though:
 
-```php?start_inline=1
+```php
 print date('r', -100);
 ```
 

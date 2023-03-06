@@ -1,12 +1,14 @@
 ---
-layout: post
 title: PHPUnit Code Coverage Can Help While Writing Tests
+date: 2020-12-28
 tags:
 - php
 - phpunit
 - testing
 ---
 It's great to run code coverage at the very end before you push your changes. This gives you some idea what's tested and what's not. But you don't have to wait till the end; code coverage can help you all throughout writing your test suite, too.
+
+<!--more-->
 
 > Let's make sure we're clear about code coverage. Code coverage is a metric used during unit testing to indicate how much of the code is under test. This doesn't necessarily mean that it's tested that code - just that the code has been ran during at least one of your tests in your suite.  It's quite easy for code to appear tested, but actually only to have been ran without error.
 

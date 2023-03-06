@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Mac App to Keep Slack Active
+date: 2017-07-22
 tags:
 - misc-web
 ---
 I tend to use either the web interface for Slack or I use [Franz](http://meetfranz.com) to manage my open connections.  When this is not focused, however, it tends to mark you automatically inactive/away after 30 minutes.  If you're hard-core programming, you might not have slack focused for hours - and this is really confusing for your teammates as you might look non-active or even out for the day.
+
+<!--more-->
 
 But, to be honest, my real concern was visibility - visibility that I might look 'not busy' - even though I was.  I know other people use the Slack App - and that tends to keep you available, even if it's not focused.  So, I wanted some of this same functionality.
 

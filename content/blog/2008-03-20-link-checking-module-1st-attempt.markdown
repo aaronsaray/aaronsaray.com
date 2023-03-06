@@ -1,14 +1,16 @@
 ---
-layout: post
 title: Link Checking Module - 1st attempt
+date: 2008-03-20
 tags:
 - php
 ---
 So I wrote some code the other day.  It sat in my code repository and I never tested it.  I was pretty certain it was going to be some good code, though.
 
+<!--more-->
+
 A few weeks later I came back to it and looked through it - and laughed!!  Anyone figure out where ALL the holes are in this code?
 
-```php?start_inline=1
+```php
 class linkChecker
 {
   protected $_links = array();

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Making the most of the toString method in Javascript
+date: 2016-02-06
 tags:
 - javascript
 ---
 Javascript objects have a built-in function called `toString()` which pretty much does what you think it does - it renders a string representation of that object.
+
+<!--more-->
 
 For the most part, this is left unused by a lot of javascript libraries I've seen.  You might notice if you're using old school `alert()` instead of `console.log()` that you see output similar to `[object Object]` a lot.  And, that's [by design](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString).  But, like many other functions in javascript, you can use the prototype property to override the default method.
 

@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Time off for B-day is done
+date: 2010-06-29
 tags:
 - misc-web
 ---

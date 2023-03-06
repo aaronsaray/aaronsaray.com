@@ -1,14 +1,16 @@
 ---
-layout: post
 title: 'Zend Framework: Add HTML to form element label'
+date: 2012-08-21
 tags:
 - zend-framework
 ---
 By default, the labels of form elements in Zend Form are escaped.  Sometimes, like in check mark boxes for Terms of Use, it makes sense to add some HTML to this.  You can turn off escaping - but just be careful!  
 
+<!--more-->
+
 **Example:**
 
-```php?start_inline=1 
+```php 
 $this->getElement('agreetos)->getDecorator('Label')->setOption('escape', false);
 ```
     

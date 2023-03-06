@@ -1,14 +1,16 @@
 ---
-layout: post
 title: Easy MCrypt encryption class
+date: 2010-08-17
 tags:
 - php
 - security
 ---
 For whatever reason, I can never remember the exact coding of MCrypt.  And maybe that is a good thing - so I stop doing so much code duplication and start using a class I wrote.  For this reason, I'll save you the same frustrations and share how I do my encryption.
 
+<!--more-->
+
 **`easyMcrypt.php`**
-```php?start_inline=1
+```php
 class easyMcrypt
 {
   protected static $_openModules = array();
@@ -69,7 +71,7 @@ At any rate then, a new Initialization Vector is generated.  In this case, I use
 
 For an example of how this is used:
     
-```php?start_inline=1
+```php
 $string = 'Please encrypt me';
 $key = 'this is my encryption key';
 $type = 'tripledes';

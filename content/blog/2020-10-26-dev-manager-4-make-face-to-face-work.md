@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Make Face-to-Face Work
+date: 2020-10-26
 tags:
 - business
 - management
 ---
 > This is part of a series of articles from the retired The Dev Manager website.
+
+<!--more-->
 
 It’s amazing what the internet can bring us, both positive and negative. Sadly, some of the worst people hang out on the internet. They bully, they rage, they say and do horrible things.
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: When writing unit tests, test against absolutes
+date: 2012-02-14
 tags:
 - testing
 ---
 So, while chatting with one of the developers on my team, we started talking about testing an XML document creation process he had been working on.  He wrote a unit test and said "see, here is my class which generates the XML, and then here I use `DomDocument` to add the nodes I know it will have and test against that."
+
+<!--more-->
 
 Poor guy.  Poor, poor guy. I gave him the look of death.
 
@@ -14,7 +16,7 @@ Basically, I told him that he can't necessarily know what the output of `DomDocu
 
 So, in other words, here's what you should do:
 
-```php?start_inline=1
+```php
 $xmlString = "<xml><root><nodes><to><test></test></to></nodes></root></xml>";
 $service = new ClassToTest();
 $this->assertEquals($xmlString, $service->generatedXmlFromClass());

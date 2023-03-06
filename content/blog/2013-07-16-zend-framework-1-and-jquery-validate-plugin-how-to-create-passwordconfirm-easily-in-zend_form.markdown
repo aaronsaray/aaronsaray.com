@@ -1,15 +1,17 @@
 ---
-layout: post
 title: 'Zend Framework 1 and jQuery Validate Plugin: how to create password/confirm easily in Zend_Form'
+date: 2013-07-16
 tags:
 - jquery
 - zend-framework
 ---
 Perhaps this trend is going away, but it used to be a "good thing" to make people validate their passwords.  I did all kinds of silly things in Zend Framework Form and jQuery Validate plugin at first - but then I finally settled on a good solution.  It's quite simple actually...
 
+<!--more-->
+
 **Part of your Zend_Form class:**
 
-```php?start_inline=1
+```php
 $this->addElement('password', 'password', array(
   'label'      => 'New Password:',
   'required'   => true,

@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Slides from thatConference
+date: 2013-08-15
 tags:
 - misc-web
 ---

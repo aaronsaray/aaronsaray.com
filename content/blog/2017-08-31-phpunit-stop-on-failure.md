@@ -1,11 +1,13 @@
 ---
-layout: post
 title: PHPUnit Stop On Failure
+date: 2017-08-31
 tags:
 - php
 - phpunit
 ---
 From time to time, I get thrown onto a project that has many, many errors in the unit tests.  It can be hard to try to figure out what to fix first with so many errors on the screen.  Sadly, I've had my scroll-back buffer filled many times.
+
+<!--more-->
 
 Or, there are other times when I'm working on a unit test and I know that some of my tests are broken - but I just want to start from the top and fix them one by one.  
 

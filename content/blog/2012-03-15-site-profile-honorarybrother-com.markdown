@@ -1,12 +1,14 @@
 ---
-layout: post
 title: 'Site Profile: honorarybrother.com'
+date: 2012-03-15
 tags:
 - archived-projects
 - business
 - misc-web
 ---
 Goal: to create a site serving females that felt a specific male in their life deserved positive recognition.  Then, to monetize the recipient from one of two targeted ads.
+
+<!--more-->
 
 Technology:
 

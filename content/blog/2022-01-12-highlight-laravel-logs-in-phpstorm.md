@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Highlight Laravel Logs in PHPStorm
+date: 2022-01-12
 tags:
 - phpstorm
 - laravel
 ---
 I'd like to say I don't ever have tons of error logs in my Laravel projects - but, sometimes it happens. With a sea of text, how can you see what you need to see easily? Enter JetBrain's idealog plugin in PHPStorm.
+
+<!--more-->
 
 The [idealog](https://plugins.jetbrains.com/plugin/9746-ideolog) plugin allows you to highlight logs in your PHPStorm editor.  The [wiki](https://github.com/jetbrains/ideolog/wiki) gives some insight into how to configure this with some standard log formats. I wanted to use it for my Laravel project, but I couldn't get it right.  I almost gave up - but then... 
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: A Better Understanding of Error Reporting in PHP
+date: 2007-07-19
 tags:
 - php
 ---
 While working on a website for ("the triangle"), I came to a page running locally that just stopped - blank.  This particular website was not using output buffering - so there is no excuse for a blank page.  For whatever reason (laziness, stupidity, thursdayness), I haven't checked my php.ini file for error reporting in the last few months... and for whatever reason a long time ago, I decided to go back to standard error reporting.  Well unfortunately, this means months of developing has gone by on this particular set of websites that I was possibly missing errors (never-mind everything has successfully went through QA...hrm...)  At any rate, I jumped out to PHP's website - eager and ready to copy a quick fix for my error reporting issue.  As I was getting ready to copy an `error_reporting()` line, I realized: I don't fully understand what I want to do here...Well, that's never good - copying code and not fully understanding it... so lets fix this.  Lets talk about error reporting.
+
+<!--more-->
 
 **Where to error report**
 
@@ -30,7 +32,7 @@ For those familiar with bitwise operators, the last paragraph probably seemed pr
 
 Well, as I said above, I'm assuming that you're not displaying errors on the production box, so we could - theoretically - use the same error reporting on the production box as well as the development box.  However, if you're handling a lot of hits, writing a lot of errors to the log file might start to overwhelm - so I would suggest using:
 
-```php?start_inline=1
+```php
 error_reporting(E_ALL)
 ```
 
@@ -38,7 +40,7 @@ It still reports all of the major errors, but it doesn't report errors such as n
 
 On the development box, this is without question - use all error reporting.  You need to know about every single error.  I'm of the opinion that code should never go to production in a state that PHP is able to report an error of it.  Use:
 
-```php?start_inline=1
+```php
 error_reporting(E_ALL | E_STRICT)
 ```
 

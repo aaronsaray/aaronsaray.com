@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Live Reloading HTML Webserver
+date: 2019-03-25
 tags:
 - html
 - ide-and-web-dev-tools
 ---
 Historically, I've always created virtual boxes with apache environments with vagrant [like this](https://github.com/aaronsaray/local-dev-server) or recently a combined docker image [like that](https://github.com/aaronsaray/docker-lamp-testbed). But, as I do more front end work as well, I realized these were pretty heavy weight.
+
+<!--more-->
 
 So, at first I decided I would just use the built-in PHP server [from the command line](http://php.net/manual/en/features.commandline.webserver.php) using something like:
 

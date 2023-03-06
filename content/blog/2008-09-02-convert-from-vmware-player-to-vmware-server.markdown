@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Convert from VMWare Player to VMWare Server
+date: 2008-09-02
 tags:
 - ide-and-web-dev-tools
 - windows
 ---
 At superdev, we have a distribution of a gentoo image made with vmware workstation.  This works fine in vmware player - but not the free vmware server - and I wanted to have vmware server running so I could have more than one server running on my windows laptop.  Well, there are two small simple edits I had to do - and it was all good.
+
+<!--more-->
 
 **First** of all, I grabbed my [favorite free hex editor](http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm) and evilly smiled.  **Open XVI32**.
 

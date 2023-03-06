@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Using Google Charts to make QR Codes
+date: 2010-07-13
 tags:
 - javascript
 - jquery
 - misc-web
 ---
 Google Charts is my hero yet again.  This time, I happened to notice that they have a chart in their API for QR Codes.  Considering I was just searching google for a PHP class to do this, I was pretty ecstatic.
+
+<!--more-->
 
 To implement, I made a quick line of jQuery to generate my QR Codes.  Of course, I did this after the page loaded :)  My goal was to generate a QR code for the page that the user is currently viewing.  Pretty simple:
 

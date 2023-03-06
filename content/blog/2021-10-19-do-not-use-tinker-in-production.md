@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Do Not Use Laravel Tinker in Production
+date: 2021-10-19
 tags:
 - php
 - laravel
 ---
 I'll say it again: do not install Laravel Tinker in production, and certainly do not use it.  It's a great tool to do work in your application, but only in test and development environments. That's why I only install it in my `require-dev` section of my `composer.json` file.
+
+<!--more-->
 
 ### Why Not?
 

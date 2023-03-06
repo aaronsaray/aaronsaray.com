@@ -1,12 +1,14 @@
 ---
-layout: post
 title: How to Break Down Laravel Unit Tests into Types
+date: 2022-06-23
 tags:
 - php
 - laravel
 - testing
 ---
 What's the difference between unit test, integration test, and a feature test? Which should you use for what type of test? Is it just preference or does performance factor in when using Laravel? Let me give you my take from over a decade of unit testing experience.
+
+<!--more-->
 
 First of all, let's talk about the definitions of these terms. We're going to focus on four terms: unit test, integration test, feature test and external test. There are even more (smoke test, e2e test, dusk tests, etc...) but we're going to focus on these because they fit nicely in our Laravel ecosystem.
 

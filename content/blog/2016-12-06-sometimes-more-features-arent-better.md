@@ -1,10 +1,12 @@
 ---
-layout: post
 title: "Startups - take note: Sometimes More Features Aren't Better"
+date: 2016-12-06
 tags:
 - business
 ---
 > The real reason we're not successful or getting a bunch of sales, is because we're missing feature X, Y and Z! Add them immediately!
+
+<!--more-->
 
 I've worked in enough start-ups (and own a minority stake in one myself) to tell you that the above is a common thought process.  But I don't know why.  Let me tell you straight out:
 

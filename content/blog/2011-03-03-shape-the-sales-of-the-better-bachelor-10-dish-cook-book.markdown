@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Shape the Sales of The Better Bachelor 10 Dish Cook Book
+date: 2011-03-03
 tags:
 - business
 ---
 Hey everyone - I'm looking to push the sales of the 10 Dish Better Bachelor Cook book to the next level.  
+
+<!--more-->
 
 Check out the sales single page here:  [http://thebetterbachelor.com/10dish/](http://thebetterbachelor.com/10dish/)
 

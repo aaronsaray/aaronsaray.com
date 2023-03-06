@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Firebug for IE?
+date: 2008-10-20
 tags:
 - javascript
 ---

@@ -1,15 +1,17 @@
 ---
-layout: post
 title: CSS incompatibility finder
+date: 2008-09-25
 tags:
 - css
 - php
 ---
 This is more of a proof of concept than anything else - as most of my scripts are ;)  But, lets say you have some files that have css in them, either external stylesheets, internal one with style tags or even style attributes - and you need to update the browser support.  Wouldn't it be great to have a tool that could look through these files and point out that there are incompatibilities?
 
+<!--more-->
+
 Well here is such a script!
 
-```php?start_inline=1
+```php
 /**
  * CSS Compat class
  * @author Aaron D Saray

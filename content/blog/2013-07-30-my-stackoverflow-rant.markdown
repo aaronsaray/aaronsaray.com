@@ -1,10 +1,12 @@
 ---
-layout: post
 title: My StackOverflow Rant
+date: 2013-07-30
 tags:
 - business
 ---
 Ugh.  I really want to contribute to the community.  I do!  If others before me wouldn't have done it, I wouldn't be where I am.  
+
+<!--more-->
 
 [![stackoverflow-logo](/uploads/2013/stackoverflow-logo-300x89.png)](/uploads/2013/stackoverflow-logo.png){: .thumbnail}{: .pull-right}
 

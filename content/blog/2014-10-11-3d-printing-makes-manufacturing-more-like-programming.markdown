@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 3D Printing Makes Manufacturing More Like Programming
+date: 2014-10-11
 tags:
 - business
 - programming
 ---
 I think it's pretty awesome that my daily job is making **something** out of **nothing**.  
+
+<!--more-->
 
 [![Beginning of Life](/uploads/2014/seedling-300x199.jpg)](/uploads/2014/seedling.jpg){: .thumbnail}{: .pull-right}
 

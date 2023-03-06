@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Printing a small segment of the page using JQuery
+date: 2009-11-23
 tags:
 - css
 - javascript
 ---
 Using Yahoo's Grid Tools, I created a pretty decent page layout.  After all this was complete, I needed to generate a printable version of only a portion of the site.  This was a particular set of instructions.  I decided to tackle this with JQuery.
+
+<!--more-->
 
 ### The Setup
 

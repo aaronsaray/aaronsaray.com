@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Javascript and CSS Compression and Cache
+date: 2010-02-25
 tags:
 - css
 - javascript
 - misc-web
 ---
 I've been researching caching and compression techniques for my external resources for some time.  My first design of [JEMDiary](http://jemdiary.com) was very greedy with HTTP connections.  Couple that with having a less-than-perfect host (Dreamhost bleh...), users could feel the burn.  I didn't like it because it would even take ME forever to use my own website.  I went on to discover many different key points I use when creating sites now - the Steps to Optimize Assets.
+
+<!--more-->
 
 ### Steps to Optimize Assets
 
@@ -58,7 +60,7 @@ Of course, when the website is built and deployed, we will be using a different 
 
 Next, lets talk about compression of the CSS.  I use [CSS Tidy](http://csstidy.sourceforge.net/) to compress my code.  The code to invoke this is pretty simple.
 
-```php?start_inline=1
+```php
 require 'csstidy-1.3/class.csstidy.php';
 $cssSource = file_get_contents('/var/www/public_source/main.css');
 

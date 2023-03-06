@@ -1,6 +1,6 @@
 ---
-layout: post
 title: I am a Zend Certified Engineer
+date: 2007-06-23
 tags:
 - php
 ---

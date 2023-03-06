@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Remove Internet Explorer Button Border
+date: 2009-04-09
 tags:
 - css
 ---
 Internet Explorer provides an additional border to any `button` element in the page if you don't explicitly assign a 0px border to it.  I have a bunch of buttons on a design that I'd like to have a `1px #fff` border on.  Unfortunately, with the additional border that IE adds, it looks horrible.
+
+<!--more-->
 
 The solution was to add a span around the button:
 

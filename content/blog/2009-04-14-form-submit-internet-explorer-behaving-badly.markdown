@@ -1,12 +1,14 @@
 ---
-layout: post
 title: 'Form Submit: Internet Explorer behaving badly'
+date: 2009-04-14
 tags:
 - html
 - javascript
 - jquery
 ---
 I just want to make a micro blog here.  Just a tiny lil blog.
+
+<!--more-->
 
 ### Internet Explorer Does Not Submit Form on Enter
 

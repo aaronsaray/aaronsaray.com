@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Theme/Template System in Zend Framework
+date: 2011-05-20
 tags:
 - zend-framework
 ---
 Theme systems are very common in projects written on Drupal, Joomla, and Wordpress.  I didn't see much out of the box support for themes in Zend Framework at first.  However, I was wrong.  It's pretty easy.  The only real decision I had to make is if I want to make themes that extend a default theme - or themes that are simple and on their own / totally encapsulated.  I will do the encapsulated version - but give some pointers on how you would do the other version, too!
+
+<!--more-->
 
 ### Make a Front Controller Plugin
 
@@ -13,7 +15,7 @@ Since themeing is something that is only specific to the view system that is ren
 However, we do have to register our front controller plugin using the bootstrap class.  First, I'm going to register my new plugin.  The plugin will be called Template.  It will be located at `application/plugins/Theme.php`.  (Note: the default ZF loader knows this location).
 
 **`application/bootstrap.php`**
-```php?start_inline=1
+```php
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
   protected function _initFrontControllerPlugin()
@@ -106,7 +108,7 @@ Since this view helper is going to be shared among all of our views, however, we
 Create a new Helper called `Application_View_Helper_Theme` inside of the file: 
 
 **`application/views/helpers/Theme.php`**
-```php?start_inline=1 
+```php 
 class Application_View_Helper_Theme
 {  
   public function theme($url)
@@ -139,13 +141,13 @@ How might we use this?
 
 **Old view:**
 
-```php?start_inline=1 
+```php 
 echo '<img src="/images/smiley.gif" alt="smiley">';
 ```
 
 **New view:**
 
-```php?start_inline=1 
+```php 
 echo '<img src='" . $this->theme('/images/smiley.gif') . '" alt="smiley">';
 ```
 

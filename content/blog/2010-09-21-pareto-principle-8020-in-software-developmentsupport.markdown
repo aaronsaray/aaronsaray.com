@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Pareto principle - 80/20 in Software Development/Support
+date: 2010-09-21
 tags:
 - business
 ---
 > For many events, roughly 80% of the effect comes from 20% of the cause.
+
+<!--more-->
 
 This is the rough translation of the Pareto principle.  You may also hear it called the 80-20 rule.  With increasing frequency, I've seen that this principle is much more important in software development and support than I originally thought.  Let's look at it in some real life examples.
 

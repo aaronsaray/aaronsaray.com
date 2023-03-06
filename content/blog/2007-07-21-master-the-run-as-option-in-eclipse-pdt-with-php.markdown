@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Master the 'Run As' option in Eclipse PDT with PHP
+date: 2007-07-21
 tags:
 - eclipse-pdt
 - ide-and-web-dev-tools
 - php
 ---
 Most of my development in Eclipse PDT with the results tested outside of it - using firefox.  PDT has a few options in the Run... menu:
+
+<!--more-->
 
   * PHP Script
 
@@ -36,7 +38,7 @@ The last thing I'm checking is the [php version](http://us2.php.net/manual/en/fu
 
 Lets move on to the script:
 
-```php?start_inline=1
+```php
 /**
  * my test script to run in eclipse
  */
@@ -377,7 +379,7 @@ Sure enough, everything from 'web browser output' echoed to the console.
 
 Well, how can I get messages to the console?  The next thing I tried was generating an error... well an `E_NOTICE` actually:
 
-```php?start_inline=1
+```php
 echo $testvar;
 ```
 

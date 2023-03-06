@@ -1,13 +1,15 @@
 ---
-layout: post
 title: How to Quickly Mask a Credit Card Number
+date: 2012-01-10
 tags:
 - php
 - programming
 ---
 So, often I have to show a masked credit card on the screen.  However, I really want to go the extra mile and show the user a secure, fully masked credit card number that still reflects their original card.  For example, if their credit card number is only 15 numbers long, I shouldn't show a 16 character long string.  So, I've developed this code snippet:
-    
-```php?start_inline=1
+
+<!--more-->
+
+```php
 $cc='1234123412341234';
 $masked = str_pad(substr($cc, -4), strlen($cc), '*', STR_PAD_LEFT);
 ```

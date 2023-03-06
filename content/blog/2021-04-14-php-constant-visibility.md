@@ -1,6 +1,6 @@
 ---
-layout: post
 title: PHP Class Constant Visibility
+date: 2021-04-14
 tags:
 - php
 ---

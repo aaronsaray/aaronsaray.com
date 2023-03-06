@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Why Care About Privacy with Web Analytics?
+date: 2022-12-24
 tags:
 - business
 - security
 ---
 If Google gives free access to their web traffic tool called Google Analytics, why would you need anything else? Why would you care? Let's briefly talk about why privacy matters and what you can do instead.
+
+<!--more-->
 
 > Know all of this? Skip to the bottom to get my security-minded privacy-focused analytics recommendation.
 

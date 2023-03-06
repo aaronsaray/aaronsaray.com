@@ -1,11 +1,13 @@
 ---
-layout: post
 title: NPM Install for Hugo Theme on Cloudflare Pages
+date: 2023-02-06
 tags:
 - javascript
 - hugo
 ---
 You've created a nice Hugo-based theme which uses Node dependencies. Time to deploy on Cloudflare pages, but it won't recognize you need to do an NPM Install. What do you do?
+
+<!--more-->
 
 ### Why
 

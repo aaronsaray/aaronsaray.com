@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Fixing Laravel 5.4's Dependency on PHPUnit 5
+date: 2017-04-14
 tags:
 - php
 - testing
@@ -9,9 +9,11 @@ tags:
 ---
 Normally, when I write unit tests, I don't use Laravel's facade and fakery methods.  I do a lot of injection of services, but in one particular case, when working with the Queue system, I had to use the facade for faking the queue and asserting some jobs were pushed.
 
+<!--more-->
+
 However, when I ran the following code in a unit test, I got an error that class `PHPUnit_Framework_Assert` was not found.
 
-```php?start_inline=1
+```php
 class QueueFakeTest extends AbstractTestCase 
 {
   public function testCanAssertPushed()
@@ -62,7 +64,7 @@ Like many of us, I have my own bootstrap php file in the tests directory (it imp
 
 In order to fix this, I decided to add class aliases to this bootstrap file.
 
-```php?start_inline=1
+```php
 /**
  * Laravel has some testing helpers that are using the non-namespaced PHPUnit 
  * classes, but these were removed in PHPUnit 6
@@ -76,7 +78,7 @@ Now, I know that in PHPUnit 5 source code there probably is a bunch of aliases f
 
 The updated list, as far as I can tell, is this:
 
-```php?start_inline=1
+```php
 class_alias(\PHPUnit\Framework\Assert::class,'PHPUnit_Framework_Assert');
 class_alias(
   \PHPUnit\Framework\ExpectationFailedException::class, 

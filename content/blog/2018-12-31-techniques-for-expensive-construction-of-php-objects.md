@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Techniques to Battle Expensive PHP Constructors
+date: 2018-12-31
 tags:
 - php
 ---
 Whether you've made the class yourself or you're using a pre-made SDK, there are times when the construction of an object might be expensive.  Expense, in this case, pertains to memory, time, CPU cycles, basically anything that is above baseline.  
+
+<!--more-->
 
 ### Why Care About Expensive Constructors
 
@@ -50,7 +52,7 @@ class DanceParty
 
 And it's called like this:
 
-```php?start_inline=1
+```php
 $dp = new DanceParty();
 $dp->doFunk();
 ```
@@ -103,7 +105,7 @@ class DanceParty
 
 Don't forget, we're doing this:
 
-```php?start_inline=1
+```php
 $dp = new DanceParty();
 $dp->doFunk();
 ```
@@ -156,14 +158,14 @@ class DanceParty
 
 I did this:
 
-```php?start_inline=1
+```php
 $dp = new DanceParty();
 $dp->doFunk();
 ```
 
 Now, you'll notice something different here.  I had to change the methods for the dance party to protected.  When they're public, `__call` does not get executed because the method actually exists (publicly).  So, I had to make them protected for this to work.  The confusing part, now, will be that other developers will see what appears to be calls to protected methods as public methods.  If you want to document this, too, you'll probably have to use the [@method PHPDoc](http://docs.phpdoc.org/references/phpdoc/tags/method.html) annotation... for example:
 
-```php?start_inline=1
+```php
 /**
  * Class DanceParty
  * @method void doFunk()
@@ -224,7 +226,7 @@ class DancePartyProxy
 
 I call it like so:
 
-```php?start_inline=1
+```php
 $i = new DancePartyProxy();
 $i->doFunk();
 ```

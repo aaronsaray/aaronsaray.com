@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Password Complexity Class
+date: 2009-02-12
 tags:
 - php
 - security
 ---
 After many times of coding relatively the same thing, it becomes prudent to have a standard library for certain sets of processes.  Of course - that is why there are things like frameworks!  At any rate, one of the biggest things I run into is password complexity.  Each website has its own requirement for the security they want to implement.  So, let's talk about the requirements and then look at the code:
+
+<!--more-->
 
 ### The Requirements
 
@@ -35,7 +37,7 @@ Those are all of the needs I plan to address.  Additionally, there are some feat
 
 Well, lets take a look at the class:
 
-```php?start_inline=1
+```php
 class Password
 {
   /** constants - are arbritrary numbers - but used for bitwise **/
@@ -202,7 +204,7 @@ class Password
 
 Most of this code is pretty self explanatory.  And an example of how we might use this:
 
-```php?start_inline=1
+```php
 $newPass = 'Turk3y*';
 $oldPass = 'monkeyS3!';
 $username = 'aaronsaray';
@@ -223,7 +225,7 @@ else {
 
 You might also try using the `getComplexityStandard()` method or creating your own complexity setting.  For example, if you wanted to create a site that was really lax and only required min/max and lower and uppercase, you could call the complexity routine like this:
 
-```php?start_inline=1
+```php
 /** not recommended!! **/
 $PASSWORD->setComplexity(
   Password::REQUIRE_MIN + Password::REQUIRE_MAX 

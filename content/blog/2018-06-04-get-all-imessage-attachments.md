@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Get All iMessage Attachments
+date: 2018-06-04
 tags:
 - php
 - macos
 ---
 The other day I was looking for an image from one of my iMessage chats.  When you browse through the attachments on the iPhone, it takes forever to scroll through them. At one point, I kept having the iMessage app crash as well (I think I was maybe 400 or 500 images into the history).  Turns out, if you have your iMessage and iCloud accounts configured properly on your Mac, you'll have duplicate copies of all the attachments (for at least the messages you haven't deleted) on your Mac as well.
+
+<!--more-->
 
 ### The Location and Filesystem
 

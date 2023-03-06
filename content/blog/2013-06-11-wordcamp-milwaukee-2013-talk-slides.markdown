@@ -1,6 +1,6 @@
 ---
-layout: post
 title: WordCamp Milwaukee 2013 Talk + Slides
+date: 2013-06-11
 tags:
 - wordpress
 ---

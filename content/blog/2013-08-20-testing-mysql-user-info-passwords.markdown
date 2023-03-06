@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Testing MySQL User Info Passwords
+date: 2013-08-20
 tags:
 - mysql
 - security
 ---
 Out of some sheer boredom, I started looking at the top 25 used passwords (from articles [here](http://www.welivesecurity.com/2012/06/07/passwords-and-pins-the-worst-choices/) and [here](http://www.cbsnews.com/8301-205_162-57539366/the-25-most-common-passwords-of-2012/)).  
+
+<!--more-->
 
 I decided to test one of my applications using six common ones:
 

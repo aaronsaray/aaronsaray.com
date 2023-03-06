@@ -1,11 +1,13 @@
 ---
-layout: post
 title: IE6 warning on site
+date: 2010-04-22
 tags:
 - jquery
 - misc-web
 ---
 So I got permission at the beginning of March to add an Internet Explorer 6 deprecation message to one of the sites I'm working on.
+
+<!--more-->
 
 My goals are simple:
 

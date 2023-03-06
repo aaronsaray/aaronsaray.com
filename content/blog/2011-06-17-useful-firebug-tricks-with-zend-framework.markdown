@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Useful Firebug Tricks with Zend Framework
+date: 2011-06-17
 tags:
 - zend-framework
 ---
 Zend Framework has a few hooks with the Firebug browser plugin (with the FirePHP add-on). The two that I use are writing logs to the console and profiling of database connections.
+
+<!--more-->
 
 **First thing's first: Make sure to only enable these settings in your non-production environments.**
 
@@ -23,7 +25,7 @@ resources.db.params.profiler.class = "Zend_Db_Profiler_Firebug"
 
 I don't like to check logs while I'm developing. I'd rather have all of these alerts in my face. Luckily, Zend Framework allows a firebug logger to do this for me. In my `bootstrap.php` file, I will create a method similar to this:
 
-```php?start_inline=1
+```php
 protected function _initLogs()
 {
   $logger = new Zend_Log();

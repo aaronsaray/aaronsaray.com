@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 3 Tough Conversations from Stakeholders and Upper Management
+date: 2020-09-15
 tags:
 - business
 - management
 ---
 > This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry one? [Click here]({% post_url 2020-09-10-dev-manager-1-3-books %})
+
+<!--more-->
 
 When you manage a team, the conversations you have change a lot. No longer are you justifying your own estimates or explaining your coding decisions. Now, you’re responsible for many different estimates, many different decisions, and many different personalities.
 

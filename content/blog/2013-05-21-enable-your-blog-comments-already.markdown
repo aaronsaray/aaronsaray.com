@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Enable your blog comments already!
+date: 2013-05-21
 tags:
 - business
 ---
 **Sorry for the mini-rant here...**
+
+<!--more-->
 
 [![Angry Birds](/uploads/2013/angry-birds.jpg)](/uploads/2013/angry-birds.jpg){: .thumbnail}{: .pull-right}
 

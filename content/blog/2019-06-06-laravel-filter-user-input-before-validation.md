@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Filter User Input Before Validation in Laravel
+date: 2019-06-06
 tags:
 - php
 - laravel
 ---
 Sometimes it makes sense to filter user input before it goes to validation.  If you're using controller-based validation in Laravel, this is pretty easy. But, if you're doing your validation in request classes, your approach needs to be different.
+
+<!--more-->
 
 In this example, I have an item coming in as an array.  The item is an array as well.  Sometimes, because of the UI, the user can send in a blank item, followed by a filled item.  So, I don't want to give them errors for the blank one - I just want it removed.
 

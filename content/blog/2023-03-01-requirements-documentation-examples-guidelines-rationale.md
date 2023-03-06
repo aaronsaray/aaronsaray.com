@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Requirements Documentation Examples Guidelines and Rationale
+date: 2023-03-01T10:00:00
 tags:
 - business
 ---
 Creating a requirements document for a project can seem daunting. Where do I start? What sections are required? How do I capture everything and keep scope limited?
+
+<!--more-->
 
 There are no perfect "right" answers as each situation is different. However, the purpose of this page is to give you some guidance about what a requirements document and wireframe might look like. I’ve created a fake company called **Fizzle Stix** which wants to create an app called **Mass Status for Slack**.
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: PHP Script Configuration Options - Class Constants or MySQL
+date: 2008-05-31
 tags:
 - php
 ---
 I'm trying to figure out the best way to do configuration options for my newest PHP scripts that I'm working on.  My requirements are simple:
+
+<!--more-->
 
 1) You cannot change the config option once it is loaded
 
@@ -30,7 +32,7 @@ When I was building my get method, I kept running into an error:
     
 The first way I tried to do it was as so:
 
-```php?start_inline=1
+```php
 public static function get($item)
 {
   return self::$item;
@@ -41,7 +43,7 @@ Turns out, that method of accessing an item points to it as being a static varia
 
 I have to end up using the `constant()` function.  Here is my finished testing script:
 
-```php?start_inline=1
+```php
 class config
 {
   const item1 = 'test';

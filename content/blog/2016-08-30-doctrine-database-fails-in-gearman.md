@@ -1,16 +1,18 @@
 ---
-layout: post
 title: Doctrine Database Connection Fails in Gearman Worker
+date: 2016-08-30
 tags:
 - php
 ---
 One of the things that was really bothering me when I first started using [Gearman](http://gearman.org/) was my consistently failing [doctrine database](http://www.doctrine-project.org/) connection.
 
+<!--more-->
+
 At first it seemed like it was randomly dropping the connection.  Then, I noticed that it was after the gearman job had been running for a while.  This makes sense - and I also decided that I don't want to keep a database connection connected the entire time of my job either (entire time == forever basically).  Oh - and finally - my entire application bootstrap consisted of connecting to the database on each request - and that bootstrap was used in my gearman worker.
 
 So - since I was using Doctrine, I had some helpers from their DBAL. I made the following function:
 
-```php?start_inline=1
+```php
 /** @var \Doctrine\ORM\EntityManager $em */
 $em = $container['em'];
 
@@ -35,7 +37,7 @@ This function takes the entity manager into the current context.  It's very simp
 
 Now, let's see how this is actually used.  The following code is in my gearman-worker.php file which is one of the workers that is registered with gearman.
 
-```php?start_inline=1
+```php
 $worker = new GearmanWorker();
 
 $worker->addFunction('send-message', function(GearmanJob $job) use ($messageService) {

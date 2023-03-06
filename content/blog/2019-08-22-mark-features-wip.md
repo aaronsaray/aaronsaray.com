@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Mark WIP Features for Better UX/Customer Acceptance
+date: 2019-08-22
 tags:
 - testing
 - misc-web
 - javascript
 ---
 When you're trying to demo your **w**ork **i**n **p**rogress to a client, it can be difficult to know where to draw the line between working and non-working features.  On one hand, you want to show them some context so they can understand the current feature. But, then what happens when they invariably try to explore the context (which may not be done)?  Let me put that in a more concrete example.
+
+<!--more-->
 
 Imagine you have a menu with three options in your final app. You've worked on the first menu item and it's ready to demonstrate.  You want to display the other two menu items to give proper context. However, those other items are not completed.
 

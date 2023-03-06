@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Mirror a Git Repository Without Forking
+date: 2021-06-21
 tags:
 - git
 ---
 I had a need to mirror a git repository on Github, but I wasn't allowed to fork the repository. Luckily, there is a mirror option built into git.
+
+<!--more-->
 
 ### Why Mirror a Repository
 

@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Quick Local Network Scanner for Default MySQL Installs
+date: 2018-11-11
 tags:
 - security
 - mysql
 - nodejs
 ---
 The other day I was at a coffee shop and I looked around at all the Mac's open. It used to be that you'd see people writing manuscripts at coffee houses. Surprisingly, this place held a lot of programmers.  I suddenly thought of something interesting:
+
+<!--more-->
 
 **How many of these Macs on this wifi network had default MySQL servers running/open?**
 

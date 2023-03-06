@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Split Read/Write Connections in Zend Framework Database on the Application Level
+date: 2012-01-24
 tags:
 - mysql
 - zend-framework
 ---
 I'm no sys admin, so I can't be sure, but I've seen lots of issues with using things like MySQL Proxy to fully separate the write and read queries in an application.  Maybe it works, I don't know... but I do know that if I can separate the connections in my code, that saves my Admin time... it doesn't appear to give that much of a hit to performance either!  Do keep in mind that this is only working at the table level in Zend Framework.  If you use their database system, this should do the trick.  If you do a lot of getting the adapter yourself, this won't help you at all!
+
+<!--more-->
 
 First thing to know, when you define your database settings in the `application.ini` file, the default settings that the bootstrap would read in ... you know: 
     
@@ -23,7 +25,7 @@ Next, create a method in your bootstrap called `_initWriteConnection()` or somet
 
 Finally, time to extend the `Zend_Db_Table_Abstract`
 
-```php?start_inline=1
+```php
 class Application_Model_SplitReadWriteDatabaseConnection extends Zend_Db_Table_Abstract
 {
   /**
@@ -89,7 +91,7 @@ Any other ways that I can make this better?
 
 PS, if you'd like to test this, but don't actually have two different database credential connections (but want to be ready for later), make the `_initWriteConnection()` method contain the following code:
 
-```php?start_inline=1
+```php
 $this->bootstrap('db');
 $db = $this->getResource('db');
 Zend_Registry::set('DbWriteConnection', $db);

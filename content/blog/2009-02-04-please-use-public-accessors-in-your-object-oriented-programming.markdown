@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Please Use Public Accessors in your Object Oriented Programming
+date: 2009-02-04
 tags:
 - php
 - programming
 ---
 I really hate to see people accessing and designing objects with public attributes.  So many times I've seen this backfire.  Lets take a few examples and see why this matters:
+
+<!--more-->
 
 ### The Simple Book Class
 
@@ -13,7 +15,7 @@ Well first, lets say we're dealing with books.  We need to know the title, autho
 
 **Bad Example**
 
-```php?start_inline=1
+```php
 class Book
 {
   public $title;
@@ -42,7 +44,7 @@ I used to think that was stupid to write an accessor for every variable.  I mean
 
 **Book Done Right**
 
-```php?start_inline=1
+```php
 class BookWithAccessors
 {
   protected $title;
@@ -88,7 +90,7 @@ Note, in this example, the code to print out the details about the book does not
 
 **New Features**
 
-```php?start_inline=1
+```php
 class Author
 {
   protected $firstName;

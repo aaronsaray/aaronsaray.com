@@ -1,11 +1,13 @@
 ---
-layout: post
 title: JS Tool - Security Auditing in Javascript
+date: 2008-04-24
 tags:
 - javascript
 - security
 ---
 JSTool was a trial run of combining many different scripts from the open source community into a security and auditing script.  
+
+<!--more-->
 
 [![js tool](/uploads/2008/jstool-112x150.gif)](/uploads/2008/jstool-112x150.gif){: .thumbnail}{: .pull-right}
 

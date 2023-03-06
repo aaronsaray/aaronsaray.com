@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Removing the extra elements on Zend_Form for Submit Button
+date: 2012-03-13
 tags:
 - zend-framework
 ---
 Have you ever used Zend Form, created a submit button, and had a few extra tags that were just throwing you off?  I know you have...  You probably did it like me:
-   
-```php?start_inline=1
+
+<!--more-->
+
+```php
 $this->addElement('submit', 'submitbutton', array(
   'ignore'=>true,
   'label'=>'Submit This',
@@ -15,7 +17,7 @@ $this->addElement('submit', 'submitbutton', array(
 
 But, you'll notice you have both a `dt` and a `dd` from the standard view helpers of `HtmlTag`.  But, the `dt` usually contains the label attribute.  In this case, the label element is part of the input now.  It stead of being silly and using CSS to hide that empty `dt`, let's just get rid of it... add the following to your code:
 
-```php?start_inline=1
+```php
 $element = $this->getElement('submitbutton');
 $element->setDecorators(
   array(

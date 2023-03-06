@@ -1,10 +1,12 @@
 ---
-layout: post
 title: "Expression #1 of SELECT list is not in GROUP By clause"
+date: 2019-08-03
 tags:
 - mysql
 ---
 This MySQL error isn't as hard as you might think to solve.  Let's find out why it's happening and what we can do to fix it.
+
+<!--more-->
 
 The error message is usually something like this:
 

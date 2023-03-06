@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Sometimes Just Ask Why
+date: 2020-11-16
 tags:
 - business
 - management
 ---
 > This is part of a series of articles from the retired The Dev Manager website.
+
+<!--more-->
 
 What happened to “why?” What happened to make people so afraid of asking this question? Perhaps it’s when all of the 3-year-olds start asking “why” about everything. Why does mommy have to go to work? Why do we need money? Why is the sky blue?
 

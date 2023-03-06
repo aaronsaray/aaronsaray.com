@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Finding Slow Tests in PHPUnit 9
+date: 2021-01-04
 tags:
 - php
 - testing
 - phpunit
 ---
 When your unit test suite gets larger, it can take quite a long time. One of the many ways to speed this up is to hunt down and fix slow tests.  Let's use PHPUnit's test listeners to do just that.
+
+<!--more-->
 
 I've written about this [before]({% post_url 2011-12-20-add-phpunit-listeners-to-watch-for-long-running-tests %}) and [revised it]({% post_url 2017-11-15-phpunit-listener-for-long-running-tests-update %}) as well, but with PHPUnit 9, we have new interfaces and classes that we need to create.  Let's get started.
 

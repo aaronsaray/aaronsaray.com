@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Treat Arrays Right: Iterating Properly'
+date: 2013-12-18
 tags:
 - php
 ---
 Oh, PHP - your love affair with arrays is like no other language.  You can always tell if someone learned PHP first before all other programming languages.  They think, design, and talk in arrays.  Have a list?  Make it an array.  Have a heap?  You mean array, right?  Collection object? Naw, I've got an array right here.
+
+<!--more-->
 
 PHP loves arrays too.  Check out [php.net/manual/en/ref.array.php](http://php.net/manual/en/ref.array.php) to see exactly what I mean.  So many ways to work with arrays, I love it!  Every PHP programmer loves and respects arrays, right?  So why do so many of us treat them the wrong way?
 
@@ -16,7 +18,7 @@ If you're like me, you're already scanning through the article, looking for code
 
 ### Best Practice: Use Loops When Not Changing Array Values
 
-```php?start_inline=1
+```php
 $array = ['a', 'b', 'c', 'd', 'e'];
 
 $length = count($array);
@@ -31,7 +33,7 @@ Here, I have an array cleverly named $array.  I do not wish to change the values
 
 ### Best Practice: Use Array Manipulation Function To Change Array Values
 
-```php?start_inline=1
+```php
 $array = ['a', 'b', 'c', 'd', 'e'];
 
 array_walk($array, function(&$value, $key) {
@@ -45,7 +47,7 @@ In this example, I want $array to contain all the same letters, just uppercase. 
 
 For this challenge, what would be the best practice?  Should I create a loop or use an array manipulation method?  Below, I'll show both ways to do it.  Which is best?
 
-```php?start_inline=1
+```php
 $array = ['a', 'b', 'c', 'd', 'e'];
 
 $uppercase = array_map(function($value) {
@@ -65,7 +67,7 @@ But, if you'd like to just ruffle my feathers a little bit, I encourage you to s
 
 ### This Is Not The Best:
 
-```php?start_inline=1
+```php
 $array = ['a', 'b', 'c', 'd', 'e'];
 
 print '<ul>';

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Array Key Accuracy
+date: 2016-03-10
 tags:
 - php
 ---
 Bugs in code suck.  It's bad enough when you misspell a function or forget a semi-colon.  That's embarrassing and annoying.  But what's worse is when you write code that seems to work fine, is syntactically correct, yet still has a bug.  You know you did it right, but somehow it's also wrong.  That's not good.  That makes me paranoid and second guess the rest of my work.  That doesn't help me be a Confident Coder at all.
+
+<!--more-->
 
 ### Episode 3: Array Key Accuracy
 
@@ -13,7 +15,7 @@ One of the areas that I've seen this happen before is with array key and values.
 
 So, let's take a look at one way this can happen.  In this example, if my array of a person's data has a zip code, I know that I want to execute some localization code in my application.
 
-```php?start_inline=1
+```php
 if ($person['zip']) {
   runLocalization($person);
 }
@@ -26,7 +28,7 @@ In this next example, we're going to deal with publication dates for printable i
 
 To set this up, we have an HTML select that builds a drop down to reflect this choice.  The possible values that we can receive are reflected by this array:
 
-```php?start_inline=1
+```php
 array(
  'Immediately'      => NULL,
  '2 Days Before'    => -2,
@@ -39,13 +41,13 @@ array(
 
 When it comes time to process the current page, the submitted value from this array is stored in a settings array using a key named `offset`.  So, for example, if we had a setting of `1 Day Before`, it would be reflected like this:
 
-```php?start_inline=1
+```php
 $settings['offset'] = -1;
 ```
 
 Now, let's take a look at our initial statement from the previous section updated to calculate publication date offsets.  Remember, if my offset setting doesn't exist, I don't want to run the calculation code.
 
-```php?start_inline=1
+```php
 if ($settings['offset']) {
   calculateOffset($settings['offset']);
 }
@@ -59,7 +61,7 @@ The next way you might attempt to become more accurate and fix this is by using 
 
 Enter our hero: `array_key_exists()`.  This function will accurately determine if the key exists in the settings array regardless of the value.  In other words, it does not try to calculate the existence of the array key by evaluating the value.  Our new code:
 
-```php?start_inline=1
+```php
 if (array_key_exists('offset', $settings) {
   calculateOffset($settings['offset']);
 }

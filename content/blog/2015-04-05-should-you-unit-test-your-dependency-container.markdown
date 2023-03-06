@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Should you unit test your dependency container?
+date: 2015-04-05
 tags:
 - php
 - phpunit
@@ -8,6 +8,8 @@ tags:
 - testing
 ---
 I've been working with Pimple Dependency Injector lately, and I've come up with an interesting question.
+
+<!--more-->
 
 **Should I unit test my container?**
 

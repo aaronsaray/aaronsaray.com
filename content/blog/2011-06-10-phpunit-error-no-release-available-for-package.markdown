@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 'PHPUnit error: No release available for package'
+date: 2011-06-10
 tags:
 - phpunit
 ---
 One of the steps to install PHPUnit is to execute the following pear commands:
-    
+
+<!--more-->
+
 ```bash
 pear channel-discover pear.phpunit.de
 pear install phpunit/PHPUnit

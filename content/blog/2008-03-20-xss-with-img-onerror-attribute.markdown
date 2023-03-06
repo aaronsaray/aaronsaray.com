@@ -1,12 +1,14 @@
 ---
-layout: post
 title: XSS with Img OnError attribute
+date: 2008-03-20
 tags:
 - javascript
 - php
 - security
 ---
 So much of my time is spent worrying over the src or href tags on images and links - that I sometimes forget about the other attributes.
+
+<!--more-->
 
 Imagine being able to make an image which has no black-flagged content in the src but yet can still make a remote request, logging the user's cookie information?  That's right - this can be done - using the `onerror` attribute of an image.
 

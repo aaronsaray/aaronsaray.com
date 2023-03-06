@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Elgg Plugin: Generate Groups'
+date: 2009-05-04
 tags:
 - php
 ---
 The [Elgg Generate Users Plugin](http://community.elgg.org/pg/plugins/aszepeshazi/read/20275/generate-users-updated) made me wonder why there was no group functionality... So...
+
+<!--more-->
 
 ### Enter the Elgg Group Generation Plugin
 

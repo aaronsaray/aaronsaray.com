@@ -1,13 +1,15 @@
 ---
-layout: post
 title: It is important to use die() after a header redirect - here's why
+date: 2013-01-08
 tags:
 - php
 - security
 ---
 I was doing some code challenge review for an open web developer position I have for my team, and I came across one piece of code that made me smile.
 
-```php?start_inline=1
+<!--more-->
+
+```php
 if (!$auth) {
   header('Location: /login.php');
 }
@@ -54,14 +56,14 @@ So I thought about this a bit more and said - well, the browser isn't the only w
 
 First, my "secure" page:
 
-```php?start_inline=1
+```php
 header('Location: /login.php');
 echo 'Secure Stuff Here';
 ```
 
 And now, my consumer:
 
-```php?start_inline=1
+```php
 $url = "http://localhost/redirectTest.php";
 $opts = array('http' =>
   array(

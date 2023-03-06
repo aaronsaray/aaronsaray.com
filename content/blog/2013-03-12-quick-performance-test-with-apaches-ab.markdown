@@ -1,17 +1,19 @@
 ---
-layout: post
 title: Quick performance test with apache's ab
+date: 2013-03-12
 tags:
 - apache
 - performance
 ---
 In a break from my normal type of tutorial, I just want to give a real quick overview and highlight of a fictitious "case study" to demonstrate the importance of load testing your application with apache's ab tool.
 
+<!--more-->
+
 'ab' is the Apache Benchmark tool.  It allows you to run concurrent tests, limit the amount of times you send requests, send specific headers, cookies, authorization, etc.  Basically, you can set up scenarios for load testing your code with nearly any scenario you can imagine - on one page - with just a little prep work.
 
 In my case study, I've created some PHP code for my profile test page.  I have a long running function that is running too long for my user experience.  Lets take a look.
 
-```php?start_inline=1     
+```php     
 function slowRunningFunction()
 {
   echo 'Ok...';
@@ -35,7 +37,7 @@ I obviously can see I have a problem here.  The 2 second mean time is just too m
 
 After some research, I found a new 'improved' method to replace in my code.  Instead of `sleep()`, I'm going to use usleep() (yup, this is cheesy).
 
-```php?start_inline=1
+```php
 function slowRunningFunction()
 {
   echo 'Ok...';

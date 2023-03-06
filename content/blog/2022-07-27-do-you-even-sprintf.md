@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Do you even sprintf?
+date: 2022-07-27
 tags:
 - php
 ---
 "Do you even lift, bro?!" What a way to ask if you work out while simultaneously insulting you. Well, maybe I shouldn't have named this "do you even sprintf" but it really surprises me how many PHP devs forget about (or don't even know about) this useful tool - and instead do some pretty icky looking string concatenation. Let's take a look at what `sprintf()` can do for us.
+
+<!--more-->
 
 If you're curious, you can check out a bunch about the [history of printf formatting](https://en.wikipedia.org/wiki/Printf_format_string).  PHP provides a number of functions in this family: `printf()`, `sprintf()` and `vsprintf()`.  For this entry, I'm going to just gently introduce you to [sprintf()](https://www.php.net/sprintf).
 

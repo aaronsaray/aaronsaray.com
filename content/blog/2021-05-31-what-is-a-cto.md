@@ -1,11 +1,13 @@
 ---
-layout: post
 title: What is a CTO? What do they do?
+date: 2021-05-31
 tags:
 - business
 - management
 ---
 The title CTO is short for Chief Technology Officer. But what actual roles and responsibilities do they have? Every business is different, so there's no hard and fast set of rules. However, there are some core responsibilities and philosophies that I believe every person with that title should have.
+
+<!--more-->
 
 There are two main concerns of a CTO: communication and technology.  Let's dig into the communication first.
 

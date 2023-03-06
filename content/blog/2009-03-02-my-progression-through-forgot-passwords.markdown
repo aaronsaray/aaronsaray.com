@@ -1,12 +1,14 @@
 ---
-layout: post
 title: My Progression through Forgot Passwords
+date: 2009-03-02
 tags:
 - php
 - programming
 - security
 ---
 I thought I'd take some time to look at the 3 main ways that I've handled forgotten passwords on my websites, why I did them that way, and if there was anything wrong.
+
+<!--more-->
 
 _Disclaimer: there is a lot of bad code in here - and that's on purpose!  This is a historical piece... :)_
 
@@ -20,7 +22,7 @@ The next step in my programming mutation was at least more secure: send the hash
 
 **Um, don't do this:**
 
-```php?start_inline=1
+```php
 mysql_query(
   "Insert into resets (userID, key) values($userID, '" . md5(time()) . "'
 );
@@ -46,7 +48,7 @@ The next thing I realized was that I had to make this hash a bit more unique, so
 
 **still not good enough!**
 
-```php?start_inline=1
+```php
 $time = time();
 $key = md5("{$userID}{$time}");
 mysql_query("Insert into resets (userID, key) values($userID, '$key');
@@ -70,7 +72,7 @@ What?
 
 Well, let me show you.
 
-```php?start_inline=1
+```php
 $forEncode = '';
 for ($i=0; $i<300; $i++) {
   $forEncode .= chr(rand(1,255));

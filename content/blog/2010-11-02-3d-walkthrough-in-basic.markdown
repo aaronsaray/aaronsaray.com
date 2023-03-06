@@ -1,10 +1,13 @@
 ---
-layout: post
 title: 3D walkthrough in Basic
+date: 2010-11-02
 tags:
 - programming
 ---
 Just had a blast from the past... found this a while ago.  This was a program I wrote way back in the days of Basic.  It was a basic 3D walk through.
+
+<!--more-->
+
     
     '  Added speed routines and antiflicker and take away waits.
     '  3rd generation program

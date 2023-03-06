@@ -1,11 +1,13 @@
 ---
-layout: post
 title: When PHP's dirname() saved the day
+date: 2009-04-24
 tags:
 - php
 - scripting
 ---
 Now, I won't bore you with the actual details of how I came across this - lets just skip to the explanation and example:
+
+<!--more-->
 
 First, even when it makes 'sense', you should not be using relative paths in your command line PHP scripts.  I am so used to writing web PHP that I fell into this bad habit.
 
@@ -57,7 +59,7 @@ Well this makes sense because I programmed with that relative path.
 
 Instead, change the require line in script.php to this:
 
-```php?start_inline=1
+```php
 require_once dirname(__FILE__) . '/../includes/include.php';
 ```
 

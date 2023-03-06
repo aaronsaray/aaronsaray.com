@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Why Does UI/UX Even Matter?
+date: 2021-09-03
 tags:
 - business
 - ux
 ---
 As you walk down the alleyway, you feel the hairs on your neck stand up. You're a bit scared, but you can't exactly put your finger on why. Was that some footsteps? Did you see a shadow shift? Why is it that you know you're in danger?
+
+<!--more-->
 
 As humans, our subconscious mind is even more powerful than our conscious one.  It's constantly making calculations in the background, figuring out answers to your forgotten questions, and examining your surroundings.  This is the key to your survival. It looked for predators when we needed that. It looks for body language in the office when we need that.  It processes visual information and looks for patterns when we need that.
 

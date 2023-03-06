@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Planning for application development
+date: 2007-06-18
 tags:
 - misc-web
 ---
 In my "younger years" in the coding world, I'd have an idea like I have right now with the website monitoring project - and immediately start coding.  I'd get the framework done, implement a feature or two, and then finally start thinking about my requirements.  Predictably, the code would turn into an unmaintainable mountain of crap - and I'd be wasting more time rewriting and refactoring than I wanted.  For this project, I decided to take steps against this happening.
+
+<!--more-->
 
 Its very important to plan and design out all of the main ideas of the projects you take on - especially if you're going to be making an open source project.  How depressing it is to see the reputation of PHP or OSS in general tarnished by projects which aren't planned thoroughly.  In recent blog entries, I've been noticing more and more backlash against the PHP community because of the large amount of crappy scripts released into the community - and I wholeheartedly believe this is a problem of planning.  I wanted to make sure my project did not bear this stigma.
 

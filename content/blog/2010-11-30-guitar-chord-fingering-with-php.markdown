@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Guitar Chord fingering with PHP
+date: 2010-11-30
 tags:
 - programming
 ---
 After cleaning up some old files in my archive, I found this snippet of code I made a while ago.  
+
+<!--more-->
 
 [![](/uploads/2010/chords-300x133.png)](/uploads/2010/chords.png){: .thumbnail}
 

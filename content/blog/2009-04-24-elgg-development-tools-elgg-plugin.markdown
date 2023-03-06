@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Elgg Development Tools - Elgg Plugin
+date: 2009-04-24
 tags:
 - php
 ---
 After working some with the open source Community building application [Elgg](http://elgg.org), I found some settings to be irritating.  I had to keep hacking my plugins to get these settings activated the way I wanted.  Also, I really wanted to put useful settings in the same location.
+
+<!--more-->
 
 ### Enter The Elgg Development Tools Plugin
 

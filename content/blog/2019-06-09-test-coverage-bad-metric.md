@@ -1,12 +1,14 @@
 ---
-layout: post
 title: Test Coverage is Not as Good of a Metric as You Think
+date: 2019-06-09
 tags:
 - php
 - phpunit
 - testing
 ---
 There are a lot of debates about trying to achieve test coverage of 100%. Some people swear you need to do this. Others say, get 80% or more... the rest doesn't matter.  Each side has strong arguments.
+
+<!--more-->
 
 But, I think test coverage is not a great metric actually.  See, test coverage should be used as a last-step reminder that you might have forgotten to test an area of new code.  Instead, you should be writing either TDD or testing right after you wrote it.
 

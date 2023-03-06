@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Integrating PHP QA Tools with Phing
+date: 2013-06-04
 tags:
 - ide-and-web-dev-tools
 - phpunit
 ---
 If you're not familiar with having [PHP QA Tools](http://phpqatools.org/), go there right now!  And then come back and read this.
+
+<!--more-->
 
 I have really found a great joy lately in phing scripts.  I know, really nerdy.  I had on my list of things to do to get phing working with my tests in PHPUnit, and maybe 'do a few other things.'  Well, I'm not done yet, but I have at least integrated some of the standard tools into my phing build task.
 

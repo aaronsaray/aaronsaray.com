@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Shutting Down PlayTicTacToe.page
+date: 2021-05-04
 tags:
 - archived-projects
 ---
 A friend of mine created a bingo caller at [letsplaybingo.io](https://letsplaybingo.io/) which I found pretty interesting. She got lots of traffic and a lot of appreciative people.  This inspired me to make a simple game website to keep my skills up to date. Maybe people would love it, too! (spoiler alert: they didn't)
+
+<!--more-->
 
 I launched PlayTicTacToe.page using a VueJS project first. I had created a single player game where you could play against the computer (easy was launched, which was basically random picking values, "hard" was planned for later where I'd have the computer try to guess good places to place it's O markers).  Or, you could play 2 player on the same screen/browser.
 

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Enabling Javascript Specific CSS
+date: 2009-05-11
 tags:
 - css
 - javascript
 ---
 While reading the blog post about [Enabling Javascript specific CSS](http://greatwebguy.com/programming/dom/enable-javascript-specific-css-with-one-line-of-jquery/) and the comments, I started thinking about my own ways to implement this.  And how to do it validly.
+
+<!--more-->
 
 ### Why Use Javascript Specific CSS
 

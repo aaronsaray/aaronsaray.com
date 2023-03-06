@@ -1,12 +1,14 @@
 ---
-layout: post
 title: AJAX Security Research and Findings - Round 1
+date: 2007-06-28
 tags:
 - ajax
 - security
 - php
 ---
 ("the triangle") wants to keep implementing more and more AJAX based systems - but no one ever took time to research into the security issues with this.  I did a proof of concept one time with a zip-code function when Big Boy was working there, and from there, they just thought it was amazing.  Most recently, some AJAX functionality was proposed for our LIVE public web servers... but I was very hesitant.  I don't know enough about the security and best practices for AJAX requests to be able to securely design and code something for the internet - especially when the end result is connecting to the iSeries and HIPAA data.  I requested a research project - and its finally been approved.  I've spent a few hours and come up with a few ideas and best practices so far.  Ok, I'll be honest, one best practice and 2 ideas - of which I'll prove/disprove here:
+
+<!--more-->
 
 **If 1000 users are using an AJAX application, you can increase your load 10-fold.  Its time to cache your AJAX results and requests.**
 
@@ -23,13 +25,13 @@ I thought about this - can we reject all requests to a specific AJAX processing 
 Anyway, here is my code for this proof of concept:
 
 **`ajaxresponse.php`**
-```php?start_inline=1
+```php
 var_dump($_COOKIE);
 echo session_id();
 ```
 
 **`ajax.php`**
-```php?start_inline=1
+```php
 /**
  * start the session right away
  */
@@ -62,7 +64,7 @@ _Well, can I make this useful?_
 
 Well, I modified our code.  The **`ajax.php`** file just removed the cookie sending header.  I changed my **`ajaxresponse.php`** file to this:
 
-```php?start_inline=1
+```php
 session_start();
 if (isset($_SESSION['ajax'])) print 'ajax';
 ```
@@ -71,7 +73,7 @@ If our session value of `ajax` is set, we'll print `ajax` (or process our reques
 
 I then modified **`ajax.php`** to begin like this...
 
-```php?start_inline=1
+```php
 /**
  * start the session right away
  */

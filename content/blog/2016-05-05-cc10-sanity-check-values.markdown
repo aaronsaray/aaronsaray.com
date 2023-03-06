@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Sanity Check Values
+date: 2016-05-05
 tags:
 - php
 ---
 When I was growing up, having chocolate milk was a huge treat.  My mom would mix together some sugar and some dry cocoa powder into the glass and then slowly add milk.  After some more vigorous stirring, I had my small glass of chocolate milk.  It was quite the process, but it tasted great.  Imagine my surprise when I found out that chocolate milk also came from the store pre-mixed!
+
+<!--more-->
 
 ### Episode 10: Sanity Check: Insane Value!
 
@@ -32,7 +34,7 @@ The second reason to sanity check information comes from purposeful directed den
 
 For example, imagine a scenario where you accept 3 email addresses in a web form to send notification emails to.  Via AJAX, the email addresses are validated for format as well as whether they belong to the customer database in Salesforce.  Note this following example code:
 
-```php?start_inline=1
+```php
 /**
  * @return true if valid email and customer
  */
@@ -55,7 +57,7 @@ Now, the assumption is that the form on the web site will only send up to 3 emai
 
 So, if only up to three email addresses could be sent via the form, some sanity checking could be done with a loop like this:
 
-```php?start_inline=1 
+```php 
 <?php
 for ($count = 1; $count <= 3; $count++) {
 ```
@@ -66,7 +68,7 @@ But, there is still a flaw with this.  We know that a legitimate request is 1 to
 
 Instead, a Confident Coder is confident of the legitimate bounds of his or her application.  Data out of bounds is not ran until a bounds is reached, it is simply discarded.  So, if we receive 100 email addresses, the proper response is not to run three and discard the rest.  The code should halt the execution immediately.  Note the following code suggestion:
 
-```php?start_inline=1 
+```php 
 <?php
 // function validateEmail($email) ... function concludes here ...
 

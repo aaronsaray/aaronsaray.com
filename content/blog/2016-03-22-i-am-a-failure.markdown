@@ -1,10 +1,12 @@
 ---
-layout: post
 title: I am a Failure
+date: 2016-03-22
 tags:
 - business
 ---
 > Fair warning - I normally don't write too personally in this blog - but this one is something different.  Something I think people need to read.
+
+<!--more-->
 
 So, when did I get heartburn?  I remember hearing about it - having good friends who had it - but I never had it.  I mean, here and there - but that was usually after doing something that deserved it.  But, suddenly I have heartburn now?
 

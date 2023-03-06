@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Pass PHP session to a new script using fsockopen
+date: 2007-09-06
 tags:
 - apache
 - php
 ---
 I was working on a script that opened up a new connection to the same server with `fsockopen` to process a php script.  It passed the variables needed through GET and then gathered the output.  Finally, it displayed the output on the screen under the current context.
+
+<!--more-->
 
 I ran into an issue where now I needed to set a session variable in my calling script, but make the same session information available to the called script (the called script starts its own session too).
 
@@ -19,7 +21,7 @@ There is a cookie named after our session with our session id.  When my called s
 
 I needed to send the cookie name and session id to the script.  Remember, this only works because these two scripts are on the same server/domain.  I used this code:
 
-```php?start_inline=1
+```php
 $out .= "Cookie: " . session_name() . "=" . session_id() . "; path=/\r\n";
 ```
 

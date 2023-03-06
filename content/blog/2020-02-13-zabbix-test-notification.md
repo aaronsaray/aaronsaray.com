@@ -1,10 +1,12 @@
 ---
-layout: post
 title: How to make a Zabbix Test Notification
+date: 2020-02-13
 tags:
 - zabbix
 ---
 A big challenge when setting up a new Zabbix installation is "how do I test my media+action+notification+trigger" setup?  I've come up with a pretty easy way to do this that doesn't require butchering your server or messing with it's historical data.
+
+<!--more-->
 
 First, it's taken me a while to use the right terminology with Zabbix. I searched many times for phrases like "test zabbix notification" but I could never find anything.  What really I am doing here is creating a trigger, which triggers an action, that sends a notification via a media type.  
 

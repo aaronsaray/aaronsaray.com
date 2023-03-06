@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Leave Current Zoom Meeting with Alfred App AppleScript
+date: 2020-05-26
 tags:
 - macos
 - scripting
 ---
 You've been there. The Zoom meeting is over and then everyone looks awkward at the bottom corner of the screen as they desperately try to leave. [Nikki Glaser](https://youtu.be/2DPw5xIupvc?t=148) will show you what I'm talking about if you don't know.  Now, if you're using [Alfred](https://www.alfredapp.com/) (like you should be on Mac), you can easily leave the meeting.
+
+<!--more-->
 
 **tldr;** Download [this workflow](/uploads/2020/LeaveZoom.1.0.0.alfredworkflow) and type `lz` in Alfred to leave the current meeting. It will end the meeting if you're the host.
 

@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Anonymous Self-Executing Functions in JavaScript and PHP
+date: 2017-11-14
 tags:
 - php
 - javascript
 ---
 I've used the anonymous self-executing paradigm a few times in JavaScript over the years.  Something like this:
+
+<!--more-->
 
 ```javascript
 (function() {

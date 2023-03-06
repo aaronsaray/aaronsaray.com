@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Error Validating Seconds in HTML5 Time Input?
+date: 2015-05-02
 tags:
 - html
 ---
 Turns out, it's just another issue of RTFM - but maybe this will save you some headache!
+
+<!--more-->
 
 I was using a simple HTML5 input of time...
 

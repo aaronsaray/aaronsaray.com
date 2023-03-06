@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Developer Time vs Manager Time
+date: 2020-10-05
 tags:
 - business
 - management
 ---
 A full calendar, hours on the phone, work into the night and a never-ending deluge of emails: the typical Dev Manager’s life. Time is precious and scarce. It’s also very fluid. You’re jumping from thing to thing; meetings get pushed and calls are rushed. It’s not ideal, but it seems to be the only way you can get to all of the things that need your attention.
+
+<!--more-->
 
 You might start to notice that your developers get more and more angry when you have to push a meeting. Or they’re complaining about having too many meetings. Don’t they understand how busy you are? And without meetings, how will you know what’s going on?
 

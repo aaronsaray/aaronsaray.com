@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Pitch to Programmers Like Investors
+date: 2017-11-15
 tags:
 - business
 ---
 What's the difference between pitching for new programmers to join the team vs investors to fund it?  Nothing.  If you've not been pitching both of them with equal detail and vigor, you're missing out.
+
+<!--more-->
 
 It's weird to me that founders and startups will develop a big elaborate investment pitch deck but then generate a 2 line craigslist post.  Tons of time is spent talking about the merits of the project, the struggles, the way it's going to make money, how it will make a difference, etc.  All of this gets presented in great detail to investors.  Now, time to find programmers?  "Wanted: programmers to make a facebook killer - equity position!"  and that's about it.  This is a problem for many reasons - and you're **not going to get good programmers** this way.
 

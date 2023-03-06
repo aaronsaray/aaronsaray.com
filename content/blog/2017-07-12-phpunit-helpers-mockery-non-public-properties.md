@@ -1,18 +1,20 @@
 ---
-layout: post
 title: PHPUnit Test Helpers for Mockery and Non-Public Properties
+date: 2017-07-12
 tags:
 - php
 - phpunit
 ---
 I've written a few helpful methods and systems that help out my unit testing.  There are many arguments for and against these tools (don't test protected methods, don't introduce global namespace methods, etc) - and those are discussions for another day - but perhaps these might help you out in the mean time.
 
+<!--more-->
+
 ### Mockery
 I've been using [Mockery](http://docs.mockery.io/en/latest/) for my mocking in PHPUnit lately. (This is probably because it was introduced in Laravel, and I actually like it more than the built in PHPUnit mocking configuration.)  
 
 To mock an object with Mockery, you have to mock it using the method `\Mockery::mock()` - which is fine.  But, in my tests I tend to allow a little bit more flexibility and "dirty" code - so I thought it'd be nice to just call something like `mock()` and get this to work easily.  So, in my bootstrap class for my PHPUnit test suite, I wrote the following code:
 
-```php?start_inline=1
+```php
 if (!function_exists('mock')) {
   /**
    * Shortcut to mock an item
@@ -59,7 +61,7 @@ Like I mentioned above, there are many arguments against testing protected metho
 
 Let's take a look at two more methods in my bootstrap file for my PHPUnit test suite.
 
-```php?start_inline=1
+```php
 if (!function_exists('callMethod')) {
   /**
    * Call protected or private method

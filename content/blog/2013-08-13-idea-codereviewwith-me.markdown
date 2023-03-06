@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 'Idea: CodeReviewWith.Me'
+date: 2013-08-13
 tags:
 - business
 - ideas
 ---
 I had this idea about doing interactive screen share and code review.  I wrote it about it earlier and even asked for feedback.
+
+<!--more-->
 
 I got some pretty good feedback, but I didn't get a good enough response that made me want to follow through.
 

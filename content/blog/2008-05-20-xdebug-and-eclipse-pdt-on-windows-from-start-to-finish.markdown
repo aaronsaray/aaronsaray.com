@@ -1,6 +1,6 @@
 ---
-layout: post
 title: XDebug and Eclipse PDT on Windows - From Start to Finish
+date: 2008-05-20
 tags:
 - eclipse-pdt
 - ide-and-web-dev-tools
@@ -8,6 +8,8 @@ tags:
 - windows
 ---
 XDebug and Eclipse PDT on Windows - From Start to Finish
+
+<!--more-->
 
 With our recent upgrade to php at "the triangle," I felt it was time to start working on using a debugging and code profiling tool.  When I say felt like it was time... I meant our PHP version finally supported it. *sigh*.  Anyway, from start to finish, this is what I did in order to get Xdebug to integrate into my current eclipse PDT - as well as investigate the other features of xdebug.  I tried to detail all of the mistakes I made as well as what I figured out.  Let's go:
 
@@ -39,7 +41,7 @@ Supposedly, when you install xdebug, it pretties up the output of `var_dump`.
 
 My first test script was to see if xdebug was really doing what it claimed:
 
-```php?start_inline=1
+```php
 $arrayName = range(0,5);
 var_dump($arrayName);
 ```
@@ -68,7 +70,7 @@ By default, when you generate an error in your php with xdebug installed, you'll
 
 I used the following code:
 
-```php?start_inline=1
+```php
 print $a;
 ```
 
@@ -98,7 +100,7 @@ Looks pretty cool.  Xdebug has the ability to show extra variables, including th
     
 I then used this code for testing:
 
-```php?start_inline=1
+```php
 $b = 'test';
 if ($b) {
   print $a;
@@ -162,7 +164,7 @@ The first line turns on tracing on every script (this is also useful because at 
 
 To generate my trace, I used this code:
 
-```php?start_inline=1
+```php
 function tester($element)
 {
   return trim($element);

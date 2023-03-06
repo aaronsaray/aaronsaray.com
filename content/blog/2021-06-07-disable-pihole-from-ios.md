@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Disable PiHole from iPhone 1-click
+date: 2021-06-07
 tags:
 - ios
 ---
 If you're running [PiHole](https://pi-hole.net/) as your DNS, you might run into situations where you want to disable it quickly. By making a shortcut on my iPhone, I can quickly disable (or re-enable) PiHole.  Let me show you how.
+
+<!--more-->
 
 First, make sure you know what the IP or hostname of your PiHole install is. On my network, mine is `pihole.local` - yours mine be something else.  Make sure your iPhone is on your same network and can surf to that domain.  If so, then you're good to go.
 

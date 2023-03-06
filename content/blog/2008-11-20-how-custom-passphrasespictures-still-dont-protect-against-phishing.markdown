@@ -1,10 +1,12 @@
 ---
-layout: post
 title: How custom passphrases/pictures still don't protect against phishing
+date: 2008-11-20
 tags:
 - security
 ---
 As you probably remember, I have lots of interest in phishing techniques (I talked about one [here](/blog/2007/07/11/the-anatomy-of-a-phishing-attack-advanced-technique/), and preventing them [here](/blog/2007/07/11/the-top-17-ways-to-help-eliminate-the-phishing-threat/)).  I've noticed a new trend: a dual stage login form with a custom picture or passphrase.  Users are to gain trust in the login page because their custom configured option is displayed.  The more I started thinking about this, however, I kept seeing an issue - this still can be easily phished!  I'm going to demonstrate a method of phishing the passphrase version.  I don't want to do a picture example because it a) takes more code and b) more people have moved to that thinking it is more secure.  Lets go:
+
+<!--more-->
 
 First off, all phishing starts with getting the user to a login page not at the respected domain.  So, lets just skip that step, and examine our login page.  This will be a duplicate of our real site's login page - note the reminder that they will have to verify their passphrase.
 
@@ -23,7 +25,7 @@ Very simple login which sends it to another page - hopefully named the same as t
 Lets look at the page we'll be submitting to:
 
 **`login2.php`** @ fakedomain.com
-```php?start_inline=1    
+```php    
 /** cutting out a lot of code - make sure its not empty, etc **/
 $args = array ('username'=>$_POST['username']);
 $uri = 'http://realdomain.com/login.do.php';

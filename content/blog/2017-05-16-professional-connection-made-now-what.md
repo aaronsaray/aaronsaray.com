@@ -1,10 +1,12 @@
 ---
-layout: post
 title: "I Made A Professional Connection: Now What?"
+date: 2017-05-16
 tags:
 - business
 ---
 I'm very lucky to receive multiple LinkedIn requests to connect each week. I rarely accept them, unless I happen to recognize or know the person.  Also, if they have a compelling message and I think they might follow up, then fine, too.  But that's where it usually ends...
+
+<!--more-->
 
 > I am really saddened to see these high-and-mighty people complaining about getting spammed on LinkedIn by people wanting to connect or offer them jobs.  Sure, there is a lot of non-qualified leads, but you should be happy that you're getting these options.  At the time of writing (April, 17), the Bureau of Labor Statistics says there is [4.4% unemployment](https://data.bls.gov/timeseries/LNS14000000) in the United States.  In 2015, there are about [325 million people](https://www.census.gov/popclock/) - which means that 13 million people roughly are unemployed.  And you're sitting here complaining about people offering you jobs that these people would die for.  Get off it.  Ok, rant over.
 

@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Track Things Done with Alfred (update)
+date: 2019-02-11
 tags:
 - business
 ---
 In an [earlier entry]({% post_url 2017-07-24-track-done-things-with-alfred %}) I detailed how I track things I do each day using an [Alfred](https://www.alfredapp.com/) workflow.  Basically, I wanted to track what I did from the Alfred launcher screen, one thing at a time.  The end result was a txt file dated today.  
+
+<!--more-->
 
 This worked fine but it still felt not as efficient as it could be.  I still had to open a txt file to export the data to my [Basecamp Daily Checkin](https://basecamp.com/features/checkins).  I could build a whole API integration with Basecamp, but that seemed like a lot of work.  Instead, I just build a copy/paste functionality into the workflow as well.
 

@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Ode to a MySpace Layout
+date: 2008-10-04
 tags:
 - news
 ---

@@ -1,12 +1,14 @@
 ---
-layout: post
 title: When is a PHP array not an array?
+date: 2007-07-21
 tags:
 - php
 ---
 Arrays, return variables, expressions, OH MY!  I recently learned a lesson about array functions in PHP not returning what I thought they would.  I had a function that returned the value of `array_shift()`... and then used it in another function.  Unfortunately, this generated a strict error and was causing some issues... As usual, I put together a proof of concept.  Lets check out the code example, the error, and then why:
 
-```php?start_inline=1
+<!--more-->
+
+```php
 class TEST
 {
   private $__data = '';
@@ -49,6 +51,6 @@ First off, [this bug page](http://bugs.php.net/bug.php?id=33466) is from another
 
 Turns out that the way to fix this issue is going to be using [pass by reference](http://us.php.net/language.references.pass).  One quick modification and we're good:
 
-```php?start_inline=1
+```php
 public function &getArray()
 ```

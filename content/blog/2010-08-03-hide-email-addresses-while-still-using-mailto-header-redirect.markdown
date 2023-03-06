@@ -1,10 +1,12 @@
 ---
-layout: post
 title: 'Hide Email Addresses while still using mailto: Header Redirect'
+date: 2010-08-03
 tags:
 - php
 ---
 Everyone I've spoken to recently no longer puts `mailto://` links in their code for fear that the owner of that address will get more spam.  However, there are still legitimate uses for a link like this.  In order to foil very simple email parsing bots, I've come up with the following script.
+
+<!--more-->
 
 Let's say you have the website `http://blahblah.com` - and on that website, user joe would like to have his email address of `joe@blahblah.com` accessible via a `mailto://` link.  He doesn't want people to use a contact form - but doesn't want spam either.  I would form his e-mail link in the following manner:
 
@@ -15,7 +17,7 @@ you can <a href="email.php?user=joe">email joe</a> directly.
 
 The content of the PHP file would be the following:
     
-```php?start_inline=1
+```php
 $user = isset($_GET['user']) ? $_GET['user'] : '';
 
 if ($user) {

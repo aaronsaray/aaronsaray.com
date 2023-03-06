@@ -1,11 +1,13 @@
 ---
-layout: post
 title: 'Web Developers: Invest the time to create your page!'
+date: 2012-07-31
 tags:
 - business
 - misc-web
 ---
 I've heard the argument so many times: "I'm just too busy to do my own website"  This usually is followed by pleading statements leading to the fact that no one is paying them to do their own website - like their current workload is paying them.
+
+<!--more-->
 
 **False!**
 

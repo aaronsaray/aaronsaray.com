@@ -1,16 +1,18 @@
 ---
-layout: post
 title: Using Your Namespace for Optimum Readability
+date: 2016-09-06
 tags:
 - php
 ---
 I love [namespaces in PHP](http://php.net/manual/en/language.namespaces.php) as much as the next programmer - but there's always been something about namespaces in my own applications that bothered me.  And that's when I have similar or identical named services, forms, entities or models.  
 
+<!--more-->
+
 As you know, you can use fully qualified names of classes, but programmers are lazy, so we like to use aliases or just fully import the class.  `MyApp\Service\User` becomes `User` or if you're fancy, `MyApp\Service\User as UserService` yields a better result.  
 
 Often times, my IDE does some of this work for me.  But let's imagine I let it do that - and I have two User named items, a service and a form.  How often does this happen?
 
-```php?start_inline=1
+```php
 use MyApp\Service\User;
 
 class Controller
@@ -23,7 +25,7 @@ Ugh - just not all that readable.  What's the first User?  A service? A model?  
 
 What I've been doing lately is importing my namespaces in my application a step up.  It makes for a more readable solution.  Imagine this code now with my solution:
 
-```php?start_inline=1
+```php
 use MyApp\Service;
 use MyApp\Form;
 

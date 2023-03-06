@@ -1,11 +1,13 @@
 ---
-layout: post
 title: Backup All Your Github Repos Script
+date: 2022-01-17
 tags:
 - github
 - nodejs
 ---
 I had a nightmare that someone had access to my Github account and was deleting every repo I had before my eyes. I couldn't figure out how to stop them and invalidate the proper token.  I woke up and decided that I am not ok with this one point-of-failure of my historical work. So I wrote a script to back it up.
+
+<!--more-->
 
 You can find the script on my [Github repo](https://github.com/aaronsaray/github-backup) (the irony is not escaping me). But this is basically what I thought:
 

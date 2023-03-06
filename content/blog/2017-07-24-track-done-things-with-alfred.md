@@ -1,10 +1,12 @@
 ---
-layout: post
 title: Track the Things You've Done Today with Alfred
+date: 2017-07-24
 tags:
 - business
 ---
 For our agile workflow, it's important to provide a check-in each day.  What did you do yesterday, what do you plan on doing today, do you have any blockers?  My biggest challenge is actually remembering what I did "yesterday" - especially after the weekend.
+
+<!--more-->
 
 **TLDR;** Download this [Alfred Workflow](/uploads/2017/did-this.alfredworkflow) and type `did something here` where `something here` is the task you just did. It will create/append a file in **`~/Documents/Did This`** named after today's date with the line of what you just did.
 
