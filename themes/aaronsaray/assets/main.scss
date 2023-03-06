@@ -5,7 +5,7 @@ $font-size-base: 1.5rem;
 $font-family-base: 'Times New Roman', Times, serif;
 $body-bg: #eeeeee;
 $body-color: #333333;
-$link-color: #2F85DF;
+$link-color: #126dcc;
 $navbar-light-color: $body-color;
 $navbar-light-active-color: black;
 $navbar-light-hover-color: $link-color;
@@ -212,4 +212,15 @@ $footer-text-color: #a4a4a4;
     li {
         margin-bottom: 0.4rem;
     }
+}
+
+article {
+    small {
+        font-size: 1rem;
+    }
+}
+
+.pagination-footer {
+    font-size: 1.2rem;
+    font-weight: bold;
 }

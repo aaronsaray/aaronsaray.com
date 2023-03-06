@@ -1,0 +1,45 @@
+{{ define "main" }}
+{{ $paginator := .Paginator }}
+<main class="container container-limited pb-5">
+    {{ .Content }}
+
+    <section>
+        {{ range $paginator.Pages }}
+        <article class="my-5">
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <div class="small mb-4">
+                <span class="text-muted">{{ .Date.Format "Jan 2, 2006" }}</span>
+                {{ range $index, $name := sort .Params.tags }}
+                <a href="/tag/{{ $name }}" class="mx-2">{{ $name }}</a>
+                {{ end }}
+            </div>
+            <div>
+                {{ .Summary }}
+            </div>
+        </article>
+        {{ end }}
+    </section>
+
+    <section class="row pagination-footer">
+        <div class="col-6 col-sm-4 order-1">
+            {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}">
+                <span class="align-text-top small">⬅</span>
+                Older
+            </a>
+            {{ end }}
+        </div>
+        <div class="col-12 col-sm-4 order-3 order-sm-2 text-center text-muted small">
+            Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+        </div>
+        <div class="col-6 col-sm-4 order-2 order-sm-3 text-end">
+            {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}">
+                Newer
+                <span class="align-text-top small">⮕</span>
+            </a>
+            {{ end }}
+        </div>
+    </section>
+</main>
+{{ end }}
