@@ -32,17 +32,35 @@ a {
     text-decoration: none;
 }
 
+$h-color: #2e3d4a;
+
 h1 {
     font-size: 2rem;
     font-weight: bold;
+    color: $h-color;
 }
 
 h2 {
-    font-weight: normal;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $h-color;
+}
 
-    @include media-breakpoint-up(lg) {
-        font-size: 2.6rem;
+h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $h-color;
+}
+
+blockquote {
+    margin: 2rem 0;
+    background-color: #ffffff;
+    border-left: 0.3rem solid #dedede;
+    font-size: 1.25rem;
+    padding: 1rem;
+
+    p:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -150,6 +168,15 @@ h2 {
 
     .container-limited {
         max-width: 46rem !important;
+    }
+}
+
+.home-section h2 {
+    font-weight: normal;
+    font-size: 2rem;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 2.6rem;
     }
 }
 
