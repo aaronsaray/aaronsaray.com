@@ -1,0 +1,24 @@
+baseURL = 'https://aronsaray.com/'
+languageCode = 'en-us'
+title = 'Aaron Saray'
+theme = 'aaronsaray'
+
+[menu]
+[[menu.main]]
+  name = 'Home'
+  identifier = 'home'
+  url = '/'
+  weight = 10
+[[menu.main]]
+  name = 'CV'
+  identifier = 'cv'
+  pageref = 'cv'
+  weight = 20
+[[menu.main]]
+  name = 'Blog'
+  pageref = 'blog'
+  weight = 30
+[[menu.main]]
+  name = 'Contact'
+  pageref = 'contact'
+  weight = 40

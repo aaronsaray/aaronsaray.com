@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{ .Title }} | Aaron Saray</title>
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:site_name" content="Aaron Saray" />
+    <meta property="og:image" content="https://aaronsaray.com/images/og-image.jpg" />
+    <meta property="og:description" content="{{ .Description }}" />
+    <meta name="description" content="{{ .Description }}" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    {{ $sass := resources.Get "main.scss" }}
+    {{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+    {{ $js := resources.Get "main.js" | js.Build "main.js" }}
+    {{ $secureJS := $js | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" defer></script>
+    {{ if hugo.IsProduction }}
+    <script src="https://fourty-thirty.aaronsaray.com/script.js" data-site="EHVVLSAC" defer></script>
+    {{ end }}
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top py-4 {{ if .IsHome }} top-position home {{ end }}">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/logo.svg" alt="logo">
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+                    <ul class="navbar-nav">
+                        {{ $currentPage := . }}
+                        {{ range .Site.Menus.main }}
+                        {{ if ne .Name "Home" }}
+                        {{ $active := or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .) }}
+                        <li class="nav-item">
+                            <a class="nav-link px-sm-4 {{if $active }} active{{end}}" href="{{ .URL }}">
+                                {{ .Name }}
+                            </a>
+                        </li>
+                        {{ end }}
+                        {{ end }}
+                        {{ $search := resources.Get "images/search.svg" }}
+                        <li class="nav-item position-relative">
+                            <label class="nav-link ps-sm-4 cursor-pointer" target="q" role="button">
+                                <img src="{{ $search.RelPermalink }}" alt="search">
+                                </a>
+                                <form action="https://duckduckgo.com/" id="search-form">
+                                    <input type="text" placeholder="Search using DuckDuckGo" id="q" name="q">
+                                </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {{- block "main" . }}{{- end }}
+
+    <footer>
+        <section id="fathom-cta">
+            <div class="container py-3">
+                <div class="mb-2">
+                    I'm polite - I don't invade your privacy with trackers.
+                </div>
+                <div>
+                    <a href="/2022/why-care-about-privacy-with-analytics">
+                        <img alt="Fathom Analytics Logo"
+                            src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI1MCIgd2lkdGg9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMTMuODY0IDE2NS40NWMtMzAuMzM4LTgzLjM1LTEyLjY2NS0xMjEuMjUgNzAuNjg1LTE1MS41ODZzMTIxLjI1LTEyLjY2NCAxNTEuNTg2IDcwLjY4NSAxMi42NjQgMTIxLjI1MS03MC42ODYgMTUxLjU4Ni0xMjEuMjUgMTIuNjY1LTE1MS41ODUtNzAuNjg1IiBmaWxsPSIjMzMzNzQwIi8+PHBhdGggZD0ibTg2LjIgNzYuODU4aC01LjI1Yy00LjUuMDEtOS4yMzQuODktMTMuMDkgMy41NjdhMTQuNTI5IDE0LjUyOSAwIDAgMCAtNC43MjMgNS40NDIgMTcuOTUyIDE3Ljk1MiAwIDAgMCAtMS43NTkgOC4xMjN2NzUuMzI1YTIuNiAyLjYgMCAwIDAgMi42IDIuNmgxMC4yNTlhMi42IDIuNiAwIDAgMCAyLjYtMi42di01My4wN2g5LjM1OWEyLjYgMi42IDAgMCAwIDIuNi0yLjZ2LTguNzlhMi42IDIuNiAwIDAgMCAtMi42LTIuNmgtOS4zNTV2LTYuNjc5YTkuMjI2IDkuMjI2IDAgMCAxIC40NTItMy4yODYgMi4wNTcgMi4wNTcgMCAwIDEgLjUxLS44MSAyLjMwNiAyLjMwNiAwIDAgMSAxLjI0NC0uNSAxNy43IDE3LjcgMCAwIDEgMi43LS4xMjdoNC40NTZhMi42IDIuNiAwIDAgMCAyLjYtMi42di04Ljc5MWEyLjYgMi42IDAgMCAwIC0yLjYtMi42IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTE0OC4xOTUgMTI1LjEyYTIyLjQyMiAyMi40MjIgMCAwIDAgLTcuNTMtMTcuMzY3Yy00LjgzNi00LjIxNy0xMS42MjYtNi40ODItMTkuNjExLTYuNDc5LTguMTIzIDAtMTUuMTQgMi4zMjUtMjAuMjYzIDYuNGEyMi4yOCAyMi4yOCAwIDAgMCAtOC41ODIgMTYuNTkyIDIuNiAyLjYgMCAwIDAgMi42IDIuNzIzaDEwLjg2M2EyLjYgMi42IDAgMCAwIDIuNTk0LTIuMzc4IDguNTUzIDguNTUzIDAgMCAxIDMuNTE1LTYuMTI5IDE1LjE3MiAxNS4xNzIgMCAwIDEgOS4yNzMtMi43MjVjNC4wNTIgMCA2Ljk2NSAxLjEgOC44MjMgMi43MTVhOC40MjcgOC40MjcgMCAwIDEgMi44NTQgNi42NDZ2LjM2N2EzLjMyMiAzLjMyMiAwIDAgMSAtLjEuOWwtLjEuMjI1YTEuNTMzIDEuNTMzIDAgMCAxIC0uNjc1LjQwOCAyMC41IDIwLjUgMCAwIDEgLTQuNDkuOTIxYy0yLjIuMjkyLTUuMDU5LjU5NC04LjYyMSAxLjA3MWguMDA2Yy02LjUzNi44NzktMTMuMjExIDEuOTQ4LTE4LjYyIDVhMTcuOTU5IDE3Ljk1OSAwIDAgMCAtNi43MjIgNi40MzQgMTkuODY5IDE5Ljg2OSAwIDAgMCAtMi41NSAxMC4zMTMgMjIuODQxIDIyLjg0MSAwIDAgMCAxLjk0MiA5LjU0NCAxOS43NjcgMTkuNzY3IDAgMCAwIDkuMiA5LjQzOCAzMC41OCAzMC41OCAwIDAgMCAxMy45MjggMy4wMjljNi4yNS4wMDYgMTAuOTktMS40NDggMTQuNDgtMy42NzFhMTkuMTY4IDE5LjE2OCAwIDAgMCAyLjMyNS0xLjczM3YxLjk0N2EyLjYgMi42IDAgMCAwIDIuNiAyLjZoNC45OTRsNy44NjUtMjkuMjY0em0tMTUuNDYzIDE5Ljc3NmExMyAxMyAwIDAgMSAtMy40NjMgOS4zMjhjLTIuMzM4IDIuMzU4LTYuMDMyIDQuMDQ0LTExLjg3OCA0LjA2MS0zLjc2NS4wMDYtNi41NS0uODIxLTguMjE1LTIuMDE1YTUuNzcgNS43NyAwIDAgMSAtMS44MzMtMi4wNTkgNi4yOTMgNi4yOTMgMCAwIDEgLS42NTQtMi44Njl2LS4wNjdhNS45MjIgNS45MjIgMCAwIDEgLjgzOC0zLjIwNiA4Ljc0MSA4Ljc0MSAwIDAgMSA0LjIzOC0zLjIgMjkuNzQ0IDI5Ljc0NCAwIDAgMSA3LjIwOS0xLjc4OGMzLjcwNi0uNTIxIDcuNTE5LTEuMDczIDEwLjY4LTEuN2E0OS40OTQgNDkuNDk0IDAgMCAwIDMuMDgxLS43MDZ6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0ibTE5MS43MzcgNjkuNDU1YTIuNjA3IDIuNjA3IDAgMCAwIC0yLjA2Ny0xLjAyaC0xMy4wNjRhMi42IDIuNiAwIDAgMCAtMi41MTUgMS45M2wtMjUuODk3IDk2LjM3LTEuMjc3IDQuNzYxLTEuNzU5IDYuNTM5YTIuNiAyLjYgMCAwIDAgMi41MTUgMy4yNzloMTMuMDY0YTIuNiAyLjYgMCAwIDAgMi41MTUtMS45MjdsMjguOTMzLTEwNy42NzJhMi42MTQgMi42MTQgMCAwIDAgLS40NDgtMi4yNjEiIGZpbGw9IiNhMjk5ZmYiLz48L3N2Zz4=">
+                        Find out how I protect your privacy - and how you can do it, too.
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-md">
+                        <h6>Site Nav</h6>
+                        <ul class="list-unstyled">
+                            {{ range .Site.Menus.main }}
+                            <li>
+                                <a href="{{ .URL }}">
+                                    {{ .Name }}
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md">
+                        <h6>Find Me</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="https://github.com/aaronsaray" target="_blank">Github</a></li>
+                            <li><a href="https://codepen.io/aaronsaray" target="_blank">CodePen</a></li>
+                            <li><a href="https://linkedin.com/in/aaronsaray" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://twitter.com/aaronsaray" target="_blank">Twitter</a></li>
+                            <li><a href="https://phpc.social/@aaronsaray" target="_blank">Mastodon</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Amateur_radio" target="_blank">KD9VGQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md">
+                        <h6>Projects</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="https://show.nocompromises.io/?rel=as" target="_blank">Laravel Podcast</a></li>
+                            <li><a href="https://masteringlaravel.io/?rel=as" target="_blank">Mastering Laravel</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center py-3 small text-muted">
+                    © {{ .Date.Format "2006" }} <a xmlns:cc="http://creativecommons.org/ns"
+                        href="https://aaronsaray.com" property="cc:attributionName" rel="cc:attributionURL"
+                        class="text-muted">Aaron
+                        Saray</a>. All content is licensed under
+                    the
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" class="text-muted">
+                        Creative Commons Attribution-ShareAlike 4.0 International License
+                    </a>.
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

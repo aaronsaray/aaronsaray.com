@@ -1,5 +1,4 @@
-.idea/
-_site/
-.sass-cache
-.jekyll-metadata
-vendor-bundle/
+.hugo_build.lock
+resources/_gen
+node_modules/
+public/
