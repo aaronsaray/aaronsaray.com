@@ -17,6 +17,12 @@
     {{ $js := resources.Get "js/main.js" | js.Build "js/main.js" }}
     {{ $secureJS := $js | resources.Minify | resources.Fingerprint }}
     <script src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" defer></script>
+    <link rel="alternate" type="application/rss+xml" href="https://aaronsaray.com/blog/index.xml"
+        title="AaronSaray.com">
+    {{ if eq .Kind "term" }}
+    <link rel="alternate" type="application/rss+xml" href="https://aaronsaray.com/tag/{{ .Data.Term }}/index.xml"
+        title="Entries tagged {{ .Data.Term }} on AaronSaray.com">
+    {{ end }}
     {{ if hugo.IsProduction }}
     <script src="https://fourty-thirty.aaronsaray.com/script.js" data-site="EHVVLSAC" defer></script>
     {{ end }}
