@@ -1,7 +1,7 @@
 ---
 title: Making Friendly Javascript Errors - Client and Server
 date: 2010-01-14
-tags:
+tag:
 - javascript
 ---
 The more I look at my code I wrote in my earlier posts about the [unknown _popupControl() function]({{< ref "/blog/2009-09-29-unknown-function-_popupcontrol" >}}) and the [Javascript Error Handler]({{< ref "/blog/2009-09-23-javascript-error-handler" >}}), I see opportunities to leverage these errors into useful user interactions.

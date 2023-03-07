@@ -1,7 +1,7 @@
 ---
 title: Excel won't handle UTF-8 in CSV?  Force a different encoding in PHP
 date: 2010-12-14
-tags:
+tag:
 - php
 - programming
 ---

@@ -1,7 +1,7 @@
 ---
 title: Be careful with prepareForValidation in Laravel
 date: 2022-09-02
-tags:
+tag:
 - php
 - laravel
 ---

@@ -1,7 +1,7 @@
 ---
 title: The Perils of the AT in PHP
 date: 2007-07-27
-tags:
+tag:
 - performance
 - php
 ---

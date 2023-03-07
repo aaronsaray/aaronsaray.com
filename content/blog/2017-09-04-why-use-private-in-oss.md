@@ -1,7 +1,7 @@
 ---
 title: Why Use Private in Open Source Software
 date: 2017-09-04
-tags:
+tag:
 - php
 - programming
 ---

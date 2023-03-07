@@ -1,7 +1,7 @@
 ---
 title: My StackOverflow Rant
 date: 2013-07-30
-tags:
+tag:
 - business
 ---
 Ugh.  I really want to contribute to the community.  I do!  If others before me wouldn't have done it, I wouldn't be where I am.  

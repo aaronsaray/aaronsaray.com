@@ -1,7 +1,7 @@
 ---
 title: Is PHP's __call() used when no __construct is present?
 date: 2009-01-11
-tags:
+tag:
 - php
 ---
 Simple enough question.  Lets check out some test code:

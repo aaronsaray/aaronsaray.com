@@ -1,7 +1,7 @@
 ---
 title: AssertSame vs AssertEqual in PHPUnit
 date: 2017-08-15
-tags:
+tag:
 - php
 - phpunit
 - testing

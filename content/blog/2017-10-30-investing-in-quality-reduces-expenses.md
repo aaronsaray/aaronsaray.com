@@ -1,7 +1,7 @@
 ---
 title: How Writing Good-Quality Code Reduces Expenses
 date: 2017-10-30
-tags:
+tag:
 - business
 - management
 ---

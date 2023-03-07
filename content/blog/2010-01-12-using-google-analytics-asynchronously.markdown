@@ -1,7 +1,7 @@
 ---
 title: Using Google Analytics Asynchronously
 date: 2010-01-12
-tags:
+tag:
 - google
 - javascript
 ---

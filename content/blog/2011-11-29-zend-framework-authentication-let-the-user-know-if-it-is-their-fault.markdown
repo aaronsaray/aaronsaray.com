@@ -1,7 +1,7 @@
 ---
 title: 'Zend Framework Authentication: Let the user know if it is their fault'
 date: 2011-11-29
-tags:
+tag:
 - zend-framework
 ---
 One of the things that is irritating is logging into a website with credentials that you know are right, only to have it fail.  Then, later, you find that the site was malfunctioning.  By then, maybe you requested a new password, or had to at least waste time looking up your old password.  With `Zend_Auth`, however, we can prevent user's from having that issue.

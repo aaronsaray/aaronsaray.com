@@ -1,7 +1,7 @@
 ---
 title: Theoretical Thoughts on Data Object Validation
 date: 2013-01-29
-tags:
+tag:
 - php
 - programming
 ---

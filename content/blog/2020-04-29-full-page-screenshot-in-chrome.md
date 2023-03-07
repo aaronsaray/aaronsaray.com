@@ -1,7 +1,7 @@
 ---
 title: How to Take Full Page Screenshots in Chrome
 date: 2020-04-29
-tags:
+tag:
 - misc-web
 ---
 It can be hard to take a full-height screenshot of a website.  Luckily, Chrome gives us a tool to do this - no more stitching images together. Let's see how...

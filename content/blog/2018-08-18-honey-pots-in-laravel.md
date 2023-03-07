@@ -1,7 +1,7 @@
 ---
 title: Quick Honey Pots in Laravel
 date: 2018-08-18
-tags:
+tag:
 - php
 - laravel
 ---

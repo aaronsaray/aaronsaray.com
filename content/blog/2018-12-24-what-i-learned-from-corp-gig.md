@@ -1,7 +1,7 @@
 ---
 title: What I Learned from My Most Recent Corporate Gig
 date: 2018-12-24
-tags:
+tag:
 - business
 ---
 I kind of hate that phrase, that buzzword-worthy label "corporate gig," but I don't know what else to call it. Office job? Large company employment? Anyway, I thought I'd take a bit to reflect on my last one and share a few things I learned.

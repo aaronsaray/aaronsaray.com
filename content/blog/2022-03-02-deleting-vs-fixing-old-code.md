@@ -1,7 +1,7 @@
 ---
 title: Why is Deleting Code OK but Fixing is Not?
 date: 2022-03-02
-tags:
+tag:
 - programming
 - business
 ---

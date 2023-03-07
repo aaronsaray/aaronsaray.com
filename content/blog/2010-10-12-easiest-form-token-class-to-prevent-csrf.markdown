@@ -1,7 +1,7 @@
 ---
 title: Easiest Form Token class to prevent CSRF
 date: 2010-10-12
-tags:
+tag:
 - php
 - security
 ---

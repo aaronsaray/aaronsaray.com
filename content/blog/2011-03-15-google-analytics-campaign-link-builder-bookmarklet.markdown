@@ -1,7 +1,7 @@
 ---
 title: Google Analytics Campaign Link Builder Bookmarklet
 date: 2011-03-15
-tags:
+tag:
 - javascript
 ---
 I was thinking about how difficult it is to create custom links for our campaigns at "the big L" - so I decided to create my own function to build these.  To top it off, I'll make it a bookmarklet.  The best thing about it is that it will bring in the current page and put that inside of the bookmarklet in the case you want to build the link right from the page you're viewing.

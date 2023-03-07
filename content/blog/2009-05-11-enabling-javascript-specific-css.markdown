@@ -1,7 +1,7 @@
 ---
 title: Enabling Javascript Specific CSS
 date: 2009-05-11
-tags:
+tag:
 - css
 - javascript
 ---

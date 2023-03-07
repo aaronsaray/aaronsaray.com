@@ -1,7 +1,7 @@
 ---
 title: Store Zend Framework Options in the Registry
 date: 2012-06-19
-tags:
+tag:
 - zend-framework
 ---
 So, since I want to save some keystrokes, I rarely will go back to the Front Controller and Bootstrap to get resources.  I also like to store them in the registry in a fashion that I see fit.  

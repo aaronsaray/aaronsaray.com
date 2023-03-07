@@ -1,7 +1,7 @@
 ---
 title: PHP Script Configuration Options - Class Constants or MySQL
 date: 2008-05-31
-tags:
+tag:
 - php
 ---
 I'm trying to figure out the best way to do configuration options for my newest PHP scripts that I'm working on.  My requirements are simple:

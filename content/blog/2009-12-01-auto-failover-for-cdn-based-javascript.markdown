@@ -1,7 +1,7 @@
 ---
 title: Auto Failover for CDN based Javascript
 date: 2009-12-01
-tags:
+tag:
 - javascript
 - jquery
 - misc-web

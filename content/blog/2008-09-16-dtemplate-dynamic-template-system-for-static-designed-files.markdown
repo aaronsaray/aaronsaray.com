@@ -1,7 +1,7 @@
 ---
 title: 'dtemplate: dynamic template system for static designed files'
 date: 2008-09-16
-tags:
+tag:
 - misc-web
 - php
 ---

@@ -1,7 +1,7 @@
 ---
 title: Count lines of code in Eclipse
 date: 2011-04-05
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 ---

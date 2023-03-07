@@ -1,7 +1,7 @@
 ---
 title: Load Facebook Fanbox Faster by Caching it
 date: 2010-04-27
-tags:
+tag:
 - php
 ---
 I wasn't in favor of the Facebook fanbox on the site I was working on... but that's what the client wanted - and that is what they get.  I added it and moved on.  Well, later, I started noticing a bit of errors in my Javascript Error log.  

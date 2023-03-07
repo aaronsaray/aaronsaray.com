@@ -1,7 +1,7 @@
 ---
 title: An Argument for Larger Dev Scopes
 date: 2021-03-29
-tags:
+tag:
 - programming
 - management
 ---

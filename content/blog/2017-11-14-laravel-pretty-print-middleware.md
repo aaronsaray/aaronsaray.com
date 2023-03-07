@@ -1,7 +1,7 @@
 ---
 title: Laravel Pretty Print JSON Middleware
 date: 2017-11-14
-tags:
+tag:
 - php
 - laravel
 ---

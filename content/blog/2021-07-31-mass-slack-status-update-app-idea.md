@@ -1,7 +1,7 @@
 ---
 title: Mass Slack Status Update App Idea
 date: 2021-07-31
-tags:
+tag:
 - business
 ---
 When I had active membership to more than 4 Slack workspaces, I thought: wouldn't it be nice to have a way to update all of these statuses in one fell swoop?

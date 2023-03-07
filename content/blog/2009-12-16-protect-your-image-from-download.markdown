@@ -1,7 +1,7 @@
 ---
 title: Protect Your Image from Download
 date: 2009-12-16
-tags:
+tag:
 - css
 - html
 - misc-web

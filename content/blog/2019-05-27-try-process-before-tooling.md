@@ -1,7 +1,7 @@
 ---
 title: Try Your Process Before Tooling Your Process
 date: 2019-05-27
-tags:
+tag:
 - programming
 ---
 I've known a lot of programmers who give a lot of concern to making the best product they can. They follow best practices, create amazing programs and demonstrate both quality and accuracy. It's quite amazing.  But when you look at their internal tooling, it's garbage.  What gives?

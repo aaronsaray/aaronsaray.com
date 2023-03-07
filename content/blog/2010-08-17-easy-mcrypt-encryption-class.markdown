@@ -1,7 +1,7 @@
 ---
 title: Easy MCrypt encryption class
 date: 2010-08-17
-tags:
+tag:
 - php
 - security
 ---

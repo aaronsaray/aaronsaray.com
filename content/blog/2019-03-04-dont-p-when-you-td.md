@@ -1,7 +1,7 @@
 ---
 title: Don't P When You TD
 date: 2019-03-04
-tags:
+tag:
 - html
 ---
 Despite the "catchy" title, this is one of my pet-peeves: when developers put a `p` tag inside of a `table` like they would use a `<tr><td>` combo.  This is often done when there is a variable amount of values - including zero - listed in a table.

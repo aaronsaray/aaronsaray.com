@@ -1,7 +1,7 @@
 ---
 title: Anonymous Self-Executing Functions in JavaScript and PHP
 date: 2017-11-14
-tags:
+tag:
 - php
 - javascript
 ---

@@ -1,7 +1,7 @@
 ---
 title: Google Street View Animation
 date: 2016-09-18
-tags:
+tag:
 - javascript
 - css
 - google

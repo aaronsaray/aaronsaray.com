@@ -1,7 +1,7 @@
 ---
 title: Use MySQL Gui tools to securely connect to remote database
 date: 2007-10-27
-tags:
+tag:
 - ide-and-web-dev-tools
 - sql
 - windows

@@ -1,7 +1,7 @@
 ---
 title: Why Some Bosses May Hate Remote Work
 date: 2019-03-11
-tags:
+tag:
 - business
 - management
 ---

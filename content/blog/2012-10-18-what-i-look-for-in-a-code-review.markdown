@@ -1,7 +1,7 @@
 ---
 title: What I look for in a code review
 date: 2012-10-18
-tags:
+tag:
 - business
 - programming
 ---

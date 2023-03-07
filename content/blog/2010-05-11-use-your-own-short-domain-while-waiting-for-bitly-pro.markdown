@@ -1,7 +1,7 @@
 ---
 title: Use your own short domain while waiting for BitLy Pro
 date: 2010-05-11
-tags:
+tag:
 - javascript
 - misc-web
 ---

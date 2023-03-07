@@ -1,7 +1,7 @@
 ---
 title: Bluefish Editor could help you leak your PHP!
 date: 2009-10-23
-tags:
+tag:
 - ide-and-web-dev-tools
 - php
 ---

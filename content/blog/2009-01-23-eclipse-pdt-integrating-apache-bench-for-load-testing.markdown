@@ -1,7 +1,7 @@
 ---
 title: 'Eclipse PDT: Integrating Apache Bench for load testing'
 date: 2009-01-23
-tags:
+tag:
 - apache
 - eclipse-pdt
 - ide-and-web-dev-tools

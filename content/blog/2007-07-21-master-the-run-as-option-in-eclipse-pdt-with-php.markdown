@@ -1,7 +1,7 @@
 ---
 title: Master the 'Run As' option in Eclipse PDT with PHP
 date: 2007-07-21
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 - php

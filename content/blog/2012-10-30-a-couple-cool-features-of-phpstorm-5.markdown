@@ -1,7 +1,7 @@
 ---
 title: A couple cool features of PHPStorm 5
 date: 2012-10-30
-tags:
+tag:
 - ide-and-web-dev-tools
 - phpstorm
 ---

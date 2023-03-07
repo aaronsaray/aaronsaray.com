@@ -1,7 +1,7 @@
 ---
 title: Stop Interactive Code Challenges During Interviews, Do This Instead
 date: 2018-10-29
-tags:
+tag:
 - business
 - management
 ---

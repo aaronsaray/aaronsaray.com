@@ -1,7 +1,7 @@
 ---
 title: 'The very bad things that Javascript can do: Part 1'
 date: 2013-04-09
-tags:
+tag:
 - javascript
 - security
 ---

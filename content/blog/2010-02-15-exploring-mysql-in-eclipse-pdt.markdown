@@ -1,7 +1,7 @@
 ---
 title: Exploring MySQL in Eclipse PDT
 date: 2010-02-15
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 - mysql

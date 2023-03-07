@@ -1,7 +1,7 @@
 ---
 title: Testing MySQL User Info Passwords
 date: 2013-08-20
-tags:
+tag:
 - mysql
 - security
 ---

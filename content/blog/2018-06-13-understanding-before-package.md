@@ -1,7 +1,7 @@
 ---
 title: Understand the Tech Before Getting a Package
 date: 2018-06-13
-tags:
+tag:
 - php
 - programming
 - javascript

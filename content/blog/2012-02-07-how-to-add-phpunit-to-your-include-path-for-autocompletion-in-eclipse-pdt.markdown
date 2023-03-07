@@ -1,7 +1,7 @@
 ---
 title: How to Add PHPUnit to your Include Path (for autocompletion) in Eclipse PDT
 date: 2012-02-07
-tags:
+tag:
 - eclipse-pdt
 - phpunit
 ---

@@ -1,7 +1,7 @@
 ---
 title: Speaking at Milwaukee Wordcamp 2013
 date: 2013-05-06
-tags:
+tag:
 - wordpress
 ---
 As you may or may not be able to tell, I use Wordpress on this website.   So, I guess that makes me a fan... (trust me, as a programmer, I've always toyed around with writing my own custom blog software just for my domain - but alas, other aspirations always trumped that.  Plus, wordpress is perfect for what I need.)

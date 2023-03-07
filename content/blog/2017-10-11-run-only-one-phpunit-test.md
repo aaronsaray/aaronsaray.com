@@ -1,7 +1,7 @@
 ---
 title: Run A Single PHPUnit Test Only
 date: 2017-10-11
-tags:
+tag:
 - php
 - phpunit
 - testing

@@ -1,7 +1,7 @@
 ---
 title: Pitch to Programmers Like Investors
 date: 2017-11-15
-tags:
+tag:
 - business
 ---
 What's the difference between pitching for new programmers to join the team vs investors to fund it?  Nothing.  If you've not been pitching both of them with equal detail and vigor, you're missing out.

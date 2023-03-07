@@ -1,7 +1,7 @@
 ---
 title: What I've Learned in 6 Months
 date: 2018-05-19
-tags:
+tag:
 - business
 ---
 Every mistake comes with a lesson or two...

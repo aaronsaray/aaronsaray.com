@@ -1,7 +1,7 @@
 ---
 title: How to handle AJAX errors with jQuery
 date: 2010-08-24
-tags:
+tag:
 - ajax
 - jquery
 ---

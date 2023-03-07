@@ -1,0 +1,12 @@
+<article class="my-5">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <div class="small mb-4">
+        <span class="text-muted d-block d-sm-inline me-3">{{ .Date.Format "Jan 2, 2006" }}</span>
+        {{ range $index, $name := sort .Params.tag }}
+        <a href="/tag/{{ $name }}" class="me-3">{{ $name }}</a>
+        {{ end }}
+    </div>
+    <div>
+        {{ .Summary }}
+    </div>
+</article>

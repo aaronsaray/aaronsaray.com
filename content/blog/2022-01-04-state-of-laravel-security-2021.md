@@ -1,7 +1,7 @@
 ---
 title: The State of Security of Laravel Apps in 2021
 date: 2022-01-04
-tags:
+tag:
 - php
 - laravel
 ---

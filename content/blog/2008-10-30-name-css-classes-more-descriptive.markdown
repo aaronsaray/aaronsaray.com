@@ -1,7 +1,7 @@
 ---
 title: Name CSS Classes More Descriptive
 date: 2008-10-30
-tags:
+tag:
 - css
 - misc-web
 ---

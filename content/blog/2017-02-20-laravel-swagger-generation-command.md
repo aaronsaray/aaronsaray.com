@@ -1,7 +1,7 @@
 ---
 title: Laravel Command to Generate Swagger Documentation
 date: 2017-02-20
-tags:
+tag:
 - php
 - laravel
 ---

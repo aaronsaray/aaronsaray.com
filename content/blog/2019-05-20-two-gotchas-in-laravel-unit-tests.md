@@ -1,7 +1,7 @@
 ---
 title: Two Gotchas in Laravel Unit Testing
 date: 2019-05-20
-tags:
+tag:
 - php
 - phpunit
 - laravel

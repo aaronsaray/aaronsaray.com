@@ -1,7 +1,7 @@
 ---
 title: Creating a custom Zend Framework Body Script helper
 date: 2012-01-31
-tags:
+tag:
 - javascript
 - zend-framework
 ---

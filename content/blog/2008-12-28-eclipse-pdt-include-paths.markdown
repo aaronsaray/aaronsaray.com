@@ -1,7 +1,7 @@
 ---
 title: Eclipse PDT - Include Paths
 date: 2008-12-28
-tags:
+tag:
 - eclipse-pdt
 ---
 When troubleshooting a different problem the other day, I re-entered the world of eclipse include paths.  For those of you who are not familiar, the eclipse include path is located as the last option of a eclipse PDT PHP project.

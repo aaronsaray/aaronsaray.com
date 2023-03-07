@@ -1,7 +1,7 @@
 ---
 title: Composer Dry Run
 date: 2017-08-22
-tags:
+tag:
 - php
 - composer
 ---

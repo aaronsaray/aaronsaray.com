@@ -1,7 +1,7 @@
 ---
 title: One-time Scrolling Banner with jQuery
 date: 2015-06-29
-tags:
+tag:
 - jquery
 ---
 I'm not gonna lie - I was really trying to figure out how to put more keywords onto the home page of my company, 201 Creative, besides just the trademark: "Let's make software simple."  So, I messed around with making a rotating banner on the home page that alternated through words that described the concept.  However, I found it annoying and eventually gave up on the idea.  I didn't want to just delete it, though, because it was really light-weight and did something I didn't really see anywhere else.

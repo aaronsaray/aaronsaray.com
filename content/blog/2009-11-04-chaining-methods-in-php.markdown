@@ -1,7 +1,7 @@
 ---
 title: Chaining methods in PHP
 date: 2009-11-04
-tags:
+tag:
 - php
 - programming
 ---

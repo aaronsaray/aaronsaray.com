@@ -1,7 +1,7 @@
 ---
 title: When to use stopPropagation vs preventDefault
 date: 2020-11-04
-tags:
+tag:
 - javascript
 ---
 These Javascript methods sound confusingly similar, but they're not the same. Let's see what each does and why you'd use it.

@@ -1,7 +1,7 @@
 ---
 title: Javascript Snow Fall with buildup
 date: 2009-12-06
-tags:
+tag:
 - javascript
 ---
 Mr. Skowron ([his business](http://markskowrondesign.com)) was working on a flash animation for a client that had a snow fall.  What really irked me about the end result, was two things.

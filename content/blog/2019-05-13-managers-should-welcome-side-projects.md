@@ -1,7 +1,7 @@
 ---
 title: Managers Should Welcome Side Projects
 date: 2019-05-13
-tags:
+tag:
 - business
 - management
 ---

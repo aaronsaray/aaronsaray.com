@@ -1,7 +1,7 @@
 ---
 title: Developer Time vs Manager Time
 date: 2020-10-05
-tags:
+tag:
 - business
 - management
 ---

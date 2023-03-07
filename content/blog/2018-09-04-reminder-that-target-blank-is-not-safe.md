@@ -1,7 +1,7 @@
 ---
 title: Reminder That Target Blank Links Are Not Safe
 date: 2018-09-04
-tags:
+tag:
 - javascript
 - html
 - security

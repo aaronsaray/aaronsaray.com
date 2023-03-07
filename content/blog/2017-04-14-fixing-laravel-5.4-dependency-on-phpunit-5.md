@@ -1,7 +1,7 @@
 ---
 title: Fixing Laravel 5.4's Dependency on PHPUnit 5
 date: 2017-04-14
-tags:
+tag:
 - php
 - testing
 - phpunit

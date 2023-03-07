@@ -2,7 +2,7 @@
 slug: would-you-find-value-in-a-one-on-one-video-code-review-session
 title: Would You Find Value in a One on One Video Code Review Session?
 date: 2013-07-17
-tags:
+tag:
 - business
 - programming
 ---

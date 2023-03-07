@@ -1,7 +1,7 @@
 ---
 title: Drupal Plugin with Github Updates
 date: 2016-07-19
-tags:
+tag:
 - php
 ---
 I'm all for coding standards and rigorous approval processes for software in app stores, I really am.  However, I'm currently responsible for creating a number of different CMS plugins that all share some code.  Unfortunately, that shared library will never follow the coding standards and requirements for all app stores - each has some differences.  That's why I created...

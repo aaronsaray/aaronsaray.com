@@ -1,7 +1,7 @@
 ---
 title: How I fixed the Javascript error with wp-codebox
 date: 2009-11-16
-tags:
+tag:
 - javascript
 - wordpress
 ---

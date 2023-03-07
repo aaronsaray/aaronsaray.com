@@ -1,7 +1,7 @@
 ---
 title: New Blog
 date: 2016-01-24
-tags:
+tag:
 - news
 ---
 So I've decided to move my website off of wordpress and on to [jekyll](https://jekyllrb.com/) - so you might notice it is a bit faster ;)

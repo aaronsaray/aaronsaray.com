@@ -1,7 +1,7 @@
 ---
 title: Scoping your Bookmarklet Correctly
 date: 2011-03-22
-tags:
+tag:
 - javascript
 ---
 I've been lucky so far.  I've used variable names and functions in my bookmarklets that weren't that common.  Then, one day, I chose a variable named something very common (x, counter, etc).  I noticed that my bookmarklet accidentally overwrote some properties in the current page.  Now, that could be benefit - you could want your bookmarklet to update/manage variables in the current page.  However, most times I believe we don't want that scope overlap. 

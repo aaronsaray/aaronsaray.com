@@ -1,7 +1,7 @@
 ---
 title: 'Site Profile: amazondiscount.me'
 date: 2012-03-14
-tags:
+tag:
 - archived-projects
 - business
 - misc-web

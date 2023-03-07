@@ -1,7 +1,7 @@
 ---
 title: PHP Bitwise User Authorization
 date: 2009-01-27
-tags:
+tag:
 - mysql
 - php
 ---

@@ -1,7 +1,7 @@
 ---
 title: Are programming surveys accurate?
 date: 2022-03-27
-tags:
+tag:
 - programming
 ---
 Please indulge me on a bit of an open-ended question and discussion.  Recently I saw some "state of the XYZ" surveys where those were specific languages. The surveys were only answered by about 3,000 people each.  And then people spoke about them as authoritative references. But are these surveys actually accurate?

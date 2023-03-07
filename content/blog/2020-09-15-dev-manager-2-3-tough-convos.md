@@ -1,7 +1,7 @@
 ---
 title: 3 Tough Conversations from Stakeholders and Upper Management
 date: 2020-09-15
-tags:
+tag:
 - business
 - management
 ---

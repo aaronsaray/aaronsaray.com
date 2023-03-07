@@ -1,7 +1,7 @@
 ---
 title: Validate Request Parameter Not Present in Laravel 5.4
 date: 2017-11-17
-tags:
+tag:
 - php
 - laravel
 ---

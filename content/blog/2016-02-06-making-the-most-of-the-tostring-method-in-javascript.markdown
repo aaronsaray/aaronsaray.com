@@ -1,7 +1,7 @@
 ---
 title: Making the most of the toString method in Javascript
 date: 2016-02-06
-tags:
+tag:
 - javascript
 ---
 Javascript objects have a built-in function called `toString()` which pretty much does what you think it does - it renders a string representation of that object.

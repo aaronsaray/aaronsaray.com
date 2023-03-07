@@ -1,7 +1,7 @@
 ---
 title: How to Quickly Mask a Credit Card Number
 date: 2012-01-10
-tags:
+tag:
 - php
 - programming
 ---

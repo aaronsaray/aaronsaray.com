@@ -1,7 +1,7 @@
 ---
 title: 'Site profile: whatscloseto.me'
 date: 2012-06-12
-tags:
+tag:
 - archived-projects
 - business
 - misc-web

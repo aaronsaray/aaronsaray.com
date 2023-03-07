@@ -1,7 +1,7 @@
 ---
 title: Highlight Laravel Logs in PHPStorm
 date: 2022-01-12
-tags:
+tag:
 - phpstorm
 - laravel
 ---

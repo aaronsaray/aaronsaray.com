@@ -1,7 +1,7 @@
 ---
 title: 'IE JS Error: Expected identifier, string or number'
 date: 2009-04-30
-tags:
+tag:
 - javascript
 ---
 I just ran into this a bunch - works fine in FireFox ... of course.

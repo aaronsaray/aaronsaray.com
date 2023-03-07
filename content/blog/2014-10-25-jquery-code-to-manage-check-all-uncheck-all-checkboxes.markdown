@@ -1,7 +1,7 @@
 ---
 title: jQuery code to manage check all / uncheck all checkboxes
 date: 2014-10-25
-tags:
+tag:
 - html
 - jquery
 ---

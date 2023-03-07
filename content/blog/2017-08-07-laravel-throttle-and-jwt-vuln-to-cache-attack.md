@@ -1,7 +1,7 @@
 ---
 title: Laravel Default Throttle Configuration and Common JWT Blacklist Vulnerable to Cache Attacks
 date: 2017-08-07
-tags:
+tag:
 - php
 - laravel
 - security

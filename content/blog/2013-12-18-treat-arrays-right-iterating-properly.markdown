@@ -1,7 +1,7 @@
 ---
 title: 'Treat Arrays Right: Iterating Properly'
 date: 2013-12-18
-tags:
+tag:
 - php
 ---
 Oh, PHP - your love affair with arrays is like no other language.  You can always tell if someone learned PHP first before all other programming languages.  They think, design, and talk in arrays.  Have a list?  Make it an array.  Have a heap?  You mean array, right?  Collection object? Naw, I've got an array right here.

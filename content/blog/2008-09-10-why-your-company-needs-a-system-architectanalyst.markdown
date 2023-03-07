@@ -1,7 +1,7 @@
 ---
 title: Why your company needs a System Architect/Analyst
 date: 2008-09-10
-tags:
+tag:
 - misc-web
 - programming
 ---

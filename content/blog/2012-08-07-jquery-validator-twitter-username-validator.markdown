@@ -1,7 +1,7 @@
 ---
 title: 'jQuery Validator: Twitter username validator'
 date: 2012-08-07
-tags:
+tag:
 - javascript
 - jquery
 ---

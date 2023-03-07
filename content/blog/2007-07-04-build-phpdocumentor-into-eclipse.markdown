@@ -1,7 +1,7 @@
 ---
 title: Build PHPDocumentor into Eclipse
 date: 2007-07-04
-tags:
+tag:
 - eclipse-pdt
 - php
 ---

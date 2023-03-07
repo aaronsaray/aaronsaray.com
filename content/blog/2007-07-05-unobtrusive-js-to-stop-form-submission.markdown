@@ -1,7 +1,7 @@
 ---
 title: Unobtrusive JS to stop form submission
 date: 2007-07-05
-tags:
+tag:
 - javascript
 ---
 On one of the sites at ("the triangle"), one of the programmers on my team had this strange attachment to the Yahoo User Interface libraries - but I guess that was a good thing as it taught him a good lesson - use unobtrusive javascript.  

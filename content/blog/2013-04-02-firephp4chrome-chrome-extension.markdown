@@ -1,7 +1,7 @@
 ---
 title: FirePHP4Chrome Chrome Extension
 date: 2013-04-02
-tags:
+tag:
 - google
 ---
 {{< call-out/header >}}

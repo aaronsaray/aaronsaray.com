@@ -1,7 +1,7 @@
 ---
 title: PHPUnit error with Zend_Session
 date: 2011-05-31
-tags:
+tag:
 - phpunit
 - zend-framework
 ---

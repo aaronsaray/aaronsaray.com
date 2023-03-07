@@ -1,7 +1,7 @@
 ---
 title: 'Site Profile: honorarybrother.com'
 date: 2012-03-15
-tags:
+tag:
 - archived-projects
 - business
 - misc-web

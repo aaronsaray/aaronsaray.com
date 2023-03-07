@@ -1,7 +1,7 @@
 ---
 title: How to Break Down Laravel Unit Tests into Types
 date: 2022-06-23
-tags:
+tag:
 - php
 - laravel
 - testing

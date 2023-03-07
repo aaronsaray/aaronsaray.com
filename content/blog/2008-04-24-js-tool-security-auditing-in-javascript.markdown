@@ -1,7 +1,7 @@
 ---
 title: JS Tool - Security Auditing in Javascript
 date: 2008-04-24
-tags:
+tag:
 - javascript
 - security
 ---

@@ -1,7 +1,7 @@
 ---
 title: My Progression through Forgot Passwords
 date: 2009-03-02
-tags:
+tag:
 - php
 - programming
 - security

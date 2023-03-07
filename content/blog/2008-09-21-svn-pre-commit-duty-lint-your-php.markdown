@@ -1,7 +1,7 @@
 ---
 title: 'SVN Pre-commit duty: Lint your PHP'
 date: 2008-09-21
-tags:
+tag:
 - php
 - svn
 ---

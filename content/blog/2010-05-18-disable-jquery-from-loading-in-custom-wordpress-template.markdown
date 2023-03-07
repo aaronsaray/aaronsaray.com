@@ -1,6 +1,6 @@
 ---
 date: 2010-05-18
-tags:
+tag:
 - jquery
 - wordpress
 ---

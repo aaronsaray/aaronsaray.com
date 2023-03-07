@@ -1,7 +1,7 @@
 ---
 title: Having Lunch With Employees Isn't Enough
 date: 2021-05-08
-tags:
+tag:
 - business
 - management
 ---

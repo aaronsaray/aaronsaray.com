@@ -1,7 +1,7 @@
 ---
 title: Twitter Book
 date: 2012-11-28
-tags:
+tag:
 - business
 - ideas
 ---

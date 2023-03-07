@@ -1,7 +1,7 @@
 ---
 title: The Importance of Tracking Work Accomplishments
 date: 2017-09-25
-tags:
+tag:
 - business
 - management
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'HTML5 Placeholder: Not Always the Best Choice'
 date: 2014-11-02
-tags:
+tag:
 - html
 - misc-web
 ---

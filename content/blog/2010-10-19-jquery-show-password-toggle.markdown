@@ -1,7 +1,7 @@
 ---
 title: jQuery show password toggle
 date: 2010-10-19
-tags:
+tag:
 - javascript
 - jquery
 ---

@@ -1,7 +1,7 @@
 ---
 title: PHP PDF Viewer - Convert to Images and use HTML/JS
 date: 2015-05-04
-tags:
+tag:
 - javascript
 - jquery
 - php

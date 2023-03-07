@@ -1,7 +1,7 @@
 ---
 title: Attention to Detail
 date: 2016-03-21
-tags:
+tag:
 - php
 ---
 Every leader has a particular methodology or key point they focus on.  Whether it be a small detail, a general philosophy or a repeated phrase, you know that if you are near that leader, you will become very familiar with their demand.  In my team, my demand is to pay attention to detail.

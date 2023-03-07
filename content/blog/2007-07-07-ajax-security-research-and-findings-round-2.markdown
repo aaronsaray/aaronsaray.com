@@ -1,7 +1,7 @@
 ---
 title: AJAX Security Research and Findings - Round 2
 date: 2007-07-07
-tags:
+tag:
 - ajax
 - php
 - security

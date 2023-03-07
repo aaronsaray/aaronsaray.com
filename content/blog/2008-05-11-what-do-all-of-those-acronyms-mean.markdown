@@ -1,7 +1,7 @@
 ---
 title: What do all of those acronyms mean?
 date: 2008-05-11
-tags:
+tag:
 - business
 ---
 Whether you're looking at web hosting advertisements or speaking with an internet firm, you're going to run into various acronyms.  If you're not familiar with the industry, this can get confusing.  Let's check out the main ones to see what they really mean to you.

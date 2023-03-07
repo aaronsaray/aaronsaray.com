@@ -1,7 +1,7 @@
 ---
 title: The Hardest Part of Mentoring is Knowing What and When to Share
 date: 2018-07-04
-tags:
+tag:
 - business
 - programming
 - management

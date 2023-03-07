@@ -1,7 +1,7 @@
 ---
 title: PHPUnit Stop On Failure
 date: 2017-08-31
-tags:
+tag:
 - php
 - phpunit
 ---

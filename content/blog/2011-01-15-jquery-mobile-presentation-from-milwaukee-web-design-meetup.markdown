@@ -1,7 +1,7 @@
 ---
 title: jQuery Mobile Presentation from Milwaukee Web Design Meetup
 date: 2011-01-15
-tags:
+tag:
 - jquery
 ---
 I presented at the [Milwaukee Web Design Meetup](http://www.meetup.com/milwaukeeweb/calendar/15524626/) on Dec 7th, 2010.  Just got around to posting my

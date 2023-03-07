@@ -1,7 +1,7 @@
 ---
 title: Figuring out Price Before Tax
 date: 2009-07-22
-tags:
+tag:
 - javascript
 ---
 A lot of the time I give quotes including taxes.  Every once in a while, someone is curious about what the tax is on a service.

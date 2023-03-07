@@ -1,7 +1,7 @@
 ---
 title: Testing Error 500 Pages in Zend Framework
 date: 2012-07-03
-tags:
+tag:
 - phpunit
 - testing
 - zend-framework

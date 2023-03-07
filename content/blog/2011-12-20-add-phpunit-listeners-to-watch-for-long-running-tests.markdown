@@ -1,7 +1,7 @@
 ---
 title: Add PHPUnit Listeners to Watch for Long Running Tests
 date: 2011-12-20
-tags:
+tag:
 - phpunit
 - testing
 ---

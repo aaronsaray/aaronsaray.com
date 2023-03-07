@@ -1,7 +1,7 @@
 ---
 title: Creating an Orphan or Empty Git Branch
 date: 2023-03-03
-tags:
+tag:
 - git
 ---
 Sometimes you may want to make a completely empty git branch in your repo. This is how you can do it.

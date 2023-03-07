@@ -1,7 +1,7 @@
 ---
 title: How desktop.ini saved me from myself
 date: 2008-10-07
-tags:
+tag:
 - windows
 ---
 When working at "the triangle" we used junction points on windows to link to repositories that we needed to run the code base - but weren't necessary for the project.  (see [creating junction points on windows with linkd.exe](http://support.microsoft.com/kb/205524).)

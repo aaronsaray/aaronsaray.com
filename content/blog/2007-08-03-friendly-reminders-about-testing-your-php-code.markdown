@@ -1,7 +1,7 @@
 ---
 title: Friendly reminders about testing your PHP code
 date: 2007-08-03
-tags:
+tag:
 - misc-web
 - php
 - testing

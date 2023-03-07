@@ -1,7 +1,7 @@
 ---
 title: Displaying the Most Popular Youtube Videos with PHP
 date: 2009-10-19
-tags:
+tag:
 - php
 ---
 During one of my random dreams of how to become an internet millionaire, I thought about displaying the top youtube videos on an aesthetically pleasing backdrop.

@@ -1,7 +1,7 @@
 ---
 title: PHP Shared Host - Session File Browser Script
 date: 2008-04-24
-tags:
+tag:
 - php
 - security
 ---

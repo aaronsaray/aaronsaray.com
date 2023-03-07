@@ -1,7 +1,7 @@
 ---
 title: 'PHPUnit error: No release available for package'
 date: 2011-06-10
-tags:
+tag:
 - phpunit
 ---
 One of the steps to install PHPUnit is to execute the following pear commands:

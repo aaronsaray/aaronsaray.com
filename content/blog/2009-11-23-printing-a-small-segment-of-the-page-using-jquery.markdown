@@ -1,7 +1,7 @@
 ---
 title: Printing a small segment of the page using JQuery
 date: 2009-11-23
-tags:
+tag:
 - css
 - javascript
 ---

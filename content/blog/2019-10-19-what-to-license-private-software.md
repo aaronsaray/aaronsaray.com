@@ -1,7 +1,7 @@
 ---
 title: What License to Use for Private Software
 date: 2019-10-19
-tags:
+tag:
 - business
 - misc-web
 - programming

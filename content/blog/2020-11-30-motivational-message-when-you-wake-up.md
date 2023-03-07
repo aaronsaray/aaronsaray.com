@@ -1,7 +1,7 @@
 ---
 title: Get a Motivational Message You Set on iPhone to Wake Up
 date: 2020-11-30
-tags:
+tag:
 - ios
 ---
 With the Shortcuts app on your iOS device, it's easy to create a motivational message for after your alarm.

@@ -1,7 +1,7 @@
 ---
 title: Twitter @anywhere proof of concepts
 date: 2010-05-13
-tags:
+tag:
 - javascript
 - twitter
 ---

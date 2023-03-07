@@ -1,7 +1,7 @@
 ---
 title: Unknown function _popupControl()
 date: 2009-09-29
-tags:
+tag:
 - javascript
 ---
 In my Javascript Error Handler post, I discussed how I track user and client side errors.  Recently, my error logs became inundated with tons of javascript errors.  The function `_popupControl()` is undefined.  After a little googling, I found out that the CA Personal Firewall is responsible for inserting the following code into every page:

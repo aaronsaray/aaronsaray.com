@@ -1,7 +1,7 @@
 ---
 title: 'Site profile: thebetterbachelor.com'
 date: 2012-04-17
-tags:
+tag:
 - archived-projects
 - business
 - misc-web

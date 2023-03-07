@@ -1,7 +1,7 @@
 ---
 title: Why Does UI/UX Even Matter?
 date: 2021-09-03
-tags:
+tag:
 - business
 - ux
 ---

@@ -1,7 +1,7 @@
 ---
 title: Javascript and CSS Compression and Cache
 date: 2010-02-25
-tags:
+tag:
 - css
 - javascript
 - misc-web

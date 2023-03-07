@@ -1,7 +1,7 @@
 ---
 title: Helpful strtotime reminders
 date: 2007-07-12
-tags:
+tag:
 - php
 ---
 Today, Todd (one of the consultants that ("the triangle") uses) called me up to share a bit of a reminder and also tell me about an issue in the code that was in one of our older modules.  There was an issue with the strtotime function converting a year to a timestamp.

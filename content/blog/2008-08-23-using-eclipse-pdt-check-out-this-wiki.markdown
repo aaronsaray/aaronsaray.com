@@ -1,7 +1,7 @@
 ---
 title: Using Eclipse PDT? Check out this wiki
 date: 2008-08-23
-tags:
+tag:
 - eclipse-pdt
 ---
 Are you a huge fan of Eclipse PDT as I am?

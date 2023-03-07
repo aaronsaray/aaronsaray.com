@@ -1,7 +1,7 @@
 ---
 title: heredoc - time for dead-dead or happy-smile time?
 date: 2008-09-08
-tags:
+tag:
 - php
 ---
 PHP's heredoc - good or bad?  All silly titles aside, lets check out some points.

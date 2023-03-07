@@ -1,7 +1,7 @@
 ---
 title: Stop Considering the Same Password a New Password Attempt
 date: 2019-04-01
-tags:
+tag:
 - programming
 - business
 ---

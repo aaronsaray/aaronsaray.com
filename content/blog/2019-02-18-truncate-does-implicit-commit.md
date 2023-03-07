@@ -1,7 +1,7 @@
 ---
 title: Truncate MySQL Causes Implicit Commit
 date: 2019-02-18
-tags:
+tag:
 - mysql
 - laravel
 ---

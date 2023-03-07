@@ -1,7 +1,7 @@
 ---
 title: Link Checking Module - 1st attempt
 date: 2008-03-20
-tags:
+tag:
 - php
 ---
 So I wrote some code the other day.  It sat in my code repository and I never tested it.  I was pretty certain it was going to be some good code, though.

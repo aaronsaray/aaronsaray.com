@@ -1,7 +1,7 @@
 ---
 title: Automatic Backup with SVN on Windows
 date: 2008-09-12
-tags:
+tag:
 - scripting
 - svn
 - windows

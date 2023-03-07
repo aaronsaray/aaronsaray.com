@@ -1,7 +1,7 @@
 ---
 title: Two Questions That Demonstrate if an Experimental Process Should Remain
 date: 2018-10-08
-tags:
+tag:
 - business
 - management
 ---

@@ -1,7 +1,7 @@
 ---
 title: Want to come work with me?  Let's do some PHP!
 date: 2011-04-29
-tags:
+tag:
 - misc-web
 - php
 ---

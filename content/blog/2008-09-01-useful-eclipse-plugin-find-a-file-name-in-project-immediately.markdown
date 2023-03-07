@@ -1,7 +1,7 @@
 ---
 title: 'Useful Eclipse Plugin: Find a file name in project immediately'
 date: 2008-09-01
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 ---

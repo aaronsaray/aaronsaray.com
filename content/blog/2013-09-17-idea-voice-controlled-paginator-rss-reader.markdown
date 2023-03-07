@@ -1,7 +1,7 @@
 ---
 title: 'Idea: Voice Controlled Paginator / RSS Reader'
 date: 2013-09-17
-tags:
+tag:
 - business
 - ideas
 ---

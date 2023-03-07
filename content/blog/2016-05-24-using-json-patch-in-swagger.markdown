@@ -1,7 +1,7 @@
 ---
 title: Using JSON Patch in Swagger
 date: 2016-05-24
-tags:
+tag:
 - misc-web
 ---
 I've been working with [Swagger](https://swagger.io), also known as the [OpenAPI Initiative](https://openapis.org/) lately,

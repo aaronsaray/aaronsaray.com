@@ -1,7 +1,7 @@
 ---
 title: Illustrating Why Fillable and Validated Matter in Laravel
 date: 2021-02-22
-tags:
+tag:
 - php
 - laravel
 - security

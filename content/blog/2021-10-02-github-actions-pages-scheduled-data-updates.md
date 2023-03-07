@@ -1,7 +1,7 @@
 ---
 title: Using Github Actions & Pages to Publish Static Pages Based on Dynamic Data
 date: 2021-10-02
-tags:
+tag:
 - github
 - html
 - javascript

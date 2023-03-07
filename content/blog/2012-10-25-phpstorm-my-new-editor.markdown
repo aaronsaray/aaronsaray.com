@@ -1,7 +1,7 @@
 ---
 title: 'PHPStorm: My new editor'
 date: 2012-10-25
-tags:
+tag:
 - ide-and-web-dev-tools
 - phpstorm
 ---

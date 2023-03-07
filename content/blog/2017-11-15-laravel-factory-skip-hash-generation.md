@@ -1,7 +1,7 @@
 ---
 title: For Performance, Skip Generating Hashes in Laravel Factories
 date: 2017-11-15
-tags:
+tag:
 - php
 - laravel
 ---

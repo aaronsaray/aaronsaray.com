@@ -1,7 +1,7 @@
 ---
 title: Using Google Charts to make QR Codes
 date: 2010-07-13
-tags:
+tag:
 - javascript
 - jquery
 - misc-web

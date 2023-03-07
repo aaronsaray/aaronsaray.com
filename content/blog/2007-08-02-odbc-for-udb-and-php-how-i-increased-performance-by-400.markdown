@@ -1,7 +1,7 @@
 ---
 title: ODBC for UDB and PHP - How I increased performance by 400%
 date: 2007-08-02
-tags:
+tag:
 - php
 - sql
 ---

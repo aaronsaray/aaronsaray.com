@@ -1,7 +1,7 @@
 ---
 title: Rewrite or Redirect URL with Apache
 date: 2020-11-23
-tags:
+tag:
 - apache
 - misc-web
 ---

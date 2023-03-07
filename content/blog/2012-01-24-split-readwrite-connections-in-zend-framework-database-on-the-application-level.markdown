@@ -1,7 +1,7 @@
 ---
 title: Split Read/Write Connections in Zend Framework Database on the Application Level
 date: 2012-01-24
-tags:
+tag:
 - mysql
 - zend-framework
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Idea: Bible Verse A Day'
 date: 2013-01-15
-tags:
+tag:
 - business
 - ideas
 ---

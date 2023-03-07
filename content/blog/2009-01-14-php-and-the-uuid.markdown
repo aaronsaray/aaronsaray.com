@@ -1,7 +1,7 @@
 ---
 title: PHP and the UUID
 date: 2009-01-14
-tags:
+tag:
 - php
 ---
 I've been thinking more and more about having unique ID's - especially with working with larger datasets - and I thought it was high time that I investigated the UUID.

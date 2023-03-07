@@ -1,7 +1,7 @@
 ---
 title: Finding Slow Tests in PHPUnit 9
 date: 2021-01-04
-tags:
+tag:
 - php
 - testing
 - phpunit

@@ -1,7 +1,7 @@
 ---
 title: Rewrite or Redirect URL with NGINX
 date: 2021-05-18
-tags:
+tag:
 - nginx
 - misc-web
 ---

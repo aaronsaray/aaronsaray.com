@@ -1,7 +1,7 @@
 ---
 title: What I believe MVC is - or MVCFDH
 date: 2008-08-28
-tags:
+tag:
 - php
 - programming
 ---

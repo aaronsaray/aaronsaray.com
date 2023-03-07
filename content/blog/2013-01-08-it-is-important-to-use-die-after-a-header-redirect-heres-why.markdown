@@ -1,7 +1,7 @@
 ---
 title: It is important to use die() after a header redirect - here's why
 date: 2013-01-08
-tags:
+tag:
 - php
 - security
 ---

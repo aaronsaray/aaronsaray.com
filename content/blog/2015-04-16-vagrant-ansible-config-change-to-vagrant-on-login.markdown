@@ -1,7 +1,7 @@
 ---
 title: 'Vagrant / Ansible config: change to /vagrant on login'
 date: 2015-04-16
-tags:
+tag:
 - linux
 ---
 While those familiar with the specifics of linux and bash are probably very familiar with the various login sequence files, this might help someone!

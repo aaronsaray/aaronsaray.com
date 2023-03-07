@@ -1,7 +1,7 @@
 ---
 title: How to Install a Composer package from a local zip
 date: 2021-11-08
-tags:
+tag:
 - php
 - composer
 - laravel

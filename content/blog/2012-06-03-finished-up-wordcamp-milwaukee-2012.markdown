@@ -1,7 +1,7 @@
 ---
 title: Finished up WordCamp Milwaukee 2012
 date: 2012-06-03
-tags:
+tag:
 - misc-web
 - wordpress
 ---

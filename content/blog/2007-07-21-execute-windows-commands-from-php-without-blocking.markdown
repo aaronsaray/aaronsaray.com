@@ -1,7 +1,7 @@
 ---
 title: Execute Windows Commands from PHP without blocking
 date: 2007-07-21
-tags:
+tag:
 - php
 - windows
 ---

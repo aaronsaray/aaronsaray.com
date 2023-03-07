@@ -1,7 +1,7 @@
 ---
 title: Short-hand PHP Dotenv instantiation
 date: 2016-08-15
-tags:
+tag:
 - php
 ---
 I'm a big fan of [PHP DotEnv](https://github.com/vlucas/phpdotenv) for creating my environment variables for my scripts.  (It's always a good thing to keep your passwords and credentials separate from your source code, according to [OWASP](https://www.owasp.org/index.php/OWASP_Guide_Project)).  

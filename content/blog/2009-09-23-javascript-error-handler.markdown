@@ -1,7 +1,7 @@
 ---
 title: Javascript error handler
 date: 2009-09-23
-tags:
+tag:
 - javascript
 - php
 ---

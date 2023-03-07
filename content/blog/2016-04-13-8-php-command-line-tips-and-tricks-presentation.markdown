@@ -1,7 +1,7 @@
 ---
 title: 8 PHP Command Line Tips and Tricks Presentation
 date: 2016-04-13
-tags:
+tag:
 - php
 ---
 I just finished giving a talk at [MKEPUG](http://www.meetup.com/Milwaukee-PHP-Users-Group/events/228866298/) about

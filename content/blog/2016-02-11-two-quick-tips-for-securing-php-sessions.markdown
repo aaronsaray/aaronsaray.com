@@ -1,7 +1,7 @@
 ---
 title: Two Quick Tips for Securing PHP Sessions
 date: 2016-02-11
-tags:
+tag:
 - php
 - security
 ---

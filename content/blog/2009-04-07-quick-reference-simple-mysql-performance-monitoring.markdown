@@ -1,7 +1,7 @@
 ---
 title: 'Quick Reference: Simple MySQL Performance Monitoring'
 date: 2009-04-07
-tags:
+tag:
 - mysql
 ---
 There are a few quick ways to monitor MySQL performance.  This isn't much of an in-depth reference, just a quick reminder.  Lets look:

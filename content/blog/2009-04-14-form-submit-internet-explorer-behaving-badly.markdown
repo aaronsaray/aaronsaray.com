@@ -1,7 +1,7 @@
 ---
 title: 'Form Submit: Internet Explorer behaving badly'
 date: 2009-04-14
-tags:
+tag:
 - html
 - javascript
 - jquery

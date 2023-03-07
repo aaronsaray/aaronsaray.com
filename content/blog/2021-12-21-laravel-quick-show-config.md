@@ -1,7 +1,7 @@
 ---
 title: Command to Quickly Show Config in Laravel
 date: 2021-12-21
-tags:
+tag:
 - php
 - laravel
 ---

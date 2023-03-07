@@ -1,7 +1,7 @@
 ---
 title: Zend Translate Plurals
 date: 2013-09-24
-tags:
+tag:
 - zend-framework
 ---
 I know it should be pretty common sense to RTFM - but sometimes you miss things.

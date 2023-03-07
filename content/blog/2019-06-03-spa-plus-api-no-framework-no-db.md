@@ -1,7 +1,7 @@
 ---
 title: SPA No Framework, API No Database
 date: 2019-06-03
-tags:
+tag:
 - php
 - javascript
 - jekyll

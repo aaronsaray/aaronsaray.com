@@ -1,7 +1,7 @@
 ---
 title: Send email from server to gmail using postfix
 date: 2009-10-07
-tags:
+tag:
 - email
 - linux
 ---

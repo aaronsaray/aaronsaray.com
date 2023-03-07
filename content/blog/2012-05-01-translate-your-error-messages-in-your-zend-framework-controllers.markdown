@@ -1,7 +1,7 @@
 ---
 title: Translate Your Error Messages in Your Zend Framework Controllers
 date: 2012-05-01
-tags:
+tag:
 - misc-web
 - zend-framework
 ---

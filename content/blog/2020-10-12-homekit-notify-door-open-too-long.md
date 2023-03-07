@@ -1,7 +1,7 @@
 ---
 title: Homekit Notify If Door Open Too Long
 date: 2020-10-12
-tags:
+tag:
 - iot
 ---
 I've finally come up with a couple of solutions to get a notification if a door has been open too long in my house. In

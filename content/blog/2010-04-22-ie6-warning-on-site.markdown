@@ -1,7 +1,7 @@
 ---
 title: IE6 warning on site
 date: 2010-04-22
-tags:
+tag:
 - jquery
 - misc-web
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Fix: FirePHP not showing output in console in Firebug'
 date: 2010-12-07
-tags:
+tag:
 - ide-and-web-dev-tools
 - misc-web
 ---

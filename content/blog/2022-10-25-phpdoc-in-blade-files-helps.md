@@ -1,7 +1,7 @@
 ---
 title: Use PHPDoc in Laravel Blade files for autocomplete in PHPStorm
 date: 2022-10-25
-tags:
+tag:
 - php
 - laravel
 - phpstorm

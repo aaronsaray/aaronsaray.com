@@ -1,7 +1,7 @@
 ---
 title: Engineering Managers Must Embrace Conflict
 date: 2021-07-08
-tags:
+tag:
 - business
 - management
 ---

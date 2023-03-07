@@ -1,7 +1,7 @@
 ---
 title: Why Care About Privacy with Web Analytics?
 date: 2022-12-24
-tags:
+tag:
 - business
 - security
 ---

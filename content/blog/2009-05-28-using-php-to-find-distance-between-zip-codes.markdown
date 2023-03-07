@@ -1,7 +1,7 @@
 ---
 title: Using PHP to find distance between Zip Codes
 date: 2009-05-28
-tags:
+tag:
 - php
 ---
 Today marked the second time I had to write this code from scratch.  To save my self time - and hopefully you too! - I'm going to post what I've developed.

@@ -1,7 +1,7 @@
 ---
 title: 3 Steps to the Best Programmer's Cover Letter
 date: 2015-07-11
-tags:
+tag:
 - business
 - programming
 ---

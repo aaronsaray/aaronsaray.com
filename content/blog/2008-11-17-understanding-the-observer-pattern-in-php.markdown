@@ -1,7 +1,7 @@
 ---
 title: Understanding the Observer Pattern in PHP
 date: 2008-11-17
-tags:
+tag:
 - php
 - programming
 ---

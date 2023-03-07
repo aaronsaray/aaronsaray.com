@@ -1,7 +1,7 @@
 ---
 title: Capture and redirect all Laravel email
 date: 2021-12-02
-tags:
+tag:
 - php
 - laravel
 ---

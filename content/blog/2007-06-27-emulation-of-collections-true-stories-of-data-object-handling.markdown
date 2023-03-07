@@ -1,7 +1,7 @@
 ---
 title: Emulation of Collections - true stories of data object handling
 date: 2007-06-27
-tags:
+tag:
 - php
 ---
 Today, Big Boy sent me an e-mail at work talking about emulation of collections in his .net programming.  He included a code sample (after the break).  This got me thinking about how I am planning on handling data going forward.  

@@ -1,7 +1,7 @@
 ---
 title: Guitar Chord fingering with PHP
 date: 2010-11-30
-tags:
+tag:
 - programming
 ---
 After cleaning up some old files in my archive, I found this snippet of code I made a while ago.  

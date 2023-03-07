@@ -1,7 +1,7 @@
 ---
 title: Dig for Windows
 date: 2008-05-30
-tags:
+tag:
 - windows
 ---
 For those of us who develop on windows, we can sometimes feel linux tool envy.  One particular tool is the `dig` command.  Well, luckily, you can get this to run on windows easily:

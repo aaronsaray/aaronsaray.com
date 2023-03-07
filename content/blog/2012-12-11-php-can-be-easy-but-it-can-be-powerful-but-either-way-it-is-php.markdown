@@ -1,7 +1,7 @@
 ---
 title: PHP can be easy, but it can be powerful, but either way, it is PHP
 date: 2012-12-11
-tags:
+tag:
 - misc-web
 - php
 ---

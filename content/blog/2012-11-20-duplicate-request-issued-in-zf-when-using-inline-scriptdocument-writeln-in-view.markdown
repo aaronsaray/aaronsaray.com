@@ -1,7 +1,7 @@
 ---
 title: Duplicate request issued in ZF when using inline script/document.writeln in view
 date: 2012-11-20
-tags:
+tag:
 - php
 - zend-framework
 ---

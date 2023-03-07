@@ -1,7 +1,7 @@
 ---
 title: Setting Config Variables - Constants vs. Abstract Class Access
 date: 2007-06-12
-tags:
+tag:
 - php
 ---
 As I was looking through some old code from Big Boy, I noticed a block of his code at the top of his initial control file and noticed a way he was using his configuration.  He was defining his from an INI file and setting constants in the code with a prefix identifier.  I then took a minute to look at my most recent framework to see how I was using my config - a static class instance with an internally held singleton pattern.  It got me starting to think of which was best... I have a new open source project coming up and I'd like to do the right thing.

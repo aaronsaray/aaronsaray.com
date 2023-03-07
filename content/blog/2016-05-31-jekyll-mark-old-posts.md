@@ -1,7 +1,7 @@
 ---
 title: Jekyll Mark Old Posts
 date: 2016-05-31
-tags:
+tag:
 - jekyll
 ---
 With technology changing so rapidly and people in such a big hurry, sometimes older suggestions or out of date recommendations

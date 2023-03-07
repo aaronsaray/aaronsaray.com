@@ -1,7 +1,7 @@
 ---
 title: Two Column Background Colors Demo
 date: 2012-12-18
-tags:
+tag:
 - css
 - html
 - misc-web

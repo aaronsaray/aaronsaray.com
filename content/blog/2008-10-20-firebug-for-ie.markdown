@@ -1,7 +1,7 @@
 ---
 title: Firebug for IE?
 date: 2008-10-20
-tags:
+tag:
 - javascript
 ---
 Now you can start accessing some of FireBug's great features in other browsers, like Internet Explorer.

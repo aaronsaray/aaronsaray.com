@@ -1,7 +1,7 @@
 ---
 title: hCard - should I care?
 date: 2010-01-23
-tags:
+tag:
 - misc-web
 ---
 So lately, I've been looking into the semantic tools available on the web.  I want to make sure that my online identity is easily searchable and undeniably accurate.  Using semantic tools such as XFN, FOAF and hCard may help me.

@@ -1,7 +1,7 @@
 ---
 title: Coders be Confident, Not Cocky
 date: 2016-03-28
-tags:
+tag:
 - php
 - business
 ---

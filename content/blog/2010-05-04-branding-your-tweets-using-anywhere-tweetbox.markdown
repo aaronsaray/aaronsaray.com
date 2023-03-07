@@ -1,7 +1,7 @@
 ---
 title: Branding your Tweets using @anywhere tweetbox
 date: 2010-05-04
-tags:
+tag:
 - javascript
 - twitter
 ---

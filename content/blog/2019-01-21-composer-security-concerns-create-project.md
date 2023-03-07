@@ -1,7 +1,7 @@
 ---
 title: Composer Security Concerns with Create Project
 date: 2019-01-21
-tags:
+tag:
 - php
 - security
 - composer

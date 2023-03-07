@@ -1,7 +1,7 @@
 ---
 title: Which Conference Should I go to - Help me in 2008
 date: 2008-04-01
-tags:
+tag:
 - programming
 ---
 So, luckily, my current employer will pay and make arrangements for me to attend one major conference each year.  Last year I attended Mysqlconf, the year before, Zend Con.

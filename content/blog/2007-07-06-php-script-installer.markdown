@@ -1,7 +1,7 @@
 ---
 title: PHP Script Installer
 date: 2007-07-06
-tags:
+tag:
 - php
 ---
 A couple weeks ago I was reading a blog posting about PHP Script installing.  I don't remember the exact context of the article (or where it was for that matter - otherwise I'd link to it!), but I had suggested someone make a php script packager - an all in one file to install a php project.

@@ -1,7 +1,7 @@
 ---
 title: The Importance of ToDo Tests
 date: 2021-03-22
-tags:
+tag:
 - php
 - testing
 - phpunit

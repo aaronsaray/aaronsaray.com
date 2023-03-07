@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main class="container container-limited pb-5">
+    {{ .Content }}
+
+    {{ range .Pages }}
+    {{ partial "blog-entry.html" . }}
+    {{ end }}
+</main>
+{{ end }}

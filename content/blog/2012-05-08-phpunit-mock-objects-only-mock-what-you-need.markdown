@@ -1,7 +1,7 @@
 ---
 title: 'PHPUnit Mock Objects: Only Mock What You Need'
 date: 2012-05-08
-tags:
+tag:
 - php
 - phpunit
 - testing

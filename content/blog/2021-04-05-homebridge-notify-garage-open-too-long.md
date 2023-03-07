@@ -1,7 +1,7 @@
 ---
 title: Homebridge Homekit Notify if Garage Open Too Long
 date: 2021-04-05
-tags:
+tag:
 - iot
 ---
 With a combination of Homebridge, a plugin, Pushover, and a Homekit compatible garage door opener, I can now receive notifications if my garage door was left open too long. Let's dive into how...

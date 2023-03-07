@@ -1,7 +1,7 @@
 ---
 title: How to discover talent, not just skill
 date: 2013-09-10
-tags:
+tag:
 - programming
 - management
 ---

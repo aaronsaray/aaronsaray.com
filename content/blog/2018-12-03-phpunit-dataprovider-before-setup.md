@@ -1,7 +1,7 @@
 ---
 title: PHPUnit Runs Data Provider Before Setup
 date: 2018-12-03
-tags:
+tag:
 - php
 - phpunit
 - testing

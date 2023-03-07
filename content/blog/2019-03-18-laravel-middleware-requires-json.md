@@ -1,7 +1,7 @@
 ---
 title: Laravel 5 Middleware that Requires JSON
 date: 2019-03-18
-tags:
+tag:
 - php
 - laravel
 ---

@@ -1,7 +1,7 @@
 ---
 title: A reminder about triggering errors not in the USER level
 date: 2007-07-21
-tags:
+tag:
 - php
 ---
 I had a function in some of my code that I wanted to trigger a notice error on certain occasions.  Unfortunately, it kept halting my script with a Warning instead.  Unfortunately, the error handler at that particular block of code was not properly capturing the error string.  It runs out that I was triggering an `E_NOTICE` instead of an `E_USER_NOTICE` error... (if I would have reviewed the [`trigger_error` manual page](http://us2.php.net/trigger_error), I wouldn't have made this mistake... silly, lazy developer).  Just to make sure that I fully understood this issue and hopefully wouldn't make the same mistake again, I made a quick proof of concept:

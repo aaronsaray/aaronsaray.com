@@ -1,7 +1,7 @@
 ---
 title: Disable md5 now - or you will die
 date: 2009-02-19
-tags:
+tag:
 - php
 - security
 ---

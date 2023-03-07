@@ -1,7 +1,7 @@
 ---
 title: Using Your Namespace for Optimum Readability
 date: 2016-09-06
-tags:
+tag:
 - php
 ---
 I love [namespaces in PHP](http://php.net/manual/en/language.namespaces.php) as much as the next programmer - but there's always been something about namespaces in my own applications that bothered me.  And that's when I have similar or identical named services, forms, entities or models.  

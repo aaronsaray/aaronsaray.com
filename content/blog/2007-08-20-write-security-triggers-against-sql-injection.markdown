@@ -1,7 +1,7 @@
 ---
 title: Write Security Triggers Against SQL Injection
 date: 2007-08-20
-tags:
+tag:
 - security
 - sql
 ---

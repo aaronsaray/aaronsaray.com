@@ -1,7 +1,7 @@
 ---
 title: SimplePHPMailer
 date: 2008-04-24
-tags:
+tag:
 - php
 ---
 There are a very small amount of really easy to implement PHP mailer scripts in the wild.  They usually try to pump so many features into  them that it becomes difficult to implement or too large of a file.  For those looking for just a quick drop-in solution - that you DON'T need to know PHP to use - SimplePHPMailer was developed.  

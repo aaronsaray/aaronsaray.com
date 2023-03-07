@@ -1,7 +1,7 @@
 ---
 title: XDebug's settings reminded me - no output to the browser if sending headers
 date: 2008-05-20
-tags:
+tag:
 - php
 ---
 So, I admit it - I've become lazy.  Well, in all fairness, the programmer before me at "the triangle" was also lazy.  And after messing with XDebug and setting `output_buffering` to off and implicit flush to on... I was reminded of our laziness.

@@ -1,7 +1,7 @@
 ---
 title: Highlighting Source Files
 date: 2007-07-07
-tags:
+tag:
 - misc-web
 ---
 I have been writing code snippets in this wordpress blog alot - and I wanted to possibly have the code highlighted.  One of the things that happened with code highlighting plugins I've noticed is that the code has to be valid (I've posted invalid PHP because stupid wordpress kept eating it) or one type of code (I post javascript/html combinations, with ellipses and such...), and so I finally decided to not highlight my code - unless I could find a really cool code highlighting plugin.  But along the way, I discovered some really cool tools that might be useful.

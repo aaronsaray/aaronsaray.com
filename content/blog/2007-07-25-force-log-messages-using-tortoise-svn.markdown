@@ -1,7 +1,7 @@
 ---
 title: Force Log Messages using Tortoise SVN
 date: 2007-07-25
-tags:
+tag:
 - svn
 - windows
 ---

@@ -1,7 +1,7 @@
 ---
 title: Sanity Check Values
 date: 2016-05-05
-tags:
+tag:
 - php
 ---
 When I was growing up, having chocolate milk was a huge treat.  My mom would mix together some sugar and some dry cocoa powder into the glass and then slowly add milk.  After some more vigorous stirring, I had my small glass of chocolate milk.  It was quite the process, but it tasted great.  Imagine my surprise when I found out that chocolate milk also came from the store pre-mixed!

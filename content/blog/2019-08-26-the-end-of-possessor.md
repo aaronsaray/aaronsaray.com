@@ -1,7 +1,7 @@
 ---
 title: The end of Possessor
 date: 2019-08-26
-tags:
+tag:
 - business
 - archived-projects
 ---

@@ -1,7 +1,7 @@
 ---
 title: Ansible Installation of Postfix with No Prompts
 date: 2015-03-13
-tags:
+tag:
 - linux
 - scripting
 ---

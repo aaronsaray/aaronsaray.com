@@ -1,7 +1,7 @@
 ---
 title: Use the $this->fail() method with Mockery::on()
 date: 2017-06-11
-tags:
+tag:
 - php
 - testing
 - mockery

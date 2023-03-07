@@ -1,7 +1,7 @@
 ---
 title: 'Zend Framework ACL: Inherits Including'
 date: 2012-09-18
-tags:
+tag:
 - zend-framework
 ---
 So one of the things that really bothered me about the Zend ACL implementation in 1.x was the `inherits()` method.  It simply would test to see if the current role inherited the roles you were testing against.  Well, what if the role WAS the tested role?  Then it would fail.  So, to fix that, in my own `Application_Model_Acl` implementation, I wrote `inheritsIncluding()`.  

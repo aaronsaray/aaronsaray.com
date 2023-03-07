@@ -1,7 +1,7 @@
 ---
 title: Testing protected and private attributes and methods using PHPUnit
 date: 2011-08-16
-tags:
+tag:
 - phpunit
 - testing
 ---

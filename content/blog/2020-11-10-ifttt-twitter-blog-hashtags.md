@@ -1,7 +1,7 @@
 ---
 title: Tweeting Blogs with Hashtags Automatically with IFTTT Pro
 date: 2020-11-10
-tags:
+tag:
 - javascript
 - twitter
 ---

@@ -1,7 +1,7 @@
 ---
 title: Use Dependency Injection in Laravel Console Commands
 date: 2017-09-23
-tags:
+tag:
 - php
 - laravel
 - testing

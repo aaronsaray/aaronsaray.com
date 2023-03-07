@@ -1,7 +1,7 @@
 ---
 title: Send e-mail from outlook using PHP
 date: 2007-07-06
-tags:
+tag:
 - php
 - windows
 ---

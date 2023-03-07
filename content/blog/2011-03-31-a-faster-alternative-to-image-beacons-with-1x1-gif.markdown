@@ -1,7 +1,7 @@
 ---
 title: A faster alternative to image beacons with 1x1 gif
 date: 2011-03-31
-tags:
+tag:
 - misc-web
 ---
 So it seems like a very common solution for tracking hit rates is the transparent 1x1 pixel gif.  Load this and parse your access logs: requests logged.

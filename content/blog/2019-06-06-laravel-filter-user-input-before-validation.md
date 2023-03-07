@@ -1,7 +1,7 @@
 ---
 title: Filter User Input Before Validation in Laravel
 date: 2019-06-06
-tags:
+tag:
 - php
 - laravel
 ---

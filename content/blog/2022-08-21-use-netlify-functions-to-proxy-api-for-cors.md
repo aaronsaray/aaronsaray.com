@@ -1,7 +1,7 @@
 ---
 title: Use Netlify functions to proxy an API without CORS
 date: 2022-08-21
-tags:
+tag:
 - javascript
 ---
 You've got a great idea, there's a free API, and you've got free hosting on Netlify. You're ready to begin. You request your first bit of data and you hit that infamous CORS error: `Cross-Origin Request Blocked: The Same Origin Policy disallows

@@ -1,7 +1,7 @@
 ---
 title: 'Site profile: jemdiary.com'
 date: 2012-03-28
-tags:
+tag:
 - archived-projects
 - business
 - misc-web

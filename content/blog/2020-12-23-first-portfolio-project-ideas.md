@@ -1,7 +1,7 @@
 ---
 title: Coming Up With Your First Portfolio Project (with coding walkthrough)
 date: 2020-12-23
-tags:
+tag:
 - javascript
 - html
 - css

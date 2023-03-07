@@ -1,7 +1,7 @@
 ---
 title: The Customer is Always Right, But Not With Everything
 date: 2017-11-16
-tags:
+tag:
 - business
 - management
 ---

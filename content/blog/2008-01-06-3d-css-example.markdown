@@ -1,7 +1,7 @@
 ---
 title: 3D CSS Example
 date: 2008-01-06
-tags:
+tag:
 - css
 - misc-web
 ---

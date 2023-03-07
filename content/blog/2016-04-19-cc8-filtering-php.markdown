@@ -1,7 +1,7 @@
 ---
 title: Filtering PHP
 date: 2016-04-19
-tags:
+tag:
 - php
 ---
 I like to think that I'm somewhat of a PHP purist.  And, when I travel to user groups, one of my favorite talks to give is named "Tell Aaron What To Do."  Basically, the goal is to solve two problems I pose using plain HTML and PHP.  Oh, and do it with core PHP, no frameworks, no libraries, just plain vanilla PHP.  At the end, I'll run a number of integration and security tests against the code the group has written to see if we were successful.

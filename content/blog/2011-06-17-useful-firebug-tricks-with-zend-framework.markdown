@@ -1,7 +1,7 @@
 ---
 title: Useful Firebug Tricks with Zend Framework
 date: 2011-06-17
-tags:
+tag:
 - zend-framework
 ---
 Zend Framework has a few hooks with the Firebug browser plugin (with the FirePHP add-on). The two that I use are writing logs to the console and profiling of database connections.

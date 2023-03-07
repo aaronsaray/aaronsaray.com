@@ -1,7 +1,7 @@
 ---
 title: "My site re-design: Simpler, faster, but less user-friendly?"
 date: 2017-04-17
-tags:
+tag:
 - misc-web
 ---
 So, after reading some of my own entries on my blog, I realized that my last re-design made the font kind of hard to read.  Plus, I was reading it on a 27" monitor, and it became hard to keep the long lines of text straight.  So, I opted for a re-design... but not before I looked at my Google Analytics.

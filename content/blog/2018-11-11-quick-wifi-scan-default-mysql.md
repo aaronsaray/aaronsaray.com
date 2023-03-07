@@ -1,7 +1,7 @@
 ---
 title: Quick Local Network Scanner for Default MySQL Installs
 date: 2018-11-11
-tags:
+tag:
 - security
 - mysql
 - nodejs

@@ -1,7 +1,7 @@
 ---
 title: 'Book Review: PHP Frameworks and Applications'
 date: 2012-07-24
-tags:
+tag:
 - php
 - programming
 ---

@@ -1,7 +1,7 @@
 ---
 title: Scanning for Unfiltered Content Automatically with PHP
 date: 2009-09-15
-tags:
+tag:
 - php
 - security
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Zend Framework 1 and jQuery Validate Plugin: how to create password/confirm easily in Zend_Form'
 date: 2013-07-16
-tags:
+tag:
 - jquery
 - zend-framework
 ---

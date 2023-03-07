@@ -1,7 +1,7 @@
 ---
 title: Posting Requests in PHP without CURL
 date: 2008-11-14
-tags:
+tag:
 - php
 ---
 Can it be done? YES!  Luckily, functions like `file_get_contents()` support stream contexts.

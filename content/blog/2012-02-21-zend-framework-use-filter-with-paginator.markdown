@@ -1,7 +1,7 @@
 ---
 title: Zend Framework Use Filter with Paginator
 date: 2012-02-21
-tags:
+tag:
 - zend-framework
 ---
 By default, when using the Zend Paginator, the result set will come back as an array.  If you are using a paginator associated with a database result set, and that db has a class defined for its row, it will come back as that class.  However, if this is not the case, or you are not using information from a database, you may still want a different result than just a plain array.

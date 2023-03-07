@@ -25,7 +25,8 @@
 </section>
 <section class="home-panel home-section">
     <div class="container container-limited">
-        <h2>I write blog entries. A lot of them. In fact, since 2007, I’ve written 639 of them.</h2>
+        <h2>I write blog entries. A lot of them. In fact, since 2007, I’ve written {{ len (where .Site.RegularPages
+            "Section" "blog" )}} of them.</h2>
         <p>
             Topics range from PHP and Laravel, to Javascript and CSS, from business management and developer relations
             to small business process and security. You can read more on <a href="/blog">my blog</a>.

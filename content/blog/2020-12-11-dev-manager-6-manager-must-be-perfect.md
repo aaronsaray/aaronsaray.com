@@ -1,7 +1,7 @@
 ---
 title: A Manager Must Always Be Perfect
 date: 2020-12-11
-tags:
+tag:
 - business
 - management
 ---

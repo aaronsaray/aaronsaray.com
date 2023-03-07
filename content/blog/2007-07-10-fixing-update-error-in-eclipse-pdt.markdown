@@ -1,7 +1,7 @@
 ---
 title: Fixing update error in eclipse PDT
 date: 2007-07-10
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 ---

@@ -1,7 +1,7 @@
 ---
 title: Export Git Project
 date: 2016-06-21
-tags:
+tag:
 - git
 - phpstorm
 ---

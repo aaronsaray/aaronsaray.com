@@ -1,7 +1,7 @@
 ---
 title: Not Everything is Imposter Syndrome
 date: 2018-08-25
-tags:
+tag:
 - business
 ---
 If you're not aware of what [imposter syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) is, let me share a quick synopsis.  Then I'll follow up with why I think the term is being abused.

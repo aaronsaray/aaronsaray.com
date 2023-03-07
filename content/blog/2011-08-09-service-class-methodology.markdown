@@ -1,7 +1,7 @@
 ---
 title: Service Class Methodology
 date: 2011-08-09
-tags:
+tag:
 - programming
 - zend-framework
 ---

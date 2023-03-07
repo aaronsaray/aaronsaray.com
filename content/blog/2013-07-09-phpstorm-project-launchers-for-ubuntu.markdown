@@ -1,7 +1,7 @@
 ---
 title: PHPStorm Project Launchers for Ubuntu
 date: 2013-07-09
-tags:
+tag:
 - ide-and-web-dev-tools
 - linux
 ---

@@ -1,7 +1,7 @@
 ---
 title: Sync BitBucket and GitHub
 date: 2016-06-06
-tags:
+tag:
 - git
 ---
 At my current job, we keep both a private copy of the code in BitBucket (where all of our code resides), and make a few repos public on GitHub.  (Wish I didn't have to do that, but really, GitHub is the premier place to get your code it seems these days.)  So, I decided to come up with a solution to keep both repos up to date as I do my development.

@@ -1,7 +1,7 @@
 ---
 title: Musings on GitHub
 date: 2018-05-28
-tags:
+tag:
 - git
 - misc-web
 ---

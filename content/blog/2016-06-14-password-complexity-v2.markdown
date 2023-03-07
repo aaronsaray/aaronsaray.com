@@ -1,7 +1,7 @@
 ---
 title: Password Complexity v2
 date: 2016-06-14
-tags:
+tag:
 - php
 - ux
 ---

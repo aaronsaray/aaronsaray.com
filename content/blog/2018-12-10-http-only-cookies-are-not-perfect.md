@@ -1,7 +1,7 @@
 ---
 title: HTTP Only Cookies Aren't Perfectly Secure
 date: 2018-12-10
-tags:
+tag:
 - php
 - javascript
 - security

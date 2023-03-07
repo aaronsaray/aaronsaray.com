@@ -1,7 +1,7 @@
 ---
 title: First Confident Coder Column
 date: 2016-02-22
-tags:
+tag:
 - php
 ---
 Sweaty palms, a fast heart rate and an overwhelming sense of dread.  

@@ -1,7 +1,7 @@
 ---
 title: Be Explicit with Your JS Function Parameters
 date: 2018-08-04
-tags:
+tag:
 - javascript
 - react
 - nodejs

@@ -1,7 +1,7 @@
 ---
 title: Theme/Template System in Zend Framework
 date: 2011-05-20
-tags:
+tag:
 - zend-framework
 ---
 Theme systems are very common in projects written on Drupal, Joomla, and Wordpress.  I didn't see much out of the box support for themes in Zend Framework at first.  However, I was wrong.  It's pretty easy.  The only real decision I had to make is if I want to make themes that extend a default theme - or themes that are simple and on their own / totally encapsulated.  I will do the encapsulated version - but give some pointers on how you would do the other version, too!

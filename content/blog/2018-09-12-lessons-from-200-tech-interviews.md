@@ -1,7 +1,7 @@
 ---
 title: Lessons Learned from Conducting more than 200 Technical Interviews
 date: 2018-09-12
-tags:
+tag:
 - business
 - management
 ---

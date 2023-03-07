@@ -1,7 +1,7 @@
 ---
 title: PHPUnit Test Helpers for Mockery and Non-Public Properties
 date: 2017-07-12
-tags:
+tag:
 - php
 - phpunit
 ---

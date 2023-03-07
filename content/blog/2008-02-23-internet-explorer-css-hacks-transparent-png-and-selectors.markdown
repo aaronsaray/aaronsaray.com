@@ -1,7 +1,7 @@
 ---
 title: Internet Explorer CSS Hacks - Transparent PNG and Selectors
 date: 2008-02-23
-tags:
+tag:
 - css
 ---
 As a reference for myself, I wanted to jot these things down.

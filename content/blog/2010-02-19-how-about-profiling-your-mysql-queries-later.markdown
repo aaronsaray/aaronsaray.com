@@ -1,7 +1,7 @@
 ---
 title: How about profiling your mysql queries... later?
 date: 2010-02-19
-tags:
+tag:
 - mysql
 ---
 So the other night I was thinking about using xdebug on my PHP code.  I then totally had a brain explosion:  I'm always forgetting to profile my MySQL queries.  `explain` is a great command for this.  However, as the lazy programmer I am, I don't know if I'm always going to do this on all of my queries.  In an attempt to save myself time, I started brainstorming an idea.

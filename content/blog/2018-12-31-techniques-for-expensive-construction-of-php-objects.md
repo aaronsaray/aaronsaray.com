@@ -1,7 +1,7 @@
 ---
 title: Techniques to Battle Expensive PHP Constructors
 date: 2018-12-31
-tags:
+tag:
 - php
 ---
 Whether you've made the class yourself or you're using a pre-made SDK, there are times when the construction of an object might be expensive.  Expense, in this case, pertains to memory, time, CPU cycles, basically anything that is above baseline.  

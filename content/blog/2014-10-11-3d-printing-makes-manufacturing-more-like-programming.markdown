@@ -1,7 +1,7 @@
 ---
 title: 3D Printing Makes Manufacturing More Like Programming
 date: 2014-10-11
-tags:
+tag:
 - business
 - programming
 ---

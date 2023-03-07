@@ -1,7 +1,7 @@
 ---
 title: Localized dates in php
 date: 2009-01-07
-tags:
+tag:
 - php
 ---
 The PHP Date manual page has a ton of interesting features to format the date that you can display to the user.  However, when you look closer at it, there are actually some really useful modifiers that will help us with our date calculations as well.  

@@ -1,7 +1,7 @@
 ---
 title: Release the quality you'd expect
 date: 2013-02-19
-tags:
+tag:
 - programming
 - misc-web
 - ux

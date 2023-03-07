@@ -1,7 +1,7 @@
 ---
 title: ThatConference Slides
 date: 2012-08-14
-tags:
+tag:
 - php
 ---
 I'm currently at [ThatConference](http://thatconference.com) here at the Kalahari Resort, in Wisconsin Dells.

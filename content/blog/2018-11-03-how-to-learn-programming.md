@@ -1,7 +1,7 @@
 ---
 title: How to Learn Programming
 date: 2018-11-03
-tags:
+tag:
 - programming
 ---
 Over the course of many years, I've heard many variations of the same question "How do I learn programming?"  Normally, I'm caught off-guard. I don't know the answer. Things are constantly changing, and what was around "back then" may not be around now.  Plus, I don't exactly remember all of the steps I took to learn programming.  Finally, the way I learned programming doesn't make sense these days.  Technology is much different - you wouldn't consider dialing into a BBS or reading the manual that came from your computer, would you?

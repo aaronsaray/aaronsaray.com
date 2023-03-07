@@ -1,7 +1,7 @@
 ---
 title: To WWW or not to WWW
 date: 2011-02-15
-tags:
+tag:
 - apache
 - misc-web
 - performance

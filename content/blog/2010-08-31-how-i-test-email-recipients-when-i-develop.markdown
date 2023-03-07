@@ -1,7 +1,7 @@
 ---
 title: How I test email recipients when I develop
 date: 2010-08-31
-tags:
+tag:
 - misc-web
 - php
 ---

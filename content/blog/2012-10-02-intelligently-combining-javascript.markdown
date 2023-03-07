@@ -1,7 +1,7 @@
 ---
 title: Intelligently combining Javascript
 date: 2012-10-02
-tags:
+tag:
 - javascript
 - performance
 ---

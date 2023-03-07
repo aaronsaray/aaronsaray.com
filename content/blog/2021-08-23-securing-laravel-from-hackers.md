@@ -1,7 +1,7 @@
 ---
 title: Securing Laravel from Hackers
 date: 2021-08-23
-tags:
+tag:
 - php
 - laravel
 - security

@@ -1,7 +1,7 @@
 ---
 title: PHP Command Line Shell Experiments
 date: 2007-07-04
-tags:
+tag:
 - php
 ---
 Having been a shell, perl and batch scripter before I started PHP, I've always enjoyed the CLI life.  I actually created an interactive or script-able interface for creating all of my projects at ("the triangle") - hopefully I'll link to it here when I write it up.

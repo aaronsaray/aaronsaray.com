@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main class="container container-limited pb-5">
+    {{ .Content }}
+
+    <ul class="list-inline">
+        {{ range .Data.Terms.ByCount }}
+        <li class="list-inline-item" style="font-size: {{ add 100 .Count }}%">
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a><small class="text-muted"> ({{ .Count }})</small>
+        </li>
+        {{ end }}
+    </ul>
+</main>
+{{ end }}

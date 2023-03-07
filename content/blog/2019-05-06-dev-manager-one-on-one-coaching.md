@@ -1,7 +1,7 @@
 ---
 title: The Dev Manager One on One Coaching
 date: 2019-05-06
-tags:
+tag:
 - business
 - management
 ---

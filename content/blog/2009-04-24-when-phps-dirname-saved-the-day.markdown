@@ -1,7 +1,7 @@
 ---
 title: When PHP's dirname() saved the day
 date: 2009-04-24
-tags:
+tag:
 - php
 - scripting
 ---

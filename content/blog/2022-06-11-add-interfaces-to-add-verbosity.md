@@ -1,7 +1,7 @@
 ---
 title: Add Interfaces to Laravel to Increase Code Readability and Verbosity
 date: 2022-06-11
-tags:
+tag:
 - php
 - laravel
 ---

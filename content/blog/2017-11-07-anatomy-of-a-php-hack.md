@@ -1,7 +1,7 @@
 ---
 title: Anatomy of a PHP Hack
 date: 2017-11-07
-tags:
+tag:
 - php
 - security
 ---

@@ -1,7 +1,7 @@
 ---
 title: PHP Doc for non declared properties in your class
 date: 2011-03-08
-tags:
+tag:
 - misc-web
 - php
 ---

@@ -1,7 +1,7 @@
 ---
 title: I am a Failure
 date: 2016-03-22
-tags:
+tag:
 - business
 ---
 Fair warning - I normally don't write too personally in this blog - but this one is something different.  Something I think people need to read.

@@ -1,7 +1,7 @@
 ---
 title: Create an RSS feed of comments from myspace
 date: 2007-09-08
-tags:
+tag:
 - misc-web
 - php
 - scripting

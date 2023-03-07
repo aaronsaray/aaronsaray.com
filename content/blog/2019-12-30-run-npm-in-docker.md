@@ -1,7 +1,7 @@
 ---
 title: Run NPM in Docker
 date: 2019-12-30
-tags:
+tag:
 - nodejs
 - javascript
 - docker

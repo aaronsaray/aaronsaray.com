@@ -1,7 +1,7 @@
 ---
 title: Keep Data Migrations Separate from Database Migration
 date: 2019-01-07
-tags:
+tag:
 - php
 - laravel
 - mysql

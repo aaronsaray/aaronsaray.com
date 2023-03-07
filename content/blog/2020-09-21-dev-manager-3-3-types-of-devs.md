@@ -1,7 +1,7 @@
 ---
 title: 3 Types of Developers and How to Manage Them
 date: 2020-09-21
-tags:
+tag:
 - business
 - management
 ---

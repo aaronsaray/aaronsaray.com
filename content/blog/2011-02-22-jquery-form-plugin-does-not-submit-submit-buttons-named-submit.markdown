@@ -1,7 +1,7 @@
 ---
 title: jQuery form plugin does not submit submit buttons named submit
 date: 2011-02-22
-tags:
+tag:
 - javascript
 - jquery
 ---

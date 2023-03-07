@@ -1,7 +1,7 @@
 ---
 title: Enable your blog comments already!
 date: 2013-05-21
-tags:
+tag:
 - business
 ---
 Sorry for the mini-rant here...

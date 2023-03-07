@@ -1,7 +1,7 @@
 ---
 title: Live Reloading HTML Webserver
 date: 2019-03-25
-tags:
+tag:
 - html
 - ide-and-web-dev-tools
 ---

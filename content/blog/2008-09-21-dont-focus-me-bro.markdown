@@ -1,7 +1,7 @@
 ---
 title: Don't focus me, bro!
 date: 2008-09-21
-tags:
+tag:
 - javascript
 - misc-web
 ---

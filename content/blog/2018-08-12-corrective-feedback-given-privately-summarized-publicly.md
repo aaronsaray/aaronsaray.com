@@ -1,7 +1,7 @@
 ---
 title: Give Corrective Feedback Privately, Then Summarize Publicly
 date: 2018-08-12
-tags:
+tag:
 - business
 - management
 ---

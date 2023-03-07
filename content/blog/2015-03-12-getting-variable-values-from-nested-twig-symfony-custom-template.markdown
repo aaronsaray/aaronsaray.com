@@ -1,7 +1,7 @@
 ---
 title: Getting variable values from nested twig / symfony custom template
 date: 2015-03-12
-tags:
+tag:
 - php
 - symfony
 ---

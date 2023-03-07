@@ -1,7 +1,7 @@
 ---
 title: Fixing c:\fakepath in filestyle jquery plugin
 date: 2010-03-26
-tags:
+tag:
 - javascript
 - jquery
 ---

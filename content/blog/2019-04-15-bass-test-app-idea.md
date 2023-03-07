@@ -1,7 +1,7 @@
 ---
 title: Bass Test App/Website
 date: 2019-04-15
-tags:
+tag:
 - business
 - javascript
 - ideas

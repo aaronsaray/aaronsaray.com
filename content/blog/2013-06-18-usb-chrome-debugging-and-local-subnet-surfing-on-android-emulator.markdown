@@ -1,7 +1,7 @@
 ---
 title: USB Chrome Debugging and Local subnet surfing on Android Emulator
 date: 2013-06-18
-tags:
+tag:
 - linux
 - mobile
 - scripting

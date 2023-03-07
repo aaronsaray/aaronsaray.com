@@ -1,7 +1,7 @@
 ---
 title: Using custom view scripts for Zend_Form in ZF1
 date: 2012-12-25
-tags:
+tag:
 - zend-framework
 ---
 To start out, I realize that a lot has changed in Zend Framework 2 regarding Zend_Form.  I think there have been a number of interesting changes, but perhaps those changes weren't explained that clearly either.  But I digress.  This piece is about Zend Framework 1.12.x Zend Form - and using view scripts for elements/the form.

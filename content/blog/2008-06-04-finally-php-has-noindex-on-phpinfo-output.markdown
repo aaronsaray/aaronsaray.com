@@ -1,7 +1,7 @@
 ---
 title: Finally - PHP has NoIndex on phpinfo output
 date: 2008-06-04
-tags:
+tag:
 - php
 - security
 ---

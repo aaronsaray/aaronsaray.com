@@ -1,7 +1,7 @@
 ---
 title: CSS3 Only Read More Link
 date: 2015-04-10
-tags:
+tag:
 - css
 ---
 Want a CSS3 **ONLY** read more link?  I think I've created one that should do the trick.

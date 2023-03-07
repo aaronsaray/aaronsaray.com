@@ -1,7 +1,7 @@
 ---
 title: Stop fast taps acting like double-tap-to-zoom
 date: 2015-07-21
-tags:
+tag:
 - javascript
 - jquery
 - mobile

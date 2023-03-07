@@ -1,7 +1,7 @@
 ---
 title: Create Google Advanced Search String
 date: 2007-09-25
-tags:
+tag:
 - google
 - php
 ---

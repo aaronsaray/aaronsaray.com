@@ -1,7 +1,7 @@
 ---
 title: A Better Milwaukee
 date: 2010-07-22
-tags:
+tag:
 - photoshop
 ---
 Artsy? I know - this is a bit non standard of a blog post for me... but bear with me. :)

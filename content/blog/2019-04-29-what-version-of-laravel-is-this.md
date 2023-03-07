@@ -1,7 +1,7 @@
 ---
 title: What Version of Laravel is This?
 date: 2019-04-29
-tags:
+tag:
 - php
 - laravel
 - composer

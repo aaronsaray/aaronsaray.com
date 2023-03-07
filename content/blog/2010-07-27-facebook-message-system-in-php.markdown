@@ -1,7 +1,7 @@
 ---
 title: Facebook Message System - in PHP
 date: 2010-07-27
-tags:
+tag:
 - php
 ---
 {{< call-out/header >}}

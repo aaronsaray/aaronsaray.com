@@ -1,7 +1,7 @@
 ---
 title: The point of custom exceptions
 date: 2012-09-25
-tags:
+tag:
 - php
 - programming
 ---

@@ -1,7 +1,7 @@
 ---
 title: Track Things Done with Alfred (update)
 date: 2019-02-11
-tags:
+tag:
 - business
 ---
 In an [earlier entry]({{< ref "/blog/2017-07-24-track-done-things-with-alfred" >}}) I detailed how I track things I do each day using an [Alfred](https://www.alfredapp.com/) workflow.  Basically, I wanted to track what I did from the Alfred launcher screen, one thing at a time.  The end result was a txt file dated today.  

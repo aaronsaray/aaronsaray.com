@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'Aaron Saray'
 theme = 'aaronsaray'
 
+[taxonomies]
+  tag = 'tag'
+
 [menu]
 [[menu.main]]
   name = 'Home'

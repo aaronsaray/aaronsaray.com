@@ -1,7 +1,7 @@
 ---
 title: Keep Mentoring, Even If It Looks Like No One Cares
 date: 2014-08-18
-tags:
+tag:
 - business
 - management
 ---

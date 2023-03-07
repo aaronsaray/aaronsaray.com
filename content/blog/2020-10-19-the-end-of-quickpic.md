@@ -1,7 +1,7 @@
 ---
 title: The End of QuickPic
 date: 2020-10-19
-tags:
+tag:
 - business
 - archived-projects
 ---

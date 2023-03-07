@@ -1,7 +1,7 @@
 ---
 title: 3 Important Management Books to Read This Quarter
 date: 2020-09-10
-tags:
+tag:
 - business
 - management
 ---

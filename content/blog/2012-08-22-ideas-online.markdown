@@ -1,7 +1,7 @@
 ---
 title: Ideas Online
 date: 2012-08-22
-tags:
+tag:
 - ideas
 - business
 ---

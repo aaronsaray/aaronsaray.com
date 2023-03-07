@@ -1,7 +1,7 @@
 ---
 title: Quick trick for Laravel requests saves tons of time
 date: 2022-09-14
-tags:
+tag:
 - php
 - laravel
 ---

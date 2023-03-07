@@ -1,7 +1,7 @@
 ---
 title: PHPUnit Code Coverage Can Help While Writing Tests
 date: 2020-12-28
-tags:
+tag:
 - php
 - phpunit
 - testing

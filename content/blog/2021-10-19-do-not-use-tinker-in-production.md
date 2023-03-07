@@ -1,7 +1,7 @@
 ---
 title: Do Not Use Laravel Tinker in Production
 date: 2021-10-19
-tags:
+tag:
 - php
 - laravel
 ---

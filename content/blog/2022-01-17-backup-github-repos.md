@@ -1,7 +1,7 @@
 ---
 title: Backup All Your Github Repos Script
 date: 2022-01-17
-tags:
+tag:
 - github
 - nodejs
 ---

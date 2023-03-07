@@ -1,7 +1,7 @@
 ---
 title: Tamper Data Firefox Extension - is it worth it?
 date: 2007-07-04
-tags:
+tag:
 - ide-and-web-dev-tools
 ---
 As you can probably tell from my last test of a firefox extension [here]({{< ref "/blog/2007-06-24-load-time-analyzer-for-firefox" >}}), I am constantly looking for new tools to make my job more accurate (see: lazier).  Another similar extension I came across is [Tamper Data](https://addons.mozilla.org/en-US/firefox/addon/966).  Tamper Data doesn't have a lot of documentation, so it was harder to actually determine the uses of this extension.  Some tutorials on the net claimed that Tamper Data was better than Live Headers or Load Time Analyzer.  So, I decided to try it out.  Lets see some screenshots and some features:

@@ -1,7 +1,7 @@
 ---
 title: Easily Test JSON Keys in Laravel API Response
 date: 2017-06-27
-tags:
+tag:
 - php
 - phpunit
 - laravel

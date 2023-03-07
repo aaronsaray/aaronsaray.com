@@ -1,7 +1,7 @@
 ---
 title: PHP5 Object Oriented Properties - Tested!
 date: 2007-06-22
-tags:
+tag:
 - php
 ---
 I was recently reading an article (while researching for my website monitoring project), and there was a comment about PHP5's lack of flexibility in its Object Oriented usage.  Some people were arguing for it - and some against, the typical ranting that goes on in blog comments, etc.  Instead of joining the argument, I wanted to do my proof of concepts myself.  I'm going to explore (well I already know some of the answers - but it'll be exploration to YOU reader ;)) public/private constructors, magic methods, and maybe a few extras (we'll see when we get to the end!)

@@ -1,7 +1,7 @@
 ---
 title: Please Use Public Accessors in your Object Oriented Programming
 date: 2009-02-04
-tags:
+tag:
 - php
 - programming
 ---

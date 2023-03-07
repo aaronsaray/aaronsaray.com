@@ -1,7 +1,7 @@
 ---
 title: 'UX: On date range, mark only one in error'
 date: 2013-02-26
-tags:
+tag:
 - misc-web
 - ux
 ---

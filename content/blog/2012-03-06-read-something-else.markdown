@@ -1,7 +1,7 @@
 ---
 title: Read Something Else
 date: 2012-03-06
-tags:
+tag:
 - business
 ---
 Many years ago, a business mentor of mine told me that I should "read something else."  I didn't know what he meant so I asked for more.  

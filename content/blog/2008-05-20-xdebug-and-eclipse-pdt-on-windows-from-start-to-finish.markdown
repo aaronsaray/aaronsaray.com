@@ -1,7 +1,7 @@
 ---
 title: XDebug and Eclipse PDT on Windows - From Start to Finish
 date: 2008-05-20
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 - php

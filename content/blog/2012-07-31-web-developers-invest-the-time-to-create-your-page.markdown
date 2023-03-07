@@ -1,7 +1,7 @@
 ---
 title: 'Web Developers: Invest the time to create your page!'
 date: 2012-07-31
-tags:
+tag:
 - business
 - misc-web
 ---

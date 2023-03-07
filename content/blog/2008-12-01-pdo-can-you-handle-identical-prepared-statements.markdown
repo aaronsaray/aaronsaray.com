@@ -1,7 +1,7 @@
 ---
 title: PDO - can you handle identical prepared statements?
 date: 2008-12-01
-tags:
+tag:
 - mysql
 - php
 ---

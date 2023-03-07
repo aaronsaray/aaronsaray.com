@@ -1,7 +1,7 @@
 ---
 title: "Programmers Aren't Being Lazy: They're Reducing Cognitive Load"
 date: 2021-06-14
-tags:
+tag:
 - business
 - programming
 ---

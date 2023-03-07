@@ -1,7 +1,7 @@
 ---
 title: Pass PHP session to a new script using fsockopen
 date: 2007-09-06
-tags:
+tag:
 - apache
 - php
 ---

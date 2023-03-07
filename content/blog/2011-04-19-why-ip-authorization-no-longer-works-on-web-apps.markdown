@@ -1,7 +1,7 @@
 ---
 title: Why IP Authorization No Longer Works on Web Apps
 date: 2011-04-19
-tags:
+tag:
 - misc-web
 - programming
 - security

@@ -1,7 +1,7 @@
 ---
 title: When to be OOP - and how much... Lesson Learned!
 date: 2007-06-26
-tags:
+tag:
 - php
 - misc-web
 ---

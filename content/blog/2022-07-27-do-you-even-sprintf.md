@@ -1,7 +1,7 @@
 ---
 title: Do you even sprintf?
 date: 2022-07-27
-tags:
+tag:
 - php
 ---
 "Do you even lift, bro?!" What a way to ask if you work out while simultaneously insulting you. Well, maybe I shouldn't have named this "do you even sprintf" but it really surprises me how many PHP devs forget about (or don't even know about) this useful tool - and instead do some pretty icky looking string concatenation. Let's take a look at what `sprintf()` can do for us.

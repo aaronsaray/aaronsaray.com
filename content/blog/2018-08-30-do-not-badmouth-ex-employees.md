@@ -1,7 +1,7 @@
 ---
 title: Why Complaining About Bad Ex-Employees Never is Good
 date: 2018-08-30
-tags:
+tag:
 - business
 - management
 ---

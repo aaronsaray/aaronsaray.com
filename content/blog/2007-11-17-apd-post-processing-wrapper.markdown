@@ -1,7 +1,7 @@
 ---
 title: APD post processing wrapper
 date: 2007-11-17
-tags:
+tag:
 - performance
 - php
 - testing

@@ -1,7 +1,7 @@
 ---
 title: Use Anonymous Classes to Test Traits
 date: 2017-05-11
-tags:
+tag:
 - php
 - phpunit
 - testing

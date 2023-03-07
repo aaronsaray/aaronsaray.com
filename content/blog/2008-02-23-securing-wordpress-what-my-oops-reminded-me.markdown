@@ -1,7 +1,7 @@
 ---
 title: Securing Wordpress - what my 'oops' reminded me
 date: 2008-02-23
-tags:
+tag:
 - security
 - wordpress
 ---

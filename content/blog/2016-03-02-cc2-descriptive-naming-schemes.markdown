@@ -1,7 +1,7 @@
 ---
 title: Descriptive Naming Schemes
 date: 2016-03-02
-tags:
+tag:
 - php
 ---
 There are two reactions to reading a new section of code for the first time.  Sadly, one of the most common seems to be of confusion, dismay, followed possibly by some sort of expletive (or many, depending on the length of the code).  The other is one of the most beautiful reactions, the most flattering, the most sought after reaction: "Oh, that makes sense" or "That's cool."

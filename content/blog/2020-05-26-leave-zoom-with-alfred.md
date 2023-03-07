@@ -1,7 +1,7 @@
 ---
 title: Leave Current Zoom Meeting with Alfred App AppleScript
 date: 2020-05-26
-tags:
+tag:
 - macos
 - scripting
 ---

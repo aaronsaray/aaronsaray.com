@@ -1,7 +1,7 @@
 ---
 title: WordPress Meetup Presentation
 date: 2016-04-22
-tags:
+tag:
 - php
 - wordpress
 ---

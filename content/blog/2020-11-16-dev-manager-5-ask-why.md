@@ -1,7 +1,7 @@
 ---
 title: Sometimes Just Ask Why
 date: 2020-11-16
-tags:
+tag:
 - business
 - management
 ---

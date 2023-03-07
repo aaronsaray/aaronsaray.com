@@ -1,7 +1,7 @@
 ---
 title: Combining Print and Screen CSS
 date: 2010-10-05
-tags:
+tag:
 - css
 - misc-web
 ---

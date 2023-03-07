@@ -1,7 +1,7 @@
 ---
 title: Another example of CSRF - in CSS
 date: 2009-03-05
-tags:
+tag:
 - css
 - javascript
 - security

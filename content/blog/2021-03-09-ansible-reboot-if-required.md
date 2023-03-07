@@ -1,7 +1,7 @@
 ---
 title: Ansible Reboot Only If Required
 date: 2021-03-09
-tags:
+tag:
 - linux
 - misc-web
 ---

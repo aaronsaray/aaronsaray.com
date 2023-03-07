@@ -1,7 +1,7 @@
 ---
 title: Extend Zend_Mail to use Views
 date: 2012-03-20
-tags:
+tag:
 - testing
 - zend-framework
 ---

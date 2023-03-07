@@ -1,7 +1,7 @@
 ---
 title: Stop Using Sqlite in Laravel Unit Tests
 date: 2019-11-06
-tags:
+tag:
 - php
 - testing
 ---

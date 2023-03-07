@@ -1,7 +1,7 @@
 ---
 title: Object Cache Class in PHP
 date: 2010-11-16
-tags:
+tag:
 - php
 - programming
 ---

@@ -1,7 +1,7 @@
 ---
 title: Get Better at Logging
 date: 2016-09-27
-tags:
+tag:
 - php
 - misc-web
 ---

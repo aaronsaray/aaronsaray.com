@@ -1,7 +1,7 @@
 ---
 title: CSS fallback for failed Javascript redirect
 date: 2021-05-14
-tags:
+tag:
 - css
 - javascript
 ---

@@ -1,7 +1,7 @@
 ---
 title: Two New useful external tools for Eclipse
 date: 2007-07-19
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 - svn

@@ -1,7 +1,7 @@
 ---
 title: Stop Using Assert Database Has in Laravel
 date: 2020-04-24
-tags:
+tag:
 - php
 - laravel
 - phpunit

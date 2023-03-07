@@ -1,7 +1,7 @@
 ---
 title: Your team isn't the only special one
 date: 2022-08-08
-tags:
+tag:
 - business
 ---
 I was watching [Bar Rescue](https://www.paramountnetwork.com/shows/bar-rescue) (please don't tell anyone) and a bartender said exactly the same thing about his job as a programmer I was just talking to... turns out they had a surprising thing in common.

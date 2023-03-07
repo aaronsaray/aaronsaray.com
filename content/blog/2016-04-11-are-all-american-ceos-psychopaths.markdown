@@ -1,7 +1,7 @@
 ---
 title: Are All American CEO's Psychopaths?
 date: 2016-04-11
-tags:
+tag:
 - business
 ---
 Are all American CEO's psychopaths?  It is a very interesting question - one that I tackled in 2012 when I was finishing my capstone at Cardinal Stritch University.  

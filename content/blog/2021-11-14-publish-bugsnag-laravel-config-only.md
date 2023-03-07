@@ -1,7 +1,7 @@
 ---
 title: Publish Bugsnag's Laravel Configuration Only
 date: 2021-11-14
-tags:
+tag:
 - php
 - laravel
 ---

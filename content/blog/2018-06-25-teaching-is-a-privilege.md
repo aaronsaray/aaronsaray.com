@@ -1,7 +1,7 @@
 ---
 title: Teaching is a Privilege, Treat it as Such
 date: 2018-06-25
-tags:
+tag:
 - business
 ---
 I've been to conferences where I've shelled out my hard-earned money to attend, been to free local meetups, and all kinds of presentations in between.  One thing that I've heard more than once, though, is a variation of this:

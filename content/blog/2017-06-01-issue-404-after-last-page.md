@@ -1,7 +1,7 @@
 ---
 title: Issue 404 Not Found Middleware After Pagination Limit
 date: 2017-06-01
-tags:
+tag:
 - php
 - laravel
 ---

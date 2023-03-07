@@ -1,7 +1,7 @@
 ---
 title: HTML5, CSS3, Javascript ONLY Photobooth with Image Download
 date: 2013-06-11
-tags:
+tag:
 - css
 - html
 - javascript

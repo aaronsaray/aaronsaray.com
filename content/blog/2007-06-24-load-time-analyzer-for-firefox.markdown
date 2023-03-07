@@ -1,7 +1,7 @@
 ---
 title: Load Time Analyzer for Firefox
 date: 2007-06-24
-tags:
+tag:
 - ide-and-web-dev-tools
 - performance
 ---

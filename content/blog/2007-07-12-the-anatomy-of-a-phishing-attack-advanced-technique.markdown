@@ -1,7 +1,7 @@
 ---
 title: The anatomy of a phishing attack - advanced technique
 date: 2007-07-12
-tags:
+tag:
 - security
 ---
 So many phishing attempts lately are just purely pathetic - easy to guess and figure out, mis spelling and grammar issues and just poorly fashioned websites.  Although these will work on the novice web surfer, can a clever criminal actually create a phishing site/scenario that can trap the experienced members in your IT department?  

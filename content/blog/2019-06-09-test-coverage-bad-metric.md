@@ -1,7 +1,7 @@
 ---
 title: Test Coverage is Not as Good of a Metric as You Think
 date: 2019-06-09
-tags:
+tag:
 - php
 - phpunit
 - testing

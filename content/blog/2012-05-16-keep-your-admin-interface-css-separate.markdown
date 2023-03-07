@@ -1,7 +1,7 @@
 ---
 title: Keep your Admin Interface CSS Separate
 date: 2012-05-16
-tags:
+tag:
 - css
 - performance
 - security

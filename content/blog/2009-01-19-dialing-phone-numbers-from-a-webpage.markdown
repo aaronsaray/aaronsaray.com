@@ -1,7 +1,7 @@
 ---
 title: Dialing Phone Numbers from a Webpage
 date: 2009-01-19
-tags:
+tag:
 - mobile
 ---
 I've recently been investigating making some better mobile accessible pages for some of my projects.  I've seen pages that allow you to dial a phone number directly from the webpage - so I thought I'd investigate...

@@ -1,7 +1,7 @@
 ---
 title: A Better Understanding of Error Reporting in PHP
 date: 2007-07-19
-tags:
+tag:
 - php
 ---
 While working on a website for ("the triangle"), I came to a page running locally that just stopped - blank.  This particular website was not using output buffering - so there is no excuse for a blank page.  

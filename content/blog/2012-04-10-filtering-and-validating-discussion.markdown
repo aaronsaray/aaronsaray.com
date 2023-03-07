@@ -1,7 +1,7 @@
 ---
 title: Filtering and Validating Discussion
 date: 2012-04-10
-tags:
+tag:
 - business
 - programming
 - security

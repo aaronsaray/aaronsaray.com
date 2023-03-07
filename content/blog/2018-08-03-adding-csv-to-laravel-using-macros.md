@@ -1,7 +1,7 @@
 ---
 title: Adding CSV Responses to Laravel Using Macros
 date: 2018-08-03
-tags:
+tag:
 - php
 - laravel
 ---

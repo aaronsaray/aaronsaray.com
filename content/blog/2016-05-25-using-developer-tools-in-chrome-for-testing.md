@@ -1,7 +1,7 @@
 ---
 title: Using Developer Tools in Chrome for Testing
 date: 2016-05-25
-tags:
+tag:
 - misc-web
 - testing
 ---

@@ -1,7 +1,7 @@
 ---
 title: Real world stories of a prepared statement
 date: 2007-07-06
-tags:
+tag:
 - php
 - sql
 ---

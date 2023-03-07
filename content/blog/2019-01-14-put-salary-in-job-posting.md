@@ -1,7 +1,7 @@
 ---
 title: Put Your Salary Range in Your Job Posting, Please!
 date: 2019-01-14
-tags:
+tag:
 - business
 - management
 ---

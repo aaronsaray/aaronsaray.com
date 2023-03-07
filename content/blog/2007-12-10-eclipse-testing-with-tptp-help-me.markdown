@@ -1,7 +1,7 @@
 ---
 title: Eclipse Testing with TPTP - help me?
 date: 2007-12-10
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 - programming

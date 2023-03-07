@@ -1,7 +1,7 @@
 ---
 title: 'Idea: CMS agnostic cloud storage plugin'
 date: 2013-08-27
-tags:
+tag:
 - business
 - ideas
 ---

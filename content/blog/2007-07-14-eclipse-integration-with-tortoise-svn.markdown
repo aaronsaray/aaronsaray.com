@@ -1,7 +1,7 @@
 ---
 title: Eclipse Integration with Tortoise SVN
 date: 2007-07-14
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 - svn

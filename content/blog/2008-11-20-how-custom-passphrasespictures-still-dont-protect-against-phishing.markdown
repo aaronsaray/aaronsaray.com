@@ -1,7 +1,7 @@
 ---
 title: How custom passphrases/pictures still don't protect against phishing
 date: 2008-11-20
-tags:
+tag:
 - security
 ---
 As you probably remember, I have lots of interest in phishing techniques (I talked about one [here](/blog/2007/07/11/the-anatomy-of-a-phishing-attack-advanced-technique/), and preventing them [here](/blog/2007/07/11/the-top-17-ways-to-help-eliminate-the-phishing-threat/)).  I've noticed a new trend: a dual stage login form with a custom picture or passphrase.  Users are to gain trust in the login page because their custom configured option is displayed.  The more I started thinking about this, however, I kept seeing an issue - this still can be easily phished!  

@@ -1,7 +1,7 @@
 ---
 title: Keep user's scroll position in scrollable div
 date: 2015-06-23
-tags:
+tag:
 - javascript
 - jquery
 ---

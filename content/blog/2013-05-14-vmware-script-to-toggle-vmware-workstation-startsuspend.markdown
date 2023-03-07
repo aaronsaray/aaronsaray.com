@@ -1,7 +1,7 @@
 ---
 title: VMWare Script to Toggle VMWare Workstation start/suspend
 date: 2013-05-14
-tags:
+tag:
 - linux
 - scripting
 ---

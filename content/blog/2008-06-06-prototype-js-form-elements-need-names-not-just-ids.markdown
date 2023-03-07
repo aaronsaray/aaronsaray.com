@@ -1,7 +1,7 @@
 ---
 title: Prototype JS - form elements need names, not just IDs
 date: 2008-06-06
-tags:
+tag:
 - javascript
 ---
 So, I got stuck on this bug for an hour - so I thought I'd write it down.

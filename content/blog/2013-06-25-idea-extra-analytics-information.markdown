@@ -1,7 +1,7 @@
 ---
 title: 'Idea: Extra Analytics Information'
 date: 2013-06-25
-tags:
+tag:
 - business
 - ideas
 ---

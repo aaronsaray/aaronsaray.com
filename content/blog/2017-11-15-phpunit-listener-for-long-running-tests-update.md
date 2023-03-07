@@ -1,7 +1,7 @@
 ---
 title: PHPUnit Listener for Long Running Tests Update
 date: 2017-11-15
-tags:
+tag:
 - php
 - phpunit
 ---

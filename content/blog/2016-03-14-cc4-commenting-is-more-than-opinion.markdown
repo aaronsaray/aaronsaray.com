@@ -1,7 +1,7 @@
 ---
 title: Commenting is More than Opinion
 date: 2016-03-14
-tags:
+tag:
 - php
 ---
 In an earlier column, I discussed the advantage of using longer and more verbose variable and method names.  When you program using this more descriptive style, the code is easier to understand and more maintainable.  However, a short and concise method with a revealing name may not always be sufficient when it comes to complex processes.  To fill this gap, PHP has comments.  

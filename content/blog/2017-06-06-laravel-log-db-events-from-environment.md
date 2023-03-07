@@ -1,7 +1,7 @@
 ---
 title: Laravel Log Database Queries Based On Environment Variable
 date: 2017-06-06
-tags:
+tag:
 - php
 - laravel
 ---

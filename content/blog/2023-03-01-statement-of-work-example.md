@@ -1,7 +1,7 @@
 ---
 title: Statement of Work Example
 date: 2023-03-01T12:00:00
-tags:
+tag:
 - business
 ---
 Whether you're on the side that just landed the big deal - or you're the business eager to get your project launched - you need to know what a statement of work is.  Let's talk about contracts and statements of work for developers.

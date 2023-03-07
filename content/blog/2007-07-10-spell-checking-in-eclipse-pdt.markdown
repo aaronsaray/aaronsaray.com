@@ -1,7 +1,7 @@
 ---
 title: Spell Checking in Eclipse PDT
 date: 2007-07-10
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 - sql

@@ -1,7 +1,7 @@
 ---
 title: What Have I Been Working on Lately?
 date: 2021-07-14
-tags:
+tag:
 - business
 ---
 I've been working on a lot of things lately - I thought it might be nice to do a quick run down of what those are.

@@ -1,7 +1,7 @@
 ---
 title: Slowing Down My Blog Frequency
 date: 2013-10-16
-tags:
+tag:
 - news
 ---
 So a couple years ago, I made a commitment to blog once a week for the foreseeable future.  I posted a new entry every Tuesday.  I kept to this pretty good.  I may have missed two or three Tuesdays over the course of many years.  I am proud of my goal, I did what I started out to do.

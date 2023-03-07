@@ -1,7 +1,7 @@
 ---
 title: The Many Ways to Remove a Composer Package
 date: 2019-04-22
-tags:
+tag:
 - php
 - composer
 ---

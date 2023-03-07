@@ -1,7 +1,7 @@
 ---
 title: Milwaukee PHP Users Group
 date: 2010-02-09
-tags:
+tag:
 - business
 ---
 I started the Milwaukee PHP Users group a few weeks ago.  Unfortunately, today we had to cancel a meeting because of the outpouring of snow... but it's on for the 4th tuesday of the month.

@@ -1,7 +1,7 @@
 ---
 title: CSS incompatibility finder
 date: 2008-09-25
-tags:
+tag:
 - css
 - php
 ---

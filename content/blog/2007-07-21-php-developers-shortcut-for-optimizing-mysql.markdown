@@ -1,7 +1,7 @@
 ---
 title: PHP developer's shortcut for optimizing mysql
 date: 2007-07-21
-tags:
+tag:
 - php
 - sql
 ---

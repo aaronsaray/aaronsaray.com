@@ -1,7 +1,7 @@
 ---
 title: Convert from VMWare Player to VMWare Server
 date: 2008-09-02
-tags:
+tag:
 - ide-and-web-dev-tools
 - windows
 ---

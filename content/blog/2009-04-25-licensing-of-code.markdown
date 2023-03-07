@@ -1,7 +1,7 @@
 ---
 title: Licensing of Code
 date: 2009-04-25
-tags:
+tag:
 - programming
 ---
 **UPDATE** As of 2023, all content is now licensed Creative Commons.  See the footer for more details.

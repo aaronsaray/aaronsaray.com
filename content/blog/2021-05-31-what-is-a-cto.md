@@ -1,7 +1,7 @@
 ---
 title: What is a CTO? What do they do?
 date: 2021-05-31
-tags:
+tag:
 - business
 - management
 ---

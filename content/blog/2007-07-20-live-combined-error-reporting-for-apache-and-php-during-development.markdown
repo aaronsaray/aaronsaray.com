@@ -1,7 +1,7 @@
 ---
 title: Live Combined Error Reporting for Apache and PHP during Development
 date: 2007-07-20
-tags:
+tag:
 - apache
 - eclipse-pdt
 - ide-and-web-dev-tools

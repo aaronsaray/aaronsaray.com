@@ -1,7 +1,7 @@
 ---
 title: The Chicken or the Egg of Hacking Your Software
 date: 2016-07-26
-tags:
+tag:
 - business
 - security
 ---

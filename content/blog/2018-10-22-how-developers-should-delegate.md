@@ -1,7 +1,7 @@
 ---
 title: How Developers Should Delegate
 date: 2018-10-22
-tags:
+tag:
 - business
 - management
 ---

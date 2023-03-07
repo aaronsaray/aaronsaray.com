@@ -1,7 +1,7 @@
 ---
 title: Block and Allow IP with iptables - simple script
 date: 2009-11-25
-tags:
+tag:
 - linux
 - scripting
 ---

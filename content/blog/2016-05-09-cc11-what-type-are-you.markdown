@@ -1,7 +1,7 @@
 ---
 title: What "type" are you?
 date: 2016-05-09
-tags:
+tag:
 - php
 ---
 When I went to a University for a Computer Science degree, a required class was Introduction to Java Programming.  I remember the first thing the professor taught seemed very confusing at the time.  I can still hear his voice very clearly: "So to begin with, we'll type... string string equals new string."  

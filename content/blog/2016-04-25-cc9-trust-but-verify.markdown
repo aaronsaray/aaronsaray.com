@@ -1,7 +1,7 @@
 ---
 title: Trust, But Verify
 date: 2016-04-25
-tags:
+tag:
 - php
 ---
 "Trust falls" are a team-building activity that some of my friends have had to endure.  I've been threatened with this exercise a few times.  But, I've never had to do it.  Luckily, I've been able to convince my team members I will participate without having to test their bicep and shoulder strength.  Or, perhaps I'm just not trusting enough.  (I once worked at a place that had a few employees that were really good friends and would force-trust-fall on each other.  When a group of colleagues were walking in a row, one would just throw himself backwards into the person behind him surprising them and shouting "trust fall!"  This was the only "trust fall" that I was forced to participate in.)  

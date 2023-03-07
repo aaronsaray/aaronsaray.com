@@ -1,7 +1,7 @@
 ---
 title: JfbConsole - chainable Firebug Console jQuery plugin
 date: 2009-11-13
-tags:
+tag:
 - javascript
 - jquery
 ---

@@ -1,7 +1,7 @@
 ---
 title: Cross Domain AJAX - A quick anatomy of a mashup
 date: 2007-09-19
-tags:
+tag:
 - ajax
 - apache
 - javascript

@@ -1,7 +1,7 @@
 ---
 title: Integrating PHP QA Tools with Phing
 date: 2013-06-04
-tags:
+tag:
 - ide-and-web-dev-tools
 - phpunit
 ---

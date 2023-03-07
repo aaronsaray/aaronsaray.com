@@ -1,7 +1,7 @@
 ---
 title: Laravel 5.4 API/Request Validate Boolean
 date: 2017-11-17
-tags:
+tag:
 - php
 - laravel
 ---

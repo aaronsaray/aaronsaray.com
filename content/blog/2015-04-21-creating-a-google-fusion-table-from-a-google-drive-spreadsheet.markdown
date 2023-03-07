@@ -1,7 +1,7 @@
 ---
 title: Creating a Google Fusion Table from a Google Drive Spreadsheet
 date: 2015-04-21
-tags:
+tag:
 - business
 - misc-web
 ---

@@ -1,7 +1,7 @@
 ---
 title: Tools of the trade
 date: 2007-09-01
-tags:
+tag:
 - ide-and-web-dev-tools
 - misc-web
 ---

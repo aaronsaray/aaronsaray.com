@@ -1,7 +1,7 @@
 ---
 title: 'Services, Mappers, Models: Enterprise Thinking in PHP {presentation}'
 date: 2012-10-09
-tags:
+tag:
 - php
 - programming
 ---

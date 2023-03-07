@@ -1,7 +1,7 @@
 ---
 title: Composer-based Utility Installs vs Global Installs
 date: 2015-05-11
-tags:
+tag:
 - phpunit
 - php
 - composer

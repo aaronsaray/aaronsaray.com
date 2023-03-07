@@ -1,7 +1,7 @@
 ---
 title: 'Trac Bookmarklet: load ticket number easily'
 date: 2009-01-31
-tags:
+tag:
 - ide-and-web-dev-tools
 ---
 While communicating with other coworkers, they generally just give me a trac ticket # and not the full URL.  And, as a lazy programmer, I hate typing in the full URL or loading up trac and searching the #.  

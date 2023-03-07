@@ -1,7 +1,7 @@
 ---
 title: When uniqid is too slow in PHP
 date: 2010-06-08
-tags:
+tag:
 - php
 ---
 I just profiled some of my code and found out that the biggest chunk of my processing time was used by [`uniqid()`](http://php.net/uniqid).  I use this to generate form tokens to prevent cross site request forgeries.  On one page, I have 6 forms each with its own unique `uniqid()`.

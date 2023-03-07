@@ -1,7 +1,7 @@
 ---
 title: Quick performance test with apache's ab
 date: 2013-03-12
-tags:
+tag:
 - apache
 - performance
 ---

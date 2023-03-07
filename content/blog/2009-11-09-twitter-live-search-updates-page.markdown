@@ -1,7 +1,7 @@
 ---
 title: Twitter live search updates page
 date: 2009-11-09
-tags:
+tag:
 - javascript
 - twitter
 ---

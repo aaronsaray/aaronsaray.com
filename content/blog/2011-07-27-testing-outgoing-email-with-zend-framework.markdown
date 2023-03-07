@@ -1,7 +1,7 @@
 ---
 title: Testing Outgoing Email with Zend Framework
 date: 2011-07-27
-tags:
+tag:
 - testing
 - zend-framework
 ---

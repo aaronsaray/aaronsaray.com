@@ -2,7 +2,7 @@
 slug: group-coding-results-tech-on-tap-version
 title: 'Group Coding Results: Tech on Tap Version'
 date: 2013-10-16
-tags:
+tag:
 - php
 ---
 I actually very much enjoy spreading “the word” on PHP. I go to a lot of conferences, and present a lot. One of the most interesting concepts I've developed lately, however, is not a presentation but more of a group coding session. This is how it goes...

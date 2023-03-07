@@ -1,7 +1,7 @@
 ---
 title: OS X Yosemite Android Studio Android SDK location
 date: 2015-04-08
-tags:
+tag:
 - mobile
 ---
 No long rambling here.  Just can't believe it took me this long to find this.  Seriously, all the documentation I found was wrong.

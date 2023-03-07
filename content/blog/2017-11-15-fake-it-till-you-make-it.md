@@ -1,7 +1,7 @@
 ---
 title: Fake It Till You Make It
 date: 2017-11-15
-tags:
+tag:
 - business
 ---
 You've heard the saying before: "Fake it till you make it."  I agree with this philosophy - especially when it comes to getting a great programming job.  But, I think the way you 'fake' it is important.  It's important to fake it ethically.  Let's discuss.

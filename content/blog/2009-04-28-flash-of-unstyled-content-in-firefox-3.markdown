@@ -1,7 +1,7 @@
 ---
 title: Flash of Unstyled Content - in FireFox 3
 date: 2009-04-28
-tags:
+tag:
 - css
 - html
 - javascript

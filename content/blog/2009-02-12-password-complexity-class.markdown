@@ -1,7 +1,7 @@
 ---
 title: Password Complexity Class
 date: 2009-02-12
-tags:
+tag:
 - php
 - security
 ---

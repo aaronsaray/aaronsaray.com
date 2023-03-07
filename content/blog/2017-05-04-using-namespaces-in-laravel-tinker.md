@@ -1,7 +1,7 @@
 ---
 title: Using Namespaces in Laravel Tinker
 date: 2017-05-04
-tags:
+tag:
 - php
 - laravel
 ---

@@ -1,7 +1,7 @@
 ---
 title: PHPStorm File Watcher for Immediate Error Log Alerts
 date: 2017-07-05
-tags:
+tag:
 - php
 - phpstorm
 ---

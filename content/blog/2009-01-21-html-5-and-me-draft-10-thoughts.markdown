@@ -1,7 +1,7 @@
 ---
 title: HTML 5 and Me - Draft 10 thoughts
 date: 2009-01-21
-tags:
+tag:
 - html
 ---
 I thought I'd ramble on a bit about my thoughts on the HTML5 differences from HTML4 draft from working draft 10 in June 2008.  You can find it - or the newest one - here: [html5 diff](http://www.w3.org/TR/html5-diff/).

@@ -1,7 +1,7 @@
 ---
 title: Always Keep Learning
 date: 2017-10-02
-tags:
+tag:
 - business
 - misc-web
 ---

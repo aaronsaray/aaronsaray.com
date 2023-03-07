@@ -1,7 +1,7 @@
 ---
 title: 'The Observer Pattern in PHP: Refactored'
 date: 2008-11-22
-tags:
+tag:
 - php
 ---
 You may remember the article I wrote about the observer pattern in php - but it lacked some of PHP's advanced features.

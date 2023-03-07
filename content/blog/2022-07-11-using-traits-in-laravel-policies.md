@@ -1,7 +1,7 @@
 ---
 title: Use Traits in Laravel in Policies
 date: 2022-07-11
-tags:
+tag:
 - php
 - laravel
 ---

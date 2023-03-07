@@ -1,7 +1,7 @@
 ---
 title: Reasons Why Not to Use Doctrine with Laravel
 date: 2019-11-16
-tags:
+tag:
 - php
 - laravel
 ---

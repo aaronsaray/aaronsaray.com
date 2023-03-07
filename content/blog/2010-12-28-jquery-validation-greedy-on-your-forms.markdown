@@ -1,7 +1,7 @@
 ---
 title: jQuery Validation - greedy on your forms?
 date: 2010-12-28
-tags:
+tag:
 - javascript
 - jquery
 ---

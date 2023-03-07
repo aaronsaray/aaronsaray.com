@@ -1,7 +1,7 @@
 ---
 title: How to make a Great MySpace Layout
 date: 2007-04-04
-tags:
+tag:
 - css
 - html
 - php

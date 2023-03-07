@@ -1,7 +1,7 @@
 ---
 title: Restrict your .git directory on live site
 date: 2010-06-15
-tags:
+tag:
 - git
 - security
 ---

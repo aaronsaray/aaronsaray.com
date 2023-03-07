@@ -1,7 +1,7 @@
 ---
 title: 1 Quick Tip to Decide Which Type of Unit Test to Create
 date: 2021-04-19
-tags:
+tag:
 - testing
 ---
 Should I be writing more unit tests? Integration Tests? End to End tests? I can't answer this completely, but I can give you one tip to help you decide 80% of the time.

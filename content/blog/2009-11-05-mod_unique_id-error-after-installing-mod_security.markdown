@@ -1,7 +1,7 @@
 ---
 title: mod_unique_id error after installing mod_security
 date: 2009-11-05
-tags:
+tag:
 - apache
 ---
 After installing my `mod_security` module for apache, I could not restart my apache server.

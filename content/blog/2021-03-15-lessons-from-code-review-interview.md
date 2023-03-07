@@ -1,7 +1,7 @@
 ---
 title: What I Learned From Giving a Few Interactive Code Review Interviews
 date: 2021-03-15
-tags:
+tag:
 - business
 ---
 Never one to be afraid of pointing out my flaws, I think it's time to share what I learned from doing a few interactive code review interviews. It may still be a great idea, but it's much more difficult than I thought.

@@ -1,7 +1,7 @@
 ---
 title: Host PHPUnit Code Coverage Image in Your Repo
 date: 2020-12-15
-tags:
+tag:
 - php
 - testing
 - git

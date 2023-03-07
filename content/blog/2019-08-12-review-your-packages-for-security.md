@@ -1,7 +1,7 @@
 ---
 title: Remember to Review Your Package Code for Security
 date: 2019-08-12
-tags:
+tag:
 - php
 - laravel
 - security

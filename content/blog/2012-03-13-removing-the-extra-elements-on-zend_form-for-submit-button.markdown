@@ -1,7 +1,7 @@
 ---
 title: Removing the extra elements on Zend_Form for Submit Button
 date: 2012-03-13
-tags:
+tag:
 - zend-framework
 ---
 Have you ever used Zend Form, created a submit button, and had a few extra tags that were just throwing you off?  I know you have...  You probably did it like me:

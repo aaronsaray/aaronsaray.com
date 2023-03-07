@@ -1,7 +1,7 @@
 ---
 title: Array Key Accuracy
 date: 2016-03-10
-tags:
+tag:
 - php
 ---
 Bugs in code suck.  It's bad enough when you misspell a function or forget a semi-colon.  That's embarrassing and annoying.  But what's worse is when you write code that seems to work fine, is syntactically correct, yet still has a bug.  You know you did it right, but somehow it's also wrong.  That's not good.  That makes me paranoid and second guess the rest of my work.  That doesn't help me be a Confident Coder at all.

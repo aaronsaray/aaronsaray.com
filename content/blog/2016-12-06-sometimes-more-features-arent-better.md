@@ -1,7 +1,7 @@
 ---
 title: "Startups - take note: Sometimes More Features Aren't Better"
 date: 2016-12-06
-tags:
+tag:
 - business
 ---
 "The real reason we're not successful or getting a bunch of sales, is because we're missing feature X, Y and Z! Add them immediately!"

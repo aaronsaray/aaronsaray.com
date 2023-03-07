@@ -1,7 +1,7 @@
 ---
 title: Setting PHP Command Line Colors
 date: 2011-12-14
-tags:
+tag:
 - php
 ---
 I'm not entirely certain why this escaped me for so long, but it's remarkably easy to set terminal colors with PHP.  

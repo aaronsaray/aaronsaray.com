@@ -1,7 +1,7 @@
 ---
 title: 'Elgg Plugin: Friend AutoComplete Box Replaces Select Box'
 date: 2009-05-31
-tags:
+tag:
 - elgg
 - php
 ---

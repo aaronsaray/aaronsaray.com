@@ -1,7 +1,7 @@
 ---
 title: In PHP, False is Sometimes True
 date: 2017-05-23
-tags:
+tag:
 - php
 ---
 Sometimes it's the little things that get you.  This is more of just a reminder than anything else.  One of the fun quirks (and I hesitate to call it a quirk because it's technically working as defined) in PHP.

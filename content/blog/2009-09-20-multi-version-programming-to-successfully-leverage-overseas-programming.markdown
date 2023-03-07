@@ -1,7 +1,7 @@
 ---
 title: Multi-Version Programming to Successfully Leverage Overseas Programming
 date: 2009-09-20
-tags:
+tag:
 - business
 - programming
 ---

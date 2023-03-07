@@ -1,7 +1,7 @@
 ---
 title: Type-Safe PHP? Hrm...
 date: 2007-07-03
-tags:
+tag:
 - php
 ---
 As you can probably remember, lately I've been writing about PHP's object handling, patterns, etc.  - but I lightly glossed over the whole forced typing of variables - and how that relates to PHP.  While looking for solutions to this, I came across a great blog entry that solves this issue - but I've gotta bring up some counter points... Finally, I'm also wondering: what are the real important needs for a strongly typed object?

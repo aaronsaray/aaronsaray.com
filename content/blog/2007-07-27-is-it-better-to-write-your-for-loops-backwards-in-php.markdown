@@ -1,7 +1,7 @@
 ---
 title: Is it better to write your 'for' loops backwards in PHP?
 date: 2007-07-27
-tags:
+tag:
 - performance
 - php
 ---

@@ -1,7 +1,7 @@
 ---
 title: Conway's Game of Life - In Javascript
 date: 2013-01-22
-tags:
+tag:
 - javascript
 - programming
 ---

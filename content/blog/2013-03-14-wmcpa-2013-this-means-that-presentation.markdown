@@ -1,7 +1,7 @@
 ---
 title: 'WMCPA 2013: This Means That Presentation'
 date: 2013-03-14
-tags:
+tag:
 - php
 ---
 This means that: how to translate between PHP and System-i lingo.

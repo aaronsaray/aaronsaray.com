@@ -1,7 +1,7 @@
 ---
 title: 'Update your URL filtering: possible XSS from "Data" URL scheme - Firefox'
 date: 2008-03-18
-tags:
+tag:
 - html
 - javascript
 - security

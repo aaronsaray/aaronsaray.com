@@ -1,7 +1,7 @@
 ---
 title: Conditional Comments - fix blocking
 date: 2010-11-23
-tags:
+tag:
 - html
 - misc-web
 ---

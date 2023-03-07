@@ -1,7 +1,7 @@
 ---
 title: Rockstar Coders are Ruining Your Business
 date: 2017-11-17
-tags:
+tag:
 - programming
 - business
 - management

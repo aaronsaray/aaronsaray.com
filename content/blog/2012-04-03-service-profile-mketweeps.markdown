@@ -1,7 +1,7 @@
 ---
 title: 'Service profile: mketweeps'
 date: 2012-04-03
-tags:
+tag:
 - archived-projects
 - business
 - misc-web

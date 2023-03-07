@@ -1,7 +1,7 @@
 ---
 title: Should you unit test your dependency container?
 date: 2015-04-05
-tags:
+tag:
 - php
 - phpunit
 - programming

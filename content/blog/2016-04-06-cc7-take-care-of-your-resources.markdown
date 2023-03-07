@@ -1,7 +1,7 @@
 ---
 title: Take Care of Your Resources
 date: 2016-04-06
-tags:
+tag:
 - php
 ---
 I'm going to say something that I never thought I'd say in my life.  In fact, I'm not sure that a single programmer has ever said this!  Ready?  

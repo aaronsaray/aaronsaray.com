@@ -1,7 +1,7 @@
 ---
 title: Remove .svn folders from Eclipse Project Explorer
 date: 2011-04-26
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 ---

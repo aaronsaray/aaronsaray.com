@@ -1,7 +1,7 @@
 ---
 title: Get All iMessage Attachments
 date: 2018-06-04
-tags:
+tag:
 - php
 - macos
 ---

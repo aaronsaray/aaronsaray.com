@@ -1,7 +1,7 @@
 ---
 title: Rely on Google for your Javascript?
 date: 2009-02-26
-tags:
+tag:
 - javascript
 - misc-web
 ---

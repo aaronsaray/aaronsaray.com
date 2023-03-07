@@ -1,7 +1,7 @@
 ---
 title: Make Face-to-Face Work
 date: 2020-10-26
-tags:
+tag:
 - business
 - management
 ---

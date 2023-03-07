@@ -1,7 +1,7 @@
 ---
 title: Have Informed Opinions
 date: 2019-04-08
-tags:
+tag:
 - business
 - programming
 ---

@@ -1,7 +1,7 @@
 ---
 title: Show the right files in PHP Explorer
 date: 2007-07-12
-tags:
+tag:
 - eclipse-pdt
 - ide-and-web-dev-tools
 ---

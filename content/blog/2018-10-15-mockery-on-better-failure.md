@@ -1,7 +1,7 @@
 ---
 title: Better failing tests with Mockery::on()
 date: 2018-10-15
-tags:
+tag:
 - php
 - testing
 - mockery

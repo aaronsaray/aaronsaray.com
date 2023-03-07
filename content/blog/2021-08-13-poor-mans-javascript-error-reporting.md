@@ -1,7 +1,7 @@
 ---
 title: Poor Man's Javascript Error Reporter
 date: 2021-08-13
-tags:
+tag:
 - javascript
 ---
 If you want to track errors in your production Javascript (which you should), you should use a fully-baked service like [BugSnag](https://www.bugsnag.com/).  If you can't, there's at least one other thing you could try: a poor man's javascript error reporter.

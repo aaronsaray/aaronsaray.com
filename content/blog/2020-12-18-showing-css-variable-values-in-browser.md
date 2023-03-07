@@ -1,7 +1,7 @@
 ---
 title: Seeing Calculated Values of CSS Variables in Browsers
 date: 2020-12-18
-tags:
+tag:
 - misc-web
 - css
 ---

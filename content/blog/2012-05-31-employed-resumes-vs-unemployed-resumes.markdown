@@ -1,7 +1,7 @@
 ---
 title: Employed Resumes vs Unemployed Resumes
 date: 2012-05-31
-tags:
+tag:
 - business
 ---
 There are two types of resumes out there: employed resumes vs unemployed resumes.  Or that is to say bragging resumes vs qualifications resumes.  There is a time and place for both... and mixing them up may not be in your best interest.

@@ -1,7 +1,7 @@
 ---
 title: Filtering User Input/Output in Zend Framework
 date: 2012-06-26
-tags:
+tag:
 - security
 - zend-framework
 ---

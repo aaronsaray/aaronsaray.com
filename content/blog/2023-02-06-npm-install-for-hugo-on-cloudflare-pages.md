@@ -1,7 +1,7 @@
 ---
 title: NPM Install for Hugo Theme on Cloudflare Pages
 date: 2023-02-06
-tags:
+tag:
 - javascript
 - hugo
 ---

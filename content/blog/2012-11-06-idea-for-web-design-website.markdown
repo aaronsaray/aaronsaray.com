@@ -1,7 +1,7 @@
 ---
 title: Idea for Web Design Website
 date: 2012-11-06
-tags:
+tag:
 - ideas
 - business
 ---

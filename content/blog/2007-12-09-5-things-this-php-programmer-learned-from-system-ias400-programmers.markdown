@@ -1,7 +1,7 @@
 ---
 title: 5 Things this PHP programmer learned from System-i/as400 programmers
 date: 2007-12-09
-tags:
+tag:
 - php
 - programming
 ---

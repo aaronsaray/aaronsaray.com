@@ -1,7 +1,7 @@
 ---
 title: Adding Subdomain Routes for all URLs in Zend Framework
 date: 2011-07-12
-tags:
+tag:
 - zend-framework
 ---
 All the examples I've seen for pulling information from subdomains are from the [hostname](http://framework.zend.com/manual/en/zend.controller.router.html#zend.controller.router.routes.hostname) router directly correlating one subdomain as a value to a single controller/action combo.  This means they map username.website.com to something that basically looks internally like `website.com/user/profile/var1/username`.  This is cool for simple one off tasks - however, what if you're creating a multiple controller/action solution?  For my example, I'm creating a CMS that will have a shared code base.  However, on every page, I need to know exactly which site this is.  

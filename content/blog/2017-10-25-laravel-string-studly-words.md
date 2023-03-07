@@ -1,7 +1,7 @@
 ---
 title: Studly Words in Laravel
 date: 2017-10-25
-tags:
+tag:
 - php
 - laravel
 ---
