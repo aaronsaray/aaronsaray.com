@@ -8,6 +8,9 @@ copyright = 'This work is licensed under a Creative Commons Attribution-ShareAli
 [taxonomies]
   tag = 'tag'
 
+[permalinks]
+  blog = '/:year/:filename/'
+
 [outputs]
   home = ['HTML']
 
