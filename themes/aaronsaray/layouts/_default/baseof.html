@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{{ $isBlogPage := and (eq .Kind "page") (eq .Type "blog") }}
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +8,15 @@
     <title>{{ .Title }} | Aaron Saray</title>
     <meta property="og:title" content="{{ .Title }}" />
     <meta property="og:site_name" content="Aaron Saray" />
-    <meta property="og:image" content="https://aaronsaray.com/images/og-image.png" />
+
+    {{ $ogImage := "images/og-image.png" }}
+    {{ if eq .Kind "term" }}
+    {{ $ogImage = printf "images/tag/%s.jpg" .Data.Term }}
+    {{ else if $isBlogPage }}
+    {{ $ogImage = printf "images/tag/%s.jpg" (index (.Params.tag) 0) }}
+    {{ end }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogImage }}" />
+
     <meta property="og:description" content="{{ .Description }}" />
     <meta name="description" content="{{ .Description }}" />
     <link rel="shortcut icon" href="/favicon.png" />
@@ -17,10 +26,9 @@
     {{ $js := resources.Get "js/main.js" | js.Build "js/main.js" }}
     {{ $secureJS := $js | resources.Minify | resources.Fingerprint }}
     <script src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" defer></script>
-    <link rel="alternate" type="application/rss+xml" href="https://aaronsaray.com/blog/index.xml"
-        title="AaronSaray.com">
+    <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}blog/index.xml" title="AaronSaray.com">
     {{ if eq .Kind "term" }}
-    <link rel="alternate" type="application/rss+xml" href="https://aaronsaray.com/tag/{{ .Data.Term }}/index.xml"
+    <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}tag/{{ .Data.Term }}/index.xml"
         title="Entries tagged {{ .Data.Term }} on AaronSaray.com">
     {{ end }}
     {{ if hugo.IsProduction }}
@@ -120,9 +128,8 @@
                     </div>
                 </div>
                 <div class="text-center py-3 small text-muted">
-                    © {{ .Date.Format "2006" }} <a xmlns:cc="http://creativecommons.org/ns"
-                        href="https://aaronsaray.com" property="cc:attributionName" rel="cc:attributionURL"
-                        class="text-muted">Aaron
+                    © {{ .Date.Format "2006" }} <a xmlns:cc="http://creativecommons.org/ns" href="{{ .Site.BaseURL }}"
+                        property="cc:attributionName" rel="cc:attributionURL" class="text-muted">Aaron
                         Saray</a>. All content is licensed under
                     the
                     <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" class="text-muted">
