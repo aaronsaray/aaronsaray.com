@@ -5,5 +5,14 @@
     {{ range .Pages }}
     {{ partial "blog-entry.html" . }}
     {{ end }}
+
+    <div class="row">
+        <div class="col-12 col-sm-6 text-center text-sm-start">
+            <a href="/blog">Go to All Posts</a>
+        </div>
+        <div class="col-12 col-sm-6 text-center text-sm-end small mt-4 mt-sm-0">
+            <a type="application/atom+xml" href="/tag/{{ .Data.Term }}.xml">Get the RSS for {{ .Data.Term }}</a>
+        </div>
+    </div>
 </main>
 {{ end }}
