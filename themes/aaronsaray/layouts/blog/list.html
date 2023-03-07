@@ -1,11 +1,11 @@
 {{ define "main" }}
-{{ .Scratch.Set "single" "true" }}
 {{ $paginator := .Paginator }}
 <main class="container container-limited pb-5">
     {{ .Content }}
 
     <section>
         {{ range $paginator.Pages }}
+        {{ .Scratch.Set "blog-display" "list" }}
         {{ partial "blog-entry.html" . }}
         {{ end }}
     </section>

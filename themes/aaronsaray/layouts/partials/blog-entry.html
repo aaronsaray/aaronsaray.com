@@ -1,5 +1,10 @@
-<article class="my-5">
+{{ $isSingle := eq (.Scratch.Get "blog-display") "single" }}
+<article {{ if not $isSingle }} class="my-5" {{ end }}>
+    {{ if $isSingle }}
+    <h1>{{ .Title }}</h1>
+    {{ else }}
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ end }}
     <div class="small mb-4">
         <span class="text-muted d-block d-sm-inline me-3">{{ .Date.Format "Jan 2, 2006" }}</span>
         {{ range $index, $name := sort .Params.tag }}
@@ -7,6 +12,10 @@
         {{ end }}
     </div>
     <div>
+        {{ if $isSingle }}
+        {{ .Content }}
+        {{ else }}
         {{ .Summary }}
+        {{ end }}
     </div>
 </article>

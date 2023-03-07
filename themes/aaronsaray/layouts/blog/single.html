@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main class="container container-limited pb-5">
+    {{ .Scratch.Set "blog-display" "single" }}
+    {{ partial "blog-entry.html" . }}
+
+    <div class="text-center mt-5">
+        <a href="/blog">Go to All Posts</a>
+    </div>
+</main>
+{{ end }}
