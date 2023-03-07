@@ -6,6 +6,16 @@ Source for [AaronSaray.com](https://aaronsaray.com)
 So that I don't forget, here are some notes on how I format / create content.
 
 * Highest level of header is H2 (h1 will be the blog entry headline)
+
 * Use `<!--more-->` to indicate the summary content
+
 * Use the paired tag `{{< call-out/header >}}` when adding content to headers of blog entries to denote some information about the entry but not part of it. It will not show up on the lists.
+
 * To refer to another blog entry, use the `ref` command - like so: `{{< ref "2023-03-01-requirements-documentation-examples-guidelines-rationale" >}}`
+
+* If you have a code block that has a filename, you should use the filename-header shortcode
+```
+{{< filename-header "resources/views/users/index.blade.php" >}}
+```html
+<table>
+```

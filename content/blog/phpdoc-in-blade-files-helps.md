@@ -33,8 +33,7 @@ class UsersController extends Controller
 
 A pagination object of User models is sent to the `users.index` view which can look something like this:
 
-**`resources/views/users/index.blade.php`**
-
+{{< filename-header "resources/views/users/index.blade.php" >}}
 ```html
 <table>
   <tr>
@@ -44,7 +43,7 @@ A pagination object of User models is sent to the `users.index` view which can l
   @foreach($users as $user)
     <tr>
       <td><!-- I want to call $user's display name method here --></td>
-      <td>{{ '{{' }} $user->email }}</td>
+      <td>{{ $user->email }}</td>
     </tr>
   @endforeach
 </table>
@@ -52,7 +51,7 @@ A pagination object of User models is sent to the `users.index` view which can l
 
 As you can see, I know that the User model has a display name method - but I can't remember what it's called. I wish there was auto complete. But when I begin to type, this is all I see:
 
-[![No Autocomplete](/uploads/2022/no-auto-complete-phpstorm.jpg)](/uploads/2022/no-auto-complete-phpstorm.jpg){: .thumbnail}
+{{< image src="/uploads/2022/no-auto-complete-phpstorm.jpg" alt="No Autocomplete" >}}
 
 No autocomplete. Even my IDE plugins aren't helping me.
 
@@ -68,8 +67,8 @@ Let's see:
   </tr>
   @foreach($users as $user /** @var App\Models\User $user */)
     <tr>
-      <td>{{ '{{' }} $user->getDisplayName() }}</td>
-      <td>{{ '{{' }} $user->email }}</td>
+      <td>{{ $user->getDisplayName() }}</td>
+      <td>{{ $user->email }}</td>
     </tr>
   @endforeach
 </table>
@@ -79,4 +78,4 @@ Remember, in Blade, the directives are just shortcuts to some PHP interpretation
 
 Sure enough, the autocomplete is now spot-on.
 
-[![Has Autocomplete](/uploads/2022/has-auto-complete-phpstorm.jpg)](/uploads/2022/has-auto-complete-phpstorm.jpg){: .thumbnail}
+{{< image src="/uploads/2022/has-auto-complete-phpstorm.jpg" alt="Has Autocomplete" >}}

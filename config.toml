@@ -14,6 +14,10 @@ copyright = 'This work is licensed under a Creative Commons Attribution-ShareAli
 [outputs]
   home = ['HTML']
 
+[markup]
+  [markup.highlight]
+    noClasses = false
+    
 [menu]
 [[menu.main]]
   name = 'Home'
