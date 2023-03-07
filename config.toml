@@ -2,9 +2,14 @@ baseURL = 'https://aronsaray.com/'
 languageCode = 'en-us'
 title = 'Aaron Saray'
 theme = 'aaronsaray'
+rssLimit = 10
+copyright = 'This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.'
 
 [taxonomies]
   tag = 'tag'
+
+[outputs]
+  home = ['HTML']
 
 [menu]
 [[menu.main]]

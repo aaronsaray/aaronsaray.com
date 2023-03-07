@@ -11,10 +11,10 @@
     <meta property="og:description" content="{{ .Description }}" />
     <meta name="description" content="{{ .Description }}" />
     <link rel="shortcut icon" href="/favicon.png" />
-    {{ $sass := resources.Get "main.scss" }}
+    {{ $sass := resources.Get "css/main.scss" }}
     {{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-    {{ $js := resources.Get "main.js" | js.Build "main.js" }}
+    {{ $js := resources.Get "js/main.js" | js.Build "main.js" }}
     {{ $secureJS := $js | resources.Minify | resources.Fingerprint }}
     <script src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}" defer></script>
     {{ if hugo.IsProduction }}
