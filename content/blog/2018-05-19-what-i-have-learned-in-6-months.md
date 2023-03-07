@@ -8,7 +8,7 @@ Every mistake comes with a lesson or two...
 
 <!--more-->
 
-It's been about 6 months since I [wrote]({% post_url 2017-11-17-whats-important-in-life %}) about having to take a step back and figure out what's important in life.  I think its important that I share some findings and thoughts.
+It's been about 6 months since I [wrote]({{< ref "/blog/2017-11-17-whats-important-in-life" >}}) about having to take a step back and figure out what's important in life.  I think its important that I share some findings and thoughts.
 
 > Warning: This is not a technical or business related blog entry per se. It's very personal. I hope you enjoy it, but if it's not your thing, please check out some other entries for more technical and business advice.
 

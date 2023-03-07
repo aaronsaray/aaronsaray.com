@@ -5,11 +5,13 @@ tags:
 - business
 - management
 ---
-> This is part of a series of articles from the retired The Dev Manager website.
-
-<!--more-->
+{{< call-out/header >}}
+This is part of a series of articles from the retired The Dev Manager website.
+{{< /call-out/header >}}
 
 It’s amazing what the internet can bring us, both positive and negative. Sadly, some of the worst people hang out on the internet. They bully, they rage, they say and do horrible things.
+
+<!--more-->
 
 But, are they really the “worst” people, or is it something else? And what does online hate have to do with my team?
 

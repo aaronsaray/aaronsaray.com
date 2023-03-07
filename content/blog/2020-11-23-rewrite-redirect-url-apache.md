@@ -9,7 +9,7 @@ Apache’s` mod_rewrite` module can create redirects with the proper configurati
 
 <!--more-->
 
-> This is an article that originally appeared on RedirectURL, a site I built a while ago.  Find out the history of that [site here]({% post_url 2020-10-31-redirecturl-experiment-is-done %})
+> This is an article that originally appeared on RedirectURL, a site I built a while ago.  Find out the history of that [site here]({{< ref "/blog/2020-10-31-redirecturl-experiment-is-done" >}})
 
 ### Verifying Mod Rewrite is Enabled
 

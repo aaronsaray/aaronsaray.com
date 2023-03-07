@@ -4,9 +4,11 @@ date: 2009-03-11
 tags:
 - business
 ---
-From time to time, I've been asked to make a list of my design ideas, or to develop a better proposal for an idea I have.  This really irritated me: didn't he believe me?  Didn't he trust my ideas?  But in the constant battle to become a better businessman, I've taken a bit of time to think about why this happens.  He's not out to get me, right?  Yours isn't either.  Lets take a look at the Why - with a bonus section: how you should respond, as a boss, to reduce the potential animosity amongst your team members.
+From time to time, I've been asked to make a list of my design ideas, or to develop a better proposal for an idea I have.  This really irritated me: didn't he believe me?  Didn't he trust my ideas?  
 
 <!--more-->
+
+But in the constant battle to become a better businessman, I've taken a bit of time to think about why this happens.  He's not out to get me, right?  Yours isn't either.  Lets take a look at the Why - with a bonus section: how you should respond, as a boss, to reduce the potential animosity amongst your team members.
 
 [![Todo List](/uploads/2009/134049_to_do_list____or_not_to_do-lis.jpg)](/uploads/2009/134049_to_do_list____or_not_to_do-lis.jpg){: .thumbnail}{: .pull-right}
 

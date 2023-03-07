@@ -5,11 +5,13 @@ tags:
 - business
 - management
 ---
-> This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry one? [Click here]({% post_url 2020-09-10-dev-manager-1-3-books %})
-
-<!--more-->
+{{< call-out/header >}}
+This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry two? [Click here]({{< ref "/blog/2020-09-15-dev-manager-2-3-tough-convos" >}})
+{{< /call-out/header >}}
 
 When you manage a team, the conversations you have change a lot. No longer are you justifying your own estimates or explaining your coding decisions. Now, you’re responsible for many different estimates, many different decisions, and many different personalities.
+
+<!--more-->
 
 The way you are measured has changed, too. Instead of a singular output, now you’re answering for others. Making the case for your team, accepting their failures as your own, and not knowing all of the details is now your modus operandi.
 
@@ -55,4 +57,4 @@ As you navigate the Dev Manager path, you’ll have many difficult conversations
 
 Conversations with upper management can be difficult, but they shouldn’t be stressful. Take a minute, put yourself in their shoes, breath, and then answer.
 
-> To move on to entry 3 of the Dev Manager Crash course, [click here]({% post_url 2020-09-21-dev-manager-3-3-types-of-devs %}).
+> To move on to entry 3 of the Dev Manager Crash course, [click here]({{< ref "/blog/2020-09-21-dev-manager-3-3-types-of-devs" >}}).

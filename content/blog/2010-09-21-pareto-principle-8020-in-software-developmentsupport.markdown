@@ -4,7 +4,7 @@ date: 2010-09-21
 tags:
 - business
 ---
-> For many events, roughly 80% of the effect comes from 20% of the cause.
+For many events, roughly 80% of the effect comes from 20% of the cause.
 
 <!--more-->
 

@@ -5,9 +5,11 @@ tags:
 - performance
 - php
 ---
-A lot of weird things have been happening ever since we introduced a new error handler at ("the triangle").  First of all, it took down our whole site for a good portion of time (oops!), then it created a large project for us to review our code.  Turns out a lot of the errors were just weird little things that we ignored.  However, there were a few times where the `@` operator [php.net/language.operators.errorcontrol.php](http://us3.php.net/manual/en/language.operators.errorcontrol.php) was a huge problem.  I, for once, don't think that the `@` operator should ever be used again.  Let me detail out what it does and why I don't think we should use it:
+A lot of weird things have been happening ever since we introduced a new error handler at ("the triangle"). First of all, it took down our whole site for a good portion of time (oops!), then it created a large project for us to review our code. Turns out a lot of the errors were just weird little things that we ignored.  
 
 <!--more-->
+
+However, there were a few times where the `@` operator [php.net/language.operators.errorcontrol.php](http://us3.php.net/manual/en/language.operators.errorcontrol.php) was a huge problem.  I, for once, don't think that the `@` operator should ever be used again.  Let me detail out what it does and why I don't think we should use it:
 
 **What does the @ do?**
 

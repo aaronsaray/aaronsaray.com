@@ -5,11 +5,13 @@ tags:
 - business
 - management
 ---
-> This is part of a series of articles from the retired The Dev Manager website.
-
-<!--more-->
+{{< call-out/header >}}
+This is part of a series of articles from the retired The Dev Manager website.
+{{< /call-out/header >}}
 
 What happened to “why?” What happened to make people so afraid of asking this question? Perhaps it’s when all of the 3-year-olds start asking “why” about everything. Why does mommy have to go to work? Why do we need money? Why is the sky blue?
+
+<!--more-->
 
 Or perhaps it’s been the poorly trained hoard of bosses and superiors who have asked the question “why” which alluded to their arrogant incompetence. When the purposely ignorant ask “why” it can be quite annoying.
 

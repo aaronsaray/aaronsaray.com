@@ -1,0 +1,9 @@
+{{ if .Scratch.Get "single" }}
+
+DO A NEW DESIGN HERE
+<BR>
+{{ .Inner }}
+
+{{ else }}
+{{/* No content here as it's not supposed to be rendered on the list pages */}}
+{{ end }}

@@ -5,11 +5,13 @@ tags:
 - business
 - management
 ---
-> This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry two? [Click here]({% post_url 2020-09-15-dev-manager-2-3-tough-convos %})
-
-<!--more-->
+{{< call-out/header >}}
+This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry two? [Click here]({{< ref "/blog/2020-09-15-dev-manager-2-3-tough-convos" >}})
+{{< /call-out/header >}}
 
 A colleague once said to me that I’m very lucky I haven’t had to fire as many people as he had. I definitely agree with the fact that my management tenure has not involved many terminations, but I don’t consider myself lucky. I put in work, just like you’re doing, to understand how to manage different types of developers.
+
+<!--more-->
 
 As a dev manager, it's your responsibility to understand your team. Each one is different: they have different likes, fears, motivations, and measurements of success. The problems come when you start to bundle all of your developers into a single style or group. Or, even worse, if you expect that they’re all little versions of you. Far from it - and you should be happy! This diversity is what makes your team successful.
 

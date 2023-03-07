@@ -11,7 +11,7 @@ One of the newer programmers on my team asked me the other day why I hired him. 
 
 [![talented](/uploads/2013/talented.jpg)](/uploads/2013/talented.jpg){: .thumbnail}{: .pull-right}
 
-I've been thinking about this a lot.  I mean, I hate to say "I can just feel it," - I made sure not to REALLY say that when I talked about [what I look for in code review]({% post_url 2012-10-18-what-i-look-for-in-a-code-review %}), so then what is it?
+I've been thinking about this a lot.  I mean, I hate to say "I can just feel it," - I made sure not to REALLY say that when I talked about [what I look for in code review]({{< ref "/blog/2012-10-18-what-i-look-for-in-a-code-review" >}}), so then what is it?
 
 First, let's take a look at the difference between talent and skill.  Talent is a natural ability, whereas skill is a measurement of the mechanics of that ability.  I think about musicians - talented performers can sit down and learn a song from start to finish really easy.  A less talented person, or someone who just works really hard, has to practice a lot more.  Finally, they get to the same skill level and can perform the same song.  
 

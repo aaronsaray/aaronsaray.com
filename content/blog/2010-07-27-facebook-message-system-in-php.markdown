@@ -4,11 +4,13 @@ date: 2010-07-27
 tags:
 - php
 ---
-**Update: I've gotten a lot of comments on this code.  This was a simple proof of concept at the time when Facebook was creating messages like this.  They no longer do it in this manner.  I also am not supporting any updates to this code.  Thanks for your interest!**
-
-<!--more-->
+{{< call-out/header >}}
+Update: I've gotten a lot of comments on this code.  This was a simple proof of concept at the time when Facebook was creating messages like this.  They no longer do it in this manner.  I also am not supporting any updates to this code.  Thanks for your interest!
+{{< /call-out/header >}}
 
 So Facebook has been really cool in the way that they have designed and implemented some new paradigms in the electronic communication realm.  However, one thing is a problem: they're too smart.  They have hired the best of the best - and have made that the norm.  The rest of us are struggling to keep up.
+
+<!--more-->
 
 I was recently faced with a task: Make our message system like facebook's.  OK - seems easy.  I implemented what I thought would be the solution -and it worked.  Sorta.  But now, I'm hearing there are bugs.  Uh oh.  ... I think I've fixed them all - but I started from scratch.  This is what I should have done.
 

@@ -5,7 +5,7 @@ tags:
 - business
 - programming
 ---
-> The other day I found myself giving advice and revisions to a fellow PHP programmer about his cover letter for his next job application.  That really inspired me to help out and write this entry.
+The other day I found myself giving advice and revisions to a fellow PHP programmer about his cover letter for his next job application.  That really inspired me to help out and write this entry.
 
 <!--more-->
 

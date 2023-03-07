@@ -10,7 +10,7 @@ To redirect an entire domain with SSL to a single page, you can use the free acc
 
 ### Why?
 
-I do a lot of experiments on various different projects. When those run their course, I like to redirect the domain to the blog entry I wrote up after the experiment ended. While a lot of domain registrars offer this for free, they don't support SSL.  When I first ran into this, I launched [RedirectURL]({% post_url 2020-10-31-redirecturl-experiment-is-done %}) instead of using Cloudflare. I think half the reason was ignorance, half I wanted to have a service to try to monetize, and half because the base configuration at the time in Cloudflare maybe wasn't free - or I couldn't figure it out. (Also I'm great at math...)
+I do a lot of experiments on various different projects. When those run their course, I like to redirect the domain to the blog entry I wrote up after the experiment ended. While a lot of domain registrars offer this for free, they don't support SSL.  When I first ran into this, I launched [RedirectURL]({{< ref "/blog/2020-10-31-redirecturl-experiment-is-done" >}}) instead of using Cloudflare. I think half the reason was ignorance, half I wanted to have a service to try to monetize, and half because the base configuration at the time in Cloudflare maybe wasn't free - or I couldn't figure it out. (Also I'm great at math...)
 
 So now, you can handle this situation with Cloudflare.
 

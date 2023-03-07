@@ -5,7 +5,7 @@ tags:
 - php
 - laravel
 ---
-The [prepareForValidation()](https://laravel.com/docs/9.x/validation#preparing-input-for-validation) method is really useful in Laravel requests: it helps modify the incoming data so that validation might be easier.  But you need to be careful that you implement it correctly and don't mess up your data. Let me explain.
+The [`prepareForValidation()`](https://laravel.com/docs/9.x/validation#preparing-input-for-validation) method is really useful in Laravel requests: it helps modify the incoming data so that validation might be easier.  But you need to be careful that you implement it correctly and don't mess up your data. Let me explain.
 
 <!--more-->
 

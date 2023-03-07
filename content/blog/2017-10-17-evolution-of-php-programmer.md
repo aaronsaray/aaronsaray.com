@@ -19,7 +19,7 @@ I think around 2015, there was a big splash of good training online for PHP.  Fr
 
 I think some of these steps are skipped now because of the sheer size and quality of training that we have access to now these days.
 
-However, I was talking to Big Boy the other day (you might remember big boy from [entries]({% post_url 2007-06-28-ajax-security-research-and-findings-round-1 %}) [such]({% post_url 2007-06-27-emulation-of-collections-true-stories-of-data-object-handling %}) as [these]({% post_url 2007-06-12-setting-config-variables-constants-vs-abstract-class-access %}))  He had a different explanation of the lifecycle of programmers:
+However, I was talking to Big Boy the other day (you might remember big boy from [entries]({{< ref "/blog/2007-06-28-ajax-security-research-and-findings-round-1" >}}) [such]({{< ref "2007-06-27-emulation-of-collections-true-stories-of-data-object-handling" >}}) as [these]({{< ref "2007-06-12-setting-config-variables-constants-vs-abstract-class-access" >}}))  He had a different explanation of the lifecycle of programmers:
 
 - Stage 1: write shitty functional code 
 - Stage 2: write shitty half assed OOP code 

@@ -4,9 +4,11 @@ date: 2011-12-14
 tags:
 - php
 ---
-I'm not entirely certain why this escaped me for so long, but it's remarkably easy to set terminal colors with PHP.  Simply echo the escape/color character `\033`, followed by the bash color definition and your output.  For reference, [here](https://wiki.archlinux.org/index.php/Color_Bash_Prompt) is a listing of bash colors.  So, for example, if we want to make something blue text, do the following:
+I'm not entirely certain why this escaped me for so long, but it's remarkably easy to set terminal colors with PHP.  
 
 <!--more-->
+
+Simply echo the escape/color character `\033`, followed by the bash color definition and your output.  For reference, [here](https://wiki.archlinux.org/index.php/Color_Bash_Prompt) is a listing of bash colors.  So, for example, if we want to make something blue text, do the following:
 
 ```php
 echo "\033[34m" . 'here is blue text' . "\033[0m\n";

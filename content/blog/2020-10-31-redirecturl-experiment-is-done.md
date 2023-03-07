@@ -18,7 +18,7 @@ So, I have dreams. I have ideas. I try them out. Most fail.
 
 ### The Genesis of RedirectURL
 
-One idea I had was an app called [Possessor]({% post_url 2019-08-26-the-end-of-possessor %}).  I had been using services that had required
+One idea I had was an app called [Possessor]({{< ref "/blog/2019-08-26-the-end-of-possessor" >}}).  I had been using services that had required
 me to validate and verify that I owned my domain. Each one seemed to have a different way of doing things. I wondered: could I make an application
 that other companies could integrate with that would help them verify that you "possessed" ownership to something you claimed.  I could use
 all of those systems that other companies have described, but be more of an aggregator. If I said you owned it, you didn't have to ... say... put in a TXT
@@ -26,7 +26,7 @@ record for Google but put in a XML file in your doc root for Microsoft.  Compani
 of this?  If not, they'd receive the instructions from Possessor so that you could set up the verification. It would be very
 transparent.
 
-Well, that didn't work.  You can [read here]({% post_url 2019-08-26-the-end-of-possessor %}) to find out more about it.
+Well, that didn't work.  You can [read here]({{< ref "/blog/2019-08-26-the-end-of-possessor" >}}) to find out more about it.
 
 So when this was done, I really wanted to redirect the Possessor URL to the blog entry I had written about it. I went to my Registrar Namecheap
 to redirect the domain. A lot of these registrars offer this service for free. That's when I realized that `.app` domains required the domain to be

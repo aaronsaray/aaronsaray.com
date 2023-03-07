@@ -5,9 +5,11 @@ tags:
 - phpunit
 - testing
 ---
-One of the under-utilized features of PHPUnit probably is the listeners interface.  You can see the configuration options here: [php.net/appendixes.configuration.html](http://www.phpunit.de/manual/current/en/appendixes.configuration.html).  So, I decided that I want to use this to know if a Unit Test takes longer than 2 seconds to run.  That's super over-kill in my opinion, but that's my hard limit.  If it takes longer than 2 seconds to run, something is wrong!  So, I added the following to my configuration:
+One of the under-utilized features of PHPUnit probably is the listeners interface.  
 
 <!--more-->
+
+You can see the configuration options here: [php.net/appendixes.configuration.html](http://www.phpunit.de/manual/current/en/appendixes.configuration.html).  So, I decided that I want to use this to know if a Unit Test takes longer than 2 seconds to run.  That's super over-kill in my opinion, but that's my hard limit.  If it takes longer than 2 seconds to run, something is wrong!  So, I added the following to my configuration:
 
 **excerpt from `phpunit.xml`**
 

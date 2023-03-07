@@ -25,4 +25,4 @@ I have the argument a lot with product managers about allowing custom HTML and J
 
 So, now you may have an idea of how those arguments don't always hold water.  I still think its important to show what can really happen in the real world.  
 
-[Part two]({% post_url 2013-04-16-the-very-bad-things-that-javascript-can-do-part-2 %}) the actual exploits that could happen.  It will run through scenarios that make it really easy for the offending code to get on the site, and make it difficult for a casual user or for security analyzing scripts to detect rogue code.
+[Part two]({{< ref "/blog/2013-04-16-the-very-bad-things-that-javascript-can-do-part-2" >}}) the actual exploits that could happen.  It will run through scenarios that make it really easy for the offending code to get on the site, and make it difficult for a casual user or for security analyzing scripts to detect rogue code.

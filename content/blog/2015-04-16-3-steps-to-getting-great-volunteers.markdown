@@ -4,7 +4,7 @@ date: 2015-04-16
 tags:
 - business
 ---
-**If you run a volunteer organization, you might be turning away valuable volunteers!  Let me give you 3 useful ways to lock in these volunteers - now!**
+If you run a volunteer organization, you might be turning away valuable volunteers!  Let me give you 3 useful ways to lock in these volunteers - now!
 
 <!--more-->
 

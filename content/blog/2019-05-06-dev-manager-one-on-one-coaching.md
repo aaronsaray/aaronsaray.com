@@ -5,11 +5,13 @@ tags:
 - business
 - management
 ---
-> Not all things go as planned, and that's ok. Entrepreneurship is hard! I've decided to roll my Dev Management coaching back into AaronSaray.com.
-
-<!--more-->
+{{< call-out/header >}}
+Not all things go as planned, and that's ok. Entrepreneurship is hard! I've decided to roll my Dev Management coaching back into AaronSaray.com.
+{{< /call-out/header >}}
 
 I'm proud to announce that I've launched One on One Coaching at The Dev Manager!
+
+<!--more-->
 
 If you've been following along on with my [management entries](/tag/management/), you know I think the job of an Engineering Manager is super important and very complex.  But besides my few entries, where do you turn for training, guidance, etc?
 

@@ -8,7 +8,7 @@ So I've decided to move my website off of wordpress and on to [jekyll](https://j
 
 <!--more-->
 
-However, I've got a lot to learn. Like, for example, how to enable comments. You may remember my one [rant about enabling comments]({% post_url 2013-05-21-enable-your-blog-comments-already %}) and then notice that I don't have any comments on this blog. Hrm - I'm not entirely certain if I want to do that.
+However, I've got a lot to learn. Like, for example, how to enable comments. You may remember my one [rant about enabling comments]({{< ref "/blog/2013-05-21-enable-your-blog-comments-already" >}}) and then notice that I don't have any comments on this blog. Hrm - I'm not entirely certain if I want to do that.
 
 With the new blog comes some other sad news. I've "stolen" the design from [201 Creative](http://201creative.com) for this blog. The reason is sad: I've decided to shut down business and move on to a full time job.
 

@@ -11,7 +11,7 @@ What if you need to see your config quickly in Laravel from the command line? An
 
 First of all, I'm not sure if I should even write this entry. I kind of feel like this is cheating or not a "best practice" but I can't put my finger on it.  Maybe it's because it's never really a good idea to be plastering secrets to the screen.  But anyway...
 
-[I don't install Tinker on my production machine]({% post_url 2021-10-19-do-not-use-tinker-in-production %}), so in that same vein it feels like I shouldn't have a command to 'debug' config. But, if you're caching your config, and you've ever forgotten to update it correctly, you know the struggle.
+[I don't install Tinker on my production machine]({{< ref "/blog/2021-10-19-do-not-use-tinker-in-production" >}}), so in that same vein it feels like I shouldn't have a command to 'debug' config. But, if you're caching your config, and you've ever forgotten to update it correctly, you know the struggle.
 
 So, I wrote a quick command that I use:
 

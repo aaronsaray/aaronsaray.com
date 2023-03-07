@@ -5,7 +5,7 @@ tags:
 - business
 - management
 ---
-> This advice is based primarily on an in-person team. I'm sure we could make this work with a remote team, too, somehow.
+This advice is based primarily on an in-person team. I'm sure we could make this work with a remote team, too, somehow.
 
 <!--more-->
 

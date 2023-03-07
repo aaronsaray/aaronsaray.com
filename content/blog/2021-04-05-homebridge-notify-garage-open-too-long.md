@@ -10,7 +10,7 @@ With a combination of Homebridge, a plugin, Pushover, and a Homekit compatible g
 
 ### Prerequisites
 
-In an [earlier blog entry]({% post_url 2020-10-12-homekit-notify-door-open-too-long %}), I detailed how I can use a sensor to watch for an open door.  But, I was still grasping for a solution for something I set out to do: notify me if my garage door was open longer than 3 minutes.  
+In an [earlier blog entry]({{< ref "/blog/2020-10-12-homekit-notify-door-open-too-long" >}}), I detailed how I can use a sensor to watch for an open door.  But, I was still grasping for a solution for something I set out to do: notify me if my garage door was open longer than 3 minutes.  
 
 You'll need: [Homebridge](https://homebridge.io), the [homebridge-delay-switch plugin](https://www.npmjs.com/package/homebridge-delay-switch), a device you want to control (mine is a switch that triggers a Pushover message, using [this plugin](https://www.npmjs.com/package/homebridge-messenger)), and a garage door opener [like this Insignia one](https://www.bestbuy.com/site/insignia-wi-fi-garage-door-controller-for-apple-homekit-white/5933701.p?skuId=5933701).
 

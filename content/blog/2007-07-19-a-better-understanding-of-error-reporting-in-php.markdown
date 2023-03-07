@@ -4,9 +4,11 @@ date: 2007-07-19
 tags:
 - php
 ---
-While working on a website for ("the triangle"), I came to a page running locally that just stopped - blank.  This particular website was not using output buffering - so there is no excuse for a blank page.  For whatever reason (laziness, stupidity, thursdayness), I haven't checked my php.ini file for error reporting in the last few months... and for whatever reason a long time ago, I decided to go back to standard error reporting.  Well unfortunately, this means months of developing has gone by on this particular set of websites that I was possibly missing errors (never-mind everything has successfully went through QA...hrm...)  At any rate, I jumped out to PHP's website - eager and ready to copy a quick fix for my error reporting issue.  As I was getting ready to copy an `error_reporting()` line, I realized: I don't fully understand what I want to do here...Well, that's never good - copying code and not fully understanding it... so lets fix this.  Lets talk about error reporting.
+While working on a website for ("the triangle"), I came to a page running locally that just stopped - blank.  This particular website was not using output buffering - so there is no excuse for a blank page.  
 
 <!--more-->
+
+For whatever reason (laziness, stupidity, thursdayness), I haven't checked my php.ini file for error reporting in the last few months... and for whatever reason a long time ago, I decided to go back to standard error reporting.  Well unfortunately, this means months of developing has gone by on this particular set of websites that I was possibly missing errors (never-mind everything has successfully went through QA...hrm...)  At any rate, I jumped out to PHP's website - eager and ready to copy a quick fix for my error reporting issue.  As I was getting ready to copy an `error_reporting()` line, I realized: I don't fully understand what I want to do here...Well, that's never good - copying code and not fully understanding it... so lets fix this.  Lets talk about error reporting.
 
 **Where to error report**
 

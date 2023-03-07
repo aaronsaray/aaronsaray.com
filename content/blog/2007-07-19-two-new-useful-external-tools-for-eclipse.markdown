@@ -6,13 +6,13 @@ tags:
 - ide-and-web-dev-tools
 - svn
 ---
-In my posting about [Integrating PHPDocumentor into Eclipse]({% post_url 2007-07-04-build-phpdocumentor-into-eclipse %}), I touched on External Tools a bit.  The combination of external batch files, the external tools extra options and the console has made my life easier.  I'm using two new additional batch files that I've written myself and integrated as external tools.  These include automated SVN release update and resource refresh and Apache application control (for those who can't run apache as a service on w32):
+In my posting about [Integrating PHPDocumentor into Eclipse]({{< ref "/blog/2007-07-04-build-phpdocumentor-into-eclipse" >}}), I touched on External Tools a bit.  The combination of external batch files, the external tools extra options and the console has made my life easier.  I'm using two new additional batch files that I've written myself and integrated as external tools.  These include automated SVN release update and resource refresh and Apache application control (for those who can't run apache as a service on w32):
 
 <!--more-->
 
 **SVN Update - resource refresh**
 
-I have a specific project at the top of my PHP Explorer called _release.  It has all of the newest release folders and repos attached to it.  No matter what tag I'm working on, that one always has the newest code that's in production for this release.  Because promotes and updates go into it all the time, I usually have to remember to do the updates by hand in the file system (or actually now I can use the [tortoise plugin]({% post_url 2007-07-14-eclipse-integration-with-tortoise-svn %}) and then make sure to refresh the project to bring in any new files and update their properties.
+I have a specific project at the top of my PHP Explorer called _release.  It has all of the newest release folders and repos attached to it.  No matter what tag I'm working on, that one always has the newest code that's in production for this release.  Because promotes and updates go into it all the time, I usually have to remember to do the updates by hand in the file system (or actually now I can use the [tortoise plugin]({{< ref "/blog/2007-07-14-eclipse-integration-with-tortoise-svn" >}}) and then make sure to refresh the project to bring in any new files and update their properties.
 
 I wanted to automate this process so I wrote a batch file which basically looks like this [edited for privacy for ("the triangle")]
 

@@ -6,7 +6,7 @@ tags:
 - testing
 - mockery
 ---
-In an earlier post titled [Use $this->fail() with Mockery::on()]({% post_url 2017-06-11-use-the-fail-method-with-mockery-on %}), I explained the challenges of debugging a failing test with the closure passed to `Mockery::on()`.  Instead of returning `false`, I opted to use `$this->fail()` - which seemed like a good idea at the time.  After all, I was doing my test, then failing with a useful bit of information.  (Previous to this, it would just say that you don't have a matching handler for this assertion, which was really confusing).
+In an earlier post titled [Use `$this->fail()` with `Mockery::on()`]({{< ref "/blog/2017-06-11-use-the-fail-method-with-mockery-on" >}}), I explained the challenges of debugging a failing test with the closure passed to `Mockery::on()`.  Instead of returning `false`, I opted to use `$this->fail()` - which seemed like a good idea at the time.  After all, I was doing my test, then failing with a useful bit of information.  (Previous to this, it would just say that you don't have a matching handler for this assertion, which was really confusing).
 
 <!--more-->
 
@@ -27,7 +27,7 @@ $mockedClass->shouldReceive('process')->once()
   })->andReturn(true);
 ```
 
-You can read about our expectations in the earlier [blog posting]({% post_url 2017-06-11-use-the-fail-method-with-mockery-on %}) - but let's refactor this using assertions now.
+You can read about our expectations in the earlier [blog posting]({{< ref "/blog/2017-06-11-use-the-fail-method-with-mockery-on" >}}) - but let's refactor this using assertions now.
 
 ```php
 $mockedClass->shouldReceive('process')->once()

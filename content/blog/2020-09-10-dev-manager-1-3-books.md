@@ -5,11 +5,13 @@ tags:
 - business
 - management
 ---
-> This is the beginning of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**.
-
-<!--more-->
+{{< call-out/header >}}
+This is the beginning of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**.
+{{< /call-out/header >}}
 
 Welcome to the New Dev Manager Crash Course! Whether this is your first time managing a group of developers, or you’ve run the gamut a few times, I’m happy you’re here. My goal is to give you some useful tips and direction from my experience managing multiple development teams. I learned a lot of this the hard way, but hopefully you won’t have to!
+
+<!--more-->
 
 Ok let’s get started. How’s your library?
 
@@ -44,4 +46,4 @@ Now, stop reading all your spammy emails like this one and get out one of these 
 
 *“Today a reader, tomorrow a leader.”*
 
-> To move on to entry 2 of the Dev Manager Crash course, [click here]({% post_url 2020-09-15-dev-manager-2-3-tough-convos %}).
+> To move on to entry 2 of the Dev Manager Crash course, [click here]({{< ref "/blog/2020-09-15-dev-manager-2-3-tough-convos" >}}).

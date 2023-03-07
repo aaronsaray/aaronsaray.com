@@ -4,7 +4,7 @@ date: 2019-02-11
 tags:
 - business
 ---
-In an [earlier entry]({% post_url 2017-07-24-track-done-things-with-alfred %}) I detailed how I track things I do each day using an [Alfred](https://www.alfredapp.com/) workflow.  Basically, I wanted to track what I did from the Alfred launcher screen, one thing at a time.  The end result was a txt file dated today.  
+In an [earlier entry]({{< ref "/blog/2017-07-24-track-done-things-with-alfred" >}}) I detailed how I track things I do each day using an [Alfred](https://www.alfredapp.com/) workflow.  Basically, I wanted to track what I did from the Alfred launcher screen, one thing at a time.  The end result was a txt file dated today.  
 
 <!--more-->
 
@@ -12,7 +12,7 @@ This worked fine but it still felt not as efficient as it could be.  I still had
 
 **TLDR;** Download this [Alfred Workflow](/uploads/2019/did-this.alfredworkflow) and type `did something here` where `something here` is the task you just did. It will create/append a file in **`~/Documents/Did This`** named after today's date with the line of what you just did.  A second option in the drop down when you type `did` is `copy to clipboard`.  This will copy a bullet point list to your clipboard (sourced from the document for today's date).  Finally, all of your did items will show in the list as well, so you can review that you're not double adding something.
 
-You can review some of [the instructions]({% post_url 2017-07-24-track-done-things-with-alfred %}) in the old entry.  The new functionality is the copy/paste.
+You can review some of [the instructions]({{< ref "/blog/2017-07-24-track-done-things-with-alfred" >}}) in the old entry.  The new functionality is the copy/paste.
 
 The big changes are the second workflow.
 

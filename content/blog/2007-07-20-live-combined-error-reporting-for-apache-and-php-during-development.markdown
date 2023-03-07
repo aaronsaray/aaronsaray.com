@@ -7,9 +7,11 @@ tags:
 - ide-and-web-dev-tools
 - scripting
 ---
-So many times during development, I've missed little PHP errors because they were 1) on a processing page that was redirected or 2) output inside of a html tag - and rendered invisible.  From time to time, I have to go back to my file system and check the php error log to see what happened.  The first step to solving this was implementing a custom error handler - which we did at ("the triangle").  But I'm torn on this: should the error handler script function the exact same during development as it does in production, or should we write two different error handlers.  To keep the code as simple as possible and allow for scenario regeneration, I opted to have the error handler work the exact same way in development.  Some might disagree, but that's not the point here.  The issue was that I needed to watch the error log closer (I'm notoriously bad at not checking errors - see my previous post about error reporting...).
+So many times during development, I've missed little PHP errors because they were 1) on a processing page that was redirected or 2) output inside of a html tag - and rendered invisible.  
 
 <!--more-->
+
+From time to time, I have to go back to my file system and check the php error log to see what happened.  The first step to solving this was implementing a custom error handler - which we did at ("the triangle").  But I'm torn on this: should the error handler script function the exact same during development as it does in production, or should we write two different error handlers.  To keep the code as simple as possible and allow for scenario regeneration, I opted to have the error handler work the exact same way in development.  Some might disagree, but that's not the point here.  The issue was that I needed to watch the error log closer (I'm notoriously bad at not checking errors - see my previous post about error reporting...).
 
 Another thing I knew would be nice to see would be the apache error log.  As I'm not combining my error logs with php, I don't often check the apache one.  However, local mistakes can cause errors on the production server too.
 

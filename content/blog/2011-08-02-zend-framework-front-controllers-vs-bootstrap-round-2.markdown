@@ -8,7 +8,7 @@ There was some discussion on Twitter regarding the original version of my articl
 
 <!--more-->
 
-> This article is the follow-up to [the original article]({% post_url 2011-05-24-zend-framework-bootstrap-vs-front-controller-plugin %}).
+> This article is the follow-up to [the original article]({{< ref "/blog/2011-05-24-zend-framework-bootstrap-vs-front-controller-plugin" >}}).
 
 ### When Initializing Site in Front Controller, Use the Proper Hook
 

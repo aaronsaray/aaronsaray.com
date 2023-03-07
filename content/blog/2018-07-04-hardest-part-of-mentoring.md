@@ -6,7 +6,7 @@ tags:
 - programming
 - management
 ---
-I've written about [mentoring]({% post_url 2014-08-18-keep-mentoring-even-if-it-looks-like-no-one-cares %}) a [bunch]({% post_url 2016-03-28-cc6-confident-not-cocky %}) [before]({% post_url 2017-05-16-professional-connection-made-now-what %}) , so you know I'm a fan of it.  But, there's another aspect that has been bothering me lately.  The questions are simple:
+I've written about [mentoring]({{< ref "/blog/2014-08-18-keep-mentoring-even-if-it-looks-like-no-one-cares" >}}) a [bunch]({{< ref "2016-03-28-cc6-confident-not-cocky" >}}) [before]({{< ref "2017-05-16-professional-connection-made-now-what" >}}) , so you know I'm a fan of it.  But, there's another aspect that has been bothering me lately.  The questions are simple:
 
 <!--more-->
 

@@ -10,7 +10,7 @@ I've been working on a lot of things lately - I thought it might be nice to do a
 
 [More Better Faster](https://morebetterfaster.io/), my consulting company, has been taking off. I'm working with a few clients on implementing best practices and good processes.  While I do some development in these contracts, a lot of the time I'm focused on guiding teams into better practices or introducing new tooling.  I have worked on niching down a bit on Laravel-specific consulting with my [/laravel](https://morebetterfaster.io/laravel/) link.
 
-[AaronSaray.com](https://www.aaronsaray.com/) continues to be primarily focused on blogging, but it hosts my [/resume](https://aaronsaray.com/resume) and [/cv](https://aaronsaray.com/cv) as well.  I thought about redoing it a bit ago - especially when I wrote about [what it means to be a CTO]({% post_url 2021-05-31-what-is-a-cto %}).  While I may still do that, that's no longer on the top of my list.
+[AaronSaray.com](https://www.aaronsaray.com/) continues to be primarily focused on blogging, but it hosts my [/resume](https://aaronsaray.com/resume) and [/cv](https://aaronsaray.com/cv) as well.  I thought about redoing it a bit ago - especially when I wrote about [what it means to be a CTO]({{< ref "/blog/2021-05-31-what-is-a-cto" >}}).  While I may still do that, that's no longer on the top of my list.
 
 [NoCompromises](https://nocompromises.io) is [Joel's](https://joelclermont.com) business, but we work together there as well.  We tend to split up the work and billing depending on who's going to be primarily working on the contract.  I'm tremendously lucky to work with Joel on projects large and small.
 

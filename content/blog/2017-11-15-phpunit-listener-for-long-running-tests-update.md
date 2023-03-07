@@ -5,7 +5,7 @@ tags:
 - php
 - phpunit
 ---
-I wrote instructions in 2011 to [add a PHPUnit Listener to Watch for Long Running Tests]({% post_url 2011-12-20-add-phpunit-listeners-to-watch-for-long-running-tests %}) which seem to be a bit out of date now.  But, here's a quick refresher:
+I wrote instructions in 2011 to [add a PHPUnit Listener to Watch for Long Running Tests]({{< ref "/blog/2011-12-20-add-phpunit-listeners-to-watch-for-long-running-tests" >}}) which seem to be a bit out of date now.  But, here's a quick refresher:
 
 <!--more-->
 

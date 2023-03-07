@@ -10,7 +10,7 @@ When your unit test suite gets larger, it can take quite a long time. One of the
 
 <!--more-->
 
-I've written about this [before]({% post_url 2011-12-20-add-phpunit-listeners-to-watch-for-long-running-tests %}) and [revised it]({% post_url 2017-11-15-phpunit-listener-for-long-running-tests-update %}) as well, but with PHPUnit 9, we have new interfaces and classes that we need to create.  Let's get started.
+I've written about this [before]({{< ref "/blog/2011-12-20-add-phpunit-listeners-to-watch-for-long-running-tests" >}}) and [revised it]({{< ref "2017-11-15-phpunit-listener-for-long-running-tests-update" >}}) as well, but with PHPUnit 9, we have new interfaces and classes that we need to create.  Let's get started.
 
 We're looking for something called [extensions](https://phpunit.readthedocs.io/en/9.5/extending-phpunit.html#extending-the-testrunner) in this version of PHPUnit.
 

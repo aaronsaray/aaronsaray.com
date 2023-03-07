@@ -85,4 +85,4 @@ You may find yourself digging into some areas more than others. For example, if 
 
 Requirements gathering can be hard, and each project is unique, but that doesn't mean that it can't be done successfully. When you use a base set of questions, you can be pretty certain you will cover topics and strike up conversations that will flesh out the requirements pretty well.
 
-Once you're set with gathering your requirements, you should move onto [writing requirements documentation]({% post_url 2023-03-01-requirements-documentation-examples-guidelines-rationale %}). I have some guidance as well as an [example wireframe and requirements document]({% post_url 2023-03-01-requirements-documentation-examples-guidelines-rationale %}) to help you get started.
+Once you're set with gathering your requirements, you should move onto [writing requirements documentation]({{< ref "/blog/2023-03-01-requirements-documentation-examples-guidelines-rationale" >}}). I have some guidance as well as an [example wireframe and requirements document]({{< ref "2023-03-01-requirements-documentation-examples-guidelines-rationale" >}}) to help you get started.
