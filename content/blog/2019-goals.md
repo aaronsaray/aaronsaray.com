@@ -4,9 +4,9 @@ date: 2019-06-10
 tag:
 - business
 ---
-{{< call-out/header >}}
+{{< header-call-out >}}
 2019 was a great year, learned a lot. Unfortunately, The Dev Manager and StartUp Tribe are no longer active.
-{{< /call-out/header >}}
+{{< /header-call-out >}}
 
 It's about halfway through 2019 and I think it's time to reflect a little bit on my professional goals.
 

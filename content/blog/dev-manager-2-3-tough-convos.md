@@ -5,9 +5,9 @@ tag:
 - business
 - management
 ---
-{{< call-out/header >}}
+{{< header-call-out >}}
 This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry two? [Click here]({{< ref "/blog/dev-manager-2-3-tough-convos" >}})
-{{< /call-out/header >}}
+{{< /header-call-out >}}
 
 When you manage a team, the conversations you have change a lot. No longer are you justifying your own estimates or explaining your coding decisions. Now, you’re responsible for many different estimates, many different decisions, and many different personalities.
 

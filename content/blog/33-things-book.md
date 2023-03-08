@@ -6,9 +6,9 @@ tag:
 - programming
 - management
 ---
-{{< call-out/header >}}
+{{< header-call-out >}}
 I've migrated the website 33thingsbook.com to this blog post.
-{{< /call-out/header >}}
+{{< /header-call-out >}}
 
 A programmer’s guide to quality code, great work relationships and respect.
 

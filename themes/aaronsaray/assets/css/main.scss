@@ -245,3 +245,33 @@ article {
     background-color: #ffffff;
     overflow-x: auto;
 }
+
+.laravel-cta {
+    padding: 1rem;
+    border-top: 0.5rem solid #3399cc;
+    color: #eaeaea;
+    background-color: #353535;
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.old-post-notification {
+    padding: 1rem;
+    background-color: #fff4a5;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.single .header-call-out {
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    background-color: #fff;
+
+    p {
+        margin-bottom: 0;
+    }
+}

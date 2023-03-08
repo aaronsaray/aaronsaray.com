@@ -6,9 +6,9 @@ tag:
 - business
 - misc-web
 ---
-{{< call-out/header >}}
+{{< header-call-out >}}
 Note: I have shut down name-tag.me.  These notes were taken before I pulled the plug.**
-{{< /call-out/header >}}
+{{< /header-call-out >}}
 
 The goal was to make a "hello my name is" style name tag without the use of images but with a handwritten font.  
 

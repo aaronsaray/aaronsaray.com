@@ -5,9 +5,9 @@ tag:
 - business
 - management
 ---
-{{< call-out/header >}}
+{{< header-call-out >}}
 This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry two? [Click here]({{< ref "/blog/dev-manager-2-3-tough-convos" >}})
-{{< /call-out/header >}}
+{{< /header-call-out >}}
 
 A colleague once said to me that I’m very lucky I haven’t had to fire as many people as he had. I definitely agree with the fact that my management tenure has not involved many terminations, but I don’t consider myself lucky. I put in work, just like you’re doing, to understand how to manage different types of developers.
 

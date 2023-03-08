@@ -5,9 +5,9 @@ tag:
 - business
 - management
 ---
-{{< call-out/header >}}
+{{< header-call-out >}}
 This is part of a series of articles from the retired The Dev Manager website.
-{{< /call-out/header >}}
+{{< /header-call-out >}}
 
 It’s amazing what the internet can bring us, both positive and negative. Sadly, some of the worst people hang out on the internet. They bully, they rage, they say and do horrible things.
 

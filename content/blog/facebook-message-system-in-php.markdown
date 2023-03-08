@@ -4,9 +4,9 @@ date: 2010-07-27
 tag:
 - php
 ---
-{{< call-out/header >}}
+{{< header-call-out >}}
 Update: I've gotten a lot of comments on this code.  This was a simple proof of concept at the time when Facebook was creating messages like this.  They no longer do it in this manner.  I also am not supporting any updates to this code.  Thanks for your interest!
-{{< /call-out/header >}}
+{{< /header-call-out >}}
 
 So Facebook has been really cool in the way that they have designed and implemented some new paradigms in the electronic communication realm.  However, one thing is a problem: they're too smart.  They have hired the best of the best - and have made that the norm.  The rest of us are struggling to keep up.
 

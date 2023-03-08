@@ -5,9 +5,9 @@ tag:
 - business
 - management
 ---
-{{< call-out/header >}}
+{{< header-call-out >}}
 Not all things go as planned, and that's ok. Entrepreneurship is hard! I've decided to roll my Dev Management coaching back into AaronSaray.com.
-{{< /call-out/header >}}
+{{< /header-call-out >}}
 
 I'm proud to announce that I've launched One on One Coaching at The Dev Manager!
 

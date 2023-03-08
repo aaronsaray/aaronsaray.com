@@ -1,7 +1,15 @@
 {{ define "main" }}
-<main class="container container-limited pb-5">
+<main class="container container-limited pb-5 single">
     {{ .Scratch.Set "blog-display" "single" }}
     {{ partial "blog-entry.html" . }}
+
+    {{ if in .Params.tag "laravel" }}
+    <div class="laravel-cta my-5 shadow-sm">
+        Looking for more Laravel Tips & Tricks? Join Joel and I on the <a href="https://show.nocompromises.io/"
+            target="_blank">No Compromises</a> bi-weekly podcast; around 15 minutes of thoughtful real-world advice and
+        helpful info.
+    </div>
+    {{ end }}
 
     <div class="text-center mt-5">
         <a href="/blog">Go to All Posts</a>
