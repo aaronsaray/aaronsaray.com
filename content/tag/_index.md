@@ -5,4 +5,4 @@ draft: false
 ---
 # Tags for the Blog
 
-My {{% blog_count %}} blog entries fall into these various different topics:
+My {{% blog-count %}} blog entries fall into these various different topics:
