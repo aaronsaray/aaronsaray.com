@@ -23,4 +23,3 @@ Sometimes that's not enough...
 PS: Real life example:  So, I've been tracking logins for a while now.  A tech support specialist suggested that I make the audit more verbose by tracking which browser the user used.  That way, they can view the last login of the user, and already narrow down any browser based issues before they send an issue my direction.  I added this and I've saved both support and myself tons of time already.
 
 Double PS: Let's get proactive: If you were tracking failed logins, you could use something like fail2ban to stop IPs that are continually generating failed logins.  Additionally, if you want to get proactive with your customers, you could see who has to request their password to be reset often.  It may make sense to give them a call and see if there is a way to help them proactively.  
-

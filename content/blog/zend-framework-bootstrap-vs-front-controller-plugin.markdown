@@ -18,7 +18,7 @@ Front controller plugins are launched whenever there is a request as a webpage. 
 
 Let's see this in practice.  Here's my before:
 
-**`application/Bootstrap.php`**
+{{< filename-header "application/Bootstrap.php" >}}
 ```php
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
@@ -36,7 +36,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 Now, afterward, make sure front controller plugins are defined, and then create a front controller plugin.  After:
 
-**`application/Bootstrap.php`**
+{{< filename-header "application/Bootstrap.php" >}}
 ```php
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
@@ -49,8 +49,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 }
 ```
 
-**`application/plugins/ViewSetup.php`**
-
+{{< filename-header "application/plugins/ViewSetup.php" >}}
 ```php
 class Application_Plugin_ViewSettings extends Zend_Controller_Plugin_Abstract
 {

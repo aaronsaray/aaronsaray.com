@@ -8,7 +8,7 @@ By default, when using the Zend Paginator, the result set will come back as an a
 
 <!--more-->
 
-**Enter the Filter**
+Enter the Filter.
 
 The `Zend_Paginator` class has a function called `setFilter()` that will accept a `Zend_Filter_Interface`'d object and apply it to each result set.
 

@@ -10,7 +10,7 @@ I'm not gonna lie - I was really trying to figure out how to put more keywords o
 
 So, I don't have a need for it for this particular site - but maybe you do?  Check out the [Scroll and stop demo in jquery](https://codepen.io/aaronsaray/pen/OJomPNr).
 
-### The Code
+## The Code
 
 The mark-up is very simple.  Just a div, and a UL of terms:
 

@@ -9,8 +9,9 @@ JSTool was a trial run of combining many different scripts from the open source 
 
 <!--more-->
 
-[![js tool](/uploads/2008/jstool-112x150.gif)](/uploads/2008/jstool-112x150.gif){: .thumbnail}{: .pull-right}
+{{< image src="/uploads/2008/jstool-112x150.gif" alt="JS Tool" >}}
 
-Features would include history viewing, website status reporting and port scanning. Very little original code - just combinations of existing code.  Check             the comments for proper author attribution.  This script really isn't             in working condition for production distribution.  Download it and              learn from it.
+Features would include history viewing, website status reporting and port scanning. Very little original code - just combinations of existing code.  
+Check the comments for proper author attribution.  This script really isn't in working condition for production distribution.  Download it and learn from it.
 
 [JS Tool](/uploads/2008/jstool_01a.zip)

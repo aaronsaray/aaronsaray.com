@@ -17,11 +17,11 @@ In JEMDiary, I started with my first MVC architecture.  I learned a lot about se
 
 I ended up making a few core classes - which in hindsight should have been abstract classes - but they were just base classes.  Then, I extended each of those to be more specific, but still worker classes.  So, all of my database classes extended the main DB class, blah blah blah.  I re-invented the wheel, and basically had my own PEAR classes (but in this particular case they extended PDO ;)).
 
-Then, I moved on to develop my core directory layout.  I decided to put my control modules inside of the folder named **`view`** with a specific view underneath it.  The reason I did this is because I assumed certain views might have different functionality (IE, you might not be able to do everything on your WAP view...).  So, I ended up making the file **`/view/browser/write.php`** - which was the controller for the browser view.  Inside of there, we made our decisions on whether to show a display, process a write or do a redirect.  The decision to show a view was a view class instantiation, the processing was a base model class.
+Then, I moved on to develop my core directory layout.  I decided to put my control modules inside of the folder named `view` with a specific view underneath it.  The reason I did this is because I assumed certain views might have different functionality (IE, you might not be able to do everything on your WAP view...).  So, I ended up making the file **`/view/browser/write.php`** - which was the controller for the browser view.  Inside of there, we made our decisions on whether to show a display, process a write or do a redirect.  The decision to show a view was a view class instantiation, the processing was a base model class.
 
-There was another directory called **`MVC`**.  Inside of here, every single main model class was there in PHP files named after their class name (like PEAR).  Then, folders named after each of the base model classes had either more model, or a view folder with a view named class in it.  The directory separator was an underscore (like PEAR).
+There was another directory called `MVC`.  Inside of here, every single main model class was there in PHP files named after their class name (like PEAR).  Then, folders named after each of the base model classes had either more model, or a view folder with a view named class in it.  The directory separator was an underscore (like PEAR).
 
-So, an example of our **`write.php`** class could be a filename of **`/view/browser/write.php`**
+So, an example of our `write.php` class could be a filename of `/view/browser/write.php`
 
 ```php
 $write = new JEMDiaryWrite_view_browser();
@@ -36,7 +36,7 @@ class JEMDiaryWrite_view_browser extends JEMDiaryWrite
 
 The issue came from when I wanted to show the profile information in the read pages.  I had a read page display... but we can only extend one class at a time with PHP - so I wasn't able to extend the profile logic.  Instead, I had to create my own version of the profile object inside of the read view... - this was just stupid and redundant.
 
-#### What could I have done better?  What will I do for this new project?
+## What could I have done better?  What will I do for this new project?
 
 Well, I got 'protected-happy'... I wanted to protect everything all the time... which is an OK idea, but hard in concept.  One of the patterns I was just reading about was using data objects all the time.  So instead of having some protected array attributes, keep the logic private, but then create public objects.  This way they can have their attributes public, but not be coupled to the actual logic.  They can also "take responsibility" by having their own methods... Why is this important?  Take for example a row returned from a database.  It has a timestamp in mysql.  You may want to create this as a unix_timestamp.  You could create a new data object which would have this as one of its methods - so it could internally take control of that for you.
 

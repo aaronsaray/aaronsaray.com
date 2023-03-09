@@ -8,7 +8,7 @@ While those familiar with the specifics of linux and bash are probably very fami
 
 <!--more-->
 
-If you'd like to save some keystrokes after a `vagrant ssh` - you might want to add this line to your ansible config.  This will automatically change directory to the /vagrant folder when you log in.
+If you'd like to save some keystrokes after a `vagrant ssh` - you might want to add this line to your ansible config.  This will automatically change directory to the `/vagrant` folder when you log in.
 
 ```yaml
 tasks:

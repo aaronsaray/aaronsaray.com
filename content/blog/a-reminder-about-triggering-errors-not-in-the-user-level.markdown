@@ -42,8 +42,10 @@ trigger_error('test error', E_USER_NOTICE);
 
 Our output is predictable:
     
-    User Notice
-    string: test error
+```txt
+User Notice
+string: test error
+```
 
 However, I was forgetting to put the USER in that error:
 
@@ -53,7 +55,9 @@ trigger_error('test error', E_NOTICE);
 
 And my error:
 
-    Warning
-    string: Invalid error type specified
+```txt
+Warning
+string: Invalid error type specified
+```
 
 So just a reminder, you can only trigger errors in the USER class.

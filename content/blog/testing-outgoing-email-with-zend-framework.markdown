@@ -9,7 +9,7 @@ I was creating a new application with Zend Framework at work the other day and I
 
 <!--more-->
 
-### Goals/Objectives
+## Goals/Objectives
 
   * Using Zend Framework's `Zend_Mail` to send mail
 
@@ -17,11 +17,11 @@ I was creating a new application with Zend Framework at work the other day and I
 
   * Must require no changes between production and development code - should be automatic
 
-### The Solution: A new class Application_Model_Mail
+## The Solution: A new class Application_Model_Mail
 
 I decided to make a new model called Mail which will extend the `Zend_Mail` class.  Everything will work the same except for the to addresses.  See this code:
 
-**`application/models/Mail.php`**
+{{< filename-header "application/models/Mail.php" >}}
 ```php
 <?php
 class Application_Model_Mail extends Zend_Mail

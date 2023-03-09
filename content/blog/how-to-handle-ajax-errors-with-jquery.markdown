@@ -41,7 +41,7 @@ In this function, an error message is generated based on the error type.  The on
 
 Here is an example of this in use:
 
-**`ajax.php`**
+{{< filename-header "ajax.php" >}}
 ```php
 <?php
 header('HTTP/1.1 503 Service Unavailable');    

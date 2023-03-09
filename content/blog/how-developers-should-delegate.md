@@ -15,7 +15,7 @@ Developers have the same challenge.  They can add more value, they can create re
 
 What does this mean?  Well, let's take a concrete type of example.  Too many times I see this:
 
-```
+```txt
 Product Config through code or database by MySQL
 -- then, later --
 Command line scripting to save time, ran by developer
@@ -27,10 +27,10 @@ This takes way too much time to get to the interface usually in this process.  T
 
 This pain is felt by the developer, which is indirectly proxied to the business, but is rarely understood by product owners or management.  Consider this common back and forth:
 
-Owner: "Why are project timelines slipping?"  
-Developer: "I have to do a task to update things that takes 15 mins each time. It happens quite often."  
-O: "That should only take 1 minute... why the extra 14?"  
-D: "To get back in the zone."
+**Owner:** "Why are project timelines slipping?"  
+**Developer:** "I have to do a task to update things that takes 15 mins each time. It happens quite often."  
+**O:** "That should only take 1 minute... why the extra 14?"  
+**D:** "To get back in the zone."
 
 Most non-development people don't understand that this context shifting is expensive.  Expensive to a developer's process, their sanity, but more so the product goals and revenue.  You're not generating new things anymore, you're doing maintenance.
 

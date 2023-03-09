@@ -16,7 +16,7 @@ I might also like to have diversified income. I'd like to not be grinding it out
 
 So, I have dreams. I have ideas. I try them out. Most fail.
 
-### The Genesis of RedirectURL
+## The Genesis of RedirectURL
 
 One idea I had was an app called [Possessor]({{< ref "/blog/the-end-of-possessor" >}}).  I had been using services that had required
 me to validate and verify that I owned my domain. Each one seemed to have a different way of doing things. I wondered: could I make an application
@@ -37,7 +37,7 @@ very soon it was no longer free.  It required you to pay for a redirect, which I
 a good bit of this actually for free. I just didn't see that.) I also thought the average user a) didn't want to muck about in the complex rules
 system of Cloudflare and b) might not even know how that works.  So RedirectURL was born.
 
-### Implementing RedirectURL
+## Implementing RedirectURL
 
 I decided to work with [Joel](https://joelclermont.com) as a partner for my new product RedirectURL.  I knew that at some point
 I might want to have a pretty scalable infrastructure and I'd need some cloud configured services.  I spend a lot of my time in application 
@@ -56,7 +56,7 @@ that.
 Joel created the infrastructure to work with Caddy and host the SSL certs and provide the redirects. He also made cloud functions
 to check DNS, verify configuration and provision new services.
 
-### Challenges
+## Challenges
 
 With subdomains, you can easily tell people to point to a CNAME in DNS and you can do the redirect.  With top level domains, you have
 to use an A record (unless your registrar supports CNAME flattening - which most don't).  The challenge is we needed people to
@@ -65,7 +65,7 @@ alter their DNS services and add in an IP - which may actually change in the fut
 Motivation was also a factor.  I'm not a marketer, so we didn't see much traffic.  We didn't market it that well, either.
 I think this was something that I wanted but Joel didn't really. He just wanted to work on the project with me so we'd learn together. 
 
-### Just Not Worth It
+## Just Not Worth It
 
 There are a number of features I still wanted to build, but I never seemed to get around to them.  So that meant that both
 partners weren't really that excited about building on it.  I also wanted to move hosting, and that would require IP moves.
@@ -75,7 +75,7 @@ insanity and was now open to listening to him again.
 
 So I shut it down.  And you might be here (probably not) from the redirect URL handled by Cloudflare.
 
-### Haven't You Given Up on a Lot?
+## Haven't You Given Up on a Lot?
 
 If you're an active reader, you wouldn't be out of line to ask "Haven't you shut down and given up on a lot of ideas?"
 You're right. I have tried a lot of things and shut down a lot of things.  But that's what I really wanted to talk about now.
@@ -97,7 +97,7 @@ It's ok to fail. But failing, shutting things down, and moving on - is not givin
 and make more adjustments.  I think RedirectURL was probably one of the most ambitious things I took on (besides working
 on my own with my own company [More Better Faster](https://morebetterfaster.io)). And I've learned a lot.
 
-### What Have I Learned?
+## What Have I Learned?
 
 Writing about failure takes vulnerability - if you're willing to admit what you failed, why, and what you learned. Otherwise
 it's just venting and complaining.  Let me try to distill what I've learned.  (Again, I don't hazard that my regular readers
@@ -118,7 +118,7 @@ a complex redirect, would be willing to pay me for it, but didn't want to set it
 people. Yeah, I did dogfood my own product, but... yeah. Turns out it was a customer segment I didn't want to support either.
 Almost one of those knows just enough to be dangerous group.
 
-### Final Notes
+## Final Notes
 
 Honestly, I got a bit depressed when I realized it was time to shut down RedirectURL. Another failure.  But, I did learn
 a lot. And getting rid of non-performing projects, products and assets lowers the cognitive load - so I can be ready

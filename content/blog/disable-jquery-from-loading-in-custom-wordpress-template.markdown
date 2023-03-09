@@ -1,4 +1,5 @@
 ---
+title: Disable jQuery from Loading in Custom Wordpress Template
 date: 2010-05-18
 tag:
 - jquery

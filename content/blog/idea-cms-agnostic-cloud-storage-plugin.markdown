@@ -11,7 +11,7 @@ So I've been looking into cloud storage a bit again - and I decided to do a bit 
 
 So first, here are the competitors:
 
-### Drupal Cloud Storage
+## Drupal Cloud Storage
 
   * [Cloud Files](https://drupal.org/project/cloud_files)
 
@@ -25,7 +25,7 @@ So first, here are the competitors:
 
   * [Media Mover](https://drupal.org/project/media_mover)
 
-### Joomla Cloud Storage
+## Joomla Cloud Storage
 
   * [Perfect SkyDrive File](http://extensions.joomla.org/extensions/directory-a-documentation/cloud-storage/23933)
 
@@ -37,7 +37,7 @@ So first, here are the competitors:
 
   * [jomCDN](http://extensions.joomla.org/extensions/core-enhancements/performance/content-networking/14395)
 
-### Wordpress Cloud Storage
+## Wordpress Cloud Storage
 
   * [CDN Sync Tool](http://wordpress.org/plugins/cdn-sync-tool/)
 
@@ -57,7 +57,7 @@ So first, here are the competitors:
 
 So, here's the idea
 
-### Build the core, add on the plugins
+## Build the core, add on the plugins
 
 I think a great idea would be for someone to build a core storage system for adding, updating, and retrieving assets using the cloud.  Things like SimpleCloud are a good starting place.  So, make a quick wrapper around this and support a number of cloud storage things.
 

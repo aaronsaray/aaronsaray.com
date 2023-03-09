@@ -8,7 +8,9 @@ As you may or may not be able to tell, I use Wordpress on this website.   So, I 
 
 <!--more-->
 
-[![Milwaukee Wordcamp 2013](/uploads/2013/wcmke.png)](http://2013.milwaukee.wordcamp.org/){: .inline}{: .thumbnail}{: .pull-right}
+{{< link href="http://2013.milwaukee.wordcamp.org/" img="/uploads/2013/wcmke.png" alt="Milwaukee Wordcamp 2013" >}}
+Milwaukee Wordcamp 2013
+{{< /link >}}
 
 Last year, I spoke about [Wordpress Plugin Security]({{< ref "/blog/finished-up-wordcamp-milwaukee-2012" >}}) - for the first Milwaukee Wordcamp ever.  I had a great time and really liked it.
 

@@ -11,7 +11,7 @@ I love using [Policies](https://laravel.com/docs/9.x/authorization#creating-poli
 
 Let's take a look at a simple policy for a Company model.  I want to authorize a user to view a company. It should check to see if there is a relationship between the user and the company.  We're going to skip all the implementation of the policies into Laravel and our workflow - and just look at the policy itself.
 
-**`app/Policies/CompanyPolicy.php`**
+{{< filename-header "app/Policies/CompanyPolicy.php" >}}
 ```php
 <?php
 
@@ -40,7 +40,7 @@ You might use an interception with the `before()` method to handle this.  We hav
 
 Instead, create a trait and apply it only to the policies that need it.  Let's see the trait.
 
-**`app/Policies/AllowAdminToDoAnything.php`**
+{{< filename-header "app/Policies/AllowAdminToDoAnything.php" >}}
 ```php
 <?php
 

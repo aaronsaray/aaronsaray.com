@@ -10,7 +10,7 @@ Considering I write a lot about business in this blog - and a few years has pass
 
 <!--more-->
 
-# American CEO Psychopathic Tendencies
+## American CEO Psychopathic Tendencies
 
 **Aaron Saray**  
 **BSM 1-2018, MGT 499 Capstone: Strategic Organizational Leadership**  

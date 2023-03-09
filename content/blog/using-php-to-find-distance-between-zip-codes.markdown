@@ -8,11 +8,11 @@ Today marked the second time I had to write this code from scratch.  To save my 
 
 <!--more-->
 
-### Get Your Zips
+## Get Your Zips
 
 I found a great resource at [ibegin.com](http://geocoder.ibegin.com/downloads.php) - a download of 5 digit zip codes, city, state and county name, and their latitude and longitude.  (Just in case it's unavailable, I have archived it [here](/uploads/2009/zip5.zip).)
 
-### Import your Zips
+## Import your Zips
 
 The table I'm using was created with this SQL:
     
@@ -72,9 +72,9 @@ if (count($inserts)) {
 print 'done';
 ```
 
-This imported a nice set of 41755 zip code rows.
+This imported a nice set of 41,755 zip code rows.
 
-### Distance Calculations
+## Distance Calculations
 
 Now, I should give a disclaimer: this is just code that you can use.  It is not the 'cleanest' or best organized.  When I implement this code for my employer, I will be making a few changes, including it in a class, etc.
 
@@ -147,7 +147,7 @@ function get_zips_within($zip, $miles)
 
 This last statement gets the zips within that many miles.
 
-### How Should I Use These?
+## How Should I Use These?
 
 Because I'm not about to do the calculations based on the earth's curvature in my SQL statement, I can have some misleading results.  Since the distance - especially as the difference in location grows - is elongated by the curvature, the initial query using the between statement should actually request a larger mileage than expected.  Then, this result set should be looped through and compared using the function which computes using the curvature to get a more accurate result set.
 

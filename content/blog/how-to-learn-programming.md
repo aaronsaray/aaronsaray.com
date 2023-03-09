@@ -12,9 +12,9 @@ Recently, I was asked this question, but for an even nobler reason. Someone want
 
 So without too much more rambling, let's talk about some resources.  
 
-> One quick note. Not everyone learns the same way. I'm going to do my best to point out resources and things that I know about that can help with learning programming. Some of these might be a great fit for you, others might want to make you pull your hair out. Pick what works best.  Also, since I tend to work in internet technologies, my suggestions will be slanted this way.
+**One quick note. Not everyone learns the same way.** I'm going to do my best to point out resources and things that I know about that can help with learning programming. Some of these might be a great fit for you, others might want to make you pull your hair out. Pick what works best.  Also, since I tend to work in internet technologies, my suggestions will be slanted this way.
 
-### Training Videos
+## Training Videos
 
 Visual learners may benefit from video content and walkthroughs. Some video content is self-guided and others are interactive.
 
@@ -28,7 +28,7 @@ Don't forget, you can find many conference videos on YouTube as well.  For examp
 
 Finally, if you find someone that you like to learn from, they might actually have their own video content.  [Wes Bos](https://wesbos.com/courses/) is a good example of this.
 
-### Books and Reading
+## Books and Reading
 
 If text is more your thing, don't forget about the online resource guide, technical blog, or books!
 
@@ -42,7 +42,7 @@ Don't forget about your locally library!
 
 When it comes to technical blogs, you can find people that you might want to learn from and subscribe to their entries.  Or, you can start exploring on a site like [DZone](https://dzone.com/).  I recommend using something like [Feedly](https://feedly.com) to manage your RSS subscriptions.
 
-### Community Involvement
+## Community Involvement
 
 If you're working in the open source world, you should check out [Github](https://github.com). This holds tons of projects, all of them looking for help! You can go to the issues section, grab one labeled `great first issue` or something like that, and try to participate. You can learn so much from watching others and participating yourself.
 
@@ -50,7 +50,7 @@ Check out [meetup.com](https://meetup.com) for meetups and programming groups ne
 
 As with all pursuits, having a good mentor is great, too.  I recommend finding a mentor who can help direct you along the path. Mentors aren't there to solve your problems, just to send you in the right direction. With people I mentor, I basically tell them that I want to help them not make the same mistakes I did. That doesn't mean they won't make new and unique mistakes, but we won't be repeating the past between ourselves.
 
-### Schooling
+## Schooling
 
 Official schooling is not on my list of suggested ways to get started.  Don't get me wrong, there are a lot of people who are trying and doing a good job teaching at universities. But, there are a lot of out of date and subpar options as well.
 
@@ -62,7 +62,7 @@ Tech schools offer more hands-on get-a-job right away teaching.  Universities te
 
 Bootcamps can't guarantee you results. There is nothing wrong with the theory as far as I'm concerned, but it's only one narrow experience.  Usually these aren't worth the money, but your mileage may vary.
 
-### How To Get Started?
+## How To Get Started?
 
 The answer to that is really simple.  Just stop reading this and start now.  Pick an open source project and go through the issues and participate. Or, even better, think of a project you'd like to use, and build it. For example, if you use a website but you wish something was better, just build a better version of it! (You don't even have to rebuild the same site. Sometimes you can alter the content or functionality using things like [Tamper Monkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)). Sure, you could purchase a Google Home, but why not get an Adurino or a Raspberry Pi and make your own IoT device to control your home.  
 

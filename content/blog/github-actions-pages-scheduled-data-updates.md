@@ -19,7 +19,7 @@ This article will break down how I use Github Actions and Github Pages to retrie
 
 You can find the finished code at this [repository](https://github.com/aaronsaray/auto-update-github-pages-demo).
 
-### First Steps
+## First Steps
 
 For this example, I want to create a page that displays the daily Silver Spot Price based on the Metals.live API.  The beauty of this approach is that you could even use a private key with an API because Github actions store environment variables and secrets securely.
 
@@ -77,7 +77,7 @@ number. Those values will be inserted using the `innerText` property (better to 
 
 Now that we have this working, it's time to look at the Github Action
 
-### The Github Action
+## The Github Action
 
 I've created a file called `.github/workflows/updates.yml` which contains the following:
 
@@ -120,7 +120,7 @@ Then, it runs a job named `update`.  This will get a runner based on `ubuntu-lat
 that I've configured to download the data from the API and store it into a variable named `myRequest`.  Then, it will echo that request response to my `data.json`
 file in the local context of this checkout.  Finally, it uses the `EndBug/add-and-commit@v7` action to commit the updated file and push it back to the repo.
 
-### Github Pages
+## Github Pages
 
 Github pages is configured on this repository to build from the `main` branch.  It will build every time there's a commit.  This is useful because it will 
 update itself every time I make a change to my HTML/JS - or - when the workflow makes a change to the data file.

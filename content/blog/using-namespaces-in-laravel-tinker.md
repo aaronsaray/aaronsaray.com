@@ -13,7 +13,7 @@ One thing I don't like, though, is the amount of typing it takes when I'm trying
 
 Check out this Laravel Tinker output:
 
-```
+```txt
 >>> $account = new App\Models\Facebook\Account();
 => App\Models\Facebook\Account {#1155}
 >>> $account->pages()->save(new App\Models\Facebook\Page());
@@ -23,7 +23,7 @@ Ugh - so many keystrokes right? :-)
 
 But, you can actually set your working namespace inside of Tinker.  Check out this example:
 
-```
+```txt
 >>> use App\Models;
 => null
 >>> $account = new Models\Facebook\Account();
@@ -32,7 +32,7 @@ But, you can actually set your working namespace inside of Tinker.  Check out th
 
 That's cool - but let's say you knew you were even going to be working just with Facebook models, in that context - go one level deeper with your namespace usage.
 
-```
+```txt
 >>> use App\Models\Facebook;
 => null
 >>> $account = new Facebook\Account();

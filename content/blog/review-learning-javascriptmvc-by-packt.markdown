@@ -8,7 +8,9 @@ Someone from Packt reached out to me the other day to ask if I'd do a review of 
 
 <!--more-->
 
-[![learning javascriptmvc](/uploads/2013/learning-javascriptmvc-240x300.jpg)](http://link.packtpub.com/hFZPlQ){: .thumbnail}{: .pull-right}
+{{< link href="http://link.packtpub.com/hFZPlQ" img="/uploads/2013/learning-javascriptmvc-240x300.jpg" alt="book" >}}
+Learning JavascriptMVC
+{{< /link >}}
 
 Starts out describing the JavaScriptMVC framework:
 - DocumentJS
@@ -21,6 +23,7 @@ Gives the ever present foo-bar type example: create a todo list.  (the only one 
 The example code is pretty easy to follow.  I feel like I could code mainly based on the example for this simple project.
 
 Then it goes on to describe each section:
+
 StealJS: describes how to manage large packages of software.  I don't really like this too, myself, plus I didn't feel like the book went into enough detail - especially if this is such a pivotal part of the examples and code.  Note, there is a full chapter about StealJS - yup pages 69 to 72.  Not enough.
 
 DocumentJS: the book is good: it describes it well.  However, I feel like the tool is a little bit unneeded - and shouldn't be considered part of the framework.  What about Jsdoc?  At any rate, good job describing, don't like it's inclusion in the framework though.

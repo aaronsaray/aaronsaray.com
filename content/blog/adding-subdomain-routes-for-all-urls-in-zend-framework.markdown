@@ -8,7 +8,7 @@ All the examples I've seen for pulling information from subdomains are from the 
 
 <!--more-->
 
-**Enter Chaining!**
+Enter Chaining!
 
 So far, all the examples have shown how to chain a hostname route to a single other route.  Like I mentioned, this solves the singular `subdomain->action` connection.  However, now I need to apply it to all of my routes.
 
@@ -31,7 +31,7 @@ First, the router is retrieved again.  Next, the hostname route is created. In t
 
 Now, when visiting `site1.example.com/blog/add`, the parameters array in the controller will be:
     
-```
+```txt
 'sitename'   => 'site1',
 'controller' => 'blog',
 'action'     => 'add'

@@ -9,7 +9,7 @@ A while ago, I saw a website that provided a javascript error reporting service.
 
 <!--more-->
 
-### Javascript's Error Handler
+## Javascript's Error Handler
 
 Javascript has an error handler called `onerror`.  It belongs to the window element.  This function accepts three parameters:
 
@@ -19,11 +19,11 @@ Javascript has an error handler called `onerror`.  It belongs to the window elem
 
   * Line Number: This is the line number of the previous file mentioned in URL that the browser believes is in error.
 
-### Sending a Request Like AJAX - um. Before AJAX
+## Sending a Request Like AJAX - um. Before AJAX
 
 Before the `XMLHTTPRequest` object became mainstream and understood, I was still creating asynchronous calls using iframes.  Another option I toyed with was the Javascript `Image` object.  When creating an `Image` object, the `src` attribute can be specified as a complete URI.  With this in mind, I choose to use the `Image` object request style over the `XMLHTTPRequest` object - just for simplicity. (Remember, I've already had one error - so I might as well do everything as simple as possible from now on...)
 
-### The Javascript Code
+## The Javascript Code
 
 The first code snippet in my head is this javascript.  (I keep it inline...)
 
@@ -40,15 +40,14 @@ I simply assign my function to the onerror method of the window object.  It crea
 
 One interesting thing to note is the `onerror()` method's ability to suppress errors.  This is done by returning `true` from the anonymous function.  I tend to not like this idea for two reasons:
 
-  * 1) I may make a mistake and not log the error properly, so I don't want to suppress any reference to it.
+* I may make a mistake and not log the error properly, so I don't want to suppress any reference to it. 
+* Sometimes when troubleshooting an error with a user, it is important for them to be able to relay the errors to you.
 
-  * 2) Sometimes when troubleshooting an error with a user, it is important for them to be able to relay the errors to you.
-
-### Tell me about the PHP
+## Tell me about the PHP
 
 The php file is pretty simple:
 
-**`jserror.php`**
+{{< filename-header "jserror.php" >}}
 ```php    
 $message = "Javascript Error: {$_GET['message']} ||";
 $message .= " URL: {$_GET['URL']} ({$_SERVER['HTTP_REFERER']}) || ";

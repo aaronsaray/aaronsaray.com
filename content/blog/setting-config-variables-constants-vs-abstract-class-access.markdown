@@ -8,9 +8,9 @@ As I was looking through some old code from Big Boy, I noticed a block of his co
 
 <!--more-->
 
-### INI File and Constants
+## INI File and Constants
 
-Having dabbled in win32 programming back in the 3.1 era, I am very familiar with the `.ini` file.  I used to love to sneak little bits of 'hacks' into all my ini files ( even as far as making another person's file manager load into something else from accessing their win.ini... ;) )  PHP supports this with its [`parse_ini_file()`](http://php.net/parse_ini_file) function.  This function lets you make standard `.ini` files - and will read them into a nice pretty array for you.  With an additional boolean flag, you can even make multidimensional arrays (check out the docs).  Basically, big boy was reading in an `.ini` file and then looping through sections, and variables and defining them... code example:
+Having dabbled in win32 programming back in the 3.1 era, I am very familiar with the `.ini` file.  I used to love to sneak little bits of 'hacks' into all my ini files ( even as far as making another person's file manager load into something else from accessing their win.ini... ;) )  PHP supports this with its [`parse_ini_file()`](http://php.net/parse_ini_file) function.  This function let's you make standard `.ini` files - and will read them into a nice pretty array for you.  With an additional boolean flag, you can even make multidimensional arrays (check out the docs).  Basically, big boy was reading in an `.ini` file and then looping through sections, and variables and defining them... code example:
 
 ```php
 $ini = parse_ini_file('values.ini', true);
@@ -23,7 +23,7 @@ foreach ($ini as $section=>$sectionArray) {
 
 As you can see, this now puts our config options into a nice set of constants for use in our class, models, controllers, etc.  (disclaimer: I'm sure big boy has made better code since this...)
 
-### Config using a static class and possible Singleton Pattern
+## Config using a static class and possible Singleton Pattern
 
 For my configuration options, I built a static class (which I used PHP5's autoload to make accessible) called `CONFIG`.  I then created a set of static methods, get and set (in hindsight, I could have modified these to use the magic methods for this class...), a singleton constructor and a logic module.  My logic module made a few decisions based on server configuration, location and site, allowing me to access those properties later.  I also could have made a mysql connection or a .ini file read in this if I wanted to.
 
@@ -81,7 +81,7 @@ class FWCONFIG
     $file = $path . DIRECTORY_SEPARATOR . 'FWCONFIGDETAILS.php';
 
     /**
-     * if we can read the file, lets bring it in.  If its not readable,
+     * if we can read the file, let's bring it in.  If its not readable,
      * doesn't exist, or any other thing, we don't care about it.
      * It is possible to have an instance of the Framework without this
      * config.
@@ -183,7 +183,7 @@ class FWCONFIG
 }
 ```
 
-### So - whats the best way to do it? (and any lessons learned?)
+## So - what's the best way to do it? (and any lessons learned?)
 
 There are good arguments for both sides: Use constants because we shouldn't have to edit our config options (well unless we have a plug-in architecture that allows for some of the internal config options to be reset), don't use a class because its bloaty and requires the user to always create an instance of your class (but they can create their own configuration options without having to edit your code or even really know how it works...)
 

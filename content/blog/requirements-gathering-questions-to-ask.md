@@ -14,22 +14,22 @@ If you’re a developer or consultant, you can use these to help you during your
 
 If you’re a prospective business client, you can follow along with this article to prepare for the likely questions that will be asked during the requirements gathering process.
 
-### What Questions Should I Ask?
+## What Questions Should I Ask?
 
 The following is an outline of the general topics to cover during a requirements gathering meeting for software and web application projects. The goal is to make sure no area or concept is forgotten. However, not all questions will apply to every project.
 
-#### General
+### General
 
 * What are you building?
 * Why are you building it?
 * If everything goes the right way, what does 1 year, and 3 years from now look like with this project?
 
-#### Features
+### Features
 
 * What are the main features?
 * What are some nice-to-have features, or things that you know are in the future?
 
-#### Users
+### Users
 
 * Will users need accounts to use your site?
 	* If so, what functionality does not need an authenticated user?
@@ -39,16 +39,16 @@ The following is an outline of the general topics to cover during a requirements
 	* Can you ban users?
 	* If using emails, can emails be re-used?
 
-#### Security
+### Security
 
 * Do you have any specific security concerns?
 * What is / can you describe your data privacy stance?
 
-#### Regulatory / Government
+### Regulatory / Government
 
 * Do you have any regulatory or state/country/locality provisions you need to account for?
 
-#### Integrations
+### Integrations
 
 * What other systems might you integrate with?
 	* Do you have or need a payment provider?
@@ -56,7 +56,7 @@ The following is an outline of the general topics to cover during a requirements
 	* How about CRM/Marketing Automation?
 	* Any in-house or proprietary systems to integrate with?
 
-#### Technical
+### Technical
 
 * Do you have an existing tech team that you work with? If so...
 	* Who is responsible for deploying the code?
@@ -67,13 +67,13 @@ The following is an outline of the general topics to cover during a requirements
 * Do you have any uptime monitoring or are you interested in monitoring?
 * What support expectations do you have?
 
-#### Process
+### Process
 
 * Can the product release be phased or deployed in stages?
 * What are the priorities of each main feature compared to the others?
 * What process do you have for testing and user acceptance?
 
-### But Why These Questions?
+## But Why These Questions?
 
 Some of these questions are pretty self explanatory. Others may seem a bit confusing or even silly. But, each has a reason and a point. While the details of each question is beyond the scope of this article, the do fall into three main categories or reasons.
 
@@ -81,7 +81,7 @@ First, functionality. What types of features are expected? How do they relate to
 
 You may find yourself digging into some areas more than others. For example, if this is a highly regulated industry, you might spend more time on the laws and certifications. For workflow tools, you might focus more on product integrations. Remember, these questions are just a base.
 
-### The End
+## The End
 
 Requirements gathering can be hard, and each project is unique, but that doesn't mean that it can't be done successfully. When you use a base set of questions, you can be pretty certain you will cover topics and strike up conversations that will flesh out the requirements pretty well.
 

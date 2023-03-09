@@ -33,12 +33,16 @@ Let's do the steps:
 
 Now you should have your test trigger set up.  Simply ssh to your Zabbix server and run the following command:
 
-`touch /tmp/test`
+```bash
+touch /tmp/test
+```
 
 Then, in one minute, you should get a new triggered alert. Your action to notify you should now fire.
 
 When you're done, delete the file:
 
-`rm /tmp/test`
+```bash
+rm /tmp/test
+```
 
 And you should be back in business.

@@ -14,33 +14,33 @@ I took a look at all the requests being generated with the firebug net request c
 
 I came up with the idea to cache the results.  One of the volunteers working with the campaign I'm working on was assigned to work with me on this project: <a href="http://www.jackpolifka.com/">Jack Polifka</a>.  Some of the code and understanding I'm going to share here can be partially attributed to him.
 
-### What Is The Plan
+## What Is The Plan
 
 The plan was to do the same request as the fanbox, but to cache that response.  I thought this could be done with CURL, stored, and reloaded every hour.  It wasn't that imperative that the fan pictures and count updated every load.  Once an hour would suffice.
 
-### Issues We Ran Into
+## Issues We Ran Into
 
 Because the fanbox was being cached locally, it was destined not to work exactly perfect.  The good news is that we were able to completely style it perfectly to fit in our layout (Thank our good friend <a href="http://markskowrondesign.com">Mark Skowron</a> for his intuitive eye.)  There were some issues though:
 
-#### Javascript
+### Javascript
 
 The first issue was the use of javascript in the fanbox.  Because Facebook was loading javascript from its own domain, it could do many extra functions that we wouldn't be able to accomplish.  The biggest one was identifying if you were already a fan of the page.  Since Facebook was loading content from their domain, they were able to access your Facebook ID and determine if you already fan'd the page.  Then, the item would update to say you're already a fan.  We couldn't do this.
 
-#### Fan... um... relativity
+### Fan... um... relativity
 
 If you are logged into facebook when you view the widget, it appears to search the page for fans that are friends of yours.  If so, it gives them priority in the picture ordering.  Since we couldn't provide that realtime cookie access, it is just a generic list of fans.
 
-#### Facebook doesn't like CURL
+### Facebook doesn't like CURL
 
 Honest FB, I wasn't trying to mess with you or take advantage of you!  But, when you saw me coming with a CURL user agent, you stopped me in my tracks.  In order to continue the request, we had to change the CURL User Agent to something else.  Then it loaded perfectly.
 
-### But, We did it Anyway
+## But, We did it Anyway
 
 In the end, it was a success.  A cron job is ran every hour to get the content of the facebook widget.  Then, it is written out to a re-formatted output file and read for the next hour.
 
 The cron script:
 
-**`build_facebook_fanbox.php`**
+{{< filename-header "build_facebook_fanbox.php" >}}
 ```php
 <?php
 $builder = new facebook_fanbox();
@@ -52,7 +52,7 @@ This is pretty self explanatory.  The class is instantiated.  A request is made 
 
 Next, I'm going to cover parts of the class and supporting files individually.
 
-**`fanbox.php`**
+{{< filename-header "fanbox.php" >}}
 ```php
 <?php
 class facebook_fanbox
@@ -137,7 +137,7 @@ protected function _buildOutput()
 
 This is pretty simple.  It builds a parameter array of the values we've identified before.  Then, this is passed into the helper function I have to generate the view.  (The specifics of the helper function won't be covered here.  However, all it does is include the file specified in the first parameter, and assign all the values in the next parameter to an internal `$vars` array.)  This output is then assigned to an internal variable.
 
-In order to understand how we're re-parsing the content, lets take a quick look at the stripped down HTML file.  (This is a smaller version and is only meant as demonstration).
+In order to understand how we're re-parsing the content, let's take a quick look at the stripped down HTML file.  (This is a smaller version and is only meant as demonstration).
 
 ```html
 <div class="fan_box">
@@ -179,5 +179,6 @@ protected function _writeOutput()
 
 The final processed output is written to a page that is later included.
 
-### Final Words
+## Final Words
+
 While I'd love to use Facebook's built in fanbox widget, it was causing issues with our page.  I couldn't afford to have the site slowing down because of their excessive resource loading.  I think this method bridges the difference nicely.

@@ -9,7 +9,7 @@ There's a reason why we want to build high-quality code - actually there are man
 
 <!--more-->
 
-#### Longevity and Maintainability 
+## Longevity and Maintainability 
 
 When you create code quickly and cut corners, it's like quickly building a house.  Yeah, you can put up some walls really quick, but it's not the kinda thing you'd brag about or feel safe in. It does block the elements, but it has low resale and it's not very attractive.  So, yes, you got the job done.
 
@@ -21,7 +21,7 @@ When you build software too quickly, it can look flashy but it becomes like Jeng
 
 When you invest more money in the beginning, you can build a better piece of software.  The argument I hear is that we will miss new sales opportunities!  That's right - you will - but that's why you have to shift your project.
 
-##### Shift Your Project
+### Shift Your Project
 
 It's fine to start out as a quick project.  You actually _have_ to do this to prove an idea, to get your first customers, etc.  
 
@@ -29,7 +29,7 @@ But, as you get more customers and build out the product, you have to spend time
 
 You can't just build the Taj Mahal when you first start - but - it does make sense to look at the project as it matures and figure out when it's time to shift to the better architecture.  This helps reduce bugs in the long run - giving you something that his solid and predictable.  And that's what you want - predictability.  It's easier to estimate ROI that way - otherwise with the quick-short-cut method, it becomes less and less predictable how long a task will take.
 
-#### Attracting and Retaining Talented Programmers
+## Attracting and Retaining Talented Programmers
 
 The higher quality your code base, generally, the higher quality the programmers that you can attract and retain.  A less quality, less desirable programmer may focus on pumping stuff out the door - quick as possible.  This, at first, seems attractive.  But, you tend to realize this is bug-ridden code then.  For the sake of speed, they start pushing out code that is half-finished - or - they don't consider all edge cases.  Before you know it, this is affecting your customer base. Yes, there are new features, but they are broken. Or even worse, the old features are no longer working.  Trust me, your customers will notice this.
 
@@ -37,12 +37,12 @@ With these programmers and their software bugs, it means more of your time - as 
 
 A good quality code base with a set of standards will help remove these type of people from your team - and this is what you want.  The less quality programmer won't be able to justify all of their decisions, they'll miss important steps and basically be irritated with the whole process.  The quality code becomes king - not their ability to release sub-par features.  You want these people gone as soon as possible so you can make room for the quality programmers.
 
-##### Great Programmers
+### Great Programmers
 
 Great programmers are proud of their work and want to write their best code.  When you stifle this desire by pushing for "cheap" solutions, it can become a deterrent to stick with the team.  Turnover becomes higher.  "I want to write great code, that's what I'm good at.  But this company does not value that, so they don't value me," thinks the programmer.  They move on.  We know turnover is expensive. 
 
 With quality code, great programmers will want to stick with the project.  Not only will they create more bug-free code, they'll less likely to leave, reducing your HR and training costs.  It's cheaper in the long run to train developers to be better, and to keep up high-quality in the code than to have to rehire sub-par developers.
 
-#### Summary
+## Summary
 
 Writing great quality software may not be the immediate goal or direction, but it needs to happen, and happen quickly, in your project.  You will have less bugs, higher stability, and attract a much higher caliber of programmers.  All of this saves money and time in the long run.

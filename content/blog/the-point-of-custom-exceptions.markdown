@@ -39,4 +39,4 @@ catch (Exception $e) {
 
 Here, in this code example, we do a number of things with the service.  We put a try/catch around those things.  If its a known custom exception, we can do certain things, but allow the code to continue.  Note, if the exception does not match the custom exception, the parent of 'Exception' will finally be caught. (You could also put a custom exception handler in your code so you wouldn't have to define this condition.)
 
-As you can see, there is nothing special about the exception itself - but since it is a specific type of exception, we can capture it effectively (I tend to think of when I use instanceof in my PHP code, this is a similar mindset).  
+As you can see, there is nothing special about the exception itself - but since it is a specific type of exception, we can capture it effectively (I tend to think of when I use `instanceof` in my PHP code, this is a similar mindset).  

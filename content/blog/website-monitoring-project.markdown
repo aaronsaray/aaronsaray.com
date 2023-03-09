@@ -12,9 +12,9 @@ Personally, lately my webhost just upgraded something, and now all of my PDO upd
 
 With all of this in mind,  a new project spawned in my mind.  This project will help fuel my new development, allow me to join the open source community officially, and also hopefully help fund some of 102 Degrees' bills.  I came up with the 'Website Monitoring Project'.  I don't have an official title for it yet... but we will soon!  Let me tell you about all the things I need to consider for this project.
 
-### There are five main categories to consider for my upcoming project:
+## There are five main categories to consider for my upcoming project:
 
-#### Refine the Idea
+### Refine the Idea
 
 The idea is to provide a service that will monitor websites remotely, possibly bring in local debug information, and will look for broken links.  These three features need to be ran remotely, scheduled, and generate reports.  I want to embrace the open source community and possibly build a platform for more remote testing solutions - but I also want to be able to support my own development and side projects (yah 102 D's is in deficit right now...).
 
@@ -34,25 +34,25 @@ The idea is to provide a service that will monitor websites remotely, possibly b
 
 - Write out the logic ideas - Although I have it pretty defined what I want, I still need to design this out further - and say exactly what are the services I want to offer right away
 
-#### Set the Standards
+### Set the Standards
 
 There are many standards that need to mesh for any project to work well.  With the added complexity of releasing it open source, there is another level of standard compliance that we need to adhere to.  We have both internal coding standards and external code dependencies to worry about.
 
-- PHP/Mysql versions - lets face it, not every environment will have PHP5.2 with Mysql5.  Should I make stuff native to the version of PHP I'm using and tell people to bite the bullet ( to the dismay of all those shared hosters ) or should I write smart functions - IE functions which determine the best and most efficient code to run based on the software that is available to them?  If you start supporting more platforms and versions, you end up having a harder to manage codebase - and testing becomes harder - but its more valuable to the users and community.
+- PHP/Mysql versions - let's face it, not every environment will have PHP5.2 with Mysql5.  Should I make stuff native to the version of PHP I'm using and tell people to bite the bullet ( to the dismay of all those shared hosters ) or should I write smart functions - IE functions which determine the best and most efficient code to run based on the software that is available to them?  If you start supporting more platforms and versions, you end up having a harder to manage codebase - and testing becomes harder - but its more valuable to the users and community.
 
 - coding standards - I think its a good thing for every project to have its internal coding standards.  Should I write these up or should I just aim for them the best I can?  This also extends to PHPDoc or any other documenting standard... Should the manuals being separate or should they be made in docbook format so they can be parsed by PHPDoc?
 
-- Frameworks frameworks frameworks - I know I want to deploy an MVC based solution - so should I be creating my own framework for this project, or using the existing ones (Zend, symphony, etc...)  What is the benefit?  Would it be more stable if its based on my framework only - or will there be issues with the external 3rd party frameworks updating and mine not?  Also, lets not kid ourselves - my skill is in PHP, then JS.  Should I use a JS framework?  Should I allow for it to update?  (Does it need to update? Are there ever vulnerabilities found in them?)
+- Frameworks frameworks frameworks - I know I want to deploy an MVC based solution - so should I be creating my own framework for this project, or using the existing ones (Zend, symphony, etc...)  What is the benefit?  Would it be more stable if its based on my framework only - or will there be issues with the external 3rd party frameworks updating and mine not?  Also, let's not kid ourselves - my skill is in PHP, then JS.  Should I use a JS framework?  Should I allow for it to update?  (Does it need to update? Are there ever vulnerabilities found in them?)
 
 - unit testing - I've not used PHPUnit yet... is this the project to whet my teeth on it?  There are a lot of test cases I can imagine I could do  for this - but I'm still reading my Kent Beck book about Test Driven Development.  It would be a nice thing to show on the project site -- even better, we could write more tutorials and allow users to write their own tests for their plugins.
 
-#### Host / Distribute
+### Host / Distribute
 
 - Dedicated hosting for the service - I've mentioned it a lot - but I need to cover some of the bills - so maybe dedicated hosting of the solution will help for some users.  I should be able to subscribe to the service.
 
 - How to get the word out?  - besides SEO, what else could I do to get the web development and hosting community to know about my service?
 
-#### Community
+### Community
 
 - it IS open source - This will be my first official foray into  the open source community.  Should I spend some time with some other projects to see how their community experience works?  Also, do I need to use any other open source solutions? If so, I need to investigate them.
 
@@ -60,12 +60,12 @@ There are many standards that need to mesh for any project to work well.  With t
 
 - tutorials and wiki - Part of the joy of the open source projects will be the tutorials and wikis that the other community members contribute to.
 
-#### To do in the future
+### To do in the future
 
 - pro plugins - Although I can allow for hosting and subscriptions, I can also sell advanced plugins - I should be in the perfect place to develop these - its my coding so I should have it down, and also I'll have all the feedback from users on what they really want.
 
 - increase community - I've not developed a community since hackingzone.org.  It would be nice to increase the support around this project.
 
-### Final Notes
+## Final Notes
 
 So, its a lofty project coming up - and I have many months I believe ahead of me.  I plan to chronicle my decisions and my design plan going forward here.  Look forward to using the product in a few months!

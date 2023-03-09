@@ -10,7 +10,7 @@ I can't help but think a lot of PHP applications have a problem.  These beautifu
 
 So - why do we use these - and what's the problem/solution?
 
-### What's the Problem
+## What's the Problem
 
 First, let's dig into the reasons why template languages exist in PHP - or at least 'excuses' I've heard for them.
 
@@ -19,9 +19,9 @@ This argument is simple: Front end or designers can't know the extreme complexit
 
 ```twig
 <ul>
- {% raw %}{% for thing in things %}{% endraw %}
+ {% for thing in things %}
    <li>{% raw %}{{ thing }}{% endraw %}</li>
- {% raw %}{% endfor %}{% endraw %}
+ {% endfor %}
 </ul>
 ```
 
@@ -46,7 +46,6 @@ I've heard the argument that we need to make sure we don't do logic inside of ou
 
 But, let me submit this bit of code in Twig:
 
-{% raw %}
 ```twig
 {% if loggedin %}
 You are logged in!
@@ -54,18 +53,15 @@ You are logged in!
 Please log in!
 {% endif %}
 ```
-{% endraw %}
 
 At the very basic level, this is a logical choice.  In fact, there's always going to be a small bit of logic in our views unless we really want to generate so many different views that there never is a choice - but then that's a lot of code duplication!
 
 **Templating Languages Make it Easier to Escape User Input**  
 I can't argue that some of the escaping is super cool - like this in Twig:
 
-{% raw %}
 ```twig
 Hola, mi nombre es {{ user.name|e }}
 ```
-{% endraw %}
 
 This is a super easy way of using the HTML escaping strategy in Twig.  But I'd argue against this reason of doing things because - well - because of reason number one.  If the consensus is that designers or front-end people don't have the necessary skill-set to use PHP as their template language, you're assuming that they do have the skill-set or will remember to escape all user input (boy - that sounds very programmery to me).  As a matter of fact, even disciplined back-end programmers forget or overlook proper escaping from time to time. :)
 
@@ -74,7 +70,7 @@ Yup - there are a lot more arguments - and I don't need to get into the details.
 
 I think it's more important to get to the "answer" - if I'm against templating languages, does that mean I'm just for some advanced PHP in the view layer - or what is it that I want? WHAT DO YOU WANT AARON?!
 
-### What's the Solution
+## What's the Solution
 
 First of all, I think it's important to draw a line - a distinction between a healthy view layer library and a templating language.  A view library has a nice set of hooks and functions that make using your templates easy.  It doesn't necessarily dictate which language the actual view file needs to be in.  I am not in favor of getting rid of quality view libraries.
 
@@ -109,6 +105,6 @@ In some systems, you might get a collection of books - and pass that to the view
 
 Instead, with the view model paradigm, all of that looping and data retrieval is done before the view file even gets a hold of it.  And instead of sending data objects to the view, we're probably just going to build a very simple array of data.
 
-### End Notes
+## End Notes
 
 Now, with every suggestion or argument, there are flip sides and other arguments.  I get that, but I think most of the arguments are dwarfed compared to the separation of concerns, security, stability and performance of a PHP-based template with a view model.

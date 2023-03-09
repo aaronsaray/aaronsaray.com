@@ -10,7 +10,7 @@ I was pretty excited that [Zabbix 5.0 LTS](https://www.zabbix.com/whats_new_5_0)
 
 But before that, here's my [Web Scenario Template to Download](/uploads/2020/zabbix-template-web-scenario.xml) so you can import it if you'd like to instead of following these steps.
 
-### Steps to Make Website Up Web Scenario Template
+## Steps to Make Website Up Web Scenario Template
 
 * Click **Configuration** and choose **Templates**
 * Click **Add New**
@@ -41,7 +41,7 @@ You can create individual web scenarios, or you can create hosts that you apply 
 
 Here's how I created a host for a website using this template.
 
-### Make a Host that Uses the Template
+## Make a Host that Uses the Template
 
 * Click **Configuration** and choose **Hosts**
 * Click **Create Host**

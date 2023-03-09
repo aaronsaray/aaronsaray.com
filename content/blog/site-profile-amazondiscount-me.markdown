@@ -10,16 +10,17 @@ The goal was to use links that Amazon provided themselves to showcase categories
 
 <!--more-->
 
-Technical items:
+## Technical items
 
 - as usual, I deflated and set 1 year expirations on items.  I also used a single sprite image for each individual icon for the categories on the left hand side reducing HTTP requests.
 
-Lessons Learned:
+## Lessons Learned
 
 - It may be a very simple design, but users don't browse amazon that much.  They search for what they want.  So discounts of random things aren't that useful.
 - No real text on the page means Google isn't that keen to index it as a top result.
 
-_Screenshots:_
+## Screenshots
 
-[![](/uploads/2012/Screenshot-at-2012-03-14-165821-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-165821.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-165827-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-165827.png){: .thumbnail}
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-165821.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-165821-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-165827.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-165827-150x150.png" alt="Screenshot" >}}

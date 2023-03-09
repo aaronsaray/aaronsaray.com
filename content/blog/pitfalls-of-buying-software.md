@@ -8,7 +8,7 @@ When you're working on a project with a tight timeline, it can seem really attra
 
 <!--more-->
 
-### Buying Software to Save Time
+## Buying Software to Save Time
 
 We need to get the project done now! You've stumbled across a piece of software that looks pretty cool, maybe better than what you currently have, and it seems pretty cheap in comparison to your development budget costs.  Why would you not buy that software? It certainly will save time, right?
 
@@ -16,7 +16,7 @@ Well, yes and no.  There are times when buying software _can_ save time.  But, b
 
 Let's talk about why.  And, let's use a new mansion as a metaphor.  And, to give some context, let's say the project we're working on is a mobile app.  We could build it ourselves from scratch, or we could go to one of the template shops and buy a pre-made template.
 
-### Nice Mansion Next Year?
+## Nice Mansion Next Year?
 
 Sometimes, we like to consider a pre-made software decision to indicate whether we get what we want now, or later.  Would you rather spend the year building a mansion, and get nothing in the mean time, or would you rather have the nice mansion kitchen now?  It looks great, why can't we just plop a mansion kitchen into our existing house?
 
@@ -26,7 +26,7 @@ Let's explain it like this. In your kitchen, you've got an old rickety stove, an
 
 Why not? The kitchen is nicer, newer?
 
-### The Long Haul
+## The Long Haul
 
 When you purchase software, you have to make sure it matches with your team's plan. Something can look great to you, but does it actually solve the problems? Does it make the job harder in the long run?  What other trade-offs are you making? To get the quick, bright, flashy nice thing, you might find yourself spending more money, more time and getting an inferior product in the long run.
 

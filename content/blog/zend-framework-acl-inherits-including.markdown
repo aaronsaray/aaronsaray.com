@@ -8,7 +8,7 @@ So one of the things that really bothered me about the Zend ACL implementation i
 
 <!--more-->
 
-**`Acl.php`**
+{{< filename-header "Acl.php" >}}
 ```php
 <?php
 class Application_Model_Acl extends Zend_Acl

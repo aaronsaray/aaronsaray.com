@@ -18,7 +18,7 @@ At first, the user would enter something like "4:00 PM" - which I'd convert to 1
 
 Then, the user would go to edit the time to say... "3:30:00 PM" and they'd get the following error in Chrome:
 
-[![Screenshot 2015-05-02 10.23.50](/uploads/2015/Screenshot-2015-05-02-10.23.50-300x101.png)](/uploads/2015/Screenshot-2015-05-02-10.23.50-300x101.png){: .thumbnail}
+{{< image src="/uploads/2015/Screenshot-2015-05-02-10.23.50-300x101.png" alt="Screenshot" >}}
 
 "Please enter a valid value.  The two nearest valid values are..." - that didn't make any sense to me.
 

@@ -10,7 +10,7 @@ It's great to run code coverage at the very end before you push your changes. Th
 
 <!--more-->
 
-> Let's make sure we're clear about code coverage. Code coverage is a metric used during unit testing to indicate how much of the code is under test. This doesn't necessarily mean that it's tested that code - just that the code has been ran during at least one of your tests in your suite.  It's quite easy for code to appear tested, but actually only to have been ran without error.
+**Let's make sure we're clear about code coverage.** Code coverage is a metric used during unit testing to indicate how much of the code is under test. This doesn't necessarily mean that it's tested that code - just that the code has been ran during at least one of your tests in your suite.  It's quite easy for code to appear tested, but actually only to have been ran without error.
 
 There are many types of tests that you can run with PHPUnit. In this entry, I'm going to talk more about unit and integration-layer tests.  These would be tests where we're dealing with a public method of a class. It may or may not be wired up into the rest of your application.  While these topics do apply to end-to-end testing, that's not the focus of this entry.
 
@@ -20,7 +20,7 @@ After I've written what I think covers all of these, I'll run PHPUnit against my
 
 Let's look at a contrived example.
 
-### Source Code
+## Source Code
 
 Here we have a file called `app/Services/DogSoundsService.php` with the following PHP code:
 
@@ -57,7 +57,7 @@ class DogSoundsService
 }
 ```
 
-### Test Planning
+## Test Planning
 
 Now, I'm going to begin my planning for my unit tests.  Here are my initial thoughts:
 
@@ -66,7 +66,7 @@ Now, I'm going to begin my planning for my unit tests.  Here are my initial thou
 
 I think I'm going to need three tests for this. (Now hold on, it should be obvious I'm missing something. But, not all code is this simple in our project codebase.)
 
-### First Round of Tests
+## First Round of Tests
 
 In my `tests/Unit/Services/DogSoundsServiceTest.php` file I have the following code:
 
@@ -109,7 +109,7 @@ class DogSoundsServiceTest extends TestCase
 }
 ```
 
-### Running Tests and Checking Coverage
+## Running Tests and Checking Coverage
 
 Ok, I'm ready to run this. I'll do the following command:
 
@@ -119,7 +119,7 @@ vendor/bin/phpunit tests/Unit/Services/DogSoundsServiceTest.php
 
 And I got a successful response.
 
-```
+```txt
 OK (3 tests, 5 assertions)
 ```
 
@@ -133,7 +133,7 @@ XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html=temp-coverage tests/Unit
 
 Now, in the `temp-coverage` folder, open the `index.html` file and drill into the `Services/DogSoundsService.php` file.
 
-[![Code coverage example](/uploads/2020/code-coverage-1.jpg)](/uploads/2020/code-coverage-1.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/code-coverage-1.jpg" alt="Code coverage example" >}}
 
 Looks like I have only 87.5% coverage.  Looking through the class I see that I've missed an if statement. Oh man! I forgot to check if the legs are 3.
 
@@ -150,9 +150,9 @@ public function testGreetingIsWoofWhenMissingSingleLeg(): void
 
 Now, my code coverage looks better, too:
 
-[![Code coverage example](/uploads/2020/code-coverage-2.jpg)](/uploads/2020/code-coverage-2.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/code-coverage-2.jpg" alt="Code coverage example" >}}
 
-### That's Only Part of It
+## That's Only Part of It
 
 Remember, code coverage is only an indicator of the quality and accuracy of your testing suite. It is not the end all, be all.  Areas that are commonly covered, but not necessarily tested are:
 

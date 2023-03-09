@@ -10,21 +10,23 @@ One thing I like about [Laravel](https://laravel.com/) is the amount of built-in
 
 <!--more-->
 
-> Just a bit of a disclaimer: I'm not trying to say everything is broken and omg the developers are horrible. I'm saying _you_ should understand what you're using, why it's working, and how you could have problems if you don't put in the effort to configure and secure things properly.
+**Just a bit of a disclaimer:** I'm not trying to say everything is broken and omg the developers are horrible. I'm saying _you_ should understand what you're using, why it's working, and how you could have problems if you don't put in the effort to configure and secure things properly.
 
 Partial blame lies on the default configuration of these packages (however, if they were more complex to configure, one might say they'd have less adoption), but the majority I think lies in the fact that too many people set-it and forget-it - never understanding what their third-party software is doing.
 
 So, let's talk about what the vulnerability is.  Stick with me here - it can get a little abstract - but once I describe all of it, it might help you understand how it can be done - and help you figure out how to secure yourself.
 
-> At time of writing, we're referring to Laravel 5.4.
+_At time of writing, we're referring to Laravel 5.4._
 
-### Laravel Throttle Default Configuration
+## Laravel Throttle Default Configuration
 
 Since I work primarily on APIs using Laravel, I have always been concerned about throttling connections.  Luckily, in a release of Laravel, a [default middleware package](https://laravel.com/docs/5.4/middleware#registering-middleware) was introduced which sets up throttling.
 
 To have this enabled, add the following line to the `$routeMiddleware` variable in `App\Http\Kernel` class:
 
-`'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class` 
+```php
+'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+```
 
 Once this is defined, you can either add it per route or on a route group by using the suggested/default setting of this:
 
@@ -36,7 +38,7 @@ Great - this is super easy!
 
 But then I got to thinking: **how is it keeping tracking of who it is throttling?** - Not because I cared so much, as I wanted to make sure that legitimate customer's weren't getting throttled.  I wanted to know if it was happening, who it was happening to, and investigate into their usage patterns.
 
-### Laravel Default Throttle Storage Mechanism
+## Laravel Default Throttle Storage Mechanism
 
 So, after digging through the code, I found out how the signature is built for this throttle.  The `fingerprint()` method on `Illuminate\Http\Request` was used - which is basically building a SHA1 of the route's methods, domain, URI and IP. 
 
@@ -50,7 +52,7 @@ I found a reference to `$this->cache->has()` which references an injected instan
 
 Before we go into why this is bad, let's see if this might be the same anywhere else.
 
-### Tymon JWT Package
+## Tymon JWT Package
 
 The [JWT package by Tymon Designs](https://github.com/tymondesigns/jwt-auth) has saved me a LOT of time.  I'm very grateful.
 
@@ -62,7 +64,7 @@ The blacklist accepts an instance of `\Tymon\JWTAuth\Providers\Storage\StorageIn
 
 Again, this information is not 'hidden' - it's clearly in the configuration file - but have you looked at this and changed it?
 
-### So How is This Attacked?
+## So How is This Attacked?
 
 Well, what do we know about caches?  They shouldn't be the first / only source of your information and they are ephemeral - they go away quite easily and at any point. (Or at least we should be planning that they could be.)
 
@@ -76,7 +78,7 @@ Depending on how you have your cache set up for Laravel, this can be attacked a 
 
 Whether the files get deleted or the persistence is lost, another way to do this is to just overflow the cache with request information that is not necessary.  If you were to black-list my JWT key, I might execute a number of other actions that cause the cache to fill up (perhaps your public api caches information) I could distribute a number of requests throughout the internet, overflow your cache, get my blacklist out of your cache, and then be allowed to work again.
 
-### How To Fix
+## How To Fix
 
 There are a number of ways to do this.  Configure and update your default cache configuration so that it is more persistent and secure.  Persist the keys used to store this information stronger than other keys.  Things like that.
 
@@ -92,6 +94,6 @@ Then, use [contextual binding](https://laravel.com/docs/5.4/container#contextual
 
 There you go!
 
-### Final Notes
+## Final Notes
 
 I believe that the default _configuration_ - not the code - of these libraries open them up for vulnerabilities.  Take a look at your code - if anything seems to magic, check it out.

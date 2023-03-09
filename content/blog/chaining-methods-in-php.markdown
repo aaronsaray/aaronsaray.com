@@ -53,9 +53,11 @@ $ohNo->twin()->neato();
 
 As expected, the output is:
     
-    bar
-    splat!
-    single
-    neato
+```txt
+bar
+splat!
+single
+neato
+```
 
 Each of these methods are pretty self explanatory.  The only one that is slightly different is the `twin()`/`single()` methods.  Note how the `twin()` method is returning the value of another method directly.  The chain remains solid and connected.

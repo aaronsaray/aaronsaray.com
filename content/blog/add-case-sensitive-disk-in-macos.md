@@ -18,41 +18,41 @@ Your harddrive normally has 1 partition with one logical drive on it, formatted 
 
 I'm going to repartition my existing drive - basically sizing the existing partition smaller than 100% of the drive, adding a new one, with a new format.  Then, I'll move all my case-sensitive files to that new drive (similar to how I had done with the earlier entry.)
 
-### Make a New Partition
+## Make a New Partition
 
 Open the Disk Utility Application.
 
-[![Open Disk Utility](/uploads/2017/partition-1.png)](/uploads/2017/partition-1.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2017/partition-1.png" alt="Open Disk Utility" >}}
 
 You will most likely see something very similar to this.  Click up one level on the actual drive, then click the `Partition` button at the top of the window.  You'll see something like this.
 
-[![Partition](/uploads/2017/partition-2.png)](/uploads/2017/partition-2.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2017/partition-2.png" alt="Partition" >}}
 
 Now, you can select the size for your new drive.  I'm choosing 20GB - I don't work with many large files - and this is only for files, not for your VM's or docker containers (they honor the host filesystem and contain their own, but don't require the container to be on case-sensitive).  
 
 Give it a name, and then choose the case-sensitive, journaled type. 
 
-[![Settings](/uploads/2017/partition-3.png)](/uploads/2017/partition-3.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2017/partition-3.png" alt="Settings" >}}
 
 Then, you'll need to confirm this.
 
-[![Settings](/uploads/2017/partition-4.png)](/uploads/2017/partition-4.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2017/partition-4.png" alt="Settings" >}}
 
 During the next process, it'll actually do the conversion.  This may take a little while.  Don't freak out if it seems like the computer freezes up - or if you see the beachball appear a lot.  In fact, mine did it a few times.  But in the mean time, I could see progress like "Checking Catalog, Checking multi-linked files, checking catalog hierarchy"
 
 Finally, you're done.
 
-[![Done](/uploads/2017/partition-5.png)](/uploads/2017/partition-5.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2017/partition-5.png" alt="Done" >}}
 
 Notice how you can now see the new drive on the left hand side?
 
-[![Success](/uploads/2017/partition-6.png)](/uploads/2017/partition-6.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2017/partition-6.png" alt="Success" >}}
 
 And it's now in the Computer view as well.
 
-[![Proof](/uploads/2017/partition-7.png)](/uploads/2017/partition-7.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2017/partition-7.png" alt="Proof" >}}
 
-### Setting Up Your Workflow
+## Setting Up Your Workflow
 
 Similar to the last entry, you might want to set up a few things to make this easier to work with.
 
@@ -60,10 +60,12 @@ First of all, your new drive is located in the Volumes mount point - so if you n
 
 To make this easier, you might want to drag this drive into a favorites position on your finder.  You might also want to make a symbolic link like maybe this:
 
-`ln -s /Volumes/Projects ~/Sites`
+```bash
+ln -s /Volumes/Projects ~/Sites
+```
 
 This will put a link in your home directory for your projects.
 
-### The End
+## The End
 
 And that's it - now you have a case-sensitive partition on your normal drive.  But remember, if you don't have enough space in your drive for something like this, you can still do it on a SD card, like I did [here]({{< ref "/blog/quick-and-easy-case-sensitive-drive-in-macos" >}}).

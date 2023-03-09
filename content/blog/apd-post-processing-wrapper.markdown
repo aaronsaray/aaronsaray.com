@@ -282,7 +282,7 @@ class APD
 
           case 'summary':
             /**
-             * there is two blank lines here, so lets make sure we don't
+             * there is two blank lines here, so let's make sure we don't
              * prematurely switch.
              */
             if (trim($this->parsedAPD[$key + 1]) != '') {
@@ -293,7 +293,7 @@ class APD
       }
       else {
         /**
-         * it has a value so lets put it into our array
+         * it has a value so let's put it into our array
          */
         array_push($$control, $line);
       }

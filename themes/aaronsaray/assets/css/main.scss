@@ -60,6 +60,10 @@ h3 {
     color: $h-color;
 }
 
+h4 {
+    font-weight: bold;
+}
+
 blockquote {
     margin: 2rem 0;
     background-color: #ffffff;
@@ -74,6 +78,9 @@ blockquote {
 
 code {
     font-size: 1rem;
+}
+h2 code {
+    font-size: 1.4rem;
 }
 
 .container {
@@ -230,6 +237,29 @@ article {
     small {
         font-size: 1rem;
     }
+
+    h2 {
+        margin-top: 1.8rem;
+    }
+    h3 {
+        margin-top: 1.5rem;
+    }
+
+    // hopefully this only targets youtube embeds
+    div + p {
+        margin-top: 1rem;
+    }
+
+    table {
+        width: 100%;
+        margin-bottom: 1.2rem;
+        background: #fff;
+        font-size: 1.2rem;
+        font-family: monospace;
+    }
+    td, th {
+        padding: 0.4rem 0.7rem;
+    }
 }
 
 .pagination-footer {
@@ -273,5 +303,16 @@ article {
 
     p {
         margin-bottom: 0;
+    }
+}
+
+.image {
+    img {
+        max-height: 20rem;
+    }
+}
+.link-with-image {
+    img {
+        max-height: 12rem;
     }
 }

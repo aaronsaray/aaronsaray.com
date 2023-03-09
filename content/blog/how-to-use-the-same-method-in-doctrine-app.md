@@ -10,7 +10,7 @@ I'm a huge fan of the service architecture paradigm - and that means that I use 
 
 So, this is what I did (I'll explain afterward):
 
-**`src/Entity/EntityInterface.php`**  
+{{< filename-header "src/Entity/EntityInterface.php" >}}
 ```php
 namespace app\Entity;
 
@@ -18,7 +18,7 @@ interface EntityInterface
 {}
 ```
 
-**`src/Service/AbstractService.php`**  
+{{< filename-header "src/Service/AbstractService.php" >}}
 ```php
 namespace app\Service;
 

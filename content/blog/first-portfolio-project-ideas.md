@@ -11,7 +11,7 @@ When talking to junior developers, I hear the same question over and over: "how 
 
 <!--more-->
 
-### Who Is This For?
+## Who Is This For?
 
 The short answer is everyone.  You should make a portfolio project or an example project if...
 
@@ -22,7 +22,7 @@ The short answer is everyone.  You should make a portfolio project or an example
 
 No matter who you are, you will find yourself making portfolio or example projects throughout your career. It's about time that we learn how to do this successfully.
 
-### How To Get Started
+## How To Get Started
 
 First, you have to have a general idea of what technologies you want to use or demonstrate.  Then, you need to scope it down to a manageable size. Don't allow scope-creep into your own ideas (it's hard to manage this when you're working for a client, why do you let it happen to your own projects?  Feeling empathetic now, hrm?)  Finally, it needs to be ripe for iterations and expansions.  Let's dig in.
 
@@ -34,7 +34,7 @@ Finally, iteration.  It's important to have a piece of work at a finished block 
 
 What things can you iterate on? Well, first, you can do technology.  Remember we picked very simple technology to get started? What would it look like to swap out your plain CSS with a CSS framework? What about introducing Vue or React?  Or, if your project is finished, now what does adding a new feature look like?
 
-### The Idea Picking Process
+## The Idea Picking Process
 
 How do I come up with an idea? What tech do I choose?
 
@@ -42,15 +42,15 @@ The idea can come up from anything in life.  What is something you use very ofte
 
 What technologies have you heard of lately? What do you wish you knew? What jobs are most common in your area? Or in the company you want to work for?
 
-#### The Idea
+### The Idea
 
 I use the Carrot Weather App a lot on my phone -- every day actually.  I think I'd like to make my own "weather app."  I could get the location of the visitor, get a weather feed, show a nice image of the weather and then display the details.  Doesn't seem that hard.
 
-#### Technology
+### Technology
 
 I've been hearing a lot about Google's Materialize CSS Framework. I also heard a lot about PreactJS - which sounds like a React alternative - smaller and more efficient.  I would like to learn those particular technologies I think.  I think I'll make a webpage that uses these technologies to show my weather.
 
-### Reducing Scope
+## Reducing Scope
 
 I did some research about finding the user's location. It looks like it could be complex. Different browsers may deal with it different ways.  Sometimes visitors don't give permission to expose it to you. Other times it may not be fully accurate.  I think this is a good example of an area I can split off for iteration.  For the time being, I'm going to just hard-code a location.
 
@@ -60,15 +60,15 @@ This CSS I have to make for this project seems pretty simple. It won't even have
 
 So, it appears I'll need two sources of information.  The first I'll need is the weather.  The second is I'll need a source of imagery like Unsplash.  I know you can search Unsplash for certain types of pictures.  Do I really want to add this complexity? I could just download like 20 images that I hope are the 20 most common weather types. Naw, I think I'll reduce scope for now and not import fresh images. I'll just display the weather for now -- actually only just the temperature.  A next step, after I've done this programming, is to figure out if I should search Unsplash for imagery.
 
-### The Final Project Idea
+## The Final Project Idea
 
 My goal is to make my first, simple portfolio project.  In the end, I'd like to learn Materialize CSS, Preact and work with the browser's location APIs.  But, to keep this manageable, I've decided to do the following: I will make a weather application, hard-coded to a specific location, that gets the weather forecast's temperature in real time.  It will use Javascript to retrieve this information and update the display with simple HTML and CSS.
 
-### Let's Program This
+## Let's Program This
 
-> For those who are more advanced, please understand that this tutorial is being done in small steps similar to how a new programmer might work through a project.  Try to be patient. :)
+For those who are more advanced, please understand that this tutorial is being done in small steps similar to how a new programmer might work through a project.  Try to be patient. :)
 
-#### The Design
+### The Design
 
 The first thing I'm going to do is set out some simple layout for my weather webpage.  I'll create plain HTML.
 
@@ -106,7 +106,7 @@ body {
 
 Woah, something isn't right here.
 
-[![Progress 1](/uploads/2020/portfolio1.jpg)](/uploads/2020/portfolio1.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/portfolio1.jpg" alt="Progress 1" >}}
 
 Looks like the background is repeating over and over.  This isn't what I wanted.  
 
@@ -150,17 +150,17 @@ Right now there is no content to scroll so everything looks fine. However, I alw
 
 And what it looks like:
 
-[![Progress 2](/uploads/2020/portfolio2.jpg)](/uploads/2020/portfolio2.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/portfolio2.jpg" alt="Progress 2" >}}
 
 See, we already have some very important proof as part of our portfolio piece. We've solved how to make a css gradient background the entire display of the page.  When I searched for this, there were a lot of people asking this same question. By learning this, we're already ahead of the pack. And, our project demonstrates that we've learned this now.
 
-#### The Programming
+### The Programming
 
 Now, I need to get some weather information.  To do this, I'm going to go to the Weather.gov page for their API information located at [weather.gov/documentation/services-web-api](https://www.weather.gov/documentation/services-web-api).
 
 It looks like I can get some information from the API in JSON format.  If I click on the examples tab I can see some examples of what I need to do.
 
-> If this is your first time working with an API, expect that this will take the longest amount of time in the project.  Do not be surprised if you get stuck here or have to come back to it a few times. I'm going to make it seem very easy, just to fit into the length of this blog post.
+If this is your first time working with an API, expect that this will take the longest amount of time in the project.  Do not be surprised if you get stuck here or have to come back to it a few times. I'm going to make it seem very easy, just to fit into the length of this blog post.
 
 I'll pull out a tool like [Postman](https://www.postman.com/) to understand how the API works.
 
@@ -283,7 +283,7 @@ document.getElementById('temperature').innerText = temperature + '°';
 
 And now it's working!
 
-[![Progress 3](/uploads/2020/portfolio3.jpg)](/uploads/2020/portfolio3.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/portfolio3.jpg" alt="Progress 3" >}}
 
 The final code looks like this:
 
@@ -344,17 +344,17 @@ The final code looks like this:
 </html>
 ```
 
-### Where Do I Go From Here?
+## Where Do I Go From Here?
 
 First, we need to get this out there for people to see.  Then, you can work your iterations.
 
-#### Displaying Your Work
+### Displaying Your Work
 
 There are two ways to display your work.  First, you should distribute it in a way that people can see it in action.  You can do this with free hosting solutions like [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/).  You might also choose a shared hosting account like [Bluehost](https://www.bluehost.com/) or you might go with a cloud provider like [AWS](https://aws.amazon.com/).  The point is, don't expect people to do the work to execute your code. Just provide it somewhere for them. Don't worry if it's not perfect.
 
 Next, you want to display your source code.  For very simple work, you can put your code on something like [Codepen](https://codepen.io/).  This is for showing very simple examples.  Otherwise, put your source code on something like [Github](https://github.com/) or [Gitlab](https://gitlab.com/).  This way, people can see your source code and see how you did something.  Portfolio projects are equal parts what you made and how you made it.  As a bonus, if you use git, you'll have a history of your progress on your portfolio site.  Those who may be interested can actually go back in time and see how you've progressed.
 
-#### Iterations / New Features
+### Iterations / New Features
 
 As I talked about above, there are many new features and technologies we can add to this.  If I want, I could include a CSS framework (although I have no real use for it right now).  If I wanted to, I could use reactive javascript of some sort to replace that loading indicator with information.  Actually, there are tons of ideas - let's see how much we could expand this and keep ourselves busy building a cool portfolio:
 
@@ -372,6 +372,6 @@ As I talked about above, there are many new features and technologies we can add
 
 There are so many more things you could slowly build out on this.
 
-### End Notes
+## End Notes
 
 I wanted to show how you might think of an idea, scope, and then execute for a portfolio project.  If you don't have code to show, there's nothing stopping you from doing something like this.  Just understand that it's example work - it doesn't have to be better or different than competition. You just need to demonstrate that you can do this type of work.  Now get started with your portfolio work!

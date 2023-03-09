@@ -41,6 +41,6 @@ $('a[href="#wip"]').click(function(e) {
 
 This will stop all of those work in progress tags from clicking through, but will also display a useful alert to the tester.
 
-### End Notes
+## End Notes
 
 It can be difficult to know how much of the work in progress functionality to release and build out. But, when you do, remember that not every stakeholder and tester is familiar with how much progress you've made - or which parts _should_ and _shouldn't_ work yet.  Reduce friction and give a better experience by creating a mechanism to alert people that **wip** items are just that.

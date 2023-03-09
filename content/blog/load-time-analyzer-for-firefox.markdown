@@ -11,7 +11,7 @@ So, I started looking at a few load time analyzers for my sites - and I found an
 
 My test site will be [JEMDiary](http://www.jemdiary.com) -  mainly because I know A LOT about it. ;)  I could have used a local website, I'm sure - but a remote site was going to give a better load time analysis.  JEMDiary's homepage is a static HTML file (generated periodically behind the scenes).  It loads a few external js and css files, and a set of images as well.  The images in the images directory send headers to cache themselves, and so do the css and js files (interestingly, if the front page had specific profile images, they would not be cached...)  At any rate, I wanted to test a fresh load on the site, and then a cached one - and see what I can determine from these load times.
 
-Lets go...
+Let's go...
 
 [Load Time Analyzer - Firefox Add-on.](https://addons.mozilla.org/en-US/firefox/addon/3371)
 
@@ -21,11 +21,11 @@ First of all, when the plugin is installed, it automatically enables itself, and
 
 The following is the results for loading the page brand new.  You'll notice it took 1750ms to load the front static html page (Um, my particular host sucks at mysql - so the internal pages take a lot more than that - anyone want to help spring for a vps or dedicated server? heh).
 
-[![Load Time Analyzer - Test 1](/uploads/2007/test-1-load-time-analyzer.thumbnail.png)](/uploads/2007/test-1-load-time-analyzer.png){: .thumbnail}
+{{< image src="/uploads/2007/test-1-load-time-analyzer.png" thumb="/uploads/2007/test-1-load-time-analyzer.thumbnail.png" alt="Screenshot 1" >}}
 
 Then, I went to a different website, and came back.  You can see the difference in the speed for cached items.  437ms - so much better.
 
-[![Load Time Analyzer - Test 2](/uploads/2007/test-2-load-time-analyzer.thumbnail.png)](/uploads/2007/test-2-load-time-analyzer.png){: .thumbnail}
+{{< image src="/uploads/2007/test-2-load-time-analyzer.png" thumb="/uploads/2007/test-2-load-time-analyzer.thumbnail.png" alt="Screenshot 2" >}}
 
 The important thing to notice is that you can determine state changes and individual resource speeds and load time.  I like that A LOT.
 

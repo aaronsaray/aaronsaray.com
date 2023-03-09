@@ -10,7 +10,7 @@ I'm not a huge fan of `todo` comments in code because I think they're mainly for
 
 <!--more-->
 
-### Why Todo in PHPUnit?
+## Why Todo in PHPUnit?
 
 Usually when we write `todo` in some code, it's because we understand something important about the code we're near, but don't have time to fix or change it.  The fact that you're deep into the understanding of the code at the time is super valuable.  You know the most about that code probably at the time that you're writing the todo.
 
@@ -24,7 +24,7 @@ With PHPUnit, we can mark tests as incomplete.  This means that the unit test su
 
 Finally, depending on your team, you may have specific people who need specific types of work - or you might be wanting to onboard a new person.  With the todo tests written out, you can give someone some clear tasks: fill in the tests.  This is much easier than "come up with test cases that are missing for a thing that you don't fully understand anyway."
 
-### Implementation of Todo Tests
+## Implementation of Todo Tests
 
 In order to make the process of marking a test `todo` easier, I put a method on my base test class. (You could also write this as a trait and include it on test classes that have todos, but I find that its just easier to have it on the base test class).
 
@@ -60,7 +60,7 @@ public function testOneNegativeNumber(): void
 
 Now, when you run the test suite, the output would look like this:
 
-```
+```txt
 .I.
 ```
 
@@ -68,7 +68,7 @@ That means two successful, one incomplete.
 
 If you wanted to see the error messages, you could run it with the `--verbose` flag.  Then you'd see something like this:
 
-```
+```txt
 .I.                                              3 / 3 (100%)
 
 Time: 00:00.004, Memory: 8.00 MB

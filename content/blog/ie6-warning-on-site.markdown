@@ -59,4 +59,5 @@ Finally, we have a bit of css
 ```
 
 The finished product looks something like this:
-[![](/uploads/2010/untitled-300x34.jpg)](/uploads/2010/untitled.jpg){: .thumbnail}
+
+{{< image src="/uploads/2010/untitled.jpg" thumb="/uploads/2010/untitled-300x34.jpg" alt="Screenshot" >}}

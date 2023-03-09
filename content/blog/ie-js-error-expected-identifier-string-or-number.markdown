@@ -19,8 +19,10 @@ functionCall({
 
 The trailing comma after the other's line is making IE expect another identifier.  So, just strip it out so that line is now:
 
-    others: {1,2,3}
-    
+```txt
+others: {1,2,3}
+```
+
 And you should be golden!
 
 Now, if only IE told me what line the error was on ;)

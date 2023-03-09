@@ -19,33 +19,35 @@ So instead of doing that normal password complexity calculation, I've decided to
 
 I've developed the following list that I test against when user's are creating a password.  If it matches any of these (or matches their email or username), I reject it and mention that they should pick a more secure password.  Not perfect, but certainly a better experience than some password complexity indicators or restrictions - and I think gets me about 80% of the way there anyway.
 
-    test
-    pass
-    secret
-    god
-    testuser
-    admin
-    administrator
-    manager
-    demo
-    demouser
-    password
-    passw0rd
-    password1
-    password123
-    qwerty
-    test123
-    letmein
-    12345
-    123456
-    1234567
-    12345678
-    123456789
-    welcome
-    abc123
-    111111
-    1qaz2wsx
-    master
-    login
-    asdf
-    asdfasdf
+```txt
+test
+pass
+secret
+god
+testuser
+admin
+administrator
+manager
+demo
+demouser
+password
+passw0rd
+password1
+password123
+qwerty
+test123
+letmein
+12345
+123456
+1234567
+12345678
+123456789
+welcome
+abc123
+111111
+1qaz2wsx
+master
+login
+asdf
+asdfasdf
+```

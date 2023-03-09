@@ -13,17 +13,17 @@ The [idealog](https://plugins.jetbrains.com/plugin/9746-ideolog) plugin allows y
 
 I figured it out - and I wanted to share what I learned with you - and you can determine if its useful for you. I'm still torn on whether it's useful to me.
 
-#### Laravel Log Configuration
+## Laravel Log Configuration
 
 First of all, I'm using a standard Laravel logging configuration.  In the `config/logging.php` file, I have default configured to `stack` which is currently only the `single` log.  This would work with `daily` as well.
 
-#### An error or three to review
+## An error or three to review
 
 I generated an info and a warning error.  I also threw a `RuntimeException` so I could get some errors. I generated these twice.  Here's what this looks like normally in my editor:
 
-[![Before highlight](/uploads/2022/highlight-logs-1-thumb.jpg)](/uploads/2022/highlight-logs-1.jpg){: .thumbnail}
+{{< image src="/uploads/2022/highlight-logs-1.jpg" thumb="/uploads/2022/highlight-logs-1-thumb.jpg" alt="Before highlight" >}}
 
-#### Configure Highlighting
+## Configure Highlighting
 
 First, make sure the [Idealog](https://plugins.jetbrains.com/plugin/9746-ideolog) plugin is installed. 
 
@@ -36,10 +36,10 @@ You may have existing ones there. I made all of mine fresh.  Here are the settin
 
 Show on stripe means that it shows on the right hand scroll bar tray so you can find it easier.  If this is full of other colors, you may need to uncheck "Display heat map on error stripe/scrollbar"
 
-[![After highlight](/uploads/2022/highlight-logs-2-thumb.jpg)](/uploads/2022/highlight-logs-2.jpg){: .thumbnail}
+{{< image src="/uploads/2022/highlight-logs-2.jpg" thumb="/uploads/2022/highlight-logs-2-thumb.jpg" alt="After highlight" >}}
 
 Now, my logs are highlighted.
 
-#### End Notes
+## End Notes
 
 I haven't yet decided if I want to use this long term - also if my color choices are any good!  And there is more in this plugin - like highlighting sections and allowing for click throughs to code (if you do your mapping properly I suppose).  It might be worth checking out.

@@ -12,19 +12,19 @@ First of all, a little background.  I just called a volunteer organization and o
 
 So, let's get into the tips - to make sure you never have to worry about getting volunteers again.
 
-### Secret Shopper Program
+## Secret Shopper Program
 
 The first steps to solving a problem is identifying it.  Sometimes, when you're so close to a specific task or process, it's hard to identify the weaknesses.  If you find yourself confused about why your on-boarding, marketing or attraction system is not working, it might be time to do a secret shopper program.  Find a trusted colleague or a friend of a friend who can play the part: give them the standard material, and see what happens.  
 
 In the end, you may even actually get a new volunteer! - But even if you don't, you'll get valuable advice from their brand new experience.  They might tell you that your handout material or call to action on your website didn't connect with them.  Perhaps they're even confused on what they would be doing if they chose to volunteer.  They might even be scared thinking they don't have the right skills to be successful.  Grab all this information - and make small, incremental changes to your program!
 
-### Be a Spy / Ask for Help
+## Be a Spy / Ask for Help
 
 We all know there are precedents for thriving, successful volunteer organizations.  Sometimes it's just as simple as asking a similar organization what really helps them entice new volunteers.  Most non-profit organizations are willing to share this information for each other - after all, we're all trying to make a better world.  
 
 If you can't seem to get that information directly, it's ok to be a spy.  Jump on their website, give them a call, and TAKE NOTES.  Figure out what they're doing right - compare your organization to theirs.  Sometimes the differences require a large investment - I understand that.  But most are just process, communication and idea changes - and those can be cheap or even free!
 
-### Communicate the Value and Requirements, Kindly
+## Communicate the Value and Requirements, Kindly
 
 The genesis of this article came from that phone call I mentioned above.  I really felt rubbed the wrong way, but I'm persistent.  I'm going to call at a different time, email, and continue my volunteering streak.  But, not everyone is like me.  You don't want to lose any volunteers, not even 1!  
 
@@ -39,7 +39,7 @@ A lot of volunteers, especially first time ones, may not think they can do what 
 **Speak clearly, treat volunteers with respect.**
 Remember, this is a cross between an interview and a sales opportunity.  And, for the most part, the power is with the potential volunteer.  Treat them with respect, go above and beyond, and communicate clearly and accurately.  Remember, you need to get these volunteers in the door - because as we all know, there are high turnovers in great volunteers - because they're desperately wanted elsewhere too!
 
-### Final Thoughts
+## Final Thoughts
 
 Volunteer organizations are HARD to run.  Trust me, I've started one - nothing was harder than getting people to help you with the work.  So, make sure you're following these three simple steps and you should see your stats jump up!
 

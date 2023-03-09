@@ -1,0 +1,11 @@
+{{ $href := .Get "href" }}
+{{ $img := .Get "img" }}
+{{ $alt := .Get "alt" }}
+<div class="my-4 text-center link-with-image">
+    <a href="{{ $href }}" target="_blank">
+        <figure>
+            <img src="{{ $img }}" alt="{{ $alt }}" class="img-fluid img-thumbnail">
+            <figcaption>{{ .Inner }}</figcaption>
+        </figure>
+    </a>
+</div>

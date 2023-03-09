@@ -8,7 +8,7 @@ Whether you've made the class yourself or you're using a pre-made SDK, there are
 
 <!--more-->
 
-### Why Care About Expensive Constructors
+## Why Care About Expensive Constructors
 
 An argument shared a lot of the time is "so what if it's expensive to construct, you only create it when you're going to use it."  That's not always the case. There are a couple scenarios where that isn't true.
 
@@ -18,7 +18,7 @@ Another reason has to do with dependency injection configuration.  Depending on 
 
 So there are a number of reasons why we might need to not experience that pain - the above are just a few.  Let's solve this, though.
 
-### Ideas to Battle Expensive Construction
+## Ideas to Battle Expensive Construction
 
 To illustrate our expensive object, we're creating a service called `DanceParty` that has a constructor that is very expensive. (Think: it has to warm up the transistors in the amplifiers, yo!)
 
@@ -61,7 +61,7 @@ In our case, we've got an expensive statement - the `sleep(3)`.  Every time this
 
 What methods can we use to help handle this slow construction - and only have it when we need it?
 
-#### Very Explicit
+### Very Explicit
 
 First, let's talk about the ["everything's a hammer/nail"](https://en.wikipedia.org/wiki/Law_of_the_instrument) method. Here, we're going to offload our logic to a method, and then just force every other method to call it first.
 
@@ -114,7 +114,7 @@ Now, when the object constructs, it doesn't have to do that expensive thing. Per
 
 The problem with this approach is that you now have to remember to call `$this->start()` with every method that needs access to the expensive construction. It's not hard to _do_ but its _easy to forget_ to do.
 
-#### Very Magic
+### Very Magic
 
 The next thing we can do is use the magic methods in PHP to intercept the calls to our methods and do the construction if need be.  We're going to use the magic method `__call` which is what gets called (if it exists) when a method is called on an object that doesn't exist.
 
@@ -176,7 +176,7 @@ class DanceParty
 
 Another caveat, that is actually positive, is that the `__call` method won't get called repeatedly on the other method calls because they'll be 'found' once inside the context of the class.
 
-#### Proxy Object
+### Proxy Object
 
 Using the [Proxy Design Pattern](https://en.wikipedia.org/wiki/Proxy_pattern), we can proxy the expensive object with another.  This functionality is similar to the previous solution, has some of the benefits and drawbacks.  However, this is very useful if you can't alter the code (if you're using a SDK) or someone has marked your class as `final` and you can't alter the functionality at all.
 
@@ -235,6 +235,6 @@ Now, we work directly with the proxy.  It handles knowing if we've constructed t
 
 Basically, you create a new instance of the proxy class.  Then, whenever you call a method signature from the original class, the `__call` method intercepts it, tests for object creation, then passes it forward.  Simple.
 
-### Final Thoughts
+## Final Thoughts
 
 These are just a few examples for handling the expense during construction of an object if you're not guaranteed to use it.  I'm sure there are more.  Even better, it'd be great to refactor your code in such a way that this wasn't necessary. However, that's not always possible.

@@ -22,6 +22,6 @@ Speaking of working with each other, you really don't want a ninja coder.  These
 
 When you ask for a 'super hero' - you're developing a culture of this person is important, we can't function without them.  This introduces an ego - even the best of us can get one - and that can be a problem as requirements change and the position migrates.  It also doesn't do a great job of motivating your other developers when you refer to someone as the ninja, the rockstar, the hero.  When a developer is made to feel less-than, you can start to see it in their quality of code and the accuracy of their solutions.
 
-#### Do This
+## Do This
 
 Instead of the rockstar or ninja, look for a solid, driven, motivated programmer who mentions other interests besides coding. Your well-rounded developer will not always be the "genius" you want, but he or she will be the problem solver you deserve. It's up to you to coax out the brilliance, the "great song" of the rockstar or the "quick kill" of the ninja.  If you don't, you end up with convoluted, cranky, messed up, drama-filled solutions that don't last the long term.

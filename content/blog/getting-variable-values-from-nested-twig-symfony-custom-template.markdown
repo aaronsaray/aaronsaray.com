@@ -13,15 +13,15 @@ _I should mention... I'm just learning this particular integration, plus this is
 
 I had the following:
 
-**`edit.html.twig`**
+{{< filename-header "edit.html.twig" >}}
 ```twig
-{% raw %}{{ form_row(form.myItem, {'label': 'My special label'}) }}{% endraw %}
+{{ form_row(form.myItem, {'label': 'My special label'}) }}
 ```
 
 It wasn't grabbing my output in the custom template.  The template excerpt looked like this...
     
 ```twig
-{% raw %}{% block field_row %}
+{% block field_row %}
   <div class="{{ div_class }}">
     {{ form_label(form) }}
     <div class="controls">
@@ -29,7 +29,7 @@ It wasn't grabbing my output in the custom template.  The template excerpt looke
       {{ form_errors(form) }}
     </div>
   </div>
-{% endblock field_row %}{% endraw %}
+{% endblock field_row %}
 ```
 
 In this case, the form variable passed to form_label did not have my custom variable on it.  _Caveat: it looks like its a form render view object, but I don't quite yet follow why this matters..._  Anyway, I tried using `form.get('label')` but that didn't work.
@@ -37,9 +37,7 @@ In this case, the form variable passed to form_label did not have my custom vari
 Turns out, the `_context` array had the values for this particular element.  So, I modified:
     
 ```twig
-{% raw %}
 {{ form_label(form, _context['label']) }}
-{% endraw %}
 ```
 
 Yay!  That got the standard label - or the custom label I set.  Success.

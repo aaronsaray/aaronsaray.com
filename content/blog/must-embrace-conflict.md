@@ -16,8 +16,8 @@ We accept and champion conflict in our personal lives, but when it comes to work
 **But this is wrong.**
 
 > Trying to get everyone to like you is a sign of mediocrity. You’ll avoid the tough decisions, and you’ll avoid confronting the people who need to be confronted.
-
-~ Colin Powel
+> 
+> ~ Colin Powel
 
 A manager must embrace conflict in order to succeed. To lead a team effectively to create a great product requires identifying weaknesses and taking corrective actions. This creates conflict — and it’s necessary.
 

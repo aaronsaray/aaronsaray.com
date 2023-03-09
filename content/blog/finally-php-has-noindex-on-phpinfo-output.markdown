@@ -19,7 +19,7 @@ Actually, let's take a look with this [google query](http://www.google.com/searc
 
 More than a million returns (granted they're not all `phpinfo()` calls... but it gives you a good idea...)
 
-### There is Hope
+## There is Hope
 
 With the release of [5.2.1](http://php.net/ChangeLog-5.php#5.2.1) of PHP, `phpinfo()` now outputs the following meta tag:
 

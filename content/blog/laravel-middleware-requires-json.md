@@ -9,7 +9,7 @@ Laravel has a built in request helper called `wantsJson()` that determines if th
 
 <!--more-->
 
-**`app/Http/Middleware/RequiresJson.php`**
+{{< filename-header "app/Http/Middleware/RequiresJson.php" >}}
 ```php
 <?php
 declare(strict_types=1);
@@ -50,4 +50,4 @@ class RequiresJson
 }
 ```
 
-When the header is not set, this middleware throws a Not Acceptable 406 HTTP error.  Just add this middleware to all of your API routes.
+When the header is not set, this middleware throws a `Not Acceptable 406` HTTP error.  Just add this middleware to all of your API routes.

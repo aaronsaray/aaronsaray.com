@@ -8,19 +8,21 @@ I love ApacheTop.  I love Cronolog.  After I installed cronolog and used it in m
 
 <!--more-->
 
-### My httpd.conf customlog
+## My Custom Log Definition
 
-The entry in **`httpd.conf`** vhost contains this line:
+The entry in `httpd.conf` vhost contains this line:
     
-    CustomLog "|/usr/local/sbin/cronolog /etc/httpd/logs/%Y/%m/%Y-%m-%d-access_log" combined
+```apacheconf
+CustomLog "|/usr/local/sbin/cronolog /etc/httpd/logs/%Y/%m/%Y-%m-%d-access_log" combined
+```
 
 Pretty simple - just keeping my logs separated.
 
-### My script
+## My script
 
 In order to make it easier on myself, I now invoke apachetop with this bash script.
 
-**`webtop.sh`**
+{{< filename-header "webtop.sh" >}}
 ```bash
 #!/bin/bash
 apachetop -T 3600 -f "/etc/httpd/logs/`date +%Y`/`date +%m`/`date +%Y`-`date +%m`-`date +%d`-access_log"

@@ -11,7 +11,7 @@ I've heard the argument so many times: "I'm just too busy to do my own website" 
 
 **False!**
 
-[![](/uploads/2012/http.png)](/uploads/2012/http.png){: .thumbnail}{: .pull-right}
+{{< image src="/uploads/2012/http.png" alt="HTTP" >}}
 
 And here's why... Let's say you're working at a fast food restaurant making $1 more than minimum wage.  The company will allow you to work as much extra as you want - so maybe you're working 60 or 70 hours.  You're making "decent" money, but you're too busy to go back to college.  You've heard that if you get a college degree, you could enter the business world, and make 2,3, even 5 times more money than you are now.  But you're just ... too busy.
 

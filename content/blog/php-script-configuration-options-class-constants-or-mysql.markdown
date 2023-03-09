@@ -18,9 +18,9 @@ Non-Requirements:
 
 1) Does not need to make dynamic configuration options or choose configuration options based on logic (IE, one mysql credential for LIVE vs another for development)
 
-with this in mind, lets figure out what may work best:
+with this in mind, let's figure out what may work best:
 
-### Class Constants
+## Class Constants
 
 I'm going to call my class `config` with the method of `get` - simple enough.  (I thought about using magic methods and overloading - but bleh - let us just keep it simple)...
 
@@ -28,8 +28,10 @@ For this test, I'm going to have 5 configuration items, all named `item1` - `ite
 
 When I was building my get method, I kept running into an error:
 
-    Fatal error: Access to undeclared static property: config::$item
-    
+```txt
+Fatal error: Access to undeclared static property: config::$item
+```
+
 The first way I tried to do it was as so:
 
 ```php
@@ -68,7 +70,7 @@ As you can see, I can still access the items 'illegally' by going the class cons
 
 Doesn't look too bad...
 
-### Enter MySQL
+## Enter MySQL
 
 Ok - so I wanted to try to do it with MySQL - to make it even more dynamic.  This script becomes drastically more complex:
 

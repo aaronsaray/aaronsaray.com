@@ -16,7 +16,7 @@ But that attitude is wrong. In certain cases, the next page, a different domain,
 
 Let's run through an example - then I'll show the code.
 
-### Attack Vector
+## Attack Vector
 
 First, either you specifically create a link or you allow someone using your site to create a link.  The link opens in a new tab to a different domain.  You've accomplished this by saying `target="_blank"`.  
 
@@ -26,12 +26,12 @@ Finally, the user logs into the phishing site, then the phishing site redirects 
 
 Let's take a look at how this code works.
 
-**`https://one.com/index.html`**
+{{< filename-header "https://one.com/index.html" >}}
 ```html
 Cool thing <a href="https://two.com" target="_blank">click here</a>.
 ```
 
-**`https://two.com/index.html`**
+{{< filename-header "https://two.com/index.html" >}}
 ```html
 <p>I can haz redirect your previous tab.</p>
 ```
@@ -44,11 +44,11 @@ window.opener.location = 'https://looks-like-one.com';
 
 And boom, your previous tab is redirected to a site that looks like it's one.com but it's not.
 
-### Mitigation Solution
+## Mitigation Solution
 
 The solution to this is very simple.  Whether coding your own links or parsing/sanitizing users' input, we can solve this with [rel noopener](https://developers.google.com/web/tools/lighthouse/audits/noopener).
 
-**`https://one.com/index.html`**
+{{< filename-header "https://one.com/index.html" >}}
 ```html
 <a href="https://two.com" target="_blank" rel="noopener">click here</a>.
 ```

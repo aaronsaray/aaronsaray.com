@@ -10,7 +10,7 @@ You've heard the saying before: "Fake it till you make it."  I agree with this p
 
 I caught a local tech school advising programmers to list their college experience as real experience.  "If the job says 2 years of experience," they said, "you are perfect for it. You have two years of experience here!"
 
-> Let's just consider the fact that the 2+ years of experience requirement is a lot of time BS.  People just don't want a know-nothing person bumbling through their project, ripping it up.  But really, another hidden meaning to this statement is "I want someone who has worked in a professional atmosphere before" - whereas coming out of high school, into college - that's not real life experience.
+**Let's just consider the fact that the 2+ years of experience requirement is a lot of time BS.**  People just don't want a know-nothing person bumbling through their project, ripping it up.  But really, another hidden meaning to this statement is "I want someone who has worked in a professional atmosphere before" - whereas coming out of high school, into college - that's not real life experience.
 
 I've also reviewed 100's of resumes that are clearly faking it.  They claim to have specific skills which are impossible (12 years of React experience) or they embellish (25 years of experience working with COBOL).  The first example is clearly false - you can't have experience before something exist.  The other: were you really programming COBOL for 25 years? Or did you do it for 5 years, 25 years ago?  Then, you have 5 years of experience.
 
@@ -20,7 +20,7 @@ The trick is to act like you actually have a job while you're searching for your
 
 First, be disciplined. It can be easy to get lazy when you're not working.  "I'll apply later, I have some Netflix to watch." Or, "how can I learn something if I don't know what my future job requirements will be? Chicken and egg, bro!"  Those are both excuses and not faking it till you make it.  Set yourself a schedule like you'd have if you had a real job already.
 
-Next, apply to jobs during your 'meetings.'  Programmers usually end having meetings during the day.  So, get in the habit of breaking up your work.  Plan some meeting time 8a to 9:30a, 11a to 11:30a, 3:30p to 5p.  During those times, stop what you're doing and apply to jobs.  (And please don't just spam everyone. Keep track of who you've applied to, and make sure your cover letter makes sense.)  This gets you in the habit of having your work broken up by 'interruptions' - and it keeps you on track.
+Next, apply to jobs during your 'meetings.'  Programmers usually end up having meetings during the day.  So, get in the habit of breaking up your work.  Plan some meeting time 8a to 9:30a, 11a to 11:30a, 3:30p to 5p.  During those times, stop what you're doing and apply to jobs.  (And please don't just spam everyone. Keep track of who you've applied to, and make sure your cover letter makes sense.)  This gets you in the habit of having your work broken up by 'interruptions' - and it keeps you on track.
 
 You might say "I need to apply to every place immediately!" but I think you should slow down.  Apply to jobs that you want, that you think you'll be a good fit at - don't panic.  Plus, depending on your area (if say you're applying locally), people have a good memory.  There's nothing more annoying than seeing yourself spammed with the same application repeatedly - or - every time someone is looking for a job.  Be more selective, use your meeting times to craft good quality applications.  Make yours stand out.
 

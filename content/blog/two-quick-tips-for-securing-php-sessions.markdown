@@ -18,7 +18,11 @@ Now, you can see the problem right away, right?  Let's say you're logged in - an
 So let's turn it off.  Pretty much all sites require cookies now (yeah, I've seen those annoying popups everywhere!) - so let's force ONLY cookies to be used.  It's not 100% fool-proof, but it's a start at reducing the vector of attack.
 
 Edit your `php.ini` file to have the following setting:
-`session.use_cookies = 1` and `session.use_only_cookies = 1` 
+
+```ini
+session.use_cookies = 1
+session.use_only_cookies = 1
+```
 
 Chances are this is already set - and that's good.  So - that's the bare minimum.  
 
@@ -34,7 +38,11 @@ Now, if we set it to use cookies only, it's still not impossible - just harder (
 
 PHP has this setting available since 5.5.2 called strict mode.  With this activated, if a session is requested with a ID that does not exist, PHP will generate a new ID instead of creating a session with that ID.  
 
-In the php.ini file, set this setting: `session.use_strict_mode = 1` and you should be all set.
+In the php.ini file, set this setting and you should be all set:
+
+```ini
+session.use_strict_mode = 1
+```
 
 **End Notes**
 

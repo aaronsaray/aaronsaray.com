@@ -11,7 +11,7 @@ If Google gives free access to their web traffic tool called Google Analytics, w
 
 > Know all of this? Skip to the bottom to get my security-minded privacy-focused analytics recommendation.
 
-### Why Do You Need Web/App Analytics?
+## Why Do You Need Web/App Analytics?
 
 As a non-marketer, I always thought that website analytics are only a vanity metric. "Look how popular I am!" - but there's so much more to it.
 
@@ -25,7 +25,7 @@ Analytics aren't just for vanity - they can help you whether you're selling or t
 
 This sounds amazing, but how much does it cost? Some are offered free, like Google Analytics.
 
-### What Does Free Cost You?
+## What Does Free Cost You?
 
 The internet isn't free.  In fact, if you're a programmer (even if you're in open source), you likely still want to get paid for building software. That's not unique to you. All products on the internet have a cost.
 
@@ -54,7 +54,7 @@ These are not all pie-in-the-sky things that 'could' happen - they are happening
 
 But don't worry. While some things are beyond our control, we can still fight 'the man' - or at least retain a little bit of our privacy.
 
-### What is the best privacy-focused Analytics tool?
+## What is the best privacy-focused Analytics tool?
 
 It's important that owners of site consider these security implications for their visitors (as well as themselves!). With this in mind, the best solution would be to implement analytics (an arguably needed tool) by a vendor who focuses on privacy.
 

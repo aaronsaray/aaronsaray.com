@@ -19,3 +19,15 @@ So that I don't forget, here are some notes on how I format / create content.
 ```html
 <table>
 ```
+
+* To link to something with an img thumbnail (like a PDF with an image thumbnail)
+```
+{{< link href="/uploads/2023/Acme Corp - Statement of Work.pdf" img="/uploads/2023/statement-of-work-doc-thumbnail.jpg" alt="ACME Corp - Statement of Work PDF" >}}
+Statement of Work PDF
+{{< /link >}}
+```
+
+* To embed an image with the source image as a thumbnail
+```
+{{< image src="/uploads/2022/no-auto-complete-phpstorm.jpg" alt="No Autocomplete" >}}
+```

@@ -13,7 +13,7 @@ When Laravel send a mail, it issues two events.  (This is valid for Laravel 8.x 
 
 Imagine this scenario.  In the staging environment, we want to send all email to a specific email address. I want to know the original email addresses, but not mess with the message content.  So, I'll write a listener, check the environment, change the to address to a known config value, and move all remaining addresses to a header.  Let's see how.
 
-First, inside of your EventServiceProvider, you will register a listener:
+First, inside of your `EventServiceProvider`, you will register a listener:
 
 ```php
 class EventServiceProvider extends ServiceProvider
@@ -28,7 +28,7 @@ class EventServiceProvider extends ServiceProvider
 
 Then, let's take a look at the file:
 
-**`app/Listeners/RedirectStagingEmail.php`**
+{{< filename-header "app/Listeners/RedirectStagingEmail.php" >}}
 ```php
 namespace App\Listeners;
 use Illuminate\Mail\Events\MessageSending;

@@ -5,6 +5,10 @@ tag:
 - misc-web
 - php
 ---
+{{< header-call-out >}}
+I no longer work for LPi and do not know what job openings are available.
+{{< /header-call-out >}}
+
 Do you like to be challenged, learn new things, and have a supportive team?  Well, let's chat a bit.  I'm building a team and I'm looking for great PHP developers to join it.  
 
 <!--more-->

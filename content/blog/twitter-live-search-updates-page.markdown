@@ -1,5 +1,5 @@
 ---
-title: Twitter live search updates page
+title: Twitter Live Search Updates Page
 date: 2009-11-09
 tag:
 - javascript
@@ -9,15 +9,15 @@ I decided it would be kind of cool to make a page that combined a bunch of twitt
 
 <!--more-->
 
-### Twitter Search API
+## Twitter Search API
 
 Twitter has a [Search API](http://apiwiki.twitter.com/Twitter-Search-API-Method%3A-search) that is pretty useful.  The important things to know are that it can track trends with hash tags as well as search the entire content of the tweet.  The other useful thing is it returns json if requested.
 
-### What I wanted
+## What I wanted
 
 I wanted to have a script that would create a page with 1 to many twitter search api terms - and then combine them into some sort of table on the web page.  I also wanted to have it refresh periodically.
 
-#### Using Javascript
+### Using Javascript
 
 I decided to use javascript instead of PHP for a couple reasons:
 
@@ -25,7 +25,7 @@ I decided to use javascript instead of PHP for a couple reasons:
 
   * PHP would require a full page reload every few seconds in order to display the newest data.  Alternatively, I could use ajax to repoll the PHP code for the new tweets - but I might as well just do all javascript then...
 
-#### The Javascript
+### The Javascript
 
 The first thing, in the head of the HTML document, I loaded google's jquery.  1 less request from my server - plus great cacheability:
 
@@ -86,7 +86,7 @@ Let me step through it... On page load, the content above is executed.  The firs
 
 `showResults()` simply builds a list item with the proper content, links, etc.  The only thing really notable about this is the choice when `first == 1`.  This was done in this way to build the auto update functionality properly.  It was best to get the search terms and append them on the first query.  But, then as time went on, we need the newest content at the top (so we don't have to keep scrolling down...).  Then, that's why each interval call for `getResults()` does NOT send in `1` - meaning it will prepend and slowly fade the content into view.
 
-#### Add a little style
+### Add a little style
 
 Just for some good effects, I added this simple set of styles to the document.
 
@@ -133,9 +133,9 @@ a {
     
 This is simply responsible for creating a nice look to the tweets.
 
-#### Finally, the HTML
+### Finally, the HTML
 
-Since the javascript `$list` variable referred to it, lets put it in.  Here is the content of the body tag:
+Since the javascript `$list` variable referred to it, let's put it in.  Here is the content of the body tag:
     
 ```html
 <h1>True Blood</h1>
@@ -144,6 +144,6 @@ Since the javascript `$list` variable referred to it, lets put it in.  Here is t
 
 A simple title for the top of the page - and then the target element that the javascript will work with.
 
-### Using this
+## Using This
 
 Minus a few changes to the css, this is a pretty much plug-n-play solution.  Want to change the search term?  Change the `var terms = []` line.  Add in another element and the search will happen for both items, and append them together.  Best of all, the load on your server is very small.

@@ -15,7 +15,7 @@ For these reasons, I don't like it when all the unit tests run from start to fin
 
 You could argue that you might take a look over some of the tests, figure out what's wrong, and maybe fix the middle one which might end up causing the rest of them to succeed.  I get that.  But more often than not, in test land, I'm working like sort of a mindless robot.
 
-> I actually haven't yet figured out any reason why we'd want the unit tests to keep running after first failure - unless it was some sort of metric saying "we have 20 broken tests" - which I'd rather they just be marked skipped or fixed - than keep them in the code base and broken...
+I actually haven't yet figured out any reason why we'd want the unit tests to keep running after first failure - unless it was some sort of metric saying "we have 20 broken tests" - which I'd rather they just be marked skipped or fixed - than keep them in the code base and broken...
 
 So, to make sure that my unit tests stop immediately, I add one setting to my **`phpunit.xml`** file's configuration.  Add the attribute and value set to the root `<phpunit />` element like such: `stopOnFailure="true"` 
 

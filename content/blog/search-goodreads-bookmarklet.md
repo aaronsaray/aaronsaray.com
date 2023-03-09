@@ -8,7 +8,11 @@ When people suggest books to you, it's common that they'll send you a link to Am
 
 <!--more-->
 
-*tldr;* Drag this bookmarklet to your bookmark bar, click it when you're on an Amazon book page, and it'll open a new tab with the Goodreads page for that book. [Search Goodreads](javascript:(function(){let t=document.querySelector('#productDetailsTable');let i=t.innerHTML.match(/\d{3}\-\d{9,}/);if(i.length){let u='https://www.goodreads.com/search?q=' + i;window.open(u);}else{alert('Can not find ISBN');}})();)
+*tldr;* Drag this bookmarklet to your bookmark bar, click it when you're on an Amazon book page, and it'll open a new tab with the Goodreads page for that book. 
+
+{{< html >}}
+<a href="javascript:(function(){let t=document.querySelector('#productDetailsTable');let i=t.innerHTML.match(/\d{3}\-\d{9,}/);if(i.length){let u='https://www.goodreads.com/search?q=' + i;window.open(u);}else{alert('Can not find ISBN');}})();">Search Goodreads</a>
+{{< /html >}}
 
 Here is the source code for it.
 

@@ -6,6 +6,10 @@ tag:
 - laravel
 - security
 ---
+{{< header-call-out >}}
+Laravel Hacker is no longer a brand. You can find my security work at [MasteringLaravel.io/security](https://masteringlaravel.io/security?ref=as)
+{{< /header-call-out >}}
+
 Laravel is a great framework that is pretty secure by default. However, configuration mistakes or coding errors can still leave your app open for attack. Where do you go for help?
 
 <!--more-->
@@ -22,8 +26,8 @@ I want to educate Laravel programmers about security in a way that they understa
 
 I want developers to make great code that's easy to read and efficient. I want them to follow best practices. I want them to use Laravel to its full extent. But, I also want them to be Beautifully Secure.
 
-And that's why I launched [Laravel Hacker](https://laravelhacker.com?ref=asdc). We can still write beautiful code but we need to protect against all of the bad actors.  It's basically every day now that we're hearing more and more sites have been breached, passwords hacked and apps held for ransom.  With Laravel Hacker, I will help programmers become Beautifully Secure.
+And that's why I launched [Laravel Hacker](https://laravelhacker.com?ref=as). We can still write beautiful code but we need to protect against all of the bad actors.  It's basically every day now that we're hearing more and more sites have been breached, passwords hacked and apps held for ransom.  With Laravel Hacker, I will help programmers become Beautifully Secure.
 
 The first thing I'm launching is a 7 question quiz to determine how secure your Laravel app is.  You can answer the questions anonymously - and then I present you with a score.  If you're like me, you can pick up some tips from the quiz questions on what you should be doing.  At the end, I offer a 7 day email course to teach you how to lock down your app. This basically follows the questions of the quiz, explaining the tools and giving you quick wins and suggestions.
 
-Ready to secure your Laravel app?  Check out [LaravelHacker.com](https://laravelhacker.com?ref=asdc)!
+Ready to secure your Laravel app?  Check out [LaravelHacker.com](https://laravelhacker.com?ref=as)!

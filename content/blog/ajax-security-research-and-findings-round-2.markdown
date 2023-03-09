@@ -6,7 +6,7 @@ tag:
 - php
 - security
 ---
-Round 2, and the final round, is complete! The previous article [here]({{< ref "/blog/ajax-security-research-and-findings-round-1" >}}) talked about my initial findings. Well, I was able to try some proofs of concepts on my javascript finding, and I put together our top level recommendations for (”the triangle”). Lets see:
+Round 2, and the final round, is complete! The previous article [here]({{< ref "/blog/ajax-security-research-and-findings-round-1" >}}) talked about my initial findings. Well, I was able to try some proofs of concepts on my javascript finding, and I put together our top level recommendations for (”the triangle”). Let's see:
 
 <!--more-->
 
@@ -16,7 +16,7 @@ First off...
 
 Well, I had talked about an issue where you could substitute the javascript object across frames. Well I tried this example. Load up javascripttest.html and click the link. Nope, no dice in IE 6 and 7, FF 1.5 and 2. Whew.
 
-**`javascripttest.html`**
+{{< filename-header "javascripttest.html" >}}
 ```html
 <html>
   <body>
@@ -31,7 +31,7 @@ Well, I had talked about an issue where you could substitute the javascript obje
 </html>
 ```
 
-**`test.html`**
+{{< filename-header "test.html" >}}
 ```html
 <html>
   <body>

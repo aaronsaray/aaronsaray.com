@@ -9,7 +9,7 @@ One of the newer programmers on my team asked me the other day why I hired him. 
 
 <!--more-->
 
-[![talented](/uploads/2013/talented.jpg)](/uploads/2013/talented.jpg){: .thumbnail}{: .pull-right}
+{{< image src="/uploads/2013/talented.jpg" alt="Talented" >}}
 
 I've been thinking about this a lot.  I mean, I hate to say "I can just feel it," - I made sure not to REALLY say that when I talked about [what I look for in code review]({{< ref "/blog/what-i-look-for-in-a-code-review" >}}), so then what is it?
 

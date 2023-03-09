@@ -12,7 +12,7 @@ Finally, after a bit of research, I came across the idea of using text-justify..
 
 This screenshot is my final output:
 
-[![Screenshot](/uploads/2013/Screenshot-300x106.png)](/uploads/2013/Screenshot.png){: .thumbnail}
+{{< image src="/uploads/2013/Screenshot.png" thumb="/uploads/2013/Screenshot-300x106.png" alt="Screenshot" >}}
 
 So here's the markup:
 

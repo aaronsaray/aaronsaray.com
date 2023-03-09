@@ -9,9 +9,9 @@ After many times of coding relatively the same thing, it becomes prudent to have
 
 <!--more-->
 
-### The Requirements
+## The Requirements
 
-There are many different requirements that I've come across, but lets focus on the ones that I have defined in this class:
+There are many different requirements that I've come across, but let's focus on the ones that I have defined in this class:
 
   * Minimum Password Length
 
@@ -33,14 +33,14 @@ Those are all of the needs I plan to address.  Additionally, there are some feat
 
 **Those of you who look at performance** might notice a few things that are not super efficient - such as having multiple calls to `preg_match` instead of combining them into a single function and using reflection and `call_user_func_array` instead of hardcoding the function names.  In most reusable libraries, performance should be king.  However, in this particular module, I think its used far less than most other bits of code, so I optimized for easy maintenance and upkeep.
 
-### The Code
+## The Code
 
-Well, lets take a look at the class:
+Well, let's take a look at the class:
 
 ```php
 class Password
 {
-  /** constants - are arbritrary numbers - but used for bitwise **/
+  /** constants - are arbitrary numbers - but used for bitwise **/
   const REQUIRE_MIN         = 1;
   const REQUIRE_MAX         = 2;
   const REQUIRE_LOWERCASE   = 4;

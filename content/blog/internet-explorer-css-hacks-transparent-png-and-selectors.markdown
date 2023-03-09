@@ -8,7 +8,7 @@ As a reference for myself, I wanted to jot these things down.
 
 <!--more-->
 
-First off, lets look at some common css selectors - and how we can use them to identify styles for specific versions of IE.  (Note: I am way not into using hacks such as broken comments, etc, in CSS.  I'd rather write a selector)
+First off, let's look at some common css selectors - and how we can use them to identify styles for specific versions of IE.  (Note: I am way not into using hacks such as broken comments, etc, in CSS.  I'd rather write a selector)
 
 **IE 6 and below**
 
@@ -33,9 +33,10 @@ First off, lets look at some common css selectors - and how we can use them to i
 ```css
 html>body {}
 ```
+
 _I can't tell you how many times I wished for the parent/child selector option in IE 6.  I've written way too many `ul ul ul li ul` type strings_
 
-Next, lets check out the behavior for transparent GIFs:
+Next, let's check out the behavior for transparent GIFs:
 
 First off, use the conditional comment to bring in the stylesheet only when needed.
 

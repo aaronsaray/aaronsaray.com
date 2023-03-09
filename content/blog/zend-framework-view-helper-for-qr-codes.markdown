@@ -8,11 +8,11 @@ Google Charts has a QR code generation service ([here are the details](http://co
 
 <!--more-->
 
-### The Code for Google QR Code
+## The Code for Google QR Code
 
 Place the following code in your view helpers location.  For example... 
 
-**`application/views/helpers/GoogleQRCode.php`**
+{{< filename-header "application/views/helpers/GoogleQRCode.php" >}}
 ```php
 class Zend_View_Helper_GoogleQRCode extends Zend_View_Helper_Abstract
 {
@@ -32,11 +32,11 @@ class Zend_View_Helper_GoogleQRCode extends Zend_View_Helper_Abstract
 
 First thing is the function declaration.  It will accept some data to encode.  By default, the width and height are `100px`.  This can be overridden with the helper call.  Next, the URL for the Google charts API is defined.  Notice that this version is https - just in case its used on SSL websites.  Next, the parameters to the API are built.  The `cht` or chart type is `qr`.  The chart size or `chs` is the integer width by the integer height.  Finally, the `chl` value is the data.  Finally, the URL is appended with the value of the results of `http_build_query()` of the url parameters.  Finally, the URL is returned from the method.
 
-IMPORTANT NOTE: In the spec, it says that the data should be url encoded.  The view helper is not doing that when it creates the parameter array.  This is handled by `http_build_query`.
+**Important Note:** In the spec, it says that the data should be url encoded.  The view helper is not doing that when it creates the parameter array.  This is handled by `http_build_query`.
 
 To use this in your view, you may have the following code:
 
-**`application/views/scripts/index/index.phtml`**
+{{< filename-header "application/views/scripts/index/index.phtml" >}}
 ```php
 <?php
 echo '<h2>Find Me Online</h2>';

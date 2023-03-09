@@ -17,7 +17,8 @@ As a dev manager, it's your responsibility to understand your team. Each one is 
 
 In order to manage and work with your team, it’s important to understand each individual character. There are many types of developers, but let me focus on just three today.
 
-### The Hero
+## The Hero
+
 The last time I fixed an issue that was affecting the entire company, I can barely describe the scene! There was a cake, music, a dance party. Did someone just release a bunch of doves? Wow!
 
 Ok, well maybe that didn’t happen. But there’s something addicting about being the hero. The hero is the developer who can always come in and fix something at the last minute. They know everything about the systems. Without them, how would we have survived the panic of 2012!? Everyone loves the hero, including themselves.
@@ -34,7 +35,8 @@ What makes the hero so magical is the way they’ve learned to digest informatio
 
 Hero programmers can be transitioned to proof-of-concept developers, researchers, and people who stretch boundaries. Put them on the bleeding edge. Use their ability to digest immense amounts of information and formulate solutions before anyone else to fuel your innovations.
 
-### The Martyr
+## The Martyr
+
 “Everything is the worst.” I received this message from Shelly* one Monday morning. She was convinced that we’d never finish the project on time. I can’t say I was surprised by her attitude. She normally seems pretty negative about our projects. I’ve noticed that lately that most of my team seems to be agreeing with her.
 
 That’s when I figured out she was The Martyr team member. The Debbie Downer, the Negative Nancy, the Sad Sally, the Morose Molly, the… ok I could go on, but you get my drift. She really thinks everything is the worst.
@@ -49,7 +51,8 @@ If The Martyr gives you some reasons or steps that will make things better, you 
 
 If they can’t put into words why everything sucks, they probably aren’t a good fit for your team anymore. Sometimes depression manifests itself into the martyr attitude, though, so I also suggest you recommend they work with your HR department to get assistance. But, you should make it very clear that their negative attitude is not building up the team or adding to the team’s success.
 
-### The Insubordinate
+## The Insubordinate
+
 “Man, this guy is pissing me off!” I thought to myself. Every time I asked Jordan* to do a ticket in Jira, he ended up doing something really different. He wasn’t listening to me! I’d ask him to do write a new feature, and then he’d upgrade our whole infrastructure. I’d tell him to fix a bug, and before you knew it, he added a new feature!
 
 How could I justify our progress to upper management. “Your other features are behind. But, we did add this new feature you never asked for. By the way, it’s going to generate more customer service requests. Ok, thanks!”
@@ -78,11 +81,10 @@ Jordan became one of my most prized colleagues then (and still is now) because I
 
 Before you jump to a conclusion that your developer is a bad seed, you need to reflect a little bit more on the situation. Are they causing you a problem based on malice or based on your vacuum?
 
-### Attend to your different programmers
-*“Always remember you're unique, just like everyone else.”*
+## Attend to your different programmers
 
-~ Red Green (or [Jim Wright](https://quoteinvestigator.com/2014/11/10/you-unique) - why am I so bad at picking quotes?)
+> “Always remember you're unique, just like everyone else.”*
+> 
+> ~ Red Green (or [Jim Wright](https://quoteinvestigator.com/2014/11/10/you-unique) - why am I so bad at picking quotes?)
 
 You are unique, intelligent and learning to do your job better. A step above the rest (that’s why you’re reading this newsletter, right?) You’re certainly different than other managers who don’t care. But remember, each one of your developers is unique and different, too. It’s your job to understand that and apply this knowledge to your leadership.
-
-> You're on your way as a great Dev Manager. Check out more [management entries](/tag/management) to continue your journey.

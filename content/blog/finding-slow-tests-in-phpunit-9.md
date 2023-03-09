@@ -50,7 +50,7 @@ Then, I've added this configuration to my `phpunit.xml` file at the top level:
 
 Now, any time there is a test that's longer than 3 seconds, I'll be alerted.
 
-### Quick Notes for Database Setup In Tests
+## Quick Notes for Database Setup In Tests
 
 If you're using something like Laravel, you might run into a situation where the unit test set up for your database takes a long time.  If you're running your database migrations on each test (which is the default with sqlite), I recommend against that and using a similar database to your production system.  If you're using something like MySQL, it will run the migrations the first time, and then after that use transactions.
 

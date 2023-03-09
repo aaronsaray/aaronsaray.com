@@ -10,7 +10,7 @@ Hello friends - I'm trying to get an idea if this would be a good idea.  Let me 
 
 <!--more-->
 
-[![I Like Code!](/uploads/2013/hithere-300x104.png)](/uploads/2013/hithere.png){: .thumbnail}{: .pull-right}
+{{< image src="/uploads/2013/hithere.png" thumb="/uploads/2013/hithere-300x104.png" alt="I like code" >}}
 
 Here's the idea (...knowing my experience in web development and programming...)
  

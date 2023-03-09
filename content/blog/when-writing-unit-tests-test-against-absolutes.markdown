@@ -1,5 +1,5 @@
 ---
-title: When writing unit tests, test against absolutes
+title: When Writing Unit Tests, Test Against Absolutes
 date: 2012-02-14
 tag:
 - testing

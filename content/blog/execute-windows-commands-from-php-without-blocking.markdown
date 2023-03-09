@@ -5,7 +5,7 @@ tag:
 - php
 - windows
 ---
-When researching for my [live error reporting posting]({{< ref "/blog/live-combined-error-reporting-for-apache-and-php-during-development" >}}), I tried running some [`exec`](http://us.php.net/manual/en/function.exec.php) and [`passthru`](http://us.php.net/manual/en/function.passthru.php) command tests by starting up calc.exe.  While they executed the command correctly, I got some weird results in my script ... which I suppose now make sense.  Lets see how we can start programs in Windows, and not run into the same issues that I did.
+When researching for my [live error reporting posting]({{< ref "/blog/live-combined-error-reporting-for-apache-and-php-during-development" >}}), I tried running some [`exec`](http://us.php.net/manual/en/function.exec.php) and [`passthru`](http://us.php.net/manual/en/function.passthru.php) command tests by starting up calc.exe.  While they executed the command correctly, I got some weird results in my script ... which I suppose now make sense.  Let's see how we can start programs in Windows, and not run into the same issues that I did.
 
 <!--more-->
 

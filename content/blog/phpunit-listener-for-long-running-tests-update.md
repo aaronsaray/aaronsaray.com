@@ -13,7 +13,7 @@ We want to add a listener to our PHPUnit tests that checks to see if any of the 
 
 So, let's apply our test times listener.  First, we need to register the listener with PHPUnit.
 
-**`phpunit.xml.dist`**
+{{< filename-header "phpunit.xml.dist" >}}
 ```xml
 <!-- snip -->
 <listeners>
@@ -26,7 +26,7 @@ So, let's apply our test times listener.  First, we need to register the listene
 
 Now, let's take a look at the listener itself.
 
-**`tests/TestTimeThresholdListener.php`**
+{{< filename-header "tests/TestTimeThresholdListener.php" >}}
 ```php
 <?php
 /**

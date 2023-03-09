@@ -28,6 +28,6 @@ Source page without proper filtering:
 </html>
 ```
 
-Then, on `evil.server`, place your image.  Finally, top it off with the following code in **`exploit.php`**
+Then, on `evil.server`, place your image.  Finally, top it off with the following code in `exploit.php` to process the GET parameter.
 
 Easy as that.  Just another reminder to properly filter your use submitted content.

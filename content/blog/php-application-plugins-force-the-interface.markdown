@@ -10,7 +10,7 @@ The other day I was experimenting with some PHP plugin scripts and trying to dev
 
 Well the obvious answer is an interface.  But, I wanted to make sure that their plugin actually implemented it.
 
-### Enter instanceof
+## Enter `instanceof`
 
 I had previously only thought of `instanceof` as a way to verify if an object was of a specific type of class - but this can be extended to interfaces.  Let's check out my test code here:
     
@@ -49,7 +49,7 @@ Next, we have the third party plugin which implements `pluginInterface`.  It has
 
 Finally, our plugin loader will make a new instance of the plugin, and then verify its of the type of `pluginInterface`.  This makes sure that we've loaded this interface with our third party plugin.  In this code, if you were to remove `implements pluginInterface` from `thirdPartyPlugin`, the `instanceof` will fail and print `discard me`.
 
-### Make the parameters in the Interface more exacting
+## Make the parameters in the Interface more exacting
 
 So, let's say that every single `update()` method should do something to the object `testObject`.  With this modified code, I make sure that the `update()` method of the 3rd party plugin expects its first parameter to be `testObject`.  If you do not match up the exact type of object in the declaration as the interface, it will fail. (note: the object's variable name does NOT need to match)
 
@@ -78,7 +78,7 @@ class testObject
 {}
 ```
 
-### Can this help with security?
+## Can this help with security?
 
 Sure!  Think about this: you install a 3rd party plugin, but you don't have time to review all of its code line by line.  Ok - so this malicious 3rd party plugin now wants to access your database connection and drop all of your records.   It expects to pass in the database connection to its update function... so it defines the function as this:
 

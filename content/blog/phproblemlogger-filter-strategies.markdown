@@ -21,7 +21,7 @@ This would filter the `$_SERVER` super global and basically return the entire th
 
 In the cookbook section of the documentation, I gave a bunch of examples of how some filtering might work - but I thought I'd jump in a bit here with more detail of some examples.  And, we'll end it with my favorite thing - not re-inventing the wheel (that is, using built-in PHP functions as you should be!)
 
-### Examples
+## Examples
 
 The filtering functionality of the PHProblemLogger library takes a `Callable` from PHP and basically executes it.  It stores the output.  So, we can duplicate this logic by simply creating user defined functions and maybe using `var_dump` to look at the answer.  This way we don't have to call specific filter functions on the class - we'll use `$_SERVER` and bypass some of the other logic in the class.
 
@@ -38,12 +38,14 @@ var_dump($filterAll($_SERVER));
 
 This is going to create something that looks similar to this:
 
-    array (size=24)
-      'DOCUMENT_ROOT' => string '/Users/aaron/Desktop' (length=20)
-      'REMOTE_ADDR' => string '127.0.0.1' (length=9)
-      'REMOTE_PORT' => string '58854' (length=5)
-      'SERVER_SOFTWARE' => string 'PHP 5.5.34 Development Server' (length=29)
-      ...
+```txt
+array (size=24)
+  'DOCUMENT_ROOT' => string '/Users/aaron/Desktop' (length=20)
+  'REMOTE_ADDR' => string '127.0.0.1' (length=9)
+  'REMOTE_PORT' => string '58854' (length=5)
+  'SERVER_SOFTWARE' => string 'PHP 5.5.34 Development Server' (length=29)
+  ...
+```
       
 A total of 24 keys in this particular instance of my `$_SERVER` variable.
 
@@ -64,8 +66,10 @@ All I did is create a new array and pick a specific portion of my incoming array
 
 The output is rather predictable:
 
-    array (size=1)
-      'REMOTE_ADDR' => string '127.0.0.1' (length=9)
+```txt
+array (size=1)
+  'REMOTE_ADDR' => string '127.0.0.1' (length=9)
+```
 
 **Filter out only one key**  
 Let's say we have a particularly delicate value in this incoming variable.  Yup, we don't want anyone to see `REMOTE_ADDR` (for some reason? Let's just use it for this example...)
@@ -96,10 +100,12 @@ This is pretty cool because we're filtering our array using a built-in function.
 
 As you can probably guess now, this returned the following output:
 
-    array (size=3)
-      'REMOTE_ADDR' => string '127.0.0.1' (length=9)
-      'REMOTE_PORT' => string '58854' (length=5)
-      'HTTP_HOST' => string '127.0.0.1:8888' (length=14)
+```txt
+array (size=3)
+  'REMOTE_ADDR' => string '127.0.0.1' (length=9)
+  'REMOTE_PORT' => string '58854' (length=5)
+  'HTTP_HOST' => string '127.0.0.1:8888' (length=14)
+```
       
 **Oh noes! Passing `ARRAY_FILTER_USE_KEYS` is always giving me a `null` array?! Help!**
 

@@ -4,7 +4,7 @@ date: 2021-05-04
 tag:
 - archived-projects
 ---
-A friend of mine created a bingo caller at [letsplaybingo.io](https://letsplaybingo.io/) which I found pretty interesting. She got lots of traffic and a lot of appreciative people.  This inspired me to make a simple game website to keep my skills up to date. Maybe people would love it, too! (spoiler alert: they didn't)
+A friend of mine created a bingo caller at [let'splaybingo.io](https://let'splaybingo.io/) which I found pretty interesting. She got lots of traffic and a lot of appreciative people.  This inspired me to make a simple game website to keep my skills up to date. Maybe people would love it, too! (spoiler alert: they didn't)
 
 <!--more-->
 
@@ -24,33 +24,32 @@ Before this project, I had known how to use cloud functions and firestore before
 
 The [archived Github](https://github.com/aaronsaray/playtictactoe.page) repo is here. Here are some screenshots of the site:
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-01.jpg)](/uploads/2021/playtictactoe.page-01.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-01.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-02.jpg)](/uploads/2021/playtictactoe.page-02.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-02.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-03.jpg)](/uploads/2021/playtictactoe.page-03.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-03.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-04.jpg)](/uploads/2021/playtictactoe.page-04.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-04.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-05.jpg)](/uploads/2021/playtictactoe.page-05.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-05.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-06.jpg)](/uploads/2021/playtictactoe.page-06.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-06.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-07.jpg)](/uploads/2021/playtictactoe.page-07.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-07.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-08.jpg)](/uploads/2021/playtictactoe.page-08.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-08.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-09.jpg)](/uploads/2021/playtictactoe.page-09.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-09.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-10.jpg)](/uploads/2021/playtictactoe.page-10.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-10.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-11.jpg)](/uploads/2021/playtictactoe.page-11.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-11.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-12.jpg)](/uploads/2021/playtictactoe.page-12.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-12.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-13.jpg)](/uploads/2021/playtictactoe.page-13.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-13.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-14.jpg)](/uploads/2021/playtictactoe.page-14.jpg){: .thumbnail}
+{{< image src="/uploads/2021/playtictactoe.page-14.jpg" alt="Play Tic Tac Toe Page" >}}
 
-[![Play Tic Tact Toe Page](/uploads/2021/playtictactoe.page-15.jpg)](/uploads/2021/playtictactoe.page-15.jpg){: .thumbnail}
-
+{{< image src="/uploads/2021/playtictactoe.page-15.jpg" alt="Play Tic Tac Toe Page" >}}

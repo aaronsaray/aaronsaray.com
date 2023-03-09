@@ -9,7 +9,7 @@ Laravel has a lot of the most common functionality built into the framework.  Ho
 
 <!--more-->
 
-### The Problem
+## The Problem
 
 I’ve been building out API endpoints to handle JSON responses using the built-in method `Request::wantsJson` and the response type `JsonResponse` like this:
 
@@ -29,13 +29,14 @@ if ($request->wantsCsv()) {
 }
 ```
 
-### The Solution
+## The Solution
 
 Luckily, the Laravel maintainers have implemented a way for us to extend built-in Laravel functionality using macros.  You can find documentation for macros on the [Response](https://laravel.com/docs/5.6/responses#response-macros) in the official Laravel documentation.  By examining the code, I found out that `Request` also supports this functionality.
 
 I decided to add my CSV functionality as a macro to both the request and response objects using my app service provider. I’m using [The League CSV](https://csv.thephpleague.com/) to easily handle my CSV response (if you’ve dealt with different line-endings, encodings, complicated escape sequences and found yourself spending tons of time, wise up sooner than I have and use this library instead).
 
-**AppServiceProvider.php** in the `boot()` method
+Add the following to the `boot()` method of the `AppServiceProvider.php` file.
+
 ```php
 Response::macro('csv', function (array $value, int $status = 200) 
 {
@@ -47,7 +48,8 @@ Response::macro('csv', function (array $value, int $status = 200)
   $csv->insertOne($headers);
   $csv->insertAll($value);
 
-  return Response::make($csv->getContent(), $status)->withHeaders(['Content-Type' => 'text/csv']);
+  return Response::make($csv->getContent(), $status)
+    ->withHeaders(['Content-Type' => 'text/csv']);
 });
 
 Request::macro('wantsCsv', function () {
@@ -66,7 +68,7 @@ The second section of code adds a method of `wantsCsv` as a macro using the `Req
 
 Now, I’m free to use the request `wantsCsv()` and the `csv()` response methods in my project.
 
-### Final Notes
+## Final Notes
 
 As with any custom implementation, there are ways that this code works for me but may not work for you.  (For example, my CSV response doesn’t handle empty documents or additional headers.)  The important part here is to understand that you can add functionality into classes like `Request` and `Response` using macros.  For more insight into the macro functionality, I suggest checking out the [Macroable](https://laravel.com/api/5.6/Illuminate/Support/Traits/Macroable.html) trait that Laravel provides.
 

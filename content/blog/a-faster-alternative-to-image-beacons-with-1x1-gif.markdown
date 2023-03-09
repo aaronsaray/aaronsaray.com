@@ -14,7 +14,7 @@ a) it sends a 1x1 gif's worth of data to the server.  This should exist - it cou
 
 b) it requires a full data connection and transmission to do something so simple.
 
-Instead, lets use the HTTP Code 204: No Content
+Instead, let's use the HTTP Code 204: No Content
 
 [HTTP response code 204](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.5) stands for "no content".  This means that there will be no additional data processed, sent or displayed after the last blank line in the header of the request.
 

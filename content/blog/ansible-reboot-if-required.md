@@ -17,7 +17,7 @@ After the upgrade, a lot of times a reboot is required.  Luckily Ansible has the
 
 Let's take a look at some tasks with this implemented: 
 
-**`tasks.yml`**
+{{< filename-header "tasks.yml" >}}
 ```yaml
 ---
 - name: Update apt-cache and do dist upgrade

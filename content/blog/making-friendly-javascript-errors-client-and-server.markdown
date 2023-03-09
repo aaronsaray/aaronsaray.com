@@ -8,7 +8,7 @@ The more I look at my code I wrote in my earlier posts about the [unknown _popup
 
 <!--more-->
 
-### Doing a service for your visitor
+## Doing a service for your visitor
 
 After your javascript is tried and tested and error free, there are still chances that errors can be logged using my utility.  These usually are the result of Spyware that is left on the user's machine.  Sometimes some removal processes don't capture all of it.  The `_popupControl()` method was one such remnant.
 
@@ -16,7 +16,7 @@ I thought that instead of just ignoring these issues, I could gently alert the u
 
 There are two ways to go about handling these javascript errors: client side and server side.
 
-### Client Side
+## Client Side
 
 Client side javascript error handling requires a bit more front-end programming.  It also shows a lot of your cards to the outside world.  By looking at the code in the javascript portion of your page, visitors could see all types of errors that you're trying to detect.  While I don't think this is a deterrent to using this method, you may feel otherwise.
 
@@ -60,7 +60,7 @@ The second if statement is simply checking for the case of `otherBaddie` - and w
 
 Like I mentioned before, this lays all of your cards out on the table - could potentially make your page load longer (especially if you have a lot of spyware you're tracking), but be most versatile.
 
-### Server Side
+## Server Side
 
 With server side, I'm going to rely on the image that the javascript error handler is loading.  If this image is populated by my error.php file, then I'll show it.
 

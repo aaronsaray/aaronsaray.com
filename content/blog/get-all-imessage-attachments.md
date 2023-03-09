@@ -9,22 +9,24 @@ The other day I was looking for an image from one of my iMessage chats.  When yo
 
 <!--more-->
 
-### The Location and Filesystem
+## The Location and Filesystem
 
 You can find the root of your attachments at `~/Library/Messages/Attachments`.  When you get to this location, you'll notice 2 digit hex folders.  This is the file system's way of making sure that there aren't too many files in the folder I think.  So, you'd have to look into each folder to see the next level, and then further in to see a folder named after the UUID, followed by an actual item inside of it.  So, for example, you might find a file like this: `~/Library/Messages/Attachments/81/01/B5BF4ECA-D5BF-4EF0-A222-D24F0AAE4B7B/IMG_3077.JPG`
 
 Oh man, this will take forever to browse through all of these!
 
-### The Scripting Way
+## The Scripting Way
 
 So, I knew I wanted to see a preview of all of my images, and they'd most likely all be `.jpg` files. I happen to have enough extra HD space that I could most likely copy all of the attachments and still have enough free space.  Plus, PHP is built into the MacOS system, so I decided to write a PHP script.
 
 My goal was simple: Iterate through all folders, grab all files, and put them in a single folder.  Then I could use thumbnail previews to look through all of them.  I also wanted to see some progress that the script was still going.  So, I made the following script:
 
-**attachments.php**
+{{< filename-header "attachments.php" >}}
 ```php
 <?php
-$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('/Users/aaron/Library/Messages/Attachments/'));
+$rii = new RecursiveIteratorIterator(
+  new RecursiveDirectoryIterator('/Users/aaron/Library/Messages/Attachments/')
+);
 
 foreach ($rii as $file) {
     if ($file->isDir()) continue;
@@ -38,11 +40,13 @@ foreach ($rii as $file) {
 
 Then, to run it, simple run the following command in the terminal:
 
-`php attachments.php`
+```bash
+php attachments.php
+```
 
 Depending on how many files you have, it may take a while.  When done, go to your `~/items` folder and take a look at all of your attachments.
 
-#### What's In This PHP
+### What's In This PHP
 
 First, we make a Recursive Directory Iterator which will generate a multi-level iterator of all of the files in the directory we pass it. It recurses into each folder and returns an iterator that is reflective of this.  In order to flatten it down for our needs, we then pass that into a Recursive Iterator Iterator.  This allows us to just loop over all the results as a single flattened loop.
 

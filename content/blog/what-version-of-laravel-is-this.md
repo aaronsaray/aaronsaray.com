@@ -6,11 +6,11 @@ tag:
 - laravel
 - composer
 ---
-There are tons of ways to answer this question each with its own benefits.  Lets check out a few.
+There are tons of ways to answer this question each with its own benefits.  Let's check out a few.
 
 <!--more-->
 
-### Artisan
+## Artisan
 
 ```bash
 php artisan
@@ -18,7 +18,7 @@ php artisan
 
 The very first line of the output shows the version.  Then it shows all the registered commands. Need only the version? Use `-V` or `--version` when running the command.
 
-### Composer
+## Composer
 
 ```bash
 composer show | grep laravel/framework

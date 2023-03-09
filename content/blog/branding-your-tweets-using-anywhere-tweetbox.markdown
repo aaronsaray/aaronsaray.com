@@ -11,7 +11,7 @@ With Twitter's new @anywhere features, it's now possible to brand your tweets fr
 
 @anywhere features an interactive tweetbox that you can embed on your website.  The javascript call allows you to add your own content to the box - just waiting for the user to hit TWEET. (Of course, they have to connect to your website.)  In order to leverage this for my own website, and brand my tweets from AaronSaray.com, I decided that I could use this box in my browser sidebar.  Here are the steps - in case you want to do it yourself!
 
-### Get Your "App" an API Key
+## Get Your "App" an API Key
 
 This is pretty simple.  First, log into the web interface for twitter.  Then, visit the apps page at [http://twitter.com/apps](http://twitter.com/apps). Click on register a new application if you need to.
 
@@ -19,7 +19,7 @@ On this page, you can enter all the details of your application.  For the applic
 
 After this is complete, you may want to view your page's settings.  (You can do this by clicking on the name of the application on the apps page.)  The important thing to do here is to access the 'Consumer Key' and copy this down.
 
-### Create your webpage
+## Create your webpage
 
 Next, I created a web page on my domain.  It has the following code:
 
@@ -54,12 +54,12 @@ First off, make sure to change `CONSUMER_KEY` to the actual key from your applic
 
 Finally, include the javascript and configure the tweetbox.  I chose not to pre-populate my tweetbox with content.  However, you could if you wish...
 
-### Add Book Mark
+## Add Book Mark
 
 Add the bookmark to your browser.  I added mine to my firefox bookmark toolbar.  Then, I right clicked and chose properties.  I checked the 'load this in the sidebar' option.
 
-### Use It!
+## Use It!
 
 The first time you use the tweet box, it will prompt you to connect to your website. After this is done, you can use this easily.  My branded tweets show that its from AaronSaray.com nicely.  See?
 
-[![](/uploads/2010/tweet.jpg)](/uploads/2010/tweet.jpg){: .thumbnail}
+{{< image src="/uploads/2010/tweet.jpg" alt="Screenshot" >}}

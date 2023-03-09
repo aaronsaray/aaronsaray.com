@@ -12,7 +12,7 @@ So I've heard of the [Flash of Unstyled Content](http://bluerobot.com/web/css/fo
 
 However, I just ran into it today - in FireFox even with a `link` tag...
 
-### Fixing Flash of Unstyled Content in Firefox
+## Fixing Flash of Unstyled Content in Firefox
 
 Simple really - I was loading way too much javascript before my stylesheet (not my fault on the large amount of js!!) - and the delay was causing the flash.  I moved the link to the very first part of the content - and presto - good to go.
 

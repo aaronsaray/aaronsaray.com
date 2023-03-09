@@ -13,7 +13,7 @@ Our example is going to be very simple: post a message to twitter.  We're not go
 
 Let's start in:
 
-### Our two logic classes
+## Our two logic classes
 
 Remember, we're just going to have some blank stub logic classes here.  They are for demonstration purposes only.
 
@@ -52,7 +52,7 @@ class twitterMessage
 }
 ```
 
-### The actual launching code
+## The actual launching code
 
 We're going to jump a head here and show what code we'll be using to add the url shortener as well as post the message.  It's really short - but it'll give us an idea of what class we need to create next:
 
@@ -73,7 +73,7 @@ Finally, we're calling `postMessage()` sending in our twitter message.  Remember
 
 So far so good.
 
-### Looking at the Observable Class
+## Looking at the Observable Class
 
 So now we know we need to build `twitterTransportObservable`.  I'm going to post the code here, but don't worry, we'll take it apart, step by step:
 
@@ -109,7 +109,7 @@ class twitterTransportObservable
 }
 ```
 
-Ok - pretty big - lets go slow:
+Ok - pretty big - let's go slow:
 
 First off, we have the `$_observers`.  Since this class is of type observable, we know it has watchers.  Well, it has to be aware of its watchers, because it registers them... so we need an array to hold all of our watchers, or `$_observers`.
 
@@ -123,9 +123,9 @@ Ok, so the last thing we have to look at is the `_notify()` function - which we'
 
 Whew, that was a lot - but we have one more part left:
 
-### The Observer class
+## The Observer class
 
-We have another class that is used to observe or watch the observable classes.  In this case, we wanted to have any URLs shortened before we posted a message to twitter... so we registered this observer with `PREPOST`.  During the Observable's `_notify()` function, we called this observerable class's `notify()` method.  So, lets finally take a look at the code:
+We have another class that is used to observe or watch the observable classes.  In this case, we wanted to have any URLs shortened before we posted a message to twitter... so we registered this observer with `PREPOST`.  During the Observable's `_notify()` function, we called this observerable class's `notify()` method.  So, let's finally take a look at the code:
 
 ```php
 class urlShortenerObserver
@@ -140,11 +140,11 @@ class urlShortenerObserver
 
 Pretty simple class.  It has only one method, called `notify()` which accepts an object - of type `twitterMessage`.  The first line just creates a new `urlShortener()` - you remember from way up top?  Just a quick `str_replace` type method.  Then, the next line accesses the `urlShortener::shorten()` method - by passing in the public `$message` variable of the `twitterMessage`.  The return value is assigned to the `twitterMessage::$message` var.  And remember, since objects are passed by reference, when the next line of the the observable's class is called, the object will now be modified.
 
-### Wrapping Up
+## Wrapping Up
 
 Ok - well this was a pretty simple example of this behavior.  There are definitely more complex ways and more business logic intense scenarios to use the observer in.  Another thing we didn't do is use many of PHP's OO properties - but we could always refactor and do that in the future.
 
-### All the code
+## All the code
 
 In case you want to run it yourself:
 

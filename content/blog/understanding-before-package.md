@@ -16,9 +16,9 @@ Packages are great - they're one of the reasons why I really like open source so
 
 And there's the key phrase: "done a good job" - how do you know if your package is any good?
 
-** I think people are approaching the package installation process backward.**
+I think people are approaching the package installation process backward.
 
-### Learn the Tech First
+## Learn the Tech First
 
 Many times I see people get a vague requirement ("let's use JWT"), then find a package, and learn about the requirement through the usage of the package.  A pet-peeve of mine is the retort "I can't do that, the package doesn't support it."  But the real problem here is that programmers are searching for the package first, then building their technical knowledge based on the implementation of that package.
 
@@ -30,15 +30,15 @@ When you learn the tech first, you can speak intelligently about the requirement
 
 There's another important reason you should learn the tech first, too.
 
-### Pick the Best Package
+## Pick the Best Package
 
 Just because a package is popular, that doesn't mean it's the best package for the job.  There are a number of reasons why this package could be popular (good marketing, it shows first in search results, someone famous used it or made it).  It's possible it has too much functionality and overhead for your need though.  
 
 It could actually be a bad package.  It could be too opinionated and not actually implement the spec properly. It could have security holes (you are reading through the source code of all the packages you use, right?).  It could have memory leaks.  It could use a deprecated version of the spec.  
 
-**How would you know?**
+How would you know?
 
-### Learn the Tech, Then Pick the Package
+## Learn the Tech, Then Pick the Package
 
 So, the next time you hear about a new requirement, don't race right away to find a good package.  Yes, the delivery time of our products is important, but whether they work properly is even more important.  Plus, we have a responsibility as programmers to implement the specs properly (or, was it that you really LIKE programming front-end code for old Internet Explorer versions?).
 

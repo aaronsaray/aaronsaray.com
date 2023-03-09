@@ -11,21 +11,20 @@ CSS contains [custom properties](https://developer.mozilla.org/en-US/docs/Web/CS
 
 In each of these examples, I've brought up the [No Compromises](https://nocompromises.io) website, brought up the inspector, and focused on the body's background color.  The `background-color: var(--light-color);` is what we'll be inspecting.  Other CSS variables are accessed in very similar ways.  All of these examples are generated on MacOS.
 
-### Chrome
+## Chrome
 
 With Google Chrome, you can find the variable in the inspector. It will show a preview of the color. If you click the color picker, you can see the exact color.
 
-[![Chrome Animation](/uploads/2020/css-var-chrome.gif)](/uploads/2020/css-var-chrome.gif){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/css-var-chrome.gif" alt="Chrome Animation" >}}
 
-### Safari
+## Safari
 
 With Safari, the inspector will show you an option to expand the value. This looks like a small equals sign.  You can click that to see the calculated value.
 
-[![Safari Animation](/uploads/2020/css-var-safari.gif)](/uploads/2020/css-var-safari.gif){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/css-var-safari.gif" alt="Safari Animation" >}}
 
-### Firefox
+## Firefox
 
 With Firefox, the inspector gives you a couple options.  For all variables, they'll become underlined when you hover near them.  Hovering over them shows a tooltip with their calculated value.  You can also click the color itself to expose the color picker if it's a color.
 
-[![Firefox Animation](/uploads/2020/css-var-firefox.gif)](/uploads/2020/css-var-firefox.gif){: .thumbnail}{: .inline}
-
+{{< image src="/uploads/2020/css-var-firefox.gif" alt="Firefox Animation" >}}

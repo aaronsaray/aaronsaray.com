@@ -8,13 +8,13 @@ I'm going to say something that I never thought I'd say in my life.  In fact, I'
 
 <!--more-->
 
-### Episode 7: Take Care of Resources, They Will Take Care of You
+## Episode 7: Take Care of Resources, They Will Take Care of You
 
 Going to church at a young age helped me be a better programmer.
 
 Now, let me explain.  One of the core principles of my religious upbringing was to be a good steward of my money, resources and time.  If I let this simple concept be your guide, the understanding was that I will be rewarded with happiness, love and success.  Basically, if one took care of things, you'd receive the same in return.  But how does this translate into being a Confident Coder of PHP?
 
-#### Don't Use More Than You Need
+### Don't Use More Than You Need
 
 To help illustrate this point, let's imagine that we have PHP installed on a server that charges per CPU cycle.  Perhaps my program has a simple loop that executes until an array is fully iterated through.
 
@@ -39,7 +39,7 @@ for ($i = 0; $i < $valuesArrayCount; $i++) {
 
 In this new code, I opted to count the values only one time.  Now, instead of executing a function on each loop, it just does one simple comparison calculation.  I took care not to execute commands that weren't necessary.  And by removing this extra function call, the total loop is also slightly faster.  And speedy execution is one thing a Confident Coder can really appreciate.
 
-#### Don't be the guest who won't leave
+### Don't be the guest who won't leave
 
 It's pretty difficult to be a successful PHP programmer without having at least some database skills.  One of the most common pairing is with MySQL.  I've too often seen programs where the usage of different technologies have not been optimized.  With MySQL in particular, PHP programmers can become the guest who won't leave: wasting time and server connections.  Let me demonstrate with some code.
 
@@ -78,8 +78,8 @@ if ($result = $mysqli->query($sql)) {
 
 MySQL is made to handle relationship data.  This is why the JOIN command exists.  So, let's make use of it!  Instead of making up to 6 calls to the database, now only one query is made.  I rely on MySQL to handle the data relationships for me.  Instead of being the guest who will never leave the MySQL connection, one query and I'm done!  I've taken care not to waste resources.  And, as usual, a byproduct of this is that the whole program is now faster too.
 
-#### End Notes
+### End Notes
 
 Taking care of your resources in your code is a lot like vehicle or home maintenance.  You don't need to do it, and you'll be fine -- for a while.  However, time will break down all things.  Proper maintenance and care will make sure you'll get more life and better performance out of your car, home, and even code!  
 
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._

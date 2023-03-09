@@ -8,7 +8,7 @@ While listening to someone complain through twitter about their MySQL conf file,
 
 <!--more-->
 
-### Enter PHPIniCreator
+## Enter PHPIniCreator
 
 As with most of my software, this is just a rough version to get the idea down on paper.  I plan to update this as well as give a working example sometime in the future.
 
@@ -34,7 +34,7 @@ As always, my todo list is great on this project:
 
   * Documentation!
 
-Yeh - its like that...
+Yeh - it's like that...
 
 So without further ramblings, here is the file:
 [phpinicreator.zip](/blog/wp-content/uploads/2009/01/phpinicreator.zip)

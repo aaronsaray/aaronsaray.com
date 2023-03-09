@@ -13,11 +13,11 @@ The object cache is design to store the references to the objects that you assoc
 
 Before I show you the code, I wanted to point out that this has already been done now (perhaps more efficiently?) in SPL: [http://www.php.net/manual/en/class.splobjectstorage.php](http://www.php.net/manual/en/class.splobjectstorage.php).
 
-### The Object Cache Class
+## The Object Cache Class
 
 This is the very simple code in the class found in this file:
 
-**`objectCache.php`**
+{{< filename-header "objectCache.php" >}}
 ```php
 class objectCache
 {

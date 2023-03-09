@@ -8,13 +8,13 @@ To redirect an entire domain with SSL to a single page, you can use the free acc
 
 <!--more-->
 
-### Why?
+## Why?
 
 I do a lot of experiments on various different projects. When those run their course, I like to redirect the domain to the blog entry I wrote up after the experiment ended. While a lot of domain registrars offer this for free, they don't support SSL.  When I first ran into this, I launched [RedirectURL]({{< ref "/blog/redirecturl-experiment-is-done" >}}) instead of using Cloudflare. I think half the reason was ignorance, half I wanted to have a service to try to monetize, and half because the base configuration at the time in Cloudflare maybe wasn't free - or I couldn't figure it out. (Also I'm great at math...)
 
 So now, you can handle this situation with Cloudflare.
 
-### What I Want to Do
+## What I Want to Do
 
 I want to redirect `redirecturl.io` to `https://www.aaronsaray.com/2020/redirecturl-experiment-is-done`.  This means I have to do the following:
 
@@ -22,7 +22,7 @@ I want to redirect `redirecturl.io` to `https://www.aaronsaray.com/2020/redirect
 * Make sure that `redirecturl.io` is handled and redirects to that page
 * Make sure both of them respond on SSL as well
 
-### How?
+## How?
 
 Here's how you do it
 
@@ -32,7 +32,7 @@ When you first sign up, they might already help you by directing you to add a si
 
 Enter your domain in the site box and click **Add Site**.
 
-[![Process pic](/uploads/2020/cloudflare-1.png)](/uploads/2020/cloudflare-1.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/cloudflare-1.png" alt="Process pic" >}}
 
 Next, it'll ask you what plan you want. I chose the **Free** one and clicked **Confirm plan**.
 
@@ -40,7 +40,7 @@ Next, it scans for DNS records.  Depending on what you have set up, you may have
 
 I added two records.  
 
-[![Process pic](/uploads/2020/cloudflare-2.png)](/uploads/2020/cloudflare-2.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/cloudflare-2.png" alt="Process pic" >}}
 
 The first was an `A Record` pointing to a reserved IP address.  You need an A record in order for Cloudflare to start to route your requests.  We need that orange cloud on the screen for proxying.  I picked a useless destination because I know that I'm going to create a page rule later.  As suggested, enter `@` for the root and then enter in `192.0.2.1` for the content value.
 
@@ -50,11 +50,11 @@ Click **Continue**.
 
 You'll be asked to change your nameservers now.
 
-[![Process pic](/uploads/2020/cloudflare-3.png)](/uploads/2020/cloudflare-3.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/cloudflare-3.png" alt="Process pic" >}}
 
 I did this at Namecheap (my registrar) and saved it.  It will take a little bit of time for these to update.
 
-[![Process pic](/uploads/2020/cloudflare-4.png)](/uploads/2020/cloudflare-4.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/cloudflare-4.png" alt="Process pic" >}}
 
 Click **Done**
 
@@ -64,7 +64,7 @@ Now, Cloudflare will watch and let you know when the DNS has been updated.  In t
 
 Click the **SSL/TLS** menu item.  We want to confirm that SSL is enabled for our domain.
 
-[![Process pic](/uploads/2020/cloudflare-5.png)](/uploads/2020/cloudflare-5.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/cloudflare-5.png" alt="Process pic" >}}
 
 Leaving it at **Full** mode is fine.
 
@@ -76,17 +76,16 @@ Then pick the **Forwarding URL** setting, select the **301 Permanent Redirect** 
 
 For your destination URL, enter where you'd like visitors to end up using the full protocol and URL.
 
-[![Process pic](/uploads/2020/cloudflare-6.png)](/uploads/2020/cloudflare-6.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/cloudflare-6.png" alt="Process pic" >}}
 
 Click **Save and Deploy**
 
 Click **Create Page Rule** again.  This time enter the `www` version of your domain with the wildcard.  Pick **Forwarding URL** again and choose **301 Permanent Redirect**.  This time, enter your base URL with SSL protocol.
 
-[![Process pic](/uploads/2020/cloudflare-7.png)](/uploads/2020/cloudflare-7.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/cloudflare-7.png" alt="Process pic" >}}
 
 Click **Save and Deploy**
 
 Now you're done.  When Cloudflare is finally resolving your site, you'll see this message:
 
-[![Process pic](/uploads/2020/cloudflare-8.png)](/uploads/2020/cloudflare-8.png){: .thumbnail}{: .inline}
-
+{{< image src="/uploads/2020/cloudflare-8.png" alt="Process pic" >}}

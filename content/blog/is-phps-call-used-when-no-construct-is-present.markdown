@@ -1,10 +1,10 @@
 ---
-title: Is PHP's __call() used when no __construct is present?
+title: Is PHP's __call() Used When No __construct is Present?
 date: 2009-01-11
 tag:
 - php
 ---
-Simple enough question.  Lets check out some test code:
+Simple enough question.  Let's check out some test code:
 
 <!--more-->
 
@@ -27,7 +27,9 @@ new TEST('hi');
 
 Ran the first time, the output was:
 
-    constructed with: hi
+```txt
+constructed with: hi
+```
 
 Ran without a constructor?
 

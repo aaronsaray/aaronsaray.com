@@ -13,7 +13,9 @@ Turns out there's a git command called [git archive](https://git-scm.com/docs/gi
 
 For example:
 
-`cd my-plugin-with-git && git archive -o my-plugin.zip HEAD` 
+```bash
+cd my-plugin-with-git && git archive -o my-plugin.zip HEAD
+```
 
 This will make a zip file of all your code, minus the `.git` folder, in the current working directory.  Use that to upload your plugin.
 

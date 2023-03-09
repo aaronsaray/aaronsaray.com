@@ -11,7 +11,7 @@ First off, let me just remind you to not be an idiot like I was.  I simply found
 
 However, I was able to create a few proof of concept things.  I'm going to cover connecting to your application, showing the connection/authentication system, and retrieving information about other users via your authenticated account.
 
-### First, set up the HTML
+## First, set up the HTML
 
 The following is the snippet of HTML I used for my demonstration.
 
@@ -40,7 +40,7 @@ The following is the snippet of HTML I used for my demonstration.
 
 This is pretty simple, create a document, load jquery and load the twitter api using your api key, and then create some placeholder boxes.  Let's check out the first set of javascript.
 
-### The Javascript for Authentication and User Information
+## The Javascript for Authentication and User Information
 
 ```javascript
 twttr.anywhere.config({
@@ -76,7 +76,7 @@ The `authComplete()` method then hides the connect button.  We're already connec
 
 All that functionality only happens when the user uses the connect button. The page can still be refreshed or visited at a different time.  This is where the next snippet comes in.  When this call continues, it verifies if the user is connected with `T.isConnected()`.  If so, it basically does the same stuff as the `authComplete()` method of the `connectButton()` call.  (Yah, I should have put this in a different method..)
 
-Next, lets look at the other code bits that we reference in this snippet.
+Next, let's look at the other code bits that we reference in this snippet.
 
 ```javascript
 $("#signoutlink").live("click", function () {
@@ -106,7 +106,7 @@ First, the link with the id of `signoutlink` is now bound with jquery to the met
 
 The `showUserInfo()` method's content is a copy from the JS API documentation.  All it does is access the `currentUser` of the `T` (twitter @anywhere instance) and retrieve that data.  It then populates it into the div with the ID `connectedUser`.  One thing I do extra is call the `hovercards()` method.  `hovercards()` parses the document and highlights every twitter handle and creates a hover-card or popup.  I thought this would be a nice edition for the user information.
 
-### The Javascript for Interacting with Other Users
+## The Javascript for Interacting with Other Users
 
 The HTML still has an input box and button I need to add javascript for.  For the proof of concept, all we're going to do is search the user by their username and alert a few bits of information about them.
 
@@ -137,6 +137,6 @@ Once the button with the id `doSearch` is clicked, the value of the input with t
 
 Next, the `User.find()` method is executed on the content of that username.  The twitter user object is passed into the callback.  The call back tells how many friends and followers the searched user has, whether the current user is following the searched user, and what that person's last status was (it uses their name to start out the sentence.).
 
-### Ending Thoughts
+## Ending Thoughts
 
 I'm looking forward to what Twitter comes up with. So far, I'm super impatient.  I was ready to make my full fledged application today - but was stuck by lack of documentation and lack of features.  However, I'm sure when it's done, it will be great.  I'll post something when it's finished with a more indepth tutorial.

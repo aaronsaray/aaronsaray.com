@@ -11,7 +11,7 @@ The other day I ran across an issue with the FileStyle jquery plugin.  Whenever 
 
 As a quick fix, however, I made the following changes to FileStyle:
 
-**BEFORE**
+**Before**
 
 ```javascript
 $(self).bind("change", function() {
@@ -19,7 +19,7 @@ $(self).bind("change", function() {
 });
 ```
 
-**AFTER**
+**After**
 
 ```javascript
 $(self).bind("change", function() {

@@ -14,7 +14,7 @@ If you’re a developer or consultant, you can use this as a set of guidelines o
 
 If you’re a prospective business client, this will show you a very simple, contrived example of the type of work you can expect out of a requirements gathering engagement.
 
-### What Should I Create?
+## What Should I Create?
 
 There are many different levels of detail you might include in the process of gathering requirements. Some would say that you should include as much detail as possible so you can quote and build things accurately. Others that preach an agile approach say that requirements are a waste of time because project needs change to quickly.
 
@@ -22,29 +22,33 @@ I tend to fall somewhere in the middle. Requirements documents and wireframes gi
 
 With this in mind, I tend to create a semi-detailed requirements document and a relatively detailed wireframe. On a detail level from least at 1 to most at 10, I do a 5 for a requirements document and an 8 for a wireframe.
 
-#### What is a requirements document?
+### What is a requirements document?
 
 Generally a requirements document contains business goals and details mixed with technical specs. It is a written version of the functionality of the project. It may also detail both how and why of each feature to provide context. I tend to use Pages or Microsoft Word and then export as a PDF.
 
 Requirements documents may contain assumptions, concerns, and features so that all members of the team are on board. Nothing’s worse than finding out 3 months into the project that “we just assumed that you would do xyz…” - so that’s where this document really shines. You think something should or may happen? Write it down. Do you plan to do something? Write it down.
 
-#### What is a wireframe?
+### What is a wireframe?
 
 There are two forms of visual representation for projects: wireframes and mockups. Wireframes tend to be more sketch-like and not have as much visual detail. Their job is to help visually describe functionality without getting bogged down on stylistic choices. They are useful to show workflows. I tend to use Balsamiq or PencilApp to create the wireframes and export them as a PDF.
 
 Mockups tend to be more stylistically filled in versions of mockups. Therefore they take longer. Depending on the needs of your project, you may have both wireframes or mockups. I tend to believe that wireframes are part of the defining stage of a project, and mockups are part of the designing / building stage.
 
-### tldr; Show Me Examples
+## tldr; Show Me Examples
 
 I’ve included two files here. The first is the requirements document and the second is the wireframe.
 
-[![Mass Status for Slack - Requirements PDF](/uploads/2023/requirements-doc-thumbnail.png) Requirements PDF](/uploads/2023/Fizzle Stix - Mass Status for Slack - Requirements.pdf){: .thumbnail}{: .inline}
+{{< link href="/uploads/2023/Fizzle Stix - Mass Status for Slack - Requirements.pdf" img="/uploads/2023/requirements-doc-thumbnail.png" alt="Mass Status for Slack - Requirements PDF" >}}
+Requirements PDF
+{{< /link >}}
 
-[![Mass Status for Slack - Wireframe PDF](/uploads/2023/wireframe-thumbnail.png) Wireframe PDF](/uploads/2023/Fizzle Stix - Mass Status for Slack - Wireframe.pdf){: .thumbnail}{: .inline}
+{{< link href="/uploads/2023/Fizzle Stix - Mass Status for Slack - Wireframe.pdf" img="/uploads/2023/wireframe-thumbnail.png" alt="Mass Status for Slack - Wireframe PDF" >}}
+Wireframe PDF
+{{< /link >}}
 
 You may decide to just download these and synthesize your own thoughts from them. But, if you want to learn more of the rationale, continue on below!
 
-### Requirements Document
+## Requirements Document
 
 The sections I’ve added here are just examples of how I start out my requirements document. Sometimes I end up expanding the sections or removing them entirely. Let’s take a look at the sections.
 
@@ -58,7 +62,7 @@ The sections I’ve added here are just examples of how I start out my requireme
 
 Your requirements document may have all of these sections, or more, or less. These are just an example of sections I’ve found useful over time creating many of these documents.
 
-### Wireframe
+## Wireframe
 
 Each wireframe will be different for each project obviously. Some may be more detailed and some less. Here are a few thoughts I have when considering creating a wireframe.
 
@@ -70,7 +74,7 @@ Each wireframe will be different for each project obviously. Some may be more de
 
 I’ve had wireframes that were a fraction of the requirements document, and I’ve had ones that were twenty times more pages. It just depends on what is the best and easiest ways to describe your requirements for each unique project.
 
-### The End
+## The End
 
 Requirement documentation is a hard process, but it’s worth it. You learn a lot about the project, develop a shared vocabulary, and can build a project plan throughout the process. Wireframes help with those who are more visual or in situations where a visual representation is more efficient and effective.
 

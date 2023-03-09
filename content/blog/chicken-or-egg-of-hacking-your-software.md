@@ -11,7 +11,7 @@ Today I was faced with an interesting quandary about whether I should write the 
 
 But this was all theory. I started thinking: is it really theory or can it be proven? Maybe I should write this software, once and for all, to demonstrate that it really is a problem.  
 
-> We should all note that sometimes problems are ok in business - sometimes a risk is still fine. I just believe in having known risks, having their mechanisms defined.  I'd rather say "this could happen, and here's how" instead of "we think this could happen."
+We should all note that sometimes problems are ok in business - sometimes a risk is still fine. I just believe in having known risks, having their mechanisms defined.  I'd rather say "this could happen, and here's how" instead of "we think this could happen."
 
 Maybe I should write this software?  But maybe I shouldn't?  [Tim Cook wrote](http://www.apple.com/customer-letter/) in his letter about the FBI case and the iPhone that sometimes building software that can bypass security is bad. This software doesn't exist now - so at least we are partially protected. Once it exists, it can't un-exist, and now the battle is keeping it in the right hands.
 

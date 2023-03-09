@@ -9,17 +9,17 @@ One of the most irritating things to me about the Elgg messaging plugin is the r
 
 <!--more-->
 
-### What This Plugin Solves:
+## What This Plugin Solves
 
 This plugin extends the input/pulldown view in Elgg to create an Autocomplete box instead (theoretically, this could be used for any pulldown, not just friends).
 
-### How do I use it?
+## How do I use it?
 
 Imagine you have a view in Elgg that uses the following code:
 
 ```php    
 $friends = amazing_function_formats_this($_SESSION['user']->getFriends());
-echo elgg_view('input/pulldown', array('name'=>'friends', 'options_values'=>$friends);
+echo elgg_view('input/pulldown', array('name' => 'friends', 'options_values' => $friends);
 ```
 
 This generates a pull down that will have the option text the friend name, and the option value - the friend GUID.
@@ -38,14 +38,14 @@ echo elgg_view(
 );
 ```
 
-### What Happens?
+## What Happens?
 
 The plugin automatically hides the select box and displays the autocomplete input field using all of the select box options as values to suggest.  Then, when a proper option is selected, the hidden select box value gets updated to the value correlated to the text that was typed.  Pretty simple and unobtrusive!
 
-### Do I Have to Do Anything Different?
+## Do I Have to Do Anything Different?
 
 Just add the class to the pulldown - and you should be good to go.
 
-### Ok Let Me Download It!
+## Ok Let Me Download It!
 
 OK here: [Elgg Friends AutoComplete](/uploads/2009/oht_elggfriendsautocomplete.zip)

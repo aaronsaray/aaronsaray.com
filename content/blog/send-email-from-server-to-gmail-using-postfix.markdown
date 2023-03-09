@@ -15,14 +15,20 @@ After some mistakes, I finally realized where the culprit lived...
 
 In `main.cf`, the following variable was set:
 
-    mydomain = domain.com
+```txt
+mydomain = domain.com
+```
 
 This was as it was supposed to be.  But, later on in the file, the following line existed:
-    
-    mydestination = $mydomain, localhost.$mydomain, localhost
+
+```txt
+mydestination = $mydomain, localhost.$mydomain, localhost
+```
 
 This was what was causing the local mail to be delivered locally.  I removed the variables like such:
-    
-    mydestination =
+
+```txt    
+mydestination =
+```
 
 And now everything works.  Yay.

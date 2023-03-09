@@ -1,5 +1,5 @@
 ---
-title: 'Site profile: jemdiary.com'
+title: 'Site Profile: jemdiary.com'
 date: 2012-03-28
 tag:
 - archived-projects
@@ -14,7 +14,7 @@ Goal: In 2001, having an online diary was only being piloted by a few people.  B
 
 What happened: This was my longest running website.  I think it was slightly before its time.  When it became more popular, I just didn't have the time to keep developing on it.  Then, other larger sites eclipsed it and it slowly lost market share.
 
-Technology:
+## Technology
 
 This was originally written in procedural PHP4.  Then, later I migrated to PHP5 in procedural style.  It finally became my first object oriented framework with my own custom controllers and views.  
 
@@ -32,7 +32,7 @@ The final thing I did, which was really a big deal for the time, was to allow us
 
 I learned from MySpace success for a time with the initial Tom friend.  I would add myself as a friend.  I also started using an automated system that would comment as my user on all new user's content. It would make one comment on their profile and one on their first diary entry. I twas ran every few hours.  The system would look at their account and create a special message based on things they said.  For example, I suggested someone add a profile picture in 4 different ways. The system would pick one randomly - and only add it to the message if they didn't have a profile picture already.  A lot of the users thought I was actually adding the messages myself.  (A few times the programming was faulty - and I commented on 'deleted' diary entries - that wasn't good!)
 
-Lessons learned:
+## Lessons learned
 
 - keep with the times!  I think I could have made some more money off of google ads if I would have kept current
 - use google ads and other ads! I wasn't placing ads very well for a while.
@@ -40,22 +40,36 @@ Lessons learned:
 - some of my features were too advanced.  Some people couldn't tell the difference between password protecting your entire diary with the other feature to password protect only certain ones.
 - better anti-spam measures.  I didn't use a captcha or anything like that to sign up.  After a while, I had a lot of spam entries.
 
-Final thoughts:
+## Final thoughts
+
 It's almost sad to see something you've spent more than a decade with go away.  But it was time to retire this beast.  I'm so glad I made it, stuck with it, and that I get to pull the plug myself.
 
-_Screenshots_
+## Screenshots
 
-[![](/uploads/2012/Screenshot-at-2012-03-14-162645-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162645.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162725-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162725.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162737-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162737.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162758-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162758.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162812-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162812.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162819-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162819.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162836-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162836.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162846-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162846.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162854-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162854.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162906-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162906.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-162917-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-162917.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-163004-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-163004.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-164457-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-164457.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-18-114756-150x132.png)](/uploads/2012/Screenshot-at-2012-03-18-114756.png){: .thumbnail}
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162645.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162645-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162725.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162725-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162737.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162737-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162758.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162758-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162812.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162812-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162819.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162819-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162836.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162836-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162846.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162846-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162854.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162854-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162906.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162906-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-162917.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-162917-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-163004.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-163004-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-164457.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-164457-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-18-114756.png" thumb="/uploads/2012/Screenshot-at-2012-03-18-114756-150x132.png" alt="Screenshot" >}}

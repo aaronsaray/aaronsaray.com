@@ -39,7 +39,7 @@ class base
 
 Now, let's say we have an object of type Person which we know will have a first name and a last name.  However, its not defined in this class for some reason.
 
-**Class with @property definition**
+**Class with `@property` definition**
 
 ```php
 class person extends base

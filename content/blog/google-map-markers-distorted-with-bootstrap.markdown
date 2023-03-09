@@ -8,7 +8,7 @@ On a recent project, the dev team installed [Twitter Bootstrap](http://twitter.g
 
 <!--more-->
 
-[![before](/uploads/2013/before.png)](/uploads/2013/before.png){: .thumbnail}
+{{< image src="/uploads/2013/before.png" alt="Before" >}}
 
 I finally tracked down that it was some default styles in Bootstrap that were causing the issue.  I added this rule to our css:
 
@@ -20,4 +20,4 @@ I finally tracked down that it was some default styles in Bootstrap that were ca
 
 And, we were good to go.  Proof:
 
-[![after](/uploads/2013/after.png)](/uploads/2013/after.png){: .thumbnail}
+{{< image src="/uploads/2013/after.png" alt="After" >}}

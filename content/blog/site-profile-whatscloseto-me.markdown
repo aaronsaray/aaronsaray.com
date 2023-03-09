@@ -10,7 +10,7 @@ Goal: Clever named site that shows local establishments close to your location. 
 
 <!--more-->
 
-Technology:
+## Technology
 
 Clean interface.  The design was made to make the map the focal point.  Colors were matched in shades - there were basically just two colors in the whole design.  
 
@@ -18,7 +18,7 @@ As with most of my projects, I used deflate and far out expiration dates.  In th
 
 The geolocation was retrieved from the Google Maps api v2.  I'm assuming by now they must have better options.  The rest was just simple Google Search Maps api to retrieve the results in that location- and then plot them on the map.
 
-Lessons learned
+## Lessons learned
 
 Not enough content so it didn't become that indexed and popular.
 
@@ -26,4 +26,4 @@ No monetization options built in - plus the result list LOOKS like google ads - 
 
 Nowadays, Google does this good enough on its own - I would need more features than just this - plus not being able to change your location sucks.  (Even though I'm in Milwaukee, the screenshots will show I'm in the big MO).
 
-[![](/uploads/2012/Screenshot-at-2012-03-14-201600-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-201600.png){: .thumbnail}
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-201600.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-201600-150x150.png" alt="Screenshot" >}}

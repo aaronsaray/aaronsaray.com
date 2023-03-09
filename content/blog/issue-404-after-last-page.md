@@ -13,7 +13,7 @@ Now, in this particular example, I am using Laravel 5.4 with a JSON API response
 
 Let's check out my file here:
 
-**`app/Http/Middleware/Issue404IfPageAfterLastMiddleware.php`**
+{{< filename-header "app/Http/Middleware/Issue404IfPageAfterLastMiddleware.php" >}}
 ```php
 <?php
 /**

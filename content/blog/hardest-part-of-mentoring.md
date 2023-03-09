@@ -10,9 +10,9 @@ I've written about [mentoring]({{< ref "/blog/keep-mentoring-even-if-it-looks-li
 
 <!--more-->
 
-**When do I share? What do I share?**
+When do I share? What do I share?
 
-### What Do I Share?
+## What Do I Share?
 
 I decided to start with the easier one: what do I share?  What do you share, what could you share, what is sharing and mentoring versus spoon-feeding?
 
@@ -22,13 +22,13 @@ So, we want to make sure we share things that will help them learn, not necessar
 
 The idea of mentoring is to help someone build themselves up in their own way, not just create a mini-you.  So, it can be difficult to realize, you shouldn't be sharing everything you know, just things that will help them reach their own conclusions.
 
-### When Do I Share?
+## When Do I Share?
 
 I kind of hit on some of this already, but the goal is to help the less experienced person learn.  When do you share?  Well, it depends, but you should share slightly after they need it, in my opinion.  I think people learn best by having a little frustration, a few failures.  Then, you can share a better path.
 
-Its important to realize that the role of the mentor is to step in when asked, most of the time. True, you might need to jump in to stop a catastrophe, but your goal should be to step in when asked.  You might see someone going a crazy direction and want to speak up.  Just let them go, wait till they ask, and maybe add a few pointers, a few nudges so they go the right way.  
+It's important to realize that the role of the mentor is to step in when asked, most of the time. True, you might need to jump in to stop a catastrophe, but your goal should be to step in when asked.  You might see someone going a crazy direction and want to speak up.  Just let them go, wait till they ask, and maybe add a few pointers, a few nudges so they go the right way.  
 
-### Why We Don't Just Tell Them the Right Way
+## Why We Don't Just Tell Them the Right Way
 
 Believe it or not, we don't want mini-me running around.  It's cool to see that we've made a positive impact on someone, but we need to make sure we don't teach and mentor someone like it's the _only_ way.  It isn't. We want people to stay unique, to generally move in the right direction, but not always on the same path.  Some of those weird exits, those distractions, those divergent people are what bring in new thoughts and ideas.
 

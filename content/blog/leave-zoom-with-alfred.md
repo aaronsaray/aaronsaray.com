@@ -11,7 +11,7 @@ You've been there. The Zoom meeting is over and then everyone looks awkward at t
 
 **tldr;** Download [this workflow](/uploads/2020/LeaveZoom.1.0.0.alfredworkflow) and type `lz` in Alfred to leave the current meeting. It will end the meeting if you're the host.
 
-### How It Works
+## How It Works
 
 To get started, we're using some AppleScript to control the current version of Zoom on MacOS.  For this workflow, I'm using Zoom 5.0.2.  I'm not great at AppleScript, but this is what I put together:
 
@@ -45,4 +45,3 @@ Next, create an Alfred workflow.  Follow these steps:
 You're good to go!
 
 Don't want to do this by hand? Download [this workflow](/uploads/2020/LeaveZoom.1.0.0.alfredworkflow) 
-

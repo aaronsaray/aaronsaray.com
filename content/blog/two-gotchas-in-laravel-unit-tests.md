@@ -10,7 +10,7 @@ There's a struggle to balance the easy-to-use Laravel helpers and functions with
 
 <!--more-->
 
-### Eloquent is function isn't exact
+## Eloquent is function isn't exact
 
 Eloquent models offer a function called `is()` which allows you to compare one model to another.  The method works by comparing the key, the table and the connection.  If they're identical, the first model _is_ the second model.
 
@@ -56,7 +56,7 @@ $m1->is($m2) === true;
 
 In this case, using inheritance, there might actually be different classes.  However, since the key, the table and the connection are the same, it'll appear that m1 is m2.
 
-### Starting at 1 in Factory Unit Tests Gives False Positives
+## Starting at 1 in Factory Unit Tests Gives False Positives
 
 I often use the `factory()` method to generate different models for my tests.  Since I use a fresh database for my tests, oftentimes the models I get begin with an auto incrementing ID of 1.
 
@@ -81,6 +81,6 @@ public function testCreateWithChildrenValueSetAndChildAdded(): void
 }
 ```
 
-Do you see the false positive here?  `$unrelatedElement` and `$child1` have the same ID (because we start at 1).  There's nothing in this test that guarantees that the first element attached is `$child1` and not somehow `$unrelatedElement` - we need to test more detail.
+Do you see the false positive here? `$unrelatedElement` and `$child1` have the same ID (because we start at 1).  There's nothing in this test that guarantees that the first element attached is `$child1` and not somehow `$unrelatedElement` - we need to test more detail.
 
 If you really don't want to test more detail, I suggest you passing in ID's directly to the factory method.  Then, at least, there's a much better chance it's not overlapping a different model.

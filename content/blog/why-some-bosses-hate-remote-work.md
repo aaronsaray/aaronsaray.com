@@ -13,7 +13,7 @@ I think its important to understand some of these points, however, for two reaso
 
 With that, let's talk about a few of the reasons why some bosses may hate remote work.
 
-### Building Team Camaraderie is Harder
+## Building Team Camaraderie is Harder
 
 When you're in person, it can be much easier to build team connections and relationships.  It's easy to just lean over, share a joke, ask for help, or have a quick conversation around the water cooler.  There's a significant amount of communication that is done via facial expressions and language tone.  When you're remote, this can be harder to create.  There's also the bonding forms that happen when you eat lunch together or go out for a beer after work with your peers.  This is something that can be harder to build remotely.
 
@@ -25,7 +25,7 @@ This can come in the form of a few different ways and mixes.  First, even though
 
 Over the years, I've had many people push back on video conferencing as they were remote workers.  Tons of excuses, but I always demanded it.  The benefits are great. First, we get to see non-verbal communication. This helps reduce miscommunications. Second, your boss can help identify if you're getting stressed out and suggest remedies. You normally only notice this if you suddenly snap via text communication. Finally, when you see people regularly, there are certain chemicals that get released in your brain.  This type of connection can happen over video as well, as far as I can see it. (How about some facts? Sadly I'm missing citations here.)  The pushback, when it happens, I've stamped out with two points. One, it's a requirement, so you need to do it. And two, if you were in the office, you'd be required to be seen. The flexibility of remote work is your own office, not the flexibility of being completely isolated. That's not what we want.
 
-### Panic and Crunch Time
+## Panic and Crunch Time
 
 This one is highly dependent on the entire culture of the company. Sometimes certain organizations have groups of remote workers, but the entire company isn't remote. This can be common with companies that have on-site C-suite people but remote "drones."  This can work, but it does have some disadvantages. One of them is the disconnection during panic and crunch time.
 
@@ -35,7 +35,7 @@ When you're in person, it's easy for your boss to say "yes, we have a problem, b
 
 The way to combat this is simple: develop a communication plan for this possibility before it happens. Plan out an escalation plan, and a plan and pattern for regular updates.  It may not be 100% match one to one for these concerns, but at least there's something there.  It's much easier for the boss's boss to be ok knowing there are scheduled updates once ever 15 minutes versus not seeing anyone, and not knowing if anyone is working or cares.
 
-### Empire Builders
+## Empire Builders
 
 There's something inspiring to look out over your kingdom, your land, and know that *you* built *this*.  Again, we'd like to say these attitudes are right/wrong, but let's just focus on the fact that they exist.  Some bosses like to look over their collection of workers as the empire they've built.
 
@@ -45,6 +45,6 @@ If you think you have a boss like this, it's important to understand where this 
 
 What they really want is to know that they're making a difference. You can help with this by publicly thanking them through proper channels so others can see and recognize them. Another thing you might do is to share a bit more with them that you might another boss. This purposeful sharing will help offset the fact that they can't "see" you in person. It helps them feel connected with their good work.  Finally, it's ok to even ask them: "I know it can be hard to keep an eye on everyone when we're not there in person. What could I do better to help you stay informed?"  You never know.  This might get you something cool and fresh that will help you solve this problem - as well as others.
 
-### Final Thoughts
+## Final Thoughts
 
 There are other reasons that some bosses may not like remote work.  This is just a few ideas and ways to combat those problems. But, on the flip side, I'd say that the workforce is changing and there are many more bosses who are ok with remote work.  Even if they're ok, some of these attitudes are good things to analyze still. They might be ok, but you could go above and beyond to make the connections stronger.

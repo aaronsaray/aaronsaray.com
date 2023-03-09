@@ -13,7 +13,7 @@ As you might already know, `json_encode` takes in encoding options - of which on
 
 My first attempt was to find all instances of a response I made where I called the json method (like `response()->json()`) and insert the options into that call.  That's not very scalable though - and it's easy to miss one.  So, I came up with a middleware.
 
-**`somefile.php`**
+{{< filename-header "app/Http/Middleware/PrettyPrintMiddleware.php" >}}
 ```php
 <?php
 /**
@@ -61,12 +61,13 @@ class PrettyPrintMiddleware
 Once you assign this middleware to your stack, you can send your query parameter of `pretty=true` (which could be changed for your own setup using the constant value) - and the middleware will insert the encoding option after your request is on the way out.  This will handle all of your requests without you having to do anything else.
 
 Now your regular JSON like this:
-```
+
+```json
 [{"id":123,"name":"first item"},{"id":124,"name":"first item"}]
 ```
 
 Will end up looking like this:
-```
+```json
 [
     {
         "id": 123,

@@ -12,7 +12,7 @@ So here's an interesting question: is `9223372036854775808` greater than `922337
 
 Watch this!
 
-```
+```txt
 >>> var_dump(9223372036854775806 < 9223372036854775807);
 bool(true)
 
@@ -36,7 +36,7 @@ The fourth example shows what I believe is happening with the second one.  Since
 
 **Important note** This is very important to understand when it comes to work with API's.  How is your incoming integer value being sent to you?  Is it a string or an integer?  If it's an integer, it can convert to null accidentally if it's too large. If it's a string, it'll pass comparisons potentially without issue - until it becomes time to convert it to an integer for storage.  Because... look what happens:
 
-```
+```txt
 >>> var_dump((int) '9223372036854775808');
 int(9223372036854775807)
 ```

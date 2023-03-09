@@ -24,6 +24,6 @@ Next, your application should function on your next release with the old and new
 
 Finally, a code deploy should be quick. When you're writing data migrations as part of your database migrations, you're most likely running them during deploy.  We want the least amount of down time, or the least amount of build time as possible (build time, assuming that you're swapping out environments instead of live-updating). If you force a data migration with the deploy, you can time out automated build tools and cause other types of issues.
 
-### Final Notes
+## Final Notes
 
 I guess you can say this is one of those opinion pieces.  I don't know if my way is best practice, but based on experience, I think it's right.  But we don't live and program in a perfect world, so sometimes its necessary to gather together all of the changes into one package and execute it immediately. I just think we should break those packages into smaller chunks, like separating our database migrations from our data migrations and conversions.

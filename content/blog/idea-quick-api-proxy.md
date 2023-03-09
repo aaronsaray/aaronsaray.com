@@ -34,7 +34,7 @@ The tool would know that the UUID was your configuration - and your configuratio
 
 Let's talk about the actual business:
 
-### Billing:
+## Billing:
 
 **Free tier:** 100 calls a month, 1 secret or key appended as a request parameter or header.
 
@@ -42,11 +42,11 @@ Let's talk about the actual business:
 
 **Major Project tier:** Unlimited calls (within reason), the rest of little project features, the ability to limit end points that can be called / methods on the destination API.  $500/year
 
-### Implementation:
+## Implementation:
 
 Use Cloudflare workers with a custom domain.  Use Cloudflare KV storage to look up configuration and map the data.  Use something like Okta or Auth0 to build a validation layer for configuration.  Store a configuration single page app on Cloudflare pages.
 
-### Concerns:
+## Concerns:
 
 * What are the costs for requests / bandwidth / storage at Cloudflare. It's pretty cheap but would there be enough paid plans to pay for the freemium model.
 * If someone can pay $500 a year for this (or more) - are they already a customer who is willing to just build a back-end?  If they could do it themselves, it's cheap - if they have to pay for someone to do it for them, then this is still affordable.
@@ -54,6 +54,6 @@ Use Cloudflare workers with a custom domain.  Use Cloudflare KV storage to look 
 * What would I use for email verification? Maybe the twilio email verification? Is that needed for billing? What do we need to stop bots for free version?
 * How will people who need this know how to find this - there's a lot of SEO that needs to happen to match the people who need this
 
-#### End Notes
+## End Notes
 
 Overall I like the idea, but I'm sharing it here because I don't see it as something that I can make profitable.  Be a great project for a beginning programmer, though!  Let me know if you build something similar!

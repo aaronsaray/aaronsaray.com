@@ -8,11 +8,11 @@ The error log can be fun to parse through and figure out what happened.  Ok, so 
 
 <!--more-->
 
-### Create an Error Handling Class
+## Create an Error Handling Class
 
 All of my error handling is going to be pretty much uniform.  In order to do this, I want to share a lot of code.  I'm going to do this by creating a class and having my error handling methods a part of it.  I plan on gathering data from both standard PHP errors and uncaught PHP Exceptions.
 
-#### First, PHP Errors
+### First, PHP Errors
 
 The first thing I want to do is grab my PHP errors.  I'll make the following code:
 
@@ -66,7 +66,7 @@ The final two steps of that method are pretty straight forward.  If we are worki
 
 The `beFriendly()` method simply redirects a user to a friendlier "ruh roh" type page if we're not in the development environment.
 
-#### Do something with uncaught exceptions
+### Do something with uncaught exceptions
 
 To handle exceptions, the following method is added to the class:
 
@@ -88,7 +88,7 @@ public static function exception_handler($exception)
 
 This is much more simple.  The exception details are exported to a string.  The new lines are removed because they play havoc with the error log grep'ing.  Then, as with the previous method, it is either displayed or logged and then the user is redirected possibly.
 
-#### Register the Error Handlers
+### Register the Error Handlers
 
 The last thing to do is to register each of these error handlers.  That is done with this simple code:
 

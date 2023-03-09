@@ -11,7 +11,7 @@ For some API work in Laravel, I wanted to validate that the incoming request par
 
 In Laravel 5.4 (I mention this version because Laravel has recently updated so this validator format may not be the best anymore), I made the following validator:
 
-**`app\Validators\AnyBooleanValueValidator.php`**
+{{< filename-header "app/Validators/AnyBooleanValueValidator.php" >}}
 ```php
 <?php
 /**
@@ -49,16 +49,15 @@ class AnyBooleanValueValidator
 
 Then, I registered `any_boolean_value` in the AppServiceProvider using the following line:
 
-```php?start_inline=true
+```php
 Validator::extend('any_boolean_value', AnyBooleanValueValidator::class);
 ```
 
 Finally, I added an error translation in the validation language resource file.
 
-**`resources/lang/en/validation.php`**
-```
+{{< filename-header "resources/lang/en/validation.php" >}}
+```php
 'any_boolean_value' => 'The :attribute field must be a boolean type value. (Try true or false, 1 or 0).',
 ```
 
 Now I can use that slug for validation on boolean values to allow in "acceptable" boolean values.
-

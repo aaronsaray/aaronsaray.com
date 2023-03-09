@@ -4,7 +4,7 @@ date: 2008-09-08
 tag:
 - php
 ---
-PHP's heredoc - good or bad?  All silly titles aside, lets check out some points.
+PHP's heredoc - good or bad?  All silly titles aside, let's check out some points.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ a.col = b.col
 SQL;
 ```
 
-### GOOD: No confusing escaping of quotes
+## GOOD: No confusing escaping of quotes
 
 With heredoc, you do not need to escape quotes of any kind:
 
@@ -36,7 +36,7 @@ LINK;
 
 While this is a 'valid' reason, I think this is just justification for sloppy or error prone programmers - but that is just my stubborn - and probably biased - $0.02.
 
-### BAD: Last line must NOT be indented
+## BAD: Last line must NOT be indented
 
 In order for the heredoc to recognize the closing marker, it must not be indented.  If it is indented, it won't recognize it as the end of the heredoc - and it continues.  This messes up coding standards that are based on indentation.
 
@@ -54,11 +54,11 @@ HTML;
 }
 ```
 
-### GOOD: Some editors recognize it and properly syntax highlight
+## GOOD: Some editors recognize it and properly syntax highlight
 
 Some editors are able to recognize the heredoc identifier and properly highlight the content - such as the SQL will be highlighted SQL syntax, same with HTML.
 
-### BAD: Solid block - so no inline calculations - introduces extra variables
+## BAD: Solid block - so no inline calculations - introduces extra variables
 
 For example, if you have to make an item plural if there is more than 1, with a normal string, you can stop mid creation, do a calculation, and continue on.  With heredoc you either need to make two of them - or you have to use temporary variables.
 
@@ -73,12 +73,12 @@ I have found {$tree}{$plural} in my backyard
 BLURB;
 ```
 
-### BAD: Could be used as a crutch for bad MVC programming practices
+## BAD: Could be used as a crutch for bad MVC programming practices
 
 Generally, when you need to create such a large block of HTML inside of a script (which is one of the main proponent arguments for using heredoc), you may be doing too much HTML generation inside of a logic script.  This should be refactored to support a better MVC approach - like putting more of that into a view.  (thanks to BigBoy for this point!)
 
 Just like my other 2 pennies I offered, I think this is not the best example / reason.  Programmers could still do the same thing by just creating normal strings - no heredoc required.
 
-### So - time for dead-dead or happy-smile time?
+## So - time for dead-dead or happy-smile time?
 
 So far, it looks like its more of a personal preference thing on heredoc.  There are no concrete reasons either for or against it that make it something you should love or hate.  And, I know everyone was waiting to know - so I'll say it: my opinion is that heredoc could be removed from PHP6 and I wouldn't miss it at all ;)

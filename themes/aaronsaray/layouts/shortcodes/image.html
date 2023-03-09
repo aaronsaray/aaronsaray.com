@@ -1,7 +1,11 @@
-{{ $src := .Get "src" }}
+{{ $href := .Get "src" }}
+{{ $src := .Get "thumb" }}
+{{ if not $src }}
+{{ $src = $href }}
+{{ end }}
 {{ $alt := .Get "alt" }}
-<div class="my-4">
-    <a href="{{ $src }}" target="_blank">
+<div class="my-4 text-center image">
+    <a href="{{ $href }}" target="_blank">
         <img src="{{ $src }}" alt="{{ $alt }}" class="img-fluid img-thumbnail">
     </a>
 </div>

@@ -8,27 +8,26 @@ Through reading a few blog posts over the last year and my own trial and error, 
 
 <!--more-->
 
-### Objective
+## Objective
 
   * Use `FlashMessenger` to store both success and failure messages and denote them as such.
 
-### Using FlashMessenger in the Controller
+## Using FlashMessenger in the Controller
 
 Now, we're going to change the way we assign messages in the controller.  Make an array of the message with a key of the type, and a value of the message.  You may want to use `success` and `failure`:
 
-**in some controller...**
-    
+{{< filename-header "in some controller..." >}}
 ```php
 $this->_helper->flashMessenger->addMessage(
     array('success'=>'The update was successful')
 );
 ```
 
-### Next, create a View Helper
+## Next, create a View Helper
 
 Create the following view helper. I placed mine here: 
 
-**`application/views/helpers/FlashMessages.php`**
+{{< filename-header "application/views/helpers/FlashMessages.php" >}}
 ```php
 <?php
 class Zend_View_Helper_FlashMessages extends Zend_View_Helper_Abstract
@@ -54,7 +53,7 @@ class Zend_View_Helper_FlashMessages extends Zend_View_Helper_Abstract
 
 The output is initially blank.  This is because we will always 'blindly' call this in our layout later.  Then, the messages are retrieved from the flash messenger using the `getStaticHelper` method to retrieve the `FlashMessenger` helper (and call its `getMessages()` method).  If it has content, output is appended with a `ul` with an ID of `messages` (this is for css styling later).  Then, each message is looped through and added to an `li` element.  The 'type' is the class of that element, and the message is the content.  (Note: since this is an array of single arrays where neither the key nor the value is known, that is the reason to use `key()` and `current()`).  Finally, output is updated with the closing `ul` tag.
 
-### Use this in Your View
+## Use this in Your View
 
 I technically put this call in my layout towards the top of my content:
 

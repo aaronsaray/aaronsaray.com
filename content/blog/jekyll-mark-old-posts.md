@@ -19,8 +19,8 @@ the notification in the proper location in your theme.  Instead, I decided to ju
 
 Here's the liquid code:
 
-```liquid
-{% raw %}{% capture now %}{{'now' | date: '%s'}}{% endcapture %}  
+```txt
+{% capture now %}{{'now' | date: '%s'}}{% endcapture %}  
 {% capture postDate %}{{page.date | date: '%s'}}{% endcapture %}  
 {% assign difference = now | minus: postDate %}  
 {% if difference > 47340000 %}  
@@ -30,7 +30,7 @@ Here's the liquid code:
     Please remember to verify any technical or programming information
     with the current release.
   </div>  
-{% endif %}{% endraw %}
+{% endif %}
 ```  
 
 First, capture the current date and the post date as unix timestamps.  Then, do a calculation to figure out the difference.

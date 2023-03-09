@@ -8,7 +8,7 @@ During the creation of my websites, I develop solely in Firefox.  When it comes 
 
 <!--more-->
 
-### Enter Firebug Lite
+## Enter Firebug Lite
 
 Firebug Lite is a stripped down version of Firebug.  For the details of the current release, look at the [firebug lite features](http://getfirebug.com/lite.html).
 
@@ -22,7 +22,7 @@ if (!ENVIRONMENT_LIVE && strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false) 
 
 In this case, whenever the code is not in production and the agent is a version of Internet Explorer, the code is loaded.
 
-### Issues with Firebug Lite
+## Issues with Firebug Lite
 
 Regular Firebug has spoiled me.  The lite version has a few issues:
 

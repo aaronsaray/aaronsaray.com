@@ -48,75 +48,77 @@ for ($j=0; $j < 10; $j++) {
 
 After running the test a few times, I was actually surprised.  There really wasn't that much of a difference.  Here's an example of the output for one of my tests:
 
-    0.061929941177368 - forward
-    0.064308881759644 - backward
-    **Forward Wins**
-    
-    
-    
-    * * *
-    
-    0.069388151168823 - forward
-    0.056493997573853 - backward
-    **Backward Wins**
-    
-    
-    * * *
-    
-    0.065435886383057 - forward
-    0.056330919265747 - backward
-    **Backward Wins**
-    
-    
-    * * *
-    
-    0.065697908401489 - forward
-    0.056133031845093 - backward
-    **Backward Wins**
-    
-    
-    * * *
-    
-    0.066594123840332 - forward
-    0.065793991088867 - backward
-    **Backward Wins**
-    
-    
-    * * *
-    
-    0.059870004653931 - forward
-    0.064540863037109 - backward
-    **Forward Wins**
-    
-    
-    * * *
-    
-    0.057721138000488 - forward
-    0.064589023590088 - backward
-    **Forward Wins**
-    
-    
-    * * *
-    
-    0.057284832000732 - forward
-    0.064239978790283 - backward
-    **Forward Wins**
-    
-    
-    * * *
-    
-    0.067974090576172 - forward
-    0.056583166122437 - backward
-    **Backward Wins**
-    
-    
-    * * *
-    
-    0.068339824676514 - forward
-    0.056351900100708 - backward
-    **Backward Wins**
-    
-    
-    * * *
+```txt
+0.061929941177368 - forward
+0.064308881759644 - backward
+**Forward Wins**
+
+
+
+* * *
+
+0.069388151168823 - forward
+0.056493997573853 - backward
+**Backward Wins**
+
+
+* * *
+
+0.065435886383057 - forward
+0.056330919265747 - backward
+**Backward Wins**
+
+
+* * *
+
+0.065697908401489 - forward
+0.056133031845093 - backward
+**Backward Wins**
+
+
+* * *
+
+0.066594123840332 - forward
+0.065793991088867 - backward
+**Backward Wins**
+
+
+* * *
+
+0.059870004653931 - forward
+0.064540863037109 - backward
+**Forward Wins**
+
+
+* * *
+
+0.057721138000488 - forward
+0.064589023590088 - backward
+**Forward Wins**
+
+
+* * *
+
+0.057284832000732 - forward
+0.064239978790283 - backward
+**Forward Wins**
+
+
+* * *
+
+0.067974090576172 - forward
+0.056583166122437 - backward
+**Backward Wins**
+
+
+* * *
+
+0.068339824676514 - forward
+0.056351900100708 - backward
+**Backward Wins**
+
+
+* * *
+```
 
 So as you can see, there's no real proof that in PHP the order of your for loop matters.

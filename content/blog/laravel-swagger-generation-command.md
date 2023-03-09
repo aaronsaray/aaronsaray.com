@@ -13,8 +13,7 @@ Now, let's say you're totally immersed in the Laravel ecosystem - and you'd like
 
 So, check out this little bit of code - maybe you'll find it useful in your project:
 
-**`app/Console/Commands/Swagger/Generate.php`**  
-
+{{< filename-header "app/Console/Commands/Swagger/Generate.php" >}}
 ```php
 <?php
 /**

@@ -9,7 +9,8 @@ I've written a few helpful methods and systems that help out my unit testing.  T
 
 <!--more-->
 
-### Mockery
+## Mockery
+
 I've been using [Mockery](http://docs.mockery.io/en/latest/) for my mocking in PHPUnit lately. (This is probably because it was introduced in Laravel, and I actually like it more than the built in PHPUnit mocking configuration.)  
 
 To mock an object with Mockery, you have to mock it using the method `\Mockery::mock()` - which is fine.  But, in my tests I tend to allow a little bit more flexibility and "dirty" code - so I thought it'd be nice to just call something like `mock()` and get this to work easily.  So, in my bootstrap class for my PHPUnit test suite, I wrote the following code:
@@ -32,7 +33,7 @@ First, it makes sure that this global namespace method was not already defined. 
 
 You might notice that I am returning a custom mock interface instead of the actual response from `Mockery::mock` - so let's take a look at it:
 
-**`CustomMockInterface.php`**
+{{< filename-header "CustomMockInterface.php" >}}
 ```php
 <?php
 namespace Tests;
@@ -55,7 +56,7 @@ This interface extends the interface that Mockery normally would return.  Howeve
 
 Because I was sick of that error, I decided to create a new implementation of this method.  Using the `...` prefix to the incoming parameter, that indicates to PHP that there is a variable length of elements this should receive.  And, because the return type is the same as the parent's interface `shouldReceive` this works as expected - with no errors in PHPStorm.
 
-### Protected and Private Properties and Functions
+## Protected and Private Properties and Functions
 
 Like I mentioned above, there are many arguments against testing protected methods and retrieving protected property values.  The main reason I do this is because there are sometimes complex logical operations that happen in protected methods - and testing all of those paths would require extensive set up.  If I can bypass a lot of that setup (required by the public methods), I can just test these methods like the true unit of code that they most likely represent.  When it comes to properties, sometimes you might want to test the way an object was constructed, but not actually run the code to generate the output of that object.  For example, if you just wanted to verify that an object was created with a set of two properties inside itself, without calling a `toArray()` method - which could be expensive - you might just validate the protected property values.  It's important to note that this is a rare and unique situation that requires these two methods to be used.  Most of the time, you shouldn't be using them.  Only in very complex situations might they provide an easier way to break down tests.  (Remember that time above I said that was a discussion for a different time - oops, think I just had it now.)
 

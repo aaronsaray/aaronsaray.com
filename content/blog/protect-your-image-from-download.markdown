@@ -10,20 +10,21 @@ I came across a great idea dealing with protecting image downloads from the site
 
 <!--more-->
 
-### What is going to happen
+## What is going to happen
 
 First of all, the user will see the image correctly.  If they choose to 'view image' or right click and download, they will receive the transparent gif instead.
 
-### The Image to Display
+## The Image to Display
 
 This simple duck.  He is 300px wide and 206px tall.  This is important to know for this feature.
-[![duck](/uploads/2009//duck.jpg)](/uploads/2009//duck.jpg){: .thumbnail}
 
-### The Decoy Image
+{{< image src="/uploads/2009//duck.jpg" alt="Duck" >}}
+
+## The Decoy Image
 
 The decoy image is a transparent gif that is 1px by 1px.  If you'd like to download it, click here: [transparent.gif](/uploads/2009/transparent.gif)
 
-### The code
+## The code
 
 Here is the example code to make this work (I'll explain it right after)
 

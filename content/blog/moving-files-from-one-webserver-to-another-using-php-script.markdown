@@ -8,7 +8,7 @@ A while back, a colleague mentioned to me that he was moving his site from one w
 
 <!--more-->
 
-### Enter The Single PHP Script
+## Enter The Single PHP Script
 
 As a proof of concept, I developed the following PHP script.  Currently, the ftp credentials and path are hardset.  It simply grabs all the files in the specified directory including child directories, opens an FTP connection and puts them up there.  It finishes by applying the proper file permissions.  Without further rambling, here is the code:
 
@@ -123,23 +123,23 @@ $migrate = new php_migrate_site();
 $migrate->go();
 ```
 
-### How it can be better
+## How it can be better
 
 There are a number of ways to make this better - in case anyone has the time to do it!
 
-#### User Friendly
+### User Friendly
 
 The first obvious thing is user friendly interface options.  The script should present a form and ask for the credentials. It should submit to itself to start the verification process.
 
-#### Error Checking
+### Error Checking
 
 It should check to make sure PHP has the FTP module enabled.  It should also connect to the ftp server first to verify credentials.
 
-#### More FTP Options
+### More FTP Options
 
 The passive and active options should be able to be set.  It should also allow for the target destination to be in a subfolder.  Some hosts require it to be in `public_html` - so you'd have to chdir there first.
 
-#### Database
+### Database
 
 Well of course!  It would also be cool to have it migrate the database.  I know this can be done but I didn't even try to do a proof of concept with this.  There are a number of different types of connections for MySQL servers - so it could be difficult to find the proper way to do this.
 

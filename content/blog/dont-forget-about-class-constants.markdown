@@ -1,14 +1,14 @@
 ---
-title: Don't forget about Class Constants!
+title: Don't Forget About Class Constants!
 date: 2008-08-23
 tag:
 - php
 ---
-Constants can be great.  They can stand for things like web services keys, integers, flags, etc.  Basically, anything that you aren't going to be changing in your script - and most likely things that don't change much outside of the script either.  However, I've seen people use them in the global name space far too many times.  A great alternative is the class constant.  Lets check out some examples:
+Constants can be great.  They can stand for things like web services keys, integers, flags, etc.  Basically, anything that you aren't going to be changing in your script - and most likely things that don't change much outside of the script either.  However, I've seen people use them in the global name space far too many times.  A great alternative is the class constant.  Let's check out some examples:
 
 <!--more-->
 
-### The Bad Code
+## The Bad Code
 
 First off, I can't tell you how many times I've seen code like this:
 
@@ -29,11 +29,11 @@ class MYCLASS
 
 Basically, you'll see that they are being smart and using constants for some specific flags.  However, they're cluttering the global namespace with constants that probably won't be used outside of the class (even if they ARE, we have a way to work around that.)
 
-Now, lets take a look at the alternative.
+Now, let's take a look at the alternative.
 
-### The Good Code
+## The Good Code
 
-Lets use the class constant.
+Let's use the class constant.
 
 ```php
 class MYCLASS

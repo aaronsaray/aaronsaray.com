@@ -13,8 +13,7 @@ This is useful in two ways: first, whenever a field was deprecated and not used,
 
 Here's how you'd validate that a field is not present in Laravel 5.4 (the version is mentioned because the most recent Laravel has a different format of validator.)
 
-**`app/Validators/NotPresentValidator.php`**
-
+{{< filename-header "app/Validators/NotPresentValidator.php" >}}
 ```php
 <?php
 /**
@@ -59,7 +58,7 @@ Extend implicit is needed because we are saying we want to validate on a field t
 
 Finally, I added an error to the validation language resource file.
 
-**`resources/lang/en/validation.php`**
-```
+{{< filename-header "resources/lang/en/validation.php" >}}
+```php
 'not_present' => 'The :attribute field should not be present in this request. (It may be deprecated.)',
 ```

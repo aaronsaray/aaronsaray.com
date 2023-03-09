@@ -11,7 +11,7 @@ In this posting, I'm going to share the steps to making a slimmed down, cleaner,
 
 <!--more-->
 
-### Always Develop Locally
+## Always Develop Locally
 
 I always work locally when I design web pages. For example, when I worked on the new JEMDiary website, I made a copy of the existing one locally, and then started editing it locally. The same applies with this MySpace layout project. View your profile, click File – Save – and save the entire webpage.
 
@@ -23,15 +23,15 @@ oas_ad(“www.myspace.com/viewprofile,11013005″,”Leaderboard2”);
 
 This appears to generate the top ad on your profile. I found it better and easier on my eyes to take a screenshot of the ad, and use that.
 
-### What Do I have to keep?
+## What Do I have to keep?
 
 You have to keep the ad at the top; that's why I suggested taking a screenshot. Place this ad in the center of your page. That appears to be the only real big key item to keep.
 
-### What SHOULD I keep?
+## What SHOULD I keep?
 
 Because MySpace users are normally used to having the links at the top of the page, its a good idea to keep some of them there. I personally use the ‘Home' and ‘Search' links a lot. I also appreciate ‘Music' so I've kept that one there as well. If you were to remove all of these links, your visitors may not want to come back. People tend to feel ‘trapped' on a page if the layout/functionality changes too much.
 
-### Customizing the Current Layout vs Creating a New One
+## Customizing the Current Layout vs Creating a New One
 
 For a period of time, I had customized the current layout. The CSS needed to do this is quite intricate to build, however. The new layout was a little bit more customizable and could use easier CSS declarations and better well-formed xhtml. There are pro's and con's to both:
 
@@ -39,7 +39,7 @@ Current Layout Pros: when MySpace adds new features, you immediately have them a
 
 New Layout Pros: Completely customize the user experience – you can control all the information you want to display. Easier to code (in my opinion).
 
-### Alrighty – tell me how to do it!
+## Alrighty – tell me how to do it!
 
 First, you have to determine where to put your CSS and where to put your HTML. YOu could put it all in one section, but I chose to split mine up. ALWAYS put your CSS first, however. This allows the browser to read it in and then apply the style immediately to HTML its rendering. If you do it the other way, there's a small chance to see a jumpy page.
 
@@ -88,21 +88,21 @@ Next, the equivalent HTML (in the Who I'd like to meet section)
 
 This matches up with the css. The ‘content here' comment would be where you'd start stashing all of your content.
 
-### Comments still show through?
+## Comments still show through?
 
 Sometimes the comments still end up showing through onto your front page, so insert this html at the VERY BOTTOM of your html in the who I'd like to meet section.
 
 ```html
-<!-- hides comments    -->
+<!-- hides comments -->
 <div style="position: relative; height: 380px; overflow: hidden; border: 0px;">
 <table><tr><td><table><tr><td>
 ```
 
-### Now, take a quick preview!
+## Now, take a quick preview!
 
 You should be able to open this page up locally in a web browser, and see your brand – new ... BLANK myspace page. You have the ad, and that's about it.
 
-### What should be my next steps?
+## What should be my next steps?
 
 I opened up a new page in Gimp (like photoshop) and started creating my layout, merging pictures, etc. Then when I finally had a style I liked, I ended up breaking out the pictures and assigning them with embedded style declarations with absolute positioning. Very nice. Quick helpful note: don't forget to add the following CSS:
 
@@ -114,7 +114,7 @@ a img {
 
 This will keep your image links from having a border and throwing off your layout.
 
-### What about Comments?
+## What about Comments?
 
 You can still have a user comment on your profile by providing the typical comment link. However, you may want to provide them with a form to use directly from your page. Use the following HTML:
 
@@ -129,7 +129,7 @@ This is very stripped down, but that's all you need to get the user to your conf
 
 (Note: Comments are not covered in the advanced programming section either. I don't want to make images out of them. If anyone has any other ideas, let me know. I had thought of once creating a parser that reads them in, then creates an rss feed, which is read in by a flash ap... but I'm not really a flash programmer...)
 
-### Advanced Programming (top friends, friends count)
+## Advanced Programming (top friends, friends count)
 
 You may have noticed that you no longer have your top friends or a listing of your friend count on your front page. while the rest of the stuff was easy to figure out how to link to (like Add Me, Message Me, etc), the top friends can be hard. People are always changing their pictures – how do you keep up with this on your custom page as well as still allow yourself to change your top friends through myspace? A PHP script is the Answer.
 
@@ -167,7 +167,7 @@ $f = get_contents(
 );
 ```
 
-### Remote Text Isn't Allowed! – Use an image
+## Remote Text Isn't Allowed! – Use an image
 
 Because of no remote text, I have to create an image with my friend count. In order to do that, I wrote a quick regular expression to find my friend count. Then, a new image is created with the GD library, filled with an off black background, and text added with a bluey color. Finally, its written out to a public directory so that I can add it as an item in my HTML part of my profile. Here is the code:
 
@@ -192,7 +192,7 @@ imagestring($countpic, 5, 0, 20, "I'm not really THAT cool...", $color);
 imagepng($countpic, '../fcount.png');
 ```
 
-### But what about my buddies?
+## But what about my buddies?
 
 I made a collage.
 
@@ -249,6 +249,6 @@ imagepng ($mainpic, '../fs.png');
 
 There you go.
 
-### There's a better way to do this!
+## There's a better way to do this!
 
 If you have a better, more efficient way to create any of this content and functionality, please let me know! Any feedback would be appreciated.

@@ -26,7 +26,7 @@ In my example, I'm using the Homebridge Messenger plugin, so my example will tri
 
 Let's get down to it.
 
-### Planning
+## Planning
 
 First, decide what you want to monitor. In this example, I'm going to monitor an [Eve Door and Window Sensor](https://www.evehome.com/en-us/eve-door-window).  I've tried to monitor
 my Garage Door opener, but the way its registered, it's a device, and not a sensor.  So, it doesn't seem to consistently share its status (and that makes sense, its not a sensor),
@@ -37,7 +37,7 @@ Second, decide how long you want to wait.  I'm going to wait 30 seconds.  If the
 
 Finally, decide what you'd want to happen. Like I said, you could trigger a scene, an outlet or a switch. I'm going to trigger my pre-configured switch which sends the pushover notification.
 
-### Let's Do It.
+## Let's Do It.
 
 * Open the Home App and choose **Automations**
 * Click the **+** to create a New Automation
@@ -64,11 +64,11 @@ Finally, decide what you'd want to happen. Like I said, you could trigger a scen
 
 I've included some pictures below to give you an idea of my setup as well.
 
-[![Example image](/uploads/2020/homekit-shortcut-1.png)](/uploads/2020/homekit-shortcut-1.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/homekit-shortcut-1.png" alt="Example image" >}}
 
-[![Example image](/uploads/2020/homekit-shortcut-2.png)](/uploads/2020/homekit-shortcut-2.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/homekit-shortcut-2.png" alt="Example image" >}}
 
-### End Notes
+## End Notes
 
 I'm still not ok with not being able to monitor my Garage Door yet. I could put a sensor on it, but I think I'll look for something else. I know that homebridge
 has some plugins for delayed switches, so maybe I can take advantage of one of those.

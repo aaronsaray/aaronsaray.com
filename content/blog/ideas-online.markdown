@@ -9,7 +9,7 @@ This idea is to create an idea repository.  I started out wanting to make this w
 
 <!--more-->
 
-This idea site lets you submit any idea you have.  Wouldn't it be great if there was a website to do this... or wouldn't it be cool if my car could do that?  What if there was a sport that involved this... etc.
+This idea site let's you submit any idea you have.  Wouldn't it be great if there was a website to do this... or wouldn't it be cool if my car could do that?  What if there was a sport that involved this... etc.
 
 Once ideas were created, they would be tagged and voted thumbs up / thumbs down.  Users could also choose to 'own' an idea implementation and say "I'm doing this"  That user would then open up the conversation thread and could keep other idea voters informed of hte progress (if you voted thumbs up on an idea, you could choose to follow if anyone started it).  The system would generate routine emails 30,60,90 days out if you didn't update the idea saying "are you still working on this?
 

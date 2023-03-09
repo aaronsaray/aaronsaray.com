@@ -1,5 +1,5 @@
 ---
-title: 'The very bad things that Javascript can do: Part 2'
+title: "The Very Bad Things That Javascript Can Do: Part 2"
 date: 2013-04-16
 tag:
 - html
@@ -14,33 +14,35 @@ In our scenarios here, we're going to focus on a fake award site called “Award
 
 Perhaps they send an email like this:
 
-    Hello and congratulations!  Your site, http://victimsite.com, has won the prestigious 
-    Best of 2013 award from AwardSite.com!  
-     
-    Did you know you made it into the top 5%?  We're impressed, and you should be proud!
-     
-    Below, you'll find a snippet of code to insert into the footer of your website.  
-    It shows off your great accomplishment.
-     
-    Did you know AwardSite.com has a very high Search Engine Optimization ranking?  
-    We're already linking to your website - but that doesn't complete the circle.  
-    If you use the banner in the code below, you not only show off your reputation 
-    this year but that reciprocal link helps Google AND Bing rank your site even higher.
-     
-    Congratulations again!
-     
-    Fake Guy
-    AwardSite.com
+```txt
+Hello and congratulations!  Your site, http://victimsite.com, has won the prestigious 
+Best of 2013 award from AwardSite.com!  
+ 
+Did you know you made it into the top 5%?  We're impressed, and you should be proud!
+ 
+Below, you'll find a snippet of code to insert into the footer of your website.  
+It shows off your great accomplishment.
+ 
+Did you know AwardSite.com has a very high Search Engine Optimization ranking?  
+We're already linking to your website - but that doesn't complete the circle.  
+If you use the banner in the code below, you not only show off your reputation 
+this year but that reciprocal link helps Google AND Bing rank your site even higher.
+ 
+Congratulations again!
+ 
+Fake Guy
+AwardSite.com
+```
 
 And of course, at the very end of the email is some HTML or Javascript that they are prompted to put into their site.
 
 Now, for our example, we're going to use the following banner:
 
-[![Award](/uploads/2013/award.png)](/uploads/2013/award.png){: .inline}{: .thumbnail}
+{{< image src="/uploads/2013/award.png" alt="Award" >}}
 
-Now, lets run through some scenarios.
+Now, let's run through some scenarios.
 
-### Hit Counter / Target Determination
+## Hit Counter / Target Determination
 
 In this case, the nefarious hacker wants to determine if this site has a lot of traffic. And, of that traffic, they want to determine what the demographics of the browsers are. This is a very easy information gathering attempt. This is what the code looks like:
 
@@ -82,7 +84,7 @@ No matter if there's a valid siteID or not, finally the png header gets sent and
 
 In this case, our victim has allowed the “bad guy” to keep track of their visitors, times, and demographics. They can now determine if this is a high traffic site or not – and whether its worth targeting specifically with more sophisticated attacks.
 
-### Cookie Stealing / Session Theft
+## Cookie Stealing / Session Theft
 
 PHP stores the session key as a cookie on the visitors browser named PHPSESSID by default. If the hacker had this cookie, and the session hadn't expired, they could act as the victim. The goal here is to have a logged in user of victim website visit the bad Javascript. Then, the cookie is sent to the hacker who then uses that to steal the session of the victim.
 
@@ -115,7 +117,7 @@ Of course, it can look bad for our trained eyes... but for those who don't “wo
 
 **For future examples, I won't show how to obfuscate the code. But that would be one of the steps.**
 
-### Denial of Service for Victim Site
+## Denial of Service for Victim Site
 
 What if we could make the visitor perform a denial of service? That wouldn't be that hard.
 
@@ -139,7 +141,7 @@ What if we could make the visitor perform a denial of service? That wouldn't be 
 
 In this case, the image is added successfully. However, the `setTimeout()` method executes a different function 3 seconds later. The delay is so that the user won't notice the delay in their browser (hopefully the entire site has loaded by then) – and it puts it in the background. Then, a new ‘image' is created 1000 times and appended to the document – with a hidden display (so the visitor can't tell). But, basically, one visitor to this site, especially if they spent some time just reading the content, loaded 1000 more requests than were necessary.
 
-### Processing Actions as the Victim
+## Processing Actions as the Victim
 
 We all know that we need to not have forms that submit with the method of GET if the action is something that adds/edits/updates information. This restricts me from creating a sample that uses the `Image()` object to load a fake form submission with GET parameters. However, it doesn't stop us from submitting a form that MAY be on the current page.
 
@@ -165,7 +167,7 @@ This is bad, but there are some potential problems. What if... the form doesn't 
 var f = document.forms[1];
 ```
 
-OK, but lets just say its distracting to the visitor when the form is submitting. It takes them away from what they're doing – of course they're going to report it. Well, we can force the form to be ajax, and then submit.
+OK, but let's just say its distracting to the visitor when the form is submitting. It takes them away from what they're doing – of course they're going to report it. Well, we can force the form to be ajax, and then submit.
 
 ```javascript
 f.onsubmit = function() {
@@ -174,6 +176,6 @@ f.onsubmit = function() {
 f.submit();
 ```
 
-### So what does all this mean?
+## So what does all this mean?
 
 Now that you've seen the examples of what can happen, I hope it turns on a light that we need to be more vigilant about what we allow clients to put into your hosted applications.

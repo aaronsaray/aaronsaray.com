@@ -21,8 +21,7 @@ Problem solved. It worked for the user and we moved on.  However, it appears tha
 
 I believe the solution is a two fold solution, now. It is necessary to use the meta tag AND have the resulting **`IEStandards.xml`** file in place.
 
-**IEStandards.xml**
-
+{{< filename-header "IEStandards.xml" >}}
 ```xml
 <ie8standardsmode></ie8standardsmode>
 ```

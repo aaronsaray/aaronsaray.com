@@ -8,11 +8,10 @@ By default, the labels of form elements in Zend Form are escaped.  Sometimes, li
 
 <!--more-->
 
-**Example:**
+Example:
 
 ```php 
-$this->getElement('agreetos)->getDecorator('Label')->setOption('escape', false);
+$this->getElement('agreetos')->getDecorator('Label')->setOption('escape', false);
 ```
-    
 
 So, there you go - you can now add a link to that label.

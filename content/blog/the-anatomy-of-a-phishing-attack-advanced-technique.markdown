@@ -40,7 +40,7 @@ Now those clever fellows of us are starting to see where I'm going with this.  F
 
 At this point, I had thought about being done here... but I know that people are training themselves to look for the URL in the address bar now.  If I launched a popup window with no address bar, people might become suspicious.  So I needed to have an address bar... - or at least something that looks like one.
 
-**`redirectToPBJ.html`**
+{{< filename-header "redirectToPBJ.html" >}}
 ```html
 <html>
   <title>http://www.wholesalepbj.com</title>
@@ -53,9 +53,9 @@ At this point, I had thought about being done here... but I know that people are
 
 If the user actually looked at the code, this page becomes more suspect.  But note, still using our misdirection, we do have the source pointing to `www.wholesalepbj.com.html`.  You may know that that still an html file, but a quick observer might miss that.  Ok, so this content was loaded into the popup window - even the title bar shows our website address.  We're done creating our frames (with no borders and resizing options).
 
-Lets check out the **`top.html`** file.  This is responsible for our address bar.  I made an assumption that the user would be using Internet Explorer.  I made this proof of concept when Internet Explorer 6 was still the default, so the interface may look a little bit different now.  Also, if the user had a different version of windows or a non-classic theme, the address bar may not look like their standard address bar.  But, this is besides the point: our proof of concept was against Internet Explorer 6 with no theme.  
+Let's check out the `top.html` file.  This is responsible for our address bar.  I made an assumption that the user would be using Internet Explorer.  I made this proof of concept when Internet Explorer 6 was still the default, so the interface may look a little bit different now.  Also, if the user had a different version of windows or a non-classic theme, the address bar may not look like their standard address bar.  But, this is besides the point: our proof of concept was against Internet Explorer 6 with no theme.  
 
-**`top.html`**
+{{< filename-header "top.html" >}}
 ```html
 <style type="text/css">
   body {
@@ -108,21 +108,21 @@ Lets check out the **`top.html`** file.  This is responsible for our address bar
 </p>
 ```
 
-This is an interesting piece of code.  First off, lets start with what we know.  We know we need and address bar that they're used to seeing - but it has to have the website they expect to be visiting's URL in itself.  It also should function like a normal address bar (It shouldn't just be a picture, it should allow for users to type in it and possibly navigate away from our site.).
+This is an interesting piece of code.  First off, let's start with what we know.  We know we need and address bar that they're used to seeing - but it has to have the website they expect to be visiting's URL in itself.  It also should function like a normal address bar (It shouldn't just be a picture, it should allow for users to type in it and possibly navigate away from our site.).
 
-The first CSS styles the address bar like our classic theme would.  The **`go.jpg`** is actually an image of the go button we normally see: ![go.jpg](/uploads/2007/go.jpg)
+The first CSS styles the address bar like our classic theme would.  The `go.jpg` is actually an image of the go button we normally see: ![go.jpg](/uploads/2007/go.jpg)
 
 The address bar itself is an input field, and its populated with our proper website URL.  It even has a note in their about this being a promotion, so the user may think that they are logging in to get their sale and discount.  On submit ('enter'), we return the value from the javascript function.  As we had learned earlier, we can always stop something on our website by returning false - so the form field never is submitted because our javascript returns false.
 
 Our javascript reads in the value from the address bar.  If the user did not enter an `http://`, it adds it to the beginning of whatever they entered for them.  Then, the javascript redirects the parent to the URL they entered and closes itself.  Obviously this will look a little strange to the user - why did they type in the URL and the window closes, but we're fine with this for two reasons: 1) most users probably will just think it was a weird quirk with the browser and 2) if we're leaving our phished site, we need to provide a real functional address bar.
 
-So we've solved our address bar issue, lets move on to spoofing the real website.
+So we've solved our address bar issue, let's move on to spoofing the real website.
 
 I simply went to `wholesalepbj.com` in my browser and did a file -> save as - and saved the entire web page and archive named `www.wholesalepbj.com.html`.  I uploaded this to my evil server as well.  It had to be named this so we could support the `src` attribute in our framed document **`top.html`**'s source.
 
 Next, we edited the content of my saved copy of the website.  I changed the login form's URL to point to a page on my evil website which will log their username and password.  If the user clicks any other link besides logging in, they will bust us - they'll go to the real website... but the 'address bar' will stay the same.  (In hindsight, I should have modified the original website's code from wholesalepbj.com that I saved to make it easier to login and encourage them to get their promotion...)  These changes were simple and easy.  (Also, keep in mind, if the user looked at the source of our document, they're gonna see our frame source, not our saved version of the website's source - which could give it away.  They would have to choose a different option to actually see the real source of the saved website).
 
-Lets take a look at what happens when the user logs in.  First off, I changed the input form field to submit to my server's version of login.php.  It contains this code:
+Let's take a look at what happens when the user logs in.  First off, I changed the input form field to submit to my server's version of login.php.  It contains this code:
 
 ```html
 <?php

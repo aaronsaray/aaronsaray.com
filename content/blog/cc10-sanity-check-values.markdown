@@ -8,15 +8,15 @@ When I was growing up, having chocolate milk was a huge treat.  My mom would mix
 
 <!--more-->
 
-### Episode 10: Sanity Check: Insane Value!
+## Episode 10: Sanity Check: Insane Value!
 
 I was visiting a friend the first time I found out about this amazing invention.  My friend's dad was beginning to pour some chocolate milk for me and he said the phrase "Say when" implying I should say when to stop the flow of rich, delicious pre-mixed chocolate milk into my glass.  Well, let me tell you, I was so excited about this new discovery, I wanted to have as much as I possibly could.  I would not say 'when' ever!  I ended up having an extremely full glass of chocolate milk surrounded by a few drops spilled on the table.  I wasn't going to stop the flow of milk, no matter what!
 
-#### Restricting the Flow
+### Restricting the Flow
 
 There are two ways we might receive a larger flow of data than we're expecting.  Both can cause a denial of service from exhausting resources.  The first is because a user is just extremely passionate or excited about our service and is over-using it.  The second is from malicious intent.  
 
-#### The Friend
+### The Friend
 
 I'm sure you've been here before.  Some great feature was available on a website after you click a link and you want to use it quickly.  Perhaps you want to pre-load a lot of Vimeo videos?  Instead of clicking through each one individually, you open up each one in a new tab in your browser.  Now instead of one video ever few seconds, you're now loading 10 videos all at once.  You're super excited to see all of these videos; and you've 'hacked' the system to get your content sooner.
 
@@ -28,7 +28,7 @@ To do this type of checking, you might track via session, IP, user account or ge
 
 As a Confident Coder, you're constantly building sanity checks and balances into your application.  You want to serve the most amount of users without degrading the user experience.  
 
-#### The Foe
+### The Foe
 
 The second reason to sanity check information comes from purposeful directed denial of service attacks.  A malicious user may take time to figure out how your application works and then generate requests that use the most amount of resources possible in an effort to degrade performance or restrict access.  
 
@@ -82,8 +82,8 @@ if (count($_GET['emails')) > 3) {
 
 In this case, we've determined that if the amount of emails being submitted is more than three, the script should not execute any other command and will return an error condition.
 
-#### End Notes
+### End Notes
 
 Sanity checking is a deep and in-depth concept to understand and implement.  But starting anywhere is a great first step.  When it comes to web applications, a Confident Coder knows that access to the application is paramount.  He or she does anything necessary to make sure that access can be guaranteed.  In this case, spending time validating that the incoming information falls within acceptable bounds and that the requests are not over-eager is important.  Stop insane values now!
 
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._

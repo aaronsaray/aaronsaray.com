@@ -10,9 +10,9 @@ Every mistake comes with a lesson or two...
 
 It's been about 6 months since I [wrote]({{< ref "/blog/whats-important-in-life" >}}) about having to take a step back and figure out what's important in life.  I think its important that I share some findings and thoughts.
 
-> Warning: This is not a technical or business related blog entry per se. It's very personal. I hope you enjoy it, but if it's not your thing, please check out some other entries for more technical and business advice.
+_Warning: This is not a technical or business related blog entry per se. It's very personal. I hope you enjoy it, but if it's not your thing, please check out some other entries for more technical and business advice._
 
-### Scared But Not Alone
+## Scared But Not Alone
 
 One of the concerns I had when writing my piece originally is that history would use it to judge me as unfit for my future.  That is to say, I can imagine a time a decade from now where I might be preparing to take on a more advanced, more important role, and researchers might uncover some of my musings.  I was concerned that what I wrote would make me look weak, like I wasn't perfect, and that I wouldn't be effective in a future task.  For example, let's say I was chosen to be a CTO of a large firm.  Would a historical blog entry make those on a board question if I was ready?
 
@@ -24,17 +24,17 @@ Second, it was a way to remain accountable.  For a long time, I was very proud o
 
 I also think it was important to be accountable to myself in a public manner about what things I was struggling with.  I know a lot of other people struggle with them (over-eating, over-working, alcohol abuse), but we all tend to brush it off and joke about it. By giving it a name, I felt like this will help me stay more on the path to success.
 
-### What I Learned in 6 Months of Reflection
+## What I Learned in 6 Months of Reflection
 
 Next month, I'll be turning 35.  While I've always felt like I was very put together, an adult for many years, if you will, there are still some areas where I've been lacking. I took some time to reflect on this, I know where I am, and I know where I need to get to.
 
-#### Health Is Always Important
+### Health Is Always Important
 
 I still struggle with getting out and exercising regularly.  There are tons of excuses (it's too hot, it's too cold, I'll do it later), but that's just what they are: excuses.  I live in an area which provides tons of options for exercise. I need to take advantage of them more.  I recently moved (and by recently, I mean 2 months ago). I used that as an excuse for not exercising.  No more excuses.  Get back on that train. I feel better, I look better, I'm more confident, and I can do more things when I exercise.  I need to keep on this in order not to end up at the doctor or hospital again.
 
 Alcohol still creeps into my life.  I try not to drink regularly (or at all), but I often fail at this.  I had to recognize that I will most likely never be a person that can have a drink and then be done.  I need to keep reminding myself that I have goals in my life, and all this does is harm me and stop me from getting to them.  It also is damaging to my health.
 
-#### Finding Things I Enjoy
+### Finding Things I Enjoy
 
 Someone asked me the other day what I like to do - and all I could think of was "nerd stuff and also Netflix."  But then I realized, I wasn't actually doing much nerd stuff. I wasn't programming or writing.  I basically would finish work and then watch TV.  This is not what I want for myself.  I used to have more hobbies (there are remnants and examples of them around my apartment, but they're covered with dust.)
 
@@ -48,6 +48,6 @@ Someone asked me the other day what I like to do - and all I could think of was 
 
 **Visiting Friends and Colleagues** I took some time by myself to figure out what I wanted in life, to reset my habits.  But, in that time I let a lot of relationships lapse. I need to get more involved with seeing friends and colleagues - basically getting out of the house.
 
-### End Notes
+## End Notes
 
 This journey is no where near done.  But I think I've learned a lot of things.  I know what my goals are, and what I need to get there.  I just need to buckle down and do the right thing.  I don't imagine I'll be writing many more entries like this, but I felt it was important to be honest about what's going on in my life. My hope is that it helps others who might be going through the same struggles and challenges know they're not alone - or at the very least show that I'm not a robot, I have flaws.  Those flaws are what have helped me become the person I am so far, and working on them will continue to make me a better person in the future.

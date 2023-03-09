@@ -10,7 +10,7 @@ When it comes to Open Source Software, you have a number of choices to make for 
 
 <!--more-->
 
-> You should know that I am not a lawyer and I do not offer legal advice.  I may not even know what I'm talking about.  Please use this blog as reference, but don't refer to it as unequivocally authoritative for your license choice.
+_You should know that I am not a lawyer and I do not offer legal advice.  I may not even know what I'm talking about.  Please use this blog as reference, but don't refer to it as unequivocally authoritative for your license choice._
 
 I started thinking about this question because I'm getting ready to publish my first SaaS product.  I have the code in a private repository on Github (which has its own terms of service and thereby determines how your non-licensed work can be used as well as that you provide them a license to host it for you).  Because some of the software I'm using like NPM and Composer have configuration files that have a license field (and Github itself tries to publish meta information based on your license file), I thought it might be interesting to understand this more.
 
@@ -30,11 +30,11 @@ So, the answer is pretty simple - if you have private, closed source software, d
 
 If you do feel the need to specify something, I would suggest using the term `Unlicensed` or `No-License` (not to be confused with [the unlicense](https://spdx.org/licenses/Unlicense.html)).
 
-### Summary
+## Summary
 
 Do not license your closed source software.  If you must specify something, use the term `Unlicensed` or `No-License`.
 
-#### References
+### References
 
 Normally I link out to references inline, but this particular article would benefit from a references list.
 

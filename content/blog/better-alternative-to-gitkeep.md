@@ -16,7 +16,7 @@ Here are the two scenarios.
 
 **Scenario 2: (A far more likely one) I want a folder to be created but all of its content to be ignored by git.** To do this, create your folder and put a `.gitignore` file with the following content:
 
-```
+```txt
 *
 !.gitignore
 ```

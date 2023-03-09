@@ -7,7 +7,7 @@ tag:
 - misc-web
 ---
 {{< header-call-out >}}
-Note: I have shut down name-tag.me.  These notes were taken before I pulled the plug.**
+Note: I have shut down name-tag.me.  These notes were taken before I pulled the plug.
 {{< /header-call-out >}}
 
 The goal was to make a "hello my name is" style name tag without the use of images but with a handwritten font.  
@@ -18,9 +18,9 @@ Trouble I ran into:
 
 nametag.me was already taken.  I had to use the dashed version because I couldn't think of a different name.  hellomynameis.com was also taken.  This became a problem because repeat visitors and word-of-mouth tend to forget about the dash.  Plus, it is a lot harder to say: "name dash tag dot me."  I also found out that the .me name, although popular, was still hard for people to remember.  A lot of .com visitors I'm sure.
 
-Technical specifications:
+## Technical specifications
 
-Open Graph integration.
+### Open Graph integration.
 
 This is the first time that I used an apple-touch icon and an open graph image.  Since the only images on the site were my signature portion (and link to my main website) and share icons, that was the preview that showed up when you shared it on Facebook.  I added the meta property of og:image which pointed to the image.
 
@@ -28,9 +28,9 @@ This is the first time that I used an apple-touch icon and an open graph image. 
 <meta content="http://name-tag.me/apple-touch-icon.png" property="og:image">
 ```
 
-**Mod_expires / mod_deflate**
+### Mod_expires / mod_deflate
 
-I also used mod_expires and mod_deflate to compress and cache images/css/javascript out for a year.  I also turned off ETags as I find that pretty annoying.  Here are entries from the apache config:
+I also used `mod_expires` and `mod_deflate` to compress and cache images/css/javascript out for a year.  I also turned off ETags as I find that pretty annoying.  Here are entries from the apache config:
     
 ```apache
 SetOutputFilter DEFLATE
@@ -50,7 +50,7 @@ FileETag none
     
 Because of this too, I decided to 'version' my css and javascript files.  At the time of writing, I had version 3 of css and version 2 of javascript.  Some people will add parameters at the end of the URLs but other caches/proxies can't handle that properly.  So, I decided to actually just change the name of the file itself.  3.css and 2.js, say hello to the world!
 
-Browser sniffing body tag.  
+### Browser sniffing body tag
 
 Because there were specific layout elements in place here (and they had to work exactly), I had to sniff browsers.  I did that with this famous line:
 
@@ -64,23 +64,23 @@ Because there were specific layout elements in place here (and they had to work 
 
 This was important because some browsers made the name tag misshapen so I had to change their CSS.
 
-Whitespace
+### Whitespace
 
 What I didn't do here was remove whitespace from my HTML and CSS.  I have done that on other projects, but I just didn't do that on this one.  It was only 1.21k (2.02k deflated).
 
-Clipboard Integration
+### Clipboard Integration
 
 I ended up using a script called ZeroClipboard.  This was a javascript that worked cross browser using technologies like the built in clipboard access to flash objects to send the URL to the clipboard.
 
-jQuery
+### jQuery
 
 Yup, used the google CDN.
 
-Rounded corners
+### Rounded corners
 
 In order to get rounded corners, but with all browsers covered, I used jQuery Corners plugin.  I really wanted to use CSS border-radius but I also wanted this to work in IE... oh well.
 
-TTF Font
+### TTF Font
 
 I defined the font I wanted to use using a utility called FontSquirrel:
 
@@ -100,7 +100,7 @@ Then later, defined it in the font-family declaration:
 font-family: DesyrelRegular, tahoma, verdana, arial, sans-serif;
 ```
 
-Image Download
+### Image Download
 
 I was able to use the same ttf font in my image downloading.  I used imagettftext to position the items.  I then sent the following headers:
 
@@ -112,7 +112,7 @@ header("Content-Type: application/octet-stream");
 header("Content-Transfer-Encoding: binary");
 ```
 
-Lessons Learned
+## Lessons Learned
 
 - Branding is important with the URL.  I think a lot of people didn't get the dash in the name.
 - Offering too much help, like click to copy to clipboard, is not worth it (Google analytics says that hardly anyone clicked that).
@@ -121,9 +121,12 @@ Lessons Learned
 
 RIP Name-Tag.me!
 
-_Screenshots / Downloads_
+## Screenshots
 
-[![](/uploads/2012/Screenshot-at-2012-03-14-150408-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-150408.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-150425-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-150425.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-150450-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-150450.png){: .thumbnail}
-[![](/uploads/2012/Hello-My-Name-Is-Aaron-150x150.png)](/uploads/2012/Hello-My-Name-Is-Aaron.png){: .thumbnail}
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-150408.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-150408-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-150425.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-150425-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-150450.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-150450-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Hello-My-Name-Is-Aaron.png" thumb="/uploads/2012/Hello-My-Name-Is-Aaron-150x150.png" alt="Screenshot" >}}

@@ -39,4 +39,4 @@ YAHOO.util.Event.addListener('someform','submit',validate);
 
 Yay - success!  We were able to stop the event with this built in call from YUI.  Any future programming on that site will use that logic.
 
-(ps: sad note - I have the same issues on my own sites, so its not one specifically related to my work at ("the triangle").)
+(ps: sad note - I have the same issues on my own sites, so it's not one specifically related to my work at ("the triangle").)

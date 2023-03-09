@@ -23,13 +23,13 @@ Let's talk about the reasons why this is not the best choice.  For this setup, I
 ],
 ```
 
-### Issue: Type Safety
+## Issue: Type Safety
 
 Type safety or type accuracy is very important. PHP developers (and other languages like Javascript where there can be type coercion) can become complacent - because doesn't `6` kind of, sort of equal `"6"` anyway?  This becomes a problem, though, when you consider `4.5` should not equal `4`.  
 
 Equality is one concern, but another is data integrity.  In this example, I am going to store information about a Car.  I want to know if it's easy to get into.  2 Door cars are harder to get into than 4 door cars.  So, let's see my model:
 
-**`app/models/Car.php`**
+{{< filename-header "app/models/Car.php" >}}
 ```php
 <?php
 namespace App\Models;
@@ -96,14 +96,15 @@ class MyTest extends TestCase
 Yay - the tests pass!  But here's the problem. If you look at our `$userInput`, you'll notice that it's a float.  Our database is a tiny **integer** - so this is a type mismatch.  Sqlite allows us to insert this into our database even though it's not the proper type.
 
 To verify, here is the description of the sqlite database:
-```
+
+```sql
 select sql from sqlite_master where name='cars';
 CREATE TABLE "cars" ("id" integer not null primary key autoincrement, "doors" integer not null, "created_at" datetime null, "updated_at" datetime null)
 ```
 
 If we look at a dump of a newly retrieved instance of this model, we will see this:
 
-```
+```txt
 #original: array:4 [
   "doors" => 4.5
   "updated_at" => "2019-11-01 20:34:09"
@@ -116,7 +117,7 @@ Now, I know what you're thinking: "That's not a big deal because you can clearly
 
 Now, you're probably running MySQL in production.  In this case, something different than your test setup will happen. When you retrieve the data back from your database, or get a fresh model, you'll get the int value instead (because that's what was stored).
 
-```
+```txt
  #original: array:4 [
   "id" => 1
   "doors" => 4
@@ -127,7 +128,7 @@ Now, you're probably running MySQL in production.  In this case, something diffe
 
 This inconsistency can cause a number of problems (if even as simple as `$userInput` does not equal `$car->doors` anymore.)
 
-### String Length
+## String Length
 
 String length on columns is ignored.  Let me show an example of something that could happen to you.
 
@@ -241,7 +242,7 @@ Running this with our Sqlite testing database, we have nothing but green, green 
 
 What happens when we insert the `Sport` trim in our database when we use MySQL?  Well, it was only 3 characters in length, so we get an error: `String data, right truncated: 1406 Data too long for column 'trim' at row 1`.
 
-### Foreign Keys
+## Foreign Keys
 
 For a while, Sqlite didn't support foreign keys.  Old timers will remember this and immediately shun Sqlite because of this.  Well, that's no longer the case.  Yes!
 
@@ -316,13 +317,13 @@ To fix this problem, you'd need a new compiled version of Sqlite.  If you alread
 
 At least the good news is that the inverse is compatible: disabling foreign key checks exactly the same using `Schema::disableForeignKeyConstraints()`.
 
-### Lack of User Authorization
+## Lack of User Authorization
 
 One of the nice things about Sqlite is that it doesn't deal with all of those pesky user permissions and authorizations. I jest, but this is important to understand.  
 
 As your application grows in size and complexity, you might find yourself using multiple SQL users or read and write connections.  Where this becomes a problem is when you meant to write a record but you grabbed the read-only connection.  With Sqlite, it will 'just work.'  But, when you get to production, you'll start getting permission errors.
 
-### Special Queries
+## Special Queries
 
 Eloquent is a great ORM, but there are some things it just doesn't support. These might be things that are unique to only one specific database engine, or they might be things that are just too unique, rare or hard to implement in ORM code.  Other times there are things that you can do with Eloquent or the query builder, but they're inefficient. It might just be better to write a raw SQL statement.
 
@@ -330,7 +331,7 @@ If you find yourself using `DB::raw()` that's a good indicator that you're going
 
 In the past, I've seen people just not test this section of the code.  I'd argue that this is some of the most important code to test because it's so unique and non-standard.  You can still write the tests, but your test tool has to use the same database engine to be an accurate representation.
 
-### It's Just Not The Same
+## It's Just Not The Same
 
 As much as we like ORMs like Eloquent that let us swap out databases whenever we want to, that's not really that realistic.  Rarely do we push a whole application into a different database engine without some alterations or a significant rewrite.  You might swap frameworks, but you probably stick with MySQL (for example).
 
@@ -344,7 +345,7 @@ If you're using something like [Valet](https://laravel.com/docs/6.x/valet), the 
 
 For a professional developer, there really is no excuse.
 
-### End Notes
+## End Notes
 
 Besides these things I've demonstrated and described, there are a number of other things that Sqlite doesn't implement or does in a quirky way. You can check out the list of [SQL Features that SQLite Does Not Implement](https://www.sqlite.org/omitted.html) or get more information on the [quirks of Sqlite](https://www.sqlite.org/quirks.html) on the official Sqlite documentation website.
 

@@ -4,7 +4,7 @@ date: 2007-07-07
 tag:
 - php
 ---
-Perl, Java and xml people are very aware of what a namespace is... even [wikipedia](http://en.wikipedia.org/wiki/Namespace_(computer_science)) tells us they are.  But, certain languages, such as PHP, don't support namespaces yet.  (However, thank you Dmitry for [your proposal](http://aspn.activestate.com/ASPN/Mail/Message/php-dev/3519062).)  But are namespaces really important?  PHP has made it this far without them, so why should you be concerned?  Well, lets see:
+Perl, Java and xml people are very aware of what a namespace is... even [wikipedia](http://en.wikipedia.org/wiki/Namespace_(computer_science)) tells us they are.  But, certain languages, such as PHP, don't support namespaces yet.  (However, thank you Dmitry for [your proposal](http://aspn.activestate.com/ASPN/Mail/Message/php-dev/3519062).)  But are namespaces really important?  PHP has made it this far without them, so why should you be concerned?  Well, let's see:
 
 <!--more-->
 
@@ -18,4 +18,4 @@ The very first is to prefix all of your function names with a short identifier t
 
 The second is to roll homemade namespaces, such as what [Drupal](http://drupal.org/) does. This solves some of the issues, but it still competes with the global namespace of PHP functions (as far as I can tell...).
 
-So, even with these two solutions, I still believe there is a big need for PHP namespaces.  Lets see what happens with PHP6...
+So, even with these two solutions, I still believe there is a big need for PHP namespaces.  Let's see what happens with PHP6...

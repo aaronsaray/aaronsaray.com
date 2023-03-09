@@ -1,5 +1,5 @@
 ---
-title: The top 17 ways to help eliminate the Phishing threat
+title: The Top 17 Ways to Help Eliminate the Phishing Threat
 date: 2007-07-12
 tag:
 - security

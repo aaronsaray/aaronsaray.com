@@ -18,7 +18,7 @@ Side note: There is some argument as to whether the translation should be handle
 Let's check out some code in an action
 
 ```php
-public function dosomethingAction()
+public function doSomethingAction()
 {
   if (!Zend_Auth::getInstance()->hasIdentity()) {
     //ruh roh - need some identity

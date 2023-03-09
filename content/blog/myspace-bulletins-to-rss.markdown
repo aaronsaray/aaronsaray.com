@@ -8,7 +8,7 @@ So I'm sick of myspace... or so I say to myself.  So now I log in about half the
 
 <!--more-->
 
-Lets check it out:
+Let's check it out:
 
 ```php
 set_time_limit(0);

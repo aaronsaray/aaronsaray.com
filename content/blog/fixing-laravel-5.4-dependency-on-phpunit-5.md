@@ -28,7 +28,7 @@ After looking into the actual code for `assertPushed` I see a dependency of the 
 
 Time to look at my composer file...
 
-**`composer.json`**
+{{< filename-header "composer.json" >}}
 ```json
 {
   "require": {
@@ -42,7 +42,7 @@ Time to look at my composer file...
 
 Obviously, I've snipped out portions of it. But yep, I was requiring PHPUnit 6, but in Laravel 5.4 (at least 5.4.16), the header in in `QueueFake` reveals the problem:
 
-**`vendor/laravel/framework/...../Fakes/QueueFake.php`**
+{{< filename-header "vendor/laravel/framework/...../Fakes/QueueFake.php" >}}
 ```php
 <?php
 namespace Illuminate\Support\Testing\Fakes;
@@ -58,7 +58,7 @@ class QueueFake implements Queue
 
 As you can see, it's importing the class alias instead of the actual namespaced code (that was available in the recommended PHPUnit 5 that laravel suggested).
 
-### What's the Fix?
+## What's the Fix?
 
 Like many of us, I have my own bootstrap php file in the tests directory (it imports the main bootstrap file for laravel, and does  a few other things.) 
 

@@ -10,7 +10,7 @@ Just finished a talk at the [Wisconsin Midrange Computer Professional Associatio
 
 The slides can be downloaded [Here](/uploads/2013/WMCPA-Intro-PHP.pdf).
 
-#### Useful Links
+## Useful Links
 
 **The Environment**
 

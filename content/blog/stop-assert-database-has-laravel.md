@@ -11,7 +11,7 @@ Please stop using `assertDatabaseHas` in Laravel.  There are many reasons why th
 
 <!--more-->
 
-### Theory
+## Theory
 
 So, it's very difficult to say "this is wrong" and be 100% certain. Titles like mine above are great for click-bait, of course, but they don't necessarily reflect the entire thought clearly. Let's talk some theory.
 
@@ -33,13 +33,13 @@ The method `assertDatabaseHas` could potentially provide false positives.  The c
 
 Finally, and this is a pretty far stretch, but I wanted to bring it up: you don't always know that your model is in the database.  It could be a remote model, like in Salesforce. When you're dealing with your models in your code, you really don't care where they come from. You enjoy the value that this is abstracted behind a PHP class. But, in your tests, you now need to understand how each is implemented?  That doesn't make sense.
 
-### Practical
+## Practical
 
 Let's see some examples of how to implement tests that test the models have been written to the database without calling the evil method.
 
 The following before and after of our tests demonstrates how we follow the advice not to use `assertDatabaseHas`.
 
-**`app\Models\Car.php`**
+{{< filename-header "app/Models/Car.php" >}}
 ```php
 <?php
 namespace App;
@@ -52,7 +52,7 @@ class Car extends Model
 }
 ```
 
-**`app\Controllers\CarCreateController.php`**
+{{< filename-header "app/Controllers/CarCreateController.php" >}}
 ```php
 <?php
 namespace App\Http\Controllers;
@@ -70,7 +70,7 @@ class CarCreateController extends Controller
 }
 ```
 
-**`tests\Feature\CreateCarTest.php`**
+{{< filename-header "tests/Feature/CreateCarTest.php" >}}
 ```php
 <?php
 namespace Tests\Feature;
@@ -100,7 +100,7 @@ In this very simple case, we're creating a `Car` through an endpoint.  We're tes
 
 Let's look at our suggested way of doing it instead.
 
-**`tests\Feature\CreateCarTest.php`**
+{{< filename-header "tests/Feature/CreateCarTest.php" >}}
 ```php
 <?php
 namespace Tests\Feature;
@@ -154,6 +154,6 @@ public function testUpdateWorks()
 
 In this example, we're executing our update via our endpoint with a named route.  Then, we call `refresh` on the model we intended to update, which will get the new data, and tested the data that way.  In addition, we also test that we haven't changed _all_ of the models by validating the other model has not changed.
 
-### End Notes
+## End Notes
 
 There are many ways to test, with tons of different mechanism and methodologies. I'm glad you're testing at all!  But, I think it's best to stop asserting directly against a database when you don't need to. Especially since your code is not generally architected in Laravel to deal directly with the database, why would your tests?  Stay in your domain and test the input and output values, not the implementation.

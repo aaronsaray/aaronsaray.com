@@ -1,5 +1,5 @@
 ---
-title: HTML 5 and Me - Draft 10 thoughts
+title: HTML 5 and Me - Draft 10 Thoughts
 date: 2009-01-21
 tag:
 - html

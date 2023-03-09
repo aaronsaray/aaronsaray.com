@@ -8,7 +8,7 @@ Want a CSS3 **ONLY** read more link?  I think I've created one that should do th
 
 <!--more-->
 
-[![Screenshot 2015-04-05 19.48.23](/uploads/2015/Screenshot-2015-04-05-19.48.23-300x223.png)](/uploads/2015/Screenshot-2015-04-05-19.48.23.png){: .thumbnail}
+{{< image src="/uploads/2015/Screenshot-2015-04-05-19.48.23.png" thumb="/uploads/2015/Screenshot-2015-04-05-19.48.23-300x223.png" alt="Screenshot" >}}
 
 The concept is simple: background image that is a gradient, a height limit, and a read more link that really is a checkbox - so you can track the stage. (Fun fact: I tried using a:active selector - doh!  That's only while you're clicking a link.)
 
@@ -77,6 +77,6 @@ input[type=checkbox]:checked + section {
 }
 ```
 
-The section style is just for this demo.  The really user-configurable sections are the .has-read-more width and the .has-read-more section height.  Oh, and the content I suppose of 'read more' could be changed (think: inline data image?)
+The section style is just for this demo.  The really user-configurable sections are the `.has-read-more` width and the `.has-read-more` section height.  Oh, and the content I suppose of 'read more' could be changed (think: inline data image?)
 
 I want to give credit to these two articles that helped inspire me: [css deck](http://cssdeck.com/labs/css-only-showhide) and [css fade out](https://css-tricks.com/text-fade-read-more/).

@@ -5,13 +5,13 @@ tag:
 - php
 - programming
 ---
-I really hate to see people accessing and designing objects with public attributes.  So many times I've seen this backfire.  Lets take a few examples and see why this matters:
+I really hate to see people accessing and designing objects with public attributes.  So many times I've seen this backfire.  Let's take a few examples and see why this matters:
 
 <!--more-->
 
-### The Simple Book Class
+## The Simple Book Class
 
-Well first, lets say we're dealing with books.  We need to know the title, author and the page count.  We want to store this in an object.  So, we create an instance of the book, and then want to print out the information about it.  In this example, we're just hard setting the values - not actually performing a query.
+Well first, let's say we're dealing with books.  We need to know the title, author and the page count.  We want to store this in an object.  So, we create an instance of the book, and then want to print out the information about it.  In this example, we're just hard setting the values - not actually performing a query.
 
 **Bad Example**
 
@@ -38,9 +38,9 @@ print $book->title . ' was written by ' . $book->author
 
 This works fine and outputs our information.  However, this is not good practice.  You should be using public accessors.
 
-### The Book Class with Accessors
+## The Book Class with Accessors
 
-I used to think that was stupid to write an accessor for every variable.  I mean, if I have `$title`, why do I have to write a function called `getTitle()`?  Well, what if the way title is retrieved is changed?  Anyways, lets look at the proper way to write this class:
+I used to think that was stupid to write an accessor for every variable.  I mean, if I have `$title`, why do I have to write a function called `getTitle()`?  Well, what if the way title is retrieved is changed?  Anyways, let's look at the proper way to write this class:
 
 **Book Done Right**
 
@@ -82,7 +82,7 @@ print $book->getTitle() . ' was written by ' . $book->getAuthor()
 
 Ok - so far still seems like a lot more code for the same results.  You'll notice I added the public methods and changed the public attributes to protected.
 
-### Proof that it was a good idea
+## Proof that it was a good idea
 
 Ok, so imagine this scenario:  other programmers have been tasked to make the Author into a class.  There is additional information about authors that we need to do, so storing it in an object.  Additionally, we need to add padding onto the page count for white pages for all books.
 

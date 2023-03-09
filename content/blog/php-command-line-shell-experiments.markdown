@@ -28,8 +28,8 @@ echo $a;
 ```
 
 And the third one is going to be a class creation, followed by `var_dump()`ing it out to the display.  Our file:
- 
-**`test.php`**
+
+{{< filename-header "test.php" >}}
 ```php
 class TEST
 {
@@ -52,9 +52,11 @@ var_dump($a);
 
 **First off, What does Plain Ol' PHP offer me?**
 
-On Windows?  Hrm... lets see.  I've been looking over the [PHP manual page for command line](http://us.php.net/manual/en/features.commandline.php) options and decided to run php interactively:
+On Windows?  Hrm... let's see.  I've been looking over the [PHP manual page for command line](http://us.php.net/manual/en/features.commandline.php) options and decided to run php interactively:
 
-    c:\php -a
+```bash
+c:\php -a
+```
 
 This test failed on all accounts - by that I mean - there was no display what so ever... so I scoured the manual pages - and found out that sometimes on windowsxp you need to execute a `-n` as well. (while this doesn't make any sense, I was willing to try it.)
 
@@ -62,30 +64,32 @@ Nope.  Didn't work either.  There was just no output what so ever - no error, no
 
 **~jk php shell**
 
-[This project](http://jan.kneschke.de/projects/php-shell) seemed to have a lot of potential.  Its an interactive command line interface that allows tab completion, (we should remember that I'm working on windows - which doesn't have support for the `readline` extension in PHP - which is required for tab completion - Dang!!), verbose output, and more! (Sounds salesy right?).  Anyway, lets do the three tests.
+[This project](http://jan.kneschke.de/projects/php-shell) seemed to have a lot of potential.  Its an interactive command line interface that allows tab completion, (we should remember that I'm working on windows - which doesn't have support for the `readline` extension in PHP - which is required for tab completion - Dang!!), verbose output, and more! (Sounds salesy right?).  Anyway, let's do the three tests.
 
 They all passed with flying colors.  The more interesting thing is the verbose output.  For example, when we created our new class instance, it dumps (`var_dump()`s?) the internals to the screen as they would be AFTER construction... see so:
 
-    >> include 'test.php';
-    
-    >> $a = new TEST();
-    TEST::__set_state(array(
-       '_val' => 'constructor',
-    ))
+```txt
+>> include 'test.php';
+
+>> $a = new TEST();
+TEST::__set_state(array(
+   '_val' => 'constructor',
+))
+```
 
 There was an issue, however.  When you create a request that throws a fatal error, you're done for... The shell exits:
-    
-    >> $a->_val = 'blah';
-    
-    Fatal error: Cannot access protected property TEST::$_val in C:\php5.2\PEAR\php-shell-cmd.php(121) : eval()'d code on line 1
-    
-    C:\DEVELO~1\temp>
+
+```txt    
+>> $a->_val = 'blah';
+
+Fatal error: Cannot access protected property TEST::$_val in C:\php5.2\PEAR\php-shell-cmd.php(121) : eval()'d code on line 1
+```
 
 This sucks because it may take you a few commands to get to your specific location - and then if you do something wrong (or if you're troubleshooting), you're kicked out - and have to start again.  It seems to me that we should be able to trap those errors (at the very least, not exit the shell... restart it at the VERY LEAST).
 
 **PHP Interactive**
 
-Finally, lets check out this [tabbed, interactive shell simulator](http://www.hping.org/phpinteractive/).  This tool is a shell emulator - its not necessarily ran from the shell.  You can open up multiple tabs and execute your commands.
+Finally, let's check out this [tabbed, interactive shell simulator](http://www.hping.org/phpinteractive/).  This tool is a shell emulator - its not necessarily ran from the shell.  You can open up multiple tabs and execute your commands.
 
 All three tests succeeded - but there were some side affects.  Every time we executed a command, the actual script itself was written to a folder inside of this distribution called `scripts`.  So for each command I ran, depending on the names at the bottom of the window.  I didn't like this that much... but I could deal.
 

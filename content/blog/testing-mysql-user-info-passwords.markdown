@@ -11,7 +11,9 @@ Out of some sheer boredom, I started looking at the top 25 used passwords (from 
 
 I decided to test one of my applications using six common ones:
 
-    password, 123456, 12345678, qwerty, abc123, letmein
+```txt
+password, 123456, 12345678, qwerty, abc123, letmein
+```
 
 First, I had an application that I tested that was not salting passwords and was only using md5.  I thought it would be interesting to get the md5's and then write a quick query against them.
 

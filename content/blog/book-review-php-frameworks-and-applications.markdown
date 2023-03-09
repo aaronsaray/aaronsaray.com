@@ -9,11 +9,13 @@ I just finished glancing over [Real-World Solutions for Developing High-Quality 
 
 <!--more-->
 
-![](http://ecx.images-amazon.com/images/I/51-b3XXNMAL._SL110_.jpg){: .thumbnail}{: .pull-right}
+{{< link href="http://www.amazon.com/gp/product/0470872497/" img="http://ecx.images-amazon.com/images/I/51-b3XXNMAL._SL110_.jpg" alt="Book" >}}
+PHP Frameworks and Applications
+{{< /link >}}
 
 **Finally!**
 
-This is the book I wish I had years ago.  This is the book I wish I had written.  Go [buy](http://www.amazon.com/gp/product/0470872497/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0470872497&linkCode=as2&tag=aarsar-20) this book.
+This is the book I wish I had years ago.  This is the book I wish I had written.  Go [buy](http://www.amazon.com/gp/product/0470872497/) this book.
 
 But let me break it down why I like it...
 

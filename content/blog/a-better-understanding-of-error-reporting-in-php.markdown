@@ -8,7 +8,7 @@ While working on a website for ("the triangle"), I came to a page running locall
 
 <!--more-->
 
-For whatever reason (laziness, stupidity, thursdayness), I haven't checked my php.ini file for error reporting in the last few months... and for whatever reason a long time ago, I decided to go back to standard error reporting.  Well unfortunately, this means months of developing has gone by on this particular set of websites that I was possibly missing errors (never-mind everything has successfully went through QA...hrm...)  At any rate, I jumped out to PHP's website - eager and ready to copy a quick fix for my error reporting issue.  As I was getting ready to copy an `error_reporting()` line, I realized: I don't fully understand what I want to do here...Well, that's never good - copying code and not fully understanding it... so lets fix this.  Lets talk about error reporting.
+For whatever reason (laziness, stupidity, thursdayness), I haven't checked my php.ini file for error reporting in the last few months... and for whatever reason a long time ago, I decided to go back to standard error reporting.  Well unfortunately, this means months of developing has gone by on this particular set of websites that I was possibly missing errors (never-mind everything has successfully went through QA...hrm...)  At any rate, I jumped out to PHP's website - eager and ready to copy a quick fix for my error reporting issue.  As I was getting ready to copy an `error_reporting()` line, I realized: I don't fully understand what I want to do here...Well, that's never good - copying code and not fully understanding it... so let's fix this.  Let's talk about error reporting.
 
 **Where to error report**
 
@@ -28,7 +28,7 @@ Error reporting is set by interpeting the integer value of the constant supplied
 
 **Bitwise?  How does that work?**
 
-For those familiar with bitwise operators, the last paragraph probably seemed pretty pointless... this one you can too.  First off, someone else wrote the tutorial, so lets check it out [here](http://www.litfuel.net/tutorials/bitwise.htm).  Ok, so with that, and combined with our constants, we can create new integer values to send to the error reporting.
+For those familiar with bitwise operators, the last paragraph probably seemed pretty pointless... this one you can too.  First off, someone else wrote the tutorial, so let's check it out [here](http://www.litfuel.net/tutorials/bitwise.htm).  Ok, so with that, and combined with our constants, we can create new integer values to send to the error reporting.
 
 **What error reporting should I be using?**
 

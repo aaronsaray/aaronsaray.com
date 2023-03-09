@@ -9,7 +9,7 @@ Using Yahoo's Grid Tools, I created a pretty decent page layout.  After all this
 
 <!--more-->
 
-### The Setup
+## The Setup
 
 The page was created with Yahoo's Grids.
 
@@ -19,7 +19,7 @@ Each instruction had its own box containing the content - as well as a 'print th
 
 Users were liable to click the wrong link - and have to do it again.
 
-### The Code
+## The Code
 
 The following is the JQuery I wrote to solve my problem:
 
@@ -46,7 +46,7 @@ This is what the content may have looked like:
 </div>
 ```
     
-### The Explanation
+## The Explanation
 
 First, any time a link with the class `printinstructions` is clicked, the function launches.  The first line in the function is responsible for undoing this process I'm about to describe.  This is necessary just in case someone clicked the 'print' button earlier on the wrong element by accident.
 

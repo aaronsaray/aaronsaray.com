@@ -31,7 +31,7 @@ Here, we have a mocked class that should receive a call to the `process` method 
 
 Now, if everything is valid, we return true - and the test passes.  However, if the parameter isn't an instance of `SomeClass` - or - if the value is not right, `$valid` will be false.  This will make Mockery give us the weird error like:
 
-```
+```txt
 Mockery\Exception\NoMatchingExpectationException: 
 No matching handler found for Mockery_2_Mocked_Class_name::process(...
 ```
@@ -55,7 +55,7 @@ $mockedClass->shouldReceive('process')->once()
 
 Now, when we run the script and we have an issue, it'll fail with a more verbose message:
 
-```
+```txt
 There was 1 failure:
 
 1) Tests\MockedClassTest::test
@@ -80,7 +80,7 @@ $mockedClass->shouldReceive('process')->once()
 
 If the wrong class comes in, the error will be very clear and verbose:
 
-```
+```txt
 There was 1 error:
 
 1) Tests\MockedClassTest::test

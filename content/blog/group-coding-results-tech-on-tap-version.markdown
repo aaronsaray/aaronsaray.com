@@ -15,15 +15,15 @@ Recently, I was invited up to [Tech on Tap](http://www.techontap.org/) in Applet
 
 So, without further delay, here is the challenge:
 
-    Challenge: Send a plain text email to a website owner.
-     
-    The following fields are required:
-    - Sender's Name
-    - Sender's Email
-    - Message
-     
-    Special Challenge Instructions:
-    Should never generate the Webpage Expired message.
+> Challenge: Send a plain text email to a website owner.
+>
+> The following fields are required:
+>    - Sender's Name
+>    - Sender's Email
+>    - Message
+>     
+>    Special Challenge Instructions:
+>    Should never generate the Webpage Expired message.
     
 Now, I'm not going to post what the group came up with. That's not a good reflection of a final product (it was a new and exciting experience, plus I did not allow time to refactor – so it was what it was.)
 
@@ -31,7 +31,7 @@ However, here is my quick and dirty version of doing this in plain PHP. I made s
 
 **Please note: those who randomly troll for code – this is not the best code example – it was a ‘challenge'**
 
-**`index.php`**
+{{< filename-header "index.php" >}}
 ```php
 <?php
 session_start();
@@ -94,7 +94,7 @@ function getErrorForField($fieldName)
 
 and then the processing page
 
-**`process.php`**
+{{< filename-header "process.php" >}}
 ```php
 <?php
 // sanity constants
@@ -186,7 +186,7 @@ die(header('Location: success.php'));
 
 Note: I did not create a success page.
 
-### The break down
+## The Break Down
 
 I believe this handled all of the issues. Looking back, I'd have liked to make it more usable – put the user data back in the form when there was an error, etc. But the main goals are achieved:
 

@@ -10,8 +10,10 @@ The predefined PHP constant `DIRECTORY_SEPARATOR` is useless.
 
 When evaluated, the constant is as follows:
 
-    *nix: /
-    win: \
+```txt
+*nix: /
+win: \
+```
 
 So, to the casual observer, there seems to be a real need for this constant - especially with those who favor the php command `getcwd()`.  However, for the most part, it is just wasteful - and potentially error prone to have around.
 

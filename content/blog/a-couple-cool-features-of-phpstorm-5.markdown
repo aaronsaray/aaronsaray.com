@@ -29,7 +29,7 @@ You can configure templates for new files - what I really like is that it suppor
 
 This was on by default.  I didn't realize this and kept hitting ctrl-s.  I like automatic saving - but it matters that I'm using VCS.
 
-**Git hub integration**
+**Github integration**
 
 Nice.
 
@@ -37,19 +37,19 @@ Nice.
 
 Like that the image viewer is semi-robust - and then offers the choice to set a default editor.
 
-**intentions**
+**Intentions**
 
 All I can say is wow!  There is a nice collection of user and plugin defined intentions.  These rules are used as suggestions when the code is inspected.  You can choose to apply the intention or not.  For example, if it detects an operational branch, you can swap the if() statements with a more logical method.
 
-**live editing in chrome**
+**Live editing in chrome**
 
 Changes to your code show up immediately in chrome without need to refresh the page.
 
-**live templates**
+**Live templates**
 
 You can create template text that can be autocompleted into a larger text (like macros) with the press of the tab key.
 
-**menus and toolbars**
+**Menus and toolbars**
 
 It appears you can even make changes to the menu system - I haven't tried this yet as I don't really use the menu that much.
 

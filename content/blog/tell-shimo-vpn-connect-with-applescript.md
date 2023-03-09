@@ -12,7 +12,7 @@ So, with some pointers from the great support team at Shimo/Mailbutler, I came u
 
 I've installed the following bash script in my local path:
 
-**`vpn-git-push`**
+{{< filename-header "vpn-git-push" >}}
 ```bash
 #!/bin/sh
 osascript ~/utils/client-shimo-pre-push.scpt
@@ -21,8 +21,8 @@ git push $@
 
 And the `scpt` AppleScript file contains the following (where `vpn.client.com` is the name of the account in my Shimo connection manager.)
 
-**`~/utils/client-shimo-pre-push.scpt`**
-```
+{{< filename-header "~/utils/client-shimo-pre-push.scpt" >}}
+```applescript
 tell application "Shimo"
 set p to account "vpn.client.com"
 if p is not connected then

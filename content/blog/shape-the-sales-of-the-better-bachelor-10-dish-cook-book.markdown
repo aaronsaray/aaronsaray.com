@@ -4,6 +4,10 @@ date: 2011-03-03
 tag:
 - business
 ---
+{{< header-call-out >}}
+The Cookbook is no longer available.
+{{< /header-call-out >}}
+
 Hey everyone - I'm looking to push the sales of the 10 Dish Better Bachelor Cook book to the next level.  
 
 <!--more-->

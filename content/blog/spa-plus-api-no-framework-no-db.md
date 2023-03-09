@@ -14,9 +14,11 @@ Then, I decided to take it one step further: I didn't really want to run a backe
 
 I created [chickenfacts.io](https://chickenfacts.io), a single page application with a JSON API.  This is how I did it (you can find the code on [GitHub](https://github.com/aaronsaray/chickenfacts.io)).
 
-[![Chicken Facts](/uploads/2019/chickenfactslogo.thumbnail.png)](https://chickenfacts.io){: .thumbnail}
+{{< link href="https://chickenfacts.io" img="/uploads/2019/chickenfactslogo.thumbnail.png" alt="ChickenFacts" >}}
+Chicken Facts
+{{< /link >}}
 
-### Jekyll
+## Jekyll
 
 First, I decided to use the static site generator [Jekyll](https://jekyllrb.com).  This is the same software that I use to build my own blog.  Jekyll takes markdown and html and creates flat files to be served.
 
@@ -28,8 +30,8 @@ The "API" is really just a set of flat files that are generated with Jekyll as w
 
 Here's an example:
 
-**`_posts/2019-06-02-6.html`**  
-```
+{{< filename-header "_posts/2019-06-02-6.html" >}}
+```yaml
 ---
 layout: json
 source: https://www.thefactsite.com/chicken-facts/
@@ -42,8 +44,7 @@ This, and all of its siblings, are brought into the `page` variable when they're
 
 Then, I created the layout called `json` with the following markup:
 
-{% raw %}
-```
+```yaml
 ---
 ---
 {
@@ -53,8 +54,6 @@ Then, I created the layout called `json` with the following markup:
   "published": {{ page.date | date: "%Y-%m-%d" | jsonify }}
 }
 ```
-{% endraw %}
-
 
 This basically takes the information from the post/page, and then generates a file output of it.  By default, it would be in a posts folder with an html extension.  I changed that in the *`_config.yml`* file:
 
@@ -80,7 +79,7 @@ Now, file **`_posts/2019-06-02-6.html`** is created in the `/api/v1/facts/22.jso
 
 Since these are flat files, no back end DB is required.  So, a request to `https://chickenfacts.io/api/v1/facts/22.json` will just serve a static file that appears like a JSON API.
 
-### CSS
+## CSS
 
 I used just basic SASS to create a nice CSS stylesheet.  The goal was to rely on browser defaults when I could, but customize only what I needed.
 
@@ -136,7 +135,7 @@ The concept is that the input checkbox will handle the toggling of this display.
 
 Basically, the content and the input box is hidden.  The label is the main clickable part.  When the input is state checked, then we change the height of the content.  A bit of CSS transition and it works real nice: an expanding/contracting box with animations with no Javascript.
 
-### Javascript
+## Javascript
 
 Finally, the app.  Like I said, I just decided to support the most recent evergreen browsers.  The Javascript is pretty simple:
 
@@ -178,7 +177,7 @@ Finally, the app.  Like I said, I just decided to support the most recent evergr
     .catch(function(err) {
       error(err);
     });
-})({% raw %}{{ site.posts | size }}{% endraw %}});
+})({{ site.posts | size }}});
 ```
 
 A couple things to note, here.  First of all, this is an anonymous self executing function.  The reason there is front matter yaml in here is I wanted to pass in the total amount of posts that are available.  This way I can pick a random value that will exist.
@@ -187,21 +186,21 @@ Next, it determines if there is a base 32 number in the pathname.  That would gi
 
 Then, we use the `fetch` browser API to request the JSON endpoint, parse it, and pass it to apply fact.  This basically just retrieves the existing markup, passes in data, and changes some classes.
 
-### Netlify Deploy
+## Netlify Deploy
 
 With this configuration, I told netlify to execute `jekyll build` as the build command and use the `_site` directory as the public directory.
 
 The only thing I had to do was add a redirect on any non-existent URL to the base index file.  I did that with the following configuration:
 
-**`netlify.toml`**  
-```
+{{< filename-header "netlify.toml" >}}
+```toml
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 ```
 
-### End Notes
+## End Notes
 
 There are many things I can do to make this better: a pagination API, better animations, share buttons, etc.  But, this proves that with very simple, open data, you don't need to use a heavy framework or a back end to serve your data.  Oh, and I have analytics on page load, but I really wouldn't know what is consuming the "API" without more data from Netlify.
 

@@ -14,7 +14,7 @@ So Facebook has been really cool in the way that they have designed and implemen
 
 I was recently faced with a task: Make our message system like facebook's.  OK - seems easy.  I implemented what I thought would be the solution -and it worked.  Sorta.  But now, I'm hearing there are bugs.  Uh oh.  ... I think I've fixed them all - but I started from scratch.  This is what I should have done.
 
-### Define the requirements
+## Define the requirements
 
 It's easy to say that the system should be like Facebook's.  However, how does FB actually handle the messages?  What does the user really experience in the UI/UX?  Let's define some requirements:
 
@@ -36,11 +36,11 @@ It's easy to say that the system should be like Facebook's.  However, how does F
 
   * You should not see a message in your inbox if you're the sender and there are no responses yet
 
-### So there are the specs, lets do this
+## So there are the specs, let's do this
 
 In order to demonstrate some of these features and practices, I'm going to have to jump ahead to the final product.  I will do my best to explain why I came up with those things, however
 
-#### Create the MySQL tables
+### Create the MySQL tables
 
 In order to keep the normalized feel of all of this, we'll need to create two tables.  The first table will be for the message itself.  It will contain the originator or author, when it was created, where it was created (IP), and the body of the message.  Side note: The tables will all be prefixed with a `2` because this is my second time trying to do this... hopefully this time is successful! :)
 
@@ -75,11 +75,11 @@ CREATE TABLE `message2_recips` (
 
 This table has the `mid`/`seq` identifier to point to the message that the users are receiving.  It then has the `uid` column - which is in a similar format to the` message2.created_by` column.  Finally, we have a `status` column - which will be `N` for new, `A` for active (or read) and `D` for deleted.  Two indexes are defined on this table.  These will not make sense until we look at the SQL that is used to generate the searches for messages.  We'll do that next.
 
-#### Creating the PHP
+### Creating the PHP
 
 For demonstration purposes, we're going to include a file called **`currentuser.php`**.  All this does is set the `$currentUser` variable to an integer.  In your full featured product, you'd probably use some sort of authentication/session system.  Here it is:
 
-**`currentuser.php`**
+{{< filename-header "currentuser.php" >}}
 ```php
 <?php
 $currentUser = 1;
@@ -88,8 +88,8 @@ $currentUser = 1;
 Now, the first view of the user will probably be their inbox.  If they have no messages to view, it has to say so.
 Note: I am using PDO and not a lot of security based programming in this example.  Please look at the concepts and don't just copy/paste the code.
 Second note: I am not really using valid HTML or pretty pages either.  The focus is on the PHP system in this case.
-    
-**`inbox.php`**
+
+{{< filename-header "inbox.php" >}}
 ```php
 <?php
 include ('currentuser.php');
@@ -103,7 +103,8 @@ $sql = "
 select m.mid, m.seq, m.created_on, m.created_by, m.body, r.status from message2_recips r
 inner join message2 m on m.mid=r.mid and m.seq=r.seq
 where r.uid=? and r.status in ('A', 'N')
-and r.seq=(select max(rr.seq) from message2_recips rr where rr.mid=m.mid and rr.status in ('A', 'N'))
+and r.seq=(select max(rr.seq) from message2_recips rr 
+where rr.mid=m.mid and rr.status in ('A', 'N'))
 and if (m.seq=1 and m.created_by=?, 1=0, 1=1)
 order by created_on desc";
 
@@ -143,7 +144,7 @@ Then, the rest is pretty simple.  All of the items are retrieved.  A loop is gen
 
 Now, let's actually view one of the messages.
 
-**`view.php`**
+{{< filename-header "view.php" >}}
 ```php
 <?php
 include ('currentuser.php');
@@ -214,16 +215,20 @@ The sql statement gathers the same information as the inbox and joins like the i
 It's important to note the importance of that last part of the where statement.  As per our requirements, it is possible to delete replies that we 'own'.  However, it can still happen that someone can reply after that and we will see more of the message, just not the parts we've decided to delete.  This is the reason for that statement.
 
 The statement is executed and if there are results, we continue on.  As per the requirements, we also need to get all of the users who this conversation is through.  We gather all of the distinct `uid` from the `recips` table where the message ID is the one we're looking at.  Then, using PHP, we gather them all into a numerically keyed array and POP off the last one.  Then, we can implode the array with commas - and then add the last one using `and`.  This way, if we have 4 recipients on this thread, it may look like this:
-    
-    1,2,3 and 4.
+
+```txt
+1,2,3 and 4.
+```
 
 If we only had two, it would look like this:
 
-    1 and 2
-    
+```txt
+1 and 2
+```
+
 Next, a table is built and all of the replies are listed.  An update statement is ran to update all of the 'New' replies as seen or 'Active' for the current user.  Finally, an update form is shown.  You can add a reply to the message using this form.  Note, the hidden input of the `mid` is in this form.  This posts to the file **`post.php`** - which is the same file that **`compose.php`** will post to.  We'll cover this later.  The final link on this page is the delete.php file.  It has the ID of the current message.  Let's take a look at this.
 
-**`delete.php`**
+{{< filename-header "delete.php" >}}
 ```php
 <?php
 include ('currentuser.php');
@@ -252,25 +257,27 @@ This is pretty simple.  Remember, we can't delete the message itself.  We can on
 
 In order to view our sent items, the layout is pretty similar to the inbox.php file.  However, the SQL statement changes.  I will show just that here:
 
-**`sent.php`**
+{{< filename-header "sent.php" >}}
+```sql
 ....snip...
 
-    select m.mid, m.seq, m.created_on, m.created_by, m.body, r.status 
-    from message2_recips r
-    inner join message2 m on m.mid=r.mid and m.seq=r.seq
-    where m.created_by=? and r.uid=?
-    and r.status != 'D'
-    and m.seq=(select max(rr.seq) from message2_recips rr 
-    where rr.mid=m.mid and rr.status != 'D' and rr.uid=?)
-    order by created_on desc
+select m.mid, m.seq, m.created_on, m.created_by, m.body, r.status 
+from message2_recips r
+inner join message2 m on m.mid=r.mid and m.seq=r.seq
+where m.created_by=? and r.uid=?
+and r.status != 'D'
+and m.seq=(select max(rr.seq) from message2_recips rr 
+where rr.mid=m.mid and rr.status != 'D' and rr.uid=?)
+order by created_on desc
     
 .... snip ....
+```
 
 As with every other statement, the message ID, sequence, date, owner, status and boy are gathered.  The message table is joined onto the `recips` table.  Then, it has to be created by the current user.  To match up the proper row, the `r.uid` matches the `m.created_by` as current user.  The `recip` record must also not be deleted.  Finally, the sequence number is the maximum from the replies where it is not deleted status and the message reply belongs to the current user.  This will show both messages where multiple replies are received and the current user is the last sender - as well as messages where the user is the only sender (unlike the inbox).
 
 Next, we have to make a new message form.  This will submit to **`post.php`** - the same as the replies to a current message.
 
-**`compose.php`**
+{{< filename-header "compose.php" >}}
 ```html
 <form action="post.php" method="post">
   To who (csv): <input type="text" name="uids"></input><br></br>
@@ -281,7 +288,7 @@ Next, we have to make a new message form.  This will submit to **`post.php`** - 
 
 Finally, we will add messages using the **`post.php`** file.  It will handle replies and new messages.  Depending on whether a message ID is being sent will determine if it is a new message or a reply.
 
-**`post.php`**
+{{< filename-header "post.php" >}}
 ```php
 <?php
 include ('currentuser.php');
@@ -364,6 +371,6 @@ If we previously had an empty message ID, it is a new message - so we'll get the
 
 The combined statement is now executed and the user is directed to look at the message they've created.
 
-### Ending Thoughts
+## Ending Thoughts
 
 While this is not yet a perfect/polished solution, I think it is further along the line.  Old message systems used to duplicate a lot of messages and not allow for multiple recipients.  I think this walks the line of being similar to the older systems but working with new paradigms.  Are there places where I could make this better?  Have any suggestions?  Please let me know. :)

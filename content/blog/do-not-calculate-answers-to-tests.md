@@ -10,7 +10,7 @@ Since you're a programmer, you're always looking for ways to be a bit more effic
 
 <!--more-->
 
-### Example
+## Example
 
 Let's say we have the following logical code.  These are obviously very contrived examples.
 
@@ -87,7 +87,7 @@ public function testMySpecialNumberNegative()
 
 Everything is going good now.
 
-### The Monkey Wrench
+## The Monkey Wrench
 
 Then someone says 'oh theres a problem with the code when we use 10' and so you go and write a unit test for 10.
 
@@ -105,7 +105,7 @@ public function testMySpecialNumberDoubleDigit()
 
 Oh no!  You have an error now:
 
-```
+```txt
 Failed asserting that 10000000000 matches expected 1000.
 ```
 
@@ -150,7 +150,7 @@ Now we're passing again.  And I can hear the defense: "I'm using different mecha
 
 This code is not using different mechanisms fully.  It still is checking **if the incoming value is greater than 5 on both sides of the test**.  This is the problem.  If you're checking the same condition on both sides of the test, you're not actually testing anything at all.
 
-### Favor String Constants and Copy and Paste
+## Favor String Constants and Copy and Paste
 
 The goal of unit tests is to have a known answer and test it against some code you've written that is dynamic. Any time you use another calculation method, or building code, you're reducing the effectiveness of your tests.  You're now testing code on both sides of the equation.
 

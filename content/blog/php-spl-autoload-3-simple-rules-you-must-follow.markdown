@@ -8,11 +8,11 @@ While working on a larger site that I may need to use many external libraries, I
 
 <!--more-->
 
-Through some trial and error, I found out 3 absolutely necessary rules that need to be followed when building your custom autoload functions, however.  Lets examine:
+Through some trial and error, I found out 3 absolutely necessary rules that need to be followed when building your custom autoload functions, however.  Let's examine:
 
-### Our Example ... so far
+## Our Example ... so far
 
-**`index.php`**
+{{< filename-header "index.php" >}}
 ```php    
 class FW
 {
@@ -29,9 +29,9 @@ new Test();
     
 **existing files:**
 
-  * includes/Test.php
+  * `includes/Test.php`
 
-### Always check if the file is readable
+## Always check if the file is readable
 
 One great feature about the [`is_readable`](http://us3.php.net/is_readable) function in PHP is that it will not only check if the file exists, but also if the script has permission to read that file.  (No need to use `file_exists` and `is_readable` - `is_readable` can do it all).  In our example right now, this will work fine.  However, if I change the request to `new Test2()` which is a file that doesn't exist, PHP will generate a Warning and a Fatal Error - halting the script.  **Not checking if the file exists could potentially halt the script, including additional autoload functions.**
 
@@ -48,9 +48,9 @@ public static function autoload($class)
     
 Now, this autoload will include the file if it exists/is readable.
 
-Now, lets add in a full new directory called `test` which will contain a file **`Test2.php`** with the same named class.
+Now, let's add in a full new directory called `test` which will contain a file **`Test2.php`** with the same named class.
 
-### Custom autoload functions should not have a failure consequence
+## Custom autoload functions should not have a failure consequence
 
 I've seen this type of code a lot of times in autoload functions:
 
@@ -70,9 +70,9 @@ function __autoload($class)
     
 **You cannot do this if you want to successfully use SPL autoload!**  Remember, now its possible to add in more autoload functions.  Your surrounding framework code should be able to handle the error correctly if all the autoload functions fail to include the proper file.
 
-Lets add to our example.
+Let's add to our example.
 
-**`index.php`**
+{{< filename-header "index.php" >}}
 ```php
 class FW
 {
@@ -99,12 +99,12 @@ new Test2();
 
 **existing files:**
 
-  * includes/Test.php
+  * `includes/Test.php`
 
-  * test/Test2.php
+  * `test/Test2.php`
 
 Now, our example will try to execute the first autoload function.  It will exit this function after finding a false answer for `is_readable`.  Then, according to our `spl_autoload_register` function, the `autoload2` function gets executed, finds the file and loads it.
 
-### Unregister functions you don't need
+## Unregister functions you don't need
 
 The amazing function `spl_autoload_unregister()` is amazing.  Remember, the more autoload functions you have loaded, the longer it will take to find (or not find!) your file.  If there is only a specific block of code that requires an additional autoload functionality - add it - then remove it when done - so the script can continue.  The performance 'hit' for removing something from a stack is far less than invoking a function (and at least one other call like `is_readable()`).

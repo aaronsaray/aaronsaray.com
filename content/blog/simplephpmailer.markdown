@@ -10,6 +10,6 @@ There are a very small amount of really easy to implement PHP mailer scripts in 
 
 All that is needed is to drop the php file into the same area as your form, open it up, and read the instructions.  There are some straight forward configuration options with very easy to understand comments.  Download  it for your next quick project.
 
-[![](/uploads/2008/email.gif)](){: .thumbnail}{: .pull-right}
+{{< image src="/uploads/2008/email.gif" alt="Simple PHP Mailer" >}}
 
 [simplephpmailer.0.2.0](/uploads/2010/SimplePHPMailer.0.2.0.zip)

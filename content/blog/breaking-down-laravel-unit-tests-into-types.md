@@ -14,7 +14,7 @@ First of all, let's talk about the definitions of these terms. We're going to fo
 
 All of these things are broadly called unit tests.  Really, a more accurate way to refer to them would be automated tests.  The idea is that we write code to automatically test other code.  So, let's break down the types that I use in my Laravel project.
 
-### Unit Test
+## Unit Test
 
 A unit test is the simplest form of test. You write a test that takes the smallest part of a piece of code and tests the outcome from possible inputs.  Think the size of one method on a class - or a simple function.  A default Laravel project even provides a folder and example test for these.  Laravel's default `ExampleTest` in the `tests/Unit` directory doesn't even load the entire application kernel. It's meant to convey that these are the simplest forms of testing.
 
@@ -32,10 +32,10 @@ class User extends Authenticatable
 
 Our unit tests would be the very simplest version of this. I can think of a few cases... I want to test the output of `$user->getDisplayName()` when...
 
-* first_name is not empty, last_name has more than one character
-* first_name is not empty, last_name has 1 character
-* first_name is not empty, last_ name is empty
-* repeating these all with first_name being empty
+* `first_name` is not empty, `last_name` has more than one character
+* `first_name` is not empty, `last_name` has 1 character
+* `first_name` is not empty, `last_name` is empty
+* repeating these all with `first_name` being empty
 
 They're very simple tests of the smallest amount of code possible.  
 
@@ -64,7 +64,7 @@ See, just a quick small test - so it's a unit.
 
 Now, what if that Gate required that we query the database?  That's integration testing.
 
-### Integration Test
+## Integration Test
 
 I define an integration test as integrating two separate sets of contexts.  A context to me means one of our code, our database, our redis, etc...  This "concept" doesn't appear in the standard Laravel project install.
 
@@ -90,7 +90,7 @@ That last bullet point is an example of things that should be tested (are we sur
 
 Anyway, the point of integration tests are to test integrating our code with one other context. Most often, I find this to be the database layer. I will test scopes, gates, services that group together multiple actions and more. I just won't use a full set of user-provided (or mocked) inputs and measure outputs from the application. That's a feature test.
 
-### Feature Test
+## Feature Test
 
 A feature test is a way of saying a full end to end test in the context of our PHP code.  Provided this URL, user state, application state, and user input, what output do I get with what side effects? It's still in our 'unit test' umbrella in a way - so make sure you don't start moving from end point to end point in one test. (That's something different, outside the scope of this article.). You're testing an API end point, or a controller method, or a console command one time only.
 
@@ -138,7 +138,7 @@ Here we search for the term `what??` and tell the service to pretend it had quer
 
 You still need to test that your third-party or external dependencies are functioning as expected. But, you don't have to do this very often compared to how often you should be running the rest of your unit tests.  In fact, your core unit tests should **never** be hitting external services in my opinion.  (I tend to configure PHPUnit environment variables in the xml file to failing values, so that it doesn't accidentally load in my local environment's sandbox credentials and hits an endpoint without me knowing.) That's why we have a separate suite called external.
 
-### External Tests
+## External Tests
 
 Following along with our FooDotCom external service, let's talk about actually executing the search.  I tend to make a separate folder, a separate `phpunit.xml` file with the proper environment variables, but use the same framework as a feature test case.  By default, this won't run all the time. By using the Laravel tools, though, we can still achieve most of the things we need easily.  This is where we would test the different methods of how our service hits the external third party.  I might only run this on the `main` branch continuous integration - right before I deploy - to make sure that my third party hasn't changed on me.
 
@@ -160,7 +160,7 @@ public function testExecuteSearchFindsResults(): void
 }
 ```
 
-### End Notes
+## End Notes
 
 The point of breaking up these tests into different types is two fold.
 

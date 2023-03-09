@@ -9,19 +9,20 @@ PHPStorm has an option to install an icon for your Unity Dash on ubuntu - you ca
 
 <!--more-->
 
-Turns out, with PHPStorm.sh file, the next parameter is the URL for the directory/project to open.  So I made a number of launchers and played them in my applications directory.  Let me show you how:
+Turns out, with `PHPStorm.sh` file, the next parameter is the URL for the directory/project to open.  So I made a number of launchers and played them in my applications directory.  Let me show you how:
 
-**`/home/aaron/.local/share/applications/phpstorm-myproject.desktop`**
-    
-    [Desktop Entry]
-    Name=PHP MyProject
-    GenericName=PHP My Project
-    Comment=Run PHPStorm IDE with MyProject
-    Exec=/opt/PhpStorm-129.291/bin/phpstorm.sh ~/sites/myproject
-    Icon=/opt/PhpStorm-129.291/bin/webide.png
-    StartupNotify=true
-    Terminal=false
-    Type=Application
-    Categories=Programming;IDE;
+{{< filename-header "/home/aaron/.local/share/applications/phpstorm-myproject.desktop" >}}
+```ini
+[Desktop Entry]
+Name=PHP MyProject
+GenericName=PHP My Project
+Comment=Run PHPStorm IDE with MyProject
+Exec=/opt/PhpStorm-129.291/bin/phpstorm.sh ~/sites/myproject
+Icon=/opt/PhpStorm-129.291/bin/webide.png
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Programming;IDE;
+```
 
 Now, if you start to type something like "PHP" or "myproje" in the lens, you will be presented with this new icon.  You can launch multiple PHPStorm instances by opening multiple project links like this.  One "nice" thing is if you have the project open currently, it will switch to your instance of PHPStorm in that project instead of launching a new one.

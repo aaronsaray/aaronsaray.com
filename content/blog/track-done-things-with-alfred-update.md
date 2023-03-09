@@ -16,16 +16,14 @@ You can review some of [the instructions]({{< ref "/blog/track-done-things-with-
 
 The big changes are the second workflow.
 
-[![Workflow](/uploads/2019/did-this-workflow-screenshot-1-thumb.png)](/uploads/2019/did-this-workflow-screenshot-1.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2019/did-this-workflow-screenshot-1.png" thumb="/uploads/2019/did-this-workflow-screenshot-1-thumb.png" alt="Workflow" >}}
 
 In this case, it's the same keyword filter without a space and argument optional.  I created PHP script that gets all of the items file and builds the list.  Then, it also unshifts or prepends to the array the option to copy all to the clipboard.  As you can see, the arg is the entire clipboard content.  That will be the `query` moving forward.
 
-[![Functionality](/uploads/2019/did-this-workflow-screenshot-2-thumb.png)](/uploads/2019/did-this-workflow-screenshot-2.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2019/did-this-workflow-screenshot-2.png" thumb="/uploads/2019/did-this-workflow-screenshot-2-thumb.png" alt="Functionality" >}}
 
 I added a copy to clipboard workflow as well.  All it does is copy the query into the clipboard.  
 
-[![Clipboard widget](/uploads/2019/did-this-workflow-screenshot-3-thumb.png)](/uploads/2019/did-this-workflow-screenshot-3.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2019/did-this-workflow-screenshot-3.png" thumb="/uploads/2019/did-this-workflow-screenshot-3-thumb.png" alt="Clipboard widget" >}}
 
 From then on, I can paste this into the Basecamp request for today's work.  If I type `did` I can start adding something for today, I can review today's list, and I can copy all of today's content into a clipboard.
-
-

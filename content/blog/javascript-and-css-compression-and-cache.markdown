@@ -10,7 +10,7 @@ I've been researching caching and compression techniques for my external resourc
 
 <!--more-->
 
-### Steps to Optimize Assets
+## Steps to Optimize Assets
 
 There are a few steps I live by when I design my websites now.
 
@@ -26,7 +26,7 @@ These are my main rules.  This article, however, is going to focus on how I deal
 
 **Disclaimer:** The methods I'm going to describe here can be labor intensive.  When you build your own system, you should strive to make some of these automated.
 
-### Preparing CSS for deployment
+## Preparing CSS for deployment
 
 The first thing I do is create that subdomain.  For my site `example.com`, users can visit `http://example.com` for the content.  I create a subdomain called `assets.example.com` which is where I expect to get my content from.  I generally create a server alias in the main config.  This technically means that duplicate content could be served at both `assets.example.com` and `example.com`.  I finish up by adding the following lines to the **`.htaccess`** file:
     
@@ -47,8 +47,10 @@ I actually hold my css in a different folder in my architecture - not some place
 
 Next, I'll create a file called dev.php in the assets folder where I plan to test my css from.  So, this file is located at **`/var/www/html/css/dev.php`**.  It may contain this content:
 
-    header ('Content-type: text/css');
-    readfile('/var/www/public_source/main.css');
+```php
+header ('Content-type: text/css');
+readfile('/var/www/public_source/main.css');
+```
 
 So, now when I load my website, I can do the following to load my source css:
 
@@ -58,7 +60,7 @@ So, now when I load my website, I can do the following to load my source css:
 
 Of course, when the website is built and deployed, we will be using a different URL.
 
-Next, lets talk about compression of the CSS.  I use [CSS Tidy](http://csstidy.sourceforge.net/) to compress my code.  The code to invoke this is pretty simple.
+Next, let's talk about compression of the CSS.  I use [CSS Tidy](http://csstidy.sourceforge.net/) to compress my code.  The code to invoke this is pretty simple.
 
 ```php
 require 'csstidy-1.3/class.csstidy.php';

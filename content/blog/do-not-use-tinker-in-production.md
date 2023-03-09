@@ -9,7 +9,7 @@ I'll say it again: do not install Laravel Tinker in production, and certainly do
 
 <!--more-->
 
-### Why Not?
+## Why Not?
 
 There are a few reasons, but let's focus on just a few.  
 
@@ -21,11 +21,11 @@ Third, you might find that you're issuing background events or notifications wit
 
 So, I think the **tl;dr** of this is that the programming isn't versioned, and it's likely less tested.
 
-### But What About...?
+## But What About...?
 
 One of my pet peeves of 'best practice' advice is that they don't always address the real world issues we programmers run into.  So let's tackle the two most common issues I've ran into - and why a different solution works better.
 
-#### Tinker to Update Some Data
+### Tinker to Update Some Data
 
 Perhaps you have to convert some data.  It might seem simple to push out your updated code and then immediately jump into Tinker and just run a quick update of data.  You can easily grab all the models you need, update them, and save them.
 
@@ -51,7 +51,7 @@ DB::commit();
 
 Much harder to remember doing this when you are in Tinker.
 
-#### I need weird one-off reports for the boss
+### I need weird one-off reports for the boss
 
 I've had this come up a lot, too. The boss wants to know the answer to a question - NOW.  "How many users do we have in Oklahoma?".  Let's say you have a `User` model with a `HasMany` relationship to the `Address` model.  You might find yourself doing something like this in Tinker:
 
@@ -68,30 +68,30 @@ Instead, I recommend using a tool like [Metabase](https://metabase.com) which ca
 
 First, open up Metabase with the connection to your database.  Click **Ask a Question** and choose the **Simple Question**.
 
-[![Screenshot](/uploads/2021/metabase-report-1.jpg)](/uploads/2021/metabase-report-1.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2021/metabase-report-1.jpg" alt="Screenshot" >}}
 
 Choose the database of choice, and click the **Addresses** table.
 
-[![Screenshot](/uploads/2021/metabase-report-2.jpg)](/uploads/2021/metabase-report-2.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2021/metabase-report-2.jpg" alt="Screenshot" >}}
 
 Then, choose the **filter** option, and click **State** - select **is Oklahoma**.
 
-[![Screenshot](/uploads/2021/metabase-report-3.jpg)](/uploads/2021/metabase-report-3.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2021/metabase-report-3.jpg" alt="Screenshot" >}}
 
 Click **Add Filter**.
 
-[![Screenshot](/uploads/2021/metabase-report-4.jpg)](/uploads/2021/metabase-report-4.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2021/metabase-report-4.jpg" alt="Screenshot" >}}
 
 Now you'll see the addresses for Oklahoma.  
 
-[![Screenshot](/uploads/2021/metabase-report-5.jpg)](/uploads/2021/metabase-report-5.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2021/metabase-report-5.jpg" alt="Screenshot" >}}
 
 But, we want to **Summarize** this data - so click that button.  Click the Count option and choose Number of distinct values, and choose **User ID**.
 
-[![Screenshot](/uploads/2021/metabase-report-6.jpg)](/uploads/2021/metabase-report-6.jpg){: .thumbnail}{: .inline}
+{{< image src="/uploads/2021/metabase-report-6.jpg" alt="Screenshot" >}}
 
 Now you have your answer!
 
-### End Notes
+## End Notes
 
 I think Laravel Tinker is incredibly useful during development and testing.  But, you should not install it in production. Instead, use one-time scripts or commands, and use proper reporting tools.

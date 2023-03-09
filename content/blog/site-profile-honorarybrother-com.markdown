@@ -10,7 +10,7 @@ Goal: to create a site serving females that felt a specific male in their life d
 
 <!--more-->
 
-Technology:
+## Technology
 
 Zend Framework
 
@@ -26,7 +26,7 @@ This was also one of the first applications that I used the test email feature I
 
 For this project, I also used the "Simple Modal" overlay plugin with jQuery integration.
 
-Lessons Learned
+## Lessons Learned
 
 Whenever you send an email from a server but change the 'from' address to not match (ie, to replace the real from address with the senders), you deal with potential spam issues.  I did.
 
@@ -34,7 +34,10 @@ From a SEO point of view, I wasn't really aware of the types of things that thes
 
 From a market point of view, I think it was potentially a risky area to enter.  Markets where 'emotion' are concerned are not my specialty.  I'm a programmer!
 
-[![](/uploads/2012/Screenshot-at-2012-03-14-185705-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-185705.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-185713-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-185713.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-185842-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-185842.png){: .thumbnail}
-[![](/uploads/2012/Screenshot-at-2012-03-14-190442-150x150.png)](/uploads/2012/Screenshot-at-2012-03-14-190442.png){: .thumbnail}
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-185705.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-185705-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-185713.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-185713-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-185842.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-185842-150x150.png" alt="Screenshot" >}}
+
+{{< image src="/uploads/2012/Screenshot-at-2012-03-14-190442.png" thumb="/uploads/2012/Screenshot-at-2012-03-14-190442-150x150.png" alt="Screenshot" >}}

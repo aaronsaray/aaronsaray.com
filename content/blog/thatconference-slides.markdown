@@ -8,7 +8,7 @@ I'm currently at [ThatConference](http://thatconference.com) here at the Kalahar
 
 <!--more-->
 
-My talk is on wednesday at 1:00p.m.: your first five design patterns.
+My talk is on wednesday at 1:00p.m.: Your First Five Design Patterns.
 
 Slides will be posted here after the talk.
 

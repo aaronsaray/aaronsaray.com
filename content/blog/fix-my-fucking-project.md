@@ -16,18 +16,18 @@ It was a unique experience to craft this marketing content, though. I really lik
 
 Here is the full screenshot of the page:
 
-[![FixMyFuckingProject](/uploads/2021/fixmyfuckingproject.com.thumbnail.png)](/uploads/2021/fixmyfuckingproject.com.png){: .thumbnail}
+{{< image src="/uploads/2021/fixmyfuckingproject.com.png" thumb="/uploads/2021/fixmyfuckingproject.com.thumbnail.png" alt="FixMyFuckingProject" >}}
 
 The Calendly content was missing from the big screenshot, so I included an example of that here:
 
-[![FixMyFuckingProject Calendly](/uploads/2021/fixmyfuckingproject-calendly.thumbnail.jpg)](/uploads/2021/fixmyfuckingproject-calendly.jpg){: .thumbnail}
+{{< image src="/uploads/2021/fixmyfuckingproject-calendly.jpg" thumb="/uploads/2021/fixmyfuckingproject-calendly.thumbnail.jpg" alt="FixMyFuckingProject Calendly" >}}
 
 I did some pretty cool open graph work for it.  When you shared on iOS you saw this:
 
-[![FixMyFuckingProject iOS](/uploads/2021/fixmyfuckingproject-ios-share.jpg)](/uploads/2021/fixmyfuckingproject-ios-share.jpg){: .thumbnail}
+{{< image src="/uploads/2021/fixmyfuckingproject-ios-share.jpg" alt="FixMyFuckingProject iOS" >}}
 
 And here is some site's preview of a bunch of other open graph and sharing contnet:
 
-[![FixMyFuckingProject iOS](/uploads/2021/fixmyfuckingproject-og.thumbnail.jpg)](/uploads/2021/fixmyfuckingproject-og.jpg){: .thumbnail}
+{{< image src="/uploads/2021/fixmyfuckingproject-og.jpg" thumb="/uploads/2021/fixmyfuckingproject-og.thumbnail.jpg" alt="FixMyFuckingProject iOS" >}}
 
 The website was fixmyfuckingproject.com and now redirects to this blog entry for the duration of the registration period. I had also registered helpmyfuckingproject.com just in case.

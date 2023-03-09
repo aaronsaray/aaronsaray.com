@@ -38,7 +38,7 @@ const box = sizer({
 
 I said I liked this a bit more because it was more explicit. But something was still bothering me.  We both agreed that this probably still wasn't the right way, so he went back to using the `props` parameter.  I mentioned I felt like this was something akin to global variables and you were passing in more context, but something was still bothering me.  We moved on.
 
-### What Was Wrong With These?
+## What Was Wrong With These?
 
 I kept thinking that we weren't being explicit enough about this method.  We were requiring too much construction in one way, or in another way we were expecting specific object syntax.  Sure, with Typescript and/or React proptypes we could specify what we needed, but I think the issue is deeper.  With Typescript we require another layer of tooling (which I like, but I don't think is always required).  With proptypes, we pretty much are saying we can't solve this with properly constructed Javascript, it must be a React-based solution.  Again, that makes sense because we were working in React, but I feel like there's still something wrong here.
 
@@ -74,6 +74,6 @@ const palette = sizer(itemsDeep * 12, itemsWide * 4, itemsTall * 8);
 
 This is kind of a sloppy implementation of that, but it's used to demonstrate that this method is now more flexible.  
 
-### End Notes
+## End Notes
 
 Don't pass around more state and properties than you need to.  The reason we like componentized architecture so much is the fact that it can be very segregated and contained.  Components shouldn't have to understand how they're called or how they fit into something, especially if they're stateless.  Finally, be explicit with your method and function declarations when you can.  This makes it easier to read the code, but more importantly, is a way of self-documentation.

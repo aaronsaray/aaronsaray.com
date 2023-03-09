@@ -32,7 +32,7 @@ Domain names are on a first come – first serve basis.  It may make sense to re
 
 Generally, a shorter name is better.  Try not to use contractions or hard to spell words.  Too many acronyms, especially if it is not common in your industry can be confusing.
 
-Lets see an example.  Your company name is XYZ Stairs and Doors.  Your target market is North Eastern Wisconsin.
+Let's see an example.  Your company name is XYZ Stairs and Doors.  Your target market is North Eastern Wisconsin.
 
 _xyz.com_ – awesome – probably taken because it is so small – but would be easy to remember.
 

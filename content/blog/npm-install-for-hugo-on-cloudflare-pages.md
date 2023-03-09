@@ -9,7 +9,7 @@ You've created a nice Hugo-based theme which uses Node dependencies. Time to dep
 
 <!--more-->
 
-### Why
+## Why
 
 First of all, the why.  Why are you using Node dependencies?  Well that's simple - you might be using something like Bootstrap and you want to use ES Build to remove the code you're not using, tree shake, minify, etc.
 
@@ -19,7 +19,7 @@ No, not really.  By default, Cloudflare pages will understand you have Node modu
 
 Point is, there is a way to get this to work - but it's not the way I want to structure my code.
 
-### How Do You Do It?
+## How Do You Do It?
 
 Well, when you configure Cloudflare Pages, you can choose the Hugo preset which will set the command `hugo` as your build command.  Now, you have to customize this.  
 

@@ -17,4 +17,4 @@ For my projects at ("the triangle"), I applied a value of 7.  The standard log c
 
 The cool part about this now is that tortoiseSVN will gray out the OK button on your commit until you reach the minimum number of characters.
 
-_**Disclaimer:** yes, I know this is not secure.  Its actually just to be more of a reminder to make the log messages and not necessarily and audit-able security measure. _
+**Disclaimer:** yes, I know this is not secure.  Its actually just to be more of a reminder to make the log messages and not necessarily and audit-able security measure.

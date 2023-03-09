@@ -9,18 +9,20 @@ I remember a while ago hearing about a few theoretical collisions of the MD5 alg
 
 <!--more-->
 
-### What should I do?
+## What should I do?
 
-First of all - lets use [sha1](http://php.net/sha1) instead - equally as easy of a function to use - but much more secure.
+First of all - let's use [sha1](http://php.net/sha1) instead - equally as easy of a function to use - but much more secure.
     
 ```php
 echo sha1('test');
 ```
 
 **Output:**
-    
-    a94a8fe5ccb19ba61c4c0873d391e987982fbbd3
-    
+ 
+```txt   
+a94a8fe5ccb19ba61c4c0873d391e987982fbbd3
+```
+
 Next, disable it in php using `disable_functions` in your configuration:
 
 **`php.ini`**

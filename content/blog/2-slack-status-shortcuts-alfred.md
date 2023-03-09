@@ -8,11 +8,13 @@ I'm a huge fan of [Alfred](https://alfredadd.com) - but I had to upgrade to get 
 
 <!--more-->
 
-### The Slash Command
+## The Slash Command
 
 First, Slack has a built in functionality to set your status from any window you're typing in.  For example, if you wanted to set your status to lunch with a taco icon, you can run the following command:
 
-`/status :taco: I'm at lunch`
+```txt
+/status :taco: I'm at lunch
+```
 
 This is great to type, but can we do it even faster?  With Alfred's built in text-completion, it's easy.
 
@@ -22,13 +24,15 @@ I named my 'Slack Lunch Status', put the identifier as `!lunch` and the snippet 
 
 Now, when I'm in any window for slack, I can type `!lunch` and it posts the status message. I just have to hit enter.
 
-### API Workflow
+## API Workflow
 
 With workflows, you can make custom actions into an Alfred command.
 
 In this case, I want to be able to type the command and send a status directly to slack.  For example, when I engage Alfred, I want to type the following:
 
-`ss :taco: I'm at lunch`
+```txt
+ss :taco: I'm at lunch
+```
 
 To do this, first open Alfred Preferences and go to Workflows.
 

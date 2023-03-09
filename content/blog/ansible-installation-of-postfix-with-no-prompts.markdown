@@ -34,4 +34,4 @@ Here's an excerpt of the Ansible file.
   apt: name=postfix state=present
 ```
 
-Of course, remember to copy over your required **`postfix/main.cnf`** file after you're done, too.
+Of course, remember to copy over your required `postfix/main.cnf` file after you're done, too.

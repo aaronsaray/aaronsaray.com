@@ -9,9 +9,10 @@ QuickPic.dev was a site for quick edits, crops and touch-ups in your browser. Af
 
 <!--more-->
 
-[![QuickPic.dev](/uploads/2020/quickpic-1.png)](/uploads/2020/quickpic-1.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/quickpic-1.png" alt="QuickPic.dev" >}}
 
-### Initial Idea / Motivation
+## Initial Idea / Motivation
+
 The initial idea was to have a website where you could easily drop in an image and resize it, crop it or meme it. This came out of a few thoughts I had:
 
 * I loved generating memes online, but I hated that they were always watermarked for advertising
@@ -20,19 +21,21 @@ The initial idea was to have a website where you could easily drop in an image a
 * Sometimes I have it on my clipboard, sometimes on my desktop, sometimes just the URL. I wanted to easily drag or paste in my source - the tool should figure it out
 * I wanted to work on my Javascript and Vue, as well as demonstrate that you can edit images in the browser, you didn't need a backend to generate the download
 
-### Challenges
+## Challenges
+
 First of all, there are competitors out there (like Canva).  More and more big time people like Adobe, Google or Microsoft are allowing more editing as well in the browser.  
 
 Second, with all the work that this would take, I couldn't think of a monetization strategy besides ads. And I don't like ads (I block them myself).  I do give back to open source and host a number of free products already for the internet. I didn't want to add on more cost + load.
 
 Third, I have other ideas that I want to go after. I thought this was cool, but the fact that I haven't gotten back to it since I first started it kind of indicates that I'm not interested.
 
-### What Were the Cool Features?
+## What Were the Cool Features?
+
 Not only do I want to talk about the user-facing features, but I want to pin-point why those were technically interesting or difficult.
 
 First, and very least, I was super excited about using CSS animations to move over the logo from the center to the side, like this.
 
-[![Animated use of the tool](/uploads/2020/quickpic-2.gif)](/uploads/2020/quickpic-2.gif){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/quickpic-2.gif" alt="Animated use of the tool" >}}
 
 When you engaged the app, it would try to minimize the landing page information so you had the most useful information available.
 
@@ -48,23 +51,23 @@ Also, the image was zoomed if it was larger than the viewport. The original size
 
 Then you could download the image or open it in a new tab.  This was actually quite complicated because of the blob data that needed to be created from the post-processed canvas.  A lot of examples of image editing showed downloading it from a server, but I wanted to not send anything to the back-end.
 
-[![New Tab Example](/uploads/2020/quickpic-3.png)](/uploads/2020/quickpic-3.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/quickpic-3.png" alt="New Tab Example" >}}
 
-### Usage
+## Usage
 
 Let's see a quick animated gif of it being used.
 
-[![Animated use of the tool](/uploads/2020/quickpic-4.gif)](/uploads/2020/quickpic-4.gif){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/quickpic-4.gif" alt="Animated use of the tool" >}}
 
 And the final download from that.
 
-[![Animated use of the tool](/uploads/2020/quickpic-result.png)](/uploads/2020/quickpic-result.png){: .thumbnail}{: .inline}
+{{< image src="/uploads/2020/quickpic-result.png" alt="Animated use of the tool" >}}
 
-### Source Code
+## Source Code
 
 You can find the archived source code on [Github](https://github.com/aaronsaray/quickpic.dev).
 
-### What ToDo Was Remaining?
+## What ToDo Was Remaining?
 
 I had wanted to do the following things:
 
@@ -81,6 +84,6 @@ I had wanted to do the following things:
 * copy the image to the clipboard
 * alter the zoom that we chose to show the image on the screen
 
-### What Next?
+## What Next?
 
 Well, I'm going to let the domain expire and then this project is archived. You can grab the Github source if you'd like, or make a new copy of it. Let me know if you want to take it over sooner than it expires.

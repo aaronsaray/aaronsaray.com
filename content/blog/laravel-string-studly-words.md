@@ -13,7 +13,7 @@ To be clear, I wanted to convert something like `something-is-here` to `Somethin
 
 So, following the Laravel namespace convention, I created my own `Str` class which augments the existing one to add this functionality:
 
-**`app/Support/Str.php`**
+{{< filename-header "app/Support/Str.php" >}}
 ```php
 <?php
 /**

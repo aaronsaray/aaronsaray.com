@@ -8,41 +8,41 @@ Terms like web developer, web programmer, webapp developer, and software enginee
 
 <!--more-->
 
-> This is just a generalization. For every point I can make, there are always counter-points and things that don't fit the mold 100%.  Hopefully, this points you in the right direction, though.
+**This is just a generalization.** For every point I can make, there are always counter-points and things that don't fit the mold 100%.  Hopefully, this points you in the right direction, though.
 
-### Prefixes
+## Prefixes
 
 Prefixes are used to distinguish the focus of the role from others that are named similarly.  This is why you'll see the most common one, *web*, used to indicate that this role focuses mainly on the internet (eg web developer, web designer, web app programmer).You might also see *software* used to indicate a wider range of expertise beyond just the internet (eg software engineer, software developer).  
 
 There are no hard and fast rules for using any of these prefixes.  Generally, though, they focus on a realm (like the internet) or a cross-discipline role (software).
 
-### Nouns
+## Nouns
 
 These tend to indicate the level and discipline at which the role functions. Let's look at some examples:
 
-#### Web Designer
+### Web Designer
 
 The term designer indicates this role is focused on user-facing, visual functionality.  Some web designers can design and create attractive designs and interfaces with rich user experiences.  But, perhaps, they're unable to actually create the code required to represent them.  Others may have some rudimentary skills in design, but can also code the exact representation of what they created.
 
 Web designers are essential to develop a user-friendly website.  While other roles may have some overlap, designers tend to be talented at design whereas others are just skillful.  Designers tend not to focus on code, even the ones who are able to do it, and use it as a tool to get the design out the door and in front of the user.
 
-#### Web Developer
+### Web Developer
 
 Web developer is probably the broadest term available. It tends to indicate that someone is familiar with programming and coding enough to create standard functionalities of websites. A lot of web developers tend to either have design skills or, at least, heavy experience implementing other designs which they can pattern.
 
 As time has progressed, the web developer role tends to mean someone who can put together a website, potentially design it, host it, and set up other ancillary services should you need.  The jack of all trades, but not necessarily a master of any. For many people businesses, this is all the role and person they need.
 
-#### Web Programmer
+### Web Programmer
 
 The web programmer role tends to be more focused on the actual coding, architecting, structure and testing of websites. While they are sometimes referred to as web developers (and then, tend to have the skills of that role), they focus more on custom-coded solutions for unique business problems.  Put another way, a web developer might put together a blog for you, but a web programmer would create a unique application that manages your inventory, integrates with your third-party ERP, processes payments and follows your unique business process.
 
 Web programmers can suffer from the scourge of making things too difficult.  They are likely to want to invent a new way of doing something than cobble together a bunch of other nearly fully functioning tools. That's not to say that they won't use libraries and other shared code, but they tend to be best suited to combining things to make something unique. When your business is uniquely based on tech, you want a programmer.
 
-#### App Developer
+### App Developer
 
 This term tends to indicate that the developer or programmer focuses on mobile applications.  Lately, there have been many crossovers between technologies in web and apps, that you might also see this - especially prefixed with 'web' - to indicate a developer or programmer may be focusing on building websites that tend to appear function similarly to a desktop application.
 
-#### Software Engineer
+### Software Engineer
 
 This title indicates that the role probably has more experience than just a web application programmer.  They may be considered a full-stack developer (one who programs, designs, and implements software), or they might interact heavily with the systems and server teams.  The engineer title indicates that this role focuses on architecture along with programming. They're meant to look at the whole picture of the software implementation, not just the piece they are creating.
 

@@ -11,8 +11,8 @@ Normally I have multiple vm's running for various different projects - all of th
 
 First, check out the launcher I used:
 
-**`/home/aaron/.local/share/applications/vmware-myproject.desktop`**
-```
+{{< filename-header "/home/aaron/.local/share/applications/vmware-myproject.desktop" >}}
+```ini
 [Desktop Entry]
 Name=VMWare MyProject Toggle
 GenericName=VMWare MyProject Toggle

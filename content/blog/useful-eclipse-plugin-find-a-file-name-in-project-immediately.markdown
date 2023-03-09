@@ -9,14 +9,14 @@ Unfortunately, at #superdev, there are times when the `include_path` in PHP is c
 
 <!--more-->
 
-### Don't be Lazy - use 'Teh Google'
+## Don't be Lazy - use 'Teh Google'
 
 So for the longest time, I would determine what classes or functions were being used from the included file, and then do a search of the code base for `function functionName()` because I knew it would find that file ... eventually.
 
 Well, turns out, there is a better way.
 
-### go to File Eclipse Plugin
+## Go to File Eclipse Plugin
 
-[![](/uploads/2008/screenshot-300x177.jpg)](/uploads/2008/screenshot.jpg){: .thumbnail}
+{{< image src="/uploads/2008/screenshot.jpg" thumb="/uploads/2008/screenshot-300x177.jpg" alt="Screenshot" >}}
 
 I found this great plugin for eclipse: [GotoFile @ muermann.org](http://muermann.org/gotofile/).  I wish I had thought that this could be done - and searched earlier! heh.  Turns out this plugin adds a new menu to your search menu by which you can launch the dialog window.  Then, just start typing the name of the file and it live searches for you.  When you finally find it, just double click it - and it'll open up the file it found in your project.  It appears to work for any file in your project - which is amazing.  For more features and details, check out hte [GotoFile Eclipse Plugin Home Page](http://muermann.org/gotofile/).

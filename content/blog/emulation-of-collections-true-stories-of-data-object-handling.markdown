@@ -49,17 +49,19 @@ $myval =  $article->postedDate;
 
 As I was hoping, I got the desired response:
 
-    object(Collection)#1 (2) { ["title"]=>  string(13) "my test title" ["body"]=>  string(12) "My test body" }
-    
-    **Fatal error:** Uncaught exception 'Exception' with message 'Property postedDate was not found in the Collection.' in C:\DEVELOPMENT\temp\collection.php:10 Stack trace: #0 C:\DEVELOPMENT\temp\collection.php(25): Collection->__get('postedDate') #1 {main} thrown in C:\DEVELOPMENT\temp\collection.php on line 10
+```txt
+object(Collection)#1 (2) { ["title"]=>  string(13) "my test title" ["body"]=>  string(12) "My test body" }
 
-Ok, so it works... but the exception message isn't that helpful to me.  True, I know where the variable is, but lets face it, I'm lazy.  So, _what was the collection that caused the issue?_
+**Fatal error:** Uncaught exception 'Exception' with message 'Property postedDate was not found in the Collection.' in C:\DEVELOPMENT\temp\collection.php:10 Stack trace: #0 C:\DEVELOPMENT\temp\collection.php(25): Collection->__get('postedDate') #1 {main} thrown in C:\DEVELOPMENT\temp\collection.php on line 10
+```
+
+Ok, so it works... but the exception message isn't that helpful to me.  True, I know where the variable is, but let's face it, I'm lazy.  So, _what was the collection that caused the issue?_
 
 I tried some experiments with the `get_class()` function - but wasn't able to retrieve the actual name of the instance variable (any takers on how this can be done?).
 
 At any rate, another thing to keep in mind is that **we can now extend our collections to be object specific**
 
-Following our example above, we have two solutions for this - simple OO extension or write an adaptor class.  Lets try both.
+Following our example above, we have two solutions for this - simple OO extension or write an adaptor class.  Let's try both.
 
 ```php
 class DatedArticle extends Collection
@@ -86,7 +88,9 @@ print $article->title . ' was posted on ' . $article->getDate();
 
 As expected, this prints out:
 
-    my test title was posted on 06/26/2007
+```txt
+my test title was posted on 06/26/2007
+```
 
 As you can see, we were able to extend this `Collection` with our customized `DatedArticle`.  That class was smart enough to know about the lack of attribute throwing an exception - and was able to assign a default value in that case (not greatly data-integral-based, but who cares ;) proof of concept).
 
@@ -129,7 +133,7 @@ It functions exactly the same.
 
 When you start extending classes, some of the coding becomes far more implicit.  Because of this, it can be confusing (although somewhat more compact) code.  On the other hand, when doing a more explicit adapter pattern, you appear to generate more code - but its easier to follow?
 
-### Which is the best way to do it?
+## Which is the best way to do it?
 
 I'm going the adapter route... The reason is because I've learned some hard lessons on JEMDiary with too much extending - as well as I like explicit code.  It helps your team members jump in and figure out everything easier.  Finally, here's the kicker: If made correctly, Adapter Patterns don't need to be executed in a specific order.
 
@@ -140,9 +144,9 @@ $article = new DatedArticle(new ByLinedArticle(new Article()));
 $article = new ByLinedArticle(new DatedArticle(new Article()));
 ```
 
-### Bonus tip - Make use of the Null Object
+## Bonus tip - Make use of the Null Object
 
-Another programming paradigm refers to the null object.  In our case, instead of throwing an exception, lets say its perfectly acceptable to have nothing returned.  In this case, we're going to list trackbacks.  Why not just make a null object and have it return that?
+Another programming paradigm refers to the null object.  In our case, instead of throwing an exception, let's say its perfectly acceptable to have nothing returned.  In this case, we're going to list trackbacks.  Why not just make a null object and have it return that?
 
 ```php
 class Collection
@@ -177,11 +181,11 @@ foreach ($trackBacks as $t) {
 
 In this case, we'll output nothing to the screen - which is perfectly fine.   However, you might not want to allow `null` as a valid case... or its allowed, but it usually means there's a bug.  You may also not have the go ahead to modify all of the code to start handling exceptions.
 
-### You can use Null Objects as a troubleshooting tool.
+## You can use Null Objects as a troubleshooting tool.
 
-Now, lets say in our example, we know that each article should have an author, but we're not going to 'crash' if there is none.  We just will show the article with no by-line - but we CERTAINLY want to know about it.
+Now, let's say in our example, we know that each article should have an author, but we're not going to 'crash' if there is none.  We just will show the article with no by-line - but we CERTAINLY want to know about it.
 
-Lets modify the code:
+Let's modify the code:
 
 ```php
 class Collection
@@ -237,10 +241,12 @@ Why would we do it this way than just using a smart `isset()` call?  Well, now w
 
 Let's modify `NullObject` and our creation of null object.
 
-    /** Collection::__get **/
-      return new NullObject(debug_backtrace());
-    /** moving on **/
-
+```php
+/** Collection::__get **/
+  return new NullObject(debug_backtrace());
+/** moving on **/
+```
+`
 And then this:
 
 ```php
@@ -261,7 +267,7 @@ As you can see, I can now log a big backtrace to some sort of logging/reporting 
 
 All in all, its important to not over-complicate the situation, but there are many possibilities for using a good OO model.
 
-### UPDATE: Bonus Tip #2!
+## UPDATE: Bonus Tip #2!
 
 Who's guilty of code like this? I know I am!
 
@@ -274,9 +280,11 @@ if ($article->author != '') {
 
 Well, in this instance with our last example, we'll get this error:
 
-    **Catchable fatal error:** Object of class NullObject could not be converted to string in C:\DEVELOPMENT\temp\collection.php on line 52
+```txt
+**Catchable fatal error:** Object of class NullObject could not be converted to string in C:\DEVELOPMENT\temp\collection.php on line 52
+```
 
-Instead, lets just add in this special little magic method into `NullObject`:
+Instead, let's just add in this special little magic method into `NullObject`:
 
 ```php
 public function __toString()

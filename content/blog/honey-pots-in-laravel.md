@@ -9,7 +9,7 @@ When someone breaches the security of a web app, sometimes it's not discovered t
 
 <!--more-->
 
-### The Concept
+## The Concept
 
 Throughout normal usage of a web app, various different resources are accessed in an approved way. It becomes hard to determine if the resource is accessed by a truly authorized person or someone who's stolen authorization.  That's where canaries and honey pots come in.
 
@@ -21,15 +21,15 @@ Now, if we knew how they'd attack our system, we'd fortify that area, right?  Th
 
 So, one of the things you might do is to block anyone who tries to access that user record.
 
-### The Implementation in Laravel
+## The Implementation in Laravel
 
 Usually, the first thing people look at is the login or the user list end points of a Laravel application and try to fortify them.  I understand this knee-jerk reaction, and it's a useful activity, but it's not the only way to access these user resources.  Actually, I can't tell you what the other ways are - but a concentrated attacker will come up with one.  So, let's go deeper and consider the model itself.
 
-#### Hydrating a Restricted Model
+### Hydrating a Restricted Model
 
 Let's define the actual issue: **A user should not hydrate and retrieve the admin user ever. We don't use it, it's an ID of 1, and it's left as a canary. If someone is successful in hydrating this model, they are a bad actor.**  Ok, so how do we do this?  Let's go as low as the eloquent model itself.
 
-**`app/Observers/UserHoneyPotObserver.php`**
+{{< filename-header "app/Observers/UserHoneyPotObserver.php" >}}
 ```php
 <?php
 namespace App\Observers;
@@ -56,7 +56,7 @@ If the user that is retrieved matches our criteria (in this case, its the the ID
 
 This can be registered in the following file:
 
-**`app/Providers/AppServiceProvider.php`**
+{{< filename-header "app/Providers/AppServiceProvider.php" >}}
 ```php
 // snip
 public function boot()
@@ -69,7 +69,7 @@ public function boot()
 
 Now, there's an observer on this eloquent model that issues an event in the case that anyone, anywhere, has tried to hydrate and load this canary or honey pot user.
 
-#### Retrieving a Resource With Restricted Properties
+### Retrieving a Resource With Restricted Properties
 
 Let's imagine your application is built with regular users, admin users and system users.  System users are restricted and used to run system commands internally.  You do hydrate them in command line scripts, but you never want them retrieved by an end-user.  
 
@@ -77,7 +77,7 @@ In this architecture, we're going to imagine we have a route defined that binds 
 
 Let's make a middleware that we'll register on all routes.
 
-**`app/Http/Middleware/SystemUserHoneyPotMiddleware.php`**
+{{< filename-header "app/Http/Middleware/SystemUserHoneyPotMiddleware.php" >}}
 ```php
 <?php
 namespace App\Http\Middleware;
@@ -111,7 +111,7 @@ This middleware is an **after** middleware.  First, it runs all of the things th
 
 This is registered globally:
 
-**`app/Http/Kernel.php`**
+{{< filename-header "app/Http/Kernel.php" >}}
 ```php
 // snip
 class Kernel extends HttpKernel
@@ -125,8 +125,8 @@ class Kernel extends HttpKernel
 
 Now, all end points will look for system users being retrieved.  If they see it, they'll issue your honey pot or canary event and restrict access.
 
-### End Notes
+## End Notes
 
-This type of architecture is a **one off** decision to add things more forcefully and globally. Normally, I'd be careful to add observers to just the events I need. I'd register middleware only when necessary.  But, the idea of honey pot and canary testing is that you don't always know the areas where someone might attack you.  By programming "with a hammer" this way, you can catch things that fail outside of your planning.
+This type of architecture is a **one-off** decision to add things more forcefully and globally. Normally, I'd be careful to add observers to just the events I need. I'd register middleware only when necessary.  But, the idea of honey pot and canary testing is that you don't always know the areas where someone might attack you.  By programming "with a hammer" this way, you can catch things that fail outside of your planning.
 
 There are many solutions for your applications security.  Honey pot and canary testing is just one of them.

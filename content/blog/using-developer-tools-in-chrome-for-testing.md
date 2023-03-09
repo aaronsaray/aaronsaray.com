@@ -12,7 +12,7 @@ our internet connection speeds.
 
 <!--more-->
 
-### Getting to Developer Tools
+## Getting to Developer Tools
 
 If you've never used developer tools (you're probably not a frequent visitor to this blog, then - so - Welcome!), it's not as 
 complicated as it sounds.  And, you don't have to be a developer to delve into the tools that we use daily.  It's pretty simple.
@@ -25,21 +25,21 @@ First, open Google Chrome.  Then...
 
 If neither of these is working, click the hamburger menu on the right hand side of Chrome, go to `More Tools` and choose `Developer Tools.`
 
-[![Menu Option](/uploads/2016/developer-tools-testing-1.jpg)](/uploads/2016/developer-tools-testing-1.jpg){: .thumbnail .inline}
+{{< image src="/uploads/2016/developer-tools-testing-1.jpg" alt="Menu Option" >}}
 
 Once this happens, you should see the developer tools at the bottom of your current browser screen like this:
 
-[![Developer Tools](/uploads/2016/developer-tools-testing-2.jpg)](/uploads/2016/developer-tools-testing-2.jpg){: .thumbnail .inline}
+{{< image src="/uploads/2016/developer-tools-testing-2.jpg" alt="Developer tools" >}}
 
 By default, developer tools attaches to the bottom of your browser window (which consequently shortens the length of the content in the browser window).  You can also
 attach it to the right-hand side of your browser, or split it off into a separate window.  You can do this by clicking the 
 three dots at the top-right of the developer tools pane and choosing a different option from the dock side list.
 
-[![Pane options](/uploads/2016/developer-tools-testing-3.jpg)](/uploads/2016/developer-tools-testing-3.jpg){: .thumbnail .inline}
+{{< image src="/uploads/2016/developer-tools-testing-3.jpg" alt="Pane Options" >}}
 
-### Simulating Other Devices
+## Simulating Other Devices
 
->  Please note - I said _simulating_ and not _emulating_.  This is because Chrome will do the best to simulate how a touch screen 
+**Please note** I said _simulating_ and not _emulating_.  This is because Chrome will do the best to simulate how a touch screen 
 works and what the viewport looks like - but this is not the same as using the actual hardware or emulator software.  
 
 In order to simulate a different device in developer tools, it's a simple click or two.  (And I suppose this goes without 
@@ -47,7 +47,7 @@ saying, make sure your browser has loaded the website you want to test.)  To sta
 on developer tools (which look like a phone and tablet).  This will change the main window to the simulator screen (you'll notice that it probably
 changed size already.)
 
-[![Simulated devices](/uploads/2016/developer-tools-testing-4.jpg)](/uploads/2016/developer-tools-testing-4.jpg){: .thumbnail .inline}
+{{< image src="/uploads/2016/developer-tools-testing-4.jpg" alt="Simulated evices" >}}
 
 In my example, the site has been loaded with an iPad size.  At the top, you'll notice from left to right, the following things:
 
@@ -64,7 +64,7 @@ If you want to test something besides just the items in the drop down, you can c
 Besides quick screen-size changes, the simulator also changes the clicks to touch-events.  You'll notice that the mouse turns 
 to a finger sized circle, and that hover-over items do not work (as there is no hovering _yet_ in mobile).
 
-### Testing With Different Internet Speeds
+## Testing With Different Internet Speeds
 
 It's important to test with different internet speeds - I mean, not everyone has the mega cable internet or fiber connection 
 you have.  It's important to know where your audience resides in the average internet speed realm (meaning, do you have mainly people
@@ -72,16 +72,16 @@ with dial-up or do you expect only broadband users to use this - and then what t
 
 So, to change or _throttle_ your internet speed in developer tools, select the Network tab on the top of the developer tools pane.
 
-[![Network connection](/uploads/2016/developer-tools-testing-5.jpg)](/uploads/2016/developer-tools-testing-5.jpg){: .thumbnail .inline}
+{{< image src="/uploads/2016/developer-tools-testing-5.jpg" alt="Network connection" >}}
 
 In the menu row below, there is a drop down that is set to 'No throttling' - click this and choose a different speed setting.
 
-[![Speeds](/uploads/2016/developer-tools-testing-6.jpg)](/uploads/2016/developer-tools-testing-6.jpg){: .thumbnail .inline}
+{{< image src="/uploads/2016/developer-tools-testing-6.jpg" alt="Speeds" >}}
 
 Here you'll see different speed options.  I suggest using no throttling for one test, using a DSL connection, and then using
 something like a regular 2G connection at least.
 
-### End Notes
+## End Notes
 
 So, the best way to test these things is with the real hardware and with different internet connections.  However, if you don't have
 access to these things, or you want to do one quick check, this should do the trick for you.

@@ -22,23 +22,23 @@ This obfuscated code is doing something bad, but we don't know what at first gla
 
 First, the `$zgjv56` variable has unique letters and numbers and an underscore.  It looks like `$fzba02` is created by picking out various offsets (remember, you can access a character of a PHP string in the same manner as you might query an array index).   It's weird that it's calling `strtolower()` though - because all the values are lower.  So, let's figure out what the value of `$fzba02` actually is.
 
-> Important note: When you're testing PHP code that you're unsure of, run it in a sandboxed virtual machine that has no access to the internet or your local device.
+**Important note:** When you're testing PHP code that you're unsure of, run it in a sandboxed virtual machine that has no access to the internet or your local device.
 
-```
+```txt
 php > $zgjv56 = "o_esb4da6ctp";
-php > $fzba02= strtolower( $zgjv56[4].$zgjv56[7].$zgjv56[3].$zgjv56[2] . $zgjv56[8].$zgjv56[5].$zgjv56[1] . $zgjv56[6]. $zgjv56[2].$zgjv56[9].$zgjv56[0].$zgjv56[6].$zgjv56[2] );
+php > $fzba02 = strtolower( $zgjv56[4].$zgjv56[7].$zgjv56[3].$zgjv56[2] . $zgjv56[8].$zgjv56[5].$zgjv56[1] . $zgjv56[6]. $zgjv56[2].$zgjv56[9].$zgjv56[0].$zgjv56[6].$zgjv56[2] );
 php > echo $fzba02;
 base64_decode
 ```
 
 Ah - so the variable is the value `base64_decode` - nice.  
 
-> Why random variable names and why `base64_decode`? The random variable names make it harder to understand what the code is doing. It's like the difference between using `$counter` and `$c` - one is more obvious than the other.  The base 64 encoding is done most likely for a weak obfuscation attempt again.
+**Why random variable names and why `base64_decode`?** The random variable names make it harder to understand what the code is doing. It's like the difference between using `$counter` and `$c` - one is more obvious than the other.  The base 64 encoding is done most likely for a weak obfuscation attempt again.
 
 The next line creates another variable based off of our initial string - let's check it out:
 
-```
-php > $gfc4 =strtoupper ( $zgjv56[1]. $zgjv56[11].$zgjv56[0]. $zgjv56[3].$zgjv56[10] ) ;
+```txt
+php > $gfc4 = strtoupper ( $zgjv56[1]. $zgjv56[11].$zgjv56[0]. $zgjv56[3].$zgjv56[10] ) ;
 php > echo $gfc4;
 _POST
 ```

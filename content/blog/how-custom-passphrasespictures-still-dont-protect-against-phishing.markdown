@@ -8,11 +8,11 @@ As you probably remember, I have lots of interest in phishing techniques (I talk
 
 <!--more-->
 
-I'm going to demonstrate a method of phishing the passphrase version.  I don't want to do a picture example because it a) takes more code and b) more people have moved to that thinking it is more secure.  Lets go:
+I'm going to demonstrate a method of phishing the passphrase version.  I don't want to do a picture example because it a) takes more code and b) more people have moved to that thinking it is more secure.  Let's go:
 
-First off, all phishing starts with getting the user to a login page not at the respected domain.  So, lets just skip that step, and examine our login page.  This will be a duplicate of our real site's login page - note the reminder that they will have to verify their passphrase.
+First off, all phishing starts with getting the user to a login page not at the respected domain.  So, let's just skip that step, and examine our login page.  This will be a duplicate of our real site's login page - note the reminder that they will have to verify their passphrase.
 
-**`login.php`** @ fakedomain.com
+{{< filename-header "http://fakedomain.com/login.php" >}}
 ```html
 <form action="login2.php" method="post">
   <label>Username: <input name="username"></input><br></br>
@@ -24,9 +24,9 @@ First off, all phishing starts with getting the user to a login page not at the 
 
 Very simple login which sends it to another page - hopefully named the same as the real domain's login page.
 
-Lets look at the page we'll be submitting to:
+Let's look at the page we'll be submitting to:
 
-**`login2.php`** @ fakedomain.com
+{{< filename-header "http://fakedomain.com/login2.php" >}}
 ```php    
 /** cutting out a lot of code - make sure its not empty, etc **/
 $args = array ('username'=>$_POST['username']);

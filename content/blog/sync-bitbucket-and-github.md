@@ -16,16 +16,16 @@ Turns out, since my workflow is almost 100% from the same laptop, a simple edit 
 
 I've decided to do this to keep my copies in sync: Add a pushURL for both BitBucket and GitHub.  Here is the before version:
 
-**`.git/config`**
-```
+{{< filename-header ".git/config" >}}
+```txt
 [remote "origin"]
     url = git@bitbucket.org:account/wordpress-plugin.git
 ```
         
 and now add a pushURL for both your repos.  Here is the after version:
 
-**`.git/config`**
-```
+{{< filename-header ".git/config" >}}
+```txt
 [remote "origin"]
     url = git@bitbucket.org:account/wordpress-plugin.git
     pushURL = git@bitbucket.org:account/wordpress-plugin.git

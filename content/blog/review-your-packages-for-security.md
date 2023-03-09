@@ -10,13 +10,13 @@ Open source software is wonderful for many reasons.  One of the best is we can s
 
 <!--more-->
 
-> It's important to note that this attack vector is not solely a problem with Laravel.  A lot of projects and code are configured to trust libraries from the package providers.
+It's important to note that this attack vector is not solely a problem with Laravel.  A lot of projects and code are configured to trust libraries from the package providers.
 
-### My Initial Set Up
+## My Initial Set Up
 
 I have a website on which I sell shoes.  For example, I have this extremely boring listing for a pair of flip flops:
 
-[![Text-based Stars](/uploads/2019/security-demo-1.thumbnail.png)](/uploads/2019/security-demo-1.png){: .thumbnail}
+{{< image src="/uploads/2019/security-demo-1.png" thumb="/uploads/2019/security-demo-1.thumbnail.png" alt="Text-based Stars" >}}
 
 I'd like to add icon-style stars to the rating.  I heard about this awesome package that allows me to use a Blade directive to do that.  Seems like a nice way to save some time.  The following command is ran:
 
@@ -32,7 +32,7 @@ Before you know it, I have a new Blade helper - yay!  Now, I can write the code 
 
 I get a nice view like this:
 
-[![UTF8-Icon-based Stars](/uploads/2019/security-demo-2.thumbnail.png)](/uploads/2019/security-demo-2.png){: .thumbnail}
+{{< image src="/uploads/2019/security-demo-2.png" thumb="/uploads/2019/security-demo-2.thumbnail.png" alt="UTF8-Icon-based Stars" >}}
 
 This is great! Moving on!
 
@@ -60,7 +60,7 @@ class StarDisplayServiceProvider extends ServiceProvider
 
 Whew - I dodged a bullet!  This package has no malicious code
 
-### It's Upgrade Season
+## It's Upgrade Season
 
 There's an upgrade for this package.  It probably gives me more features or makes it more efficient? I don't have time to check into this.  So, the package gets updated.  Everything seems to be working fine.  However, during this upgrade, the service provider has changed (and I didn't notice).  There's a new line:
 
@@ -92,11 +92,13 @@ This code is accessing the Monolog `Logger` instance and adding another stream h
 
 Not a big deal? You never know... you might have a log entry like:
 
-`logger('User sensitive information here.')`
+```txt
+logger('User sensitive information here.')
+```
 
 or the application could be configured to log errors.  These stack traces could include passwords and secret keys.
 
-### Another Upgrade
+## Another Upgrade
 
 Just by downloading this newly publicly available log file, the attacker has useful information about my users and app.  But, the fact that the log even exists indicates that I use their package and don't care about reviewing it for security.
 
@@ -144,7 +146,7 @@ class StarDisplayServiceProvider extends ServiceProvider
 
 In this code, the bad guy replaces the `Authenticate` (which is aliased to `auth`) middleware with an inline closure.  When we check `auth`, instead of running any sort of checks, this code just grab the bad guy user and force them to be logged in.
 
-### End Notes
+## End Notes
 
 These were some pretty contrived examples, but it should illustrate the point. I wanted to demonstrate how it's important for us all to read the code before we install and upgrade packages.  Through these demonstrations, I hope to have shown that a pretty unskilled attacker can compromise your website with just a few lines of code in Laravel.
 

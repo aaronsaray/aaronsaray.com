@@ -17,13 +17,13 @@ First, let's break down what we want to do.  We want to make a website - for som
 
 Next, with that information, you want to build a plain, simple vanilla JS app that inserts that information into a page and you're set.  (I'm building it in plain javascript - but this works with any Javascript framework - I didn't want to get distracted with things like React vs Vue).  Also, there are many ways to make this JS / HTML. The point is we're focusing on the most simplest way of demonstrating the Netlify functions. Don't get stuck on the other things.
 
-### First, let's build out our HTML/JS
+## First, let's build out our HTML/JS
 
 I'm going to assume that you're familiar with connecting Netlify to your Github repository and configuring it to deploy your code.  If not, you can check out their [great article here](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/).
 
 Let's take a look at our file.
 
-**`index.html`**
+{{< filename-header "index.html" >}}
 ```html
 <!DOCTYPE html>
 <html>
@@ -67,11 +67,11 @@ This means we're not going to be able to load this API as is.  (You can read mor
 
 So, we need to make a proxy with Netlify's functions.  (If you need, you can check out more about [Netlify functions here](https://docs.netlify.com/functions/overview/)).  Point is, we need to make a function that retrieves this data, then returns it to us in a way that we can deal with.
 
-### Building the Netlify Function
+## Building the Netlify Function
 
 I'm going to name my function `chickenfacts-facts` because I want the name to indicate the service I'm proxying and the end point I'm retrieving. I'll place it in a folder called `netlify/functions`. I'll name a folder `chickenfacts-facts` and the file will be called `index.js`. (Note: it is a synchronous function, otherwise we'd append `-background` to the name of the folder.)
 
-**`netlify/functions/chicken-facts/index.js`**
+{{< filename-header "netlify/functions/chicken-facts/index.js" >}}
 ```javascript
 exports.handler = async () => {
   return {
@@ -99,14 +99,14 @@ So, the last step is that we need to retrieve the API data and send it back inst
 
 In order to do this, I'm going to need to install something like [node-fetch](https://www.npmjs.com/package/node-fetch) to use my favored fetch-style async behavior.  I can install the NPM package (now you can see why it's good to have a folder named after the function - now we can have a `package.json` with the function to instruct on the dependencies). We're going to use version 2 as it supports CommonJS.
 
-```
+```bash
 cd netlify/functions/chickenfacts-facts
 npm i node-fetch@2
 ```
 
 Make sure to commit your `package.json` and lock file as well.  We also have to tell Netlify to install this for us during function build.  There are a number of ways to do this, but the easiest I found was to create a `netlify.toml` file at the root of your project - if you don't already have one - and add a line to install the plugin to install function requirements.
 
-**`netlify.toml`**
+{{< filename-header "netlify.toml" >}}
 ```toml
 [[plugins]]
   package = "@netlify/plugin-functions-install-core"
@@ -116,7 +116,7 @@ Now, Netlify will do the install during deploy.
 
 Let's move on to modifying our function.
 
-**`netlify/functions/chicken-facts/index.js`**
+{{< filename-header "netlify/functions/chicken-facts/index.js" >}}
 ```javascript
 const fetch = require('node-fetch')
 
@@ -143,6 +143,6 @@ We now import the `node-fetch` library and make a request and process the JSON o
 
 **Success!** Now, we retrieve our data through a proxy using Netlify functions (still for free!) and can bypass the lack of appropriate CORS settings. No more error!
 
-### End Notes
+## End Notes
 
 You should keep in mind that you can use this to hide your authentication or API keys (you can find out [more here](https://docs.netlify.com/functions/build-with-javascript/)) - but you should be careful as there are no limitations on this. It's up to you to lock down CORS on your own end point - as well as do any rate limiting or anything else to restrict abuse of your own functions.

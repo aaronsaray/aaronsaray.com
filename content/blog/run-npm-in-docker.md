@@ -16,7 +16,7 @@ Enter Docker - the way I should have been doing this to begin with.
 
 One simple command line script, and I'm now using npm inside of docker.  Here it is:
 
-**`bin/npm`**
+{{< filename-header "bin/npm" >}}
 ```bash
 #!/usr/bin/env bash
 

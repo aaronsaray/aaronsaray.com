@@ -5,7 +5,7 @@ tag:
 - css
 - php
 ---
-This is more of a proof of concept than anything else - as most of my scripts are ;)  But, lets say you have some files that have css in them, either external stylesheets, internal one with style tags or even style attributes - and you need to update the browser support.  Wouldn't it be great to have a tool that could look through these files and point out that there are incompatibilities?
+This is more of a proof of concept than anything else - as most of my scripts are ;)  But, let's say you have some files that have css in them, either external stylesheets, internal one with style tags or even style attributes - and you need to update the browser support.  Wouldn't it be great to have a tool that could look through these files and point out that there are incompatibilities?
 
 <!--more-->
 
@@ -393,11 +393,11 @@ Ok – that's the class and an example how to use it. I would be lying if I didn
 
 Off the top of my head, here are some todo's:
 
-    @todo support selector differences
-    @todo support attribute/value combo inequalities
-    @todo could break out into a css locator and a compatibility checker
-    @todo could make a class to do directory iteration and check for files
-    @todo output could be formatted/csv or anything
-    @todo point to the actual incompatibility
-    @todo handle multiple version compares
-    @todo add in many more supported attributes
+* support selector differences 
+* support attribute/value combo inequalities 
+* could break out into a css locator and a compatibility checker 
+* could make a class to do directory iteration and check for files 
+* output could be formatted/csv or anything 
+* point to the actual incompatibility 
+* handle multiple version compares 
+* add in many more supported attributes

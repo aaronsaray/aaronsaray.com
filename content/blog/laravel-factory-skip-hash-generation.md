@@ -11,7 +11,7 @@ This isn't a one-size-fits-all suggestion, but it's a start to help you think ab
 
 I've generated a User Model factory.  It ends up looking something like this:
 
-```php?start_inline=true
+```php
 $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
   return [
     'first_name' => $faker->firstName,
@@ -26,7 +26,7 @@ This looks all fine and dandy until you realize that if you generate 100 models,
 
 So, instead, pre-calculate the hash and just use a string. It's only test data! (In this case, I like to comment out my actual code I used to create the hash as a mechanism to explain what is going on here.)
 
-```php?start_inline=true
+```php
 $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
   return [
     'first_name' => $faker->firstName,

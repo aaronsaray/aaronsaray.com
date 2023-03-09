@@ -9,7 +9,9 @@ Running a test, I ran into this error:
 
 <!--more-->
 
-    Zend_Session_Exception: Session must be started before any output has been sent to the browser; output started in /usr/share/php/PHPUnit/Util/Printer.php/173
+```txt
+Zend_Session_Exception: Session must be started before any output has been sent to the browser; output started in /usr/share/php/PHPUnit/Util/Printer.php/173
+```
 
 In order to solve that, I added a line calling `ob_start()` to my test bootstrap file.  
 

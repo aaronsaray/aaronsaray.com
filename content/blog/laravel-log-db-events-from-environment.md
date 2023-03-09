@@ -36,7 +36,7 @@ This set's the value of the config option `app.log_queries` to whatever is in yo
 
 Finally, whenever you want to enable your local logging of database queries, you can add the following line to your local **`.env`** file:
 
-```yml
+```env
 LOG_QUERIES=true
 ```
 

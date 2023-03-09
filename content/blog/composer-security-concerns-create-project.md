@@ -12,7 +12,9 @@ One of the lesser known pieces of functionality from [Composer](https://getcompo
 
 But, there is a security concern lurking around the corner.  Try creating this project on a Mac:
 
-`composer create-project aaronsaray/composer-mac-security-demonstration`
+```bash
+composer create-project aaronsaray/composer-mac-security-demonstration
+```
 
 What did you hear?  This project created some files on your local machine, and then executed the `say` command to speak to you.  I doubt that was something you had wanted to happen.  Using the `say` command was just a demonstration.  Technically, we could execute a lot of commands, actually.  Good thing you're [not running composer as root](https://getcomposer.org/root), right?
 
@@ -26,7 +28,7 @@ You might have noticed that this was demonstrated using the `create-project` fun
 
 Naw, I just thought it'd be fun to demonstrate this using the Mac's `say` command. Really, it could execute any command.
 
-### This Isn't the End
+## This Isn't the End
 
 There are more opportunities to take advantage of in the Composer ecosystem.  Imagine someone creating a [custom installer plugin](https://getcomposer.org/doc/articles/custom-installers.md) and dropping it into packages that you trust. 
 

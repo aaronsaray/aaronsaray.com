@@ -14,7 +14,7 @@ But, I think test coverage is not a great metric actually.  See, test coverage s
 
 Let me show an example (albeit very contrived).
 
-**`app/models/Chicken.php`**  
+{{< filename-header "app/models/Chicken.php" >}}
 ```php
 <?php
 namespace App\Models;
@@ -40,11 +40,11 @@ In this case, we want to test our `whatItDoes` method.
 
 Right now, we don't have test coverage:
 
-[![No Coverage](/uploads/2019/code-coverage-1.png)](/uploads/2019/code-coverage-1){: .thumbnail}
+{{< image src="/uploads/2019/code-coverage-1.png" alt="No Coverage" >}}
 
 Now, let's introduce our test.
 
-**`tests/Unit/Models/ChickenTest.php`**  
+{{< filename-header "tests/Unit/Models/ChickenTest.php" >}}
 ```php
 <?php
 namespace Tests\Unit\Models;
@@ -70,7 +70,7 @@ This test _should_ test the `whatItDoes` method as well as provide testing for t
 
 First, they check that it's an array.  Then, they check that its not empty.  Then, the count of items. Finally, they test what it does.  I think we could get rid of the `is_array` test because we're already using types.  Not empty can go away because we're using count.  Let's run it and see what we get for coverage.
 
-[![100% Coverage](/uploads/2019/code-coverage-2.png)](/uploads/2019/code-coverage-2){: .thumbnail}
+{{< image src="/uploads/2019/code-coverage-2.png" alt="100% Coverage" >}}
 
 Now, we have 100% code coverage for this test. Yay!
 

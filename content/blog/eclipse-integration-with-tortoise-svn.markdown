@@ -6,7 +6,7 @@ tag:
 - ide-and-web-dev-tools
 - svn
 ---
-I generally don't like to be tied to a specific IDE when developing.  Additionally, I like to have my choice in using tools to manage my source control (tortoisesvn, svn command line, etc).  I just think this is the open-source way - it seems to be just a more free-spirited way of developing and managing projects.  With this in mind, I've been looking for ways to integrate my SVN into my current IDE (Eclipse PDT) but not limit myself from accessing my SVN repositories from the file system.  I've found a great plugin to help with this - so lets go over the specifics:
+I generally don't like to be tied to a specific IDE when developing.  Additionally, I like to have my choice in using tools to manage my source control (tortoisesvn, svn command line, etc).  I just think this is the open-source way - it seems to be just a more free-spirited way of developing and managing projects.  With this in mind, I've been looking for ways to integrate my SVN into my current IDE (Eclipse PDT) but not limit myself from accessing my SVN repositories from the file system.  I've found a great plugin to help with this - so let's go over the specifics:
 
 <!--more-->
 
@@ -18,7 +18,7 @@ In order to leverage some of the tools in Eclipse, without binding myself to my 
 
 **Install the Plugin**
 
-First off, download the zip file.  Put the unzipped folder in your plugins directory for eclipse and launch eclipse.  There.  All set.  Lets configure:
+First off, download the zip file.  Put the unzipped folder in your plugins directory for eclipse and launch eclipse.  There.  All set.  Let's configure:
 
 **Configure the plugin**
 
@@ -28,7 +28,9 @@ First off, go to Window > preferences > tortoise.
 
 Next, fill in the first field with the path to your tortoise executable.  Mine was:
 
-**`C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe`**
+```txt
+C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe
+```
 
 Finally, blank out the other two fields and click ok.  I honestly have no idea what they're used for... there didn't seem to be any difference between having them filled and not.   _If you know what they're for, feel free to leave a comment._
 

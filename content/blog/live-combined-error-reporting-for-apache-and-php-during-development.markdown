@@ -15,7 +15,7 @@ From time to time, I have to go back to my file system and check the php error l
 
 Another thing I knew would be nice to see would be the apache error log.  As I'm not combining my error logs with php, I don't often check the apache one.  However, local mistakes can cause errors on the production server too.
 
-Luckily, I was able to find a utility that made life easier - and of course - integrates into eclipse.  Lets configure:
+Luckily, I was able to find a utility that made life easier - and of course - integrates into eclipse.  Let's configure:
 
 **The meat: a perl script**
 
@@ -31,13 +31,17 @@ I opened up Eclipse's External Tools menu and made another external tool - I nam
 
 First thing's first, fill in your location of perl in the Location: dialog box.  I used:
 
-`C:\Program Files\Perl\bin\perl.exe`
+```txt
+C:\Program Files\Perl\bin\perl.exe
+```
 
 Next, the arguments box: fill in the rest of your command line.  I used:
 
-`c:\tools\logtail.pl c:\php\error.log "c:\program files\apache group\apache2\logs\error.log"`
+```txt
+c:\tools\logtail.pl c:\php\error.log "c:\program files\apache group\apache2\logs\error.log"
+```
 
-Finally, save it and click run.  You may see a console window appear the next time you have an error... why? Well lets checkout...
+Finally, save it and click run.  You may see a console window appear the next time you have an error... why? Well let's checkout...
 
 **The Gravy: Eclipse keeps it running in the background**
 

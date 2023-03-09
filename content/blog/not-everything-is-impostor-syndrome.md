@@ -14,7 +14,7 @@ I've had the experience of working with and being good friends with a few people
 
 I think the same thing is happening with Imposter Syndrome.  Don't get me wrong, this is a legitimate thing and people have it.  But, your uncomfortable feeling is not always this.  Let me demonstrate with two examples: one that is, and one that isn't.
 
-### Imposter vs Skill-Gap
+## Imposter vs Skill-Gap
 
 Jessica has been a web designer for the last 5 years at a specialty firm.  She decides to move on and go work for a competitor. They have been recruiting her heavily, everyone know's she's good, and she joins the new team. For the next few weeks, she barely produces anything worthwhile.  Every time she creates a beautiful design, she second, third, fourth guesses it, and then destroys it.  What is she doing here? She doesn't know how to design things.  Everyone can tell it, they see her designs and she just has to destroy them.  She can't believe that she's been faking it these last 5 years and was never any good.
 
@@ -26,7 +26,7 @@ The first example is Imposter Syndrome, in my opinion.  Objectively, we know Jes
 
 In the second example, Sara's experience is different.  She doesn't know what she's doing with this new technology stack.  **That's ok.**  Sometimes it's ok to not know everything, to admit you're lacking in areas.  Her questions about whether she is good enough are warranted and worthwhile.  She is demonstrating humility: really looking at her work to see if she can transition.  She'll work through it and become a great web designer.  Right now, though, she's experiencing the pain that we all feel when we are learning something new.  That's not a syndrome, that's just learning.
 
-### You May Not Be Experiencing Imposter Syndrome
+## You May Not Be Experiencing Imposter Syndrome
 
 When I decided to write this, I was actually a little bit scared. I didn't want it to be another article written by a dude who doesn't know anything or to come across like I didn't believe people's illnesses. I wanted to demonstrate, with great care, that this condition exists and people do experience it. However, just like ADHD and OCD, it can be bandied about way too easily.  You may not be experiencing this. Perhaps, you're just experiencing learning and growing.
 

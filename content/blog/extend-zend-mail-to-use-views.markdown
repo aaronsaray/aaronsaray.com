@@ -11,7 +11,7 @@ I love working in the Zend Framework view system.  One thing that bothers me, ho
 
 Before we begin, it's important to know the goal. The goal is to create a version of `Zend_Mail` that can read in views for both HTML and Text emails. In addition, since I am such a Unit Testing Fool, I want to make sure my new changes are testable.  For once, you're going to see a fully documented class!  I'll post the code here and then review it afterward.
 
-**`application/models/Mail.php`**
+{{< filename-header "application/models/Mail.php" >}}
 ```php
 <?php
 /**
@@ -137,4 +137,5 @@ $mail->setBody(
 $mail->send();
 ```
 
-This would load the layout from **`APPLICATION_PATH/layouts/scripts/emailtext.phtml`** and **`APPLICATION_PATH/layouts/scripts/emailhtml.phtml`**.  Then, the views would be rendered from **`APPLICATION_PATH/views/scripts/email.forgotpasswordhtml.phtml`** and **`APPLICATION_PATH/views/scripts/email.forgotpasswordtext.phtml`**
+This would load the layout from `APPLICATION_PATH/layouts/scripts/emailtext.phtml` and `APPLICATION_PATH/layouts/scripts/emailhtml.phtml`.  
+Then, the views would be rendered from `APPLICATION_PATH/views/scripts/email.forgotpasswordhtml.phtml` and `APPLICATION_PATH/views/scripts/email.forgotpasswordtext.phtml`

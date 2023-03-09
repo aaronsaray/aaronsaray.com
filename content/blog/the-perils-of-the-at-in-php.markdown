@@ -49,7 +49,7 @@ What this does is exits the error handler right away (not so good - what if this
 
 **How to not code with the @:**
 
-I can't think of a legitimate, quality use for calling functions with the `@`.  Notice I qualified that with 'quality'.  You can create code and use it to cut corners, but really, you're just creating crappy code.  Lets go over a few common usages of the `@`, and how you could code without using it again.
+I can't think of a legitimate, quality use for calling functions with the `@`.  Notice I qualified that with 'quality'.  You can create code and use it to cut corners, but really, you're just creating crappy code.  Let's go over a few common usages of the `@`, and how you could code without using it again.
 
 Require
 Bad:

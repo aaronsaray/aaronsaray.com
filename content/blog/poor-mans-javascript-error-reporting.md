@@ -8,11 +8,11 @@ If you want to track errors in your production Javascript (which you should), yo
 
 <!--more-->
 
-### Use BugSnag
+## Use BugSnag
 
 Use Bugsnag or something like it if you can. There are many other Javascript and entire-app error monitoring, reporting and alerting systems. Please use these.
 
-### An Alternative
+## An Alternative
 
 If you're looking for a [poor man's](https://www.merriam-webster.com/dictionary/poor%20man%27s) javascript error reporting, you can make use of the [`onerror`](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror) handler like a blunt hammer.
 

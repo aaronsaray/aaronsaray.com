@@ -66,7 +66,7 @@ The request is checked to make sure it has the token.  Then, it verifies it exis
 
 Let's see how we might implement this.
 
-**`formWeWantToTokenize.php`**
+{{< filename-header "formWeWantToTokenize.php" >}}
 ```html
 <form action="process.php" method="post">
 <label>What is your name? <input name="name"></input></label>
@@ -78,7 +78,7 @@ The only PHP call in this form is to `formtoken::getField()` which will return t
 
 Now, the processor must check that this is good to go:
 
-**`process.php`**
+{{< filename-header "process.php" >}}
 ```php
 <?php
 if (formtoken::validateToken($_POST)) {

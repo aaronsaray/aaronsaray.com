@@ -8,7 +8,7 @@ Sweaty palms, a fast heart rate and an overwhelming sense of dread.
 
 <!--more-->
 
-### Welcome
+## Welcome
 
 What could have brought on this primal fight or flight reflex at 2p.m. in an air conditioned cubicle under the slightly annoying buzz of fluorescent lamps?  One small phrase, three simple words from your boss or the lead architect: "Code Review Time."
 
@@ -20,7 +20,7 @@ The _Confident Coder_ column is my reflection on the things that I had to do to 
 
 I look forward to joining you on this journey as I explore the simplicities (and sometimes complexities!) of plain PHP.  Let's never fear showing our code again.  Welcome to confident coding.
 
-#### Episode 1: Detecting the POST Request Method
+### Episode 1: Detecting the POST Request Method
 
 Some applications have different work-flows based on whether the current request is GET versus POST.  If you have a favorite framework, there probably is something built in that can help you detect this rather easily.    For example, in Zend Framework 1, you can check with a call to `Zend_Controller_Request_Http::isPost()`.  Wow - what a time saver!  But what if you're writing your PHP code with no library or framework?  
 
@@ -56,8 +56,8 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') 
 
 First, we validate that the super global `$_SERVER` array has the key of `REQUEST_METHOD`.  It is not a good idea to test a value against an array key without validating that the key actually exists.  Using `isset()` first will determine that the key exists before we attempt to test the value.  (Please note that `isset()` will return false if the key does exist but the value is NULL.  In this particular case, that's fine.)  Next, we check to make sure that the request method is identical to `POST` exactly.
 
-#### End Notes
+### End Notes
 
 Now, I am confident that I can determine if this was request was indeed a POST.  And, in the spirit of confident coding for peer review, please feel free to send me your thoughts, questions, or critiques.  If you'd like me to cover something in an upcoming column, don't be afraid to ask.  
 
-> This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news.
+_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._

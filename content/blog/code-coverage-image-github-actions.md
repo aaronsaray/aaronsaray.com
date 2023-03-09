@@ -15,15 +15,15 @@ It looks a little like this: ![Preview](https://raw.githubusercontent.com/aarons
 
 I'll discuss how and what's happening below.
 
-### What We're Going to Do
+## What We're Going to Do
 
 I've written some PHP that I'm going to run PHPUnit tests against.  The result of that are going to be parsed and put into an image. That image will be committed back to our branch. This will then be loaded by our README file to display the code coverage percentage in image form.  Let's begin by setting up some PHP.
 
-### PHP Source
+## PHP Source
 
 I've installed PHPUnit with Composer into my project.  I have a filesystem like this:
 
-```
+```txt
 .github/
   workflows/
     ci.yml
@@ -42,13 +42,11 @@ phpunit.xml
 
 The `DecoratorTest` is configured in such a way that it covers 100% of the `Decorator` class.  The `OtherTest` will cover about 50% of the `Other` class.  The `Utility` class has no tests, so 0% coverage.
 
-### Github Action
+## Github Action
 
 Now, we build out a Github action to run our PHPUnit, to write coverage, to call a PHP script to build the image, and to commit it to our branch.
 
-**`.github/workflows/ci.yml`**
-
-{% raw %}
+{{< filename-header ".github/workflows/ci.yml" >}}
 ```yaml
 name: CI for Project
 
@@ -83,7 +81,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-{% endraw %}
 
 You may have more steps in your Github action (like caching), but these are the important parts.  Let's dissect.
 
@@ -97,11 +94,11 @@ Next, have PHP run our custom PHP application which reads in the coverage and wr
 
 Finally, use a Github action to stage and commit the code coverage file back to the repo.
 
-### PHP Code for Image Generation
+## PHP Code for Image Generation
 
 This code is pretty simple.  Let's take a look:
 
-**`generate-code-coverage-image.php`**
+{{< filename-header "generate-code-coverage-image.php" >}}
 ```php
 <?php
 
@@ -142,11 +139,11 @@ Then, we figure out how wide the next text will be (its either 1, 2 or 3 digits 
 
 Finally the image is written to the filesystem (remember, this is committed during the Github action).  Then its destroyed from memory.
 
-### README.md
+## README.md
 
 The readme now can just link to the location you've committed the file to.
 
-**`README.md`**
+{{< filename-header "README.md" >}}
 ```markdown
 # Your Project
 
@@ -157,7 +154,7 @@ Now you're good to go! You have a self-hosted image-based code coverage badge.  
 
 You can see an example of this on my Github repo here: [aaronsaray/php-test-coverage-image-from-gh-actions](https://github.com/aaronsaray/php-test-coverage-image-from-gh-actions)
 
-### Final Thoughts
+## Final Thoughts
 
 I think you can take this further and make your own Github action. Perhaps you'll have to build the images with a Node script instead, but that's OK.  Another idea that was shared with me by [Joel](https://joelclermont.com) was creating the image and uploading it to a CDN based on git hash. I think there's something there, but I'm not sure it'd be that easy.  The beauty of this method is that the file is always in the same place so the README doesn't have to be updated. But, I could be wrong.
 

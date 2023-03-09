@@ -18,7 +18,7 @@ sudo ./allowip.sh 123.1.2.3
 
 Block and allow the IP using iptables with these scripts:
 
-**`blockip.sh`**
+{{< filename-header "blockip.sh" >}}
 ```bash
 #!/bin/bash
 
@@ -29,7 +29,7 @@ Block and allow the IP using iptables with these scripts:
 /sbin/iptables-save > /etc/sysconfig/iptables
 ```
 
-**`allowip.sh`**
+{{< filename-header "allowip.sh" >}}
 ```bash    
 #!/bin/bash
 

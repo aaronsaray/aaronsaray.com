@@ -62,7 +62,7 @@ I love that some of the functionality of Laravel is implemented with interfaces.
 
 We can do the same thing ourselves with our own interfaces to help make our code more clear and more verbose.  Let's say that I don't want this listener to queue.  So, maybe I make a new interface in my project:
 
-**`app/Contracts/ShouldNotQueue.php`**
+{{< filename-header "app/Contracts/ShouldNotQueue.php" >}}
 ```php
 <?php
 

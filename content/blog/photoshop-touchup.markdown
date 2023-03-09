@@ -8,10 +8,10 @@ So I tried my very first photoshop touch up of a girl I found online.  Turns out
 
 <!--more-->
 
-### Before
+## Before
 
-[![before](/uploads/2009/before-275x300.jpg)](/uploads/2009/before.jpg){: .thumbnail}
+{{< image src="/uploads/2009/before.jpg" thumb="/uploads/2009/before-275x300.jpg" alt="Before" >}}
 
-### After
+## After
 
-[![after](/uploads/2009/after-275x300.jpg)](/uploads/2009/after.jpg){: .thumbnail}
+{{< image src="/uploads/2009/after.jpg" thumb="/uploads/2009/after-275x300.jpg" alt="After" >}}

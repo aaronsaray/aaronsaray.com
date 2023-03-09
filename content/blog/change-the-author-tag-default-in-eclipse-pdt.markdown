@@ -8,7 +8,9 @@ When creating a docblock in Eclipse PDT, if commenting is enabled, a template is
 
 <!--more-->
     
-    eclipse -vmargs -Duser.name="Aaron Saray"
+```bash
+eclipse -vmargs -Duser.name="Aaron Saray"
+```
 
 If you don't want to change the process you use to launch Eclipse, you can also just quickly change the template with these steps:
 

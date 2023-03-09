@@ -10,7 +10,7 @@ Goal: to create a bachelor cookbook and sell it to other bachelors online.  The 
 
 <!--more-->
 
-Technology/Process:
+## Technology/Process:
 
 thebetterbachelor.com was redirected to /10dish for 10 Dish Cookbook.  The thought was at some point to broaden the platform if the cookbook was successful.
 
@@ -22,7 +22,7 @@ If the visitor chose to purchase, it was a paypal IPN process.  So they received
 
 There was also a coupon system that bypassed the purchase system and allowed an instant copy to be sent.
 
-Lessons Learned
+## Lessons Learned
 
 I learned that I really needed to give away a free chapter.  Up until receiving the product, visitors did not know the quality of the book. It could have been horrible with no pictures.
 
@@ -30,10 +30,11 @@ After speaking with a SEO expert I know, he set me up with an A/B test.  Unfortu
 
 Overall, it was a good project.  I didn't sell as many as I'd like but I paid for the cost of the food - and that was enough for me!
 
-_Screenshots:_
+## Screenshots
 
-[![](/uploads/2012/1-150x150.png)](/uploads/2012/1.png){: .thumbnail}
-[![](/uploads/2012/2-150x150.png)](/uploads/2012/2.png){: .thumbnail}
+{{< image src="/uploads/2012/1.png" thumb="/uploads/2012/1-150x150.png" alt="Screenshot 1" >}}
+
+{{< image src="/uploads/201221.png" thumb="/uploads/2012/2-150x150.png" alt="Screenshot 1" >}}
 
 **Bonus! Download the cookbook free!**
 
