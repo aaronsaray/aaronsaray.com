@@ -1,7 +1,6 @@
 {{ define "main" }}
 <main class="container container-limited pb-5 single">
-    {{ .Scratch.Set "blog-display" "single" }}
-    {{ partial "blog-entry.html" . }}
+    {{ partial "blog-entry.html" (dict "context" . "single" true) }}
 
     {{ if in .Params.tag "laravel" }}
     <div class="laravel-cta my-5 shadow-sm">

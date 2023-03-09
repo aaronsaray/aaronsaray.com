@@ -5,8 +5,7 @@
 
     <section>
         {{ range $paginator.Pages }}
-        {{ .Scratch.Set "blog-display" "list" }}
-        {{ partial "blog-entry.html" . }}
+        {{ partial "blog-entry.html" (dict "context" . "single" false) }}
         {{ end }}
     </section>
 

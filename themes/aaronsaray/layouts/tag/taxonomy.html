@@ -3,7 +3,7 @@
     {{ .Content }}
 
     {{ range .Pages }}
-    {{ partial "blog-entry.html" . }}
+    {{ partial "blog-entry.html" (dict "context" . "single" false) }}
     {{ end }}
 
     <div class="row">
