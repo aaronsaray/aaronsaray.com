@@ -9,5 +9,9 @@
   to = "https://www.amazon.com/Professional-Design-Patterns-Aaron-Saray/dp/0470496703/"
 
 [[redirects]]
+  from = "/resume"
+  to = "/cv"
+
+[[redirects]]
   from = "/feed.xml"
   to = "/blog/index.xml"
