@@ -5,7 +5,7 @@ draft: false
 ---
 # My CV contains detailed information relevant to my entire professional career.
 
-> If you're looking for the abridged version, you can download [my resume](#).
+This full-featured curriculum vitae details my development and management experience, speaking engagements, projects, published code and more.
 
 ## Open Source
 
