@@ -1,0 +1,13 @@
+[[redirects]]
+  from = "https://aaronsaraycom.netlify.app"
+  to = "https://aaronsaray.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/book"
+  to = "https://www.amazon.com/Professional-Design-Patterns-Aaron-Saray/dp/0470496703/"
+
+[[redirects]]
+  from = "/feed.xml"
+  to = "/blog/index.xml"
