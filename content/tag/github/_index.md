@@ -1,7 +1,7 @@
 ---
 title: Blog Entries Tagged "github"
+description: Blog Entries Tagged "github"
 date: 2023-03-03T14:08:55-06:00
-draft: false
 ---
 # Entries with the tag "github"
 

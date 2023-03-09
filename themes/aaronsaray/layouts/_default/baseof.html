@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 {{ $isBlogPage := and (eq .Kind "page") (eq .Type "blog") }}
-
+{{ $title := .Params.Title }}
+{{ with .Page.Title }}{{ $title = . }}{{ end }}
+{{ $description := .Site.Params.Description }}
+{{ with .Page.Summary }}{{ $description = . }}{{ end }}
+{{ with .Page.Description }}{{ $description = . }}{{ end }}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>{{ .Title }} | Aaron Saray</title>
+    <title>{{ $title }} | Aaron Saray</title>
     <meta property="og:title" content="{{ .Title }}" />
     <meta property="og:site_name" content="Aaron Saray" />
 
@@ -17,8 +21,8 @@
     {{ end }}
     <meta property="og:image" content="{{ .Site.BaseURL }}{{ $ogImage }}" />
 
-    <meta property="og:description" content="{{ .Description }}" />
-    <meta name="description" content="{{ .Description }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta name="description" content="{{ $description }}" />
     <link rel="shortcut icon" href="/favicon.png" />
     {{ $sass := resources.Get "css/main.scss" }}
     {{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}

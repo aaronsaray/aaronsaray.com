@@ -1,7 +1,7 @@
 ---
 title: "Contact"
+description: "Send me a note."
 date: 2023-03-05T14:52:14-06:00
-draft: false
 ---
 
 # Send me a note. I will respond I promise. (I'm nice like that.)

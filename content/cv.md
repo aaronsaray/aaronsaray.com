@@ -1,7 +1,7 @@
 ---
 title: "Curriculum Vitae"
+description: "My CV contains detailed information relevant to my entire professional career."
 date: 2023-03-06T11:21:43-06:00
-draft: false
 ---
 # My CV contains detailed information relevant to my entire professional career.
 

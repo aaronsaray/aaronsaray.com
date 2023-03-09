@@ -1,7 +1,7 @@
 ---
 title: Blog Entries Tagged "eclipse-pdt"
+description: Blog Entries Tagged "eclipse-pdt"
 date: 2023-03-03T14:08:55-06:00
-draft: false
 ---
 # Entries with the tag "eclipse-pdt"
 
