@@ -15,7 +15,7 @@ it went from about 30 seconds to compile 650 pages - to just about 1.5 seconds.
 
 Next, I really like the shortcode functionality in Hugo. It allows you to put snippets of either plain HTML or full-functional components into your markdown files.
 
-Finally, the new design I created focuses on more of my wholistic work - and not just on being a programmer.  My programming work is directly still marketed on [More Beter Faster](https://morebetterfaster.io).
+Finally, the new design I created focuses on more of my wholistic work - and not just on being a programmer.  My programming work is directly still marketed on [More Better Faster](https://morebetterfaster.io).
 
 ## The Negatives
 
