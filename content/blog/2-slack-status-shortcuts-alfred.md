@@ -1,5 +1,5 @@
 ---
-title: 2 Ways to Use Afred to Set Status on Slack
+title: 2 Ways to Use Alfred to Set Status on Slack
 date: 2018-11-19
 tag:
 - business
