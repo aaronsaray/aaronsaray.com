@@ -8,7 +8,7 @@ Many years ago, a business mentor of mine told me that I should "read something 
 
 <!--more-->
 
-He said I should go find some biographies, some history books, etc, and read those before I go to bed.  He said it would not only expand my mind and show me that my problems weren't that bad.  He also told me it would increase my vocabulary.  Well everyone knows that [geeks are smart](http://www.mediadump.com/hosted-id202-real-reasons-why-geeks-make-the-best-lovers.html), so I didn't think about it too much.  I just thought this was an old guy telling me how things used to work back in the day.  He didn't have the Discovery Channel growing up... what did he know?
+He said I should go find some biographies, some history books, etc, and read those before I go to bed.  He said it would not only expand my mind and show me that my problems weren't that bad.  He also told me it would increase my vocabulary.  Well everyone knows that [geeks are smart](https://www.mediadump.com/hosted-id202-real-reasons-why-geeks-make-the-best-lovers.html), so I didn't think about it too much.  I just thought this was an old guy telling me how things used to work back in the day.  He didn't have the Discovery Channel growing up... what did he know?
 
 **As usual, I find that I was wrong again.**  I'm telling you now, read something else.  Let me tell you why:
 
@@ -18,7 +18,7 @@ When's the last time you read a whole O'Reilly book?  Yah... me either.  Even wh
 
 ## Read something else: It will inspire you
 
-Sometimes I will drive through the well-to-do portions of my city to just look at the houses.  This always reinvigorates me.  It reminds me what my goals are.  I'd love to live in a place like that.  And in order to do that, I need to re-concentrate on being successful.  Less video games and more enhancing my skills, experience and career.  The same thing happens with reading.  I once read [Losing My Virginity](http://www.amazon.com/gp/product/0812932293/ref=as_li_ss_tl?ie=UTF8&tag=aarsar-20&linkCode=as2&camp=217145&creative=399369&creativeASIN=0812932293)![](http://www.assoc-amazon.com/e/ir?t=aarsar-20&l=as2&o=1&a=0812932293&camp=217145&creative=399369) and I couldn't believe all the things that Richard Branson had done.  It reminded me that I could keep droning on with what I'm doing, or I could do great things, like him. I needed to be reminded to take chances. I got inspired.
+Sometimes I will drive through the well-to-do portions of my city to just look at the houses.  This always reinvigorates me.  It reminds me what my goals are.  I'd love to live in a place like that.  And in order to do that, I need to re-concentrate on being successful.  Less video games and more enhancing my skills, experience and career.  The same thing happens with reading.  I once read [Losing My Virginity](https://www.amazon.com/gp/product/0812932293/) and I couldn't believe all the things that Richard Branson had done.  It reminded me that I could keep droning on with what I'm doing, or I could do great things, like him. I needed to be reminded to take chances. I got inspired.
 
 ## Read something else: It will increase your vocabulary
 
@@ -30,7 +30,7 @@ Sometimes when people say read something else, we think that must mean another b
 
   * **Sales books:** Especially if you're a freelancer, try reading some sales books.  You'll learn how people sell to you, and how to sell yourself.
 
-  * **Biographies:** They don't have to be historical biographies like George Washington (although, it is pretty interesting to have found out that he never said the "can't tell a lie" phrase... it was actually a preacher using him as an example during a sermon), but it can be real time people too.  Try the [Steve Jobs Biography](http://www.amazon.com/gp/entity/Walter-Isaacson/B000APFLB8?ie=UTF8&ref_=sr_ntt_srch_lnk_1&qid=1322420160&sr=8-1&ie=UTF8&tag=aarsar-20&linkCode=ur2&camp=1789&creative=390957)![](https://www.assoc-amazon.com/e/ir?t=aarsar-20&l=ur2&o=1) for example.  Like I said, I enjoyed the Richard Branson biography as well.
+  * **Biographies:** They don't have to be historical biographies like George Washington (although, it is pretty interesting to have found out that he never said the "can't tell a lie" phrase... it was actually a preacher using him as an example during a sermon), but it can be real time people too.  Try the [Steve Jobs Biography](https://www.amazon.com/gp/entity/Walter-Isaacson/B000APFLB8) for example.  Like I said, I enjoyed the Richard Branson biography as well.
 
   * **Read fiction:** WHAT?!  Sometimes the goal is to just to relax.  If so, read a fiction book.  It's just like TV, except that you'll be expanding your vocabulary and running into concepts that are a bit more in-depth than those on TV written for a fourth grader.
 

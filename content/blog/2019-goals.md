@@ -12,7 +12,7 @@ It's about halfway through 2019 and I think it's time to reflect a little bit on
 
 <!--more-->
 
-In late 2018, I went to work for myself again. Luckily, I've been able to pair up with a [colleague](http://joelclermont.com) to tackle some of the more tough areas of working on your own.  We've decided to work on some things ourselves and combine our forces on others.
+In late 2018, I went to work for myself again. Luckily, I've been able to pair up with a [colleague](https://joelclermont.com) to tackle some of the more tough areas of working on your own.  We've decided to work on some things ourselves and combine our forces on others.
 
 ## The Dev Manager
 
@@ -64,7 +64,7 @@ Sorry about that.
 
 ## No Compromises
 
-[Joel](http://joelclermont.com) has a long career of building out great projects and supporting many clients.  Together, we're working on morphing the business into something different.  Instead of just being implementation specialists, we want to help clients in different ways.
+[Joel](https://joelclermont.com) has a long career of building out great projects and supporting many clients.  Together, we're working on morphing the business into something different.  Instead of just being implementation specialists, we want to help clients in different ways.
 
 {{< link href="https://nocompromises.io" img="/uploads/2019/nocompromises.io.png" alt="No Compromises" >}}
 No Compromises

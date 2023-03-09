@@ -17,15 +17,15 @@ At Github, I’ve released various PHP and Javascript code including [Feedly Bac
 
 I enjoy participating in my local business and technical community.
 
-Community volunteer for [i.c.Stars](http://milwaukee.icstars.org), 2019 to 2020.
+Community volunteer for [i.c.Stars](https://milwaukee.icstars.org), 2019 to 2020.
 
 [Open Sourcing Mental Illness](https://osmihelp.org) content editor, writer 2018 to 2019.
 
-[Milwaukee PHP Users Group](http://mkepug.org). I started the Milwaukee PHP user's group in 2010.  With about 11 meetups per year, we closed it up in 2019.
+[Milwaukee PHP Users Group](https://mkepug.org). I started the Milwaukee PHP user's group in 2010.  With about 11 meetups per year, we closed it up in 2019.
 
 Various Other Meetup Leadership Roles.  I've participated in restarting, restructuring, and/or other assistance with the Fox Cities PHP Users group, the Milwaukee Web Design Meetup, and the Milwaukee Web Professionals meetup.
 
-[WCTC Communications Advisory Board](http://wctc.edu).  From 2016 to 2018, I was a member of the advisory committee. This committee helps direct the curriculum of the communications and technical/programming programs.
+[WCTC Communications Advisory Board](https://wctc.edu).  From 2016 to 2018, I was a member of the advisory committee. This committee helps direct the curriculum of the communications and technical/programming programs.
 
 ## Publications
 
@@ -43,11 +43,11 @@ I am a prolific author, editor and blogger.  (On this site - [600+ technical and
 
 [33 Things I Wish Somebody Would Have Told Me]({% post_url 2017-11-13-33-things-book %}) This book details - you guessed it - 33 things that I wish someone would have mentioned to be before or during my programming and management career.  A more conversational read, this shares lessons I've learned "the hard way" in a language or technical disipline-agnostic format.
 
-[WROX: Professional PHP Design Patterns](http://saray.me/look-at-this-guy) (ISBN: 978-0470496701) This book helps bridge the divide between the traditional design pattern books and the average PHP developer.  Learn how to apply all the true, time-tested patterns in object-oriented PHP.
+[WROX: Professional PHP Design Patterns](https://saray.me/look-at-this-guy) (ISBN: 978-0470496701) This book helps bridge the divide between the traditional design pattern books and the average PHP developer.  Learn how to apply all the true, time-tested patterns in object-oriented PHP.
 
 The Confident Coder.  A monthly column for PHP[architect] from [October, 2013](https://www.phparch.com/magazine/2013-2/october/) to [September, 2014](https://www.phparch.com/magazine/2014-2/september/).  From best practice programming tips to communication skills for programmers, this column was a staple for 12 issues of PHP[architect], the leading PHP magazine.
 
-[Columnist for the PHP channel of SitePoint](http://www.sitepoint.com/author/asaray/) Previously known as PHPMaster.com, the SitePoint PHP channel contains high quality content from noted PHP experts.  I wrote two articles: Debugging PHP Code with FirePHP and Giving Your First PHP Presentation.
+[Columnist for the PHP channel of SitePoint](https://www.sitepoint.com/author/asaray/) Previously known as PHPMaster.com, the SitePoint PHP channel contains high quality content from noted PHP experts.  I wrote two articles: Debugging PHP Code with FirePHP and Giving Your First PHP Presentation.
 
 [MKE PHP: Best People, Best Practices](https://www.phparch.com/magazine/2012-2/january/)  This article for PHP[architect] was co-authored by me in 2012.  In it, my writing partner and I explained the challenges and rewards of starting Milwaukee's first PHP user group.
 
