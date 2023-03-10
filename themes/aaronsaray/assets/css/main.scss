@@ -79,6 +79,7 @@ blockquote {
 code {
     font-size: 1rem;
 }
+
 h2 code {
     font-size: 1.4rem;
 }
@@ -177,11 +178,11 @@ h2 code {
     }
 
     &:nth-child(even) {
-        background: #F4F4F4;
         box-shadow: inset 0px 2px 6px -2px $home-panel-shadow-color;
     }
 
     &:nth-child(odd) {
+        background: #F4F4F4;
         box-shadow: 0px -2px 6px -2px $home-panel-shadow-color;
     }
 
@@ -241,12 +242,13 @@ article {
     h2 {
         margin-top: 1.8rem;
     }
+
     h3 {
         margin-top: 1.5rem;
     }
 
     // hopefully this only targets youtube embeds
-    div + p {
+    div+p {
         margin-top: 1rem;
     }
 
@@ -257,7 +259,9 @@ article {
         font-size: 1.2rem;
         font-family: monospace;
     }
-    td, th {
+
+    td,
+    th {
         padding: 0.4rem 0.7rem;
     }
 }
@@ -311,6 +315,7 @@ article {
         max-height: 20rem;
     }
 }
+
 .link-with-image {
     img {
         max-height: 12rem;
