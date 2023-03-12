@@ -41,7 +41,7 @@ I am a prolific author, editor and blogger.  (On this site - [600+ technical and
 
 [Mastering Laravel Validation Rules](https://nocompromises.gumroad.com/l/laravel-validation) This ebook, co-authored with Joel Clermont, focuses on the validation system in the PHP framework Laravel.
 
-[33 Things I Wish Somebody Would Have Told Me]({% post_url 2017-11-13-33-things-book %}) This book details - you guessed it - 33 things that I wish someone would have mentioned to be before or during my programming and management career.  A more conversational read, this shares lessons I've learned "the hard way" in a language or technical disipline-agnostic format.
+[33 Things I Wish Somebody Would Have Told Me]({{< ref "33-things-book" >}}) This book details - you guessed it - 33 things that I wish someone would have mentioned to be before or during my programming and management career.  A more conversational read, this shares lessons I've learned "the hard way" in a language or technical disipline-agnostic format.
 
 [WROX: Professional PHP Design Patterns](https://saray.me/look-at-this-guy) (ISBN: 978-0470496701) This book helps bridge the divide between the traditional design pattern books and the average PHP developer.  Learn how to apply all the true, time-tested patterns in object-oriented PHP.
 
