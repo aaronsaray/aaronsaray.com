@@ -6,6 +6,7 @@
 {{ $description := .Site.Params.Description }}
 {{ with .Page.Summary }}{{ $description = . }}{{ end }}
 {{ with .Page.Description }}{{ $description = . }}{{ end }}
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -116,19 +117,28 @@
                     <div class="col-6 col-md">
                         <h6>Find Me</h6>
                         <ul class="list-unstyled">
-                            <li><a href="https://github.com/aaronsaray" target="_blank" title="Aaron Saray, Open Source on GitHub">Github</a></li>
-                            <li><a href="https://codepen.io/aaronsaray" target="_blank" title="HTML, CSS, and Javascript code on CodePen">CodePen</a></li>
-                            <li><a href="https://linkedin.com/in/aaronsaray" target="_blank" title="Web Developer, Chief Technical Officer Aaron Saray on LinkedIn">LinkedIn</a></li>
-                            <li><a href="https://twitter.com/aaronsaray" target="_blank" title="Aaron Saray on Twitter">Twitter</a></li>
-                            <li><a href="https://phpc.social/@aaronsaray" target="_blank" title="Aaron Saray on Mastadon">Mastodon</a></li>
-                            <li><a href="https://en.wikipedia.org/wiki/Amateur_radio" target="_blank" title="HAM Radio Callsign">KD9VGQ</a></li>
+                            <li><a href="https://github.com/aaronsaray" target="_blank"
+                                    title="Aaron Saray, Open Source on GitHub">Github</a></li>
+                            <li><a href="https://codepen.io/aaronsaray" target="_blank"
+                                    title="HTML, CSS, and Javascript code on CodePen">CodePen</a></li>
+                            <li><a href="https://linkedin.com/in/aaronsaray" target="_blank"
+                                    title="Web Developer, Chief Technical Officer Aaron Saray on LinkedIn">LinkedIn</a>
+                            </li>
+                            <li><a href="https://twitter.com/aaronsaray" target="_blank"
+                                    title="Aaron Saray on Twitter">Twitter</a></li>
+                            <li><a href="https://phpc.social/@aaronsaray" target="_blank"
+                                    title="Aaron Saray on Mastadon">Mastodon</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Amateur_radio" target="_blank"
+                                    title="HAM Radio Callsign">KD9VGQ</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-md">
                         <h6>Projects</h6>
                         <ul class="list-unstyled">
-                            <li><a href="https://show.nocompromises.io/?rel=as" target="_blank" title="Podcast of 15 mins or less episodes of Laravel Tips">Laravel Podcast</a></li>
-                            <li><a href="https://masteringlaravel.io/?rel=as" target="_blank" title="Up your Laravel Mastery">Mastering Laravel</a></li>
+                            <li><a href="https://show.nocompromises.io/?rel=as" target="_blank"
+                                    title="Podcast of 15 mins or less episodes of Laravel Tips">Laravel Podcast</a></li>
+                            <li><a href="https://masteringlaravel.io/?rel=as" target="_blank"
+                                    title="Up your Laravel Mastery">Mastering Laravel</a></li>
                         </ul>
                     </div>
                 </div>
@@ -137,9 +147,8 @@
                         property="cc:attributionName" rel="cc:attributionURL" class="text-muted">Aaron
                         Saray</a>. All content is licensed under
                     the
-                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" class="text-muted">
-                        Creative Commons Attribution-ShareAlike 4.0 International License
-                    </a>.
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" class="text-muted">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
                 </div>
             </div>
         </section>
