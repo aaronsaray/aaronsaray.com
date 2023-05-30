@@ -1,6 +1,6 @@
 ---
 title: "Siri Shortcut to Todo List Easier Than Existing Systems"
-date: 2023-05-17T09:26:21-05:00
+date: 2023-05-30T09:26:21-05:00
 tag:
 - ios
 - iot
