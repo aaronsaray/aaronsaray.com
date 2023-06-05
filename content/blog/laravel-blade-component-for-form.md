@@ -1,7 +1,6 @@
 ---
 title: "Is a Laravel Blade Component for a Form a Good Idea?"
-date: 2023-05-18T09:56:38-05:00
-draft: true
+date: 2023-06-05T09:56:38-05:00
 tag:
 - laravel
 ---
