@@ -1,7 +1,6 @@
 ---
 title: "Hourly Billing Gives You the Worst Results"
 date: 2023-05-15T09:39:02-05:00
-draft: true
 tag:
 - business
 ---
@@ -11,7 +10,7 @@ I don't do hourly billing (if I can help it) - but most businesses and partners 
 
 How do you get the worst results? Well let's first talk about individual contractors - but then move on to businesses.
 
-### Individual Contractor Hourly Billing is Bad
+## Individual Contractor Hourly Billing is Bad
 
 When an individual contractor bills you as hourly, it's in their best interest to charge you more hours to get the work done. The more 'time' it takes to get the job done, the more they get paid. 
 
@@ -23,7 +22,7 @@ That doesn't mean the quality will suffer. Sometimes people use hours as a proxy
 
 Find a way to bill flat rate or pay flat rate. Then build your relationship with the developer. Programming is art and science - it's not just assembly line stuff.
 
-### Agency Billing Hours
+## Agency Billing Hours
 
 Now, I hope you've read the above section.  Take all of that and understand that it applies here, too.  But there is even one more thing to consider:
 
@@ -33,6 +32,6 @@ Developer A makes 100k a year. Developer B makes 150k a year.  The likely reason
 
 If you do flat rate projects, this doesn't necessarily go away. But it is one less variable that pushes for getting the cheaper developer.  In my experience flat rate projects tend to cycle through developers - the cheaper ones in the beginning - and the more experienced ones at the end to clean up and do the final push.  You may actually get more experienced developers on your project if you pay flat rate.
 
-### Is this true?
+## Is this true?
 
 These are all generalizations.  These may not be true in some situations. In my experience, though, they are gradients of truth in most organizations that charge hourly. You may still choose to want to do your business dealings in hours - but I wanted you to be aware of what some of the consequences or risks of those decisions are.
