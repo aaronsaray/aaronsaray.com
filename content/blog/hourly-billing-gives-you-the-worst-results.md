@@ -1,6 +1,6 @@
 ---
 title: "Hourly Billing Gives You the Worst Results"
-date: 2023-05-15T09:39:02-05:00
+date: 2023-06-12T09:39:02-05:00
 tag:
 - business
 ---
