@@ -1,7 +1,6 @@
 ---
 title: "How to Fix Chronically Out of Date Documentation"
-date: 2023-05-24T14:17:27-05:00
-draft: true
+date: 2023-06-24T14:52:08-05:00
 tag:
 - business
 - management
