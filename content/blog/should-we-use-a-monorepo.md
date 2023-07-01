@@ -1,7 +1,6 @@
 ---
 title: "Should We Use a Monorepo?"
-date: 2023-05-24T13:57:15-05:00
-draft: true
+date: 2023-07-01T12:11:06-05:00
 tag:
 - programming
 ---
