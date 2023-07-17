@@ -1,7 +1,6 @@
 ---
 title: "How Do I Find a Programmer?"
-date: 2023-05-24T13:21:50-05:00
-draft: true
+date: 2023-07-17T14:40:14-05:00
 tag:
 - business
 ---
