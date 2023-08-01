@@ -213,7 +213,7 @@ Jobshouts.com is a free job board built for employers, recruiters & job seekers 
 
 **102 Degrees, LLC. Greenfield, WI (2001 – 2009)**  
 *Owner*  
-102 Degrees specialized in custom design web programming utilizing open source software; primarily within the LAMP stack. Longest running project, www.jemdiary.com, was created in 2001 and ran PHP5 through 2010. (Sole Proprietor formed LLC in 2007).
+102 Degrees specialized in custom design web programming utilizing open source software; primarily within the LAMP stack. Longest running project, JEMDiary, was created in 2001 and ran PHP5 through 2010. (Sole Proprietor formed LLC in 2007).
 
 **Rogers Software Development. Fairbanks, AK (7/08 – 1/09)**  
 *Programmer 3*  
