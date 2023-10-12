@@ -18,7 +18,7 @@ So, what's the problem?
 
 In a standard MVC type application in Laravel, you may have some logic inside of a controller - or a model - and find that that's not as flexible as you might like. Say that you allow multiple routes or workflows to do your said action - like purchase and confirm a subscription.  After a bit of copying and pasting, mixing in traits, and other shenanigans, you might find that you lean towards moving this into an Action class.  Other times, programmers choose to do this right away - even when the functionality is not shared anywhere.
 
-That's usually where our problem rears it's ugly head: tightly coupled input.
+That's usually where our problem rears its ugly head: tightly coupled input.
 
 What do I mean?
 
@@ -92,7 +92,7 @@ public function specialDeal(SubSpecialStoreRequest $request)
 
 So you can now use this `Create` action in many places.  You don't need to tightly couple them to the incoming form request.
 
-_But with all solutions, there is some pro's and cons._ As you can see here, you don't really have any control of the incoming data. In fact, some programmer could send in something like `make(['ding' => 'dong'])` and that would 'work' but generate an error most likely.
+_But with all solutions, there are some pro's and cons._ As you can see here, you don't really have any control of the incoming data. In fact, some programmer could send in something like `make(['ding' => 'dong'])` and that would 'work' but generate an error most likely.
 
 **Pass a data object into `make()`** This is another option. Here we're swinging to the potentially opposite side of the spectrum - that is, making it more difficult.  This solution might be great if you're part of a large team (see: 10+ programmers all on the same project - or very high turnover - or non-invested consultants.). 
 
@@ -142,7 +142,7 @@ Here we're using the same action, but we're using specifically crafted methods o
 
 Let's see:
 
-```
+```php
 public static function fromStore(SubStoreRequest $request): Models\Sub
 {
   return static::make($request->validated());
