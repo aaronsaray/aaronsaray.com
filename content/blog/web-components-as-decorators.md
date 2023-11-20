@@ -49,7 +49,7 @@ document.querySelector('form').addEventListener('submit', function (event) {
 });
 ```
 
-Arguably, it's considered bad UX to disable a button on the form when submitting.  Also, that doesn't stop the form from submitting again - someone could tab into the input boxes and hit enter.  I've [read here - which is actually the inspiration for this idea](https://gomakethings.com/dont-disable-buttons/) that it can also cause problems with screen readers.
+Arguably, it's considered bad UX to disable a button on the form when submitting.  Also, that doesn't stop the form from submitting again - someone could tab into the input boxes and hit enter.  I've [read here - which is actually the inspiration for this idea](https://gomakethings.com/dont-disable-buttons/) - that it can also cause problems with screen readers.
 
 So instead, we're going to grab all forms and watch for their submit function, and add a data attribute of `data-submitting` to them when they are submitted. If they already have that attribute, we'll prevent the default submit (because one is already happening) and return.
 
