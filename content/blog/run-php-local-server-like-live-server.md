@@ -30,7 +30,7 @@ Then, source it again and you should be good to go.
 source ~/.zshrc
 ```
 
-Sweet - now you have a locally running web server with PHP at localhost on port 8000.
+Sweet - now you have a locally running web server with PHP at localhost on port 8000 when you run `php-server`.
 
 But we can do better than this, can't we?
 
@@ -38,7 +38,7 @@ But we can do better than this, can't we?
 
 Eagle-eyed readers may have seen that there was a space after the alias declaration.  This allows additional parameters to be passed to the command after the alias.  For example, we could run `php-server -t my-project/` and it would point to the `my-project` for the doc root.
 
-I'm not interested in this though. I just need something quick. I know that I'll be starting my PHP server always in the root where the files are located.  (You could expand the following code and solutions though to handle many other options like custom ports and custom doc roots. I'm just not doing that.)
+I'm not interested in this, though. I just need something quick. I know that I'll be starting my PHP server always in the root where the files are located.  (You could expand the following code and solutions though to handle many other options like custom ports and custom doc roots. I'm just not doing that.)
 
 Instead, what I want is to copy some of the basic `live-server` stuff - like picking an open port and launching the browser.
 
