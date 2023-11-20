@@ -4,6 +4,7 @@ title = 'Milwaukee Web Developer, PHP and Laravel Programmer, Consultant'
 theme = 'aaronsaray'
 rssLimit = 10
 copyright = 'This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.'
+disableHugoGeneratorInject = true
 
 [taxonomies]
   tag = 'tag'
