@@ -1,7 +1,6 @@
 ---
 title: "Self Reflection as a Manager"
-draft: true # change date!
-date: 2023-11-20T16:21:52-06:00
+date: 2023-12-13T16:21:52-06:00
 tag:
 - business
 - management
