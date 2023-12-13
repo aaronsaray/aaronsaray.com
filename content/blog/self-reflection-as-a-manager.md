@@ -1,6 +1,6 @@
 ---
 title: "Self Reflection as a Manager"
-date: 2023-12-13T13:10:52-06:00
+date: 2023-12-12T13:10:52-06:00
 tag:
 - business
 - management
