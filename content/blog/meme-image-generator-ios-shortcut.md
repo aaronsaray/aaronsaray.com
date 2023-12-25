@@ -1,7 +1,6 @@
 ---
 title: "Make Meme Image Generator with IOS Shortcuts"
-date: 2023-12-07T14:58:29-06:00
-draft: true # don't forget to change date
+date: 2023-12-25T10:58:29-06:00
 tag:
 - ios
 ---
