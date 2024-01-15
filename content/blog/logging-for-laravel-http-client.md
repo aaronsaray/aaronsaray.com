@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
   {
     $this->bootFileMakerLogging();
   }
-∂
+
   protected function bootFileMakerLogging(): void
   {
     Http::globalMiddleware(static function (callable $handler): callable {
