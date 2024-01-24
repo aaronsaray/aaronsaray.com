@@ -1,7 +1,6 @@
 ---
 title: "Web Components as Decorators"
-draft: true # change date!
-date: 2023-11-20T16:34:03-06:00
+date: 2024-01-24T08:34:03-06:00
 tag:
 - javascript
 ---
