@@ -32,7 +32,7 @@ First, this is the HTML for our form.
     <label for="message">Message</label>
     <textarea required name="message" id="message"></textarea>
   </div>
-<button type="submit">Submit!</button>
+  <button type="submit">Submit!</button>
 </form>
 ```
 
