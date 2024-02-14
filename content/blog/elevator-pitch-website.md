@@ -1,7 +1,6 @@
 ---
 title: "Elevator Pitch Website"
-draft: true # change the date
-date: 2023-11-22T10:31:22-06:00
+date: 2024-02-14T10:00:22-06:00
 tag:
 - ideas
 ---
