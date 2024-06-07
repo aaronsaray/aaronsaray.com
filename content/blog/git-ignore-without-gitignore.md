@@ -1,7 +1,6 @@
 ---
 title: "Git Ignore Without the .gitignore File"
-date: 2024-04-03T11:01:06-05:00
-draft: true # don't forget to change the date
+date: 2024-06-07T08:01:06-05:00
 tag:
 - git
 ---
