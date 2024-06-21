@@ -1,7 +1,6 @@
 ---
 title: "Generate Laravel Seeds Package Idea"
-date: 2024-01-15T12:15:11-06:00
-draft: true # don't forget to change date
+date: 2024-06-21T12:15:11-06:00
 tag:
 - ideas
 - laravel
