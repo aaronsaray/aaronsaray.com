@@ -1,7 +1,6 @@
 ---
 title: "Laravel Log Incoming API Request and Response"
-date: 2024-03-27T13:28:38-05:00
-draft: true # do not forget to change date
+date: 2024-07-21T00:28:38-05:00
 tag:
 - laravel
 ---
