@@ -1,7 +1,6 @@
 ---
 title: "Let's Refactor a Javascript Snippet for Adding Class on Scroll"
-date: 2024-03-27T15:07:04-05:00
-draft: true # don't forget to change the date
+date: 2024-09-02T11:07:04-05:00
 tag:
 - javascript
 ---

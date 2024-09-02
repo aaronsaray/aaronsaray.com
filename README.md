@@ -13,14 +13,14 @@ So that I don't forget, here are some notes on how I format / create content.
 
 * To refer to another blog entry, use the `ref` command - like so: `{{< ref "2023-03-01-requirements-documentation-examples-guidelines-rationale" >}}`
 
-* If you have a code block that has a filename, you should use the filename-header shortcode
+* If you have a code block that has a filename, you should use the filename-header shortcode `!file`
 ```
 {{< filename-header "resources/views/users/index.blade.php" >}}
 ```html
 <table>
 ```
 
-* To link to something with an img thumbnail (like a PDF with an image thumbnail)
+* To link to something with an img thumbnail (like a PDF with an image thumbnail) `!image`
 ```
 {{< link href="/uploads/2023/Acme Corp - Statement of Work.pdf" img="/uploads/2023/statement-of-work-doc-thumbnail.jpg" alt="ACME Corp - Statement of Work PDF" >}}
 Statement of Work PDF

@@ -1,7 +1,6 @@
 ---
 title: "Laravel Display Markdown Easily in Blade"
-date: 2024-03-27T15:48:27-05:00
-draft: true
+date: 2024-09-02T10:48:27-05:00
 tag:
 - laravel
 ---
@@ -32,6 +31,6 @@ This is some *markdown* text.
 
 Pretty simple.  
 
-There are some caveates though.  First, if you indent anything four spaces inside of the markdown component (perhaps you're trying to nest it in your blade) it will recognize those spaces and process them as Markdown. This means it'll make the content pre-formatted.
+There are some caveats though.  First, if you indent anything four spaces inside of the markdown component (perhaps you're trying to nest it in your blade) it will recognize those spaces and process them as Markdown. This means it'll make the content pre-formatted.
 
 Second, the security and strictness of the markdown content is handled with Laravel's markdown configuration. This is using the `GithubFlavoredMarkdownConverter` from `league/commonmark`.  You may want to investigate this set up and make sure it's using the features you want and has been securely configured based on the type of content you intend to publish (your own markdown or user's markdown).

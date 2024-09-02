@@ -1,7 +1,6 @@
 ---
 title: "Show Alpine Element After Delay"
-date: 2024-03-27T12:45:52-05:00
-draft: true -- don't forget to change date
+date: 2024-09-02T12:45:52-05:00
 tag:
 - javascript
 ---
