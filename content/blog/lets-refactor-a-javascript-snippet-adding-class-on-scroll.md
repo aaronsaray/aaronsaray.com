@@ -52,7 +52,7 @@ function scrollHandler(className = "scrolled") {
 }
 ```
 
-Look at how much more simple that method is!  Except, I don't really like it.  Maybe I could refactor out that array access into it's own variable... butt here has to be a better way.  Turns out there is! The [toggle()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle) method!  It accepts a secondary parameter which determins if it adds or removes the class.
+Look at how much more simple that method is!  Except, I don't really like it.  Maybe I could refactor out that array access into it's own variable... butt here has to be a better way.  Turns out there is! The [toggle()](https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle) method!  It accepts a secondary parameter which determines if it adds or removes the class.
 
 ```javascript
 function scrollHandler(className = "scrolled") {
