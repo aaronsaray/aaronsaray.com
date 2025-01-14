@@ -1,4 +1,5 @@
 # aaronsaray.com
+
 Source for [AaronSaray.com](https://aaronsaray.com)
 
 ## Blog Writing Instructions
@@ -31,3 +32,13 @@ Statement of Work PDF
 ```
 {{< image src="/uploads/2022/no-auto-complete-phpstorm.jpg" alt="No Autocomplete" >}}
 ```
+
+## Blog Draft Creation Instructions
+
+It is created as an entry with all the tags.
+
+```shell
+hugo new content content/blog/my-slug-here.md
+```
+
+Remove the tags you don't want. Add `draft: true` in the header if you want it as a draft.
