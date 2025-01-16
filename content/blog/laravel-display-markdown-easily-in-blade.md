@@ -3,6 +3,9 @@ title: "Laravel Display Markdown Easily in Blade"
 date: 2024-09-02T10:48:27-05:00
 tag:
 - laravel
+params:
+  context: 
+  - Laravel 11
 ---
 I love writing in Markdown - and offering that functionality in WYSIWYG editors for our users. But, it just seems so complicated to try to show markdown in Laravel blade files. So, I made a quick anonymous component that makes this easier.
 

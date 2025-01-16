@@ -4,13 +4,23 @@
     {{ else }}
     <h2><a href="{{ .context.Permalink }}">{{ .context.Title }}</a></h2>
     {{ end }}
-    <div class="small mb-4">
+    <div class="small">
         <span class="text-muted d-block d-sm-inline me-3">{{ .context.Date.Format "Jan 2, 2006" }}</span>
         {{ range $index, $name := sort .context.Params.tag }}
         <a href="/tag/{{ $name }}" class="me-3">{{ $name }}</a>
         {{ end }}
     </div>
     {{ if .single }}
+
+    {{ with .context.Params.context }}
+        <div class="small text-muted mt-2">
+            <strong>Context:</strong>
+            {{ range . }}
+                <span class="ms-1 border bg-light py-1 px-2 rounded text-secondary">{{ . }}</span>
+            {{ end }}
+        </div>
+    {{ end }}
+
     {{ $ageDays := div (sub now.Unix .context.Date.Unix) 86400 }}
     {{ if and (gt $ageDays 545) (.single) }}
     <div class="old-post-notification mb-4 shadow-sm">
@@ -20,7 +30,7 @@
     </div>
     {{ end }}
     {{ end }}
-    <div>
+    <div class="mt-4">
         {{ if .single }}
         {{ .context.Content }}
         {{ else }}
