@@ -26,7 +26,7 @@
     <meta name="description" content="{{ $description }}" />
     <link rel="shortcut icon" href="/favicon.png" />
     {{ $sass := resources.Get "css/main.scss" }}
-    {{ $style := $sass | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style := $sass | toCSS | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
     {{ $js := resources.Get "js/main.js" | js.Build "js/main.js" }}
     {{ $secureJS := $js | resources.Minify | resources.Fingerprint }}

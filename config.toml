@@ -5,6 +5,7 @@ theme = 'aaronsaray'
 rssLimit = 10
 copyright = 'This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.'
 disableHugoGeneratorInject = true
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [taxonomies]
   tag = 'tag'
