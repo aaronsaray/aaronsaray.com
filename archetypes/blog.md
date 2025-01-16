@@ -1,6 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
+draft: true
 tag:
 - apache
 - archived-projects
@@ -40,5 +41,8 @@ tag:
 - sql
 - testing
 - ux
+params:
+  context:
+    - Laravel 11
 ---
 
