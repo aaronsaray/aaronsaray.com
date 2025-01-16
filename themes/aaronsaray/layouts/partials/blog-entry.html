@@ -1,8 +1,22 @@
 <article {{ if not .single }} class="my-5" {{ end }}>
     {{ if .single }}
-    <h1>{{ .context.Title }}</h1>
+    {{ if .context.Draft }}
+    <h1 class="position-relative">
+      <span class="badge badge-pill bg-warning text-black position-absolute text-uppercase" style="font-family: sans-serif; top: -20px; opacity: 0.8">Draft</span>
+      {{ .context.Title }}
+    </h1>
     {{ else }}
-    <h2><a href="{{ .context.Permalink }}">{{ .context.Title }}</a></h2>
+    <h1>{{ .context.Title }}</h1>
+    {{ end }}
+    {{ else }}
+    <h2>
+      <a href="{{ .context.Permalink }}">
+        {{ if .context.Draft }}
+        <span class="badge badge-pill bg-warning text-black position-absolute text-uppercase" style="font-family: sans-serif; opacity: 0.7">Draft</span>
+        {{ end }}
+        {{ .context.Title }}
+      </a>
+    </h2>
     {{ end }}
     <div class="small">
         <span class="text-muted d-block d-sm-inline me-3">{{ .context.Date.Format "Jan 2, 2006" }}</span>
@@ -14,9 +28,9 @@
 
     {{ with .context.Params.context }}
         <div class="small text-muted mt-2">
-            <strong>Context:</strong>
+            <strong class="d-block d-md-inline">Context:</strong>
             {{ range . }}
-                <span class="ms-1 border bg-light py-1 px-2 rounded text-secondary">{{ . }}</span>
+                <span class="lh-lg border bg-light py-1 px-2 rounded text-secondary text-nowrap">{{ . }}</span>
             {{ end }}
         </div>
     {{ end }}
