@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: true
+draft: true # don't forget to change date!!
 tag:
 - apache
 - archived-projects
