@@ -1,7 +1,6 @@
 ---
 title: "Custom PHP Exceptions for Unimplemented Code"
-date: 2025-01-16T15:23:09-06:00
-draft: true
+date: 2025-06-30T10:00:00
 tag:
 - php
 - programming
