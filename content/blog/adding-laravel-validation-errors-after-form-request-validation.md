@@ -1,13 +1,11 @@
 ---
 title: "Adding Laravel Validation Errors After Form Request Validation"
-date: 2025-01-16T15:41:29-06:00
-draft: true # don't forget to change date!!
+date: 2025-07-16T05:41:29-06:00
 tag:
 - laravel
 params:
   context:
-    - Laravel 11
-    - Laravel 10
+    - Laravel 12
 ---
 Most things we want to validate in Laravel are simple. But, what should we do when we want to add more validation outside of the standard patterns that are provided? In this example, I'll show how I do just that.
 
