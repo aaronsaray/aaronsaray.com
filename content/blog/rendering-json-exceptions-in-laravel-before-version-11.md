@@ -1,7 +1,6 @@
 ---
 title: "Rendering Json Exceptions in Laravel Before Version 11"
-date: 2025-01-16T14:13:34-06:00
-draft: true
+date: 2025-08-12T10:13:34-06:00
 tag:
 - laravel
 params:
@@ -11,7 +10,7 @@ params:
     - Laravel 9
     - Laravel 8
 ---
-In Laravel 11, it's quite easy to tell the exception handler to render all (or a select portion of them) as JSON regardless of the request/response type. But what about earlier versions?
+In Laravel 11+, it's quite easy to tell the exception handler to render all (or a select portion of them) as JSON regardless of the request/response type. But what about earlier versions?
 
 <!--more-->
 
