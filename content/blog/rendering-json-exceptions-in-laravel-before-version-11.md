@@ -1,6 +1,6 @@
 ---
 title: "Rendering Json Exceptions in Laravel Before Version 11"
-date: 2025-08-12T10:13:34-06:00
+date: 2025-08-12
 tag:
 - laravel
 params:
