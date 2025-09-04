@@ -1,7 +1,6 @@
 ---
 title: "Exploring Sprintf in the Browser"
-date: 2025-01-22T13:09:58-06:00
-draft: true # don't forget to change date!!
+date: 2025-09-04
 tag:
 - javascript
 - php
@@ -23,4 +22,4 @@ Here is a screenshot of it.
 
 Basically, as you typed, it would format the string using a javascript version of the same functionality. When it was invalid, it would blur out the formatted string area. When it found operators, it would open a new row below.
 
-However, the idea is not dead! I'm going to build out a game version on [Mastering Laravel](https://masteringlaravel.io) - so make sure to check it out!
+Feel free to fork this / copy it, and make your own tool.
