@@ -1,7 +1,6 @@
 ---
 title: "Docker Healthcheck Values for Laravel Projects"
-date: 2025-06-30T15:07:13-05:00
-draft: true # don't forget to change date!!
+date: 2025-09-22
 tag:
 - docker
 - laravel
