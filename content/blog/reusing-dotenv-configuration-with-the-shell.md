@@ -1,7 +1,6 @@
 ---
 title: "Reusing DotEnv Configuration with the Shell"
-date: 2025-01-16T16:35:01-06:00
-draft: true # don't forget to change date!!
+date: 2025-09-29
 tag:
 - php
 - scripting
