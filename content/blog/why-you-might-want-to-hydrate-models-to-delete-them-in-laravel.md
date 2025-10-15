@@ -1,7 +1,6 @@
 ---
 title: "Why You Might Want to Hydrate Models to Delete Them in Laravel"
-date: 2025-06-30T16:57:49-05:00
-draft: true # don't forget to change date!!
+date: 2025-10-15
 tag:
 - laravel
 params:
