@@ -4,3 +4,4 @@ node_modules/
 public/
 .idea/
 .DS_Store
+static/uploads/.DS_Store
