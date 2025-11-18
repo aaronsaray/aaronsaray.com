@@ -1,7 +1,6 @@
 ---
 title: "Github Workflow for Production Merge"
-date: 2025-06-30T16:18:03-05:00
-draft: true # don't forget to change date!!
+date: 2025-011-18
 tag:
 - git
 - github
