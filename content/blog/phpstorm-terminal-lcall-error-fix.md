@@ -1,5 +1,5 @@
 ---
-title: "Phpstorm Terminal Lcall Error Fix"
+title: "Phpstorm Terminal LC_ALL Error Fix"
 date: 2025-12-05T15:39:43-06:00
 tag:
 - macos
