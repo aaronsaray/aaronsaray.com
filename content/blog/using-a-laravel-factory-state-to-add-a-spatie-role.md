@@ -1,7 +1,6 @@
 ---
 title: "Using a Laravel Factory State to Add a Spatie Role"
-date: 2025-06-30T14:45:35-05:00
-draft: true # don't forget to change date!!
+date: 2026-01-09
 tag:
 - laravel
 - testing
