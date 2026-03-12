@@ -1,7 +1,6 @@
 ---
 title: "Laravel 201 Created JSON With Location Header"
-date: 2025-06-30T16:49:56-05:00
-draft: true # don't forget to change date!!
+date: 2026-03-12
 tag:
 - laravel
 params:
