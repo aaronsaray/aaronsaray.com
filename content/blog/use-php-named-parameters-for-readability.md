@@ -1,7 +1,6 @@
 ---
 title: "Use PHP Named Parameters for Readability"
-date: 2025-01-16T16:20:44-06:00
-draft: true # don't forget to change date!!
+date: 2026-04-21
 tag:
 - php
 params:
