@@ -1,7 +1,6 @@
 ---
 title: "Validate Everything Including Pagination"
-date: 2025-06-30T17:14:32-05:00
-draft: true # don't forget to change date!!
+date: 2026-05-26
 tag:
 - laravel
 - security
