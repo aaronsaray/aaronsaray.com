@@ -1,7 +1,6 @@
 ---
 title: "Why Do I Use Plain Text Password for My Initial User Record?"
-date: 2025-06-30T14:57:00-05:00
-draft: true # don't forget to change date!!
+date: 2026-05-27
 tag:
 - laravel
 - programming
