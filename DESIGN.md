@@ -127,10 +127,11 @@ direction, not copied identically.
 * **Link columns (decided Aug 26, 2026):**
   * Site — full page list (Home, Who am I, CV, Blog, Books, Contact)
   * Find Me — GitHub, CodePen, LinkedIn, Twitter
-  * Projects — Laravel Podcast, Mastering Laravel, Learn the Phonetic
-    Alphabet, Typesetter.io (keep the `?rel=as` referral params from the
-    Hugo site). ChickenFacts is dropped — that site is coming down.
-  * Other Sites — More Better Faster, 1lastcheck
+  * Projects — Laravel Podcast, Learn the Phonetic Alphabet,
+    Typesetter.io (no referral query params — the Hugo site's `?rel=as`
+    does not carry over). ChickenFacts is dropped — that site is coming
+    down.
+  * Other Sites — More Better Faster, Mastering Laravel, 1lastcheck
 * **Bottom meta row:** copyright/license left, RSS feed link right —
   they're the same tier of supporting information.
 * **No Fathom privacy CTA** in the new site (the Hugo footer's

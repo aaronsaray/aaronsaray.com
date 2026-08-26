@@ -31,6 +31,11 @@
     /* Scrollbar: very dark and muted, but still findable. */
     html {
       scrollbar-color: #2c3238 var(--color-night); /* Firefox + modern Chromium */
+      /* In-page anchor jumps glide (browser eases slow/fast/slow) */
+      scroll-behavior: smooth;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
     ::-webkit-scrollbar {
       width: 10px;
@@ -52,6 +57,29 @@
       50%      { transform: translateY(3px); opacity: 1; }
     }
     .scroll-cue { animation: drift-down 3s ease-in-out infinite; }
+
+    /* Scroll-driven reveal (fade + small rise) for the beliefs grid.
+       Pure CSS, no JS: each item animates as it enters the viewport,
+       which staggers rows on desktop and single items on mobile for
+       free. nth-child ranges add a gentle left-to-right stagger within
+       a row. Progressive enhancement — browsers without
+       animation-timeline (currently Firefox) just show the content. */
+    @supports (animation-timeline: view()) {
+      .reveal {
+        animation: reveal-up linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 25%;
+      }
+      .reveal:nth-child(3n + 2) { animation-range: entry 30% cover 28%; }
+      .reveal:nth-child(3n)     { animation-range: entry 60% cover 31%; }
+      @keyframes reveal-up {
+        from { opacity: 0; transform: translateY(1.25rem); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { animation: none; }
+    }
   </style>
 </head>
 
@@ -98,13 +126,20 @@
   <section class="relative flex min-h-svh flex-col justify-center">
     <div class="mx-auto w-full max-w-6xl px-5 sm:px-8">
       <!-- Reads as one sentence: Hi, I'm / Aaron Saray / I make things better. -->
-      <!-- Rule starts at the left margin and does the indenting itself.
-           Width is derived from the name's font size so "Hi" starts at
-           the top-left corner of the A's flat apex at every viewport
-           width. The corner is at 0.258em; 0.245 compensates for the
-           H's side bearing and the A's antialiased corner edge. -->
-      <p class="flex items-center gap-2 text-[clamp(1.2rem,2.8vw,2.1rem)] font-semibold leading-tight text-ink-dim">
-        <span class="h-px w-[calc(0.245*clamp(3.5rem,9.5vw,8rem)-0.5rem)] bg-ink-faint"></span>Hi, I'm
+      <!-- Arrow starts at the left margin and does the indenting itself.
+           The arrow box width + gap is derived from the name's font
+           size so "Hi" starts at the top-left corner of the A's flat
+           apex at every viewport width. The corner is at 0.258em;
+           0.245 compensates for the H's side bearing and the A's
+           antialiased corner edge. Inside the box the chevron head
+           overlaps the shaft (tip exactly on the shaft's end) and
+           overflows 6px into the gap, so at narrow widths the head
+           never pokes left of the margin. -->
+      <p class="flex items-center text-[clamp(1.2rem,2.8vw,2.1rem)] font-semibold leading-tight text-ink-dim">
+        <span class="mr-2 flex w-[calc(0.245*clamp(3.5rem,9.5vw,8rem)-0.5rem)] shrink-0 items-center">
+          <span class="h-px flex-1 bg-ink-faint"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="-ml-[10px] -mr-1.5 size-4 shrink-0 text-ink-faint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6l-6 6"/></svg>
+        </span>Hi, I'm
       </p>
       <!-- Name sits just below the off-white ink token so it doesn't "bounce" -->
       <h1 class="mt-2 text-[clamp(3.5rem,9.5vw,8rem)] font-black leading-[0.95] tracking-[-0.03em] text-[#dfe2e6]">
@@ -115,53 +150,57 @@
       </p>
     </div>
 
-    <div class="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2">
-      <p class="text-base text-ink-faint sm:text-lg">let me show you how</p>
-      <!-- Tabler: chevron-down -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="scroll-cue size-5 text-ink-faint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M6 9l6 6l6 -6"/>
-      </svg>
+    <!-- Whole cue is a link to the beliefs section. Deliberately no
+         hover styling — only the cursor gives it away. -->
+    <div class="absolute inset-x-0 bottom-8 flex justify-center">
+      <a href="#beliefs" class="flex flex-col items-center gap-2">
+        <p class="text-base text-ink-faint sm:text-lg">let me show you how</p>
+        <!-- Tabler: chevron-down -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="scroll-cue size-5 text-ink-faint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6l6 -6"/>
+        </svg>
+      </a>
     </div>
   </section>
 
   <!-- ============ Beliefs / manifesto ============ -->
   <!-- Placeholder copy throughout — statements need Aaron's voice. -->
-  <section class="border-t border-hairline">
+  <section id="beliefs" class="border-t border-hairline">
     <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
       <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">What I believe</h2>
 
       <div class="mt-12 grid grid-cols-1 gap-x-10 gap-y-14 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
-        <div>
+        <div class="reveal">
           <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#01</p>
           <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
             Working software beats perfect plans.
           </p>
         </div>
-        <div>
+        <div class="reveal">
           <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#02</p>
           <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
             Code is read far more often than it's written.
           </p>
         </div>
-        <div>
+        <div class="reveal">
           <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#03</p>
           <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
             Simple is harder than clever — and worth it.
           </p>
         </div>
-        <div>
+        <div class="reveal">
           <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#04</p>
           <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
             The best tool is the one your team can maintain.
           </p>
         </div>
-        <div>
+        <div class="reveal">
           <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#05</p>
           <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
             Ship small. Ship often. Learn faster.
           </p>
         </div>
-        <div>
+        <div class="reveal">
           <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#06</p>
           <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
             Tools change. Fundamentals compound.
@@ -234,16 +273,16 @@
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Projects</p>
           <ul class="mt-4 space-y-2">
-            <li><a href="https://show.nocompromises.io/?rel=as" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Laravel Podcast</a></li>
-            <li><a href="https://masteringlaravel.io/?rel=as" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Mastering Laravel</a></li>
-            <li><a href="https://learnthephoneticalphabet.com/?rel=as" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Learn the Phonetic Alphabet</a></li>
-            <li><a href="https://typesetter.io/?rel=as" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Typesetter.io</a></li>
+            <li><a href="https://show.nocompromises.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Laravel Podcast</a></li>
+            <li><a href="https://learnthephoneticalphabet.com" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Learn the Phonetic Alphabet</a></li>
+            <li><a href="https://typesetter.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Typesetter.io</a></li>
           </ul>
         </div>
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Other Sites</p>
           <ul class="mt-4 space-y-2">
             <li><a href="https://morebetterfaster.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">More Better Faster</a></li>
+            <li><a href="https://masteringlaravel.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Mastering Laravel</a></li>
             <li><a href="https://1lastcheck.com" class="opacity-60 transition-opacity duration-300 hover:opacity-100">1lastcheck</a></li>
           </ul>
         </div>
