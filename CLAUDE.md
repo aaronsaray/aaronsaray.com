@@ -41,9 +41,9 @@ code exists. The migration to Astro happens after the designs are settled.
 * `DESIGN.md` (root) — records design decisions as they're made. Read it
   before doing any design work.
 * `.design/` — HTML prototypes. **No build step.** Plain HTML files using
-  live CDN resources (e.g., Tailwind via CDN). Served with a simple
-  live-reloading server (`npx live-server` or similar) during design
-  sessions. Do not scaffold a full prototype site/project here.
+  live CDN resources (e.g., Tailwind via CDN). How they get served/viewed
+  during design sessions is not decided yet — don't add tooling for it.
+  Do not scaffold a full prototype site/project here.
 * `.design/inspiration/` — screenshots we review together. Aaron says what
   he likes; extracted design choices land in notes and eventually
   `DESIGN.md`.
