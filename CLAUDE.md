@@ -27,6 +27,8 @@ code exists. The migration to Astro happens after the designs are settled.
   interactivity genuinely requires them — the default is zero JS on a page.
 * **Deploy target:** Cloudflare, as static output. Details (Pages vs
   Workers) undecided and not important yet.
+* **No search functionality.** The new site has no search of any kind —
+  no search box, no ⌘K palette. Decided during the inspiration review.
 
 ## Tech Choices
 
@@ -46,7 +48,10 @@ code exists. The migration to Astro happens after the designs are settled.
   Do not scaffold a full prototype site/project here.
 * `.design/inspiration/` — screenshots we review together. Aaron says what
   he likes; extracted design choices land in notes and eventually
-  `DESIGN.md`.
+  `DESIGN.md`. The first review (images 1–8) is complete: notes live in
+  `.design/INSPIRATION.md` (archived as of August 26, 2026) and its
+  decisions are promoted to `DESIGN.md`. Future inspiration gets new
+  dated sections there.
 
 ## Known Worries / Open Items
 

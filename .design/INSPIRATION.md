@@ -1,5 +1,9 @@
 # Design Inspiration Notes
 
+**Last reviewed: August 26, 2026.** All notes below are archived as of
+that date — promoted to `DESIGN.md`. Any future inspiration review gets
+its own new dated section; do not edit the sections below.
+
 Review notes for the screenshots in [`inspiration/`](./inspiration/).
 Process: Aaron reacts to each image first (what he likes, what he doesn't),
 then Claude names the underlying techniques and patterns so they're
@@ -334,3 +338,10 @@ Near-black dark theme.
 - Small accent-color pill tag for status metadata (Beta)
 - Footer as hierarchy: primary CTAs first (two boxes), then brand mark,
   then full sitemap link columns — footer does real navigation work
+
+---
+
+**Archive note (August 26, 2026):** everything above is the complete
+review of images 1–8 and has been promoted to `DESIGN.md`. This file is
+frozen as of this date. Any future inspiration work goes in a new
+section below this line, with its own review date.
