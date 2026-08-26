@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aaron Saray — Home (design prototype)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      /* Palette: off-white + yellow accent on navy-tinted near-black.
+         Surfaces are tinted toward the accent-adjacent navy hue, not
+         neutral gray. All swappable — this is the first candidate. */
+      --color-night: #0a0e14;
+      --color-surface: #101722;
+      --color-ink: #e9e7e1;
+      --color-ink-dim: #8b95a4;
+      --color-ink-faint: #5c6675;
+      --color-accent: #f6c945;
+      --color-hairline: #1c2530;
+
+      --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-display: "Fraunces", ui-serif, Georgia, serif;
+    }
+
+    /* The one texture effect on this page: a faint navy glow at the
+       top that fades into the flat background. Atmosphere, not
+       decoration. */
+    .top-glow {
+      background:
+        radial-gradient(120% 70% at 30% 0%, #131c2b 0%, transparent 60%),
+        var(--color-night);
+    }
+
+    @keyframes drift-down {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50%      { transform: translateY(6px); opacity: 1; }
+    }
+    .scroll-cue { animation: drift-down 2.4s ease-in-out infinite; }
+  </style>
+</head>
+
+<body class="bg-night text-ink font-sans antialiased">
+
+  <!-- ============ Header: compact single-row slim top bar ============ -->
+  <header class="absolute inset-x-0 top-0 z-10">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <!-- Placeholder mark: two-tone wordmark until the AS SVG is redone -->
+      <a href="/home.html" class="text-lg font-extrabold tracking-tight">
+        <span class="text-accent">aaron</span><span>saray</span>
+      </a>
+      <nav class="flex items-center gap-5 text-sm sm:gap-8">
+        <a href="#" class="opacity-60 transition-opacity hover:opacity-100">CV</a>
+        <a href="/blog.html" class="opacity-60 transition-opacity hover:opacity-100">Blog</a>
+        <a href="#" class="opacity-60 transition-opacity hover:opacity-100">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ Hero: full viewport, left-aligned ============ -->
+  <section class="top-glow relative flex min-h-svh flex-col justify-center">
+    <div class="mx-auto w-full max-w-6xl px-5 sm:px-8">
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-accent">Hi, I'm</p>
+      <h1 class="mt-3 text-[clamp(3.8rem,14vw,10.5rem)] font-black leading-[0.92] tracking-[-0.04em]">
+        Aaron Saray
+      </h1>
+      <p class="mt-5 text-[clamp(1.6rem,5vw,3.5rem)] font-bold leading-tight tracking-[-0.02em]">
+        I make things better.
+      </p>
+    </div>
+
+    <div class="absolute inset-x-0 bottom-8">
+      <div class="mx-auto flex max-w-6xl items-center gap-3 px-5 sm:px-8">
+        <p class="text-sm text-ink-faint sm:text-base">let me show you how</p>
+        <!-- Tabler: chevron-down -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="scroll-cue size-5 text-ink-faint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6l6 -6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Beliefs / manifesto ============ -->
+  <!-- Placeholder copy throughout — statements need Aaron's voice. -->
+  <section class="border-t border-hairline">
+    <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+      <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">What I believe</h2>
+
+      <div class="mt-12 grid grid-cols-1 gap-x-10 gap-y-14 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#01</p>
+          <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
+            Working software beats perfect plans.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#02</p>
+          <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
+            Code is read far more often than it's written.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#03</p>
+          <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
+            Simple is harder than clever — and worth it.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#04</p>
+          <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
+            The best tool is the one your team can maintain.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#05</p>
+          <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
+            Ship small. Ship often. Learn faster.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">#06</p>
+          <p class="mt-4 font-display text-2xl font-semibold leading-snug text-white">
+            Tools change. Fundamentals compound.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Further homepage sections TBD (DESIGN.md) — they slot in here. -->
+
+  <!-- ============ Footer: does real work ============ -->
+  <footer class="border-t border-hairline bg-surface/40">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+
+      <!-- Two primary CTA boxes: the two main tasks -->
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <a href="/blog.html" class="group border border-hairline p-6 transition-colors hover:border-accent sm:p-8">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display text-xl font-semibold text-white sm:text-2xl">Read the blog</h3>
+            <!-- Tabler: arrow-right -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-ink-faint transition-colors group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/>
+            </svg>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-ink-dim">
+            Two decades of PHP, Laravel, and lessons learned shipping real software.
+          </p>
+        </a>
+        <a href="#" class="group border border-hairline p-6 transition-colors hover:border-accent sm:p-8">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display text-xl font-semibold text-white sm:text-2xl">Work with me</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-ink-faint transition-colors group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/>
+            </svg>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-ink-dim">
+            Open source consultant for startups and SMBs that need effective software.
+          </p>
+        </a>
+      </div>
+
+      <!-- Brand mark -->
+      <div class="mt-14 text-lg font-extrabold tracking-tight">
+        <span class="text-accent">aaron</span><span>saray</span>
+      </div>
+
+      <!-- Sitemap-style link columns (external links are placeholders) -->
+      <div class="mt-8 grid grid-cols-2 gap-8 text-sm sm:grid-cols-3">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Site</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="/home.html" class="opacity-60 transition-opacity hover:opacity-100">Home</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity hover:opacity-100">CV</a></li>
+            <li><a href="/blog.html" class="opacity-60 transition-opacity hover:opacity-100">Blog</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity hover:opacity-100">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Elsewhere</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="https://github.com/aaronsaray" class="opacity-60 transition-opacity hover:opacity-100">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/aaronsaray" class="opacity-60 transition-opacity hover:opacity-100">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Other Sites</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="https://morebetterfaster.io" class="opacity-60 transition-opacity hover:opacity-100">More Better Faster</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="mt-14 border-t border-hairline pt-6 text-xs text-ink-faint">
+        &copy; 2026 Aaron Saray. Licensed under CC BY-SA 4.0.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
