@@ -13,35 +13,45 @@
 
   <style type="text/tailwindcss">
     @theme {
-      /* Palette: off-white + yellow accent on navy-tinted near-black.
-         Surfaces are tinted toward the accent-adjacent navy hue, not
-         neutral gray. All swappable — this is the first candidate. */
-      --color-night: #0a0e14;
-      --color-surface: #101722;
-      --color-ink: #e9e7e1;
-      --color-ink-dim: #8b95a4;
-      --color-ink-faint: #5c6675;
-      --color-accent: #f6c945;
-      --color-hairline: #1c2530;
+      /* Palette: off-white + muted steel-blue accent on off-black
+         (#0a0a0a). Surfaces carry a whisper of cool tint toward the
+         accent hue rather than neutral gray. All swappable. */
+      --color-night: #0a0a0a;
+      --color-surface: #10141a;
+      --color-ink: #e7e9ec;
+      --color-ink-dim: #8e959e;
+      --color-ink-faint: #5d646d;
+      --color-accent: #537e9e;
+      --color-hairline: #1b2026;
 
       --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
       --font-display: "Fraunces", ui-serif, Georgia, serif;
     }
 
-    /* The one texture effect on this page: a faint navy glow at the
-       top that fades into the flat background. Atmosphere, not
-       decoration. */
-    .top-glow {
-      background:
-        radial-gradient(120% 70% at 30% 0%, #131c2b 0%, transparent 60%),
-        var(--color-night);
+    /* Scrollbar: very dark and muted, but still findable. */
+    html {
+      scrollbar-color: #2c3238 var(--color-night); /* Firefox + modern Chromium */
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--color-night);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2c3238;
+      border-radius: 5px;
+      border: 2px solid var(--color-night);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3a424a;
     }
 
     @keyframes drift-down {
-      0%, 100% { transform: translateY(0); opacity: 0.5; }
-      50%      { transform: translateY(6px); opacity: 1; }
+      0%, 100% { transform: translateY(0); opacity: 0.55; }
+      50%      { transform: translateY(3px); opacity: 1; }
     }
-    .scroll-cue { animation: drift-down 2.4s ease-in-out infinite; }
+    .scroll-cue { animation: drift-down 3s ease-in-out infinite; }
   </style>
 </head>
 
@@ -50,38 +60,69 @@
   <!-- ============ Header: compact single-row slim top bar ============ -->
   <header class="absolute inset-x-0 top-0 z-10">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-      <!-- Placeholder mark: two-tone wordmark until the AS SVG is redone -->
-      <a href="/home.html" class="text-lg font-extrabold tracking-tight">
-        <span class="text-accent">aaron</span><span>saray</span>
+      <!-- Current-site logo, inlined + recolored for dark bg. Gets
+           replaced when the AS mark is redone as a new SVG. -->
+      <a href="/home.html" aria-label="Aaron Saray — home">
+        <svg class="h-8 w-auto" viewBox="0 0 62 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AS logo"><path d="m26.405502 27.325043 11.065735-.670941c.796601 2.330656 1.05901 3.13172 1.815735 4.068341 1.231762 1.515525 2.991547 2.273365 5.279198 2.273365 1.706959 0 3.022426-.387398 3.946247-1.162274.923904-.774875 1.385853-1.673183 1.385853-2.694917 0-.970698-.439926-1.839167-1.319855-2.605565-.879856-.766391-2.921166-1.490079-6.12394-2.171215-5.244007-1.140924-8.983501-2.656599-11.218475-4.546806-2.252462-1.890356-3.378731-4.29995-3.378731-7.229074 0-1.924284.576302-3.742169 1.728983-5.453671 1.152601-1.711498 2.885973-3.056797 5.200037-4.035976 2.314064-.979176 5.486035-1.468804 9.515984-1.468804 4.944847 0 8.715214.889824 11.310882 2.669396 2.595593 1.779575 4.139767 4.610717 4.632519 8.493505l-11.271301.6385c-.299164-1.685905-.928291-2.912017-1.887306-3.678335-.959092-.766323-2.283265-1.149479-3.972664-1.149479-1.39016 0-2.437271.285248-3.141167.855748-.703899.570499-1.055809 1.264499-1.055809 2.081859 0 .596018.290306 1.132443.871075 1.609346.563057.493794 1.90047.953585 4.012237 1.379303 5.226456 1.089884 8.970417 2.192568 11.231655 3.307972 2.261307 1.115479 3.90667 2.499169 4.936139 4.150999 1.029472 1.651827 1.544174 3.499552 1.544174 5.543099 0 2.401112-.686272 4.614883-2.058949 6.641464-1.372604 2.026581-3.290714 3.563389-5.75439 4.610718-2.463608 1.047401-5.569584 1.57103-9.317933 1.57103-6.793243.206314-11.172947-1.193379-13.673385-3.67841-2.53406-2.452148-3.968195-5.568691-4.302548-9.349106z" fill="var(--color-ink)"/><path d="m28.203676 33.936668h-13.620557l-1.874209 6.387913h-12.221541l14.544457-38.697224h13.039866l14.544378 38.724751c-3.929657.090771-6.759907-.133396-8.490902-.672348-1.730911-.53896-3.300305-1.694019-4.7081-3.465031zm-2.507726-8.367689-4.276213-13.91094-4.249802 13.91094z" fill="var(--color-accent)"/></svg>
       </a>
       <nav class="flex items-center gap-5 text-sm sm:gap-8">
-        <a href="#" class="opacity-60 transition-opacity hover:opacity-100">CV</a>
-        <a href="/blog.html" class="opacity-60 transition-opacity hover:opacity-100">Blog</a>
-        <a href="#" class="opacity-60 transition-opacity hover:opacity-100">Contact</a>
+        <div class="group relative">
+          <button class="flex items-center gap-1 opacity-60 transition-opacity duration-200 delay-300 group-hover:opacity-100 group-hover:delay-0 group-focus-within:opacity-100 group-focus-within:delay-0">
+            About
+            <!-- Tabler: chevron-down -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></svg>
+          </button>
+          <div class="invisible absolute right-0 top-full pt-2 opacity-0 transition-[opacity,visibility] duration-200 delay-300 group-hover:visible group-hover:opacity-100 group-hover:delay-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0">
+            <div class="min-w-36 border border-hairline bg-surface py-2">
+              <a href="#" class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100">Who am I</a>
+              <a href="#" class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100">CV</a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative">
+          <button class="flex items-center gap-1 opacity-60 transition-opacity duration-200 delay-300 group-hover:opacity-100 group-hover:delay-0 group-focus-within:opacity-100 group-focus-within:delay-0">
+            Writing
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></svg>
+          </button>
+          <div class="invisible absolute right-0 top-full pt-2 opacity-0 transition-[opacity,visibility] duration-200 delay-300 group-hover:visible group-hover:opacity-100 group-hover:delay-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0">
+            <div class="min-w-36 border border-hairline bg-surface py-2">
+              <a href="/blog.html" class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100">Blog</a>
+              <a href="#" class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100">Books</a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- ============ Hero: full viewport, left-aligned ============ -->
-  <section class="top-glow relative flex min-h-svh flex-col justify-center">
+  <section class="relative flex min-h-svh flex-col justify-center">
     <div class="mx-auto w-full max-w-6xl px-5 sm:px-8">
-      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-accent">Hi, I'm</p>
-      <h1 class="mt-3 text-[clamp(3.8rem,14vw,10.5rem)] font-black leading-[0.92] tracking-[-0.04em]">
+      <!-- Reads as one sentence: Hi, I'm / Aaron Saray / I make things better. -->
+      <!-- Rule starts at the left margin and does the indenting itself.
+           Width is derived from the name's font size so "Hi" starts at
+           the top-left corner of the A's flat apex at every viewport
+           width. The corner is at 0.258em; 0.245 compensates for the
+           H's side bearing and the A's antialiased corner edge. -->
+      <p class="flex items-center gap-2 text-[clamp(1.2rem,2.8vw,2.1rem)] font-semibold leading-tight text-ink-dim">
+        <span class="h-px w-[calc(0.245*clamp(3.5rem,9.5vw,8rem)-0.5rem)] bg-ink-faint"></span>Hi, I'm
+      </p>
+      <!-- Name sits just below the off-white ink token so it doesn't "bounce" -->
+      <h1 class="mt-2 text-[clamp(3.5rem,9.5vw,8rem)] font-black leading-[0.95] tracking-[-0.03em] text-[#dfe2e6]">
         Aaron Saray
       </h1>
-      <p class="mt-5 text-[clamp(1.6rem,5vw,3.5rem)] font-bold leading-tight tracking-[-0.02em]">
+      <p class="mt-4 text-[clamp(1.55rem,4vw,3rem)] font-bold leading-tight tracking-[-0.01em] text-ink-dim">
         I make things better.
       </p>
     </div>
 
-    <div class="absolute inset-x-0 bottom-8">
-      <div class="mx-auto flex max-w-6xl items-center gap-3 px-5 sm:px-8">
-        <p class="text-sm text-ink-faint sm:text-base">let me show you how</p>
-        <!-- Tabler: chevron-down -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="scroll-cue size-5 text-ink-faint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 9l6 6l6 -6"/>
-        </svg>
-      </div>
+    <div class="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2">
+      <p class="text-base text-ink-faint sm:text-lg">let me show you how</p>
+      <!-- Tabler: chevron-down -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="scroll-cue size-5 text-ink-faint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 9l6 6l6 -6"/>
+      </svg>
     </div>
   </section>
 
@@ -140,11 +181,11 @@
 
       <!-- Two primary CTA boxes: the two main tasks -->
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <a href="/blog.html" class="group border border-hairline p-6 transition-colors hover:border-accent sm:p-8">
+        <a href="/blog.html" class="group border border-hairline p-6 transition-colors duration-300 hover:border-accent/75 sm:p-8">
           <div class="flex items-center justify-between">
             <h3 class="font-display text-xl font-semibold text-white sm:text-2xl">Read the blog</h3>
             <!-- Tabler: arrow-right -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-ink-faint transition-colors group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-ink-faint transition-colors duration-300 group-hover:text-accent/75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/>
             </svg>
           </div>
@@ -152,10 +193,10 @@
             Two decades of PHP, Laravel, and lessons learned shipping real software.
           </p>
         </a>
-        <a href="#" class="group border border-hairline p-6 transition-colors hover:border-accent sm:p-8">
+        <a href="#" class="group border border-hairline p-6 transition-colors duration-300 hover:border-accent/75 sm:p-8">
           <div class="flex items-center justify-between">
             <h3 class="font-display text-xl font-semibold text-white sm:text-2xl">Work with me</h3>
-            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-ink-faint transition-colors group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-ink-faint transition-colors duration-300 group-hover:text-accent/75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/>
             </svg>
           </div>
@@ -166,39 +207,59 @@
       </div>
 
       <!-- Brand mark -->
-      <div class="mt-14 text-lg font-extrabold tracking-tight">
-        <span class="text-accent">aaron</span><span>saray</span>
+      <div class="mt-14">
+        <svg class="h-8 w-auto" viewBox="0 0 62 42" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AS logo"><path d="m26.405502 27.325043 11.065735-.670941c.796601 2.330656 1.05901 3.13172 1.815735 4.068341 1.231762 1.515525 2.991547 2.273365 5.279198 2.273365 1.706959 0 3.022426-.387398 3.946247-1.162274.923904-.774875 1.385853-1.673183 1.385853-2.694917 0-.970698-.439926-1.839167-1.319855-2.605565-.879856-.766391-2.921166-1.490079-6.12394-2.171215-5.244007-1.140924-8.983501-2.656599-11.218475-4.546806-2.252462-1.890356-3.378731-4.29995-3.378731-7.229074 0-1.924284.576302-3.742169 1.728983-5.453671 1.152601-1.711498 2.885973-3.056797 5.200037-4.035976 2.314064-.979176 5.486035-1.468804 9.515984-1.468804 4.944847 0 8.715214.889824 11.310882 2.669396 2.595593 1.779575 4.139767 4.610717 4.632519 8.493505l-11.271301.6385c-.299164-1.685905-.928291-2.912017-1.887306-3.678335-.959092-.766323-2.283265-1.149479-3.972664-1.149479-1.39016 0-2.437271.285248-3.141167.855748-.703899.570499-1.055809 1.264499-1.055809 2.081859 0 .596018.290306 1.132443.871075 1.609346.563057.493794 1.90047.953585 4.012237 1.379303 5.226456 1.089884 8.970417 2.192568 11.231655 3.307972 2.261307 1.115479 3.90667 2.499169 4.936139 4.150999 1.029472 1.651827 1.544174 3.499552 1.544174 5.543099 0 2.401112-.686272 4.614883-2.058949 6.641464-1.372604 2.026581-3.290714 3.563389-5.75439 4.610718-2.463608 1.047401-5.569584 1.57103-9.317933 1.57103-6.793243.206314-11.172947-1.193379-13.673385-3.67841-2.53406-2.452148-3.968195-5.568691-4.302548-9.349106z" fill="var(--color-ink)"/><path d="m28.203676 33.936668h-13.620557l-1.874209 6.387913h-12.221541l14.544457-38.697224h13.039866l14.544378 38.724751c-3.929657.090771-6.759907-.133396-8.490902-.672348-1.730911-.53896-3.300305-1.694019-4.7081-3.465031zm-2.507726-8.367689-4.276213-13.91094-4.249802 13.91094z" fill="var(--color-accent)"/></svg>
       </div>
 
       <!-- Sitemap-style link columns (external links are placeholders) -->
-      <div class="mt-8 grid grid-cols-2 gap-8 text-sm sm:grid-cols-3">
+      <div class="mt-8 grid grid-cols-2 gap-8 text-sm sm:grid-cols-4">
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Site</p>
           <ul class="mt-4 space-y-2">
-            <li><a href="/home.html" class="opacity-60 transition-opacity hover:opacity-100">Home</a></li>
-            <li><a href="#" class="opacity-60 transition-opacity hover:opacity-100">CV</a></li>
-            <li><a href="/blog.html" class="opacity-60 transition-opacity hover:opacity-100">Blog</a></li>
-            <li><a href="#" class="opacity-60 transition-opacity hover:opacity-100">Contact</a></li>
+            <li><a href="/home.html" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Home</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Who am I</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">CV</a></li>
+            <li><a href="/blog.html" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Blog</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Books</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Contact</a></li>
           </ul>
         </div>
         <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Elsewhere</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Find Me</p>
           <ul class="mt-4 space-y-2">
-            <li><a href="https://github.com/aaronsaray" class="opacity-60 transition-opacity hover:opacity-100">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/aaronsaray" class="opacity-60 transition-opacity hover:opacity-100">LinkedIn</a></li>
+            <li><a href="https://github.com/aaronsaray" class="opacity-60 transition-opacity duration-300 hover:opacity-100">GitHub</a></li>
+            <li><a href="https://codepen.io/aaronsaray" class="opacity-60 transition-opacity duration-300 hover:opacity-100">CodePen</a></li>
+            <li><a href="https://linkedin.com/in/aaronsaray" class="opacity-60 transition-opacity duration-300 hover:opacity-100">LinkedIn</a></li>
+            <li><a href="https://twitter.com/aaronsaray" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Twitter</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Projects</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="https://show.nocompromises.io/?rel=as" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Laravel Podcast</a></li>
+            <li><a href="https://masteringlaravel.io/?rel=as" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Mastering Laravel</a></li>
+            <li><a href="https://learnthephoneticalphabet.com/?rel=as" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Learn the Phonetic Alphabet</a></li>
+            <li><a href="https://typesetter.io/?rel=as" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Typesetter.io</a></li>
           </ul>
         </div>
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Other Sites</p>
           <ul class="mt-4 space-y-2">
-            <li><a href="https://morebetterfaster.io" class="opacity-60 transition-opacity hover:opacity-100">More Better Faster</a></li>
+            <li><a href="https://morebetterfaster.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">More Better Faster</a></li>
+            <li><a href="https://1lastcheck.com" class="opacity-60 transition-opacity duration-300 hover:opacity-100">1lastcheck</a></li>
           </ul>
         </div>
       </div>
 
-      <p class="mt-14 border-t border-hairline pt-6 text-xs text-ink-faint">
-        &copy; 2026 Aaron Saray. Licensed under CC BY-SA 4.0.
-      </p>
+      <!-- Bottom meta row: legal left, feed right — same tier of info -->
+      <div class="mt-14 flex items-center justify-between gap-4 border-t border-hairline pt-6 text-xs text-ink-faint">
+        <p>&copy; 2026 Aaron Saray. Licensed under CC BY-SA 4.0.</p>
+        <a href="/blog/index.xml" class="flex items-center gap-1.5 opacity-80 transition-opacity duration-300 hover:opacity-100">
+          <!-- Tabler: rss -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M4 4a16 16 0 0 1 16 16"/><path d="M4 11a9 9 0 0 1 9 9"/></svg>
+          RSS
+        </a>
+      </div>
     </div>
   </footer>
 

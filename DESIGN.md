@@ -67,18 +67,26 @@ forward.
   (possibly with social icons). Minimal vertical cost.
 * No search box (site-wide decision).
 * Dropdown chevron indicators are fine on nav items that have children.
+* **Nav structure (decided Aug 26, 2026):** About ▾ (Who am I, CV) —
+  Writing ▾ (Blog, Books) — Contact.
 
 ## Homepage
 
 First design target. Structure, top to bottom:
 
-* **Full-viewport hero, left-aligned** (not centered), massive
-  heavy-weight type, tight letter-spacing and line-height:
-  * "Hi, I'm" — small, eyebrow-style
-  * "Aaron Saray" — the largest element on the screen
-  * "I make things better" — slightly smaller than the name
-  * "let me show you how" — lighter gray, smaller, toward the bottom,
-    paired with a scroll-down cue
+* **Full-viewport hero, left-aligned** (not centered), heavy-weight
+  type, tight letter-spacing and line-height. Flat background — no
+  gradient/texture in the hero. The three lines read as one sentence:
+  * "Hi, I'm" — grey, sentence-case, led by a short hairline rule that
+    starts at the left margin; the rule's length optically aligns the
+    "Hi" with the top of the A in "Aaron" (alignment is to the glyph's
+    ink, derived from the name's font size — not a fixed indent)
+  * "Aaron Saray" — still the largest element, but restrained (not
+    viewport-filling)
+  * "I make things better" — smaller than the name and dimmer than
+    full white
+  * "let me show you how" — lighter gray, centered horizontally at the
+    bottom with a gently-animated scroll-down chevron
 * **Beliefs/manifesto section after the hero:** a multi-column grid of
   short punchy statements, each a small uppercase letterspaced accent
   eyebrow with sequential numbering ("#01"…) over a two-to-three-line
@@ -115,8 +123,19 @@ direction, not copied identically.
 
 * **The footer does real work — not minimal or boring.**
 * Hierarchy, top to bottom: two primary CTA boxes (the two main tasks to
-  take) → brand mark → full sitemap-style link columns.
-* Will carry links to Aaron's other sites.
+  take) → brand mark → full sitemap-style link columns → bottom meta row.
+* **Link columns (decided Aug 26, 2026):**
+  * Site — full page list (Home, Who am I, CV, Blog, Books, Contact)
+  * Find Me — GitHub, CodePen, LinkedIn, Twitter
+  * Projects — Laravel Podcast, Mastering Laravel, Learn the Phonetic
+    Alphabet, Typesetter.io (keep the `?rel=as` referral params from the
+    Hugo site). ChickenFacts is dropped — that site is coming down.
+  * Other Sites — More Better Faster, 1lastcheck
+* **Bottom meta row:** copyright/license left, RSS feed link right —
+  they're the same tier of supporting information.
+* **No Fathom privacy CTA** in the new site (the Hugo footer's
+  "I don't invade your privacy" band does not carry over).
+* No tag-page links in menus or footer — tags get handled later.
 
 ## Texture & Effects
 
@@ -136,6 +155,17 @@ most, never stacked:
   contrast than the Raycast reference.
 * Small accent-color pill tags for status metadata.
 * Separators: solid 1px hairlines, not gradients — and few of them.
+
+## Motion
+
+* **Hover transitions are deliberately unhurried** — links and hover
+  states animate noticeably slower than browser defaults; nothing snaps.
+* **Dropdown menus:** open instantly, but linger briefly before fading
+  out on mouse-away. The trigger's hover state and its panel are locked
+  to the same timing — they appear and dim together.
+* **Hover accents stay muted:** hover borders/icons reach only partial
+  accent brightness (~75%), never full intensity.
+* Scroll cue animates with a small, slow drift — movement is minimal.
 
 ## Overall Direction
 
