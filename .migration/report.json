@@ -1,0 +1,780 @@
+{
+  "posts": 707,
+  "missingAlt": [],
+  "noMoreMarker": [
+    "8-php-command-line-tips-and-tricks-presentation",
+    "eclipse-testing-with-tptp-help-me",
+    "firebug-for-ie",
+    "i-am-a-zend-certified-engineer",
+    "jemgames-launched",
+    "jquery-mobile-presentation-from-milwaukee-web-design-meetup",
+    "milwaukee-php-users-group-1st-year-anniversary",
+    "network-site-jemdiarycom-updated",
+    "newest-version-of-102-degrees-launched",
+    "no-more-the-triangle",
+    "ode-to-a-myspace-layout",
+    "php-constant-visibility",
+    "simplephpmailer-now-with-required-fields",
+    "slides-from-thatconference",
+    "spl-documentation-standard-php-library",
+    "started-my-own-company",
+    "symbolic-linking-in-windows",
+    "time-off-for-b-day-is-done",
+    "twitter-anywhere-platform-web414-presentation",
+    "unofficial-xdebug-ini-with-comments",
+    "wordcamp-milwaukee-2013-talk-slides",
+    "writing-a-spelling-corrector"
+  ],
+  "refsResolved": {
+    "2019-goals: /blog/spa-plus-api-no-framework-no-db": "/2019/spa-plus-api-no-framework-no-db/",
+    "add-case-sensitive-disk-in-macos: /blog/quick-and-easy-case-sensitive-drive-in-macos": "/2017/quick-and-easy-case-sensitive-drive-in-macos/",
+    "ajax-security-research-and-findings-round-2: /blog/ajax-security-research-and-findings-round-1": "/2007/ajax-security-research-and-findings-round-1/",
+    "custom-php-exceptions-for-unimplemented-code: the-point-of-custom-exceptions": "/2012/the-point-of-custom-exceptions/",
+    "custom-php-exceptions-for-unimplemented-code: add-interfaces-to-add-verbosity.md": "/2022/add-interfaces-to-add-verbosity/",
+    "dev-manager-1-3-books: /blog/dev-manager-2-3-tough-convos": "/2020/dev-manager-2-3-tough-convos/",
+    "dev-manager-2-3-tough-convos: /blog/dev-manager-2-3-tough-convos": "/2020/dev-manager-2-3-tough-convos/",
+    "dev-manager-2-3-tough-convos: /blog/dev-manager-3-3-types-of-devs": "/2020/dev-manager-3-3-types-of-devs/",
+    "dev-manager-3-3-types-of-devs: /blog/dev-manager-2-3-tough-convos": "/2020/dev-manager-2-3-tough-convos/",
+    "easiest-form-token-class-to-prevent-csrf: /blog/ajax-security-research-and-findings-round-1": "/2007/ajax-security-research-and-findings-round-1/",
+    "evolution-of-php-programmer: /blog/ajax-security-research-and-findings-round-1": "/2007/ajax-security-research-and-findings-round-1/",
+    "evolution-of-php-programmer: emulation-of-collections-true-stories-of-data-object-handling": "/2007/emulation-of-collections-true-stories-of-data-object-handling/",
+    "evolution-of-php-programmer: setting-config-variables-constants-vs-abstract-class-access": "/2007/setting-config-variables-constants-vs-abstract-class-access/",
+    "execute-windows-commands-from-php-without-blocking: /blog/live-combined-error-reporting-for-apache-and-php-during-development": "/2007/live-combined-error-reporting-for-apache-and-php-during-development/",
+    "find-code-review-fodder: /blog/what-i-look-for-in-a-code-review": "/2012/what-i-look-for-in-a-code-review/",
+    "finding-slow-tests-in-phpunit-9: /blog/add-phpunit-listeners-to-watch-for-long-running-tests": "/2011/add-phpunit-listeners-to-watch-for-long-running-tests/",
+    "finding-slow-tests-in-phpunit-9: phpunit-listener-for-long-running-tests-update": "/2017/phpunit-listener-for-long-running-tests-update/",
+    "git-ignore-without-gitignore: better-alternative-to-gitkeep": "/2021/better-alternative-to-gitkeep/",
+    "hardest-part-of-mentoring: /blog/keep-mentoring-even-if-it-looks-like-no-one-cares": "/2014/keep-mentoring-even-if-it-looks-like-no-one-cares/",
+    "hardest-part-of-mentoring: cc6-confident-not-cocky": "/2016/cc6-confident-not-cocky/",
+    "hardest-part-of-mentoring: professional-connection-made-now-what": "/2017/professional-connection-made-now-what/",
+    "homebridge-notify-garage-open-too-long: /blog/homekit-notify-door-open-too-long": "/2020/homekit-notify-door-open-too-long/",
+    "how-to-discover-talent-not-just-skill: /blog/what-i-look-for-in-a-code-review": "/2012/what-i-look-for-in-a-code-review/",
+    "intelligently-combining-javascript: /blog/rely-on-google-for-your-javascript": "/2009/rely-on-google-for-your-javascript/",
+    "intelligently-combining-javascript: auto-failover-for-cdn-based-javascript": "/2009/auto-failover-for-cdn-based-javascript/",
+    "laravel-api-validate-boolean-value: /blog/in-php-false-is-sometimes-true": "/2017/in-php-false-is-sometimes-true/",
+    "laravel-quick-show-config: /blog/do-not-use-tinker-in-production": "/2021/do-not-use-tinker-in-production/",
+    "lessons-from-code-review-interview: /blog/lessons-from-200-tech-interviews": "/2018/lessons-from-200-tech-interviews/",
+    "lessons-from-code-review-interview: instead-of-coding-interview-do-peer-review": "/2018/instead-of-coding-interview-do-peer-review/",
+    "mac-app-keep-slack-active: /blog/its-not-shameful-to-cut-your-losses": "/2010/its-not-shameful-to-cut-your-losses/",
+    "making-friendly-javascript-errors-client-and-server: /blog/unknown-function-_popupcontrol": "/2009/unknown-function-_popupcontrol/",
+    "making-friendly-javascript-errors-client-and-server: /blog/javascript-error-handler": "/2009/javascript-error-handler/",
+    "mockery-on-better-failure: /blog/use-the-fail-method-with-mockery-on": "/2017/use-the-fail-method-with-mockery-on/",
+    "my-nondisclosure-promise: /blog/aaron-on-ndas": "/2010/aaron-on-ndas/",
+    "new-blog: /blog/enable-your-blog-comments-already": "/2013/enable-your-blog-comments-already/",
+    "ode-to-a-myspace-layout: /blog/how-to-make-a-great-myspace-layout": "/2007/how-to-make-a-great-myspace-layout/",
+    "php-script-configuration-class-with-logic-built-in: /blog/php-script-configuration-options-class-constants-or-mysql": "/2008/php-script-configuration-options-class-constants-or-mysql/",
+    "phpunit-listener-for-long-running-tests-update: /blog/add-phpunit-listeners-to-watch-for-long-running-tests": "/2011/add-phpunit-listeners-to-watch-for-long-running-tests/",
+    "planning-for-application-development: /blog/website-monitoring-project": "/2007/website-monitoring-project/",
+    "redirect-domain-with-ssl-on-cloudflare: /blog/redirecturl-experiment-is-done": "/2020/redirecturl-experiment-is-done/",
+    "redirect-rewrite-url-nginx: /blog/redirecturl-experiment-is-done": "/2020/redirecturl-experiment-is-done/",
+    "redirecturl-experiment-is-done: /blog/the-end-of-possessor": "/2019/the-end-of-possessor/",
+    "requirements-documentation-examples-guidelines-rationale: /blog/requirements-gathering-questions-to-ask": "/2023/requirements-gathering-questions-to-ask/",
+    "requirements-documentation-examples-guidelines-rationale: requirements-gathering-questions-to-ask": "/2023/requirements-gathering-questions-to-ask/",
+    "requirements-gathering-questions-to-ask: /blog/requirements-documentation-examples-guidelines-rationale": "/2023/requirements-documentation-examples-guidelines-rationale/",
+    "requirements-gathering-questions-to-ask: requirements-documentation-examples-guidelines-rationale": "/2023/requirements-documentation-examples-guidelines-rationale/",
+    "rewrite-redirect-url-apache: /blog/redirecturl-experiment-is-done": "/2020/redirecturl-experiment-is-done/",
+    "simplephpmailer-now-with-required-fields: /blog/simplephpmailer": "/2008/simplephpmailer/",
+    "speaking-at-milwaukee-wordcamp-2013: /blog/finished-up-wordcamp-milwaukee-2012": "/2012/finished-up-wordcamp-milwaukee-2012/",
+    "tamper-data-firefox-extension-is-it-worth-it: /blog/load-time-analyzer-for-firefox": "/2007/load-time-analyzer-for-firefox/",
+    "testing-outgoing-email-with-zend-framework: /blog/how-i-test-email-recipients-when-i-develop": "/2010/how-i-test-email-recipients-when-i-develop/",
+    "the-very-bad-things-that-javascript-can-do-part-1: /blog/the-very-bad-things-that-javascript-can-do-part-2": "/2013/the-very-bad-things-that-javascript-can-do-part-2/",
+    "track-done-things-with-alfred-update: /blog/track-done-things-with-alfred": "/2017/track-done-things-with-alfred/",
+    "tracking-work-accomplishments: /blog/track-done-things-with-alfred": "/2017/track-done-things-with-alfred/",
+    "two-new-useful-external-tools-for-eclipse: /blog/build-phpdocumentor-into-eclipse": "/2007/build-phpdocumentor-into-eclipse/",
+    "two-new-useful-external-tools-for-eclipse: /blog/eclipse-integration-with-tortoise-svn": "/2007/eclipse-integration-with-tortoise-svn/",
+    "what-have-i-done-lately: /blog/what-is-a-cto": "/2021/what-is-a-cto/",
+    "what-i-have-learned-in-6-months: /blog/whats-important-in-life": "/2017/whats-important-in-life/",
+    "zend-framework-front-controllers-vs-bootstrap-round-2: /blog/zend-framework-bootstrap-vs-front-controller-plugin": "/2011/zend-framework-bootstrap-vs-front-controller-plugin/"
+  },
+  "linkFigures": [
+    {
+      "post": "2019-goals",
+      "href": "https://thedevmanager.com",
+      "caption": "The Dev Manager"
+    },
+    {
+      "post": "2019-goals",
+      "href": "https://morebetterfaster.io",
+      "caption": "More Better Faster"
+    },
+    {
+      "post": "2019-goals",
+      "href": "https://startuptribe.us",
+      "caption": "Startup Tribe"
+    },
+    {
+      "post": "2019-goals",
+      "href": "https://chickenfacts.io",
+      "caption": "Chicken Facts"
+    },
+    {
+      "post": "2019-goals",
+      "href": "https://nocompromises.io",
+      "caption": "No Compromises"
+    },
+    {
+      "post": "book-review-php-frameworks-and-applications",
+      "href": "http://www.amazon.com/gp/product/0470872497/",
+      "caption": "PHP Frameworks and Applications"
+    },
+    {
+      "post": "requirements-documentation-examples-guidelines-rationale",
+      "href": "/uploads/2023/Fizzle Stix - Mass Status for Slack - Requirements.pdf",
+      "caption": "Requirements PDF"
+    },
+    {
+      "post": "requirements-documentation-examples-guidelines-rationale",
+      "href": "/uploads/2023/Fizzle Stix - Mass Status for Slack - Wireframe.pdf",
+      "caption": "Wireframe PDF"
+    },
+    {
+      "post": "review-learning-javascriptmvc-by-packt",
+      "href": "http://link.packtpub.com/hFZPlQ",
+      "caption": "Learning JavascriptMVC"
+    },
+    {
+      "post": "spa-plus-api-no-framework-no-db",
+      "href": "https://chickenfacts.io",
+      "caption": "Chicken Facts"
+    },
+    {
+      "post": "speaking-at-milwaukee-wordcamp-2013",
+      "href": "http://2013.milwaukee.wordcamp.org/",
+      "caption": "Milwaukee Wordcamp 2013"
+    },
+    {
+      "post": "state-of-laravel-security-2021",
+      "href": "/uploads/2022/state-of-security-of-laravel-apps-in-2021.pdf",
+      "caption": "Whitepaper"
+    },
+    {
+      "post": "statement-of-work-example",
+      "href": "/uploads/2023/Acme Corp - Statement of Work.pdf",
+      "caption": "Statement of Work PDF"
+    },
+    {
+      "post": "xdebug-and-eclipse-pdt-on-windows-from-start-to-finish",
+      "href": "http://sourceforge.net/projects/wincachegrind/",
+      "caption": "WinCacheGrind"
+    }
+  ],
+  "thumbLinks": [
+    {
+      "post": "3d-printing-makes-manufacturing-more-like-programming",
+      "src": "/uploads/2014/seedling.jpg",
+      "thumb": "/uploads/2014/seedling-300x199.jpg"
+    },
+    {
+      "post": "3d-printing-makes-manufacturing-more-like-programming",
+      "src": "/uploads/2014/3D-Printer.jpg",
+      "thumb": "/uploads/2014/3D-Printer-300x239.jpg"
+    },
+    {
+      "post": "a-better-milwaukee",
+      "src": "/uploads/2010/before.png",
+      "thumb": "/uploads/2010/before-300x77.png"
+    },
+    {
+      "post": "a-better-milwaukee",
+      "src": "/uploads/2010/after.png",
+      "thumb": "/uploads/2010/after-300x77.png"
+    },
+    {
+      "post": "bluefish-editor-could-help-you-leak-your-php",
+      "src": "/uploads/2009/Untitled.jpg",
+      "thumb": "/uploads/2009/Untitled-300x208.jpg"
+    },
+    {
+      "post": "book-review-expert-php-5-tools",
+      "src": "/uploads/2010/8389_MockupCover.jpg",
+      "thumb": "/uploads/2010/8389_MockupCover-243x300.jpg"
+    },
+    {
+      "post": "creating-a-google-fusion-table-from-a-google-drive-spreadsheet",
+      "src": "/uploads/2015/fusion-1.png",
+      "thumb": "/uploads/2015/fusion-1-300x214.png"
+    },
+    {
+      "post": "creating-a-google-fusion-table-from-a-google-drive-spreadsheet",
+      "src": "/uploads/2015/fusion-2.png",
+      "thumb": "/uploads/2015/fusion-2-300x214.png"
+    },
+    {
+      "post": "creating-a-google-fusion-table-from-a-google-drive-spreadsheet",
+      "src": "/uploads/2015/fusion-3.png",
+      "thumb": "/uploads/2015/fusion-3-300x217.png"
+    },
+    {
+      "post": "creating-a-google-fusion-table-from-a-google-drive-spreadsheet",
+      "src": "/uploads/2015/fusion-4.png",
+      "thumb": "/uploads/2015/fusion-4-300x202.png"
+    },
+    {
+      "post": "creating-a-google-fusion-table-from-a-google-drive-spreadsheet",
+      "src": "/uploads/2015/fusion-5.png",
+      "thumb": "/uploads/2015/fusion-5-300x193.png"
+    },
+    {
+      "post": "creating-a-google-fusion-table-from-a-google-drive-spreadsheet",
+      "src": "/uploads/2015/fusion-6.png",
+      "thumb": "/uploads/2015/fusion-6-300x275.png"
+    },
+    {
+      "post": "creating-a-google-fusion-table-from-a-google-drive-spreadsheet",
+      "src": "/uploads/2015/fusion-7.png",
+      "thumb": "/uploads/2015/fusion-7-300x230.png"
+    },
+    {
+      "post": "creating-a-google-fusion-table-from-a-google-drive-spreadsheet",
+      "src": "/uploads/2015/fusion-8.png",
+      "thumb": "/uploads/2015/fusion-8-300x164.png"
+    },
+    {
+      "post": "css3-only-read-more-link",
+      "src": "/uploads/2015/Screenshot-2015-04-05-19.48.23.png",
+      "thumb": "/uploads/2015/Screenshot-2015-04-05-19.48.23-300x223.png"
+    },
+    {
+      "post": "didnt-launch-my-startup",
+      "src": "/uploads/2019/startuptribe1.png",
+      "thumb": "/uploads/2019/startuptribe1.thumbnail.png"
+    },
+    {
+      "post": "didnt-launch-my-startup",
+      "src": "/uploads/2019/startuptribe2.png",
+      "thumb": "/uploads/2019/startuptribe2.thumbnail.png"
+    },
+    {
+      "post": "didnt-launch-my-startup",
+      "src": "/uploads/2019/startuptribe3.png",
+      "thumb": "/uploads/2019/startuptribe3.thumbnail.png"
+    },
+    {
+      "post": "documentation-tools-for-phpstorm",
+      "src": "/uploads/2015/Screenshot-2015-04-05-18.15.42.png",
+      "thumb": "/uploads/2015/Screenshot-2015-04-05-18.15.42-150x150.png"
+    },
+    {
+      "post": "documentation-tools-for-phpstorm",
+      "src": "/uploads/2015/Screenshot-2015-04-05-18.21.11.png",
+      "thumb": "/uploads/2015/Screenshot-2015-04-05-18.21.11-300x282.png"
+    },
+    {
+      "post": "eclipse-pdt-integrating-apache-bench-for-load-testing",
+      "src": "/uploads/2009/1.jpg",
+      "thumb": "/uploads/2009/1-150x118.jpg"
+    },
+    {
+      "post": "eclipse-pdt-integrating-apache-bench-for-load-testing",
+      "src": "/uploads/2009/2.jpg",
+      "thumb": "/uploads/2009/2-300x240.jpg"
+    },
+    {
+      "post": "eclipse-pdt-integrating-apache-bench-for-load-testing",
+      "src": "/uploads/2009/3.jpg",
+      "thumb": "/uploads/2009/3-140x150.jpg"
+    },
+    {
+      "post": "equal-distance-menu-items",
+      "src": "/uploads/2013/Screenshot.png",
+      "thumb": "/uploads/2013/Screenshot-300x106.png"
+    },
+    {
+      "post": "exploring-mysql-in-eclipse-pdt",
+      "src": "/uploads/2010/1.jpg",
+      "thumb": "/uploads/2010/1-150x56.jpg"
+    },
+    {
+      "post": "exploring-mysql-in-eclipse-pdt",
+      "src": "/uploads/2010/2.jpg",
+      "thumb": "/uploads/2010/2-300x33.jpg"
+    },
+    {
+      "post": "exploring-mysql-in-eclipse-pdt",
+      "src": "/uploads/2010/3.jpg",
+      "thumb": "/uploads/2010/3-125x150.jpg"
+    },
+    {
+      "post": "exploring-mysql-in-eclipse-pdt",
+      "src": "/uploads/2010/5.jpg",
+      "thumb": "/uploads/2010/5-150x122.jpg"
+    },
+    {
+      "post": "exploring-mysql-in-eclipse-pdt",
+      "src": "/uploads/2010/6.jpg",
+      "thumb": "/uploads/2010/6-150x37.jpg"
+    },
+    {
+      "post": "exploring-mysql-in-eclipse-pdt",
+      "src": "/uploads/2010/7.jpg",
+      "thumb": "/uploads/2010/7-300x213.jpg"
+    },
+    {
+      "post": "fix-my-fucking-project",
+      "src": "/uploads/2021/fixmyfuckingproject.com.png",
+      "thumb": "/uploads/2021/fixmyfuckingproject.com.thumbnail.png"
+    },
+    {
+      "post": "fix-my-fucking-project",
+      "src": "/uploads/2021/fixmyfuckingproject-calendly.jpg",
+      "thumb": "/uploads/2021/fixmyfuckingproject-calendly.thumbnail.jpg"
+    },
+    {
+      "post": "fix-my-fucking-project",
+      "src": "/uploads/2021/fixmyfuckingproject-og.jpg",
+      "thumb": "/uploads/2021/fixmyfuckingproject-og.thumbnail.jpg"
+    },
+    {
+      "post": "full-page-screenshot-in-chrome",
+      "src": "/uploads/2020/fullsize-chrome-1.png",
+      "thumb": "/uploads/2020/fullsize-chrome-1.thumb.png"
+    },
+    {
+      "post": "full-page-screenshot-in-chrome",
+      "src": "/uploads/2020/fullsize-chrome-2.png",
+      "thumb": "/uploads/2020/fullsize-chrome-2.thumb.png"
+    },
+    {
+      "post": "full-page-screenshot-in-chrome",
+      "src": "/uploads/2020/fullsize-chrome-3.png",
+      "thumb": "/uploads/2020/fullsize-chrome-3.thumb.png"
+    },
+    {
+      "post": "full-page-screenshot-in-chrome",
+      "src": "/uploads/2020/fullsize-chrome-4.png",
+      "thumb": "/uploads/2020/fullsize-chrome-4.thumb.png"
+    },
+    {
+      "post": "full-page-screenshot-in-chrome",
+      "src": "/uploads/2020/fullsize-chrome-5.png",
+      "thumb": "/uploads/2020/fullsize-chrome-5.thumb.png"
+    },
+    {
+      "post": "full-page-screenshot-in-chrome",
+      "src": "/uploads/2020/fullsize-chrome-6.png",
+      "thumb": "/uploads/2020/fullsize-chrome-6.thumb.png"
+    },
+    {
+      "post": "guitar-chord-fingering-with-php",
+      "src": "/uploads/2010/chords.png",
+      "thumb": "/uploads/2010/chords-300x133.png"
+    },
+    {
+      "post": "highlight-laravel-logs-in-phpstorm",
+      "src": "/uploads/2022/highlight-logs-1.jpg",
+      "thumb": "/uploads/2022/highlight-logs-1-thumb.jpg"
+    },
+    {
+      "post": "highlight-laravel-logs-in-phpstorm",
+      "src": "/uploads/2022/highlight-logs-2.jpg",
+      "thumb": "/uploads/2022/highlight-logs-2-thumb.jpg"
+    },
+    {
+      "post": "html5-css3-javascript-only-photobooth-with-image-download",
+      "src": "/uploads/2013/1.png",
+      "thumb": "/uploads/2013/1-300x140.png"
+    },
+    {
+      "post": "html5-css3-javascript-only-photobooth-with-image-download",
+      "src": "/uploads/2013/2.png",
+      "thumb": "/uploads/2013/2-300x146.png"
+    },
+    {
+      "post": "html5-css3-javascript-only-photobooth-with-image-download",
+      "src": "/uploads/2013/3.png",
+      "thumb": "/uploads/2013/3-300x135.png"
+    },
+    {
+      "post": "ie6-warning-on-site",
+      "src": "/uploads/2010/untitled.jpg",
+      "thumb": "/uploads/2010/untitled-300x34.jpg"
+    },
+    {
+      "post": "load-time-analyzer-for-firefox",
+      "src": "/uploads/2007/test-1-load-time-analyzer.png",
+      "thumb": "/uploads/2007/test-1-load-time-analyzer.thumbnail.png"
+    },
+    {
+      "post": "load-time-analyzer-for-firefox",
+      "src": "/uploads/2007/test-2-load-time-analyzer.png",
+      "thumb": "/uploads/2007/test-2-load-time-analyzer.thumbnail.png"
+    },
+    {
+      "post": "my-stackoverflow-rant",
+      "src": "/uploads/2013/stackoverflow-logo.png",
+      "thumb": "/uploads/2013/stackoverflow-logo-300x89.png"
+    },
+    {
+      "post": "ode-to-a-myspace-layout",
+      "src": "/uploads/2008//myspace.jpg",
+      "thumb": "/uploads/2008/myspace-225x300.jpg"
+    },
+    {
+      "post": "old-school-fancy-resume-style",
+      "src": "/uploads/2021/resume-guy-smiley.png",
+      "thumb": "/uploads/2021/resume-guy-smiley.thumb.png"
+    },
+    {
+      "post": "photoshop-touchup",
+      "src": "/uploads/2009/before.jpg",
+      "thumb": "/uploads/2009/before-275x300.jpg"
+    },
+    {
+      "post": "photoshop-touchup",
+      "src": "/uploads/2009/after.jpg",
+      "thumb": "/uploads/2009/after-275x300.jpg"
+    },
+    {
+      "post": "php-shared-host-session-file-browser-script",
+      "src": "/uploads/2008/sessionfilebrowser.jpg",
+      "thumb": "/uploads/2008/sessionfilebrowser-108x150.jpg"
+    },
+    {
+      "post": "phpstorm-file-watcher-error-logs",
+      "src": "/uploads/2017/phpstorm-file-watcher-dialog.png",
+      "thumb": "/uploads/2017/phpstorm-file-watcher-dialog.thumbnail.png"
+    },
+    {
+      "post": "phpstorm-file-watcher-error-logs",
+      "src": "/uploads/2017/phpstorm-file-watcher-scope.png",
+      "thumb": "/uploads/2017/phpstorm-file-watcher-scope.thumbnail.png"
+    },
+    {
+      "post": "programming-without-e-notice",
+      "src": "/uploads/2008/squirrel.jpg",
+      "thumb": "/uploads/2008/squirrel-150x109.jpg"
+    },
+    {
+      "post": "programming-without-e-notice",
+      "src": "/uploads/2008/false_pos.jpg",
+      "thumb": "/uploads/2008/false_pos-150x100.jpg"
+    },
+    {
+      "post": "quick-and-easy-case-sensitive-drive-in-macos",
+      "src": "/uploads/2017/formatting-sd-card.png",
+      "thumb": "/uploads/2017/formatting-sd-card-thumb.png"
+    },
+    {
+      "post": "review-your-packages-for-security",
+      "src": "/uploads/2019/security-demo-1.png",
+      "thumb": "/uploads/2019/security-demo-1.thumbnail.png"
+    },
+    {
+      "post": "review-your-packages-for-security",
+      "src": "/uploads/2019/security-demo-2.png",
+      "thumb": "/uploads/2019/security-demo-2.thumbnail.png"
+    },
+    {
+      "post": "service-profile-mketweeps",
+      "src": "/uploads/2012/Screenshot-at-2012-03-18-203832.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-18-203832-150x150.png"
+    },
+    {
+      "post": "site-profile-amazondiscount-me",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-165821.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-165821-150x150.png"
+    },
+    {
+      "post": "site-profile-amazondiscount-me",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-165827.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-165827-150x150.png"
+    },
+    {
+      "post": "site-profile-honorarybrother-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-185705.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-185705-150x150.png"
+    },
+    {
+      "post": "site-profile-honorarybrother-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-185713.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-185713-150x150.png"
+    },
+    {
+      "post": "site-profile-honorarybrother-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-185842.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-185842-150x150.png"
+    },
+    {
+      "post": "site-profile-honorarybrother-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-190442.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-190442-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162645.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162645-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162725.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162725-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162737.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162737-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162758.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162758-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162812.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162812-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162819.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162819-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162836.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162836-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162846.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162846-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162854.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162854-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162906.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162906-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-162917.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-162917-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-163004.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-163004-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-164457.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-164457-150x150.png"
+    },
+    {
+      "post": "site-profile-jemdiary-com",
+      "src": "/uploads/2012/Screenshot-at-2012-03-18-114756.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-18-114756-150x132.png"
+    },
+    {
+      "post": "site-profile-name-tag-me",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-150408.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-150408-150x150.png"
+    },
+    {
+      "post": "site-profile-name-tag-me",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-150425.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-150425-150x150.png"
+    },
+    {
+      "post": "site-profile-name-tag-me",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-150450.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-150450-150x150.png"
+    },
+    {
+      "post": "site-profile-name-tag-me",
+      "src": "/uploads/2012/Hello-My-Name-Is-Aaron.png",
+      "thumb": "/uploads/2012/Hello-My-Name-Is-Aaron-150x150.png"
+    },
+    {
+      "post": "site-profile-thebetterbachelor-com",
+      "src": "/uploads/2012/1.png",
+      "thumb": "/uploads/2012/1-150x150.png"
+    },
+    {
+      "post": "site-profile-thebetterbachelor-com",
+      "src": "/uploads/201221.png",
+      "thumb": "/uploads/2012/2-150x150.png"
+    },
+    {
+      "post": "site-profile-whatscloseto-me",
+      "src": "/uploads/2012/Screenshot-at-2012-03-14-201600.png",
+      "thumb": "/uploads/2012/Screenshot-at-2012-03-14-201600-150x150.png"
+    },
+    {
+      "post": "tamper-data-firefox-extension-is-it-worth-it",
+      "src": "/uploads/2007/tamperprompt.gif",
+      "thumb": "/uploads/2007/tamperprompt.thumbnail.gif"
+    },
+    {
+      "post": "tamper-data-firefox-extension-is-it-worth-it",
+      "src": "/uploads/2007/tamperitem.gif",
+      "thumb": "/uploads/2007/tamperitem.thumbnail.gif"
+    },
+    {
+      "post": "tamper-data-firefox-extension-is-it-worth-it",
+      "src": "/uploads/2007/tamperresults.gif",
+      "thumb": "/uploads/2007/tamperresults.thumbnail.gif"
+    },
+    {
+      "post": "tamper-data-firefox-extension-is-it-worth-it",
+      "src": "/uploads/2007/tampergraph.gif",
+      "thumb": "/uploads/2007/tampergraph.thumbnail.gif"
+    },
+    {
+      "post": "tamper-data-firefox-extension-is-it-worth-it",
+      "src": "/uploads/2007/tamperoption.gif",
+      "thumb": "/uploads/2007/tamperoption.thumbnail.gif"
+    },
+    {
+      "post": "the-end-of-possessor",
+      "src": "/uploads/2019/possessor.png",
+      "thumb": "/uploads/2019/possessor.thumb.png"
+    },
+    {
+      "post": "timetracker-timeclock",
+      "src": "/uploads/2008/timetracker-screenshot.gif",
+      "thumb": "/uploads/2008/timetracker-screenshot-300x133.gif"
+    },
+    {
+      "post": "track-done-things-with-alfred-update",
+      "src": "/uploads/2019/did-this-workflow-screenshot-1.png",
+      "thumb": "/uploads/2019/did-this-workflow-screenshot-1-thumb.png"
+    },
+    {
+      "post": "track-done-things-with-alfred-update",
+      "src": "/uploads/2019/did-this-workflow-screenshot-2.png",
+      "thumb": "/uploads/2019/did-this-workflow-screenshot-2-thumb.png"
+    },
+    {
+      "post": "track-done-things-with-alfred-update",
+      "src": "/uploads/2019/did-this-workflow-screenshot-3.png",
+      "thumb": "/uploads/2019/did-this-workflow-screenshot-3-thumb.png"
+    },
+    {
+      "post": "track-done-things-with-alfred",
+      "src": "/uploads/2017/did-this-workflow-screenshot-1.png",
+      "thumb": "/uploads/2017/did-this-workflow-screenshot-1-thumb.png"
+    },
+    {
+      "post": "track-done-things-with-alfred",
+      "src": "/uploads/2017/did-this-workflow-screenshot-2.png",
+      "thumb": "/uploads/2017/did-this-workflow-screenshot-2-thumb.png"
+    },
+    {
+      "post": "track-done-things-with-alfred",
+      "src": "/uploads/2017/did-this-workflow-screenshot-3.png",
+      "thumb": "/uploads/2017/did-this-workflow-screenshot-3-thumb.png"
+    },
+    {
+      "post": "track-done-things-with-alfred",
+      "src": "/uploads/2017/did-this-workflow-screenshot-4.png",
+      "thumb": "/uploads/2017/did-this-workflow-screenshot-4-thumb.png"
+    },
+    {
+      "post": "track-done-things-with-alfred",
+      "src": "/uploads/2017/did-this-workflow-screenshot-5.png",
+      "thumb": "/uploads/2017/did-this-workflow-screenshot-5-thumb.png"
+    },
+    {
+      "post": "trim-down-your-content-it-is-a-must",
+      "src": "/uploads/2008/toomuchtext.png",
+      "thumb": "/uploads/2008/toomuchtext-300x196.png"
+    },
+    {
+      "post": "trim-down-your-content-it-is-a-must",
+      "src": "/uploads/2008/lesstext.png",
+      "thumb": "/uploads/2008/lesstext-300x196.png"
+    },
+    {
+      "post": "use-mysql-gui-tools-to-securely-connect-to-remote-database",
+      "src": "/uploads/2007/1.jpg",
+      "thumb": "/uploads/2007/1.thumbnail.jpg"
+    },
+    {
+      "post": "use-mysql-gui-tools-to-securely-connect-to-remote-database",
+      "src": "/uploads/2007/4.jpg",
+      "thumb": "/uploads/2007/4.thumbnail.jpg"
+    },
+    {
+      "post": "use-mysql-gui-tools-to-securely-connect-to-remote-database",
+      "src": "/uploads/2007/3.jpg",
+      "thumb": "/uploads/2007/3.thumbnail.jpg"
+    },
+    {
+      "post": "useful-eclipse-plugin-find-a-file-name-in-project-immediately",
+      "src": "/uploads/2008/screenshot.jpg",
+      "thumb": "/uploads/2008/screenshot-300x177.jpg"
+    },
+    {
+      "post": "would-you-find-value-in-a-one-on-one-video-code-review-session",
+      "src": "/uploads/2013/hithere.png",
+      "thumb": "/uploads/2013/hithere-300x104.png"
+    },
+    {
+      "post": "xdebug-and-eclipse-pdt-on-windows-from-start-to-finish",
+      "src": "/uploads/2008/kcachegrind.gif",
+      "thumb": "/uploads/2008/kcachegrind-150x108.gif"
+    },
+    {
+      "post": "xdebug-and-eclipse-pdt-on-windows-from-start-to-finish",
+      "src": "/uploads/2008/1.gif",
+      "thumb": "/uploads/2008/1-150x133.gif"
+    },
+    {
+      "post": "xdebug-and-eclipse-pdt-on-windows-from-start-to-finish",
+      "src": "/uploads/2008/2.gif",
+      "thumb": "/uploads/2008/2-150x133.gif"
+    },
+    {
+      "post": "xdebug-and-eclipse-pdt-on-windows-from-start-to-finish",
+      "src": "/uploads/2008/3.gif",
+      "thumb": "/uploads/2008/3-150x116.gif"
+    },
+    {
+      "post": "xdebug-and-eclipse-pdt-on-windows-from-start-to-finish",
+      "src": "/uploads/2008/4.gif",
+      "thumb": "/uploads/2008/4-150x116.gif"
+    }
+  ],
+  "htmlUnwrapped": [
+    "bookmarklet-wage-calculator",
+    "google-analytics-campaign-link-builder-bookmarklet",
+    "search-goodreads-bookmarklet",
+    "use-your-own-short-domain-while-waiting-for-bitly-pro"
+  ],
+  "youtube": [
+    "didnt-launch-my-startup",
+    "php-constant-visibility"
+  ],
+  "callouts": [
+    "2019-goals",
+    "33-things-book",
+    "an-argument-for-keeping-your-project-simple",
+    "dev-manager-1-3-books",
+    "dev-manager-2-3-tough-convos",
+    "dev-manager-3-3-types-of-devs",
+    "dev-manager-4-make-face-to-face-work",
+    "dev-manager-5-ask-why",
+    "dev-manager-one-on-one-coaching",
+    "facebook-message-system-in-php",
+    "firephp4chrome-chrome-extension",
+    "redirect-rewrite-url-nginx",
+    "rewrite-redirect-url-apache",
+    "securing-laravel-from-hackers",
+    "shape-the-sales-of-the-better-bachelor-10-dish-cook-book",
+    "site-profile-name-tag-me",
+    "want-to-come-work-with-me-lets-do-some-php",
+    "zend-framework-front-controllers-vs-bootstrap-round-2"
+  ],
+  "filenameHeaders": 161,
+  "oneOffFixes": [
+    "site-profile-thebetterbachelor-com: /uploads/201221.png -> /uploads/2012/2.png",
+    "xdebug-and-eclipse-pdt-on-windows-from-start-to-finish: ```.ini -> ```ini",
+    "email-catch-all-forwarding-on-cloudflare-free: duplicate cfe-1.png -> cfe-2.png; alts written by Claude, reviewed by Aaron"
+  ],
+  "errors": []
+}

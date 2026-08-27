@@ -33,6 +33,12 @@ code exists. The migration to Astro happens after the designs are settled.
   project — no new posts, no changes of any kind. All work happens on
   `astro-rewrite`; `main` exists only as the reference. Never plan for,
   hedge against, or write contingencies for `main` changing. It won't.
+* **No AI content, ever.** Claude never writes or edits Aaron's content
+  (post prose, page copy). Mechanical transforms (frontmatter,
+  shortcode syntax) are fine. If generated text is unavoidable
+  (placeholder pages, fallbacks), it must be clearly marked as
+  AI-generated — visible marker plus an inventory entry — so Aaron
+  knows to replace it.
 
 ## Tech Choices
 

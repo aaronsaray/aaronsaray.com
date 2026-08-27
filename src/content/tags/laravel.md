@@ -1,0 +1,8 @@
+---
+title: Blog Entries Tagged "laravel"
+description: Blog Entries Tagged "laravel"
+---
+These entries contain content about programming efficient, effective and secure Laravel projects.
+
+Want to become a better Laravel programmer? Check out [masteringlaravel.io](https://masteringlaravel.io/) for ebooks, videos, tools and more - or listen to the dulcet tones of Joel and I talking Laravel on the [No Compromises Podcast](https://show.nocompromises.io/).
+

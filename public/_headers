@@ -1,0 +1,7 @@
+# Extensionless well-known files need explicit content types
+/.well-known/webfinger
+  Content-Type: application/jrd+json
+/.well-known/nodeinfo
+  Content-Type: application/json
+/.well-known/host-meta
+  Content-Type: application/xrd+xml

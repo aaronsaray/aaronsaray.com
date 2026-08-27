@@ -1,7 +1,8 @@
 .hugo_build.lock
 resources/_gen
 node_modules/
-public/
+dist/
+.astro/
+.migration/hugo-baseline/
 .idea/
 .DS_Store
-static/uploads/.DS_Store
