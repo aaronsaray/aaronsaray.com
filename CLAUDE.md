@@ -20,7 +20,7 @@ code exists. The migration to Astro happens after the designs are settled.
 * **URLs never change. Ever.** Blog permalinks are `/:year/:filename/`
   (see `config.toml`). Every existing URL must resolve identically in the
   new site. This is non-negotiable.
-* **All content migrates.** All ~708 blog posts plus `cv.md` and
+* **All content migrates.** All 707 blog posts plus `cv.md` and
   `contact.md` come over. Content may be edited/altered *after* it's in
   the new design, but nothing gets dropped in the migration.
 * **Minimal JavaScript.** Static generation. Vue components only when
@@ -29,6 +29,10 @@ code exists. The migration to Astro happens after the designs are settled.
   Workers) undecided and not important yet.
 * **No search functionality.** The new site has no search of any kind —
   no search box, no ⌘K palette. Decided during the inspiration review.
+* **`main` is frozen.** There will be no updates to `main` during this
+  project — no new posts, no changes of any kind. All work happens on
+  `astro-rewrite`; `main` exists only as the reference. Never plan for,
+  hedge against, or write contingencies for `main` changing. It won't.
 
 ## Tech Choices
 
@@ -71,13 +75,16 @@ solutions needed yet:
 Things that must happen before/during the Astro migration. Don't let
 Aaron forget these:
 
-* **Generate the URL contract fixture.** Before the Astro site ships,
-  build the Hugo site from `main` and dump the complete list of URLs it
-  serves as an acceptance-test fixture for the new site. It's more than
-  the 708 blog permalinks: `/blog/` pagination pages, tag pages, the RSS
-  feed at `/blog/index.xml` (home has RSS output disabled), and per-tag
-  feeds at `/tag/<term>/index.xml`. Not needed yet — `main` can
-  regenerate it at any time — but it must exist before launch.
+* **URL contract fixture — DONE** (August 27, 2026). Lives at
+  `.migration/url-contract.txt`: every path the Hugo site serves (built
+  from `main` @ a4c7ce0), one per line, `#` lines are comments. 707 post
+  permalinks (the "~708" count included `_index.md`; 707 is the real
+  number), `/blog/` + 71 pagination pages (`/blog/page/1/` is a
+  meta-refresh alias to `/blog/` — a redirect satisfies it), `/tag/` +
+  52 tag pages, 54 feeds (`/blog/index.xml` + per-tag; home RSS is
+  disabled), 783 `/uploads/`+`/images/` assets, root files (favicons,
+  `sitemap.xml`, `404.html`, `.well-known/*`, etc.). Cross-checked
+  against Hugo's sitemap. `main` is frozen, so this fixture is final.
 * **Aaron rewrites all AI-generated copy.** Migration will fill gaps
   with placeholders: subtitles get lorem ipsum, and any other new copy
   (home page text, etc.) is AI-generated stand-in only. Aaron will
