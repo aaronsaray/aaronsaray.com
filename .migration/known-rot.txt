@@ -1,0 +1,31 @@
+# Internal links in old post content that were ALREADY broken on the
+# Hugo site (verified missing from .migration/hugo-baseline/ on
+# August 27, 2026). These are content rot, not migration regressions —
+# fixing them means editing Aaron's prose, which is his call, not the
+# build's. check-links.mjs reports them as non-fatal.
+#
+# WordPress-era permalink structure (/blog/YYYY/MM/DD/...):
+/blog/2007/07/11/the-anatomy-of-a-phishing-attack-advanced-technique/
+/blog/2007/07/11/the-top-17-ways-to-help-eliminate-the-phishing-threat/
+/blog/2008/11/14/posting-requests-in-php-without-curl/
+/blog/2008/05/11/what-is-website-hosting/
+/blog/2008/05/11/what-is-a-domain-name/
+/blog/2008/03/19/link-checking-module-1st-attempt/
+/blog/2009/09/23/javascript-error-handler
+#
+# Old /tags/ (plural) path — the taxonomy has been /tag/ for years:
+/tags/security
+#
+# Assets that no longer exist anywhere:
+/blog/wp-content/uploads/2009/01/phpinicreator.zip
+/js/ie6warning.js
+/images/smiley.gif
+/2010/web414_twitter_anywhere.pdf
+/2016/8%20sCLI%20sTips%20sand%20sTricks.key
+/uploads/2016/8%20sCLI%20sTips%20sand%20sTricks.key
+/uploads/2017/aaronsaray.com-after-homepage.har
+/help.html
+#
+# Schemeless URLs in prose (render as relative links; same on Hugo):
+php.net/integer
+no-www.org/faq.php?q=class_b

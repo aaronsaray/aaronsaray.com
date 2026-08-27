@@ -21,7 +21,7 @@ I went to [xdebug.org](http://xdebug.org) and acquired my version of the debugge
 
 I modified my `php.ini` file to load in the extension file.  On windows, this is a TS type - or thread safe.  Also remember, this is a zend extension, not a normal extension.  At the end of my `php.ini` file, I started with this:
 
-```.ini    
+```ini
 ;Xdebug stuff
 zend_extension_ts="c:\php\ext\php_xdebug-2.0.3-5.2.5.dll"
 xdebug.default_enable = on

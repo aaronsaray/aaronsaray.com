@@ -154,10 +154,12 @@ style reference was the Tempest PHP blog, as direction not copied. The
 prototype's `.prose` stylesheet is written as element rules on purpose:
 it is the typography stylesheet the Astro markdown pipeline will need.
 
-* **Serif title** (bright white, `text-4xl`/`text-5xl`) with a sans
-  subtitle in ink-dim under it. **Every post gets a subtitle** going
-  forward (lorem ipsum during migration; Aaron writes the real ones —
-  see CLAUDE.md Migration To-Dos).
+* **Serif title** (bright white, `text-4xl`/`text-5xl`).
+* **REVERSED (August 27, 2026): subtitles are scrapped.** The prototype's
+  sans subtitle line under the title does not exist in the built site —
+  post pages go title → meta line. No subtitle field, no placeholder
+  copy. (Decided during migration planning; `.design/*.html` left
+  untouched per Aaron.)
 * **Meta line: no author name** (single-author site). Date · read time ·
   `#tag` hash links, in ink-faint with middot separators; tags in the
   accent color, brightening to `#7fa6c4` on hover. Hairline rule below.
@@ -218,9 +220,11 @@ Derived page, prototyped in `.design/blog.html` (rendered as page 2 of
 * **Entry list:** hairline dividers between entries, nothing heavier.
   Each entry is the serif title (linked, white, hover shows an accent
   underline that fades in — the underline is always present but
-  transparent at rest so only its color animates), the subtitle in
-  ink-dim, then the same date · read time · `#tags` meta line as the
-  post page. No body excerpts — the subtitle is the teaser.
+  transparent at rest so only its color animates), then the teaser,
+  then the same date · read time · `#tags` meta line as the post page.
+* **REVERSED (August 27, 2026): the teaser is the excerpt, not a
+  subtitle.** The prototype's one-line subtitle slot renders the post's
+  `<!--more-->` excerpt (Hugo behavior kept), in ink-dim.
 * **Pagination:** 10 posts per page. "← Newer" left, "Older →" right,
   in ink-dim with arrows that slide on hover; a "Page X of Y" indicator
   centered between them, one size smaller (`text-xs`) in ink-faint —

@@ -19,6 +19,10 @@
 #   noindex. New site must keep it resolving (redirect is fine).
 # - /404.html and /sitemap.xml are infrastructure, not content pages.
 # - static/.DS_Store was in the Hugo output; excluded here as junk.
+# - /uploads/.DS_Store likewise (commented out August 27, 2026 — same
+#   junk rationale; .DS_Store files are always mistakes, never served).
+# - /images/search.svg was an old-theme-only asset, never referenced by
+#   content; dropped with the theme (commented out August 27, 2026).
 /
 /.well-known/host-meta
 /.well-known/nodeinfo
@@ -810,7 +814,9 @@
 /favicon.png
 /humans.txt
 /images/og-image.png
-/images/search.svg
+# /images/search.svg — old-theme-only asset (the theme header's search
+#   icon); nothing in content ever referenced it. Dropped with the
+#   theme (commented out August 27, 2026).
 /images/tag/ajax.jpg
 /images/tag/apache.jpg
 /images/tag/archived-projects.jpg
@@ -972,7 +978,7 @@
 /tag/zabbix/index.xml
 /tag/zend-framework/
 /tag/zend-framework/index.xml
-/uploads/.DS_Store
+# /uploads/.DS_Store
 /uploads/2007/1.jpg
 /uploads/2007/1.thumbnail.jpg
 /uploads/2007/3.jpg

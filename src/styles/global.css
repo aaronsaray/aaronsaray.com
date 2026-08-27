@@ -75,6 +75,12 @@ html {
 }
 .prose > * + * { margin-top: 1.25rem; }
 
+/* A body-authored H1 (cv/contact keep their own) gets the same
+   treatment as page titles. */
+.prose h1 {
+  @apply font-display text-4xl font-semibold leading-tight text-white sm:text-5xl;
+}
+
 .prose h2 {
   @apply font-display text-2xl font-semibold text-white sm:text-3xl;
   margin-top: 3.5rem;
@@ -194,6 +200,71 @@ html {
 .copy-btn .icon-check { display: none; color: var(--color-accent); }
 .copy-btn.copied .icon-copy { display: none; }
 .copy-btn.copied .icon-check { display: block; }
+
+/* Callout: the migrated header-call-out shortcode — quiet accent
+   spine on a faint surface band. */
+.prose .callout {
+  @apply border-l-2 border-accent/60 bg-surface/40 px-4 py-3 text-[0.9375rem] text-ink-dim;
+}
+.prose .callout > * + * { margin-top: 0.75rem; }
+
+/* Figures: lone images get a framed, centered treatment. */
+.prose figure {
+  @apply border border-hairline bg-surface/40 p-6 sm:p-8;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.prose figure img {
+  display: block;
+  margin-inline: auto;
+  max-width: 100%;
+  height: auto;
+}
+.prose figcaption {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-ink-dim);
+}
+.prose img { max-width: 100%; height: auto; }
+
+/* YouTube embeds (privacy-enhanced iframes from the migration). */
+.prose .video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-hairline);
+}
+
+/* ============ Entry-list excerpts ============
+   The rendered chunk before <!--more--> shown on blog/tag lists —
+   the design's "subtitle" slot, carrying real excerpt HTML. */
+.entry-excerpt {
+  margin-top: 0.75rem;
+  line-height: 1.625;
+  color: var(--color-ink-dim);
+}
+.entry-excerpt > * + * { margin-top: 0.75rem; }
+.entry-excerpt a {
+  @apply text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300;
+  text-decoration-thickness: 1px;
+}
+.entry-excerpt a:hover { @apply decoration-accent text-white; }
+.entry-excerpt strong { @apply font-semibold text-ink; }
+.entry-excerpt code {
+  @apply bg-surface font-mono;
+  font-size: 0.875em;
+  padding: 0.0625rem 0.25rem;
+  border: 1px solid var(--color-hairline);
+}
+.entry-excerpt pre {
+  @apply bg-surface border border-hairline overflow-x-auto;
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+.entry-excerpt pre code { background: transparent; border: 0; padding: 0; }
+.entry-excerpt img { max-width: 100%; height: auto; }
 
 /* Blockquote: quiet accent spine, brighter text than body. */
 .prose blockquote {
