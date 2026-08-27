@@ -80,3 +80,23 @@ Rules that matter:
 ## URL Contract
 
 Blog permalinks are `/:year/:slug/` and every URL the Hugo site ever served must keep resolving. `npm run verify` enforces this — if it fails, fix the site, not the fixture.
+
+## To-Do
+
+The remaining tail of the rewrite, roughly in order. Delete items as they finish.
+
+* [ ] **Full review of the generated site** — every file, every page in the local browser; rework anything to taste.
+* [ ] **Rewrite all AI-generated placeholder copy** (each marked with an AI-GENERATED comment in source):
+  * `/books/` — entire page (`src/pages/books.astro`)
+  * `/who-am-i/` — entire page (`src/pages/who-am-i.astro`)
+  * Blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
+  * Home page copy sections (`src/pages/index.astro`, marked inline)
+  * Footer CTA box copy (`src/components/Footer.astro`)
+* [ ] **Review `.migration/known-rot.txt`** — 25 internal links in old posts that were already broken on the Hugo site. The build treats them as non-fatal; decide which are worth fixing in the prose.
+* [ ] **22 posts use the auto ~70-word excerpt** (no `<!--more-->` marker) — list in `.migration/report.json` under `noMoreMarker`. Decided to leave them auto for now; add markers later if it bothers.
+* [ ] **Consider generating `/images/tag/twitter.jpg`** — the one tag with no OG image, so posts whose first tag is `twitter` fall back to the default og-image. Creating it restores the simple per-tag rule everywhere.
+* [ ] **Decide the long-term OG image approach** — current rule is Hugo's (per-first-tag jpg, else `/images/og-image.png`); generated OG images are an option.
+* [ ] **Fast broken-link/image scan as a permanent build step** — the `.migration` checkers work but were built for migration acceptance; want a super-fast scan in the regular build (promote/rewrite the scripts, or a dedicated tool — undecided).
+* [ ] **Lighthouse and other quality checks** — wire performance / accessibility / SEO auditing into the workflow; scope and tooling undecided.
+* [ ] **Integrate Astro's MCP server** into the AI tooling (e.g. project `.mcp.json`) so Claude sessions get first-party Astro docs/context.
+* [ ] **Deploy** — Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Explicitly last; no deploy tooling until then.
