@@ -52,12 +52,14 @@ check, a plain browser tab pointed at the same URL also works.
 | File | What it is |
 | ---- | ---------- |
 | `home.html` | Homepage prototype — first design target. Slim header, full-viewport hero, beliefs/manifesto grid, working footer. |
-| `blog.html` | Blog post page prototype — second design target. Serif title, meta line, dark reading treatment for prose/code. |
+| `blog-single.html` | Blog post page prototype — second design target. Serif title, meta line, dark reading treatment for prose/code. |
+| `blog.html` | Blog index prototype — 10 real post titles with generated subtitles, meta lines, Newer/Older pagination (rendered as page 2). |
 
-These two pages are the **source designs**: every other page (CV,
-contact, blog index, tag pages) will be derived from the patterns
-established here. Future design tasks may optionally get their own
-files in this folder — same rules apply (no build step, CDN only).
+`home.html` and `blog-single.html` are the **source designs**: every
+other page (CV, contact, tag pages) will be derived from the patterns
+established there — `blog.html` is the first derived page. Future
+design tasks may optionally get their own files in this folder — same
+rules apply (no build step, CDN only).
 
 `inspiration/` holds the reviewed screenshots; `INSPIRATION.md` is the
 archived review (decisions promoted to `DESIGN.md`).
