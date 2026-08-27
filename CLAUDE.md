@@ -58,9 +58,32 @@ code exists. The migration to Astro happens after the designs are settled.
 Things flagged as concerns for the migration — keep them in mind, no
 solutions needed yet:
 
-* **Tags** — the Hugo site has a tag taxonomy; migration approach unknown.
 * **OG image generation** — how social/open-graph images get generated in
-  Astro is an open question.
+  Astro is an open question. The Hugo theme defaults to
+  `images/og-image.png` and swaps in `images/tag/<first-tag>.jpg` for
+  posts (and `images/tag/<term>.jpg` for tag pages). Aaron may want to
+  change that approach later; undecided for now.
+
+(Tags themselves are decided: they stay, with tag pages. See DESIGN.md.)
+
+## Migration To-Dos
+
+Things that must happen before/during the Astro migration. Don't let
+Aaron forget these:
+
+* **Generate the URL contract fixture.** Before the Astro site ships,
+  build the Hugo site from `main` and dump the complete list of URLs it
+  serves as an acceptance-test fixture for the new site. It's more than
+  the 708 blog permalinks: `/blog/` pagination pages, tag pages, the RSS
+  feed at `/blog/index.xml` (home has RSS output disabled), and per-tag
+  feeds at `/tag/<term>/index.xml`. Not needed yet — `main` can
+  regenerate it at any time — but it must exist before launch.
+* **Aaron rewrites all AI-generated copy.** Migration will fill gaps
+  with placeholders: subtitles get lorem ipsum, and any other new copy
+  (home page text, etc.) is AI-generated stand-in only. Aaron will
+  personally rewrite every piece of placeholder/AI-generated text —
+  before launch, remind him and help inventory what's still
+  placeholder.
 
 ## Current Hugo Site (reference only)
 

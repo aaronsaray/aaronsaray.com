@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Break Down Laravel Unit Tests into Types | Aaron Saray (design prototype)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      /* Same palette as home.html. --color-prose is new: the article
+         body color — brighter than ink-dim for long-form reading, but
+         below full ink so headings still lead. */
+      --color-night: #0a0a0a;
+      --color-surface: #10141a;
+      --color-ink: #e7e9ec;
+      --color-ink-dim: #8e959e;
+      --color-ink-faint: #5d646d;
+      --color-prose: #bfc5cc;
+      --color-accent: #537e9e;
+      --color-hairline: #1b2026;
+
+      --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+      --font-display: "Fraunces", ui-serif, Georgia, serif;
+      --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    /* Scrollbar: very dark and muted, but still findable. */
+    html {
+      scrollbar-color: #2c3238 var(--color-night);
+      scroll-behavior: smooth;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--color-night); }
+    ::-webkit-scrollbar-thumb {
+      background: #2c3238;
+      border-radius: 5px;
+      border: 2px solid var(--color-night);
+    }
+    ::-webkit-scrollbar-thumb:hover { background: #3a424a; }
+
+    /* ============ Article reading treatment ============
+       Written as element rules instead of per-tag utilities because
+       this is exactly the typography stylesheet the Astro build will
+       need — the markdown pipeline emits bare elements. */
+    .prose {
+      color: var(--color-prose);
+      font-size: 1.0625rem;
+      line-height: 1.75;
+    }
+    .prose > * + * { margin-top: 1.25rem; }
+
+    .prose h2 {
+      @apply font-display text-2xl font-semibold text-white sm:text-3xl;
+      margin-top: 3.5rem;
+    }
+    .prose h3 {
+      @apply font-display text-xl font-semibold text-white sm:text-2xl;
+      margin-top: 2.5rem;
+    }
+
+    /* Links: brighter than body, underlined, underline in the accent
+       color (deliberately different from the text color). */
+    .prose a {
+      @apply text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300;
+      text-decoration-thickness: 1px;
+    }
+    .prose a:hover { @apply decoration-accent text-white; }
+
+    /* Heading self-links: every section header is an anchor. The link
+       icon rides along at all times, faint, so it's discoverable while
+       scrolling but not shouting; it warms to the accent on hover. */
+    .prose :is(h2, h3) { scroll-margin-top: 2rem; }
+    .prose :is(h2, h3) a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .anchor-icon {
+      display: inline-block;
+      width: 0.55em;
+      height: 0.55em;
+      margin-left: 0.4em;
+      color: var(--color-ink-faint);
+      opacity: 0.55;
+      transition: color 0.3s, opacity 0.3s;
+    }
+    .prose :is(h2, h3) a:hover .anchor-icon {
+      color: var(--color-accent);
+      opacity: 1;
+    }
+
+    .prose ul, .prose ol { padding-left: 1.5rem; }
+    .prose ul { list-style: disc; }
+    .prose ol { list-style: decimal; }
+    .prose li { margin-top: 0.5rem; }
+    .prose li::marker { color: var(--color-ink-faint); }
+    .prose ul ul { margin-top: 0.5rem; list-style: circle; }
+
+    .prose strong { @apply font-semibold text-ink; }
+
+    /* Inline code: a subtle chip — slightly-less-dark background,
+       tight padding. Kept deliberately light. */
+    .prose code {
+      @apply bg-surface font-mono text-ink;
+      font-size: 0.875em;
+      padding: 0.125rem 0.375rem;
+      border: 1px solid var(--color-hairline);
+    }
+
+    /* Code blocks: clearly distinct from prose but exactly the prose
+       column width — never bleeding wider. */
+    .prose pre {
+      @apply bg-surface border border-hairline overflow-x-auto;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      line-height: 1.7;
+    }
+    .prose pre code {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      font-size: 0.8125rem;
+      color: #aab1b9;
+    }
+
+    /* Filename header: attaches to the top of the code block that
+       follows it (the Hugo filename-header shortcode). */
+    .prose .filename-header {
+      @apply flex items-center gap-2 border border-hairline bg-night font-mono text-xs text-ink-faint;
+      margin-top: 1.5rem;
+      margin-bottom: 0;
+      padding: 0.5rem 1.25rem;
+    }
+    /* Only the filename scrolls when it's too long — the language tag
+       and copy button stay pinned on the right. */
+    .filename-header .filename-text {
+      flex: 1;
+      min-width: 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .prose .filename-header + pre { margin-top: 0; border-top: 0; }
+
+    /* Language tag + copy button. Blocks with a filename bar carry
+       them in the bar; bare blocks float them in the top-right corner. */
+    .prose .code-wrap {
+      position: relative;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .prose .code-wrap pre { margin: 0; }
+    .code-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+    .code-wrap .code-controls {
+      position: absolute;
+      top: 0.625rem;
+      right: 0.75rem;
+    }
+    .filename-header .code-controls { margin-left: auto; padding-left: 1rem; }
+    .code-lang { @apply font-mono text-[11px] text-ink-faint; }
+    .copy-btn {
+      @apply cursor-pointer text-ink-faint transition-colors duration-300 hover:text-ink;
+    }
+    .copy-btn svg { display: block; width: 1rem; height: 1rem; }
+    .copy-btn .icon-check { display: none; color: var(--color-accent); }
+    .copy-btn.copied .icon-copy { display: none; }
+    .copy-btn.copied .icon-check { display: block; }
+
+    /* Syntax token palette: desaturated, near-monochrome with the
+       accent doing keyword duty. Swappable with the final palette. */
+    .tok-k { color: #7fa6c4; }                            /* keywords, types */
+    .tok-s { color: #a3b389; }                            /* strings */
+    .tok-v { color: #c2a583; }                            /* variables, numbers */
+    .tok-f { color: #dde0e4; }                            /* function + class names */
+    .tok-c { color: var(--color-ink-faint); font-style: italic; }  /* comments */
+
+    /* Blockquote: quiet accent spine, brighter text than body. */
+    .prose blockquote {
+      @apply border-l-2 border-accent/60 text-ink;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding-left: 1.25rem;
+    }
+
+    /* Tables: clean and simple — hairline rows, no zebra, no chrome.
+       The wrapper scrolls sideways on narrow screens so a wide table
+       never scrolls the page (Astro build: wrap via rehype plugin). */
+    .prose .table-wrap {
+      overflow-x: auto;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .prose table {
+      width: 100%;
+      font-size: 0.9375rem;
+      border-collapse: collapse;
+    }
+    .prose th {
+      @apply text-left text-xs font-semibold uppercase tracking-[0.15em] text-ink-faint;
+      padding: 0 1rem 0.625rem 0;
+      border-bottom: 1px solid var(--color-hairline);
+    }
+    .prose td {
+      padding: 0.625rem 1rem 0.625rem 0;
+      border-bottom: 1px solid var(--color-hairline);
+    }
+    .prose td:first-child { @apply text-ink font-medium; }
+  </style>
+</head>
+
+<body class="bg-night text-ink font-sans antialiased">
+
+  <!-- ============ Header: same bar as home, in normal flow ============ -->
+  <header class="relative z-10">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <a href="/home.html" aria-label="Aaron Saray home">
+        <img src="/logo.svg" class="h-8 w-auto" alt="AS logo">
+      </a>
+      <nav class="flex items-center gap-5 text-sm sm:gap-8">
+        <div class="group relative">
+          <button class="flex items-center gap-1 opacity-60 transition-opacity duration-200 delay-300 group-hover:opacity-100 group-hover:delay-0 group-focus-within:opacity-100 group-focus-within:delay-0">
+            About
+            <!-- Tabler: chevron-down -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></svg>
+          </button>
+          <div class="invisible absolute right-0 top-full pt-2 opacity-0 transition-[opacity,visibility] duration-200 delay-300 group-hover:visible group-hover:opacity-100 group-hover:delay-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0">
+            <div class="min-w-36 border border-hairline bg-surface py-2">
+              <a href="#" class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100">Who am I</a>
+              <a href="#" class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100">CV</a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative">
+          <button class="flex items-center gap-1 opacity-60 transition-opacity duration-200 delay-300 group-hover:opacity-100 group-hover:delay-0 group-focus-within:opacity-100 group-focus-within:delay-0">
+            Writing
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6l6 -6"/></svg>
+          </button>
+          <div class="invisible absolute right-0 top-full pt-2 opacity-0 transition-[opacity,visibility] duration-200 delay-300 group-hover:visible group-hover:opacity-100 group-hover:delay-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0">
+            <div class="min-w-36 border border-hairline bg-surface py-2">
+              <a href="/blog.html" class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100">Blog</a>
+              <a href="#" class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100">Books</a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ Article ============ -->
+  <main class="mx-auto max-w-3xl px-5 pb-24 pt-12 sm:px-8 sm:pt-16">
+
+    <!-- Title + subtitle: serif title in bright white, sans secondary line -->
+    <h1 class="font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
+      How to Break Down Laravel Unit Tests into Types
+    </h1>
+    <p class="mt-4 text-lg leading-relaxed text-ink-dim">
+      What's the difference between a unit test, an integration test, and
+      a feature test? My take from over a decade of testing experience.
+    </p>
+
+    <!-- Meta line: date · read time · tags. No author (single-author site). -->
+    <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline pb-6 text-sm text-ink-faint">
+      <span>Jun 23, 2022</span>
+      <span aria-hidden="true">&middot;</span>
+      <span>10 min read</span>
+      <span aria-hidden="true">&middot;</span>
+      <a href="#" class="text-accent transition-colors duration-300 hover:text-[#7fa6c4]">#laravel</a>
+      <a href="#" class="text-accent transition-colors duration-300 hover:text-[#7fa6c4]">#php</a>
+      <a href="#" class="text-accent transition-colors duration-300 hover:text-[#7fa6c4]">#testing</a>
+    </div>
+
+    <!-- Old-content notification: shown when the post is older than
+         18 months (current Hugo behavior, redesigned for dark). -->
+    <div class="mt-8 flex gap-3 border border-hairline bg-surface/50 p-4 text-sm leading-relaxed text-ink-dim">
+      <!-- Tabler: history -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-5 shrink-0 text-[#b08d57]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8l0 4l2 2"/><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"/></svg>
+      <p>
+        <strong class="font-semibold text-ink">This post is more than 18 months old.</strong>
+        Technology changes quickly, so some of this content may be out of
+        date (but that's not always the case). Please verify any technical
+        or programming information against the current release.
+      </p>
+    </div>
+
+    <div class="prose mt-10">
+
+      <!-- header-call-out shortcode: editorial context before the body -->
+      <div class="border-l-2 border-accent/60 bg-surface/40 px-4 py-3 text-[0.9375rem] text-ink-dim">
+        Before we begin: this is how I structure tests in my own Laravel
+        projects. Your team may draw the lines differently, and that's
+        fine; the concepts still apply.
+      </div>
+
+      <p>
+        First of all, let's talk about the definitions of these terms.
+        We're going to focus on four terms: unit test, integration test,
+        feature test and external test. There are even more (smoke test,
+        e2e test, dusk tests, etc...) but we're going to focus on these
+        because they fit nicely in our Laravel ecosystem.
+      </p>
+      <p>
+        All of these things are broadly called unit tests. Really, a more
+        accurate way to refer to them would be automated tests. The idea is
+        that we write code to automatically test other code. So, let's
+        break down the types that I use in my Laravel project.
+      </p>
+
+      <!-- image shortcode: centered figure, framed, prose width max -->
+      <figure class="!my-10 border border-hairline bg-surface/40 p-6 sm:p-8">
+        <svg viewBox="0 0 400 232" role="img" aria-label="The testing pyramid: many fast unit tests at the base, then integration, feature, and a few slow external tests at the top" class="mx-auto h-auto w-full max-w-sm">
+          <g font-family="Inter, sans-serif" font-size="14" text-anchor="middle">
+            <rect x="140" y="8" width="120" height="44" fill="#537e9e" fill-opacity="0.42" stroke="#537e9e" stroke-opacity="0.5"/>
+            <text x="200" y="35" fill="#e7e9ec">External</text>
+            <rect x="100" y="60" width="200" height="44" fill="#537e9e" fill-opacity="0.30" stroke="#537e9e" stroke-opacity="0.45"/>
+            <text x="200" y="87" fill="#e7e9ec">Feature</text>
+            <rect x="60" y="112" width="280" height="44" fill="#537e9e" fill-opacity="0.20" stroke="#537e9e" stroke-opacity="0.4"/>
+            <text x="200" y="139" fill="#e7e9ec">Integration</text>
+            <rect x="20" y="164" width="360" height="44" fill="#537e9e" fill-opacity="0.12" stroke="#537e9e" stroke-opacity="0.35"/>
+            <text x="200" y="191" fill="#e7e9ec">Unit</text>
+          </g>
+          <g font-family="Inter, sans-serif" font-size="11" fill="#5d646d">
+            <text x="200" y="228" text-anchor="middle">fewer and slower at the top, many and fast at the bottom</text>
+          </g>
+        </svg>
+      </figure>
+
+      <h2 id="unit-test"><a href="#unit-test">Unit Test<svg class="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l6 -6"/><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"/><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"/></svg></a></h2>
+      <p>
+        A unit test is the simplest form of test. You write a test that
+        takes the smallest part of a piece of code and tests the outcome
+        from possible inputs. Think the size of one method on a class, or a
+        simple function. A default Laravel project even provides a folder
+        and example test for these. Laravel's default <code>ExampleTest</code>
+        in the <code>tests/Unit</code> directory doesn't even load the
+        entire application kernel. It's meant to convey that these are the
+        simplest forms of testing.
+      </p>
+      <p>
+        A way to look at this is that you should be only testing the
+        smallest part of code, or the thing that makes roughly, at max, one
+        decision. Preferably you're writing your methods simple anyway, so
+        this is easy. (In fact, proper unit testing actually helps you
+        write cleaner code, because clean code is required for simpler,
+        faster <a href="https://phpunit.de">PHPUnit</a> tests.) Let's take
+        a look at an example where our default Laravel user model has a
+        first and last name, and we want to get a display name, which is
+        first name and last initial.
+      </p>
+
+      <!-- filename-header shortcode + code block -->
+      <div class="filename-header">
+        <!-- Tabler: file-type-php (per-language file icons exist) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4"/><path d="M5 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6"/><path d="M17 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6"/><path d="M11 21v-6"/><path d="M14 15v6"/><path d="M11 18h3"/></svg>
+        <span class="filename-text">app/Models/User.php</span>
+        <span class="code-controls">
+          <span class="code-lang">php</span>
+          <button class="copy-btn" type="button" aria-label="Copy code">
+            <!-- Tabler: copy / check -->
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666"/><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"/></svg>
+            <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10"/></svg>
+          </button>
+        </span>
+      </div>
+      <pre><code><span class="tok-k">class</span> <span class="tok-f">User</span> <span class="tok-k">extends</span> <span class="tok-f">Authenticatable</span>
+{
+  <span class="tok-k">public function</span> <span class="tok-f">getDisplayName</span>(): <span class="tok-k">string</span>
+  {
+    <span class="tok-k">return</span> <span class="tok-f">trim</span>(<span class="tok-v">$this</span>-&gt;first_name . <span class="tok-s">' '</span> . <span class="tok-f">substr</span>((<span class="tok-k">string</span>) <span class="tok-v">$this</span>-&gt;last_name, <span class="tok-v">0</span>, <span class="tok-v">1</span>));
+  }
+  <span class="tok-c">// snip</span></code></pre>
+
+      <p>
+        Our unit tests would be the very simplest version of this. I can
+        think of a few cases... I want to test the output of
+        <code>$user-&gt;getDisplayName()</code> when...
+      </p>
+      <ul>
+        <li><code>first_name</code> is not empty, <code>last_name</code> has more than one character</li>
+        <li><code>first_name</code> is not empty, <code>last_name</code> has 1 character</li>
+        <li><code>first_name</code> is not empty, <code>last_name</code> is empty</li>
+        <li>repeating these all with <code>first_name</code> being empty</li>
+      </ul>
+      <p>
+        They're very simple tests of the smallest amount of code possible.
+      </p>
+      <p>
+        Like I mentioned, in the default implementation of the Laravel unit
+        test folder, it doesn't even implement the
+        <code>CreatesApplication</code> trait. And maybe that's the best
+        default scenario. In real life, however, I tend to blur the lines a
+        little bit. I will test the smallest piece of code that sometimes
+        use the Laravel framework as well. (I trust that Laravel works as
+        expected because it is properly tested, so I can assume when I use
+        it, it's going to work as expected.) Sometimes, it's necessary to
+        have the Laravel app loaded... for example, let's say I wanted to
+        test a <a href="https://laravel.com/docs/9.x/authorization#gates">gate</a>
+        I wrote. As long as that gate doesn't hit the database, this is
+        fine: it can be a unit test.
+      </p>
+      <p>
+        For this example, let's say we have a gate that verifies if a user
+        can search location-based results. Right now, that check is simple:
+        they have to have a zip code. (In the future it might be based on
+        their plan, some other things, who knows.) We make the following
+        gate:
+      </p>
+
+      <div class="code-wrap">
+        <pre><code><span class="tok-f">Gate</span>::<span class="tok-f">define</span>(<span class="tok-s">'can-search-location-based'</span>, <span class="tok-k">function</span> (<span class="tok-f">User</span> <span class="tok-v">$user</span>) {
+  <span class="tok-k">return</span> <span class="tok-v">$user</span>-&gt;zipcode !== <span class="tok-k">null</span>;
+});</code></pre>
+        <div class="code-controls">
+          <span class="code-lang">php</span>
+          <button class="copy-btn" type="button" aria-label="Copy code">
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666"/><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"/></svg>
+            <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <p>
+        This is another place where I could write a small unit test.
+        Technically it's requiring that we load the Laravel application,
+        but that shouldn't require anything that integrates anywhere; it's
+        just heavier. So, what would our unit test look like?
+      </p>
+
+      <div class="code-wrap">
+        <pre><code><span class="tok-k">public function</span> <span class="tok-f">testUserCanSearchLocationBased</span>(): <span class="tok-k">void</span>
+{
+  <span class="tok-v">$user</span> = <span class="tok-k">new</span> <span class="tok-f">App\Models\User</span>();
+  <span class="tok-v">$user</span>-&gt;zipcode = <span class="tok-s">'12345'</span>;
+
+  <span class="tok-f">self</span>::<span class="tok-f">assertTrue</span>(<span class="tok-v">$user</span>-&gt;<span class="tok-f">can</span>(<span class="tok-s">'can-search-location-based'</span>));</code></pre>
+        <div class="code-controls">
+          <span class="code-lang">php</span>
+          <button class="copy-btn" type="button" aria-label="Copy code">
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666"/><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"/></svg>
+            <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <p>
+        See, just a quick small test, so it's a unit.
+      </p>
+      <p>
+        Now, what if that Gate required that we query the database? That's
+        integration testing.
+      </p>
+
+      <h2 id="integration-test"><a href="#integration-test">Integration Test<svg class="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l6 -6"/><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"/><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"/></svg></a></h2>
+      <p>
+        I define an integration test as integrating two separate sets of
+        contexts. A context to me means one of our code, our database, our
+        redis, etc... This "concept" doesn't appear in the standard Laravel
+        project install.
+      </p>
+      <p>
+        In practice, most often this is just something that connects with
+        the database, but doesn't execute a whole user flow. It's a middle
+        ground. For example, you might have an end point that queries 4
+        different types of Eloquent scopes, processes user inputs and
+        displays outputs. That's too much for integration; that's a feature
+        test. But think about all of the set up that's required to test
+        that. Maybe each scope requires tons of different databases entries
+        to be created and many services to be mocked. That takes a lot more
+        work and that takes a lot more runtime for the tests.
+      </p>
+      <p>
+        Because of this, I use integration tests. These are your mid-level,
+        and sometimes very detailed tests. Let's take a look at our updated
+        Gate as an example:
+      </p>
+
+      <div class="code-wrap">
+        <pre><code><span class="tok-f">Gate</span>::<span class="tok-f">define</span>(<span class="tok-s">'can-search-location-based'</span>, <span class="tok-k">function</span> (<span class="tok-f">User</span> <span class="tok-v">$user</span>) {
+  <span class="tok-k">return</span> <span class="tok-v">$user</span>-&gt;<span class="tok-f">subscriptions</span>()-&gt;<span class="tok-f">contains</span>(<span class="tok-f">Subscription</span>::<span class="tok-k">PREMIUM</span>);
+});</code></pre>
+        <div class="code-controls">
+          <span class="code-lang">php</span>
+          <button class="copy-btn" type="button" aria-label="Copy code">
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666"/><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"/></svg>
+            <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <p>
+        Now, our gate is doing some sort of query against the database to
+        determine if this user has the premium subscription. We now move to
+        integration tests, so we can boot up the application and use
+        <a href="https://laravel.com/docs/9.x/eloquent-factories">factories</a>
+        to generate data. (Note that we're not fully testing an end point.)
+        We test these integrations with all of the scenarios we can think
+        of because they're faster to run (less setup). We might test:
+      </p>
+      <ul>
+        <li>user under test has no subscriptions: false</li>
+        <li>user under test has premium subscription: true</li>
+        <li>user under test has premium subscription and basic subscription: true</li>
+        <li>user under test has basic subscription: false</li>
+        <li>user under test has basic subscription, second user in db has premium subscription: false</li>
+      </ul>
+      <p>
+        That last bullet point is an example of things that should be
+        tested (are we sure we're targeting the right user? What if our
+        gate was just searching the first user, or any user, with premium)
+        but are hard to really set up for a full end point test. Why would
+        I need to do a search through a full end point with processed data,
+        when really I just want to check one instance of the gate's logic.
+      </p>
+      <p>
+        Anyway, the point of integration tests are to test integrating our
+        code with one other context. Most often, I find this to be the
+        database layer. I will test scopes, gates, services that group
+        together multiple actions and more. I just won't use a full set of
+        user-provided (or mocked) inputs and measure outputs from the
+        application. That's a feature test.
+      </p>
+
+      <h2 id="feature-test"><a href="#feature-test">Feature Test<svg class="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l6 -6"/><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"/><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"/></svg></a></h2>
+      <p>
+        A feature test is a way of saying a full end to end test in the
+        context of our PHP code. Provided this URL, user state, application
+        state, and user input, what output do I get with what side effects?
+        It's still in our 'unit test' umbrella in a way, so make sure you
+        don't start moving from end point to end point in one test. (That's
+        something different, outside the scope of this article.) You're
+        testing an API end point, or a controller method, or a console
+        command one time only.
+      </p>
+      <p>
+        Laravel provides a feature test folder with an example test. It
+        shows how you might load an URL and process the response of it.
+      </p>
+      <p>
+        Feature tests are a great place to set up realistic application and
+        user states, and pass in data, and test the result. The benefit of
+        the tooling we have in Laravel is we can use factories to set up
+        data states; we don't have to process all of this through end point
+        calls on our application.
+      </p>
+      <p>
+        Let's break down what I might test on a store end point for a blog
+        entry. The blog entry is created by a logged in user, it has a
+        title that is required but may not be longer than 255 characters,
+        and a body that is required and may not be longer than 65535
+        characters. I would write separate, unique tests for each of the
+        following bullet points.
+      </p>
+      <ul>
+        <li>unauthorized user posts to /store gets 403</li>
+        <li>
+          authorized user posts to /store
+          <ul>
+            <li>no fields fails with 422</li>
+            <li>title and body fields empty strings fails with 422</li>
+            <li>title field 256 characters, body field 65536 characters, fails with 422</li>
+            <li>title field and body field set as array values fails 422</li>
+            <li>title field 'the-title' body field 'the body here' succeeds, test new blog entry with those values appears associated with current user as a model</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        That's just the basics of a feature test. Now, you might repeat
+        this for editing (including checking for permission to edit that,
+        and making sure it overwrites the proper blog entry.)
+      </p>
+
+      <blockquote>
+        <p>
+          Fun tip: Sometimes... rarely... I write a set of tests and they
+          run successfully immediately. For the most part, even after all
+          these years, that freaks me out. So, I go to my code and
+          specifically edit it (temporarily) so my test will fail and run
+          my tests again. If they continue to pass, I know my test is
+          targeting the wrong thing. If they fail, then I know I just am
+          "that good" this one time.
+        </p>
+      </blockquote>
+
+      <p>
+        Feature tests may also do things that integrate with third party
+        APIs or have complex sets of relationships between eloquent models.
+        One of the benefits of the integration test layer for the eloquent
+        models is that we've tested their functionality thoroughly (and
+        much faster). Therefore, we only need to write Feature tests that
+        are unique enough to indicate that those proper scopes are being
+        called. If we know that, we can reasonably assume (not always, but
+        reasonably) that the integration tests will then cover the
+        uniqueness and edge cases.
+      </p>
+
+      <h3 id="mocking-third-parties"><a href="#mocking-third-parties">Mocking third parties<svg class="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l6 -6"/><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"/><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"/></svg></a></h3>
+      <p>
+        When it come to third parties, feature tests should mock them out.
+        Generally, I tend to wrap a third party call in a service (even if
+        I'm using Laravel's mockable HTTP facade.) Then, this is injected
+        with Laravel's dependency injection. This allows me to mock it out.
+        Let's say that our service has a method called
+        <code>executeSearch()</code> which takes a string, queries FooDotCom
+        and returns a results object. That has a key called
+        <code>results</code> which has the count of results. In my end
+        point I test that to see if I should display the results or show a
+        message saying nothing was found.
+      </p>
+      <p>I might have a test like this:</p>
+
+      <div class="filename-header">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4"/><path d="M5 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6"/><path d="M17 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6"/><path d="M11 21v-6"/><path d="M14 15v6"/><path d="M11 18h3"/></svg>
+        <span class="filename-text">tests/Feature/FooDotComSearchTest.php</span>
+        <span class="code-controls">
+          <span class="code-lang">php</span>
+          <button class="copy-btn" type="button" aria-label="Copy code">
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666"/><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"/></svg>
+            <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10"/></svg>
+          </button>
+        </span>
+      </div>
+      <pre><code><span class="tok-k">public function</span> <span class="tok-f">testFooDotComReturnsNothing</span>(): <span class="tok-k">void</span>
+{
+  <span class="tok-v">$term</span> = <span class="tok-s">'what??'</span>
+
+  <span class="tok-v">$this</span>-&gt;<span class="tok-f">mock</span>(<span class="tok-f">FooDotComService</span>::<span class="tok-k">class</span>, <span class="tok-k">function</span> (<span class="tok-v">$mock</span>) <span class="tok-k">use</span> (<span class="tok-v">$term</span>) {
+    <span class="tok-v">$results</span> = (<span class="tok-k">object</span>) [<span class="tok-s">'results'</span> =&gt; <span class="tok-v">0</span>];
+    <span class="tok-v">$mock</span>-&gt;<span class="tok-f">shouldReceive</span>(<span class="tok-s">'executeSearch'</span>)-&gt;<span class="tok-f">once</span>()-&gt;<span class="tok-f">with</span>(<span class="tok-v">$term</span>)-&gt;<span class="tok-f">andReturn</span>(<span class="tok-v">$results</span>);
+  });
+
+  <span class="tok-v">$response</span> = <span class="tok-v">$this</span>-&gt;<span class="tok-f">get</span>(<span class="tok-f">route</span>(<span class="tok-s">'search-foo'</span>, [<span class="tok-s">'q'</span> =&gt; <span class="tok-v">$term</span>]));
+  <span class="tok-v">$response</span>-&gt;<span class="tok-f">assertOk</span>();
+  <span class="tok-v">$response</span>-&gt;<span class="tok-f">assertSeeText</span>(<span class="tok-s">'There were no results.'</span>);
+}</code></pre>
+
+      <p>
+        Here we search for the term <code>what??</code> and tell the
+        service to pretend it had queried the external service. We mock the
+        results and then test how our code handles that third party result.
+        We don't actually hit the third party.
+      </p>
+      <p>
+        You still need to test that your third-party or external
+        dependencies are functioning as expected. But, you don't have to do
+        this very often compared to how often you should be running the
+        rest of your unit tests. In fact, your core unit tests should
+        <strong>never</strong> be hitting external services in my opinion.
+        (I tend to configure PHPUnit environment variables in the xml file
+        to failing values, so that it doesn't accidentally load in my local
+        environment's sandbox credentials and hits an endpoint without me
+        knowing.) That's why we have a separate suite called external.
+      </p>
+
+      <h2 id="external-tests"><a href="#external-tests">External Tests<svg class="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l6 -6"/><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"/><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"/></svg></a></h2>
+      <p>
+        Following along with our FooDotCom external service, let's talk
+        about actually executing the search. I tend to make a separate
+        folder, a separate <code>phpunit.xml</code> file with the proper
+        environment variables, but use the same framework as a feature test
+        case. By default, this won't run all the time. By using the Laravel
+        tools, though, we can still achieve most of the things we need
+        easily. This is where we would test the different methods of how
+        our service hits the external third party. I might only run this on
+        the <code>main</code> branch continuous integration, right before I
+        deploy, to make sure that my third party hasn't changed on me.
+      </p>
+      <p>
+        With our example, I would probably only have three external tests
+        for our service:
+      </p>
+      <ol>
+        <li>sending invalid search data into the service (like a blank string) returns a results object with results key equalling 0.</li>
+        <li>search a term that we know can never be found, should have zero results</li>
+        <li>search a term that we know always will be found (hopefully with a predictable amount of results, but definitely above 0).</li>
+      </ol>
+      <p>
+        These would be done by actually asking for the service, which our
+        combination of PHPUnit environment variables and Laravel dependency
+        injection make possible. For example:
+      </p>
+
+      <div class="code-wrap">
+        <pre><code><span class="tok-k">public function</span> <span class="tok-f">testExecuteSearchFindsResults</span>(): <span class="tok-k">void</span>
+{
+  <span class="tok-v">$service</span> = <span class="tok-f">app</span>()-&gt;<span class="tok-f">make</span>(<span class="tok-f">FooDotComService</span>::<span class="tok-k">class</span>);
+  <span class="tok-v">$responseObject</span> = <span class="tok-v">$service</span>-&gt;<span class="tok-f">executeSearch</span>(<span class="tok-s">'blueberries'</span>);
+  <span class="tok-f">self</span>::<span class="tok-f">assertIsObject</span>(<span class="tok-v">$responseObject</span>);
+  <span class="tok-f">self</span>::<span class="tok-f">assertGreaterThan</span>(<span class="tok-v">0</span>, <span class="tok-v">$responseObject</span>-&gt;results);
+}</code></pre>
+        <div class="code-controls">
+          <span class="code-lang">php</span>
+          <button class="copy-btn" type="button" aria-label="Copy code">
+            <svg class="icon-copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666"/><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"/></svg>
+            <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5l10 -10"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <h2 id="end-notes"><a href="#end-notes">End Notes<svg class="anchor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15l6 -6"/><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"/><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"/></svg></a></h2>
+      <p>
+        The point of breaking up these tests into different types is two
+        fold.
+      </p>
+      <p>
+        First, it allows us to think clearly about the types of tests and
+        how to split up our code into simpler blocks. In order to write
+        good unit tests, you have to write good units of code. In order to
+        have integration tests to test specific scenarios, you have to
+        think in the form of repeatable scopes, not inline queries. In
+        order to write good feature tests, you have to have services to
+        mock out, thereby reducing third party coupling.
+      </p>
+      <p>
+        Second, it can help our test suite run faster in total. Here's how
+        the four types compare:
+      </p>
+
+      <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Scope</th>
+            <th>Hits the database</th>
+            <th>Relative speed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Unit</td>
+            <td>One method or decision</td>
+            <td>Never</td>
+            <td>Fastest</td>
+          </tr>
+          <tr>
+            <td>Integration</td>
+            <td>Our code plus one context</td>
+            <td>Usually</td>
+            <td>Fast</td>
+          </tr>
+          <tr>
+            <td>Feature</td>
+            <td>A full end point or command</td>
+            <td>Yes</td>
+            <td>Slower</td>
+          </tr>
+          <tr>
+            <td>External</td>
+            <td>A real third party call</td>
+            <td>Sometimes</td>
+            <td>Slowest</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>
+        Feature tests always take longer to run because they must load the
+        whole environment, run middleware, process input, call databases,
+        process output, and finalize the application. Integration tests
+        always take longer than unit because they hit the database, and
+        while databases and transactions are fast, they're not as fast as
+        simple PHP code. Unit tests are fastest because they should only be
+        checking a few small pieces of code and decisions. External tests
+        take the longest because they're hitting a third party. We're
+        reasonably certain the third party is honoring it's contract of
+        keeping things the same, so we don't need to hit them all the time.
+      </p>
+      <p>
+        This is just my experience after 20 some years of programming, and
+        more than a decade of actually using unit tests. It doesn't mean
+        it's the only way, but it hopefully inspires you into thinking
+        about how you should structure your project.
+      </p>
+    </div>
+
+    <!-- Laravel CTA: shown on posts tagged laravel (current Hugo behavior) -->
+    <div class="mt-14 border border-hairline border-t-2 border-t-accent/75 bg-surface/50 p-5 text-sm leading-relaxed text-ink-dim sm:p-6">
+      Looking for more Laravel Tips &amp; Tricks? Join Joel and I on the
+      <a href="https://show.nocompromises.io/" class="text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent">No Compromises</a>
+      bi-weekly podcast; around 15 minutes of thoughtful real-world advice
+      and helpful info.
+    </div>
+
+    <!-- Back to the index -->
+    <div class="mt-16 text-center">
+      <a href="/blog.html" class="group inline-flex items-center gap-2 text-sm text-ink-dim transition-colors duration-300 hover:text-ink">
+        <!-- Tabler: arrow-left — slides left on hover, mirrors the footer CTAs -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-ink-faint transition duration-300 group-hover:-translate-x-1 group-hover:text-accent/75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12l14 0"/><path d="M5 12l6 6"/><path d="M5 12l6 -6"/>
+        </svg>
+        Go to all posts
+      </a>
+    </div>
+  </main>
+
+  <!-- ============ Footer: identical to home ============ -->
+  <footer class="border-t border-hairline bg-surface/40">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+
+      <!-- Two primary CTA boxes: the two main tasks -->
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <a href="/blog.html" class="group border border-hairline p-6 transition-colors duration-300 hover:border-accent/75 sm:p-8">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display text-xl font-semibold text-white sm:text-2xl">Read the blog</h3>
+            <!-- Tabler: arrow-right — slides right on hover -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-ink-faint transition duration-300 group-hover:translate-x-1 group-hover:text-accent/75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/>
+            </svg>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-ink-dim">
+            Two decades and 708 entries on programming, business, and
+            management. The lessons stuck around; so did I.
+          </p>
+        </a>
+        <a href="#" class="group border border-hairline p-6 transition-colors duration-300 hover:border-accent/75 sm:p-8">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display text-xl font-semibold text-white sm:text-2xl">Say hello</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-ink-faint transition duration-300 group-hover:translate-x-1 group-hover:text-accent/75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/>
+            </svg>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-ink-dim">
+            Find out if we can work together, or just tell me your
+            best production-outage story. I answer both.
+          </p>
+        </a>
+      </div>
+
+      <!-- Brand mark -->
+      <div class="mt-14">
+        <img src="/logo.svg" class="h-8 w-auto" alt="AS logo">
+      </div>
+
+      <!-- Sitemap-style link columns (external links are placeholders) -->
+      <div class="mt-8 grid grid-cols-2 gap-8 text-sm sm:grid-cols-4">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Site</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="/home.html" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Home</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Who am I</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">CV</a></li>
+            <li><a href="/blog.html" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Blog</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Books</a></li>
+            <li><a href="#" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Find Me</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="https://github.com/aaronsaray" class="opacity-60 transition-opacity duration-300 hover:opacity-100">GitHub</a></li>
+            <li><a href="https://codepen.io/aaronsaray" class="opacity-60 transition-opacity duration-300 hover:opacity-100">CodePen</a></li>
+            <li><a href="https://linkedin.com/in/aaronsaray" class="opacity-60 transition-opacity duration-300 hover:opacity-100">LinkedIn</a></li>
+            <li><a href="https://twitter.com/aaronsaray" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Twitter</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Projects</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="https://show.nocompromises.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Laravel Podcast</a></li>
+            <li><a href="https://learnthephoneticalphabet.com" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Learn the Phonetic Alphabet</a></li>
+            <li><a href="https://typesetter.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Typesetter.io</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-ink-faint">Other Sites</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="https://morebetterfaster.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">More Better Faster</a></li>
+            <li><a href="https://masteringlaravel.io" class="opacity-60 transition-opacity duration-300 hover:opacity-100">Mastering Laravel</a></li>
+            <li><a href="https://1lastcheck.com" class="opacity-60 transition-opacity duration-300 hover:opacity-100">1lastcheck</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom meta row: legal left, feed right — same tier of info -->
+      <div class="mt-14 flex items-center justify-between gap-4 border-t border-hairline pt-6 text-xs text-ink-faint">
+        <p>&copy; 2026 Aaron Saray. Licensed under CC BY-SA 4.0.</p>
+        <a href="/blog/index.xml" class="flex items-center gap-1.5 opacity-80 transition-opacity duration-300 hover:opacity-100">
+          <!-- Tabler: rss -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M4 4a16 16 0 0 1 16 16"/><path d="M4 11a9 9 0 0 1 9 9"/></svg>
+          RSS
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Copy-to-clipboard for code blocks. This exact snippet ships in
+       the Astro build as a plain inline script — no framework island
+       needed for a few lines of vanilla JS. -->
+  <script>
+    document.querySelectorAll('.copy-btn').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const pre = btn.closest('.filename-header')?.nextElementSibling
+          ?? btn.closest('.code-wrap')?.querySelector('pre');
+        if (!pre) return;
+        try {
+          await navigator.clipboard.writeText(pre.innerText);
+          btn.classList.add('copied');
+          setTimeout(() => btn.classList.remove('copied'), 1500);
+        } catch (e) {
+          /* clipboard unavailable (permissions): do nothing */
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
