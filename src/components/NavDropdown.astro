@@ -29,11 +29,12 @@ const panelId = `nav-menu-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
   <button
     type="button"
     aria-controls={panelId}
-    class="flex items-center gap-1 opacity-60 transition-opacity delay-150 duration-150 group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:opacity-100 group-hover:delay-0"
+    class="-my-1.5 flex items-center gap-1 py-1.5 opacity-60 transition-opacity delay-150 duration-150 group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:opacity-100 group-hover:delay-0"
   >
     {label}
     <!-- Tabler: chevron-down -->
     <svg
+      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       class="size-3.5"
       viewBox="0 0 24 24"

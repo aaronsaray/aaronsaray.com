@@ -9,6 +9,7 @@ import { remarkCallout } from "./src/plugins/remark-callout.mjs";
 import { rehypeCodeChrome } from "./src/plugins/rehype-code-chrome.mjs";
 import { rehypeTableWrap } from "./src/plugins/rehype-table-wrap.mjs";
 import { rehypeFigure } from "./src/plugins/rehype-figure.mjs";
+import { rehypeImgDefer } from "./src/plugins/rehype-img-defer.mjs";
 import { anchorIcon } from "./src/plugins/anchor-icon.mjs";
 import { aaronsarayDark } from "./src/plugins/shiki-theme.mjs";
 import { shikiMetaFilename } from "./src/plugins/shiki-meta-filename.mjs";
@@ -50,6 +51,7 @@ export default defineConfig({
         rehypeCodeChrome,
         rehypeTableWrap,
         rehypeFigure,
+        rehypeImgDefer,
       ],
     }),
     shikiConfig: {

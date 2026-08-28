@@ -27,7 +27,7 @@ const posts = (await getSortedPosts()).filter((post) =>
   description={entry.data.description}
   ogImage={ogImageForTag(term)}
 >
-  <main class="mx-auto max-w-3xl px-5 pt-12 pb-24 sm:px-8 sm:pt-16">
+  <main id="main" class="mx-auto max-w-3xl px-5 pt-12 pb-24 sm:px-8 sm:pt-16">
     <!-- Hugo's tag pages carried a formulaic H1; the layout supplies
          it, the body below is Aaron's per-tag prose. -->
     <h1
@@ -46,10 +46,11 @@ const posts = (await getSortedPosts()).filter((post) =>
     >
       <a
         href="/blog/"
-        class="group inline-flex items-center gap-2 text-ink-dim transition-colors duration-300 hover:text-ink"
+        class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
       >
         <!-- Tabler: arrow-left -->
         <svg
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           class="size-4 text-ink-faint transition duration-300 group-hover:-translate-x-1 group-hover:text-accent/75"
           viewBox="0 0 24 24"
@@ -66,10 +67,11 @@ const posts = (await getSortedPosts()).filter((post) =>
       </a>
       <a
         href={`/tag/${term}/index.xml`}
-        class="flex items-center gap-1.5 text-ink-dim opacity-80 transition-opacity duration-300 hover:opacity-100"
+        class="-my-1.5 flex items-center gap-1.5 py-1.5 text-ink-dim opacity-80 transition-opacity duration-300 hover:opacity-100"
       >
         <!-- Tabler: rss -->
         <svg
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           class="size-3.5"
           viewBox="0 0 24 24"

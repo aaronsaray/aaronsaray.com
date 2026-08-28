@@ -17,10 +17,11 @@ const olderHref = `/blog/page/${current + 1}/`;
     current > 1 ? (
       <a
         href={newerHref}
-        class="group inline-flex items-center gap-2 text-ink-dim transition-colors duration-300 hover:text-ink"
+        class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
       >
         {/* Tabler: arrow-left */}
         <svg
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           class="size-4 text-ink-faint transition duration-300 group-hover:-translate-x-1 group-hover:text-accent/75"
           viewBox="0 0 24 24"
@@ -47,11 +48,12 @@ const olderHref = `/blog/page/${current + 1}/`;
     current < total ? (
       <a
         href={olderHref}
-        class="group inline-flex items-center gap-2 text-ink-dim transition-colors duration-300 hover:text-ink"
+        class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
       >
         Older
         {/* Tabler: arrow-right */}
         <svg
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           class="size-4 text-ink-faint transition duration-300 group-hover:translate-x-1 group-hover:text-accent/75"
           viewBox="0 0 24 24"

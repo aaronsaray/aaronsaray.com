@@ -19,7 +19,7 @@ const terms = [...counts.entries()].sort(
 ---
 
 <Base title="Blog Tags" description={SITE_DESCRIPTION}>
-  <main class="mx-auto max-w-3xl px-5 pt-12 pb-24 sm:px-8 sm:pt-16">
+  <main id="main" class="mx-auto max-w-3xl px-5 pt-12 pb-24 sm:px-8 sm:pt-16">
     <!-- Prose carried over from content/tag/_index.md (the H1 and the
          paragraph are Aaron's); the count is computed, replacing the
          Hugo blog-count shortcode. -->
@@ -39,7 +39,7 @@ const terms = [...counts.entries()].sort(
         terms.map(([term, count]) => (
           <a
             href={`/tag/${term}/`}
-            class="group text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
+            class="group -my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
           >
             #{term}
             <span class="text-sm text-ink-faint">({count})</span>

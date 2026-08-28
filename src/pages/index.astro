@@ -10,11 +10,13 @@ const description =
   description={description}
   overlayHeader
 >
-  <!-- ============ Hero: full viewport, left-aligned ============ -->
-  <section class="relative flex min-h-svh flex-col justify-center">
-    <div class="mx-auto w-full max-w-6xl px-5 sm:px-8">
-      <!-- Reads as one sentence: Hi, I'm / Aaron Saray / I make things better. -->
-      <!-- Arrow starts at the left margin and does the indenting itself.
+  {/* Landmark wrapper: every other page's template supplies <main>. */}
+  <main id="main">
+    <!-- ============ Hero: full viewport, left-aligned ============ -->
+    <section class="relative flex min-h-svh flex-col justify-center">
+      <div class="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <!-- Reads as one sentence: Hi, I'm / Aaron Saray / I make things better. -->
+        <!-- Arrow starts at the left margin and does the indenting itself.
            The arrow box width + gap is derived from the name's font
            size so "Hi" starts at the top-left corner of the A's flat
            apex at every viewport width. The corner is at 0.258em;
@@ -23,211 +25,216 @@ const description =
            overlaps the shaft (tip exactly on the shaft's end) and
            overflows 6px into the gap, so at narrow widths the head
            never pokes left of the margin. -->
-      <p
-        class="flex items-center text-[clamp(1.2rem,2.8vw,2.1rem)] leading-tight font-semibold text-ink-dim"
-      >
-        <span
-          class="mr-2 flex w-[calc(0.245*clamp(3.5rem,9.5vw,8rem)-0.5rem)] shrink-0 items-center"
+        <p
+          class="flex items-center text-[clamp(1.2rem,2.8vw,2.1rem)] leading-tight font-semibold text-ink-dim"
         >
-          <span class="h-px flex-1 bg-ink-faint"></span>
+          <span
+            class="mr-2 flex w-[calc(0.245*clamp(3.5rem,9.5vw,8rem)-0.5rem)] shrink-0 items-center"
+          >
+            <span class="h-px flex-1 bg-ink-faint"></span>
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              class="-mr-1.5 -ml-[10px] size-4 shrink-0 text-ink-faint"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="M9 6l6 6l-6 6"></path></svg
+            >
+          </span>Hi, I'm
+        </p>
+        <!-- Name sits just below the off-white ink token so it doesn't "bounce" -->
+        <h1
+          class="mt-2 text-[clamp(3.5rem,9.5vw,8rem)] leading-[0.95] font-black tracking-[-0.03em] text-[#dfe2e6]"
+        >
+          Aaron Saray
+        </h1>
+        <p
+          class="mt-4 text-[clamp(1.55rem,4vw,3rem)] leading-tight font-bold tracking-[-0.01em] text-ink-dim"
+        >
+          I make things better.
+        </p>
+      </div>
+
+      <!-- Whole cue is a link to the beliefs section. Deliberately no
+         hover styling — only the cursor gives it away. -->
+      <div class="absolute inset-x-0 bottom-8 flex justify-center">
+        <a href="#beliefs" class="flex flex-col items-center gap-2">
+          <p class="text-base text-ink-faint sm:text-lg">let me show you how</p>
+          <!-- Tabler: chevron-down -->
           <svg
+            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
-            class="-mr-1.5 -ml-[10px] size-4 shrink-0 text-ink-faint"
+            class="scroll-cue size-5 text-ink-faint"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
+            stroke-width="2"
             stroke-linecap="round"
-            stroke-linejoin="round"><path d="M9 6l6 6l-6 6"></path></svg
+            stroke-linejoin="round"
           >
-        </span>Hi, I'm
-      </p>
-      <!-- Name sits just below the off-white ink token so it doesn't "bounce" -->
-      <h1
-        class="mt-2 text-[clamp(3.5rem,9.5vw,8rem)] leading-[0.95] font-black tracking-[-0.03em] text-[#dfe2e6]"
-      >
-        Aaron Saray
-      </h1>
-      <p
-        class="mt-4 text-[clamp(1.55rem,4vw,3rem)] leading-tight font-bold tracking-[-0.01em] text-ink-dim"
-      >
-        I make things better.
-      </p>
-    </div>
+            <path d="M6 9l6 6l6 -6"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
 
-    <!-- Whole cue is a link to the beliefs section. Deliberately no
-         hover styling — only the cursor gives it away. -->
-    <div class="absolute inset-x-0 bottom-8 flex justify-center">
-      <a href="#beliefs" class="flex flex-col items-center gap-2">
-        <p class="text-base text-ink-faint sm:text-lg">let me show you how</p>
-        <!-- Tabler: chevron-down -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="scroll-cue size-5 text-ink-faint"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M6 9l6 6l6 -6"></path>
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- ============ Beliefs / manifesto ============ -->
-  <!-- AI-GENERATED PLACEHOLDER COPY throughout this section (from the
+    <!-- ============ Beliefs / manifesto ============ -->
+    <!-- AI-GENERATED PLACEHOLDER COPY throughout this section (from the
        design prototype) — statements need Aaron's voice. -->
-  <section id="beliefs" class="border-t border-hairline">
-    <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-      <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">
-        What I believe
-      </h2>
+    <section id="beliefs" class="border-t border-hairline">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">
+          What I believe
+        </h2>
 
-      <div
-        class="mt-12 grid grid-cols-1 gap-x-10 gap-y-14 sm:mt-16 md:grid-cols-2 lg:grid-cols-3"
-      >
-        <div class="reveal">
-          <p
-            class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-          >
-            #01
-          </p>
-          <p
-            class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-          >
-            Working software beats perfect plans.
-          </p>
-        </div>
-        <div class="reveal">
-          <p
-            class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-          >
-            #02
-          </p>
-          <p
-            class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-          >
-            Code is read far more often than it's written.
-          </p>
-        </div>
-        <div class="reveal">
-          <p
-            class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-          >
-            #03
-          </p>
-          <p
-            class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-          >
-            Simple is harder than clever, and worth it.
-          </p>
-        </div>
-        <div class="reveal">
-          <p
-            class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-          >
-            #04
-          </p>
-          <p
-            class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-          >
-            The best tool is the one your team can maintain.
-          </p>
-        </div>
-        <div class="reveal">
-          <p
-            class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-          >
-            #05
-          </p>
-          <p
-            class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-          >
-            Ship small. Ship often. Learn faster.
-          </p>
-        </div>
-        <div class="reveal">
-          <p
-            class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-          >
-            #06
-          </p>
-          <p
-            class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-          >
-            Tools change. Fundamentals compound.
-          </p>
+        <div
+          class="mt-12 grid grid-cols-1 gap-x-10 gap-y-14 sm:mt-16 md:grid-cols-2 lg:grid-cols-3"
+        >
+          <div>
+            <p
+              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+            >
+              #01
+            </p>
+            <p
+              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
+            >
+              Working software beats perfect plans.
+            </p>
+          </div>
+          <div>
+            <p
+              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+            >
+              #02
+            </p>
+            <p
+              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
+            >
+              Code is read far more often than it's written.
+            </p>
+          </div>
+          <div>
+            <p
+              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+            >
+              #03
+            </p>
+            <p
+              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
+            >
+              Simple is harder than clever, and worth it.
+            </p>
+          </div>
+          <div>
+            <p
+              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+            >
+              #04
+            </p>
+            <p
+              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
+            >
+              The best tool is the one your team can maintain.
+            </p>
+          </div>
+          <div>
+            <p
+              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+            >
+              #05
+            </p>
+            <p
+              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
+            >
+              Ship small. Ship often. Learn faster.
+            </p>
+          </div>
+          <div>
+            <p
+              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+            >
+              #06
+            </p>
+            <p
+              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
+            >
+              Tools change. Fundamentals compound.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ How I can help ============ -->
-  <!-- AI-GENERATED PLACEHOLDER COPY throughout this section (from the
+    <!-- ============ How I can help ============ -->
+    <!-- AI-GENERATED PLACEHOLDER COPY throughout this section (from the
        design prototype) — needs Aaron's voice. Style is an editorial
        index: full-width rows, hairline separators. Deliberately unlike
        the beliefs grid (serif cards) and the footer (bordered CTA
        boxes + columns). -->
-  <section class="border-t border-hairline">
-    <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-      <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">
-        How I can help
-      </h2>
+    <section class="border-t border-hairline">
+      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+        <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">
+          How I can help
+        </h2>
 
-      <div class="mt-12 sm:mt-16">
-        <div
-          class="reveal grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
-        >
-          <h3
-            class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+        <div class="mt-12 sm:mt-16">
+          <div
+            class="grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
           >
-            As a programmer
-          </h3>
-          <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
-            Contract development, mostly PHP and Laravel. I join your codebase,
-            ship working software, and leave the code better than I found it.
-          </p>
-        </div>
-        <div
-          class="reveal grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
-        >
-          <h3
-            class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+            <h3
+              class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+            >
+              As a programmer
+            </h3>
+            <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
+              Contract development, mostly PHP and Laravel. I join your
+              codebase, ship working software, and leave the code better than I
+              found it.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
           >
-            As a coach
-          </h3>
-          <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
-            For developers and for managers. I work on how your team builds, not
-            just what it builds: the habits, the process, the communication.
-          </p>
-        </div>
-        <div
-          class="reveal grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
-        >
-          <h3
-            class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+            <h3
+              class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+            >
+              As a coach
+            </h3>
+            <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
+              For developers and for managers. I work on how your team builds,
+              not just what it builds: the habits, the process, the
+              communication.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
           >
-            As a CTO
-          </h3>
-          <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
-            Technical leadership when you need it: the architecture, the hiring,
-            and the hard calls in between, from someone who has run the team and
-            written the code.
-          </p>
+            <h3
+              class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+            >
+              As a CTO
+            </h3>
+            <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
+              Technical leadership when you need it: the architecture, the
+              hiring, and the hard calls in between, from someone who has run
+              the team and written the code.
+            </p>
+          </div>
         </div>
+
+        <!-- Two-tone kicker: used once, where it earns it -->
+        <p
+          class="mt-10 text-xl font-bold tracking-[-0.01em] text-ink-faint sm:text-2xl"
+        >
+          Different hat, same result: <span class="text-ink"
+            >things get better.</span
+          >
+        </p>
       </div>
-
-      <!-- Two-tone kicker: used once, where it earns it -->
-      <p
-        class="mt-10 text-xl font-bold tracking-[-0.01em] text-ink-faint sm:text-2xl"
-      >
-        Different hat, same result: <span class="text-ink"
-          >things get better.</span
-        >
-      </p>
-    </div>
-  </section>
+    </section>
+  </main>
 </Base>

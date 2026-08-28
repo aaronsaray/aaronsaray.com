@@ -21,8 +21,34 @@
 
 /* Scrollbar: very dark and muted, but still findable. */
 html {
+  /* Dark-only site: tell the browser so its own UI (overscroll canvas,
+     Firefox scrollbars, any future form control) matches. */
+  color-scheme: dark;
   scrollbar-color: #2c3238 var(--color-night);
   scroll-behavior: smooth;
+}
+
+/* Wrapping: balance multi-line headings; avoid single-word last lines
+   in running text. Both are progressive (pretty is Chromium-only
+   today) and layout-neutral where unsupported. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Keyboard focus: a deliberate ring in the site's palette instead of
+   the UA default blue, offset so it stays distinct on dark surfaces.
+   [tabindex] covers the scrollable code blocks (pre tabindex="0"). */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Selection: accent ground, night text (4.6:1). */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-night);
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -71,37 +97,8 @@ html {
   animation: drift-down 3s ease-in-out infinite;
 }
 
-/* Scroll-driven reveal (fade + small rise). Pure CSS, no JS: each item
-   animates as it enters the viewport, which staggers rows on desktop
-   and single items on mobile for free. nth-child ranges add a gentle
-   left-to-right stagger within a row. Progressive enhancement —
-   browsers without animation-timeline (currently Firefox) just show
-   the content. */
-@supports (animation-timeline: view()) {
-  .reveal {
-    animation: reveal-up linear both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 25%;
-  }
-  .reveal:nth-child(3n + 2) {
-    animation-range: entry 30% cover 28%;
-  }
-  .reveal:nth-child(3n) {
-    animation-range: entry 60% cover 31%;
-  }
-  @keyframes reveal-up {
-    from {
-      opacity: 0;
-      transform: translateY(1.25rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .scroll-cue {
     animation: none;
   }
 }
@@ -113,6 +110,14 @@ html {
   color: var(--color-prose);
   font-size: 1.0625rem;
   line-height: 1.75;
+  /* Old posts carry long bare URLs; never let one overflow the column. */
+  overflow-wrap: break-word;
+}
+.prose p,
+.prose li,
+.prose blockquote,
+.entry-excerpt p {
+  text-wrap: pretty;
 }
 .prose > * + * {
   margin-top: 1.25rem;
@@ -266,10 +271,14 @@ html {
   padding-left: 1rem;
 }
 .code-lang {
-  @apply font-mono text-[11px] text-ink-faint;
+  @apply font-mono text-[0.6875rem] text-ink-faint;
 }
 .copy-btn {
   @apply cursor-pointer text-ink-faint transition-colors duration-300 hover:text-ink;
+  /* 24px hit target from the 16px icon; the negative margin keeps the
+     visual layout exactly where it was. */
+  padding: 0.25rem;
+  margin: -0.25rem;
 }
 .copy-btn svg {
   display: block;
@@ -334,6 +343,7 @@ html {
   margin-top: 0.75rem;
   line-height: 1.625;
   color: var(--color-ink-dim);
+  overflow-wrap: break-word;
 }
 .entry-excerpt > * + * {
   margin-top: 0.75rem;
