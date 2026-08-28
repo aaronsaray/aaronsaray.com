@@ -14,12 +14,12 @@
 //
 // Never commits. Writes .migration/report.json for review.
 
-import fs from 'node:fs';
-import path from 'node:path';
-import YAML from 'yaml';
+import fs from "node:fs";
+import path from "node:path";
+import YAML from "yaml";
 
-const ROOT = path.resolve(import.meta.dirname, '..');
-const BLOG = path.join(ROOT, 'src/content/blog');
+const ROOT = path.resolve(import.meta.dirname, "..");
+const BLOG = path.join(ROOT, "src/content/blog");
 
 const report = {
   posts: 0,
@@ -38,7 +38,7 @@ const report = {
 
 const files = fs
   .readdirSync(BLOG)
-  .filter((f) => f.endsWith('.md'))
+  .filter((f) => f.endsWith(".md"))
   .sort();
 
 // ---- pass 1: frontmatter index (stem -> permalink) ----------------
@@ -53,11 +53,11 @@ const parsed = new Map(); // stem -> {data, body}
 const permalinks = new Map(); // stem -> /year/stem/
 
 for (const f of files) {
-  const stem = f.replace(/\.md$/, '');
-  const src = fs.readFileSync(path.join(BLOG, f), 'utf8');
+  const stem = f.replace(/\.md$/, "");
+  const src = fs.readFileSync(path.join(BLOG, f), "utf8");
   const { fmRaw, body } = splitFrontmatter(src, f);
   const data = YAML.parse(fmRaw);
-  if (typeof data.date !== 'string') {
+  if (typeof data.date !== "string") {
     throw new Error(`${f}: date parsed as ${typeof data.date}`);
   }
   parsed.set(stem, { data, body });
@@ -76,8 +76,8 @@ function parseArgs(argString) {
 
 function resolveRef(target, stem) {
   let t = target.trim();
-  t = t.replace(/^\/blog\//, '').replace(/^\//, '');
-  t = t.replace(/\.(md|markdown)$/, '');
+  t = t.replace(/^\/blog\//, "").replace(/^\//, "");
+  t = t.replace(/\.(md|markdown)$/, "");
   const permalink = permalinks.get(t);
   if (!permalink) {
     report.errors.push(`${stem}: unresolved ref "${target}"`);
@@ -107,8 +107,8 @@ function transformBody(body, stem) {
       const a = parseArgs(argString);
       const caption = inner.trim();
       report.linkFigures.push({ post: stem, href: a.href, caption });
-      const href = encodeURI(a.href ?? '');
-      return `<figure><a href="${href}"><img src="${encodeURI(a.img ?? '')}" alt="${a.alt ?? ''}"></a><figcaption>${caption}</figcaption></figure>`;
+      const href = encodeURI(a.href ?? "");
+      return `<figure><a href="${href}"><img src="${encodeURI(a.img ?? "")}" alt="${a.alt ?? ""}"></a><figcaption>${caption}</figcaption></figure>`;
     },
   );
 
@@ -125,7 +125,7 @@ function transformBody(body, stem) {
   out = out.replace(/\{\{<\s*image\s+([^>]*?)\s*>\}\}/g, (_, argString) => {
     const a = parseArgs(argString);
     if (a.alt === undefined) report.missingAlt.push({ post: stem, src: a.src });
-    const alt = a.alt ?? '';
+    const alt = a.alt ?? "";
     if (a.thumb && a.thumb !== a.src) {
       report.thumbLinks.push({ post: stem, src: a.src, thumb: a.thumb });
       return `<a href="${encodeURI(a.src)}"><img src="${encodeURI(a.thumb)}" alt="${alt}"></a>`;
@@ -154,12 +154,14 @@ function transformBody(body, stem) {
   });
 
   // one-off content fixes
-  if (stem === 'site-profile-thebetterbachelor-com') {
-    out = out.replace('/uploads/201221.png', '/uploads/2012/2.png');
-    report.oneOffFixes.push(`${stem}: /uploads/201221.png -> /uploads/2012/2.png`);
+  if (stem === "site-profile-thebetterbachelor-com") {
+    out = out.replace("/uploads/201221.png", "/uploads/2012/2.png");
+    report.oneOffFixes.push(
+      `${stem}: /uploads/201221.png -> /uploads/2012/2.png`,
+    );
   }
-  if (stem === 'xdebug-and-eclipse-pdt-on-windows-from-start-to-finish') {
-    out = out.replace(/^```\.ini$/m, '```ini');
+  if (stem === "xdebug-and-eclipse-pdt-on-windows-from-start-to-finish") {
+    out = out.replace(/^```\.ini$/m, "```ini");
     report.oneOffFixes.push(`${stem}: \`\`\`.ini -> \`\`\`ini`);
   }
 
@@ -184,38 +186,42 @@ function buildFrontmatter(data, stem) {
   if (data.params?.context) {
     lines.push(YAML.stringify({ context: data.params.context }).trimEnd());
   }
-  return `---\n${lines.join('\n')}\n---\n`;
+  return `---\n${lines.join("\n")}\n---\n`;
 }
 
 for (const f of files) {
-  const stem = f.replace(/\.md$/, '');
+  const stem = f.replace(/\.md$/, "");
   const { data, body } = parsed.get(stem);
 
-  const known = new Set(['title', 'date', 'tag', 'params', 'slug']);
+  const known = new Set(["title", "date", "tag", "params", "slug"]);
   for (const key of Object.keys(data)) {
     if (!known.has(key)) report.errors.push(`${stem}: unexpected key "${key}"`);
   }
 
-  if (!body.includes('<!--more-->')) report.noMoreMarker.push(stem);
+  if (!body.includes("<!--more-->")) report.noMoreMarker.push(stem);
 
   const newBody = transformBody(body, stem);
-  fs.writeFileSync(
-    path.join(BLOG, f),
-    buildFrontmatter(data, stem) + newBody,
-  );
+  fs.writeFileSync(path.join(BLOG, f), buildFrontmatter(data, stem) + newBody);
   report.posts++;
 }
 
 fs.writeFileSync(
-  path.join(ROOT, '.migration/report.json'),
-  JSON.stringify(report, null, 2) + '\n',
+  path.join(ROOT, ".migration/report.json"),
+  JSON.stringify(report, null, 2) + "\n",
 );
 
 const counts = Object.fromEntries(
-  Object.entries(report).map(([k, v]) => [k, Array.isArray(v) ? v.length : typeof v === 'object' ? Object.keys(v).length : v]),
+  Object.entries(report).map(([k, v]) => [
+    k,
+    Array.isArray(v)
+      ? v.length
+      : typeof v === "object"
+        ? Object.keys(v).length
+        : v,
+  ]),
 );
 console.log(counts);
 if (report.errors.length) {
-  console.error('ERRORS:', report.errors);
+  console.error("ERRORS:", report.errors);
   process.exitCode = 1;
 }

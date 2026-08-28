@@ -1,6 +1,6 @@
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from "astro:content";
 
-export type Post = CollectionEntry<'blog'>;
+export type Post = CollectionEntry<"blog">;
 
 /** Permalink per the URL contract: /:year/:filename/ */
 export function postHref(post: Post): string {
@@ -13,7 +13,7 @@ export function postHref(post: Post): string {
  * Hugo does (Date, then LinkTitle, then file path).
  */
 export async function getSortedPosts(): Promise<Post[]> {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
   return posts.sort(
     (a, b) =>
       b.data.date.localeCompare(a.data.date) ||

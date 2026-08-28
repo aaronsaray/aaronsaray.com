@@ -1,7 +1,7 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -15,13 +15,14 @@ interface Props {
 const {
   title,
   description,
-  ogImage = '/images/og-image.png',
+  ogImage = "/images/og-image.png",
   overlayHeader = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImageUrl = new URL(ogImage, Astro.site);
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -41,7 +42,7 @@ const ogImageUrl = new URL(ogImage, Astro.site);
       rel="alternate"
       type="application/rss+xml"
       title="AaronSaray.com"
-      href={new URL('/blog/index.xml', Astro.site)}
+      href={new URL("/blog/index.xml", Astro.site)}
     />
     <slot name="head" />
 
@@ -52,7 +53,7 @@ const ogImageUrl = new URL(ogImage, Astro.site);
       rel="stylesheet"
     />
   </head>
-  <body class="bg-night text-ink font-sans antialiased">
+  <body class="bg-night font-sans text-ink antialiased">
     <Header overlay={overlayHeader} />
     <slot />
     <Footer />

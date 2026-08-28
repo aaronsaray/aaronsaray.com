@@ -3,24 +3,34 @@
 // existing subscribers see item continuity, not a new feed.
 
 export const SITE_TITLE =
-  'Milwaukee Web Developer, PHP and Laravel Programmer, Consultant';
-export const SITE_URL = 'https://aaronsaray.com';
+  "Milwaukee Web Developer, PHP and Laravel Programmer, Consultant";
+export const SITE_URL = "https://aaronsaray.com";
 const COPYRIGHT =
-  'This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.';
+  "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.";
 
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const MONTHS = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 
 export function xmlEscape(s: string): string {
   return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&#34;')
-    .replace(/'/g, '&#39;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&#34;")
+    .replace(/'/g, "&#39;");
 }
 
 /**
@@ -29,12 +39,11 @@ export function xmlEscape(s: string): string {
  * strings are midnight +0000), never converted through a timezone.
  */
 export function rfc1123(date: string): string {
-  const [y, mo, d] = date.slice(0, 10).split('-').map(Number);
+  const [y, mo, d] = date.slice(0, 10).split("-").map(Number);
   const day = DAYS[new Date(Date.UTC(y, mo - 1, d)).getUTCDay()];
-  const time = date.length > 10 ? date.slice(11, 19) : '00:00:00';
-  const offset =
-    date.length > 19 ? date.slice(19).replace(':', '') : '+0000';
-  return `${day}, ${String(d).padStart(2, '0')} ${MONTHS[mo - 1]} ${y} ${time} ${offset}`;
+  const time = date.length > 10 ? date.slice(11, 19) : "00:00:00";
+  const offset = date.length > 19 ? date.slice(19).replace(":", "") : "+0000";
+  return `${day}, ${String(d).padStart(2, "0")} ${MONTHS[mo - 1]} ${y} ${time} ${offset}`;
 }
 
 export interface FeedItem {
@@ -63,7 +72,7 @@ export function renderFeed(opts: {
     .map((item) => {
       const pubDate = item.date
         ? `\n      <pubDate>${rfc1123(item.date)}</pubDate>`
-        : '';
+        : "";
       return `    <item>
       <title>${xmlEscape(item.title)}</title>
       <link>${item.link}</link>${pubDate}
@@ -71,7 +80,7 @@ export function renderFeed(opts: {
       <description>${xmlEscape(item.descriptionHtml)}</description>
     </item>`;
     })
-    .join('\n');
+    .join("\n");
 
   return `<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -81,7 +90,7 @@ export function renderFeed(opts: {
     <description>Recent content in ${channelTitle}</description>
     <generator>Astro</generator>
     <language>en-us</language>
-    <copyright>${COPYRIGHT}</copyright>${lastBuild ? `\n    <lastBuildDate>${rfc1123(lastBuild)}</lastBuildDate>` : ''}
+    <copyright>${COPYRIGHT}</copyright>${lastBuild ? `\n    <lastBuildDate>${rfc1123(lastBuild)}</lastBuildDate>` : ""}
     <atom:link href="${SITE_URL}${opts.selfPath}" rel="self" type="application/rss+xml" />
 ${items}
   </channel>
@@ -93,6 +102,6 @@ export const RSS_LIMIT = 10; // Hugo's rssLimit
 
 export function feedResponse(xml: string): Response {
   return new Response(xml, {
-    headers: { 'Content-Type': 'application/rss+xml; charset=utf-8' },
+    headers: { "Content-Type": "application/rss+xml; charset=utf-8" },
   });
 }

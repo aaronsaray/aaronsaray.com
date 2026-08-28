@@ -1,14 +1,15 @@
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const blog = defineCollection({
   // generateId keeps the slug = filename stem VERBATIM. The default
   // loader slugifies ids (github-slugger), which would strip the dot
   // from fixing-laravel-5.4-dependency-on-phpunit-5 and break its URL.
   loader: glob({
-    pattern: '*.md',
-    base: './src/content/blog',
-    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+    pattern: "*.md",
+    base: "./src/content/blog",
+    generateId: ({ entry }) => entry.replace(/\.md$/, ""),
   }),
   schema: z.object({
     title: z.string(),
@@ -25,9 +26,9 @@ const blog = defineCollection({
 
 const tags = defineCollection({
   loader: glob({
-    pattern: '*.md',
-    base: './src/content/tags',
-    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+    pattern: "*.md",
+    base: "./src/content/tags",
+    generateId: ({ entry }) => entry.replace(/\.md$/, ""),
   }),
   schema: z.object({
     title: z.string(),
@@ -37,9 +38,9 @@ const tags = defineCollection({
 
 const pages = defineCollection({
   loader: glob({
-    pattern: '*.md',
-    base: './src/content/pages',
-    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+    pattern: "*.md",
+    base: "./src/content/pages",
+    generateId: ({ entry }) => entry.replace(/\.md$/, ""),
   }),
   schema: z.object({
     title: z.string(),

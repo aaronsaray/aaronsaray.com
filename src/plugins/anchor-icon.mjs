@@ -1,4 +1,4 @@
-import { fromHtml } from 'hast-util-from-html';
+import { fromHtml } from "hast-util-from-html";
 
 // Tabler link icon, verbatim from .design/blog-single.html — appended
 // after the heading text by rehype-autolink-headings (behavior: wrap).

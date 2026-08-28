@@ -1,13 +1,13 @@
 ---
-import { getCollection, render } from 'astro:content';
-import Base from '../../layouts/Base.astro';
-import { formatDate, isOldPost } from '../../lib/dates';
-import { readingTime } from '../../lib/readingTime';
-import { excerptText } from '../../lib/excerpt';
-import { ogImageForTag } from '../../lib/ogImage';
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { formatDate, isOldPost } from "../../lib/dates";
+import { readingTime } from "../../lib/readingTime";
+import { excerptText } from "../../lib/excerpt";
+import { ogImageForTag } from "../../lib/ogImage";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
   return posts.map((entry) => ({
     // The URL contract: /:year/:filename/ — year is the first four
     // characters of the date string, slug is the filename verbatim.
@@ -19,68 +19,130 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const description = await excerptText(entry.body ?? '');
-const minutes = readingTime(entry.body ?? '');
+const description = await excerptText(entry.body ?? "");
+const minutes = readingTime(entry.body ?? "");
 const tags = [...entry.data.tags].sort();
 const context = entry.data.context;
 const showOldNotice = isOldPost(entry.data.date);
-const showLaravelCta = entry.data.tags.includes('laravel');
+const showLaravelCta = entry.data.tags.includes("laravel");
 ---
+
 <Base
   title={entry.data.title}
   description={description}
   ogImage={ogImageForTag(entry.data.tags[0])}
 >
-  <main class="mx-auto max-w-3xl px-5 pb-24 pt-12 sm:px-8 sm:pt-16">
-    <h1 class="font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
+  <main class="mx-auto max-w-3xl px-5 pt-12 pb-24 sm:px-8 sm:pt-16">
+    <h1
+      class="font-display text-4xl leading-tight font-semibold text-white sm:text-5xl"
+    >
       {entry.data.title}
     </h1>
 
     <!-- Meta line: date · read time · tags. No author (single-author site). -->
-    <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline pb-6 text-sm text-ink-faint">
+    <div
+      class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline pb-6 text-sm text-ink-faint"
+    >
       <span>{formatDate(entry.data.date)}</span>
       <span aria-hidden="true">&middot;</span>
       <span>{minutes} min read</span>
       <span aria-hidden="true">&middot;</span>
-      {tags.map((tag) => (
-        <a href={`/tag/${tag}/`} class="text-accent transition-colors duration-300 hover:text-[#7fa6c4]">#{tag}</a>
-      ))}
+      {
+        tags.map((tag) => (
+          <a
+            href={`/tag/${tag}/`}
+            class="text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
+          >
+            #{tag}
+          </a>
+        ))
+      }
     </div>
 
-    {context && (
-      <div class="mt-6 flex flex-wrap items-center gap-2 text-sm text-ink-faint">
-        <strong class="font-semibold text-ink-dim">Context:</strong>
-        {context.map((item) => (
-          <span class="whitespace-nowrap border border-hairline bg-surface/50 px-2 py-1 text-ink-dim">{item}</span>
-        ))}
-      </div>
-    )}
+    {
+      context && (
+        <div class="mt-6 flex flex-wrap items-center gap-2 text-sm text-ink-faint">
+          <strong class="font-semibold text-ink-dim">Context:</strong>
+          {context.map((item) => (
+            <span class="border border-hairline bg-surface/50 px-2 py-1 whitespace-nowrap text-ink-dim">
+              {item}
+            </span>
+          ))}
+        </div>
+      )
+    }
 
-    {showOldNotice && (
-      <div class="mt-8 flex gap-3 border border-hairline bg-surface/50 p-4 text-sm leading-relaxed text-ink-dim">
-        <!-- Tabler: history -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-5 shrink-0 text-[#b08d57]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8l0 4l2 2"/><path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"/></svg>
-        <!-- Whitespace between JSX-expression children collapses, so
-             the space after the strong tag must be literal text. -->
-        <p><strong class="font-semibold text-ink">This post is more than 18 months old.</strong> Technology changes quickly, so some of this content may be out of date (but that's not always the case). Please verify any technical or programming information against the current release.</p>
-      </div>
-    )}
+    {
+      showOldNotice && (
+        <div class="mt-8 flex gap-3 border border-hairline bg-surface/50 p-4 text-sm leading-relaxed text-ink-dim">
+          {/* Tabler: history */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mt-0.5 size-5 shrink-0 text-[#b08d57]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <>
+              <path d="M12 8l0 4l2 2" />
+              <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" />
+            </>
+          </svg>
+          {/* Whitespace between JSX-expression children collapses, so
+            the space after the strong tag must be literal text. */}
+          <p>
+            <strong class="font-semibold text-ink">
+              This post is more than 18 months old.
+            </strong>{" "}
+            Technology changes quickly, so some of this content may be out of
+            date (but that's not always the case). Please verify any technical
+            or programming information against the current release.
+          </p>
+        </div>
+      )
+    }
 
     <div class="prose mt-10">
       <Content />
     </div>
 
-    {showLaravelCta && (
-      <div class="mt-14 border border-hairline border-t-2 border-t-accent/75 bg-surface/50 p-5 text-sm leading-relaxed text-ink-dim sm:p-6">
-        Looking for more Laravel Tips &amp; Tricks? Join Joel and I on the <a href="https://show.nocompromises.io/" class="text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent">No Compromises</a> bi-weekly podcast; around 15 minutes of thoughtful real-world advice and helpful info.
-      </div>
-    )}
+    {
+      showLaravelCta && (
+        <div class="mt-14 border border-t-2 border-hairline border-t-accent/75 bg-surface/50 p-5 text-sm leading-relaxed text-ink-dim sm:p-6">
+          Looking for more Laravel Tips &amp; Tricks? Join Joel and I on the{" "}
+          <a
+            href="https://show.nocompromises.io/"
+            class="text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent"
+          >
+            No Compromises
+          </a>{" "}
+          bi-weekly podcast; around 15 minutes of thoughtful real-world advice
+          and helpful info.
+        </div>
+      )
+    }
 
     <div class="mt-16 text-center">
-      <a href="/blog/" class="group inline-flex items-center gap-2 text-sm text-ink-dim transition-colors duration-300 hover:text-ink">
+      <a
+        href="/blog/"
+        class="group inline-flex items-center gap-2 text-sm text-ink-dim transition-colors duration-300 hover:text-ink"
+      >
         <!-- Tabler: arrow-left — slides left on hover, mirrors the footer CTAs -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-ink-faint transition duration-300 group-hover:-translate-x-1 group-hover:text-accent/75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12l14 0"/><path d="M5 12l6 6"/><path d="M5 12l6 -6"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-4 text-ink-faint transition duration-300 group-hover:-translate-x-1 group-hover:text-accent/75"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12l14 0"></path><path d="M5 12l6 6"></path><path
+            d="M5 12l6 -6"></path>
         </svg>
         Go to all posts
       </a>
@@ -91,16 +153,17 @@ const showLaravelCta = entry.data.tags.includes('laravel');
        island. The selectors depend on the two rehype-code-chrome DOM
        shapes. -->
   <script is:inline>
-    document.querySelectorAll('.copy-btn').forEach((btn) => {
-      btn.addEventListener('click', async () => {
-        const pre = btn.closest('.filename-header')?.nextElementSibling
-          ?? btn.closest('.code-wrap')?.querySelector('pre');
+    document.querySelectorAll(".copy-btn").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const pre =
+          btn.closest(".filename-header")?.nextElementSibling ??
+          btn.closest(".code-wrap")?.querySelector("pre");
         if (!pre) return;
         try {
           await navigator.clipboard.writeText(pre.innerText);
-          btn.classList.add('copied');
-          setTimeout(() => btn.classList.remove('copied'), 1500);
-        } catch (e) {
+          btn.classList.add("copied");
+          setTimeout(() => btn.classList.remove("copied"), 1500);
+        } catch {
           /* clipboard unavailable (permissions): do nothing */
         }
       });

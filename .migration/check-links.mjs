@@ -5,17 +5,17 @@
 // External URLs, mailto:, javascript:, tel: are skipped. Exits
 // non-zero with a list of broken references. Runs in `npm run verify`.
 
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
-const ROOT = path.resolve(import.meta.dirname, '..');
-const DIST = path.join(ROOT, 'dist');
+const ROOT = path.resolve(import.meta.dirname, "..");
+const DIST = path.join(ROOT, "dist");
 
 function* htmlFiles(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) yield* htmlFiles(full);
-    else if (entry.name.endsWith('.html')) yield full;
+    else if (entry.name.endsWith(".html")) yield full;
   }
 }
 
@@ -25,7 +25,7 @@ function idsOf(file) {
   let ids = idCache.get(file);
   if (!ids) {
     ids = new Set(
-      [...fs.readFileSync(file, 'utf8').matchAll(/\sid="([^"]+)"/g)].map(
+      [...fs.readFileSync(file, "utf8").matchAll(/\sid="([^"]+)"/g)].map(
         (m) => m[1],
       ),
     );
@@ -36,18 +36,18 @@ function idsOf(file) {
 
 function targetFile(urlPath) {
   const clean = decodeURIComponent(urlPath);
-  return clean.endsWith('/')
-    ? path.join(DIST, clean, 'index.html')
+  return clean.endsWith("/")
+    ? path.join(DIST, clean, "index.html")
     : path.join(DIST, clean);
 }
 
 // Paths served by Cloudflare redirects rather than files in dist.
 const redirected = new Set(
   fs
-    .readFileSync(path.join(ROOT, 'public/_redirects'), 'utf8')
-    .split('\n')
+    .readFileSync(path.join(ROOT, "public/_redirects"), "utf8")
+    .split("\n")
     .map((l) => l.trim())
-    .filter((l) => l && !l.startsWith('#'))
+    .filter((l) => l && !l.startsWith("#"))
     .map((l) => l.split(/\s+/)[0]),
 );
 
@@ -56,10 +56,10 @@ const redirected = new Set(
 // fatal.
 const knownRot = new Set(
   fs
-    .readFileSync(path.join(ROOT, '.migration/known-rot.txt'), 'utf8')
-    .split('\n')
+    .readFileSync(path.join(ROOT, ".migration/known-rot.txt"), "utf8")
+    .split("\n")
     .map((l) => l.trim())
-    .filter((l) => l && !l.startsWith('#')),
+    .filter((l) => l && !l.startsWith("#")),
 );
 
 const broken = [];
@@ -70,22 +70,22 @@ for (const file of htmlFiles(DIST)) {
   // Skip code samples — highlighted code text contains literal,
   // unescaped href="…" sequences that aren't links.
   const html = fs
-    .readFileSync(file, 'utf8')
-    .replace(/<pre[\s\S]*?<\/pre>/g, '');
-  const page = '/' + path.relative(DIST, file).replace(/index\.html$/, '');
+    .readFileSync(file, "utf8")
+    .replace(/<pre[\s\S]*?<\/pre>/g, "");
+  const page = "/" + path.relative(DIST, file).replace(/index\.html$/, "");
   for (const m of html.matchAll(/\s(?:href|src)="([^"]+)"/g)) {
     const url = m[1];
     if (/^(https?:|mailto:|javascript:|tel:|data:|#$)/.test(url)) continue;
 
-    let [target, fragment] = url.split('#');
-    if (target === '') {
+    let [target, fragment] = url.split("#");
+    if (target === "") {
       // same-page fragment
       if (fragment && !idsOf(file).has(fragment)) {
         broken.push(`${page} -> #${fragment} (no such id)`);
       }
       continue;
     }
-    if (!target.startsWith('/')) {
+    if (!target.startsWith("/")) {
       if (knownRot.has(target)) rotSeen.push(`${page} -> ${url}`);
       else broken.push(`${page} -> ${url} (relative URL)`);
       continue;
@@ -98,7 +98,7 @@ for (const file of htmlFiles(DIST)) {
       else broken.push(`${page} -> ${url} (missing)`);
       continue;
     }
-    if (fragment && dest.endsWith('.html') && !idsOf(dest).has(fragment)) {
+    if (fragment && dest.endsWith(".html") && !idsOf(dest).has(fragment)) {
       broken.push(`${page} -> ${url} (no id "${fragment}")`);
     }
   }

@@ -1,0 +1,22 @@
+# Build output and generated files
+dist/
+.astro/
+
+# Reference material and snapshots, never reformatted
+.migration/hugo-baseline/
+.design/
+
+# Static assets served verbatim
+public/
+
+# Aaron's content. Tooling never touches it.
+src/content/
+
+# Session artifacts
+.playwright-mcp/
+
+# npm-owned
+package-lock.json
+
+# markdownlint owns markdown, not Prettier
+*.md

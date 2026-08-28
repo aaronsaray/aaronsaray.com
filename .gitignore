@@ -4,3 +4,4 @@ dist/
 .migration/hugo-baseline/
 .idea/
 .DS_Store
+.playwright-mcp/

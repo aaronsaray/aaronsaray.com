@@ -746,10 +746,7 @@
     "search-goodreads-bookmarklet",
     "use-your-own-short-domain-while-waiting-for-bitly-pro"
   ],
-  "youtube": [
-    "didnt-launch-my-startup",
-    "php-constant-visibility"
-  ],
+  "youtube": ["didnt-launch-my-startup", "php-constant-visibility"],
   "callouts": [
     "2019-goals",
     "33-things-book",

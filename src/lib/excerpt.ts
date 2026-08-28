@@ -9,23 +9,23 @@
 // prose as the full post; it skips the heavy rehype chrome (Shiki,
 // figures, code controls), which excerpt prose doesn't need.
 
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkGfm from 'remark-gfm';
-import remarkSmartypants from 'remark-smartypants';
-import remarkDirective from 'remark-directive';
-import remarkRehype from 'remark-rehype';
-import rehypeRaw from 'rehype-raw';
-import rehypeStringify from 'rehype-stringify';
-import { remarkCallout } from '../plugins/remark-callout.mjs';
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkSmartypants from "remark-smartypants";
+import remarkDirective from "remark-directive";
+import remarkRehype from "remark-rehype";
+import rehypeRaw from "rehype-raw";
+import rehypeStringify from "rehype-stringify";
+import { remarkCallout } from "../plugins/remark-callout.mjs";
 
-const MARKER = '<!--more-->';
+const MARKER = "<!--more-->";
 const FALLBACK_WORDS = 70; // Hugo's default summaryLength
 
 const pipeline = unified()
   .use(remarkParse)
   .use(remarkGfm)
-  .use(remarkSmartypants, { dashes: 'oldschool' })
+  .use(remarkSmartypants, { dashes: "oldschool" })
   .use(remarkDirective)
   .use(remarkCallout)
   .use(remarkRehype, { allowDangerousHtml: true })
@@ -36,14 +36,14 @@ const htmlCache = new Map<string, string>();
 
 function toPlainText(html: string): string {
   return html
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"')
-    .replace(/&#x26;/g, '&')
-    .replace(/&#x3C;/g, '<')
-    .replace(/\s+/g, ' ')
+    .replace(/&#x26;/g, "&")
+    .replace(/&#x3C;/g, "<")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
@@ -59,8 +59,8 @@ export async function excerptHtml(body: string): Promise<string> {
     // Hugo-parity auto summary: first ~70 words of the rendered
     // content as plain text, no ellipsis.
     const full = String(await pipeline.process(body));
-    const words = toPlainText(full).split(' ').slice(0, FALLBACK_WORDS);
-    html = `<p>${words.join(' ')}</p>`;
+    const words = toPlainText(full).split(" ").slice(0, FALLBACK_WORDS);
+    html = `<p>${words.join(" ")}</p>`;
   }
   htmlCache.set(body, html);
   return html;

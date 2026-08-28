@@ -4,13 +4,23 @@
 // the previous day.
 
 const MONTHS = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 
 /** Hugo's "Jan 2, 2006" display format. */
 export function formatDate(date: string): string {
-  const [y, m, d] = date.slice(0, 10).split('-').map(Number);
+  const [y, m, d] = date.slice(0, 10).split("-").map(Number);
   return `${MONTHS[m - 1]} ${d}, ${y}`;
 }
 

@@ -1,9 +1,9 @@
 ---
-import type { Post } from '../lib/posts';
-import { postHref } from '../lib/posts';
-import { formatDate } from '../lib/dates';
-import { readingTime } from '../lib/readingTime';
-import { excerptHtml } from '../lib/excerpt';
+import type { Post } from "../lib/posts";
+import { postHref } from "../lib/posts";
+import { formatDate } from "../lib/dates";
+import { readingTime } from "../lib/readingTime";
+import { excerptHtml } from "../lib/excerpt";
 
 interface Props {
   posts: Post[];
@@ -15,30 +15,41 @@ const entries = await Promise.all(
   posts.map(async (post) => ({
     post,
     href: postHref(post),
-    excerpt: await excerptHtml(post.body ?? ''),
-    minutes: readingTime(post.body ?? ''),
+    excerpt: await excerptHtml(post.body ?? ""),
+    minutes: readingTime(post.body ?? ""),
     tags: [...post.data.tags].sort(),
   })),
 );
 ---
+
 <section class="divide-y divide-hairline">
-  {entries.map(({ post, href, excerpt, minutes, tags }) => (
-    <article class="py-10">
-      <h2 class="font-display text-2xl font-semibold leading-snug sm:text-3xl">
-        <a href={href} class="text-white underline decoration-transparent decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-accent/60">
-          {post.data.title}
-        </a>
-      </h2>
-      <div class="entry-excerpt" set:html={excerpt} />
-      <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-faint">
-        <span>{formatDate(post.data.date)}</span>
-        <span aria-hidden="true">&middot;</span>
-        <span>{minutes} min read</span>
-        <span aria-hidden="true">&middot;</span>
-        {tags.map((tag) => (
-          <a href={`/tag/${tag}/`} class="text-accent transition-colors duration-300 hover:text-[#7fa6c4]">#{tag}</a>
-        ))}
-      </div>
-    </article>
-  ))}
+  {
+    entries.map(({ post, href, excerpt, minutes, tags }) => (
+      <article class="py-10">
+        <h2 class="font-display text-2xl leading-snug font-semibold sm:text-3xl">
+          <a
+            href={href}
+            class="text-white underline decoration-transparent decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-accent/60"
+          >
+            {post.data.title}
+          </a>
+        </h2>
+        <div class="entry-excerpt" set:html={excerpt} />
+        <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-faint">
+          <span>{formatDate(post.data.date)}</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>{minutes} min read</span>
+          <span aria-hidden="true">&middot;</span>
+          {tags.map((tag) => (
+            <a
+              href={`/tag/${tag}/`}
+              class="text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
+      </article>
+    ))
+  }
 </section>

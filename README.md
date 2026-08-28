@@ -8,13 +8,30 @@ Node is pinned via [Volta](https://volta.sh) (24.x). Package manager is npm.
 
 ```shell
 npm install
-npm run dev      # local dev server
-npm run build    # static build to dist/
-npm run preview  # serve the built dist/
-npm run verify   # build + URL contract check + internal link check
+npm run dev           # local dev server
+npm run build         # static build to dist/
+npm run preview       # serve the built dist/
+npm run check         # astro check (TypeScript)
+npm run lint          # eslint
+npm run lint:fix      # eslint with autofix
+npm run format        # prettier, write
+npm run format:check  # prettier, check only
+npm run verify        # check + build + URL contract + links + lint + format:check
 ```
 
-`npm run verify` must pass before deploying. It checks that every historical URL (`.migration/url-contract.txt`) still resolves and that no internal link or heading anchor is broken.
+`npm run verify` must pass before deploying. It type checks, builds, checks that every historical URL (`.migration/url-contract.txt`) still resolves, that no internal link or heading anchor is broken, and that lint and formatting are clean.
+
+## Tooling
+
+* **ESLint** (`eslint.config.js`): flat config, recommended rule sets only (`@eslint/js`, `typescript-eslint`, `eslint-plugin-astro`), with `eslint-config-prettier` last so no formatting rules fight Prettier. `no-console` allows `warn`/`error`; off entirely for the `.migration/` CLI scripts.
+* **Prettier** (`.prettierrc`): pure defaults. Plugins: `prettier-plugin-astro` and `prettier-plugin-tailwindcss` (sorts Tailwind classes; must stay last in the plugin list). Markdown is excluded (`.prettierignore`): `markdownlint-cli2` owns markdown, and `src/content/` is never touched by tooling at all.
+* **astro check** (`@astrojs/check`): TypeScript checking for `.astro` and `.ts`, strict preset. TypeScript is pinned to 5.x; the checker does not support TypeScript 7 yet.
+* Note for `.astro` templates: HTML comments (`<!-- -->`) are fine in plain markup but break Prettier's parser inside `{...}` expressions. Use `{/* */}` there (bonus: those are stripped from the built HTML).
+* **npm hardening** (`.npmrc`, committed):
+  * `min-release-age=7` refuses package versions published less than 7 days ago (most malicious releases are yanked within hours, so a cooldown skips the blast window). Needs npm >= 11.10; the Volta pin covers that. Older npm silently ignores it.
+  * `ignore-scripts=true` blocks dependency lifecycle scripts (preinstall/postinstall), the main malware delivery mechanism. `npm run <script>` still works. If a future dep genuinely needs its install script, that is a deliberate decision, not a default.
+  * `save-exact=true` pins new deps to exact versions; all current deps are exact-pinned and `package-lock.json` is committed.
+* Node and npm are pinned in `package.json` under `volta`.
 
 ## Writing a Blog Post
 

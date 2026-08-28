@@ -4,7 +4,7 @@
 // transformers as options.meta.__raw.
 export function shikiMetaFilename() {
   return {
-    name: 'meta-filename',
+    name: "meta-filename",
     pre(node) {
       const raw = this.options.meta?.__raw;
       if (!raw) return;

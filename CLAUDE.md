@@ -43,8 +43,23 @@ Expect him to rework code to his taste.
 
 ## Building and Verifying
 
-* `npm run verify` (build + URL contract check + internal link check)
-  must be green before declaring any change done.
+* `npm run verify` (astro check + build + URL contract check +
+  internal link check + eslint + prettier check) must be green before
+  declaring any change done.
+* Formatting is owned by Prettier (pure defaults plus the astro and
+  tailwindcss plugins), linting by ESLint flat config (recommended
+  sets only, prettier-conflict rules disabled). Never hand-format
+  against Prettier; run `npm run format`. Prettier and ESLint never
+  touch `src/content/`, `.design/`, `public/`, or any markdown
+  (markdownlint owns markdown). See README "Tooling".
+* In `.astro` templates, use `{/* */}` comments inside `{...}`
+  expressions; HTML comments there break Prettier's parser.
+* `.npmrc` enforces supply-chain rules: 7-day package cooldown
+  (`min-release-age`), no dependency install scripts
+  (`ignore-scripts`), exact version pins (`save-exact`). Do not
+  weaken these to make an install work; surface the problem to Aaron
+  instead. Node and npm versions are pinned via Volta in
+  `package.json`.
 * **Content-layer cache gotcha:** Astro caches rendered markdown. After
   changing anything in the markdown pipeline (`src/plugins/`, the
   `markdown` options in `astro.config.mjs`), build with

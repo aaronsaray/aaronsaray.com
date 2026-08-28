@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+import fs from "node:fs";
 
 // Hugo used /images/tag/<first-frontmatter-tag>.jpg for posts and
 // <term>.jpg for tag pages, falling back to the site og-image only
@@ -8,5 +8,5 @@ export function ogImageForTag(tag: string | undefined): string {
   if (tag && fs.existsSync(`public/images/tag/${tag}.jpg`)) {
     return `/images/tag/${tag}.jpg`;
   }
-  return '/images/og-image.png';
+  return "/images/og-image.png";
 }

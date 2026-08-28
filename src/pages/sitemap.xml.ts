@@ -1,7 +1,7 @@
-import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
-import { getSortedPosts, postHref } from '../lib/posts';
-import { SITE_URL } from '../lib/rss';
+import type { APIRoute } from "astro";
+import { getCollection } from "astro:content";
+import { getSortedPosts, postHref } from "../lib/posts";
+import { SITE_URL } from "../lib/rss";
 
 // Mirrors Hugo's sitemap URL set exactly: home, cv, contact, blog,
 // tag index, the 52 tag pages, and all posts (764 urls). lastmod is
@@ -15,7 +15,7 @@ function lastmod(date: string): string {
 
 function url(path: string, mod?: string): string {
   return `  <url>
-    <loc>${SITE_URL}${path}</loc>${mod ? `\n    <lastmod>${mod}</lastmod>` : ''}
+    <loc>${SITE_URL}${path}</loc>${mod ? `\n    <lastmod>${mod}</lastmod>` : ""}
   </url>`;
 }
 
@@ -24,13 +24,13 @@ export const GET: APIRoute = async () => {
   const newest = lastmod(posts[0].data.date);
   const entries: string[] = [];
 
-  entries.push(url('/', newest));
-  entries.push(url('/cv/'));
-  entries.push(url('/contact/'));
-  entries.push(url('/blog/', newest));
-  entries.push(url('/tag/', newest));
+  entries.push(url("/", newest));
+  entries.push(url("/cv/"));
+  entries.push(url("/contact/"));
+  entries.push(url("/blog/", newest));
+  entries.push(url("/tag/", newest));
 
-  const tags = (await getCollection('tags')).sort((a, b) =>
+  const tags = (await getCollection("tags")).sort((a, b) =>
     a.id.localeCompare(b.id),
   );
   for (const tag of tags) {
@@ -46,10 +46,10 @@ export const GET: APIRoute = async () => {
 
   const xml = `<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${entries.join('\n')}
+${entries.join("\n")}
 </urlset>
 `;
   return new Response(xml, {
-    headers: { 'Content-Type': 'application/xml; charset=utf-8' },
+    headers: { "Content-Type": "application/xml; charset=utf-8" },
   });
 };

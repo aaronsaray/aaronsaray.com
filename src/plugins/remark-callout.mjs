@@ -1,4 +1,4 @@
-import { visit } from 'unist-util-visit';
+import { visit } from "unist-util-visit";
 
 // :::callout container directives (migrated from the Hugo
 // header-call-out shortcode) become div.callout.
@@ -12,41 +12,40 @@ import { visit } from 'unist-util-visit';
 export function remarkCallout() {
   return (tree, file) => {
     visit(tree, (node, index, parent) => {
-      if (node.type === 'containerDirective' && node.name === 'callout') {
-        node.data = { hName: 'div', hProperties: { className: ['callout'] } };
+      if (node.type === "containerDirective" && node.name === "callout") {
+        node.data = { hName: "div", hProperties: { className: ["callout"] } };
         return;
       }
 
-      if (node.type === 'textDirective') {
-        const replacement = [{ type: 'text', value: `:${node.name}` }];
+      if (node.type === "textDirective") {
+        const replacement = [{ type: "text", value: `:${node.name}` }];
         if (node.children?.length) {
-          replacement.push(
-            { type: 'text', value: '[' },
-            ...node.children,
-            { type: 'text', value: ']' },
-          );
+          replacement.push({ type: "text", value: "[" }, ...node.children, {
+            type: "text",
+            value: "]",
+          });
         }
         if (node.attributes && Object.keys(node.attributes).length) {
           // Attribute syntax can't be restored losslessly; flag it.
           console.warn(
-            `[remark-callout] dropped attributes on ":${node.name}" in ${file?.path ?? 'unknown file'}`,
+            `[remark-callout] dropped attributes on ":${node.name}" in ${file?.path ?? "unknown file"}`,
           );
         }
         parent.children.splice(index, 1, ...replacement);
         return index + replacement.length;
       }
 
-      if (node.type === 'leafDirective' || node.type === 'containerDirective') {
-        const marker = node.type === 'leafDirective' ? '::' : ':::';
+      if (node.type === "leafDirective" || node.type === "containerDirective") {
+        const marker = node.type === "leafDirective" ? "::" : ":::";
         console.warn(
-          `[remark-callout] restored unexpected ${node.type} "${marker}${node.name}" in ${file?.path ?? 'unknown file'}`,
+          `[remark-callout] restored unexpected ${node.type} "${marker}${node.name}" in ${file?.path ?? "unknown file"}`,
         );
         parent.children.splice(
           index,
           1,
           {
-            type: 'paragraph',
-            children: [{ type: 'text', value: `${marker}${node.name}` }],
+            type: "paragraph",
+            children: [{ type: "text", value: `${marker}${node.name}` }],
           },
           ...node.children,
         );
