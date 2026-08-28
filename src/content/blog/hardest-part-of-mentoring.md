@@ -5,6 +5,7 @@ tags:
   - business
   - programming
   - management
+evergreen: true
 ---
 I've written about [mentoring](/2014/keep-mentoring-even-if-it-looks-like-no-one-cares/) a [bunch](/2016/cc6-confident-not-cocky/) [before](/2017/professional-connection-made-now-what/) , so you know I'm a fan of it.  But, there's another aspect that has been bothering me lately.  The questions are simple:
 

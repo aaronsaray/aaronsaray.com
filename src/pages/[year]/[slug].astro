@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import { formatDate, isOldPost } from "../../lib/dates";
+import { isEvergreen } from "../../lib/evergreen";
 import { readingTime } from "../../lib/readingTime";
 import { excerptText } from "../../lib/excerpt";
 import { ogImageForTag } from "../../lib/ogImage";
@@ -23,7 +24,9 @@ const description = await excerptText(entry.body ?? "");
 const minutes = readingTime(entry.body ?? "");
 const tags = [...entry.data.tags].sort();
 const context = entry.data.context;
-const showOldNotice = isOldPost(entry.data.date);
+const showOldNotice =
+  isOldPost(entry.data.date) &&
+  !isEvergreen(entry.data.tags, entry.data.evergreen);
 const showLaravelCta = entry.data.tags.includes("laravel");
 ---
 

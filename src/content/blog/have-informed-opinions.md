@@ -4,6 +4,7 @@ date: "2019-04-08"
 tags:
   - business
   - programming
+evergreen: true
 ---
 I don't want this to turn into a rant, but...
 

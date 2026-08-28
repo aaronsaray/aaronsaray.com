@@ -25,6 +25,11 @@ const blog = defineCollection({
       tags: z.array(z.string()).min(1),
       context: z.array(z.string()).optional(),
       draft: z.boolean().optional(),
+      // Overrides the tag-derived evergreen policy (src/lib/evergreen.ts)
+      // that decides whether an old post shows the age notice. true:
+      // never show it (a timeless essay with technical tags); false:
+      // show it despite evergreen tags. Omit for the default.
+      evergreen: z.boolean().optional(),
     })
     .strict(),
 });

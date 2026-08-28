@@ -14,16 +14,123 @@ import Base from "../layouts/Base.astro";
     >
       Who am I
     </h1>
+    <!-- The compiler drops line-break whitespace around inline
+         elements, so the spaces flanking the link are explicit
+         expressions. -->
     <p class="mt-4 text-lg leading-relaxed text-ink-dim">
       [AI-generated placeholder — real copy coming.] Milwaukee-based developer,
       manager, and consultant. The long version of this page is still being
-      written; in the meantime, the
+      written; in the meantime, the{" "}
       <a
         href="/cv/"
         class="text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent"
         >CV</a
-      >
+      >{" "}
       has the professional details.
     </p>
+
+    <!-- Link inventory relocated from the footer (labels are the
+         footer's own). The footer still duplicates these until its
+         colophon rework decides what it keeps; see README to-do.
+         Aaron writes the prose context around these groups. -->
+    <div class="mt-14 grid grid-cols-1 gap-10 text-sm sm:grid-cols-3">
+      <section>
+        <h2
+          class="text-xs font-semibold tracking-[0.2em] text-ink-dim uppercase"
+        >
+          Find Me
+        </h2>
+        <ul class="mt-4 space-y-2">
+          <li>
+            <a
+              href="https://github.com/aaronsaray"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/aaronsaray"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >CodePen</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/aaronsaray"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/aaronsaray"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >Twitter</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2
+          class="text-xs font-semibold tracking-[0.2em] text-ink-dim uppercase"
+        >
+          Projects
+        </h2>
+        <ul class="mt-4 space-y-2">
+          <li>
+            <a
+              href="https://show.nocompromises.io"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >Laravel Podcast</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://learnthephoneticalphabet.com"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >Learn the Phonetic Alphabet</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://typesetter.io"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >Typesetter.io</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2
+          class="text-xs font-semibold tracking-[0.2em] text-ink-dim uppercase"
+        >
+          Other Sites
+        </h2>
+        <ul class="mt-4 space-y-2">
+          <li>
+            <a
+              href="https://morebetterfaster.io"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >More Better Faster</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://masteringlaravel.io"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >Mastering Laravel</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://1lastcheck.com"
+              class="-my-1 inline-block py-1 opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >1lastcheck</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
   </main>
 </Base>
