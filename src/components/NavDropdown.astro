@@ -1,0 +1,55 @@
+---
+// Header dropdown: opens on hover (desktop), tap (touch browsers'
+// hover/focus emulation), or keyboard focus. Pure CSS, no JS.
+//
+// The mechanics that matter:
+// - Closed panels are pointer-events-none. pointer-events is not in
+//   the transition list, so the moment the group loses hover the
+//   panel stops hit-testing, and a closing menu can never steal the
+//   mouse from a neighboring one (the panels overlap horizontally).
+// - hover:z-10/focus-within:z-10 on the group keeps the open menu
+//   painting above a still-fading neighbor.
+// - pt-2 on the panel is the hover bridge across the visual gap
+//   between the trigger and the menu; leaving it drops the hover.
+// - Close gets a 150ms grace delay for mouse slips; open is instant.
+interface Props {
+  label: string;
+  items: { href: string; text: string }[];
+}
+const { label, items } = Astro.props;
+---
+
+<div class="group relative focus-within:z-10 hover:z-10">
+  <button
+    class="flex items-center gap-1 opacity-60 transition-opacity delay-150 duration-150 group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:opacity-100 group-hover:delay-0"
+  >
+    {label}
+    <!-- Tabler: chevron-down -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="size-3.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"><path d="M6 9l6 6l6 -6"></path></svg
+    >
+  </button>
+  <div
+    class="pointer-events-none invisible absolute top-full right-0 pt-2 opacity-0 transition-[opacity,visibility] delay-150 duration-150 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-hover:delay-0"
+  >
+    <div class="min-w-36 border border-hairline bg-surface py-2">
+      {
+        items.map((item) => (
+          <a
+            href={item.href}
+            class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100"
+          >
+            {item.text}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>

@@ -16,6 +16,11 @@ import { shikiMetaFilename } from "./src/plugins/shiki-meta-filename.mjs";
 export default defineConfig({
   site: "https://aaronsaray.com",
   trailingSlash: "always",
+  // The dev toolbar overlays the bottom of the viewport and gets in
+  // the way of judging real layout; nothing on this site uses it.
+  devToolbar: {
+    enabled: false,
+  },
   build: {
     format: "directory",
   },

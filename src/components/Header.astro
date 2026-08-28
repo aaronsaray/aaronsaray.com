@@ -1,5 +1,7 @@
 ---
 // The same bar on every page; on the homepage it overlays the hero.
+import NavDropdown from "./NavDropdown.astro";
+
 interface Props {
   overlay?: boolean;
 }
@@ -14,73 +16,20 @@ const { overlay = false } = Astro.props;
       <img src="/logo.svg" class="h-8 w-auto" alt="AS logo" />
     </a>
     <nav class="flex items-center gap-5 text-sm sm:gap-8">
-      <div class="group relative">
-        <button
-          class="flex items-center gap-1 opacity-60 transition-opacity delay-300 duration-200 group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:opacity-100 group-hover:delay-0"
-        >
-          About
-          <!-- Tabler: chevron-down -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="size-3.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"><path d="M6 9l6 6l6 -6"></path></svg
-          >
-        </button>
-        <div
-          class="invisible absolute top-full right-0 pt-2 opacity-0 transition-[opacity,visibility] delay-300 duration-200 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:visible group-hover:opacity-100 group-hover:delay-0"
-        >
-          <div class="min-w-36 border border-hairline bg-surface py-2">
-            <a
-              href="/who-am-i/"
-              class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100"
-              >Who am I</a
-            >
-            <a
-              href="/cv/"
-              class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100"
-              >CV</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="group relative">
-        <button
-          class="flex items-center gap-1 opacity-60 transition-opacity delay-300 duration-200 group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:opacity-100 group-hover:delay-0"
-        >
-          Writing
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="size-3.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"><path d="M6 9l6 6l6 -6"></path></svg
-          >
-        </button>
-        <div
-          class="invisible absolute top-full right-0 pt-2 opacity-0 transition-[opacity,visibility] delay-300 duration-200 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:visible group-hover:opacity-100 group-hover:delay-0"
-        >
-          <div class="min-w-36 border border-hairline bg-surface py-2">
-            <a
-              href="/blog/"
-              class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100"
-              >Blog</a
-            >
-            <a
-              href="/books/"
-              class="block px-4 py-1.5 opacity-70 transition-opacity duration-300 hover:opacity-100"
-              >Books</a
-            >
-          </div>
-        </div>
-      </div>
+      <NavDropdown
+        label="About"
+        items={[
+          { href: "/who-am-i/", text: "Who am I" },
+          { href: "/cv/", text: "CV" },
+        ]}
+      />
+      <NavDropdown
+        label="Writing"
+        items={[
+          { href: "/blog/", text: "Blog" },
+          { href: "/books/", text: "Books" },
+        ]}
+      />
       <a
         href="/contact/"
         class="opacity-60 transition-opacity duration-300 hover:opacity-100"

@@ -44,6 +44,17 @@ html {
   background: #3a424a;
 }
 
+/* ============ Page transitions ============
+   Native cross-document view transitions: a quick browser-default
+   crossfade between pages. Pure CSS progressive enhancement;
+   browsers without support (currently Firefox) just navigate
+   normally. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
 /* ============ Homepage motion ============ */
 @keyframes drift-down {
   0%,
