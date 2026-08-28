@@ -16,6 +16,17 @@ const paths = fs
   .map((l) => l.trim())
   .filter((l) => l && !l.startsWith("#"));
 
+// The fixture never shrinks (CLAUDE.md hard rule). Guard the checker
+// against its own fixture: a truncated url-contract.txt would
+// otherwise report "0/0 served" and pass.
+const FIXTURE_FLOOR = 1681; // count as of the Aug 2026 migration
+if (paths.length < FIXTURE_FLOOR) {
+  console.error(
+    `url contract: fixture has ${paths.length} paths, expected at least ${FIXTURE_FLOOR}. url-contract.txt never shrinks; restore it.`,
+  );
+  process.exit(1);
+}
+
 const missing = [];
 for (const p of paths) {
   const rel = p.endsWith("/") ? `${p}index.html` : p;

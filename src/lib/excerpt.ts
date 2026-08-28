@@ -1,6 +1,7 @@
-// Excerpts, Hugo-parity: the markdown before <!--more--> (685 posts),
-// or a ~70-word plain-text fallback for the 22 posts without a marker
-// (inventoried in .migration/report.json — no content files were
+// Excerpts, Hugo-parity: the markdown before <!--more--> (685 posts
+// at the Aug 2026 migration), or a ~70-word plain-text fallback for
+// the posts without a marker (22 at migration, inventoried in
+// .migration/report.json — no content files were
 // edited). Three forms: HTML for list display, HTML for RSS
 // descriptions, plain text for meta descriptions.
 //
@@ -34,6 +35,16 @@ const pipeline = unified()
 
 const htmlCache = new Map<string, string>();
 
+// toPlainText DECODES entities, so its output is plain text, not
+// HTML. Anything wrapping it back into markup must re-escape it or a
+// literal "&" or "<" in post prose becomes live markup downstream.
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function toPlainText(html: string): string {
   return html
     .replace(/<[^>]+>/g, " ")
@@ -60,7 +71,7 @@ export async function excerptHtml(body: string): Promise<string> {
     // content as plain text, no ellipsis.
     const full = String(await pipeline.process(body));
     const words = toPlainText(full).split(" ").slice(0, FALLBACK_WORDS);
-    html = `<p>${words.join(" ")}</p>`;
+    html = `<p>${escapeHtml(words.join(" "))}</p>`;
   }
   htmlCache.set(body, html);
   return html;

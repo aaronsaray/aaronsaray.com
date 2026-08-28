@@ -14,6 +14,18 @@
 //
 // Never commits. Writes .migration/report.json for review.
 
+// RETIRED. This ran once, in place, in Aug 2026; the content on disk
+// is now in the POST-migration shape. Re-running would read the Hugo
+// key names (tag:, params.context) from frontmatter that no longer
+// has them and rewrite every post with its tags and context destroyed.
+// Kept only as a record of what the transform did (CLAUDE.md).
+retiredGuard();
+function retiredGuard() {
+  throw new Error(
+    ".migration/migrate.mjs is RETIRED: it already ran in place. Re-running destroys tags/context in every post. See CLAUDE.md.",
+  );
+}
+
 import fs from "node:fs";
 import path from "node:path";
 import YAML from "yaml";

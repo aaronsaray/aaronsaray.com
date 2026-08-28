@@ -12,15 +12,23 @@
 // - pt-2 on the panel is the hover bridge across the visual gap
 //   between the trigger and the menu; leaving it drops the hover.
 // - Close gets a 150ms grace delay for mouse slips; open is instant.
+//
+// Known no-JS limitation: without a script there is no live
+// aria-expanded and no Escape-to-close, so a screen reader hears a
+// plain button. Keyboard access still works (focus opens the panel
+// and the links are tabbable); aria-controls ties panel to trigger.
 interface Props {
   label: string;
   items: { href: string; text: string }[];
 }
 const { label, items } = Astro.props;
+const panelId = `nav-menu-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 ---
 
 <div class="group relative focus-within:z-10 hover:z-10">
   <button
+    type="button"
+    aria-controls={panelId}
     class="flex items-center gap-1 opacity-60 transition-opacity delay-150 duration-150 group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:opacity-100 group-hover:delay-0"
   >
     {label}
@@ -37,6 +45,7 @@ const { label, items } = Astro.props;
     >
   </button>
   <div
+    id={panelId}
     class="pointer-events-none invisible absolute top-full right-0 pt-2 opacity-0 transition-[opacity,visibility] delay-150 duration-150 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-hover:delay-0"
   >
     <div class="min-w-36 border border-hairline bg-surface py-2">

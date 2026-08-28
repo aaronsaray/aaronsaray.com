@@ -40,6 +40,12 @@ export function xmlEscape(s: string): string {
  */
 export function rfc1123(date: string): string {
   const [y, mo, d] = date.slice(0, 10).split("-").map(Number);
+  if (!y || !mo || !d || !MONTHS[mo - 1]) {
+    // The collection schema regex makes this unreachable for content
+    // dates; the guard is for any future caller that bypasses it,
+    // which would otherwise emit NaNs into pubDate.
+    throw new Error(`rfc1123: malformed date string "${date}"`);
+  }
   const day = DAYS[new Date(Date.UTC(y, mo - 1, d)).getUTCDay()];
   const time = date.length > 10 ? date.slice(11, 19) : "00:00:00";
   const offset = date.length > 19 ? date.slice(19).replace(":", "") : "+0000";
@@ -75,8 +81,8 @@ export function renderFeed(opts: {
         : "";
       return `    <item>
       <title>${xmlEscape(item.title)}</title>
-      <link>${item.link}</link>${pubDate}
-      <guid>${item.link}</guid>
+      <link>${xmlEscape(item.link)}</link>${pubDate}
+      <guid>${xmlEscape(item.link)}</guid>
       <description>${xmlEscape(item.descriptionHtml)}</description>
     </item>`;
     })
@@ -86,12 +92,12 @@ export function renderFeed(opts: {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${channelTitle}</title>
-    <link>${SITE_URL}${opts.path}</link>
+    <link>${xmlEscape(`${SITE_URL}${opts.path}`)}</link>
     <description>Recent content in ${channelTitle}</description>
     <generator>Astro</generator>
     <language>en-us</language>
     <copyright>${COPYRIGHT}</copyright>${lastBuild ? `\n    <lastBuildDate>${rfc1123(lastBuild)}</lastBuildDate>` : ""}
-    <atom:link href="${SITE_URL}${opts.selfPath}" rel="self" type="application/rss+xml" />
+    <atom:link href="${xmlEscape(`${SITE_URL}${opts.selfPath}`)}" rel="self" type="application/rss+xml" />
 ${items}
   </channel>
 </rss>

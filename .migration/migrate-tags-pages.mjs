@@ -7,6 +7,16 @@
 //   shortcode in cv.md. Bodies untouched otherwise.
 // Undo with: git restore src/content/tags src/content/pages
 
+// RETIRED. Already ran in place in Aug 2026; kept only as a record of
+// what the transform did (CLAUDE.md). The H1 assertion would stop a
+// re-run before the first write, but don't rely on that.
+retiredGuard();
+function retiredGuard() {
+  throw new Error(
+    ".migration/migrate-tags-pages.mjs is RETIRED: it already ran in place. See CLAUDE.md.",
+  );
+}
+
 import fs from "node:fs";
 import path from "node:path";
 import YAML from "yaml";
