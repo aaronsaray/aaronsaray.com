@@ -1,0 +1,20 @@
+// Repo-local markdownlint config so `npm run lint:md` works from a
+// fresh clone with no global install or home-directory config.
+// Globs live here so the CLI needs no arguments.
+{
+  "config": {
+    // Line length: prose wraps however the writing wants.
+    "MD013": false,
+  },
+  "globs": ["**/*.md"],
+  "ignores": [
+    "node_modules/**",
+    "dist/**",
+    ".astro/**",
+    // Aaron's prose: tooling never touches it.
+    "src/content/**",
+    // Design prototypes/reference: exempt from tooling, same as
+    // Prettier and ESLint.
+    ".design/**",
+  ],
+}

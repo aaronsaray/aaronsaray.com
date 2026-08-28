@@ -1,0 +1,17 @@
+{
+  "browser": {
+    "launchOptions": {
+      "args": [
+        "--disable-features=PasswordLeakDetection",
+        "--disable-save-password-bubble",
+        "--disable-password-generation"
+      ]
+    },
+    "contextOptions": {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      }
+    }
+  }
+}

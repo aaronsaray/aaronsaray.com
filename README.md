@@ -31,6 +31,21 @@ npm run verify        # check + build + URL contract + links + lint + format:che
   * `min-release-age=7` refuses package versions published less than 7 days ago (most malicious releases are yanked within hours, so a cooldown skips the blast window). Needs npm >= 11.10; the Volta pin covers that. Older npm silently ignores it.
   * `ignore-scripts=true` blocks dependency lifecycle scripts (preinstall/postinstall), the main malware delivery mechanism. `npm run <script>` still works. If a future dep genuinely needs its install script, that is a deliberate decision, not a default.
   * `save-exact=true` pins new deps to exact versions; all current deps are exact-pinned and `package-lock.json` is committed.
+* **markdownlint** (`.markdownlint-cli2.jsonc`): `npm run lint:md`, also
+  part of `verify`. `markdownlint-cli2` is a devDependency and the config
+  (globs included) is in the repo, so no global install or home-directory
+  config is involved. It lints the doc markdown (README, DESIGN, CLAUDE);
+  `src/content/` and `.design/` are ignored, same policy as the other
+  tooling.
+* **AI tooling** is declared in the repo so a fresh clone reconstructs it:
+  * `.mcp.json` (committed): the official Astro Docs MCP server (remote
+    HTTP, no auth) and the Playwright MCP for browser smoke passes. The
+    Playwright entry's browser config is `.claude/playwright-mcp-config.json`.
+  * `.claude/settings.json` (committed): pre-approves those MCP servers
+    and declares the `modern-web-guidance` plugin (Google Chrome's
+    marketplace). Plugins are not auto-installed from a clone; Claude Code
+    surfaces the one `claude plugin install` command to run.
+  * `.claude/settings.local.json` is gitignored: personal overrides only.
 * Node and npm are pinned in `package.json` under `volta`.
 
 ## Writing a Blog Post
@@ -101,7 +116,6 @@ Blog permalinks are `/:year/:slug/`. Every URL the Hugo site ever served must ke
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] Integrate Astro's MCP server into the AI tooling (project `.mcp.json`) so Claude sessions get first-party Astro docs.
 * [ ] Self-host the Google Fonts: Inter + Fraunces woff2 files in `public/fonts/`, `@font-face` + preload in the head, drop the third-party stylesheet and preconnects. Add size-adjusted fallback font metrics in the same pass (kills the swap layout shift). Wins: biggest perf lever on the site (render-blocking cross-origin CSS in front of a text LCP), removes the only third-party request (privacy).
 * [ ] Stamp `width`/`height` attributes on content images (the remaining CLS gap; they currently reflow the article as they load). Mechanical rehype transform, but needs a build-time image dimension probe first: decide on the `image-size` npm package or similar.
 * [ ] Contrast pass on `ink-faint` (#5d646d) used as a text color: fails WCAG AA (3.3:1 on night) on post meta lines, pagination, footer labels, code-block chrome, and the Shiki comment token (`src/plugins/shiki-theme.mjs`). Also the scrollbar thumb (1.5:1 against its track). Keep ink-faint for decorative strokes; pick a brighter token for text roles during the design rework (a starting point: `#727a84`, about 4.6:1 on night).

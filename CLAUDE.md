@@ -50,8 +50,14 @@ Expect him to rework code to his taste.
   tailwindcss plugins), linting by ESLint flat config (recommended
   sets only, prettier-conflict rules disabled). Never hand-format
   against Prettier; run `npm run format`. Prettier and ESLint never
-  touch `src/content/`, `.design/`, `public/`, or any markdown
-  (markdownlint owns markdown). See README "Tooling".
+  touch `src/content/`, `.design/`, `public/`, or any markdown.
+  Markdown is owned by markdownlint: `npm run lint:md`, repo-local
+  config in `.markdownlint-cli2.jsonc` (do not use the home-directory
+  config here). See README "Tooling".
+* AI tooling is repo-declared: `.mcp.json` (Astro docs + Playwright MCP
+  servers) and `.claude/settings.json` (server approvals, plugin
+  declarations). Keep additions project-scoped in these files, not in
+  user-level config.
 * In `.astro` templates, use `{/* */}` comments inside `{...}`
   expressions; HTML comments there break Prettier's parser.
 * `.npmrc` enforces supply-chain rules: 7-day package cooldown
