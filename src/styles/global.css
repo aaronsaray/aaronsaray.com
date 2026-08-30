@@ -89,6 +89,38 @@ h3 {
   }
 }
 
+/* ============ Header veil ============
+   The many mask stops are deliberate: a two-stop fade ends in a
+   visible Mach band. saturate() keeps blurred code colors from
+   smearing into brown. */
+.header-veil {
+  height: 7.5rem;
+  --veil-tint: color-mix(in srgb, var(--color-night) 92%, var(--color-accent));
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--veil-tint) 95%, transparent),
+    color-mix(in srgb, var(--veil-tint) 85%, transparent) 40%,
+    color-mix(in srgb, var(--veil-tint) 50%, transparent) 70%,
+    transparent 95%
+  );
+}
+.header-veil > div {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px) saturate(0.65);
+  mask-image: linear-gradient(
+    to bottom,
+    black 45%,
+    rgb(0 0 0 / 0.94) 55%,
+    rgb(0 0 0 / 0.82) 62%,
+    rgb(0 0 0 / 0.65) 70%,
+    rgb(0 0 0 / 0.45) 78%,
+    rgb(0 0 0 / 0.26) 85%,
+    rgb(0 0 0 / 0.12) 91%,
+    transparent 98%
+  );
+}
+
 /* ============ Homepage motion ============ */
 @keyframes drift-down {
   0%,
@@ -158,7 +190,8 @@ h3 {
 /* Heading self-links. The anchor icon is always visible by design,
    not hover-only. */
 .prose :is(h2, h3) {
-  scroll-margin-top: 2rem;
+  /* Anchor jumps land clear of the sticky header. */
+  scroll-margin-top: 5.5rem;
 }
 .prose :is(h2, h3) a {
   color: inherit;

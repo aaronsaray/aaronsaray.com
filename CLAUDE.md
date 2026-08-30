@@ -117,8 +117,6 @@ Expect him to rework code to his taste.
   AI aesthetic: decorative gradients, the blue-purple palette,
   oversized rounded corners and pill shapes, icon-card grids ("4 of
   something" panels), glowing status dots, too-bright glowy headlines.
-* Texture effects (gradient washes, scanline bands, radial glows):
-  at most one per page, never stacked.
 
 ## The `.migration/` Directory
 
