@@ -96,12 +96,90 @@ h3 {
   }
 }
 
-/* The header's blur (backdrop-blur-sm) has no utility for this, and
-   dropping it alone would leave content legible through the bar. */
+/* ============ Header progressive blur ============
+   One blur masked by a gradient cannot do this: filters run over the
+   whole buffer and the mask applies to the result, so it crossfades
+   between sharp and uniformly blurred instead of ramping the radius.
+
+   Four stacked layers instead. backdrop-filter samples everything
+   already painted beneath it, so each layer blurs its predecessor's
+   output and the radii compound. They must stay siblings: nesting them
+   would clip each layer to its parent's mask, confining the strongest
+   blur to the band where the weakest is opaque.
+
+   Radii double per layer. A shallower ratio between the ends reads as
+   flat softness rather than depth.
+
+   The ramp runs bottom-to-top: sharp where content emerges below the
+   bar, blurriest at the top where it has travelled furthest under.
+   Reversed, it reads as a smudge on the glass instead of distance. */
+.progressive-blur > div {
+  position: absolute;
+  inset: 0;
+}
+.progressive-blur > div:nth-child(1) {
+  backdrop-filter: blur(1px);
+  mask-image: linear-gradient(to top, black 0%, black 25%, transparent 50%);
+}
+.progressive-blur > div:nth-child(2) {
+  backdrop-filter: blur(2px);
+  mask-image: linear-gradient(
+    to top,
+    transparent 15%,
+    black 35%,
+    black 50%,
+    transparent 70%
+  );
+}
+.progressive-blur > div:nth-child(3) {
+  backdrop-filter: blur(4px);
+  mask-image: linear-gradient(
+    to top,
+    transparent 35%,
+    black 55%,
+    black 70%,
+    transparent 88%
+  );
+}
+.progressive-blur > div:nth-child(4) {
+  backdrop-filter: blur(8px);
+  mask-image: linear-gradient(to top, transparent 55%, black 78%, black 100%);
+}
+
+/* Without the blur the bar is transparent and content reads straight
+   through it. */
 @media (prefers-reduced-transparency: reduce) {
+  .progressive-blur {
+    display: none;
+  }
   header {
-    backdrop-filter: none;
     background: var(--color-night);
+  }
+}
+
+/* Post title self-link. Color never changes: on a page whose other
+   headings are plain, a title that lit up would read as navigation to
+   somewhere else. The icon carries the affordance instead. */
+.title-self-link {
+  color: inherit;
+  text-decoration: none;
+}
+.title-self-icon {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.35em;
+  color: var(--color-ink-faint);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.title-self-link:hover .title-self-icon,
+.title-self-link:focus-visible .title-self-icon {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .title-self-icon {
+    transition: none;
   }
 }
 

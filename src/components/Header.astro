@@ -9,9 +9,22 @@ interface Props {
 const { overlay = false } = Astro.props;
 ---
 
-<header
-  class={`z-10 backdrop-blur-sm ${overlay ? "fixed inset-x-0 top-0" : "sticky top-0"}`}
->
+<header class={`z-10 ${overlay ? "fixed inset-x-0 top-0" : "sticky top-0"}`}>
+  {
+    /* Progressive blur; the stack's mechanics are in global.css. It
+       extends past the header's own height so the ramp finishes in open
+       page rather than at the bar's edge, which is what removes the
+       visible boundary. */
+  }
+  <div
+    aria-hidden="true"
+    class="progressive-blur pointer-events-none absolute inset-x-0 top-0 h-[150%]"
+  >
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <!-- Skip link: first tab stop on every page, visible only while
        focused. Every template's <main> carries id="main". -->
   <a
