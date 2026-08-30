@@ -8,12 +8,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "npm run lint:js && npm run lint:format && npm run lint:md",
+    "lint:fix": "eslint . --fix && prettier --write . && markdownlint-cli2 --fix",
+    "lint:js": "eslint .",
+    "lint:format": "prettier --check .",
     "lint:md": "markdownlint-cli2",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "verify": "astro check && astro build && node .migration/check-url-contract.mjs && node .migration/check-links.mjs && eslint . && prettier --check . && markdownlint-cli2"
+    "test:e2e": "playwright test",
+    "verify": "astro check && astro build && node scripts/check-url-contract.mjs && node scripts/check-links.mjs && npm run lint && npm run test:e2e"
   },
   "volta": {
     "node": "24.20.0",
@@ -36,6 +38,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@eslint/js": "10.0.1",
+    "@playwright/test": "1.62.1",
     "@types/node": "24.13.3",
     "eslint": "10.8.1",
     "eslint-config-prettier": "10.1.8",

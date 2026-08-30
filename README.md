@@ -8,27 +8,31 @@ Node is pinned via [Volta](https://volta.sh) (24.x). Package manager is npm.
 
 ```shell
 npm install
+npx playwright install chromium   # browsers; .npmrc blocks install scripts
 npm run dev           # local dev server
 npm run build         # static build to dist/
 npm run preview       # serve the built dist/
 npm run check         # astro check (TypeScript)
-npm run lint          # eslint
-npm run lint:fix      # eslint with autofix
+npm run lint          # eslint + prettier check + markdownlint
+npm run lint:fix      # all three, with autofix
 npm run format        # prettier, write
-npm run format:check  # prettier, check only
-npm run verify        # check + build + URL contract + links + lint + format:check
+npm run test:e2e      # playwright tests, boots its own dev server
+npm run verify        # check + build + URL contract + links + lint + tests
 ```
 
-`npm run verify` must pass before deploying. It type checks, builds, checks that every historical URL (`.migration/url-contract.txt`) still resolves, that no internal link or heading anchor is broken, and that lint and formatting are clean.
+`npm run verify` must pass before deploying. It type checks, builds, checks that every historical URL (`scripts/url-contract.txt`) still resolves, that no internal link or heading anchor is broken, that lint and formatting are clean, and that the browser tests pass. It runs in about 13 seconds.
+
+New checks belong inside `verify` rather than alongside it: one command is the whole point. The GitHub Actions workflow runs `npm run verify` and nothing else.
 
 ## Tooling
 
-* **ESLint** (`eslint.config.js`): flat config, recommended rule sets only (`@eslint/js`, `typescript-eslint`, `eslint-plugin-astro`), with `eslint-config-prettier` last so no formatting rules fight Prettier. `no-console` allows `warn`/`error`; off entirely for the `.migration/` CLI scripts.
-* **Prettier** (`.prettierrc`): pure defaults. Plugins: `prettier-plugin-astro` and `prettier-plugin-tailwindcss` (sorts Tailwind classes; must stay last in the plugin list). Markdown is excluded (`.prettierignore`): `markdownlint-cli2` owns markdown, and `src/content/` is never touched by tooling at all.
+* **`npm run lint`** is the umbrella: ESLint, then Prettier's check, then markdownlint. `npm run lint:fix` fixes all three (it rewrites this file and `CLAUDE.md`, since markdownlint owns the docs). The individual steps stay available as `lint:js`, `lint:format`, and `lint:md`. Prettier deliberately runs as its own step rather than through `eslint-plugin-prettier`, which is slow, reports every formatting difference as a lint error, and muddles the two kinds of autofix; `eslint-config-prettier` plus a separate run is the arrangement Prettier itself recommends.
+* **ESLint** (`eslint.config.js`): flat config, recommended rule sets only (`@eslint/js`, `typescript-eslint`, `eslint-plugin-astro`), with `eslint-config-prettier` last so no formatting rules fight Prettier. `no-console` allows `warn`/`error`; off entirely for the `scripts/` CLI scripts.
+* **Prettier** (`.prettierrc`): no style overrides, plugin config only. Plugins: `prettier-plugin-astro` and `prettier-plugin-tailwindcss` (sorts Tailwind classes; must stay last in the plugin list). Markdown is excluded (`.prettierignore`): `markdownlint-cli2` owns markdown, and `src/content/` is never touched by tooling at all.
 * **astro check** (`@astrojs/check`): TypeScript checking for `.astro` and `.ts`, strict preset. TypeScript is pinned to 5.x; the checker does not support TypeScript 7 yet.
 * Note for `.astro` templates: HTML comments (`<!-- -->`) are fine in plain markup but break Prettier's parser inside `{...}` expressions. Use `{/* */}` there (bonus: those are stripped from the built HTML).
 * **npm hardening** (`.npmrc`, committed):
-  * `min-release-age=7` refuses package versions published less than 7 days ago (most malicious releases are yanked within hours, so a cooldown skips the blast window). Needs npm >= 11.10; the Volta pin covers that. Older npm silently ignores it.
+  * `min-release-age=7` refuses package versions published less than 7 days ago (most malicious releases are yanked within hours, so a cooldown skips the blast window). Needs npm >= 11.10, which the Volta pin satisfies locally; older npm silently ignores the setting. It is a local-development control: it filters which version the resolver may pick during `npm install` or `npm update`, and `npm ci` resolves nothing, installing the exact versions already in `package-lock.json`. So CI never applies the cooldown and can never install anything newer than what was vetted here. CI also does not read the `volta.npm` pin (`setup-node` reads `volta.node` only, and Volta is not on the runner), so its npm is whatever ships with that Node release.
   * `ignore-scripts=true` blocks dependency lifecycle scripts (preinstall/postinstall), the main malware delivery mechanism. `npm run <script>` still works. If a future dep genuinely needs its install script, that is a deliberate decision, not a default.
   * `save-exact=true` pins new deps to exact versions; all current deps are exact-pinned and `package-lock.json` is committed.
 * **markdownlint** (`.markdownlint-cli2.jsonc`): `npm run lint:md`, also
@@ -36,10 +40,41 @@ npm run verify        # check + build + URL contract + links + lint + format:che
   (globs included) is in the repo, so no global install or home-directory
   config is involved. It lints the doc markdown (README, CLAUDE);
   `src/content/` is ignored, same policy as the other tooling.
+* **Playwright** (`playwright.config.ts`): Chromium-only tests in `tests/`,
+  part of `verify` and runnable alone with `npm run test:e2e`. The
+  `webServer` block starts its own dev server on port 4321 and stops it
+  afterward, so no build is required and nothing needs to be running
+  first. If anything already answers on 4321 the run stops with a port
+  error instead of testing whatever is there, so stop a stray dev server
+  before running the suite (`npx astro dev stop` if it daemonized
+  itself).
+  Coverage is layered: `pages.spec.ts` loads one page per route template
+  and asserts a single `h1`, then `copy-button.spec.ts`, `header.spec.ts`,
+  and `feeds.spec.ts` cover specific behavior. Adding a page means adding
+  a line to the table in `pages.spec.ts`. The 707 posts and 52 tags are
+  deliberately not enumerated: the URL contract check already proves all
+  1681 paths resolve, so these prove each template renders. Because
+  `.npmrc` blocks install scripts, browsers need an explicit
+  `npx playwright install chromium`. CI adds `--only-shell` to that
+  command, skipping the headed build it cannot use; locally the full
+  browser is worth having for headed debugging.
+* **GitHub Actions** (`.github/workflows/ci.yml`): runs `npm run verify` on
+  push, nothing more. Node comes from the `volta.node` pin via
+  `node-version-file`, so the version is not duplicated (`volta.npm` is
+  not read: `setup-node` looks only at `volta.node`, and Volta is not on
+  the runner). It installs the browser explicitly for the
+  `ignore-scripts` reason above, and on a failed run uploads the
+  Playwright report along with the traces that make it diagnosable.
+  Actions are pinned to full commit SHAs with the version in a trailing
+  comment, because a git tag is a mutable pointer that an attacker who
+  compromises an action's repo can repoint; bumping one means replacing
+  both the SHA and the comment.
 * **AI tooling** is declared in the repo so a fresh clone reconstructs it:
   * `.mcp.json` (committed): the official Astro Docs MCP server (remote
-    HTTP, no auth) and the Playwright MCP for browser smoke passes. The
-    Playwright entry's browser config is `.claude/playwright-mcp-config.json`.
+    HTTP, no auth) and the Playwright MCP for interactive browsing. That
+    MCP server is unrelated to the `@playwright/test` devDependency that
+    powers `verify`. The Playwright entry's browser config is
+    `.claude/playwright-mcp-config.json`.
   * `.claude/settings.json` (committed): pre-approves those MCP servers
     and declares the `modern-web-guidance` plugin (Google Chrome's
     marketplace). Plugins are not auto-installed from a clone; Claude Code
@@ -104,7 +139,8 @@ The rest of the post.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, Shiki theme).
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
-* `.migration/` is the URL contract fixture and verify scripts. `url-contract.txt` lists every URL the old site served; it never shrinks.
+* `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every URL the site has ever served; it never shrinks.
+* `tests/` is the Playwright suite.
 
 ## URL Contract
 
@@ -132,10 +168,10 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 * [ ] Explore the cross-document page fade. The browser-default 250ms crossfade double-exposes pages (the home hero visibly ghosts behind the blog list). Prototype CSS-only variants: a quicker ~150ms crossfade, and a fade through `--color-night` (old page out ~100ms, new page in ~120ms), sequential vs. slightly overlapping. Judge home-to-blog and blog-to-post mid-transition, not from screenshots. Keep the reduced-motion suppression.
 * [ ] Maybe generate `/images/tag/twitter.jpg`. It is the one tag without an OG image, so those posts fall back to the default og-image. Creating it restores the simple per-tag rule everywhere.
 * [ ] Decide the long-term OG image approach. Current rule is Hugo's: per-first-tag jpg, else `/images/og-image.png`. Generated OG images are an option.
-* [ ] Fast broken link/image scan as a permanent build step. The `.migration` checkers work but were built for migration acceptance; want something fast in the regular build (promote/rewrite the scripts, or a dedicated tool, undecided).
+* [ ] Extend `scripts/check-links.mjs` to `srcset` and `og:image` `content=` attributes. Both are skipped today (see the script's header comment), so image sources have no coverage.
 * [ ] Lighthouse and other quality checks (performance, accessibility, SEO). Scope and tooling undecided.
-* [ ] Review `.migration/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
-* [ ] 22 posts have no `<!--more-->` marker and use the auto ~70-word excerpt. List in `.migration/report.json` under `noMoreMarker`. Leaving them auto for now; add markers later if it bothers.
+* [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
+* [ ] 22 posts have no `<!--more-->` marker and use the auto ~70-word excerpt. Leaving them auto for now; add markers later if it bothers: `8-php-command-line-tips-and-tricks-presentation`, `eclipse-testing-with-tptp-help-me`, `firebug-for-ie`, `i-am-a-zend-certified-engineer`, `jemgames-launched`, `jquery-mobile-presentation-from-milwaukee-web-design-meetup`, `milwaukee-php-users-group-1st-year-anniversary`, `network-site-jemdiarycom-updated`, `newest-version-of-102-degrees-launched`, `no-more-the-triangle`, `ode-to-a-myspace-layout`, `php-constant-visibility`, `simplephpmailer-now-with-required-fields`, `slides-from-thatconference`, `spl-documentation-standard-php-library`, `started-my-own-company`, `symbolic-linking-in-windows`, `time-off-for-b-day-is-done`, `twitter-anywhere-platform-web414-presentation`, `unofficial-xdebug-ini-with-comments`, `wordcamp-milwaukee-2013-talk-slides`, `writing-a-spelling-corrector`.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 36 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
 * [ ] Full review of the generated site: every file, every page in the local browser.
 * [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP must allow the inline copy script by sha256 hash, not `unsafe-inline`.

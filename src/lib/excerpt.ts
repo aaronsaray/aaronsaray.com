@@ -1,9 +1,8 @@
-// Excerpts, Hugo-parity: the markdown before <!--more--> (685 posts
-// at the Aug 2026 migration), or a ~70-word plain-text fallback for
-// the posts without a marker (22 at migration, inventoried in
-// .migration/report.json — no content files were
-// edited). Three forms: HTML for list display, HTML for RSS
-// descriptions, plain text for meta descriptions.
+// Excerpts, Hugo-parity: the markdown before <!--more-->, or a
+// ~70-word plain-text fallback for the posts without a marker (see
+// the README to-do for that list). Three forms: HTML for list
+// display, HTML for RSS descriptions, plain text for meta
+// descriptions.
 //
 // The mini-pipeline mirrors the site config's remark side (gfm,
 // smartypants oldschool, directives) so an excerpt renders the same

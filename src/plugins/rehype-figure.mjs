@@ -3,9 +3,9 @@ import { fromHtml } from "hast-util-from-html";
 
 // Lone images become framed figures (see .prose figure). Three shapes:
 //
-//  1. p > img            — markdown ![alt](src)
-//  2. p > a > img        — a markdown image wrapped in a link
-//  3. p of raw nodes     — the migrated thumb-link HTML
+//  1. p > img            : markdown ![alt](src)
+//  2. p > a > img        : a markdown image wrapped in a link
+//  3. p of raw nodes     : the migrated thumb-link HTML
 //                          <a href="full"><img src="thumb"></a> is
 //                          inline HTML, so remark leaves it as raw
 //                          nodes inside a paragraph. (rehype-raw runs
@@ -14,7 +14,7 @@ import { fromHtml } from "hast-util-from-html";
 //
 // A bare <img> alone on its own line is an HTML *block* (root-level
 // raw node), handled last. Hand-authored <figure> HTML from the
-// migration is left alone — the element CSS styles it directly.
+// migration is left alone; the element CSS styles it directly.
 
 const isWhitespace = (n) => n.type === "text" && !n.value.trim();
 

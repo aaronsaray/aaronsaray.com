@@ -1,8 +1,8 @@
 # Internal links in old post content that were ALREADY broken on the
-# Hugo site (verified missing from .migration/hugo-baseline/ on
-# August 27, 2026). These are content rot, not migration regressions —
-# fixing them means editing Aaron's prose, which is his call, not the
-# build's. check-links.mjs reports them as non-fatal.
+# Hugo site (verified against it on August 27, 2026). These are content
+# rot, not migration regressions. Fixing them means editing Aaron's
+# prose, which is his call, not the build's. check-links.mjs reports
+# them as non-fatal.
 #
 # WordPress-era permalink structure (/blog/YYYY/MM/DD/...):
 /blog/2007/07/11/the-anatomy-of-a-phishing-attack-advanced-technique/
@@ -13,7 +13,7 @@
 /blog/2008/03/19/link-checking-module-1st-attempt/
 /blog/2009/09/23/javascript-error-handler
 #
-# Old /tags/ (plural) path — the taxonomy has been /tag/ for years:
+# Old /tags/ (plural) path; the taxonomy is /tag/:
 /tags/security
 #
 # Assets that no longer exist anywhere:

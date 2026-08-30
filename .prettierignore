@@ -2,9 +2,6 @@
 dist/
 .astro/
 
-# Reference material and snapshots, never reformatted
-.migration/hugo-baseline/
-
 # Static assets served verbatim
 public/
 
@@ -13,6 +10,8 @@ src/content/
 
 # Session artifacts
 .playwright-mcp/
+playwright-report/
+test-results/
 
 # npm-owned
 package-lock.json

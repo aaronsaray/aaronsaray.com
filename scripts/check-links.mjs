@@ -53,12 +53,11 @@ const redirected = new Set(
     .map((l) => l.split(/\s+/)[0]),
 );
 
-// Links that were already broken on the Hugo site (content rot in old
-// posts — Aaron's content, not touched by the migration). Warned, not
-// fatal.
+// Links in old posts pointing at targets that no longer exist.
+// Content rot in Aaron's prose, not a site bug. Warned, not fatal.
 const knownRot = new Set(
   fs
-    .readFileSync(path.join(ROOT, ".migration/known-rot.txt"), "utf8")
+    .readFileSync(path.join(import.meta.dirname, "known-rot.txt"), "utf8")
     .split("\n")
     .map((l) => l.trim())
     .filter((l) => l && !l.startsWith("#")),
@@ -69,8 +68,8 @@ const rotSeen = [];
 let checked = 0;
 
 for (const file of htmlFiles(DIST)) {
-  // Skip code samples — highlighted code text contains literal,
-  // unescaped href="…" sequences that aren't links.
+  // Skip code samples: highlighted code text contains literal,
+  // unescaped href="..." sequences that aren't links.
   const html = fs
     .readFileSync(file, "utf8")
     .replace(/<pre[\s\S]*?<\/pre>/g, "");

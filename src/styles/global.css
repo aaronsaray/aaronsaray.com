@@ -269,7 +269,7 @@ h3 {
   margin-bottom: 0;
   padding: 0.5rem 1.25rem;
 }
-/* Only the filename scrolls when it's too long — the language tag
+/* Only the filename scrolls when it's too long. The language tag
    and copy button stay pinned on the right. */
 .filename-header .filename-text {
   flex: 1;

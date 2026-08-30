@@ -3,6 +3,11 @@
   "compilerOptions": {
     "allowJs": true
   },
-  "include": [".astro/types.d.ts", "src/**/*"],
+  "include": [
+    ".astro/types.d.ts",
+    "playwright.config.ts",
+    "src/**/*",
+    "tests/**/*"
+  ],
   "exclude": ["dist"]
 }

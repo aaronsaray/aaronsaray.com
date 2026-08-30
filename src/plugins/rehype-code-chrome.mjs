@@ -135,7 +135,7 @@ export function rehypeCodeChrome() {
     visit(tree, "element", (node, index, parent) => {
       if (node.tagName !== "pre" || !parent || index === undefined) return;
       // Astro's Shiki wrapper sets `properties.class` (not the hast
-      // convention `className`) — accept either.
+      // convention `className`), so accept either.
       const cls = node.properties?.className ?? node.properties?.class;
       const classes = Array.isArray(cls) ? cls : String(cls ?? "").split(" ");
       if (!classes.includes("astro-code")) return;

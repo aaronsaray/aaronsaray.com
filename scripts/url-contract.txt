@@ -3,11 +3,11 @@
 # on the new site. Lines starting with '#' are comments; test code
 # should ignore them.
 #
-# Generated: 2026-08-27 — final. main is frozen for this project, so
+# Generated: 2026-08-27, final. main is frozen for this project, so
 #   this fixture will not change.
 # Source: main @ a4c7ce0 ("publishing blog entry")
 # Built with: hugo v0.140.2+extended (default build, no flags)
-# Method: built main with hugo, then listed public/ — directories with
+# Method: built main with hugo, then listed public/: directories with
 #   index.html become "/path/", all other files verbatim.
 #
 # Counts: 707 post permalinks (/YYYY/slug/), /blog/ + 71 pagination pages,
@@ -19,7 +19,7 @@
 #   noindex. New site must keep it resolving (redirect is fine).
 # - /404.html and /sitemap.xml are infrastructure, not content pages.
 # - static/.DS_Store was in the Hugo output; excluded here as junk.
-# - /uploads/.DS_Store likewise (commented out August 27, 2026 — same
+# - /uploads/.DS_Store likewise (commented out August 27, 2026, same
 #   junk rationale; .DS_Store files are always mistakes, never served).
 # - /images/search.svg was an old-theme-only asset, never referenced by
 #   content; dropped with the theme (commented out August 27, 2026).
@@ -814,7 +814,7 @@
 /favicon.png
 /humans.txt
 /images/og-image.png
-# /images/search.svg — old-theme-only asset (the theme header's search
+# /images/search.svg: old-theme-only asset (the theme header's search
 #   icon); nothing in content ever referenced it. Dropped with the
 #   theme (commented out August 27, 2026).
 /images/tag/ajax.jpg

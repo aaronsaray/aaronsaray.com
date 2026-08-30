@@ -9,10 +9,11 @@ export default tseslint.config(
     ignores: [
       "dist/",
       ".astro/",
-      ".migration/hugo-baseline/",
       ".playwright-mcp/",
+      "playwright-report/",
       "public/",
       "src/content/",
+      "test-results/",
     ],
   },
   js.configs.recommended,
@@ -24,8 +25,8 @@ export default tseslint.config(
     },
   },
   {
-    // Build-time code runs under Node.
-    files: ["**/*.mjs"],
+    // Build-time and test code runs under Node.
+    files: ["**/*.mjs", "playwright.config.ts", "tests/**/*.ts"],
     languageOptions: {
       globals: globals.node,
     },
@@ -39,7 +40,7 @@ export default tseslint.config(
   },
   {
     // CLI verification scripts print their results.
-    files: [".migration/**"],
+    files: ["scripts/**"],
     rules: {
       "no-console": "off",
     },

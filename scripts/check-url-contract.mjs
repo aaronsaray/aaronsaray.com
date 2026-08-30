@@ -8,7 +8,7 @@ import path from "node:path";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const DIST = path.join(ROOT, "dist");
-const FIXTURE = path.join(ROOT, ".migration/url-contract.txt");
+const FIXTURE = path.join(import.meta.dirname, "url-contract.txt");
 
 const paths = fs
   .readFileSync(FIXTURE, "utf8")

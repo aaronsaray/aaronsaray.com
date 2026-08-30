@@ -4,7 +4,7 @@ import { excerptHtml } from "../../lib/excerpt";
 import { renderFeed, feedResponse, RSS_LIMIT, SITE_URL } from "../../lib/rss";
 
 // Hugo's feed OF tag pages. The migrated tag entries no longer carry
-// the old _index dates, so items are title-ordered with no pubDate —
+// the old _index dates, so items are title-ordered with no pubDate:
 // a known, deliberate drift from the baseline on this rarely-consumed
 // feed.
 export const GET: APIRoute = async () => {

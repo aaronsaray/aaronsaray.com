@@ -10,7 +10,7 @@ import { ogImageForTag } from "../../lib/ogImage";
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
   return posts.map((entry) => ({
-    // The URL contract: /:year/:filename/ — year is the first four
+    // The URL contract: /:year/:filename/. Year is the first four
     // characters of the date string, slug is the filename verbatim.
     params: { year: entry.data.date.slice(0, 4), slug: entry.id },
     props: { entry },
@@ -134,7 +134,7 @@ const showLaravelCta = entry.data.tags.includes("laravel");
         href="/blog/"
         class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-sm text-ink-dim transition-colors duration-300 hover:text-ink"
       >
-        <!-- Tabler: arrow-left — slides left on hover, mirrors the footer CTAs -->
+        <!-- Tabler: arrow-left, slides left on hover, mirrors the footer CTAs -->
         <svg
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"

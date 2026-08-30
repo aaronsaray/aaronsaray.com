@@ -31,7 +31,7 @@ export default defineConfig({
     "/blog/page/1/": "/blog/",
   },
   markdown: {
-    // The remark/rehype pipeline (not the Sätteri default) — the code
+    // The remark/rehype pipeline (not the Sätteri default). The code
     // chrome, heading anchors, and table wrappers are rehype plugins.
     // Note Astro's plugin order: Shiki runs BEFORE user rehype
     // plugins; rehype-raw runs AFTER them (the chrome plugins emit
@@ -63,5 +63,12 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    // Fail on a taken port instead of sliding to the next one, so a
+    // second dev server is obvious rather than quietly on 4322. Only
+    // catches a listener on the same host: a wildcard-bound process on
+    // 4321 still lets localhost:4321 bind, with a warning.
+    server: {
+      strictPort: true,
+    },
   },
 });

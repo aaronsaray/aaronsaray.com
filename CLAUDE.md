@@ -19,7 +19,7 @@ Expect him to rework code to his taste.
 ## Hard Rules
 
 * **URLs never change. Ever.** Blog permalinks are `/:year/:slug/`
-  (filename = slug, date's year = year). `.migration/url-contract.txt`
+  (filename = slug, date's year = year). `scripts/url-contract.txt`
   lists every URL the old site served; `npm run verify` enforces that
   they all still resolve. If verify fails, fix the site, not the
   fixture. The fixture never shrinks.
@@ -56,16 +56,18 @@ Expect him to rework code to his taste.
 ## Building and Verifying
 
 * `npm run verify` (astro check + build + URL contract check +
-  internal link check + eslint + prettier check) must be green before
-  declaring any change done.
+  internal link check + lint + Playwright tests) must be green before
+  declaring any change done. It is the only gate: a new check goes
+  inside `verify`, never beside it as a command to remember.
+  GitHub Actions runs `npm run verify` and nothing else.
 * Formatting is owned by Prettier (pure defaults plus the astro and
   tailwindcss plugins), linting by ESLint flat config (recommended
-  sets only, prettier-conflict rules disabled). Never hand-format
-  against Prettier; run `npm run format`. Prettier and ESLint never
-  touch `src/content/`, `public/`, or any markdown.
-  Markdown is owned by markdownlint: `npm run lint:md`, repo-local
-  config in `.markdownlint-cli2.jsonc` (do not use the home-directory
-  config here). See README "Tooling".
+  sets only, prettier-conflict rules disabled), markdown by
+  markdownlint (repo-local `.markdownlint-cli2.jsonc`; do not use the
+  home-directory config here). `npm run lint` runs all three and
+  `npm run lint:fix` fixes all three. Never hand-format against
+  Prettier. Prettier and ESLint never touch `src/content/`, `public/`,
+  or any markdown. See README "Tooling".
 * AI tooling is repo-declared: `.mcp.json` (Astro docs + Playwright MCP
   servers) and `.claude/settings.json` (server approvals, plugin
   declarations). Keep additions project-scoped in these files, not in
@@ -78,13 +80,20 @@ Expect him to rework code to his taste.
   weaken these to make an install work; surface the problem to Aaron
   instead. Node and npm versions are pinned via Volta in
   `package.json`.
-* **Content-layer cache gotcha:** Astro caches rendered markdown. After
-  changing anything in the markdown pipeline (`src/plugins/`, the
-  `markdown` options in `astro.config.mjs`), build with
-  `npx astro build --force`. A plain build silently serves stale post
-  HTML.
-* Verify user-facing changes by actually using the site: `npm run
-  preview` plus a Playwright smoke pass, not just a green build.
+* **Content-layer cache gotcha:** Astro caches rendered markdown in
+  `.astro/data-store.json`. After changing anything in the markdown
+  pipeline (`src/plugins/`, the `markdown` options in
+  `astro.config.mjs`), build with `npx astro build --force`. A plain
+  build silently serves stale post HTML. The dev server reads the same
+  cache, so the Playwright tests inherit this: a plugin change can be
+  invisible to them until the cache is cleared. When a test result
+  after a pipeline change looks impossible, delete
+  `.astro/data-store.json` and re-run before believing it. CI is
+  unaffected, since a fresh checkout has no cache.
+* The `tests/` suite covers behavior against a dev server it starts
+  itself. It is not a substitute for looking at the page: for
+  user-facing changes, browse the built site with `npm run preview`
+  and the Playwright MCP.
 
 ## How the Site Works
 
@@ -102,7 +111,9 @@ Expect him to rework code to his taste.
   transformer, code chrome, callouts (`:::callout`), table wrap,
   figures, heading anchors. The code-block DOM shapes and the inline
   copy script are a matched pair; the script's element lookups depend
-  on the exact shapes the plugins emit.
+  on the exact shapes the plugins emit. `tests/copy-button.spec.ts`
+  enforces that pairing by comparing the copied text against the code
+  block through both DOM shapes.
 * `src/lib/`: excerpts (`<!--more-->` split, ~70-word fallback),
   reading time, date formatting, post sorting/pagination, OG image
   lookup, RSS rendering.
@@ -118,16 +129,19 @@ Expect him to rework code to his taste.
   oversized rounded corners and pill shapes, icon-card grids ("4 of
   something" panels), glowing status dots, too-bright glowy headlines.
 
-## The `.migration/` Directory
+## Verify Scripts and Tests
 
-* `url-contract.txt`, `check-url-contract.mjs`, `check-links.mjs`: the
-  permanent verify suite (see Hard Rules).
-* `migrate*.mjs` are **retired**. They already ran against the content
-  in place; running them again would corrupt it. They stay only as a
-  record of what the transform did.
-* `diff-sample.mjs` compares sample pages against
-  `.migration/hugo-baseline/` (gitignored). If the baseline is ever
-  lost, rebuild it from a temp worktree of `main`; the Hugo source
-  exists only there.
-* `report.json`: migration review artifact (missing alts, the
-  no-`<!--more-->` post list, restored raw HTML pages).
+* `scripts/`: `check-url-contract.mjs` and `check-links.mjs` with their
+  fixtures `url-contract.txt` and `known-rot.txt`. Both read `dist/`,
+  so a build has to precede them. Both carry a pinned count
+  (`FIXTURE_FLOOR`, `EXPECTED_ROT`) that fails on drift in either
+  direction: changing a pin is a deliberate decision, never a way to
+  make a failing run pass.
+* `tests/`: Playwright, Chromium only, against a dev server the config
+  starts on port 4321 and stops afterward. `pages.spec.ts` loads one
+  page per route template; the rest cover specific behavior. A new
+  page means a new line in the table in `pages.spec.ts`. Posts and
+  tags are not enumerated there: the URL contract already proves every
+  path resolves.
+* `.npmrc`'s `ignore-scripts` blocks Playwright's browser download, so
+  a fresh clone needs `npx playwright install chromium`.

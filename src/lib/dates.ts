@@ -1,5 +1,5 @@
 // Dates stay strings end to end (the URL year is date.slice(0, 4)).
-// Formatting parses the components directly — new Date('2008-05-20')
+// Formatting parses the components directly: new Date('2008-05-20')
 // is UTC midnight, which a local-timezone formatter would render as
 // the previous day.
 
