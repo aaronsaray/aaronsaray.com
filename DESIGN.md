@@ -43,8 +43,10 @@ Typefaces decided during prototyping (August 2026):
   footer CTA titles, beliefs statements.
 * **Mono is the system stack** (`ui-monospace` / SF Mono / Menlo /
   Consolas) — no webfont for code.
-* Both webfonts load from Google Fonts as variable fonts (Inter
-  400–900, Fraunces opsz+wght 400–700).
+* Both webfonts are self-hosted variable fonts (Inter 400–900,
+  Fraunces opsz 9–144 + wght 400–700), latin subset, served from
+  `public/fonts/` and preloaded. The site makes no third-party
+  requests.
 * **Serif display face for blog post titles and section headers**, in
   bright white — the serif-against-sans contrast plus the brighter color
   is the liked pattern. Body stays sans.

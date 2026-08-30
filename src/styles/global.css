@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Latin subsets pulled from:
+   fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Fraunces:opsz,wght@9..144,400..700
+   Latin only: characters these files lack fall back. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/inter-latin-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/fraunces-latin-variable.woff2") format("woff2");
+}
+
 @theme {
   /* Palette per DESIGN.md. --color-prose is the article body color —
      brighter than ink-dim for long-form reading, but below full ink so

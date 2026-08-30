@@ -31,6 +31,18 @@ Expect him to rework code to his taste.
 * **No em dashes.** Strictly forbidden in any content Claude generates:
   docs, code comments, placeholder text, commit messages, everything.
   Use a period, comma, colon, or parentheses instead.
+* **Comments earn their place.** A comment exists only for what the
+  code cannot say: a non-obvious constraint, a foot-gun, a gotcha that
+  looks deletable but is not (the `crossorigin` on the font preloads in
+  `Base.astro` is the model). Never narrate the change, justify a
+  decision, restate an adjacent line, or explain general web platform
+  behavior. If a reader could learn it from the code or from MDN, cut
+  it. Comments describe the code as it stands, never as a diff:
+  anything that reads like a changelog ("now self-hosted", "was
+  previously X") is wrong, and it rots the moment the surrounding code
+  moves. Rationale that matters to a human belongs in `DESIGN.md` or
+  `README.md`, not inline. Same bar in those docs: state what is true,
+  not what changed.
 * **Minimal JavaScript.** Static output; the default is zero JS on a
   page. Vue islands only when interactivity genuinely requires them.
   Currently the only JS on the site is the inline copy-button script.
