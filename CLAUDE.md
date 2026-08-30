@@ -138,10 +138,25 @@ Expect him to rework code to his taste.
   direction: changing a pin is a deliberate decision, never a way to
   make a failing run pass.
 * `tests/`: Playwright, Chromium only, against a dev server the config
-  starts on port 4321 and stops afterward. `pages.spec.ts` loads one
-  page per route template; the rest cover specific behavior. A new
-  page means a new line in the table in `pages.spec.ts`. Posts and
-  tags are not enumerated there: the URL contract already proves every
-  path resolves.
+  starts on port 4321 and stops afterward. Two projects: `e2e`
+  (`tests/e2e/`, behavior) and `a11y` (`tests/a11y/`, the axe sweep).
+  Both run in `verify`; `npm run test:e2e` and `npm run test:a11y` run
+  one at a time while iterating. A new page means a new line in
+  `tests/routes.ts`, which both projects read. Posts and tags are not
+  enumerated there: the URL contract already proves every path
+  resolves.
+* **Contrast is enforced, so pick colors against the test, not by eye.**
+  Every text token clears AA 4.5:1 on all three grounds the site
+  composites: `--color-night`, `--color-surface`, and `bg-surface/40`
+  over night (`#0c0e10`, the footer). `--color-ink-faint` is the sole
+  exception, non-text strokes only at 3:1. Two things this catches that
+  reading the CSS does not: an alpha background composites to a ground
+  that is in no token, and an opacity utility multiplies against the
+  token so a passing color can still fail where it renders. axe also
+  truncates its ratio to two decimals, so a value computing to 4.499
+  reports as 4.49 and fails; leave margin rather than landing on 4.50.
+  `tests/a11y/axe.spec.ts` asserts on `incomplete` as well as
+  `violations`, because text on a gradient lands in `incomplete` and
+  would otherwise pass silently.
 * `.npmrc`'s `ignore-scripts` blocks Playwright's browser download, so
   a fresh clone needs `npx playwright install chromium`.

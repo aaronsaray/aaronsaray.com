@@ -14,8 +14,10 @@
     "lint:format": "prettier --check .",
     "lint:md": "markdownlint-cli2",
     "format": "prettier --write .",
-    "test:e2e": "playwright test",
-    "verify": "astro check && astro build && node scripts/check-url-contract.mjs && node scripts/check-links.mjs && npm run lint && npm run test:e2e"
+    "test:e2e": "playwright test --project=e2e",
+    "verify": "astro check && astro build && node scripts/check-url-contract.mjs && node scripts/check-links.mjs && npm run lint && npm run test",
+    "test:a11y": "playwright test --project=a11y",
+    "test": "playwright test"
   },
   "volta": {
     "node": "24.20.0",
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
     "@eslint/js": "10.0.1",
     "@playwright/test": "1.62.1",
     "@types/node": "24.13.3",

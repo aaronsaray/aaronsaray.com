@@ -16,7 +16,9 @@ npm run check         # astro check (TypeScript)
 npm run lint          # eslint + prettier check + markdownlint
 npm run lint:fix      # all three, with autofix
 npm run format        # prettier, write
-npm run test:e2e      # playwright tests, boots its own dev server
+npm run test          # both playwright projects, boots its own dev server
+npm run test:e2e      # behavior only
+npm run test:a11y     # axe sweep only
 npm run verify        # check + build + URL contract + links + lint + tests
 ```
 
@@ -40,24 +42,48 @@ New checks belong inside `verify` rather than alongside it: one command is the w
   (globs included) is in the repo, so no global install or home-directory
   config is involved. It lints the doc markdown (README, CLAUDE);
   `src/content/` is ignored, same policy as the other tooling.
-* **Playwright** (`playwright.config.ts`): Chromium-only tests in `tests/`,
-  part of `verify` and runnable alone with `npm run test:e2e`. The
-  `webServer` block starts its own dev server on port 4321 and stops it
-  afterward, so no build is required and nothing needs to be running
+* **Playwright** (`playwright.config.ts`): Chromium-only, two projects,
+  both part of `verify`. `e2e` (`tests/e2e/`) is behavior; `a11y`
+  (`tests/a11y/`) is the axe sweep. Either runs alone
+  (`npm run test:e2e`, `npm run test:a11y`) for a faster loop while
+  iterating, but both gate a commit: the contrast bugs this suite first
+  caught came from a component change, not a redesign, so running a11y
+  only when the design changes would have missed them.
+  The `webServer` block starts its own dev server on port 4321 and stops
+  it afterward, so no build is required and nothing needs to be running
   first. If anything already answers on 4321 the run stops with a port
   error instead of testing whatever is there, so stop a stray dev server
   before running the suite (`npx astro dev stop` if it daemonized
   itself).
   Coverage is layered: `pages.spec.ts` loads one page per route template
   and asserts a single `h1`, then `copy-button.spec.ts`, `header.spec.ts`,
-  and `feeds.spec.ts` cover specific behavior. Adding a page means adding
-  a line to the table in `pages.spec.ts`. The 707 posts and 52 tags are
+  and `feeds.spec.ts` cover specific behavior. Both projects read the
+  route table from `tests/routes.ts`, so adding a page there covers it in
+  each. The 707 posts and 52 tags are
   deliberately not enumerated: the URL contract check already proves all
   1681 paths resolve, so these prove each template renders. Because
   `.npmrc` blocks install scripts, browsers need an explicit
   `npx playwright install chromium`. CI adds `--only-shell` to that
   command, skipping the headed build it cannot use; locally the full
   browser is worth having for headed debugging.
+* **axe-core** (`tests/a11y/axe.spec.ts`, via `@axe-core/playwright`):
+  runs the WCAG 2.0/2.1/2.2 A and AA rules against every route in the
+  table. It catches a well-defined minority of accessibility problems,
+  weighted toward the mechanical ones: contrast, accessible names, ARIA
+  validity, heading order, duplicate ids. It cannot judge whether alt
+  text is meaningful, whether focus order makes sense, or whether a
+  screen reader narrates a widget coherently, so a green run is a floor
+  and not a clean bill of health. The known gap is in
+  `NavDropdown.astro`: a CSS-only menu has no live `aria-expanded` and no
+  Escape-to-close, and axe passes it regardless.
+  The spec asserts on `violations` and on `incomplete` separately.
+  Incomplete means axe could not decide, most often because text sits on
+  a gradient it cannot sample; those never appear in `violations`, so
+  asserting only on violations would pass an unreadable element
+  silently. The three header items over the veil are the known set,
+  measured by hand at 6.09:1 against the veil's `#101213` top band.
+  Anything else landing in incomplete fails the run until someone
+  measures it too.
 * **GitHub Actions** (`.github/workflows/ci.yml`): runs `npm run verify` on
   push, nothing more. Node comes from the `volta.node` pin via
   `node-version-file`, so the version is not duplicated (`volta.npm` is
@@ -140,7 +166,7 @@ The rest of the post.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, Shiki theme).
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
 * `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every URL the site has ever served; it never shrinks.
-* `tests/` is the Playwright suite.
+* `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read.
 
 ## URL Contract
 
@@ -169,7 +195,7 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 * [ ] Maybe generate `/images/tag/twitter.jpg`. It is the one tag without an OG image, so those posts fall back to the default og-image. Creating it restores the simple per-tag rule everywhere.
 * [ ] Decide the long-term OG image approach. Current rule is Hugo's: per-first-tag jpg, else `/images/og-image.png`. Generated OG images are an option.
 * [ ] Extend `scripts/check-links.mjs` to `srcset` and `og:image` `content=` attributes. Both are skipped today (see the script's header comment), so image sources have no coverage.
-* [ ] Lighthouse and other quality checks (performance, accessibility, SEO). Scope and tooling undecided.
+* [ ] Performance and SEO checks. Accessibility is covered by the axe project in `tests/a11y/`; these two are not. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
 * [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
 * [ ] 22 posts have no `<!--more-->` marker and use the auto ~70-word excerpt. Leaving them auto for now; add markers later if it bothers: `8-php-command-line-tips-and-tricks-presentation`, `eclipse-testing-with-tptp-help-me`, `firebug-for-ie`, `i-am-a-zend-certified-engineer`, `jemgames-launched`, `jquery-mobile-presentation-from-milwaukee-web-design-meetup`, `milwaukee-php-users-group-1st-year-anniversary`, `network-site-jemdiarycom-updated`, `newest-version-of-102-degrees-launched`, `no-more-the-triangle`, `ode-to-a-myspace-layout`, `php-constant-visibility`, `simplephpmailer-now-with-required-fields`, `slides-from-thatconference`, `spl-documentation-standard-php-library`, `started-my-own-company`, `symbolic-linking-in-windows`, `time-off-for-b-day-is-done`, `twitter-anywhere-platform-web414-presentation`, `unofficial-xdebug-ini-with-comments`, `wordcamp-milwaukee-2013-talk-slides`, `writing-a-spelling-corrector`.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 36 remaining posts mix an evergreen tag with a technical one and default to showing the notice.

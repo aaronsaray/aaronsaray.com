@@ -24,13 +24,16 @@
   --color-surface: #10141a;
   --color-ink: #e7e9ec;
   --color-ink-dim: #8e959e;
-  /* ink-mute and -surface are contrast floors (AA 4.5:1 on night and
-     surface); ink-faint sits below the bar, decorative strokes only. */
-  --color-ink-mute: #717984;
-  --color-ink-mute-surface: #767e8a;
+  /* Every text token clears AA 4.5:1 on all three grounds the site
+     composites: night, surface, and surface/40 over night (#0c0e10,
+     the footer). ink-faint is the exception, below the text bar and
+     good only for non-text strokes at 3:1. Opacity multiplies against
+     these, so a knocked-back token can still fail where the token
+     passes. tests/a11y/ checks the rendered result. */
+  --color-ink-mute: #777f8a;
   --color-ink-faint: #5d646d;
   --color-prose: #bfc5cc;
-  --color-accent: #537e9e;
+  --color-accent: #5a86a6;
   --color-hairline: #1b2026;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -89,36 +92,26 @@ h3 {
   }
 }
 
-/* ============ Header veil ============
-   The many mask stops are deliberate: a two-stop fade ends in a
-   visible Mach band. saturate() keeps blurred code colors from
-   smearing into brown. */
-.header-veil {
-  height: 7.5rem;
-  --veil-tint: color-mix(in srgb, var(--color-night) 92%, var(--color-accent));
-  background: linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--veil-tint) 95%, transparent),
-    color-mix(in srgb, var(--veil-tint) 85%, transparent) 40%,
-    color-mix(in srgb, var(--veil-tint) 50%, transparent) 70%,
-    transparent 95%
-  );
+/* The header's blur (backdrop-blur-sm) has no utility for this, and
+   dropping it alone would leave content legible through the bar. */
+@media (prefers-reduced-transparency: reduce) {
+  header {
+    backdrop-filter: none;
+    background: var(--color-night);
+  }
 }
-.header-veil > div {
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(10px) saturate(0.65);
-  mask-image: linear-gradient(
-    to bottom,
-    black 45%,
-    rgb(0 0 0 / 0.94) 55%,
-    rgb(0 0 0 / 0.82) 62%,
-    rgb(0 0 0 / 0.65) 70%,
-    rgb(0 0 0 / 0.45) 78%,
-    rgb(0 0 0 / 0.26) 85%,
-    rgb(0 0 0 / 0.12) 91%,
-    transparent 98%
-  );
+
+/* Nav's counterpart to the logo's drop-shadow: unseen against the page,
+   it darkens blurred text passing under the bar. Stacked because one
+   blurred shadow thins out on the diagonals and the glyph edge shows
+   through; four deep because the nav sits at opacity-60, which fades
+   the shadow along with the text. */
+.text-punch {
+  text-shadow:
+    0 0 3px var(--color-night),
+    0 0 3px var(--color-night),
+    0 0 6px var(--color-night),
+    0 0 10px var(--color-night);
 }
 
 /* ============ Homepage motion ============ */
@@ -264,7 +257,7 @@ h3 {
 /* Filename header: attaches to the top of the code block that
    follows it. */
 .prose .filename-header {
-  @apply flex items-center gap-2 border border-hairline bg-night font-mono text-xs text-ink-mute-surface;
+  @apply flex items-center gap-2 border border-hairline bg-night font-mono text-xs text-ink-mute;
   margin-top: 1.5rem;
   margin-bottom: 0;
   padding: 0.5rem 1.25rem;
@@ -307,10 +300,10 @@ h3 {
   padding-left: 1rem;
 }
 .code-lang {
-  @apply font-mono text-[0.6875rem] text-ink-mute-surface;
+  @apply font-mono text-[0.6875rem] text-ink-mute;
 }
 .copy-btn {
-  @apply cursor-pointer text-ink-mute-surface transition-colors duration-300 hover:text-ink;
+  @apply cursor-pointer text-ink-mute transition-colors duration-300 hover:text-ink;
   /* 24px hit target from the 16px icon; the negative margin cancels
      it visually. */
   padding: 0.25rem;

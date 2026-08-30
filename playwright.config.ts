@@ -4,7 +4,6 @@ const PORT = 4321;
 const BASE_URL = `http://localhost:${PORT}`;
 
 export default defineConfig({
-  testDir: "./tests",
   forbidOnly: !!process.env.CI,
   // The github reporter writes annotations but no files. The html one is
   // what produces playwright-report/, which the workflow uploads on a
@@ -18,7 +17,21 @@ export default defineConfig({
     permissions: ["clipboard-read", "clipboard-write"],
     trace: "retain-on-failure",
   },
-  projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
+  // Two projects, one per directory: `e2e` is behavior, `a11y` is the
+  // axe sweep. Both run in verify. Split so either can be run alone
+  // while iterating (`npm run test:e2e`, `npm run test:a11y`).
+  projects: [
+    {
+      name: "e2e",
+      testDir: "./tests/e2e",
+      use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "a11y",
+      testDir: "./tests/a11y",
+      use: { ...devices["Desktop Chrome"] },
+    },
+  ],
   webServer: {
     command: `npm run dev -- --port ${PORT}`,
     url: BASE_URL,
