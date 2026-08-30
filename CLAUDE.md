@@ -129,6 +129,64 @@ Expect him to rework code to his taste.
   oversized rounded corners and pill shapes, icon-card grids ("4 of
   something" panels), glowing status dots, too-bright glowy headlines.
 
+## Accessibility
+
+Aaron holds this site to a higher bar than the field does, and he is
+learning the subject as the site is built. Do not wait to be asked, and
+do not assume he knows a rule already: say what the rule is, and why,
+when it comes up.
+
+`npm run verify` runs axe over every route template. **Treat a green
+run as a floor, not a pass.** Automation covers a well-defined minority
+of accessibility (roughly 17% of WCAG AA success criteria, though those
+happen to include most of what people get wrong in practice). The rest
+is judgment, and it is the part that has to be raised in conversation
+rather than discovered by a test.
+
+### Rules
+
+* **Color comes from a token, never from opacity.** `opacity-60` or
+  `text-ink/60` renders a color that is in no palette, cannot be
+  grepped, and that no reading of the CSS predicts. Use the token that
+  matches, and animate hover with `transition-colors`. Opacity is still
+  right for what it actually means: fading something in or out, and
+  decorative `aria-hidden` icons.
+* **Every text token clears AA 4.5:1 on all three grounds** the site
+  composites: `--color-night`, `--color-surface`, and `bg-surface/40`
+  over night (`#0c0e10`, the footer). Keep it to those three; a fourth
+  alpha value silently adds a fourth ground. `--color-ink-faint` is the
+  sole exception, non-text strokes only at 3:1.
+* **Leave contrast margin.** axe truncates to two decimals, so 4.499
+  reports as 4.49 and fails. A value that lands on 4.50 is one rounding
+  step from breaking. This is how the first bug here shipped.
+* **A hover state must raise contrast, never lower it.** Emphasis that
+  dims is backwards, and no test catches it.
+* **Interactive targets stay at least 24x24px**, using padding with
+  negative margin where the visual size is smaller.
+
+### What the tests cannot see
+
+These need a human pass whenever the relevant area changes, and Claude
+should raise them rather than wait:
+
+* **Whether alt text is meaningful.** axe checks that `alt` exists, not
+  that it says anything. Images in `src/content/` are Aaron's, so
+  flag a bad one, never rewrite it.
+* **Whether focus order matches reading order**, and whether focus is
+  visible at every step. Tab through anything new.
+* **Whether a screen reader can operate it.** The known gap is
+  `NavDropdown.astro`: a CSS-only menu has no live `aria-expanded` and
+  no Escape-to-close, and axe passes it regardless. Any new
+  interactive component needs this thought through before it ships.
+* **Whether text on a gradient or image is readable.** axe returns
+  these as `incomplete`, not as a pass. `tests/a11y/axe.spec.ts`
+  asserts the incomplete set stays exactly the known header items, so a
+  new one fails the run until someone measures it by hand.
+* **Whether motion respects `prefers-reduced-motion`.** Every animation
+  added needs the query.
+* **Whether it works at 200% zoom and at 320px wide**, without
+  horizontal scrolling.
+
 ## Verify Scripts and Tests
 
 * `scripts/`: `check-url-contract.mjs` and `check-links.mjs` with their
@@ -145,18 +203,5 @@ Expect him to rework code to his taste.
   `tests/routes.ts`, which both projects read. Posts and tags are not
   enumerated there: the URL contract already proves every path
   resolves.
-* **Contrast is enforced, so pick colors against the test, not by eye.**
-  Every text token clears AA 4.5:1 on all three grounds the site
-  composites: `--color-night`, `--color-surface`, and `bg-surface/40`
-  over night (`#0c0e10`, the footer). `--color-ink-faint` is the sole
-  exception, non-text strokes only at 3:1. Two things this catches that
-  reading the CSS does not: an alpha background composites to a ground
-  that is in no token, and an opacity utility multiplies against the
-  token so a passing color can still fail where it renders. axe also
-  truncates its ratio to two decimals, so a value computing to 4.499
-  reports as 4.49 and fails; leave margin rather than landing on 4.50.
-  `tests/a11y/axe.spec.ts` asserts on `incomplete` as well as
-  `violations`, because text on a gradient lands in `incomplete` and
-  would otherwise pass silently.
 * `.npmrc`'s `ignore-scripts` blocks Playwright's browser download, so
   a fresh clone needs `npx playwright install chromium`.

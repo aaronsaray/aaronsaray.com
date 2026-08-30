@@ -27,9 +27,13 @@
   /* Every text token clears AA 4.5:1 on all three grounds the site
      composites: night, surface, and surface/40 over night (#0c0e10,
      the footer). ink-faint is the exception, below the text bar and
-     good only for non-text strokes at 3:1. Opacity multiplies against
-     these, so a knocked-back token can still fail where the token
-     passes. tests/a11y/ checks the rendered result. */
+     good only for non-text strokes at 3:1.
+
+     Set text color from these tokens, never by knocking one back with
+     opacity or an alpha modifier: the rendered result is a color that
+     is in no palette and that no reading of the CSS predicts, and it
+     can fail where the token itself passes. tests/a11y/ checks what
+     actually renders. */
   --color-ink-mute: #777f8a;
   --color-ink-faint: #5d646d;
   --color-prose: #bfc5cc;
@@ -104,14 +108,12 @@ h3 {
 /* Nav's counterpart to the logo's drop-shadow: unseen against the page,
    it darkens blurred text passing under the bar. Stacked because one
    blurred shadow thins out on the diagonals and the glyph edge shows
-   through; four deep because the nav sits at opacity-60, which fades
-   the shadow along with the text. */
+   through. */
 .text-punch {
   text-shadow:
     0 0 3px var(--color-night),
     0 0 3px var(--color-night),
-    0 0 6px var(--color-night),
-    0 0 10px var(--color-night);
+    0 0 8px var(--color-night);
 }
 
 /* ============ Homepage motion ============ */
