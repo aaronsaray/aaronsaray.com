@@ -13,8 +13,5 @@
     ".astro/**",
     // Aaron's prose: tooling never touches it.
     "src/content/**",
-    // Design prototypes/reference: exempt from tooling, same as
-    // Prettier and ESLint.
-    ".design/**",
   ],
 }

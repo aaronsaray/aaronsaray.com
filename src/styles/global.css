@@ -20,9 +20,9 @@
 }
 
 @theme {
-  /* Palette per DESIGN.md. --color-prose is the article body color —
-     brighter than ink-dim for long-form reading, but below full ink so
-     headings still lead. */
+  /* --color-prose is the article body color: brighter than ink-dim
+     for long-form reading, but below full ink so headings still
+     lead. */
   --color-night: #0a0a0a;
   --color-surface: #10141a;
   --color-ink: #e7e9ec;
@@ -356,8 +356,8 @@ h3 {
 }
 
 /* ============ Entry-list excerpts ============
-   The rendered chunk before <!--more--> shown on blog/tag lists —
-   the design's "subtitle" slot, carrying real excerpt HTML. */
+   The rendered chunk before <!--more-->, shown on blog/tag entry
+   lists as real excerpt HTML. */
 .entry-excerpt {
   margin-top: 0.75rem;
   line-height: 1.625;

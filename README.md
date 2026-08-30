@@ -34,9 +34,8 @@ npm run verify        # check + build + URL contract + links + lint + format:che
 * **markdownlint** (`.markdownlint-cli2.jsonc`): `npm run lint:md`, also
   part of `verify`. `markdownlint-cli2` is a devDependency and the config
   (globs included) is in the repo, so no global install or home-directory
-  config is involved. It lints the doc markdown (README, DESIGN, CLAUDE);
-  `src/content/` and `.design/` are ignored, same policy as the other
-  tooling.
+  config is involved. It lints the doc markdown (README, CLAUDE);
+  `src/content/` is ignored, same policy as the other tooling.
 * **AI tooling** is declared in the repo so a fresh clone reconstructs it:
   * `.mcp.json` (committed): the official Astro Docs MCP server (remote
     HTTP, no auth) and the Playwright MCP for browser smoke passes. The
@@ -105,7 +104,6 @@ The rest of the post.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, Shiki theme).
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
-* `.design/` is the HTML design prototypes (visual reference).
 * `.migration/` is the URL contract fixture and verify scripts. `url-contract.txt` lists every URL the old site served; it never shrinks.
 
 ## URL Contract

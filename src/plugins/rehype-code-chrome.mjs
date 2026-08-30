@@ -1,8 +1,8 @@
 import { visit, SKIP } from "unist-util-visit";
 
-// Runs after Astro's Shiki pass. Two DOM shapes, matching
-// .design/blog-single.html exactly — the inline copy script depends on
-// them (`.filename-header` → nextElementSibling, `.code-wrap` →
+// Runs after Astro's Shiki pass. Emits two DOM shapes; the inline
+// copy script's element lookups depend on them exactly
+// (`.filename-header` → nextElementSibling, `.code-wrap` →
 // querySelector('pre')):
 //
 //  with data-filename (fence meta filename="…"):

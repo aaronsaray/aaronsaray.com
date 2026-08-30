@@ -11,7 +11,6 @@ export default tseslint.config(
       ".astro/",
       ".migration/hugo-baseline/",
       ".playwright-mcp/",
-      ".design/",
       "public/",
       "src/content/",
     ],

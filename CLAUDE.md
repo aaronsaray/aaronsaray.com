@@ -40,8 +40,8 @@ Expect him to rework code to his taste.
   it. Comments describe the code as it stands, never as a diff:
   anything that reads like a changelog ("now self-hosted", "was
   previously X") is wrong, and it rots the moment the surrounding code
-  moves. Rationale that matters to a human belongs in `DESIGN.md` or
-  `README.md`, not inline. Same bar in those docs: state what is true,
+  moves. Rationale that matters to a human belongs in `README.md`, not
+  inline. Same bar in those docs: state what is true,
   not what changed.
 * **Minimal JavaScript.** Static output; the default is zero JS on a
   page. Vue islands only when interactivity genuinely requires them.
@@ -62,7 +62,7 @@ Expect him to rework code to his taste.
   tailwindcss plugins), linting by ESLint flat config (recommended
   sets only, prettier-conflict rules disabled). Never hand-format
   against Prettier; run `npm run format`. Prettier and ESLint never
-  touch `src/content/`, `.design/`, `public/`, or any markdown.
+  touch `src/content/`, `public/`, or any markdown.
   Markdown is owned by markdownlint: `npm run lint:md`, repo-local
   config in `.markdownlint-cli2.jsonc` (do not use the home-directory
   config here). See README "Tooling".
@@ -100,22 +100,25 @@ Expect him to rework code to his taste.
   shape: guid = permalink, 10 items) and a hand-rolled `sitemap.xml`.
 * `src/plugins/`: the markdown pipeline. Shiki theme plus filename-meta
   transformer, code chrome, callouts (`:::callout`), table wrap,
-  figures, heading anchors. The code-block DOM shapes must match
-  `.design/blog-single.html` exactly; the inline copy script's element
-  lookups depend on them.
+  figures, heading anchors. The code-block DOM shapes and the inline
+  copy script are a matched pair; the script's element lookups depend
+  on the exact shapes the plugins emit.
 * `src/lib/`: excerpts (`<!--more-->` split, ~70-word fallback),
   reading time, date formatting, post sorting/pagination, OG image
   lookup, RSS rendering.
 * `public/`: served verbatim (`uploads/`, favicons, `_redirects`,
   `_headers`).
 
-## Design Reference
+## Design
 
-* `DESIGN.md`: the written design decisions. Read it before touching
-  anything visual.
-* `.design/`: plain-HTML prototypes, the visual reference for the
-  built site. Two knowing drifts: subtitles were scrapped (see
-  DESIGN.md reversals), and prototype copy is placeholder.
+* The built site is the design reference. Match the patterns already
+  in the components and `src/styles/global.css` for anything visual.
+* **Do not look AI-generated.** New visual work must avoid the default
+  AI aesthetic: decorative gradients, the blue-purple palette,
+  oversized rounded corners and pill shapes, icon-card grids ("4 of
+  something" panels), glowing status dots, too-bright glowy headlines.
+* Texture effects (gradient washes, scanline bands, radial glows):
+  at most one per page, never stacked.
 
 ## The `.migration/` Directory
 

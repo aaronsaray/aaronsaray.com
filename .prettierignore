@@ -4,7 +4,6 @@ dist/
 
 # Reference material and snapshots, never reformatted
 .migration/hugo-baseline/
-.design/
 
 # Static assets served verbatim
 public/

@@ -1,6 +1,6 @@
-// Sparse TextMate theme for Shiki, per DESIGN.md: desaturated,
-// near-monochrome, with the accent's brighter sibling doing keyword
-// duty. Mirrors the .tok-* palette from .design/blog-single.html.
+// Several hexes track the palette tokens in global.css by hand (bg =
+// --color-surface, comments = --color-ink-faint, keywords = the
+// accent's hover companion); a palette change there must be mirrored here.
 export const aaronsarayDark = {
   name: "aaronsaray-dark",
   type: "dark",
