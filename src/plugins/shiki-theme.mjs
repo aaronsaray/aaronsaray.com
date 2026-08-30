@@ -1,5 +1,5 @@
 // Several hexes track the palette tokens in global.css by hand (bg =
-// --color-surface, comments = --color-ink-faint, keywords = the
+// --color-surface, comments = --color-ink-mute-surface, keywords = the
 // accent's hover companion); a palette change there must be mirrored here.
 export const aaronsarayDark = {
   name: "aaronsaray-dark",
@@ -32,7 +32,7 @@ export const aaronsarayDark = {
     },
     {
       scope: ["comment"],
-      settings: { foreground: "#5d646d", fontStyle: "italic" },
+      settings: { foreground: "#767e8a", fontStyle: "italic" },
     },
   ],
 };

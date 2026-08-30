@@ -44,7 +44,7 @@ const showLaravelCta = entry.data.tags.includes("laravel");
 
     <!-- Meta line: date · read time · tags. No author (single-author site). -->
     <div
-      class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline pb-6 text-sm text-ink-faint"
+      class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline pb-6 text-sm text-ink-mute"
     >
       <span>{formatDate(entry.data.date)}</span>
       <span aria-hidden="true">&middot;</span>
@@ -64,7 +64,7 @@ const showLaravelCta = entry.data.tags.includes("laravel");
 
     {
       context && (
-        <div class="mt-6 flex flex-wrap items-center gap-2 text-sm text-ink-faint">
+        <div class="mt-6 flex flex-wrap items-center gap-2 text-sm text-ink-mute">
           <strong class="font-semibold text-ink-dim">Context:</strong>
           {context.map((item) => (
             <span class="border border-hairline bg-surface/50 px-2 py-1 whitespace-nowrap text-ink-dim">

@@ -35,7 +35,7 @@ const entries = await Promise.all(
           </a>
         </h2>
         <div class="entry-excerpt" set:html={excerpt} />
-        <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-faint">
+        <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-mute">
           <span>{formatDate(post.data.date)}</span>
           <span aria-hidden="true">&middot;</span>
           <span>{minutes} min read</span>
