@@ -50,7 +50,7 @@ Great points James. I'd like to add that while providers of web services (SOAP &
 
 In the case of critical web services, I often store a compressed copy of my request and their response alongside the data I've pulled out of the transaction for the flexibility it offers (maybe I'll use more of this transaction's data someday) and liability concerns.
 
-Finally, a question I have for the group - what practices do you follow regarding “internal” filtering and validating on a big system. With high cohesion you get an explosion of objects, each with public methods potentially being called from anywhere. When do you check parameter types and/or values? Or do you just let it fail? Type hinting's fine for objects, but what about primitives? Personally, I know some of my “gateway” methods that start a cascade of actions, so I'll make sure that I've at least got my parameters straight before I proceed with them so I don't have to do a giant rollback way down the call stack, but I've often wondered if it's overkill. 
+Finally, a question I have for the group - what practices do you follow regarding "internal" filtering and validating on a big system. With high cohesion you get an explosion of objects, each with public methods potentially being called from anywhere. When do you check parameter types and/or values? Or do you just let it fail? Type hinting's fine for objects, but what about primitives? Personally, I know some of my "gateway" methods that start a cascade of actions, so I'll make sure that I've at least got my parameters straight before I proceed with them so I don't have to do a giant rollback way down the call stack, but I've often wondered if it's overkill. 
 
 **[Aaron Saray](http://aaronsaray.com)**
 

@@ -10,7 +10,7 @@ This full-featured curriculum vitae details my development and management experi
 
 The preeminent showcase of Open Source Software is Github. You can find my repositories at [github.com/aaronsaray](https://github.com/aaronsaray).
 
-At Github, I’ve released various PHP and Javascript code including [Feedly Background Tab Chrome Extension](https://github.com/aaronsaray/feedlybackgroundtab), [Laravel Simple Feature Flags](https://github.com/aaronsaray/laravel-simple-feature), and [MadMimi PHP SDK](https://github.com/aaronsaray/madmimi-api-php). With over 50 public repositories, I am committed (PUN!) to OSS.
+At Github, I've released various PHP and Javascript code including [Feedly Background Tab Chrome Extension](https://github.com/aaronsaray/feedlybackgroundtab), [Laravel Simple Feature Flags](https://github.com/aaronsaray/laravel-simple-feature), and [MadMimi PHP SDK](https://github.com/aaronsaray/madmimi-api-php). With over 50 public repositories, I am committed (PUN!) to OSS.
 
 ## Community & Volunteering
 
@@ -112,7 +112,7 @@ Harnessing the Cloud for SaaS & Hosted Platforms *(11/11) Joomla Day Midwest, Mi
 
 PHP Design Patterns: Why? and How? *(8/11) Madison PHP Meetup, Madison, WI*
 
-Zend Filter: A Secure Man’s Best Friend *(7/11) Webinar: Zend.com*
+Zend Filter: A Secure Man's Best Friend *(7/11) Webinar: Zend.com*
 
 Introduction to MailChimp *(6/11) Waukesha Area Internet Marketing Meetup, Sussex, WI*
 
@@ -216,7 +216,7 @@ Jobshouts.com is a free job board built for employers, recruiters & job seekers 
 
 **Rogers Software Development. Fairbanks, AK (7/08 – 1/09)**  
 *Programmer 3*  
-As a full-time level 3 programmer, led beginner and intermediate level programmer teams in the development of Point of Sale solutions software utilizing PHP, MySQL and Javascript. Analyzed business requirements and translated into detailed technical specifications. Aided in the development of standards, code review and analysis. Migrated a legacy code base “back office” to the most up to date framework, then deployed it with version control for the first time since its inception. Reported directly to development manager.
+As a full-time level 3 programmer, led beginner and intermediate level programmer teams in the development of Point of Sale solutions software utilizing PHP, MySQL and Javascript. Analyzed business requirements and translated into detailed technical specifications. Aided in the development of standards, code review and analysis. Migrated a legacy code base "back office" to the most up to date framework, then deployed it with version control for the first time since its inception. Reported directly to development manager.
 
 **Delta Dental of Wisconsin. Stevens Point, WI (2/06 – 7/08)**  
 *Web Developer*  
@@ -224,4 +224,4 @@ Provided Business Analysis, documentation, design, development and management of
 
 **EZ-Net, Inc. Oconto Falls, WI (8/01 – 2/06)**  
 *Web Developer / Technical Support Supervisor*  
-EZ-Net is an ISP, offering a full range of internet, computer & network services and computer sales & service and consulting services. Full-time employment consisted of balancing two positions. Using LAMP stack, designed and developed internet and intranet interfaces, as well as maintained existing projects. Development and creation of scripting tools to perform system administration for internal sites and interfaced with billing systems. Managed all aDSL, cable and satellite internet service orders. Provided escalated support for complex technical issues and service disputes. Developed and authored a comprehensive troubleshooting guide which allowed full diagnosis support for new/existing internet installations as well as developed a custom setup kit which automatically configured end user’s equipment. Support included Windows 95/98/2000/NT, Mac OS 7 and above, select Netgear routers and Westell DSL modems for 5,000+ customer base. Provided documentation, research and development, customer service training, quality assurance and employee reviews.
+EZ-Net is an ISP, offering a full range of internet, computer & network services and computer sales & service and consulting services. Full-time employment consisted of balancing two positions. Using LAMP stack, designed and developed internet and intranet interfaces, as well as maintained existing projects. Development and creation of scripting tools to perform system administration for internal sites and interfaced with billing systems. Managed all aDSL, cable and satellite internet service orders. Provided escalated support for complex technical issues and service disputes. Developed and authored a comprehensive troubleshooting guide which allowed full diagnosis support for new/existing internet installations as well as developed a custom setup kit which automatically configured end user's equipment. Support included Windows 95/98/2000/NT, Mac OS 7 and above, select Netgear routers and Westell DSL modems for 5,000+ customer base. Provided documentation, research and development, customer service training, quality assurance and employee reviews.

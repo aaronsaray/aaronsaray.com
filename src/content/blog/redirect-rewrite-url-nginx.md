@@ -25,7 +25,7 @@ Note where the file is. We'll make changes to it soon.
 
 ## Configuring the Server Redirect
 
-For this example, we’re going to stick with a very common scenario that’s very simple.
+For this example, we're going to stick with a very common scenario that's very simple.
 
 We want to redirect **pets.com** to **https://bigboxstore.com/pets**  with a permanent 301 HTTP code.
 

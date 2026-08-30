@@ -10,9 +10,9 @@ Gathering requirements for a new project can get unwieldy and unorganized pretty
 
 No project is exactly the same, so it's very difficult to make an exact blueprint of the questions you need to ask. However, there are many common patterns and themes in most projects. I've created a set of questions that form the basis of my requirements gathering conversation and I'll share them below.
 
-If you’re a developer or consultant, you can use these to help you during your client conversations. I would suggest using them as a guide to create your own project-specific questionnaire or outline.
+If you're a developer or consultant, you can use these to help you during your client conversations. I would suggest using them as a guide to create your own project-specific questionnaire or outline.
 
-If you’re a prospective business client, you can follow along with this article to prepare for the likely questions that will be asked during the requirements gathering process.
+If you're a prospective business client, you can follow along with this article to prepare for the likely questions that will be asked during the requirements gathering process.
 
 ## What Questions Should I Ask?
 

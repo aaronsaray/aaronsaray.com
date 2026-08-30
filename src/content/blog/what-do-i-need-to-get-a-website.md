@@ -48,7 +48,7 @@ Finally, a hybrid exists: Web Developer.  This term generally is used to encompa
 
 With this in mind, if you're making a simple website with a few pages, you may want to pick a designer.  If you have a contact form or something simple like that, they might contract with another programmer to do the work for them.  If you're looking for a fully featured website, with many bits of interactivity, concise and attractive information presentation, and high impact, you'll want to contract a developer.
 
-You don't need to ask them what their ‘label' is – you will be able to determine this from their work portfolio for tips on what kind of professional they are.  If all else fails, present them with your requirements and see if they can make it happen.  Remember, if you don't feel comfortable with them, move on.
+You don't need to ask them what their 'label' is – you will be able to determine this from their work portfolio for tips on what kind of professional they are.  If all else fails, present them with your requirements and see if they can make it happen.  Remember, if you don't feel comfortable with them, move on.
 
 **Web Hosting**
 
@@ -76,7 +76,7 @@ Search engine submission services are not needed.  With the advanced technology 
 
 **Update Plan for your website**
 
-As your business changes, so might your products, portfolio, etc.  You have two options to keep your website up to date.  You could request a self-service website (commonly referred to as a “Content Management System” or “CMS”) or you could hire someone to make your changes when applicable.  There are pros and cons to each solution.
+As your business changes, so might your products, portfolio, etc.  You have two options to keep your website up to date.  You could request a self-service website (commonly referred to as a "Content Management System" or "CMS") or you could hire someone to make your changes when applicable.  There are pros and cons to each solution.
 
 When using a CMS, the initial development investment may be much higher.  You may also be required to invest more time initially learning the system, adding content, and formatting your words and pictures.  With a system like this, however, you are put into control of your website – you can make changes to it 24x7 – whenever you want to.
 

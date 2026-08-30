@@ -18,7 +18,7 @@ I always work locally when I design web pages. For example, when I worked on the
 I also suggest viewing the source of the myspace page and commenting / removing a specific javascript call:
 
 ```javascript
-oas_ad(“www.myspace.com/viewprofile,11013005″,”Leaderboard2”);
+oas_ad("www.myspace.com/viewprofile,11013005","Leaderboard2");
 ```
 
 This appears to generate the top ad on your profile. I found it better and easier on my eyes to take a screenshot of the ad, and use that.
@@ -29,7 +29,7 @@ You have to keep the ad at the top; that's why I suggested taking a screenshot. 
 
 ## What SHOULD I keep?
 
-Because MySpace users are normally used to having the links at the top of the page, its a good idea to keep some of them there. I personally use the ‘Home' and ‘Search' links a lot. I also appreciate ‘Music' so I've kept that one there as well. If you were to remove all of these links, your visitors may not want to come back. People tend to feel ‘trapped' on a page if the layout/functionality changes too much.
+Because MySpace users are normally used to having the links at the top of the page, its a good idea to keep some of them there. I personally use the 'Home' and 'Search' links a lot. I also appreciate 'Music' so I've kept that one there as well. If you were to remove all of these links, your visitors may not want to come back. People tend to feel 'trapped' on a page if the layout/functionality changes too much.
 
 ## Customizing the Current Layout vs Creating a New One
 
@@ -43,7 +43,7 @@ New Layout Pros: Completely customize the user experience – you can control al
 
 First, you have to determine where to put your CSS and where to put your HTML. YOu could put it all in one section, but I chose to split mine up. ALWAYS put your CSS first, however. This allows the browser to read it in and then apply the style immediately to HTML its rendering. If you do it the other way, there's a small chance to see a jumpy page.
 
-Remember, we're developing locally – so open up your copy of your profile. I put my CSS in the ‘About Me' section.
+Remember, we're developing locally – so open up your copy of your profile. I put my CSS in the 'About Me' section.
 
 The first CSS I added is this:
 
@@ -86,7 +86,7 @@ Next, the equivalent HTML (in the Who I'd like to meet section)
 </div>
 ```
 
-This matches up with the css. The ‘content here' comment would be where you'd start stashing all of your content.
+This matches up with the css. The 'content here' comment would be where you'd start stashing all of your content.
 
 ## Comments still show through?
 

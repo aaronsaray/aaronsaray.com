@@ -10,7 +10,7 @@ tags:
 I've migrated the website 33thingsbook.com to this blog post.
 :::
 
-A programmer’s guide to quality code, great work relationships and respect.
+A programmer's guide to quality code, great work relationships and respect.
 
 <!--more-->
 

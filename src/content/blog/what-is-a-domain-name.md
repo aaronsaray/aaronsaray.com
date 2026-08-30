@@ -20,7 +20,7 @@ Every computer on the internet has a numeric address assigned to it.  It is far 
 
 **What are the restrictions and types?**
 
-The most common domain name ends with ‘.com.'  You might also be familiar with .net, .org, .co.uk, .info, .biz – the list goes on and on.  The domain name has to be 255 characters or less.  There are other restrictions on certain domain names – such as .gov has to be a verified government entity.  Finally, they can only contain certain special non-alphanumeric characters.  Generally speaking, most people with commercial business entities online choose .com (dot com for commercial).  Others may also choose .net.  Organizations and non profits tend to choose .org.  The .com is the most popular domain name type.
+The most common domain name ends with '.com.'  You might also be familiar with .net, .org, .co.uk, .info, .biz – the list goes on and on.  The domain name has to be 255 characters or less.  There are other restrictions on certain domain names – such as .gov has to be a verified government entity.  Finally, they can only contain certain special non-alphanumeric characters.  Generally speaking, most people with commercial business entities online choose .com (dot com for commercial).  Others may also choose .net.  Organizations and non profits tend to choose .org.  The .com is the most popular domain name type.
 
 **Do I Own the Domain Name?**
 
@@ -38,7 +38,7 @@ _xyz.com_ – awesome – probably taken because it is so small – but would be
 
 _xyzstairsanddoors.com_ – the full company name.  Highly targeted.
 
-_xyzstairsndoors.com_ – users might type in ‘and' instead of ‘n'
+_xyzstairsndoors.com_ – users might type in 'and' instead of 'n'
 
 _newstairsanddoors.com_ – North Eastern Wisconsin is commonly abbreviated as NEW – so this is targeted.
 
