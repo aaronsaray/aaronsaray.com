@@ -112,14 +112,25 @@ h3 {
 
    The ramp runs bottom-to-top: sharp where content emerges below the
    bar, blurriest at the top where it has travelled furthest under.
-   Reversed, it reads as a smudge on the glass instead of distance. */
+   Reversed, it reads as a smudge on the glass instead of distance.
+
+   The weakest layer fades in at its own bottom rather than starting
+   opaque. Holding it at full strength to the element's edge steps
+   straight from 1px blur to none, which is visible as a line across
+   the page even though the radius is small. */
 .progressive-blur > div {
   position: absolute;
   inset: 0;
 }
 .progressive-blur > div:nth-child(1) {
   backdrop-filter: blur(1px);
-  mask-image: linear-gradient(to top, black 0%, black 25%, transparent 50%);
+  mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    black 12%,
+    black 30%,
+    transparent 50%
+  );
 }
 .progressive-blur > div:nth-child(2) {
   backdrop-filter: blur(2px);
