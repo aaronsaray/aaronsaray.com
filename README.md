@@ -157,13 +157,14 @@ The rest of the post.
 
 * Link to another post by its final URL (`/2023/some-slug/`). The link checker in verify catches typos.
 * Images are plain markdown: `![Alt Text](/uploads/2026/file.png)`. A lone image renders as a framed figure. Thumbnail linking to a full asset: `<a href="/uploads/2026/full.pdf"><img src="/uploads/2026/thumb.jpg" alt="Alt Text"></a>`.
+* Image `width`/`height` are never authored. `rehype-img-attrs` reads every local image at build (through Astro's own `imageMetadata` helper, so no extra dependency) and stamps its real dimensions, so a new image needs nothing beyond the markdown above. Reserving the box is what stops the article reflowing as images load.
 * YouTube: `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/VIDEOID" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>`
 
 ## Layout
 
 * `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv and contact bodies.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
-* `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, Shiki theme).
+* `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme).
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
 * `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every URL the site has ever served; it never shrinks.
 * `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read.
@@ -176,7 +177,11 @@ Blog permalinks are `/:year/:slug/`. Every URL the Hugo site ever served must ke
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] Stamp `width`/`height` attributes on content images (the remaining CLS gap; they currently reflow the article as they load). Mechanical rehype transform, but needs a build-time image dimension probe first: decide on the `image-size` npm package or similar.
+* [ ] Retire the thumbnail-link images. 116 references across 52 posts use the migrated `<a href="full"><img src="thumb"></a>` shape, a 2007-era bandwidth optimization that recent posts already skip. Point them at the full asset so the corpus is consistent, then delete the orphaned `.thumbnail.*` files. Survey before changing anything:
+  * Whether any `.thumbnail.*` path appears in `scripts/url-contract.txt`. Repointing a post is free; deleting a file the contract still promises is not.
+  * Which images would look worse at full column width. Some are full-IDE screenshots that are unreadable at 640px, where the thumbnail plus click-to-enlarge is the better experience. Expect this to be post-by-post, not a bulk transform.
+  * Whether any of the wrapping links have an empty `alt` on their image. Today the `alt` is the link's only accessible name, so an empty one is a link with no name at all: a real bug worth fixing while in there.
+  * `rehype-img-attrs` needs no changes either way; it stamps whatever `src` it finds.
 * [ ] Home page concept ("productive tension"): replace the two middle sections (belief grid and "How I can help") with one connected editorial system instead of rewriting each in place. Rewriting them separately preserves their disconnect: slogans followed by a service menu. The replacement shows what Aaron thinks and how that thinking informs the work, since his distinctive value is operating between competing concerns (code and business, developers and managers, speed and durability, confidence and humility, conflict and cohesion).
   * Promising form: paired rows. Each row holds a real tension Aaron has written about, the existing essay that argues it, and the part of the practice it informs (programming, coaching, technical leadership, business advising). Two poles on either side of a thin accent seam (borrowing the blue and off-white relationship in the AS mark), stacking cleanly on small screens. Composition stays static: the interest comes from the connection, not motion. The seam is a candidate for the site-wide "selected/active" motif (see the active-nav item) and may extend to curated topic pages, but should not be forced into every component or explained literally in copy.
   * Build the first version from existing essays, no new writing required. Candidates to compare (pick roughly three or four): Solving the Problem, Not the Solution (2011); Developer Time vs Manager Time (2020); Engineering Managers Must Embrace Conflict (2021); Have Informed Opinions (2019); How Writing Good-Quality Code Reduces Expenses (2017); 3 Reasons to Stop Calling Your Dev Team a Family (2021); Self Reflection as a Manager (2023).
