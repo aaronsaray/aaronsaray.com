@@ -138,6 +138,24 @@ Expect him to rework code to his taste.
 
 * The built site is the design reference. Match the patterns already
   in the components and `src/styles/global.css` for anything visual.
+* **Where a style lives.** Styles have exactly two homes: Tailwind
+  utilities on the element, or `src/styles/global.css`. No `<style>`
+  blocks in components. Pick by asking, in order:
+  * Used in one place? Utilities on the element, including `hover:`,
+    `group-*:`, and `motion-reduce:` variants. A rule with a class
+    name that appears in one template is a global.css rule that
+    should have been utilities.
+  * The same utility stack in more than one template? One
+    `@utility` in global.css (`page-title` is the model), never a
+    copied class string. Keyframes go in `@theme` as `--animate-*`.
+  * Styling markup the templates never author (the markdown
+    pipeline's output: `.prose`, `.entry-excerpt`, the code chrome)?
+    Element rules in global.css. Plugins emit the class hooks;
+    global.css styles them.
+  * Still in global.css for another reason (the header blur, whose
+    four masks only read as one ramp side by side)? One line at the
+    top of the block saying why. Without that line, the next audit
+    inlines it.
 * **Do not look AI-generated.** New visual work must avoid the default
   AI aesthetic: decorative gradients, the blue-purple palette,
   oversized rounded corners and pill shapes, icon-card grids ("4 of

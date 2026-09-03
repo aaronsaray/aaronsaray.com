@@ -45,14 +45,17 @@ const showLaravelCta = entry.data.tags.includes("laravel");
          stay hidden until hover or focus without withholding anything:
          a reader who never finds it loses no destination. The h2/h3
          anchors are always visible because those do reach somewhere
-         otherwise unreachable. */
+         otherwise unreachable. The link color never changes: on a page
+         whose other headings are plain, a title that lit up would read
+         as navigation elsewhere. The icon carries the affordance. */
     }
-    <h1
-      class="font-display text-4xl leading-tight font-semibold text-white sm:text-5xl"
-    >
-      <a href={postHref(entry)} class="title-self-link">
+    <h1 class="page-title">
+      <a href={postHref(entry)} class="group text-inherit no-underline">
         {entry.data.title}
-        <Icon name="link" class="title-self-icon" />
+        <Icon
+          name="link"
+          class="ml-[0.35em] inline-block size-[0.5em] text-ink-faint opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none"
+        />
       </a>
     </h1>
 

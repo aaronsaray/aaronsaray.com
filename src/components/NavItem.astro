@@ -42,7 +42,8 @@ const rule = ["border-b", active ? "border-accent-dim" : "border-transparent"];
 
 // py + negative my on the bar controls: 24px+ touch targets without
 // changing the visual layout.
-const bar = "text-punch -my-1.5 py-1.5 transition-colors";
+const bar =
+  "-my-1.5 py-1.5 transition-colors text-shadow-[0_0_3px_var(--color-night),0_0_3px_var(--color-night),0_0_8px_var(--color-night)]";
 
 const kind = nested ? "panel" : item.children ? "section" : "link";
 const panelId = `nav-menu-${item.text.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;

@@ -178,9 +178,9 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] compare global.css for things that could be tailwind inlined - things only used one time?
-* [ ] content section like http://localhost:4321/who-am-i/ needs to be full height - or strech - because the foote rdoesn't hit the bottom
-* [ ] remove dumb obvious comments like this /* Zero-offset black halo: nothing to see against the page, but it darkens blurred text passing under the mark. */
+* [ ] content section like <http://localhost:4321/who-am-i/> needs to be full height - or strech - because the foote rdoesn't hit the bottom
+* [ ] remove dumb obvious comments like this `/* Zero-offset black halo: nothing to see against the page, but it darkens blurred text passing under the mark. */`
+* [ ] rewrite the readme to sections of design, review, and writing. design first, writing next, and review finally
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
 * [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
 * [ ] Performance and SEO checks. Accessibility is covered by the axe project in `tests/a11y/`; these two are not. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.

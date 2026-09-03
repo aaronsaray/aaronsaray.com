@@ -45,6 +45,23 @@
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-mono:
     ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  --animate-drift-down: drift-down 3s ease-in-out infinite;
+  @keyframes drift-down {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.55;
+    }
+    50% {
+      transform: translateY(3px);
+      opacity: 1;
+    }
+  }
+}
+
+@utility page-title {
+  @apply font-display text-4xl leading-tight font-semibold text-white sm:text-5xl;
 }
 
 /* Scrollbar: muted, but clears 3:1 against its track. */
@@ -98,6 +115,9 @@ h3 {
 }
 
 /* ============ Header progressive blur ============
+   Lives here, not in Header.astro: the four masks only read as one
+   ramp when they sit side by side.
+
    One blur masked by a gradient cannot do this: filters run over the
    whole buffer and the mask applies to the result, so it crossfades
    between sharp and uniformly blurred instead of ramping the radius.
@@ -169,65 +189,6 @@ h3 {
   }
 }
 
-/* Post title self-link. Color never changes: on a page whose other
-   headings are plain, a title that lit up would read as navigation to
-   somewhere else. The icon carries the affordance instead. */
-.title-self-link {
-  color: inherit;
-  text-decoration: none;
-}
-.title-self-icon {
-  display: inline-block;
-  width: 0.5em;
-  height: 0.5em;
-  margin-left: 0.35em;
-  color: var(--color-ink-faint);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.title-self-link:hover .title-self-icon,
-.title-self-link:focus-visible .title-self-icon {
-  opacity: 1;
-}
-@media (prefers-reduced-motion: reduce) {
-  .title-self-icon {
-    transition: none;
-  }
-}
-
-/* Nav's counterpart to the logo's drop-shadow: unseen against the page,
-   it darkens blurred text passing under the bar. Stacked because one
-   blurred shadow thins out on the diagonals and the glyph edge shows
-   through. */
-.text-punch {
-  text-shadow:
-    0 0 3px var(--color-night),
-    0 0 3px var(--color-night),
-    0 0 8px var(--color-night);
-}
-
-/* ============ Homepage motion ============ */
-@keyframes drift-down {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.55;
-  }
-  50% {
-    transform: translateY(3px);
-    opacity: 1;
-  }
-}
-.scroll-cue {
-  animation: drift-down 3s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-cue {
-    animation: none;
-  }
-}
-
 /* ============ Article reading treatment ============
    Written as element rules because the markdown pipeline emits bare
    elements. */
@@ -251,7 +212,7 @@ h3 {
 /* A body-authored H1 (cv/contact keep their own) gets the same
    treatment as page titles. */
 .prose h1 {
-  @apply font-display text-4xl leading-tight font-semibold text-white sm:text-5xl;
+  @apply page-title;
 }
 
 .prose h2 {
@@ -319,11 +280,11 @@ h3 {
   list-style: circle;
 }
 
-.prose strong {
+:is(.prose, .entry-excerpt) strong {
   @apply font-semibold text-ink;
 }
 
-.prose code {
+:is(.prose, .entry-excerpt) code {
   @apply bg-surface font-mono text-ink;
   font-size: 0.875em;
   padding: 0.125rem 0.375rem;
@@ -338,7 +299,7 @@ h3 {
   padding: 1rem 1.25rem;
   line-height: 1.7;
 }
-.prose pre code {
+:is(.prose, .entry-excerpt) pre code {
   background: transparent;
   border: 0;
   padding: 0;
@@ -468,25 +429,11 @@ h3 {
 .entry-excerpt > * + * {
   margin-top: 0.75rem;
 }
-.entry-excerpt strong {
-  @apply font-semibold text-ink;
-}
-.entry-excerpt code {
-  @apply bg-surface font-mono;
-  font-size: 0.875em;
-  padding: 0.0625rem 0.25rem;
-  border: 1px solid var(--color-hairline);
-}
 .entry-excerpt pre {
   @apply overflow-x-auto border border-hairline bg-surface;
   padding: 0.75rem 1rem;
   font-size: 0.8125rem;
   line-height: 1.7;
-}
-.entry-excerpt pre code {
-  background: transparent;
-  border: 0;
-  padding: 0;
 }
 .entry-excerpt img {
   max-width: 100%;
