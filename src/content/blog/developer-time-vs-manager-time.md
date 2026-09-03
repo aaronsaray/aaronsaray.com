@@ -4,6 +4,7 @@ date: "2020-10-05"
 tags:
   - business
   - management
+evergreen: true
 ---
 A full calendar, hours on the phone, work into the night and a never-ending deluge of emails: the typical Dev Manager's life. Time is precious and scarce. It's also very fluid. You're jumping from thing to thing; meetings get pushed and calls are rushed. It's not ideal, but it seems to be the only way you can get to all of the things that need your attention.
 

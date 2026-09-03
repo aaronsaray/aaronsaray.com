@@ -4,6 +4,7 @@ date: "2023-12-12T13:10:52-06:00"
 tags:
   - business
   - management
+evergreen: true
 ---
 Sometimes when I get called in to help a dev manager straighten up their team, I face a lot of resistance.  But there's hope. I have a solution!
 

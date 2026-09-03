@@ -3,6 +3,7 @@ title: What Type of Contractor are You Hiring?
 date: "2025-01-14T17:55:15-06:00"
 tags:
   - business
+evergreen: true
 ---
 
 What type of contractor are you hiring? That's a question you should be asking yourself - and them - before you pull the trigger. Let me expand on the reason for this...

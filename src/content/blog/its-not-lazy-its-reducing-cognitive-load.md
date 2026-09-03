@@ -4,6 +4,7 @@ date: "2021-06-14"
 tags:
   - business
   - programming
+evergreen: true
 ---
 There's a common joke among programmers: I'm so lazy that I made this script to automate these tasks.  Efficiency and process are prized, but also sometimes mocked and ridiculed.  So, are programmers actually lazy - or is there something deeper here - have they been mislabeling something else?
 

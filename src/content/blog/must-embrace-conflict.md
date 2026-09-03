@@ -4,6 +4,7 @@ date: "2021-07-08"
 tags:
   - business
   - management
+evergreen: true
 ---
 Conflict seems like a dirty word. After all, we don't want to have fights at work, right? For managers, reducing conflict seems to be the best choice. But is it?
 

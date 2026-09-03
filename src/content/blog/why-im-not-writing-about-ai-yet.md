@@ -3,6 +3,7 @@ title: Why Im Not Writing About AI Yet
 date: "2026-02-18T15:29:34-06:00"
 tags:
   - programming
+evergreen: true
 ---
 AI is everywhere - and it has been for the last months... the last year(s)... I even use it now a lot as a tool for my development. So why haven't I published AI guidance or written about it at all?
 

@@ -264,11 +264,11 @@ h3 {
 }
 
 /* Underline color deliberately differs from the link text. */
-.prose a {
+:is(.prose, .entry-excerpt, .role-copy) a {
   @apply text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300;
   text-decoration-thickness: 1px;
 }
-.prose a:hover {
+:is(.prose, .entry-excerpt, .role-copy) a:hover {
   @apply text-white decoration-accent;
 }
 
@@ -467,13 +467,6 @@ h3 {
 }
 .entry-excerpt > * + * {
   margin-top: 0.75rem;
-}
-.entry-excerpt a {
-  @apply text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300;
-  text-decoration-thickness: 1px;
-}
-.entry-excerpt a:hover {
-  @apply text-white decoration-accent;
 }
 .entry-excerpt strong {
   @apply font-semibold text-ink;

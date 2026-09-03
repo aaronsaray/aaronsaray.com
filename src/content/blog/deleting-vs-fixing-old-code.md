@@ -4,6 +4,7 @@ date: "2022-03-02"
 tags:
   - programming
   - business
+evergreen: true
 ---
 One of the most painful things for programmers - whether you're in a startup or an established business - is leaving code alone that you know could be better. That should be better.  There are reasons for this - but what about when it comes to deleting code?
 

@@ -1,15 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
 
+// AI-GENERATED PLACEHOLDER: title and description. Aaron rewrites.
+const title = "Engineering Coach, Developer, and CTO";
 const description =
-  "Open Source Consultant specializing in building effective software for startups and SMBs.";
+  "Aaron Saray coaches engineering managers and developers, builds software that stays simple, and leads as a CTO who puts communication first.";
 ---
 
-<Base
-  title="Milwaukee Web Developer, PHP and Laravel Programmer, Consultant"
-  description={description}
-  overlayHeader
->
+<Base title={title} description={description} overlayHeader>
   {/* Landmark wrapper: every other page's template supplies <main>. */}
   <main id="main">
     <!-- ============ Hero: full viewport, left-aligned ============ -->
@@ -58,10 +56,10 @@ const description =
         </p>
       </div>
 
-      <!-- Whole cue is a link to the beliefs section. Deliberately no
+      <!-- Whole cue is a link to the roles section. Deliberately no
          hover styling: only the cursor gives it away. -->
       <div class="absolute inset-x-0 bottom-8 flex justify-center">
-        <a href="#beliefs" class="flex flex-col items-center gap-2">
+        <a href="#how" class="flex flex-col items-center gap-2">
           <p class="text-base text-ink-mute sm:text-lg">let me show you how</p>
           <!-- Tabler: chevron-down -->
           <svg
@@ -81,159 +79,158 @@ const description =
       </div>
     </section>
 
-    <!-- ============ Beliefs / manifesto ============ -->
-    <!-- AI-GENERATED PLACEHOLDER COPY throughout this section (from the
-       design prototype). Statements need Aaron's voice. -->
-    <section id="beliefs" class="scroll-mt-20 border-t border-hairline">
-      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">
-          What I believe
-        </h2>
-
+    <!-- ============ Roles ============ -->
+    <!-- AI-GENERATED PLACEHOLDER COPY throughout this section: belief
+       statements, paragraphs, and link text. Aaron rewrites. -->
+    <section id="how" class="scroll-mt-20 border-t border-hairline">
+      <div class="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
         <div
-          class="mt-12 grid grid-cols-1 gap-x-10 gap-y-14 sm:mt-16 md:grid-cols-2 lg:grid-cols-3"
+          class="grid grid-cols-1 gap-y-4 border-b border-hairline py-12 last:border-b-0 md:grid-cols-[1fr_2fr] md:gap-x-12"
         >
-          <div>
+          <h2
+            class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+          >
+            As a coach
+          </h2>
+          <div class="role-copy">
             <p
-              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+              class="font-display text-2xl leading-snug font-semibold text-white"
             >
-              #01
+              Good teams are managed on purpose.
             </p>
-            <p
-              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-            >
-              Working software beats perfect plans.
+            <p class="mt-5 max-w-prose leading-relaxed text-ink-dim">
+              I coach engineering managers, and the developers who report to
+              them. The pattern I run into most is a manager who has already
+              decided what will not work: <a
+                href="/2023/self-reflection-as-a-manager/"
+                >&ldquo;we tried that before&rdquo;</a
+              > is usually about the manager, not the idea.
             </p>
-          </div>
-          <div>
-            <p
-              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-            >
-              #02
-            </p>
-            <p
-              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-            >
-              Code is read far more often than it's written.
-            </p>
-          </div>
-          <div>
-            <p
-              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-            >
-              #03
-            </p>
-            <p
-              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-            >
-              Simple is harder than clever, and worth it.
+            <p class="mt-5 max-w-prose leading-relaxed text-ink-dim">
+              Managing well means <a href="/2021/must-embrace-conflict/"
+                >embracing conflict instead of smoothing it over</a
+              >, <a href="/2020/developer-time-vs-manager-time/"
+                >protecting the blocks of time developers need</a
+              >, and letting people build the wrong thing first, because <a
+                href="/2026/reinventing-the-wheel-is-how-you-learn/"
+                >reinventing the wheel is how you learn</a
+              >.
             </p>
           </div>
-          <div>
+        </div>
+        <div
+          class="grid grid-cols-1 gap-y-4 border-b border-hairline py-12 last:border-b-0 md:grid-cols-[1fr_2fr] md:gap-x-12"
+        >
+          <h2
+            class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+          >
+            As a developer
+          </h2>
+          <div class="role-copy">
             <p
-              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+              class="font-display text-2xl leading-snug font-semibold text-white"
             >
-              #04
+              Simple, boring, and shipped beats clever.
             </p>
-            <p
-              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-            >
-              The best tool is the one your team can maintain.
+            <p class="mt-5 max-w-prose leading-relaxed text-ink-dim">
+              I have written PHP for most of my career, and the longer I do it,
+              the less code I want to keep. I <a
+                href="/2023/an-argument-for-keeping-your-project-simple/"
+                >argue against abstraction you have not earned</a
+              >, <a href="/2022/deleting-vs-fixing-old-code/"
+                >delete dead code on sight</a
+              >, and treat automation as <a
+                href="/2021/its-not-lazy-its-reducing-cognitive-load/"
+                >reducing cognitive load, not laziness</a
+              >.
+            </p>
+            <p class="mt-5 max-w-prose leading-relaxed text-ink-dim">
+              New tools get a fair trial before they get a verdict, because <a
+                href="/2019/have-informed-opinions/"
+                >opinions should be informed</a
+              >, and <a href="/2026/why-im-not-writing-about-ai-yet/"
+                >AI is getting the same trial</a
+              >.
             </p>
           </div>
-          <div>
+        </div>
+        <div
+          class="grid grid-cols-1 gap-y-4 border-b border-hairline py-12 last:border-b-0 md:grid-cols-[1fr_2fr] md:gap-x-12"
+        >
+          <h2
+            class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
+          >
+            As a CTO
+          </h2>
+          <div class="role-copy">
             <p
-              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
+              class="font-display text-2xl leading-snug font-semibold text-white"
             >
-              #05
+              The real work is the bridge between the tech team and the rest of
+              the C&#8209;suite.
             </p>
-            <p
-              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-            >
-              Ship small. Ship often. Learn faster.
+            <p class="mt-5 max-w-prose leading-relaxed text-ink-dim">
+              Hands on code is about a fifth of the job. The rest is
+              communication, guidance, priorities, and <a
+                href="/2026/the-cto-is-a-communicator-first/"
+                >laying out the consequence of every choice</a
+              > so decision makers can decide with their eyes open.
             </p>
-          </div>
-          <div>
-            <p
-              class="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-            >
-              #06
-            </p>
-            <p
-              class="mt-4 font-display text-2xl leading-snug font-semibold text-white"
-            >
-              Tools change. Fundamentals compound.
+            <p class="mt-5 max-w-prose leading-relaxed text-ink-dim">
+              For a business without a technical leader, that starts with <a
+                href="/2021/what-non-it-startup-founders-need-to-know/"
+                >what a non-technical founder needs to know</a
+              >, <a href="/2025/what-type-of-contractor-are-you-hiring/"
+                >which kind of contractor you are actually hiring</a
+              >, and the oldest lesson on this site: <a
+                href="/2011/solving-the-problem-not-the-solution/"
+                >bring me the problem, not the solution</a
+              >.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ How I can help ============ -->
-    <!-- AI-GENERATED PLACEHOLDER COPY throughout this section (from the
-       design prototype). Needs Aaron's voice. Style is an editorial
-       index: full-width rows, hairline separators. Deliberately unlike
-       the beliefs grid (serif cards) and the footer (bordered CTA
-       boxes + columns). -->
+    <!-- ============ Close ============ -->
+    <!-- AI-GENERATED PLACEHOLDER COPY: headline, paragraph, and link
+       text. Aaron rewrites. -->
+    <!-- Bookends the hero: same heavy sans and off-white, one link, no box. -->
     <section class="border-t border-hairline">
-      <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">
-          How I can help
-        </h2>
-
-        <div class="mt-12 sm:mt-16">
-          <div
-            class="grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
-          >
-            <h3
-              class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
-            >
-              As a programmer
-            </h3>
-            <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
-              Contract development, mostly PHP and Laravel. I join your
-              codebase, ship working software, and leave the code better than I
-              found it.
-            </p>
-          </div>
-          <div
-            class="grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
-          >
-            <h3
-              class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
-            >
-              As a coach
-            </h3>
-            <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
-              For developers and for managers. I work on how your team builds,
-              not just what it builds: the habits, the process, the
-              communication.
-            </p>
-          </div>
-          <div
-            class="grid grid-cols-1 gap-y-3 border-t border-hairline py-10 md:grid-cols-[1fr_2fr] md:gap-x-12"
-          >
-            <h3
-              class="font-display text-2xl leading-snug font-semibold text-white sm:text-3xl"
-            >
-              As a CTO
-            </h3>
-            <p class="max-w-prose leading-relaxed text-ink-dim md:mt-1.5">
-              Technical leadership when you need it: the architecture, the
-              hiring, and the hard calls in between, from someone who has run
-              the team and written the code.
-            </p>
-          </div>
-        </div>
-
-        <!-- Two-tone kicker: used once, where it earns it -->
-        <p
-          class="mt-10 text-xl font-bold tracking-[-0.01em] text-ink-mute sm:text-2xl"
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-36">
+        <h2
+          class="max-w-4xl text-[clamp(2rem,5.5vw,4.5rem)] leading-[1.02] font-black tracking-[-0.03em] text-[#dfe2e6]"
         >
-          Different hat, same result: <span class="text-ink"
-            >things get better.</span
-          >
+          I want what's best for your project. Not for me.
+        </h2>
+        <p
+          class="mt-8 max-w-prose text-lg leading-relaxed text-ink-dim sm:text-xl"
+        >
+          My opinions come from facts and from trial and error, and they change
+          when the facts do. Bring me the problem and I'll tell you which of
+          those three you need. If it's none of them, I'll say that too.
         </p>
+        <a
+          href="/contact/"
+          class="mt-10 inline-flex items-center gap-3 text-lg font-semibold text-ink transition-colors duration-300 hover:text-white sm:text-xl"
+        >
+          Say hello
+          <!-- Tabler: arrow-right -->
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-5 shrink-0"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path
+              d="M13 6l6 6"></path>
+          </svg>
+        </a>
       </div>
     </section>
   </main>

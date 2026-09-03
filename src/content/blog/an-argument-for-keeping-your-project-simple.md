@@ -4,6 +4,7 @@ date: "2023-05-22T07:59:33-05:00"
 tags:
   - business
   - programming
+evergreen: true
 ---
 Awesome. You used interfaces so you can abstract out the dependencies and swap services. Your database queries are all built with an ORM that is database agnostic. You don't rely on anything special with your servers/cloud. You did it! You now have a project that retains the business logic while allowing all the technical aspects to be loosely coupled! But should you have done it?!
 
