@@ -10,8 +10,8 @@ So I tried my very first photoshop touch up of a girl I found online.  Turns out
 
 ## Before
 
-<a href="/uploads/2009/before.jpg"><img src="/uploads/2009/before-275x300.jpg" alt="Before"></a>
+[![Before](/uploads/2009/before.jpg)](/uploads/2009/before.jpg)
 
 ## After
 
-<a href="/uploads/2009/after.jpg"><img src="/uploads/2009/after-275x300.jpg" alt="After"></a>
+[![After](/uploads/2009/after.jpg)](/uploads/2009/after.jpg)

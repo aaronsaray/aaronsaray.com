@@ -24,7 +24,7 @@ Now, let's check it out.
 
 My goals were simple:
 
-<a href="/uploads/2013/1.png"><img src="/uploads/2013/1-300x140.png" alt="First Screen"></a>
+[![First Screen](/uploads/2013/1.png)](/uploads/2013/1.png)
 
 - No flash / use HTML5 only
 - Minimal amount of javascript: don't you DARE import jQuery if you don't need to
@@ -79,7 +79,7 @@ The first part of the HTML document is as follows:
 
 First, the class of `modal` and `needAllow` are on the body.  The modal that is used for this application is purely css.  It activates/deactivates based on the classes on the body.  We'll look at that more in the css and the javascript.  Next of course is the header.  I have this separate because I'm not going to blur out the header with the modal - just the body content.
 
-<a href="/uploads/2013/2.png"><img src="/uploads/2013/2-300x146.png" alt="Second Screen"></a>
+[![Second Screen](/uploads/2013/2.png)](/uploads/2013/2.png)
 
 Following that is the video.  You'll see that the video element is set to autoplay.  If this is not true, when you send webcam to it, it will still require you to click 'play' to show the content.  Below that is a hint to take a screenshot.  When the user hovers over the video with the mouse, the icon changes to a small camera, and a click handler watches for a click.  You'll see that in the css and javascript.
 
@@ -112,7 +112,7 @@ The next section of the HTML document has the content for when a screenshot is t
 
 The canvas element is where the captured screenshot will go.  Then, the input field allows the user to name the file before they download it.  If its not changed, the placeholder content is used for the filename.  The download button allows the user to download.  At the very bottom, the `closeScreenshot` link is put in the top righthand corner to close the screenshot.  Fun fact: it also resets all the content on this page when that happens.
 
-<a href="/uploads/2013/3.png"><img src="/uploads/2013/3-300x135.png" alt="Third screen"></a>
+[![Third screen](/uploads/2013/3.png)](/uploads/2013/3.png)
 
 The screenshot decoration div allows for a list of draggable items that can be placed on the canvas.  You'll notice its using the HTML5 draggable attribute.  This allows drag handlers to be written so that no additional javascript libraries are required.  I initially wanted the image to also be `contentEditable` - but in Chrome, there is a bug that does not allow images to get resize handles when applied this.  Most editors have a work around for that.  Instead, I added a mousewheel handler to this to handle resizing.  More on that later.
 

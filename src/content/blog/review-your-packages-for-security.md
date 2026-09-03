@@ -16,7 +16,7 @@ It's important to note that this attack vector is not solely a problem with Lara
 
 I have a website on which I sell shoes.  For example, I have this extremely boring listing for a pair of flip flops:
 
-<a href="/uploads/2019/security-demo-1.png"><img src="/uploads/2019/security-demo-1.thumbnail.png" alt="Text-based Stars"></a>
+[![Text-based Stars](/uploads/2019/security-demo-1.png)](/uploads/2019/security-demo-1.png)
 
 I'd like to add icon-style stars to the rating.  I heard about this awesome package that allows me to use a Blade directive to do that.  Seems like a nice way to save some time.  The following command is ran:
 
@@ -32,7 +32,7 @@ Before you know it, I have a new Blade helper - yay!  Now, I can write the code 
 
 I get a nice view like this:
 
-<a href="/uploads/2019/security-demo-2.png"><img src="/uploads/2019/security-demo-2.thumbnail.png" alt="UTF8-Icon-based Stars"></a>
+[![UTF8-Icon-based Stars](/uploads/2019/security-demo-2.png)](/uploads/2019/security-demo-2.png)
 
 This is great! Moving on!
 

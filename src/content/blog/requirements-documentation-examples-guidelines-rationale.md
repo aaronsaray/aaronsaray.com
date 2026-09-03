@@ -38,9 +38,13 @@ Mockups tend to be more stylistically filled in versions of mockups. Therefore t
 
 I've included two files here. The first is the requirements document and the second is the wireframe.
 
-<figure><a href="/uploads/2023/Fizzle%20Stix%20-%20Mass%20Status%20for%20Slack%20-%20Requirements.pdf"><img src="/uploads/2023/requirements-doc-thumbnail.png" alt="Mass Status for Slack - Requirements PDF"></a><figcaption>Requirements PDF</figcaption></figure>
+[![Mass Status for Slack - Requirements PDF](/uploads/2023/requirements-doc-cover.png)](/uploads/2023/Fizzle%20Stix%20-%20Mass%20Status%20for%20Slack%20-%20Requirements.pdf)
 
-<figure><a href="/uploads/2023/Fizzle%20Stix%20-%20Mass%20Status%20for%20Slack%20-%20Wireframe.pdf"><img src="/uploads/2023/wireframe-thumbnail.png" alt="Mass Status for Slack - Wireframe PDF"></a><figcaption>Wireframe PDF</figcaption></figure>
+Requirements PDF
+
+[![Mass Status for Slack - Wireframe PDF](/uploads/2023/wireframe-cover.png)](/uploads/2023/Fizzle%20Stix%20-%20Mass%20Status%20for%20Slack%20-%20Wireframe.pdf)
+
+Wireframe PDF
 
 You may decide to just download these and synthesize your own thoughts from them. But, if you want to learn more of the rationale, continue on below!
 

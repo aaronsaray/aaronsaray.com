@@ -21,6 +21,6 @@ The goal was to use links that Amazon provided themselves to showcase categories
 
 ## Screenshots
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-165821.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-165821-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-165821.png)](/uploads/2012/Screenshot-at-2012-03-14-165821.png)
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-165827.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-165827-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-165827.png)](/uploads/2012/Screenshot-at-2012-03-14-165827.png)

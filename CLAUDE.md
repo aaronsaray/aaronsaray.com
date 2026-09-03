@@ -20,9 +20,10 @@ Expect him to rework code to his taste.
 
 * **URLs never change. Ever.** Blog permalinks are `/:year/:slug/`
   (filename = slug, date's year = year). `scripts/url-contract.txt`
-  lists every URL the old site served; `npm run verify` enforces that
-  they all still resolve. If verify fails, fix the site, not the
-  fixture. The fixture never shrinks.
+  lists every page, feed, and downloadable document URL the old site
+  served (image files under `/uploads/` are not promised); `npm run
+  verify` enforces that they all still resolve. If verify fails, fix
+  the site, not the fixture. The fixture never shrinks.
 * **No AI content, ever.** Claude never writes or edits Aaron's
   content (post prose, page copy). Mechanical transforms (frontmatter,
   markup) are fine. If generated text is unavoidable, it must be

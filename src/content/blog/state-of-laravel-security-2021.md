@@ -15,4 +15,6 @@ When I launched the Laravel Hacker 7 Question Security Quiz, I gathered aggregat
 
 These self-reported quiz answers have been gathered into a whitepaper from over 1,000 developers in 2021.  Download the 14 page PDF below.
 
-<figure><a href="/uploads/2022/state-of-security-of-laravel-apps-in-2021.pdf"><img src="/uploads/2022/2021-state.jpg" alt="Whitepaper"></a><figcaption>Whitepaper</figcaption></figure>
+[![Whitepaper](/uploads/2022/2021-state.jpg)](/uploads/2022/state-of-security-of-laravel-apps-in-2021.pdf)
+
+Whitepaper

@@ -8,7 +8,7 @@ After cleaning up some old files in my archive, I found this snippet of code I m
 
 <!--more-->
 
-<a href="/uploads/2010/chords.png"><img src="/uploads/2010/chords-300x133.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2010/chords.png)](/uploads/2010/chords.png)
 
 Basically, it just shows all the combinations of a single guitar chord on a neck when you choose it from the drop down.  It may be useful - it's nothing ground breaking.  Check it out by downloading the zip file below and running it.
 

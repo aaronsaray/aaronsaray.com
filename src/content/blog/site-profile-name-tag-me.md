@@ -123,10 +123,10 @@ RIP Name-Tag.me!
 
 ## Screenshots
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-150408.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-150408-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-150408.png)](/uploads/2012/Screenshot-at-2012-03-14-150408.png)
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-150425.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-150425-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-150425.png)](/uploads/2012/Screenshot-at-2012-03-14-150425.png)
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-150450.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-150450-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-150450.png)](/uploads/2012/Screenshot-at-2012-03-14-150450.png)
 
-<a href="/uploads/2012/Hello-My-Name-Is-Aaron.png"><img src="/uploads/2012/Hello-My-Name-Is-Aaron-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Hello-My-Name-Is-Aaron.png)](/uploads/2012/Hello-My-Name-Is-Aaron.png)

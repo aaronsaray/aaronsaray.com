@@ -20,7 +20,7 @@ After opening them up, I noticed that they were straight PHP code.  The settings
 
 I talked with the other developers to see why this was happening.  The most irritating response I received was "just add it as a php mime type so we don't have to worry about it."  Grrarr!
 
-<a href="/uploads/2009/Untitled.jpg"><img src="/uploads/2009/Untitled-300x208.jpg" alt="BlueFish Options"></a>
+[![BlueFish Options](/uploads/2009/Untitled.jpg)](/uploads/2009/Untitled.jpg)
 
 Turns out it was one of the developers using the Bluefish editor - and then committing his entire working directory.  Bluefish has an auto backup process that creates a backup of a file before a save.  Its default setting was to use a tilde with the file name.  This option is found under the **Edit -> Preferences** menu option.
 

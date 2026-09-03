@@ -36,8 +36,8 @@ Last but not least, check out the thesaurus.  Also, from time to time, I used re
 
 This top picture is the original design.  
 
-<a href="/uploads/2008/toomuchtext.png"><img src="/uploads/2008/toomuchtext-300x196.png" alt="Too much"></a>
+[![Too much](/uploads/2008/toomuchtext.png)](/uploads/2008/toomuchtext.png)
 
 This second picture is the trimmed version.
 
-<a href="/uploads/2008/lesstext.png"><img src="/uploads/2008/lesstext-300x196.png" alt="Too much"></a>
+[![Too much](/uploads/2008/lesstext.png)](/uploads/2008/lesstext.png)

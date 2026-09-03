@@ -9,7 +9,9 @@ I just finished glancing over [Real-World Solutions for Developing High-Quality 
 
 <!--more-->
 
-<figure><a href="http://www.amazon.com/gp/product/0470872497/"><img src="https://ecx.images-amazon.com/images/I/51-b3XXNMAL._SL110_.jpg" alt="Book"></a><figcaption>PHP Frameworks and Applications</figcaption></figure>
+[![Book](/uploads/2012/php-frameworks-and-applications.jpg)](http://www.amazon.com/gp/product/0470872497/)
+
+PHP Frameworks and Applications
 
 **Finally!**
 

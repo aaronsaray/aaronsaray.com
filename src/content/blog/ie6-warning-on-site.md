@@ -60,4 +60,4 @@ Finally, we have a bit of css
 
 The finished product looks something like this:
 
-<a href="/uploads/2010/untitled.jpg"><img src="/uploads/2010/untitled-300x34.jpg" alt="Screenshot"></a>
+[![Screenshot](/uploads/2010/untitled.jpg)](/uploads/2010/untitled.jpg)

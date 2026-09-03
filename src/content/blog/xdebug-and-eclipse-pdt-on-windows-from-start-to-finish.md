@@ -256,13 +256,15 @@ Not very exciting... so let's look at our tools for Windows...
 
 ## WinCacheGrind
 
-<figure><a href="http://sourceforge.net/projects/wincachegrind/"><img src="/uploads/2008/wincachegrind-150x91.gif" alt="WinCacheGrind"></a><figcaption>WinCacheGrind</figcaption></figure>
+[![WinCacheGrind](/uploads/2008/wincachegrind.gif)](http://sourceforge.net/projects/wincachegrind/)
+
+WinCacheGrind
 
 WinCacheGrind is the windows version of the software that can parse these profile files and generate usable statistics.  Since development has ceased in 2005, this project isn't a very likely candidate for doing profiling.  You can see from the screenshot that our very simple script generates only a few details - but the actual UI is very limited - with not a lot of features (or maybe kcachegrind has spoiled me)...
 
 ## KcacheGrind
 
-<a href="/uploads/2008/kcachegrind.gif"><img src="/uploads/2008/kcachegrind-150x108.gif" alt="KcacheGrind"></a>
+[![KcacheGrind](/uploads/2008/kcachegrind.gif)](/uploads/2008/kcachegrind.gif)
 
 KcacheGrind is a linux based utility in KDE.  Since I'm on windows, I had to acquire the [KDE4Win](http://www.winkde.org/pub/kde/ports/win32/readme.html).  Once installed, I could run any KDE app that had been ported into this release - so I fired up KcacheGrind.
 
@@ -299,21 +301,21 @@ We're done doing our config - let's fire up Eclipse.
 
 First off, make a new project in eclipse.  Then, a new PHP file.  I'm going to continue using my same code and name it **`test.php`**.  On my machine `http://localhost/test.php` will launch this script.
 
-<a href="/uploads/2008/1.gif"><img src="/uploads/2008/1-150x133.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2008/1.gif)](/uploads/2008/1.gif)
 
 In Eclipse PDT, click the Window menu and choose preferences.  Expand the General item and click on Web Browser.  Here it probably says use internal web browser.  In my experience on Windows, the internal browser is MSIE... and I want to use firefox.  Check use external web browser - and make sure there is a check next to default system web browser (mine is FireFox, so I'm good to go.  You could also choose the external browser you wanted to use if it is listed here....)
 
-<a href="/uploads/2008/2.gif"><img src="/uploads/2008/2-150x133.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2008/2.gif)](/uploads/2008/2.gif)
 
 Next, expand the PHP item and click on Debug.  For the PHP Debugger, you'll have to choose 'Xdebug' - mine was set to zend debugger.  Next, choose the server that will be running the php.  I didn't have one, so I had to click on PHP Servers and add one with `http://localhost`.
 
 Click OK and you're good to go with your debugger set up.
 
-<a href="/uploads/2008/3.gif"><img src="/uploads/2008/3-150x116.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2008/3.gif)](/uploads/2008/3.gif)
 
 Next, you have to set up a debugging project script.  Click the Run Menu and click on 'open debug dialog'.  Double click the PHP web Page option to generate a new_configuration.  You could change this to any name you want.  You should make sure that XDebug is selected with the proper server.  You can click on browse to locate the file you want to start debugging with.  Notice, you'll be browsing through open projects.  In my case, I'm choosing test.php.  If you had a larger project, you might just start with it's index.php file.  I like to mark 'break at first line' just in case I forget to make break points.  Finally, uncheck 'auto generate' under the URL if the URL isn't correct.  Click Close.
 
-<a href="/uploads/2008/4.gif"><img src="/uploads/2008/4-150x116.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2008/4.gif)](/uploads/2008/4.gif)
 
 Eclipse will try to open up the PHP Debug perspective when you launch a debugging task.  This is ok to do - and probably very helpful.  If it prompts for it to open, choose to allow it.
 

@@ -34,10 +34,10 @@ From a SEO point of view, I wasn't really aware of the types of things that thes
 
 From a market point of view, I think it was potentially a risky area to enter.  Markets where 'emotion' are concerned are not my specialty.  I'm a programmer!
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-185705.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-185705-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-185705.png)](/uploads/2012/Screenshot-at-2012-03-14-185705.png)
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-185713.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-185713-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-185713.png)](/uploads/2012/Screenshot-at-2012-03-14-185713.png)
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-185842.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-185842-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-185842.png)](/uploads/2012/Screenshot-at-2012-03-14-185842.png)
 
-<a href="/uploads/2012/Screenshot-at-2012-03-14-190442.png"><img src="/uploads/2012/Screenshot-at-2012-03-14-190442-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-14-190442.png)](/uploads/2012/Screenshot-at-2012-03-14-190442.png)

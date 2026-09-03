@@ -9,7 +9,7 @@ Hello friends - I'm trying to get an idea if this would be a good idea.  Let me 
 
 <!--more-->
 
-<a href="/uploads/2013/hithere.png"><img src="/uploads/2013/hithere-300x104.png" alt="I like code"></a>
+[![I like code](/uploads/2013/hithere.png)](/uploads/2013/hithere.png)
 
 Here's the idea (...knowing my experience in web development and programming...)
  

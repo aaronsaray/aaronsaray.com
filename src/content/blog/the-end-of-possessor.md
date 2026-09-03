@@ -13,6 +13,6 @@ Living at [possessor.app](https://possessor.app), this product would play the pa
 
 So, for example, if I built a website security scanner app, I could integrate Possessor via API to validate the ownership of the site before I ran the scan.  We don't want to just be scanning anyone's website - we want to have permission.
 
-<a href="/uploads/2019/possessor.png"><img src="/uploads/2019/possessor.thumb.png" alt="Placeholder page"></a>
+[![Placeholder page](/uploads/2019/possessor.png)](/uploads/2019/possessor.png)
 
 I still think the idea is a good one, but I don't see a clear path forward for the monetization versus the amount of money / time it would take to build it.  I came up with the idea nearly a year ago, and haven't made any progress at it. So, with this, I'm calling it quits - and opening it up to the world.  Maybe someone else will build it!

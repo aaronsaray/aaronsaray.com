@@ -20,11 +20,11 @@ I'll use my site as an example to show you how frustrating taking a full height 
 
 When you load up the site, you'll see this screen below.
 
-<a href="/uploads/2020/fullsize-chrome-1.png"><img src="/uploads/2020/fullsize-chrome-1.thumb.png" alt="Screenshot - full"></a>
+[![Screenshot - full](/uploads/2020/fullsize-chrome-1.png)](/uploads/2020/fullsize-chrome-1.png)
 
 No matter what you resize your browser to, you have to scroll to see additional content.  You end up doing something like this: yuck
 
-<a href="/uploads/2020/fullsize-chrome-2.png"><img src="/uploads/2020/fullsize-chrome-2.thumb.png" alt="Screenshot - scrolled"></a>
+[![Screenshot - scrolled](/uploads/2020/fullsize-chrome-2.png)](/uploads/2020/fullsize-chrome-2.png)
 
 ## Solve It For Me!
 
@@ -39,23 +39,23 @@ First, you'll want to bring up your developer tools. To do this:
 
 Next, you'll see something like this.
 
-<a href="/uploads/2020/fullsize-chrome-3.png"><img src="/uploads/2020/fullsize-chrome-3.thumb.png" alt="Screenshot - finding the emulator"></a>
+[![Screenshot - finding the emulator](/uploads/2020/fullsize-chrome-3.png)](/uploads/2020/fullsize-chrome-3.png)
 
 Click the icon that has a phone and tablet in it: it looks like two rectangles.
 
 You should see a border towards the top of your window now.  It should say "Responsive" in the left top area. If it does not, click that and choose Responsive from the list.
 
-<a href="/uploads/2020/fullsize-chrome-4.png"><img src="/uploads/2020/fullsize-chrome-4.thumb.png" alt="Screenshot - responsive link"></a>
+[![Screenshot - responsive link](/uploads/2020/fullsize-chrome-4.png)](/uploads/2020/fullsize-chrome-4.png)
 
 Next, find the three dots that is in this same bar on the right and click it.
 
-<a href="/uploads/2020/fullsize-chrome-5.png"><img src="/uploads/2020/fullsize-chrome-5.thumb.png" alt="Screenshot - choose full screen"></a>
+[![Screenshot - choose full screen](/uploads/2020/fullsize-chrome-5.png)](/uploads/2020/fullsize-chrome-5.png)
 
 Choose Capture full size screenshot
 
 There you go. Now you'll see something like this:
 
-<a href="/uploads/2020/fullsize-chrome-6.png"><img src="/uploads/2020/fullsize-chrome-6.thumb.png" alt="Screenshot - full length"></a>
+[![Screenshot - full length](/uploads/2020/fullsize-chrome-6.png)](/uploads/2020/fullsize-chrome-6.png)
 
 *One small caveat:* It's possible that this method won't work if a programmer didn't account for limiting the height, but this is probably rare.
 For the nerds: if you used 100vh, the chrome view port will still be 100vh when it launches to take the screenshot, so the element will likely stretch that entire height as well.

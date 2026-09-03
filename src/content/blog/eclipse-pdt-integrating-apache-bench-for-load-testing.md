@@ -41,14 +41,14 @@ In order to accomplish this task, we're going to have to create an external tool
 After starting Eclipse PDT:
 **Click the Run menu, select the External Tools menu option and click the External Tools Dialog... option.**
 
-<a href="/uploads/2009/1.jpg"><img src="/uploads/2009/1-150x118.jpg" alt="Screenshot"></a>
+[![Screenshot](/uploads/2009/1.jpg)](/uploads/2009/1.jpg)
 
 ### Configure the Program call External Tools
 
 **Double click the Program Menu item.**
 This new screen will bring up the external tools menu items.  So far, I've named my External Tool 'AB Load Testing' and filled in the path to my ab.exe and working directory.
 
-<a href="/uploads/2009/2.jpg"><img src="/uploads/2009/2-300x240.jpg" alt="Screenshot"></a>
+[![Screenshot](/uploads/2009/2.jpg)](/uploads/2009/2.jpg)
 
 ### Configuring the command line arguments
 
@@ -62,7 +62,7 @@ You'll notice that you have the option to click on variables.  Eclipse has the a
 
 **Scroll down until you see `string_prompt` and select it.**  You'll notice that the arguments that you can specify are the prompt text and the default value.  **Fill in your prompt text and default value separated by a colon in the arguments box.**
 
-<a href="/uploads/2009/3.jpg"><img src="/uploads/2009/3-140x150.jpg" alt="Screenshot"></a>
+[![Screenshot](/uploads/2009/3.jpg)](/uploads/2009/3.jpg)
 
 **Repeat the process with the -n option.**  I selected `-n ${string_prompt:Number of requests?:40}`.
 

@@ -21,7 +21,7 @@ First of all, I'm using a standard Laravel logging configuration.  In the `confi
 
 I generated an info and a warning error.  I also threw a `RuntimeException` so I could get some errors. I generated these twice.  Here's what this looks like normally in my editor:
 
-<a href="/uploads/2022/highlight-logs-1.jpg"><img src="/uploads/2022/highlight-logs-1-thumb.jpg" alt="Before highlight"></a>
+[![Before highlight](/uploads/2022/highlight-logs-1.jpg)](/uploads/2022/highlight-logs-1.jpg)
 
 ## Configure Highlighting
 
@@ -36,7 +36,7 @@ You may have existing ones there. I made all of mine fresh.  Here are the settin
 
 Show on stripe means that it shows on the right hand scroll bar tray so you can find it easier.  If this is full of other colors, you may need to uncheck "Display heat map on error stripe/scrollbar"
 
-<a href="/uploads/2022/highlight-logs-2.jpg"><img src="/uploads/2022/highlight-logs-2-thumb.jpg" alt="After highlight"></a>
+[![After highlight](/uploads/2022/highlight-logs-2.jpg)](/uploads/2022/highlight-logs-2.jpg)
 
 Now, my logs are highlighted.
 

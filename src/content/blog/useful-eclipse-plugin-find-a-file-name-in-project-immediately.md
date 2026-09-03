@@ -17,6 +17,6 @@ Well, turns out, there is a better way.
 
 ## Go to File Eclipse Plugin
 
-<a href="/uploads/2008/screenshot.jpg"><img src="/uploads/2008/screenshot-300x177.jpg" alt="Screenshot"></a>
+[![Screenshot](/uploads/2008/screenshot.jpg)](/uploads/2008/screenshot.jpg)
 
 I found this great plugin for eclipse: [GotoFile @ muermann.org](http://muermann.org/gotofile/).  I wish I had thought that this could be done - and searched earlier! heh.  Turns out this plugin adds a new menu to your search menu by which you can launch the dialog window.  Then, just start typing the name of the file and it live searches for you.  When you finally find it, just double click it - and it'll open up the file it found in your project.  It appears to work for any file in your project - which is amazing.  For more features and details, check out hte [GotoFile Eclipse Plugin Home Page](http://muermann.org/gotofile/).

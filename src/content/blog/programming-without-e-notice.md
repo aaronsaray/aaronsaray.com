@@ -10,7 +10,7 @@ Well, my boss at #superdev - who can only be compared to a more energetic versio
 
 Ok.
 
-<a href="/uploads/2008/squirrel.jpg"><img src="/uploads/2008/squirrel-150x109.jpg" alt="#superdev boss"></a>
+[![#superdev boss](/uploads/2008/squirrel.jpg)](/uploads/2008/squirrel.jpg)
 
 ## How does it happen?
 
@@ -84,7 +84,7 @@ if ($isAdmin) {
 
 Other suitable predefined values include: empty string, `NULL`, `0`, `array()`.
 
-<a href="/uploads/2008/false_pos.jpg"><img src="/uploads/2008/false_pos-150x100.jpg" alt="False Positive"></a>
+[![False Positive](/uploads/2008/false_pos.jpg)](/uploads/2008/false_pos.jpg)
 
 _One Caveat:_ Be careful with predefining your values, however, so that you don't use a legitimate value when not expecting it.  For example, if you assigned `$locationOfString = 0` and then did a `stristr()`, you could legitimately get a `0` returned.  This might cause issues with your code that might be difficult to track down-such as false positives.
 

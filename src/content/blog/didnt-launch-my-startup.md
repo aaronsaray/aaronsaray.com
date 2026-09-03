@@ -36,15 +36,15 @@ I learned to make an explainer video with [VideoScribe](https://www.videoscribe.
 
 I created a single HTML-only landing page with [Netlify](https://netlify.com) and registered a quick domain. I didn't provision any advanced hosting because this was just a single, static page. I focused on the explainer video for the landing page, then described the details below.
 
-<a href="/uploads/2019/startuptribe1.png"><img src="/uploads/2019/startuptribe1.thumbnail.png" alt="Landing Page"></a>
+[![Landing Page](/uploads/2019/startuptribe1.png)](/uploads/2019/startuptribe1.png)
 
 For the imagery, I went to [UnSplash](https://unsplash.com) and then edited some of them.
 
-<a href="/uploads/2019/startuptribe2.png"><img src="/uploads/2019/startuptribe2.thumbnail.png" alt="Landing Page 2"></a>
+[![Landing Page 2](/uploads/2019/startuptribe2.png)](/uploads/2019/startuptribe2.png)
 
 One of the interesting questions I got, and by interesting I mean **infuriating**, was "how much does it cost?"  I listed in the marketing material in a bold header that it was free.  See?
 
-<a href="/uploads/2019/startuptribe3.png"><img src="/uploads/2019/startuptribe3.thumbnail.png" alt="It is free"></a>
+[![It is free](/uploads/2019/startuptribe3.png)](/uploads/2019/startuptribe3.png)
 
 Other feedback I got revolved around how vague my description of the features were. What were the actual tools and functionality I was going to provide? Looking back, I should have mocked some up and taken "screenshots" I suppose.
 

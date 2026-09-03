@@ -36,7 +36,7 @@ When you first install it, it will appear as a mounted volume, but in whatever f
 - Type a name for your new disk and choose Mac OS Extended (Case-sensitive, Journaled) format.
 - Click Erase
 
-<a href="/uploads/2017/formatting-sd-card.png"><img src="/uploads/2017/formatting-sd-card-thumb.png" alt="Formatting"></a>
+[![Formatting](/uploads/2017/formatting-sd-card.png)](/uploads/2017/formatting-sd-card.png)
 
 After a few seconds, you should have your new drive mounted and ready.
 

@@ -12,7 +12,7 @@ Finally, after a bit of research, I came across the idea of using text-justify..
 
 This screenshot is my final output:
 
-<a href="/uploads/2013/Screenshot.png"><img src="/uploads/2013/Screenshot-300x106.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2013/Screenshot.png)](/uploads/2013/Screenshot.png)
 
 So here's the markup:
 

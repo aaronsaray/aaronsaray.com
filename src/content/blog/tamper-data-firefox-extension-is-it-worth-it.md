@@ -12,7 +12,7 @@ As you can probably tell from my last test of a firefox extension [here](/2007/l
 
 I went to the tools menu of my firefox and choose tamper data.  I also clicked on the Start Tamper option, and then loaded up my favorite test website, the [free online diary site, JEMDiary](http://www.jemdiary.com). Right away, I was prompted with a message box - tamper the data, submit it, or abort.
 
-<a href="/uploads/2007/tamperprompt.gif"><img src="/uploads/2007/tamperprompt.thumbnail.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2007/tamperprompt.gif)](/uploads/2007/tamperprompt.gif)
 
 It's useful to note that the Abort option stops that particular request.  If we started our request, and clicked abort, we're done.  It is also good to note that if you start tampering with images, and other includes (an option in the options dialog of tamper data), you could abort individual requests (yay! a website with no css!).
 
@@ -20,7 +20,7 @@ You can also click 'submit' which will submit the request with no tampering.
 
 Finally, you can click tamper to modify the request, like this:
 
-<a href="/uploads/2007/tamperitem.gif"><img src="/uploads/2007/tamperitem.thumbnail.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2007/tamperitem.gif)](/uploads/2007/tamperitem.gif)
 
 This page shows the request and allows you to modify some of the request options as you can see.  Additionally, you can add post variables one by one, or many, or even from a file (the menu on the page is a right click option).  After you've customized this, you can submit the tamper (this is soooo much easier than our good ol telnet...)
 
@@ -28,17 +28,17 @@ This page shows the request and allows you to modify some of the request options
 
 After you've requested the entire website, you'll receive the following dialog.
 
-<a href="/uploads/2007/tamperresults.gif"><img src="/uploads/2007/tamperresults.thumbnail.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2007/tamperresults.gif)](/uploads/2007/tamperresults.gif)
 
 This shows each of the requests, their header results and accepts, the order, the time, OH MY!!  So much info!  But it gets better.  Your right click menu brings in the options to view the source of the item, view them in your browser (from the cache), replay the request, and more.  Additionally, you can graph one item or all items (like the other plugins).
 
-<a href="/uploads/2007/tampergraph.gif"><img src="/uploads/2007/tampergraph.thumbnail.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2007/tampergraph.gif)](/uploads/2007/tampergraph.gif)
 
 **Give me more customization!**
 
 So let's bring up the options for this plugin.
 
-<a href="/uploads/2007/tamperoption.gif"><img src="/uploads/2007/tamperoption.thumbnail.gif" alt="Screenshot"></a>
+[![Screenshot](/uploads/2007/tamperoption.gif)](/uploads/2007/tamperoption.gif)
 
 The options here include the ability to tamper with the request or all items, cache our data, and add in additional preset tamper options (side note: although that option looks cool, I haven't found the way to use them!! I'm sure I'm just missing it...)  I expected more configuration options... oh well.
 

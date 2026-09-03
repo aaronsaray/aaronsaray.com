@@ -16,14 +16,14 @@ You can review some of [the instructions](/2017/track-done-things-with-alfred/) 
 
 The big changes are the second workflow.
 
-<a href="/uploads/2019/did-this-workflow-screenshot-1.png"><img src="/uploads/2019/did-this-workflow-screenshot-1-thumb.png" alt="Workflow"></a>
+[![Workflow](/uploads/2019/did-this-workflow-screenshot-1.png)](/uploads/2019/did-this-workflow-screenshot-1.png)
 
 In this case, it's the same keyword filter without a space and argument optional.  I created PHP script that gets all of the items file and builds the list.  Then, it also unshifts or prepends to the array the option to copy all to the clipboard.  As you can see, the arg is the entire clipboard content.  That will be the `query` moving forward.
 
-<a href="/uploads/2019/did-this-workflow-screenshot-2.png"><img src="/uploads/2019/did-this-workflow-screenshot-2-thumb.png" alt="Functionality"></a>
+[![Functionality](/uploads/2019/did-this-workflow-screenshot-2.png)](/uploads/2019/did-this-workflow-screenshot-2.png)
 
 I added a copy to clipboard workflow as well.  All it does is copy the query into the clipboard.  
 
-<a href="/uploads/2019/did-this-workflow-screenshot-3.png"><img src="/uploads/2019/did-this-workflow-screenshot-3-thumb.png" alt="Clipboard widget"></a>
+[![Clipboard widget](/uploads/2019/did-this-workflow-screenshot-3.png)](/uploads/2019/did-this-workflow-screenshot-3.png)
 
 From then on, I can paste this into the Basecamp request for today's work.  If I type `did` I can start adding something for today, I can review today's list, and I can copy all of today's content into a clipboard.

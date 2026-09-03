@@ -156,7 +156,7 @@ The rest of the post.
   ```
 
 * Link to another post by its final URL (`/2023/some-slug/`). The link checker in verify catches typos.
-* Images are plain markdown: `![Alt Text](/uploads/2026/file.png)`. A lone image renders as a framed figure. Thumbnail linking to a full asset: `<a href="/uploads/2026/full.pdf"><img src="/uploads/2026/thumb.jpg" alt="Alt Text"></a>`.
+* Images are plain markdown: `![Alt Text](/uploads/2026/file.png)`. A lone image renders as a framed figure. Click-to-open: `[![Alt Text](/uploads/2026/file.png)](/uploads/2026/file.png)`, where the target can also be a document. A caption is its own paragraph below the image.
 * Image `width`/`height` are never authored. `rehype-img-attrs` reads every local image at build (through Astro's own `imageMetadata` helper, so no extra dependency) and stamps its real dimensions, so a new image needs nothing beyond the markdown above. Reserving the box is what stops the article reflowing as images load.
 * YouTube: `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/VIDEOID" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>`
 
@@ -166,22 +166,18 @@ The rest of the post.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme).
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
-* `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every URL the site has ever served; it never shrinks.
+* `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every page, feed, and document URL the site has ever served; it never shrinks.
 * `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read.
 
 ## URL Contract
 
-Blog permalinks are `/:year/:slug/`. Every URL the Hugo site ever served must keep resolving. `npm run verify` enforces this. If it fails, fix the site, not the fixture.
+Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo site ever served must keep resolving; images are not part of the contract. `npm run verify` enforces this. If it fails, fix the site, not the fixture.
 
 ## To-Do
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] Retire the thumbnail-link images. 116 references across 52 posts use the migrated `<a href="full"><img src="thumb"></a>` shape, a 2007-era bandwidth optimization that recent posts already skip. Point them at the full asset so the corpus is consistent, then delete the orphaned `.thumbnail.*` files. Survey before changing anything:
-  * Whether any `.thumbnail.*` path appears in `scripts/url-contract.txt`. Repointing a post is free; deleting a file the contract still promises is not.
-  * Which images would look worse at full column width. Some are full-IDE screenshots that are unreadable at 640px, where the thumbnail plus click-to-enlarge is the better experience. Expect this to be post-by-post, not a bulk transform.
-  * Whether any of the wrapping links have an empty `alt` on their image. Today the `alt` is the link's only accessible name, so an empty one is a link with no name at all: a real bug worth fixing while in there.
-  * `rehype-img-attrs` needs no changes either way; it stamps whatever `src` it finds.
+* [ ] Imageoptim maybe on the images - especially the startup tribe one or something - huge png
 * [ ] Active-section state in the header nav: About active for its child pages, Writing for blog/books, Contact for itself. Subtle treatment fitting the system (full-opacity text + accent chevron, short accent underline, or a 1px accent stroke; consider making one 1px accent motif the site-wide "selected/active" language). Add `aria-current="page"` on the current page's link; derive state from `Astro.url.pathname` without duplicating route knowledge.
 * [ ] Explore the cross-document page fade. The browser-default 250ms crossfade double-exposes pages (the home hero visibly ghosts behind the blog list). Prototype CSS-only variants: a quicker ~150ms crossfade, and a fade through `--color-night` (old page out ~100ms, new page in ~120ms), sequential vs. slightly overlapping. Judge home-to-blog and blog-to-post mid-transition, not from screenshots. Keep the reduced-motion suppression.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 36 remaining posts mix an evergreen tag with a technical one and default to showing the notice.

@@ -26,4 +26,4 @@ Zend framework command line cron job.  Once an hour it ran.  Pretty simple using
 
 ## Screenshots
 
-<a href="/uploads/2012/Screenshot-at-2012-03-18-203832.png"><img src="/uploads/2012/Screenshot-at-2012-03-18-203832-150x150.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2012/Screenshot-at-2012-03-18-203832.png)](/uploads/2012/Screenshot-at-2012-03-18-203832.png)

@@ -8,7 +8,7 @@ The 102 Degrees Timeclock software package is a very simple interface for keepin
 
 <!--more-->
 
-<a href="/uploads/2008/timetracker-screenshot.gif"><img src="/uploads/2008/timetracker-screenshot-300x133.gif" alt="Time tracker"></a>
+[![Time tracker](/uploads/2008/timetracker-screenshot.gif)](/uploads/2008/timetracker-screenshot.gif)
 
 The software requires PHP5 with MySQL.
 

@@ -8,7 +8,7 @@ Ugh.  I really want to contribute to the community.  I do!  If others before me 
 
 <!--more-->
 
-<a href="/uploads/2013/stackoverflow-logo.png"><img src="/uploads/2013/stackoverflow-logo-300x89.png" alt="Stackoverflow Logo"></a>
+[![Stackoverflow Logo](/uploads/2013/stackoverflow-logo.png)](/uploads/2013/stackoverflow-logo.png)
 
 So I visit [Stack Overflow](http://stackoverflow.com) often.  But I'm getting depressed...
 

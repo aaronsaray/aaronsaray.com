@@ -8,7 +8,7 @@ Want a CSS3 **ONLY** read more link?  I think I've created one that should do th
 
 <!--more-->
 
-<a href="/uploads/2015/Screenshot-2015-04-05-19.48.23.png"><img src="/uploads/2015/Screenshot-2015-04-05-19.48.23-300x223.png" alt="Screenshot"></a>
+[![Screenshot](/uploads/2015/Screenshot-2015-04-05-19.48.23.png)](/uploads/2015/Screenshot-2015-04-05-19.48.23.png)
 
 The concept is simple: background image that is a gradient, a height limit, and a read more link that really is a checkbox - so you can track the stage. (Fun fact: I tried using a:active selector - doh!  That's only while you're clicking a link.)
 

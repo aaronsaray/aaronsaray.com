@@ -24,13 +24,13 @@ Let's take a look on how we can accomplish this:
 
 We need to make a new connection in putty and configure it to do tunneling.
 
-<a href="/uploads/2007/1.jpg"><img src="/uploads/2007/1.thumbnail.jpg" alt="Screenshot"></a>
+[![Screenshot](/uploads/2007/1.jpg)](/uploads/2007/1.jpg)
 
 Create a connection to your webserver with the SSH protocol and proper port.
 
 In this case, it'll be our server `dreamhost.server.com` on port 22 using SSH.
 
-<a href="/uploads/2007/4.jpg"><img src="/uploads/2007/4.thumbnail.jpg" alt="Screenshot"></a>
+[![Screenshot](/uploads/2007/4.jpg)](/uploads/2007/4.jpg)
 	
 Find the tunnels dialog.  Expand the connection item, expand the SSH item, and click on Tunnels.
 
@@ -40,7 +40,7 @@ In my example, I am using source of 9999, 'local' destination (that's local to t
 
 Next, click 'Open' (You might want to save the session for future reference), and then log in using your credentials (In the future, you might want to set up a public/private key to remove the need for you to interact with the login - you might also want to set up a new SSH user with no permissions to run any commands to increase security.  They only need to connect!)
 
-<a href="/uploads/2007/3.jpg"><img src="/uploads/2007/3.thumbnail.jpg" alt="Screenshot"></a>
+[![Screenshot](/uploads/2007/3.jpg)](/uploads/2007/3.jpg)
 	
 Open MySQL GUI Tool.  In this case, I'm going to use the query browser.
 

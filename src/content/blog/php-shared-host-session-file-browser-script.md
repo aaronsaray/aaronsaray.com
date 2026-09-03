@@ -9,7 +9,7 @@ PHP stores its session information into flat files unencrypted by default.
 
 <!--more-->
 
-<a href="/uploads/2008/sessionfilebrowser.jpg"><img src="/uploads/2008/sessionfilebrowser-108x150.jpg" alt="Session File Browser"></a>
+[![Session File Browser](/uploads/2008/sessionfilebrowser.jpg)](/uploads/2008/sessionfilebrowser.jpg)
 
 In shared hosting situations, this can be a big security issue.  This script allows easy access to the attributes of these files as well as decoding of the values stored in them.  This script can also be used to audit the security of your current configuration.  If other users' session information is available, your information is not secure either!
 

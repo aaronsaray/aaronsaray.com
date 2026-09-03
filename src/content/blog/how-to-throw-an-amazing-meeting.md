@@ -8,7 +8,7 @@ I've been to far more meetings than any one on earth should ever have had to by 
 
 <!--more-->
 
-![Boardroom](/uploads/2008/11326425712-225x300.jpg)
+![Boardroom](/uploads/2008/11326425712.jpg)
 
 ## Planning
 

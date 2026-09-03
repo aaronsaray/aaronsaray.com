@@ -11,7 +11,7 @@ If you've ever worked with a customer's CMS pages and heard the term "Oh but I w
 
 ## Enter navigationFiller.js
 
-![Screenshot](/uploads/2008/1-150x99.png)
+![Screenshot](/uploads/2008/1.png)
 
 With this js file and some configuration in the HTML, you can solve the problem of having that blank space below the navigation bar.  For example, see our before screen...
 
@@ -19,7 +19,7 @@ Minus it being very very ugly and boring, you'll see the huge blank space below 
 
 navigationFiller.js will calculate the available space and fill with images from your pre-configured list.
 
-![Screenshot](/uploads/2008/2-150x99.png)
+![Screenshot](/uploads/2008/2.png)
 
 See the after picture - of our equally as AWESOME demo pics?
 

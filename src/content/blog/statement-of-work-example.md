@@ -54,7 +54,9 @@ The document should be shared with all stakeholders so that everyone is on the s
 
 Sure.  I've created a fictional requirements document for ACME corp that shows the format and some of the content that a statement of work could include.  you may edit it as you wish.
 
-<figure><a href="/uploads/2023/Acme%20Corp%20-%20Statement%20of%20Work.pdf"><img src="/uploads/2023/statement-of-work-doc-thumbnail.jpg" alt="ACME Corp - Statement of Work PDF"></a><figcaption>Statement of Work PDF</figcaption></figure>
+[![ACME Corp - Statement of Work PDF](/uploads/2023/statement-of-work-doc-cover.jpg)](/uploads/2023/Acme%20Corp%20-%20Statement%20of%20Work.pdf)
+
+Statement of Work PDF
 
 ## The End
 

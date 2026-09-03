@@ -14,7 +14,9 @@ Then, I decided to take it one step further: I didn't really want to run a backe
 
 I created [chickenfacts.io](https://chickenfacts.io), a single page application with a JSON API.  This is how I did it (you can find the code on [GitHub](https://github.com/aaronsaray/chickenfacts.io)).
 
-<figure><a href="https://chickenfacts.io"><img src="/uploads/2019/chickenfactslogo.thumbnail.png" alt="ChickenFacts"></a><figcaption>Chicken Facts</figcaption></figure>
+[![ChickenFacts](/uploads/2019/chickenfactslogo.png)](https://chickenfacts.io)
+
+Chicken Facts
 
 ## Jekyll
 

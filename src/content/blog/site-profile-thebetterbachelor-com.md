@@ -32,9 +32,9 @@ Overall, it was a good project.  I didn't sell as many as I'd like but I paid fo
 
 ## Screenshots
 
-<a href="/uploads/2012/1.png"><img src="/uploads/2012/1-150x150.png" alt="Screenshot 1"></a>
+[![Screenshot 1](/uploads/2012/1.png)](/uploads/2012/1.png)
 
-<a href="/uploads/2012/2.png"><img src="/uploads/2012/2-150x150.png" alt="Screenshot 1"></a>
+[![Screenshot 1](/uploads/2012/2.png)](/uploads/2012/2.png)
 
 **Bonus! Download the cookbook free!**
 

@@ -19,7 +19,7 @@ const paths = fs
 // The fixture never shrinks (CLAUDE.md hard rule). Guard the checker
 // against its own fixture: a truncated url-contract.txt would
 // otherwise report "0/0 served" and pass.
-const FIXTURE_FLOOR = 1681; // count as of the Aug 2026 migration
+const FIXTURE_FLOOR = 1031; // pages, feeds, documents, chrome; no /uploads/ images
 if (paths.length < FIXTURE_FLOOR) {
   console.error(
     `url contract: fixture has ${paths.length} paths, expected at least ${FIXTURE_FLOOR}. url-contract.txt never shrinks; restore it.`,

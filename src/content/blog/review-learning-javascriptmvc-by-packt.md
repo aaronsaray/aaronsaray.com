@@ -8,7 +8,9 @@ Someone from Packt reached out to me the other day to ask if I'd do a review of 
 
 <!--more-->
 
-<figure><a href="http://link.packtpub.com/hFZPlQ"><img src="/uploads/2013/learning-javascriptmvc-240x300.jpg" alt="book"></a><figcaption>Learning JavascriptMVC</figcaption></figure>
+[![book](/uploads/2013/learning-javascriptmvc.jpg)](http://link.packtpub.com/hFZPlQ)
+
+Learning JavascriptMVC
 
 Starts out describing the JavaScriptMVC framework:
 - DocumentJS
