@@ -1,7 +1,8 @@
 ---
 // The same bar on every page; fixed on the homepage so it overlays
 // the hero instead of pushing it down.
-import NavDropdown from "./NavDropdown.astro";
+import NavItem from "./NavItem.astro";
+import { NAV } from "../lib/nav";
 
 interface Props {
   overlay?: boolean;
@@ -50,29 +51,7 @@ const { overlay = false } = Astro.props;
       />
     </a>
     <nav class="flex items-center gap-5 text-sm sm:gap-8">
-      <NavDropdown
-        label="About"
-        items={[
-          { href: "/who-am-i/", text: "Who am I" },
-          { href: "/cv/", text: "CV" },
-        ]}
-      />
-      <NavDropdown
-        label="Writing"
-        items={[
-          { href: "/blog/", text: "Blog" },
-          { href: "/books/", text: "Books" },
-        ]}
-      />
-      {
-        /* py + negative my on the nav controls: 24px+ touch targets
-          without changing the visual layout. */
-      }
-      <a
-        href="/contact/"
-        class="text-punch -my-1.5 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
-        >Contact</a
-      >
+      {NAV.map((item) => <NavItem item={item} />)}
     </nav>
   </div>
 </header>

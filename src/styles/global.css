@@ -26,8 +26,8 @@
   --color-ink-dim: #8e959e;
   /* Every text token clears AA 4.5:1 on all three grounds the site
      composites: night, surface, and surface/40 over night (#0c0e10,
-     the footer). ink-faint is the exception, below the text bar and
-     good only for non-text strokes at 3:1.
+     the footer). ink-faint and accent-dim are the exceptions, below
+     the text bar and good only for non-text strokes at 3:1.
 
      Set text color from these tokens, never by knocking one back with
      opacity or an alpha modifier: the rendered result is a color that
@@ -38,6 +38,7 @@
   --color-ink-faint: #5d646d;
   --color-prose: #bfc5cc;
   --color-accent: #5a86a6;
+  --color-accent-dim: #4a6d87;
   --color-hairline: #1b2026;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;

@@ -155,8 +155,8 @@ rather than discovered by a test.
 * **Every text token clears AA 4.5:1 on all three grounds** the site
   composites: `--color-night`, `--color-surface`, and `bg-surface/40`
   over night (`#0c0e10`, the footer). Keep it to those three; a fourth
-  alpha value silently adds a fourth ground. `--color-ink-faint` is the
-  sole exception, non-text strokes only at 3:1.
+  alpha value silently adds a fourth ground. `--color-ink-faint` and
+  `--color-accent-dim` are the exceptions, non-text strokes only at 3:1.
 * **Leave contrast margin.** axe truncates to two decimals, so 4.499
   reports as 4.49 and fails. A value that lands on 4.50 is one rounding
   step from breaking. This is how the first bug here shipped.
@@ -176,7 +176,7 @@ should raise them rather than wait:
 * **Whether focus order matches reading order**, and whether focus is
   visible at every step. Tab through anything new.
 * **Whether a screen reader can operate it.** The known gap is
-  `NavDropdown.astro`: a CSS-only menu has no live `aria-expanded` and
+  `NavItem.astro`: a CSS-only menu has no live `aria-expanded` and
   no Escape-to-close, and axe passes it regardless. Any new
   interactive component needs this thought through before it ships.
 * **Whether text on a gradient or image is readable.** axe returns

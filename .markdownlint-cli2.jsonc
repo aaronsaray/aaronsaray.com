@@ -6,11 +6,9 @@
     // Line length: prose wraps however the writing wants.
     "MD013": false,
   },
+  "gitignore": true,
   "globs": ["**/*.md"],
   "ignores": [
-    "node_modules/**",
-    "dist/**",
-    ".astro/**",
     // Aaron's prose: tooling never touches it.
     "src/content/**",
   ],

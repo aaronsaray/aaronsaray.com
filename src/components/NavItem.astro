@@ -1,0 +1,117 @@
+---
+// One component for every nav entry. Top-level items render in the
+// bar, as a link or as a dropdown trigger when they have children;
+// items inside a panel render as panel links. The panel is one level
+// deep: a nested item's own children are not rendered.
+//
+// The dropdown opens on hover (desktop), tap (touch browsers'
+// hover/focus emulation), or keyboard focus. Pure CSS, no JS.
+//
+// The mechanics that matter:
+// - Closed panels are pointer-events-none. pointer-events is not in
+//   the transition list, so the moment the group loses hover the
+//   panel stops hit-testing, and a closing menu can never steal the
+//   mouse from a neighboring one (the panels overlap horizontally).
+// - hover:z-10/focus-within:z-10 on the group keeps the open menu
+//   painting above a still-fading neighbor.
+// - pt-2 on the panel is the hover bridge across the visual gap
+//   between the trigger and the menu; leaving it drops the hover.
+// - Close gets a 150ms grace delay for mouse slips; open is instant.
+//
+// Known no-JS limitation: without a script there is no live
+// aria-expanded and no Escape-to-close, so a screen reader hears a
+// plain button. Keyboard access still works (focus opens the panel
+// and the links are tabbable); aria-controls ties panel to trigger.
+//
+// aria-current="page" is exact-match only: on a post, Blog is the
+// active section but not the page being viewed.
+import { isActive, type NavItem } from "../lib/nav";
+
+interface Props {
+  item: NavItem;
+  nested?: boolean;
+}
+const { item, nested = false } = Astro.props;
+const pathname = Astro.url.pathname;
+
+const active = isActive(pathname, item);
+const current = item.href === pathname ? "page" : undefined;
+const tone = active ? "text-ink" : "text-ink-dim";
+const rule = ["border-b", active ? "border-accent-dim" : "border-transparent"];
+
+// py + negative my on the bar controls: 24px+ touch targets without
+// changing the visual layout.
+const bar = "text-punch -my-1.5 py-1.5 transition-colors";
+
+const kind = nested ? "panel" : item.children ? "section" : "link";
+const panelId = `nav-menu-${item.text.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+---
+
+{
+  kind === "panel" && (
+    <a
+      href={item.href}
+      aria-current={current}
+      class:list={[
+        "block px-4 py-1.5 transition-colors duration-300 hover:text-ink",
+        tone,
+      ]}
+    >
+      {item.text}
+    </a>
+  )
+}
+
+{
+  kind === "link" && (
+    <a
+      href={item.href}
+      aria-current={current}
+      class:list={[bar, "inline-flex duration-300 hover:text-ink", tone]}
+    >
+      <span class:list={rule}>{item.text}</span>
+    </a>
+  )
+}
+
+{
+  kind === "section" && (
+    <div class="group relative focus-within:z-10 hover:z-10">
+      <button
+        type="button"
+        aria-controls={panelId}
+        class:list={[
+          bar,
+          "flex items-center gap-1 delay-150 duration-150 group-focus-within:text-ink group-focus-within:delay-0 group-hover:text-ink group-hover:delay-0",
+          tone,
+        ]}
+      >
+        <span class:list={rule}>{item.text}</span>
+        {/* Tabler: chevron-down */}
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-3.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 9l6 6l6 -6" />
+        </svg>
+      </button>
+      <div
+        id={panelId}
+        class="pointer-events-none invisible absolute top-full right-0 pt-2 opacity-0 transition-[opacity,visibility] delay-150 duration-150 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-hover:delay-0"
+      >
+        <div class="min-w-36 border border-hairline bg-surface py-2">
+          {item.children!.map((child) => (
+            <Astro.self item={child} nested />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
