@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import OldPostNotice from "../../components/OldPostNotice.astro";
+import LaravelCta from "../../components/LaravelCta.astro";
 import { formatDate, isOldPost } from "../../lib/dates";
 import { isEvergreen } from "../../lib/evergreen";
 import { postHref } from "../../lib/posts";
@@ -100,59 +102,13 @@ const showLaravelCta = entry.data.tags.includes("laravel");
       )
     }
 
-    {
-      showOldNotice && (
-        <div class="mt-8 flex gap-3 border border-hairline bg-surface/40 p-4 text-sm leading-relaxed text-ink-dim">
-          {/* Tabler: history */}
-          <svg
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            class="mt-0.5 size-5 shrink-0 text-[#b08d57]"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.75"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <>
-              <path d="M12 8l0 4l2 2" />
-              <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" />
-            </>
-          </svg>
-          {/* Whitespace between JSX-expression children collapses, so
-            the space after the strong tag must be literal text. */}
-          <p>
-            <strong class="font-semibold text-ink">
-              This post is more than 18 months old.
-            </strong>{" "}
-            Technology changes quickly, so some of this content may be out of
-            date (but that's not always the case). Please verify any technical
-            or programming information against the current release.
-          </p>
-        </div>
-      )
-    }
+    {showOldNotice && <OldPostNotice />}
 
     <div class="prose mt-10">
       <Content />
     </div>
 
-    {
-      showLaravelCta && (
-        <div class="mt-14 border border-t-2 border-hairline border-t-accent bg-surface/40 p-5 text-sm leading-relaxed text-ink-dim sm:p-6">
-          Looking for more Laravel Tips &amp; Tricks? Join Joel and I on the{" "}
-          <a
-            href="https://show.nocompromises.io/"
-            class="text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent"
-          >
-            No Compromises
-          </a>{" "}
-          bi-weekly podcast; around 15 minutes of thoughtful real-world advice
-          and helpful info.
-        </div>
-      )
-    }
+    {showLaravelCta && <LaravelCta />}
 
     <div class="mt-16 text-center">
       <a

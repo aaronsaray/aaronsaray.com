@@ -14,9 +14,9 @@ const year = new Date().getFullYear();
         class="group border border-hairline p-6 transition-colors duration-300 hover:border-accent sm:p-8"
       >
         <div class="flex items-center justify-between">
-          <h2 class="font-display text-xl font-semibold text-white sm:text-2xl">
+          <p class="font-display text-xl font-semibold text-white sm:text-2xl">
             Read the blog
-          </h2>
+          </p>
           <!-- Tabler: arrow-right, slides right on hover -->
           <svg
             aria-hidden="true"
@@ -44,9 +44,10 @@ const year = new Date().getFullYear();
         class="group border border-hairline p-6 transition-colors duration-300 hover:border-accent sm:p-8"
       >
         <div class="flex items-center justify-between">
-          <h2 class="font-display text-xl font-semibold text-white sm:text-2xl">
+          <p class="font-display text-xl font-semibold text-white sm:text-2xl">
             Say hello
-          </h2>
+          </p>
+          <!-- Tabler: arrow-right, slides right on hover -->
           <svg
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -70,174 +71,118 @@ const year = new Date().getFullYear();
       </a>
     </div>
 
-    <!-- Brand mark -->
-    <div class="mt-14">
-      <img
-        src="/logo.svg"
-        width="45"
-        height="32"
-        class="h-8 w-auto"
-        alt="AS logo"
-      />
+    <!-- The mark as a section break. Inlined rather than
+       <img src="/logo.svg"> because that file hard-codes its fills and
+       these take theirs from tokens. -->
+    <div class="mt-14 flex justify-center" aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-auto"
+        viewBox="2.25 -74.61 104.47 74.61"
+      >
+        <path
+          class="fill-[#24282c]"
+          d="M77.23 0L77.23 0Q67.75 0 60.7 -2.81Q53.64 -5.62 49.74 -11.47Q45.83 -17.33 45.78 -26.46L45.78 -26.46L64.53 -26.46Q64.73 -23.14 66.22 -20.85Q67.71 -18.55 70.42 -17.38Q73.13 -16.21 76.93 -16.21L76.93 -16.21Q80.11 -16.21 82.26 -16.99Q84.41 -17.77 85.5 -19.17Q86.6 -20.56 86.6 -22.36L86.6 -22.36Q86.6 -24.02 85.55 -25.27Q84.5 -26.51 82.11 -27.54Q79.72 -28.56 75.66 -29.39L75.66 -29.39L68.34 -30.96Q58.72 -33.01 53.18 -37.96Q47.64 -42.92 47.64 -51.46L47.64 -51.46Q47.64 -58.4 51.4 -63.6Q55.16 -68.8 61.77 -71.7Q68.39 -74.61 77.03 -74.61L77.03 -74.61Q85.87 -74.61 92.29 -71.66Q98.71 -68.7 102.2 -63.35Q105.69 -58.01 105.74 -50.88L105.74 -50.88L86.8 -50.88Q86.55 -54.44 84.19 -56.42Q81.82 -58.4 77.03 -58.4L77.03 -58.4Q74 -58.4 72.05 -57.69Q70.1 -56.98 69.17 -55.71Q68.24 -54.44 68.24 -52.83L68.24 -52.83Q68.24 -51.12 69.24 -49.83Q70.24 -48.54 72.42 -47.58Q74.59 -46.63 78.01 -45.9L78.01 -45.9L83.97 -44.63Q89.97 -43.36 94.29 -41.26Q98.61 -39.16 101.37 -36.35Q104.13 -33.54 105.43 -30.03Q106.72 -26.51 106.72 -22.36L106.72 -22.36Q106.72 -15.19 103.18 -10.18Q99.64 -5.18 93.05 -2.59Q86.46 0 77.23 0Z"
+        ></path>
+        <path
+          class="fill-[#3d4248]"
+          d="M24.32 0L2.25 0L25.83 -72.75L52.78 -72.75L77.25 0L77.2 0L74.17 0L72.51 -0.09L69.94 -0.37L67.98 -0.68L65.44 -1.21L63.01 -1.9L60.93 -2.63L59.1 -3.41L57.29 -4.35L56.29 -4.95L54.44 -6.26L52.93 -7.54L51.91 -8.58L51.28 -9.28L49.88 -11.09L48.98 -12.49L48.23 -13.9L48.23 -13.96L28.32 -13.96ZM32.52 -28.71L46.29 -28.71Q43.65 -37.65 41.31 -47.31L41.31 -47.31Q40.19 -52 39.11 -56.64L39.11 -56.64Q38.09 -52 37.11 -47.31L37.11 -47.31Q35.06 -37.65 32.52 -28.71L32.52 -28.71Z"
+        ></path>
+      </svg>
     </div>
 
-    <!-- Sitemap-style link columns -->
-    <div class="mt-8 grid grid-cols-2 gap-8 text-sm sm:grid-cols-4">
-      <div>
-        <p
+    <dl class="mt-8 space-y-8">
+      <div class="grid grid-cols-1 gap-y-3 md:grid-cols-[1fr_2fr] md:gap-x-12">
+        <dt
           class="text-xs font-semibold tracking-[0.2em] text-ink-mute uppercase"
         >
-          Site
-        </p>
-        <ul class="mt-4 space-y-2">
-          <li>
-            <a
-              href="/"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="/who-am-i/"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Who am I</a
-            >
-          </li>
-          <li>
-            <a
-              href="/cv/"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >CV</a
-            >
-          </li>
-          <li>
-            <a
-              href="/blog/"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Blog</a
-            >
-          </li>
-          <li>
-            <a
-              href="/books/"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Books</a
-            >
-          </li>
-          <li>
-            <a
-              href="/contact/"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Contact</a
-            >
-          </li>
-        </ul>
+          Find me
+        </dt>
+        <dd class="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          <a
+            href="https://github.com/aaronsaray"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >GitHub</a
+          >
+          <a
+            href="https://codepen.io/aaronsaray"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >CodePen</a
+          >
+          <a
+            href="https://linkedin.com/in/aaronsaray"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >LinkedIn</a
+          >
+          <a
+            href="https://twitter.com/aaronsaray"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >Twitter</a
+          >
+        </dd>
       </div>
-      <div>
-        <p
-          class="text-xs font-semibold tracking-[0.2em] text-ink-mute uppercase"
-        >
-          Find Me
-        </p>
-        <ul class="mt-4 space-y-2">
-          <li>
-            <a
-              href="https://github.com/aaronsaray"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >GitHub</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://codepen.io/aaronsaray"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >CodePen</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://linkedin.com/in/aaronsaray"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >LinkedIn</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/aaronsaray"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Twitter</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div>
-        <p
+      <div class="grid grid-cols-1 gap-y-3 md:grid-cols-[1fr_2fr] md:gap-x-12">
+        <dt
           class="text-xs font-semibold tracking-[0.2em] text-ink-mute uppercase"
         >
           Projects
-        </p>
-        <ul class="mt-4 space-y-2">
-          <li>
-            <a
-              href="https://show.nocompromises.io"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Laravel Podcast</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://learnthephoneticalphabet.com"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Learn the Phonetic Alphabet</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://typesetter.io"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Typesetter.io</a
-            >
-          </li>
-        </ul>
+        </dt>
+        <dd class="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          <a
+            href="https://show.nocompromises.io"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >Laravel Podcast</a
+          >
+          <a
+            href="https://learnthephoneticalphabet.com"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >Learn the Phonetic Alphabet</a
+          >
+          <a
+            href="https://typesetter.io"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >Typesetter.io</a
+          >
+        </dd>
       </div>
-      <div>
-        <p
+      <div class="grid grid-cols-1 gap-y-3 md:grid-cols-[1fr_2fr] md:gap-x-12">
+        <dt
           class="text-xs font-semibold tracking-[0.2em] text-ink-mute uppercase"
         >
-          Other Sites
-        </p>
-        <ul class="mt-4 space-y-2">
-          <li>
-            <a
-              href="https://morebetterfaster.io"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >More Better Faster</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://masteringlaravel.io"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >Mastering Laravel</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://1lastcheck.com"
-              class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
-              >1lastcheck</a
-            >
-          </li>
-        </ul>
+          Other sites
+        </dt>
+        <dd class="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          <a
+            href="https://morebetterfaster.io"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >More Better Faster</a
+          >
+          <a
+            href="https://masteringlaravel.io"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >Mastering Laravel</a
+          >
+          <a
+            href="https://1lastcheck.com"
+            class="-my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink"
+            >1lastcheck</a
+          >
+        </dd>
       </div>
-    </div>
+    </dl>
 
     <!-- Bottom meta row: legal left, feed right, same tier of info -->
     <div
-      class="mt-14 flex items-center justify-between gap-4 border-t border-hairline pt-6 text-xs text-ink-mute"
+      class="mt-10 flex items-center justify-between gap-4 border-t border-hairline pt-6 text-xs text-ink-mute"
     >
-      <p>&copy; {year} Aaron Saray. Licensed under CC BY-SA 4.0.</p>
+      <p>
+        &copy; {year} Aaron Saray. Licensed under <a
+          href="https://creativecommons.org/licenses/by-sa/4.0/"
+          rel="license"
+          class="-my-1 inline-block py-1 transition-colors duration-300 hover:text-ink"
+          >CC BY-SA 4.0</a
+        >.
+      </p>
       <a
         href="/blog/index.xml"
         class="-my-1.5 flex items-center gap-1.5 py-1.5 transition-colors duration-300 hover:text-ink"

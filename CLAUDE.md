@@ -75,6 +75,16 @@ Expect him to rework code to his taste.
   user-level config.
 * In `.astro` templates, use `{/* */}` comments inside `{...}`
   expressions; HTML comments there break Prettier's parser.
+* **Never write `{" "}`.** Not to fix a missing space, not because
+  Prettier inserted it, not anywhere. A line break between text and an
+  inline tag loses its space in the compiled output; the fix is to
+  author the text and the tag on the same line (`under <a` and
+  `</a> has`), which Prettier preserves. Inside a `{cond && (...)}`
+  expression the JSX rules collapse that whitespace no matter how it
+  is written, so text that flows around an inline element never lives
+  inside one: move that markup into its own component
+  (`OldPostNotice.astro` and `LaravelCta.astro` are the pattern) and
+  render the component from the expression instead.
 * `.npmrc` enforces supply-chain rules: 7-day package cooldown
   (`min-release-age`), no dependency install scripts
   (`ignore-scripts`), exact version pins (`save-exact`). Do not

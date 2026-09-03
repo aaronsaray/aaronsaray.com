@@ -177,6 +177,7 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
+* [ ] why are all tabler icons inline
 * [ ] Explore the cross-document page fade. The browser-default 250ms crossfade double-exposes pages (the home hero visibly ghosts behind the blog list). Prototype CSS-only variants: a quicker ~150ms crossfade, and a fade through `--color-night` (old page out ~100ms, new page in ~120ms), sequential vs. slightly overlapping. Judge home-to-blog and blog-to-post mid-transition, not from screenshots. Keep the reduced-motion suppression.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
 * [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
