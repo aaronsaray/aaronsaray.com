@@ -1,4 +1,5 @@
 ---
+import Icon from "../components/Icon.astro";
 import Base from "../layouts/Base.astro";
 
 // AI-GENERATED PLACEHOLDER: title and description. Aaron rewrites.
@@ -30,17 +31,11 @@ const description =
             class="mr-2 flex w-[calc(0.245*clamp(3.5rem,9.5vw,8rem)-0.5rem)] shrink-0 items-center"
           >
             <span class="h-px flex-1 bg-ink-faint"></span>
-            <svg
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
+            <Icon
+              name="chevron-right"
               class="-mr-1.5 -ml-[10px] size-4 shrink-0 text-ink-faint"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"><path d="M9 6l6 6l-6 6"></path></svg
-            >
+              strokeWidth={1.5}
+            />
           </span>Hi, I'm
         </p>
         <!-- Name sits just below the off-white ink token so it doesn't "bounce" -->
@@ -61,20 +56,7 @@ const description =
       <div class="absolute inset-x-0 bottom-8 flex justify-center">
         <a href="#how" class="flex flex-col items-center gap-2">
           <p class="text-base text-ink-mute sm:text-lg">let me show you how</p>
-          <!-- Tabler: chevron-down -->
-          <svg
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            class="scroll-cue size-5 text-ink-faint"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M6 9l6 6l6 -6"></path>
-          </svg>
+          <Icon name="chevron-down" class="scroll-cue size-5 text-ink-faint" />
         </a>
       </div>
     </section>
@@ -215,21 +197,7 @@ const description =
           class="mt-10 inline-flex items-center gap-3 text-lg font-semibold text-ink transition-colors duration-300 hover:text-white sm:text-xl"
         >
           Let's talk
-          <!-- Tabler: arrow-right -->
-          <svg
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            class="size-5 shrink-0"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path
-              d="M13 6l6 6"></path>
-          </svg>
+          <Icon name="arrow-right" class="size-5 shrink-0" />
         </a>
       </div>
     </section>

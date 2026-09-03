@@ -1,21 +1,15 @@
+---
+import Icon from "./Icon.astro";
+---
+
 <div
   class="mt-8 flex gap-3 border border-hairline bg-surface/40 p-4 text-sm leading-relaxed text-ink-dim"
 >
-  <!-- Tabler: history -->
-  <svg
-    aria-hidden="true"
-    xmlns="http://www.w3.org/2000/svg"
+  <Icon
+    name="history"
     class="mt-0.5 size-5 shrink-0 text-[#b08d57]"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.75"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path d="M12 8l0 4l2 2"></path>
-    <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"></path>
-  </svg>
+    strokeWidth={1.75}
+  />
   <p>
     <strong class="font-semibold text-ink"
       >This post is more than 18 months old.</strong

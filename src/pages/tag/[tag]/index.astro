@@ -1,4 +1,5 @@
 ---
+import Icon from "../../../components/Icon.astro";
 import { getCollection, render } from "astro:content";
 import Base from "../../../layouts/Base.astro";
 import EntryList from "../../../components/EntryList.astro";
@@ -48,42 +49,17 @@ const posts = (await getSortedPosts()).filter((post) =>
         href="/blog/"
         class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
       >
-        <!-- Tabler: arrow-left -->
-        <svg
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
+        <Icon
+          name="arrow-left"
           class="size-4 text-ink-faint transition duration-300 group-hover:-translate-x-1 group-hover:text-accent"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M5 12l14 0"></path><path d="M5 12l6 6"></path><path
-            d="M5 12l6 -6"></path>
-        </svg>
+        />
         Go to all posts
       </a>
       <a
         href={`/tag/${term}/index.xml`}
         class="-my-1.5 flex items-center gap-1.5 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
       >
-        <!-- Tabler: rss -->
-        <svg
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          class="size-3.5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path
-            d="M4 4a16 16 0 0 1 16 16"></path><path d="M4 11a9 9 0 0 1 9 9"
-          ></path></svg
-        >
+        <Icon name="rss" class="size-3.5" />
         Get the RSS for {term}
       </a>
     </div>

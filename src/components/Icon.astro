@@ -1,0 +1,21 @@
+---
+import { iconMarkup } from "../lib/icon.mjs";
+
+interface Props {
+  name: string;
+  class?: string;
+  strokeWidth?: number;
+}
+
+const files = import.meta.glob<string>("../icons/*.svg", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
+
+const { name, class: className, strokeWidth } = Astro.props;
+const svg = files[`../icons/${name}.svg`];
+if (!svg) throw new Error(`No icon named "${name}" in src/icons/`);
+---
+
+<Fragment set:html={iconMarkup(svg, { class: className, strokeWidth })} />

@@ -118,6 +118,9 @@ Expect him to rework code to his taste.
   descending.
 * `src/pages/`: routes, including hand-rolled RSS feeds (Hugo-parity
   shape: guid = permalink, 10 items) and a hand-rolled `sitemap.xml`.
+* `src/icons/`: Tabler SVGs, one per name. `Icon.astro` inlines one
+  (Vite `?raw` import); the markdown plugins read the same files from
+  disk via `src/lib/icon.mjs`. Never paste SVG markup into a template.
 * `src/plugins/`: the markdown pipeline. Shiki theme plus filename-meta
   transformer, code chrome, callouts (`:::callout`), table wrap,
   figures, heading anchors. The code-block DOM shapes and the inline

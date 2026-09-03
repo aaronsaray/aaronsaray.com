@@ -165,6 +165,7 @@ The rest of the post.
 * `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv and contact bodies.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme).
+* `src/icons/` is the Tabler icon set, one SVG per name. Templates render one with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />` (`src/components/Icon.astro`); the markdown plugins read the same files through `src/lib/icon.mjs`. Both emit inline `currentColor` SVG so icons take text color tokens and hover transitions. Adding an icon is dropping the Tabler file into the folder.
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
 * `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every page, feed, and document URL the site has ever served; it never shrinks.
 * `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read.
@@ -177,8 +178,8 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] why are all tabler icons inline
 * [ ] Explore the cross-document page fade. The browser-default 250ms crossfade double-exposes pages (the home hero visibly ghosts behind the blog list). Prototype CSS-only variants: a quicker ~150ms crossfade, and a fade through `--color-night` (old page out ~100ms, new page in ~120ms), sequential vs. slightly overlapping. Judge home-to-blog and blog-to-post mid-transition, not from screenshots. Keep the reduced-motion suppression.
+* [ ] compare global.css for things that could be tailwind inlined - things only used one time?
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
 * [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
 * [ ] Performance and SEO checks. Accessibility is covered by the axe project in `tests/a11y/`; these two are not. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
