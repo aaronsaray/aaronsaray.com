@@ -261,3 +261,11 @@ should raise them rather than wait:
   resolves.
 * `.npmrc`'s `ignore-scripts` blocks Playwright's browser download, so
   a fresh clone needs `npx playwright install chromium`.
+* **If port 4321 is in use, stop and tell Aaron.** Playwright refuses
+  to run when anything already answers on the port, and the thing
+  answering is almost always Aaron's own `npm run dev` in a PhpStorm
+  terminal. Do not investigate the process, do not trace its
+  ancestry, do not kill it, do not work around it with
+  `reuseExistingServer`. Say that verify cannot finish because a dev
+  server holds port 4321, and ask him to stop it if it is his. Then
+  re-run verify once he says it is stopped.

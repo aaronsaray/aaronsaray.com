@@ -185,7 +185,7 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 ### Writing
 
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
-  * `/books/` (`src/pages/books.astro`)
+  * `/books/` (`src/pages/books.astro`): title and description only; the book entries are copied verbatim from the CV
   * `/about/` (`src/pages/about.astro`)
   * `/colophon/` (`src/content/pages/colophon.md`): the writing rule and the AI distinction are Aaron's to state in his own words
   * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
