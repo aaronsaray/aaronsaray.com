@@ -11,7 +11,7 @@ export const NAV: NavItem[] = [
   {
     text: "About",
     children: [
-      { text: "Who am I", href: "/who-am-i/" },
+      { text: "Who am I", href: "/about/" },
       { text: "CV", href: "/cv/" },
     ],
   },

@@ -162,7 +162,7 @@ The rest of the post.
 
 ## Layout
 
-* `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv and contact bodies.
+* `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv, contact, and colophon bodies.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme).
 * `src/icons/` is the Tabler icon set, one SVG per name. Templates render one with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />` (`src/components/Icon.astro`); the markdown plugins read the same files through `src/lib/icon.mjs`. Both emit inline `currentColor` SVG so icons take text color tokens and hover transitions. Adding an icon is dropping the Tabler file into the folder.
@@ -174,21 +174,20 @@ The rest of the post.
 
 Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo site ever served must keep resolving; images are not part of the contract. `npm run verify` enforces this. If it fails, fix the site, not the fixture.
 
-## To-Do
+## To-Do for Launch
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 ### Design
 
-* [ ] Curated topic landings for the subjects that define the current direction, starting with `/tag/management/` and possibly `/tag/business/`. (archived projects maybe too) Keep the permanent URL and the complete chronological list, but lead with a direct topic title, Aaron's intro prose (already in `src/content/tags/`), and a small set of selected foundational essays, with the full list beneath and a pointer to an adjacent topic where useful. Decide the authoring model first: optional frontmatter on the tag file declaring a featured set (stable post IDs, fail loudly on a bad reference, understandable months later) versus a small explicit config in the template. Ordinary tags stay untouched; not every tag becomes a magazine.
 * [ ] CV information design (`src/pages/cv.astro`): the page currently reads as one long prose column; the programmer-to-manager-to-business arc is hard to scan. Keep the single markdown source (`src/content/pages/cv.md`): adding a role, talk, or credential must never require duplicated data or a custom component tree. Investigate: frontmatter title as the page title with the descriptive opening as intro content (needs Aaron's approval), a build-time section index from Astro's rendered heading data, stronger section spacing and typographic hierarchy, a repeatable visual rhythm for work-history entries derived from the markdown structure already present, and on wide screens a quiet section rail or two-column layout (single column on narrow). CSS and mechanical markdown only, no client JS. If the markdown is too irregular, propose the smallest one-time cleanup and show the authoring convention before applying it.
-* [ ] Footer colophon rework (`src/components/Footer.astro`): the current footer (two CTA boxes, repeated logo, four link columns) reads as a SaaS sitemap and competes with the editorial character above it. Aim for a signature at the end of a personal site: one clear path to contact or writing instead of two promotional panels, a much darker "stamped" logo treatment, licensing and RSS present but quiet. The link inventory now also lives on `/who-am-i/`; once the keep-list is confirmed, drop the duplicated columns here, retaining only the few professional projects that merit persistent visibility (Mastering Laravel and the No Compromises podcast are the candidates).
 
 ### Writing
 
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
   * `/books/` (`src/pages/books.astro`)
-  * `/who-am-i/` (`src/pages/who-am-i.astro`)
+  * `/about/` (`src/pages/about.astro`)
+  * `/colophon/` (`src/content/pages/colophon.md`): the writing rule and the AI distinction are Aaron's to state in his own words
   * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
   * home page title, description, and the three role rows (`src/pages/index.astro`)
   * the CTO draft post (`src/content/blog/the-cto-is-a-communicator-first.md`), written from Aaron's outline and linked from the home page
@@ -203,3 +202,9 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 * [ ] Performance and SEO checks. Accessibility is covered by the axe project in `tests/a11y/`; these two are not. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
 * [ ] Full review of the generated site: every file, every page in the local browser.
 * [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP must allow the inline copy script by sha256 hash, not `unsafe-inline`.
+
+## To-Do for Future
+
+Not needed for release.
+
+* [ ] Curated topic landings for the subjects that define the current direction, starting with `/tag/management/` and possibly `/tag/business/`. (archived projects maybe too) Keep the permanent URL and the complete chronological list, but lead with a direct topic title, Aaron's intro prose (already in `src/content/tags/`), and a small set of selected foundational essays, with the full list beneath and a pointer to an adjacent topic where useful. Decide the authoring model first: optional frontmatter on the tag file declaring a featured set (stable post IDs, fail loudly on a bad reference, understandable months later) versus a small explicit config in the template. Ordinary tags stay untouched; not every tag becomes a magazine.

@@ -56,7 +56,7 @@ const ACTIVE_SECTION = [
     label: "Writing",
   },
   { path: "/cv/", label: "About" },
-  { path: "/who-am-i/", label: "About" },
+  { path: "/about/", label: "About" },
 ];
 
 for (const { path, label } of ACTIVE_SECTION) {

@@ -20,7 +20,8 @@ export const GET: APIRoute = async () => {
   const entries: string[] = [];
 
   entries.push(url("/", newest));
-  entries.push(url("/who-am-i/"));
+  entries.push(url("/about/"));
+  entries.push(url("/colophon/"));
   entries.push(url("/cv/"));
   entries.push(url("/books/"));
   entries.push(url("/contact/"));
