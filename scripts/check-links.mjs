@@ -1,11 +1,4 @@
-// Walks every HTML file in dist/ and resolves internal href/src
-// targets against dist itself:
-//   - path targets must exist (trailing slash -> index.html)
-//   - #fragment targets must match an id in the target document
-// External URLs, mailto:, javascript:, tel:, data:, and bare "#"
-// hrefs are skipped; srcset and content= attributes (og:image) are
-// not checked at all. Exits non-zero with a list of broken
-// references. Runs in `npm run verify`.
+// srcset and content= attributes (og:image) are not checked.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -21,7 +14,6 @@ function* htmlFiles(dir) {
   }
 }
 
-// id="..." sets per document, extracted lazily for fragment checks.
 const idCache = new Map();
 function idsOf(file) {
   let ids = idCache.get(file);
@@ -53,8 +45,7 @@ const redirected = new Set(
     .map((l) => l.split(/\s+/)[0]),
 );
 
-// Links in old posts pointing at targets that no longer exist.
-// Content rot in Aaron's prose, not a site bug. Warned, not fatal.
+// Rot in Aaron's prose, not a site bug: warned, not fatal.
 const knownRot = new Set(
   fs
     .readFileSync(path.join(import.meta.dirname, "known-rot.txt"), "utf8")
@@ -82,7 +73,6 @@ for (const file of htmlFiles(DIST)) {
 
     let [target, fragment] = url.split("#");
     if (target === "") {
-      // same-page fragment
       if (fragment && !idsOf(file).has(fragment)) {
         broken.push(`${page} -> #${fragment} (no such id)`);
       }
@@ -111,9 +101,9 @@ console.log(`links: ${checked} internal references checked`);
 
 // The rot exemption is a frozen inventory, not a growing class: a NEW
 // link to an already-rotted target would otherwise be excused because
-// knownRot matches by target alone. Pin the instance count so any
-// drift (up or down) fails loudly and gets a deliberate update here.
-const EXPECTED_ROT = 25; // instances as of the Aug 2026 migration
+// knownRot matches by target alone. The pinned instance count makes
+// any drift (up or down) fail loudly until the pin is updated by hand.
+const EXPECTED_ROT = 25;
 if (rotSeen.length !== EXPECTED_ROT) {
   console.error(
     `known-rot drift: expected ${EXPECTED_ROT} rot links, found ${rotSeen.length}:`,

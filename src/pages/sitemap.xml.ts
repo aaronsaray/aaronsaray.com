@@ -3,14 +3,7 @@ import { getCollection } from "astro:content";
 import { getSortedPosts, postHref } from "../lib/posts";
 import { SITE_URL } from "../lib/rss";
 
-// Same URL categories as Hugo's sitemap (verified identical to the
-// Hugo output, 764 urls, at the Aug 2026 migration; grows with new
-// posts and tags) plus the pages new with the redesign: books and
-// who-am-i. lastmod is the post's own date; list pages get the newest
-// date they cover; cv/contact lost their dates in migration and the
-// new pages have none, so no lastmod there.
-
-/** Frontmatter date -> full ISO form Hugo used in lastmod. */
+/** Frontmatter date as a full ISO lastmod. */
 function lastmod(date: string): string {
   return date.length > 10 ? date : `${date}T00:00:00+00:00`;
 }

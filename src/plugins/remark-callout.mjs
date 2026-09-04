@@ -1,17 +1,12 @@
 import { visit } from "unist-util-visit";
 
-// :::callout container directives (migrated from the Hugo
-// header-call-out shortcode) become div.callout.
-//
-// Every OTHER directive node is restored to the literal text it was
-// parsed from. remark-directive's inline syntax is greedy (":D",
-// ":points", "10:30am" all parse as textDirectives), and an unhandled
-// directive node renders as an empty element, silently deleting the
-// author's text. Restoration makes enabling the plugin safe across
-// the corpus (707 posts at the Aug 2026 migration) that never opted
-// into directive syntax. The two cases restoration can't do
-// losslessly THROW rather than warn: a build-time warning scrolls
-// away and altered prose ships; a crash names the file.
+// Every directive node other than :::callout is restored to the
+// literal text it was parsed from. remark-directive's inline syntax
+// is greedy (":D", ":points", "10:30am" all parse as textDirectives),
+// and an unhandled directive node renders as an empty element,
+// silently deleting the author's text. The two cases restoration
+// cannot do losslessly throw rather than warn: a build-time warning
+// scrolls away and altered prose ships; a crash names the file.
 export function remarkCallout() {
   return (tree, file) => {
     visit(tree, (node, index, parent) => {

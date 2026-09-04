@@ -6,7 +6,7 @@ tags:
   - programming
 evergreen: true
 ---
-<!-- AI-GENERATED DRAFT written from Aaron's notes. Aaron rewrites before launch. -->
+<!-- AI-GENERATED PLACEHOLDER: the entire post, from Aaron's notes -->
 A junior developer releases a package to the world because they think they learned something new. In reality, they didn't. Somebody already built it, and probably built it better. And that's fine. That's good, even. That's how you learn.
 
 <!--more-->

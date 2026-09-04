@@ -1,8 +1,5 @@
 import { test, expect } from "@playwright/test";
 
-// Header and nav ship on every page, so they are covered once here
-// rather than repeated per page in pages.spec.ts.
-
 test("nav dropdown opens on keyboard focus", async ({ page }) => {
   await page.goto("/");
 
@@ -33,7 +30,6 @@ test("skip link is the first tab stop and moves reading position", async ({
   const skip = page.getByRole("link", { name: "Skip to content" });
   await page.keyboard.press("Tab");
   await expect(skip).toBeFocused();
-  // sr-only until focused.
   await expect(skip).toBeVisible();
 
   await skip.press("Enter");

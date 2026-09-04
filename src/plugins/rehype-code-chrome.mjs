@@ -1,10 +1,9 @@
 import { visit, SKIP } from "unist-util-visit";
 import { iconFromDisk as icon } from "../lib/icon.mjs";
 
-// Runs after Astro's Shiki pass. Emits two DOM shapes; the inline
-// copy script's element lookups depend on them exactly
-// (`.filename-header` → nextElementSibling, `.code-wrap` →
-// querySelector('pre')):
+// Two DOM shapes. The inline copy script in [year]/[slug].astro
+// resolves its <pre> from them (`.filename-header` via
+// nextElementSibling, `.code-wrap` via querySelector('pre')):
 //
 //  with data-filename (fence meta filename="…"):
 //    <div class="filename-header">icon <span class="filename-text">…</span>
@@ -18,8 +17,6 @@ import { iconFromDisk as icon } from "../lib/icon.mjs";
 // The chrome is emitted as raw HTML nodes; Astro's pipeline runs
 // rehype-raw after user plugins, which parses them into the tree.
 
-// Per-language file-type icons where Tabler has one for a language in
-// the corpus, file-code as the fallback.
 const FILE_ICONS = {
   php: "file-type-php",
   html: "file-type-html",

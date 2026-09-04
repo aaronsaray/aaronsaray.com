@@ -1,13 +1,6 @@
-// Excerpts, Hugo-parity: the markdown before <!--more-->, or a
-// ~70-word plain-text fallback for the posts without a marker (see
-// the README to-do for that list). Three forms: HTML for list
-// display, HTML for RSS descriptions, plain text for meta
-// descriptions.
-//
-// The mini-pipeline mirrors the site config's remark side (gfm,
+// The remark half of this pipeline mirrors astro.config.mjs (gfm,
 // smartypants oldschool, directives) so an excerpt renders the same
-// prose as the full post; it skips the heavy rehype chrome (Shiki,
-// figures, code controls), which excerpt prose doesn't need.
+// prose as the post. A change there is mirrored here.
 
 import { unified } from "unified";
 import remarkParse from "remark-parse";
@@ -20,7 +13,7 @@ import rehypeStringify from "rehype-stringify";
 import { remarkCallout } from "../plugins/remark-callout.mjs";
 
 const MARKER = "<!--more-->";
-const FALLBACK_WORDS = 70; // Hugo's default summaryLength
+const FALLBACK_WORDS = 70;
 
 const pipeline = unified()
   .use(remarkParse)
@@ -66,8 +59,6 @@ export async function excerptHtml(body: string): Promise<string> {
   if (body.includes(MARKER)) {
     html = String(await pipeline.process(body.split(MARKER)[0])).trim();
   } else {
-    // Hugo-parity auto summary: first ~70 words of the rendered
-    // content as plain text, no ellipsis.
     const full = String(await pipeline.process(body));
     const words = toPlainText(full).split(" ").slice(0, FALLBACK_WORDS);
     html = `<p>${escapeHtml(words.join(" "))}</p>`;

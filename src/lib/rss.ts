@@ -1,6 +1,6 @@
-// Hand-rolled RSS matching Hugo's default template field-for-field
-// (channel shape, guid = permalink, escaped-HTML descriptions) so
-// existing subscribers see item continuity, not a new feed.
+// Channel shape, guid = permalink, and escaped-HTML descriptions match
+// the feed the site served before; a change makes every subscriber
+// see the whole archive as new items.
 
 export const SITE_TITLE =
   "Milwaukee Web Developer, PHP and Laravel Programmer, Consultant";
@@ -34,16 +34,15 @@ export function xmlEscape(s: string): string {
 }
 
 /**
- * RFC-1123 pubDate from the frontmatter date string, Hugo-style: the
- * authored wall-clock time and offset are kept verbatim (date-only
- * strings are midnight +0000), never converted through a timezone.
+ * RFC-1123 pubDate from the frontmatter date string. The authored
+ * wall-clock time and offset are kept verbatim (date-only strings are
+ * midnight +0000), never converted through a timezone.
  */
 export function rfc1123(date: string): string {
   const [y, mo, d] = date.slice(0, 10).split("-").map(Number);
   if (!y || !mo || !d || !MONTHS[mo - 1]) {
-    // The collection schema regex makes this unreachable for content
-    // dates; the guard is for any future caller that bypasses it,
-    // which would otherwise emit NaNs into pubDate.
+    // Unreachable for schema-validated dates; a caller that bypasses
+    // the schema would otherwise emit NaNs into pubDate.
     throw new Error(`rfc1123: malformed date string "${date}"`);
   }
   const day = DAYS[new Date(Date.UTC(y, mo - 1, d)).getUTCDay()];
@@ -104,7 +103,7 @@ ${items}
 `;
 }
 
-export const RSS_LIMIT = 10; // Hugo's rssLimit
+export const RSS_LIMIT = 10;
 
 export function feedResponse(xml: string): Response {
   return new Response(xml, {

@@ -17,8 +17,8 @@ import { shikiMetaFilename } from "./src/plugins/shiki-meta-filename.mjs";
 export default defineConfig({
   site: "https://aaronsaray.com",
   trailingSlash: "always",
-  // The dev toolbar overlays the bottom of the viewport and gets in
-  // the way of judging real layout; nothing on this site uses it.
+  // The toolbar overlays the bottom of the viewport and spoils layout
+  // checks in the browser.
   devToolbar: {
     enabled: false,
   },
@@ -26,20 +26,17 @@ export default defineConfig({
     format: "directory",
   },
   redirects: {
-    // Hugo generated this alias page; static build emits the same
-    // meta-refresh file. Cloudflare _redirects upgrades it to a 301.
+    // /blog/page/1/ is in the URL contract. The static build emits a
+    // meta-refresh page here; public/_redirects upgrades it to a 301.
     "/blog/page/1/": "/blog/",
   },
   markdown: {
-    // The remark/rehype pipeline (not the Sätteri default). The code
-    // chrome, heading anchors, and table wrappers are rehype plugins.
-    // Note Astro's plugin order: Shiki runs BEFORE user rehype
-    // plugins; rehype-raw runs AFTER them (the chrome plugins emit
-    // raw nodes and rely on this).
+    // Astro runs Shiki before the user rehype plugins and rehype-raw
+    // after them. The chrome plugins emit raw nodes and depend on that.
     processor: unified({
       gfm: true,
-      // Hugo's Goldmark typographer maps -- to en and --- to em dash;
-      // smartypants only matches that with oldschool dashes.
+      // Post prose writes -- and --- expecting en and em dashes; only
+      // oldschool mode renders them that way.
       smartypants: { dashes: "oldschool" },
       remarkPlugins: [remarkDirective, remarkCallout],
       rehypePlugins: [

@@ -7,10 +7,10 @@ const TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
 // axe cannot resolve a background it can only sample from a gradient, so
 // text over the header veil comes back "incomplete" rather than pass or
 // fail. Incomplete results are NOT failures and never appear in
-// violations, so a suite that only asserts on violations would wave a
-// genuinely unreadable element through. These three are measured by
-// hand instead: the veil's top band composites to #101213, against which
-// the nav's ink-at-60% renders 6.09:1. Asserting the exact set (rather
+// violations, so a suite that only asserts on violations would wave an
+// unreadable element through. These three are measured by hand
+// instead: the veil's top band composites to #101213, against which
+// the nav's ink-dim renders 6.2:1. Asserting the exact set (rather
 // than skipping the rule) means a gradient introduced anywhere else
 // fails here until someone measures that one too.
 // Matched on the identifying attribute rather than axe's full generated

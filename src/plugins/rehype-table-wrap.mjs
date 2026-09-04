@@ -1,10 +1,8 @@
 import { visit, SKIP } from "unist-util-visit";
 
-// Wrap every table in div.table-wrap so a wide table scrolls inside
-// its own container instead of the page (see .prose .table-wrap).
-// While here, stamp scope="col" on header cells: GFM emits every
-// table's <th> inside <thead>, and screen readers use scope to
-// associate data cells with their column.
+// .prose .table-wrap in global.css is what makes the wrapper scroll.
+// scope="col" is safe to stamp on every <th> because GFM only ever
+// emits them inside <thead>.
 export function rehypeTableWrap() {
   return (tree) => {
     visit(tree, "element", (node, index, parent) => {

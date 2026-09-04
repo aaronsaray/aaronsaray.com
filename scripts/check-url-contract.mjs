@@ -1,8 +1,3 @@
-// Verifies every path in url-contract.txt is served by dist/:
-//   - paths ending in / must have dist/<path>/index.html
-//   - file paths must exist verbatim
-// Exits non-zero listing anything missing. Runs in `npm run verify`.
-
 import fs from "node:fs";
 import path from "node:path";
 
@@ -16,9 +11,9 @@ const paths = fs
   .map((l) => l.trim())
   .filter((l) => l && !l.startsWith("#"));
 
-// The fixture never shrinks (CLAUDE.md hard rule). Guard the checker
-// against its own fixture: a truncated url-contract.txt would
-// otherwise report "0/0 served" and pass.
+// The fixture never shrinks. Guard the checker against its own
+// fixture: a truncated url-contract.txt would otherwise report
+// "0/0 served" and pass.
 const FIXTURE_FLOOR = 1031; // pages, feeds, documents, chrome; no /uploads/ images
 if (paths.length < FIXTURE_FLOOR) {
   console.error(

@@ -26,14 +26,13 @@
   --color-ink-dim: #8e959e;
   /* Every text token clears AA 4.5:1 on all three grounds the site
      composites: night, surface, and surface/40 over night (#0c0e10,
-     the footer). ink-faint and accent-dim are the exceptions, below
-     the text bar and good only for non-text strokes at 3:1.
+     the footer). A fourth alpha value adds a fourth ground. ink-faint
+     and accent-dim are below the text bar: non-text strokes at 3:1
+     only.
 
-     Set text color from these tokens, never by knocking one back with
-     opacity or an alpha modifier: the rendered result is a color that
-     is in no palette and that no reading of the CSS predicts, and it
-     can fail where the token itself passes. tests/a11y/ checks what
-     actually renders. */
+     Text color comes from these tokens, never from opacity or an
+     alpha modifier: that renders a color in no palette, and it can
+     fail where the token itself passes. */
   --color-ink-mute: #777f8a;
   --color-ink-faint: #5d646d;
   --color-prose: #bfc5cc;
@@ -64,10 +63,9 @@
   @apply font-display text-4xl leading-tight font-semibold text-white sm:text-5xl;
 }
 
-/* Scrollbar: muted, but clears 3:1 against its track. */
 html {
-  /* Dark-only site; browser-drawn UI must match. */
   color-scheme: dark;
+  /* 3:1 against the track. */
   scrollbar-color: #585f66 var(--color-night);
   scroll-behavior: smooth;
 }
@@ -84,7 +82,7 @@ h3 {
   outline-offset: 3px;
 }
 
-/* Selection: accent ground, night text (4.6:1). */
+/* 4.6:1 */
 ::selection {
   background: var(--color-accent);
   color: var(--color-night);
@@ -106,16 +104,13 @@ h3 {
   border: 2px solid var(--color-night);
 }
 
-/* ============ Page transitions ============
-   Browsers without view-transition support just navigate normally. */
 @media (prefers-reduced-motion: no-preference) {
   @view-transition {
     navigation: auto;
   }
 }
 
-/* ============ Header progressive blur ============
-   Lives here, not in Header.astro: the four masks only read as one
+/* Lives here, not in Header.astro: the four masks only read as one
    ramp when they sit side by side.
 
    One blur masked by a gradient cannot do this: filters run over the
@@ -189,9 +184,7 @@ h3 {
   }
 }
 
-/* ============ Article reading treatment ============
-   Written as element rules because the markdown pipeline emits bare
-   elements. */
+/* Element rules because the markdown pipeline emits bare elements. */
 .prose {
   color: var(--color-prose);
   font-size: 1.0625rem;
@@ -224,7 +217,6 @@ h3 {
   margin-top: 2.5rem;
 }
 
-/* Underline color deliberately differs from the link text. */
 :is(.prose, .entry-excerpt, .role-copy) a {
   @apply text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300;
   text-decoration-thickness: 1px;
@@ -233,10 +225,8 @@ h3 {
   @apply text-white decoration-accent;
 }
 
-/* Heading self-links. The anchor icon is always visible by design,
-   not hover-only. */
 .prose :is(h2, h3) {
-  /* Anchor jumps land clear of the sticky header. */
+  /* Clears the sticky header. */
   scroll-margin-top: 5.5rem;
 }
 .prose :is(h2, h3) a {
@@ -291,7 +281,6 @@ h3 {
   border: 1px solid var(--color-hairline);
 }
 
-/* Code blocks stay exactly the prose column width; never wider. */
 .prose pre {
   @apply overflow-x-auto border border-hairline bg-surface;
   margin-top: 1.5rem;
@@ -307,16 +296,12 @@ h3 {
   color: #aab1b9;
 }
 
-/* Filename header: attaches to the top of the code block that
-   follows it. */
 .prose .filename-header {
   @apply flex items-center gap-2 border border-hairline bg-night font-mono text-xs text-ink-mute;
   margin-top: 1.5rem;
   margin-bottom: 0;
   padding: 0.5rem 1.25rem;
 }
-/* Only the filename scrolls when it's too long. The language tag
-   and copy button stay pinned on the right. */
 .filename-header .filename-text {
   flex: 1;
   min-width: 0;
@@ -328,8 +313,6 @@ h3 {
   border-top: 0;
 }
 
-/* Language tag + copy button. Blocks with a filename bar carry them
-   in the bar; bare blocks float them in the top-right corner. */
 .prose .code-wrap {
   position: relative;
   margin-top: 1.5rem;
@@ -357,8 +340,7 @@ h3 {
 }
 .copy-btn {
   @apply cursor-pointer text-ink-mute transition-colors duration-300 hover:text-ink;
-  /* 24px hit target from the 16px icon; the negative margin cancels
-     it visually. */
+  /* 24px target from the 16px icon at the same visual size. */
   padding: 0.25rem;
   margin: -0.25rem;
 }
@@ -378,7 +360,6 @@ h3 {
   display: block;
 }
 
-/* Callout: the migrated header-call-out shortcode. */
 .prose .callout {
   @apply border-l-2 border-accent/60 bg-surface/40 px-4 py-3 text-[0.9375rem] text-ink-dim;
 }
@@ -386,7 +367,6 @@ h3 {
   margin-top: 0.75rem;
 }
 
-/* Figures: lone images get a framed, centered treatment. */
 .prose figure {
   @apply border border-hairline bg-surface/40 p-6 sm:p-8;
   margin-top: 2.5rem;
@@ -409,7 +389,6 @@ h3 {
   height: auto;
 }
 
-/* YouTube embeds (privacy-enhanced iframes from the migration). */
 .prose .video-embed iframe {
   display: block;
   width: 100%;
@@ -417,9 +396,6 @@ h3 {
   border: 1px solid var(--color-hairline);
 }
 
-/* ============ Entry-list excerpts ============
-   The rendered chunk before <!--more-->, shown on blog/tag entry
-   lists as real excerpt HTML. */
 .entry-excerpt {
   margin-top: 0.75rem;
   line-height: 1.625;
@@ -447,8 +423,6 @@ h3 {
   padding-left: 1.25rem;
 }
 
-/* The wrapper scrolls sideways so a wide table never scrolls the
-   page. */
 .prose .table-wrap {
   overflow-x: auto;
   margin-top: 1.5rem;

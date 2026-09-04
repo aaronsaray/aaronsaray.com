@@ -14,8 +14,7 @@ import { ogImageForTag } from "../../lib/ogImage";
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
   return posts.map((entry) => ({
-    // The URL contract: /:year/:filename/. Year is the first four
-    // characters of the date string, slug is the filename verbatim.
+    // URL contract: year is the first four characters of the date string.
     params: { year: entry.data.date.slice(0, 4), slug: entry.id },
     props: { entry },
   }));
@@ -41,13 +40,9 @@ const showLaravelCta = entry.data.tags.includes("laravel");
 >
   <main id="main" class="mx-auto max-w-3xl px-5 pt-6 pb-24 sm:px-8 sm:pt-8">
     {
-      /* The title links to the page it is already on, so the icon can
-         stay hidden until hover or focus without withholding anything:
-         a reader who never finds it loses no destination. The h2/h3
-         anchors are always visible because those do reach somewhere
-         otherwise unreachable. The link color never changes: on a page
-         whose other headings are plain, a title that lit up would read
-         as navigation elsewhere. The icon carries the affordance. */
+      /* The title links to its own page, so a hover-only icon withholds
+         nothing. The h2/h3 anchors stay visible because they reach
+         somewhere otherwise unreachable. */
     }
     <h1 class="page-title">
       <a href={postHref(entry)} class="group text-inherit no-underline">
@@ -59,7 +54,6 @@ const showLaravelCta = entry.data.tags.includes("laravel");
       </a>
     </h1>
 
-    <!-- Meta line: date · read time · tags. No author (single-author site). -->
     <div
       class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline pb-6 text-sm text-ink-mute"
     >
@@ -114,9 +108,7 @@ const showLaravelCta = entry.data.tags.includes("laravel");
     </div>
   </main>
 
-  <!-- Copy-to-clipboard for code blocks: plain inline vanilla JS, no
-       island. The selectors depend on the two rehype-code-chrome DOM
-       shapes. -->
+  <!-- The selectors depend on the two DOM shapes rehype-code-chrome emits. -->
   <script is:inline>
     document.querySelectorAll(".copy-btn").forEach((btn) => {
       btn.addEventListener("click", async () => {

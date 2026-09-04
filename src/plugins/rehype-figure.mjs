@@ -1,20 +1,19 @@
 import { visit, SKIP } from "unist-util-visit";
 import { fromHtml } from "hast-util-from-html";
 
-// Lone images become framed figures (see .prose figure). Three shapes:
+// Three shapes become figures (styled by .prose figure in global.css):
 //
 //  1. p > img            : markdown ![alt](src)
 //  2. p > a > img        : a markdown image wrapped in a link
-//  3. p of raw nodes     : the migrated thumb-link HTML
-//                          <a href="full"><img src="thumb"></a> is
-//                          inline HTML, so remark leaves it as raw
-//                          nodes inside a paragraph. (rehype-raw runs
-//                          AFTER user plugins in Astro's pipeline, so
-//                          we parse the fragment ourselves.)
+//  3. p of raw nodes     : <a href="full"><img src="thumb"></a> in
+//                          old posts is inline HTML, so remark leaves
+//                          it as raw nodes inside a paragraph. Astro
+//                          runs rehype-raw after user plugins, so the
+//                          fragment is parsed here.
 //
-// A bare <img> alone on its own line is an HTML *block* (root-level
-// raw node), handled last. Hand-authored <figure> HTML from the
-// migration is left alone; the element CSS styles it directly.
+// A bare <img> alone on its own line is an HTML block (root-level raw
+// node), handled last. Hand-authored <figure> HTML is left alone; the
+// element CSS styles it directly.
 
 const isWhitespace = (n) => n.type === "text" && !n.value.trim();
 
@@ -61,7 +60,6 @@ export function rehypeFigure() {
       }
     });
 
-    // Root-level raw <img> blocks.
     visit(tree, "raw", (node, index, parent) => {
       if (!parent || index === undefined) return;
       if (parent.type === "element" && parent.tagName === "figure") return;

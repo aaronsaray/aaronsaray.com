@@ -5,9 +5,8 @@ const BASE_URL = `http://localhost:${PORT}`;
 
 export default defineConfig({
   forbidOnly: !!process.env.CI,
-  // The github reporter writes annotations but no files. The html one is
-  // what produces playwright-report/, which the workflow uploads on a
-  // failed run.
+  // The github reporter writes no files. The html one produces
+  // playwright-report/, which the workflow uploads on a failed run.
   reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : "list",
   use: {
     baseURL: BASE_URL,
@@ -17,9 +16,6 @@ export default defineConfig({
     permissions: ["clipboard-read", "clipboard-write"],
     trace: "retain-on-failure",
   },
-  // Two projects, one per directory: `e2e` is behavior, `a11y` is the
-  // axe sweep. Both run in verify. Split so either can be run alone
-  // while iterating (`npm run test:e2e`, `npm run test:a11y`).
   projects: [
     {
       name: "e2e",

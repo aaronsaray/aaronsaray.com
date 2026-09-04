@@ -6,7 +6,7 @@ tags:
   - management
 evergreen: true
 ---
-<!-- AI-GENERATED DRAFT written from Aaron's outline. Aaron rewrites before launch. -->
+<!-- AI-GENERATED PLACEHOLDER: the entire post, from Aaron's outline -->
 When people picture a CTO, they picture the best programmer in the building. That's the wrong picture. A CTO is not just a technical thinker. A CTO is a communicator, and the job is building the bridge between the tech team and the rest of the C-suite.
 
 <!--more-->

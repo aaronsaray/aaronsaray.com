@@ -1,9 +1,6 @@
 import { visit } from "unist-util-visit";
 import { lookupDimensions } from "../lib/imageDimensions.ts";
 
-// Stamps the four attributes content images need but markdown cannot
-// express: loading, decoding, width and height.
-//
 // width/height are not a rendered size. Browsers map them to an
 // aspect-ratio, so paired with the `max-width:100%; height:auto` in
 // global.css they reserve the right box before the image loads and
@@ -14,13 +11,12 @@ import { lookupDimensions } from "../lib/imageDimensions.ts";
 // it can be the LCP element, and lazy-loading the LCP image is the
 // one thing this attribute must never do.
 //
-// Two shapes exist at this point in the pipeline (runs after
-// rehype-figure): hast <img> elements (markdown images, plus the raw
-// fragments rehype-figure already parsed), and still-raw HTML strings
-// (inline <img> inside paragraphs, root-level blocks) which
-// rehype-raw parses after user plugins, so those are edited as text.
-// visit() is preorder, so "first" means first in document order
-// across both shapes.
+// Two shapes exist at this point: hast <img> elements (markdown
+// images, plus the fragments rehype-figure already parsed), and
+// still-raw HTML strings (inline <img> inside paragraphs, root-level
+// blocks), which rehype-raw parses only after user plugins, so those
+// are edited as text. visit() is preorder, so "first" means first in
+// document order across both shapes.
 //
 // The dimension lookup is async, and visit() is not, so the walk only
 // records what to do; the edits run after every lookup has settled.

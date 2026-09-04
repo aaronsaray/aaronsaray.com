@@ -25,21 +25,18 @@ export default tseslint.config(
     },
   },
   {
-    // Build-time and test code runs under Node.
     files: ["**/*.mjs", "playwright.config.ts", "tests/**/*.ts"],
     languageOptions: {
       globals: globals.node,
     },
   },
   {
-    // Client-side <script> content in .astro files runs in the browser.
     files: ["**/*.astro/*.js", "**/*.astro/*.ts"],
     languageOptions: {
       globals: globals.browser,
     },
   },
   {
-    // CLI verification scripts print their results.
     files: ["scripts/**"],
     rules: {
       "no-console": "off",

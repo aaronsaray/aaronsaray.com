@@ -28,22 +28,51 @@ Expect him to rework code to his taste.
   content (post prose, page copy). Mechanical transforms (frontmatter,
   markup) are fine. If generated text is unavoidable, it must be
   clearly marked as AI-generated (visible marker in the source plus a
-  to-do entry in README.md) so Aaron knows to replace it.
+  to-do entry in README.md) so Aaron knows to replace it. The marker
+  is one exact phrase so every instance can be found:
+  `AI-GENERATED PLACEHOLDER: <what it covers>` and nothing more.
 * **No em dashes.** Strictly forbidden in any content Claude generates:
   docs, code comments, placeholder text, commit messages, everything.
   Use a period, comma, colon, or parentheses instead.
-* **Comments earn their place.** A comment exists only for what the
-  code cannot say: a non-obvious constraint, a foot-gun, a gotcha that
-  looks deletable but is not (the `crossorigin` on the font preloads in
-  `Base.astro` is the model). Never narrate the change, justify a
-  decision, restate an adjacent line, or explain general web platform
-  behavior. If a reader could learn it from the code or from MDN, cut
-  it. Comments describe the code as it stands, never as a diff:
-  anything that reads like a changelog ("now self-hosted", "was
-  previously X") is wrong, and it rots the moment the surrounding code
-  moves. Rationale that matters to a human belongs in `README.md`, not
-  inline. Same bar in those docs: state what is true,
-  not what changed.
+* **A comment answers a question the code raises and cannot answer.**
+  There are four such questions. A comment exists to answer one of
+  them and for no other reason:
+  1. Can I delete or change this? No, and here is what breaks. The
+     `crossorigin` on the font preloads in `Base.astro` is the model.
+  2. Why is this shaped so strangely? Because of an external fact a
+     reader would not guess: a third-party ordering, a platform quirk,
+     a tool that misbehaves under one condition.
+  3. What elsewhere depends on this? Coupling across files that
+     nothing enforces: hexes that mirror tokens in another file, a
+     script whose selectors depend on the DOM a plugin emits.
+  4. Where does this number come from? The derivation or source of a
+     value that is not self-evident.
+
+  Everything else is cut: what the code does (read it), what it used
+  to do (git has it), where it came from, that a choice was made,
+  counts and dates, section banners, and pointers to README to-dos
+  (they are deleted when done). A comment that rejects an alternative
+  says what the alternative breaks; if it cannot, the choice is a
+  preference, and preferences get no comment. "Deliberately", "on
+  purpose", "by design", "now", "no longer", and "migrated" nearly
+  always mark a comment that fails this bar.
+
+  Hugo appears in a comment only when something outside the repo still
+  depends on the old behavior: feed readers keyed on the RSS guid, the
+  URL contract, a display format readers know. The Hugo setting a value
+  was copied from is history, not a reason.
+
+  Comments describe the code as it stands, never as a diff. Lead with
+  the fact, in the fewest words that carry it. A file header states the
+  mechanics that hold the file together, never what the file is; a
+  reader who needs orienting reads the code. Rationale that matters to
+  a human but answers none of the four questions belongs in
+  `README.md`, held to the same bar: what is true, not what changed.
+
+  A rule is written in one place. Where a rule bears on one block of
+  code (the palette tokens in `global.css`), that block carries the
+  lines a person needs at the point they would break it, and nothing
+  else repeats them.
 * **Minimal JavaScript.** Static output; the default is zero JS on a
   page. Vue islands only when interactivity genuinely requires them.
   Currently the only JS on the site is the inline copy-button script.
@@ -177,17 +206,12 @@ rather than discovered by a test.
 
 ### Rules
 
-* **Color comes from a token, never from opacity.** `opacity-60` or
-  `text-ink/60` renders a color that is in no palette, cannot be
-  grepped, and that no reading of the CSS predicts. Use the token that
-  matches, and animate hover with `transition-colors`. Opacity is still
-  right for what it actually means: fading something in or out, and
-  decorative `aria-hidden` icons.
-* **Every text token clears AA 4.5:1 on all three grounds** the site
-  composites: `--color-night`, `--color-surface`, and `bg-surface/40`
-  over night (`#0c0e10`, the footer). Keep it to those three; a fourth
-  alpha value silently adds a fourth ground. `--color-ink-faint` and
-  `--color-accent-dim` are the exceptions, non-text strokes only at 3:1.
+* **Text color comes from the palette tokens in
+  `src/styles/global.css`.** The comment on that block states the
+  grounds, the exceptions, and the no-opacity rule; read it before
+  touching a color. Animate hover with `transition-colors`. Opacity is
+  for what it means: fading in or out, and decorative `aria-hidden`
+  icons.
 * **Leave contrast margin.** axe truncates to two decimals, so 4.499
   reports as 4.49 and fails. A value that lands on 4.50 is one rounding
   step from breaking. This is how the first bug here shipped.

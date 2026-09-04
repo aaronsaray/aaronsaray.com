@@ -1,8 +1,7 @@
 // One case per route template, shared by the e2e and a11y projects so a
-// new page cannot be covered by one and missed by the other. The 707
-// posts and 52 tags are not enumerated: check-url-contract.mjs already
-// proves every one of them resolves in dist/. These prove each template
-// renders.
+// new page cannot be covered by one and missed by the other. Posts and
+// tags are not enumerated: check-url-contract.mjs already proves every
+// one of them resolves in dist/. These prove each template renders.
 export const ROUTES = [
   { name: "home", path: "/" },
   { name: "contact", path: "/contact/" },

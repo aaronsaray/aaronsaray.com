@@ -9,8 +9,7 @@ export function postHref(post: Post): string {
 
 /**
  * Published posts, newest first. Date strings are ISO-shaped so they
- * sort lexicographically; title then id break same-day ties the way
- * Hugo does (Date, then LinkTitle, then file path).
+ * sort lexicographically.
  */
 export async function getSortedPosts(): Promise<Post[]> {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -22,7 +21,7 @@ export async function getSortedPosts(): Promise<Post[]> {
   );
 }
 
-export const PER_PAGE = 10; // Hugo's paginate setting
+export const PER_PAGE = 10;
 
 export function pageCount(total: number): number {
   return Math.max(1, Math.ceil(total / PER_PAGE));

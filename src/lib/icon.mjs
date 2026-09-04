@@ -1,8 +1,7 @@
 import { readFileSync } from "node:fs";
 
-// Tabler outline icons, one file per name in src/icons/. The file's own
-// wrapper is discarded so every caller gets the same attributes and
-// controls class and stroke width.
+// The file's own <svg> wrapper is discarded so every caller gets the
+// same attributes and controls class and stroke width.
 /**
  * @param {string} svg
  * @param {{ class?: string; strokeWidth?: number }} [options]

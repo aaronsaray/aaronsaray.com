@@ -28,9 +28,9 @@ async function read(src: string): Promise<Dimensions | null> {
     const { width, height } = await imageMetadata(await readFile(path), src);
     return { width, height };
   } catch {
-    // A missing file or an unparseable one (posts reference both on
-    // purpose: an XSS demo points <img> at a .php). Callers stamp
-    // nothing and the build carries on.
+    // A missing file or an unparseable one (posts reference both: an
+    // XSS demo points <img> at a .php). Callers stamp nothing and the
+    // build carries on.
     return null;
   }
 }

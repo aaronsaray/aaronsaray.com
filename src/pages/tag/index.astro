@@ -5,8 +5,6 @@ import { SITE_DESCRIPTION } from "../../lib/site";
 
 const posts = await getSortedPosts();
 
-// Term counts from post frontmatter, most-used first (Hugo's ByCount),
-// term name breaking ties.
 const counts = new Map<string, number>();
 for (const post of posts) {
   for (const tag of post.data.tags) {
@@ -20,9 +18,6 @@ const terms = [...counts.entries()].sort(
 
 <Base title="Blog Tags" description={SITE_DESCRIPTION}>
   <main id="main" class="mx-auto max-w-3xl px-5 pt-6 pb-24 sm:px-8 sm:pt-8">
-    <!-- Prose carried over from content/tag/_index.md (the H1 and the
-         paragraph are Aaron's); the count is computed, replacing the
-         Hugo blog-count shortcode. -->
     <h1 class="page-title">Tags for the Blog</h1>
     <p
       class="mt-4 border-b border-hairline pb-8 text-lg leading-relaxed text-ink-dim"

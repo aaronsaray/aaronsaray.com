@@ -17,18 +17,15 @@ const blog = defineCollection({
   schema: z
     .object({
       title: z.string(),
-      // A string on purpose: the URL year is the first 4 characters, and
-      // Date coercion through a timezone could shift it.
+      // A string: the URL year is its first 4 characters, and Date
+      // coercion through a timezone could shift it.
       date: z
         .string()
         .regex(/^\d{4}-\d{2}-\d{2}($|T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2})?$)/),
       tags: z.array(z.string()).min(1),
       context: z.array(z.string()).optional(),
       draft: z.boolean().optional(),
-      // Overrides the tag-derived evergreen policy (src/lib/evergreen.ts)
-      // that decides whether an old post shows the age notice. true:
-      // never show it (a timeless essay with technical tags); false:
-      // show it despite evergreen tags. Omit for the default.
+      // Overrides the tag policy in src/lib/evergreen.ts.
       evergreen: z.boolean().optional(),
     })
     .strict(),

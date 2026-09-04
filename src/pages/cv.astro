@@ -2,7 +2,7 @@
 import { getEntry, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 
-// Body prose is Aaron's, including its own leading H1.
+// The body carries its own H1.
 const entry = await getEntry("pages", "cv");
 if (!entry) throw new Error("pages/cv content missing");
 const { Content } = await render(entry);

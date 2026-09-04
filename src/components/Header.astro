@@ -1,6 +1,4 @@
 ---
-// The same bar on every page; fixed on the homepage so it overlays
-// the hero instead of pushing it down.
 import NavItem from "./NavItem.astro";
 import { NAV } from "../lib/nav";
 
@@ -12,10 +10,9 @@ const { overlay = false } = Astro.props;
 
 <header class={`z-10 ${overlay ? "fixed inset-x-0 top-0" : "sticky top-0"}`}>
   {
-    /* Progressive blur; the stack's mechanics are in global.css. It
-       extends past the header's own height so the ramp finishes in open
-       page rather than at the bar's edge, which is what removes the
-       visible boundary. */
+    /* The blur stack (mechanics in global.css) extends past the header
+       so the ramp ends in open page; ending it at the bar's edge draws
+       a visible boundary. */
   }
   <div
     aria-hidden="true"
@@ -26,8 +23,7 @@ const { overlay = false } = Astro.props;
     <div></div>
     <div></div>
   </div>
-  <!-- Skip link: first tab stop on every page, visible only while
-       focused. Every template's <main> carries id="main". -->
+  <!-- Every template's <main> carries id="main". -->
   <a
     href="#main"
     class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:border focus:border-hairline focus:bg-surface focus:px-4 focus:py-2 focus:text-ink"
@@ -38,10 +34,6 @@ const { overlay = false } = Astro.props;
     class="relative mx-auto flex max-w-6xl items-center justify-between px-5 pt-6 pb-4 sm:px-8"
   >
     <a href="/" aria-label="Aaron Saray home">
-      {
-        /* Zero-offset black halo: nothing to see against the page, but
-           it darkens blurred text passing under the mark. */
-      }
       <img
         src="/logo.svg"
         width="45"
