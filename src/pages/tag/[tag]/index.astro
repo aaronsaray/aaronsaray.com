@@ -28,7 +28,7 @@ const posts = (await getSortedPosts()).filter((post) =>
   description={entry.data.description}
   ogImage={ogImageForTag(term)}
 >
-  <main id="main" class="mx-auto max-w-3xl px-5 pt-6 pb-24 sm:px-8 sm:pt-8">
+  <main id="main" class="page-column">
     <h1 class="page-title">
       Entries with the tag &ldquo;{term}&rdquo;
     </h1>
