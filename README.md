@@ -164,6 +164,38 @@ The rest of the post.
 * Image `width`/`height` are never authored. `rehype-img-attrs` reads every local image at build (through Astro's own `imageMetadata` helper, so no extra dependency) and stamps its real dimensions, so a new image needs nothing beyond the markdown above. Reserving the box is what stops the article reflowing as images load.
 * YouTube: `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/VIDEOID" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>`
 
+## Updating the CV
+
+`src/content/pages/cv.md` is one markdown file. `src/pages/cv.astro` renders the frontmatter `title` as the H1 and `intro` as the lede, then a section index built from the H2s in file order; sections are reordered by moving H2 blocks. The frontmatter `sections: true` wraps each H2 and what follows it in a `<section>` (`src/plugins/rehype-sections.mjs`). On wide screens a section that holds a dated row gets the date gutter and a section of plain prose does not; a table carries its own date column, the same width as the gutter, and lives in a section by itself. The `.cv` rules in `src/styles/global.css` key on the shapes below, so each kind of entry is typed one way.
+
+A role: an H3 per organization, then an H4 per role whose first thing is the date in italics, then the description as an ordinary paragraph. Consecutive roles at one organization share the H3.
+
+```markdown
+### Talimer, Milwaukee, WI
+
+#### *Nov 2020 to Feb 2021* Advisory Chief Technology Officer
+
+As the Advisory CTO at Talimer, I help review decisions ...
+```
+
+A talk or a credential: one pipe-table row, the date, then the title with the venue or issuer in italics.
+
+```markdown
+| Oct 2019 | The Freelance Economy Panel *FallX19 Fall Experiment, Milwaukee, WI* |
+```
+
+A community line: a paragraph whose first thing is the date in italics, then the organization in bold, then the rest.
+
+```markdown
+*2019 to 2020* **[i.c.Stars](https://milwaukee.icstars.org)** Community volunteer.
+```
+
+A publication: a paragraph whose first thing is the title in bold (linked or not), then the description.
+
+Dates are `Mon YYYY`, a bare `YYYY`, or a range with the word "to" (`Oct 2018 to present`). Never a slash or a dash: the gutter sets them in tabular figures, and a slash reads as a fraction.
+
+The footgun: any paragraph whose first inline element is italic or bold gets the row treatment, text before it or not (CSS cannot see leading text). Ordinary prose in this file starts with plain text.
+
 ## Layout
 
 * `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv, contact, and colophon bodies.
@@ -184,7 +216,7 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 ### Design
 
-* [ ] CV information design (`src/pages/cv.astro`): the page currently reads as one long prose column; the programmer-to-manager-to-business arc is hard to scan. Keep the single markdown source (`src/content/pages/cv.md`): adding a role, talk, or credential must never require duplicated data or a custom component tree. Investigate: frontmatter title as the page title with the descriptive opening as intro content (needs Aaron's approval), a build-time section index from Astro's rendered heading data, stronger section spacing and typographic hierarchy, a repeatable visual rhythm for work-history entries derived from the markdown structure already present, and on wide screens a quiet section rail or two-column layout (single column on narrow). CSS and mechanical markdown only, no client JS. If the markdown is too irregular, propose the smallest one-time cleanup and show the authoring convention before applying it.
+* [ ] CV sticky section labels (`src/pages/cv.astro`): on wide screens pin each H2 in a left column while its entries scroll on the right, the homepage `md:grid-cols-[1fr_2fr]` grid. Each H2 block is already a `<section>` (`src/plugins/rehype-sections.mjs`), so this is CSS `position: sticky` on the H2, no client JS.
 
 ### Writing
 

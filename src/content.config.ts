@@ -55,6 +55,9 @@ const pages = defineCollection({
     .object({
       title: z.string(),
       description: z.string(),
+      intro: z.string().optional(),
+      // Wraps each H2 block in a <section> (src/plugins/rehype-sections.mjs).
+      sections: z.boolean().optional(),
     })
     .strict(),
 });

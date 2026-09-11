@@ -202,11 +202,13 @@ h3 {
 .entry-excerpt p {
   text-wrap: pretty;
 }
-.prose > * + * {
+/* rehype-sections wraps each H2 block in a section. */
+.prose > * + *,
+.prose section > * + * {
   margin-top: 1.25rem;
 }
 
-/* A body-authored H1 (cv/contact keep their own) gets the same
+/* A body-authored H1 (contact keeps its own) gets the same
    treatment as page titles. */
 .prose h1 {
   @apply page-title;
@@ -448,4 +450,89 @@ h3 {
 }
 .prose td:first-child {
   @apply font-medium text-ink;
+}
+
+/* The shapes these rules key on (an h4 or p whose first child is an
+   em is a dated row, a leading strong is a title on its own line, a
+   table's first column is a date, a td em is a venue) are the CV
+   authoring convention in README "Updating the CV". 11.5rem is the
+   gutter; the section padding, H2 pull-back, hanging indent, and
+   table date column all carry it. */
+.cv h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-hairline);
+}
+.cv h4 {
+  @apply font-sans font-semibold text-ink;
+  font-size: 1.0625rem;
+  margin-top: 1.5rem;
+  scroll-margin-top: 5.5rem;
+}
+.cv h4 + p {
+  margin-top: 0.5rem;
+}
+.cv :is(p, li) {
+  color: var(--color-ink-dim);
+}
+.cv :is(h4, p) > em:first-child {
+  @apply text-sm font-normal text-ink-dim;
+  display: block;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+}
+.cv p > strong:first-child {
+  display: block;
+}
+.cv p > em:first-child + strong {
+  display: inline;
+}
+.cv td {
+  vertical-align: baseline;
+}
+.cv td:first-child {
+  @apply font-normal text-ink-dim;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.cv td:first-child + td {
+  color: var(--color-ink);
+}
+.cv td em {
+  display: block;
+  font-style: normal;
+  color: var(--color-ink-dim);
+}
+@media (width >= 64rem) {
+  .cv section:has(> :is(h4, p) > em:first-child) {
+    padding-left: 11.5rem;
+  }
+  .cv section:has(> :is(h4, p) > em:first-child) > h2 {
+    margin-left: -11.5rem;
+  }
+  /* Inline-block, not absolute: an absolute date cannot share the
+     title's baseline. The margin is 1.5rem less the space that
+     follows the date; Inter's space advance is 0.25 of the font size
+     at weight 600 and 0.28 at 400. */
+  .cv :is(h4, p):has(> em:first-child) {
+    text-indent: -11.5rem;
+  }
+  .cv :is(h4, p) > em:first-child {
+    display: inline-block;
+    width: 10rem;
+    text-align: right;
+    text-indent: 0;
+  }
+  .cv h4 > em:first-child {
+    margin-right: calc(1.5rem - 0.25 * 1.0625rem);
+  }
+  .cv p > em:first-child {
+    margin-right: calc(1.5rem - 0.28 * 1.0625rem);
+  }
+  .cv th:first-child,
+  .cv td:first-child {
+    width: 11.5rem;
+    padding-right: 1.5rem;
+    text-align: right;
+  }
 }

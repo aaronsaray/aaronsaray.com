@@ -10,6 +10,7 @@ import { rehypeCodeChrome } from "./src/plugins/rehype-code-chrome.mjs";
 import { rehypeTableWrap } from "./src/plugins/rehype-table-wrap.mjs";
 import { rehypeFigure } from "./src/plugins/rehype-figure.mjs";
 import { rehypeImgAttrs } from "./src/plugins/rehype-img-attrs.mjs";
+import { rehypeSections } from "./src/plugins/rehype-sections.mjs";
 import { anchorIcon } from "./src/plugins/anchor-icon.mjs";
 import { aaronsarayDark } from "./src/plugins/shiki-theme.mjs";
 import { shikiMetaFilename } from "./src/plugins/shiki-meta-filename.mjs";
@@ -49,6 +50,7 @@ export default defineConfig({
         rehypeTableWrap,
         rehypeFigure,
         rehypeImgAttrs,
+        rehypeSections,
       ],
     }),
     shikiConfig: {

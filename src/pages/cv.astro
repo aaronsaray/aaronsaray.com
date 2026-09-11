@@ -2,15 +2,41 @@
 import { getEntry, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 
-// The body carries its own H1.
 const entry = await getEntry("pages", "cv");
 if (!entry) throw new Error("pages/cv content missing");
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const sections = headings.filter((h) => h.depth === 2);
 ---
 
 <Base title={entry.data.title} description={entry.data.description}>
-  <main id="main" class="page-column">
-    <div class="prose">
+  <main id="main" class="page-column lg:max-w-5xl">
+    <h1 class="page-title">{entry.data.title}</h1>
+    {
+      entry.data.intro && (
+        <p class="mt-4 text-lg leading-relaxed text-ink-dim">
+          {entry.data.intro}
+        </p>
+      )
+    }
+    <nav
+      aria-label="Sections"
+      class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-dim"
+    >
+      {
+        sections.map((section, i) => (
+          <>
+            {i > 0 && <span aria-hidden="true">&middot;</span>}
+            <a
+              href={`#${section.slug}`}
+              class="-my-1 inline-block py-1 transition-colors duration-300 hover:text-ink"
+            >
+              {section.text}
+            </a>
+          </>
+        ))
+      }
+    </nav>
+    <div class="prose cv">
       <Content />
     </div>
   </main>
