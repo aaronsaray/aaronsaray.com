@@ -178,6 +178,10 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
+### Tooling
+
+* [ ] Switch all AI and user tooling to makefile
+
 ### Design
 
 * [ ] CV information design (`src/pages/cv.astro`): the page currently reads as one long prose column; the programmer-to-manager-to-business arc is hard to scan. Keep the single markdown source (`src/content/pages/cv.md`): adding a role, talk, or credential must never require duplicated data or a custom component tree. Investigate: frontmatter title as the page title with the descriptive opening as intro content (needs Aaron's approval), a build-time section index from Astro's rendered heading data, stronger section spacing and typographic hierarchy, a repeatable visual rhythm for work-history entries derived from the markdown structure already present, and on wide screens a quiet section rail or two-column layout (single column on narrow). CSS and mechanical markdown only, no client JS. If the markdown is too irregular, propose the smallest one-time cleanup and show the authoring convention before applying it.
