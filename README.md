@@ -214,10 +214,6 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-### Design
-
-* [ ] CV sticky section labels (`src/pages/cv.astro`): on wide screens pin each H2 in a left column while its entries scroll on the right, the homepage `md:grid-cols-[1fr_2fr]` grid. Each H2 block is already a `<section>` (`src/plugins/rehype-sections.mjs`), so this is CSS `position: sticky` on the H2, no client JS.
-
 ### Writing
 
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
