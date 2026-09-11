@@ -128,7 +128,7 @@ I am a prolific author, editor and blogger.  (On this site - [700+ technical and
 
 ### Participant
 
-**[No Compromises Podcast](https://show.nocompromises.io)** A bi-weekly podcast with over 50 episodes focusing on Laravel and PHP programming concepts and dev team methodologies and strategies.
+**[No Compromises Podcast](https://show.nocompromises.io)** A bi-weekly podcast with over 160 episodes focusing on Laravel and PHP programming concepts and dev team methodologies and strategies.
 
 ### Technical Editor
 
