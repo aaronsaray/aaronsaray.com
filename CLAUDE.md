@@ -21,9 +21,9 @@ Expect him to rework code to his taste.
 * **URLs never change. Ever.** Blog permalinks are `/:year/:slug/`
   (filename = slug, date's year = year). `scripts/url-contract.txt`
   lists every page, feed, and downloadable document URL the old site
-  served (image files under `/uploads/` are not promised); `npm run
-  verify` enforces that they all still resolve. If verify fails, fix
-  the site, not the fixture. The fixture never shrinks.
+  served (image files under `/uploads/` are not promised); `make verify`
+  enforces that they all still resolve. If verify fails, fix the site,
+  not the fixture. The fixture never shrinks.
 * **No AI content, ever.** Claude never writes or edits Aaron's
   content (post prose, page copy). Mechanical transforms (frontmatter,
   markup) are fine. If generated text is unavoidable, it must be
@@ -85,17 +85,23 @@ Expect him to rework code to his taste.
 
 ## Building and Verifying
 
-* `npm run verify` (astro check + build + URL contract check +
+* `make verify` (clean + astro check + build + URL contract check +
   internal link check + lint + Playwright tests) must be green before
   declaring any change done. It is the only gate: a new check goes
   inside `verify`, never beside it as a command to remember.
-  GitHub Actions runs `npm run verify` and nothing else.
+  GitHub Actions runs `make ci` (fresh install, then `verify`) and
+  nothing else.
+* Every repeated command is a make target, and `make` with no target
+  lists them. The leaf-and-grouping rule is in README "Tooling":
+  `package.json` scripts are single-tool leaves, each with a same-named
+  target, and the Makefile composes them. A command not in the list is
+  a one-off; a one-off that gets repeated becomes a target.
 * Formatting is owned by Prettier (pure defaults plus the astro and
   tailwindcss plugins), linting by ESLint flat config (recommended
   sets only, prettier-conflict rules disabled), markdown by
   markdownlint (repo-local `.markdownlint-cli2.jsonc`; do not use the
-  home-directory config here). `npm run lint` runs all three and
-  `npm run lint:fix` fixes all three. Never hand-format against
+  home-directory config here). `make lint` runs all three and
+  `make lint-fix` fixes all three. Never hand-format against
   Prettier. Prettier and ESLint never touch `src/content/`, `public/`,
   or any markdown. See README "Tooling".
 * AI tooling is repo-declared: `.mcp.json` (Astro docs + Playwright MCP
@@ -121,18 +127,19 @@ Expect him to rework code to his taste.
   instead. Node and npm versions are pinned via Volta in
   `package.json`.
 * **Content-layer cache gotcha:** Astro caches rendered markdown in
-  `.astro/data-store.json`. After changing anything in the markdown
-  pipeline (`src/plugins/`, the `markdown` options in
-  `astro.config.mjs`), build with `npx astro build --force`. A plain
-  build silently serves stale post HTML. The dev server reads the same
-  cache, so the Playwright tests inherit this: a plugin change can be
-  invisible to them until the cache is cleared. When a test result
-  after a pipeline change looks impossible, delete
-  `.astro/data-store.json` and re-run before believing it. CI is
-  unaffected, since a fresh checkout has no cache.
+  two places: `node_modules/.astro/data-store.json` for `astro build`
+  and `.astro/data-store.json` for `astro dev`, which the Playwright
+  suite starts. After changing anything in the markdown pipeline
+  (`src/plugins/`, the `markdown` options in `astro.config.mjs`), a
+  warm `make build` or `make test` silently serves stale post HTML.
+  `make verify` deletes both caches first, so it is always
+  trustworthy; while iterating, run `make clean` before believing a
+  build or test result that looks impossible. CI is unaffected, since
+  `npm ci` removes `node_modules/` and a fresh checkout has no
+  `.astro/`.
 * The `tests/` suite covers behavior against a dev server it starts
   itself. It is not a substitute for looking at the page: for
-  user-facing changes, browse the built site with `npm run preview`
+  user-facing changes, browse the built site with `make preview`
   and the Playwright MCP.
 
 ## How the Site Works
@@ -197,7 +204,7 @@ learning the subject as the site is built. Do not wait to be asked, and
 do not assume he knows a rule already: say what the rule is, and why,
 when it comes up.
 
-`npm run verify` runs axe over every route template. **Treat a green
+`make verify` runs axe over every route template. **Treat a green
 run as a floor, not a pass.** Automation covers a well-defined minority
 of accessibility (roughly 17% of WCAG AA success criteria, though those
 happen to include most of what people get wrong in practice). The rest
@@ -254,16 +261,16 @@ should raise them rather than wait:
 * `tests/`: Playwright, Chromium only, against a dev server the config
   starts on port 4321 and stops afterward. Two projects: `e2e`
   (`tests/e2e/`, behavior) and `a11y` (`tests/a11y/`, the axe sweep).
-  Both run in `verify`; `npm run test:e2e` and `npm run test:a11y` run
+  Both run in `verify`; `make test-e2e` and `make test-a11y` run
   one at a time while iterating. A new page means a new line in
   `tests/routes.ts`, which both projects read. Posts and tags are not
   enumerated there: the URL contract already proves every path
   resolves.
 * `.npmrc`'s `ignore-scripts` blocks Playwright's browser download, so
-  a fresh clone needs `npx playwright install chromium`.
+  a fresh clone needs `make install`, which downloads it after `npm ci`.
 * **If port 4321 is in use, stop and tell Aaron.** Playwright refuses
   to run when anything already answers on the port, and the thing
-  answering is almost always Aaron's own `npm run dev` in a PhpStorm
+  answering is almost always Aaron's own `make dev` in a PhpStorm
   terminal. Do not investigate the process, do not trace its
   ancestry, do not kill it, do not work around it with
   `reuseExistingServer`. Say that verify cannot finish because a dev

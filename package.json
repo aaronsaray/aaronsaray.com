@@ -8,16 +8,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "lint": "npm run lint:js && npm run lint:format && npm run lint:md",
-    "lint:fix": "eslint . --fix && prettier --write . && markdownlint-cli2 --fix",
     "lint:js": "eslint .",
     "lint:format": "prettier --check .",
     "lint:md": "markdownlint-cli2",
     "format": "prettier --write .",
+    "test": "playwright test",
     "test:e2e": "playwright test --project=e2e",
-    "verify": "astro check && astro build && node scripts/check-url-contract.mjs && node scripts/check-links.mjs && npm run lint && npm run test",
-    "test:a11y": "playwright test --project=a11y",
-    "test": "playwright test"
+    "test:a11y": "playwright test --project=a11y"
   },
   "volta": {
     "node": "24.20.0",
