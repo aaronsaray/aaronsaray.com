@@ -137,7 +137,7 @@ The rest of the post.
 * At least one tag. A tag needs a matching file in `src/content/tags/` for its landing page. New tag: add `src/content/tags/<term>.md` with `title`/`description` frontmatter and a prose body, and a 1200x630 `public/images/tag/<term>.jpg` for the social card.
 * `draft: true` keeps the post out of every build. Remove it to publish.
 * Posts older than ~18 months show a "technology changes" notice, except evergreen essays: posts whose tags are all in the evergreen set (`management`, `business`, `ideas`; see `src/lib/evergreen.ts`). Optional `evergreen: true`/`false` frontmatter overrides the tag-based default either way.
-* Body headers start at H2. The post title is the H1.
+* Body headers start at H2. The post title is the H1. H2 and H3 get an anchor link.
 * Optional `context:` (list of strings) renders the "Context:" pills under the meta line.
 
 ### Formatting
@@ -166,7 +166,7 @@ The rest of the post.
 
 ## Updating the CV
 
-`src/content/pages/cv.md` is one markdown file. `src/pages/cv.astro` renders the frontmatter `title` as the H1 and `intro` as the lede, then a section index built from the H2s in file order; sections are reordered by moving H2 blocks. The frontmatter `sections: true` wraps each H2 and what follows it in a `<section>` (`src/plugins/rehype-sections.mjs`). On wide screens a section that holds a dated row gets the date gutter and a section of plain prose does not; a table carries its own date column, the same width as the gutter, and lives in a section by itself. The `.cv` rules in `src/styles/global.css` key on the shapes below, so each kind of entry is typed one way.
+`src/content/pages/cv.md` is one markdown file. `src/pages/cv.astro` renders the frontmatter `title` as the H1 and `intro` as the lede, then a section index built from the H2s in file order; sections are reordered by moving H2 blocks. The frontmatter `sections: true` wraps each H2 and what follows it in a `<section>` (`src/plugins/rehype-sections.mjs`). `anchorDepth: 2` links the H2s only; 4 or more would wrap the H4 role headings and break the date gutter, which needs the date `em` as the H4's first child. On wide screens a section that holds a dated row gets the date gutter and a section of plain prose does not; a table carries its own date column, the same width as the gutter, and lives in a section by itself. The `.cv` rules in `src/styles/global.css` key on the shapes below, so each kind of entry is typed one way.
 
 A role: an H3 per organization, then an H4 per role whose first thing is the date in italics, then the description as an ordinary paragraph. Consecutive roles at one organization share the H3.
 
@@ -200,7 +200,7 @@ The footgun: any paragraph whose first inline element is italic or bold gets the
 
 * `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv, contact, and colophon bodies.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
-* `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme).
+* `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
 * `src/icons/` is the Tabler icon set, one SVG per name. Templates render one with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />` (`src/components/Icon.astro`); the markdown plugins read the same files through `src/lib/icon.mjs`. Both emit inline `currentColor` SVG so icons take text color tokens and hover transitions. Adding an icon is dropping the Tabler file into the folder.
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
 * `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every page, feed, and document URL the site has ever served; it never shrinks.

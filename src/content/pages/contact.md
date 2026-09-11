@@ -1,6 +1,7 @@
 ---
 title: Contact
 description: Send me a note.
+anchorDepth: 0
 ---
 
 # Send me a note. I will respond I promise. (I'm nice like that.)

@@ -20,4 +20,9 @@ export const ROUTES = [
     name: "post without filename headers",
     path: "/2007/a-better-understanding-of-error-reporting-in-php/",
   },
+  // The one post the axe sweep sees with H3 anchors.
+  {
+    name: "post with heading anchors",
+    path: "/2021/do-not-use-tinker-in-production/",
+  },
 ] as const;

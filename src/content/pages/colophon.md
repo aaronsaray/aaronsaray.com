@@ -1,6 +1,7 @@
 ---
 title: Colophon
 description: How this site is made, and who made what.
+anchorDepth: 0
 ---
 
 <!-- AI-GENERATED PLACEHOLDER: the entire page -->

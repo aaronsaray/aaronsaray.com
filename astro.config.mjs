@@ -3,7 +3,6 @@ import { defineConfig } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
 import tailwindcss from "@tailwindcss/vite";
 import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkDirective from "remark-directive";
 import { remarkCallout } from "./src/plugins/remark-callout.mjs";
 import { rehypeCodeChrome } from "./src/plugins/rehype-code-chrome.mjs";
@@ -11,7 +10,7 @@ import { rehypeTableWrap } from "./src/plugins/rehype-table-wrap.mjs";
 import { rehypeFigure } from "./src/plugins/rehype-figure.mjs";
 import { rehypeImgAttrs } from "./src/plugins/rehype-img-attrs.mjs";
 import { rehypeSections } from "./src/plugins/rehype-sections.mjs";
-import { anchorIcon } from "./src/plugins/anchor-icon.mjs";
+import { rehypeHeadingAnchors } from "./src/plugins/rehype-heading-anchors.mjs";
 import { aaronsarayDark } from "./src/plugins/shiki-theme.mjs";
 import { shikiMetaFilename } from "./src/plugins/shiki-meta-filename.mjs";
 
@@ -42,10 +41,9 @@ export default defineConfig({
       remarkPlugins: [remarkDirective, remarkCallout],
       rehypePlugins: [
         rehypeSlug,
-        [
-          rehypeAutolinkHeadings,
-          { behavior: "wrap", test: ["h2", "h3"], content: anchorIcon },
-        ],
+        // A document without anchorDepth is a post: the pages schema
+        // requires the key. 3 links H2 and H3.
+        [rehypeHeadingAnchors, { depth: 3 }],
         rehypeCodeChrome,
         rehypeTableWrap,
         rehypeFigure,

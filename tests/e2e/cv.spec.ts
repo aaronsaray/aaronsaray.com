@@ -92,3 +92,12 @@ test("desktop gutter lines up across sections and dates share the title baseline
   expect(layout.publicationLeft).toBe(layout.headingLeft);
   expect(Math.abs(layout.baselineGap)).toBeLessThan(0.5);
 });
+
+test("H2s carry an anchor link and deeper headings do not", async ({
+  page,
+}) => {
+  const count = await page.locator(".cv h2").count();
+  expect(count).toBeGreaterThan(0);
+  await expect(page.locator(".cv h2 > a.heading-anchor")).toHaveCount(count);
+  await expect(page.locator(".cv :is(h3, h4) a.heading-anchor")).toHaveCount(0);
+});

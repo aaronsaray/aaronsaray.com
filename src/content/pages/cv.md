@@ -3,6 +3,7 @@ title: Curriculum Vitae
 description: My CV contains detailed information relevant to my entire professional career.
 intro: This full-featured curriculum vitae details my development and management experience, speaking engagements, projects, published code and more.
 sections: true
+anchorDepth: 2
 ---
 
 ## Work Experience

@@ -222,22 +222,22 @@ h3 {
   @apply font-display text-xl font-semibold text-white sm:text-2xl;
   margin-top: 2.5rem;
 }
+.prose h4 {
+  @apply font-display text-lg font-semibold text-white sm:text-xl;
+  margin-top: 2rem;
+}
 
-:is(.prose, .entry-excerpt, .role-copy) a {
+:is(.prose, .entry-excerpt, .role-copy) a:not(.heading-anchor) {
   @apply text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300;
   text-decoration-thickness: 1px;
 }
-:is(.prose, .entry-excerpt, .role-copy) a:hover {
+:is(.prose, .entry-excerpt, .role-copy) a:not(.heading-anchor):hover {
   @apply text-white decoration-accent;
 }
 
-.prose :is(h2, h3) {
+.prose :is(h2, h3, h4, h5, h6) {
   /* Clears the sticky header. */
   scroll-margin-top: 5.5rem;
-}
-.prose :is(h2, h3) a {
-  color: inherit;
-  text-decoration: none;
 }
 .anchor-icon {
   display: inline-block;
@@ -250,9 +250,14 @@ h3 {
     color 0.3s,
     opacity 0.3s;
 }
-.prose :is(h2, h3) a:hover .anchor-icon {
+.heading-anchor:is(:hover, :focus-visible) .anchor-icon {
   color: var(--color-accent);
   opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .anchor-icon {
+    transition: none;
+  }
 }
 
 .prose ul,
@@ -465,8 +470,9 @@ h3 {
 .cv h4 {
   @apply font-sans font-semibold text-ink;
   font-size: 1.0625rem;
+  /* Undoes the .prose h4 line-height. */
+  line-height: inherit;
   margin-top: 1.5rem;
-  scroll-margin-top: 5.5rem;
 }
 .cv h4 + p {
   margin-top: 0.5rem;

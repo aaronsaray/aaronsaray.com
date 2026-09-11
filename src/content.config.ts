@@ -58,6 +58,10 @@ const pages = defineCollection({
       intro: z.string().optional(),
       // Wraps each H2 block in a <section> (src/plugins/rehype-sections.mjs).
       sections: z.boolean().optional(),
+      // The deepest heading level that gets an anchor link; 0 for none.
+      // No .default(): src/plugins/rehype-heading-anchors.mjs reads the raw
+      // frontmatter, which zod output never reaches.
+      anchorDepth: z.number().int().min(0).max(6),
     })
     .strict(),
 });
