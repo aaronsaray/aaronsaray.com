@@ -135,7 +135,7 @@ The rest of the post.
 * The filename is the URL slug and the date's year is the URL path: `/2026/my-slug-here/`. Never change either after publishing.
 * `date` stays a quoted string. Date-only (`"2026-08-27"`) works too.
 * At least one tag. A tag needs a matching file in `src/content/tags/` for its landing page. New tag: add `src/content/tags/<term>.md` with `title`/`description` frontmatter and a prose body, and a 1200x630 `public/images/tag/<term>.jpg` for the social card.
-* `draft: true` keeps the post out of every build. Remove it to publish.
+* `draft: true` keeps the post out of every build. Remove it to publish. `make dev` renders drafts at their real URL, in every list and feed, with a Draft badge next to the date.
 * Posts older than ~18 months show a "technology changes" notice, except evergreen essays: posts whose tags are all in the evergreen set (`management`, `business`, `ideas`; see `src/lib/evergreen.ts`). Optional `evergreen: true`/`false` frontmatter overrides the tag-based default either way.
 * Body headers start at H2. The post title is the H1. H2 and H3 get an anchor link.
 * Optional `context:` (list of strings) renders the "Context:" pills under the meta line.
@@ -224,8 +224,8 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
   * home page title, description, and the three role rows (`src/pages/index.astro`)
   * the CTO draft post (`src/content/blog/the-cto-is-a-communicator-first.md`), written from Aaron's outline and linked from the home page
   * the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), written from Aaron's notes
+  * the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, written from Aaron's one-line note
   * footer CTA box (`src/components/Footer.astro`)
-* [ ] blog entry about why i'm starting to love parallel test - and yes i'm behind but it's not for just no reason - i just want to have a reason - and before I didn't - but that was a specific tpe of confidence
 
 ### Review
 

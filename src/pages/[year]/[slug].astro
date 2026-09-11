@@ -1,18 +1,18 @@
 ---
 import Icon from "../../components/Icon.astro";
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import OldPostNotice from "../../components/OldPostNotice.astro";
 import LaravelCta from "../../components/LaravelCta.astro";
 import { formatDate, isOldPost } from "../../lib/dates";
 import { isEvergreen } from "../../lib/evergreen";
-import { postHref } from "../../lib/posts";
+import { getPosts, postHref } from "../../lib/posts";
 import { readingTime } from "../../lib/readingTime";
 import { excerptText } from "../../lib/excerpt";
 import { ogImageForTag } from "../../lib/ogImage";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getPosts();
   return posts.map((entry) => ({
     // URL contract: year is the first four characters of the date string.
     params: { year: entry.data.date.slice(0, 4), slug: entry.id },
@@ -57,6 +57,7 @@ const showLaravelCta = entry.data.tags.includes("laravel");
     <div
       class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline pb-6 text-sm text-ink-mute"
     >
+      {entry.data.draft && <span class="draft-badge">Draft</span>}
       <span>{formatDate(entry.data.date)}</span>
       <span aria-hidden="true">&middot;</span>
       <span>{minutes} min read</span>

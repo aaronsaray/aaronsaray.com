@@ -1,4 +1,4 @@
-import { getCollection } from "astro:content";
+import { getPosts } from "./posts";
 
 /** Default meta description. */
 export const SITE_DESCRIPTION =
@@ -10,6 +10,6 @@ export const SITE_DESCRIPTION =
  * to those pages.
  */
 export async function getPostCount(): Promise<number> {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getPosts();
   return posts.length;
 }

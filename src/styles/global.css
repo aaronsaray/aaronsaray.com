@@ -67,6 +67,12 @@
   @apply mx-auto max-w-3xl px-5 pt-6 pb-24 sm:px-8 sm:pt-8;
 }
 
+/* Off the palette: drafts render only on the dev server, and a badge
+   that matched the site would be missed. */
+@utility draft-badge {
+  @apply bg-yellow-300 px-3 py-1 text-sm font-bold tracking-widest text-black uppercase;
+}
+
 html {
   color-scheme: dark;
   /* 3:1 against the track. */
