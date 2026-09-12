@@ -236,6 +236,10 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 ### Writing
 
+* [ ] Reword the books section: the `/books/` title and description, and the five entries in `src/content/books/`, which still read as CV publication blurbs.
+* [ ] Replace the three Laravel covers in `src/content/books/` (`securing-laravel.jpg`, `a-little-bit-of-laravel.jpg`, `mastering-laravel-validation-rules.jpg`). No flat cover is published anywhere, so these are the front face un-tilted from the masteringlaravel.io 3D mockups: slightly soft, with the mockup's lighting gradient. The flat original is page 1 of each e-book PDF; drop it in at any size. `professional-php-design-patterns.jpg` is the Amazon listing image.
+* [ ] Make a better 33 Things book cover. `src/content/books/33-things.jpg` is the PDF's letter-size first page (blue band, white lower half), not a designed cover, and the white half sits badly on the dark ground.
+* [ ] CV, under Participant: Aaron writes some of the daily tips for Mastering Laravel (`src/content/pages/cv.md`).
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
   * `/books/` (`src/pages/books.astro`): title and description only; the book entries in `src/content/books/` are copied verbatim from the CV
   * `/about/` (`src/pages/about.astro`)
@@ -246,10 +250,6 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
   * the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), written from Aaron's notes
   * the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, written from Aaron's one-line note
   * footer CTA box (`src/components/Footer.astro`)
-* [ ] Reword the books section: the `/books/` title and description, and the five entries in `src/content/books/`, which still read as CV publication blurbs.
-* [ ] Replace the three Laravel covers in `src/content/books/` (`securing-laravel.jpg`, `a-little-bit-of-laravel.jpg`, `mastering-laravel-validation-rules.jpg`). No flat cover is published anywhere, so these are the front face un-tilted from the masteringlaravel.io 3D mockups: slightly soft, with the mockup's lighting gradient. The flat original is page 1 of each e-book PDF; drop it in at any size. `professional-php-design-patterns.jpg` is the Amazon listing image.
-* [ ] Make a better 33 Things book cover. `src/content/books/33-things.jpg` is the PDF's letter-size first page (blue band, white lower half), not a designed cover, and the white half sits badly on the dark ground.
-* [ ] CV, under Participant: Aaron writes some of the daily tips for Mastering Laravel (`src/content/pages/cv.md`).
 
 ### Review
 
