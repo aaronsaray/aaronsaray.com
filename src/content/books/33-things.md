@@ -5,4 +5,6 @@ cover: ./33-things.jpg
 order: 4
 anchorDepth: 0
 ---
-This book details - you guessed it - 33 things that I wish someone would have mentioned to be before or during my programming and management career. A more conversational read, this shares lessons I've learned "the hard way" in a language or technical disipline-agnostic format.
+Picture a senior developer handing you a quick note with the most important things they learned in their first decade of programming.
+That's this book. It's language-agnostic and split into two parts: things most developers should know, and things you need to know the first time you move from programming into management.
+Part conversation, part cheat sheet. I still pick it up to remind myself of lessons I learned the hard way.

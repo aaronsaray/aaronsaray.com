@@ -5,4 +5,6 @@ cover: ./securing-laravel.jpg
 order: 3
 anchorDepth: 0
 ---
-A free e-book I created (edited/reviewed by Joel Clermont) containing 7 steps to lock down and secure a Laravel application. Considered the intro material for the Secure Coding Laravel video course.
+Web app security can seem overwhelming - there is so much to know and understand. Where do you start? 
+How about here? I picked the 7 steps that matter most.  A few minutes to read, a few hours to implement, and you'll go from accidentally ok
+to confidently secure.

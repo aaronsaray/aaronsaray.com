@@ -5,4 +5,6 @@ cover: ./a-little-bit-of-laravel.jpg
 order: 2
 anchorDepth: 0
 ---
-A free e-book authored by Joel Clermont and I giving more than 15 Laravel-based tips and tricks with thorough explanation, rationale, and code examples.
+We've put together a collection of short, useful tips to make your Laravel application "a little bit" better.
+It contains more than 15 tips on naming events and listeners, validation gotchas, and authorization bugs.
+Each one comes with real-world rationale and code examples - and they're easy to apply.

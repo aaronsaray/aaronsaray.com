@@ -31,9 +31,19 @@ Expect him to rework code to his taste.
   to-do entry in README.md) so Aaron knows to replace it. The marker
   is one exact phrase so every instance can be found:
   `AI-GENERATED PLACEHOLDER: <what it covers>` and nothing more.
-* **No em dashes.** Strictly forbidden in any content Claude generates:
-  docs, code comments, placeholder text, commit messages, everything.
-  Use a period, comma, colon, or parentheses instead.
+  This covers punctuation and style, not just words. The spaced
+  hyphen ` - ` is a fixture of Aaron's prose and does three jobs: the
+  reversal (`Nope - the actual need is`), the aside (`a large
+  investment - I understand that`), and the tack-on (`code examples -
+  and they're easy to apply`). It is never flagged, never converted to
+  a comma, and never counted against the rule below, in the content or
+  in feedback on a draft. The same goes for any other punctuation
+  habit in his writing.
+* **No em dashes in what Claude writes.** Strictly forbidden in text
+  Claude authors: docs, README, code comments, placeholder text,
+  commit messages. This covers the em dash, the en dash used as one,
+  and the ASCII stand-ins ` - ` and ` -- `. Use a period, comma,
+  colon, or parentheses instead.
 * **A comment answers a question the code raises and cannot answer.**
   There are four such questions. A comment exists to answer one of
   them and for no other reason:

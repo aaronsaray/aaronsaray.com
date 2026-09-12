@@ -236,9 +236,7 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 ### Writing
 
-* [ ] Reword the books section: the `/books/` title and description, and the five entries in `src/content/books/`, which still read as CV publication blurbs.
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
-  * `/books/` (`src/pages/books.astro`): title and description only; the book entries in `src/content/books/` are copied verbatim from the CV
   * `/about/` (`src/pages/about.astro`)
   * `/colophon/` (`src/content/pages/colophon.md`): the writing rule and the AI distinction are Aaron's to state in his own words
   * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)

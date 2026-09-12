@@ -5,4 +5,8 @@ cover: ./professional-php-design-patterns.jpg
 order: 5
 anchorDepth: 0
 ---
-(ISBN: 978-0470496701) This book helps bridge the divide between the traditional design pattern books and the average PHP developer. Learn how to apply all the true, time-tested patterns in object-oriented PHP.
+Programming changes all the time; and it never changes at all. 
+The same core problems appear no matter the language, discipline, or decade we're in.
+The classic solutions I learned from Java still work, and this book translates them into PHP so you don't have to take that trip.
+The examples are in an older version of PHP, but they're still the patterns I'd reach for today.
+(ISBN: 978-0470496701)

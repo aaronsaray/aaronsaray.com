@@ -3,8 +3,6 @@ import { getCollection, render } from "astro:content";
 import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 
-// AI-GENERATED PLACEHOLDER: title and description
-
 const books = await Promise.all(
   (await getCollection("books"))
     .sort((a, b) => a.data.order - b.data.order)
@@ -15,7 +13,7 @@ const books = await Promise.all(
 );
 ---
 
-<Base title="Books" description="Books written by Aaron Saray.">
+<Base title="Books" description="Print and eBooks written by Aaron Saray.">
   <main id="main" class="page-column">
     <h1 class="page-title">Books</h1>
     <section class="mt-4 divide-y divide-hairline">
