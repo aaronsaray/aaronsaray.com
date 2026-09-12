@@ -237,14 +237,14 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 ### Writing
 
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
-  * `/about/` (`src/pages/about.astro`)
-  * `/colophon/` (`src/content/pages/colophon.md`): the writing rule and the AI distinction are Aaron's to state in his own words
+  * footer CTA box (`src/components/Footer.astro`)
   * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
   * home page title, description, and the three role rows (`src/pages/index.astro`)
+  * `/about/` (`src/pages/about.astro`)
+  * `/colophon/` (`src/content/pages/colophon.md`): the writing rule and the AI distinction are Aaron's to state in his own words
   * the CTO draft post (`src/content/blog/the-cto-is-a-communicator-first.md`), written from Aaron's outline and linked from the home page
   * the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), written from Aaron's notes
   * the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, written from Aaron's one-line note
-  * footer CTA box (`src/components/Footer.astro`)
 
 ### Review
 
@@ -253,9 +253,3 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 * [ ] Performance and SEO checks. Accessibility is covered by the axe project in `tests/a11y/`; these two are not. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
 * [ ] Full review of the generated site: every file, every page in the local browser.
 * [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP must allow the inline copy script by sha256 hash, not `unsafe-inline`.
-
-## To-Do for Future
-
-Not needed for release.
-
-* [ ] Curated topic landings for the subjects that define the current direction, starting with `/tag/management/` and possibly `/tag/business/`. (archived projects maybe too) Keep the permanent URL and the complete chronological list, but lead with a direct topic title, Aaron's intro prose (already in `src/content/tags/`), and a small set of selected foundational essays, with the full list beneath and a pointer to an adjacent topic where useful. Decide the authoring model first: optional frontmatter on the tag file declaring a featured set (stable post IDs, fail loudly on a bad reference, understandable months later) versus a small explicit config in the template. Ordinary tags stay untouched; not every tag becomes a magazine.
