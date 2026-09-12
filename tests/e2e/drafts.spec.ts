@@ -1,29 +1,18 @@
 import { test, expect } from "@playwright/test";
-import { readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { DRAFT_FIXTURE } from "../draft-fixture";
 
-// The dev server is the only place a draft renders, so this is the
-// only place the draft code paths get exercised at all.
-const BLOG = join(import.meta.dirname, "../../src/content/blog");
-
-const drafts = readdirSync(BLOG)
-  .filter((file) => file.endsWith(".md"))
-  .flatMap((file) => {
-    const frontmatter = readFileSync(join(BLOG, file), "utf8").split("---")[1];
-    if (!/^draft: true$/m.test(frontmatter)) return [];
-    const year = /^date: "(\d{4})/m.exec(frontmatter)?.[1];
-    return [`/${year}/${file.replace(/\.md$/, "")}/`];
-  });
-
-test("a draft exists to exercise the dev-only paths", () => {
-  expect(drafts.length).toBeGreaterThan(0);
+test("a draft renders in dev at its real URL with a badge", async ({
+  page,
+}) => {
+  const response = await page.goto(DRAFT_FIXTURE.path);
+  expect(response?.status()).toBe(200);
+  await expect(page.locator("h1")).toHaveText(DRAFT_FIXTURE.title);
+  await expect(page.locator(".draft-badge")).toBeVisible();
 });
 
-for (const path of drafts) {
-  test(`draft ${path} renders in dev with a badge`, async ({ page }) => {
-    const response = await page.goto(path);
-    expect(response?.status()).toBe(200);
-    await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.getByText("Draft", { exact: true })).toBeVisible();
-  });
-}
+test("a draft is listed in dev with a badge", async ({ page }) => {
+  await page.goto(`/tag/${DRAFT_FIXTURE.tag}/`);
+  const entry = page.locator("article", { hasText: DRAFT_FIXTURE.title });
+  await expect(entry).toHaveCount(1);
+  await expect(entry.locator(".draft-badge")).toBeVisible();
+});

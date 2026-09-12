@@ -18,7 +18,7 @@ make test                      # all browser tests, boots its own dev server
 make test ARGS="--grep copy"   # any playwright flags pass through; test-e2e and test-a11y take ARGS too
 make test-e2e                  # behavior subset
 make test-a11y                 # axe sweep subset
-make clean                     # dist/, both Astro content caches, Playwright output, .DS_Store files
+make clean                     # dist/, both Astro content caches, Playwright output, the draft fixture, .DS_Store files
 make verify                    # clean + check + build + URL contract + links + lint + tests
 ```
 
@@ -204,23 +204,27 @@ Create `src/content/books/my-book.md`:
 ---
 title: My Book
 href: https://nocompromises.gumroad.com/l/my-book
+cover: ./my-book.jpg
 order: 6
+anchorDepth: 0
 ---
 One paragraph about it.
 ```
 
-* `order` sorts the list, lowest first. The row is one link to `href`, so the paragraph cannot contain a link of its own.
+* `order` sorts the list, lowest first.
+* `href` is where the title leads, and a click anywhere on the row follows it. A link inside the paragraph still works as its own link.
 * `cover` is the flat front cover, any size, sitting next to the markdown file. Astro resizes it at build (`src/pages/books.astro` asks for 224px wide, double the rendered width) and fails the build if the file is missing.
+* `anchorDepth` is required (see Layout); a book body is one paragraph, so 0.
 
 ## Layout
 
 * `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv, contact, and colophon bodies, `src/content/books/` is one file per book on `/books/`.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
-* `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
+* `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/`, `src/content/tags/`, and `src/content/books/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
 * `src/icons/` is the Tabler icon set, one SVG per name. Templates render one with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />` (`src/components/Icon.astro`); the markdown plugins read the same files through `src/lib/icon.mjs`. Both emit inline `currentColor` SVG so icons take text color tokens and hover transitions. Adding an icon is dropping the Tabler file into the folder.
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
 * `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every page, feed, and document URL the site has ever served; it never shrinks.
-* `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read.
+* `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read. `global-setup.ts` writes one `draft: true` post (`draft-fixture.ts`) into the blog collection for the length of a run and `global-teardown.ts` removes it, so the draft paths are tested without a draft living in the repo; the file is gitignored and `make clean` removes a leftover.
 
 ## URL Contract
 

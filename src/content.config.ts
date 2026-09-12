@@ -2,6 +2,12 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
+// The deepest heading level that gets an anchor link; 0 for none.
+// Required on every collection but blog, whose value lives in
+// astro.config.mjs. No .default(): src/plugins/rehype-heading-anchors.mjs
+// reads the raw frontmatter, which zod output never reaches.
+const anchorDepth = z.number().int().min(0).max(6);
+
 const blog = defineCollection({
   // generateId keeps the slug = filename stem VERBATIM. The default
   // loader slugifies ids (github-slugger), which would strip the dot
@@ -41,6 +47,7 @@ const tags = defineCollection({
     .object({
       title: z.string(),
       description: z.string(),
+      anchorDepth: anchorDepth,
     })
     .strict(),
 });
@@ -58,10 +65,7 @@ const pages = defineCollection({
       intro: z.string().optional(),
       // Wraps each H2 block in a <section> (src/plugins/rehype-sections.mjs).
       sections: z.boolean().optional(),
-      // The deepest heading level that gets an anchor link; 0 for none.
-      // No .default(): src/plugins/rehype-heading-anchors.mjs reads the raw
-      // frontmatter, which zod output never reaches.
-      anchorDepth: z.number().int().min(0).max(6),
+      anchorDepth: anchorDepth,
     })
     .strict(),
 });
@@ -79,6 +83,7 @@ const books = defineCollection({
         href: z.string(),
         cover: image(),
         order: z.number().int(),
+        anchorDepth: anchorDepth,
       })
       .strict(),
 });

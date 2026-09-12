@@ -67,6 +67,22 @@
   @apply mx-auto max-w-3xl px-5 pt-6 pb-24 sm:px-8 sm:pt-8;
 }
 
+@utility page-lede {
+  @apply mt-4 text-lg leading-relaxed text-ink-dim;
+}
+
+@utility section-title {
+  @apply font-display text-2xl leading-snug font-semibold text-white sm:text-3xl;
+}
+
+@utility quiet-link {
+  @apply -my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink;
+}
+
+@utility meta-line {
+  @apply flex flex-wrap items-center gap-x-3 gap-y-1 text-sm;
+}
+
 /* Off the palette: drafts render only on the dev server, and a badge
    that matched the site would be missed. */
 @utility draft-badge {
@@ -214,8 +230,8 @@ h3 {
   margin-top: 1.25rem;
 }
 
-/* A body-authored H1 (contact keeps its own) gets the same
-   treatment as page titles. */
+/* A body-authored H1 (contact and colophon keep their own) gets the
+   same treatment as page titles. */
 .prose h1 {
   @apply page-title;
 }
@@ -463,6 +479,12 @@ h3 {
   @apply font-medium text-ink;
 }
 
+/* books.astro stretches each title link over its whole article with
+   an ::after; a positioned link paints above that layer. */
+.book-blurb a {
+  position: relative;
+}
+
 /* The shapes these rules key on (an h4 or p whose first child is an
    em is a dated row, a leading strong is a title on its own line, a
    table's first column is a date, a td em is a venue) are the CV
@@ -495,9 +517,6 @@ h3 {
 .cv p > strong:first-child {
   display: block;
 }
-.cv p > em:first-child + strong {
-  display: inline;
-}
 .cv td {
   vertical-align: baseline;
 }
@@ -515,7 +534,8 @@ h3 {
   font-style: normal;
   color: var(--color-ink-dim);
 }
-@media (width >= 64rem) {
+/* lg: the breakpoint where cv.astro widens the column. */
+@variant lg {
   .cv section:has(> :is(h4, p) > em:first-child) {
     padding-left: 11.5rem;
   }

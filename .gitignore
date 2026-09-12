@@ -6,4 +6,5 @@ dist/
 .playwright-mcp/
 playwright-report/
 test-results/
+src/content/blog/draft-fixture-for-tests.md
 .claude/settings.local.json

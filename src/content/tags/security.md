@@ -1,6 +1,7 @@
 ---
 title: Blog Entries Tagged "security"
 description: Blog Entries Tagged "security"
+anchorDepth: 0
 ---
 These entries are about cybersecurity and programming securely so they have the "security" tag.
 

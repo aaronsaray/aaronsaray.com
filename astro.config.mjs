@@ -41,8 +41,8 @@ export default defineConfig({
       remarkPlugins: [remarkDirective, remarkCallout],
       rehypePlugins: [
         rehypeSlug,
-        // A document without anchorDepth is a post: the pages schema
-        // requires the key. 3 links H2 and H3.
+        // A document without anchorDepth is a post: every other
+        // collection's schema requires the key. 3 links H2 and H3.
         [rehypeHeadingAnchors, { depth: 3 }],
         rehypeCodeChrome,
         rehypeTableWrap,

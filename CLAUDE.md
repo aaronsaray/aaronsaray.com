@@ -147,7 +147,10 @@ Expect him to rework code to his taste.
 * `src/content/`: collections defined in `src/content.config.ts`.
   `blog` (post id = filename verbatim, via a custom `generateId`; do
   not remove it, Astro's default slugifier would corrupt the dotted
-  slug), `tags` (per-tag prose), `pages` (cv, contact).
+  slug), `tags` (per-tag prose), `pages` (cv, contact, colophon),
+  `books` (one file per book, its cover beside it through `image()`).
+  Every collection but `blog` requires `anchorDepth` in frontmatter;
+  the blog's value lives in `astro.config.mjs`.
 * **Dates are strings end-to-end.** Frontmatter dates are validated
   strings, never coerced to `Date`; timezone math could shift a post's
   URL year. Year is `date.slice(0, 4)`; sorting is lexicographic
@@ -159,7 +162,10 @@ Expect him to rework code to his taste.
   disk via `src/lib/icon.mjs`. Never paste SVG markup into a template.
 * `src/plugins/`: the markdown pipeline. Shiki theme plus filename-meta
   transformer, code chrome, callouts (`:::callout`), table wrap,
-  figures, heading anchors. The code-block DOM shapes and the inline
+  figures, heading anchors (`rehype-heading-anchors.mjs`, depth from
+  frontmatter `anchorDepth`), sections (`rehype-sections.mjs`, opt-in
+  through frontmatter `sections: true`, the CV). The code-block DOM
+  shapes and the inline
   copy script are a matched pair; the script's element lookups depend
   on the exact shapes the plugins emit. `tests/copy-button.spec.ts`
   enforces that pairing by comparing the copied text against the code
@@ -265,7 +271,10 @@ should raise them rather than wait:
   one at a time while iterating. A new page means a new line in
   `tests/routes.ts`, which both projects read. Posts and tags are not
   enumerated there: the URL contract already proves every path
-  resolves.
+  resolves. The draft paths are tested against a fixture post that
+  `tests/global-setup.ts` writes into the blog collection for the run
+  and `tests/global-teardown.ts` removes; never commit a draft to make
+  a test pass.
 * `.npmrc`'s `ignore-scripts` blocks Playwright's browser download, so
   a fresh clone needs `make install`, which downloads it after `npm ci`.
 * **If port 4321 is in use, stop and tell Aaron.** Playwright refuses

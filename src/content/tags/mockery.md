@@ -1,5 +1,6 @@
 ---
 title: Blog Entries Tagged "mockery"
 description: Blog Entries Tagged "mockery"
+anchorDepth: 0
 ---
 No, this page isn't about making you feel bad about yourself or your choices. These entries are tagged "mockery" after the Mockery PHP test mocking library.

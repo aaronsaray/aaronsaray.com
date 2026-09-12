@@ -16,6 +16,8 @@ export default defineConfig({
     permissions: ["clipboard-read", "clipboard-write"],
     trace: "retain-on-failure",
   },
+  globalSetup: "./tests/global-setup.ts",
+  globalTeardown: "./tests/global-teardown.ts",
   projects: [
     {
       name: "e2e",

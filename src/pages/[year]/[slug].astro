@@ -54,9 +54,7 @@ const showLaravelCta = entry.data.tags.includes("laravel");
       </a>
     </h1>
 
-    <div
-      class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-hairline pb-6 text-sm text-ink-mute"
-    >
+    <div class="mt-6 meta-line border-b border-hairline pb-6 text-ink-mute">
       {entry.data.draft && <span class="draft-badge">Draft</span>}
       <span>{formatDate(entry.data.date)}</span>
       <span aria-hidden="true">&middot;</span>
