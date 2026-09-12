@@ -237,7 +237,6 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 ### Writing
 
 * [ ] Reword the books section: the `/books/` title and description, and the five entries in `src/content/books/`, which still read as CV publication blurbs.
-* [ ] CV, under Participant: Aaron writes some of the daily tips for Mastering Laravel (`src/content/pages/cv.md`).
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
   * `/books/` (`src/pages/books.astro`): title and description only; the book entries in `src/content/books/` are copied verbatim from the CV
   * `/about/` (`src/pages/about.astro`)

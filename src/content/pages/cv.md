@@ -130,6 +130,8 @@ I am a prolific author, editor and blogger.  (On this site - [700+ technical and
 
 **[No Compromises Podcast](https://show.nocompromises.io)** A bi-weekly podcast with over 160 episodes focusing on Laravel and PHP programming concepts and dev team methodologies and strategies.
 
+**[Mastering Laravel Daily Tips](https://masteringlaravel.io/daily)** A daily tips and tricks newsletter co-authored by Aaron Saray and Joel Clermont.
+
 ### Technical Editor
 
 **PHPUnit Essentials** (ISBN: 978-1783283439)
