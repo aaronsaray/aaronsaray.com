@@ -40,6 +40,11 @@ export default defineConfig({
     timeout: 30_000,
     // astro dev daemonizes itself when it detects an AI agent shell,
     // which reads to Playwright as the server exiting on startup.
-    env: { ASTRO_DEV_BACKGROUND: "0" },
+    // NODE_ENV=test is Astro's switch for Vite server.hmr=false
+    // (astro/dist/core/create-vite.js). With HMR on, the content sync
+    // that global-setup's fixture write triggers emits a full-reload;
+    // Vite holds that message while no page is connected and delivers
+    // it to the first page that connects, which is a test's.
+    env: { ASTRO_DEV_BACKGROUND: "0", NODE_ENV: "test" },
   },
 });
