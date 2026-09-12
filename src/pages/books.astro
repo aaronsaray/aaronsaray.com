@@ -21,11 +21,12 @@ const books = await Promise.all(
     <section class="mt-4 divide-y divide-hairline">
       {
         books.map(({ Content, ...book }, i) => (
-          <article class="group relative grid grid-cols-[6rem_1fr] gap-x-5 gap-y-1 py-10 first:pt-2 sm:grid-cols-[7rem_1fr] sm:gap-x-8 sm:gap-y-0">
+          <article class="group relative grid grid-cols-[6rem_1fr] gap-x-5 gap-y-1 py-10 first:pt-2 sm:grid-cols-[7rem_1fr] sm:grid-rows-[auto_1fr] sm:gap-x-8 sm:gap-y-0">
             <Image
               src={book.cover}
               alt=""
               width={224}
+              densities={[1, 2]}
               loading={i === 0 ? "eager" : "lazy"}
               decoding="async"
               class="block h-auto w-full border border-hairline transition-colors duration-300 group-hover:border-accent sm:row-span-2"
