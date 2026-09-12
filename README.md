@@ -196,9 +196,25 @@ Dates are `Mon YYYY`, a bare `YYYY`, or a range with the word "to" (`Oct 2018 to
 
 The footgun: any paragraph whose first inline element is italic or bold gets the row treatment, text before it or not (CSS cannot see leading text). Ordinary prose in this file starts with plain text.
 
+## Adding a Book
+
+Create `src/content/books/my-book.md`:
+
+```markdown
+---
+title: My Book
+href: https://nocompromises.gumroad.com/l/my-book
+order: 6
+---
+One paragraph about it.
+```
+
+* `order` sorts the list, lowest first. The row is one link to `href`, so the paragraph cannot contain a link of its own.
+* `cover` is the flat front cover, any size, sitting next to the markdown file. Astro resizes it at build (`src/pages/books.astro` asks for 224px wide, double the rendered width) and fails the build if the file is missing.
+
 ## Layout
 
-* `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv, contact, and colophon bodies.
+* `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv, contact, and colophon bodies, `src/content/books/` is one file per book on `/books/`.
 * `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
 * `src/icons/` is the Tabler icon set, one SVG per name. Templates render one with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />` (`src/components/Icon.astro`); the markdown plugins read the same files through `src/lib/icon.mjs`. Both emit inline `currentColor` SVG so icons take text color tokens and hover transitions. Adding an icon is dropping the Tabler file into the folder.
@@ -217,7 +233,7 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 ### Writing
 
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
-  * `/books/` (`src/pages/books.astro`): title and description only; the book entries are copied verbatim from the CV
+  * `/books/` (`src/pages/books.astro`): title and description only; the book entries in `src/content/books/` are copied verbatim from the CV
   * `/about/` (`src/pages/about.astro`)
   * `/colophon/` (`src/content/pages/colophon.md`): the writing rule and the AI distinction are Aaron's to state in his own words
   * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
@@ -226,6 +242,10 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
   * the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), written from Aaron's notes
   * the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, written from Aaron's one-line note
   * footer CTA box (`src/components/Footer.astro`)
+* [ ] Reword the books section: the `/books/` title and description, and the five entries in `src/content/books/`, which still read as CV publication blurbs.
+* [ ] Replace the three Laravel covers in `src/content/books/` (`securing-laravel.jpg`, `a-little-bit-of-laravel.jpg`, `mastering-laravel-validation-rules.jpg`). No flat cover is published anywhere, so these are the front face un-tilted from the masteringlaravel.io 3D mockups: slightly soft, with the mockup's lighting gradient. The flat original is page 1 of each e-book PDF; drop it in at any size. `professional-php-design-patterns.jpg` is the Amazon listing image.
+* [ ] Make a better 33 Things book cover. `src/content/books/33-things.jpg` is the PDF's letter-size first page (blue band, white lower half), not a designed cover, and the white half sits badly on the dark ground.
+* [ ] CV, under Participant: Aaron writes some of the daily tips for Mastering Laravel (`src/content/pages/cv.md`).
 
 ### Review
 

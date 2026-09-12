@@ -66,4 +66,21 @@ const pages = defineCollection({
     .strict(),
 });
 
-export const collections = { blog, tags, pages };
+const books = defineCollection({
+  loader: glob({
+    pattern: "*.md",
+    base: "./src/content/books",
+    generateId: ({ entry }) => entry.replace(/\.md$/, ""),
+  }),
+  schema: ({ image }) =>
+    z
+      .object({
+        title: z.string(),
+        href: z.string(),
+        cover: image(),
+        order: z.number().int(),
+      })
+      .strict(),
+});
+
+export const collections = { blog, tags, pages, books };

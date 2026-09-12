@@ -9,3 +9,8 @@
 # A year: font files are effectively permanent once published.
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Astro names everything here by content hash (its CSS, and the book
+# covers it resizes), so a changed file is a new URL.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
