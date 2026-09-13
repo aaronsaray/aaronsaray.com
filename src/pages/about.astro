@@ -1,44 +1,151 @@
 ---
 import { Image } from "astro:assets";
-import { getEntry, render } from "astro:content";
 import portrait from "../assets/aaron-saray.jpg";
 import Base from "../layouts/Base.astro";
 
-// The H1 is rendered here, not in the body, so the portrait can float
-// after it and start level with the first paragraph. A body H1 would
-// give the page two.
-const entry = await getEntry("pages", "about");
-if (!entry) throw new Error("pages/about content missing");
-const { Content } = await render(entry);
+const title = "Who am I";
+const description = "And now you'll know... the rest of the story.";
 ---
 
-<Base title={entry.data.title} description={entry.data.description}>
+<Base title={title} description={description}>
   <main id="main" class="page-column">
-    <h1 class="page-title">{entry.data.title}</h1>
-    <div class="mt-5">
-      {
-        /* Duotone in the palette: multiply lands the photo's whites on the
-          wrapper's background (the text grey), lighten lifts its blacks to
-          the overlay's (the rule grey). isolate keeps both blends inside
-          the box; without it the multiply hits the page background and the
-          photo disappears into it. */
-      }
-      <div
-        class="relative isolate float-right mb-2 ml-5 w-28 border border-hairline bg-ink-dim after:absolute after:inset-0 after:bg-hairline after:mix-blend-lighten after:content-[''] sm:ml-8 sm:w-36"
-      >
-        <Image
-          src={portrait}
-          alt="Aaron Saray"
-          width={144}
-          densities={[1, 2]}
-          loading="eager"
-          decoding="async"
-          class="block h-auto w-full mix-blend-multiply grayscale"
-        />
-      </div>
-      <div class="prose">
-        <Content />
+    <div class="flex items-start gap-5 sm:gap-7">
+      <Image
+        src={portrait}
+        alt="Aaron Saray"
+        width={112}
+        densities={[1, 2]}
+        loading="eager"
+        decoding="async"
+        class="block aspect-square h-auto w-20 shrink-0 border border-hairline object-cover grayscale sm:w-28"
+      />
+      <div class="min-w-0">
+        {
+          /* Trims Fraunces' leading above the cap height so the portrait
+            lines up with the top of the letters, not the line box. */
+        }
+        <h1 class="page-title [text-box:trim-start_cap_alphabetic]">
+          Aaron Saray
+        </h1>
+        <p class="mt-3 leading-relaxed text-ink">
+          Pronounced suh-RAY. Google agrees there's only one which still hasn't
+          stopped anyone from saying it wrong.
+        </p>
       </div>
     </div>
+
+    <section class="mt-10 space-y-4 text-lg leading-relaxed text-ink sm:mt-12">
+      <p>
+        I live in Milwaukee - and other parts of Wisconsin, depending on the
+        year, the weather, the traffic or the wifi.
+      </p>
+      <p>
+        I'm trying my best - whether it's still learning Spanish, or working to
+        limit my <s>fucking</s> potty mouth.
+      </p>
+    </section>
+
+    <section class="mt-14 sm:mt-16">
+      <h2 class="section-title">Where I'm From</h2>
+      <div class="prose mt-5">
+        <p>
+          It wasn't that hard to keep 8-year-old Aaron happy. All it took was a
+          Commodore 64/VIC-20, a Black and White TV, the manual, and a few 3-2-1
+          Contact magazines. The northwoods of Wisconsin didn't have dependable
+          electricity, and I wasn't a rich kid who could afford the luxuries of
+          a printer or a tape drive (the computer was a hand-me-down and the TV
+          was rescued from a dumpster). When the power blinked, I lost all of my
+          work. That's how I learned to type really fast. Not much has changed
+          these days - except now we have multiple terabyte hard drives and I've
+          invested quite disproportionately in UPSs.
+        </p>
+        <p>
+          The patience, well, that was another story. My first technical job was
+          at an internet service provider, doing tech support. While I later got
+          promoted to the web development team, it was those initial years that
+          taught me patience, understanding and converting technical things for
+          a non-technical audience.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-14 sm:mt-16">
+      <h2 class="section-title">How I Work</h2>
+      <div class="prose mt-5">
+        <p>
+          <b class="font-medium text-ink">I want to know everything.</b> Tell me all
+          of the facts, concerns, past successes and failures, current restrictions
+          and future risks. The more information the better. And no, I'm not one of
+          those jackasses that just try to sell you on the most expensive service
+          or the thing that's easiest for me. With the full picture, I'll tell you
+          how I best fit in - or if I would suggest working with someone else.
+        </p>
+        <p>
+          <b class="font-medium text-ink"
+            >Making things better is about understanding the world is grey.</b
+          > The middle ground is where businesses make money. We can't throw everything
+          away and rewrite it. But it just can't stay like this either.
+        </p>
+        <p>
+          <b class="font-medium text-ink"
+            >The part of me that can't leave it like that - that's the same part
+            of me that is furious when a bug (or missed requirement) is mine.</b
+          > Don't let my measured approach fool you; internally, I'm fuming.
+        </p>
+        <p>
+          <b class="font-medium text-ink">Don't be wrong.</b> But when you are, accept
+          the facts, apologize and move on. I like being given a fact I didn't have
+          before. It means I get to learn something new.
+        </p>
+        <p>
+          <b class="font-medium text-ink"
+            >And yes, I still read those manuals.</b
+          > If only because I like to know if AI is lying to me.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-14 sm:mt-16">
+      <h2 class="section-title">Now What?</h2>
+      <dl class="prose mt-5">
+        <div>
+          <dt class="font-medium text-ink"><a href="/blog/">My blog</a></dt>
+          <dd class="mt-1">
+            700+ entries over 2 decades. There's a little bit for everyone,
+            whether you're interested in <a href="/tag/management/"
+              >management</a
+            > or <a href="/tag/laravel/">Laravel</a>, <a href="/tag/business/"
+              >business</a
+            >, or just random <a href="/tag/iot/">home automation</a>.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium text-ink"><a href="/cv/">My CV</a></dt>
+          <dd class="mt-1">
+            but how do you know I even know what I'm talking about? Check out
+            what I've been doing for the last little bit. Work experience, open
+            source, volunteering.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium text-ink">
+            <a href="https://masteringlaravel.io">Mastering Laravel</a>
+          </dt>
+          <dd class="mt-1">
+            Whether you're into Laravel articles and books - or you're more a
+            podcast sort of person - I've been teaching and talking about
+            Laravel for a while now. Get your fill.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-medium text-ink"><a href="/contact/">Contact</a></dt>
+          <dd class="mt-1">
+            Are we about to become best friends? Really?! Either way, you
+            probably have some questions, or want me to help you out. Let's
+            chat.
+          </dd>
+        </div>
+      </dl>
+    </section>
   </main>
 </Base>

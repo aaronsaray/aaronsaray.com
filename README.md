@@ -237,6 +237,7 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 ### Writing
 
+* [ ] Take a current photo for `/about/` and replace `src/assets/aaron-saray.jpg`. The page renders it square at 112px, grayscale, so shoot in color, crop to a square of at least 400x400, head and shoulders with the eyes in the upper third.
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
   * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
   * home page title, description, and the three role rows (`src/pages/index.astro`)
