@@ -17,21 +17,13 @@ export async function getStaticPaths() {
 const num = Number(Astro.params.num);
 const posts = await getSortedPosts();
 const total = pageCount(posts.length);
+const position = `Page ${num} of ${total} - ${num === total ? "and welcome to the end!" : "keep going..."}`;
 ---
 
 <Base title={`Blog - page ${num}`} description={SITE_DESCRIPTION}>
   <main id="main" class="page-column">
     <h1 class="page-title">Blog</h1>
-    <!-- AI-GENERATED PLACEHOLDER: the intro paragraph -->
-    <p class="page-lede border-b border-hairline pb-8">
-      {posts.length} entries on programming, business, and management. Newest first.
-      Looking for something meatier? <a
-        href="/books/"
-        class="text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent"
-        >Check out my books.</a
-      >
-    </p>
-
+    <p class="page-lede border-b border-hairline pb-8">{position}</p>
     <EntryList posts={pageSlice(posts, num)} />
     <Pagination current={num} total={total} />
   </main>

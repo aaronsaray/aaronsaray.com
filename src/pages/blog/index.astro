@@ -12,14 +12,14 @@ const total = pageCount(posts.length);
 <Base title="Blog" description={SITE_DESCRIPTION}>
   <main id="main" class="page-column">
     <h1 class="page-title">Blog</h1>
-    <!-- AI-GENERATED PLACEHOLDER: the intro paragraph -->
     <p class="page-lede border-b border-hairline pb-8">
-      {posts.length} entries on programming, business, and management. Newest first.
-      Looking for something meatier? <a
+      {posts.length} entries on php, laravel, business, management - and even iot.
+      Looking for something a bit meatier? You might be the sort of person who likes
+      my <a
         href="/books/"
         class="text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent"
-        >Check out my books.</a
-      >
+        >books</a
+      >.
     </p>
 
     <EntryList posts={pageSlice(posts, 1)} />

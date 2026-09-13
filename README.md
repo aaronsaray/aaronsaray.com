@@ -235,18 +235,12 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-### Writing
-
 * [ ] Take a current photo for `/about/` and replace `src/assets/aaron-saray.jpg`. The page renders it square at 112px, grayscale, so shoot in color, crop to a square of at least 400x400, head and shoulders with the eyes in the upper third.
-* [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
-  * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
-  * home page title, description, and the three role rows (`src/pages/index.astro`)
-  * the CTO draft post (`src/content/blog/the-cto-is-a-communicator-first.md`), written from Aaron's outline and linked from the home page
-  * the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), written from Aaron's notes
-  * the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, written from Aaron's one-line note
-
-### Review
-
+* [ ] Work on the 404 page (`src/pages/404.astro`). Currently a centered stack: a mono `404`, "Page not found", one line of copy, and a single "Go to all posts" link back to `/blog/`.
+* [ ] Rewrite the AI-generated home page title, description, and three role rows (`src/pages/index.astro`).
+* [ ] Rewrite the CTO draft post (`src/content/blog/the-cto-is-a-communicator-first.md`), AI-generated from Aaron's outline and linked from the home page.
+* [ ] Rewrite the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), AI-generated from Aaron's notes.
+* [ ] Rewrite the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, AI-generated from Aaron's one-line note.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
 * [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
 * [ ] Performance and SEO checks. Accessibility is covered by the axe project in `tests/a11y/`; these two are not. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
