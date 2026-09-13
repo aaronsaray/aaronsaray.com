@@ -1,95 +1,17 @@
 ---
+import { getEntry, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 
-// AI-GENERATED PLACEHOLDER: the entire page
+// The body carries its own H1.
+const entry = await getEntry("pages", "about");
+if (!entry) throw new Error("pages/about content missing");
+const { Content } = await render(entry);
 ---
 
-<Base title="Who am I" description="About Aaron Saray.">
+<Base title={entry.data.title} description={entry.data.description}>
   <main id="main" class="page-column">
-    <h1 class="page-title">Who am I</h1>
-    <p class="page-lede">
-      [AI-generated placeholder. Real copy coming.] Milwaukee-based developer,
-      manager, and consultant. The long version of this page is still being
-      written; in the meantime, the <a
-        href="/cv/"
-        class="text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent"
-        >CV</a
-      > has the professional details.
-    </p>
-
-    <div class="mt-14 grid grid-cols-1 gap-10 text-sm sm:grid-cols-3">
-      <section>
-        <h2
-          class="text-xs font-semibold tracking-[0.2em] text-ink-dim uppercase"
-        >
-          Find Me
-        </h2>
-        <ul class="mt-4 space-y-2">
-          <li>
-            <a href="https://github.com/aaronsaray" class="quiet-link">GitHub</a
-            >
-          </li>
-          <li>
-            <a href="https://codepen.io/aaronsaray" class="quiet-link"
-              >CodePen</a
-            >
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/aaronsaray" class="quiet-link"
-              >LinkedIn</a
-            >
-          </li>
-          <li>
-            <a href="https://twitter.com/aaronsaray" class="quiet-link"
-              >Twitter</a
-            >
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h2
-          class="text-xs font-semibold tracking-[0.2em] text-ink-dim uppercase"
-        >
-          Projects
-        </h2>
-        <ul class="mt-4 space-y-2">
-          <li>
-            <a href="https://show.nocompromises.io" class="quiet-link"
-              >Laravel Podcast</a
-            >
-          </li>
-          <li>
-            <a href="https://learnthephoneticalphabet.com" class="quiet-link"
-              >Learn the Phonetic Alphabet</a
-            >
-          </li>
-          <li>
-            <a href="https://typesetter.io" class="quiet-link">Typesetter.io</a>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h2
-          class="text-xs font-semibold tracking-[0.2em] text-ink-dim uppercase"
-        >
-          Other Sites
-        </h2>
-        <ul class="mt-4 space-y-2">
-          <li>
-            <a href="https://morebetterfaster.io" class="quiet-link"
-              >More Better Faster</a
-            >
-          </li>
-          <li>
-            <a href="https://masteringlaravel.io" class="quiet-link"
-              >Mastering Laravel</a
-            >
-          </li>
-          <li>
-            <a href="https://1lastcheck.com" class="quiet-link">1lastcheck</a>
-          </li>
-        </ul>
-      </section>
+    <div class="prose">
+      <Content />
     </div>
   </main>
 </Base>
