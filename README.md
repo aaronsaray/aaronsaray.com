@@ -219,9 +219,10 @@ One paragraph about it.
 ## Layout
 
 * `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv, contact, and colophon bodies, `src/content/books/` is one file per book on `/books/`.
-* `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag) and `sitemap.xml`.
+* `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag), `sitemap.xml`, and `/logo.svg`.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/`, `src/content/tags/`, and `src/content/books/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
 * `src/icons/` is the Tabler icon set, one SVG per name. Templates render one with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />` (`src/components/Icon.astro`); the markdown plugins read the same files through `src/lib/icon.mjs`. Both emit inline `currentColor` SVG so icons take text color tokens and hover transitions. Adding an icon is dropping the Tabler file into the folder.
+* `src/assets/logo.svg` is the mark, the one file it lives in. The header and footer render it inline; its two paths fill from `--logo-s` and `--logo-a` with the brand colors as fallbacks, so the header sets neither and the footer sets both to its greys. `/logo.svg`, the plain copy anyone outside the site links, is built from this file by `src/pages/logo.svg.ts` and the build fails if the two fills are missing. Updating the mark is replacing this file and putting the two `style` fills back on the paths.
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
 * `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every page, feed, and document URL the site has ever served; it never shrinks.
 * `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read. `global-setup.ts` writes one `draft: true` post (`draft-fixture.ts`) into the blog collection for the length of a run and `global-teardown.ts` removes it, so the draft paths are tested without a draft living in the repo; the file is gitignored and `make clean` removes a leftover.
@@ -237,11 +238,9 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 ### Writing
 
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
-  * footer CTA box (`src/components/Footer.astro`)
   * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
   * home page title, description, and the three role rows (`src/pages/index.astro`)
   * `/about/` (`src/pages/about.astro`)
-  * `/colophon/` (`src/content/pages/colophon.md`): the writing rule and the AI distinction are Aaron's to state in his own words
   * the CTO draft post (`src/content/blog/the-cto-is-a-communicator-first.md`), written from Aaron's outline and linked from the home page
   * the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), written from Aaron's notes
   * the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, written from Aaron's one-line note

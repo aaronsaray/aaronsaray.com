@@ -39,6 +39,13 @@ Expect him to rework code to his taste.
   a comma, and never counted against the rule below, in the content or
   in feedback on a draft. The same goes for any other punctuation
   habit in his writing.
+  The rule governs files, not the conversation. "Give me some
+  options" is not "write my content": when Aaron asks for options,
+  examples, or a draft of a sentence, give several in chat, in his
+  register, with no preamble about this rule. What he does with them
+  is his call. If he asks for text to be written into a file, write it
+  and mark it. Never decline, and never announce what Claude will not
+  do.
 * **No em dashes in what Claude writes.** Strictly forbidden in text
   Claude authors: docs, README, code comments, placeholder text,
   commit messages. This covers the em dash, the en dash used as one,
@@ -166,10 +173,22 @@ Expect him to rework code to his taste.
   URL year. Year is `date.slice(0, 4)`; sorting is lexicographic
   descending.
 * `src/pages/`: routes, including hand-rolled RSS feeds (Hugo-parity
-  shape: guid = permalink, 10 items) and a hand-rolled `sitemap.xml`.
+  shape: guid = permalink, 10 items), a hand-rolled `sitemap.xml`, and
+  `/logo.svg`, derived from `src/assets/logo.svg`.
 * `src/icons/`: Tabler SVGs, one per name. `Icon.astro` inlines one
   (Vite `?raw` import); the markdown plugins read the same files from
   disk via `src/lib/icon.mjs`. Never paste SVG markup into a template.
+* `src/assets/`: the site's own SVG. `logo.svg` is rendered inline
+  through Astro's SVG import (`import Logo from "../assets/logo.svg"`,
+  `<Logo class="..." />`), never through `Icon.astro` (which forces the
+  Tabler viewBox and stroke) and never pasted into a template. Props
+  spread onto the root `<svg>` and `class` replaces. Everything inside
+  the root ships to the page verbatim, so the file carries no comment
+  and no `id`: it renders twice per page and axe's duplicate-id rules
+  are on. Fills are `--logo-s` and `--logo-a` with brand-color
+  fallbacks. `/logo.svg` is derived from it by `src/pages/logo.svg.ts`;
+  there is no copy in `public/`, and the build fails if the asset stops
+  declaring both fills.
 * `src/plugins/`: the markdown pipeline. Shiki theme plus filename-meta
   transformer, code chrome, callouts (`:::callout`), table wrap,
   figures, heading anchors (`rehype-heading-anchors.mjs`, depth from

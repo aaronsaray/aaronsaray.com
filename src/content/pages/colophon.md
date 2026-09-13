@@ -1,24 +1,27 @@
 ---
 title: Colophon
-description: How this site is made, and who made what.
+description: How this site is coded, written and generated. Giving credit to those who helped.
 anchorDepth: 0
 ---
 
-<!-- AI-GENERATED PLACEHOLDER: the entire page -->
-
 # How this site is made
 
-Who wrote what, and what it runs on.
+This page describes how this site was coded and generated, how content is written and authored, and those who contributed 3rd-party resources.
 
 ## The writing
 
-Every word on this site comes from my human brain, not AI. The blog posts, the pages, the descriptions, the sentence in the footer that brought you here: I wrote them. No language model drafted, rewrote, summarized, or "improved" any of it.
+Every word on this site comes from my human brain, not AI. 
+That means all blog posts, pages, descriptions, really any written prose.  I wrote them.  Sure, I use grammar checking and spell checking. 
+And sometimes I don't.  But shhh.
 
-The one exception is the boring kind: a spell checker and a grammar checker run over what I type, the same way they have since long before any of this. They flag. I decide.
+No AI/LLM model wrote or improved my writing. I will take suggestions from proofreaders but every single thing is typed, by hand, by me.
 
 ## The code
 
-The code that builds and styles this site is written with AI assistance. I direct the work, I read every change, and nothing lands here that I have not confirmed and approved.
+Code is a different story.  I write some code, I use AI assistance for the rest.  I believe in doing what is the most efficient and effective, 
+and that means using the tooling we have available for non-opinion things. True, there is art and opinion in code, but the mechanisms are binary.
+Therefore, I will use AI to assist me - but I own all code as accepted and something I'd also write.  There is no "oh, AI did that" excuse here.
+Either AI or I did it, but I take responsibility.
 
 ## How it's built
 
@@ -30,4 +33,7 @@ The code that builds and styles this site is written with AI assistance. I direc
 
 ## License
 
-Unless a page says otherwise, the writing here is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Quote it, share it, build on it, and credit me.
+All content and writing here is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). 
+Any code published on GitHub may have its own license. I honor 3rd-party licenses when applicable.
+
+I want you to learn from my hard-earned lessons. The price? A link back. (I also accept money, but the license insists on a link.)
