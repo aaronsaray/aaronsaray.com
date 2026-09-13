@@ -240,7 +240,6 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 * [ ] Rewrite all AI-generated placeholder copy (each marked with an AI-GENERATED comment in source):
   * blog index intro line (`src/pages/blog/index.astro` and `src/pages/blog/page/[num].astro`)
   * home page title, description, and the three role rows (`src/pages/index.astro`)
-  * `/about/` (`src/pages/about.astro`)
   * the CTO draft post (`src/content/blog/the-cto-is-a-communicator-first.md`), written from Aaron's outline and linked from the home page
   * the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), written from Aaron's notes
   * the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, written from Aaron's one-line note

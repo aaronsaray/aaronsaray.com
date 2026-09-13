@@ -1,8 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import { getEntry, render } from "astro:content";
+import portrait from "../assets/aaron-saray.jpg";
 import Base from "../layouts/Base.astro";
 
-// The body carries its own H1.
+// The H1 is rendered here, not in the body, so the portrait can float
+// after it and start level with the first paragraph. A body H1 would
+// give the page two.
 const entry = await getEntry("pages", "about");
 if (!entry) throw new Error("pages/about content missing");
 const { Content } = await render(entry);
@@ -10,8 +14,31 @@ const { Content } = await render(entry);
 
 <Base title={entry.data.title} description={entry.data.description}>
   <main id="main" class="page-column">
-    <div class="prose">
-      <Content />
+    <h1 class="page-title">{entry.data.title}</h1>
+    <div class="mt-5">
+      {
+        /* Duotone in the palette: multiply lands the photo's whites on the
+          wrapper's background (the text grey), lighten lifts its blacks to
+          the overlay's (the rule grey). isolate keeps both blends inside
+          the box; without it the multiply hits the page background and the
+          photo disappears into it. */
+      }
+      <div
+        class="relative isolate float-right mb-2 ml-5 w-28 border border-hairline bg-ink-dim after:absolute after:inset-0 after:bg-hairline after:mix-blend-lighten after:content-[''] sm:ml-8 sm:w-36"
+      >
+        <Image
+          src={portrait}
+          alt="Aaron Saray"
+          width={144}
+          densities={[1, 2]}
+          loading="eager"
+          decoding="async"
+          class="block h-auto w-full mix-blend-multiply grayscale"
+        />
+      </div>
+      <div class="prose">
+        <Content />
+      </div>
     </div>
   </main>
 </Base>
