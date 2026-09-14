@@ -60,6 +60,11 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    // 0: Astro inlines any script chunk under this limit back into the
+    // HTML as an inline module, which a CSP would then have to hash.
+    build: {
+      assetsInlineLimit: 0,
+    },
     // Fail on a taken port instead of sliding to the next one, so a
     // second dev server is obvious rather than quietly on 4322. Only
     // catches a listener on the same host: a wildcard-bound process on

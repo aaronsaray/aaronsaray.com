@@ -92,7 +92,12 @@ Expect him to rework code to his taste.
   else repeats them.
 * **Minimal JavaScript.** Static output; the default is zero JS on a
   page. Vue islands only when interactivity genuinely requires them.
-  No islands exist yet; all JS on the site is `is:inline` scripts.
+  No islands exist. Every page script is a bundled `<script>`, never
+  `is:inline`; `vite.build.assetsInlineLimit: 0` keeps them external,
+  so a CSP needs only `script-src 'self'`. The Konami trigger in
+  `src/konami/Konami.astro` is the one script on every page: its
+  `import()` fetches the scene only when the code completes, and
+  nothing else may ride in it.
 * **No search functionality.** No search box, no ⌘K palette.
 * **Deploy is deferred.** Target is Cloudflare static output; Aaron
   handles deploy and DNS himself. Do not build deploy tooling until he
@@ -200,6 +205,19 @@ Expect him to rework code to his taste.
 * `src/lib/`: excerpts (`<!--more-->` split, ~70-word fallback),
   reading time, date formatting, post sorting/pagination, OG image
   lookup, RSS rendering.
+* `src/konami/`: the Konami-code easter egg, one folder because
+  nothing else references any of it. `Konami.astro` is the keydown
+  trigger, rendered from `Base.astro` after the footer: it builds the
+  stage and the floor line (inline styles and one Web Animations call,
+  since no stylesheet exists yet), then imports `scene.ts`. The scene
+  carries the flats as `?raw` SVG, the sprite gif as `?url` (a query
+  string bypasses `astro:assets`, so the animation is never
+  re-encoded), and `scene.css` as `?inline`, injected into the stage.
+  The state classes `is-in`, `is-run`, `is-puff`, `is-out`, and `is-on`
+  are the contract between `scene.ts` and `scene.css`. The character
+  is never named anywhere a visitor could read: no text, `alt=""`,
+  neutral filenames, no comment. The SVGs ship verbatim, so like
+  `logo.svg` they carry no comment and no `id`.
 * `public/`: served verbatim (`uploads/`, favicons, `_redirects`,
   `_headers`).
 
@@ -207,9 +225,9 @@ Expect him to rework code to his taste.
 
 * The built site is the design reference. Match the patterns already
   in the components and `src/styles/global.css` for anything visual.
-* **Where a style lives.** Styles have exactly two homes: Tailwind
-  utilities on the element, or `src/styles/global.css`. No `<style>`
-  blocks in components. Pick by asking, in order:
+* **Where a style lives.** Styles have two homes: Tailwind utilities
+  on the element, or `src/styles/global.css`. No `<style>` blocks in
+  components. Pick by asking, in order:
   * Used in one place? Utilities on the element, including `hover:`,
     `group-*:`, and `motion-reduce:` variants. A rule with a class
     name that appears in one template is a global.css rule that
@@ -225,6 +243,10 @@ Expect him to rework code to his taste.
     four masks only read as one ramp side by side)? One line at the
     top of the block saying why. Without that line, the next audit
     inlines it.
+  * Must not load on a page that never uses it (the Konami scene)?
+    A stylesheet beside the code that imports it with `?inline` and
+    injects it. `src/konami/scene.css` is the only one; global.css
+    never carries a rule for the scene.
 * **Do not look AI-generated.** New visual work must avoid the default
   AI aesthetic: decorative gradients, the blue-purple palette,
   oversized rounded corners and pill shapes, icon-card grids ("4 of
@@ -279,7 +301,9 @@ should raise them rather than wait:
   asserts the incomplete set stays exactly the known header items, so a
   new one fails the run until someone measures it by hand.
 * **Whether motion respects `prefers-reduced-motion`.** Every animation
-  added needs the query.
+  added needs the query. The Konami scene's still path (`still()` in
+  `src/konami/scene.ts`) is the model for a reduced-motion branch that
+  is a different scene, not a shortened one.
 * **Whether it works at 200% zoom and at 320px wide**, without
   horizontal scrolling.
 

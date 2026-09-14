@@ -202,9 +202,16 @@ One paragraph about it.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/`, `src/content/tags/`, and `src/content/books/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
 * `src/icons/` is the Tabler icon set, one SVG per name. Templates render one with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />` (`src/components/Icon.astro`); the markdown plugins read the same files through `src/lib/icon.mjs`. Both emit inline `currentColor` SVG so icons take text color tokens and hover transitions. Adding an icon is dropping the Tabler file into the folder.
 * `src/assets/logo.svg` is the mark, the one file it lives in. The header and footer render it inline; its two paths fill from `--logo-s` and `--logo-a` with the brand colors as fallbacks, so the header sets neither and the footer sets both to its greys. `/logo.svg`, the plain copy anyone outside the site links, is built from this file by `src/pages/logo.svg.ts` and the build fails if the two fills are missing. Updating the mark is replacing this file and putting the two `style` fills back on the paths.
+* `src/konami/` is the Konami-code easter egg, described below.
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
 * `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every page, feed, and document URL the site has ever served; it never shrinks.
 * `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read. `global-setup.ts` writes one `draft: true` post (`draft-fixture.ts`) into the blog collection for the length of a run and `global-teardown.ts` removes it, so the draft paths are tested without a draft living in the repo; the file is gitignored and `make clean` removes a leftover.
+
+## The Konami Code
+
+Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. A desert drops in over the lower three quarters of the window, something runs across it, and it hoists back out. Escape ends it early. Keys typed into an editable field do not count.
+
+Every page carries the key listener, a small module script. The scene (art, stylesheet, sequencing) is a separate chunk fetched only when the code completes; the line that draws across the window is the loading indicator. Under `prefers-reduced-motion: reduce` the scene fades in with a single still frame, holds three seconds, and fades out.
 
 ## URL Contract
 

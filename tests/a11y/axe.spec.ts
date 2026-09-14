@@ -1,8 +1,7 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { ROUTES } from "../routes";
-
-const TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
+import { TAGS } from "./tags";
 
 // axe cannot resolve a background it can only sample from a gradient, so
 // text over the header veil comes back "incomplete" rather than pass or

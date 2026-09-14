@@ -1,0 +1,77 @@
+<script>
+  const CODE = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
+  let matched = 0;
+  let running = false;
+
+  function inEditable(target: EventTarget | null): boolean {
+    return (
+      target instanceof HTMLElement &&
+      (target.isContentEditable || target.matches("input, textarea, select"))
+    );
+  }
+
+  async function start(): Promise<void> {
+    running = true;
+    const stage = document.createElement("div");
+    stage.className = "konami-stage";
+    stage.setAttribute("aria-hidden", "true");
+    // Laid out before any stylesheet arrives: the scene's own sheet
+    // rides in the chunk imported below and never restates these.
+    Object.assign(stage.style, {
+      position: "fixed",
+      inset: "auto 0 0 0",
+      height: "75vh",
+      overflow: "hidden",
+      pointerEvents: "none",
+    });
+    document.body.append(stage);
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const floor = document.createElement("div");
+      floor.className = "konami-floor";
+      // #f4d38a mirrors the sun fill in sky.svg.
+      Object.assign(floor.style, {
+        position: "absolute",
+        inset: "auto 0 0 0",
+        height: "2px",
+        background: "#f4d38a",
+        transformOrigin: "left",
+      });
+      stage.append(floor);
+      floor.animate([{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }], {
+        duration: 600,
+        easing: "ease-out",
+        fill: "forwards",
+      });
+    }
+    try {
+      const scene = await import("./scene");
+      await scene.play(stage);
+    } catch (err) {
+      console.warn("The scene did not load.", err);
+    } finally {
+      stage.remove();
+      running = false;
+    }
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (running || e.repeat || inEditable(e.target)) return;
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    matched = key === CODE[matched] ? matched + 1 : key === CODE[0] ? 1 : 0;
+    if (matched < CODE.length) return;
+    matched = 0;
+    void start();
+  });
+</script>

@@ -107,14 +107,14 @@ const showLaravelCta = entry.data.tags.includes("laravel");
     </div>
   </main>
 
-  <!-- The selectors depend on the two DOM shapes rehype-code-chrome emits. -->
-  <script is:inline>
+  <script>
+    // The selectors depend on the two DOM shapes rehype-code-chrome emits.
     document.querySelectorAll(".copy-btn").forEach((btn) => {
       btn.addEventListener("click", async () => {
         const pre =
           btn.closest(".filename-header")?.nextElementSibling ??
           btn.closest(".code-wrap")?.querySelector("pre");
-        if (!pre) return;
+        if (!(pre instanceof HTMLElement)) return;
         try {
           await navigator.clipboard.writeText(pre.innerText);
           btn.classList.add("copied");

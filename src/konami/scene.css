@@ -1,0 +1,198 @@
+/* Reaches a page only through scene.ts (?inline, injected into the
+   stage), so nothing here loads unless the scene runs. The stage's own
+   position and size are inline styles from Konami.astro; this sheet
+   never restates them. State classes accumulate in sequence (is-in,
+   is-run, is-puff, is-out): later rules win. */
+
+.konami-stage {
+  mask-image: linear-gradient(to top, black 60%, transparent 100%);
+}
+
+/* The 5% overhang keeps the parallax slide from exposing an edge. */
+.konami-flat {
+  position: absolute;
+  inset: 0 -5%;
+  transform: translateY(-100%);
+}
+
+.konami-flat > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* The strings. Visible only while a flat hangs above its landed
+   position, since the stage clips everything above its own top. */
+.konami-flat::before,
+.konami-flat::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  width: 2px;
+  height: 100vh;
+  background: #f4d38a;
+}
+
+.konami-flat::before {
+  left: 24%;
+}
+
+.konami-flat::after {
+  left: 76%;
+}
+
+.konami-flat--far > svg {
+  --konami-slide: 1%;
+}
+
+.konami-flat--mid > svg {
+  --konami-slide: 2%;
+}
+
+.konami-flat--near > svg {
+  --konami-slide: 4%;
+}
+
+/* 107x132 is the gif's frame; integer multiples keep pixelated crisp. */
+.konami-sprite {
+  position: absolute;
+  bottom: 18%;
+  left: 100%;
+  width: 107px;
+  height: 132px;
+  image-rendering: pixelated;
+}
+
+@media (min-width: 48rem) {
+  .konami-sprite {
+    width: 214px;
+    height: 264px;
+  }
+}
+
+.konami-puff {
+  position: absolute;
+  translate: -50% -50%;
+  opacity: 0;
+}
+
+.konami-puff > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Drop and hoist are distinct names: a finished animation does not
+   restart when only its direction changes. */
+@keyframes konami-drop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes konami-hoist {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes konami-run {
+  to {
+    transform: translateX(calc(-1 * var(--konami-travel)));
+  }
+}
+
+@keyframes konami-slide {
+  to {
+    transform: translateX(var(--konami-slide));
+  }
+}
+
+@keyframes konami-puff {
+  from {
+    opacity: 1;
+    scale: 0.4;
+  }
+  to {
+    opacity: 0;
+    scale: 1.4;
+  }
+}
+
+.konami-stage.is-in .konami-flat {
+  animation: konami-drop 600ms cubic-bezier(0.2, 0.7, 0.3, 1.1) both;
+}
+
+.konami-stage.is-in .konami-flat--far {
+  animation-delay: 300ms;
+}
+
+.konami-stage.is-in .konami-flat--mid {
+  animation-delay: 600ms;
+}
+
+.konami-stage.is-in .konami-flat--near {
+  animation-delay: 900ms;
+}
+
+/* Shorthand first: it resets the duration the next line sets. */
+.konami-stage.is-run .konami-sprite {
+  animation: konami-run linear both;
+  animation-duration: var(--konami-run);
+}
+
+.konami-stage.is-run .konami-flat > svg {
+  animation: konami-slide linear both;
+  animation-duration: var(--konami-run);
+}
+
+.konami-stage.is-puff .konami-puff {
+  animation: konami-puff 600ms ease-out both;
+}
+
+.konami-stage.is-out .konami-flat {
+  animation: konami-hoist 600ms ease-in both;
+}
+
+.konami-stage.is-out .konami-flat--mid {
+  animation-delay: 300ms;
+}
+
+.konami-stage.is-out .konami-flat--far {
+  animation-delay: 600ms;
+}
+
+.konami-stage.is-out .konami-flat--sky {
+  animation-delay: 900ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .konami-stage {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  .konami-stage.is-on {
+    opacity: 1;
+  }
+
+  .konami-flat,
+  .konami-flat > svg,
+  .konami-sprite,
+  .konami-puff {
+    animation: none;
+    transform: none;
+  }
+
+  .konami-flat::before,
+  .konami-flat::after,
+  .konami-puff {
+    display: none;
+  }
+}
