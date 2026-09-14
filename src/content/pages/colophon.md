@@ -27,7 +27,7 @@ Either AI or I did it, but I take responsibility.
 
 * Built with [Astro](https://astro.build).
 * Styled with [Tailwind CSS](https://tailwindcss.com).
-* Fonts are [Inter](https://rsms.me/inter/) and [Fraunces](https://github.com/undercasetype/Fraunces).
+* Fonts are [Inter](https://rsms.me/inter/), [Fraunces](https://github.com/undercasetype/Fraunces) and [C64 Pro Mono](https://style64.org/c64-truetype).
 * Icons are [Tabler Icons](https://tabler.io/icons).
 * Code highlighting is [Shiki](https://shiki.style).
 

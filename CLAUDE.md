@@ -92,7 +92,8 @@ Expect him to rework code to his taste.
   else repeats them.
 * **Minimal JavaScript.** Static output; the default is zero JS on a
   page. Vue islands only when interactivity genuinely requires them.
-  Currently the only JS on the site is the inline copy-button script.
+  Currently the only JS on the site is two inline scripts: the post
+  copy button, and the 404 page's Enter key (it runs the RUN link).
 * **No search functionality.** No search box, no ⌘K palette.
 * **Deploy is deferred.** Target is Cloudflare static output; Aaron
   handles deploy and DNS himself. Do not build deploy tooling until he

@@ -219,7 +219,7 @@ One paragraph about it.
 ## Layout
 
 * `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv, contact, and colophon bodies, `src/content/books/` is one file per book on `/books/`.
-* `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag), `sitemap.xml`, and `/logo.svg`.
+* `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag), `sitemap.xml`, and `/logo.svg`. The 404 page is a Commodore 64 screen, the machine the About page's 8-year-old learned on: FILE NOT FOUND, then a one-line program whose RUN is the link home; Enter anywhere on the page presses it. It stays in the palette: the real light blue on blue is about 2.3:1.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/`, `src/content/tags/`, and `src/content/books/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
 * `src/icons/` is the Tabler icon set, one SVG per name. Templates render one with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />` (`src/components/Icon.astro`); the markdown plugins read the same files through `src/lib/icon.mjs`. Both emit inline `currentColor` SVG so icons take text color tokens and hover transitions. Adding an icon is dropping the Tabler file into the folder.
 * `src/assets/logo.svg` is the mark, the one file it lives in. The header and footer render it inline; its two paths fill from `--logo-s` and `--logo-a` with the brand colors as fallbacks, so the header sets neither and the footer sets both to its greys. `/logo.svg`, the plain copy anyone outside the site links, is built from this file by `src/pages/logo.svg.ts` and the build fails if the two fills are missing. Updating the mark is replacing this file and putting the two `style` fills back on the paths.
@@ -236,7 +236,6 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 * [ ] Take a current photo for `/about/` and replace `src/assets/aaron-saray.jpg`. The page renders it square at 112px, grayscale, so shoot in color, crop to a square of at least 400x400, head and shoulders with the eyes in the upper third.
-* [ ] Work on the 404 page (`src/pages/404.astro`). Currently a centered stack: a mono `404`, "Page not found", one line of copy, and a single "Go to all posts" link back to `/blog/`.
 * [ ] Rewrite the AI-generated home page title, description, and three role rows (`src/pages/index.astro`).
 * [ ] Rewrite the CTO draft post (`src/content/blog/the-cto-is-a-communicator-first.md`), AI-generated from Aaron's outline and linked from the home page.
 * [ ] Rewrite the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), AI-generated from Aaron's notes.
@@ -245,4 +244,4 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 * [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
 * [ ] Performance and SEO checks. Accessibility is covered by the axe project in `tests/a11y/`; these two are not. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
 * [ ] Full review of the generated site: every file, every page in the local browser.
-* [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP must allow the inline copy script by sha256 hash, not `unsafe-inline`.
+* [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP must allow the two inline scripts (the post copy button, the 404 page's Enter key) by sha256 hash, not `unsafe-inline`.

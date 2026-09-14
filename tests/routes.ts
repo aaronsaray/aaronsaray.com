@@ -2,7 +2,9 @@
 // new page cannot be covered by one and missed by the other. Posts and
 // tags are not enumerated: check-url-contract.mjs already proves every
 // one of them resolves in dist/. These prove each template renders.
-export const ROUTES = [
+type Route = { name: string; path: string; status?: number };
+
+export const ROUTES: readonly Route[] = [
   { name: "home", path: "/" },
   { name: "contact", path: "/contact/" },
   { name: "cv", path: "/cv/" },
@@ -25,4 +27,5 @@ export const ROUTES = [
     name: "post with heading anchors",
     path: "/2021/do-not-use-tinker-in-production/",
   },
-] as const;
+  { name: "not found", path: "/no-such-page-exists/", status: 404 },
+];
