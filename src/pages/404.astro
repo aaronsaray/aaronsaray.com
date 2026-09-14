@@ -1,10 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
 
-// The stock KERNAL's power-on message, 40 columns: a blank first row,
-// four spaces before the asterisks, one before 64K, a blank row
-// between. The blank row after is the paragraph's bottom padding: a
-// trailing newline makes no line box.
+// The KERNAL power-on screen verbatim, spacing included. Its last blank
+// row is the paragraph's pb-[1lh]: a trailing newline makes no line box.
 const BANNER = [
   "",
   "    **** COMMODORE 64 BASIC V2 ****",
@@ -24,21 +22,26 @@ const BANNER = [
   />
   <main id="main" class="page-column">
     {
-      /* The border is the VIC-II's; the container inside it is the
-         picture area. C64 Pro Mono's cells are square, so 2.5cqw makes
-         40 columns span the picture exactly and 25lh gives its 25 rows.
-         Container units must not sit on the container itself (they
-         would fall back to the viewport), and the rem floor is what
-         lets browser zoom enlarge the text. */
+      /* 2.5cqw: C64 Pro Mono's cells are square, so 40 columns fill the
+         container; 25lh is its 25 rows. The units sit on a child, not the
+         @container div, or they resolve against the viewport. The rem
+         floor keeps zoom growing the text once the column is narrower
+         than 40 cells. */
     }
     <div class="border-[0.5rem] border-accent-dim bg-surface sm:border-[2rem]">
       <div class="@container">
         <div
-          class="min-h-[25lh] overflow-hidden font-c64 text-[max(0.5rem,2.5cqw)] leading-none text-accent"
+          class="min-h-[25lh] font-c64 text-[max(0.7rem,2.5cqw)] leading-none text-accent"
         >
-          <p aria-hidden="true" class="pb-[1lh] whitespace-pre">{BANNER}</p>
+          <p
+            aria-hidden="true"
+            class="overflow-hidden pb-[1lh] whitespace-pre"
+            set:text={BANNER}
+          />
           <p>READY.</p>
-          {/* An expression: Prettier collapses the double space in text. */}
+          <p class="pb-[1lh]">LOAD"THAT PAGE",8</p>
+          <p>SEARCHING FOR THAT PAGE</p>
+          {/* Prettier collapses the double space in text. */}
           <h1 class="whitespace-pre">{"?FILE NOT FOUND  ERROR"}</h1>
           <p>READY.</p>
           <p>10 GOTO HOME</p>
@@ -46,11 +49,11 @@ const BANNER = [
             <a
               id="run"
               href="/"
-              class="-my-2 inline-block py-2 transition-colors duration-300 hover:bg-accent hover:text-surface"
+              class="-my-2 inline-block bg-clip-content py-2 transition-colors duration-300 hover:bg-accent hover:text-surface"
               >RUN<span class="sr-only">, go back home</span></a
             ><span
               aria-hidden="true"
-              class="inline-block h-[1em] w-[1ch] animate-blink bg-ink align-text-bottom motion-reduce:animate-none"
+              class="inline-block h-[1em] w-[1ch] animate-blink bg-current align-text-bottom motion-reduce:animate-none"
             ></span>
           </p>
         </div>
@@ -58,14 +61,11 @@ const BANNER = [
     </div>
   </main>
 
+  <!-- A focused control keeps Enter for itself. -->
   <script is:inline>
-    // Enter anywhere on the page runs the program. A focused control
-    // (a nav link, the menu buttons) keeps Enter for itself.
     document.addEventListener("keydown", (e) => {
-      if (e.key !== "Enter" || e.repeat || e.defaultPrevented) return;
+      if (e.key !== "Enter" || e.repeat || e.target !== document.body) return;
       if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
-      if (e.target.closest?.("a, button, input, select, textarea, [tabindex]"))
-        return;
       document.getElementById("run").click();
     });
   </script>

@@ -92,8 +92,7 @@ Expect him to rework code to his taste.
   else repeats them.
 * **Minimal JavaScript.** Static output; the default is zero JS on a
   page. Vue islands only when interactivity genuinely requires them.
-  Currently the only JS on the site is two inline scripts: the post
-  copy button, and the 404 page's Enter key (it runs the RUN link).
+  No islands exist yet; all JS on the site is `is:inline` scripts.
 * **No search functionality.** No search box, no ⌘K palette.
 * **Deploy is deferred.** Target is Cloudflare static output; Aaron
   handles deploy and DNS himself. Do not build deploy tooling until he
@@ -110,10 +109,9 @@ Expect him to rework code to his taste.
   GitHub Actions runs `make ci` (fresh install, then `verify`) and
   nothing else.
 * Every repeated command is a make target, and `make` with no target
-  lists them. The leaf-and-grouping rule is in README "Tooling":
-  `package.json` scripts are single-tool leaves, each with a same-named
-  target, and the Makefile composes them. A command not in the list is
-  a one-off; a one-off that gets repeated becomes a target.
+  lists them. `package.json` scripts are single-tool leaves, each with
+  a same-named target, and the Makefile composes them. A one-off that
+  gets repeated becomes a target.
 * Formatting is owned by Prettier (pure defaults plus the astro and
   tailwindcss plugins), linting by ESLint flat config (recommended
   sets only, prettier-conflict rules disabled), markdown by
@@ -121,7 +119,7 @@ Expect him to rework code to his taste.
   home-directory config here). `make lint` runs all three and
   `make lint-fix` fixes all three. Never hand-format against
   Prettier. Prettier and ESLint never touch `src/content/`, `public/`,
-  or any markdown. See README "Tooling".
+  or any markdown.
 * AI tooling is repo-declared: `.mcp.json` (Astro docs + Playwright MCP
   servers) and `.claude/settings.json` (server approvals, plugin
   declarations). Keep additions project-scoped in these files, not in
@@ -142,8 +140,7 @@ Expect him to rework code to his taste.
   (`min-release-age`), no dependency install scripts
   (`ignore-scripts`), exact version pins (`save-exact`). Do not
   weaken these to make an install work; surface the problem to Aaron
-  instead. Node and npm versions are pinned via Volta in
-  `package.json`.
+  instead.
 * **Content-layer cache gotcha:** Astro caches rendered markdown in
   two places: `node_modules/.astro/data-store.json` for `astro build`
   and `.astro/data-store.json` for `astro dev`, which the Playwright
@@ -197,7 +194,7 @@ Expect him to rework code to his taste.
   through frontmatter `sections: true`, the CV). The code-block DOM
   shapes and the inline
   copy script are a matched pair; the script's element lookups depend
-  on the exact shapes the plugins emit. `tests/copy-button.spec.ts`
+  on the exact shapes the plugins emit. `tests/e2e/copy-button.spec.ts`
   enforces that pairing by comparing the copied text against the code
   block through both DOM shapes.
 * `src/lib/`: excerpts (`<!--more-->` split, ~70-word fallback),
@@ -299,9 +296,7 @@ should raise them rather than wait:
   (`tests/e2e/`, behavior) and `a11y` (`tests/a11y/`, the axe sweep).
   Both run in `verify`; `make test-e2e` and `make test-a11y` run
   one at a time while iterating. A new page means a new line in
-  `tests/routes.ts`, which both projects read. Posts and tags are not
-  enumerated there: the URL contract already proves every path
-  resolves. The draft paths are tested against a fixture post that
+  `tests/routes.ts`, which both projects read. The draft paths are tested against a fixture post that
   `tests/global-setup.ts` writes into the blog collection for the run
   and `tests/global-teardown.ts` removes; never commit a draft to make
   a test pass.

@@ -25,7 +25,9 @@
   font-family: "C64 Pro Mono";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  /* block: the fallback's cells are not square, so the layout is wrong
+     until the swap. */
+  font-display: block;
   src: url("/fonts/C64_Pro_Mono-STYLE.woff2") format("woff2");
 }
 
@@ -56,8 +58,7 @@
     ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
   --font-c64: "C64 Pro Mono", ui-monospace, Menlo, Consolas, monospace;
 
-  /* 667ms: the KERNAL toggles the cursor every 20 jiffies of 1/60 s
-     ($CD, BLNCT). */
+  /* 667ms: the KERNAL cursor toggles every 20 jiffies (1/60 s). */
   --animate-blink: blink 667ms step-end infinite;
   @keyframes blink {
     50% {
