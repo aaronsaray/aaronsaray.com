@@ -93,6 +93,9 @@ New checks belong inside `verify` rather than alongside it: one command is the w
     its `voice.md`, the catalog of Aaron's writing habits it reads
     before the post.
   * `.claude/skills/fact-check/` (committed): the `/fact-check` skill.
+  * `.claude/skills/related/` (committed): the `/related` skill and its
+    `index.md`, a table with one row per published post (URL, title,
+    and a summary written to be grepped for the idea).
   * `.claude/settings.local.json` is gitignored: personal overrides only.
 
 ## Writing a Blog Post
@@ -124,6 +127,7 @@ The rest of the post.
 * Optional `context:` (list of strings) renders the "Context:" pills under the meta line.
 * Proofread with `/proofread <slug>` in Claude Code; with no argument it takes the post modified in git. It prints one list in chat, mechanical errors first, rewrites as blockquotes, and never edits the file. `.claude/skills/proofread/voice.md` lists the habits it must not flag, one bullet per rule; delete a bullet to drop the rule.
 * Fact check with `/fact-check <slug>`, same lookup as `/proofread`. The first pass is closed-book: code against the prose around it, the post against itself, and what it would state flatly from memory. Anything it would rather verify (versions, support, quotes, numbers) goes in a numbered list, and it asks before looking any of it up. Opinions are never findings. Never edits the file.
+* Find a post to link with `/related <what you remember writing about>`. It runs apart from the conversation, greps `.claude/skills/related/index.md` for the idea, confirms by reading the candidates, and prints one to three paste-ready `[Title](/YYYY/slug/)` links, each with the matching passage quoted, or `Nothing close.` with the terms it tried. With no argument it checks the index against the posts (new, changed, deleted, and drafts) and prints the rows to add, replace, or remove; nothing is written until you say so.
 
 ### Formatting
 
@@ -229,10 +233,10 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 * [ ] Take a current photo for `/about/` and replace `src/assets/aaron-saray.jpg`. The page renders it square at 112px, grayscale, so shoot in color, crop to a square of at least 400x400, head and shoulders with the eyes in the upper third.
 * [ ] Rewrite the AI-generated home page title, description, and three role rows (`src/pages/index.astro`).
-* [ ] Rewrite the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), AI-generated from Aaron's notes.
 * [ ] Rewrite the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, AI-generated from Aaron's one-line note.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
 * [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
+* [ ] Three content issues found while indexing the archive. The body of `disable-jquery-from-loading-in-custom-wordpress-template.md` ends on "this is what I did:" with no code block after it. The title of `why-im-not-writing-about-ai-yet.md` reads "Why Im Not Writing About AI Yet", missing the apostrophe. `posting-requests-in-php-without-curl.md` names the ini setting `fopen_url`; the directive is `allow_url_fopen`.
 * [ ] Performance and SEO checks. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
 * [ ] Full review of the generated site: every file, every page in the local browser.
 * [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP allows the inline scripts by sha256 hash, not `unsafe-inline`.

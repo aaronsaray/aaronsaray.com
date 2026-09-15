@@ -8,4 +8,16 @@
     // Aaron's prose: tooling never touches it.
     "src/content/**",
   ],
+  "overrides": [
+    {
+      "filter": [".claude/skills/related/index.md"],
+      "combine": "merge",
+      "config": {
+        // The Title column is the post's frontmatter title verbatim, and
+        // a title naming a PHP magic method (__call) reads as emphasis.
+        // Backticks there would stop matching the post.
+        "MD037": false,
+      },
+    },
+  ],
 }

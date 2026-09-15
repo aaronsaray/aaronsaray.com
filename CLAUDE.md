@@ -135,9 +135,11 @@ Expect him to rework code to his taste.
   servers), `.claude/settings.json` (server approvals, plugin
   declarations), and `.claude/skills/` (the `/proofread` skill, report
   only, with `voice.md` as Aaron's catalog of habits it never flags,
-  and the `/fact-check` skill, report only, closed-book until Aaron
-  approves lookups). Keep additions project-scoped in these files, not
-  in user-level config.
+  the `/fact-check` skill, report only, closed-book until Aaron
+  approves lookups, and the `/related` skill, report only, a forked
+  lookup over `index.md`, one row per post, that proposes index rows
+  for Aaron to approve and never writes). Keep additions
+  project-scoped in these files, not in user-level config.
 * In `.astro` templates, use `{/* */}` comments inside `{...}`
   expressions; HTML comments there break Prettier's parser.
 * **Never write `{" "}`.** Not to fix a missing space, not because
