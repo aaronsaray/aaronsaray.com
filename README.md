@@ -92,6 +92,7 @@ New checks belong inside `verify` rather than alongside it: one command is the w
   * `.claude/skills/proofread/` (committed): the `/proofread` skill and
     its `voice.md`, the catalog of Aaron's writing habits it reads
     before the post.
+  * `.claude/skills/fact-check/` (committed): the `/fact-check` skill.
   * `.claude/settings.local.json` is gitignored: personal overrides only.
 
 ## Writing a Blog Post
@@ -122,6 +123,7 @@ The rest of the post.
 * Body headers start at H2. The post title is the H1. H2 and H3 get an anchor link.
 * Optional `context:` (list of strings) renders the "Context:" pills under the meta line.
 * Proofread with `/proofread <slug>` in Claude Code; with no argument it takes the post modified in git. It prints one list in chat, mechanical errors first, rewrites as blockquotes, and never edits the file. `.claude/skills/proofread/voice.md` lists the habits it must not flag, one bullet per rule; delete a bullet to drop the rule.
+* Fact check with `/fact-check <slug>`, same lookup as `/proofread`. The first pass is closed-book: code against the prose around it, the post against itself, and what it would state flatly from memory. Anything it would rather verify (versions, support, quotes, numbers) goes in a numbered list, and it asks before looking any of it up. Opinions are never findings. Never edits the file.
 
 ### Formatting
 
@@ -227,7 +229,6 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 * [ ] Take a current photo for `/about/` and replace `src/assets/aaron-saray.jpg`. The page renders it square at 112px, grayscale, so shoot in color, crop to a square of at least 400x400, head and shoulders with the eyes in the upper third.
 * [ ] Rewrite the AI-generated home page title, description, and three role rows (`src/pages/index.astro`).
-* [ ] Fact check skill
 * [ ] Rewrite the reinventing-the-wheel draft post (`src/content/blog/reinventing-the-wheel-is-how-you-learn.md`), AI-generated from Aaron's notes.
 * [ ] Rewrite the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, AI-generated from Aaron's one-line note.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
