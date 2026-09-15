@@ -72,7 +72,7 @@ If you're crazy stalker, and you really care, here they are:
 
 [aaronsaray.com-before-homepage.har](/uploads/2017/aaronsaray.com-before-homepage.har), [aaronsaray.com-before-blog-list.har](/uploads/2017/aaronsaray.com-before-blog-list.har), [aaronsaray.com-before-blog-entry.har](/uploads/2017/aaronsaray.com-before-blog-entry.har) 
 
-[aaronsaray.com-after-homepage.har](/uploads/2017/aaronsaray.com-after-homepage.har), [aaronsaray.com-after-blog-list.har](/uploads/2017/aaronsaray.com-after-blog-list.har), [aaronsaray.com-after-blog-entry.har](/uploads/2017/aaronsaray.com-after-blog-entry.har) 
+[aaronsaray.com-after-home-page.har](/uploads/2017/aaronsaray.com-after-home-page.har), [aaronsaray.com-after-blog-list.har](/uploads/2017/aaronsaray.com-after-blog-list.har), [aaronsaray.com-after-blog-entry.har](/uploads/2017/aaronsaray.com-after-blog-entry.har) 
 
 I realize, these aren't ultimately accurate, because I have some Google analytics in there as well, but they're close enough for this particular conversation.
 

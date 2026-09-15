@@ -11,3 +11,7 @@ On the rest of my site, I load jQuery from the google cdn.  However, wordpress l
 
 Instead, I found there was a function called `wp_deregister_script()`.  Using this, I removed the jquery from my **`header.php`** file - and continued to load it from the cdn.  For reference, this is what I did:
 
+```php
+<?php wp_deregister_script('jquery');wp_head(); ?>
+```
+

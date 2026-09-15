@@ -1,5 +1,5 @@
 ---
-title: Why Im Not Writing About AI Yet
+title: Why I'm Not Writing About AI Yet
 date: "2026-02-18T15:29:34-06:00"
 tags:
   - programming

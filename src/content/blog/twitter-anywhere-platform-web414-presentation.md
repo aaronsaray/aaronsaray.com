@@ -4,4 +4,4 @@ date: "2010-06-13"
 tags:
   - business
 ---
-I did a presentation at [Web414](http://web414.org) this last Thursday.  You can find the PDF of the presentation [here](/2010/web414_twitter_anywhere.pdf).
+I did a presentation at [Web414](http://web414.org) this last Thursday.  You can find the PDF of the presentation [here](/uploads/2010/web414_twitter_anywhere.pdf).

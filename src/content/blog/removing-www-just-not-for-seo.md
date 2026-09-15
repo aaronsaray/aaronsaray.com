@@ -25,7 +25,7 @@ RewriteCond %{HTTP_HOST} ^www.thebetterbachelor.com$ [NC]
 RewriteRule ^(.*)$ http://thebetterbachelor.com/$1 [R=301,L]
 ```
 
-This would make sure that the domain redirected with a 301 and was not processed anywhere else.  However, after doing some more research, and running into the non www website at [no-www.org](no-www.org/faq.php?q=class_b), there is a better solution.  Let's do it this way from now on:
+This would make sure that the domain redirected with a 301 and was not processed anywhere else.  However, after doing some more research, and running into the non www website at [no-www.org](https://no-www.org/faq.php?q=class_b), there is a better solution.  Let's do it this way from now on:
     
 ```apache
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]

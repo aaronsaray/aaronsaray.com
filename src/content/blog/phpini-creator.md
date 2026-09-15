@@ -37,4 +37,4 @@ As always, my todo list is great on this project:
 Yeh - it's like that...
 
 So without further ramblings, here is the file:
-[phpinicreator.zip](/blog/wp-content/uploads/2009/01/phpinicreator.zip)
+[phpinicreator.zip](/uploads/2009/phpinicreator.zip)

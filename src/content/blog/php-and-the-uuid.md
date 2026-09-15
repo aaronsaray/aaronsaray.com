@@ -14,7 +14,7 @@ My chosen UUID is V4 in PHP.  I checked out the [php.net/uniqid](http://php.net/
 
 ## UUID is Hex
 
-So, let's make sure we fully understand our integer formats [http://us2.php.net/manual/en/language.types.integer.php](php.net/integer) specifically our hexadecimal format: `0[xX][0-9a-fA-F]+`  From this, we should start to think of our min and max ranges for our UUID in hex: between `0` and `0xFF...(many f's)`.
+So, let's make sure we fully understand our integer formats [php.net/integer](https://www.php.net/manual/en/language.types.integer.php) specifically our hexadecimal format: `0[xX][0-9a-fA-F]+`  From this, we should start to think of our min and max ranges for our UUID in hex: between `0` and `0xFF...(many f's)`.
 
 The next thing I want to make sure is that PHP doesn't convert my hex to something base 10 - so let's format it properly with the `sprintf()` function.  Note the description of the last parameter:
 

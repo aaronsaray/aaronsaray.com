@@ -52,7 +52,7 @@ You don't need to ask them what their 'label' is – you will be able to determi
 
 **Web Hosting**
 
-While I get into the specifics of web hosting more here in [this article](/blog/2008/05/11/what-is-website-hosting/), I'll cover the main idea here.
+While I get into the specifics of web hosting more here in [this article](/2008/what-is-website-hosting/), I'll cover the main idea here.
 
 You need web hosting.  Web hosting is space on a computer that is always on with a fast internet connection.  This is the computer that stores your website.  Prices for hosting can vary depending on the company and features of the hosting.  You do not need to purchase the hosting from the firm you contract for your website.  However, your site may have specific technology requirements, so not just any offering may suffice.  Generally, you can purchase hosting from the firm you're working with for your site, however, to make everything seamless.  This is usually a monthly or yearly reoccurring charge.  Make sure to build this initial charge or setup fee into your budget.
 
@@ -60,7 +60,7 @@ The last important thing to find out from your provider is the information requi
 
 **Domain Name**
 
-I give more detail on what a domain name is in [this article](/blog/2008/05/11/what-is-a-domain-name/).  However, here is the main idea.
+I give more detail on what a domain name is in [this article](/2008/what-is-a-domain-name/).  However, here is the main idea.
 
 You need a domain name to point to your web hosting.  A domain name is those familiar www dot something dot com labels.  You can have a .com, .net, .org, etc, domain name – there are a lot to pick from.  This usually is an annual reoccurring charge.  Some web hosting providers throw in the domain name for free.
 

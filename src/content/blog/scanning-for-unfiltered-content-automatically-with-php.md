@@ -113,4 +113,4 @@ foreach ($forms as $form) {
 }
 ```
 
-As you can see, still very simple, but it lays the groundwork.  Combine this with my [link checking code](/blog/2008/03/19/link-checking-module-1st-attempt/) and you could make a pretty decent start on a PHP vulnerability scanner.
+As you can see, still very simple, but it lays the groundwork.  Combine this with my [link checking code](/2008/link-checking-module-1st-attempt/) and you could make a pretty decent start on a PHP vulnerability scanner.

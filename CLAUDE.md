@@ -320,12 +320,12 @@ should raise them rather than wait:
 
 ## Verify Scripts and Tests
 
-* `scripts/`: `check-url-contract.mjs` and `check-links.mjs` with their
-  fixtures `url-contract.txt` and `known-rot.txt`. Both read `dist/`,
-  so a build has to precede them. Both carry a pinned count
-  (`FIXTURE_FLOOR`, `EXPECTED_ROT`) that fails on drift in either
-  direction: changing a pin is a deliberate decision, never a way to
-  make a failing run pass.
+* `scripts/`: `check-url-contract.mjs`, with its fixture
+  `url-contract.txt`, and `check-links.mjs`. Both read `dist/`, so a
+  build has to precede them. The contract check carries a pinned count
+  (`FIXTURE_FLOOR`) that fails on drift in either direction: changing
+  the pin is a deliberate decision, never a way to make a failing run
+  pass. Every internal link resolves; a broken one fails the run.
 * `tests/`: Playwright, Chromium only, against a dev server the config
   starts on port 4321 and stops afterward. Two projects: `e2e`
   (`tests/e2e/`, behavior) and `a11y` (`tests/a11y/`, the axe sweep).

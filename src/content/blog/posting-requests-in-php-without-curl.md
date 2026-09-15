@@ -45,6 +45,6 @@ The next line is the `$opts` array.  This will be the options that we send to th
 
 Moving on, we create a new context using `stream_context_create()`, assign that to $context using `$opts` as our parameter.  Think of `$context` not as a value, but as a handle - similar to an fopen or other resource handle.
 
-Finally, we retrieve the contents of our request using `file_get_contents()`.  Do note: you must have `fopen_url = true` in your **`php.ini`**.  This allows us to retrieve content via an external URL.  We pass the location of our post request, false because we don't want send any additional flags, and a pointer to our stream context.
+Finally, we retrieve the contents of our request using `file_get_contents()`.  Do note: you must have `allow_url_fopen = true` in your **`php.ini`**.  This allows us to retrieve content via an external URL.  We pass the location of our post request, false because we don't want send any additional flags, and a pointer to our stream context.
 
 After this is complete, we should have the output in the `$result` variable.

@@ -4,7 +4,7 @@ date: "2008-11-20"
 tags:
   - security
 ---
-As you probably remember, I have lots of interest in phishing techniques (I talked about one [here](/blog/2007/07/11/the-anatomy-of-a-phishing-attack-advanced-technique/), and preventing them [here](/blog/2007/07/11/the-top-17-ways-to-help-eliminate-the-phishing-threat/)).  I've noticed a new trend: a dual stage login form with a custom picture or passphrase.  Users are to gain trust in the login page because their custom configured option is displayed.  The more I started thinking about this, however, I kept seeing an issue - this still can be easily phished!  
+As you probably remember, I have lots of interest in phishing techniques (I talked about one [here](/2007/the-anatomy-of-a-phishing-attack-advanced-technique/), and preventing them [here](/2007/the-top-17-ways-to-help-eliminate-the-phishing-threat/)).  I've noticed a new trend: a dual stage login form with a custom picture or passphrase.  Users are to gain trust in the login page because their custom configured option is displayed.  The more I started thinking about this, however, I kept seeing an issue - this still can be easily phished!  
 
 <!--more-->
 
@@ -49,7 +49,7 @@ $passphrase = $doc->getElementById('passphrase_node')->nodeValue;
 include('next_login_form.php');
 ```
 
-Ok, first off, you'll see we create a nice post with our stream context creation ([detailed here](/blog/2008/11/14/posting-requests-in-php-without-curl/)) - so we basically send the username to the real domain as they had logged in.  (Depending on the target site, you might also have to send referrers, cookies, etc - but we're making it a really simple example here.)
+Ok, first off, you'll see we create a nice post with our stream context creation ([detailed here](/2008/posting-requests-in-php-without-curl/)) - so we basically send the username to the real domain as they had logged in.  (Depending on the target site, you might also have to send referrers, cookies, etc - but we're making it a really simple example here.)
 
 We retrieve the page after a successful post of the username.  This content should now contain the custom passphrase somewhere.  For our example, there is a nicely named `div` or `span` with an id of `passphrase_node`.  Probably, in real life, you'd have to use a complex XPath to get the actual value.
 
