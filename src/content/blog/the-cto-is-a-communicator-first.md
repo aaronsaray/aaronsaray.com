@@ -26,8 +26,8 @@ technical chops and communication.
 In that entry, I listed the high level skills they need - but I don't think I was as forceful as I should have been
 with my suggestions.  I used "In a lot of cases" and "usually" to hedge.
 
-But let's be clear: the job is more than just those high level skills and general direction.  It's about prioritizing 
-the time of the role for what's needed. And surprise - it's not "usually" or "maybe" - its very clear.
+The job is more than just those high level skills and general direction.  It's about prioritizing 
+the time of the role for what's needed. And surprise - it's not "usually" or "maybe" - it's very clear.
 
 A real CTO knows the line they walk - between technical and communicator - and how much effort they put towards both.
 Let's investigate that.
@@ -38,7 +38,7 @@ A CTO should still write code, review pull requests and attend technical discuss
 may seem pretty obvious - especially for CTOs who came from a programming career and were promoted upward.
 
 Before I go further, though, let me be absolutely clear: if there are enough resources that this is a CTO role, and not just a
-fancy title to appease a lower salary, then a CTO is not doing work to hit a production code timeline.  
+fancy title to compensate for a lower salary, then a CTO is not doing work to hit a production code timeline.  
 They are not saving the world. They are not the final call for solving a technical problem. 
 They find the people to be that instead - so they don't have to be that anymore.
 
@@ -77,7 +77,7 @@ Over and over again.
 And it's translating the technical "noise" up to the stakeholders, listening to their concerns, and honestly
 applying that priority and feedback to the decisions. And communicating that again.
 
-**See?** It sounds like prioritization, but in reality, its communication.
+**See?** It sounds like prioritization, but in reality, it's communication.
 
 ## The Result
 
@@ -93,7 +93,7 @@ on a wild-chicken-chase - literally - and he has to catch that chicken. Then aft
 and cooks it, he brings it to you.  It took way too long. It was way harder to do - and you're upset because the food was
 delayed.
 
-**Everyone seems unhappy. Who's fault is that?**
+**Everyone seems unhappy. Whose fault is that?**
 
 ### Team Cohesion
 
@@ -112,23 +112,23 @@ or CTO, would have informed everyone earlier in the shift what resources were in
 
 ### Consequences with Choice
 
-Every thing the CTO chooses to do with their time has consequence.  Our example is silly, sure, but it illustrates the issue
+Everything the CTO chooses to do with their time has consequence.  Our example is silly, sure, but it illustrates the issue
 in a way that we can all recognize.
 
 Sometimes the decision makers, the stakeholders, don't understand the consequence of their decision.
 
-The CTO's job is communication - tell them what each choice details and what the consequence is.
+The CTO's job is communication - tell them what each choice entails and what the consequence is.
 
-Let me follow this through in a more technical way:  The stakeholders ask for a feature, its really hard, the CTO
-never alerts of the consequence of this action, and the project is late.  Not only is it late, but other things are missed,
+Let me follow this through in a more technical way:  The stakeholders ask for a feature, it's really hard, the CTO
+never warns of the consequence of this action, and the project is late.  Not only is it late, but other things are missed,
 too. And this is because our programmers were running after that metaphorical chicken - instead of just giving us the meat we wanted,
 already prepared for the grill.  
 
-Who's fault was it? The CTO.  The CTO needed to communicate the consequence for each decision.
+Whose fault was it? The CTO.  The CTO needed to communicate the consequence for each decision.
 
 ### The Risk of the Solution
 
-But what does consequence even matter? I sort of already alluded above with one risk: late projects.
+But why does consequence even matter? I already alluded to one risk: late projects.
 
 But there's so much more.
 
