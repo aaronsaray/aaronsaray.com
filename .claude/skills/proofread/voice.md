@@ -9,6 +9,8 @@ What the proofread skill treats as Aaron's voice. One bullet per rule.
   all."
 * Two spaces after a sentence. "I reached for validation on pagination
   requests.  This is user input."
+* Trailing whitespace at the end of a line. Markdown drops it on
+  render.
 * A sentence or a paragraph that opens with But, And, or So, with or
   without the comma. "But, what if someone says "I want 10000" - should
   we allow that?"

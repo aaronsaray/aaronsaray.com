@@ -233,7 +233,6 @@ Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
 * [ ] Take a current photo for `/about/` and replace `src/assets/aaron-saray.jpg`. The page renders it square at 112px, grayscale, so shoot in color, crop to a square of at least 400x400, head and shoulders with the eyes in the upper third.
 * [ ] Rewrite the AI-generated home page title, description, and three role rows (`src/pages/index.astro`).
-* [ ] Rewrite the parallel-testing draft post (`src/content/blog/why-i-am-starting-to-love-parallel-testing.md`), `draft: true`, AI-generated from Aaron's one-line note.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
 * [ ] Review `scripts/known-rot.txt`: 25 internal links in old posts that were already broken on the Hugo site. Non-fatal in verify; decide which are worth fixing in the prose.
 * [ ] Three content issues found while indexing the archive. The body of `disable-jquery-from-loading-in-custom-wordpress-template.md` ends on "this is what I did:" with no code block after it. The title of `why-im-not-writing-about-ai-yet.md` reads "Why Im Not Writing About AI Yet", missing the apostrophe. `posting-requests-in-php-without-curl.md` names the ini setting `fopen_url`; the directive is `allow_url_fopen`.
