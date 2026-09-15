@@ -126,9 +126,11 @@ Expect him to rework code to his taste.
   Prettier. Prettier and ESLint never touch `src/content/`, `public/`,
   or any markdown.
 * AI tooling is repo-declared: `.mcp.json` (Astro docs + Playwright MCP
-  servers) and `.claude/settings.json` (server approvals, plugin
-  declarations). Keep additions project-scoped in these files, not in
-  user-level config.
+  servers), `.claude/settings.json` (server approvals, plugin
+  declarations), and `.claude/skills/` (the `/proofread` skill, report
+  only, with `voice.md` as Aaron's catalog of habits it never flags).
+  Keep additions project-scoped in these files, not in user-level
+  config.
 * In `.astro` templates, use `{/* */}` comments inside `{...}`
   expressions; HTML comments there break Prettier's parser.
 * **Never write `{" "}`.** Not to fix a missing space, not because
