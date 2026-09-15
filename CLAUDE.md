@@ -39,6 +39,9 @@ Expect him to rework code to his taste.
   a comma, and never counted against the rule below, in the content or
   in feedback on a draft. The same goes for any other punctuation
   habit in his writing.
+  The rule covers `src/content/`. Files under `.claude/` (skills,
+  their support files, any index a skill keeps) are written by Claude
+  as a matter of course and need no marker and no README note.
   The rule governs files, not the conversation. "Give me some
   options" is not "write my content": when Aaron asks for options,
   examples, or a draft of a sentence, give several in chat, in his
@@ -112,7 +115,10 @@ Expect him to rework code to his taste.
   declaring any change done. It is the only gate: a new check goes
   inside `verify`, never beside it as a command to remember.
   GitHub Actions runs `make ci` (fresh install, then `verify`) and
-  nothing else.
+  nothing else. Verify checks the site's code and tooling and nothing
+  else. Skills in `.claude/skills/` are a separate silo: a skill is
+  never a verify step, verify never gates a skill or the files it
+  keeps, and skill work never raises the question.
 * Every repeated command is a make target, and `make` with no target
   lists them. `package.json` scripts are single-tool leaves, each with
   a same-named target, and the Makefile composes them. A one-off that
