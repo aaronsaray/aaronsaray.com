@@ -231,7 +231,6 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] Take a current photo for `/about/` and replace `src/assets/aaron-saray.jpg`. The page renders it square at 112px, grayscale, so shoot in color, crop to a square of at least 400x400, head and shoulders with the eyes in the upper third.
 * [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
 * [ ] Performance and SEO checks. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
 * [ ] Full review of the generated site: every file, every page in the local browser.

@@ -21,19 +21,55 @@ for (const width of [320, 768, 1280]) {
         if (!el) throw new Error(`missing ${selector}`);
         return el.getBoundingClientRect();
       };
+      const lede = document.querySelector("main h1 + p");
+      if (!lede) throw new Error("missing lede");
       const portrait = rect("main img");
       const name = rect("main h1");
       return {
         portraitTop: portrait.top,
+        portraitBottom: portrait.bottom,
         portraitRight: portrait.right,
         nameTop: name.top,
         nameLeft: name.left,
+        ledeBottom: lede.getBoundingClientRect().bottom,
       };
     });
-    expect(layout.portraitTop).toBe(layout.nameTop);
     expect(layout.nameLeft).toBeGreaterThan(layout.portraitRight);
+    // Below sm the lede wraps tall enough that a bottom-aligned portrait
+    // would drift away from the name, so the row tops align instead.
+    if (width < 640) {
+      expect(layout.portraitTop).toBe(layout.nameTop);
+    } else {
+      expect(layout.portraitBottom).toBe(layout.ledeBottom);
+    }
   });
 }
+
+// The bottom-aligned portrait lands on the lede's last baseline only
+// because the lede's box is trimmed there. Untrimmed, the line box keeps
+// its half-leading and descender space and the portrait hangs below the
+// text by that much.
+test("the portrait's bottom edge lands on the lede's last baseline", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const { portraitBottom, baseline } = await page.evaluate(() => {
+    const lede = document.querySelector("main h1 + p");
+    const portrait = document.querySelector("main img");
+    if (!lede || !portrait) throw new Error("missing portrait or lede");
+    const probe = document.createElement("span");
+    probe.style.cssText =
+      "display:inline-block;width:0;height:0;vertical-align:baseline";
+    lede.appendChild(probe);
+    const baseline = probe.getBoundingClientRect().top;
+    probe.remove();
+    return {
+      portraitBottom: portrait.getBoundingClientRect().bottom,
+      baseline,
+    };
+  });
+  expect(portraitBottom).toBeCloseTo(baseline, 1);
+});
 
 test("every destination is named by a link", async ({ page }) => {
   const terms = page.locator("main dt");
