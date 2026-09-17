@@ -4,6 +4,7 @@ date: "2012-10-09"
 tags:
   - php
   - programming
+evergreen: true
 ---
 One thing I'm really passionate about is using PHP in enterprise situations.  I obviously care about [Design Patterns](/book) in PHP.  I've also done a lot of technical review of other books about refactoring away from bad code.  
 

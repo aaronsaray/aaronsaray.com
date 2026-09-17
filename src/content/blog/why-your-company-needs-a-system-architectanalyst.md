@@ -4,6 +4,7 @@ date: "2008-09-10"
 tags:
   - misc-web
   - programming
+evergreen: true
 ---
 In this post, I'm going to cover what a System Architect/Analyst (SA from now on) is and why you need one.
 

@@ -122,7 +122,7 @@ The rest of the post.
 * `date` stays a quoted string. Date-only (`"2026-08-27"`) works too.
 * At least one tag. A tag needs a matching file in `src/content/tags/` for its landing page. New tag: add `src/content/tags/<term>.md` with `title`/`description` frontmatter and a prose body, and a 1200x630 `public/images/tag/<term>.jpg` for the social card.
 * `draft: true` keeps the post out of every build. Remove it to publish. `make dev` renders drafts at their real URL, in every list and feed, with a Draft badge next to the date.
-* Posts older than ~18 months show a "technology changes" notice, except evergreen essays: posts whose tags are all in the evergreen set (`management`, `business`, `ideas`; see `src/lib/evergreen.ts`). Optional `evergreen: true`/`false` frontmatter overrides the tag-based default either way.
+* Posts older than ~18 months show a "technology changes" notice. `evergreen: true` frontmatter suppresses it. Tags have no bearing on this.
 * Body headers start at H2. The post title is the H1. H2 and H3 get an anchor link.
 * Optional `context:` (list of strings) renders the "Context:" pills under the meta line.
 * Proofread with `/proofread <slug>` in Claude Code; with no argument it takes the post modified in git. It prints one list in chat, mechanical errors first, rewrites as blockquotes, and never edits the file. `.claude/skills/proofread/voice.md` lists the habits it must not flag, one bullet per rule; delete a bullet to drop the rule.
@@ -231,7 +231,11 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] While browsing the full archive, flag mixed-tag essays that deserve `evergreen: true` frontmatter (suppresses the old-post technology notice; policy and tag set in `src/lib/evergreen.ts`, four example overrides already set). Roughly 33 remaining posts mix an evergreen tag with a technical one and default to showing the notice.
+* [ ] Confirm the evergreen flag on each post during the archive walk. 114 posts carry `evergreen: true` after the tag-policy backfill; the walker's green toggle sets and clears it.
+* [ ] consider a cli output design (for most of the txt)
+* [ ] updates to contact page 
+* [ ] updates to about page the google thing
+* [ ] http://localhost:4321/2017/33-things-book/ - needs to have a easier download of the book
 * [ ] Performance and SEO checks. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
 * [ ] Full review of the generated site: every file, every page in the local browser.
 * [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP allows the inline scripts by sha256 hash, not `unsafe-inline`.

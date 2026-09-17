@@ -4,6 +4,7 @@ date: "2013-07-17"
 tags:
   - business
   - programming
+evergreen: true
 ---
 Hello friends - I'm trying to get an idea if this would be a good idea.  Let me know your thoughts in the comments.
 

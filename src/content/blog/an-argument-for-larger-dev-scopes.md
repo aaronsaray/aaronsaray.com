@@ -4,6 +4,7 @@ date: "2021-03-29"
 tags:
   - programming
   - management
+evergreen: true
 ---
 Conventional wisdom says to scope down your initiatives and make small tasks for your team members.  It's best if each can easily work on a single task in a silo, so they can get the project done with the least overlap and delay. But, what are we losing with this methodology?
 

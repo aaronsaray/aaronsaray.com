@@ -5,6 +5,7 @@ tags:
   - archived-projects
   - business
   - misc-web
+evergreen: true
 ---
 JEMDiary was one of my longest running websites, from way early in the century.
 

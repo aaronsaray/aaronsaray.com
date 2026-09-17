@@ -4,7 +4,7 @@ date: "2010-09-14"
 tags:
   - misc-web
 ---
-I get a few questions here and there about the location detection on [whatscloseto.me](http://whatscloseto.me).  Sometimes it seems really near - other times it seems way off.
+I get a few questions here and there about the location detection on whatscloseto.me.  Sometimes it seems really near - other times it seems way off.
 
 <!--more-->
 

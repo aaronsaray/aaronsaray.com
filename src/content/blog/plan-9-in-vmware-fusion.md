@@ -20,7 +20,7 @@ First, you must download the iso.  You can find that from [ArchiveOS](https://ar
 
 Now, configure VMWare new virtual machine, using the Plan 9 iso as a boot disk.  Drag the Plan 9 iso into the new dialog.
 
-![Plan 9 image](/uploads/2020/plan9-1.png)
+![Plan 9 image](/uploads/2020/plan9-1@2x.png)
 
 When asked to choose an operating system, choose `Other > Other`.
 
@@ -28,7 +28,7 @@ Choose `Legacy BIOS` and continue.
 
 These standard settings should suffice.
 
-![Plan 9 image](/uploads/2020/plan9-2.png)
+![Plan 9 image](/uploads/2020/plan9-2@2x.png)
 
 I chose `Plan 9` as the Virtual Machine name and got it started.
 
@@ -38,7 +38,7 @@ Now, the VM has started.
 
 Given an option to Install or run Plan 9, choose type `1` for installation.
 
-![Plan 9 image](/uploads/2020/plan9-3.png)
+![Plan 9 image](/uploads/2020/plan9-3@2x.png)
 
 When or if prompted for these questions, here are the answers:
 
@@ -57,21 +57,21 @@ This part I was a bit confused. It asked to find the location of the dist and su
 
 Next, I ran the suggested `copydist`.  Along the way, you should see your progress:
 
-![Plan 9 image](/uploads/2020/plan9-4.png)
+![Plan 9 image](/uploads/2020/plan9-4@2x.png)
 
 Next, we will run `bootsetup` and choose `plan9` as a boot method.  Choose `y` to install the Plan 9 mbr.  Finally, choose `finish`.
 
 Now, you can turn off the Virtual Machine.  Don't forget to remove the mounted ISO.  I just chose to remove the drive.
 
-![Plan 9 image](/uploads/2020/plan9-5.png)
+![Plan 9 image](/uploads/2020/plan9-5@2x.png)
 
 When you reboot, you'll be asked where root is from. You can choose the default `local`
 
-![Plan 9 image](/uploads/2020/plan9-6.png)
+![Plan 9 image](/uploads/2020/plan9-6@2x.png)
 
 Then, it will ask for an auth user. Type `glenda` and boom you're in!
 
-![Plan 9 image](/uploads/2020/plan9-7.png)
+![Plan 9 image](/uploads/2020/plan9-7@2x.png)
 
 **Helpful tip** read the install instructions to learn how to use the Rio window manager.
 

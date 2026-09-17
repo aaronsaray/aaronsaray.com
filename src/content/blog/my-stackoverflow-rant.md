@@ -3,12 +3,11 @@ title: My StackOverflow Rant
 date: "2013-07-30"
 tags:
   - business
+evergreen: true
 ---
 Ugh.  I really want to contribute to the community.  I do!  If others before me wouldn't have done it, I wouldn't be where I am.  
 
 <!--more-->
-
-[![Stackoverflow Logo](/uploads/2013/stackoverflow-logo.png)](/uploads/2013/stackoverflow-logo.png)
 
 So I visit [Stack Overflow](http://stackoverflow.com) often.  But I'm getting depressed...
 

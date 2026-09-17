@@ -40,7 +40,7 @@ Finally, the most humbling thing, going to Google Analytics.  95% of my search r
 
 Speaking of resume, I can't point to more than one 'real' person a month who actually clicked on that link.  I had more views on the resume than that, but I think that's because I would actively send the link directly when I was looking for work.
 
-No one clicked my 'Open Source' link (however, 10's of thousands of people use my open source projects..) People must find me directly on Github.  
+No one clicked my 'Open Source' link (however, 10's of thousands of people use my open source projects..) People must find me directly on GitHub.  
 
 Finally, when people actually are on my blog entries, they rarely click through to other ones.  In fact, most often they bounced up to the 'blog' link, and didn't browse through.  95% of my readers, remember, bounce away.  I think that has something to do with the style of writing I do, too.  That, and how people consume media these days.  (I'm one of the rare ones I think that read through another blogger's blog if I find one of their articles interesting.)
 
@@ -48,7 +48,7 @@ So, I decided to make my redesign with that
 
 ![Home Page](/uploads/2017/after-home.png)
 
-It still says who I am, but it's cleaner, simpler, and the menu has been slimmed down to the only two functions that people really use: The return to home - and the contact page.  These pictures don't show the footer, but links to my Github, LinkedIn, Twitter and Resume appear in there.  Then, the home page just shows the first 5 entries with a link to read more.  I decided to give the people what they wanted.  No one came to my website to explore, it was just for the blog (and that's what I wanted, right?)
+It still says who I am, but it's cleaner, simpler, and the menu has been slimmed down to the only two functions that people really use: The return to home - and the contact page.  These pictures don't show the footer, but links to my GitHub, LinkedIn, Twitter and Resume appear in there.  Then, the home page just shows the first 5 entries with a link to read more.  I decided to give the people what they wanted.  No one came to my website to explore, it was just for the blog (and that's what I wanted, right?)
 
 ![Blog list](/uploads/2017/after-blog-list.png)
 

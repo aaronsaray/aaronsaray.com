@@ -4,6 +4,7 @@ date: "2009-09-20"
 tags:
   - business
   - programming
+evergreen: true
 ---
 Today, I read through the paper titled 'An Experimental Evaluation of the Assumption of Independence in Multi-Version Programming' (Find it [here](http://sunnyday.mit.edu/papers/nver-tse.pdf)).
 

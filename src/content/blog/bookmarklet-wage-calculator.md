@@ -18,10 +18,6 @@ While searching for employment, I realize I can't be super picky - but my househ
 
   * Configurable to take in other rates of tax
 
-**Here's the bookmarklet** - drag it to your book mark bar:
-
-<a href="javascript:var i=15.3,t=25;var a=prompt("amount:");if(a){if(a<200){a*=2080}var o="Gross: $"+a+"/yr - $"+Math.round(a/12)+"/mo - $"+Math.round(a/2080)+"/hr\n";var m=a*t/100;o+="Cmp Net: $"+Math.round(a-m)+"/yr - $"+Math.round((a-m)/12)+"/mo - $"+Math.round((a-m)/2080)+"/hr\n";m=a*((t+i)/100);o+="Ind Net: $"+Math.round(a-m)+"/yr - $"+Math.round((a-m)/12)+"/mo - $"+Math.round((a-m)/2080)+"/hr";alert(o);}">Calculate Wage</a>
-
 **The UnMinified version**:
 
 ```javascript

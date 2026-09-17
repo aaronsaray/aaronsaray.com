@@ -4,6 +4,7 @@ date: "2018-09-12"
 tags:
   - business
   - management
+evergreen: true
 ---
 Too often we find a team leader or a manager and just expect they'll be able to hire new employees effectively.  After all, they're successful, they should be able to clone themselves, right?
 

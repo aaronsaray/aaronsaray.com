@@ -10,7 +10,7 @@ As you can probably tell from my last test of a firefox extension [here](/2007/l
 
 **Let's Start Tamper Data**
 
-I went to the tools menu of my firefox and choose tamper data.  I also clicked on the Start Tamper option, and then loaded up my favorite test website, the [free online diary site, JEMDiary](http://www.jemdiary.com). Right away, I was prompted with a message box - tamper the data, submit it, or abort.
+I went to the tools menu of my firefox and choose tamper data.  I also clicked on the Start Tamper option, and then loaded up my favorite test website, the free online diary site, JEMDiary. Right away, I was prompted with a message box - tamper the data, submit it, or abort.
 
 [![Screenshot](/uploads/2007/tamperprompt.gif)](/uploads/2007/tamperprompt.gif)
 

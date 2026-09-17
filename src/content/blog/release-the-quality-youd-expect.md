@@ -5,6 +5,7 @@ tags:
   - programming
   - misc-web
   - ux
+evergreen: true
 ---
 Recently, I had a programmer create a new feature for one of our products.  He inadvertently caused another feature of our product to look less polished and function a bit weird.  (I called it 'wonkified').  The consensus of the group was to push out the feature, and then go back and fix the broken part of the old feature in the next week or so.  
 

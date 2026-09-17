@@ -4,6 +4,7 @@ date: "2021-05-08"
 tags:
   - business
   - management
+evergreen: true
 ---
 This advice is based primarily on an in-person team. I'm sure we could make this work with a remote team, too, somehow.
 

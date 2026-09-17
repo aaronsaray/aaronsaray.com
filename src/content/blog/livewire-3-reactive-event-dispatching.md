@@ -15,7 +15,7 @@ This had stumped me a few times in the past. Because of this, I wanted to give a
 
 First, let's just take a quick look at our UI for our experiment.
 
-![Livewire Event Example](/uploads/2025/livewire-event.png)
+![Livewire Event Example](/uploads/2025/livewire-event@2x.png)
 
 
 We're building something with a container component and a child component. Each has a variable that is an integer. The container passes its value to the child component as a property.

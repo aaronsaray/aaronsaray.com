@@ -18,7 +18,7 @@ Finally, it will prompt you to save it (to your photo album) or to copy it (to y
 
 ## Creating it
 
-![Meme Shortcut](/uploads/2023/meme-shortcut.png)
+![Meme Shortcut](/uploads/2023/meme-shortcut@2x.png)
 
 Let's walk through creating it.
 

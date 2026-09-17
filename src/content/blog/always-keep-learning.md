@@ -4,6 +4,7 @@ date: "2017-10-02"
 tags:
   - business
   - misc-web
+evergreen: true
 ---
 The other day, an acquaintance of mine was complaining about never getting ahead in their career.  I didn't really feel like I knew enough about their area of expertise to give any advice - until I heard what they did when they got home.  During our conversation, they described their favorite TV shows, how involved they were with the outcomes; basically once they got home, 4 to 5 hours were spent on the couch watching TV.
 
@@ -25,4 +26,4 @@ So, if you want to expand your mind and grow your career, keep learning.  You ne
 
 ## Follow Up On Project
 
-Above I mentioned [this project](https://codepen.io/aaronsaray/pen/wvEdBeb) which I created over the weekend.  I wanted to learn about a new CSS framework I heard about, Bulma.  Then, I've worked with Angular and a little bit with React, but I haven't touched VueJS, so I built it with that, too.  I also wanted to know more about Webpack, so I configured it by hand.  Overall, the project is not something that I'd ever release (the github source code is private), but it helped me learn a bunch.  One of the side-effects of this particular project was that I learned there are a lot of similarities between the major frameworks - and it shouldn't be that hard to switch from one to another.  This helps me when I determine who and how to hire people for front-end positions.
+Above I mentioned [this project](https://codepen.io/aaronsaray/pen/wvEdBeb) which I created over the weekend.  I wanted to learn about a new CSS framework I heard about, Bulma.  Then, I've worked with Angular and a little bit with React, but I haven't touched VueJS, so I built it with that, too.  I also wanted to know more about Webpack, so I configured it by hand.  Overall, the project is not something that I'd ever release (the GitHub source code is private), but it helped me learn a bunch.  One of the side-effects of this particular project was that I learned there are a lot of similarities between the major frameworks - and it shouldn't be that hard to switch from one to another.  This helps me when I determine who and how to hire people for front-end positions.

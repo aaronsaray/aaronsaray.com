@@ -14,7 +14,7 @@ XFN ([website here](http://gmpg.org/xfn/)) aims to build relationships between p
 
 ### Should I use it?
 
-I myself am not planning on using it (well... yet).  Most of my websites are not strongly 'friend' oriented.  Instead, they are content based.  There are some relationships built on pages like the [JEMDiary](http://jemdiary.com) friends page... but nothing too extreme.
+I myself am not planning on using it (well... yet).  Most of my websites are not strongly 'friend' oriented.  Instead, they are content based.  There are some relationships built on pages like the JEMDiary friends page... but nothing too extreme.
 
 Should you use it?  Well... maybe.
 

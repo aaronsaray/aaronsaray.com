@@ -1,11 +1,11 @@
 ---
-title: A couple cool features of PHPStorm 5
+title: A couple cool features of PhpStorm 5
 date: "2012-10-30"
 tags:
   - ide-and-web-dev-tools
   - phpstorm
 ---
-As I've mentioned before, I've recently moved to [PHPStorm](http://www.jetbrains.com/phpstorm/).  I've done a little bit of configuration and I plan to start using it more now.  Here are a few things I really like:
+As I've mentioned before, I've recently moved to [PhpStorm](http://www.jetbrains.com/phpstorm/).  I've done a little bit of configuration and I plan to start using it more now.  Here are a few things I really like:
 
 <!--more-->
 
@@ -29,7 +29,7 @@ You can configure templates for new files - what I really like is that it suppor
 
 This was on by default.  I didn't realize this and kept hitting ctrl-s.  I like automatic saving - but it matters that I'm using VCS.
 
-**Github integration**
+**GitHub integration**
 
 Nice.
 

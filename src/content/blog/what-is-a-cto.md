@@ -4,6 +4,7 @@ date: "2021-05-31"
 tags:
   - business
   - management
+evergreen: true
 ---
 The title CTO is short for Chief Technology Officer. But what actual roles and responsibilities do they have? Every business is different, so there's no hard and fast set of rules. However, there are some core responsibilities and philosophies that I believe every person with that title should have.
 

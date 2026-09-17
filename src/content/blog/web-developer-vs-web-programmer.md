@@ -3,6 +3,7 @@ title: Web Developer vs Web Programmer
 date: "2020-04-13"
 tags:
   - business
+evergreen: true
 ---
 Terms like web developer, web programmer, webapp developer, and software engineer get thrown around a lot. But, what's the difference?
 

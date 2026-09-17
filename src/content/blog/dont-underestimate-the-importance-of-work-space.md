@@ -4,6 +4,7 @@ date: "2014-01-03"
 tags:
   - business
   - management
+evergreen: true
 ---
 I've read the articles and studies about workers creating their own work spaces and I think it's a great idea.  (In fact, the company should too - it [increases efficiency by 32%!](http://www.medicalnewstoday.com/articles/200208.php))  But, I never really realized how important it was until recently.
 

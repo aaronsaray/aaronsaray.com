@@ -82,6 +82,14 @@ export function rehypeCodeChrome() {
       const lang = dataLang === "plaintext" ? "txt" : dataLang;
       const filename = node.properties.dataFilename;
 
+      // A block that scrolls is unreachable by keyboard unless it is
+      // focusable (WCAG 2.1.1). The group role gives the stop a name;
+      // without it a screen reader lands on unlabeled content.
+      node.properties.tabIndex = 0;
+      node.properties.role = "group";
+      node.properties["aria-label"] =
+        filename != null ? `Code: ${String(filename)}` : `Code: ${lang}`;
+
       if (filename != null) {
         delete node.properties.dataFilename;
         parent.children.splice(index, 0, {

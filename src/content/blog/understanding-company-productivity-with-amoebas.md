@@ -3,6 +3,7 @@ title: Understanding Company Productivity, High Performers and Amoebas
 date: "2021-02-14"
 tags:
   - business
+evergreen: true
 ---
 I've seen a lot of high-performers enter slow-moving companies, make great progress, but then get upset. They can't seem to move the company along anymore. What's going on? Is it ok to move on? I've got a theory about all of this.
 

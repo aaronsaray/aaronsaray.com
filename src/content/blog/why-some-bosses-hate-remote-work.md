@@ -4,6 +4,7 @@ date: "2019-03-11"
 tags:
   - business
   - management
+evergreen: true
 ---
 First, to start out, I need to make one thing abundantly clear: This piece is just a bunch of assumptions, generalizations and feelings. I've gathered these together after all of my own experiences.  That's why I add the most important auxiliary verb **may**.
 

@@ -1,15 +1,15 @@
 ---
-title: Highlight Laravel Logs in PHPStorm
+title: Highlight Laravel Logs in PhpStorm
 date: "2022-01-12"
 tags:
   - phpstorm
   - laravel
 ---
-I'd like to say I don't ever have tons of error logs in my Laravel projects - but, sometimes it happens. With a sea of text, how can you see what you need to see easily? Enter JetBrain's idealog plugin in PHPStorm.
+I'd like to say I don't ever have tons of error logs in my Laravel projects - but, sometimes it happens. With a sea of text, how can you see what you need to see easily? Enter JetBrain's idealog plugin in PhpStorm.
 
 <!--more-->
 
-The [idealog](https://plugins.jetbrains.com/plugin/9746-ideolog) plugin allows you to highlight logs in your PHPStorm editor.  The [wiki](https://github.com/jetbrains/ideolog/wiki) gives some insight into how to configure this with some standard log formats. I wanted to use it for my Laravel project, but I couldn't get it right.  I almost gave up - but then... 
+The [idealog](https://plugins.jetbrains.com/plugin/9746-ideolog) plugin allows you to highlight logs in your PhpStorm editor.  The [wiki](https://github.com/jetbrains/ideolog/wiki) gives some insight into how to configure this with some standard log formats. I wanted to use it for my Laravel project, but I couldn't get it right.  I almost gave up - but then... 
 
 I figured it out - and I wanted to share what I learned with you - and you can determine if its useful for you. I'm still torn on whether it's useful to me.
 
@@ -27,7 +27,7 @@ I generated an info and a warning error.  I also threw a `RuntimeException` so I
 
 First, make sure the [Idealog](https://plugins.jetbrains.com/plugin/9746-ideolog) plugin is installed. 
 
-Then, go to your PHPStorm preferences, then **Editor** -> **Log Highlighting (Idealog)**.  There is a section to display heatmaps or highlight code references - and log formats.  That's not part of this - you can uncheck all of those if you want.  I'm focusing on the highlighting section below.
+Then, go to your PhpStorm preferences, then **Editor** -> **Log Highlighting (Idealog)**.  There is a section to display heatmaps or highlight code references - and log formats.  That's not part of this - you can uncheck all of those if you want.  I'm focusing on the highlighting section below.
 
 You may have existing ones there. I made all of mine fresh.  Here are the settings I used:
 * `^(Stack|\#\d)` - `Highlight line` - Foreground: `#AA5582`

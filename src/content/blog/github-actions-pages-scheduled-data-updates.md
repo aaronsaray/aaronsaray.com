@@ -1,27 +1,27 @@
 ---
-title: Using Github Actions & Pages to Publish Static Pages Based on Dynamic Data
+title: Using GitHub Actions & Pages to Publish Static Pages Based on Dynamic Data
 date: "2021-10-02"
 tags:
   - github
   - html
   - javascript
 ---
-This article will break down how I use Github Actions and Github Pages to retrieve data from an API, commit the new data to my repo, and have Github pages rebuild and use that data - all on a schedule with no hands-on interaction.
+This article will break down how I use GitHub Actions and GitHub Pages to retrieve data from an API, commit the new data to my repo, and have GitHub pages rebuild and use that data - all on a schedule with no hands-on interaction.
 
 <!--more-->
 
 *Here's how it works* if you don't want to follow along and can figure it out based on the idea:
 
 * Create an html page that retrieves a local json file and parses/puts that data into the body using javascript
-* Create a github action that retrieves api data, then overwrites the target json file, and does a commit of that new data
-* Configure github pages to publish from the root of this repository and branch
-* Schedule the github action to run using the cron-based scheduling declaration
+* Create a GitHub action that retrieves api data, then overwrites the target json file, and does a commit of that new data
+* Configure GitHub pages to publish from the root of this repository and branch
+* Schedule the GitHub action to run using the cron-based scheduling declaration
 
 You can find the finished code at this [repository](https://github.com/aaronsaray/auto-update-github-pages-demo).
 
 ## First Steps
 
-For this example, I want to create a page that displays the daily Silver Spot Price based on the Metals.live API.  The beauty of this approach is that you could even use a private key with an API because Github actions store environment variables and secrets securely.
+For this example, I want to create a page that displays the daily Silver Spot Price based on the Metals.live API.  The beauty of this approach is that you could even use a private key with an API because GitHub actions store environment variables and secrets securely.
 
 First, I'll create a very simple HTML file with some Javascript.
 
@@ -75,9 +75,9 @@ just the silver price.
 When that is done being processed, we'll process the timestamp into a locale-based date string and parse the float value of the spot price to a USD style format
 number. Those values will be inserted using the `innerText` property (better to use this than `innerHTML` - this way I don't need to deal with HTML entities).
 
-Now that we have this working, it's time to look at the Github Action
+Now that we have this working, it's time to look at the GitHub Action
 
-## The Github Action
+## The GitHub Action
 
 I've created a file called `.github/workflows/updates.yml` which contains the following:
 
@@ -112,7 +112,7 @@ jobs:
         message: 'Updated spot price data.json file'
 ```
 
-First, I give it a name so I can recognize it in my Github Actions.
+First, I give it a name so I can recognize it in my GitHub Actions.
 
 Then, I schedule it with Cron to happen every day at 6a GMT.  This is roughly around midnight in my own timezone - give or take an hour based on daylight savings time.
 
@@ -120,9 +120,9 @@ Then, it runs a job named `update`.  This will get a runner based on `ubuntu-lat
 that I've configured to download the data from the API and store it into a variable named `myRequest`.  Then, it will echo that request response to my `data.json`
 file in the local context of this checkout.  Finally, it uses the `EndBug/add-and-commit@v7` action to commit the updated file and push it back to the repo.
 
-## Github Pages
+## GitHub Pages
 
-Github pages is configured on this repository to build from the `main` branch.  It will build every time there's a commit.  This is useful because it will 
+GitHub pages is configured on this repository to build from the `main` branch.  It will build every time there's a commit.  This is useful because it will 
 update itself every time I make a change to my HTML/JS - or - when the workflow makes a change to the data file.
 
-Because of this, the workflow will retrieve the updated json, write it to the new file, commit it, and that'll trigger a Github page build.
+Because of this, the workflow will retrieve the updated json, write it to the new file, commit it, and that'll trigger a GitHub page build.

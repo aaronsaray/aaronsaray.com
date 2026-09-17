@@ -22,35 +22,35 @@ I'm going to repartition my existing drive - basically sizing the existing parti
 
 Open the Disk Utility Application.
 
-![Open Disk Utility](/uploads/2017/partition-1.png)
+![Open Disk Utility](/uploads/2017/partition-1@2x.png)
 
 You will most likely see something very similar to this.  Click up one level on the actual drive, then click the `Partition` button at the top of the window.  You'll see something like this.
 
-![Partition](/uploads/2017/partition-2.png)
+![Partition](/uploads/2017/partition-2@2x.png)
 
 Now, you can select the size for your new drive.  I'm choosing 20GB - I don't work with many large files - and this is only for files, not for your VM's or docker containers (they honor the host filesystem and contain their own, but don't require the container to be on case-sensitive).  
 
 Give it a name, and then choose the case-sensitive, journaled type. 
 
-![Settings](/uploads/2017/partition-3.png)
+![Settings](/uploads/2017/partition-3@2x.png)
 
 Then, you'll need to confirm this.
 
-![Settings](/uploads/2017/partition-4.png)
+![Settings](/uploads/2017/partition-4@2x.png)
 
 During the next process, it'll actually do the conversion.  This may take a little while.  Don't freak out if it seems like the computer freezes up - or if you see the beachball appear a lot.  In fact, mine did it a few times.  But in the mean time, I could see progress like "Checking Catalog, Checking multi-linked files, checking catalog hierarchy"
 
 Finally, you're done.
 
-![Done](/uploads/2017/partition-5.png)
+![Done](/uploads/2017/partition-5@2x.png)
 
 Notice how you can now see the new drive on the left hand side?
 
-![Success](/uploads/2017/partition-6.png)
+![Success](/uploads/2017/partition-6@2x.png)
 
 And it's now in the Computer view as well.
 
-![Proof](/uploads/2017/partition-7.png)
+![Proof](/uploads/2017/partition-7@2x.png)
 
 ## Setting Up Your Workflow
 

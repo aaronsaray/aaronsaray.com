@@ -3,6 +3,7 @@ title: Elevator Pitch Website
 date: "2024-02-14T10:00:22-06:00"
 tags:
   - ideas
+evergreen: true
 ---
 Elevator pitches for startups and products are hard. What if there was an online tool where you could go to practice just that?
 

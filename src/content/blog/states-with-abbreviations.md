@@ -3,6 +3,7 @@ title: States With Abbreviations in PHP
 date: "2024-03-27T13:48:04-05:00"
 tags:
   - php
+evergreen: true
 ---
 To whom it may concern... and that person probably is me... here is a list of the 50 US states in array form, nice and easy to copy+paste into your PHP code.
 

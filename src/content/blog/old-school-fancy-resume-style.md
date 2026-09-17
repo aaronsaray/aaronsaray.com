@@ -9,7 +9,7 @@ Remember when the biggest way to show off your quality as an applicant was to ha
 
 <!--more-->
 
-I have a history of creating my resumes using HTML and CSS instead of desktop publishing projects.  You can find examples of my past [resumes in Github](https://github.com/aaronsaray/resume) if you're curious.
+I have a history of creating my resumes using HTML and CSS instead of desktop publishing projects.  You can find examples of my past [resumes in GitHub](https://github.com/aaronsaray/resume) if you're curious.
 
 This time, I wanted to create a background that was textured and a gold flake ribbon type of effect.
 

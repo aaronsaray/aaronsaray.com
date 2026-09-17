@@ -454,7 +454,7 @@ That's it - now let's look at the javascript.  I promise, for what it is... it's
 
 Remember, the goal was to use the least amount of javascript.  I'm going to start a little bit different than normal - I'm going to start at the bottom of the document.
 
-First, a Javascript base64 to ByteArray function (because you can't do this natively) - got this from a github entry.
+First, a Javascript base64 to ByteArray function (because you can't do this natively) - got this from a GitHub entry.
 
 ```javascript
 /**

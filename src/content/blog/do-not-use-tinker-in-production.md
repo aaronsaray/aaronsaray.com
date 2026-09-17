@@ -72,7 +72,7 @@ First, open up Metabase with the connection to your database.  Click **Ask a Que
 
 Choose the database of choice, and click the **Addresses** table.
 
-![Screenshot](/uploads/2021/metabase-report-2.jpg)
+![Screenshot](/uploads/2021/metabase-report-2@2x.jpg)
 
 Then, choose the **filter** option, and click **State** - select **is Oklahoma**.
 
@@ -80,7 +80,7 @@ Then, choose the **filter** option, and click **State** - select **is Oklahoma**
 
 Click **Add Filter**.
 
-![Screenshot](/uploads/2021/metabase-report-4.jpg)
+![Screenshot](/uploads/2021/metabase-report-4@2x.jpg)
 
 Now you'll see the addresses for Oklahoma.  
 

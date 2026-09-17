@@ -32,7 +32,7 @@ When you first sign up, they might already help you by directing you to add a si
 
 Enter your domain in the site box and click **Add Site**.
 
-![Process pic](/uploads/2020/cloudflare-1.png)
+![Process pic](/uploads/2020/cloudflare-1@2x.png)
 
 Next, it'll ask you what plan you want. I chose the **Free** one and clicked **Confirm plan**.
 
@@ -40,7 +40,7 @@ Next, it scans for DNS records.  Depending on what you have set up, you may have
 
 I added two records.  
 
-![Process pic](/uploads/2020/cloudflare-2.png)
+![Process pic](/uploads/2020/cloudflare-2@2x.png)
 
 The first was an `A Record` pointing to a reserved IP address.  You need an A record in order for Cloudflare to start to route your requests.  We need that orange cloud on the screen for proxying.  I picked a useless destination because I know that I'm going to create a page rule later.  As suggested, enter `@` for the root and then enter in `192.0.2.1` for the content value.
 
@@ -50,11 +50,11 @@ Click **Continue**.
 
 You'll be asked to change your nameservers now.
 
-![Process pic](/uploads/2020/cloudflare-3.png)
+![Process pic](/uploads/2020/cloudflare-3@2x.png)
 
 I did this at Namecheap (my registrar) and saved it.  It will take a little bit of time for these to update.
 
-![Process pic](/uploads/2020/cloudflare-4.png)
+![Process pic](/uploads/2020/cloudflare-4@2x.png)
 
 Click **Done**
 
@@ -64,7 +64,7 @@ Now, Cloudflare will watch and let you know when the DNS has been updated.  In t
 
 Click the **SSL/TLS** menu item.  We want to confirm that SSL is enabled for our domain.
 
-![Process pic](/uploads/2020/cloudflare-5.png)
+![Process pic](/uploads/2020/cloudflare-5@2x.png)
 
 Leaving it at **Full** mode is fine.
 
@@ -76,16 +76,16 @@ Then pick the **Forwarding URL** setting, select the **301 Permanent Redirect** 
 
 For your destination URL, enter where you'd like visitors to end up using the full protocol and URL.
 
-![Process pic](/uploads/2020/cloudflare-6.png)
+![Process pic](/uploads/2020/cloudflare-6@2x.png)
 
 Click **Save and Deploy**
 
 Click **Create Page Rule** again.  This time enter the `www` version of your domain with the wildcard.  Pick **Forwarding URL** again and choose **301 Permanent Redirect**.  This time, enter your base URL with SSL protocol.
 
-![Process pic](/uploads/2020/cloudflare-7.png)
+![Process pic](/uploads/2020/cloudflare-7@2x.png)
 
 Click **Save and Deploy**
 
 Now you're done.  When Cloudflare is finally resolving your site, you'll see this message:
 
-![Process pic](/uploads/2020/cloudflare-8.png)
+![Process pic](/uploads/2020/cloudflare-8@2x.png)

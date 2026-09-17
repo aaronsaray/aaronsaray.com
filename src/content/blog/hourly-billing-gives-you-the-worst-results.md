@@ -3,6 +3,7 @@ title: Hourly Billing Gives You the Worst Results
 date: "2023-06-12T09:39:02-05:00"
 tags:
   - business
+evergreen: true
 ---
 I don't do hourly billing (if I can help it) - but most businesses and partners still ask about my hourly rate. Hourly billing is bad. There are so many reasons. But in this article I will just focus on one: you get the worst results with hourly billing. Let's find out why.
 

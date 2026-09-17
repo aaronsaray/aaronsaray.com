@@ -23,7 +23,9 @@ Let's see how:
 return response()
   ->json(data: null, status: 201)
   ->withHeaders([
-    'location' => route('api.complex-objects.show', ['complex_object' => $complexObject]),
+    'location' => route('api.complex-objects.show', [
+      'complex_object' => $complexObject,
+    ]),
   ]);
 ```
 

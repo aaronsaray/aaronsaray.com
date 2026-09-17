@@ -8,10 +8,6 @@ Well, my boss at #superdev - who can only be compared to a more energetic versio
 
 <!--more-->
 
-Ok.
-
-[![#superdev boss](/uploads/2008/squirrel.jpg)](/uploads/2008/squirrel.jpg)
-
 ## How does it happen?
 
 `E_NOTICE` errors are generally generated when variables that haven't been declared are read.  But Aaron - why is this an error?  I thought PHP did not require you to define your variables a head of time?  Well, buddy, thanks for asking!  PHP does not require you to define your variables ahead of time - when you write to them.  However, it does suggest that you define them with some value before you read them.  One of the main reasons why this is important is the registered globals feature... "feature"... that PHP had prior to PHP6.
@@ -84,8 +80,6 @@ if ($isAdmin) {
 
 Other suitable predefined values include: empty string, `NULL`, `0`, `array()`.
 
-[![False Positive](/uploads/2008/false_pos.jpg)](/uploads/2008/false_pos.jpg)
-
 _One Caveat:_ Be careful with predefining your values, however, so that you don't use a legitimate value when not expecting it.  For example, if you assigned `$locationOfString = 0` and then did a `stristr()`, you could legitimately get a `0` returned.  This might cause issues with your code that might be difficult to track down-such as false positives.
 
 _If you're really lazy and don't like spending all those extra lines, here's a tip:_
@@ -139,4 +133,4 @@ $arrayKaBob['key master'] = 'gate keeper';
 
 ## Well what if I just use the @?
 
-Don't.  Seriously.  Look [here](/2007/the-perils-of-the-at-in-php).
+Don't.  Seriously.  Look [here](/2007/the-perils-of-the-at-in-php/).

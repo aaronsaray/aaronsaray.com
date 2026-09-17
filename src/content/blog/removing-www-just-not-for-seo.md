@@ -4,7 +4,7 @@ date: "2010-09-29"
 tags:
   - apache
 ---
-I used to think that I had to remove the WWW from my URL's to stop having duplicate content.  For example, if my website The Better Bachelor were to respond at both [www.thebetterbachelor.com](http://www.thebetterbachelor.com) and [thebetterbachelor.com](http://thebetterbachelor.com), it used to be thought that this duplicate content would lower your search result quality.  This would result in duplicate content.
+I used to think that I had to remove the WWW from my URL's to stop having duplicate content.  For example, if my website The Better Bachelor were to respond at both www.thebetterbachelor.com and thebetterbachelor.com, it used to be thought that this duplicate content would lower your search result quality.  This would result in duplicate content.
 
 <!--more-->
 

@@ -215,6 +215,6 @@ I enjoy participating in my local business and technical community.
 
 ## Open Source
 
-The preeminent showcase of Open Source Software is Github. You can find my repositories at [github.com/aaronsaray](https://github.com/aaronsaray).
+The preeminent showcase of Open Source Software is GitHub. You can find my repositories at [github.com/aaronsaray](https://github.com/aaronsaray).
 
-At Github, I've released various PHP and Javascript code including [Feedly Background Tab Chrome Extension](https://github.com/aaronsaray/feedlybackgroundtab), [Laravel Simple Feature Flags](https://github.com/aaronsaray/laravel-simple-feature), and [MadMimi PHP SDK](https://github.com/aaronsaray/madmimi-api-php). With over 50 public repositories, I am committed (PUN!) to OSS.
+At GitHub, I've released various PHP and Javascript code including [Feedly Background Tab Chrome Extension](https://github.com/aaronsaray/feedlybackgroundtab), [Laravel Simple Feature Flags](https://github.com/aaronsaray/laravel-simple-feature), and [MadMimi PHP SDK](https://github.com/aaronsaray/madmimi-api-php). With over 50 public repositories, I am committed (PUN!) to OSS.

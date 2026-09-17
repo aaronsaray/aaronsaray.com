@@ -3,6 +3,7 @@ title: 3 Steps to Getting Great Volunteers
 date: "2015-04-16"
 tags:
   - business
+evergreen: true
 ---
 If you run a volunteer organization, you might be turning away valuable volunteers!  Let me give you 3 useful ways to lock in these volunteers - now!
 

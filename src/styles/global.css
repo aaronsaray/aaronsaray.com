@@ -66,6 +66,21 @@
     }
   }
 
+  /* Drives the code-block edge fades off scroll position, so each end
+     clears when its content runs out. The mask stops are custom
+     properties because a mask-image cannot be interpolated. */
+  --animate-code-edges: code-edges linear;
+  @keyframes code-edges {
+    0% {
+      --code-fade-start: 0px;
+      --code-fade-end: calc(100% - 2.5rem);
+    }
+    100% {
+      --code-fade-start: 2.5rem;
+      --code-fade-end: 100%;
+    }
+  }
+
   --animate-drift-down: drift-down 3s ease-in-out infinite;
   @keyframes drift-down {
     0%,
@@ -120,7 +135,7 @@ html {
 h1,
 h2,
 h3 {
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 /* [tabindex] covers the scrollable code blocks (pre tabindex="0"). */
@@ -342,6 +357,41 @@ h3 {
   padding: 1rem 1.25rem;
   line-height: 1.7;
 }
+
+/* Overlay scrollbars (the macOS trackpad default, iOS, Android, and
+   Windows 11 Chrome/Edge) leave a wide code block with no sign that it
+   scrolls. The fade is the only affordance, so it is load-bearing, not
+   decoration. The mask lives entirely under @supports: a scroll()
+   timeline with nothing to scroll is inactive, which leaves the base
+   values, so those have to be the no-fade state (0 to 100%) or a block
+   that fits would clip its own last 2.5rem. A browser without timeline
+   support cannot make that distinction at all and gets no mask. */
+@supports (animation-timeline: scroll(self inline)) {
+  @property --code-fade-start {
+    syntax: "<length-percentage>";
+    inherits: false;
+    initial-value: 0px;
+  }
+  @property --code-fade-end {
+    syntax: "<length-percentage>";
+    inherits: false;
+    initial-value: 100%;
+  }
+
+  .prose pre {
+    --code-fade-start: 0px;
+    --code-fade-end: 100%;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 var(--code-fade-start),
+      #000 var(--code-fade-end),
+      transparent 100%
+    );
+    animation: var(--animate-code-edges);
+    animation-timeline: scroll(self inline);
+  }
+}
 :is(.prose, .entry-excerpt) pre code {
   background: transparent;
   border: 0;
@@ -414,10 +464,22 @@ h3 {
   display: block;
 }
 
-.prose .callout {
-  @apply border-l-2 border-accent/60 bg-surface/40 px-4 py-3 text-[0.9375rem] text-ink-dim;
+.prose del,
+.prose s {
+  color: var(--color-ink-dim);
 }
-.prose .callout > * + * {
+
+/* Blockquotes in the archive are a mix of quotations and asides Aaron
+   wrote before :::callout existed, so the two cannot be told apart and
+   share one treatment. */
+.prose .callout,
+.prose blockquote {
+  @apply border-l-2 border-accent/60 bg-surface/40 px-4 py-3 text-[0.9375rem] text-ink-dim;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.prose .callout > * + *,
+.prose blockquote > * + * {
   margin-top: 0.75rem;
 }
 
@@ -468,13 +530,6 @@ h3 {
 .entry-excerpt img {
   max-width: 100%;
   height: auto;
-}
-
-.prose blockquote {
-  @apply border-l-2 border-accent/60 text-ink;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-left: 1.25rem;
 }
 
 .prose .table-wrap {

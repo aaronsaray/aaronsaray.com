@@ -28,13 +28,13 @@ I stumbled upon [MacGap](https://macgapproject.github.io/) which promises binari
 
 After some time, if I'm honest, I came to realize that no one is watching my slack status, no one is monitoring me, I was just being paranoid.  In fact, if that was really a problem, that's just a symptom of something else (lack of trust, output doesn't match expectations, etc).  Because I realized I don't need this tool anymore, I started to make less time for learning about it and working on it.
 
-Now I've decided that I don't need it - in fact, I'm not even hosting it on github - it's just not far along enough to show anyone I don't think.  It was a good learning experience, though, and now I understand more about what tools are out there.  It was difficult to think 'maybe I should just give this up' - but as I've [said before](/2010/its-not-shameful-to-cut-your-losses/) it's ok to cut your losses sometimes.
+Now I've decided that I don't need it - in fact, I'm not even hosting it on GitHub - it's just not far along enough to show anyone I don't think.  It was a good learning experience, though, and now I understand more about what tools are out there.  It was difficult to think 'maybe I should just give this up' - but as I've [said before](/2010/its-not-shameful-to-cut-your-losses/) it's ok to cut your losses sometimes.
 
 ## What I've Got So Far
 
 First of all, // sarcasm // I'm a great UI developer - so check this screenshot out:
 
-![Initial Screen](/uploads/2017/initial-screen-mac-gap.png)
+![Initial Screen](/uploads/2017/initial-screen-mac-gap@2x.png)
 
 I've created a MacGap project that has some UI, CSS and Javascript.  The javascript attempts to authenticate with the slack API using the token you insert.  If you're successful, that's when the timer was supposed to start.  That's where I stopped.
 

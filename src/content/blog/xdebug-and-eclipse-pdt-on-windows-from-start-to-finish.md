@@ -15,8 +15,6 @@ With our recent upgrade to php at "the triangle," I felt it was time to start wo
 
 ## Get XDebug
 
-![XDebug](/uploads/2008/xdebug-logo.png)
-
 I went to [xdebug.org](http://xdebug.org) and acquired my version of the debugger dll for windows.  I'm using Windows XP, Apache 2.2.8 and PHP 5.2.5 for this article.  The Xdebug I downloaded was [XDebug 2.03 Against PHP 5.2.5](http://xdebug.org/link.php?url=xdebug203-52-win).  (I thought about getting the binary snapshot of 2.1dev... but finally decided against it - smartly.)
 
 I modified my `php.ini` file to load in the extension file.  On windows, this is a TS type - or thread safe.  Also remember, this is a zend extension, not a normal extension.  At the end of my `php.ini` file, I started with this:

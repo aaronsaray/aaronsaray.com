@@ -5,6 +5,7 @@ tags:
   - archived-projects
   - business
   - misc-web
+evergreen: true
 ---
 :::callout
 Note: I have shut down name-tag.me.  These notes were taken before I pulled the plug.

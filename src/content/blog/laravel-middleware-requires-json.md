@@ -4,6 +4,8 @@ date: "2019-03-18"
 tags:
   - php
   - laravel
+context:
+  - Laravel 5
 ---
 Laravel has a built in request helper called `wantsJson()` that determines if the request is requesting JSON with the `Accept: application/json` header.  But, what if you want to only accept JSON responses?  I set up a Laravel middleware that rejects anything that isn't JSON.
 

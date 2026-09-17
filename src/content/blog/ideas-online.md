@@ -4,6 +4,7 @@ date: "2012-08-22"
 tags:
   - ideas
   - business
+evergreen: true
 ---
 This idea is to create an idea repository.  I started out wanting to make this website - and instead just decided to list my ideas on this blog.  But, here goes.
 

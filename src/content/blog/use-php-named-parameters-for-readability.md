@@ -30,7 +30,7 @@ $s = new Something();
 $s->process(['some' => 'thing'], 'active', true, null, ['more' => 'here']);
 ```
 
-In an editor like PHPStorm, you may see some context / hints about the parameters.  But otherwise, this is pretty hard to understand.
+In an editor like PhpStorm, you may see some context / hints about the parameters.  But otherwise, this is pretty hard to understand.
 
 You can make some progress by putting items into variables - or even using inline variables to hint.
 

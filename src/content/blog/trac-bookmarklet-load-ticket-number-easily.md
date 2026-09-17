@@ -10,6 +10,8 @@ While communicating with other coworkers, they generally just give me a trac tic
 
 So, I generated this bookmarklet.  Replace the url with the root path to your trac instance.  Finally, create a bookmark and put the following content in it:
 
-```txt
-javascript:var url='http://domain.com/trac';var p=prompt('Ticket #?');if(p)document.location.href=url+'/ticket/'+p;
+```javascript
+var url = 'http://domain.com/trac';
+var p = prompt('Ticket #?');
+if (p) document.location.href = url + '/ticket/' + p;
 ```    

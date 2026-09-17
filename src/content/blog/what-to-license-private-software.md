@@ -5,6 +5,7 @@ tags:
   - business
   - misc-web
   - programming
+evergreen: true
 ---
 When it comes to Open Source Software, you have a number of choices to make for licensing your software.  When you provide a license for your software, you, as the copyright holder, are giving various types of permissions and warranties for the use of this software. You might even define the way it can be used and if modifications have to be submitted back to you. But, what do you "license" software that is closed, paid or private software that you don't want anyone else to use?
 
@@ -12,7 +13,7 @@ When it comes to Open Source Software, you have a number of choices to make for 
 
 _You should know that I am not a lawyer and I do not offer legal advice.  I may not even know what I'm talking about.  Please use this blog as reference, but don't refer to it as unequivocally authoritative for your license choice._
 
-I started thinking about this question because I'm getting ready to publish my first SaaS product.  I have the code in a private repository on Github (which has its own terms of service and thereby determines how your non-licensed work can be used as well as that you provide them a license to host it for you).  Because some of the software I'm using like NPM and Composer have configuration files that have a license field (and Github itself tries to publish meta information based on your license file), I thought it might be interesting to understand this more.
+I started thinking about this question because I'm getting ready to publish my first SaaS product.  I have the code in a private repository on GitHub (which has its own terms of service and thereby determines how your non-licensed work can be used as well as that you provide them a license to host it for you).  Because some of the software I'm using like NPM and Composer have configuration files that have a license field (and GitHub itself tries to publish meta information based on your license file), I thought it might be interesting to understand this more.
 
 There are many resources about which license to choose. Many people end up referring to the [SPDX License List](https://spdx.org/licenses/) or [Creative Commons](https://creativecommons.org/) to research and choose your license for open source software.  But what about software that you wish to "license" as your own and non-distributable?
 

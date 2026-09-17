@@ -4,7 +4,7 @@ date: "2021-06-21"
 tags:
   - git
 ---
-I had a need to mirror a git repository on Github, but I wasn't allowed to fork the repository. Luckily, there is a mirror option built into git.
+I had a need to mirror a git repository on GitHub, but I wasn't allowed to fork the repository. Luckily, there is a mirror option built into git.
 
 <!--more-->
 
@@ -18,8 +18,8 @@ There are other options as well. You could download the distribution package of 
 
 In this example, we need this setup - or prerequisite:
 
-* You have a repository called `OwnerName/RepoName` - in my example, I'm going to use one on Github
-* You have your own bare repository with no history waiting for the mirror. In Github, this happens when you create a new repository under your account, but do not commit anything.  In this example, that's `YourUserName/YourBackupRepo`
+* You have a repository called `OwnerName/RepoName` - in my example, I'm going to use one on GitHub
+* You have your own bare repository with no history waiting for the mirror. In GitHub, this happens when you create a new repository under your account, but do not commit anything.  In this example, that's `YourUserName/YourBackupRepo`
 * A local install of git that you can use
 * Authentication to each of the repositories (permission to read the source or origin, permission to write to the destination or copy)
 

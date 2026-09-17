@@ -5,6 +5,7 @@ tags:
   - archived-projects
   - business
   - misc-web
+evergreen: true
 ---
 Goal: to create a site serving females that felt a specific male in their life deserved positive recognition.  Then, to monetize the recipient from one of two targeted ads.
 

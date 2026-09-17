@@ -49,47 +49,47 @@ Now, let's apply this to our blog tweeting applet on IFTTT.
 
 Begin by creating your own applet.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-1.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-1@2x.png)
 
 Search `RSS` to find the RSS posting action.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-2.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-2@2x.png)
 
 Choose New feed item.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-3.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-3@2x.png)
 
 And fill in your RSS feed url.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-4.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-4@2x.png)
 
 After you create create trigger, you'll have the option to add your action. You have to add your action before you can get the helpful hints on javascript objects to filter your tweet. So, don't click the `+` and instead click `Then That`
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-5.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-5@2x.png)
 
 Search for Twitter and choose that service.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-6.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-6@2x.png)
 
 Then, choose to post a tweet.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-7.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-7@2x.png)
 
 You can just leave whatever is in there right now.  We'll be replacing this anyway later.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-8.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-8@2x.png)
 
 Create the action. Now you can click the `+` between the `If` and `Then`.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-9.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-9@2x.png)
 
 Choose `Add filter`
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-10.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-10@2x.png)
 
 Here's where we can fill in our javascript from above.
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-11.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-11@2x.png)
 
 But with some edits:
 
@@ -113,13 +113,13 @@ hashtags.forEach(h => {
 Twitter.postNewTweet.setTweet(incoming + ' ' + Feed.newFeedItem.EntryUrl);
 ```
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-12.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-12@2x.png)
 
 You'll notice we can't replace the Entry Title. We can only set a new tweet. So, we do our replacement and then add back in our `incoming` which was the modified title.  We need to make sure to add the URL back, though, as when we call `setTweet` we're starting from a plain blank slate.
 
 Then, you can accept these changes. You're almost done. It will generate a name for you, but I edited mine to be just a bit easier to read:
 
-![Instructional image](/uploads/2020/ifttt-hashtag-tweet-13.png)
+![Instructional image](/uploads/2020/ifttt-hashtag-tweet-13@2x.png)
 
 ## End Notes
 

@@ -1,17 +1,17 @@
 ---
-title: Backup All Your Github Repos Script
+title: Backup All Your GitHub Repos Script
 date: "2022-01-17"
 tags:
   - github
   - nodejs
 ---
-I had a nightmare that someone had access to my Github account and was deleting every repo I had before my eyes. I couldn't figure out how to stop them and invalidate the proper token.  I woke up and decided that I am not ok with this one point-of-failure of my historical work. So I wrote a script to back it up.
+I had a nightmare that someone had access to my GitHub account and was deleting every repo I had before my eyes. I couldn't figure out how to stop them and invalidate the proper token.  I woke up and decided that I am not ok with this one point-of-failure of my historical work. So I wrote a script to back it up.
 
 <!--more-->
 
-You can find the script on my [Github repo](https://github.com/aaronsaray/github-backup) (the irony is not escaping me). But this is basically what I thought:
+You can find the script on my [GitHub repo](https://github.com/aaronsaray/github-backup) (the irony is not escaping me). But this is basically what I thought:
 
-* I want to backup my Github repos that I own - not the ones that I belong to - once every 6 months. There might be some duplicate backups but that's ok.  This is a nice mix for the size of my repos compared to the amount / frequency of new ones.
+* I want to backup my GitHub repos that I own - not the ones that I belong to - once every 6 months. There might be some duplicate backups but that's ok.  This is a nice mix for the size of my repos compared to the amount / frequency of new ones.
 * I will put that in my iCloud drive so it will back up to icloud. I also use Backblaze so it will backup there as well
 * I will run it every 6 months with a reminder in Things3 using an Alfred workflow
 * I will zip the file myself (even though I could build that in).

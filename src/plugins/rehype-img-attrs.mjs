@@ -24,6 +24,25 @@ import { lookupDimensions } from "../lib/imageDimensions.ts";
 const RAW_IMG_TAG = /<img\b[^>]*>/gi;
 const RAW_SRC = /\bsrc\s*=\s*["']([^"']*)["']/i;
 
+// A screen capture taken on a high-density display holds several pixels
+// for every CSS pixel the page actually showed, and a PNG carries no
+// density to say so: nothing under public/uploads/ has a pHYs chunk.
+// `@2x` or `@3x` before the extension is that missing declaration, so
+// the attributes are the file divided by that factor, which is the size
+// the captured UI really was. Without it the browser treats the
+// multiplied pixels as width and the screenshot renders that many times
+// its true size. Phone captures are commonly 3x: an iPhone Pro's
+// 1170x2532 is a 390x844 screen.
+const DENSITY = /@([23])x\.[^./]+$/i;
+
+function displaySize(src, size) {
+  const scale = Number(DENSITY.exec(src)?.[1] ?? 1);
+  return {
+    width: Math.round(size.width / scale),
+    height: Math.round(size.height / scale),
+  };
+}
+
 export function rehypeImgAttrs() {
   return async (tree) => {
     const srcs = new Set();
@@ -41,8 +60,9 @@ export function rehypeImgAttrs() {
         edits.push((sizes) => {
           const size = src ? sizes.get(src) : null;
           if (size) {
-            node.properties.width ??= size.width;
-            node.properties.height ??= size.height;
+            const { width, height } = displaySize(src, size);
+            node.properties.width ??= width;
+            node.properties.height ??= height;
           }
           if (eager) return;
           node.properties.loading ??= "lazy";
@@ -65,8 +85,9 @@ export function rehypeImgAttrs() {
           node.value = node.value.replace(RAW_IMG_TAG, (tag) => {
             const { eager, src } = tags[i++];
             const size = src ? sizes.get(src) : null;
-            const dims = size
-              ? ` width="${size.width}" height="${size.height}"`
+            const shown = size ? displaySize(src, size) : null;
+            const dims = shown
+              ? ` width="${shown.width}" height="${shown.height}"`
               : "";
             if (eager || /\bloading\s*=/i.test(tag)) {
               return tag.replace(/^<img\b/i, `<img${dims}`);

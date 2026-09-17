@@ -3,6 +3,7 @@ title: I Didn't Launch My Start Up - and That's OK.
 date: "2019-07-15"
 tags:
   - business
+evergreen: true
 ---
 I deal with a lot of start-up founders. One thing that I've noticed from a lot of them is that they feel like no one understands the struggles they're going through. A lot have talked about being lonely or trying to find people to count on.  Because of this, I had an idea - I wanted to help them with an online tool.  I came up with the idea for StartUp Tribe.
 
@@ -14,7 +15,7 @@ _Running a startup is hard: long days, late nights, and lots of ups and downs.  
 
 When I talked to my friends, they all supported me.  "That's a great idea!"  "This is gonna work!"  But, after many years around start-ups, I've learned that friends are the worst market validation. They mean well, but you have to validate the market yourself.
 
-I created a landing page at [startuptribe.us](https://startuptribe.us). My goal was to gather enough feedback and email addresses to indicate a strong desire for this product. In the end, I only got 5 email addresses. I got a few messages from founders saying it sounds like a good idea, but they wouldn't use it.
+I created a landing page at startuptribe.us. My goal was to gather enough feedback and email addresses to indicate a strong desire for this product. In the end, I only got 5 email addresses. I got a few messages from founders saying it sounds like a good idea, but they wouldn't use it.
 
 My market validation was successful - as in it validated that the idea didn't have a market.  Honestly I'm partially relieved.  But, I can't help being somewhat sad. I liked this idea. I thought it would be great. But, I don't have time to push something up hill that the market doesn't want or need.  So, today, I throw in the towel and call it a day.  
 
@@ -36,15 +37,15 @@ I learned to make an explainer video with [VideoScribe](https://www.videoscribe.
 
 I created a single HTML-only landing page with [Netlify](https://netlify.com) and registered a quick domain. I didn't provision any advanced hosting because this was just a single, static page. I focused on the explainer video for the landing page, then described the details below.
 
-[![Landing Page](/uploads/2019/startuptribe1.png)](/uploads/2019/startuptribe1.png)
+[![Landing Page](/uploads/2019/startuptribe1@2x.png)](/uploads/2019/startuptribe1@2x.png)
 
 For the imagery, I went to [UnSplash](https://unsplash.com) and then edited some of them.
 
-[![Landing Page 2](/uploads/2019/startuptribe2.png)](/uploads/2019/startuptribe2.png)
+[![Landing Page 2](/uploads/2019/startuptribe2@2x.png)](/uploads/2019/startuptribe2@2x.png)
 
 One of the interesting questions I got, and by interesting I mean **infuriating**, was "how much does it cost?"  I listed in the marketing material in a bold header that it was free.  See?
 
-[![It is free](/uploads/2019/startuptribe3.png)](/uploads/2019/startuptribe3.png)
+[![It is free](/uploads/2019/startuptribe3@2x.png)](/uploads/2019/startuptribe3@2x.png)
 
 Other feedback I got revolved around how vague my description of the features were. What were the actual tools and functionality I was going to provide? Looking back, I should have mocked some up and taken "screenshots" I suppose.
 

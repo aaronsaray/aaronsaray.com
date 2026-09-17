@@ -3,6 +3,7 @@ title: Shutting Down PlayTicTacToe.page
 date: "2021-05-04"
 tags:
   - archived-projects
+evergreen: true
 ---
 A friend of mine created a bingo caller at [letsplaybingo.io](https://letsplaybingo.io/) which I found pretty interesting. She got lots of traffic and a lot of appreciative people.  This inspired me to make a simple game website to keep my skills up to date. Maybe people would love it, too! (spoiler alert: they didn't)
 
@@ -22,7 +23,7 @@ Second, I don't like that there's no real capping mechanism on Firebase. You can
 
 Before this project, I had known how to use cloud functions and firestore before, but I feel like I learned even more here.  My vue programming also got a little bit of a brush up.  In the end, though, the site didn't get more than a couple hundred visitors, and about 20 games, over a little over a year.  
 
-The [archived Github](https://github.com/aaronsaray/playtictactoe.page) repo is here. Here are some screenshots of the site:
+The [archived GitHub](https://github.com/aaronsaray/playtictactoe.page) repo is here. Here are some screenshots of the site:
 
 ![Play Tic Tac Toe Page](/uploads/2021/playtictactoe.page-01.jpg)
 

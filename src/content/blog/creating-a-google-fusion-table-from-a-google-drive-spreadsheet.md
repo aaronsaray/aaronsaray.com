@@ -21,19 +21,19 @@ And this is where we begin!
 
 ## Selecting the Source
 
-[![Screenshot](/uploads/2015/fusion-1.png)](/uploads/2015/fusion-1.png)
+[![Screenshot](/uploads/2015/fusion-1@2x.png)](/uploads/2015/fusion-1@2x.png)
 
 I chose to use a Google Drive Spreadsheet.
 
 ## Validating the Layout
 
-[![Screenshot](/uploads/2015/fusion-2.png)](/uploads/2015/fusion-2.png)
+[![Screenshot](/uploads/2015/fusion-2@2x.png)](/uploads/2015/fusion-2@2x.png)
 
 Yup, everything looks good.  I really like the option of choosing the header / label row too.  Sometimes you might want to make a report from data farther down on a street.
 
 ## Adding the Meta Data
 
-[![Screenshot](/uploads/2015/fusion-3.png)](/uploads/2015/fusion-3.png)
+[![Screenshot](/uploads/2015/fusion-3@2x.png)](/uploads/2015/fusion-3@2x.png)
 
 I think its important to give attribution to sources when you use them.  Here, I did so with MKE Biz Journal.
 
@@ -41,21 +41,21 @@ Click Finish!
 
 ## The first result
 
-[![Screenshot](/uploads/2015/fusion-4.png)](/uploads/2015/fusion-4.png)
+[![Screenshot](/uploads/2015/fusion-4@2x.png)](/uploads/2015/fusion-4@2x.png)
 
 As you can tell - it's pretty boring right now.  But, let's make it a little bit more user friendly.  I've decided to rename the columns to 'Source Data', 'Cards' and 'Building Locations.'  When I clicked on the locations tab, however, it decided to do all the geo-location:
 
-[![Screenshot](/uploads/2015/fusion-5.png)](/uploads/2015/fusion-5.png)
+[![Screenshot](/uploads/2015/fusion-5@2x.png)](/uploads/2015/fusion-5@2x.png)
 
 That only took a little while - and then I had my map.  But it was WAY zoomed out.  ** AND ** I couldn't find my locations anywhere.  Turns out there is an option on the left to select which column you want to map. It had defaulted to "Name" - so I chose address - and then it re-geocoded.  This actually re-focused it - closer to Wisconsin, but that's not perfect yet.  Turns out, I had to center and zoom the map manually - but that was fine.  
 
 There are other map configuration options too.  The default placeholder was a simple dot - but I wanted the familiar balloon.  So, I chose that option.  On the left hand, choose Feature Map -> Choose feature styles.  You'll see something like this:
 
-[![Screenshot](/uploads/2015/fusion-6.png)](/uploads/2015/fusion-6.png)
+[![Screenshot](/uploads/2015/fusion-6@2x.png)](/uploads/2015/fusion-6@2x.png)
 
 The next thing I wanted to do was configure the info window.  This is on the left side too: Feature Map -> Change Info Window.  I decided I would want the name, address, values and picture to be in the info window.  By default, it renders all of the information automatically like shown below:
 
-[![Screenshot](/uploads/2015/fusion-7.png)](/uploads/2015/fusion-7.png)
+[![Screenshot](/uploads/2015/fusion-7@2x.png)](/uploads/2015/fusion-7@2x.png)
 
 I decided to write my own HTML to customize the view.  You can click on the custom tab and do the following:
 
@@ -70,7 +70,7 @@ I decided to write my own HTML to customize the view.  You can click on the cust
 </div>
 ```
 
-[![Screenshot](/uploads/2015/fusion-8.png)](/uploads/2015/fusion-8.png)
+[![Screenshot](/uploads/2015/fusion-8@2x.png)](/uploads/2015/fusion-8@2x.png)
 
 Ugh - inline style.  But, what can ya do?
 

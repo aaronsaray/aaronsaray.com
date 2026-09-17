@@ -22,17 +22,17 @@ But, I did it a little bit different to get started.
 
 First, open the **Shortcuts app** and tap **Automation** at the bottom.
 
-![Helpful image](/uploads/2020/iosalarm1.png)
+![Helpful image](/uploads/2020/iosalarm1@3x.png)
 
-![Helpful image](/uploads/2020/iosalarm2.png)
+![Helpful image](/uploads/2020/iosalarm2@3x.png)
 
 Tap **Create Personal Automation** and choose **Alarm**.
 
-![Helpful image](/uploads/2020/iosalarm3.png)
+![Helpful image](/uploads/2020/iosalarm3@3x.png)
 
 You can choose existing alarm options here.  I just have one alarm so I left it at **Any** and clicked **Next**
 
-![Helpful image](/uploads/2020/iosalarm4.png)
+![Helpful image](/uploads/2020/iosalarm4@3x.png)
 
 Next, I'm going to turn the volume all the way up. I don't know what I was doing the last time I used my phone.
 
@@ -40,7 +40,7 @@ Then, tap **Add Action**,  search for **Volume** and tap **Set Volume**.
 
 Tap the **50%** and slide it all to the right.
 
-![Helpful image](/uploads/2020/iosalarm5.png)
+![Helpful image](/uploads/2020/iosalarm5@3x.png)
 
 Next, tap **the plus sign**, search for **Text** and tap **Text**.
 
@@ -48,7 +48,7 @@ Next, you can type in whatever you want Siri to say in the morning.
 
 Tap **the plus sign**, search for **speak** and tap **Speak Text**.
 
-![Helpful image](/uploads/2020/iosalarm6.png)
+![Helpful image](/uploads/2020/iosalarm6@3x.png)
 
 You can click the **Play button** if you'd like to preview your work.
 
@@ -58,4 +58,4 @@ Click **Done**.
 
 And there you go.
 
-![Helpful image](/uploads/2020/iosalarm7.png)
+![Helpful image](/uploads/2020/iosalarm7@3x.png)

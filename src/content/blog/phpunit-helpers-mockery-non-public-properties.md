@@ -51,9 +51,9 @@ interface CustomMockInterface extends \Mockery\MockInterface
 }
 ```
 
-This interface extends the interface that Mockery normally would return.  However, it has one difference, and that's in the `shouldReceive` method.  In the main implementation, there are no arguments defined, documented or hinted on this method.  It makes use of the `func_get_args()` like I've done above.  However, because of this, whenever you worked with mock interfaces in IDEs like PHPStorm, it would indicate that passing a value to the method was a no-no.  It would remind you that the definition does not receive any values.  
+This interface extends the interface that Mockery normally would return.  However, it has one difference, and that's in the `shouldReceive` method.  In the main implementation, there are no arguments defined, documented or hinted on this method.  It makes use of the `func_get_args()` like I've done above.  However, because of this, whenever you worked with mock interfaces in IDEs like PhpStorm, it would indicate that passing a value to the method was a no-no.  It would remind you that the definition does not receive any values.  
 
-Because I was sick of that error, I decided to create a new implementation of this method.  Using the `...` prefix to the incoming parameter, that indicates to PHP that there is a variable length of elements this should receive.  And, because the return type is the same as the parent's interface `shouldReceive` this works as expected - with no errors in PHPStorm.
+Because I was sick of that error, I decided to create a new implementation of this method.  Using the `...` prefix to the incoming parameter, that indicates to PHP that there is a variable length of elements this should receive.  And, because the return type is the same as the parent's interface `shouldReceive` this works as expected - with no errors in PhpStorm.
 
 ## Protected and Private Properties and Functions
 

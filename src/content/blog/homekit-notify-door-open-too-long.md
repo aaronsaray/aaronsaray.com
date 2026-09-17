@@ -64,9 +64,9 @@ Finally, decide what you'd want to happen. Like I said, you could trigger a scen
 
 I've included some pictures below to give you an idea of my setup as well.
 
-![Example image](/uploads/2020/homekit-shortcut-1.png)
+![Example image](/uploads/2020/homekit-shortcut-1@3x.png)
 
-![Example image](/uploads/2020/homekit-shortcut-2.png)
+![Example image](/uploads/2020/homekit-shortcut-2@3x.png)
 
 ## End Notes
 

@@ -5,6 +5,7 @@ tags:
   - css
   - performance
   - security
+evergreen: true
 ---
 There are a number of performance arguments about combining assets to reduce HTTP requests and speed up your site.  I agree!  However, I do have to say that there is such a thing as overkill - to the detriment of speed and security... 
 

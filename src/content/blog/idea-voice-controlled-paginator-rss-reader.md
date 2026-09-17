@@ -4,6 +4,7 @@ date: "2013-09-17"
 tags:
   - business
   - ideas
+evergreen: true
 ---
 I've been thinking about this idea for a while...
 

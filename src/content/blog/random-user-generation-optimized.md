@@ -8,7 +8,7 @@ I came across [this blog posting](http://jan.kneschke.de/projects/mysql/order-by
 
 <!--more-->
 
-Normally, when you click the random link on jemdiary ([jemdiary.com/read/random](http://www.jemdiary.com/read/random)), you are retrieving a user's username to view their diary.  This user has to have their account flagged to allow random reads, and not be globally password protected.  Finally, they need to be an active user.  The settings are in the Tsettings table, the users are in the Tuser table.  See my current sql statement:
+Normally, when you click the random link on jemdiary (jemdiary.com/read/random), you are retrieving a user's username to view their diary.  This user has to have their account flagged to allow random reads, and not be globally password protected.  Finally, they need to be an active user.  The settings are in the Tsettings table, the users are in the Tuser table.  See my current sql statement:
 
 ```sql
 select u.userID, u.userName from Tuser u

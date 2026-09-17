@@ -9,7 +9,7 @@ So, I started looking at a few load time analyzers for my sites - and I found an
 
 <!--more-->
 
-My test site will be [JEMDiary](http://www.jemdiary.com) -  mainly because I know A LOT about it. ;)  I could have used a local website, I'm sure - but a remote site was going to give a better load time analysis.  JEMDiary's homepage is a static HTML file (generated periodically behind the scenes).  It loads a few external js and css files, and a set of images as well.  The images in the images directory send headers to cache themselves, and so do the css and js files (interestingly, if the front page had specific profile images, they would not be cached...)  At any rate, I wanted to test a fresh load on the site, and then a cached one - and see what I can determine from these load times.
+My test site will be JEMDiary -  mainly because I know A LOT about it. ;)  I could have used a local website, I'm sure - but a remote site was going to give a better load time analysis.  JEMDiary's homepage is a static HTML file (generated periodically behind the scenes).  It loads a few external js and css files, and a set of images as well.  The images in the images directory send headers to cache themselves, and so do the css and js files (interestingly, if the front page had specific profile images, they would not be cached...)  At any rate, I wanted to test a fresh load on the site, and then a cached one - and see what I can determine from these load times.
 
 Let's go...
 

@@ -4,6 +4,7 @@ date: "2019-05-13"
 tags:
   - business
   - management
+evergreen: true
 ---
 I worked with a client one time who didn't like when their employees had side projects.  "If they have free time, they should be spending it on our project! That's why they are salary!"
 

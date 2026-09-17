@@ -4,6 +4,7 @@ date: "2020-12-11"
 tags:
   - business
   - management
+evergreen: true
 ---
 Oh, what a scary thought: a manager must always be perfect. But, stick with me here.
 

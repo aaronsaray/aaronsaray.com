@@ -4,6 +4,7 @@ date: "2017-09-25"
 tags:
   - business
   - management
+evergreen: true
 ---
 Answer this question real quick: What was the most impressive thing you did 2 years ago at work?  Did you get the proper accolades for it? Or, possibly more important, did you get a performance-based wage increase or some other reward?  
 

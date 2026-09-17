@@ -3,6 +3,7 @@ title: What is a Domain Name?
 date: "2008-05-11"
 tags:
   - business
+evergreen: true
 ---
 What is a domain name or a dot com name?  And why are they needed?  Let's find out.
 

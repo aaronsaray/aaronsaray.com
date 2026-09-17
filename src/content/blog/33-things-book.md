@@ -5,6 +5,7 @@ tags:
   - business
   - programming
   - management
+evergreen: true
 ---
 :::callout
 I've migrated the website 33thingsbook.com to this blog post.

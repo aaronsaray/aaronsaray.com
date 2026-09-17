@@ -3,6 +3,7 @@ title: Make interfaces Useful, not featureful
 date: "2007-06-19"
 tags:
   - misc-web
+evergreen: true
 ---
 There seem to be two schools of design lately: Feature rich, RIA designs and simplicity.
 

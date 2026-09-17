@@ -3,6 +3,7 @@ title: How Do I Find a Programmer?
 date: "2023-07-17T14:40:14-05:00"
 tags:
   - business
+evergreen: true
 ---
 So you have a great idea. You have some budget. It's now time to make your vision into a reality. The problem is - you don't know any programmers. You don't even know where you'd find one. What can you do? 
 

@@ -77,10 +77,12 @@ The rest of the examples do not require html to be edited. Because of that, I'll
 ## Simple Positioning
 
 Page 1:
-![Simple Position](/uploads/2025/page-position-simple-1.jpg)
+
+![page 1](/uploads/2025/page-position-simple-1.jpg)
 
 Page 2:
-![Simple Position](/uploads/2025/page-position-simple-2.jpg)
+
+![page 2](/uploads/2025/page-position-simple-2.jpg)
 
 ```css
 html, body {

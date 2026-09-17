@@ -4,6 +4,7 @@ date: "2012-11-06"
 tags:
   - ideas
   - business
+evergreen: true
 ---
 So I've been looking at some [parallax plugins](http://jonraasch.com/blog/scrolling-parallax-jquery-plugin) with Javascript and CSS3 animations... and it got me to thinking: I have a great idea for a web site design firm.  
 

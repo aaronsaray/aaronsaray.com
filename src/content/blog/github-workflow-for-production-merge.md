@@ -1,15 +1,15 @@
 ---
-title: Github Workflow for Production Merge
+title: GitHub Workflow for Production Merge
 date: "2025-11-18"
 tags:
   - git
   - github
 ---
-Github actions are awesome. In fact, we often write about them or share details on [MasteringLaravel.io](https://masteringlaravel.io) in the tips section or the community.
+GitHub actions are awesome. In fact, we often write about them or share details on [MasteringLaravel.io](https://masteringlaravel.io) in the tips section or the community.
 
 Let's take a look at one particular workflow that appears pretty simple - after you understand it all.
 
-How do we merge from develop into main for a production deploy or merge? By using this Github action.
+How do we merge from develop into main for a production deploy or merge? By using this GitHub action.
 
 <!--more-->
 
@@ -55,16 +55,16 @@ jobs:
 
 There's a lot to look at here, even though it's very simple. Let's dive in.
 
-First, we name it. This will show up in the Github actions. Production Merge will have a workflow job called 'Merge'.
+First, we name it. This will show up in the GitHub actions. Production Merge will have a workflow job called 'Merge'.
 
 Next, it's only dispatched with `workflow_dispatch` - this basically means that we only use it through the UI. There will be an option next to the workflow to run all jobs.
 
-Moving on - permissions: We want to be explicit with the permissions this action requires. We need the ability to write to our Github repo for this action.
+Moving on - permissions: We want to be explicit with the permissions this action requires. We need the ability to write to our GitHub repo for this action.
 
 In the job, we define some environment variables. This just makes it easier to drop this in when clients or projects have different named branches.
 
-Using the Github `actions/checkout` workflow, we then retrieve the develop branch (this may also be the default, it may not be).  The `secrets.PAT` is the Personal Access Token for a Github user. This is used just to check it out. Sadly, we can't get this from the current actor. This must be configured in your secrets. As long as the user exists who this PAT belongs to, it will be fine. (If you have a better alternative to this, I'm all ears!)
+Using the GitHub `actions/checkout` workflow, we then retrieve the develop branch (this may also be the default, it may not be).  The `secrets.PAT` is the Personal Access Token for a GitHub user. This is used just to check it out. Sadly, we can't get this from the current actor. This must be configured in your secrets. As long as the user exists who this PAT belongs to, it will be fine. (If you have a better alternative to this, I'm all ears!)
 
-Next, set the credentials of the git user to the current user. This is the user who is activating this Github action. We configure their name and their email (to the built-in email for Github that they provide all users).
+Next, set the credentials of the git user to the current user. This is the user who is activating this GitHub action. We configure their name and their email (to the built-in email for GitHub that they provide all users).
 
 Finally, checkout the main branch, merge, and push to the origin. Consider this merged!

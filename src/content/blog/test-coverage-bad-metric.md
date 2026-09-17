@@ -39,7 +39,7 @@ In this case, we want to test our `whatItDoes` method.
 
 Right now, we don't have test coverage:
 
-![No Coverage](/uploads/2019/code-coverage-1.png)
+![No Coverage](/uploads/2019/code-coverage-1@2x.png)
 
 Now, let's introduce our test.
 
@@ -68,7 +68,7 @@ This test _should_ test the `whatItDoes` method as well as provide testing for t
 
 First, they check that it's an array.  Then, they check that its not empty.  Then, the count of items. Finally, they test what it does.  I think we could get rid of the `is_array` test because we're already using types.  Not empty can go away because we're using count.  Let's run it and see what we get for coverage.
 
-![100% Coverage](/uploads/2019/code-coverage-2.png)
+![100% Coverage](/uploads/2019/code-coverage-2@2x.png)
 
 Now, we have 100% code coverage for this test. Yay!
 

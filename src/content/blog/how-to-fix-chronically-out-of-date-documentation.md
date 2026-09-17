@@ -5,6 +5,7 @@ tags:
   - business
   - management
   - programming
+evergreen: true
 ---
 It seems that every project we run into has missing or out of date documentation. Wikis become stale. Don't even start me on that out of date README.md file. 
 

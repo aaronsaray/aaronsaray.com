@@ -9,8 +9,6 @@ There are many interpretations of MVC - there are less definitions but more impl
 
 <!--more-->
 
-![MVC](/uploads/2008/mvc.jpg)
-
 ## What is MVC?
 
 A real quick definition of MVC for those who are not familiar.  MVC is a design pattern that consists of separating the logic, action and display from each other.  The three parts of this are Model, View, and Controller.  The Model contains the logic and business content, the View contains the way of displaying that content, and the Controller interprets the actions being requested by the user to glue the Model's usage to the View.  Theoretically, you should be able to swap out any one of the components with another of the same interface - and function flawlessly.  A common example of this is using multiple views - 1 for HTML on the screen, 1 for WAP devices, 1 for web services, etc.  Now, if you're not familiar beyond this quick refresher, I recommend doing more research on the web.
@@ -39,7 +37,7 @@ The data object is a very precise object that connects to an entity of content. 
 
 I find that the biggest hurdle for new users of MVC is the view.  Understanding that there can be code that displays data while not performing any manipulation is usually hard to comprehend.  Or knowing that logic can happen in the model - but it can't ever output its final result.  This comes from PHP's embedding features - so its not a surprise to see this.  The view contains the general markup to display the content that the controller received back.  The controller invokes the proper view for the data - which is to say the proper view for the current request type and action type.  Basically - any sort of HTML, CSS and JS will be in your view.  Two common questions: what about separating CSS from HTML - and what about Automated JS generation from Helpers or Models.  First of all, CSS/JS separation from your markup is a must - and indeed another topic entirely - but suffice to say the view is your implementation of proper client side design and development with content being pumped into it afterward.  Follow all of the rules that you know to be good practice when adding your CSS and JS.  Second - JS that is generated and how to import that is generally a very long conversation.  Just follow the directions of your library you are using.  I've seen examples as easy as just injecting it mid HTML to generating an include .js file that contains JS for only the current request.  That is not the focus of this article.
 
-## Jared's got aids... or Helpers
+## Jared's Got Helpers...
 
 I would be remiss if I didn't talk about those little bits of code that you just can't live without - and that MUST be brought out into something else in order to eliminate code duplication.  Helpers refer to those small bits of code that help us perform needed tasks - such as connecting to a database, generating repetitive HTML code - like forms, retrieve configuration options, etc.  These are a necessary evil - and are usually held outside of your main application tree - but still part of the project.  These should never contain any business logic or generate any output.
 

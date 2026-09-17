@@ -5,6 +5,7 @@ tags:
   - archived-projects
   - business
   - misc-web
+evergreen: true
 ---
 The goal was to use links that Amazon provided themselves to showcase categories and percentage discounts with my affiliate tag.  The thought was a clean interface would easily encourage people to click a discount of say 90% but send affiliate contributions my way.
 

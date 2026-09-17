@@ -4,6 +4,7 @@ date: "2007-12-09"
 tags:
   - php
   - programming
+evergreen: true
 ---
 Working in a shop that has approximately 15 times more System-I as/400 iSeries (whatever you want to call it) programmers, I've been immersed into their culture, standards and mindset.
 

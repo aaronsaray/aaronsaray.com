@@ -3,6 +3,7 @@ title: Job Trader Website Idea
 date: "2023-11-08T08:24:41-06:00"
 tags:
   - ideas
+evergreen: true
 ---
 What if you could trade your job with someone else - who wanted your job - and you wanted theirs? Would this be that hard to do? Here's my idea.
 

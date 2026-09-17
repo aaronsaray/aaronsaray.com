@@ -3,6 +3,7 @@ title: Why the Boss makes YOU make a List or Proposal
 date: "2009-03-11"
 tags:
   - business
+evergreen: true
 ---
 From time to time, I've been asked to make a list of my design ideas, or to develop a better proposal for an idea I have.  This really irritated me: didn't he believe me?  Didn't he trust my ideas?  
 

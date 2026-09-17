@@ -3,6 +3,7 @@ title: Explain WTF
 date: "2023-11-09T11:00:33-06:00"
 tags:
   - archived-projects
+evergreen: true
 ---
 A couple years ago I was working with a group of great hearted well meaning people who just didn't know anything about tech. So I decided to create a website where I explained terms to them - but in my typical manner.  That was explain.wtf.
 

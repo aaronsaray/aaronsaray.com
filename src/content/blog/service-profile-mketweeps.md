@@ -5,6 +5,7 @@ tags:
   - archived-projects
   - business
   - misc-web
+evergreen: true
 ---
 Goal: I came up with an idea that I wanted to find local people in our area and mention them using a twitter bot.  Pretty simple.  
 

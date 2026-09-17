@@ -3,6 +3,7 @@ title: "2019 Goals: What am I Working On?"
 date: "2019-06-10"
 tags:
   - business
+evergreen: true
 ---
 :::callout
 2019 was a great year, learned a lot. Unfortunately, The Dev Manager and StartUp Tribe are no longer active.
@@ -44,7 +45,7 @@ Part of a new business venture is validating that the idea is good. Your friends
 
 StartUp Tribe is an idea I have that I'm validating. Before I build it, I'd like to make sure there is a market.  
 
-[![Startup Tribe](/uploads/2019/startuptribe.us.png)](https://startuptribe.us)
+![Startup Tribe](/uploads/2019/startuptribe.us.png)
 
 Startup Tribe
 
@@ -54,7 +55,7 @@ Running a startup is hard: long days, late nights, and lots of ups and downs.  W
 
 While this started as a proof of concept which I wrote about [here](/2019/spa-plus-api-no-framework-no-db/), it has really grown on me.
 
-[![Chicken Facts](/uploads/2019/chickenfacts.io.png)](https://chickenfacts.io)
+![Chicken Facts](/uploads/2019/chickenfacts.io.png)
 
 Chicken Facts
 
@@ -78,4 +79,4 @@ It's hard to balance all of these things. Plus, I always want to keep working on
 
 I've decided that I really want to focus on working with Joel on No Compromises, and focusing in on my own project work to augment teams.  The next highest priority is The Dev Manager.  Everything else after that is just extra. That includes blogging.  I've published an entry nearly every week for months at a time, but I think I need to take a break.  I need to focus on these other things.
 
-Finally, I'm looking forward to looking at this entry in another 5 years. See what happened, see if I still find the same things important. What succeeded? What failed?  I have this sinking suspicion that after all of this hard work, the one thing that will take off is [chickenfacts.io](https://chickenfacts.io).  That just seems like the way things go. :)
+Finally, I'm looking forward to looking at this entry in another 5 years. See what happened, see if I still find the same things important. What succeeded? What failed?  I have this sinking suspicion that after all of this hard work, the one thing that will take off is chickenfacts.io.  That just seems like the way things go. :)

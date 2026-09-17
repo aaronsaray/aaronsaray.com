@@ -12,9 +12,9 @@ The average webpage seems to contain tons of bloat and increase in size - and th
 
 Then, I decided to take it one step further: I didn't really want to run a backend service and spin up some hosting.  Sure, I could use something like Firebase, but I really just wanted to host everything for free on Netlify.
 
-I created [chickenfacts.io](https://chickenfacts.io), a single page application with a JSON API.  This is how I did it (you can find the code on [GitHub](https://github.com/aaronsaray/chickenfacts.io)).
+I created chickenfacts.io, a single page application with a JSON API.  This is how I did it (you can find the code on [GitHub](https://github.com/aaronsaray/chickenfacts.io)).
 
-[![ChickenFacts](/uploads/2019/chickenfactslogo.png)](https://chickenfacts.io)
+![ChickenFacts](/uploads/2019/chickenfactslogo.png)
 
 Chicken Facts
 
@@ -202,4 +202,4 @@ The only thing I had to do was add a redirect on any non-existent URL to the bas
 
 There are many things I can do to make this better: a pagination API, better animations, share buttons, etc.  But, this proves that with very simple, open data, you don't need to use a heavy framework or a back end to serve your data.  Oh, and I have analytics on page load, but I really wouldn't know what is consuming the "API" without more data from Netlify.
 
-Check out [chickenfacts.io](https://chickenfacts.io) for more quality Chicken Facts.  Or, submit your own on GitHub. :)
+Check out chickenfacts.io for more quality Chicken Facts.  Or, submit your own on GitHub. :)

@@ -4,6 +4,7 @@ date: "2013-08-27"
 tags:
   - business
   - ideas
+evergreen: true
 ---
 So I've been looking into cloud storage a bit again - and I decided to do a bit of quick research on the top three CMS in my life: Drupal, Joomla, and Wordpress.  I wanted to see if my idea made sense...
 

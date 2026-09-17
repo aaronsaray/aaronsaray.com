@@ -3,6 +3,7 @@ title: Zend Filter Presentation
 date: "2011-07-20"
 tags:
   - zend-framework
+evergreen: true
 ---
 Thanks to [Zend](http://zend.com) and their community organizers for the opportunity to do a webinar today.  
 

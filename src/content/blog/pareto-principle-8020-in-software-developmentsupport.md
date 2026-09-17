@@ -3,6 +3,7 @@ title: Pareto principle - 80/20 in Software Development/Support
 date: "2010-09-21"
 tags:
   - business
+evergreen: true
 ---
 For many events, roughly 80% of the effect comes from 20% of the cause.
 

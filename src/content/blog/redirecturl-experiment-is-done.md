@@ -4,6 +4,7 @@ date: "2020-10-31"
 tags:
   - business
   - archived-projects
+evergreen: true
 ---
 This is a tech and business blog, so I normally don't get too deep or emotional. But, I've got to talk a bit about my dream and what I've learned.
 
@@ -70,7 +71,8 @@ I think this was something that I wanted but Joel didn't really. He just wanted 
 There are a number of features I still wanted to build, but I never seemed to get around to them.  So that meant that both
 partners weren't really that excited about building on it.  I also wanted to move hosting, and that would require IP moves.
 The last straw was logging in and seeing only 1 (free) user, no paid users, and only 35 or so new visitors a month!!  
-Or maybe the final straw was that Joel convinced me that Cloudlfare could actually do what I needed. I had lost my founders'
+
+Or maybe the final straw was that Joel convinced me that Cloudflare could actually do what I needed. I had lost my founders'
 insanity and was now open to listening to him again.
 
 So I shut it down.  And you might be here (probably not) from the redirect URL handled by Cloudflare.

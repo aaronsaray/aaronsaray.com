@@ -3,6 +3,7 @@ title: Should We Use a Monorepo?
 date: "2023-07-01T12:11:06-05:00"
 tags:
   - programming
+evergreen: true
 ---
 A monorepo refers to a single repository in your version control system that holds all of the code for an entire project. That project could be made up of many services, front and back end code, ETLs, etc. 
 

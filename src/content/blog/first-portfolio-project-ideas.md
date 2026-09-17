@@ -6,6 +6,7 @@ tags:
   - html
   - css
   - business
+evergreen: true
 ---
 When talking to junior developers, I hear the same question over and over: "how can I demonstrate what I know, or show experience, if I haven't had any gigs yet?" Old-timers tell you to build a portfolio, but how do you do that? Where do you get ideas? How do you choose a project that's not overwhelming?  Let me explain my rationale as well as demonstrate how I might make my first portfolio project.
 
@@ -352,7 +353,7 @@ First, we need to get this out there for people to see.  Then, you can work your
 
 There are two ways to display your work.  First, you should distribute it in a way that people can see it in action.  You can do this with free hosting solutions like [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/).  You might also choose a shared hosting account like [Bluehost](https://www.bluehost.com/) or you might go with a cloud provider like [AWS](https://aws.amazon.com/).  The point is, don't expect people to do the work to execute your code. Just provide it somewhere for them. Don't worry if it's not perfect.
 
-Next, you want to display your source code.  For very simple work, you can put your code on something like [Codepen](https://codepen.io/).  This is for showing very simple examples.  Otherwise, put your source code on something like [Github](https://github.com/) or [Gitlab](https://gitlab.com/).  This way, people can see your source code and see how you did something.  Portfolio projects are equal parts what you made and how you made it.  As a bonus, if you use git, you'll have a history of your progress on your portfolio site.  Those who may be interested can actually go back in time and see how you've progressed.
+Next, you want to display your source code.  For very simple work, you can put your code on something like [Codepen](https://codepen.io/).  This is for showing very simple examples.  Otherwise, put your source code on something like [GitHub](https://github.com/) or [Gitlab](https://gitlab.com/).  This way, people can see your source code and see how you did something.  Portfolio projects are equal parts what you made and how you made it.  As a bonus, if you use git, you'll have a history of your progress on your portfolio site.  Those who may be interested can actually go back in time and see how you've progressed.
 
 ### Iterations / New Features
 

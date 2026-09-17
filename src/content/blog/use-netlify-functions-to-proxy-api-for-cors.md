@@ -19,7 +19,7 @@ Next, with that information, you want to build a plain, simple vanilla JS app th
 
 ## First, let's build out our HTML/JS
 
-I'm going to assume that you're familiar with connecting Netlify to your Github repository and configuring it to deploy your code.  If not, you can check out their [great article here](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/).
+I'm going to assume that you're familiar with connecting Netlify to your GitHub repository and configuring it to deploy your code.  If not, you can check out their [great article here](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/).
 
 Let's take a look at our file.
 

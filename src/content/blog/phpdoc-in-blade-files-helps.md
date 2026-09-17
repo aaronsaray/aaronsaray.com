@@ -1,16 +1,16 @@
 ---
-title: Use PHPDoc in Laravel Blade files for autocomplete in PHPStorm
+title: Use PHPDoc in Laravel Blade files for autocomplete in PhpStorm
 date: "2022-10-25"
 tags:
   - php
   - laravel
   - phpstorm
 ---
-I love PHPStorm, but it can only do so much.  Even with plugins like [Laravel Idea](https://laravel-idea.com/docs/overview), you may still have some missing features. One that I wish I had was autocomplete of models from collections or paginators in blade files.  Well, turns out there's an easy enough way to add this functionality for yourself.
+I love PhpStorm, but it can only do so much.  Even with plugins like [Laravel Idea](https://laravel-idea.com/docs/overview), you may still have some missing features. One that I wish I had was autocomplete of models from collections or paginators in blade files.  Well, turns out there's an easy enough way to add this functionality for yourself.
 
 <!--more-->
 
-For this example, I'm using Laravel 9 and PHPStorm 2022 with the Blade bundled plugin enabled.  Let's take a look at the code.  We have a `UsersController.php` file with the following simple code:
+For this example, I'm using Laravel 9 and PhpStorm 2022 with the Blade bundled plugin enabled.  Let's take a look at the code.  We have a `UsersController.php` file with the following simple code:
 
 ```php
 <?php
@@ -54,7 +54,7 @@ As you can see, I know that the User model has a display name method - but I can
 
 No autocomplete. Even my IDE plugins aren't helping me.
 
-Well, turns out we can use the `@var` syntax from [PHPDoc](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/var.html) to help PHPStorm understand what we're doing.  
+Well, turns out we can use the `@var` syntax from [PHPDoc](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/var.html) to help PhpStorm understand what we're doing.  
 
 Let's see:
 
@@ -73,7 +73,7 @@ Let's see:
 </table>
 ```
 
-Remember, in Blade, the directives are just shortcuts to some PHP interpretation.  With the `@var` inside of the `@foreach` we can now instruct PHPStorm what the `$user` variable is.  
+Remember, in Blade, the directives are just shortcuts to some PHP interpretation.  With the `@var` inside of the `@foreach` we can now instruct PhpStorm what the `$user` variable is.  
 
 Sure enough, the autocomplete is now spot-on.
 

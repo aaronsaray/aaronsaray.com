@@ -4,6 +4,7 @@ date: "2011-04-29"
 tags:
   - misc-web
   - php
+evergreen: true
 ---
 :::callout
 I no longer work for LPi and do not know what job openings are available.

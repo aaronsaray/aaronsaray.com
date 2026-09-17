@@ -2,7 +2,9 @@
 title: Track Things Done with Alfred (update)
 date: "2019-02-11"
 tags:
-  - business
+  - macos
+  - scripting
+evergreen: true
 ---
 In an [earlier entry](/2017/track-done-things-with-alfred/) I detailed how I track things I do each day using an [Alfred](https://www.alfredapp.com/) workflow.  Basically, I wanted to track what I did from the Alfred launcher screen, one thing at a time.  The end result was a txt file dated today.  
 
@@ -16,14 +18,14 @@ You can review some of [the instructions](/2017/track-done-things-with-alfred/) 
 
 The big changes are the second workflow.
 
-[![Workflow](/uploads/2019/did-this-workflow-screenshot-1.png)](/uploads/2019/did-this-workflow-screenshot-1.png)
+[![Workflow](/uploads/2019/did-this-workflow-screenshot-1@2x.png)](/uploads/2019/did-this-workflow-screenshot-1@2x.png)
 
 In this case, it's the same keyword filter without a space and argument optional.  I created PHP script that gets all of the items file and builds the list.  Then, it also unshifts or prepends to the array the option to copy all to the clipboard.  As you can see, the arg is the entire clipboard content.  That will be the `query` moving forward.
 
-[![Functionality](/uploads/2019/did-this-workflow-screenshot-2.png)](/uploads/2019/did-this-workflow-screenshot-2.png)
+[![Functionality](/uploads/2019/did-this-workflow-screenshot-2@2x.png)](/uploads/2019/did-this-workflow-screenshot-2@2x.png)
 
 I added a copy to clipboard workflow as well.  All it does is copy the query into the clipboard.  
 
-[![Clipboard widget](/uploads/2019/did-this-workflow-screenshot-3.png)](/uploads/2019/did-this-workflow-screenshot-3.png)
+[![Clipboard widget](/uploads/2019/did-this-workflow-screenshot-3@2x.png)](/uploads/2019/did-this-workflow-screenshot-3@2x.png)
 
 From then on, I can paste this into the Basecamp request for today's work.  If I type `did` I can start adding something for today, I can review today's list, and I can copy all of today's content into a clipboard.

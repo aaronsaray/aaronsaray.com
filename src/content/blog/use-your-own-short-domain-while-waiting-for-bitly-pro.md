@@ -40,9 +40,6 @@ Yay!
 Since I do continue to get my bit.ly links with `http://bit.ly` instead of `http://saray.me` in the beginning, I decided to make a Firefox bookmarklet to replace this for me.  It's pretty simple.  All it does is take `bit.ly` and replace with `saray.me`.
 
 ```javascript
-var x=prompt('Bit.ly URL');alert(x.replace('bit.ly','saray.me'));
+var x = prompt('Bit.ly URL');
+alert(x.replace('bit.ly', 'saray.me'));
 ```
-
-Here, you can drag this to your toolbar if you want :)
-
-<a href="javascript:var%20x=prompt('Bit.ly%20URL');alert(x.replace('bit.ly',%20'saray.me'))">Saray.Me the Bit.Ly</a>

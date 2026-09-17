@@ -4,6 +4,7 @@ date: "2016-03-28"
 tags:
   - php
   - business
+evergreen: true
 ---
 In the last decade or two, the US proliferation of low quality reality television shows has been unstoppable.  "Big Brother" would be ashamed by some of his siblings.  There are shows that follow famous people (although, I'm not entirely certain why some of them are famous), shows that involve the audience, shows that support nerds; basically anything you can imagine!  I pretend I'm above this, I surely don't fall into the category of people who sit at home and pine over "The Bachelor."  I normally flip the channel right past these shows.
 

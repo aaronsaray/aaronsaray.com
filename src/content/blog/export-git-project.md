@@ -21,7 +21,7 @@ This will make a zip file of all your code, minus the `.git` folder, in the curr
 
 **Bonus Tip**
 
-In PHPStorm, you can add this as an external command easily.  Do the following steps:
+In PhpStorm, you can add this as an external command easily.  Do the following steps:
 
   - Go to the settings/preferences pane
   - Go to Tools > External Tools

@@ -4,6 +4,7 @@ date: "2012-11-28"
 tags:
   - business
   - ideas
+evergreen: true
 ---
 This idea is about the concept of grouping tweets in a meaningful way.
 

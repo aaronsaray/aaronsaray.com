@@ -11,11 +11,11 @@ Sometimes you want to set up a new project with a domain, but you don't want to 
 
 In order to do this, we need to have our free Cloudflare account.  Then, you need to have a domain registered and have its nameservers be pointed at Cloudflare. You don't necessarily need to use them for their hosting/proxying services.  
 
-In this example, I had my email set up through a different service. I used [chickenfacts.io](https://chickenfacts.io) as my domain. Here are the steps.
+In this example, I had my email set up through a different service. I used chickenfacts.io as my domain. Here are the steps.
 
 **Log into Cloudflare** and select your domain.  Click the Email Routing option.
 
-![Email Routing Option](/uploads/2024/cfe-1.png)
+![Email Routing Option](/uploads/2024/cfe-1@2x.png)
 
 **Skip any wizards** I clicked Skip getting started here.
 

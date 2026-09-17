@@ -5,6 +5,7 @@ tags:
   - archived-projects
   - business
   - misc-web
+evergreen: true
 ---
 Goal: Clever named site that shows local establishments close to your location.  Was based on Google Ip location services.  The thought was just for people to think 'whats close to me' and type that up.
 

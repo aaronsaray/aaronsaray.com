@@ -44,7 +44,7 @@ When it comes to technical blogs, you can find people that you might want to lea
 
 ## Community Involvement
 
-If you're working in the open source world, you should check out [Github](https://github.com). This holds tons of projects, all of them looking for help! You can go to the issues section, grab one labeled `great first issue` or something like that, and try to participate. You can learn so much from watching others and participating yourself.
+If you're working in the open source world, you should check out [GitHub](https://github.com). This holds tons of projects, all of them looking for help! You can go to the issues section, grab one labeled `great first issue` or something like that, and try to participate. You can learn so much from watching others and participating yourself.
 
 Check out [meetup.com](https://meetup.com) for meetups and programming groups near your area.  Just search the topic or area of programming you're interested in. For example, if you're looking for PHP programming groups, you might find PHP Meetups. If you're looking for general programming, you'll find a lot of options as well.  Meetups tend to be gatherings of like-minded people who all enjoy working on a particular type of programming. Don't be discouraged if you don't know tons - meetups are for you.  Everyone has to start somewhere - and people who attend meetups are welcoming. They're spending their free time gathering and talking about programming, so they'll be welcoming.
 

@@ -4,6 +4,7 @@ date: "2020-09-21"
 tags:
   - business
   - management
+evergreen: true
 ---
 :::callout
 This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry two? [Click here](/2020/dev-manager-2-3-tough-convos/)

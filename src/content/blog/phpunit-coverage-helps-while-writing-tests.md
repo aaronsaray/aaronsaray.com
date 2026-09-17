@@ -133,7 +133,7 @@ XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-html=temp-coverage tests/Unit
 
 Now, in the `temp-coverage` folder, open the `index.html` file and drill into the `Services/DogSoundsService.php` file.
 
-![Code coverage example](/uploads/2020/code-coverage-1.jpg)
+![Code coverage example](/uploads/2020/code-coverage-1@2x.jpg)
 
 Looks like I have only 87.5% coverage.  Looking through the class I see that I've missed an if statement. Oh man! I forgot to check if the legs are 3.
 
@@ -150,7 +150,7 @@ public function testGreetingIsWoofWhenMissingSingleLeg(): void
 
 Now, my code coverage looks better, too:
 
-![Code coverage example](/uploads/2020/code-coverage-2.jpg)
+![Code coverage example](/uploads/2020/code-coverage-2@2x.jpg)
 
 ## That's Only Part of It
 

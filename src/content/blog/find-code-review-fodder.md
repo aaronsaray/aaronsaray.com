@@ -3,6 +3,7 @@ title: How to Find Sections of Code to Review
 date: "2017-11-14"
 tags:
   - programming
+evergreen: true
 ---
 I'm a huge fan of code review and code walkthroughs.  I've been [asked before what I look for while reviewing code](/2012/what-i-look-for-in-a-code-review/) but I don't know if I've ever addressed ways to pick out what code to actually review.
 

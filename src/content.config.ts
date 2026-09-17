@@ -31,7 +31,7 @@ const blog = defineCollection({
       tags: z.array(z.string()).min(1),
       context: z.array(z.string()).optional(),
       draft: z.boolean().optional(),
-      // Overrides the tag policy in src/lib/evergreen.ts.
+      // Suppresses the old-post notice. Nothing else sets it.
       evergreen: z.boolean().optional(),
     })
     .strict(),

@@ -25,7 +25,7 @@ First, we have the "gimme" of a good [stack trace](https://xdebug.org/docs/stack
 
 But, then comes [functional execution tracing](https://xdebug.org/docs/execution_trace).  This basically is a complete output of all functions called, in what order, and optionally their incoming parameters and return values.  Human readable and machine parsable options are available.
 
-Finally, the holy grail, [profiling of PHP Scripts](https://xdebug.org/docs/profiler).  This not only tops tracing, but it can show memory usage, number of function calls, call times, and more.  Need a good good tool to view the cachegrind files?  There are some on the manual page, or you can even use [PHPStorm](https://confluence.jetbrains.com/display/PhpStorm/Profiling+PHP+applications+with+PhpStorm+and+Xdebug#ProfilingPHPapplicationswithPhpStormandXdebug-3.1.Opentheprofilersnapshot).
+Finally, the holy grail, [profiling of PHP Scripts](https://xdebug.org/docs/profiler).  This not only tops tracing, but it can show memory usage, number of function calls, call times, and more.  Need a good good tool to view the cachegrind files?  There are some on the manual page, or you can even use [PhpStorm](https://confluence.jetbrains.com/display/PhpStorm/Profiling+PHP+applications+with+PhpStorm+and+Xdebug#ProfilingPHPapplicationswithPhpStormandXdebug-3.1.Opentheprofilersnapshot).
 
 ## HTTP Time Consumed by Guzzle
 

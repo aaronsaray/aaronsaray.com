@@ -25,17 +25,17 @@ First, open Google Chrome.  Then...
 
 If neither of these is working, click the hamburger menu on the right hand side of Chrome, go to `More Tools` and choose `Developer Tools.`
 
-![Menu Option](/uploads/2016/developer-tools-testing-1.jpg)
+![Menu Option](/uploads/2016/developer-tools-testing-1@2x.jpg)
 
 Once this happens, you should see the developer tools at the bottom of your current browser screen like this:
 
-![Developer tools](/uploads/2016/developer-tools-testing-2.jpg)
+![Developer tools](/uploads/2016/developer-tools-testing-2@2x.jpg)
 
 By default, developer tools attaches to the bottom of your browser window (which consequently shortens the length of the content in the browser window).  You can also
 attach it to the right-hand side of your browser, or split it off into a separate window.  You can do this by clicking the 
 three dots at the top-right of the developer tools pane and choosing a different option from the dock side list.
 
-![Pane Options](/uploads/2016/developer-tools-testing-3.jpg)
+![Pane Options](/uploads/2016/developer-tools-testing-3@2x.jpg)
 
 ## Simulating Other Devices
 
@@ -47,7 +47,7 @@ saying, make sure your browser has loaded the website you want to test.)  To sta
 on developer tools (which look like a phone and tablet).  This will change the main window to the simulator screen (you'll notice that it probably
 changed size already.)
 
-![Simulated evices](/uploads/2016/developer-tools-testing-4.jpg)
+![Simulated evices](/uploads/2016/developer-tools-testing-4@2x.jpg)
 
 In my example, the site has been loaded with an iPad size.  At the top, you'll notice from left to right, the following things:
 
@@ -72,11 +72,11 @@ with dial-up or do you expect only broadband users to use this - and then what t
 
 So, to change or _throttle_ your internet speed in developer tools, select the Network tab on the top of the developer tools pane.
 
-![Network connection](/uploads/2016/developer-tools-testing-5.jpg)
+![Network connection](/uploads/2016/developer-tools-testing-5@2x.jpg)
 
 In the menu row below, there is a drop down that is set to 'No throttling' - click this and choose a different speed setting.
 
-![Speeds](/uploads/2016/developer-tools-testing-6.jpg)
+![Speeds](/uploads/2016/developer-tools-testing-6@2x.jpg)
 
 Here you'll see different speed options.  I suggest using no throttling for one test, using a DSL connection, and then using
 something like a regular 2G connection at least.

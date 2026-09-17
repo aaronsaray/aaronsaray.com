@@ -16,6 +16,6 @@ The answer should be none. There should be a password. Or at the very least, the
 
 So, I decided to write a quick NodeJS script to do the scan and try the default login configuration.  It will grab your local subnet (through CIDR), look for open port 3306 and try to log into MySQL with `root` and blank password.
 
-You can download this at the [mysql-connect Github repo](https://github.com/aaronsaray/mysql-connect).
+You can download this at the [mysql-connect GitHub repo](https://github.com/aaronsaray/mysql-connect).
 
 *What did you find?* ... none.  But, maybe your luck will be different. It's only good news if you don't find any!

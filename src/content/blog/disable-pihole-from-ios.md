@@ -14,35 +14,35 @@ Next, get your API token from PiHole.  To do this, access the **Settings** menu 
 
 Now, open your iPhone's Shortcut App and click the plus sign to create a new shortcut.
 
-![Screenshot](/uploads/2021/disable-pihole-1.png)
+![Screenshot](/uploads/2021/disable-pihole-1@3x.png)
 
 Click the three dots to change the icon and the name. I've chosen a relevant name and a different color/icon.
 
-![Screenshot](/uploads/2021/disable-pihole-2.png)
+![Screenshot](/uploads/2021/disable-pihole-2@3x.png)
 
 Click the **Add action** button and search for Text.
 
-![Screenshot](/uploads/2021/disable-pihole-3.png)
+![Screenshot](/uploads/2021/disable-pihole-3@3x.png)
 
 Place your API key in the text field all by itself (make sure there's no extra spaces or no letters mistakenly capitalized).
 
-![Screenshot](/uploads/2021/disable-pihole-4.png)
+![Screenshot](/uploads/2021/disable-pihole-4@3x.png)
 
 Click the **Plus** again and search for "Get contents" to find the **Get Contents of URL** action.  Select this.
 
-![Screenshot](/uploads/2021/disable-pihole-5.png)
+![Screenshot](/uploads/2021/disable-pihole-5@3x.png)
 
-![Screenshot](/uploads/2021/disable-pihole-6.png)
+![Screenshot](/uploads/2021/disable-pihole-6@3x.png)
 
 Type the following URL into your Network action: `http://pihole.local/admin/api.php?disable&auth=` where `pihole.local` is your local PiHole.  The `=` should then have the **Text** placeholder after it. This will insert your api key.
 
 I also opted to add a "show notification" action to confirm the action has completed.
 
-![Screenshot](/uploads/2021/disable-pihole-7.png)
+![Screenshot](/uploads/2021/disable-pihole-7@3x.png)
 
 Now you have an action that you can click to execute with one click. You can put this in one of your iOS widgets if you'd like.  
 
-![Screenshot](/uploads/2021/disable-pihole-8.png)
+![Screenshot](/uploads/2021/disable-pihole-8@3x.png)
 
 A couple things...
 

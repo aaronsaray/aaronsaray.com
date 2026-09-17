@@ -4,7 +4,7 @@ date: "2023-03-09T10:08:39-06:00"
 tags:
   - news
 ---
-I just moved from Jekyll and Github pages to Hugo and Netlify.  And made a new design.  It's overall much better - but with a few things to note.
+I just moved from Jekyll and GitHub pages to Hugo and Netlify.  And made a new design.  It's overall much better - but with a few things to note.
 
 <!--more-->
 

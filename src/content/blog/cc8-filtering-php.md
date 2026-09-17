@@ -10,17 +10,11 @@ I like to think that I'm somewhat of a PHP purist.  And, when I travel to user g
 
 ## Episode 8: `filter_var` to the Rescue!
 
----
-
 I don't have anything against frameworks.  I've used Zend Framework as the basis for a number of projects.  However, I find that too many people rely on frameworks for every single little thing, and that can be bad! 
 
-Before you implement a framework, you should research it, read the documentation, and do a basic code review.  If you're seeing things you're not familiar with as part of the framework, it's your responsibility to learn about those concepts.  I've seen a trend lately that PHP programmers just blindly download something from Github and hope for the best.  Just because the source is available doesn't guarantee that anyone has actually reviewed it.  If there is a bug or a security hole in the framework, it will effect your application.  You're still responsible.  
+Before you implement a framework, you should research it, read the documentation, and do a basic code review.  If you're seeing things you're not familiar with as part of the framework, it's your responsibility to learn about those concepts.  I've seen a trend lately that PHP programmers just blindly download something from GitHub and hope for the best.  Just because the source is available doesn't guarantee that anyone has actually reviewed it.  If there is a bug or a security hole in the framework, it will effect your application.  You're still responsible.  
 
 Also, not all development is new.  If you ever have to work on legacy code, you should be able to manage your way through it without the need to implement a framework to solve a simple problem.
-
----
-
-**Continue the entry!**
 
 One of the challenges requires the group to build an email form.  I sit at the keyboard and request that the group tells me what to type.  When necessary, I pose questions and hints like: "Don't forget we have to validate that the email address is correct."  One time I posed this question and was answered with a lengthy silence.  Then, someone timidly asked: "Can we import Zend_Validate?"  I said no - that's a framework tool!  Then I heard comments rumblings about not being experts at regular expressions.  One more hint from me and we were on our way: "don't reinvent the wheel," I said.  "Check out php.net/filter_var."  
 

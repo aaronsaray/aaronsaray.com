@@ -2,7 +2,9 @@
 title: Track the Things You've Done Today with Alfred
 date: "2017-07-24"
 tags:
-  - business
+  - macos
+  - scripting
+evergreen: true
 ---
 For our agile workflow, it's important to provide a check-in each day.  What did you do yesterday, what do you plan on doing today, do you have any blockers?  My biggest challenge is actually remembering what I did "yesterday" - especially after the weekend.
 
@@ -18,7 +20,7 @@ I originally started out with Alfred, AppleScript and the Notes app.  However, a
 
 So, after some research, I found out that I could just append files using built in functionality in Alfred.  Let's take a look at the workflow.
 
-[![Workflow](/uploads/2017/did-this-workflow-screenshot-1.png)](/uploads/2017/did-this-workflow-screenshot-1.png)
+[![Workflow](/uploads/2017/did-this-workflow-screenshot-1@2x.png)](/uploads/2017/did-this-workflow-screenshot-1@2x.png)
 
 Here, we can see we have a keyword, which is mapped to a vars/args filter, and then to an action.  
 
@@ -28,14 +30,14 @@ Then, we add a variable to the mix called `{fileName}` - which is using a built-
 
 Finally, we have an action that refers to two variables - `folderName` and `fileName`.  File name you recognize from the previous version.  Folder name is defined as a configuration variable in the workflow (I'll explain that later).  Then, we append to the file, creating folders if they don't exist - and just put `- {query}` in the file.  Basically that will make the text written after `did` look like a bullet point.
 
-[![Keyword](/uploads/2017/did-this-workflow-screenshot-2.png)](/uploads/2017/did-this-workflow-screenshot-2.png)
+[![Keyword](/uploads/2017/did-this-workflow-screenshot-2@2x.png)](/uploads/2017/did-this-workflow-screenshot-2@2x.png)
 
-[![ArgsVars](/uploads/2017/did-this-workflow-screenshot-3.png)](/uploads/2017/did-this-workflow-screenshot-3.png)
+[![ArgsVars](/uploads/2017/did-this-workflow-screenshot-3@2x.png)](/uploads/2017/did-this-workflow-screenshot-3@2x.png)
 
-[![Action](/uploads/2017/did-this-workflow-screenshot-4.png)](/uploads/2017/did-this-workflow-screenshot-4.png)
+[![Action](/uploads/2017/did-this-workflow-screenshot-4@2x.png)](/uploads/2017/did-this-workflow-screenshot-4@2x.png)
 
 I've specified that the storage location for this (the `folderName` variable) is **`~/Documents/Did This`** - but you can change that by clicking the `[x]` variable icon in the workflow and changing it to something else.
 
-[![Variables](/uploads/2017/did-this-workflow-screenshot-5.png)](/uploads/2017/did-this-workflow-screenshot-5.png)
+[![Variables](/uploads/2017/did-this-workflow-screenshot-5@2x.png)](/uploads/2017/did-this-workflow-screenshot-5@2x.png)
 
 Now, you should be able to type `did something here` and `- something here` will be added to day's date file inside of the directory.  Good luck!

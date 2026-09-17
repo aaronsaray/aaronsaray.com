@@ -3,6 +3,7 @@ title: What I Learned From Giving a Few Interactive Code Review Interviews
 date: "2021-03-15"
 tags:
   - business
+evergreen: true
 ---
 Never one to be afraid of pointing out my flaws, I think it's time to share what I learned from doing a few interactive code review interviews. It may still be a great idea, but it's much more difficult than I thought.
 
@@ -14,7 +15,7 @@ I've [learned a lot from doing 200+ interviews](/2018/lessons-from-200-tech-inte
 
 First, I would ask the candidate to specify which language they wanted to be "tested" on for their proficiency exam portion of the interview. I explained that, instead of writing code, we'd be reading and commenting on code together.  So, it just makes sense that they'd we'd use a language they were most comfortable with.
 
-I explained the whole process to them in an email before they even picked the language.  After I got their response and they were scheduled, I waited till about a day before the interview.  I sent them a Github repository that had significant code in it in the language that they requested to review.  I reminded them that neither of us had participated in this code, so you can be as open and honest as you need to be.  I told them to take notes so they remember what to talk about - but not to worry, I won't be asking for the notes. I just want them to be prepared.  I had given them only a day or so because I figured that was enough time to review the code while having a low enough change that they wouldn't farm out the review to someone else.
+I explained the whole process to them in an email before they even picked the language.  After I got their response and they were scheduled, I waited till about a day before the interview.  I sent them a GitHub repository that had significant code in it in the language that they requested to review.  I reminded them that neither of us had participated in this code, so you can be as open and honest as you need to be.  I told them to take notes so they remember what to talk about - but not to worry, I won't be asking for the notes. I just want them to be prepared.  I had given them only a day or so because I figured that was enough time to review the code while having a low enough change that they wouldn't farm out the review to someone else.
 
 Finally, I reminded them that I'd be taking notes during the screen share session we'd do where they reviewed the code. I'd be reviewing my findings with another person so that they could help me look for any biases in my assessment.
 

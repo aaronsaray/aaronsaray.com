@@ -4,6 +4,7 @@ date: "2019-05-06"
 tags:
   - business
   - management
+evergreen: true
 ---
 :::callout
 Not all things go as planned, and that's ok. Entrepreneurship is hard! I've decided to roll my Dev Management coaching back into AaronSaray.com.
@@ -19,4 +20,4 @@ To answer that question, I launched The Dev Manager. I wanted to offer training 
 
 It's time to take it a step further past training, books and videos.  One on one coaching with someone that's been there before is invaluable.  I've been doing this type of outreach and mentoring with a few select colleagues over the years.  It turns out that there are many more Dev Managers out there than I know personally! That's the genesis of putting together a more official coaching program.
 
-You ready to level up as a manager? Check out my Dev Manager One on One Coaching now!
+You ready to level up as a manager? Check out my Dev Manager [One on One Coaching](/contact/) now!

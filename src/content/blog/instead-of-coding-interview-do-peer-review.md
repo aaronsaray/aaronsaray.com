@@ -4,6 +4,7 @@ date: "2018-10-29"
 tags:
   - business
   - management
+evergreen: true
 ---
 Interactive coding challenges during an interview are common place these days.  The idea is that you'll get an idea of the type and quality of work a candidate will produce by watching them code during an interview.
 

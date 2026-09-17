@@ -3,6 +3,7 @@ title: Deciding What's Important in Life
 date: "2017-11-17"
 tags:
   - business
+evergreen: true
 ---
 I've made a horrible mistake...
 
