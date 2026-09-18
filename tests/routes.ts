@@ -38,6 +38,12 @@ export const ROUTES: readonly Route[] = [
     name: "post with a scrolling code block",
     path: "/2019/expression-1-not-in-group-by/",
   },
+  // The one post with output blocks, so the axe sweep sees a <pre>
+  // whose colors come from global.css rather than from Shiki.
+  {
+    name: "post with output blocks",
+    path: "/2017/use-the-fail-method-with-mockery-on/",
+  },
   { name: "not found", path: "/no-such-page-exists/", status: 404 },
 ];
 

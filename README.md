@@ -140,6 +140,17 @@ The rest of the post.
   ```
   ````
 
+* Terminal output uses the fence language `output`, not `txt`: a black
+  ground, no highlighting, and no copy button, since the block is what
+  a program printed rather than source to reuse. `txt` stays for plain
+  text that is not output (a hash, a file tree, a format string).
+
+  ````markdown
+  ```output
+  OK (3 tests, 5 assertions)
+  ```
+  ````
+
 * Callout box:
 
   ```markdown
@@ -231,8 +242,6 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] Confirm the evergreen flag on each post during the archive walk. 114 posts carry `evergreen: true` after the tag-policy backfill; the walker's green toggle sets and clears it.
-* [ ] consider a cli output design (for most of the txt)
 * [ ] updates to contact page
 * [ ] updates to about page the google thing
 * [ ] <http://localhost:4321/2017/33-things-book/> - needs to have a easier download of the book

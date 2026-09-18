@@ -36,11 +36,15 @@
   --color-surface: #10141a;
   --color-ink: #e7e9ec;
   --color-ink-dim: #8e959e;
-  /* Every text token clears AA 4.5:1 on all three grounds the site
-     composites: night, surface, and surface/40 over night (#0c0e10,
-     the footer). A fourth alpha value adds a fourth ground. ink-faint
-     and accent-dim are below the text bar: non-text strokes at 3:1
-     only.
+  /* The ground a code block's output takes, black as a console is,
+     with an edge that bounds it without the hairline's brightness. */
+  --color-terminal: #000;
+  --color-terminal-edge: #121618;
+  /* Every text token clears AA 4.5:1 on all four grounds the site
+     composites: night, surface, surface/40 over night (#0c0e10, the
+     footer), and terminal. A fifth alpha value adds a fifth ground.
+     ink-faint and accent-dim are below the text bar: non-text strokes
+     at 3:1 only.
 
      Text color comes from these tokens, never from opacity or an
      alpha modifier: that renders a color in no palette, and it can
@@ -351,7 +355,13 @@ h3 {
 }
 
 .prose pre {
-  @apply overflow-x-auto border border-hairline bg-surface;
+  /* Both settable by a block kind (the output block darkens them) in
+     one declaration, so nothing paints a first value and overrides it. */
+  --pre-edge: var(--color-hairline);
+  --pre-ground: var(--color-surface);
+  @apply overflow-x-auto;
+  border: 1px solid var(--pre-edge);
+  background: var(--pre-ground);
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   padding: 1rem 1.25rem;
@@ -462,6 +472,22 @@ h3 {
 }
 .copy-btn.copied .icon-check {
   display: block;
+}
+
+/* Shiki passes `output` through as plaintext, so there are no token
+   spans here to color: the pre carries the whole block's color. */
+.prose .code-wrap.is-output pre {
+  --pre-edge: var(--color-terminal-edge);
+  --pre-ground: var(--color-terminal);
+  color: var(--color-ink-dim);
+}
+.prose .code-wrap.is-output pre code {
+  color: inherit;
+}
+/* The icon takes currentColor; without this it inherits the block's
+   brighter text instead of matching the label beside it. */
+.code-wrap.is-output .code-controls {
+  color: var(--color-ink-mute);
 }
 
 .prose del,

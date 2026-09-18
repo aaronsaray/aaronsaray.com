@@ -21,7 +21,7 @@ for (const { name, path } of FIXTURES) {
     await page.goto(path);
 
     const buttons = page.locator(".copy-btn");
-    const blocks = page.locator("pre");
+    const blocks = page.locator(".prose pre:not(.code-wrap.is-output pre)");
     const count = await buttons.count();
     expect(count).toBeGreaterThan(0);
     expect(await blocks.count()).toBe(count);

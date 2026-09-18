@@ -13,6 +13,7 @@ import { rehypeSections } from "./src/plugins/rehype-sections.mjs";
 import { rehypeHeadingAnchors } from "./src/plugins/rehype-heading-anchors.mjs";
 import { aaronsarayDark } from "./src/plugins/shiki-theme.mjs";
 import { shikiMetaFilename } from "./src/plugins/shiki-meta-filename.mjs";
+import { shikiOutputRootStyle } from "./src/plugins/shiki-output-root-style.mjs";
 
 export default defineConfig({
   site: "https://aaronsaray.com",
@@ -53,9 +54,19 @@ export default defineConfig({
     }),
     shikiConfig: {
       theme: aaronsarayDark,
-      // Corpus languages Shiki doesn't ship under these names.
-      langAlias: { apacheconf: "apache", basic: "plaintext", env: "ini" },
-      transformers: [shikiMetaFilename()],
+      // apacheconf, basic, and env are corpus languages Shiki doesn't
+      // ship under these names. `output` is not a language: it marks a
+      // block as terminal output, which rehype-code-chrome styles as
+      // its own kind. Astro keeps the authored name in data-language
+      // and resolves the alias only to pick a grammar, which is what
+      // both the language label and that styling read.
+      langAlias: {
+        apacheconf: "apache",
+        basic: "plaintext",
+        env: "ini",
+        output: "plaintext",
+      },
+      transformers: [shikiMetaFilename(), shikiOutputRootStyle()],
     },
   },
   vite: {

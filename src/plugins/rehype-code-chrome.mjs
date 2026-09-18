@@ -14,6 +14,9 @@ import { iconFromDisk as icon } from "../lib/icon.mjs";
 //    <div class="code-wrap"><pre class="astro-code">…</pre>
 //      <div class="code-controls">lang + copy</div></div>
 //
+// A fence language of `output` takes the bare shape with `is-output`
+// and controls that carry no copy button.
+//
 // The chrome is emitted as raw HTML nodes; Astro's pipeline runs
 // rehype-raw after user plugins, which parses them into the tree.
 
@@ -58,6 +61,15 @@ function controls(lang, tag) {
   );
 }
 
+function outputControls() {
+  return (
+    '<div class="code-controls">' +
+    icon("terminal-2", { class: "size-3.5 shrink-0", strokeWidth: 1.75 }) +
+    '<span class="code-lang">output</span>' +
+    "</div>"
+  );
+}
+
 function filenameHeader(filename, lang) {
   return (
     '<div class="filename-header">' +
@@ -66,6 +78,18 @@ function filenameHeader(filename, lang) {
     controls(lang, "span") +
     "</div>"
   );
+}
+
+function wrapBlock(parent, index, node, controlsHtml, extraClass) {
+  parent.children[index] = {
+    type: "element",
+    tagName: "div",
+    properties: {
+      className: extraClass ? ["code-wrap", extraClass] : ["code-wrap"],
+    },
+    children: [node, { type: "raw", value: controlsHtml }],
+  };
+  return SKIP;
 }
 
 export function rehypeCodeChrome() {
@@ -79,7 +103,6 @@ export function rehypeCodeChrome() {
       if (!classes.includes("astro-code")) return;
 
       const dataLang = String(node.properties.dataLanguage ?? "plaintext");
-      const lang = dataLang === "plaintext" ? "txt" : dataLang;
       const filename = node.properties.dataFilename;
 
       // A block that scrolls is unreachable by keyboard unless it is
@@ -87,6 +110,13 @@ export function rehypeCodeChrome() {
       // without it a screen reader lands on unlabeled content.
       node.properties.tabIndex = 0;
       node.properties.role = "group";
+
+      if (dataLang === "output") {
+        node.properties["aria-label"] = "Terminal output";
+        return wrapBlock(parent, index, node, outputControls(), "is-output");
+      }
+
+      const lang = dataLang === "plaintext" ? "txt" : dataLang;
       node.properties["aria-label"] =
         filename != null ? `Code: ${String(filename)}` : `Code: ${lang}`;
 
@@ -99,13 +129,7 @@ export function rehypeCodeChrome() {
         return index + 2;
       }
 
-      parent.children[index] = {
-        type: "element",
-        tagName: "div",
-        properties: { className: ["code-wrap"] },
-        children: [node, { type: "raw", value: controls(lang, "div") }],
-      };
-      return SKIP;
+      return wrapBlock(parent, index, node, controls(lang, "div"));
     });
   };
 }
