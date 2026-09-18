@@ -3,7 +3,6 @@ import Base from "../../../layouts/Base.astro";
 import EntryList from "../../../components/EntryList.astro";
 import Pagination from "../../../components/Pagination.astro";
 import { getSortedPosts, pageCount, pageSlice } from "../../../lib/posts";
-import { SITE_DESCRIPTION } from "../../../lib/site";
 
 export async function getStaticPaths() {
   const posts = await getSortedPosts();
@@ -20,7 +19,10 @@ const total = pageCount(posts.length);
 const position = `Page ${num} of ${total} - ${num === total ? "and welcome to the end!" : "keep going..."}`;
 ---
 
-<Base title={`Blog - page ${num}`} description={SITE_DESCRIPTION}>
+<Base
+  title={`Blog - page ${num}`}
+  description={`Blog entries, page ${num} of ${total}.`}
+>
   <main id="main" class="page-column">
     <h1 class="page-title">Blog</h1>
     <p class="page-lede border-b border-hairline pb-8">{position}</p>

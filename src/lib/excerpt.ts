@@ -14,6 +14,12 @@ import { remarkCallout } from "../plugins/remark-callout.mjs";
 
 const MARKER = "<!--more-->";
 const FALLBACK_WORDS = 70;
+const MAX_DESCRIPTION = 200;
+
+// Tags that sit inside a sentence: replacing one with a space puts that
+// space before the punctuation that follows the closing tag.
+const INLINE_TAGS =
+  /<\/?(?:a|abbr|b|cite|code|del|em|i|kbd|mark|q|s|small|span|strong|sub|sup)(?:\s[^>]*)?>/gi;
 
 const pipeline = unified()
   .use(remarkParse)
@@ -39,6 +45,7 @@ function escapeHtml(text: string): string {
 
 function toPlainText(html: string): string {
   return html
+    .replace(INLINE_TAGS, "")
     .replace(/<[^>]+>/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&lt;/g, "<")
@@ -67,7 +74,15 @@ export async function excerptHtml(body: string): Promise<string> {
   return html;
 }
 
-/** Plain-text excerpt for meta descriptions. */
+function cap(text: string): string {
+  if (text.length <= MAX_DESCRIPTION) return text;
+  const room = text.slice(0, MAX_DESCRIPTION - 1);
+  const space = room.lastIndexOf(" ");
+  const cut = space === -1 ? room : room.slice(0, space);
+  return `${cut.replace(/[\s.,;:!?–—…-]+$/, "")}…`;
+}
+
+/** Plain-text excerpt for meta descriptions, capped at 200 characters. */
 export async function excerptText(body: string): Promise<string> {
-  return toPlainText(await excerptHtml(body));
+  return cap(toPlainText(await excerptHtml(body)));
 }

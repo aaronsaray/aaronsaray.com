@@ -36,6 +36,8 @@ const showThirtyThreeThings = entry.id === "33-things-book";
   title={entry.data.title}
   description={description}
   ogImage={ogImageForTag(entry.data.tags[0])}
+  ogType="article"
+  publishedTime={entry.data.date}
 >
   <main id="main" class="page-column">
     {

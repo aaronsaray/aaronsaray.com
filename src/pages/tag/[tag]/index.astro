@@ -5,7 +5,7 @@ import Base from "../../../layouts/Base.astro";
 import EntryList from "../../../components/EntryList.astro";
 import { getSortedPosts } from "../../../lib/posts";
 import { ogImageForTag } from "../../../lib/ogImage";
-import { tagTitle } from "../../../lib/tags";
+import { tagTitle, tagDescription } from "../../../lib/tags";
 
 export async function getStaticPaths() {
   const tags = await getCollection("tags");
@@ -26,9 +26,16 @@ const posts = (await getSortedPosts()).filter((post) =>
 
 <Base
   title={tagTitle(term)}
-  description={tagTitle(term)}
+  description={tagDescription(term)}
   ogImage={ogImageForTag(term)}
 >
+  <link
+    slot="head"
+    rel="alternate"
+    type="application/rss+xml"
+    title={`Entries tagged ${term} on AaronSaray.com`}
+    href={new URL(`/tag/${term}/index.xml`, Astro.site)}
+  />
   <main id="main" class="page-column">
     <h1 class="page-title">
       Entries with the tag &ldquo;{term}&rdquo;

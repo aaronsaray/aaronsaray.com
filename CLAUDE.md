@@ -78,9 +78,14 @@ Expect him to rework code to his taste.
   Comments describe the code as it stands, never as a diff. Lead with
   the fact, in the fewest words that carry it. A file header states the
   mechanics that hold the file together, never what the file is; a
-  reader who needs orienting reads the code. Rationale that matters to
-  a human but answers none of the four questions belongs in
-  `README.md`, held to the same bar: what is true, not what changed.
+  reader who needs orienting reads the code. Rationale that answers
+  none of the four questions is not written down anywhere.
+* **`README.md` is Aaron's how-to, not a description of the site.** A
+  line belongs there when he would open the file to find out how to do
+  something: run a command, write a post, add a book, avoid a footgun.
+  How a feature works, what a config file contains, and why a tool was
+  chosen stay out; the code says those. A new feature earns a README
+  line only when it changes what he types.
 
   A rule is written in one place. Where a rule bears on one block of
   code (the palette tokens in `global.css`), that block carries the

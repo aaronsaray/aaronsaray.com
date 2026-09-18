@@ -3,13 +3,15 @@ import Base from "../../layouts/Base.astro";
 import EntryList from "../../components/EntryList.astro";
 import Pagination from "../../components/Pagination.astro";
 import { getSortedPosts, pageCount, pageSlice } from "../../lib/posts";
-import { SITE_DESCRIPTION } from "../../lib/site";
 
 const posts = await getSortedPosts();
 const total = pageCount(posts.length);
 ---
 
-<Base title="Blog" description={SITE_DESCRIPTION}>
+<Base
+  title="Blog"
+  description="Articles about PHP, Laravel, business, and management by Aaron Saray."
+>
   <main id="main" class="page-column">
     <h1 class="page-title">Blog</h1>
     <p class="page-lede border-b border-hairline pb-8">
