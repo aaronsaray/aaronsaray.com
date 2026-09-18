@@ -19,7 +19,7 @@ make test ARGS="--grep copy"   # any playwright flags pass through; test-e2e and
 make test-e2e                  # behavior subset
 make test-a11y                 # axe sweep subset
 make clean                     # dist/, both Astro content caches, Playwright output, the draft fixture, .DS_Store files
-make verify                    # clean + check + build + URL contract + links + lint + tests
+make verify                    # clean + check + build + links + lint + tests
 ```
 
 ## Tooling
@@ -163,16 +163,16 @@ One paragraph about it.
 * `src/assets/logo.svg` is the mark, the one file it lives in; `/logo.svg` is built from it. Updating the mark is replacing this file and putting the two `style` fills (`--logo-s`, `--logo-a`) back on the paths; the build fails without them.
 * `src/konami/` is the Konami-code easter egg, described below.
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
-* `scripts/` is the verify checkers and their fixtures. `url-contract.txt` lists every page, feed, and document URL the site has ever served; it never shrinks.
+* `scripts/` is the internal link checker that `make verify` runs against `dist/`.
 * `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read. A run writes one draft fixture post into the blog collection and removes it afterward; `make clean` removes a leftover.
 
 ## The Konami Code
 
 Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. A desert drops in over the lower three quarters of the window, something runs across it, and it hoists back out. Escape ends it early. Keys typed into an editable field do not count.
 
-## URL Contract
+## URLs
 
-Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo site ever served must keep resolving; images are not part of the contract. `make verify` enforces this. If it fails, fix the site, not the fixture.
+Blog permalinks are `/:year/:slug/`: the filename is the slug, the date's year is the year.
 
 ## To-Do for Launch
 

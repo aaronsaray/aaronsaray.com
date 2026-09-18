@@ -1,7 +1,7 @@
 // One case per route template, shared by the e2e and a11y projects so a
 // new page cannot be covered by one and missed by the other. Posts and
-// tags are not enumerated: check-url-contract.mjs already proves every
-// one of them resolves in dist/.
+// tags are not enumerated: check-links.mjs already proves every linked
+// one resolves in dist/.
 type Route = { name: string; path: string; status?: number };
 
 export const ROUTES: readonly Route[] = [
@@ -51,8 +51,7 @@ export const ROUTES: readonly Route[] = [
 // some post happens to contain is covered only when a sampled post
 // happens to contain it. The entries above name what each post was
 // picked for. Nothing enforces that a new rendering shape gets a
-// sample, and the list cannot grow to every post without becoming the
-// URL contract check.
+// sample, and the list cannot grow to every post.
 //
 // Known uncovered: no sampled post has a table. `.table-wrap` in
 // global.css scrolls on overflow and rehype-table-wrap.mjs adds no

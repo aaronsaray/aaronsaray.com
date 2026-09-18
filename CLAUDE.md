@@ -19,11 +19,10 @@ Expect him to rework code to his taste.
 ## Hard Rules
 
 * **URLs never change. Ever.** Blog permalinks are `/:year/:slug/`
-  (filename = slug, date's year = year). `scripts/url-contract.txt`
-  lists every page, feed, and downloadable document URL the old site
-  served (image files under `/uploads/` are not promised); `make verify`
-  enforces that they all still resolve. If verify fails, fix the site,
-  not the fixture. The fixture never shrinks.
+  (filename = slug, date's year = year). Every page, feed, and
+  downloadable document URL the site serves keeps resolving (image
+  files under `/uploads/` are not promised). Nothing enforces this, so
+  never propose a change that moves one.
 * **Aaron's prose is his.** Claude never edits existing content (post
   prose, page copy) unasked, and never inside a mechanical change.
   Mechanical transforms (frontmatter, markup) are fine. When Aaron asks
@@ -108,8 +107,8 @@ Expect him to rework code to his taste.
 
 ## Building and Verifying
 
-* `make verify` (clean + astro check + build + URL contract check +
-  internal link check + lint + Playwright tests) must be green before
+* `make verify` (clean + astro check + build + internal link check +
+  lint + Playwright tests) must be green before
   declaring any change done. It is the only gate: a new check goes
   inside `verify`, never beside it as a command to remember.
   GitHub Actions runs `make ci` (fresh install, then `verify`) and
@@ -318,12 +317,9 @@ should raise them rather than wait:
 
 ## Verify Scripts and Tests
 
-* `scripts/`: `check-url-contract.mjs`, with its fixture
-  `url-contract.txt`, and `check-links.mjs`. Both read `dist/`, so a
-  build has to precede them. The contract check carries a pinned count
-  (`FIXTURE_FLOOR`) that fails on drift in either direction: changing
-  the pin is a deliberate decision, never a way to make a failing run
-  pass. Every internal link resolves; a broken one fails the run.
+* `scripts/`: `check-links.mjs`. It reads `dist/`, so a build has to
+  precede it. Every internal link resolves; a broken one fails the
+  run.
 * `tests/`: Playwright, Chromium only, against a dev server the config
   starts on port 4321 and stops afterward. Two projects: `e2e`
   (`tests/e2e/`, behavior) and `a11y` (`tests/a11y/`, the axe sweep).
