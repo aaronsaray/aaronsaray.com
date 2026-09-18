@@ -58,7 +58,14 @@ for (const file of htmlFiles(DIST)) {
   // Both quote styles: restored raw HTML in old posts may use single
   // quotes, and a single-quoted broken link should not slip through.
   for (const m of html.matchAll(/\s(?:href|src)=(?:"([^"]+)"|'([^']+)')/g)) {
-    const url = m[1] ?? m[2];
+    // A browser resolves character references before it reads the URL,
+    // and /contact/ writes its whole mailto href as them. Undecoded, the
+    // "#" in each one also reads as a fragment below.
+    const url = (m[1] ?? m[2]).replace(/&#(x[0-9a-f]+|\d+);/gi, (_, ref) =>
+      String.fromCodePoint(
+        /^x/i.test(ref) ? parseInt(ref.slice(1), 16) : Number(ref),
+      ),
+    );
     if (/^(https?:|mailto:|javascript:|tel:|data:|#$)/.test(url)) continue;
 
     let [target, fragment] = url.split("#");

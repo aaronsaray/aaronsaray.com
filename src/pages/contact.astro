@@ -1,17 +1,55 @@
 ---
-import { getEntry, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 
-// The body carries its own H1.
-const entry = await getEntry("pages", "contact");
-if (!entry) throw new Error("pages/contact content missing");
-const { Content } = await render(entry);
+const title = "Contact";
+const description = "Send me a note.";
+
+// Entities plus set:html, because Astro escapes the & of a dynamic
+// href. The hidden span feeds tag-stripping harvesters a decoy
+// subdomain that takes no mail, and splits the accessible name, so
+// aria-label states it outright. tests/e2e/contact.spec.ts fails on a
+// literal address.
+const encode = (text: string) =>
+  [...text].map((char) => `&#${char.charCodeAt(0)};`).join("");
+const user = "aaron";
+const host = "aaronsaray.com";
+const emailLink = `<a href="${encode(`mailto:${user}@${host}`)}" aria-label="${encode(`${user}@${host}`)}">${encode(`${user}@`)}<span class="hidden">mail.</span>${encode(host)}</a>`;
 ---
 
-<Base title={entry.data.title} description={entry.data.description}>
+<Base title={title} description={description}>
   <main id="main" class="page-column">
-    <div class="prose">
-      <Content />
+    <h1 class="page-title">Send me a note.</h1>
+
+    <div
+      class="mt-10 grid grid-cols-1 gap-y-10 sm:mt-12 md:grid-cols-[3fr_2fr] md:items-baseline md:gap-x-12"
+    >
+      <div class="prose">
+        <p>
+          I will respond I promise. (I'm nice like that.) Plus, I practice
+          inbox-zero - so I definitely will see it.
+        </p>
+        <p>
+          I <strong>am</strong> accepting new contract work. Tell me about what you're
+          building, or the challenges you have, and I'll tell you if I'm a fit.
+        </p>
+        <p>
+          Or maybe you just want to say hi. Or tell me one of my blog entries is
+          wrong and I'm "the worst" - I accept those emails, too!
+        </p>
+      </div>
+
+      <div>
+        <div class="prose">
+          <p class="text-xl font-medium" set:html={emailLink} />
+        </div>
+        <p class="mt-3 leading-relaxed text-ink-dim">
+          Rather talk on the phone? Email me first and we'll set up a call.
+        </p>
+        <p class="mt-3 text-sm leading-relaxed text-ink-dim">
+          AI drafted email gets marked as spam. I'll accept your human words,
+          though.
+        </p>
+      </div>
     </div>
   </main>
 </Base>

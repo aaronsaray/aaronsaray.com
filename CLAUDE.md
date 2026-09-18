@@ -24,13 +24,12 @@ Expect him to rework code to his taste.
   served (image files under `/uploads/` are not promised); `make verify`
   enforces that they all still resolve. If verify fails, fix the site,
   not the fixture. The fixture never shrinks.
-* **No AI content, ever.** Claude never writes or edits Aaron's
-  content (post prose, page copy). Mechanical transforms (frontmatter,
-  markup) are fine. If generated text is unavoidable, it must be
-  clearly marked as AI-generated (visible marker in the source plus a
-  to-do entry in README.md) so Aaron knows to replace it. The marker
-  is one exact phrase so every instance can be found:
-  `AI-GENERATED PLACEHOLDER: <what it covers>` and nothing more.
+* **Aaron's prose is his.** Claude never edits existing content (post
+  prose, page copy) unasked, and never inside a mechanical change.
+  Mechanical transforms (frontmatter, markup) are fine. When Aaron asks
+  for a draft, Claude writes it into the file, unmarked; he reviews
+  every diff and alters it before it is committed. The rule covers
+  `src/content/` and the page copy in `src/pages/`.
   This covers punctuation and style, not just words. The spaced
   hyphen ` - ` is a fixture of Aaron's prose and does three jobs: the
   reversal (`Nope - the actual need is`), the aside (`a large
@@ -38,19 +37,13 @@ Expect him to rework code to his taste.
   and they're easy to apply`). It is never flagged, never converted to
   a comma, and never counted against the rule below, in the content or
   in feedback on a draft. The same goes for any other punctuation
-  habit in his writing.
-  The rule covers `src/content/`. Files under `.claude/` (skills,
-  their support files, any index a skill keeps) are written by Claude
-  as a matter of course and need no marker and no README note.
-  The rule governs files, not the conversation. "Give me some
-  options" is not "write my content": when Aaron asks for options,
-  examples, or a draft of a sentence, give several in chat, in his
-  register, with no preamble about this rule. What he does with them
-  is his call. If he asks for text to be written into a file, write it
-  and mark it. Never decline, and never announce what Claude will not
-  do.
+  habit in his writing. A draft Claude writes still follows the rule
+  below, spaced hyphen included; adding his habits is his edit.
+  "Give me some options" gets several in chat, in his register, with
+  no preamble about this rule. Never decline, and never announce what
+  Claude will not do.
 * **No em dashes in what Claude writes.** Strictly forbidden in text
-  Claude authors: docs, README, code comments, placeholder text,
+  Claude authors: docs, README, code comments, drafted copy,
   commit messages. This covers the em dash, the en dash used as one,
   and the ASCII stand-ins ` - ` and ` -- `. Use a period, comma,
   colon, or parentheses instead.
@@ -178,7 +171,7 @@ Expect him to rework code to his taste.
 * `src/content/`: collections defined in `src/content.config.ts`.
   `blog` (post id = filename verbatim, via a custom `generateId`; do
   not remove it, Astro's default slugifier would corrupt the dotted
-  slug), `tags` (per-tag prose), `pages` (cv, contact, colophon),
+  slug), `tags` (per-tag prose), `pages` (cv, colophon),
   `books` (one file per book, its cover beside it through `image()`).
   Every collection but `blog` requires `anchorDepth` in frontmatter;
   the blog's value lives in `astro.config.mjs`.

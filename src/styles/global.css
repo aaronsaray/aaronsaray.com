@@ -270,8 +270,8 @@ h3 {
   margin-top: 1.25rem;
 }
 
-/* A body-authored H1 (contact and colophon keep their own) gets the
-   same treatment as page titles. */
+/* A body-authored H1 (the colophon keeps its own) gets the same
+   treatment as page titles. */
 .prose h1 {
   @apply page-title;
 }
