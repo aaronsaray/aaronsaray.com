@@ -176,7 +176,6 @@ Blog permalinks are `/:year/:slug/`: the filename is the slug, the date's year i
 ## To-Do for Launch
 
 * [ ] full code review
-* [ ] before deploy - handle these two files with r2: `public/uploads/2013/6.mp4`, `public/uploads/2016/8 CLI Tips and Tricks.key`
 * [ ] deploy to cloudflare pages
 * [ ] disable email obfuscation on cloudflare - dont need that js
 * [ ] page speed - lighthouse stuff
