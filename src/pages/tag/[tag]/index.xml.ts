@@ -8,16 +8,14 @@ import {
   RSS_LIMIT,
   SITE_URL,
 } from "../../../lib/rss";
+import { tagTitle } from "../../../lib/tags";
 
 export async function getStaticPaths() {
   const tags = await getCollection("tags");
-  return tags.map((entry) => ({
-    params: { tag: entry.id },
-    props: { title: entry.data.title },
-  }));
+  return tags.map((entry) => ({ params: { tag: entry.id } }));
 }
 
-export const GET: APIRoute = async ({ params, props }) => {
+export const GET: APIRoute = async ({ params }) => {
   const term = params.tag as string;
   const posts = (await getSortedPosts())
     .filter((post) => post.data.tags.includes(term))
@@ -32,7 +30,7 @@ export const GET: APIRoute = async ({ params, props }) => {
   );
   return feedResponse(
     renderFeed({
-      title: props.title,
+      title: tagTitle(term),
       path: `/tag/${term}/`,
       selfPath: `/tag/${term}/index.xml`,
       items,

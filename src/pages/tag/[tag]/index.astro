@@ -5,6 +5,7 @@ import Base from "../../../layouts/Base.astro";
 import EntryList from "../../../components/EntryList.astro";
 import { getSortedPosts } from "../../../lib/posts";
 import { ogImageForTag } from "../../../lib/ogImage";
+import { tagTitle } from "../../../lib/tags";
 
 export async function getStaticPaths() {
   const tags = await getCollection("tags");
@@ -24,8 +25,8 @@ const posts = (await getSortedPosts()).filter((post) =>
 ---
 
 <Base
-  title={entry.data.title}
-  description={entry.data.description}
+  title={tagTitle(term)}
+  description={tagTitle(term)}
   ogImage={ogImageForTag(term)}
 >
   <main id="main" class="page-column">

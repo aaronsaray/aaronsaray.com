@@ -1,6 +1,4 @@
 ---
-title: Blog Entries Tagged "php"
-description: Blog Entries Tagged "php"
 anchorDepth: 0
 ---
 These entries are about PHP so they're tagged with the "php" tag.

@@ -1,6 +1,4 @@
 ---
-title: Blog Entries Tagged "laravel"
-description: Blog Entries Tagged "laravel"
 anchorDepth: 0
 ---
 These entries contain content about programming efficient, effective and secure Laravel projects.
