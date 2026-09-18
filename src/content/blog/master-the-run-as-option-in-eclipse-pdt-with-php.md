@@ -64,7 +64,7 @@ Nice and simple and sweet.
 
 The first test - a kind of control - is loading firefox and executing this command on my localhost.  Here is the output (formatted by me for easier reading - also removed a few items for privacy):
 
-```txt
+```output
 PHP_SAPI: apache2handler
 _SERVER: array(32) {
   ["HTTP_HOST"]=>
@@ -193,7 +193,7 @@ At any rate, I went to the Run As menu option, right clicked on the PHP Script i
 
 When I ran the script, two things happened.  First, the console view opened up - and remained blank throughout the execution of my script.  Then, the Browser Output view opened as well and contained the output of my script.  Let's look over the output here:
 
-```txt
+```output
 X-Powered-By: PHP/5.2.0
 Set-Cookie: ZendDebuggerCookie=127.0.0.1%3A10000%3A0||004|77742D65|1003; path=/
 Content-type: text/html
@@ -393,7 +393,7 @@ echo $testvar;
 
 I added that to the bottom.  Sure enough, our output is the same in the Browser Output, but the console has this:
     
-```txt
+```output
 Notice: C:/DEVELOPMENT/temp/runas/index.php line 18 - Undefined variable: testvar
 ```
 

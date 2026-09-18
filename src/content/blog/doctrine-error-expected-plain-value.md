@@ -8,7 +8,7 @@ I'm so used to PHP's liberal allowance for single and double quotes, that I forg
 
 <!--more-->
     
-```txt
+```output
 [Syntax Error] Expected PlainValue, got ''' at position 378 in class My\Bundle\App\Entity\ItemDefinition.
 ```
 

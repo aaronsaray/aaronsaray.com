@@ -42,7 +42,7 @@ trigger_error('test error', E_USER_NOTICE);
 
 Our output is predictable:
     
-```txt
+```output
 User Notice
 string: test error
 ```
@@ -55,7 +55,7 @@ trigger_error('test error', E_NOTICE);
 
 And my error:
 
-```txt
+```output
 Warning
 string: Invalid error type specified
 ```

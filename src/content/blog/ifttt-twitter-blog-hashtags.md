@@ -37,7 +37,7 @@ console.log(incoming);
 
 The `incoming` variable holds what my tweet might be - or the incoming blog entry title.  Then, I create a variable of hashtag terms that I'd like to target.  This would be ones that really resonate with your audience.  The next section puts the `#` in front of any of the words that matter.  Finally, we look at the result with `console.log` - which is: 
 
-```txt
+```output
 There were three #fish that swam afish in the #Pond. The day was better than #great. I have #pondered
 ```
 

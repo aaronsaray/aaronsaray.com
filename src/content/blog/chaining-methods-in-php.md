@@ -53,7 +53,7 @@ $ohNo->twin()->neato();
 
 As expected, the output is:
     
-```txt
+```output
 bar
 splat!
 single

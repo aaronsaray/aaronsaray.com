@@ -10,7 +10,7 @@ This MySQL error isn't as hard as you might think to solve.  Let's find out why 
 
 The error message is usually something like this:
 
-```txt
+```output
 ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'database.table.column' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
 ```
 

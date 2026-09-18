@@ -90,7 +90,7 @@ And, as you can see, after it is completed, you will see the output in the conso
 
 For example, my output was this:
 
-```txt
+```output
 This is ApacheBench, Version 2.0.40-dev <$Revision: 1.146 $> apache-2.0
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Copyright 2006 The Apache Software Foundation, http://www.apache.org/

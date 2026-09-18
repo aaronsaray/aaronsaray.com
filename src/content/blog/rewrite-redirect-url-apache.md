@@ -68,7 +68,7 @@ So, now it's time to open up the http configuration file (you may have had to ac
 
 Inside of the `<Directory>` declaration, you can write the following:
 
-```txt
+```apache
 RewriteEngine on
 RewriteBase /
 RewriteRule (.*) https://bigboxstore.com/pets [R=301,L]

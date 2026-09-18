@@ -10,7 +10,7 @@ After installing my `mod_security` module for apache, I could not restart my apa
 
 I kept getting the following error:
 
-```txt
+```output
 [alert] (EAI 2)Name or service not known: mod_unique_id: unable to find IPv4 address of "mn-ws"
 ```
 

@@ -60,7 +60,7 @@ public function testOneNegativeNumber(): void
 
 Now, when you run the test suite, the output would look like this:
 
-```txt
+```output
 .I.
 ```
 
@@ -68,7 +68,7 @@ That means two successful, one incomplete.
 
 If you wanted to see the error messages, you could run it with the `--verbose` flag.  Then you'd see something like this:
 
-```txt
+```output
 .I.                                              3 / 3 (100%)
 
 Time: 00:00.004, Memory: 8.00 MB

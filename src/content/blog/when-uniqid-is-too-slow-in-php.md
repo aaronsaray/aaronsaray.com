@@ -38,7 +38,7 @@ foreach ($start as $key=>$startval) {
 
 The results:
 
-```txt
+```output
 uniqid: 1.1227629184723
 mt_rand: 0.0030300617218018
 sha1/mt_rand: 0.0076968669891357

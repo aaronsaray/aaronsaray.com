@@ -8,7 +8,7 @@ I've found the need to do some installs from some PEAR channels, so I jumped int
 
 <!--more-->
 
-```txt
+```output
 1-8, 'all' or Enter to continue:
 Beginning install...
 Configuration written to C:\WINDOWS\pear.ini...

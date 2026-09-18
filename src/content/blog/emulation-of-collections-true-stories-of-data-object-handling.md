@@ -49,7 +49,7 @@ $myval =  $article->postedDate;
 
 As I was hoping, I got the desired response:
 
-```txt
+```output
 object(Collection)#1 (2) { ["title"]=>  string(13) "my test title" ["body"]=>  string(12) "My test body" }
 
 **Fatal error:** Uncaught exception 'Exception' with message 'Property postedDate was not found in the Collection.' in C:\DEVELOPMENT\temp\collection.php:10 Stack trace: #0 C:\DEVELOPMENT\temp\collection.php(25): Collection->__get('postedDate') #1 {main} thrown in C:\DEVELOPMENT\temp\collection.php on line 10
@@ -88,7 +88,7 @@ print $article->title . ' was posted on ' . $article->getDate();
 
 As expected, this prints out:
 
-```txt
+```output
 my test title was posted on 06/26/2007
 ```
 
@@ -280,7 +280,7 @@ if ($article->author != '') {
 
 Well, in this instance with our last example, we'll get this error:
 
-```txt
+```output
 **Catchable fatal error:** Object of class NullObject could not be converted to string in C:\DEVELOPMENT\temp\collection.php on line 52
 ```
 

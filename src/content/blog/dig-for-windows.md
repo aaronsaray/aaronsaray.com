@@ -27,7 +27,7 @@ liblwres.dll
 
 ## Run Dig
 
-```txt
+```output
 c:\>dig
 
 ; <<>> DiG 9.4.2 <<>>

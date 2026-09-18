@@ -27,7 +27,7 @@ new TEST('hi');
 
 Ran the first time, the output was:
 
-```txt
+```output
 constructed with: hi
 ```
 

@@ -40,7 +40,7 @@ print "<hr></hr>";
 
 This was the output: (with php 5.2)
 
-```txt
+```output
 date('r', strtotime('now'))Wed, 11 Jul 2007 19:05:18 -0500
 
 * * *
@@ -78,7 +78,7 @@ print date('r', -100);
 
 The output:
 
-```txt
+```output
 Wed, 31 Dec 1969 17:58:20 -0600
 ```
 

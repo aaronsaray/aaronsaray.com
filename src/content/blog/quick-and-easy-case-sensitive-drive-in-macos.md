@@ -51,7 +51,7 @@ ls
 
 The output is:
 
-```txt
+```output
 Test    test
 ```
 

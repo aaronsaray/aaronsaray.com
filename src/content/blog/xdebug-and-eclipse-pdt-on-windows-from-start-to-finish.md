@@ -29,7 +29,7 @@ Ok - good to go - restarted apache and everything worked fine.
 
 Just for fun, jump out and do a `phpinfo()`.  You should find the following lines:
 
-```txt
+```output
 This program makes use of the Zend Scripting Language Engine:
 Zend Engine v2.2.0, Copyright (c) 1998-2007 Zend Technologies
     Xdebug v2.0.2, Copyright (c) 2002-2007, by Derick Rethans
@@ -58,7 +58,7 @@ html_errors = On
 
 Now, the `var_dump()` looks great:
 
-```txt
+```output
 **array**
   0 => int 0
   1 => int 1
@@ -191,7 +191,7 @@ print "XX{$b}XX";
 
 This generated this trace:
 
-```txt
+```output
 TRACE START [2008-05-19 17:12:49]
     0.0010      52360   -> {main}() C:\code\default\htdocs\test.php:0
     0.0011      52568     -> tester() C:\code\default\htdocs\test.php:10
@@ -221,7 +221,7 @@ The first setting enables profiling.  You can add a setting called `xdebug.profi
 
 I'm going to use the same bit of code and generate a profile:
 
-```txt
+```output
 version: 0.9.6
 cmd: C:\code\default\htdocs\test.php
 part: 1

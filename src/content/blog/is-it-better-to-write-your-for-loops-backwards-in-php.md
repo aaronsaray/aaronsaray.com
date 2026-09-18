@@ -48,7 +48,7 @@ for ($j=0; $j < 10; $j++) {
 
 After running the test a few times, I was actually surprised.  There really wasn't that much of a difference.  Here's an example of the output for one of my tests:
 
-```txt
+```output
 0.061929941177368 - forward
 0.064308881759644 - backward
 **Forward Wins**

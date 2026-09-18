@@ -119,7 +119,7 @@ vendor/bin/phpunit tests/Unit/Services/DogSoundsServiceTest.php
 
 And I got a successful response.
 
-```txt
+```output
 OK (3 tests, 5 assertions)
 ```
 

@@ -38,7 +38,7 @@ var_dump($filterAll($_SERVER));
 
 This is going to create something that looks similar to this:
 
-```txt
+```output
 array (size=24)
   'DOCUMENT_ROOT' => string '/Users/aaron/Desktop' (length=20)
   'REMOTE_ADDR' => string '127.0.0.1' (length=9)
@@ -66,7 +66,7 @@ All I did is create a new array and pick a specific portion of my incoming array
 
 The output is rather predictable:
 
-```txt
+```output
 array (size=1)
   'REMOTE_ADDR' => string '127.0.0.1' (length=9)
 ```
@@ -100,7 +100,7 @@ This is pretty cool because we're filtering our array using a built-in function.
 
 As you can probably guess now, this returned the following output:
 
-```txt
+```output
 array (size=3)
   'REMOTE_ADDR' => string '127.0.0.1' (length=9)
   'REMOTE_PORT' => string '58854' (length=5)

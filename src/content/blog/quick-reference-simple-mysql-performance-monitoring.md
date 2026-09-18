@@ -12,7 +12,7 @@ There are a few quick ways to monitor MySQL performance.  This isn't much of an 
 
 Shows a quick status:
 
-```txt
+```output
 mysqladmin status
 Uptime: 102594  Threads: 1  Questions: 39  Slow queries: 0  Opens: 12  Flush tables: 1  Open tables: 0  Queries per second avg: 0.000
 ```
@@ -21,7 +21,7 @@ Uptime: 102594  Threads: 1  Questions: 39  Slow queries: 0  Opens: 12  Flush tab
 
 Show the active processes and what they're doing:
 
-```txt    
+```output    
 mysqladmin processlist
 +----+------+----------------+----+---------+------+-------+------------------+
 | Id | User | Host           | db | Command | Time | State | Info             |
@@ -34,7 +34,7 @@ mysqladmin processlist
 
 This is short for `extended-status`, which shows you pretty much everything you want to know about the current system.
 
-```txt
+```output
 mysqladmin extended
 +-----------------------------------+----------+
 | Variable_name                     | Value    |

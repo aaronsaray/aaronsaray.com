@@ -23,7 +23,7 @@ pear remote-list -c phpunit
 
 This finally gave me a worthwhile error! 
 
-```txt
+```output
 The value of the config option cache_dir (/tmp/pear/cache) is not a directory and attempts to create the directory have failed
 ```
 

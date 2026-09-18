@@ -67,7 +67,7 @@ Nope.  Didn't work either.  There was just no output what so ever - no error, no
 
 They all passed with flying colors.  The more interesting thing is the verbose output.  For example, when we created our new class instance, it dumps (`var_dump()`s?) the internals to the screen as they would be AFTER construction... see so:
 
-```txt
+```output
 >> include 'test.php';
 
 >> $a = new TEST();
@@ -78,7 +78,7 @@ TEST::__set_state(array(
 
 There was an issue, however.  When you create a request that throws a fatal error, you're done for... The shell exits:
 
-```txt    
+```output    
 >> $a->_val = 'blah';
 
 Fatal error: Cannot access protected property TEST::$_val in C:\php5.2\PEAR\php-shell-cmd.php(121) : eval()'d code on line 1

@@ -28,7 +28,7 @@ Perhaps by now, you're seeing the flaw in my reasoning.  I gotta admit - I was s
 
 So, on my most recent project, I use `apt-get` to install PHPUnit.  All was good and fine until I did a `--version` on the command line tool - for some unknown reason.
 
-```txt
+```output
 PHPUnit 3.7.28 by Sebastian Bergmann.
 ```
 

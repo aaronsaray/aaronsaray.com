@@ -26,7 +26,7 @@ var_dump($ar2);
 
 Output:
 
-```txt
+```output
 array(6) { ["a"]=>  string(2) "ay" ["b"]=>  string(3) "bee"
 ["c"]=>  string(3) "see" ["d"]=>  string(3) "dee"
 ["e"]=>  string(2) "ee" ["f"]=>  string(2) "ef" }
@@ -43,7 +43,7 @@ var_dump($ar2);
 
 Output: 
 
-```txt
+```output
 array(6) { ["d"]=>  string(3) "dee" ["e"]=>  string(2) "ee"
 ["f"]=>  string(2) "ef" ["a"]=>  string(2) "ay"
 ["b"]=>  string(3) "bee" ["c"]=>  string(3) "see" }

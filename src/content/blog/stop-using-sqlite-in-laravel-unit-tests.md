@@ -103,7 +103,7 @@ CREATE TABLE "cars" ("id" integer not null primary key autoincrement, "doors" in
 
 If we look at a dump of a newly retrieved instance of this model, we will see this:
 
-```txt
+```output
 #original: array:4 [
   "doors" => 4.5
   "updated_at" => "2019-11-01 20:34:09"
@@ -116,7 +116,7 @@ Now, I know what you're thinking: "That's not a big deal because you can clearly
 
 Now, you're probably running MySQL in production.  In this case, something different than your test setup will happen. When you retrieve the data back from your database, or get a fresh model, you'll get the int value instead (because that's what was stored).
 
-```txt
+```output
  #original: array:4 [
   "id" => 1
   "doors" => 4

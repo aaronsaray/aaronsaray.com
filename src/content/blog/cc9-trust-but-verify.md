@@ -30,7 +30,7 @@ foreach ($results as $result) {
 
 This code will expect an array from the `fetchAll()` method.  Normally this has an array of results to loop through.  However, in the very rare case that there are no results found, `null` is passed to the `foreach` loop.  This will give us an error:
 
-```txt
+```output
 PHP Warning: Invalid argument supplied for foreach()
 ```
 

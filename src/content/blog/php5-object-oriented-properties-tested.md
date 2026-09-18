@@ -52,7 +52,7 @@ $myClassTest = new classTest();
 
 Error:
 
-```txt
+```output
 **Fatal error**:  Call to protected classTest::__construct() from invalid context in **C:\DEVELOPMENT\temp\methodtest.php** on line **22**
 ```
 
@@ -70,7 +70,7 @@ var_dump($newMyClassTest);
 
 Our output?
 
-```txt
+```output
 object(classTest)#1 (1) { ["_myVar:protected"]=>  string(59) "I have been constructed at: Thu, 21 Jun 2007 19:00:17 -0500" }
 
 object(classTest)#1 (1) { ["_myVar:protected"]=> string(59) "I have been constructed at: Thu, 21 Jun 2007 19:00:17 -0500" }
@@ -127,13 +127,13 @@ It seems to me that we should make a new instance of the class, see the protecte
 
 Output:
 
-```txt
+```output
 object(classTest)#1 (1) { ["_protectedVars:protected"]=>  array(1) { ["constructMessage"]=>  string(59) "I have been constructed at: Thu, 21 Jun 2007 19:17:21 -0500" } }
 ```
 
 I have been constructed at: Thu, 21 Jun 2007 19:17:21 -0500
 
-```txt
+```output
 object(classTest)#1 (1) { ["_protectedVars:protected"]=> array(2) { ["constructMessage"]=> string(59) "I have been constructed at: Thu, 21 Jun 2007 19:17:21 -0500" ["newMessage"]=> string(4) "yay!" } }
 ```
 
@@ -160,7 +160,7 @@ var_dump($o);
 
 Our output is:
 
-```txt
+```output
 object(stdClass)#1 (1) { ["test"]=>  string(4) "blah" }
 ```
 
@@ -178,7 +178,7 @@ private function __set($item, $value)
 
 And, our output?
 
-```txt
+```output
 object(classTest)#1 (1) { ["_protectedVars:protected"]=>  array(1) { ["constructMessage"]=>  string(59) "I have been constructed at: Thu, 21 Jun 2007 19:29:32 -0500" } }
 
 I have been constructed at: Thu, 21 Jun 2007 19:29:32 -0500
@@ -218,7 +218,7 @@ var_dump($myClassTest);
 
 Results in:
 
-```txt
+```output
 **Fatal error**: Uncaught exception 'Exception' with message 'We can't set this because you're not extending it!' in C:\DEVELOPMENT\temp\methodtest.php:32 Stack trace: #0 C:\DEVELOPMENT\temp\methodtest.php(46): classTest->__set('newMessage', 'yay!') #1 {main} thrown in **C:\DEVELOPMENT\temp\methodtest.php** on line **32**
 ```
 
@@ -240,7 +240,7 @@ var_dump($myClassTest);
 
 And the result is:
 
-```txt
+```output
 object(extenderClassTest)#1 (1) { ["_protectedVars:protected"]=>  array(2) { ["constructMessage"]=>  string(31) "This was made from the extender" ["newMessage"]=>  string(4) "yay!" } }
 ```
 
@@ -276,7 +276,7 @@ $myItem = $myClassTest->constructMessage;
 
 What about putting the ampersand after the `=`?  Then you get this error!
 
-```txt
+```output
 **Notice:** Indirect modification of overloaded property classTest::$constructMessage has no effect in **C:\DEVELOPMENT\temp\methodtest.php **on line **30**
 ```
 

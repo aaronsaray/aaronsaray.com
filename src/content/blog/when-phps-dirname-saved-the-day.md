@@ -15,7 +15,7 @@ First, even when it makes 'sense', you should not be using relative paths in you
 
 Imagine a directory structure on windows like this:
 
-```txt
+```output
 C:\DEVELOPMENT\local>dir
  Volume in drive C has no label.
  Volume Serial Number is 1122-45E1
@@ -45,7 +45,7 @@ print "I'm an include!\n";
 
 Now, let's run the script as it is:
     
-```txt
+```output
 C:\DEVELOPMENT\local\testdirname>php script.php
 I'm an include!
 I've done ran, ya'll.
@@ -53,7 +53,7 @@ I've done ran, ya'll.
 
 Not too bad - but note how we're actually in the script.php's working directory.  What if we wanted to run it in a different directory?
 
-```txt
+```output
 C:\DEVELOPMENT\local>php testdirname\script.php
 
 Warning: require_once(../includes/include.php): failed to open stream: No such file or directory in C:\DEVELOPMENT\local\testdirname\script.php on line 2
@@ -71,7 +71,7 @@ This way, it always gets the full directory of the file itself (`__FILE__` const
 
 Let's check the output:
 
-```txt
+```output
 C:\DEVELOPMENT\local>php testdirname\script.php
 I'm an include!
 I've done ran, ya'll.

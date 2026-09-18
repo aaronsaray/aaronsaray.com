@@ -28,7 +28,7 @@ For this test, I'm going to have 5 configuration items, all named `item1` - `ite
 
 When I was building my get method, I kept running into an error:
 
-```txt
+```output
 Fatal error: Access to undeclared static property: config::$item
 ```
 

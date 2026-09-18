@@ -42,7 +42,7 @@ var_dump(testFunction());
 
 When I execute this, I get a strict error:
 
-```txt
+```output
 **Strict Standards:** Only variables should be passed by reference in C:\DEVELOPMENT\temp\arraytest.php on line 27
 array(3) { [0]=> string(3) "one" [1]=> string(3) "two" [2]=> string(5) "three" }
 ```

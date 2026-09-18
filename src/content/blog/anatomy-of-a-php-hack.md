@@ -24,7 +24,7 @@ First, the `$zgjv56` variable has unique letters and numbers and an underscore. 
 
 **Important note:** When you're testing PHP code that you're unsure of, run it in a sandboxed virtual machine that has no access to the internet or your local device.
 
-```txt
+```output
 php > $zgjv56 = "o_esb4da6ctp";
 php > $fzba02 = strtolower( $zgjv56[4].$zgjv56[7].$zgjv56[3].$zgjv56[2] . $zgjv56[8].$zgjv56[5].$zgjv56[1] . $zgjv56[6]. $zgjv56[2].$zgjv56[9].$zgjv56[0].$zgjv56[6].$zgjv56[2] );
 php > echo $fzba02;
@@ -37,7 +37,7 @@ Ah - so the variable is the value `base64_decode` - nice.
 
 The next line creates another variable based off of our initial string - let's check it out:
 
-```txt
+```output
 php > $gfc4 = strtoupper ( $zgjv56[1]. $zgjv56[11].$zgjv56[0]. $zgjv56[3].$zgjv56[10] ) ;
 php > echo $gfc4;
 _POST

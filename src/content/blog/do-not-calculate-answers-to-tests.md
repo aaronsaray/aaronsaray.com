@@ -105,7 +105,7 @@ public function testMySpecialNumberDoubleDigit()
 
 Oh no!  You have an error now:
 
-```txt
+```output
 Failed asserting that 10000000000 matches expected 1000.
 ```
 
