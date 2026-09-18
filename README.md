@@ -175,8 +175,8 @@ Blog permalinks are `/:year/:slug/`: the filename is the slug, the date's year i
 
 ## To-Do for Launch
 
-Remaining tail of the rewrite, roughly in order. Delete items as they finish.
-
 * [ ] full code review
-* [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP allows the inline scripts by sha256 hash, not `unsafe-inline`. Decide whether Cloudflare's Email Address Obfuscation stays on: it is on by default, injects its own script, and rewrites mailto links, and `/contact/` already entity-encodes its address.
+* [ ] before deploy - handle these two files with r2: `public/uploads/2013/6.mp4`, `public/uploads/2016/8 CLI Tips and Tricks.key`
+* [ ] deploy to cloudflare pages
+* [ ] disable email obfuscation on cloudflare - dont need that js
 * [ ] page speed - lighthouse stuff

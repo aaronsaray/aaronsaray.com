@@ -1,3 +1,10 @@
+# 'unsafe-inline' covers the style attributes Shiki and logo.svg emit.
+/*
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000
+
 # Extensionless well-known files need explicit content types
 /.well-known/webfinger
   Content-Type: application/jrd+json
