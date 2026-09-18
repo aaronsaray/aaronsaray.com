@@ -242,8 +242,7 @@ Blog permalinks are `/:year/:slug/`. Every page, feed, and document URL the Hugo
 
 Remaining tail of the rewrite, roughly in order. Delete items as they finish.
 
-* [ ] updates to about page the google thing
-* [ ] <http://localhost:4321/2017/33-things-book/> - needs to have a easier download of the book
 * [ ] Performance and SEO checks. Lighthouse is the obvious candidate but Lighthouse CI is a poor bet: `@lhci/cli` has not shipped since June 2025, pins Lighthouse 12 against a current 13, and its Lighthouse 13 support issue has sat unanswered since April 2026. Running Lighthouse by hand from DevTools may be enough for a static site this size.
-* [ ] Full review of the generated site: every file, every page in the local browser.
+* [ ] Full review of the generated site: every file, every page in the local browser. (did blog entries - need to look at few of the rest)
+* [ ] full code review
 * [ ] Deploy: Cloudflare static, handled alongside migrating hosting/DNS off the current setup. Last; no deploy tooling until then. At that point, build out `public/_headers` with the standard security set (nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, HSTS ramp-up); any CSP allows the inline scripts by sha256 hash, not `unsafe-inline`. Decide whether Cloudflare's Email Address Obfuscation stays on: it is on by default, injects its own script, and rewrites mailto links, and `/contact/` already entity-encodes its address.
