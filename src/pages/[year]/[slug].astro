@@ -4,6 +4,7 @@ import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import OldPostNotice from "../../components/OldPostNotice.astro";
 import LaravelCta from "../../components/LaravelCta.astro";
+import ThirtyThreeThingsDownload from "../../components/ThirtyThreeThingsDownload.astro";
 import { formatDate, isOldPost } from "../../lib/dates";
 import { getPosts, postHref } from "../../lib/posts";
 import { readingTime } from "../../lib/readingTime";
@@ -28,6 +29,7 @@ const tags = [...entry.data.tags].sort();
 const context = entry.data.context;
 const showOldNotice = isOldPost(entry.data.date) && !entry.data.evergreen;
 const showLaravelCta = entry.data.tags.includes("laravel");
+const showThirtyThreeThings = entry.id === "33-things-book";
 ---
 
 <Base
@@ -87,6 +89,8 @@ const showLaravelCta = entry.data.tags.includes("laravel");
     }
 
     {showOldNotice && <OldPostNotice />}
+
+    {showThirtyThreeThings && <ThirtyThreeThingsDownload />}
 
     <div class="prose mt-10">
       <Content />

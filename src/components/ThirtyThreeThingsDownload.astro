@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import cover from "../content/books/33-things.jpg";
+
+const pdf = "/uploads/2017/33 Things I Wish Somebody Would Have Told Me.pdf";
+const epub = "/uploads/2017/33 Things I Wish Somebody Would Have Told Me.epub";
+---
+
+<div
+  class="thirty-three-things mt-8 grid grid-cols-[5rem_1fr] gap-x-5 border border-hairline bg-surface/40 p-5 text-sm leading-relaxed text-ink-dim sm:grid-cols-[7rem_1fr] sm:grid-rows-[auto_1fr] sm:gap-x-6 sm:p-6"
+>
+  <Image
+    src={cover}
+    alt=""
+    width={224}
+    densities={[1, 2]}
+    loading="eager"
+    decoding="async"
+    class="block h-auto w-full self-start border border-hairline sm:row-span-2"
+  />
+  <p>
+    <strong class="font-semibold text-ink">Get the book.</strong> It's free. Just
+    click download. No spam, signups, etc.
+  </p>
+  <p
+    class="col-span-2 mt-8 flex flex-wrap items-start gap-x-3 gap-y-2 self-start sm:col-span-1 sm:col-start-2 sm:mt-11.5"
+  >
+    <a
+      href={pdf}
+      class="-my-1.5 inline-block border border-accent-dim px-4 py-1.5 text-ink transition-colors duration-300 hover:border-accent hover:text-white"
+      >Download PDF</a
+    >
+    <a
+      href={epub}
+      class="-my-1.5 inline-block border border-hairline px-4 py-1.5 text-ink transition-colors duration-300 hover:border-accent hover:text-white"
+      >Download ePub</a
+    >
+  </p>
+</div>
