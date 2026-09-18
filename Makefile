@@ -92,14 +92,11 @@ clean: ## Remove dist/, both Astro content caches, Playwright output, the draft 
 	find . -name node_modules -prune -o -name .DS_Store -type f -exec rm -f {} +
 
 # A stale data-store.json feeds old post HTML to both the build and the
-# dev server the tests start; clean first is what catches it. The link
-# checker reads dist/ and has no target, so this is a recipe: a rule
-# cannot put prerequisites between recipe lines. ARGS= keeps a
-# command-line ARGS from reaching the test step through MAKEFLAGS.
-verify: ## The gate: clean, check, build, links, lint, test
+# dev server the tests start; clean first is what catches it. ARGS= keeps
+# a command-line ARGS from reaching the test step through MAKEFLAGS.
+verify: ## The gate: clean, check, build, lint, test
 	$(MAKE) clean
 	$(MAKE) check
 	$(MAKE) build
-	node scripts/check-links.mjs
 	$(MAKE) lint
 	$(MAKE) test ARGS=

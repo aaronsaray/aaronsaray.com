@@ -107,8 +107,8 @@ Expect him to rework code to his taste.
 
 ## Building and Verifying
 
-* `make verify` (clean + astro check + build + internal link check +
-  lint + Playwright tests) must be green before
+* `make verify` (clean + astro check + build + lint + Playwright
+  tests) must be green before
   declaring any change done. It is the only gate: a new check goes
   inside `verify`, never beside it as a command to remember.
   GitHub Actions runs `make ci` (fresh install, then `verify`) and
@@ -315,11 +315,8 @@ should raise them rather than wait:
 * **Whether it works at 200% zoom and at 320px wide**, without
   horizontal scrolling.
 
-## Verify Scripts and Tests
+## Tests
 
-* `scripts/`: `check-links.mjs`. It reads `dist/`, so a build has to
-  precede it. Every internal link resolves; a broken one fails the
-  run.
 * `tests/`: Playwright, Chromium only, against a dev server the config
   starts on port 4321 and stops afterward. Two projects: `e2e`
   (`tests/e2e/`, behavior) and `a11y` (`tests/a11y/`, the axe sweep).

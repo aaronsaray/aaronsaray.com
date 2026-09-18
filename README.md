@@ -19,7 +19,7 @@ make test ARGS="--grep copy"   # any playwright flags pass through; test-e2e and
 make test-e2e                  # behavior subset
 make test-a11y                 # axe sweep subset
 make clean                     # dist/, both Astro content caches, Playwright output, the draft fixture, .DS_Store files
-make verify                    # clean + check + build + links + lint + tests
+make verify                    # clean + check + build + lint + tests
 ```
 
 ## Tooling
@@ -97,7 +97,7 @@ The rest of the post.
   :::
   ```
 
-* Link to another post by its final URL (`/2023/some-slug/`). The link checker in verify catches typos.
+* Link to another post by its final URL (`/2023/some-slug/`).
 * Images are plain markdown: `![Alt Text](/uploads/2026/file.png)`. A lone image renders as a framed figure. Click-to-open: `[![Alt Text](/uploads/2026/file.png)](/uploads/2026/file.png)`, where the target can also be a document. A caption is its own paragraph below the image.
 * Image `width`/`height` are never authored; `rehype-img-attrs` stamps the real dimensions at build.
 * YouTube: `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/VIDEOID" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>`
@@ -163,7 +163,6 @@ One paragraph about it.
 * `src/assets/logo.svg` is the mark, the one file it lives in; `/logo.svg` is built from it. Updating the mark is replacing this file and putting the two `style` fills (`--logo-s`, `--logo-a`) back on the paths; the build fails without them.
 * `src/konami/` is the Konami-code easter egg, described below.
 * `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
-* `scripts/` is the internal link checker that `make verify` runs against `dist/`.
 * `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read. A run writes one draft fixture post into the blog collection and removes it afterward; `make clean` removes a leftover.
 
 ## The Konami Code

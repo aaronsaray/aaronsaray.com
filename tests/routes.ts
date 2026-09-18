@@ -1,7 +1,5 @@
 // One case per route template, shared by the e2e and a11y projects so a
-// new page cannot be covered by one and missed by the other. Posts and
-// tags are not enumerated: check-links.mjs already proves every linked
-// one resolves in dist/.
+// new page cannot be covered by one and missed by the other.
 type Route = { name: string; path: string; status?: number };
 
 export const ROUTES: readonly Route[] = [
