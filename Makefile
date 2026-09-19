@@ -98,10 +98,9 @@ test-a11y: ## Only the a11y subset of test (axe sweep)
 # includes .astro/types.d.ts.
 # -exec rather than -delete: -delete implies depth-first on BSD and GNU
 # find, which disables -prune, and the sweep would walk node_modules.
-clean: ## Remove dist/, both Astro content caches, Playwright output, the draft fixture, .DS_Store files
-	rm -rf dist playwright-report test-results
+clean: ## Remove dist/, both Astro content caches, Playwright output, .DS_Store files
+	rm -rf dist test-results
 	rm -f node_modules/.astro/data-store.json .astro/data-store.json
-	rm -f src/content/blog/draft-fixture-for-tests.md
 	find . -name node_modules -prune -o -name .DS_Store -type f -exec rm -f {} +
 
 # A stale data-store.json feeds old post HTML to both the build and the

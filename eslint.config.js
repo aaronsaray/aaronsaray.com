@@ -10,7 +10,6 @@ export default tseslint.config(
       "dist/",
       ".astro/",
       ".playwright-mcp/",
-      "playwright-report/",
       "public/",
       "src/content/",
       "test-results/",

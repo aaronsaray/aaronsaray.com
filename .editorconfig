@@ -1,6 +1,4 @@
-# Prettier reads this file: indent_style, indent_size and end_of_line
-# under [*] become its options. They equal Prettier's defaults, so its
-# output is unchanged; change one and every formatted file changes.
+# Prettier reads indent_style, indent_size and end_of_line as its options.
 root = true
 
 [*]
@@ -14,12 +12,11 @@ trim_trailing_whitespace = true
 [Makefile]
 indent_style = tab
 
-# Two trailing spaces are a hard line break. markdownlint MD009 polices
-# the docs; src/content/ is Aaron's prose and tooling never touches it.
+# Two trailing spaces are a hard line break.
 [*.md]
 trim_trailing_whitespace = false
 
-# Served verbatim; tooling never touches it.
+# Served verbatim.
 [public/**]
 trim_trailing_whitespace = false
 insert_final_newline = false

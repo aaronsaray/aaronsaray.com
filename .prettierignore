@@ -10,7 +10,6 @@ src/content/
 
 # Session artifacts
 .playwright-mcp/
-playwright-report/
 test-results/
 
 # npm-owned
