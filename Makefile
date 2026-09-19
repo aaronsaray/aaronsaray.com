@@ -5,7 +5,7 @@
 .DEFAULT_GOAL := help
 .NOTPARALLEL:
 MAKEFLAGS += --no-print-directory
-.PHONY: help install ci dev build preview check lint lint-js lint-format lint-md lint-fix format test test-e2e test-a11y clean verify
+.PHONY: help install ci dev build preview post check lint lint-js lint-format lint-md lint-fix format test test-e2e test-a11y clean verify
 
 help: ## List targets
 	@awk 'BEGIN {FS = ":.*## "} /^##@ / {printf "\n%s\n", substr($$0, 5)} /^[a-zA-Z0-9_-]+:.*## / {printf "  %-12s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -39,6 +39,13 @@ build: ## Static build to dist/ (warm cache)
 # so with no build it answers 404 instead of failing.
 preview: build ## Build, then serve dist/
 	npm run preview
+
+##@ Write
+
+# "$$TITLE" reads the title from the environment, where its quotes and
+# apostrophes are data. node runs directly so stdout is the path alone.
+post: ## New draft post dated today (TITLE="My Post Title")
+	@node scripts/new-post.mjs "$$TITLE"
 
 ##@ Lint
 

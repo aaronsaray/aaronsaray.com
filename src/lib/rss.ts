@@ -1,6 +1,11 @@
 // Channel shape, guid = permalink, and escaped-HTML descriptions match
 // the feed the site served before; a change makes every subscriber
 // see the whole archive as new items.
+//
+// `@astrojs/rss` reproduces most of that through `customData`, but it
+// coerces `pubDate` with `new Date()` and emits `toUTCString()`, which
+// rewrites every authored offset to GMT. Dates are strings end to end
+// here, and `rfc1123` below keeps the authored offset verbatim.
 
 export const SITE_TITLE =
   "Milwaukee Web Developer, PHP and Laravel Programmer, Consultant";

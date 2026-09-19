@@ -2,19 +2,13 @@
 
 ## What This Project Is
 
-aaronsaray.com: a static [Astro](https://astro.build) site styled with
-Tailwind CSS v4, minimal JavaScript, npm, Node pinned via Volta. The
-site was rewritten from Hugo in August 2026. The Hugo source now exists
-only on `main`, which stays frozen until this branch (`astro-rewrite`)
-replaces it.
+aaronsaray.com: a static Astro site styled with Tailwind CSS v4,
+minimal JavaScript, npm, Node pinned via Volta. Look Astro behavior up
+through the `astro-docs` MCP server before stating it or relying on
+it.
 
-Commands, authoring instructions, and the working to-do list live in
-`README.md`. Read it. The to-dos are Aaron's list first, Claude's
-second: help with them when asked, don't start them unprompted.
-
-Current status: Aaron is reviewing the whole generated site (every
-file, every page in the browser) and rewriting placeholder copy.
-Expect him to rework code to his taste.
+`make` lists the commands. Authoring instructions live in
+`README.md`. Read it.
 
 ## Hard Rules
 
@@ -62,17 +56,11 @@ Expect him to rework code to his taste.
 
   Everything else is cut: what the code does (read it), what it used
   to do (git has it), where it came from, that a choice was made,
-  counts and dates, section banners, and pointers to README to-dos
-  (they are deleted when done). A comment that rejects an alternative
-  says what the alternative breaks; if it cannot, the choice is a
-  preference, and preferences get no comment. "Deliberately", "on
-  purpose", "by design", "now", "no longer", and "migrated" nearly
-  always mark a comment that fails this bar.
-
-  Hugo appears in a comment only when something outside the repo still
-  depends on the old behavior: feed readers keyed on the RSS guid, the
-  URL contract, a display format readers know. The Hugo setting a value
-  was copied from is history, not a reason.
+  counts and dates, and section banners. A comment that rejects an
+  alternative says what the alternative breaks; if it cannot, the
+  choice is a preference, and preferences get no comment.
+  "Deliberately", "on purpose", "by design", "now", "no longer", and
+  "migrated" nearly always mark a comment that fails this bar.
 
   Comments describe the code as it stands, never as a diff. Lead with
   the fact, in the fewest words that carry it. A file header states the
@@ -81,10 +69,10 @@ Expect him to rework code to his taste.
   none of the four questions is not written down anywhere.
 * **`README.md` is Aaron's how-to, not a description of the site.** A
   line belongs there when he would open the file to find out how to do
-  something: run a command, write a post, add a book, avoid a footgun.
-  How a feature works, what a config file contains, and why a tool was
-  chosen stay out; the code says those. A new feature earns a README
-  line only when it changes what he types.
+  something: write a post, add a book, avoid a footgun. The Tech list
+  at the top is one bullet per high-level tool, its name linked, saying
+  what it does here. A new feature earns a README line only when it
+  changes what he types.
 
   A rule is written in one place. Where a rule bears on one block of
   code (the palette tokens in `global.css`), that block carries the
@@ -99,9 +87,6 @@ Expect him to rework code to his taste.
   `import()` fetches the scene only when the code completes, and
   nothing else may ride in it.
 * **No search functionality.** No search box, no ⌘K palette.
-* **Deploy is deferred.** Target is Cloudflare static output; Aaron
-  handles deploy and DNS himself. Do not build deploy tooling until he
-  asks.
 * **`.DS_Store` files are always mistakes.** If one shows up anywhere
   (disk or index), delete it.
 
@@ -179,13 +164,16 @@ Expect him to rework code to his taste.
   `books` (one file per book, its cover beside it through `image()`).
   Every collection but `blog` requires `anchorDepth` in frontmatter;
   the blog's value lives in `astro.config.mjs`.
+* `scripts/`: `new-post.mjs`, behind `make post`, fills `{{title}}`
+  and `{{date}}` in `scripts/stubs/post.md` (Aaron's file) and prints
+  the new path. Its stdout is the path alone, because callers open it.
 * **Dates are strings end-to-end.** Frontmatter dates are validated
   strings, never coerced to `Date`; timezone math could shift a post's
   URL year. Year is `date.slice(0, 4)`; sorting is lexicographic
   descending.
-* `src/pages/`: routes, including hand-rolled RSS feeds (Hugo-parity
-  shape: guid = permalink, 10 items), a hand-rolled `sitemap.xml`, and
-  `/logo.svg`, derived from `src/assets/logo.svg`.
+* `src/pages/`: routes. The RSS feeds (`src/lib/rss.ts` builds the
+  XML: guid = permalink, 10 items), `sitemap.xml`, and `/logo.svg`
+  (derived from `src/assets/logo.svg`) are `.ts` endpoints.
 * `src/icons/`: Tabler SVGs, one per name. `Icon.astro` inlines one
   (Vite `?raw` import); the markdown plugins read the same files from
   disk via `src/lib/icon.mjs`. Never paste SVG markup into a template.
@@ -284,7 +272,7 @@ rather than discovered by a test.
   icons.
 * **Leave contrast margin.** axe truncates to two decimals, so 4.499
   reports as 4.49 and fails. A value that lands on 4.50 is one rounding
-  step from breaking. This is how the first bug here shipped.
+  step from breaking.
 * **A hover state must raise contrast, never lower it.** Emphasis that
   dims is backwards, and no test catches it.
 * **Interactive targets stay at least 24x24px**, using padding with

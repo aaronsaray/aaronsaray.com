@@ -3,12 +3,13 @@ import Icon from "../../../components/Icon.astro";
 import { getCollection, render } from "astro:content";
 import Base from "../../../layouts/Base.astro";
 import EntryList from "../../../components/EntryList.astro";
-import { getSortedPosts } from "../../../lib/posts";
+import { getPosts, getSortedPosts } from "../../../lib/posts";
 import { ogImageForTag } from "../../../lib/ogImage";
-import { tagTitle, tagDescription } from "../../../lib/tags";
+import { assertTags, tagTitle, tagDescription } from "../../../lib/tags";
 
 export async function getStaticPaths() {
   const tags = await getCollection("tags");
+  assertTags(tags, await getPosts());
   return tags.map((entry) => ({
     params: { tag: entry.id },
     props: { entry },

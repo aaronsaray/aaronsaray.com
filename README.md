@@ -1,75 +1,41 @@
 # aaronsaray.com
 
-Source for [AaronSaray.com](https://aaronsaray.com). [Astro](https://astro.build) static site, Tailwind CSS v4.
+Source for [AaronSaray.com](https://aaronsaray.com).
 
-## Commands
+## Tech
 
-Node is pinned via [Volta](https://volta.sh) (24.x). Package manager is npm. Every repeated command is a `make` target; `make` with no target prints the full list under headings.
+`make` lists every command.
 
-```shell
-make install                   # npm ci, then the Chromium download (.npmrc blocks install scripts)
-make dev                       # dev server on port 4321
-make build                     # static build to dist/
-make preview                   # build, then serve dist/
-make check                     # astro check (TypeScript)
-make lint                      # eslint + prettier check + markdownlint
-make lint-fix                  # all three, with autofix
-make test                      # all browser tests, boots its own dev server
-make test ARGS="--grep copy"   # any playwright flags pass through; test-e2e and test-a11y take ARGS too
-make test-e2e                  # behavior subset
-make test-a11y                 # axe sweep subset
-make clean                     # dist/, both Astro content caches, Playwright output, the draft fixture, .DS_Store files
-make verify                    # clean + check + build + lint + tests
-```
-
-## Tooling
-
-* **Makefile**: `package.json` scripts are single-tool leaves, each with a make target of the same name (colon turned into a hyphen); the Makefile adds the groupings on top (`lint`, `lint-fix`, `verify`, `ci`). After a change to `src/plugins/` or the `markdown` options in `astro.config.mjs`, run `make clean` before trusting a warm build or test run.
-* **EditorConfig** (`.editorconfig`): Prettier reads it, so the `[*]` values equal Prettier's defaults; change one and the whole tree reformats.
-* **Linting**: one tool at a time is `make lint-js`, `make lint-format`, `make lint-md`, and `make format` (Prettier, writing). `make lint-fix` rewrites this file and `CLAUDE.md` too. Nothing lints or formats `src/content/`.
-* **astro check**: TypeScript is pinned to 5.x; the checker does not support TypeScript 7 yet.
-* **npm hardening** (`.npmrc`):
-  * `min-release-age=7` refuses package versions published less than 7 days ago. Needs npm >= 11.10, which the Volta pin satisfies; older npm silently ignores the setting.
-  * `ignore-scripts=true` blocks dependency lifecycle scripts; `npm run <script>` still works.
-  * `save-exact=true` pins new deps to exact versions.
-* **Playwright**: the suite starts its own dev server on port 4321 and stops it afterward. If anything already answers on 4321 the run stops with a port error, so stop a stray dev server first. A new page gets a line in `tests/routes.ts`, which covers it in both the e2e and axe projects. The axe spec also fails on any `incomplete` result outside the known header items; a new one fails until someone measures it by hand.
-* **GitHub Actions**: runs `make ci` on push. Actions are pinned to commit SHAs with the version in a trailing comment; bumping one means replacing both.
-* **AI tooling**: `.mcp.json`, `.claude/settings.json`, and `.claude/skills/` are committed. Plugins are not auto-installed from a clone; Claude Code surfaces the one `claude plugin install` command to run. `.claude/settings.local.json` is gitignored: personal overrides only.
+* [Astro](https://astro.build): builds the static site.
+* [TypeScript](https://www.typescriptlang.org): types for the `.ts` files and the script in every `.astro` file. `astro check` is the type-checker.
+* [Tailwind CSS](https://tailwindcss.com): styling. v4, so the config is `src/styles/global.css`.
+* [Volta](https://volta.sh): pins Node and npm, in `package.json`.
+* [Make](https://www.gnu.org/software/make/): every repeated command is a target.
+* [Prettier](https://prettier.io): formatting. Separate from ESLint: `eslint-config-prettier` turns off ESLint's own formatting rules.
+* [ESLint](https://eslint.org): lints the JS, TS, and Astro files.
+* [markdownlint](https://github.com/DavidAnson/markdownlint-cli2): lints the docs. All three skip `src/content/`.
+* [Playwright](https://playwright.dev): browser tests, with [axe](https://github.com/dequelabs/axe-core) for the accessibility sweep.
+* [GitHub Actions](https://docs.github.com/actions): runs `make ci` on push.
 
 ## Writing a Blog Post
 
-Create `src/content/blog/my-slug-here.md`:
-
-```markdown
----
-title: My Post Title
-date: "2026-08-27T09:00:00-05:00"
-tags:
-  - php
-draft: true
----
-Intro paragraph. Everything above the marker is the excerpt shown on
-lists, in feeds, and as the meta description.
-
-<!--more-->
-
-The rest of the post.
+```shell
+make post TITLE="My Post Title"
 ```
 
-* The filename is the URL slug and the date's year is the URL path: `/2026/my-slug-here/`. Never change either after publishing.
-* `date` stays a quoted string. Date-only (`"2026-08-27"`) works too.
-* At least one tag. A tag needs a matching file in `src/content/tags/` for its landing page. New tag: add `src/content/tags/<term>.md` with `anchorDepth: 0` frontmatter and a prose body, and a 1200x630 `public/images/tag/<term>.jpg` for the social card.
-* `draft: true` keeps the post out of every build. Remove it to publish. `make dev` renders drafts at their real URL, in every list and feed, with a Draft badge next to the date.
-* Posts older than ~18 months show a "technology changes" notice. `evergreen: true` frontmatter suppresses it. Tags have no bearing on this.
-* Body headers start at H2. The post title is the H1. H2 and H3 get an anchor link.
-* Optional `context:` (list of strings) renders the "Context:" pills under the meta line.
-* Proofread with `/proofread <slug>` in Claude Code; with no argument it takes the post modified in git. It never edits the file. `.claude/skills/proofread/voice.md` lists the habits it must not flag, one bullet per rule; delete a bullet to drop the rule.
-* Fact check with `/fact-check <slug>`, same lookup as `/proofread`. It asks before looking anything up and never edits the file.
-* Find a post to link with `/related <what you remember writing about>`. It prints paste-ready `[Title](/YYYY/slug/)` links. With no argument it checks its index against the posts and prints the rows to change; nothing is written until you say so.
+Writes a draft dated today from `scripts/stubs/post.md` and prints its path. It stops if the file exists. A title with a `$` in it goes in single quotes ahead of the command: `TITLE='Using $this' make post`.
 
-### Formatting
-
-* `<!--more-->` splits the excerpt from the body. Without it, the first ~70 words are used.
+* The filename is the URL slug and the date's year is the URL path: `/2026/my-post-title/`. Rename the file only before publishing.
+* `date` stays a quoted string.
+* `draft: true` keeps the post out of every build, and `make dev` shows it with a Draft badge. Remove the line to publish.
+* The first tag picks the post's social card image.
+* A new tag gets a line in `scripts/stubs/post.md`. The build names the file and image it needs.
+* `context:` renders the "Context:" pills under the meta line.
+* `evergreen: true` turns off the old-post notice.
+* `<!--more-->` ends the excerpt shown on lists, in feeds, and as the meta description. The fallback is the first ~70 words.
+* Body headers start at H2. The post title is the H1.
+* `/proofread <slug>` and `/fact-check <slug>` in Claude Code; with no argument they take the post modified in git. Both only report. The habits `/proofread` leaves alone are the bullets in `.claude/skills/proofread/voice.md`.
+* `/related <what you remember writing about>` prints paste-ready links to older posts. With no argument it checks its index against the posts and proposes the rows to change.
 * Code fence with a filename header:
 
   ````markdown
@@ -78,10 +44,7 @@ The rest of the post.
   ```
   ````
 
-* Terminal output uses the fence language `output`, not `txt`: a black
-  ground, no highlighting, and no copy button, since the block is what
-  a program printed rather than source to reuse. `txt` stays for plain
-  text that is not output (a hash, a file tree, a format string).
+* Terminal output uses the fence language `output`. `txt` is for other plain text: a hash, a file tree, a format string.
 
   ````markdown
   ```output
@@ -99,7 +62,7 @@ The rest of the post.
 
 * Link to another post by its final URL (`/2023/some-slug/`).
 * Images are plain markdown: `![Alt Text](/uploads/2026/file.png)`. A lone image renders as a framed figure. Click-to-open: `[![Alt Text](/uploads/2026/file.png)](/uploads/2026/file.png)`, where the target can also be a document. A caption is its own paragraph below the image.
-* Image `width`/`height` are never authored; `rehype-img-attrs` stamps the real dimensions at build.
+* The build stamps image `width` and `height`. A retina capture named `file@2x.png` or `file@3x.png` is stamped at half or a third of its pixels.
 * YouTube: `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/VIDEOID" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>`
 
 ## Updating the CV
@@ -157,7 +120,7 @@ One paragraph about it.
 ## Layout
 
 * `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv and colophon bodies, `src/content/books/` is one file per book on `/books/`.
-* `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag), `sitemap.xml`, and `/logo.svg`.
+* `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag), `sitemap.xml`, and `/logo.svg`. They stay that way rather than move to the Astro packages; `src/lib/rss.ts` and `src/pages/sitemap.xml.ts` say why at the top.
 * `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/`, `src/content/tags/`, and `src/content/books/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
 * `src/icons/` is the Tabler icon set, one SVG per name, rendered with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />`. Adding an icon is dropping the Tabler file into the folder.
 * `src/assets/logo.svg` is the mark, the one file it lives in; `/logo.svg` is built from it. Updating the mark is replacing this file and putting the two `style` fills (`--logo-s`, `--logo-a`) back on the paths; the build fails without them.

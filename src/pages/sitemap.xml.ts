@@ -1,3 +1,11 @@
+// `@astrojs/sitemap` cannot serve this route: it writes
+// `sitemap-index.xml` plus `sitemap-0.xml` and its only filename
+// option is the `sitemap` prefix, so /sitemap.xml stops resolving. It
+// also emits one `lastmod` for the whole site, where the entries below
+// carry the date of the newest post each URL covers, and it sitemaps
+// every built page, which would pull in the paginated aliases and all
+// 54 feeds.
+
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import { getSortedPosts, postHref } from "../lib/posts";
@@ -16,7 +24,9 @@ function url(path: string, mod?: string): string {
 
 export const GET: APIRoute = async () => {
   const posts = await getSortedPosts();
-  const newest = lastmod(posts[0].data.date);
+  // The post-derived pages carry no lastmod when the collection is
+  // empty; dating them off a missing newest post would be a guess.
+  const newest = posts[0] && lastmod(posts[0].data.date);
   const entries: string[] = [];
 
   entries.push(url("/", newest));
