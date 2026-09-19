@@ -149,16 +149,20 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 * `order` sorts the list, lowest first.
 * `cover` is the flat front cover, any size.
 
-## Layout
+## Icons and the Logo
 
-* `src/content/blog/` is the posts, `src/content/tags/` is per-tag prose, `src/content/pages/` is the cv and colophon bodies, `src/content/books/` is one file per book on `/books/`.
-* `src/pages/` is the routes, including hand-rolled RSS feeds (`/blog/index.xml`, per-tag), `sitemap.xml`, and `/logo.svg`. They stay that way rather than move to the Astro packages; `src/lib/rss.ts` and `src/pages/sitemap.xml.ts` say why at the top.
-* `src/plugins/` is the markdown pipeline (code chrome, callouts, figures, heading anchors, image attributes, Shiki theme). Every file in `src/content/pages/`, `src/content/tags/`, and `src/content/books/` declares `anchorDepth`, the deepest heading level that gets an anchor link, 0 for none; posts do not, and link H2 and H3.
-* `src/icons/` is the Tabler icon set, one SVG per name, rendered with `<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />`. Adding an icon is dropping the Tabler file into the folder.
-* `src/assets/logo.svg` is the mark, the one file it lives in; `/logo.svg` is built from it. Updating the mark is replacing this file and putting the two `style` fills (`--logo-s`, `--logo-a`) back on the paths; the build fails without them.
-* `src/konami/` is the Konami-code easter egg, described below.
-* `public/` is static files served verbatim (`uploads/`, favicons, `_redirects`, `_headers`).
-* `tests/` is the Playwright suite: `e2e/` for behavior, `a11y/` for the axe sweep, `routes.ts` for the route table both read. A run writes one draft fixture post into the blog collection and removes it afterward; `make clean` removes a leftover.
+```astro
+<Icon name="arrow-right" class="size-4" strokeWidth={1.5} />
+```
+
+* A new icon is the Tabler SVG dropped into `src/icons/`. The filename is the `name`.
+* A new `src/assets/logo.svg` needs the two `style` fills (`--logo-s`, `--logo-a`) put back on its paths. The build stops and prints the format.
+
+`src/pages/logo.svg.ts` serves `/logo.svg`: during `make build` it reads that file and swaps each `var()` fill for its plain hex.
+
+## Adding a Page
+
+* A new page gets a line in `tests/routes.ts`, or the accessibility sweep never visits it.
 
 ## The Konami Code
 
