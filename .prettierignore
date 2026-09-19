@@ -1,19 +1,9 @@
-# Build output and generated files
-dist/
-.astro/
+# Prettier also reads .gitignore.
 
-# Static assets served verbatim
 public/
 
 # Aaron's content. Tooling never touches it.
 src/content/
 
-# Session artifacts
-.playwright-mcp/
-test-results/
-
-# npm-owned
-package-lock.json
-
-# markdownlint owns markdown, not Prettier
+# markdownlint owns markdown.
 *.md

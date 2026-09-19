@@ -1,5 +1,6 @@
+import type { Root } from "hast";
 import { visit } from "unist-util-visit";
-import { lookupDimensions } from "../lib/imageDimensions.ts";
+import { lookupDimensions, type Dimensions } from "../lib/imageDimensions.ts";
 
 // width/height are not a rendered size. Browsers map them to an
 // aspect-ratio, so paired with the `max-width:100%; height:auto` in
@@ -33,9 +34,11 @@ const RAW_SRC = /\bsrc\s*=\s*["']([^"']*)["']/i;
 // multiplied pixels as width and the screenshot renders that many times
 // its true size. Phone captures are commonly 3x: an iPhone Pro's
 // 1170x2532 is a 390x844 screen.
+type Sizes = Map<string, Dimensions | null>;
+
 const DENSITY = /@([23])x\.[^./]+$/i;
 
-function displaySize(src, size) {
+function displaySize(src: string, size: Dimensions) {
   const scale = Number(DENSITY.exec(src)?.[1] ?? 1);
   return {
     width: Math.round(size.width / scale),
@@ -44,52 +47,49 @@ function displaySize(src, size) {
 }
 
 export function rehypeImgAttrs() {
-  return async (tree) => {
-    const srcs = new Set();
-    const edits = [];
+  return async (tree: Root) => {
+    const srcs = new Set<string>();
+    const edits: ((sizes: Sizes) => void)[] = [];
     let first = true;
 
     visit(tree, (node) => {
       if (node.type === "element" && node.tagName === "img") {
         const eager = first;
         first = false;
-        node.properties ??= {};
-        const src =
-          typeof node.properties.src === "string" ? node.properties.src : null;
-        if (src) srcs.add(src);
+        const src = node.properties.src as string;
+        srcs.add(src);
         edits.push((sizes) => {
-          const size = src ? sizes.get(src) : null;
+          const size = sizes.get(src);
           if (size) {
             const { width, height } = displaySize(src, size);
-            node.properties.width ??= width;
-            node.properties.height ??= height;
+            node.properties.width = width;
+            node.properties.height = height;
           }
           if (eager) return;
-          node.properties.loading ??= "lazy";
-          node.properties.decoding ??= "async";
+          node.properties.loading = "lazy";
+          node.properties.decoding = "async";
         });
         return;
       }
       if (node.type === "raw" && /<img\b/i.test(node.value)) {
-        const tags = [];
+        const tags: { eager: boolean; src: string }[] = [];
         for (const [tag] of node.value.matchAll(RAW_IMG_TAG)) {
           const eager = first;
           first = false;
-          const hasSize = /\b(width|height)\s*=/i.test(tag);
-          const src = hasSize ? null : (RAW_SRC.exec(tag)?.[1] ?? null);
-          if (src) srcs.add(src);
+          const src = RAW_SRC.exec(tag)![1];
+          srcs.add(src);
           tags.push({ eager, src });
         }
         edits.push((sizes) => {
           let i = 0;
           node.value = node.value.replace(RAW_IMG_TAG, (tag) => {
             const { eager, src } = tags[i++];
-            const size = src ? sizes.get(src) : null;
+            const size = sizes.get(src);
             const shown = size ? displaySize(src, size) : null;
             const dims = shown
               ? ` width="${shown.width}" height="${shown.height}"`
               : "";
-            if (eager || /\bloading\s*=/i.test(tag)) {
+            if (eager) {
               return tag.replace(/^<img\b/i, `<img${dims}`);
             }
             return tag.replace(
@@ -101,10 +101,11 @@ export function rehypeImgAttrs() {
       }
     });
 
-    const sizes = new Map(
-      await Promise.all(
-        [...srcs].map(async (src) => [src, await lookupDimensions(src)]),
-      ),
+    const sizes: Sizes = new Map();
+    await Promise.all(
+      [...srcs].map(async (src) => {
+        sizes.set(src, await lookupDimensions(src));
+      }),
     );
     for (const edit of edits) edit(sizes);
   };

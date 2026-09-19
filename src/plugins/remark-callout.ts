@@ -1,3 +1,5 @@
+import type { PhrasingContent, Root } from "mdast";
+import type { VFile } from "vfile";
 import { visit } from "unist-util-visit";
 
 // Every directive node other than :::callout is restored to the
@@ -8,7 +10,7 @@ import { visit } from "unist-util-visit";
 // cannot do losslessly throw rather than warn: a build-time warning
 // scrolls away and altered prose ships; a crash names the file.
 export function remarkCallout() {
-  return (tree, file) => {
+  return (tree: Root, file: VFile) => {
     visit(tree, (node, index, parent) => {
       if (node.type === "containerDirective" && node.name === "callout") {
         node.data = { hName: "div", hProperties: { className: ["callout"] } };
@@ -16,7 +18,10 @@ export function remarkCallout() {
       }
 
       if (node.type === "textDirective") {
-        const replacement = [{ type: "text", value: `:${node.name}` }];
+        if (!parent || index === undefined) return;
+        const replacement: PhrasingContent[] = [
+          { type: "text", value: `:${node.name}` },
+        ];
         if (node.children?.length) {
           replacement.push({ type: "text", value: "[" }, ...node.children, {
             type: "text",

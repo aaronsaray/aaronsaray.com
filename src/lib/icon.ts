@@ -2,11 +2,12 @@ import { readFileSync } from "node:fs";
 
 // The file's own <svg> wrapper is discarded so every caller gets the
 // same attributes and controls class and stroke width.
-/**
- * @param {string} svg
- * @param {{ class?: string; strokeWidth?: number }} [options]
- */
-export function iconMarkup(svg, { class: className, strokeWidth = 2 } = {}) {
+type IconOptions = { class?: string; strokeWidth?: number };
+
+export function iconMarkup(
+  svg: string,
+  { class: className, strokeWidth = 2 }: IconOptions = {},
+) {
   const body = svg
     .slice(svg.indexOf(">") + 1, svg.lastIndexOf("</svg>"))
     .trim();
@@ -18,17 +19,13 @@ export function iconMarkup(svg, { class: className, strokeWidth = 2 } = {}) {
   );
 }
 
-// For the markdown plugins, which astro.config.mjs loads outside Vite.
+// For the markdown plugins, which astro.config.ts loads unbundled.
 // Components go through Icon.astro instead: once Vite bundles this
 // module, import.meta.url no longer points at src/.
 const dir = new URL("../icons/", import.meta.url);
-const files = new Map();
+const files = new Map<string, string>();
 
-/**
- * @param {string} name
- * @param {{ class?: string; strokeWidth?: number }} [options]
- */
-export function iconFromDisk(name, options) {
+export function iconFromDisk(name: string, options?: IconOptions) {
   let svg = files.get(name);
   if (svg === undefined) {
     svg = readFileSync(new URL(`${name}.svg`, dir), "utf8");

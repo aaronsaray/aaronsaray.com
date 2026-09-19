@@ -1,7 +1,9 @@
+import type { ShikiConfig } from "astro";
+
 // Several hexes track the palette tokens in global.css by hand (bg =
 // --color-surface, comments = --color-ink-mute, keywords = the
 // accent's hover companion); a palette change there must be mirrored here.
-export const aaronsarayDark = {
+export const aaronsarayDark: ShikiConfig["theme"] = {
   name: "aaronsaray-dark",
   type: "dark",
   fg: "#aab1b9",

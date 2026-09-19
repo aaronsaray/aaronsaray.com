@@ -1,4 +1,4 @@
-// The remark half of this pipeline mirrors astro.config.mjs (gfm,
+// The remark half of this pipeline mirrors astro.config.ts (gfm,
 // smartypants oldschool, directives) so an excerpt renders the same
 // prose as the post. A change there is mirrored here.
 
@@ -10,7 +10,7 @@ import remarkDirective from "remark-directive";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
-import { remarkCallout } from "../plugins/remark-callout.mjs";
+import { remarkCallout } from "../plugins/remark-callout.ts";
 
 const MARKER = "<!--more-->";
 const FALLBACK_WORDS = 70;

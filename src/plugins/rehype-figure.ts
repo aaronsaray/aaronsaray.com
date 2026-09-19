@@ -1,3 +1,4 @@
+import type { Element, ElementContent, Root, RootContent } from "hast";
 import { visit, SKIP } from "unist-util-visit";
 import { fromHtml } from "hast-util-from-html";
 
@@ -15,17 +16,17 @@ import { fromHtml } from "hast-util-from-html";
 // node), handled last. Hand-authored <figure> HTML is left alone; the
 // element CSS styles it directly.
 
-const isWhitespace = (n) => n.type === "text" && !n.value.trim();
+const isWhitespace = (n: RootContent) => n.type === "text" && !n.value.trim();
 
 const RAW_LINKED_IMG = /^<a\b[^>]*>\s*<img\b[^>]*\/?>\s*<\/a>$/i;
 const RAW_IMG = /^<img\b[^>]*\/?>$/i;
 
-function figure(children) {
+function figure(children: ElementContent[]): Element {
   return { type: "element", tagName: "figure", properties: {}, children };
 }
 
 export function rehypeFigure() {
-  return (tree) => {
+  return (tree: Root) => {
     visit(tree, "element", (node, index, parent) => {
       if (node.tagName !== "p" || !parent || index === undefined) return;
       const kids = node.children.filter((n) => !isWhitespace(n));
@@ -53,7 +54,7 @@ export function rehypeFigure() {
           .trim();
         if (RAW_LINKED_IMG.test(html) || RAW_IMG.test(html)) {
           parent.children[index] = figure(
-            fromHtml(html, { fragment: true }).children,
+            fromHtml(html, { fragment: true }).children as ElementContent[],
           );
           return SKIP;
         }

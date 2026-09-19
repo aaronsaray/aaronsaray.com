@@ -1,5 +1,6 @@
+import type { Element, Parents, Root } from "hast";
 import { visit, SKIP } from "unist-util-visit";
-import { iconFromDisk as icon } from "../lib/icon.mjs";
+import { iconFromDisk as icon } from "../lib/icon.ts";
 
 // Two DOM shapes. The inline copy script in [year]/[slug].astro
 // resolves its <pre> from them (`.filename-header` via
@@ -20,7 +21,7 @@ import { iconFromDisk as icon } from "../lib/icon.mjs";
 // The chrome is emitted as raw HTML nodes; Astro's pipeline runs
 // rehype-raw after user plugins, which parses them into the tree.
 
-const FILE_ICONS = {
+const FILE_ICONS: Record<string, string> = {
   php: "file-type-php",
   html: "file-type-html",
   javascript: "file-type-js",
@@ -37,7 +38,7 @@ const COPY_BUTTON =
   icon("check", { class: "icon-check" }) +
   "</button>";
 
-function escapeHtml(s) {
+function escapeHtml(s: string) {
   return s
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -45,14 +46,14 @@ function escapeHtml(s) {
     .replace(/"/g, "&quot;");
 }
 
-function fileIcon(lang) {
+function fileIcon(lang: string) {
   return icon(FILE_ICONS[lang] ?? "file-code", {
     class: "size-3.5 shrink-0",
     strokeWidth: 1.75,
   });
 }
 
-function controls(lang, tag) {
+function controls(lang: string, tag: string) {
   return (
     `<${tag} class="code-controls">` +
     `<span class="code-lang">${escapeHtml(lang)}</span>` +
@@ -70,7 +71,7 @@ function outputControls() {
   );
 }
 
-function filenameHeader(filename, lang) {
+function filenameHeader(filename: string, lang: string) {
   return (
     '<div class="filename-header">' +
     fileIcon(lang) +
@@ -80,7 +81,13 @@ function filenameHeader(filename, lang) {
   );
 }
 
-function wrapBlock(parent, index, node, controlsHtml, extraClass) {
+function wrapBlock(
+  parent: Parents,
+  index: number,
+  node: Element,
+  controlsHtml: string,
+  extraClass?: string,
+) {
   parent.children[index] = {
     type: "element",
     tagName: "div",
@@ -93,7 +100,7 @@ function wrapBlock(parent, index, node, controlsHtml, extraClass) {
 }
 
 export function rehypeCodeChrome() {
-  return (tree) => {
+  return (tree: Root) => {
     visit(tree, "element", (node, index, parent) => {
       if (node.tagName !== "pre" || !parent || index === undefined) return;
       // Astro's Shiki wrapper sets `properties.class` (not the hast

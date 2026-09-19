@@ -71,7 +71,7 @@ relying on it.
   install scripts, exact pins. Never weaken one to make an install
   work; tell Aaron.
 * **Stale content cache.** After a change to the markdown pipeline
-  (`src/plugins/`, `markdown` in `astro.config.mjs`), a warm
+  (`src/plugins/`, `markdown` in `astro.config.ts`), a warm
   `make build` or `make test` serves stale post HTML. `make verify`
   cleans first; while iterating, run `make clean` before believing a
   result that looks impossible. The comment on `clean` in the Makefile

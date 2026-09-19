@@ -1,3 +1,4 @@
+import type { Root } from "hast";
 import { visit, SKIP } from "unist-util-visit";
 
 // .prose .table-wrap in global.css is what makes the wrapper scroll.
@@ -11,7 +12,7 @@ import { visit, SKIP } from "unist-util-visit";
 // name is generic because a markdown table has no caption to draw one
 // from.
 export function rehypeTableWrap() {
-  return (tree) => {
+  return (tree: Root) => {
     visit(tree, "element", (node, index, parent) => {
       if (node.tagName !== "table" || !parent || index === undefined) return;
       visit(node, "element", (cell) => {

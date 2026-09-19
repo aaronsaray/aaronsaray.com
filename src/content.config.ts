@@ -4,7 +4,7 @@ import { z } from "astro/zod";
 
 // The deepest heading level that gets an anchor link; 0 for none.
 // Required on every collection but blog, whose value lives in
-// astro.config.mjs. No .default(): src/plugins/rehype-heading-anchors.mjs
+// astro.config.ts. No .default(): src/plugins/rehype-heading-anchors.ts
 // reads the raw frontmatter, which zod output never reaches.
 const anchorDepth = z.number().int().min(0).max(6);
 
@@ -61,7 +61,7 @@ const pages = defineCollection({
       title: z.string(),
       description: z.string(),
       intro: z.string().optional(),
-      // Wraps each H2 block in a <section> (src/plugins/rehype-sections.mjs).
+      // Wraps each H2 block in a <section> (src/plugins/rehype-sections.ts).
       sections: z.boolean().optional(),
       anchorDepth: anchorDepth,
     })
