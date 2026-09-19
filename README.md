@@ -32,7 +32,7 @@ make post TITLE="My Post Title"
 * `/related <what you remember writing about>` prints paste-ready links to older posts. With no argument it checks its index against the posts and proposes the rows to change.
 * Link to another post by its final URL (`/2023/some-slug/`).
 
-### Behaviors
+### Post Behaviors
 
 `make post` writes a draft dated today from `scripts/stubs/post.md`, prints its path, and stops if the file exists.
 The filename is the URL slug and the date's year is the URL path: `/2026/my-post-title/`. `draft: true` keeps the post out of every build,
@@ -93,9 +93,18 @@ The build stamps image `width` and `height`. A retina capture named `file@2x.png
 
 ## Updating the CV
 
-`src/content/pages/cv.md` is one markdown file. `src/pages/cv.astro` renders the frontmatter `title` as the H1 and `intro` as the lede, then a section index built from the H2s in file order; sections are reordered by moving H2 blocks. The frontmatter `sections: true` wraps each H2 and what follows it in a `<section>` (`src/plugins/rehype-sections.mjs`). `anchorDepth: 2` links the H2s only; 4 or more would wrap the H4 role headings and break the date gutter, which needs the date `em` as the H4's first child. On wide screens a section that holds a dated row gets the date gutter and a section of plain prose does not; a table carries its own date column, the same width as the gutter, and lives in a section by itself. The `.cv` rules in `src/styles/global.css` key on the shapes below, so each kind of entry is typed one way.
+`src/content/pages/cv.md`. Each kind of entry is typed one way, because the `.cv` rules in `src/styles/global.css` key on its shape.
 
-A role: an H3 per organization, then an H4 per role whose first thing is the date in italics, then the description as an ordinary paragraph. Consecutive roles at one organization share the H3.
+* Dates are `Mon YYYY`, a bare `YYYY`, or a range with the word "to" (`Oct 2018 to present`). Never a slash or a dash.
+* A plain paragraph, like a section intro, takes no italic or bold. The first one in any paragraph is styled as an entry's date or title.
+
+### CV Behaviors
+
+Frontmatter `title` is the H1 and `intro` is the lede. The section index under them is the H2s in file order.
+
+### Roles
+
+The date in italics is the H4's first thing. Roles at one organization share its H3.
 
 ```markdown
 ### Talimer, Milwaukee, WI
@@ -103,45 +112,42 @@ A role: an H3 per organization, then an H4 per role whose first thing is the dat
 #### *Nov 2020 to Feb 2021* Advisory Chief Technology Officer
 
 As the Advisory CTO at Talimer, I help review decisions ...
+
+#### *Jan 2020 to Nov 2020* Chief Technology Officer
+
+Freelancer's first is the Talimer motto ...
 ```
 
-A talk or a credential: one pipe-table row, the date, then the title with the venue or issuer in italics.
+### Talks and Credentials
+
+One table row: the date, then the title, then the venue or issuer in italics.
 
 ```markdown
 | Oct 2019 | The Freelance Economy Panel *FallX19 Fall Experiment, Milwaukee, WI* |
 ```
 
-A community line: a paragraph whose first thing is the date in italics, then the organization in bold, then the rest.
+### Community
+
+The date in italics, then the organization in bold.
 
 ```markdown
 *2019 to 2020* **[i.c.Stars](https://milwaukee.icstars.org)** Community volunteer.
 ```
 
-A publication: a paragraph whose first thing is the title in bold (linked or not), then the description.
+### Publications
 
-Dates are `Mon YYYY`, a bare `YYYY`, or a range with the word "to" (`Oct 2018 to present`). Never a slash or a dash: the gutter sets them in tabular figures, and a slash reads as a fraction.
+The title in bold, linked or not.
 
-The footgun: any paragraph whose first inline element is italic or bold gets the row treatment, text before it or not (CSS cannot see leading text). Ordinary prose in this file starts with plain text.
+```markdown
+**[Securing Laravel](https://nocompromises.gumroad.com/l/securing-laravel)** A free e-book ...
+```
 
 ## Adding a Book
 
-Create `src/content/books/my-book.md`:
-
-```markdown
----
-title: My Book
-href: https://nocompromises.gumroad.com/l/my-book
-cover: ./my-book.jpg
-order: 6
-anchorDepth: 0
----
-One paragraph about it.
-```
+Copy a file in `src/content/books/` and put the cover image beside it.
 
 * `order` sorts the list, lowest first.
-* `href` is where the title leads, and a click anywhere on the row follows it. A link inside the paragraph still works as its own link.
-* `cover` is the flat front cover, any size, sitting next to the markdown file. Astro resizes it at build (`src/pages/books.astro` asks for 224px wide, double the rendered width) and fails the build if the file is missing.
-* `anchorDepth` is required (see Layout); a book body is one paragraph, so 0.
+* `cover` is the flat front cover, any size.
 
 ## Layout
 
