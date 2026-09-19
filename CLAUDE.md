@@ -203,19 +203,9 @@ it.
 * `src/lib/`: excerpts (`<!--more-->` split, ~70-word fallback),
   reading time, date formatting, post sorting/pagination, OG image
   lookup, RSS rendering.
-* `src/konami/`: the Konami-code easter egg, one folder because
-  nothing else references any of it. `Konami.astro` is the keydown
-  trigger, rendered from `Base.astro` after the footer: it builds the
-  stage and the floor line (inline styles and one Web Animations call,
-  since no stylesheet exists yet), then imports `scene.ts`. The scene
-  carries the flats as `?raw` SVG, the sprite gif as `?url` (a query
-  string bypasses `astro:assets`, so the animation is never
-  re-encoded), and `scene.css` as `?inline`, injected into the stage.
-  The state classes `is-in`, `is-run`, `is-puff`, `is-out`, and `is-on`
-  are the contract between `scene.ts` and `scene.css`. The character
-  is never named anywhere a visitor could read: no text, `alt=""`,
-  neutral filenames, no comment. The SVGs ship verbatim, so like
-  `logo.svg` they carry no comment and no `id`.
+* `src/konami/`: the Konami-code easter egg. `Base.astro` renders
+  `Konami.astro`; everything else it uses is in the folder, and the
+  comments there carry the details.
 * `public/`: served verbatim (`uploads/`, favicons, `_redirects`,
   `_headers`).
 

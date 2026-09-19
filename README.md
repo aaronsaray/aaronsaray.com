@@ -166,11 +166,7 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 
 ## The Konami Code
 
-Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. A desert drops in over the lower three quarters of the window, something runs across it, and it hoists back out. Escape ends it early. Keys typed into an editable field do not count.
-
-## URLs
-
-Blog permalinks are `/:year/:slug/`: the filename is the slug, the date's year is the year.
+Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. The bunchie/oogmagoog is rendered into a claude-developed background.
 
 ## To-Do for Launch
 
