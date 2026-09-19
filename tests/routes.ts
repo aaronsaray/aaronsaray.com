@@ -38,5 +38,11 @@ export const ROUTES: readonly Route[] = [
     name: "post with output blocks",
     path: "/2017/use-the-fail-method-with-mockery-on/",
   },
+  // The one post the axe sweep sees with retina captures, whose width
+  // and height are the file divided by the density suffix.
+  {
+    name: "post with retina images",
+    path: "/2022/one-tap-track-weight-daily-ios-no-app/",
+  },
   { name: "not found", path: "/no-such-page-exists/", status: 404 },
 ];
