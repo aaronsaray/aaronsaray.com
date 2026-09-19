@@ -42,6 +42,12 @@ preview: build ## Build, then serve dist/
 
 ##@ Write
 
+# make expands a command-line variable before exporting it, so a $ in
+# the title would vanish. $(value) takes it unexpanded, and override is
+# what lets a makefile assignment beat the command line.
+override TITLE := $(value TITLE)
+export TITLE
+
 # "$$TITLE" reads the title from the environment, where its quotes and
 # apostrophes are data. node runs directly so stdout is the path alone.
 post: ## New draft post dated today (TITLE="My Post Title")

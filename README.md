@@ -23,47 +23,73 @@ Source for [AaronSaray.com](https://aaronsaray.com).
 make post TITLE="My Post Title"
 ```
 
-Writes a draft dated today from `scripts/stubs/post.md` and prints its path. It stops if the file exists. A title with a `$` in it goes in single quotes ahead of the command: `TITLE='Using $this' make post`.
-
-* The filename is the URL slug and the date's year is the URL path: `/2026/my-post-title/`. Rename the file only before publishing.
-* `date` stays a quoted string.
-* `draft: true` keeps the post out of every build, and `make dev` shows it with a Draft badge. Remove the line to publish.
+* Remove `draft: true` to publish.
 * The first tag picks the post's social card image.
 * A new tag gets a line in `scripts/stubs/post.md`. The build names the file and image it needs.
-* `context:` renders the "Context:" pills under the meta line.
 * `evergreen: true` turns off the old-post notice.
-* `<!--more-->` ends the excerpt shown on lists, in feeds, and as the meta description. The fallback is the first ~70 words.
 * Body headers start at H2. The post title is the H1.
 * `/proofread <slug>` and `/fact-check <slug>` in Claude Code; with no argument they take the post modified in git. Both only report. The habits `/proofread` leaves alone are the bullets in `.claude/skills/proofread/voice.md`.
 * `/related <what you remember writing about>` prints paste-ready links to older posts. With no argument it checks its index against the posts and proposes the rows to change.
-* Code fence with a filename header:
-
-  ````markdown
-  ```php filename="app/Models/User.php"
-  class User {}
-  ```
-  ````
-
-* Terminal output uses the fence language `output`. `txt` is for other plain text: a hash, a file tree, a format string.
-
-  ````markdown
-  ```output
-  OK (3 tests, 5 assertions)
-  ```
-  ````
-
-* Callout box:
-
-  ```markdown
-  :::callout
-  Editorial note about this entry, not part of it.
-  :::
-  ```
-
 * Link to another post by its final URL (`/2023/some-slug/`).
-* Images are plain markdown: `![Alt Text](/uploads/2026/file.png)`. A lone image renders as a framed figure. Click-to-open: `[![Alt Text](/uploads/2026/file.png)](/uploads/2026/file.png)`, where the target can also be a document. A caption is its own paragraph below the image.
-* The build stamps image `width` and `height`. A retina capture named `file@2x.png` or `file@3x.png` is stamped at half or a third of its pixels.
-* YouTube: `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/VIDEOID" title="YouTube video" loading="lazy" allowfullscreen></iframe></div>`
+
+### Behaviors
+
+`make post` writes a draft dated today from `scripts/stubs/post.md`, prints its path, and stops if the file exists.
+The filename is the URL slug and the date's year is the URL path: `/2026/my-post-title/`. `draft: true` keeps the post out of every build,
+and `make dev` shows it with a Draft badge. `context:` renders the "Context:" pills under the meta line.
+`<!--more-->` ends the excerpt shown on lists, in feeds, and as the meta description.
+
+### Code
+
+Inline code is single backticks. A block is a fence with a language, which labels the block beside its copy button. A fence with no language is labeled `txt`.
+
+````markdown
+```php
+class User {}
+```
+````
+
+### Code Filenames
+
+````markdown
+```php filename="app/Models/User.php"
+class User {}
+```
+````
+
+### Output
+
+Terminal output: a terminal label and no copy button.
+
+````markdown
+```output
+OK (3 tests, 5 assertions)
+```
+````
+
+### Callouts
+
+A callout and a markdown blockquote render as the same box.
+
+```markdown
+:::callout
+Editorial note about this entry, not part of it.
+:::
+
+> Editorial note about this entry, not part of it.
+```
+
+### Images
+
+```markdown
+![Alt Text](/uploads/2026/file.png)
+
+[![Alt Text](/uploads/2026/file.png)](/uploads/2026/file.png)
+```
+
+The second opens on click, and its target can also be a document. A lone image renders as a framed figure. A caption is its own paragraph below the image.
+
+The build stamps image `width` and `height`. A retina capture named `file@2x.png` or `file@3x.png` is stamped at half or a third of its pixels.
 
 ## Updating the CV
 

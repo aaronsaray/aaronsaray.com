@@ -23,6 +23,8 @@ it.
   for a draft, Claude writes it into the file, unmarked; he reviews
   every diff and alters it before it is committed. The rule covers
   `src/content/` and the page copy in `src/pages/`.
+  Whitespace is not prose: Claude fixes trailing spaces and other
+  spacing a linter flags in anything Aaron wrote, without asking.
   This covers punctuation and style, not just words. The spaced
   hyphen ` - ` is a fixture of Aaron's prose and does three jobs: the
   reversal (`Nope - the actual need is`), the aside (`a large
