@@ -35,5 +35,4 @@ const post = readFileSync(new URL("stubs/post.md", import.meta.url), "utf8")
   .replace("{{date}}", date);
 
 writeFileSync(file, post);
-// stdout is the path alone; callers open it.
 process.stdout.write(`${file}\n`);
