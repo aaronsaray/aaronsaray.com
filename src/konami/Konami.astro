@@ -57,8 +57,6 @@
     try {
       const scene = await import("./scene");
       await scene.play(stage);
-    } catch (err) {
-      console.warn("The scene did not load.", err);
     } finally {
       stage.remove();
       running = false;

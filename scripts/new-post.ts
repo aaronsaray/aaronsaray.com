@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 
 const title = process.argv[2]?.trim();
 if (!title) {
-  console.error('usage: make post TITLE="My Post Title"');
+  process.stderr.write('usage: make post TITLE="My Post Title"\n');
   process.exit(1);
 }
 
@@ -13,7 +13,7 @@ const slug = title
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-|-$/g, "");
 if (!slug) {
-  console.error(`no slug in "${title}"`);
+  process.stderr.write(`no slug in "${title}"\n`);
   process.exit(1);
 }
 
@@ -21,7 +21,7 @@ const file = fileURLToPath(
   new URL(`../src/content/blog/${slug}.md`, import.meta.url),
 );
 if (existsSync(file)) {
-  console.error(`${file} exists`);
+  process.stderr.write(`${file} exists\n`);
   process.exit(1);
 }
 
