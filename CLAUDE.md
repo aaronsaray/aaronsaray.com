@@ -1,318 +1,103 @@
 # CLAUDE.md
 
-## What This Project Is
-
-aaronsaray.com: a static Astro site styled with Tailwind CSS v4,
-minimal JavaScript, npm, Node pinned via Volta. Look Astro behavior up
-through the `astro-docs` MCP server before stating it or relying on
-it.
-
-`make` lists the commands. Authoring instructions live in
-`README.md`. Read it.
+aaronsaray.com: a static Astro site styled with Tailwind CSS v4, npm,
+Node pinned via Volta. `make` lists the commands. `README.md` is
+Aaron's authoring how-to: posts, the CV, books, icons. Look Astro
+behavior up through the `astro-docs` MCP server before stating it or
+relying on it.
 
 ## Hard Rules
 
-* **URLs never change. Ever.** Blog permalinks are `/:year/:slug/`
-  (filename = slug, date's year = year). Every page, feed, and
-  downloadable document URL the site serves keeps resolving (image
-  files under `/uploads/` are not promised). Nothing enforces this, so
-  never propose a change that moves one.
-* **Aaron's prose is his.** Claude never edits existing content (post
-  prose, page copy) unasked, and never inside a mechanical change.
-  Mechanical transforms (frontmatter, markup) are fine. When Aaron asks
-  for a draft, Claude writes it into the file, unmarked; he reviews
-  every diff and alters it before it is committed. The rule covers
-  `src/content/` and the page copy in `src/pages/`.
-  Whitespace is not prose: Claude fixes trailing spaces and other
-  spacing a linter flags in anything Aaron wrote, without asking.
-  This covers punctuation and style, not just words. The spaced
-  hyphen ` - ` is a fixture of Aaron's prose and does three jobs: the
-  reversal (`Nope - the actual need is`), the aside (`a large
-  investment - I understand that`), and the tack-on (`code examples -
-  and they're easy to apply`). It is never flagged, never converted to
-  a comma, and never counted against the rule below, in the content or
-  in feedback on a draft. The same goes for any other punctuation
-  habit in his writing. A draft Claude writes still follows the rule
-  below, spaced hyphen included; adding his habits is his edit.
-  "Give me some options" gets several in chat, in his register, with
-  no preamble about this rule. Never decline, and never announce what
-  Claude will not do.
-* **No em dashes in what Claude writes.** Strictly forbidden in text
-  Claude authors: docs, README, code comments, drafted copy,
-  commit messages. This covers the em dash, the en dash used as one,
-  and the ASCII stand-ins ` - ` and ` -- `. Use a period, comma,
-  colon, or parentheses instead.
+* **URLs never change.** Blog permalinks are `/:year/:slug/`
+  (filename = slug, date's year = year). Every page and feed URL
+  keeps resolving.
+* **Aaron's prose is his.** That is `src/content/` and the page copy
+  in `src/pages/`, punctuation and style included. Claude never edits
+  it unasked, and never inside a mechanical change. Mechanical
+  transforms (frontmatter, markup) and whitespace a linter flags need
+  no asking. His habits, the spaced hyphen ` - ` first among them, are
+  never flagged or converted, in the content or in feedback on a
+  draft; `.claude/skills/proofread/voice.md` lists them. When he asks
+  for a draft, Claude writes it into the file, unmarked, under the em
+  dash rule below; adding his habits is his edit. "Give me some
+  options" gets several in chat, in his register.
+* **No em dashes in what Claude writes**: docs, comments, drafted
+  copy, commit messages. That covers the en dash used as one and the
+  ASCII stand-ins ` - ` and ` -- `. Use a period, comma, colon, or
+  parentheses.
 * **A comment answers a question the code raises and cannot answer.**
-  There are four such questions. A comment exists to answer one of
-  them and for no other reason:
+  There are four, and a comment that answers none is cut:
   1. Can I delete or change this? No, and here is what breaks. The
      `crossorigin` on the font preloads in `Base.astro` is the model.
-  2. Why is this shaped so strangely? Because of an external fact a
-     reader would not guess: a third-party ordering, a platform quirk,
-     a tool that misbehaves under one condition.
-  3. What elsewhere depends on this? Coupling across files that
-     nothing enforces: hexes that mirror tokens in another file, a
-     script whose selectors depend on the DOM a plugin emits.
+  2. Why is this shaped so strangely? An external fact a reader would
+     not guess: a third-party ordering, a platform quirk, a tool that
+     misbehaves under one condition.
+  3. What elsewhere depends on this? Coupling across files: hexes that
+     mirror tokens in another file, a script whose selectors depend on
+     the DOM a plugin emits.
   4. Where does this number come from? The derivation or source of a
      value that is not self-evident.
 
-  Everything else is cut: what the code does (read it), what it used
-  to do (git has it), where it came from, that a choice was made,
-  counts and dates, and section banners. A comment that rejects an
-  alternative says what the alternative breaks; if it cannot, the
-  choice is a preference, and preferences get no comment.
-  "Deliberately", "on purpose", "by design", "now", "no longer", and
-  "migrated" nearly always mark a comment that fails this bar.
-
   Comments describe the code as it stands, never as a diff. Lead with
   the fact, in the fewest words that carry it. A file header states the
-  mechanics that hold the file together, never what the file is; a
-  reader who needs orienting reads the code. Rationale that answers
-  none of the four questions is not written down anywhere.
+  mechanics that hold the file together, never what the file is.
+  Rationale that answers none of the four is written down nowhere.
 * **`README.md` is Aaron's how-to, not a description of the site.** A
   line belongs there when he would open the file to find out how to do
-  something: write a post, add a book, avoid a footgun. The Tech list
-  at the top is one bullet per high-level tool, its name linked, saying
-  what it does here. A new feature earns a README line only when it
-  changes what he types.
-
-  A rule is written in one place. Where a rule bears on one block of
+  something, so a new feature earns one only when it changes what he
+  types. The Tech list is one bullet per high-level tool, its name
+  linked, saying what it does here.
+* **A rule is written in one place.** Where it bears on one block of
   code (the palette tokens in `global.css`), that block carries the
   lines a person needs at the point they would break it, and nothing
   else repeats them.
-* **Minimal JavaScript.** Static output; the default is zero JS on a
-  page. Vue islands only when interactivity genuinely requires them.
-  No islands exist. Every page script is a bundled `<script>`, never
-  `is:inline`; `vite.build.assetsInlineLimit: 0` keeps them external,
-  so a CSP needs only `script-src 'self'`. The Konami trigger in
-  `src/konami/Konami.astro` is the one script on every page: its
-  `import()` fetches the scene only when the code completes, and
-  nothing else may ride in it.
-* **No search functionality.** No search box, no ⌘K palette.
-* **`.DS_Store` files are always mistakes.** If one shows up anywhere
-  (disk or index), delete it.
+* **`.DS_Store` files are always mistakes.** Delete one wherever it
+  shows up, disk or index.
 
 ## Building and Verifying
 
-* `make verify` (clean + astro check + build + lint + Playwright
-  tests) must be green before
-  declaring any change done. It is the only gate: a new check goes
-  inside `verify`, never beside it as a command to remember.
-  GitHub Actions runs `make ci` (fresh install, then `verify`) and
-  nothing else. Verify checks the site's code and tooling and nothing
-  else. Skills in `.claude/skills/` are a separate silo: a skill is
-  never a verify step, verify never gates a skill or the files it
-  keeps, and skill work never raises the question.
-* Every repeated command is a make target, and `make` with no target
-  lists them. `package.json` scripts are single-tool leaves, each with
-  a same-named target, and the Makefile composes them. A one-off that
-  gets repeated becomes a target.
-* Formatting is owned by Prettier (pure defaults plus the astro and
-  tailwindcss plugins), linting by ESLint flat config (recommended
-  sets only, prettier-conflict rules disabled), markdown by
-  markdownlint (repo-local `.markdownlint-cli2.jsonc`; do not use the
-  home-directory config here). `make lint` runs all three and
-  `make lint-fix` fixes all three. Never hand-format against
-  Prettier. Prettier and ESLint never touch `src/content/`, `public/`,
-  or any markdown.
-* AI tooling is repo-declared: `.mcp.json` (Astro docs + Playwright MCP
-  servers), `.claude/settings.json` (server approvals, plugin
-  declarations), and `.claude/skills/` (the `/proofread` skill, report
-  only, with `voice.md` as Aaron's catalog of habits it never flags,
-  the `/fact-check` skill, report only, closed-book until Aaron
-  approves lookups, and the `/related` skill, report only, a forked
-  lookup over `index.md`, one row per post, that proposes index rows
-  for Aaron to approve and never writes). Keep additions
-  project-scoped in these files, not in user-level config.
-* In `.astro` templates, use `{/* */}` comments inside `{...}`
-  expressions; HTML comments there break Prettier's parser.
-* **Never write `{" "}`.** Not to fix a missing space, not because
-  Prettier inserted it, not anywhere. A line break between text and an
-  inline tag loses its space in the compiled output; the fix is to
-  author the text and the tag on the same line (`under <a` and
-  `</a> has`), which Prettier preserves. Inside a `{cond && (...)}`
-  expression the JSX rules collapse that whitespace no matter how it
-  is written, so text that flows around an inline element never lives
-  inside one: move that markup into its own component
-  (`OldPostNotice.astro` and `LaravelCta.astro` are the pattern) and
-  render the component from the expression instead.
-* `.npmrc` enforces supply-chain rules: 7-day package cooldown
-  (`min-release-age`), no dependency install scripts
-  (`ignore-scripts`), exact version pins (`save-exact`). Do not
-  weaken these to make an install work; surface the problem to Aaron
-  instead.
-* **Content-layer cache gotcha:** Astro caches rendered markdown in
-  two places: `node_modules/.astro/data-store.json` for `astro build`
-  and `.astro/data-store.json` for `astro dev`, which the Playwright
-  suite starts. After changing anything in the markdown pipeline
-  (`src/plugins/`, the `markdown` options in `astro.config.mjs`), a
-  warm `make build` or `make test` silently serves stale post HTML.
-  `make verify` deletes both caches first, so it is always
-  trustworthy; while iterating, run `make clean` before believing a
-  build or test result that looks impossible. CI is unaffected, since
-  `npm ci` removes `node_modules/` and a fresh checkout has no
-  `.astro/`.
-* The `tests/` suite covers behavior against a dev server it starts
-  itself. It is not a substitute for looking at the page: for
-  user-facing changes, browse the built site with `make preview`
-  and the Playwright MCP.
+* `make verify` must be green before declaring a change done. It is
+  the only gate: a new check goes inside it, never beside it, and CI
+  runs nothing else.
+* Every repeated command is a make target. `package.json` scripts are
+  single-tool leaves, each with a same-named target; the Makefile
+  composes them.
+* `make lint-fix` formats and fixes. Never hand-format against
+  Prettier. Every linter skips `src/content/`. Linters run through
+  their make targets, never invoked directly.
+* AI tooling is project-scoped: `.mcp.json`, `.claude/settings.json`,
+  `.claude/skills/`, `.claude/rules/`. Never user-level config.
+* `.npmrc` sets the supply-chain rules: a 7-day release cooldown, no
+  install scripts, exact pins. Never weaken one to make an install
+  work; tell Aaron.
+* **Stale content cache.** After a change to the markdown pipeline
+  (`src/plugins/`, `markdown` in `astro.config.mjs`), a warm
+  `make build` or `make test` serves stale post HTML. `make verify`
+  cleans first; while iterating, run `make clean` before believing a
+  result that looks impossible. The comment on `clean` in the Makefile
+  has the mechanism.
+* A new page gets a line in `tests/routes.ts`.
+* **If port 4321 is in use, stop and tell Aaron.** It is almost always
+  his own `make dev`. Do not investigate the process, kill it, or work
+  around it with `reuseExistingServer`. Say verify cannot finish
+  because a dev server holds the port, and re-run once he says it is
+  stopped.
 
 ## How the Site Works
 
-* `src/content/`: collections defined in `src/content.config.ts`.
-  `blog` (post id = filename verbatim, via a custom `generateId`; do
-  not remove it, Astro's default slugifier would corrupt the dotted
-  slug), `tags` (per-tag prose), `pages` (cv, colophon),
-  `books` (one file per book, its cover beside it through `image()`).
-  Every collection but `blog` requires `anchorDepth` in frontmatter;
-  the blog's value lives in `astro.config.mjs`.
-* `scripts/`: `new-post.mjs`, behind `make post`, fills `{{title}}`
-  and `{{date}}` in `scripts/stubs/post.md` (Aaron's file) and prints
-  the new path. Its stdout is the path alone, because callers open it.
-* **Dates are strings end-to-end.** Frontmatter dates are validated
-  strings, never coerced to `Date`; timezone math could shift a post's
-  URL year. Year is `date.slice(0, 4)`; sorting is lexicographic
-  descending.
-* `src/pages/`: routes. The RSS feeds (`src/lib/rss.ts` builds the
-  XML: guid = permalink, 10 items), `sitemap.xml`, and `/logo.svg`
-  (derived from `src/assets/logo.svg`) are `.ts` endpoints.
-* `src/icons/`: Tabler SVGs, one per name. `Icon.astro` inlines one
-  (Vite `?raw` import); the markdown plugins read the same files from
-  disk via `src/lib/icon.mjs`. Never paste SVG markup into a template.
-* `src/assets/`: the site's own SVG. `logo.svg` is rendered inline
-  through Astro's SVG import (`import Logo from "../assets/logo.svg"`,
-  `<Logo class="..." />`), never through `Icon.astro` (which forces the
-  Tabler viewBox and stroke) and never pasted into a template. Props
-  spread onto the root `<svg>` and `class` replaces. Everything inside
-  the root ships to the page verbatim, so the file carries no comment
-  and no `id`: it renders twice per page and axe's duplicate-id rules
-  are on. Fills are `--logo-s` and `--logo-a` with brand-color
-  fallbacks. `/logo.svg` is derived from it by `src/pages/logo.svg.ts`;
-  there is no copy in `public/`, and the build fails if the asset stops
-  declaring both fills.
-* `src/plugins/`: the markdown pipeline. Shiki theme plus filename-meta
-  transformer, code chrome, callouts (`:::callout`), table wrap,
-  figures, heading anchors (`rehype-heading-anchors.mjs`, depth from
-  frontmatter `anchorDepth`), sections (`rehype-sections.mjs`, opt-in
-  through frontmatter `sections: true`, the CV). The code-block DOM
-  shapes and the inline
-  copy script are a matched pair; the script's element lookups depend
-  on the exact shapes the plugins emit. `tests/e2e/copy-button.spec.ts`
-  enforces that pairing by comparing the copied text against the code
-  block through both DOM shapes.
-* `src/lib/`: excerpts (`<!--more-->` split, ~70-word fallback),
-  reading time, date formatting, post sorting/pagination, OG image
-  lookup, RSS rendering.
-* `src/konami/`: the Konami-code easter egg. `Base.astro` renders
-  `Konami.astro`; everything else it uses is in the folder, and the
-  comments there carry the details.
-* `public/`: served verbatim (`uploads/`, favicons, `_redirects`,
-  `_headers`).
+* **Dates are strings end to end**, never coerced to `Date`: timezone
+  math could shift a post's URL year. Year is `date.slice(0, 4)`;
+  sorting is lexicographic.
 
-## Design
+## Rules That Load by Path
 
-* The built site is the design reference. Match the patterns already
-  in the components and `src/styles/global.css` for anything visual.
-* **Where a style lives.** Styles have two homes: Tailwind utilities
-  on the element, or `src/styles/global.css`. No `<style>` blocks in
-  components. Pick by asking, in order:
-  * Used in one place? Utilities on the element, including `hover:`,
-    `group-*:`, and `motion-reduce:` variants. A rule with a class
-    name that appears in one template is a global.css rule that
-    should have been utilities.
-  * The same utility stack in more than one template? One
-    `@utility` in global.css (`page-title` is the model), never a
-    copied class string. Keyframes go in `@theme` as `--animate-*`.
-  * Styling markup the templates never author (the markdown
-    pipeline's output: `.prose`, `.entry-excerpt`, the code chrome)?
-    Element rules in global.css. Plugins emit the class hooks;
-    global.css styles them.
-  * Still in global.css for another reason (the header blur, whose
-    four masks only read as one ramp side by side)? One line at the
-    top of the block saying why. Without that line, the next audit
-    inlines it.
-  * Must not load on a page that never uses it (the Konami scene)?
-    A stylesheet beside the code that imports it with `?inline` and
-    injects it. `src/konami/scene.css` is the only one; global.css
-    never carries a rule for the scene.
-* **Do not look AI-generated.** New visual work must avoid the default
-  AI aesthetic: decorative gradients, the blue-purple palette,
-  oversized rounded corners and pill shapes, icon-card grids ("4 of
-  something" panels), glowing status dots, too-bright glowy headlines.
+`.claude/rules/` holds the rest of this file: rules that load when
+the Read tool opens a file matching their `paths:` frontmatter. Before
+editing such a file reached any other way (`cat`, `grep`, a new file),
+read its rule. They carry the same weight as this file. When a change makes one untrue, or
+a new rule matters only to those files, the edit goes there, and a new
+rule file gets a line here.
 
-## Accessibility
-
-Aaron holds this site to a higher bar than the field does, and he is
-learning the subject as the site is built. Do not wait to be asked, and
-do not assume he knows a rule already: say what the rule is, and why,
-when it comes up.
-
-`make verify` runs axe over every route template. **Treat a green
-run as a floor, not a pass.** Automation covers a well-defined minority
-of accessibility (roughly 17% of WCAG AA success criteria, though those
-happen to include most of what people get wrong in practice). The rest
-is judgment, and it is the part that has to be raised in conversation
-rather than discovered by a test.
-
-### Rules
-
-* **Text color comes from the palette tokens in
-  `src/styles/global.css`.** The comment on that block states the
-  grounds, the exceptions, and the no-opacity rule; read it before
-  touching a color. Animate hover with `transition-colors`. Opacity is
-  for what it means: fading in or out, and decorative `aria-hidden`
-  icons.
-* **Leave contrast margin.** axe truncates to two decimals, so 4.499
-  reports as 4.49 and fails. A value that lands on 4.50 is one rounding
-  step from breaking.
-* **A hover state must raise contrast, never lower it.** Emphasis that
-  dims is backwards, and no test catches it.
-* **Interactive targets stay at least 24x24px**, using padding with
-  negative margin where the visual size is smaller.
-
-### What the tests cannot see
-
-These need a human pass whenever the relevant area changes, and Claude
-should raise them rather than wait:
-
-* **Whether alt text is meaningful.** axe checks that `alt` exists, not
-  that it says anything. Images in `src/content/` are Aaron's, so
-  flag a bad one, never rewrite it.
-* **Whether focus order matches reading order**, and whether focus is
-  visible at every step. Tab through anything new.
-* **Whether a screen reader can operate it.** The known gap is
-  `NavItem.astro`: a CSS-only menu has no live `aria-expanded` and
-  no Escape-to-close, and axe passes it regardless. Any new
-  interactive component needs this thought through before it ships.
-* **Whether text on a gradient or image is readable.** axe returns
-  these as `incomplete`, not as a pass. `tests/a11y/axe.spec.ts`
-  asserts the incomplete set stays exactly the known header items, so a
-  new one fails the run until someone measures it by hand.
-* **Whether motion respects `prefers-reduced-motion`.** Every animation
-  added needs the query. The Konami scene's still path (`still()` in
-  `src/konami/scene.ts`) is the model for a reduced-motion branch that
-  is a different scene, not a shortened one.
-* **Whether it works at 200% zoom and at 320px wide**, without
-  horizontal scrolling.
-
-## Tests
-
-* `tests/`: Playwright, Chromium only, against a dev server the config
-  starts on port 4321 and stops afterward. Two projects: `e2e`
-  (`tests/e2e/`, behavior) and `a11y` (`tests/a11y/`, the axe sweep).
-  Both run in `verify`; `make test-e2e` and `make test-a11y` run
-  one at a time while iterating. A new page means a new line in
-  `tests/routes.ts`, which both projects read. The draft paths are tested against a fixture post that
-  `tests/global-setup.ts` writes into the blog collection for the run
-  and `tests/global-teardown.ts` removes; never commit a draft to make
-  a test pass.
-* `.npmrc`'s `ignore-scripts` blocks Playwright's browser download, so
-  a fresh clone needs `make install`, which downloads it after `npm ci`.
-* **If port 4321 is in use, stop and tell Aaron.** Playwright refuses
-  to run when anything already answers on the port, and the thing
-  answering is almost always Aaron's own `make dev` in a PhpStorm
-  terminal. Do not investigate the process, do not trace its
-  ancestry, do not kill it, do not work around it with
-  `reuseExistingServer`. Say that verify cannot finish because a dev
-  server holds port 4321, and ask him to stop it if it is his. Then
-  re-run verify once he says it is stopped.
+* `astro-templates.md`: template comments, `{" "}`, SVG and the logo.
+* `design-and-accessibility.md`: where a style lives, the palette and
+  contrast rules, what axe cannot judge.

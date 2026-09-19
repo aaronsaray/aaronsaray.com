@@ -22,6 +22,14 @@ export default tseslint.config(
   {
     rules: {
       "no-console": ["error", { allow: ["warn", "error"] }],
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector: 'JSXExpressionContainer > Literal[value=" "]',
+          message:
+            'Prettier writes {" "} when text flows around an inline tag inside an expression. Move that markup into its own component (OldPostNotice.astro is the pattern) and render the component from the expression.',
+        },
+      ],
     },
   },
   {
