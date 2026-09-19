@@ -1,5 +1,7 @@
 # Post index
 
+<!-- markdownlint-disable no-space-in-emphasis -->
+
 | URL | Title | Summary |
 | --- | --- | --- |
 | /2007/5-things-this-php-programmer-learned-from-system-ias400-programmers/ | 5 Things this PHP programmer learned from System-i/as400 programmers | Lessons a web developer took from IBM System i (AS/400, iSeries) programmers: store user-facing text in database tables, drive per-environment logic with database rule records, separate small service programs from display, validate data before sending it downstream, and split analyst from programmer roles. |
