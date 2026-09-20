@@ -173,4 +173,5 @@ Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. The bunchie/oogm
 * [ ] full code review
 * [ ] deploy to cloudflare pages
 * [ ] disable email obfuscation on cloudflare - dont need that js
+* [ ] enable HSTS on cloudflare
 * [ ] page speed - lighthouse stuff

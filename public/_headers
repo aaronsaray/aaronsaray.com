@@ -1,23 +1,15 @@
 # 'unsafe-inline' covers the style attributes Shiki and logo.svg emit.
 /*
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'
   X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Strict-Transport-Security: max-age=31536000
 
-# Extensionless well-known files need explicit content types
 /.well-known/webfinger
   Content-Type: application/jrd+json
-/.well-known/nodeinfo
-  Content-Type: application/json
-/.well-known/host-meta
-  Content-Type: application/xrd+xml
 
-# A year: font files are effectively permanent once published.
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Astro names everything here by content hash (its CSS, and the book
-# covers it resizes), so a changed file is a new URL.
+# Astro names everything here by content hash, so a changed file is a
+# new URL.
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable

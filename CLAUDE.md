@@ -39,9 +39,13 @@ relying on it.
      value that is not self-evident.
 
   Comments describe the code as it stands, never as a diff. Lead with
-  the fact, in the fewest words that carry it. A file header states the
-  mechanics that hold the file together, never what the file is.
-  Rationale that answers none of the four is written down nowhere.
+  the fact, in the fewest words that carry it. Rationale that answers
+  none of the four is written down nowhere.
+
+  A file header sits on line 1 and says what the filename leaves out:
+  what runs the file and how to run it, what it reads and writes, what
+  it emits that other files depend on. A header that restates the
+  filename ("the book component") is cut.
 * **`README.md` is Aaron's how-to, not a description of the site.** A
   line belongs there when he would open the file to find out how to do
   something, so a new feature earns one only when it changes what he
