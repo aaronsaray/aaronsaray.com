@@ -100,7 +100,7 @@
 }
 
 @utility page-title {
-  @apply font-display text-4xl leading-tight font-semibold text-white sm:text-5xl;
+  @apply font-display text-4xl leading-tight font-semibold wrap-break-word text-white sm:text-5xl;
 }
 
 @utility page-column {
@@ -112,7 +112,7 @@
 }
 
 @utility section-title {
-  @apply font-display text-2xl leading-snug font-semibold text-white sm:text-3xl;
+  @apply font-display text-2xl leading-snug font-semibold wrap-break-word text-white sm:text-3xl;
 }
 
 @utility quiet-link {
