@@ -10,9 +10,6 @@ export default defineConfig({
   reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : "list",
   use: {
     baseURL: BASE_URL,
-    // The copy button writes to the clipboard inside a try whose catch
-    // is empty, so without this grant the write rejects silently and
-    // the test reads as "copy is broken" rather than "no permission".
     permissions: ["clipboard-read", "clipboard-write"],
     trace: "retain-on-failure",
   },
@@ -31,11 +28,8 @@ export default defineConfig({
   webServer: {
     command: `npm run dev -- --port ${PORT}`,
     url: BASE_URL,
-    // The guard against testing a server this config did not start:
-    // Playwright refuses to run when anything already answers on the
-    // port. astro dev alone would slide to the next free one.
+    // false: Playwright refuses to run when the port already answers.
     reuseExistingServer: false,
-    timeout: 30_000,
     // astro dev daemonizes itself when it detects an AI agent shell,
     // which reads to Playwright as the server exiting on startup.
     env: { ASTRO_DEV_BACKGROUND: "0" },
