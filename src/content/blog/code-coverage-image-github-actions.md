@@ -11,7 +11,7 @@ I'm a sucker for those little badges at the top of the README files in GitHub re
 <!--more-->
 
 **tldr;** You can host your PHPUnit code coverage as an image in your GitHub repo using GitHub actions.  You can see my example repository [here](https://github.com/aaronsaray/php-test-coverage-image-from-gh-actions).  
-It looks a little like this: ![Preview](https://raw.githubusercontent.com/aaronsaray/php-test-coverage-image-from-gh-actions/main/docs/code-coverage.png)
+It looks a little like this: ![Preview](/uploads/2020/code-coverage-badge.png)
 
 I'll discuss how and what's happening below.
 
