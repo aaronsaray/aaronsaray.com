@@ -14,5 +14,7 @@ export const CODE = [
 ];
 
 export async function typeCode(page: Page): Promise<void> {
-  for (const key of CODE) await page.keyboard.press(key);
+  for (const key of CODE) {
+    await page.keyboard.press(key);
+  }
 }

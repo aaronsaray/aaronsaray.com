@@ -65,7 +65,9 @@ export function rehypeImgAttrs() {
             node.properties.width = width;
             node.properties.height = height;
           }
-          if (eager) return;
+          if (eager) {
+            return;
+          }
           node.properties.loading = "lazy";
           node.properties.decoding = "async";
         });
@@ -107,6 +109,8 @@ export function rehypeImgAttrs() {
         sizes.set(src, await lookupDimensions(src));
       }),
     );
-    for (const edit of edits) edit(sizes);
+    for (const edit of edits) {
+      edit(sizes);
+    }
   };
 }

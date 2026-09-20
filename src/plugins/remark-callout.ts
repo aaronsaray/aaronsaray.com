@@ -18,7 +18,9 @@ export function remarkCallout() {
       }
 
       if (node.type === "textDirective") {
-        if (!parent || index === undefined) return;
+        if (!parent || index === undefined) {
+          return;
+        }
         const replacement: PhrasingContent[] = [
           { type: "text", value: `:${node.name}` },
         ];

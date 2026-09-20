@@ -102,12 +102,16 @@ function wrapBlock(
 export function rehypeCodeChrome() {
   return (tree: Root) => {
     visit(tree, "element", (node, index, parent) => {
-      if (node.tagName !== "pre" || !parent || index === undefined) return;
+      if (node.tagName !== "pre" || !parent || index === undefined) {
+        return;
+      }
       // Astro's Shiki wrapper sets `properties.class` (not the hast
       // convention `className`), so accept either.
       const cls = node.properties?.className ?? node.properties?.class;
       const classes = Array.isArray(cls) ? cls : String(cls ?? "").split(" ");
-      if (!classes.includes("astro-code")) return;
+      if (!classes.includes("astro-code")) {
+        return;
+      }
 
       const dataLang = String(node.properties.dataLanguage ?? "plaintext");
       const filename = node.properties.dataFilename;

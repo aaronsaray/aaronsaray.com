@@ -28,9 +28,13 @@ function figure(children: ElementContent[]): Element {
 export function rehypeFigure() {
   return (tree: Root) => {
     visit(tree, "element", (node, index, parent) => {
-      if (node.tagName !== "p" || !parent || index === undefined) return;
+      if (node.tagName !== "p" || !parent || index === undefined) {
+        return;
+      }
       const kids = node.children.filter((n) => !isWhitespace(n));
-      if (kids.length === 0) return;
+      if (kids.length === 0) {
+        return;
+      }
 
       if (kids.length === 1 && kids[0].type === "element") {
         const el = kids[0];
@@ -62,8 +66,12 @@ export function rehypeFigure() {
     });
 
     visit(tree, "raw", (node, index, parent) => {
-      if (!parent || index === undefined) return;
-      if (parent.type === "element" && parent.tagName === "figure") return;
+      if (!parent || index === undefined) {
+        return;
+      }
+      if (parent.type === "element" && parent.tagName === "figure") {
+        return;
+      }
       const html = node.value.trim();
       if (RAW_IMG.test(html) || RAW_LINKED_IMG.test(html)) {
         parent.children[index] = figure([node]);

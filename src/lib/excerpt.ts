@@ -60,7 +60,9 @@ function toPlainText(html: string): string {
 /** Rendered-HTML excerpt for list display and RSS descriptions. */
 export async function excerptHtml(body: string): Promise<string> {
   const cached = htmlCache.get(body);
-  if (cached !== undefined) return cached;
+  if (cached !== undefined) {
+    return cached;
+  }
 
   let html: string;
   if (body.includes(MARKER)) {
@@ -75,7 +77,9 @@ export async function excerptHtml(body: string): Promise<string> {
 }
 
 function cap(text: string): string {
-  if (text.length <= MAX_DESCRIPTION) return text;
+  if (text.length <= MAX_DESCRIPTION) {
+    return text;
+  }
   const room = text.slice(0, MAX_DESCRIPTION - 1);
   const space = room.lastIndexOf(" ");
   const cut = space === -1 ? room : room.slice(0, space);

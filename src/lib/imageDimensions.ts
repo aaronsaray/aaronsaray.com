@@ -15,12 +15,16 @@ const cache = new Map<string, Promise<Dimensions | null>>();
 async function read(src: string): Promise<Dimensions | null> {
   // Anything not rooted at / is a relative path inside a code sample,
   // not a real asset reference.
-  if (!src.startsWith("/")) return null;
+  if (!src.startsWith("/")) {
+    return null;
+  }
 
   // A src is untrusted text from markdown; keep the read inside
   // public/ so "/../.." cannot walk out of it.
   const path = normalize(join(PUBLIC_DIR, src));
-  if (!path.startsWith(PUBLIC_DIR)) return null;
+  if (!path.startsWith(PUBLIC_DIR)) {
+    return null;
+  }
 
   try {
     // imageMetadata already swaps width and height for a JPEG whose

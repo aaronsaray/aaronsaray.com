@@ -42,7 +42,9 @@ test("Escape ends it early", async ({ page }) => {
 
 test("a wrong key resets the sequence", async ({ page }) => {
   await page.goto("/");
-  for (const key of CODE.slice(0, 9)) await page.keyboard.press(key);
+  for (const key of CODE.slice(0, 9)) {
+    await page.keyboard.press(key);
+  }
   await page.keyboard.press("x");
   await page.keyboard.press("a");
   await expect(page.locator(STAGE)).toHaveCount(0);

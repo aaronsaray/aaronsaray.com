@@ -10,7 +10,9 @@ export function shikiOutputRootStyle(): Transformer {
   return {
     name: "output-root-style",
     preprocess(_code, options) {
-      if (options.lang === "output") options.rootStyle = false;
+      if (options.lang === "output") {
+        options.rootStyle = false;
+      }
     },
   };
 }

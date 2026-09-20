@@ -32,4 +32,6 @@ export default defineConfig(
     },
   },
   eslintConfigPrettier,
+  // Last, because eslintConfigPrettier turns curly off.
+  { rules: { curly: ["error", "all"] } },
 );

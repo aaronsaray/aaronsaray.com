@@ -64,8 +64,12 @@ const BANNER = [
   <script>
     // A focused control keeps Enter for itself.
     document.addEventListener("keydown", (e) => {
-      if (e.key !== "Enter" || e.repeat || e.target !== document.body) return;
-      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      if (e.key !== "Enter" || e.repeat || e.target !== document.body) {
+        return;
+      }
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
+        return;
+      }
       document.getElementById("run")?.click();
     });
   </script>

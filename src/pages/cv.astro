@@ -3,7 +3,9 @@ import { getEntry, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 
 const entry = await getEntry("pages", "cv");
-if (!entry) throw new Error("pages/cv content missing");
+if (!entry) {
+  throw new Error("pages/cv content missing");
+}
 const { Content, headings } = await render(entry);
 const sections = headings.filter((h) => h.depth === 2);
 ---

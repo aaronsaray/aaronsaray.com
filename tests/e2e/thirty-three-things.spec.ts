@@ -15,7 +15,9 @@ test("the download panel sits above the prose", async ({ page }) => {
   // scrolling past the story.
   const panelBox = await panel.boundingBox();
   const proseBox = await page.locator(".prose").boundingBox();
-  if (!panelBox || !proseBox) throw new Error("panel or prose has no box");
+  if (!panelBox || !proseBox) {
+    throw new Error("panel or prose has no box");
+  }
   expect(panelBox.y).toBeLessThan(proseBox.y);
 });
 

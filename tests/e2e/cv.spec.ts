@@ -79,7 +79,9 @@ test("desktop gutter lines up across sections and dates share the title baseline
     };
     const role = document.querySelector(".cv h4");
     const date = role?.querySelector("em");
-    if (!role || !date) throw new Error("no dated role on the page");
+    if (!role || !date) {
+      throw new Error("no dated role on the page");
+    }
     return {
       roleLeft: left(role),
       talkLeft: left(document.querySelector(".cv table tbody td:nth-child(2)")),

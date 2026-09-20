@@ -22,7 +22,9 @@ test("content images carry intrinsic dimensions", async ({ page }) => {
     // late, so wait for the real bitmap before comparing.
     await img.scrollIntoViewIfNeeded();
     const natural = await img.evaluate(async (el: HTMLImageElement) => {
-      if (!el.complete) await el.decode().catch(() => {});
+      if (!el.complete) {
+        await el.decode().catch(() => {});
+      }
       return { width: el.naturalWidth, height: el.naturalHeight };
     });
     expect(natural, `natural size of ${src}`).toEqual({ width, height });
@@ -74,7 +76,9 @@ for (const { path, scale } of RETINA) {
 
       await img.scrollIntoViewIfNeeded();
       const natural = await img.evaluate(async (el: HTMLImageElement) => {
-        if (!el.complete) await el.decode().catch(() => {});
+        if (!el.complete) {
+          await el.decode().catch(() => {});
+        }
         return { width: el.naturalWidth, height: el.naturalHeight };
       });
 

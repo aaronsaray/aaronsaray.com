@@ -22,9 +22,13 @@ export function rehypeHeadingAnchors({ depth }: { depth: number }) {
     const max = file.data.astro?.frontmatter?.anchorDepth ?? depth;
     visit(tree, "element", (node) => {
       const rank = /^h[2-6]$/.test(node.tagName) ? Number(node.tagName[1]) : 0;
-      if (!rank || rank > max || !node.properties.id) return;
+      if (!rank || rank > max || !node.properties.id) {
+        return;
+      }
       // Nested anchors are invalid HTML and the parser splits them.
-      if (holdsLink(node)) return SKIP;
+      if (holdsLink(node)) {
+        return SKIP;
+      }
       node.children = [
         {
           type: "element",

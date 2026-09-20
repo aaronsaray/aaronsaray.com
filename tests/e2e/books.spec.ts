@@ -26,7 +26,9 @@ test("a click on the blurb follows the row's link", async ({ page }) => {
   const paragraph = row.first().locator(".book-blurb p");
   await paragraph.scrollIntoViewIfNeeded();
   const blurb = await paragraph.boundingBox();
-  if (!blurb) throw new Error("blurb has no box");
+  if (!blurb) {
+    throw new Error("blurb has no box");
+  }
   await page.mouse.click(blurb.x + blurb.width / 2, blurb.y + blurb.height / 2);
   await expect(page).toHaveURL(href ?? "");
 });

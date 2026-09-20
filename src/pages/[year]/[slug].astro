@@ -121,7 +121,9 @@ const showThirtyThreeThings = entry.id === "33-things-book";
         const pre =
           btn.closest(".filename-header")?.nextElementSibling ??
           btn.closest(".code-wrap")?.querySelector("pre");
-        if (!(pre instanceof HTMLElement)) return;
+        if (!(pre instanceof HTMLElement)) {
+          return;
+        }
         try {
           await navigator.clipboard.writeText(pre.innerText);
           btn.classList.add("copied");

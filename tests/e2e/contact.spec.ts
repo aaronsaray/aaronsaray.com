@@ -33,7 +33,9 @@ test.describe("rendered", () => {
     const follows = await page.evaluate(() => {
       const invitation = document.querySelector("main .prose p");
       const link = document.querySelector('main a[href^="mailto:"]');
-      if (!invitation || !link) throw new Error("missing invitation or link");
+      if (!invitation || !link) {
+        throw new Error("missing invitation or link");
+      }
       return Boolean(
         invitation.compareDocumentPosition(link) &
         Node.DOCUMENT_POSITION_FOLLOWING,
@@ -50,7 +52,9 @@ test.describe("rendered", () => {
         () => {
           const link = document.querySelector('main a[href^="mailto:"]');
           const column = link?.closest(".prose");
-          if (!link || !column) throw new Error("missing link or column");
+          if (!link || !column) {
+            throw new Error("missing link or column");
+          }
           return {
             scrollWidth: document.documentElement.scrollWidth,
             linkRight: link.getBoundingClientRect().right,
@@ -72,7 +76,9 @@ test.describe("rendered", () => {
     await page.setViewportSize({ width: 1280, height: 900 });
     const [invitation, address] = await page.evaluate(() => {
       const baseline = (el: Element | null) => {
-        if (!el) throw new Error("missing element");
+        if (!el) {
+          throw new Error("missing element");
+        }
         const probe = document.createElement("span");
         probe.style.cssText =
           "display:inline-block;width:0;height:0;vertical-align:baseline";

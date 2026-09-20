@@ -1,10 +1,16 @@
+// Creates a blog post from stubs/post.md. Run as: make post TITLE="..."
+
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
+function fail(message: string): never {
+  process.stderr.write(`${message}\n`);
+  process.exit(1);
+}
+
 const title = process.argv[2]?.trim();
 if (!title) {
-  process.stderr.write('usage: make post TITLE="My Post Title"\n');
-  process.exit(1);
+  fail('usage: make post TITLE="My Post Title"');
 }
 
 const slug = title
@@ -13,19 +19,17 @@ const slug = title
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-|-$/g, "");
 if (!slug) {
-  process.stderr.write(`no slug in "${title}"\n`);
-  process.exit(1);
+  fail(`no slug in "${title}"`);
 }
 
 const file = fileURLToPath(
   new URL(`../src/content/blog/${slug}.md`, import.meta.url),
 );
 if (existsSync(file)) {
-  process.stderr.write(`${file} exists\n`);
-  process.exit(1);
+  fail(`${file} exists`);
 }
 
-// en-CA formats as YYYY-MM-DD in local time.
+// en-CA: Canada writes dates as YYYY-MM-DD. Local time, not UTC.
 const date = new Date().toLocaleDateString("en-CA");
 
 // A replacement function inserts the title literally, $& and $1

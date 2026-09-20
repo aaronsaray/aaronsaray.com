@@ -10,9 +10,13 @@ export function shikiMetaFilename(): Transformer {
     name: "meta-filename",
     pre(node) {
       const raw = this.options.meta?.__raw;
-      if (!raw) return;
+      if (!raw) {
+        return;
+      }
       const m = /filename="([^"]*)"/.exec(raw);
-      if (m) node.properties.dataFilename = m[1];
+      if (m) {
+        node.properties.dataFilename = m[1];
+      }
     },
   };
 }

@@ -64,11 +64,17 @@
   }
 
   document.addEventListener("keydown", (e) => {
-    if (running || e.repeat || inEditable(e.target)) return;
-    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    if (running || e.repeat || inEditable(e.target)) {
+      return;
+    }
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) {
+      return;
+    }
     const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
     matched = key === CODE[matched] ? matched + 1 : key === CODE[0] ? 1 : 0;
-    if (matched < CODE.length) return;
+    if (matched < CODE.length) {
+      return;
+    }
     matched = 0;
     void start();
   });

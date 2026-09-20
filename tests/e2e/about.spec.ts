@@ -18,11 +18,15 @@ for (const width of [320, 768, 1280]) {
     const layout = await page.evaluate(() => {
       const rect = (selector: string) => {
         const el = document.querySelector(selector);
-        if (!el) throw new Error(`missing ${selector}`);
+        if (!el) {
+          throw new Error(`missing ${selector}`);
+        }
         return el.getBoundingClientRect();
       };
       const lede = document.querySelector("main h1 + p");
-      if (!lede) throw new Error("missing lede");
+      if (!lede) {
+        throw new Error("missing lede");
+      }
       const portrait = rect("main img");
       const name = rect("main h1");
       return {
@@ -56,7 +60,9 @@ test("the portrait's bottom edge lands on the lede's last baseline", async ({
   const { portraitBottom, baseline } = await page.evaluate(() => {
     const lede = document.querySelector("main h1 + p");
     const portrait = document.querySelector("main img");
-    if (!lede || !portrait) throw new Error("missing portrait or lede");
+    if (!lede || !portrait) {
+      throw new Error("missing portrait or lede");
+    }
     const probe = document.createElement("span");
     probe.style.cssText =
       "display:inline-block;width:0;height:0;vertical-align:baseline";

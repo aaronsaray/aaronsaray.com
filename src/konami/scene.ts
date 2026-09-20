@@ -25,7 +25,9 @@ const ENDS = [
 export async function play(stage: HTMLElement): Promise<void> {
   const ctrl = new AbortController();
   const onKey = (e: KeyboardEvent) => {
-    if (e.key === "Escape") ctrl.abort();
+    if (e.key === "Escape") {
+      ctrl.abort();
+    }
   };
   document.addEventListener("keydown", onKey);
   try {
@@ -78,14 +80,20 @@ function settled(el: Element, signal?: AbortSignal): Promise<void> {
       return;
     }
     function finish() {
-      for (const type of ENDS) el.removeEventListener(type, onEnd);
+      for (const type of ENDS) {
+        el.removeEventListener(type, onEnd);
+      }
       signal?.removeEventListener("abort", finish);
       resolve();
     }
     function onEnd(e: Event) {
-      if (e.target === el) finish();
+      if (e.target === el) {
+        finish();
+      }
     }
-    for (const type of ENDS) el.addEventListener(type, onEnd);
+    for (const type of ENDS) {
+      el.addEventListener(type, onEnd);
+    }
     signal?.addEventListener("abort", finish);
   });
 }

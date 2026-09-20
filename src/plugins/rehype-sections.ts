@@ -6,7 +6,9 @@ import type { VFile } from "vfile";
 // `.prose section` in global.css is the matching spacing rule.
 export function rehypeSections() {
   return (tree: Root, file: VFile) => {
-    if (file.data.astro?.frontmatter?.sections !== true) return;
+    if (file.data.astro?.frontmatter?.sections !== true) {
+      return;
+    }
     const children: RootContent[] = [];
     let section: Element | null = null;
     for (const node of tree.children) {

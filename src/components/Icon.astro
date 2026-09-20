@@ -15,7 +15,9 @@ const files = import.meta.glob<string>("../icons/*.svg", {
 
 const { name, class: className, strokeWidth } = Astro.props;
 const svg = files[`../icons/${name}.svg`];
-if (!svg) throw new Error(`No icon named "${name}" in src/icons/`);
+if (!svg) {
+  throw new Error(`No icon named "${name}" in src/icons/`);
+}
 ---
 
 <Fragment set:html={iconMarkup(svg, { class: className, strokeWidth })} />

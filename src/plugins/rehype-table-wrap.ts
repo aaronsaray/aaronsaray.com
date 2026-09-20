@@ -14,7 +14,9 @@ import { visit, SKIP } from "unist-util-visit";
 export function rehypeTableWrap() {
   return (tree: Root) => {
     visit(tree, "element", (node, index, parent) => {
-      if (node.tagName !== "table" || !parent || index === undefined) return;
+      if (node.tagName !== "table" || !parent || index === undefined) {
+        return;
+      }
       visit(node, "element", (cell) => {
         if (cell.tagName === "th" && cell.properties.scope === undefined) {
           cell.properties.scope = "col";
