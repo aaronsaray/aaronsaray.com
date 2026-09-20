@@ -7,7 +7,7 @@ const description = "Send me a note.";
 // Entities plus set:html, because Astro escapes the & of a dynamic
 // href. The hidden span feeds tag-stripping harvesters a decoy
 // subdomain that takes no mail, and splits the accessible name, so
-// aria-label states it outright. tests/e2e/contact.spec.ts fails on a
+// aria-label states it outright. tests/pages/contact.spec.ts fails on a
 // literal address.
 const encode = (text: string) =>
   [...text].map((char) => `&#${char.charCodeAt(0)};`).join("");

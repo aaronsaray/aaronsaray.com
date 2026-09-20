@@ -22,6 +22,22 @@ test("nav dropdown opens on keyboard focus", async ({ page }) => {
   await expect(firstItem).toBeFocused();
 });
 
+// The panels are the only header path to four pages, and a touch
+// screen has neither hover nor Tab: the tap's focus is what opens one.
+test("a tap opens the nav dropdown and its links work", async ({
+  page,
+  hasTouch,
+}) => {
+  test.skip(!hasTouch, "touch only");
+  await page.goto("/");
+
+  const panel = page.locator("#nav-menu-about");
+  await expect(panel).toBeHidden();
+  await page.getByRole("button", { name: "About" }).tap();
+  await panel.getByRole("link", { name: "Who am I" }).tap();
+  await expect(page).toHaveURL(/\/about\/$/);
+});
+
 test("skip link is the first tab stop and moves reading position", async ({
   page,
 }) => {
@@ -115,4 +131,24 @@ test("aria-current marks the page, not the section", async ({ page }) => {
   // current page.
   await page.goto("/2007/ajax-security-research-and-findings-round-1/");
   await expect(page.locator("header [aria-current]")).toHaveCount(0);
+});
+
+test("the footer's no-AI link goes to the colophon", async ({ page }) => {
+  await page.goto("/");
+  await page.locator("footer a[href='/colophon/']").click();
+  await expect(page).toHaveURL(/\/colophon\/$/);
+});
+
+// The copyright line is the one place a link sits inside running text
+// with no color difference from its neighbors, so the resting
+// underline is what satisfies WCAG 1.4.1 there. Asserted on the
+// rendered value so a class cleanup cannot drop it.
+test("copyright-line links are underlined at rest", async ({ page }) => {
+  await page.goto("/");
+
+  const links = page.locator("footer p:has(a[href='/colophon/']) a");
+  await expect(links).toHaveCount(2);
+  for (const link of await links.all()) {
+    await expect(link).toHaveCSS("text-decoration-line", "underline");
+  }
 });

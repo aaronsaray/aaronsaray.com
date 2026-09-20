@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { runAxe } from "../axe";
 
 // The widest table on the site: five columns, and the only one measured
 // to overflow its column at a phone width. cv.spec.ts covers the
@@ -33,17 +34,21 @@ test("every table wrapper is a named focus stop", async ({ page }) => {
   }
 });
 
-test("the wide table overflows far enough for the axe rule to judge it", async ({
+test("the wide table overflows far enough for axe to judge it, and passes", async ({
   page,
+  isMobile,
 }) => {
+  test.skip(isMobile, "pins its own viewport");
+  // The table fits at both project viewports.
   await page.setViewportSize({ width: 320, height: 720 });
-  await page.goto(POST);
+  await page.goto(POST, { waitUntil: "networkidle" });
 
   const wrapper = page.locator(".prose .table-wrap").first();
   const overflow = await wrapper.evaluate(
     (el) => el.scrollWidth - el.clientWidth,
   );
   expect(overflow).toBeGreaterThan(AXE_SCROLL_MINIMUM);
+  expect((await runAxe(page)).violations).toEqual([]);
 
   // Styling that stopped the wrapper scrolling would leave the
   // attributes above on an element with nothing to scroll.

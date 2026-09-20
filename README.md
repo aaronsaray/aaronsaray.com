@@ -162,7 +162,7 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 
 ## Adding a Page
 
-* A new page gets a line in `tests/routes.ts`, or the accessibility sweep never visits it.
+* A new page gets a line in `ROUTES` at the top of `tests/every-page.spec.ts`. `make verify` fails until it has one.
 
 ## The Konami Code
 

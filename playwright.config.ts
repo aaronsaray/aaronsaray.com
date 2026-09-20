@@ -13,25 +13,20 @@ export default defineConfig({
     permissions: ["clipboard-read", "clipboard-write"],
     trace: "retain-on-failure",
   },
+  testDir: "./tests",
+  fullyParallel: true,
+  // Every test runs once per project.
   projects: [
-    {
-      name: "e2e",
-      testDir: "./tests/e2e",
-      use: { ...devices["Desktop Chrome"] },
-    },
-    {
-      name: "a11y",
-      testDir: "./tests/a11y",
-      use: { ...devices["Desktop Chrome"] },
-    },
+    { name: "desktop", use: { ...devices["Desktop Chrome"] } },
+    { name: "mobile", use: { ...devices["Pixel 7"] } },
   ],
   webServer: {
-    command: `npm run dev -- --port ${PORT}`,
+    command: `npm run preview -- --port ${PORT}`,
     url: BASE_URL,
     // false: Playwright refuses to run when the port already answers.
     reuseExistingServer: false,
-    // astro dev daemonizes itself when it detects an AI agent shell,
-    // which reads to Playwright as the server exiting on startup.
-    env: { ASTRO_DEV_BACKGROUND: "0" },
+    // astro preview daemonizes itself when it detects an AI agent
+    // shell, which reads to Playwright as the server exiting on startup.
+    env: { ASTRO_PREVIEW_BACKGROUND: "0" },
   },
 });

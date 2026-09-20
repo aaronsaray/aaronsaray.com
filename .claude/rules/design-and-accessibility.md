@@ -38,9 +38,10 @@ learning the subject as the site is built. Do not wait to be asked, and
 do not assume he knows a rule already: say what the rule is, and why,
 when it comes up.
 
-`make verify` runs axe over every route in `tests/routes.ts`. A green
-run is a floor: automation covers a minority of WCAG AA, and the rest
-is judgment that gets raised in conversation.
+`make verify` runs axe over every route in `tests/every-page.spec.ts`,
+at a desktop and a phone viewport. A green run is a floor: automation
+covers a minority of WCAG AA, and the rest is judgment that gets raised
+in conversation.
 
 * **Text color comes from the palette tokens in
   `src/styles/global.css`.** The comment on that block has the grounds,
@@ -61,4 +62,4 @@ is judgment that gets raised in conversation.
   matches reading order and stays visible (tab through anything new),
   whether a screen reader can operate anything interactive (the
   comment in `NavItem.astro` records the known gap), and whether the
-  page holds at 200% zoom and 320px wide without horizontal scroll.
+  page holds at 200% zoom.

@@ -12,9 +12,7 @@
     "lint:format": "prettier --check .",
     "lint:md": "markdownlint-cli2",
     "format": "prettier --write .",
-    "test": "playwright test",
-    "test:e2e": "playwright test --project=e2e",
-    "test:a11y": "playwright test --project=a11y"
+    "test": "playwright test"
   },
   "volta": {
     "node": "24.20.0",

@@ -60,9 +60,13 @@ relying on it.
 
 ## Building and Verifying
 
-* `make verify` must be green before declaring a change done. It is
-  the only gate: a new check goes inside it, never beside it, and CI
-  runs nothing else.
+* `make verify` is the only gate: a new check goes inside it, never
+  beside it, and CI runs nothing else. It is slow, so it runs when
+  Aaron asks for it or once at the end of a feature, never after each
+  small edit. A small change gets the narrowest target that would
+  notice it (`make check`, `make lint`,
+  `make test ARGS="--grep copy"`), and the reply says which target ran
+  and that verify did not.
 * Every repeated command is a make target. `package.json` scripts are
   single-tool leaves, each with a same-named target; the Makefile
   composes them.
@@ -80,7 +84,6 @@ relying on it.
   cleans first; while iterating, run `make clean` before believing a
   result that looks impossible. The comment on `clean` in the Makefile
   has the mechanism.
-* A new page gets a line in `tests/routes.ts`.
 * **If port 4321 is in use, stop and tell Aaron.** It is almost always
   his own `make dev`. Do not investigate the process, kill it, or work
   around it with `reuseExistingServer`. Say verify cannot finish

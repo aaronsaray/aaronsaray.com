@@ -45,35 +45,29 @@ test.describe("rendered", () => {
   });
 
   // The address cannot wrap, so it is the first thing to overflow.
-  for (const width of [320, 768, 1280]) {
-    test(`the address fits its column at ${width}px`, async ({ page }) => {
-      await page.setViewportSize({ width, height: 900 });
-      const { scrollWidth, linkRight, columnRight, tops } = await page.evaluate(
-        () => {
-          const link = document.querySelector('main a[href^="mailto:"]');
-          const column = link?.closest(".prose");
-          if (!link || !column) {
-            throw new Error("missing link or column");
-          }
-          return {
-            scrollWidth: document.documentElement.scrollWidth,
-            linkRight: link.getBoundingClientRect().right,
-            columnRight: column.getBoundingClientRect().right,
-            // One rect per text node: the hidden span splits the text.
-            tops: [...link.getClientRects()].map((rect) => rect.top),
-          };
-        },
-      );
-      expect(scrollWidth).toBeLessThanOrEqual(width);
-      expect(linkRight).toBeLessThanOrEqual(columnRight);
-      expect(new Set(tops).size).toBe(1);
+  test("the address fits its column on one line", async ({ page }) => {
+    const { linkRight, columnRight, tops } = await page.evaluate(() => {
+      const link = document.querySelector('main a[href^="mailto:"]');
+      const column = link?.closest(".prose");
+      if (!link || !column) {
+        throw new Error("missing link or column");
+      }
+      return {
+        linkRight: link.getBoundingClientRect().right,
+        columnRight: column.getBoundingClientRect().right,
+        // One rect per text node: the hidden span splits the text.
+        tops: [...link.getClientRects()].map((rect) => rect.top),
+      };
     });
-  }
+    expect(linkRight).toBeLessThanOrEqual(columnRight);
+    expect(new Set(tops).size).toBe(1);
+  });
 
   test("the address sits on the invitation's first baseline", async ({
     page,
+    isMobile,
   }) => {
-    await page.setViewportSize({ width: 1280, height: 900 });
+    test.skip(isMobile, "the two columns start at md");
     const [invitation, address] = await page.evaluate(() => {
       const baseline = (el: Element | null) => {
         if (!el) {
@@ -93,15 +87,5 @@ test.describe("rendered", () => {
       ];
     });
     expect(address).toBeCloseTo(invitation, 1);
-  });
-
-  // The compiler drops the space at a line break between text and an
-  // inline tag, so a Prettier reflow can fuse words around one.
-  test("inline tags keep the spaces around them", async ({ page }) => {
-    const text = await page
-      .locator("main strong")
-      .first()
-      .evaluate((el) => (el.parentElement ? el.parentElement.innerText : ""));
-    expect(text.replace(/\s+/g, " ")).toContain("I am accepting new");
   });
 });

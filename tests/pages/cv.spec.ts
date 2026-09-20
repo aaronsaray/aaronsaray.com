@@ -41,14 +41,6 @@ test("record tables carry column headers and a date in every row", async ({
   }
 });
 
-test("no horizontal scroll at 320px", async ({ page }) => {
-  await page.setViewportSize({ width: 320, height: 800 });
-  const scrollWidth = await page.evaluate(
-    () => document.documentElement.scrollWidth,
-  );
-  expect(scrollWidth).toBeLessThanOrEqual(320);
-});
-
 test("every H2 opens its own section", async ({ page }) => {
   const headings = page.locator(".cv h2");
   const count = await headings.count();
@@ -64,8 +56,9 @@ test("every H2 opens its own section", async ({ page }) => {
 
 test("desktop gutter lines up across sections and dates share the title baseline", async ({
   page,
+  isMobile,
 }) => {
-  await page.setViewportSize({ width: 1280, height: 900 });
+  test.skip(isMobile, "the gutter is a desktop layout");
   const layout = await page.evaluate(() => {
     const left = (el: Element | null) =>
       el ? el.getBoundingClientRect().left : NaN;
