@@ -10,7 +10,7 @@ The other day I found myself giving advice and revisions to a fellow PHP program
 
 <!--more-->
 
-I've had a lot of [experience](/resume) hiring programmers, so I thought I'd take a look at this fellow's cover letter.  After quickly reviewing it, I realized it was just a shortened version of his resume and maybe one personal paragraph.  This won't do!  I wanted him to be successful.  
+I've had a lot of [experience](/cv/) hiring programmers, so I thought I'd take a look at this fellow's cover letter.  After quickly reviewing it, I realized it was just a shortened version of his resume and maybe one personal paragraph.  This won't do!  I wanted him to be successful.  
 
 ## The Connection Letter
 

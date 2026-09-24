@@ -162,7 +162,8 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 
 ## Adding a Page
 
-* A new page gets a line in `ROUTES` at the top of `tests/every-page.spec.ts`. `make verify` fails until it has one.
+* A new page gets a line in `ROUTES` at the top of `tests/pages/all.spec.ts`. `make verify` fails until it has one.
+* `/testing` in Claude Code loads the test rules from `.claude/skills/testing/SKILL.md`.
 
 ## The Konami Code
 

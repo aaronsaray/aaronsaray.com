@@ -81,8 +81,7 @@ function cap(text: string): string {
     return text;
   }
   const room = text.slice(0, MAX_DESCRIPTION - 1);
-  const space = room.lastIndexOf(" ");
-  const cut = space === -1 ? room : room.slice(0, space);
+  const cut = room.slice(0, room.lastIndexOf(" "));
   return `${cut.replace(/[\s.,;:!?–—…-]+$/, "")}…`;
 }
 

@@ -38,7 +38,7 @@ learning the subject as the site is built. Do not wait to be asked, and
 do not assume he knows a rule already: say what the rule is, and why,
 when it comes up.
 
-`make verify` runs axe over every route in `tests/every-page.spec.ts`,
+`make verify` runs axe over every route in `tests/pages/all.spec.ts`,
 at a desktop and a phone viewport. A green run is a floor: automation
 covers a minority of WCAG AA, and the rest is judgment that gets raised
 in conversation.

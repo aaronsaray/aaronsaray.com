@@ -39,4 +39,4 @@ Let me tell you the truth: most of the time that's your inner demons telling you
 
 ## Lecture Over
 
-I've given [many talks](/cv) and I've been to many, many more.  All I can tell you is that I find each part of the experience rewarding and enriching. I still get value out of talks that begin with "I just finished this 30 minutes ago...", but there's an initial hump I have to get over.  Instead, let's all make a deal to drop that line - its not cool - and dedicate or delegate - to make the best presentations we can.
+I've given [many talks](/cv/) and I've been to many, many more.  All I can tell you is that I find each part of the experience rewarding and enriching. I still get value out of talks that begin with "I just finished this 30 minutes ago...", but there's an initial hump I have to get over.  Instead, let's all make a deal to drop that line - its not cool - and dedicate or delegate - to make the best presentations we can.

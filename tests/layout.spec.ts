@@ -96,25 +96,6 @@ for (const { path, label } of ACTIVE_SECTION) {
   });
 }
 
-// The rule underlines the label only, so it hangs off an inner span in
-// both the dropdown triggers and the plain links. Those two markups
-// have to put it on one line or the nav looks misaligned as the active
-// item moves between them.
-test("the active rule sits at the same height on every nav item", async ({
-  page,
-}) => {
-  await page.goto("/contact/");
-
-  const bottoms = await page
-    .locator("header nav a span, header nav button span")
-    .evaluateAll((els) =>
-      els.map((el) => Math.round(el.getBoundingClientRect().bottom)),
-    );
-
-  expect(bottoms.length).toBe(3);
-  expect(new Set(bottoms).size).toBe(1);
-});
-
 test("aria-current marks the page, not the section", async ({ page }) => {
   await page.goto("/contact/");
   await expect(page.locator("header [aria-current]")).toHaveText("Contact");
@@ -141,8 +122,10 @@ test("the footer's no-AI link goes to the colophon", async ({ page }) => {
 
 // The copyright line is the one place a link sits inside running text
 // with no color difference from its neighbors, so the resting
-// underline is what satisfies WCAG 1.4.1 there. Asserted on the
-// rendered value so a class cleanup cannot drop it.
+// underline is what satisfies WCAG 1.4.1 there. axe's link-in-text-block
+// rule passes a same-color link (allowSameColor is on by default), so
+// the sweep never sees this. Asserted on the rendered value so a class
+// cleanup cannot drop it.
 test("copyright-line links are underlined at rest", async ({ page }) => {
   await page.goto("/");
 

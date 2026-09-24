@@ -14,4 +14,4 @@ With the new blog comes some other sad news. I've "stolen" the design from 201 C
 
 I am proud to say, though, that I've accepted an offer at iMoneza as a Senior Software Engineer. Woo!
 
-That's all for now - and in lieu of comments, feel free to visit my [contact](/contact) page.
+That's all for now - and in lieu of comments, feel free to visit my [contact](/contact/) page.

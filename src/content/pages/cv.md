@@ -104,7 +104,7 @@ EZ-Net is an ISP, offering a full range of internet, computer & network services
 
 ## Publications
 
-I am a prolific author, editor and blogger.  (On this site - [700+ technical and business entries](/blog) since 2007.)
+I am a prolific author, editor and blogger.  (On this site - [700+ technical and business entries](/blog/) since 2007.)
 
 ### Author
 

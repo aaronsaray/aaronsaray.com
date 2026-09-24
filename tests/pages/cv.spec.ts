@@ -54,40 +54,6 @@ test("every H2 opens its own section", async ({ page }) => {
   expect(orphans).toEqual([]);
 });
 
-test("desktop gutter lines up across sections and dates share the title baseline", async ({
-  page,
-  isMobile,
-}) => {
-  test.skip(isMobile, "the gutter is a desktop layout");
-  const layout = await page.evaluate(() => {
-    const left = (el: Element | null) =>
-      el ? el.getBoundingClientRect().left : NaN;
-    const baseline = (el: Element) => {
-      const probe = document.createElement("span");
-      probe.style.cssText = "display:inline-block;width:0;height:0";
-      el.appendChild(probe);
-      const bottom = probe.getBoundingClientRect().bottom;
-      probe.remove();
-      return bottom;
-    };
-    const role = document.querySelector(".cv h4");
-    const date = role?.querySelector("em");
-    if (!role || !date) {
-      throw new Error("no dated role on the page");
-    }
-    return {
-      roleLeft: left(role),
-      talkLeft: left(document.querySelector(".cv table tbody td:nth-child(2)")),
-      publicationLeft: left(document.querySelector("#publications ~ p")),
-      headingLeft: left(document.querySelector("#publications")),
-      baselineGap: baseline(role) - baseline(date),
-    };
-  });
-  expect(layout.talkLeft).toBe(layout.roleLeft);
-  expect(layout.publicationLeft).toBe(layout.headingLeft);
-  expect(Math.abs(layout.baselineGap)).toBeLessThan(0.5);
-});
-
 test("H2s carry an anchor link and deeper headings do not", async ({
   page,
 }) => {

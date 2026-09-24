@@ -1,4 +1,4 @@
-// axe at WCAG 2.2 AA, for every-page.spec.ts and posts/tables.spec.ts.
+// axe at WCAG 2.2 AA, for pages/all.spec.ts and pages/post.spec.ts.
 import AxeBuilder from "@axe-core/playwright";
 import type { Page } from "@playwright/test";
 

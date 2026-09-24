@@ -41,7 +41,7 @@ Someone asked me the other day what I like to do - and all I could think of was 
 
 **Writing** I actually enjoy this.  That's why I'm starting again with this blog entry (explaining life, lessons and choices), but I'm also going to write more technical and business entries again. This time I'm going to write them on the schedule that I want to, not try to force a publishing timeline on myself.  
 
-**Speaking** In the same vein as writing, I enjoy speaking and sharing technical and business knowledge.  I have done this [many times](/cv) in the past.  I would like to get back to this.
+**Speaking** In the same vein as writing, I enjoy speaking and sharing technical and business knowledge.  I have done this [many times](/cv/) in the past.  I would like to get back to this.
 
 **Guitar and Music** Years ago, I had actually made my own LP (in CD format).  I played all the music, wrote the music, sang it and mixed it.  I have lost my voice (I've changed, but I've also beat on my body that I'm not as healthy as I used to be - and I think part of that is reflected by my lack of voice now), but I still enjoy music. I listen to music all the time. I have a bunch of guitars around the house gathering dust.  I've lost my skill I'm sure by now.  But in the same way where I can type crazy fast, because I do it all day, all I need is practice to get better at guitar and create / play more music (that I like).
 

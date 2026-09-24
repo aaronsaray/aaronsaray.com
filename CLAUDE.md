@@ -78,17 +78,9 @@ relying on it.
 * `.npmrc` sets the supply-chain rules: a 7-day release cooldown, no
   install scripts, exact pins. Never weaken one to make an install
   work; tell Aaron.
-* **Stale content cache.** After a change to the markdown pipeline
-  (`src/plugins/`, `markdown` in `astro.config.ts`), a warm
-  `make build` or `make test` serves stale post HTML. `make verify`
-  cleans first; while iterating, run `make clean` before believing a
-  result that looks impossible. The comment on `clean` in the Makefile
-  has the mechanism.
-* **If port 4321 is in use, stop and tell Aaron.** It is almost always
-  his own `make dev`. Do not investigate the process, kill it, or work
-  around it with `reuseExistingServer`. Say verify cannot finish
-  because a dev server holds the port, and re-run once he says it is
-  stopped.
+* **Tests live by `.claude/skills/testing/SKILL.md`**: what gets
+  tested, where a test goes, the stale cache, and port 4321. Read it
+  before running, adding, or changing one.
 
 ## How the Site Works
 

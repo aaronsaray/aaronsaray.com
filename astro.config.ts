@@ -16,7 +16,6 @@ import { shikiOutputRootStyle } from "./src/plugins/shiki-output-root-style.ts";
 
 export default defineConfig({
   site: "https://aaronsaray.com",
-  trailingSlash: "always",
   devToolbar: {
     enabled: false,
   },

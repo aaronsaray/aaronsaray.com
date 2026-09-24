@@ -13,7 +13,7 @@ So, when did I get heartburn?  I remember hearing about it - having good friends
 
 Maybe it happened when I crossed that 350lb marker.  To the rest of the world, that's 158 kilograms - or to my dream to do a pull up someday, that's 1.5 metric dicktons of weight.
 
-You might remember back in early 2015, I decided to go out and [start my own company](/2015/started-my-own-company).  I had a very noble reason for leaving my job - I didn't care anymore, and I didn't feel like I should draw a salary if I was just going through the motions.  I was constantly tired - and as a trusted friend and coworker said "man - it seems like you're in a fight every day."  I was just very tired of that corporate world - so I went off on my own.
+You might remember back in early 2015, I decided to go out and [start my own company](/2015/started-my-own-company/).  I had a very noble reason for leaving my job - I didn't care anymore, and I didn't feel like I should draw a salary if I was just going through the motions.  I was constantly tired - and as a trusted friend and coworker said "man - it seems like you're in a fight every day."  I was just very tired of that corporate world - so I went off on my own.
 
 I became an **entrepreneur** - the spectacle of the American Dream.  I owned my own business and was very soon going to be rich.
 
@@ -51,7 +51,7 @@ So I'm broke.  I pushed away a lot of my friends (I'm alone).  I feel the health
 
 **I'm a failure**
 
-But you know, that's ok.  I wrote one time that sometimes it's ok to [just be great](/2012/dont-always-lead-sometimes-just-be-great) - which was more of an essay about not always becoming the boss.  But I guess that means you don't always have to be the owner either.  You don't always have to be the entrepreneur.
+But you know, that's ok.  I wrote one time that sometimes it's ok to [just be great](/2012/dont-always-lead-sometimes-just-be-great/) - which was more of an essay about not always becoming the boss.  But I guess that means you don't always have to be the owner either.  You don't always have to be the entrepreneur.
 
 I used to have a retirement goal of owning a company that supports 50 families through high quality, competitive paid jobs.  But, I've learned a lot this last year - and I'm not sure if that's what I want anymore.
 

@@ -75,7 +75,7 @@ Because of our unique set of experiences, we can advise clients on the best solu
 
 ## End notes
 
-It's hard to balance all of these things. Plus, I always want to keep working on my [open source](https://aaronsaray.github.io/) and updating this [blog](/blog) right?
+It's hard to balance all of these things. Plus, I always want to keep working on my [open source](https://aaronsaray.github.io/) and updating this [blog](/blog/) right?
 
 I've decided that I really want to focus on working with Joel on No Compromises, and focusing in on my own project work to augment teams.  The next highest priority is The Dev Manager.  Everything else after that is just extra. That includes blogging.  I've published an entry nearly every week for months at a time, but I think I need to take a break.  I need to focus on these other things.
 

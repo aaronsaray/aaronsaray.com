@@ -1,12 +1,12 @@
 import { existsSync, readdirSync } from "node:fs";
 import { test, expect, type Page } from "@playwright/test";
-import { runAxe } from "./axe";
+import { runAxe } from "../support/axe";
 
 const scrollWidth = (page: Page) =>
   page.evaluate(() => document.documentElement.scrollWidth);
 
-// One entry per route template, then the posts whose markdown emits
-// DOM the plain post lacks. axe judges only what it is shown.
+// One entry per template, plus the posts whose markdown emits DOM the
+// plain post lacks: axe judges only what it is shown.
 const ROUTES: { name: string; path: string; status?: number }[] = [
   { name: "home", path: "/" },
   { name: "contact", path: "/contact/" },
@@ -24,9 +24,8 @@ const ROUTES: { name: string; path: string; status?: number }[] = [
     name: "post with heading anchors",
     path: "/2021/do-not-use-tinker-in-production/",
   },
-  // The one post whose code block overflows at 1280px, so the only one
-  // where axe's scrollable-region-focusable rule has a region to judge
-  // and the overflow mask renders.
+  // The only post whose code block overflows at 1280px, so the only
+  // one where axe's scrollable-region-focusable rule has a region.
   {
     name: "post with a scrolling code block",
     path: "/2019/expression-1-not-in-group-by/",
@@ -42,16 +41,11 @@ const ROUTES: { name: string; path: string; status?: number }[] = [
   },
 ];
 
-// axe cannot resolve a background it can only sample from a gradient, so
-// text over the header veil comes back "incomplete" rather than pass or
-// fail. Incomplete results never appear in violations, so asserting on
-// violations alone would wave an unreadable element through. These
-// three are measured by hand instead: the veil's top band composites to
-// #101213, against which the nav's ink-dim renders 6.2:1. Asserting the
-// exact set means a gradient introduced anywhere else fails here until
-// someone measures that one too.
-// Matched on the identifying attribute: axe's generated selector leads
-// with Tailwind utility classes an unrelated spacing change would break.
+// Text over the header gradient comes back from axe "incomplete", which
+// never reaches violations, so the unreviewed set is asserted empty and
+// these three are measured by hand: the veil's top band composites to
+// #101213, 6.2:1 against the nav's ink-dim. Matched on an attribute
+// because axe's selector leads with Tailwind classes.
 const GRADIENT_EXEMPT = [
   '[href$="contact/"]',
   'button[aria-controls="nav-menu-about"]',
@@ -67,9 +61,7 @@ for (const { name, path, status } of ROUTES) {
     });
 
     test("has no axe violations", async ({ page }) => {
-      // analyze() evaluates in the page, so it throws if anything is
-      // still navigating. goto resolves on load, which the
-      // view-transition swap and the font swap can both still be racing.
+      // networkidle: axe throws if the page is still loading as it runs.
       await page.goto(path, { waitUntil: "networkidle" });
       const { violations, incomplete } = await runAxe(page);
       expect(violations, `axe violations on ${path}`).toEqual([]);
@@ -86,13 +78,8 @@ for (const { name, path, status } of ROUTES) {
       );
     });
 
-    // The Astro compiler drops the space at a line break between text
-    // and an inline tag, so a Prettier reflow of a template can fuse
-    // the words around one. Posts are markdown, where that cannot
-    // happen and `Closure`s is legitimate.
-    if (/^\/\d{4}\//.test(path)) {
-      return;
-    }
+    // Inside a {...} expression the compiler trims the line break beside
+    // an inline tag, so a Prettier reflow there fuses the words.
     test("keeps the spaces around inline tags", async ({ page }) => {
       await page.goto(path);
       const fused = await page.evaluate(() => {
@@ -133,8 +120,7 @@ test.describe("at 320px", () => {
   }
 });
 
-// ROUTES is a hand list. This covers its static pages; a new dynamic
-// template has nothing to catch it.
+// ROUTES is a hand list. A new dynamic template has nothing to catch it.
 test("every page directory in dist/ is a route above", () => {
   const built = readdirSync("dist", { withFileTypes: true })
     .filter(
@@ -146,4 +132,78 @@ test("every page directory in dist/ is a route above", () => {
     .map((entry) => `/${entry.name}/`);
   const listed = ROUTES.map((route) => route.path);
   expect(built.filter((path) => !listed.includes(path))).toEqual([]);
+});
+
+test.describe("head", () => {
+  const content = (page: Page, selector: string) =>
+    page.locator(selector).getAttribute("content");
+
+  test("a post carries article metadata", async ({ page }) => {
+    await page.goto("/2007/ajax-security-research-and-findings-round-1/");
+
+    expect(await content(page, 'meta[name="twitter:card"]')).toBe(
+      "summary_large_image",
+    );
+    expect(await content(page, 'meta[property="og:type"]')).toBe("article");
+    expect(await content(page, 'meta[property="article:published_time"]')).toBe(
+      "2007-06-28",
+    );
+    expect(await content(page, 'meta[property="og:url"]')).toBe(
+      await page.locator("link[rel=canonical]").getAttribute("href"),
+    );
+
+    const description = await content(page, 'meta[name="description"]');
+    expect(await content(page, 'meta[property="og:description"]')).toBe(
+      description,
+    );
+    expect(description!.length).toBeLessThanOrEqual(200);
+  });
+
+  test("a long excerpt is capped cleanly", async ({ page }) => {
+    await page.goto("/2007/website-monitoring-project/");
+
+    const description = (await content(page, 'meta[name="description"]'))!;
+    expect(description.length).toBeLessThanOrEqual(200);
+    expect(description).toMatch(/…$/);
+    expect(description).not.toMatch(/(?:\.|…)…$/);
+  });
+
+  test("a non-post is a website", async ({ page }) => {
+    await page.goto("/about/");
+
+    expect(await content(page, 'meta[property="og:type"]')).toBe("website");
+    await expect(
+      page.locator('meta[property="article:published_time"]'),
+    ).toHaveCount(0);
+  });
+
+  test("a tag page advertises its own feed", async ({ page }) => {
+    await page.goto("/tag/php/");
+
+    const href = await page
+      .locator('link[rel=alternate][type="application/rss+xml"]')
+      .last()
+      .getAttribute("href");
+    expect(href).toMatch(/\/tag\/php\/index\.xml$/);
+
+    expect(await content(page, 'meta[name="description"]')).not.toBe(
+      await content(page, 'meta[property="og:title"]'),
+    );
+  });
+
+  test("a pagination page names its position", async ({ page }) => {
+    await page.goto("/blog/page/2/");
+
+    expect(await content(page, 'meta[name="description"]')).toMatch(
+      /^Blog entries, page 2 of \d+\.$/,
+    );
+  });
+
+  test("the 404 page is noindex and uncanonical", async ({ page }) => {
+    await page.goto("/no-such-page-exists/");
+
+    expect(await content(page, 'meta[name="robots"]')).toBe("noindex");
+    await expect(page.locator("link[rel=canonical]")).toHaveCount(0);
+    await expect(page.locator('meta[property="og:url"]')).toHaveCount(0);
+  });
 });
