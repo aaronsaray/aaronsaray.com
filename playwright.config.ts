@@ -15,6 +15,7 @@ export default defineConfig({
   },
   testDir: "./tests",
   fullyParallel: true,
+  maxFailures: 1,
   // Every test runs once per project.
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },

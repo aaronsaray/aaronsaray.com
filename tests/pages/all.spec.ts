@@ -2,8 +2,13 @@ import { existsSync, readdirSync } from "node:fs";
 import { test, expect, type Page } from "@playwright/test";
 import { runAxe } from "../support/axe";
 
-const scrollWidth = (page: Page) =>
-  page.evaluate(() => document.documentElement.scrollWidth);
+function scrollWidth(page: Page) {
+  return page.evaluate(() => document.documentElement.scrollWidth);
+}
+
+function content(page: Page, selector: string) {
+  return page.locator(selector).getAttribute("content");
+}
 
 // One entry per template, plus the posts whose markdown emits DOM the
 // plain post lacks: axe judges only what it is shown.
@@ -21,7 +26,7 @@ const ROUTES: { name: string; path: string; status?: number }[] = [
   { name: "not found", path: "/no-such-page-exists/", status: 404 },
   { name: "post", path: "/2007/ajax-security-research-and-findings-round-1/" },
   {
-    name: "post with heading anchors",
+    name: "post with images and heading anchors",
     path: "/2021/do-not-use-tinker-in-production/",
   },
   // The only post whose code block overflows at 1280px, so the only
@@ -35,15 +40,11 @@ const ROUTES: { name: string; path: string; status?: number }[] = [
     name: "post with output blocks",
     path: "/2017/use-the-fail-method-with-mockery-on/",
   },
-  {
-    name: "post with retina images",
-    path: "/2022/one-tap-track-weight-daily-ios-no-app/",
-  },
 ];
 
-// Text over the header gradient comes back from axe "incomplete", which
-// never reaches violations, so the unreviewed set is asserted empty and
-// these three are measured by hand: the veil's top band composites to
+// axe reports text over the header gradient as "incomplete", which
+// never reaches violations, so incomplete is asserted empty and these
+// three are measured by hand: the veil's top band composites to
 // #101213, 6.2:1 against the nav's ink-dim. Matched on an attribute
 // because axe's selector leads with Tailwind classes.
 const GRADIENT_EXEMPT = [
@@ -65,69 +66,31 @@ for (const { name, path, status } of ROUTES) {
       await page.goto(path, { waitUntil: "networkidle" });
       const { violations, incomplete } = await runAxe(page);
       expect(violations, `axe violations on ${path}`).toEqual([]);
+
       const unreviewed = incomplete.filter(
         (target) => !GRADIENT_EXEMPT.some((e) => target.includes(e)),
       );
       expect(unreviewed, `unreviewed axe results on ${path}`).toEqual([]);
     });
 
+    // WCAG 1.4.10: 320 CSS px is a 1280px window at 400% zoom.
     test("has no sideways scroll", async ({ page }) => {
       await page.goto(path);
       expect(await scrollWidth(page)).toBeLessThanOrEqual(
         page.viewportSize()!.width,
       );
-    });
 
-    // Inside a {...} expression the compiler trims the line break beside
-    // an inline tag, so a Prettier reflow there fuses the words.
-    test("keeps the spaces around inline tags", async ({ page }) => {
-      await page.goto(path);
-      const fused = await page.evaluate(() => {
-        const word = /[\p{L}\p{N}]/u;
-        const textOf = (node: Node | null) =>
-          node?.nodeType === Node.TEXT_NODE ? (node.textContent ?? "") : "";
-        return [...document.querySelectorAll("a, strong, em, s")].flatMap(
-          (el) => {
-            const inside = el.textContent ?? "";
-            const before = textOf(el.previousSibling);
-            const after = textOf(el.nextSibling);
-            const faults: string[] = [];
-            if (word.test(before.slice(-1)) && word.test(inside.slice(0, 1))) {
-              faults.push(`${before.slice(-20)}|${inside.slice(0, 20)}`);
-            }
-            if (word.test(inside.slice(-1)) && word.test(after.slice(0, 1))) {
-              faults.push(`${inside.slice(-20)}|${after.slice(0, 20)}`);
-            }
-            return faults;
-          },
-        );
-      });
-      expect(fused).toEqual([]);
+      await page.setViewportSize({ width: 320, height: 800 });
+      expect(await scrollWidth(page)).toBeLessThanOrEqual(320);
     });
   });
 }
 
-// WCAG 1.4.10: 320 CSS px is a 1280px window at 400% zoom.
-test.describe("at 320px", () => {
-  test.skip(({ isMobile }) => isMobile, "pins its own viewport");
-  test.use({ viewport: { width: 320, height: 800 } });
-
-  for (const { name, path } of ROUTES) {
-    test(`${name} has no sideways scroll`, async ({ page }) => {
-      await page.goto(path);
-      expect(await scrollWidth(page)).toBeLessThanOrEqual(320);
-    });
-  }
-});
-
-// ROUTES is a hand list. A new dynamic template has nothing to catch it.
 test("every page directory in dist/ is a route above", () => {
   const built = readdirSync("dist", { withFileTypes: true })
     .filter(
       (entry) =>
-        entry.isDirectory() &&
-        !/^\d{4}$/.test(entry.name) &&
-        existsSync(`dist/${entry.name}/index.html`),
+        entry.isDirectory() && existsSync(`dist/${entry.name}/index.html`),
     )
     .map((entry) => `/${entry.name}/`);
   const listed = ROUTES.map((route) => route.path);
@@ -135,11 +98,12 @@ test("every page directory in dist/ is a route above", () => {
 });
 
 test.describe("head", () => {
-  const content = (page: Page, selector: string) =>
-    page.locator(selector).getAttribute("content");
-
   test("a post carries article metadata", async ({ page }) => {
-    await page.goto("/2007/ajax-security-research-and-findings-round-1/");
+    const path = "/2007/ajax-security-research-and-findings-round-1/";
+    const url = `https://aaronsaray.com${path}`;
+    const description =
+      "(“the triangle”) wants to keep implementing more and more AJAX based systems - but no one ever took time to research into the security issues with this.";
+    await page.goto(path);
 
     expect(await content(page, 'meta[name="twitter:card"]')).toBe(
       "summary_large_image",
@@ -148,24 +112,24 @@ test.describe("head", () => {
     expect(await content(page, 'meta[property="article:published_time"]')).toBe(
       "2007-06-28",
     );
-    expect(await content(page, 'meta[property="og:url"]')).toBe(
-      await page.locator("link[rel=canonical]").getAttribute("href"),
+    await expect(page.locator("link[rel=canonical]")).toHaveAttribute(
+      "href",
+      url,
     );
-
-    const description = await content(page, 'meta[name="description"]');
+    expect(await content(page, 'meta[property="og:url"]')).toBe(url);
+    expect(await content(page, 'meta[name="description"]')).toBe(description);
     expect(await content(page, 'meta[property="og:description"]')).toBe(
       description,
     );
-    expect(description!.length).toBeLessThanOrEqual(200);
   });
 
+  // Its excerpt runs past the 200-character cap.
   test("a long excerpt is capped cleanly", async ({ page }) => {
     await page.goto("/2007/website-monitoring-project/");
 
-    const description = (await content(page, 'meta[name="description"]'))!;
-    expect(description.length).toBeLessThanOrEqual(200);
-    expect(description).toMatch(/…$/);
-    expect(description).not.toMatch(/(?:\.|…)…$/);
+    expect(await content(page, 'meta[name="description"]')).toBe(
+      "Recently, while working at (“the triangle”), I came across a project that I had to research. This project’s definition included finding an up-time monitoring system for our websites as well as a…",
+    );
   });
 
   test("a non-post is a website", async ({ page }) => {
@@ -180,17 +144,17 @@ test.describe("head", () => {
   test("a tag page advertises its own feed", async ({ page }) => {
     await page.goto("/tag/php/");
 
-    const href = await page
-      .locator('link[rel=alternate][type="application/rss+xml"]')
-      .last()
-      .getAttribute("href");
-    expect(href).toMatch(/\/tag\/php\/index\.xml$/);
-
-    expect(await content(page, 'meta[name="description"]')).not.toBe(
-      await content(page, 'meta[property="og:title"]'),
+    await expect(
+      page.locator(
+        'link[rel=alternate][type="application/rss+xml"][href="https://aaronsaray.com/tag/php/index.xml"]',
+      ),
+    ).toHaveCount(1);
+    expect(await content(page, 'meta[name="description"]')).toBe(
+      'Blog entries by Aaron Saray that have the tag "php".',
     );
   });
 
+  // The page count moves with every post.
   test("a pagination page names its position", async ({ page }) => {
     await page.goto("/blog/page/2/");
 

@@ -12,7 +12,7 @@ test that cannot name that does not get written.
 ## Tested
 
 * **Served bytes.** Feeds parse as XML, the contact page never carries
-  the literal address, head metadata, a download answers 200.
+  the literal address, head metadata.
 * **Links.** Click and assert the URL, never just the `href`.
 * **Operation.** Keyboard, tap, clipboard: skip link, nav panels, copy
   button, Enter on the 404 page.
@@ -61,12 +61,17 @@ names. Nothing one of these owns gets a hand-rolled check.
 
 ## Writing one
 
-* Fixtures are permanent post URLs, the comment saying why that post.
-  Nothing goes in `src/content/` for a test.
+* Fixtures are permanent posts, the comment saying why that post. A
+  permanent post's values are known: assert the string or count the
+  built page carries, never that two fields agree or that a count is
+  above zero. A live page (CV, books, about, blog index) gets a shape
+  check instead. Nothing goes in `src/content/` for a test.
 * Both projects run every test. `test.skip(isMobile, "why")` or
   `hasTouch` only when one form factor cannot show the behavior.
 * `expect(locator)` retries; `page.evaluate` only when no locator can
-  ask. Over many elements, collect faults and expect `[]`.
+  ask. A test stops at its first failed expect and the run stops at
+  its first failed test: never `expect.soft`, never a collected list
+  of faults.
 * Comments answer which fixture and why, or what the owning tool
   cannot see.
 * Helpers sit above the tests that call them, as `function`

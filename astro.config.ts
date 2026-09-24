@@ -22,6 +22,8 @@ export default defineConfig({
   build: {
     format: "directory",
   },
+  // The "jsx" default deletes a line break beside an inline tag.
+  compressHTML: true,
   redirects: {
     // Builds a meta-refresh page; public/_redirects upgrades it to a 301.
     "/blog/page/1/": "/blog/",

@@ -26,7 +26,7 @@ export default defineConfig(
         {
           selector: 'JSXExpressionContainer > Literal[value=" "]',
           message:
-            'Prettier writes {" "} when text flows around an inline tag inside an expression. Move that markup into its own component (OldPostNotice.astro is the pattern) and render the component from the expression.',
+            'Prettier writes {" "} when it wraps text beside an inline tag inside an expression. Delete it and keep the line break; compressHTML renders the break as a space.',
         },
       ],
     },
