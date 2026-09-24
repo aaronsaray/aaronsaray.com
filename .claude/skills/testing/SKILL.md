@@ -69,6 +69,8 @@ names. Nothing one of these owns gets a hand-rolled check.
   ask. Over many elements, collect faults and expect `[]`.
 * Comments answer which fixture and why, or what the owning tool
   cannot see.
+* Helpers sit above the tests that call them, as `function`
+  declarations, not arrows.
 
 ## Running
 

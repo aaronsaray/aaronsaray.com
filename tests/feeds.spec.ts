@@ -1,8 +1,5 @@
 import { test, expect } from "@playwright/test";
 
-// The feeds and sitemap are hand-rolled strings rather than generated
-// by an integration, so nothing but these checks proves they stay
-// well-formed.
 const FEEDS = [
   { name: "blog feed", path: "/blog/index.xml" },
   { name: "tag index feed", path: "/tag/index.xml" },

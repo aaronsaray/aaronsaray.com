@@ -1,41 +1,51 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { test, expect } from "@playwright/test";
 
+function htmlFiles(): string[] {
+  return readdirSync("dist", { recursive: true, encoding: "utf8" })
+    .filter((path) => path.endsWith(".html"))
+    .map((path) => join("dist", path));
+}
+
+// Code samples in posts carry hrefs too; they sit inside <pre>.
+function internalHrefs(file: string): string[] {
+  const html = readFileSync(file, "utf8").replace(/<pre[\s\S]*?<\/pre>/g, "");
+
+  return [...html.matchAll(/href="(\/[^"/][^"]*)"/g)].map(([, href]) => href);
+}
+
+// The paths in public/_redirects redirect on purpose.
+const intended = readFileSync("public/_redirects", "utf8")
+  .split("\n")
+  .filter((line) => line.startsWith("/"))
+  .map((line) => line.split(/\s+/)[0]);
+
 // The host serves a page only at its slashed URL and answers the bare
-// form with a 301. Read from dist/ because the posts hold most of the
-// links and the route sweep visits a dozen pages.
-test("internal links land without a redirect", () => {
-  // The bare paths in public/_redirects exist to redirect: /book is
-  // the site's own stable URL for the Amazon page.
-  const intended = readFileSync("public/_redirects", "utf8")
-    .split("\n")
-    .filter((line) => line.startsWith("/"))
-    .map((line) => line.split(/\s+/)[0]);
-  const faults: string[] = [];
-  const walk = (dir: string) => {
-    for (const entry of readdirSync(dir, { withFileTypes: true })) {
-      const path = join(dir, entry.name);
-      if (entry.isDirectory()) {
-        walk(path);
-      } else if (entry.name.endsWith(".html")) {
-        check(path);
-      }
-    }
-  };
-  const check = (file: string) => {
-    const html = readFileSync(file, "utf8");
-    for (const [, href] of html.matchAll(/href="(\/[^"/][^"]*)"/g)) {
-      const path = href.split(/[#?]/)[0];
-      if (
-        !path.endsWith("/") &&
-        !/\.[a-z0-9]+$/i.test(path) &&
-        !intended.includes(path)
-      ) {
-        faults.push(`${file}: ${href}`);
-      }
-    }
-  };
-  walk("dist");
+// form with a 301.
+function fault(href: string): string | null {
+  const path = decodeURIComponent(href.split(/[#?]/)[0]);
+
+  if (intended.includes(path)) {
+    return null;
+  }
+  if (path.endsWith("/")) {
+    return existsSync(join("dist", path, "index.html")) ? null : "has no page";
+  }
+  if (/\.[a-z0-9]+$/i.test(path)) {
+    return existsSync(join("dist", path)) ? null : "has no file";
+  }
+  return "redirects";
+}
+
+// Read from dist/ rather than visiting pages: the posts hold most of
+// the links and the route sweep opens a dozen pages.
+test("internal links land on a built page without a redirect", () => {
+  const faults = htmlFiles().flatMap((file) =>
+    internalHrefs(file)
+      .filter((href) => fault(href))
+      .map((href) => `${file}: ${href} ${fault(href)}`),
+  );
+
   expect(faults).toEqual([]);
 });
