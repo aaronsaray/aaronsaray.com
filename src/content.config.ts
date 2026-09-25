@@ -24,7 +24,18 @@ const blog = defineCollection({
       // A string: Date coercion could shift the URL year across a timezone.
       date: z
         .string()
-        .regex(/^\d{4}-\d{2}-\d{2}($|T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2})?$)/),
+        .regex(/^\d{4}-\d{2}-\d{2}($|T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2})?$)/)
+        // A day past the month's end rolls the Date into the next month,
+        // so the round trip fails.
+        .refine((date) => {
+          const [y, m, d] = date.slice(0, 10).split("-").map(Number);
+          const utc = new Date(Date.UTC(y, m - 1, d));
+          return (
+            utc.getUTCFullYear() === y &&
+            utc.getUTCMonth() === m - 1 &&
+            utc.getUTCDate() === d
+          );
+        }, "date is not a real calendar day"),
       tags: z.array(z.string()).min(1),
       context: z.array(z.string()).optional(),
       draft: z.boolean().optional(),

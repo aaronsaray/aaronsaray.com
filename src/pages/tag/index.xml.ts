@@ -12,7 +12,7 @@ export const GET: APIRoute = async () => {
     tags.slice(0, RSS_LIMIT).map(async (entry) => ({
       title: tagTitle(entry.id),
       link: `${SITE_URL}/tag/${entry.id}/`,
-      descriptionHtml: await excerptHtml(entry.body ?? ""),
+      descriptionHtml: await excerptHtml(entry.body!),
     })),
   );
   return feedResponse(

@@ -24,9 +24,7 @@ function url(path: string, mod?: string): string {
 
 export const GET: APIRoute = async () => {
   const posts = await getSortedPosts();
-  // The post-derived pages carry no lastmod when the collection is
-  // empty; dating them off a missing newest post would be a guess.
-  const newest = posts[0] && lastmod(posts[0].data.date);
+  const newest = lastmod(posts[0].data.date);
   const entries: string[] = [];
 
   entries.push(url("/", newest));

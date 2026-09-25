@@ -1,5 +1,5 @@
 import { readFile } from "node:fs/promises";
-import { join, normalize } from "node:path";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { imageMetadata } from "astro/assets/utils";
 
@@ -19,17 +19,13 @@ async function read(src: string): Promise<Dimensions | null> {
     return null;
   }
 
-  // A src is untrusted text from markdown; keep the read inside
-  // public/ so "/../.." cannot walk out of it.
-  const path = normalize(join(PUBLIC_DIR, src));
-  if (!path.startsWith(PUBLIC_DIR)) {
-    return null;
-  }
-
   try {
     // imageMetadata already swaps width and height for a JPEG whose
     // EXIF orientation rotates it, so the box matches what renders.
-    const { width, height } = await imageMetadata(await readFile(path), src);
+    const { width, height } = await imageMetadata(
+      await readFile(join(PUBLIC_DIR, src)),
+      src,
+    );
     return { width, height };
   } catch {
     // A missing file or an unparseable one (posts reference both: an

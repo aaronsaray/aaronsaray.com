@@ -57,7 +57,7 @@ for (const { name, path, status } of ROUTES) {
   test.describe(name, () => {
     test("renders", async ({ page }) => {
       const response = await page.goto(path);
-      expect(response?.status()).toBe(status ?? 200);
+      expect(response!.status()).toBe(status ?? 200);
       await expect(page.locator("h1")).toHaveCount(1);
     });
 
@@ -120,6 +120,10 @@ test.describe("head", () => {
     expect(await content(page, 'meta[name="description"]')).toBe(description);
     expect(await content(page, 'meta[property="og:description"]')).toBe(
       description,
+    );
+    // Its first tag, ajax, has an image.
+    expect(await content(page, 'meta[property="og:image"]')).toBe(
+      "https://aaronsaray.com/images/tag/ajax.jpg",
     );
   });
 

@@ -10,7 +10,7 @@ export const GET: APIRoute = async () => {
       title: post.data.title,
       link: `${SITE_URL}${postHref(post)}`,
       date: post.data.date,
-      descriptionHtml: await excerptHtml(post.body ?? ""),
+      descriptionHtml: await excerptHtml(post.body),
     })),
   );
   return feedResponse(

@@ -23,8 +23,8 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const description = await excerptText(entry.body ?? "");
-const minutes = readingTime(entry.body ?? "");
+const description = await excerptText(entry.body);
+const minutes = readingTime(entry.body);
 const tags = [...entry.data.tags].sort();
 const context = entry.data.context;
 const showOldNotice = isOldPost(entry.data.date) && !entry.data.evergreen;
@@ -118,12 +118,8 @@ const showThirtyThreeThings = entry.id === "33-things-book";
     // The selectors depend on the two DOM shapes rehype-code-chrome emits.
     document.querySelectorAll(".copy-btn").forEach((btn) => {
       btn.addEventListener("click", async () => {
-        const pre =
-          btn.closest(".filename-header")?.nextElementSibling ??
-          btn.closest(".code-wrap")?.querySelector("pre");
-        if (!(pre instanceof HTMLElement)) {
-          return;
-        }
+        const pre = (btn.closest(".filename-header")?.nextElementSibling ??
+          btn.closest(".code-wrap")?.querySelector("pre")) as HTMLElement;
         try {
           await navigator.clipboard.writeText(pre.innerText);
           btn.classList.add("copied");

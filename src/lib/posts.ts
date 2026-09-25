@@ -1,6 +1,8 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 
-export type Post = CollectionEntry<"blog">;
+// Astro types `body` optional because the glob loader also loads JSON,
+// which has none; every blog entry is markdown.
+export type Post = CollectionEntry<"blog"> & { body: string };
 
 /** Permalink per the URL contract: /:year/:filename/ */
 export function postHref(post: Post): string {
@@ -15,7 +17,10 @@ export async function getPosts(): Promise<Post[]> {
   // MODE follows the astro command; DEV follows NODE_ENV, which a shell
   // exporting NODE_ENV=production turns off under `astro dev` too.
   const dev = import.meta.env.MODE === "development";
-  return getCollection("blog", ({ data }) => !data.draft || dev);
+  return (await getCollection(
+    "blog",
+    ({ data }) => !data.draft || dev,
+  )) as Post[];
 }
 
 /**
@@ -27,15 +32,14 @@ export async function getSortedPosts(): Promise<Post[]> {
   return posts.sort(
     (a, b) =>
       b.data.date.localeCompare(a.data.date) ||
-      a.data.title.localeCompare(b.data.title) ||
-      a.id.localeCompare(b.id),
+      a.data.title.localeCompare(b.data.title),
   );
 }
 
 export const PER_PAGE = 10;
 
 export function pageCount(total: number): number {
-  return Math.max(1, Math.ceil(total / PER_PAGE));
+  return Math.ceil(total / PER_PAGE);
 }
 
 /** Items for a 1-based page number. */

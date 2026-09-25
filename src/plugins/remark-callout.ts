@@ -24,7 +24,7 @@ export function remarkCallout() {
         const replacement: PhrasingContent[] = [
           { type: "text", value: `:${node.name}` },
         ];
-        if (node.children?.length) {
+        if (node.children.length) {
           replacement.push({ type: "text", value: "[" }, ...node.children, {
             type: "text",
             value: "]",

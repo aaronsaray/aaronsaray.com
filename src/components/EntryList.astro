@@ -15,8 +15,8 @@ const entries = await Promise.all(
   posts.map(async (post) => ({
     post,
     href: postHref(post),
-    excerpt: await excerptHtml(post.body ?? ""),
-    minutes: readingTime(post.body ?? ""),
+    excerpt: await excerptHtml(post.body),
+    minutes: readingTime(post.body),
     tags: [...post.data.tags].sort(),
   })),
 );

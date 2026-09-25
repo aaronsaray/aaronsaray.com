@@ -32,13 +32,10 @@ export function rehypeFigure() {
         return;
       }
       const kids = node.children.filter((n) => !isWhitespace(n));
-      if (kids.length === 0) {
-        return;
-      }
 
       if (kids.length === 1 && kids[0].type === "element") {
         const el = kids[0];
-        const inner = el.children?.filter((n) => !isWhitespace(n)) ?? [];
+        const inner = el.children.filter((n) => !isWhitespace(n));
         const isImg = el.tagName === "img";
         const isLinkedImg =
           el.tagName === "a" &&
@@ -67,9 +64,6 @@ export function rehypeFigure() {
 
     visit(tree, "raw", (node, index, parent) => {
       if (!parent || index === undefined) {
-        return;
-      }
-      if (parent.type === "element" && parent.tagName === "figure") {
         return;
       }
       const html = node.value.trim();

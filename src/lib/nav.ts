@@ -26,9 +26,9 @@ export const NAV: NavItem[] = [
 ];
 
 export function isActive(pathname: string, item: NavItem): boolean {
-  return (
+  return Boolean(
     pathname === item.href ||
-    (item.match?.test(pathname) ?? false) ||
-    (item.children?.some((child) => isActive(pathname, child)) ?? false)
+    item.match?.test(pathname) ||
+    item.children?.some((child) => isActive(pathname, child)),
   );
 }

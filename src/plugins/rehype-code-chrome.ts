@@ -105,15 +105,14 @@ export function rehypeCodeChrome() {
       if (node.tagName !== "pre" || !parent || index === undefined) {
         return;
       }
-      // Astro's Shiki wrapper sets `properties.class` (not the hast
-      // convention `className`), so accept either.
-      const cls = node.properties?.className ?? node.properties?.class;
-      const classes = Array.isArray(cls) ? cls : String(cls ?? "").split(" ");
+      // Astro's Shiki wrapper writes `class` as a string, not the hast
+      // convention `className`.
+      const classes = String(node.properties.class).split(" ");
       if (!classes.includes("astro-code")) {
         return;
       }
 
-      const dataLang = String(node.properties.dataLanguage ?? "plaintext");
+      const dataLang = String(node.properties.dataLanguage);
       const filename = node.properties.dataFilename;
 
       // A block that scrolls is unreachable by keyboard unless it is
