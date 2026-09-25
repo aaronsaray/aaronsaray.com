@@ -2,6 +2,8 @@
 // smartypants oldschool, directives) so an excerpt renders the same
 // prose as the post. A change there is mirrored here.
 
+import type { Root } from "hast";
+import { toText } from "hast-util-to-text";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
@@ -16,13 +18,6 @@ const MARKER = "<!--more-->";
 const FALLBACK_WORDS = 70;
 const MAX_DESCRIPTION = 200;
 
-// toPlainText removes these outright and turns every other tag into a
-// space. Block tags need the space, or "</p><p>" glues two words
-// together; an inline tag replaced by one leaves "this post ." in place
-// of "this post."
-const INLINE_TAGS =
-  /<\/?(?:a|abbr|b|cite|code|del|em|i|kbd|mark|q|s|small|span|strong|sub|sup)(?:\s[^>]*)?>/gi;
-
 const pipeline = unified()
   .use(remarkParse)
   .use(remarkGfm)
@@ -33,11 +28,16 @@ const pipeline = unified()
   .use(rehypeRaw)
   .use(rehypeStringify, { allowDangerousHtml: true });
 
-const htmlCache = new Map<string, string>();
+interface Excerpt {
+  html: string;
+  text: string;
+}
 
-// toPlainText DECODES entities, so its output is plain text, not
-// HTML. Anything wrapping it back into markup must re-escape it or a
-// literal "&" or "<" in post prose becomes live markup downstream.
+const cache = new Map<string, Excerpt>();
+
+// Text from the tree has its entities decoded. Wrapping it back into
+// markup must re-escape it or a literal "&" or "<" in post prose becomes
+// live markup downstream.
 function escapeHtml(text: string): string {
   return text
     .replace(/&/g, "&amp;")
@@ -45,37 +45,36 @@ function escapeHtml(text: string): string {
     .replace(/>/g, "&gt;");
 }
 
-function toPlainText(html: string): string {
-  return html
-    .replace(INLINE_TAGS, "")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#x26;/g, "&")
-    .replace(/&#x3C;/g, "<")
-    .replace(/\s+/g, " ")
-    .trim();
+function render(markdown: string): Root {
+  return pipeline.runSync(pipeline.parse(markdown));
 }
 
-/** Rendered-HTML excerpt for list display and RSS descriptions. */
-export function excerptHtml(body: string): string {
-  const cached = htmlCache.get(body);
+function plainText(tree: Root): string {
+  return toText(tree).replace(/\s+/g, " ").trim();
+}
+
+function excerpt(body: string): Excerpt {
+  const cached = cache.get(body);
   if (cached !== undefined) {
     return cached;
   }
 
-  let html: string;
+  let result: Excerpt;
   if (body.includes(MARKER)) {
-    html = String(pipeline.processSync(body.split(MARKER)[0])).trim();
+    const tree = render(body.split(MARKER)[0]);
+    result = { html: pipeline.stringify(tree).trim(), text: plainText(tree) };
   } else {
-    const full = String(pipeline.processSync(body));
-    const words = toPlainText(full).split(" ").slice(0, FALLBACK_WORDS);
-    html = `<p>${escapeHtml(words.join(" "))}</p>`;
+    const words = plainText(render(body)).split(" ").slice(0, FALLBACK_WORDS);
+    const text = words.join(" ");
+    result = { html: `<p>${escapeHtml(text)}</p>`, text };
   }
-  htmlCache.set(body, html);
-  return html;
+  cache.set(body, result);
+  return result;
+}
+
+/** Rendered-HTML excerpt for list display and RSS descriptions. */
+export function excerptHtml(body: string): string {
+  return excerpt(body).html;
 }
 
 function cap(text: string): string {
@@ -89,5 +88,5 @@ function cap(text: string): string {
 
 /** Plain-text excerpt for meta descriptions, capped at 200 characters. */
 export function excerptText(body: string): string {
-  return cap(toPlainText(excerptHtml(body)));
+  return cap(excerpt(body).text);
 }
