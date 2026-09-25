@@ -110,7 +110,9 @@ Let's break down what I might test on a store end point for a blog entry.  The b
 
 That's just the basics of a feature test.  Now, you might repeat this for editing (including checking for permission to edit that, and making sure it overwrites the proper blog entry.)
 
-> Fun tip: Sometimes... rarely... I write a set of tests and they run successfully immediately. For the most part, even after all these years, that freaks me out. So, I go to my code and specifically edit it (temporarily) so my test will fail and run my tests again. If they continue to pass, I know my test is targeting the wrong thing. If they fail, then I know I just am "that good" this one time.
+:::callout
+Fun tip: Sometimes... rarely... I write a set of tests and they run successfully immediately. For the most part, even after all these years, that freaks me out. So, I go to my code and specifically edit it (temporarily) so my test will fail and run my tests again. If they continue to pass, I know my test is targeting the wrong thing. If they fail, then I know I just am "that good" this one time.
+:::
 
 Feature tests may also do things that integrate with third party APIs or have complex sets of relationships between eloquent models.  One of the benefits of the integration test layer for the eloquent models is that we've tested their functionality thoroughly (and much faster).  Therefore, we only need to write Feature tests that are unique enough to indicate that those proper scopes are being called. If we know that, we can reasonably assume (not always, but reasonably) that the integration tests will then cover the uniqueness and edge cases.
 

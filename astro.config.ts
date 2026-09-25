@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
 import tailwindcss from "@tailwindcss/vite";
 import rehypeSlug from "rehype-slug";
-import remarkDirective from "remark-directive";
 import { remarkCallout } from "./src/plugins/remark-callout.ts";
 import { rehypeCodeChrome } from "./src/plugins/rehype-code-chrome.ts";
 import { rehypeTableWrap } from "./src/plugins/rehype-table-wrap.ts";
@@ -12,7 +11,6 @@ import { rehypeSections } from "./src/plugins/rehype-sections.ts";
 import { rehypeHeadingAnchors } from "./src/plugins/rehype-heading-anchors.ts";
 import { aaronsarayDark } from "./src/plugins/shiki-theme.ts";
 import { shikiMetaFilename } from "./src/plugins/shiki-meta-filename.ts";
-import { shikiOutputRootStyle } from "./src/plugins/shiki-output-root-style.ts";
 
 export default defineConfig({
   site: "https://aaronsaray.com",
@@ -36,7 +34,7 @@ export default defineConfig({
       // Post prose writes -- and --- expecting en and em dashes; only
       // oldschool mode renders them that way.
       smartypants: { dashes: "oldschool" },
-      remarkPlugins: [remarkDirective, remarkCallout],
+      remarkPlugins: [remarkCallout],
       rehypePlugins: [
         rehypeSlug,
         [rehypeHeadingAnchors, { depth: 3 }],
@@ -49,15 +47,14 @@ export default defineConfig({
     }),
     shikiConfig: {
       theme: aaronsarayDark,
-      // `output` is not a language: rehype-code-chrome and
-      // shikiOutputRootStyle key on the name.
+      // `output` is not a language: rehype-code-chrome keys on the name.
       langAlias: {
         apacheconf: "apache",
         basic: "plaintext",
         env: "ini",
         output: "plaintext",
       },
-      transformers: [shikiMetaFilename(), shikiOutputRootStyle()],
+      transformers: [shikiMetaFilename()],
     },
   },
   vite: {

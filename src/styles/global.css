@@ -408,10 +408,12 @@ h4 {
       right: 0.75rem;
     }
     &.is-output {
+      /* Shiki writes the theme's colors inline on the pre. */
       pre {
         --pre-edge: var(--color-terminal-edge);
         --pre-ground: var(--color-terminal);
-        color: var(--color-ink-dim);
+        background: var(--pre-ground) !important;
+        color: var(--color-ink-dim) !important;
       }
       /* The icon strokes in currentColor; this matches it to
          .code-lang. */

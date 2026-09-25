@@ -9,7 +9,9 @@ Whether you're on the side that just landed the big deal - or you're the busines
 
 <!--more-->
 
-> You should know that I am not a lawyer. Take this entry as advisory only. Your locale or business situation may require you to work with representation to draft your contract.
+:::callout
+You should know that I am not a lawyer. Take this entry as advisory only. Your locale or business situation may require you to work with representation to draft your contract.
+:::
 
 ## What is a Statement of Work
 

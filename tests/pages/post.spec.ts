@@ -57,11 +57,9 @@ test.describe("output blocks", () => {
   // Three output blocks alternating with php ones.
   const POST = "/2017/use-the-fail-method-with-mockery-on/";
 
-  // Shiki writes the theme colors inline on the pre, where no class can
-  // override them; shiki-output-root-style.ts drops them for `output`,
-  // leaving Astro's overflow-x. The `output: "plaintext"` alias in
-  // astro.config.ts keeps token spans out. axe judges a scroll stop
-  // only where one overflows, and never its name.
+  // The `output: "plaintext"` alias in astro.config.ts keeps token
+  // spans out. axe judges a scroll stop only where one overflows, and
+  // never its name.
   test("output blocks are unhighlighted, uncopyable, named focus stops", async ({
     page,
   }) => {
@@ -80,7 +78,7 @@ test.describe("output blocks", () => {
     await expect(outputs.locator(".copy-btn")).toHaveCount(0);
     await expect(
       outputs.locator(
-        'pre[tabindex="0"][role="group"][aria-label="Terminal output"][style="; overflow-x: auto;"]',
+        'pre[tabindex="0"][role="group"][aria-label="Terminal output"]',
       ),
     ).toHaveCount(3);
     await expect(outputs.locator("pre span[style]")).toHaveCount(0);

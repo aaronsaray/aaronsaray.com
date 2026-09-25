@@ -13,7 +13,9 @@ Let's see how to do this with a little bit of HTML and Javascript.
 
 <!--more-->
 
-> Before we continue, let's just clarify: this is only for showing dates. This approach is not reflecting any logical calculations, scheduling, etc. The topic of timezones is pretty in depth and way larger than this article.
+:::callout
+Before we continue, let's just clarify: this is only for showing dates. This approach is not reflecting any logical calculations, scheduling, etc. The topic of timezones is pretty in depth and way larger than this article.
+:::
 
 So, let's take a look at what we normally have.  In this example, I'm going to use the PHP library Carbon - but it works with any string date value.
 

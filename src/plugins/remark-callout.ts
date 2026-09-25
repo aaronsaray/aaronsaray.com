@@ -1,54 +1,33 @@
-import type { PhrasingContent, Root } from "mdast";
-import type { VFile } from "vfile";
+import type { Root } from "mdast";
 import { visit } from "unist-util-visit";
 
-// Every directive node other than :::callout is restored to the
-// literal text it was parsed from. remark-directive's inline syntax
-// is greedy (":D", ":points", "10:30am" all parse as textDirectives),
-// and an unhandled directive node renders as an empty element,
-// silently deleting the author's text. The two cases restoration
-// cannot do losslessly throw rather than warn: a build-time warning
-// scrolls away and altered prose ships; a crash names the file.
+const OPEN = ":::callout\n";
+const CLOSE = "\n:::";
+
+// A callout is a single paragraph whose first line is `:::callout` and
+// whose last is `:::`. A blank line inside one splits the paragraph and
+// leaves both markers on the page as text.
 export function remarkCallout() {
-  return (tree: Root, file: VFile) => {
-    visit(tree, (node, index, parent) => {
-      if (node.type === "containerDirective" && node.name === "callout") {
-        node.data = { hName: "div", hProperties: { className: ["callout"] } };
+  return (tree: Root) => {
+    visit(tree, "paragraph", (node, index, parent) => {
+      const first = node.children[0];
+      const last = node.children.at(-1);
+      if (
+        first?.type !== "text" ||
+        last?.type !== "text" ||
+        !first.value.startsWith(OPEN) ||
+        !last.value.endsWith(CLOSE)
+      ) {
         return;
       }
-
-      if (node.type === "textDirective") {
-        if (!parent || index === undefined) {
-          return;
-        }
-        const replacement: PhrasingContent[] = [
-          { type: "text", value: `:${node.name}` },
-        ];
-        if (node.children.length) {
-          replacement.push({ type: "text", value: "[" }, ...node.children, {
-            type: "text",
-            value: "]",
-          });
-        }
-        if (node.attributes && Object.keys(node.attributes).length) {
-          // Attribute syntax can't be restored losslessly: refuse to
-          // ship prose with the {...} text silently deleted.
-          throw new Error(
-            `[remark-callout] cannot restore attributes on ":${node.name}" in ${file.path}; rework the text or handle the directive`,
-          );
-        }
-        parent.children.splice(index, 1, ...replacement);
-        return index + replacement.length;
-      }
-
-      if (node.type === "leafDirective" || node.type === "containerDirective") {
-        // Block-directive restoration is an approximation of the
-        // original source, not the source itself: don't ship it.
-        const marker = node.type === "leafDirective" ? "::" : ":::";
-        throw new Error(
-          `[remark-callout] unexpected ${node.type} "${marker}${node.name}" in ${file.path}; restoration would approximate the author's text`,
-        );
-      }
+      first.value = first.value.slice(OPEN.length);
+      last.value = last.value.slice(0, -CLOSE.length);
+      // mdast has no generic block wrapper; hName renders this one as a div.
+      parent!.children[index!] = {
+        type: "blockquote",
+        children: [node],
+        data: { hName: "div", hProperties: { className: ["callout"] } },
+      };
     });
   };
 }

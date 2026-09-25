@@ -10,7 +10,9 @@ If Google gives free access to their web traffic tool called Google Analytics, w
 
 <!--more-->
 
-> Know all of this? Skip to the bottom to get my security-minded privacy-focused analytics recommendation.
+:::callout
+Know all of this? Skip to the bottom to get my security-minded privacy-focused analytics recommendation.
+:::
 
 ## Why Do You Need Web/App Analytics?
 
@@ -72,5 +74,7 @@ I believe in this product - ~~I use it on this website - as well as most website
 
 Get [Fathom Analytics](https://usefathom.com/ref/NGDXMB) now.  (affiliate link) *may be expired - no longer using, but I support these guys!*
 
-> By the way... They're committed to privacy and security, and therefore have built their own affiliate tracking system.  This means it works when you use it - but doesn't necessarily track you long-term.
+:::callout
+By the way... They're committed to privacy and security, and therefore have built their own affiliate tracking system.  This means it works when you use it - but doesn't necessarily track you long-term.
+:::
 

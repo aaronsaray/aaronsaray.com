@@ -45,8 +45,10 @@ Let's do the scenarios again.
 > 
 > **Developer:** No Thanks.
 > 
-> **Recruiter:** Alright!  Thanks so much for taking the time to get back to me.  Really appreciate it.  I know not every opportunity is a great fit at this time, but do keep me in mind if you're looking for any new challenges.  I've got a few positions that offer unique sets of rewards for the right individual.**
-_BONUS POINTS IF YOU'RE LOCAL:_ Actually, if you're a coffee addict like me, could I buy you some coffee at Starbucks next week?  I could use some insight from people like you to find out how I might find other qualified candidates._
+> **Recruiter:** Alright!  Thanks so much for taking the time to get back to me.  Really appreciate it.  I know not every opportunity is a great fit at this time, but do keep me in mind if you're looking for any new challenges.  I've got a few positions that offer unique sets of rewards for the right individual.
+> 
+> _BONUS POINTS IF YOU'RE LOCAL:_ Actually, if you're a coffee addict like me, could I buy you some coffee at Starbucks next week?  I could use some insight from people like you to find out how I might find other qualified candidates.
+
 (People like feeling important - plus you get to know the person, and maybe they really ARE looking.)
 
 The other example.

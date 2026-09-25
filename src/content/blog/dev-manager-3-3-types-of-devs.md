@@ -84,7 +84,7 @@ Before you jump to a conclusion that your developer is a bad seed, you need to r
 
 ## Attend to your different programmers
 
-> "Always remember you're unique, just like everyone else."*
+> "Always remember you're unique, just like everyone else."
 > 
 > ~ Red Green (or [Jim Wright](https://quoteinvestigator.com/2014/11/10/you-unique) - why am I so bad at picking quotes?)
 

@@ -13,7 +13,9 @@ Ahh! So now, you have to build a complex backend to deal with this. Or do you? I
 
 First, let's break down what we want to do.  We want to make a website - for some reason - that shows the last time [chickenfacts.io](https://chickenfacts.io) was updated.  Luckily, there is an [API](https://github.com/aaronsaray/chickenfacts.io/blob/master/API.md) that you can retrieve.  Turns out you need to call the endpoint `https://chickenfacts.io/api/v1/facts.json` for a JSON return.  The field `last_counted` tells when the last update happened.
 
-> I should point out that this is a contrived example.  There is actually no error with chickenfacts.io CORS - but since you're here, your API likely has one. So just use your API in this example. Why would you be trying to retrieve chicken facts anyway?
+:::callout
+I should point out that this is a contrived example.  There is actually no error with chickenfacts.io CORS - but since you're here, your API likely has one. So just use your API in this example. Why would you be trying to retrieve chicken facts anyway?
+:::
 
 Next, with that information, you want to build a plain, simple vanilla JS app that inserts that information into a page and you're set.  (I'm building it in plain javascript - but this works with any Javascript framework - I didn't want to get distracted with things like React vs Vue).  Also, there are many ways to make this JS / HTML. The point is we're focusing on the most simplest way of demonstrating the Netlify functions. Don't get stuck on the other things.
 

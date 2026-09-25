@@ -1,5 +1,5 @@
 // The remark half of this pipeline mirrors astro.config.ts (gfm,
-// smartypants oldschool, directives) so an excerpt renders the same
+// smartypants oldschool, callouts) so an excerpt renders the same
 // prose as the post. A change there is mirrored here.
 
 import type { Root } from "hast";
@@ -8,7 +8,6 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkSmartypants from "remark-smartypants";
-import remarkDirective from "remark-directive";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
@@ -22,7 +21,6 @@ const pipeline = unified()
   .use(remarkParse)
   .use(remarkGfm)
   .use(remarkSmartypants, { dashes: "oldschool" })
-  .use(remarkDirective)
   .use(remarkCallout)
   .use(remarkRehype, { allowDangerousHtml: true })
   .use(rehypeRaw)

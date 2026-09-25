@@ -6,7 +6,7 @@ tags:
   - management
 evergreen: true
 ---
-> "If you have the question, chances are someone else in the group has it, too. Be brave: get the answer to your question with a by-product of serving others." 
+If you have the question, chances are someone else in the group has it, too. Be brave: get the answer to your question with a by-product of serving others.
 
 <!--more-->
 
