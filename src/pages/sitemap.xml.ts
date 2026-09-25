@@ -4,7 +4,7 @@
 // also emits one `lastmod` for the whole site, where the entries below
 // carry the date of the newest post each URL covers, and it sitemaps
 // every built page, which would pull in the paginated aliases and all
-// 54 feeds.
+// 53 feeds.
 
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";

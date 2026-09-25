@@ -79,7 +79,7 @@ The first part of the HTML document is as follows:
 
 First, the class of `modal` and `needAllow` are on the body.  The modal that is used for this application is purely css.  It activates/deactivates based on the classes on the body.  We'll look at that more in the css and the javascript.  Next of course is the header.  I have this separate because I'm not going to blur out the header with the modal - just the body content.
 
-[![Second Screen](/uploads/2013/2.png)](/uploads/2013/2.png)
+[![Second Screen](/uploads/2013/photobooth-2.png)](/uploads/2013/photobooth-2.png)
 
 Following that is the video.  You'll see that the video element is set to autoplay.  If this is not true, when you send webcam to it, it will still require you to click 'play' to show the content.  Below that is a hint to take a screenshot.  When the user hovers over the video with the mouse, the icon changes to a small camera, and a click handler watches for a click.  You'll see that in the css and javascript.
 

@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.2.4",
+    "@astrojs/rss": "4.0.19",
     "@tailwindcss/vite": "4.3.3",
     "astro": "7.2.9",
     "hast-util-from-html": "2.0.3",

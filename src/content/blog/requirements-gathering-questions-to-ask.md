@@ -1,6 +1,6 @@
 ---
 title: Requirements Gathering Questions to Ask
-date: "2023-03-01T11:00:00"
+date: "2023-03-01T11:00:00-06:00"
 tags:
   - business
 evergreen: true

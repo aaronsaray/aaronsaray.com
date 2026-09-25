@@ -1,6 +1,6 @@
 ---
 title: Statement of Work Example
-date: "2023-03-01T12:00:00"
+date: "2023-03-01T12:00:00-06:00"
 tags:
   - business
 evergreen: true

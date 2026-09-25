@@ -2,7 +2,6 @@ import { test, expect } from "@playwright/test";
 
 const FEEDS = [
   { name: "blog feed", path: "/blog/index.xml" },
-  { name: "tag index feed", path: "/tag/index.xml" },
   { name: "per-tag feed", path: "/tag/php/index.xml" },
   { name: "sitemap", path: "/sitemap.xml" },
 ];

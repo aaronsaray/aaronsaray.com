@@ -1,9 +1,9 @@
 ---
 import Icon from "./Icon.astro";
 import Logo from "../assets/logo.svg";
-import { getPostCount } from "../lib/site";
+import { getPosts } from "../lib/posts";
 
-const postCount = await getPostCount();
+const postCount = (await getPosts()).length;
 const year = new Date().getFullYear();
 ---
 

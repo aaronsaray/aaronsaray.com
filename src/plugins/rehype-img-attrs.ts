@@ -34,7 +34,7 @@ const RAW_SRC = /\bsrc\s*=\s*["']([^"']*)["']/i;
 // multiplied pixels as width and the screenshot renders that many times
 // its true size. Phone captures are commonly 3x: an iPhone Pro's
 // 1170x2532 is a 390x844 screen.
-type Sizes = Map<string, Dimensions | null>;
+type Sizes = Map<string, Dimensions>;
 
 const DENSITY = /@([23])x\.[^./]+$/i;
 
@@ -59,12 +59,9 @@ export function rehypeImgAttrs() {
         const src = node.properties.src as string;
         srcs.add(src);
         edits.push((sizes) => {
-          const size = sizes.get(src);
-          if (size) {
-            const { width, height } = displaySize(src, size);
-            node.properties.width = width;
-            node.properties.height = height;
-          }
+          const { width, height } = displaySize(src, sizes.get(src)!);
+          node.properties.width = width;
+          node.properties.height = height;
           if (eager) {
             return;
           }
@@ -86,11 +83,8 @@ export function rehypeImgAttrs() {
           let i = 0;
           node.value = node.value.replace(RAW_IMG_TAG, (tag) => {
             const { eager, src } = tags[i++];
-            const size = sizes.get(src);
-            const shown = size ? displaySize(src, size) : null;
-            const dims = shown
-              ? ` width="${shown.width}" height="${shown.height}"`
-              : "";
+            const { width, height } = displaySize(src, sizes.get(src)!);
+            const dims = ` width="${width}" height="${height}"`;
             if (eager) {
               return tag.replace(/^<img\b/i, `<img${dims}`);
             }

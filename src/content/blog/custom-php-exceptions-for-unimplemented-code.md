@@ -1,6 +1,6 @@
 ---
 title: Custom PHP Exceptions for Unimplemented Code
-date: "2025-06-30T10:00:00"
+date: "2025-06-30T10:00:00-05:00"
 tags:
   - php
   - programming

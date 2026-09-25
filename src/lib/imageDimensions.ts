@@ -7,39 +7,10 @@ const PUBLIC_DIR = fileURLToPath(new URL("../../public/", import.meta.url));
 
 export type Dimensions = { width: number; height: number };
 
-// Same src resolves once per build no matter how many posts use it.
-// The promise is cached, not the result, so concurrent posts sharing
-// an image wait on one read instead of racing to start their own.
-const cache = new Map<string, Promise<Dimensions | null>>();
-
-async function read(src: string): Promise<Dimensions | null> {
-  // Anything not rooted at / is a relative path inside a code sample,
-  // not a real asset reference.
-  if (!src.startsWith("/")) {
-    return null;
-  }
-
-  try {
-    // imageMetadata already swaps width and height for a JPEG whose
-    // EXIF orientation rotates it, so the box matches what renders.
-    const { width, height } = await imageMetadata(
-      await readFile(join(PUBLIC_DIR, src)),
-      src,
-    );
-    return { width, height };
-  } catch {
-    // A missing file or an unparseable one (posts reference both: an
-    // XSS demo points <img> at a .php). Callers stamp nothing and the
-    // build carries on.
-    return null;
-  }
-}
-
-export function lookupDimensions(src: string): Promise<Dimensions | null> {
-  let hit = cache.get(src);
-  if (!hit) {
-    hit = read(src);
-    cache.set(src, hit);
-  }
-  return hit;
+export async function lookupDimensions(src: string): Promise<Dimensions> {
+  const { width, height } = await imageMetadata(
+    await readFile(join(PUBLIC_DIR, src)),
+    src,
+  );
+  return { width, height };
 }

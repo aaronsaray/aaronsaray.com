@@ -2,12 +2,7 @@ import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import { getSortedPosts, postHref } from "../../../lib/posts";
 import { excerptHtml } from "../../../lib/excerpt";
-import {
-  renderFeed,
-  feedResponse,
-  RSS_LIMIT,
-  SITE_URL,
-} from "../../../lib/rss";
+import { feed, RSS_LIMIT, SITE_URL } from "../../../lib/rss";
 import { tagTitle } from "../../../lib/tags";
 
 export async function getStaticPaths() {
@@ -26,12 +21,10 @@ export const GET: APIRoute = async ({ params }) => {
     date: post.data.date,
     descriptionHtml: excerptHtml(post.body),
   }));
-  return feedResponse(
-    renderFeed({
-      title: tagTitle(term),
-      path: `/tag/${term}/`,
-      selfPath: `/tag/${term}/index.xml`,
-      items,
-    }),
-  );
+  return feed({
+    title: tagTitle(term),
+    path: `/tag/${term}/`,
+    selfPath: `/tag/${term}/index.xml`,
+    items,
+  });
 };

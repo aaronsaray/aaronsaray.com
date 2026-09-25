@@ -1,4 +1,3 @@
-import fs from "node:fs";
 import type { CollectionEntry } from "astro:content";
 import type { Post } from "./posts";
 
@@ -10,19 +9,13 @@ export function tagDescription(term: string): string {
   return `Blog entries by Aaron Saray that have the tag "${term}".`;
 }
 
-/** Throws when a tag lacks its social card or a post's tag lacks its file. */
+// Tag pages are built from src/content/tags/, so a mistyped tag in a
+// post builds no page, and the post's #tag link points at nothing.
 export function assertTags(
   tags: CollectionEntry<"tags">[],
   posts: Post[],
 ): void {
   const terms = new Set(tags.map((tag) => tag.id));
-  for (const term of terms) {
-    if (!fs.existsSync(`public/images/tag/${term}.jpg`)) {
-      throw new Error(
-        `The tag "${term}" needs public/images/tag/${term}.jpg (1200x630).`,
-      );
-    }
-  }
   for (const post of posts) {
     for (const term of post.data.tags) {
       if (!terms.has(term)) {

@@ -141,7 +141,7 @@ I think we can do that.
 
 ![page 1](/uploads/2025/page-position-footer-background-1.jpg)
 
-![page 2](/uploads/2025/page-position-footer-background-1.jpg)
+![page 2](/uploads/2025/page-position-footer-background-2.jpg)
 
 ```css
 html, body {

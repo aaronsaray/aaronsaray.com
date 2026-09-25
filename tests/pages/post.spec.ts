@@ -138,7 +138,7 @@ test.describe("images", () => {
     await page.goto(PHOTOBOOTH);
     expect(await stamps(page.locator(".prose img"))).toEqual([
       "/uploads/2013/1.png 1682x789",
-      "/uploads/2013/2.png 691x825",
+      "/uploads/2013/photobooth-2.png 1645x801",
       "/uploads/2013/3.png 1650x746",
     ]);
   });
