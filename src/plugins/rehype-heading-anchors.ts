@@ -5,8 +5,6 @@ import { visit, SKIP } from "unist-util-visit";
 import { iconFromDisk as icon } from "../lib/icon.ts";
 
 // Emits the .heading-anchor and .anchor-icon hooks global.css styles.
-// anchorDepth is read from the raw frontmatter, which zod output never
-// reaches; `depth` is the value for a document without the key.
 const ICON = fromHtml(icon("link", { class: "anchor-icon" }), {
   fragment: true,
 }).children[0] as Element;

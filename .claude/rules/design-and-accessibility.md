@@ -23,7 +23,13 @@ paths:
     string. Keyframes go in `@theme` as `--animate-*`.
   * Markup the templates never author (the markdown pipeline's output:
     `.prose`, `.entry-excerpt`, the code chrome)? Element rules in
-    global.css, on the class hooks the plugins emit.
+    global.css, on the class hooks the plugins emit. One nested block
+    per hook (`.prose { h2 { } }`, `@variant lg` inside `.cv`); the
+    build flattens it, and a nested selector list flattens to `:is()`.
+    Inside one, a declaration is plain CSS on the theme variables
+    (`var(--color-ink)`, `var(--text-xs)`, `--alpha()`). `@apply` is
+    for a utility this file names (`page-title`) or a stack that
+    carries a variant (`sm:`, `hover:`).
   * In global.css for another reason (the header blur, whose four
     masks only read as one ramp side by side)? One line at the top of
     the block saying why.
@@ -50,6 +56,12 @@ in conversation.
 * **Leave contrast margin.** axe passes only a ratio strictly above
   4.5 and reports it truncated to two decimals, so a value near the
   line is one color tweak from failing.
+* **A contrast ratio is written down only where axe cannot measure
+  it**: non-text (axe has no WCAG 1.4.11 rule), states the tests never
+  render (hover, focus, `::selection`), anything outside the DOM (the
+  scrollbar), and what axe reports as incomplete. It goes in a comment
+  on the declaration that sets the color. A ratio axe measures gets no
+  comment.
 * **A hover state raises contrast, never lowers it.**
 * **Interactive targets stay at least 24x24px**, using padding with
   negative margin where the visual size is smaller.

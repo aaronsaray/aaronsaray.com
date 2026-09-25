@@ -149,6 +149,11 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 * `order` sorts the list, lowest first.
 * `cover` is the flat front cover, any size.
 
+## Site Images
+
+* An image in a page template goes in `src/assets/` and is imported, so the build optimizes it and stamps its size.
+* `public/images/` holds the social cards, served as-is at fixed URLs. The build names the file each new tag needs.
+
 ## Icons and the Logo
 
 ```astro

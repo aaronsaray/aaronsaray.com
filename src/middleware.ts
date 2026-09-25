@@ -1,7 +1,6 @@
-// The host answers /about with a redirect to /about/; this does the
-// same in dev, where an unslashed Astro.url.pathname breaks the nav's
-// active state and the canonical URL. A build renders every page at
-// its slashed path.
+// Dev serves /about unslashed, which breaks the nav's active state and
+// the canonical URL. A build renders only slashed paths, so this is a
+// no-op there. Production serves static files and never runs it.
 import { defineMiddleware } from "astro:middleware";
 
 export const onRequest = defineMiddleware(({ url, redirect }, next) => {

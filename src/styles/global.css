@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
-/* Latin subsets pulled from:
-   fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Fraunces:opsz,wght@9..144,400..700
-   Latin only: characters these files lack fall back. */
+/* Latin subsets from
+   fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Fraunces:opsz,wght@9..144,400..700 */
 @font-face {
   font-family: "Inter";
   font-style: normal;
@@ -32,23 +31,21 @@
 }
 
 @theme {
-  --color-night: #0a0a0a;
-  --color-surface: #10141a;
-  --color-ink: #e7e9ec;
-  --color-ink-dim: #8e959e;
-  /* The ground a code block's output takes, black as a console is,
-     with an edge that bounds it without the hairline's brightness. */
-  --color-terminal: #000;
-  --color-terminal-edge: #121618;
-  /* Every text token clears AA 4.5:1 on all four grounds the site
-     composites: night, surface, surface/40 over night (#0c0e10, the
-     footer), and terminal. A fifth alpha value adds a fifth ground.
-     ink-faint and accent-dim are below the text bar: non-text strokes
-     at 3:1 only.
+  /* Every text token clears AA 4.5:1 on the four grounds the site
+     composites: night, surface, terminal, and surface/40 over night
+     (#0c0e10). A new alpha value is a new ground to check. ink-faint
+     and accent-dim are for non-text only, at 3:1. Tailwind's white is
+     the one text color from outside this list: titles, and link hover.
 
      Text color comes from these tokens, never from opacity or an
      alpha modifier: that renders a color in no palette, and it can
      fail where the token itself passes. */
+  --color-night: #0a0a0a;
+  --color-surface: #10141a;
+  --color-ink: #e7e9ec;
+  --color-ink-dim: #8e959e;
+  --color-terminal: #000;
+  --color-terminal-edge: #121618;
   --color-ink-mute: #777f8a;
   --color-ink-faint: #5d646d;
   --color-prose: #bfc5cc;
@@ -70,9 +67,8 @@
     }
   }
 
-  /* Drives the code-block edge fades off scroll position, so each end
-     clears when its content runs out. The mask stops are custom
-     properties because a mask-image cannot be interpolated. */
+  /* Scroll-driven by `.prose pre`. The mask stops are registered
+     properties because a gradient cannot be interpolated. */
   --animate-code-edges: code-edges linear;
   @keyframes code-edges {
     0% {
@@ -115,6 +111,10 @@
   @apply font-display text-2xl leading-snug font-semibold wrap-break-word text-white sm:text-3xl;
 }
 
+@utility subsection-title {
+  @apply font-display text-xl font-semibold text-white sm:text-2xl;
+}
+
 @utility quiet-link {
   @apply -my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink;
 }
@@ -134,41 +134,29 @@ html {
   /* 3:1 against the track. */
   scrollbar-color: #585f66 var(--color-night);
   scroll-behavior: smooth;
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   text-wrap: pretty;
 }
 
-/* [tabindex] covers the two scrollable containers: code blocks
-   (pre tabindex="0") and table wrappers (.table-wrap tabindex="0"). */
+/* [tabindex]: the code blocks and table wraps the markdown plugins
+   make focusable. */
 :where(a, button, [tabindex]):focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
-/* 4.6:1 */
+/* 5.1:1 */
 ::selection {
   background: var(--color-accent);
   color: var(--color-night);
-}
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-night);
-}
-::-webkit-scrollbar-thumb {
-  background: #585f66;
-  border-radius: 5px;
-  border: 2px solid var(--color-night);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -177,67 +165,52 @@ h3 {
   }
 }
 
-/* Lives here, not in Header.astro: the four masks only read as one
-   ramp when they sit side by side.
-
-   One blur masked by a gradient cannot do this: filters run over the
-   whole buffer and the mask applies to the result, so it crossfades
-   between sharp and uniformly blurred instead of ramping the radius.
-
-   Four stacked layers instead. backdrop-filter samples everything
-   already painted beneath it, so each layer blurs its predecessor's
-   output and the radii compound. They must stay siblings: nesting them
-   would clip each layer to its parent's mask, confining the strongest
-   blur to the band where the weakest is opaque.
-
-   Radii double per layer. A shallower ratio between the ends reads as
-   flat softness rather than depth.
-
-   The ramp runs bottom-to-top: sharp where content emerges below the
-   bar, blurriest at the top where it has travelled furthest under.
-   Reversed, it reads as a smudge on the glass instead of distance.
-
-   The weakest layer fades in at its own bottom rather than starting
-   opaque. Holding it at full strength to the element's edge steps
-   straight from 1px blur to none, which is visible as a line across
-   the page even though the radius is small. */
-.progressive-blur > div {
-  position: absolute;
-  inset: 0;
-}
-.progressive-blur > div:nth-child(1) {
-  backdrop-filter: blur(1px);
-  mask-image: linear-gradient(
-    to top,
-    transparent 0%,
-    black 12%,
-    black 30%,
-    transparent 50%
-  );
-}
-.progressive-blur > div:nth-child(2) {
-  backdrop-filter: blur(2px);
-  mask-image: linear-gradient(
-    to top,
-    transparent 15%,
-    black 35%,
-    black 50%,
-    transparent 70%
-  );
-}
-.progressive-blur > div:nth-child(3) {
-  backdrop-filter: blur(4px);
-  mask-image: linear-gradient(
-    to top,
-    transparent 35%,
-    black 55%,
-    black 70%,
-    transparent 88%
-  );
-}
-.progressive-blur > div:nth-child(4) {
-  backdrop-filter: blur(8px);
-  mask-image: linear-gradient(to top, transparent 55%, black 78%, black 100%);
+/* Used only by Header.astro, but kept here as one block: the four
+   masks are one ramp, and they read as one only side by side.
+   One blur under a gradient mask crossfades sharp to blurred
+   instead of ramping the radius, so each layer blurs the one below.
+   They stay siblings: nested, each is clipped to its parent's mask.
+   Layer 1 starts transparent; starting opaque draws a line where the
+   blur ends. */
+.progressive-blur {
+  > div {
+    position: absolute;
+    inset: 0;
+  }
+  > div:nth-child(1) {
+    backdrop-filter: blur(1px);
+    mask-image: linear-gradient(
+      to top,
+      transparent 0%,
+      black 12%,
+      black 30%,
+      transparent 50%
+    );
+  }
+  > div:nth-child(2) {
+    backdrop-filter: blur(2px);
+    mask-image: linear-gradient(
+      to top,
+      transparent 15%,
+      black 35%,
+      black 50%,
+      transparent 70%
+    );
+  }
+  > div:nth-child(3) {
+    backdrop-filter: blur(4px);
+    mask-image: linear-gradient(
+      to top,
+      transparent 35%,
+      black 55%,
+      black 70%,
+      transparent 88%
+    );
+  }
+  > div:nth-child(4) {
+    backdrop-filter: blur(8px);
+    mask-image: linear-gradient(to top, transparent 55%, black 78%, black 100%);
+  }
 }
 
 /* Without the blur the bar is transparent and content reads straight
@@ -251,132 +224,48 @@ h3 {
   }
 }
 
-/* Element rules because the markdown pipeline emits bare elements. */
-.prose {
-  color: var(--color-prose);
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  /* Old posts carry long bare URLs; never let one overflow the column. */
-  overflow-wrap: break-word;
-}
-.prose p,
-.prose li,
-.prose blockquote,
-.entry-excerpt p {
-  text-wrap: pretty;
-}
-/* rehype-sections wraps each H2 block in a section. */
-.prose > * + *,
-.prose section > * + * {
-  margin-top: 1.25rem;
-}
-
-/* A body-authored H1 (the colophon keeps its own) gets the same
-   treatment as page titles. */
-.prose h1 {
-  @apply page-title;
-}
-
-.prose h2 {
-  @apply font-display text-2xl font-semibold text-white sm:text-3xl;
-  margin-top: 3.5rem;
-}
-.prose h3 {
-  @apply font-display text-xl font-semibold text-white sm:text-2xl;
-  margin-top: 2.5rem;
-}
-.prose h4 {
-  @apply font-display text-lg font-semibold text-white sm:text-xl;
-  margin-top: 2rem;
-}
-
 :is(.prose, .entry-excerpt, .role-copy) a:not(.heading-anchor) {
-  @apply text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300;
+  @apply text-ink underline decoration-accent/60 underline-offset-4 transition-colors duration-300 hover:text-white hover:decoration-accent;
   text-decoration-thickness: 1px;
 }
-:is(.prose, .entry-excerpt, .role-copy) a:not(.heading-anchor):hover {
-  @apply text-white decoration-accent;
-}
 
-.prose :is(h2, h3, h4, h5, h6) {
-  /* Clears the sticky header. */
-  scroll-margin-top: 5.5rem;
-}
-.anchor-icon {
-  display: inline-block;
-  width: 0.55em;
-  height: 0.55em;
-  margin-left: 0.4em;
-  color: var(--color-ink-faint);
-  opacity: 0.55;
-  transition:
-    color 0.3s,
-    opacity 0.3s;
-}
-.heading-anchor:is(:hover, :focus-visible) .anchor-icon {
-  color: var(--color-accent);
-  opacity: 1;
-}
-@media (prefers-reduced-motion: reduce) {
-  .anchor-icon {
-    transition: none;
+:is(.prose, .entry-excerpt) {
+  /* Old posts carry long bare URLs. */
+  overflow-wrap: break-word;
+
+  p,
+  li,
+  blockquote {
+    text-wrap: pretty;
+  }
+  strong {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+  code {
+    padding: 0.125rem 0.375rem;
+    border: 1px solid var(--color-hairline);
+    background: var(--color-surface);
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    color: var(--color-ink);
+  }
+  pre code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-size: 0.8125rem;
+    color: inherit;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
-.prose ul,
-.prose ol {
-  padding-left: 1.5rem;
-}
-.prose ul {
-  list-style: disc;
-}
-.prose ol {
-  list-style: decimal;
-}
-.prose li {
-  margin-top: 0.5rem;
-}
-.prose li::marker {
-  color: var(--color-ink-faint);
-}
-.prose ul ul {
-  margin-top: 0.5rem;
-  list-style: circle;
-}
-
-:is(.prose, .entry-excerpt) strong {
-  @apply font-semibold text-ink;
-}
-
-:is(.prose, .entry-excerpt) code {
-  @apply bg-surface font-mono text-ink;
-  font-size: 0.875em;
-  padding: 0.125rem 0.375rem;
-  border: 1px solid var(--color-hairline);
-}
-
-.prose pre {
-  /* Both settable by a block kind (the output block darkens them) in
-     one declaration, so nothing paints a first value and overrides it. */
-  --pre-edge: var(--color-hairline);
-  --pre-ground: var(--color-surface);
-  @apply overflow-x-auto;
-  border: 1px solid var(--pre-edge);
-  background: var(--pre-ground);
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.25rem;
-  line-height: 1.7;
-}
-
-/* Overlay scrollbars (the macOS trackpad default, iOS, Android, and
-   Windows 11 Chrome/Edge) leave a wide code block with no sign that it
-   scrolls. The fade is the only affordance, so it is load-bearing, not
-   decoration. The mask lives entirely under @supports: a scroll()
-   timeline with nothing to scroll is inactive, which leaves the base
-   values, so those have to be the no-fade state (0 to 100%) or a block
-   that fits would clip its own last 2.5rem. A browser without timeline
-   support cannot make that distinction at all and gets no mask. */
+/* The code-block edge fades. With nothing to scroll the timeline is
+   inactive and these initial values apply, so they are the no-fade
+   state, or a block that fits would clip its last 2.5rem. */
 @supports (animation-timeline: scroll(self inline)) {
   @property --code-fade-start {
     syntax: "<length-percentage>";
@@ -388,286 +277,391 @@ h3 {
     inherits: false;
     initial-value: 100%;
   }
+}
 
-  .prose pre {
-    --code-fade-start: 0px;
-    --code-fade-end: 100%;
-    mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      #000 var(--code-fade-start),
-      #000 var(--code-fade-end),
-      transparent 100%
-    );
-    animation: var(--animate-code-edges);
-    animation-timeline: scroll(self inline);
+.prose {
+  color: var(--color-prose);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+
+  /* rehype-sections wraps each H2 block in a section. */
+  > * + *,
+  section > * + * {
+    margin-top: 1.25rem;
+  }
+
+  /* The colophon authors its own H1. */
+  h1 {
+    @apply page-title;
+  }
+  h2 {
+    @apply section-title;
+    margin-top: 3.5rem;
+  }
+  h3 {
+    @apply subsection-title;
+    margin-top: 2.5rem;
+  }
+  h4 {
+    @apply font-display text-lg font-semibold text-white sm:text-xl;
+    margin-top: 2rem;
+  }
+  :is(h2, h3, h4, h5, h6) {
+    /* Clears the sticky header; the scroll-mt-20 in index.astro is the
+       same clearance. */
+    scroll-margin-top: 5rem;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.5rem;
+  }
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
+  li {
+    margin-top: 0.5rem;
+  }
+  li::marker {
+    color: var(--color-ink-faint);
+  }
+  ul ul {
+    margin-top: 0.5rem;
+    list-style: circle;
+  }
+
+  del,
+  s {
+    color: var(--color-ink-dim);
+  }
+
+  pre {
+    /* The output block overrides both. */
+    --pre-edge: var(--color-hairline);
+    --pre-ground: var(--color-surface);
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--pre-edge);
+    background: var(--pre-ground);
+    line-height: 1.7;
+
+    /* Overlay scrollbars (the macOS trackpad default, iOS, Android)
+       give a wide code block no sign that it scrolls; the fade is the
+       only one. */
+    @supports (animation-timeline: scroll(self inline)) {
+      mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        #000 var(--code-fade-start),
+        #000 var(--code-fade-end),
+        transparent 100%
+      );
+      animation: var(--animate-code-edges);
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  .filename-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--color-hairline);
+    background: var(--color-night);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    color: var(--color-ink-mute);
+
+    .filename-text {
+      flex: 1;
+      min-width: 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .code-controls {
+      margin-left: auto;
+      padding-left: 1rem;
+    }
+    & + pre {
+      margin-top: 0;
+      border-top: 0;
+    }
+  }
+
+  .code-wrap {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    pre {
+      margin: 0;
+    }
+    .code-controls {
+      position: absolute;
+      top: 0.625rem;
+      right: 0.75rem;
+    }
+    &.is-output {
+      pre {
+        --pre-edge: var(--color-terminal-edge);
+        --pre-ground: var(--color-terminal);
+        color: var(--color-ink-dim);
+      }
+      /* The icon strokes in currentColor; this matches it to
+         .code-lang. */
+      .code-controls {
+        color: var(--color-ink-mute);
+      }
+    }
+  }
+
+  /* Archive blockquotes mix quotations with asides written before
+     :::callout existed, so the two share one treatment. */
+  .callout,
+  blockquote {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0.75rem 1rem;
+    border-left: 2px solid --alpha(var(--color-accent) / 60%);
+    background: --alpha(var(--color-surface) / 40%);
+    font-size: 0.9375rem;
+    color: var(--color-ink-dim);
+
+    > * + * {
+      margin-top: 0.75rem;
+    }
+  }
+
+  figure {
+    @apply border border-hairline bg-surface/40 p-6 sm:p-8;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    img {
+      display: block;
+      margin-inline: auto;
+    }
+  }
+  figcaption {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-ink-dim);
+  }
+
+  /* Post content authors this markup. */
+  .video-embed iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--color-hairline);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  th {
+    padding: 0 1rem 0.625rem 0;
+    border-bottom: 1px solid var(--color-hairline);
+    text-align: left;
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+  td {
+    padding: 0.625rem 1rem 0.625rem 0;
+    border-bottom: 1px solid var(--color-hairline);
+  }
+  td:first-child {
+    font-weight: 500;
+    color: var(--color-ink);
   }
 }
-:is(.prose, .entry-excerpt) pre code {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  font-size: 0.8125rem;
-  color: #aab1b9;
-}
 
-.prose .filename-header {
-  @apply flex items-center gap-2 border border-hairline bg-night font-mono text-xs text-ink-mute;
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-  padding: 0.5rem 1.25rem;
-}
-.filename-header .filename-text {
-  flex: 1;
-  min-width: 0;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-.prose .filename-header + pre {
-  margin-top: 0;
-  border-top: 0;
-}
-
-.prose .code-wrap {
-  position: relative;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.prose .code-wrap pre {
-  margin: 0;
-}
 .code-controls {
   display: flex;
   align-items: center;
   gap: 0.625rem;
 }
-.code-wrap .code-controls {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.75rem;
-}
-.filename-header .code-controls {
-  margin-left: auto;
-  padding-left: 1rem;
-}
 .code-lang {
-  @apply font-mono text-[0.6875rem] text-ink-mute;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-ink-mute);
 }
 .copy-btn {
   @apply cursor-pointer text-ink-mute transition-colors duration-300 hover:text-ink;
   /* 24px target from the 16px icon at the same visual size. */
   padding: 0.25rem;
   margin: -0.25rem;
-}
-.copy-btn svg {
-  display: block;
-  width: 1rem;
-  height: 1rem;
-}
-.copy-btn .icon-check {
-  display: none;
-  color: var(--color-accent);
-}
-.copy-btn.copied .icon-copy {
-  display: none;
-}
-.copy-btn.copied .icon-check {
-  display: block;
+
+  svg {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+  }
+  .icon-check {
+    display: none;
+    color: var(--color-accent);
+  }
+  &.copied {
+    .icon-copy {
+      display: none;
+    }
+    .icon-check {
+      display: block;
+    }
+  }
 }
 
-/* Shiki passes `output` through as plaintext, so there are no token
-   spans here to color: the pre carries the whole block's color. */
-.prose .code-wrap.is-output pre {
-  --pre-edge: var(--color-terminal-edge);
-  --pre-ground: var(--color-terminal);
-  color: var(--color-ink-dim);
-}
-.prose .code-wrap.is-output pre code {
-  color: inherit;
-}
-/* The icon takes currentColor; without this it inherits the block's
-   brighter text instead of matching the label beside it. */
-.code-wrap.is-output .code-controls {
-  color: var(--color-ink-mute);
-}
+.anchor-icon {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-left: 0.4em;
+  /* Decoration: the heading text is the link. 1.8:1, under the 3:1
+     non-text floor on purpose; hover and focus raise it to accent. */
+  color: var(--color-ink-faint);
+  opacity: 0.55;
+  transition:
+    color 0.3s,
+    opacity 0.3s;
 
-.prose del,
-.prose s {
-  color: var(--color-ink-dim);
-}
-
-/* Blockquotes in the archive are a mix of quotations and asides Aaron
-   wrote before :::callout existed, so the two cannot be told apart and
-   share one treatment. */
-.prose .callout,
-.prose blockquote {
-  @apply border-l-2 border-accent/60 bg-surface/40 px-4 py-3 text-[0.9375rem] text-ink-dim;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.prose .callout > * + *,
-.prose blockquote > * + * {
-  margin-top: 0.75rem;
-}
-
-.prose figure {
-  @apply border border-hairline bg-surface/40 p-6 sm:p-8;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-.prose figure img {
-  display: block;
-  margin-inline: auto;
-  max-width: 100%;
-  height: auto;
-}
-.prose figcaption {
-  margin-top: 1rem;
-  text-align: center;
-  font-size: 0.875rem;
-  color: var(--color-ink-dim);
-}
-.prose img {
-  max-width: 100%;
-  height: auto;
-}
-
-.prose .video-embed iframe {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--color-hairline);
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+  .heading-anchor:is(:hover, :focus-visible) & {
+    color: var(--color-accent);
+    opacity: 1;
+  }
 }
 
 .entry-excerpt {
   margin-top: 0.75rem;
   line-height: 1.625;
   color: var(--color-ink-dim);
-  overflow-wrap: break-word;
-}
-.entry-excerpt > * + * {
-  margin-top: 0.75rem;
-}
-.entry-excerpt pre {
-  @apply overflow-x-auto border border-hairline bg-surface;
-  padding: 0.75rem 1rem;
-  font-size: 0.8125rem;
-  line-height: 1.7;
-}
-.entry-excerpt img {
-  max-width: 100%;
-  height: auto;
+
+  > * + * {
+    margin-top: 0.75rem;
+  }
+  pre {
+    overflow-x: auto;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-hairline);
+    background: var(--color-surface);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+  }
 }
 
-.prose .table-wrap {
-  overflow-x: auto;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.prose table {
-  width: 100%;
-  font-size: 0.9375rem;
-  border-collapse: collapse;
-}
-.prose th {
-  @apply text-left text-xs font-semibold tracking-[0.15em] text-ink-mute uppercase;
-  padding: 0 1rem 0.625rem 0;
-  border-bottom: 1px solid var(--color-hairline);
-}
-.prose td {
-  padding: 0.625rem 1rem 0.625rem 0;
-  border-bottom: 1px solid var(--color-hairline);
-}
-.prose td:first-child {
-  @apply font-medium text-ink;
-}
-
-/* books.astro stretches each title link over its whole article with
-   an ::after; a positioned link paints above that layer. */
+/* books.astro stretches each title link over its article with an
+   ::after; a positioned link paints above it. */
 .book-blurb a {
   position: relative;
 }
 
-/* The shapes these rules key on (an h4 or p whose first child is an
-   em is a dated row, a leading strong is a title on its own line, a
-   table's first column is a date, a td em is a venue) are the CV
-   authoring convention in README "Updating the CV". 11.5rem is the
-   gutter; the section padding, H2 pull-back, hanging indent, and
-   table date column all carry it. */
-.cv h2 {
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-hairline);
-}
-.cv h4 {
-  @apply font-sans font-semibold text-ink;
-  font-size: 1.0625rem;
-  /* Undoes the .prose h4 line-height. */
-  line-height: inherit;
-  margin-top: 1.5rem;
-}
-.cv h4 + p {
-  margin-top: 0.5rem;
-}
-.cv :is(p, li) {
-  color: var(--color-ink-dim);
-}
-.cv :is(h4, p) > em:first-child {
-  @apply text-sm font-normal text-ink-dim;
-  display: block;
-  font-style: normal;
-  font-variant-numeric: tabular-nums;
-}
-.cv p > strong:first-child {
-  display: block;
-}
-.cv td {
-  vertical-align: baseline;
-}
-.cv td:first-child {
-  @apply font-normal text-ink-dim;
-  font-size: 0.875rem;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.cv td:first-child + td {
-  color: var(--color-ink);
-}
-.cv td em {
-  display: block;
-  font-style: normal;
-  color: var(--color-ink-dim);
-}
-/* lg: the breakpoint where cv.astro widens the column. */
-@variant lg {
-  .cv section:has(> :is(h4, p) > em:first-child) {
-    padding-left: 11.5rem;
+/* These rules key on the shapes in README "Updating the CV". 11.5rem
+   is the gutter; the section padding, H2 pull-back, hanging indent,
+   and table date column all carry it. */
+.cv {
+  h2 {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-hairline);
   }
-  .cv section:has(> :is(h4, p) > em:first-child) > h2 {
-    margin-left: -11.5rem;
+  h4 {
+    margin-top: 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    /* Undoes the .prose h4 line-height. */
+    line-height: inherit;
+    font-weight: 600;
+    color: var(--color-ink);
   }
-  /* Inline-block, not absolute: an absolute date cannot share the
-     title's baseline. The margin is 1.5rem less the space that
-     follows the date; Inter's space advance is 0.25 of the font size
-     at weight 600 and 0.28 at 400. */
-  .cv :is(h4, p):has(> em:first-child) {
-    text-indent: -11.5rem;
+  h4 + p {
+    margin-top: 0.5rem;
   }
-  .cv :is(h4, p) > em:first-child {
-    display: inline-block;
-    width: 10rem;
-    text-align: right;
-    text-indent: 0;
+  :is(p, li) {
+    color: var(--color-ink-dim);
   }
-  .cv h4 > em:first-child {
-    margin-right: calc(1.5rem - 0.25 * 1.0625rem);
+  :is(h4, p) > em:first-child {
+    display: block;
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-weight: 400;
+    font-style: normal;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-ink-dim);
   }
-  .cv p > em:first-child {
-    margin-right: calc(1.5rem - 0.28 * 1.0625rem);
+  p > strong:first-child {
+    display: block;
   }
-  .cv th:first-child,
-  .cv td:first-child {
-    width: 11.5rem;
-    padding-right: 1.5rem;
-    text-align: right;
+  td {
+    vertical-align: baseline;
+  }
+  td:first-child {
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--color-ink-dim);
+  }
+  td:first-child + td {
+    color: var(--color-ink);
+  }
+  td em {
+    display: block;
+    font-style: normal;
+    color: var(--color-ink-dim);
+  }
+
+  /* lg: the breakpoint where cv.astro widens the column. */
+  @variant lg {
+    section:has(> :is(h4, p) > em:first-child) {
+      padding-left: 11.5rem;
+    }
+    section:has(> :is(h4, p) > em:first-child) > h2 {
+      margin-left: -11.5rem;
+    }
+    /* Inline-block, not absolute: an absolute date cannot share the
+       title's baseline. The margin is 1.5rem less the space that
+       follows the date; Inter's space advance is 0.25 of the font size
+       at weight 600 and 0.28 at 400. */
+    :is(h4, p):has(> em:first-child) {
+      text-indent: -11.5rem;
+    }
+    :is(h4, p) > em:first-child {
+      display: inline-block;
+      width: 10rem;
+      text-align: right;
+      text-indent: 0;
+    }
+    h4 > em:first-child {
+      margin-right: calc(1.5rem - 0.25 * 1.0625rem);
+    }
+    p > em:first-child {
+      margin-right: calc(1.5rem - 0.28 * 1.0625rem);
+    }
+    th:first-child,
+    td:first-child {
+      width: 11.5rem;
+      padding-right: 1.5rem;
+      text-align: right;
+    }
   }
 }

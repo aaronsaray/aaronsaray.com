@@ -39,7 +39,6 @@ export default defineConfig({
       remarkPlugins: [remarkDirective, remarkCallout],
       rehypePlugins: [
         rehypeSlug,
-        // Posts only: every other collection's schema requires anchorDepth.
         [rehypeHeadingAnchors, { depth: 3 }],
         rehypeCodeChrome,
         rehypeTableWrap,

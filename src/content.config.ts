@@ -2,36 +2,32 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-// The deepest heading level that gets an anchor link; 0 for none.
-// Required on every collection but blog, whose value lives in
-// astro.config.ts. No .default(): src/plugins/rehype-heading-anchors.ts
-// reads the raw frontmatter, which zod output never reaches.
+// Deepest heading level that gets an anchor link, 0 for none. Blog has
+// no key and gets the depth passed to rehypeHeadingAnchors in
+// astro.config.ts. No .default(): the plugin reads the raw frontmatter,
+// so a zod default never reaches it.
 const anchorDepth = z.number().int().min(0).max(6);
 
 const blog = defineCollection({
-  // generateId keeps the slug = filename stem VERBATIM. The default
-  // loader slugifies ids (github-slugger), which would strip the dot
-  // from fixing-laravel-5.4-dependency-on-phpunit-5 and break its URL.
+  // The default id is slugified, which drops the dot from
+  // fixing-laravel-5.4-dependency-on-phpunit-5 and breaks its URL.
   loader: glob({
     pattern: "*.md",
     base: "./src/content/blog",
     generateId: ({ entry }) => entry.replace(/\.md$/, ""),
   }),
-  // .strict() everywhere: without it zod silently discards unknown
-  // keys, so a typo'd `darft: true` would publish a draft post with
-  // zero signal. A crashed build naming the file is the right outcome.
+  // .strict() everywhere: zod drops unknown keys, so a typo like
+  // `darft: true` would publish the draft silently.
   schema: z
     .object({
       title: z.string(),
-      // A string: the URL year is its first 4 characters, and Date
-      // coercion through a timezone could shift it.
+      // A string: Date coercion could shift the URL year across a timezone.
       date: z
         .string()
         .regex(/^\d{4}-\d{2}-\d{2}($|T\d{2}:\d{2}:\d{2}([+-]\d{2}:\d{2})?$)/),
       tags: z.array(z.string()).min(1),
       context: z.array(z.string()).optional(),
       draft: z.boolean().optional(),
-      // Suppresses the old-post notice. Nothing else sets it.
       evergreen: z.boolean().optional(),
     })
     .strict(),
@@ -41,7 +37,6 @@ const tags = defineCollection({
   loader: glob({
     pattern: "*.md",
     base: "./src/content/tags",
-    generateId: ({ entry }) => entry.replace(/\.md$/, ""),
   }),
   schema: z
     .object({
@@ -54,7 +49,6 @@ const pages = defineCollection({
   loader: glob({
     pattern: "*.md",
     base: "./src/content/pages",
-    generateId: ({ entry }) => entry.replace(/\.md$/, ""),
   }),
   schema: z
     .object({
@@ -72,7 +66,6 @@ const books = defineCollection({
   loader: glob({
     pattern: "*.md",
     base: "./src/content/books",
-    generateId: ({ entry }) => entry.replace(/\.md$/, ""),
   }),
   schema: ({ image }) =>
     z
