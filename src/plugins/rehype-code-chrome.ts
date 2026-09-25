@@ -1,14 +1,15 @@
-import type { Element, Parents, Root } from "hast";
+import type { Element, Root } from "hast";
 import { visit, SKIP } from "unist-util-visit";
 import { iconFromDisk as icon } from "../lib/icon.ts";
+import { escapeHtml } from "../lib/escapeHtml.ts";
 
-// Two DOM shapes. The inline copy script in [year]/[slug].astro
-// resolves its <pre> from them (`.filename-header` via
-// nextElementSibling, `.code-wrap` via querySelector('pre')):
+// Two DOM shapes. The copy script in [year]/[slug].astro finds its
+// <pre> from them (`.filename-header` via nextElementSibling,
+// `.code-wrap` via querySelector('pre')), and global.css styles them:
 //
-//  with data-filename (fence meta filename="…"):
+//  fence meta filename="…":
 //    <div class="filename-header">icon <span class="filename-text">…</span>
-//      <span class="code-controls">lang + copy</span></div>
+//      <div class="code-controls">lang + copy</div></div>
 //    <pre class="astro-code">…</pre>
 //
 //  bare:
@@ -16,11 +17,9 @@ import { iconFromDisk as icon } from "../lib/icon.ts";
 //      <div class="code-controls">lang + copy</div></div>
 //
 // A fence language of `output` takes the bare shape with `is-output`
-// and controls that carry no copy button.
-//
-// The chrome is emitted as raw HTML nodes; Astro's pipeline runs
-// rehype-raw after user plugins, which parses them into the tree.
+// and no copy button.
 
+// Keyed by the fence language. Any other language gets file-code.
 const FILE_ICONS: Record<string, string> = {
   php: "file-type-php",
   html: "file-type-html",
@@ -32,71 +31,40 @@ const FILE_ICONS: Record<string, string> = {
   txt: "file-type-txt",
 };
 
+const HEADER_ICON = { class: "size-3.5 shrink-0", strokeWidth: 1.75 };
+
 const COPY_BUTTON =
-  '<button class="copy-btn" type="button" aria-label="Copy code">' +
+  '<button class="copy-btn" aria-label="Copy code">' +
   icon("copy", { class: "icon-copy", strokeWidth: 1.75 }) +
   icon("check", { class: "icon-check" }) +
   "</button>";
 
-function escapeHtml(s: string) {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+function controls(inner: string) {
+  return `<div class="code-controls">${inner}</div>`;
 }
 
-function fileIcon(lang: string) {
-  return icon(FILE_ICONS[lang] ?? "file-code", {
-    class: "size-3.5 shrink-0",
-    strokeWidth: 1.75,
-  });
-}
-
-function controls(lang: string, tag: string) {
-  return (
-    `<${tag} class="code-controls">` +
-    `<span class="code-lang">${escapeHtml(lang)}</span>` +
-    COPY_BUTTON +
-    `</${tag}>`
-  );
-}
-
-function outputControls() {
-  return (
-    '<div class="code-controls">' +
-    icon("terminal-2", { class: "size-3.5 shrink-0", strokeWidth: 1.75 }) +
-    '<span class="code-lang">output</span>' +
-    "</div>"
-  );
+function langLabel(lang: string) {
+  return `<span class="code-lang">${escapeHtml(lang)}</span>`;
 }
 
 function filenameHeader(filename: string, lang: string) {
   return (
     '<div class="filename-header">' +
-    fileIcon(lang) +
+    icon(FILE_ICONS[lang] ?? "file-code", HEADER_ICON) +
     `<span class="filename-text">${escapeHtml(filename)}</span>` +
-    controls(lang, "span") +
+    controls(langLabel(lang) + COPY_BUTTON) +
     "</div>"
   );
 }
 
-function wrapBlock(
-  parent: Parents,
-  index: number,
-  node: Element,
-  controlsHtml: string,
-  extraClass?: string,
-) {
-  parent.children[index] = {
+function codeWrap(pre: Element, controlsHtml: string, ...classes: string[]) {
+  const wrap: Element = {
     type: "element",
     tagName: "div",
-    properties: {
-      className: extraClass ? ["code-wrap", extraClass] : ["code-wrap"],
-    },
-    children: [node, { type: "raw", value: controlsHtml }],
+    properties: { className: ["code-wrap", ...classes] },
+    children: [pre, { type: "raw", value: controlsHtml }],
   };
-  return SKIP;
+  return wrap;
 }
 
 export function rehypeCodeChrome() {
@@ -105,15 +73,8 @@ export function rehypeCodeChrome() {
       if (node.tagName !== "pre" || !parent || index === undefined) {
         return;
       }
-      // Astro's Shiki wrapper writes `class` as a string, not the hast
-      // convention `className`.
-      const classes = String(node.properties.class).split(" ");
-      if (!classes.includes("astro-code")) {
-        return;
-      }
-
-      const dataLang = String(node.properties.dataLanguage);
-      const filename = node.properties.dataFilename;
+      const dataLang = node.properties.dataLanguage as string;
+      const filename = node.properties.dataFilename as string | undefined;
 
       // A block that scrolls is unreachable by keyboard unless it is
       // focusable (WCAG 2.1.1). The group role gives the stop a name;
@@ -123,23 +84,32 @@ export function rehypeCodeChrome() {
 
       if (dataLang === "output") {
         node.properties["aria-label"] = "Terminal output";
-        return wrapBlock(parent, index, node, outputControls(), "is-output");
+        parent.children[index] = codeWrap(
+          node,
+          controls(icon("terminal-2", HEADER_ICON) + langLabel("output")),
+          "is-output",
+        );
+        return SKIP;
       }
 
       const lang = dataLang === "plaintext" ? "txt" : dataLang;
-      node.properties["aria-label"] =
-        filename != null ? `Code: ${String(filename)}` : `Code: ${lang}`;
+      node.properties["aria-label"] = `Code: ${filename ?? lang}`;
 
-      if (filename != null) {
-        delete node.properties.dataFilename;
-        parent.children.splice(index, 0, {
-          type: "raw",
-          value: filenameHeader(String(filename), lang),
-        });
-        return index + 2;
+      if (filename === undefined) {
+        parent.children[index] = codeWrap(
+          node,
+          controls(langLabel(lang) + COPY_BUTTON),
+        );
+        return SKIP;
       }
 
-      return wrapBlock(parent, index, node, controls(lang, "div"));
+      delete node.properties.dataFilename;
+      parent.children.splice(index, 0, {
+        type: "raw",
+        value: filenameHeader(filename, lang),
+      });
+      // The splice moved the pre to index + 1; anything less revisits it.
+      return index + 2;
     });
   };
 }

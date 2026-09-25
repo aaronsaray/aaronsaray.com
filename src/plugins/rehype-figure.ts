@@ -1,25 +1,11 @@
 import type { Element, ElementContent, Root, RootContent } from "hast";
 import { visit, SKIP } from "unist-util-visit";
-import { fromHtml } from "hast-util-from-html";
 
-// Three shapes become figures (styled by .prose figure in global.css):
-//
-//  1. p > img            : markdown ![alt](src)
-//  2. p > a > img        : a markdown image wrapped in a link
-//  3. p of raw nodes     : <a href="full"><img src="thumb"></a> in
-//                          old posts is inline HTML, so remark leaves
-//                          it as raw nodes inside a paragraph. Astro
-//                          runs rehype-raw after user plugins, so the
-//                          fragment is parsed here.
-//
-// A bare <img> alone on its own line is an HTML block (root-level raw
-// node), handled last. Hand-authored <figure> HTML is left alone; the
-// element CSS styles it directly.
+// A paragraph holding only an image, `p > img`, or only a linked
+// image, `p > a > img`, becomes a <figure>. `.prose figure` in
+// global.css styles it.
 
 const isWhitespace = (n: RootContent) => n.type === "text" && !n.value.trim();
-
-const RAW_LINKED_IMG = /^<a\b[^>]*>\s*<img\b[^>]*\/?>\s*<\/a>$/i;
-const RAW_IMG = /^<img\b[^>]*\/?>$/i;
 
 function figure(children: ElementContent[]): Element {
   return { type: "element", tagName: "figure", properties: {}, children };
@@ -32,43 +18,19 @@ export function rehypeFigure() {
         return;
       }
       const kids = node.children.filter((n) => !isWhitespace(n));
-
-      if (kids.length === 1 && kids[0].type === "element") {
-        const el = kids[0];
-        const inner = el.children.filter((n) => !isWhitespace(n));
-        const isImg = el.tagName === "img";
-        const isLinkedImg =
-          el.tagName === "a" &&
-          inner.length === 1 &&
-          inner[0].type === "element" &&
-          inner[0].tagName === "img";
-        if (isImg || isLinkedImg) {
-          parent.children[index] = figure([el]);
-          return SKIP;
-        }
-      }
-
-      if (kids.every((n) => n.type === "raw")) {
-        const html = kids
-          .map((n) => n.value)
-          .join("")
-          .trim();
-        if (RAW_LINKED_IMG.test(html) || RAW_IMG.test(html)) {
-          parent.children[index] = figure(
-            fromHtml(html, { fragment: true }).children as ElementContent[],
-          );
-          return SKIP;
-        }
-      }
-    });
-
-    visit(tree, "raw", (node, index, parent) => {
-      if (!parent || index === undefined) {
+      if (kids.length !== 1 || kids[0].type !== "element") {
         return;
       }
-      const html = node.value.trim();
-      if (RAW_IMG.test(html) || RAW_LINKED_IMG.test(html)) {
-        parent.children[index] = figure([node]);
+      const el = kids[0];
+      const inner = el.children.filter((n) => !isWhitespace(n));
+      const isImg = el.tagName === "img";
+      const isLinkedImg =
+        el.tagName === "a" &&
+        inner.length === 1 &&
+        inner[0].type === "element" &&
+        inner[0].tagName === "img";
+      if (isImg || isLinkedImg) {
+        parent.children[index] = figure([el]);
         return SKIP;
       }
     });

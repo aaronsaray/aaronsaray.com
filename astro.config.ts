@@ -28,7 +28,8 @@ export default defineConfig({
   },
   markdown: {
     // Astro runs Shiki before the user rehype plugins and rehype-raw
-    // after them. The chrome plugins emit raw nodes and depend on that.
+    // after them. rehype-code-chrome reads Shiki's <pre> and emits raw
+    // nodes, so it depends on both.
     processor: unified({
       gfm: true,
       // Post prose writes -- and --- expecting en and em dashes; only

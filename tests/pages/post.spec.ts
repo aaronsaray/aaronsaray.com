@@ -126,7 +126,7 @@ test.describe("heading anchors", () => {
 });
 
 test.describe("images", () => {
-  // Three images in the prose and an <img> inside a code sample.
+  // Three images in the prose.
   const PHOTOBOOTH =
     "/2013/html5-css3-javascript-only-photobooth-with-image-download/";
 
@@ -139,14 +139,6 @@ test.describe("images", () => {
       "/uploads/2013/photobooth-2.png 1645x801",
       "/uploads/2013/3.png 1650x746",
     ]);
-  });
-
-  test("images inside code samples are left alone", async ({ page }) => {
-    await page.goto(PHOTOBOOTH);
-    const samples = (await page.locator("pre").allTextContents()).join("\n");
-
-    expect(samples).toContain("<img");
-    expect(samples).not.toMatch(/<img[^>]*\bwidth="\d+"/);
   });
 
   test("only the first content image loads eagerly", async ({ page }) => {
@@ -209,9 +201,7 @@ test.describe("tables", () => {
   // Attributes, not behavior: Chromium tabs into a scrollable container
   // with no tabindex at all, so a keyboard test passes with it deleted.
   // Firefox and Safari are what the tabindex is for.
-  test("the table sits in a named focus stop with scoped column headers", async ({
-    page,
-  }) => {
+  test("the table sits in a named focus stop", async ({ page }) => {
     await page.goto(POST);
     const wrapper = page.locator(".prose .table-wrap");
     await expect(wrapper).toHaveCount(1);
@@ -222,7 +212,6 @@ test.describe("tables", () => {
     await expect(wrapper.locator("table")).toHaveCount(1);
     // A role on the table would replace its table semantics.
     await expect(wrapper.locator("table")).not.toHaveAttribute("role", /.*/);
-    await expect(wrapper.locator('th:not([scope="col"])')).toHaveCount(0);
   });
 
   test("the wide table overflows far enough for axe to judge it, and passes", async ({

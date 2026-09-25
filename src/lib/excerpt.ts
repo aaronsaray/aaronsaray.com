@@ -10,6 +10,7 @@ import remarkGfm from "remark-gfm";
 import remarkSmartypants from "remark-smartypants";
 import remarkRehype from "remark-rehype";
 import rehypeRaw from "rehype-raw";
+import { escapeHtml } from "./escapeHtml";
 import rehypeStringify from "rehype-stringify";
 import { remarkCallout } from "../plugins/remark-callout.ts";
 
@@ -32,16 +33,6 @@ interface Excerpt {
 }
 
 const cache = new Map<string, Excerpt>();
-
-// Text from the tree has its entities decoded. Wrapping it back into
-// markup must re-escape it or a literal "&" or "<" in post prose becomes
-// live markup downstream.
-function escapeHtml(text: string): string {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
 
 function render(markdown: string): Root {
   return pipeline.runSync(pipeline.parse(markdown));

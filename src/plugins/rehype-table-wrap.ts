@@ -2,26 +2,15 @@ import type { Root } from "hast";
 import { visit, SKIP } from "unist-util-visit";
 
 // .prose .table-wrap in global.css is what makes the wrapper scroll.
-// scope="col" is safe to stamp on every <th> because GFM only ever
-// emits them inside <thead>.
-//
-// A wrapper that scrolls is unreachable by keyboard unless it is
-// focusable (WCAG 2.1.1), and the group role gives that stop a name.
-// Both belong to the wrapper: role="group" on the <table> would replace
-// its table role and take the row and column semantics with it. The
-// name is generic because a markdown table has no caption to draw one
-// from.
+// tabindex: Firefox and Safari give a scroll container no keyboard
+// focus of its own, so without it the table cannot be scrolled from
+// the keyboard (WCAG 2.1.1). role and aria-label name that tab stop.
 export function rehypeTableWrap() {
   return (tree: Root) => {
     visit(tree, "element", (node, index, parent) => {
       if (node.tagName !== "table" || !parent || index === undefined) {
         return;
       }
-      visit(node, "element", (cell) => {
-        if (cell.tagName === "th" && cell.properties.scope === undefined) {
-          cell.properties.scope = "col";
-        }
-      });
       parent.children[index] = {
         type: "element",
         tagName: "div",
