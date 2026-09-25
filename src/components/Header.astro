@@ -10,11 +10,6 @@ const { overlay = false } = Astro.props;
 ---
 
 <header class={`z-10 ${overlay ? "fixed inset-x-0 top-0" : "sticky top-0"}`}>
-  {
-    /* The blur stack (mechanics in global.css) extends past the header
-       so the ramp ends in open page; ending it at the bar's edge draws
-       a visible boundary. */
-  }
   <div
     aria-hidden="true"
     class="progressive-blur pointer-events-none absolute inset-x-0 top-0 h-[150%]"
