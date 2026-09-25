@@ -7,7 +7,10 @@ description: How the Playwright tests are chosen, written, and run. Read before 
 
 A test proves one thing the site must keep doing, at a desktop and a
 phone, and its title says what a person would notice was broken. A
-test that cannot name that does not get written.
+test that cannot name that does not get written. The route sweep is
+the exception: one test per route runs every check a page must pass
+on a single load, since `maxFailures: 1` stops the run at the first
+failure either way.
 
 ## Tested
 
@@ -50,7 +53,7 @@ names. Nothing one of these owns gets a hand-rolled check.
 
 * `tests/layout.spec.ts`: the shell every page shares.
 * `tests/pages/all.spec.ts`: the sweep every route gets, and the head
-  metadata. A new page gets a `ROUTES` line; the `dist/` check fails
+  metadata. A new per-route check goes inside the sweep's one test. A new page gets a `ROUTES` line; the `dist/` check fails
   until it has one.
 * `tests/pages/<page>.spec.ts`: what one template does that the sweep
   cannot see. `post.spec.ts` is the markdown pipeline, one `describe`

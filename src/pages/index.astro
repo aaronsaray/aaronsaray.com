@@ -8,19 +8,13 @@ const description =
 ---
 
 <Base title={title} description={description} overlayHeader>
-  {/* Landmark wrapper: every other page's template supplies <main>. */}
   <main id="main">
     <section class="relative flex min-h-svh flex-col justify-center">
       <div class="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <!-- Arrow starts at the left margin and does the indenting itself.
-           The arrow box width + gap is derived from the name's font
-           size so "Hi" starts at the top-left corner of the A's flat
-           apex at every viewport width. The corner is at 0.258em;
-           0.245 compensates for the H's side bearing and the A's
-           antialiased corner edge. Inside the box the chevron head
-           overlaps the shaft (tip exactly on the shaft's end) and
-           overflows 6px into the gap, so at narrow widths the head
-           never pokes left of the margin. -->
+        {
+          /* 0.245 × the h1's font-size clamp: the arrow ends at the A's
+             apex. The two clamps change together. */
+        }
         <p
           class="flex items-center text-[clamp(1.2rem,2.8vw,2.1rem)] leading-tight font-semibold text-ink-dim"
         >
@@ -35,9 +29,8 @@ const description =
             />
           </span>Hi, I'm
         </p>
-        <!-- Name sits just below the off-white ink token so it doesn't "bounce" -->
         <h1
-          class="mt-2 text-[clamp(3.5rem,9.5vw,8rem)] leading-[0.95] font-black tracking-[-0.03em] text-[#dfe2e6]"
+          class="mt-2 text-[clamp(3.5rem,9.5vw,8rem)] leading-[0.95] font-black tracking-[-0.03em] text-ink-display"
         >
           Aaron Saray
         </h1>
@@ -152,7 +145,7 @@ const description =
     <section class="border-t border-hairline">
       <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-36">
         <h2
-          class="max-w-4xl text-[clamp(2rem,5.5vw,4.5rem)] leading-[1.02] font-black tracking-[-0.03em] text-[#dfe2e6]"
+          class="max-w-4xl text-[clamp(2rem,5.5vw,4.5rem)] leading-[1.02] font-black tracking-[-0.03em] text-ink-display"
         >
           I want what's best for your project. Not for me.
         </h2>

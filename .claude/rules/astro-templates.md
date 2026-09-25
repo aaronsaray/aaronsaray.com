@@ -6,8 +6,12 @@ paths:
 
 # Astro Templates
 
-* Inside a `{...}` expression in an `.astro` template a comment is
-  `{/* */}`; an HTML comment there breaks Prettier's parser.
+* **A template comment is `{/* */}`, never `<!-- -->`.** An HTML
+  comment ships in the page; `{/* */}`, the frontmatter, and a bundled
+  `<script>` never reach the browser. `<script is:inline>` ships
+  verbatim, comments included. The one comment that ships is
+  `<!--more-->` in posts: it comes from the markdown, and Aaron keeps
+  it.
 * **Never `{" "}`.** ESLint fails on it. Prettier writes it when it
   wraps text beside an inline tag inside a `{cond && (...)}`
   expression. Delete it and keep the line break: `compressHTML: true`

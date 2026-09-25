@@ -54,35 +54,27 @@ const GRADIENT_EXEMPT = [
 ];
 
 for (const { name, path, status } of ROUTES) {
-  test.describe(name, () => {
-    test("renders", async ({ page }) => {
-      const response = await page.goto(path);
-      expect(response!.status()).toBe(status ?? 200);
-      await expect(page.locator("h1")).toHaveCount(1);
-    });
+  test(`${name} renders cleanly`, async ({ page }) => {
+    // networkidle: axe throws if the page is still loading as it runs.
+    const response = await page.goto(path, { waitUntil: "networkidle" });
+    expect(response!.status()).toBe(status ?? 200);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator("main#main"), "skip link target").toHaveCount(1);
 
-    test("has no axe violations", async ({ page }) => {
-      // networkidle: axe throws if the page is still loading as it runs.
-      await page.goto(path, { waitUntil: "networkidle" });
-      const { violations, incomplete } = await runAxe(page);
-      expect(violations, `axe violations on ${path}`).toEqual([]);
+    const { violations, incomplete } = await runAxe(page);
+    expect(violations, `axe violations on ${path}`).toEqual([]);
+    const unreviewed = incomplete.filter(
+      (target) => !GRADIENT_EXEMPT.some((e) => target.includes(e)),
+    );
+    expect(unreviewed, `unreviewed axe results on ${path}`).toEqual([]);
 
-      const unreviewed = incomplete.filter(
-        (target) => !GRADIENT_EXEMPT.some((e) => target.includes(e)),
-      );
-      expect(unreviewed, `unreviewed axe results on ${path}`).toEqual([]);
-    });
-
+    // Last: the resize changes the page every check above reads.
     // WCAG 1.4.10: 320 CSS px is a 1280px window at 400% zoom.
-    test("has no sideways scroll", async ({ page }) => {
-      await page.goto(path);
-      expect(await scrollWidth(page)).toBeLessThanOrEqual(
-        page.viewportSize()!.width,
-      );
-
-      await page.setViewportSize({ width: 320, height: 800 });
-      expect(await scrollWidth(page)).toBeLessThanOrEqual(320);
-    });
+    expect(await scrollWidth(page)).toBeLessThanOrEqual(
+      page.viewportSize()!.width,
+    );
+    await page.setViewportSize({ width: 320, height: 800 });
+    expect(await scrollWidth(page)).toBeLessThanOrEqual(320);
   });
 }
 
