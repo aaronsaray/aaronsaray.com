@@ -20,14 +20,12 @@ export const GET: APIRoute = async ({ params }) => {
   const posts = (await getSortedPosts())
     .filter((post) => post.data.tags.includes(term))
     .slice(0, RSS_LIMIT);
-  const items = await Promise.all(
-    posts.map(async (post) => ({
-      title: post.data.title,
-      link: `${SITE_URL}${postHref(post)}`,
-      date: post.data.date,
-      descriptionHtml: await excerptHtml(post.body),
-    })),
-  );
+  const items = posts.map((post) => ({
+    title: post.data.title,
+    link: `${SITE_URL}${postHref(post)}`,
+    date: post.data.date,
+    descriptionHtml: excerptHtml(post.body),
+  }));
   return feedResponse(
     renderFeed({
       title: tagTitle(term),

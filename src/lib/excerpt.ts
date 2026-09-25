@@ -58,7 +58,7 @@ function toPlainText(html: string): string {
 }
 
 /** Rendered-HTML excerpt for list display and RSS descriptions. */
-export async function excerptHtml(body: string): Promise<string> {
+export function excerptHtml(body: string): string {
   const cached = htmlCache.get(body);
   if (cached !== undefined) {
     return cached;
@@ -66,9 +66,9 @@ export async function excerptHtml(body: string): Promise<string> {
 
   let html: string;
   if (body.includes(MARKER)) {
-    html = String(await pipeline.process(body.split(MARKER)[0])).trim();
+    html = String(pipeline.processSync(body.split(MARKER)[0])).trim();
   } else {
-    const full = String(await pipeline.process(body));
+    const full = String(pipeline.processSync(body));
     const words = toPlainText(full).split(" ").slice(0, FALLBACK_WORDS);
     html = `<p>${escapeHtml(words.join(" "))}</p>`;
   }
@@ -86,6 +86,6 @@ function cap(text: string): string {
 }
 
 /** Plain-text excerpt for meta descriptions, capped at 200 characters. */
-export async function excerptText(body: string): Promise<string> {
-  return cap(toPlainText(await excerptHtml(body)));
+export function excerptText(body: string): string {
+  return cap(toPlainText(excerptHtml(body)));
 }

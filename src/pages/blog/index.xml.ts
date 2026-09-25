@@ -5,14 +5,12 @@ import { renderFeed, feedResponse, RSS_LIMIT, SITE_URL } from "../../lib/rss";
 
 export const GET: APIRoute = async () => {
   const posts = (await getSortedPosts()).slice(0, RSS_LIMIT);
-  const items = await Promise.all(
-    posts.map(async (post) => ({
-      title: post.data.title,
-      link: `${SITE_URL}${postHref(post)}`,
-      date: post.data.date,
-      descriptionHtml: await excerptHtml(post.body),
-    })),
-  );
+  const items = posts.map((post) => ({
+    title: post.data.title,
+    link: `${SITE_URL}${postHref(post)}`,
+    date: post.data.date,
+    descriptionHtml: excerptHtml(post.body),
+  }));
   return feedResponse(
     renderFeed({
       title: "Blog Posts",

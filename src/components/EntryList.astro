@@ -11,15 +11,13 @@ interface Props {
 
 const { posts } = Astro.props;
 
-const entries = await Promise.all(
-  posts.map(async (post) => ({
-    post,
-    href: postHref(post),
-    excerpt: await excerptHtml(post.body),
-    minutes: readingTime(post.body),
-    tags: [...post.data.tags].sort(),
-  })),
-);
+const entries = posts.map((post) => ({
+  post,
+  href: postHref(post),
+  excerpt: excerptHtml(post.body),
+  minutes: readingTime(post.body),
+  tags: [...post.data.tags].sort(),
+}));
 ---
 
 <section class="divide-y divide-hairline">

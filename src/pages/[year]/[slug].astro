@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const description = await excerptText(entry.body);
+const description = excerptText(entry.body);
 const minutes = readingTime(entry.body);
 const tags = [...entry.data.tags].sort();
 const context = entry.data.context;

@@ -8,13 +8,11 @@ export const GET: APIRoute = async () => {
   const tags = (await getCollection("tags")).sort((a, b) =>
     a.id.localeCompare(b.id),
   );
-  const items = await Promise.all(
-    tags.slice(0, RSS_LIMIT).map(async (entry) => ({
-      title: tagTitle(entry.id),
-      link: `${SITE_URL}/tag/${entry.id}/`,
-      descriptionHtml: await excerptHtml(entry.body!),
-    })),
-  );
+  const items = tags.slice(0, RSS_LIMIT).map((entry) => ({
+    title: tagTitle(entry.id),
+    link: `${SITE_URL}/tag/${entry.id}/`,
+    descriptionHtml: excerptHtml(entry.body!),
+  }));
   return feedResponse(
     renderFeed({
       title: "Blog Tags",
