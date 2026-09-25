@@ -24,10 +24,8 @@ export function formatDate(date: string): string {
 }
 
 /**
- * A Date object is safe here: the 545-day threshold is nowhere near
- * a timezone boundary and the result never touches a URL. The build
- * is date-dependent as a result: the same commit can render the
- * notice differently on different days.
+ * 545 days is about 18 months. Age is measured at build time, so a post
+ * gets the notice on the first build after its 545th day.
  */
 export function isOldPost(date: string): boolean {
   const ageDays = (Date.now() - new Date(date).getTime()) / 86_400_000;

@@ -87,9 +87,10 @@ relying on it.
 
 ## How the Site Works
 
-* **Dates are strings end to end**, never coerced to `Date`: timezone
-  math could shift a post's URL year. Year is `date.slice(0, 4)`;
-  sorting is lexicographic.
+* **A post's date string is the source of truth.** Its URL year is
+  `date.slice(0, 4)`, sorting compares the strings, and display splits
+  the string. Parsing it into a `Date` moves it by the build machine's
+  timezone, which can change a post's URL year.
 
 ## Rules That Load by Path
 

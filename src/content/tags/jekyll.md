@@ -1,4 +1,5 @@
 ---
 anchorDepth: 0
 ---
-These entries are tagged "Jekyll" after the tool that is used to build many blogs (and many GitHub pages). Jekyll is a static site generator written in Ruby.
+These entries are tagged "Jekyll" after the tool that is used to build many blogs (and many GitHub pages). 
+Jekyll is a static site generator written in Ruby.

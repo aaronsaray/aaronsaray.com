@@ -16,8 +16,10 @@ const MARKER = "<!--more-->";
 const FALLBACK_WORDS = 70;
 const MAX_DESCRIPTION = 200;
 
-// Tags that sit inside a sentence: replacing one with a space puts that
-// space before the punctuation that follows the closing tag.
+// toPlainText removes these outright and turns every other tag into a
+// space. Block tags need the space, or "</p><p>" glues two words
+// together; an inline tag replaced by one leaves "this post ." in place
+// of "this post."
 const INLINE_TAGS =
   /<\/?(?:a|abbr|b|cite|code|del|em|i|kbd|mark|q|s|small|span|strong|sub|sup)(?:\s[^>]*)?>/gi;
 
