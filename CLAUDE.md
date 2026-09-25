@@ -46,6 +46,9 @@ relying on it.
   what runs the file and how to run it, what it reads and writes, what
   it emits that other files depend on. A header that restates the
   filename ("the book component") is cut.
+* **A guard stays only when, without it, the build or page carries on
+  wrong.** One that rewords an error the platform already throws is
+  cut, and so is one for a state the types rule out.
 * **`README.md` is Aaron's how-to, not a description of the site.** A
   line belongs there when he would open the file to find out how to do
   something, so a new feature earns one only when it changes what he

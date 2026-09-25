@@ -34,7 +34,7 @@ export function remarkCallout() {
           // Attribute syntax can't be restored losslessly: refuse to
           // ship prose with the {...} text silently deleted.
           throw new Error(
-            `[remark-callout] cannot restore attributes on ":${node.name}" in ${file?.path ?? "unknown file"}; rework the text or handle the directive`,
+            `[remark-callout] cannot restore attributes on ":${node.name}" in ${file.path}; rework the text or handle the directive`,
           );
         }
         parent.children.splice(index, 1, ...replacement);
@@ -46,7 +46,7 @@ export function remarkCallout() {
         // original source, not the source itself: don't ship it.
         const marker = node.type === "leafDirective" ? "::" : ":::";
         throw new Error(
-          `[remark-callout] unexpected ${node.type} "${marker}${node.name}" in ${file?.path ?? "unknown file"}; restoration would approximate the author's text`,
+          `[remark-callout] unexpected ${node.type} "${marker}${node.name}" in ${file.path}; restoration would approximate the author's text`,
         );
       }
     });
