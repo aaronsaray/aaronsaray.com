@@ -1,5 +1,5 @@
 MAKEFLAGS += --no-print-directory
-.PHONY: help install ci dev build preview post check lint lint-js lint-format lint-md lint-fix format test clean verify
+.PHONY: help install ci dev build preview post card check lint lint-js lint-format lint-md lint-fix format test clean verify
 
 # A "## " comment on a target line is its help text; a "##@ " line is
 # a heading.
@@ -42,6 +42,11 @@ export TITLE
 
 post: ## New draft post dated today (TITLE="My Post Title")
 	@node scripts/new-post.ts "$$TITLE"
+
+##@ Print
+
+card: ## business-card/front.pdf and back.pdf from business-card/index.html
+	@node business-card/build.ts
 
 ##@ Lint
 

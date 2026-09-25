@@ -1,0 +1,170 @@
+<!-- Printed by build.ts (make card), opened in a browser to iterate. Reads the site fonts by relative path, so it must stay one directory below the repo root. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Business card</title>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400 900;
+        src: url("../public/fonts/inter-latin-variable.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Fraunces";
+        font-style: normal;
+        font-weight: 400 700;
+        src: url("../public/fonts/fraunces-latin-variable.woff2")
+          format("woff2");
+      }
+
+      /* MOO's bleed size is 3.66 x 2.16in, which is 263.52 x 155.52pt.
+         Chromium rounds a PDF page box to whole points and emits
+         264 x 156pt; 352 x 208px is that size exactly, so the painted
+         card fills the page box. Trim is 3.5 x 2in (336 x 192px), 8px in
+         from every edge. The safe area is 3.34 x 1.84in, 15.68px in. */
+      @page {
+        size: 352px 208px;
+        margin: 0;
+      }
+
+      html {
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      @media screen {
+        body {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 24px;
+          padding: 24px;
+          background: #3a3f46;
+        }
+      }
+
+      /* #0a0a0a and #8e959e mirror --color-night and --color-ink-dim in
+         src/styles/global.css. */
+      .side {
+        position: relative;
+        box-sizing: border-box;
+        width: 352px;
+        height: 208px;
+        overflow: hidden;
+        background: #0a0a0a;
+        color: #8e959e;
+        font-family: "Inter", sans-serif;
+      }
+
+      [data-side="front"] .back,
+      [data-side="back"] .front {
+        display: none;
+      }
+
+      .front {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* The logo's fills are its --logo-a and --logo-s custom properties,
+         set here: the site's accent and ink pulled down in value, the S
+         kept the brighter of the two as on the site. The seam is a
+         bright paper insert, so the face stays dark. */
+      .front svg {
+        height: 42px;
+        width: auto;
+        overflow: visible;
+        --logo-a: #2f4f6b;
+        --logo-s: #7b838c;
+      }
+
+      /* 54px bottom: the name sits halfway between the card's center
+         and the center of the space above the bottom line. */
+      .back {
+        display: grid;
+        place-items: center;
+        padding: 32px 32px 54px;
+      }
+
+      .name {
+        margin: 0;
+        color: #fff;
+        font-family: "Fraunces", serif;
+        font-size: 29pt;
+        font-weight: 600;
+        font-variation-settings: "opsz" 29;
+        line-height: 1;
+      }
+
+      .line {
+        position: absolute;
+        inset: auto 32px 32px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 9.5pt;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .guide {
+        position: absolute;
+        pointer-events: none;
+        border: 1px dashed rgb(255 255 255 / 0.35);
+      }
+
+      .guide-trim {
+        inset: 8px;
+        border-radius: 5mm;
+      }
+
+      .guide-safe {
+        inset: 15.68px;
+      }
+
+      @media print {
+        .guide {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="side front">
+      <!-- A copy of src/assets/logo.svg; build.ts stops when the paths differ. -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="2.25 -74.61 104.47 74.61"
+      >
+        <path
+          style="fill: var(--logo-s, #e7e9ec)"
+          d="M77.23 0L77.23 0Q67.75 0 60.7 -2.81Q53.64 -5.62 49.74 -11.47Q45.83 -17.33 45.78 -26.46L45.78 -26.46L64.53 -26.46Q64.73 -23.14 66.22 -20.85Q67.71 -18.55 70.42 -17.38Q73.13 -16.21 76.93 -16.21L76.93 -16.21Q80.11 -16.21 82.26 -16.99Q84.41 -17.77 85.5 -19.17Q86.6 -20.56 86.6 -22.36L86.6 -22.36Q86.6 -24.02 85.55 -25.27Q84.5 -26.51 82.11 -27.54Q79.72 -28.56 75.66 -29.39L75.66 -29.39L68.34 -30.96Q58.72 -33.01 53.18 -37.96Q47.64 -42.92 47.64 -51.46L47.64 -51.46Q47.64 -58.4 51.4 -63.6Q55.16 -68.8 61.77 -71.7Q68.39 -74.61 77.03 -74.61L77.03 -74.61Q85.87 -74.61 92.29 -71.66Q98.71 -68.7 102.2 -63.35Q105.69 -58.01 105.74 -50.88L105.74 -50.88L86.8 -50.88Q86.55 -54.44 84.19 -56.42Q81.82 -58.4 77.03 -58.4L77.03 -58.4Q74 -58.4 72.05 -57.69Q70.1 -56.98 69.17 -55.71Q68.24 -54.44 68.24 -52.83L68.24 -52.83Q68.24 -51.12 69.24 -49.83Q70.24 -48.54 72.42 -47.58Q74.59 -46.63 78.01 -45.9L78.01 -45.9L83.97 -44.63Q89.97 -43.36 94.29 -41.26Q98.61 -39.16 101.37 -36.35Q104.13 -33.54 105.43 -30.03Q106.72 -26.51 106.72 -22.36L106.72 -22.36Q106.72 -15.19 103.18 -10.18Q99.64 -5.18 93.05 -2.59Q86.46 0 77.23 0Z"
+        />
+        <path
+          style="fill: var(--logo-a, #537e9e)"
+          fill-rule="evenodd"
+          d="M24.32 0L2.25 0L25.83 -72.75L52.78 -72.75L77.25 0L77.2 0L74.17 0L72.51 -0.09L69.94 -0.37L67.98 -0.68L65.44 -1.21L63.01 -1.9L60.93 -2.63L59.1 -3.41L57.29 -4.35L56.29 -4.95L54.44 -6.26L52.93 -7.54L51.91 -8.58L51.28 -9.28L49.88 -11.09L48.98 -12.49L48.23 -13.9L48.23 -13.96L28.32 -13.96ZM32.52 -28.71L46.29 -28.71Q43.65 -37.65 41.31 -47.31L41.31 -47.31Q40.19 -52 39.11 -56.64L39.11 -56.64Q38.09 -52 37.11 -47.31L37.11 -47.31Q35.06 -37.65 32.52 -28.71L32.52 -28.71Z"
+        />
+      </svg>
+      <div class="guide guide-trim"></div>
+      <div class="guide guide-safe"></div>
+    </section>
+    <section class="side back">
+      <p class="name">Aaron Saray</p>
+      <p class="line">
+        <span>I make things better</span>
+        <span>aaronsaray.com</span>
+      </p>
+      <div class="guide guide-trim"></div>
+      <div class="guide guide-safe"></div>
+    </section>
+  </body>
+</html>

@@ -165,6 +165,14 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 
 `src/pages/logo.svg.ts` serves `/logo.svg`: during `make build` it reads that file and swaps each `var()` fill for its plain hex.
 
+## Business Card
+
+```shell
+make card
+```
+
+`business-card/README.md` has the MOO specs, the stock, and how to upload.
+
 ## Adding a Page
 
 * A new page gets a line in `ROUTES` at the top of `tests/pages/all.spec.ts`. `make verify` fails until it has one.

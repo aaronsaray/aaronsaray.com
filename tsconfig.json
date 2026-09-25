@@ -3,6 +3,7 @@
   "include": [
     ".astro/types.d.ts",
     "astro.config.ts",
+    "business-card/**/*",
     "playwright.config.ts",
     "scripts/**/*",
     "src/**/*",
