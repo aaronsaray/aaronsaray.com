@@ -1,18 +1,5 @@
 ---
 import Icon from "./Icon.astro";
-// - Closed panels are pointer-events-none. pointer-events is not in
-//   the transition list, so the moment the group loses hover the
-//   panel stops hit-testing, and a closing menu can never steal the
-//   mouse from a neighboring one (the panels overlap horizontally).
-// - hover:z-10/focus-within:z-10 on the group keeps the open menu
-//   painting above a still-fading neighbor.
-// - pt-2 on the panel is the hover bridge across the visual gap
-//   between the trigger and the menu; leaving it drops the hover.
-// - Close gets a 150ms grace delay for mouse slips; open is instant.
-// - No script means no live aria-expanded and no Escape-to-close;
-//   aria-controls is what ties panel to trigger.
-// - aria-current="page" is exact-match only: on a post, Blog is the
-//   active section but not the page being viewed.
 import { isActive, type NavItem } from "../lib/nav";
 
 interface Props {
@@ -23,6 +10,8 @@ const { item, nested = false } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const active = isActive(pathname, item);
+// Exact match only: on a post, Blog is the active section but not the
+// page being viewed.
 const current = item.href === pathname ? "page" : undefined;
 const tone = active ? "text-ink" : "text-ink-dim";
 const rule = ["border-b", active ? "border-accent-dim" : "border-transparent"];
@@ -33,6 +22,9 @@ const bar =
 
 const kind = nested ? "panel" : item.children ? "section" : "link";
 const panelId = `nav-menu-${item.text.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+// Named, because a panel the hover script opens with showPopover()
+// gets no implicit anchor from its button.
+const anchor = `--${panelId}`;
 ---
 
 {
@@ -64,22 +56,30 @@ const panelId = `nav-menu-${item.text.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
 
 {
   kind === "section" && (
-    <div class="group relative focus-within:z-10 hover:z-10">
+    <div data-nav-section class="group">
+      {/* show, not toggle: hover has opened the panel before a click
+          lands, and a toggle would close it. */}
       <button
         type="button"
-        aria-controls={panelId}
+        popovertarget={panelId}
+        popovertargetaction="show"
+        style={`anchor-name: ${anchor}`}
         class:list={[
           bar,
-          "flex items-center gap-1 delay-150 duration-150 group-focus-within:text-ink group-focus-within:delay-0 group-hover:text-ink group-hover:delay-0",
+          "flex items-center gap-1 duration-150 group-has-[:popover-open]:text-ink",
           tone,
         ]}
       >
         <span class:list={rule}>{item.text}</span>
         <Icon name="chevron-down" class="size-3.5" />
       </button>
+      {/* pt-2, not a margin: the gap stays inside the section, so
+          crossing it never ends the hover. */}
       <div
         id={panelId}
-        class="pointer-events-none invisible absolute top-full right-0 pt-2 opacity-0 transition-[opacity,visibility] delay-150 duration-150 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100 group-focus-within:delay-0 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-hover:delay-0"
+        popover
+        style={`position-anchor: ${anchor}`}
+        class="top-[anchor(bottom)] right-[anchor(right)] bottom-auto left-auto bg-transparent pt-2 opacity-0 transition-[opacity,display,overlay] transition-discrete duration-150 open:opacity-100 starting:open:opacity-0"
       >
         <div class="min-w-36 border border-hairline bg-surface py-2">
           {item.children!.map((child) => (
@@ -90,3 +90,33 @@ const panelId = `nav-menu-${item.text.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
     </div>
   )
 }
+
+<script>
+  // Hover is mouse-only: a touch pointer leaves when it lifts, which
+  // would close the panel its tap just opened.
+  document
+    .querySelectorAll<HTMLElement>("[data-nav-section]")
+    .forEach((section) => {
+      const panel = section.querySelector<HTMLElement>("[popover]")!;
+      let closing = 0;
+      section.addEventListener("pointerenter", (e) => {
+        if (e.pointerType !== "mouse") {
+          return;
+        }
+        clearTimeout(closing);
+        panel.showPopover();
+      });
+      section.addEventListener("pointerleave", (e) => {
+        if (e.pointerType !== "mouse") {
+          return;
+        }
+        // Grace for a mouse that slips off the edge.
+        closing = window.setTimeout(() => panel.hidePopover(), 150);
+      });
+      section.addEventListener("focusout", (e) => {
+        if (!section.contains(e.relatedTarget as Node | null)) {
+          panel.hidePopover();
+        }
+      });
+    });
+</script>

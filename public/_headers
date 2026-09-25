@@ -1,4 +1,5 @@
-# 'unsafe-inline' covers the style attributes Shiki and logo.svg emit.
+# 'unsafe-inline' covers the style attributes Shiki, logo.svg, and
+# NavItem.astro's anchor names emit.
 /*
   Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'
   X-Content-Type-Options: nosniff

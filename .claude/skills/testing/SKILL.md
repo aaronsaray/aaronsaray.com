@@ -5,12 +5,28 @@ description: How the Playwright tests are chosen, written, and run. Read before 
 
 # Testing
 
-A test proves one thing the site must keep doing, at a desktop and a
-phone, and its title says what a person would notice was broken. A
-test that cannot name that does not get written. The route sweep is
-the exception: one test per route runs every check a page must pass
-on a single load, since `maxFailures: 1` stops the run at the first
-failure either way.
+A test is one page load, one piece of the site, one way of working
+it, walked start to finish: focus the nav button, open the panel, move
+inside, leave, close, reopen. The steps of that job are never separate
+tests; `maxFailures: 1` stops the run at the first failed expect
+either way, so splitting them buys a page load and nothing else. The
+route sweep is the same unit on a page: one test per route runs every
+check that load must pass.
+
+What makes a second test:
+
+* **A different input.** Keyboard, mouse, and touch each get their
+  own, because each skips on a different fixture and a person notices
+  "hover is broken" apart from "Tab is broken."
+* **A different piece of the site.** The skip link, a nav panel, the
+  copy button: never two controls in one test, even on one page.
+* **A different page load.** A job that follows a link ends there; the
+  new page is not the start of a second job in the same test.
+
+The title says what a person would notice was broken, at a desktop
+and a phone. A test that cannot name that does not get written, and a
+title that needs "and also" across two controls is doing two tests'
+work.
 
 ## Tested
 

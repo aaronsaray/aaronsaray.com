@@ -49,8 +49,8 @@ const ROUTES: { name: string; path: string; status?: number }[] = [
 // because axe's selector leads with Tailwind classes.
 const GRADIENT_EXEMPT = [
   '[href$="contact/"]',
-  'button[aria-controls="nav-menu-about"]',
-  'button[aria-controls="nav-menu-writing"]',
+  'button[popovertarget="nav-menu-about"]',
+  'button[popovertarget="nav-menu-writing"]',
 ];
 
 for (const { name, path, status } of ROUTES) {

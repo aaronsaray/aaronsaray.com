@@ -1,16 +1,45 @@
 import { test, expect } from "@playwright/test";
 
-test("nav dropdown opens on keyboard focus", async ({ page }) => {
+test("the keyboard opens, leaves, and closes a nav panel", async ({ page }) => {
   await page.goto("/");
 
+  const button = page.getByRole("button", { name: "About" });
   const panel = page.locator("#nav-menu-about");
   await expect(panel).toBeHidden();
 
-  await page.getByRole("button", { name: "About" }).focus();
+  await button.focus();
+  await page.keyboard.press("Enter");
   await expect(panel).toBeVisible();
 
   await page.keyboard.press("Tab");
   await expect(panel.getByRole("link", { name: "Who am I" })).toBeFocused();
+
+  await page.keyboard.press("Escape");
+  await expect(panel).toBeHidden();
+  await expect(button).toBeFocused();
+
+  await page.keyboard.press("Enter");
+  await expect(panel).toBeVisible();
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Tab");
+  await page.keyboard.press("Tab");
+  await expect(page.getByRole("button", { name: "Writing" })).toBeFocused();
+  await expect(panel).toBeHidden();
+});
+
+test("hovering a nav section opens its panel until the mouse leaves", async ({
+  page,
+  hasTouch,
+}) => {
+  test.skip(hasTouch, "a touch screen has no hover");
+  await page.goto("/");
+
+  const panel = page.locator("#nav-menu-about");
+  await page.getByRole("button", { name: "About" }).hover();
+  await expect(panel).toBeVisible();
+
+  await page.locator("h1").hover();
+  await expect(panel).toBeHidden();
 });
 
 test("a tap opens the nav dropdown and its links work", async ({
@@ -86,7 +115,7 @@ test("aria-current marks the page, not the section", async ({ page }) => {
 
   await page.goto("/blog/");
   const panel = page.locator("#nav-menu-writing");
-  await page.getByRole("button", { name: "Writing" }).focus();
+  await page.getByRole("button", { name: "Writing" }).click();
   await expect(panel.getByRole("link", { name: "Blog" })).toHaveAttribute(
     "aria-current",
     "page",

@@ -72,6 +72,5 @@ in conversation.
   touch changes, and say so: whether alt text means anything (in
   `src/content/` flag it, never rewrite it), whether focus order
   matches reading order and stays visible (tab through anything new),
-  whether a screen reader can operate anything interactive (the
-  comment in `NavItem.astro` records the known gap), and whether the
-  page holds at 200% zoom.
+  whether a screen reader can operate anything interactive, and
+  whether the page holds at 200% zoom.
