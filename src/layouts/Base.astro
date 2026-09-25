@@ -14,8 +14,6 @@ interface Props {
   publishedTime?: string;
   /** Drops the canonical and og:url along with adding the robots tag */
   noindex?: boolean;
-  /** Homepage: header overlays the hero */
-  overlayHeader?: boolean;
 }
 
 const {
@@ -25,7 +23,6 @@ const {
   ogType = "website",
   publishedTime,
   noindex = false,
-  overlayHeader = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -82,7 +79,7 @@ const ogImageUrl = new URL(ogImage, Astro.site);
     />
   </head>
   <body class="flex min-h-svh flex-col bg-night font-sans text-ink antialiased">
-    <Header overlay={overlayHeader} />
+    <Header />
     <div class="grow">
       <slot />
     </div>

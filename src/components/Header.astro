@@ -2,14 +2,9 @@
 import NavItem from "./NavItem.astro";
 import Logo from "../assets/logo.svg";
 import { NAV } from "../lib/nav";
-
-interface Props {
-  overlay?: boolean;
-}
-const { overlay = false } = Astro.props;
 ---
 
-<header class={`z-10 ${overlay ? "fixed inset-x-0 top-0" : "sticky top-0"}`}>
+<header class="sticky top-0 z-10 h-header">
   <div
     aria-hidden="true"
     class="progressive-blur pointer-events-none absolute inset-x-0 top-0 h-[150%]"

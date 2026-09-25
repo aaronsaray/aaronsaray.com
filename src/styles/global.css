@@ -60,6 +60,8 @@
     ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
   --font-c64: "C64 Pro Mono", ui-monospace, Menlo, Consolas, monospace;
 
+  --spacing-header: 4.5rem;
+
   /* 667ms: the KERNAL cursor toggles every 20 jiffies (1/60 s). */
   --animate-blink: blink 667ms step-end infinite;
   @keyframes blink {
@@ -135,6 +137,7 @@ html {
   /* 3:1 against the track. */
   scrollbar-color: #585f66 var(--color-night);
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--spacing-header) + 0.5rem);
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
   }
@@ -306,11 +309,6 @@ h4 {
   h4 {
     @apply font-display text-lg font-semibold text-white sm:text-xl;
     margin-top: 2rem;
-  }
-  :is(h2, h3, h4, h5, h6) {
-    /* Clears the sticky header; the scroll-mt-20 in index.astro is the
-       same clearance. */
-    scroll-margin-top: 5rem;
   }
 
   ul,
