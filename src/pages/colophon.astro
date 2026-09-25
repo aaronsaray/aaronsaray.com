@@ -2,11 +2,8 @@
 import { getEntry, render } from "astro:content";
 import Base from "../layouts/Base.astro";
 
-// The body carries its own H1.
-const entry = await getEntry("pages", "colophon");
-if (!entry) {
-  throw new Error("pages/colophon content missing");
-}
+// The H1 comes from colophon.md.
+const entry = (await getEntry("pages", "colophon"))!;
 const { Content } = await render(entry);
 ---
 

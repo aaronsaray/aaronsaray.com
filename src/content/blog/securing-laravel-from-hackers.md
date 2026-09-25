@@ -7,7 +7,7 @@ tags:
   - security
 ---
 :::callout
-Laravel Hacker is no longer a brand. You can find my security work at [MasteringLaravel.io/security](https://masteringlaravel.io/security?ref=as)
+Laravel Hacker is no longer a brand. You can find my security work at [MasteringLaravel.io/security](https://masteringlaravel.io/security)
 :::
 
 Laravel is a great framework that is pretty secure by default. However, configuration mistakes or coding errors can still leave your app open for attack. Where do you go for help?

@@ -10,7 +10,7 @@ The State of Security of Laravel Apps in 2021 is a whitepaper based on the quiz 
 <!--more-->
 
 :::callout
-This is an entry I've written to preserve the content from The Laravel Hacker. Current Laravel security information can now be found on [masteringlaravel.io/security](https://masteringlaravel.io/security?ref=as)
+This is an entry I've written to preserve the content from The Laravel Hacker. Current Laravel security information can now be found on [masteringlaravel.io/security](https://masteringlaravel.io/security)
 :::
 
 When I launched the Laravel Hacker 7 Question Security Quiz, I gathered aggregate, privatized anonymous results.  The quiz helped programmers understand how secure their app is - and the answers helped me understand what things to talk about in the future regarding security.

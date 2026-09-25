@@ -1,10 +1,8 @@
-// `@astrojs/sitemap` cannot serve this route: it writes
-// `sitemap-index.xml` plus `sitemap-0.xml` and its only filename
-// option is the `sitemap` prefix, so /sitemap.xml stops resolving. It
-// also emits one `lastmod` for the whole site, where the entries below
-// carry the date of the newest post each URL covers, and it sitemaps
-// every built page, which would pull in the paginated aliases and all
-// 53 feeds.
+// Not `@astrojs/sitemap`: it writes `sitemap-index.xml` plus
+// `sitemap-0.xml` (only the prefix is configurable), so /sitemap.xml
+// stops resolving. Its one site-wide `lastmod` also marks every post
+// changed whenever anything changes, and it lists every built page,
+// feeds included. Here each URL carries its newest post's date.
 
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";

@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import asset from "../assets/logo.svg?raw";
+import asset from "../assets/logo.svg?raw"; // ?raw imports the SVG source as a string for FILL to rewrite.
 
 // /logo.svg is linked from outside the site, so it serves plain fills
 // that need nothing from a page.

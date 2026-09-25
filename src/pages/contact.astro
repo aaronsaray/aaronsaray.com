@@ -4,11 +4,10 @@ import Base from "../layouts/Base.astro";
 const title = "Contact";
 const description = "Send me a note.";
 
-// Entities plus set:html, because Astro escapes the & of a dynamic
-// href. The hidden span feeds tag-stripping harvesters a decoy
-// subdomain that takes no mail, and splits the accessible name, so
-// aria-label states it outright. tests/pages/contact.spec.ts fails on a
-// literal address.
+// Entities through set:html: Astro escapes the & of a dynamic href.
+// The hidden span hands tag-stripping harvesters a decoy host that
+// takes no mail. It also splits the accessible name, so aria-label
+// carries the address.
 const encode = (text: string) =>
   [...text].map((char) => `&#${char.charCodeAt(0)};`).join("");
 const user = "aaron";

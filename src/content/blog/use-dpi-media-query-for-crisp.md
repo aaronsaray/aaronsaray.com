@@ -8,7 +8,7 @@ What do you do when your website looks great to you - but others say the text is
 
 <!--more-->
 
-First, let's see what I was talking about. I was working on my development business site [MoreBetterFaster.io](https://morebetterfaster.io/?ref=as) - when I started noticing the problem.
+First, let's see what I was talking about. I was working on my development business site [MoreBetterFaster.io](https://morebetterfaster.io/) - when I started noticing the problem.
 
 Well, first of all, I thought it looked great.  I was using some antialiasing on my text and I found an image that I really felt connected with the content.  It looks good:
 
