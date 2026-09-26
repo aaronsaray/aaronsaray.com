@@ -1,6 +1,19 @@
-# aaronsaray.com
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.svg">
+    <img src=".github/assets/logo-light.svg" width="96" alt="">
+  </picture>
+</p>
 
-Source for [AaronSaray.com](https://aaronsaray.com).
+<h1 align="center">aaronsaray.com</h1>
+
+<p align="center">
+  <a href="https://github.com/aaronsaray/aaronsaray.com/actions/workflows/ci.yml"><img src="https://github.com/aaronsaray/aaronsaray.com/actions/workflows/ci.yml/badge.svg?branch=main" alt="ci"></a>
+  <a href="https://aaronsaray.com"><img src="https://img.shields.io/website?url=https%3A%2F%2Faaronsaray.com&label=site" alt="site"></a>
+  <a href="https://astro.build"><img src="https://img.shields.io/github/package-json/dependency-version/aaronsaray/aaronsaray.com/astro?label=astro" alt="astro"></a>
+</p>
+
+---
 
 ## Tech
 
@@ -13,7 +26,6 @@ Source for [AaronSaray.com](https://aaronsaray.com).
 * [Make](https://www.gnu.org/software/make/): every repeated command is a target.
 * [Prettier](https://prettier.io): formatting.
 * [ESLint](https://eslint.org): lints the JS, TS, and Astro files.
-* [markdownlint](https://github.com/DavidAnson/markdownlint-cli2): lints the docs. All three skip `src/content/`.
 * [Playwright](https://playwright.dev): browser tests, with [axe](https://github.com/dequelabs/axe-core) for the accessibility sweep.
 * [GitHub Actions](https://docs.github.com/actions): runs `make ci` on push; on `main`, a second job deploys the tested `dist/`.
 * [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/): hosts `dist/`, with `public/_headers` and `public/_redirects` applied at the edge.
@@ -156,6 +168,7 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 
 * A new icon is the Tabler SVG dropped into `src/icons/`. The filename is the `name`.
 * A new `src/assets/logo.svg` needs the two `style` fills (`--logo-s`, `--logo-a`) put back on its paths. The build stops and prints the format.
+* `.github/assets/` holds the README's two copies of the logo with plain fills, dark and light. A new logo means new copies.
 
 ## Business Card
 

@@ -7,5 +7,18 @@
   "ignores": [
     // Aaron's prose: tooling never touches it.
     "src/content/**"
+  ],
+  "overrides": [
+    {
+      // The README opens with a centered HTML header: logo, title, badges.
+      "filter": ["README.md"],
+      "combine": "merge",
+      "config": {
+        "first-line-heading": false,
+        "no-inline-html": {
+          "allowed_elements": ["p", "picture", "source", "img", "h1", "a"]
+        }
+      }
+    }
   ]
 }
