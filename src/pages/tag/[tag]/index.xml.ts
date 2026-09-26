@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import { getSortedPosts, postHref } from "../../../lib/posts";
 import { excerptHtml } from "../../../lib/excerpt";
 import { feed, RSS_LIMIT, SITE_URL } from "../../../lib/rss";
-import { tagTitle } from "../../../lib/tags";
+import { tagDescription, tagFeedTitle } from "../../../lib/tags";
 
 export async function getStaticPaths() {
   const tags = await getCollection("tags");
@@ -22,7 +22,8 @@ export const GET: APIRoute = async ({ params }) => {
     descriptionHtml: excerptHtml(post.body),
   }));
   return feed({
-    title: tagTitle(term),
+    title: tagFeedTitle(term),
+    description: tagDescription(term),
     path: `/tag/${term}/`,
     selfPath: `/tag/${term}/index.xml`,
     items,

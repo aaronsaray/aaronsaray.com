@@ -1,8 +1,14 @@
 import type { CollectionEntry } from "astro:content";
 import type { Post } from "./posts";
+import { pageTitle } from "./site";
 
 export function tagTitle(term: string): string {
   return `Blog Entries Tagged "${term}"`;
+}
+
+/** Channel title of a tag's feed, and the label on the link to it. */
+export function tagFeedTitle(term: string): string {
+  return pageTitle(`"${term}" entries`);
 }
 
 export function tagDescription(term: string): string {

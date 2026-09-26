@@ -117,6 +117,8 @@ test.describe("head", () => {
     expect(await content(page, 'meta[property="og:image"]')).toBe(
       "https://aaronsaray.com/images/tag/ajax.jpg",
     );
+    expect(await content(page, 'meta[property="og:image:width"]')).toBe("1200");
+    expect(await content(page, 'meta[property="og:image:height"]')).toBe("630");
   });
 
   // Its excerpt runs past the 200-character cap.
@@ -144,7 +146,7 @@ test.describe("head", () => {
       page.locator(
         'link[rel=alternate][type="application/rss+xml"][href="https://aaronsaray.com/tag/php/index.xml"]',
       ),
-    ).toHaveCount(1);
+    ).toHaveAttribute("title", '"php" entries | Aaron Saray');
     expect(await content(page, 'meta[name="description"]')).toBe(
       'Blog entries by Aaron Saray that have the tag "php".',
     );

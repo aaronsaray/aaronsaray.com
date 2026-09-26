@@ -2,6 +2,7 @@ import type { APIRoute } from "astro";
 import { getSortedPosts, postHref } from "../../lib/posts";
 import { excerptHtml } from "../../lib/excerpt";
 import { feed, RSS_LIMIT, SITE_URL } from "../../lib/rss";
+import { SITE_DESCRIPTION, SITE_NAME } from "../../lib/site";
 
 export const GET: APIRoute = async () => {
   const posts = (await getSortedPosts()).slice(0, RSS_LIMIT);
@@ -12,7 +13,8 @@ export const GET: APIRoute = async () => {
     descriptionHtml: excerptHtml(post.body),
   }));
   return feed({
-    title: "Blog Posts",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
     path: "/blog/",
     selfPath: "/blog/index.xml",
     items,

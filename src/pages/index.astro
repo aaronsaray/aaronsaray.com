@@ -1,13 +1,12 @@
 ---
 import Icon from "../components/Icon.astro";
 import Base from "../layouts/Base.astro";
+import { SITE_DESCRIPTION } from "../lib/site";
 
 const title = "Engineering Coach, Developer, and CTO";
-const description =
-  "Aaron Saray coaches engineering managers and developers, builds software that stays simple, and leads through honest communication and education.";
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={SITE_DESCRIPTION}>
   <main id="main">
     <section class="relative -mt-header flex min-h-svh flex-col justify-center">
       <div class="mx-auto w-full max-w-6xl px-5 sm:px-8">

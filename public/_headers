@@ -1,8 +1,11 @@
 # 'unsafe-inline' covers the style attributes Shiki, logo.svg, and
-# NavItem.astro's anchor names emit.
+# NavItem.astro's anchor names emit. static.cloudflareinsights.com serves
+# the beacon Cloudflare Web Analytics injects, at a versioned path, and
+# the beacon reports to /cdn-cgi/rum under 'self'.
 /*
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'
   X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
 
 /.well-known/webfinger
   Content-Type: application/jrd+json
@@ -14,3 +17,11 @@
 # new URL.
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# A file under either path keeps its name when replaced, so a browser
+# holding the old one shows it for up to 30 days, the max-age in seconds.
+/uploads/*
+  Cache-Control: public, max-age=2592000
+
+/images/*
+  Cache-Control: public, max-age=2592000

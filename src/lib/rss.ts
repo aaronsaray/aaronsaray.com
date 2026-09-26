@@ -1,7 +1,5 @@
 import rss from "@astrojs/rss";
 
-export const SITE_TITLE =
-  "Milwaukee Web Developer, PHP and Laravel Programmer, Consultant";
 export const SITE_URL = "https://aaronsaray.com";
 export const RSS_LIMIT = 10;
 const COPYRIGHT =
@@ -22,15 +20,15 @@ function day(date: string): Date {
 }
 
 export function feed(opts: {
-  /** Page title; channel title becomes "<title> on <site title>". */
+  /** Channel title: the name a reader lists the feed under. */
   title: string;
+  description: string;
   /** Site-absolute path of the page the feed covers, e.g. /blog/. */
   path: string;
   /** Site-absolute path of the feed itself. */
   selfPath: string;
   items: FeedItem[];
 }): Promise<Response> {
-  const channelTitle = `${opts.title} on ${SITE_TITLE}`;
   const lastBuild = day(opts.items[0].date).toUTCString();
   const channelData = [
     "<language>en-us</language>",
@@ -40,8 +38,8 @@ export function feed(opts: {
   ].join("");
 
   return rss({
-    title: channelTitle,
-    description: `Recent content in ${channelTitle}`,
+    title: opts.title,
+    description: opts.description,
     site: `${SITE_URL}${opts.path}`,
     xmlns: { atom: "http://www.w3.org/2005/Atom" },
     customData: channelData,
