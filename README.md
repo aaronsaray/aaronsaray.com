@@ -185,7 +185,7 @@ Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. The bunchie/oogm
 
 ## Deploy
 
-CI deploys `main` to Cloudflare Workers with `make deploy`. The Worker is created by the first deploy from `wrangler.jsonc`, 
+CI deploys `main` to Cloudflare Workers with `make deploy`. The Worker is created by the first deploy from `wrangler.jsonc`,
 never in the dashboard. One-time setup, done 2026-09-26:
 
 * Cloudflare > Workers & Pages > Account details: copy the Account ID.
