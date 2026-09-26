@@ -182,3 +182,12 @@ make card
 ## The Konami Code
 
 Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. The bunchie/oogmagoog is rendered into a claude-developed background.
+
+## Deploy
+
+CI deploys `main` to Cloudflare Workers with `make deploy`. The Worker is created by the first deploy from `wrangler.jsonc`, 
+never in the dashboard. One-time setup, done 2026-09-26:
+
+* Cloudflare > Workers & Pages > Account details: copy the Account ID.
+* My Profile > API Tokens > Create Token > template **Edit Cloudflare Workers**. Account Resources: Include > the `me@aaronsaray.com` account. Zone Resources: Include > Specific zone > aaronsaray.com.
+* GitHub repo > Settings > Environments > New environment > `production`. Environment secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
