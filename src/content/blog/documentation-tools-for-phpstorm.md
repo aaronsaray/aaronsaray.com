@@ -22,7 +22,7 @@ Next, Go to the **PhpStorm preferences > Tools > Remote SSH External Tools**.
 
 Click the **+** button to add a new tool:
 
-[![Screenshot](/uploads/2015/Screenshot-2015-04-05-18.15.42@2x.png)](/uploads/2015/Screenshot-2015-04-05-18.15.42@2x.png)
+[![Screenshot](/uploads/2015/Screenshot-2015-04-05-18.15.42-2x.png)](/uploads/2015/Screenshot-2015-04-05-18.15.42-2x.png)
 
   * Enter php doc as the name.  You can group it differently if you'd like.
 
@@ -36,6 +36,6 @@ Click OK and you're good to go for phpdocumentor.
 
 The same configuration can be done with apiDoc.  For parameters, I used `-i /path/to/api.php -o /path/to/api/doc/output`.   
 
-[![Screenshot](/uploads/2015/Screenshot-2015-04-05-18.21.11@2x.png)](/uploads/2015/Screenshot-2015-04-05-18.21.11@2x.png)
+[![Screenshot](/uploads/2015/Screenshot-2015-04-05-18.21.11-2x.png)](/uploads/2015/Screenshot-2015-04-05-18.21.11-2x.png)
 
 After you save this, you now have external tools available to use in PhpStorm.  You simply have to click on the Tools menu, hover over External tools, and choose your tool from the menu.  (Note, if you have used vagrant, it may ask you to confirm you'd like to use the current vagrant instance each time you run the tool.)  Also, if you chose a different group for the commands, the menu will be different.

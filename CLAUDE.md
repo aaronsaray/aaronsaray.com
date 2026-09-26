@@ -90,6 +90,10 @@ relying on it.
   `date.slice(0, 4)`, sorting compares the strings, and display splits
   the string. Parsing it into a `Date` moves it by the build machine's
   timezone, which can change a post's URL year.
+* **An `@` in a filename under `public/` costs a redirect.** Workers
+  answers the path with a 307 to its `%40` form, and `astro dev` and
+  `astro preview` answer that form with a 404. Retina captures end in
+  `-2x` or `-3x` for that reason.
 
 ## Rules That Load by Path
 

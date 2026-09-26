@@ -158,8 +158,8 @@ test.describe("images", () => {
       count: 20,
       // 1170x2532 files.
       known: [
-        "/uploads/2022/weight-1@3x.png 390x844",
-        "/uploads/2022/weight-20@3x.png 390x844",
+        "/uploads/2022/weight-1-3x.png 390x844",
+        "/uploads/2022/weight-20-3x.png 390x844",
       ],
     },
     {
@@ -169,19 +169,19 @@ test.describe("images", () => {
       // 2028x826 and 1097x452 files: the odd width's half pixel rounds
       // up.
       known: [
-        "/uploads/2018/host1@2x.png 1014x413",
-        "/uploads/2018/host14@2x.png 549x226",
+        "/uploads/2018/host1-2x.png 1014x413",
+        "/uploads/2018/host14-2x.png 549x226",
       ],
     },
   ];
 
   for (const { scale, path, count, known } of RETINA) {
-    test(`@${scale}x captures are stamped at the divided size`, async ({
+    test(`-${scale}x captures are stamped at the divided size`, async ({
       page,
     }) => {
       await page.goto(path);
       const stamped = await stamps(
-        page.locator(`.prose img[src*="@${scale}x."]`),
+        page.locator(`.prose img[src*="-${scale}x."]`),
       );
       expect(stamped).toHaveLength(count);
       expect(stamped).toEqual(expect.arrayContaining(known));

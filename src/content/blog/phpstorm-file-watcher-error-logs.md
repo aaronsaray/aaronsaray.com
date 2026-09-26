@@ -31,14 +31,14 @@ In the search box, type `watcher` which will bring up the `Tools > File Watchers
 
 In the new watcher, choose the following options as per the screenshot:
 
-[![File Water Dialog](/uploads/2017/phpstorm-file-watcher-dialog@2x.png)](/uploads/2017/phpstorm-file-watcher-dialog@2x.png)
+[![File Water Dialog](/uploads/2017/phpstorm-file-watcher-dialog-2x.png)](/uploads/2017/phpstorm-file-watcher-dialog-2x.png)
 
 In order to make the scope, you'll have to click the `...` link and create a new scope named `error.log` - you can see the settings in the screenshot below:
 
-[![File Water Scope](/uploads/2017/phpstorm-file-watcher-scope@2x.png)](/uploads/2017/phpstorm-file-watcher-scope@2x.png)
+[![File Water Scope](/uploads/2017/phpstorm-file-watcher-scope-2x.png)](/uploads/2017/phpstorm-file-watcher-scope-2x.png)
 
 Basically, what you do is to choose your error file and and include it.  That will create the proper scope for your file watcher.
 
 Save all the settings and you have a new alert system set up now.  It's a nice backup.  Here's an example of what you might see:
 
-![Dialog](/uploads/2017/phpstorm-file-watcher-alert@2x.png)
+![Dialog](/uploads/2017/phpstorm-file-watcher-alert-2x.png)

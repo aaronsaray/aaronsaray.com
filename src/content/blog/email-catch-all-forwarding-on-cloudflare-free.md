@@ -15,7 +15,7 @@ In this example, I had my email set up through a different service. I used chick
 
 **Log into Cloudflare** and select your domain.  Click the Email Routing option.
 
-![Email Routing Option](/uploads/2024/cfe-1@2x.png)
+![Email Routing Option](/uploads/2024/cfe-1-2x.png)
 
 **Skip any wizards** I clicked Skip getting started here.
 

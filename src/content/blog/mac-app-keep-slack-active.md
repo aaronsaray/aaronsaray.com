@@ -34,7 +34,7 @@ Now I've decided that I don't need it - in fact, I'm not even hosting it on GitH
 
 First of all, // sarcasm // I'm a great UI developer - so check this screenshot out:
 
-![Initial Screen](/uploads/2017/initial-screen-mac-gap@2x.png)
+![Initial Screen](/uploads/2017/initial-screen-mac-gap-2x.png)
 
 I've created a MacGap project that has some UI, CSS and Javascript.  The javascript attempts to authenticate with the slack API using the token you insert.  If you're successful, that's when the timer was supposed to start.  That's where I stopped.
 

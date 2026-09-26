@@ -10,7 +10,7 @@ QuickPic.dev was a site for quick edits, crops and touch-ups in your browser. Af
 
 <!--more-->
 
-![QuickPic.dev](/uploads/2020/quickpic-1@2x.png)
+![QuickPic.dev](/uploads/2020/quickpic-1-2x.png)
 
 ## Initial Idea / Motivation
 
@@ -36,7 +36,7 @@ Not only do I want to talk about the user-facing features, but I want to pin-poi
 
 First, and very least, I was super excited about using CSS animations to move over the logo from the center to the side, like this.
 
-![Animated use of the tool](/uploads/2020/quickpic-2@2x.gif)
+![Animated use of the tool](/uploads/2020/quickpic-2-2x.gif)
 
 When you engaged the app, it would try to minimize the landing page information so you had the most useful information available.
 
@@ -52,17 +52,17 @@ Also, the image was zoomed if it was larger than the viewport. The original size
 
 Then you could download the image or open it in a new tab.  This was actually quite complicated because of the blob data that needed to be created from the post-processed canvas.  A lot of examples of image editing showed downloading it from a server, but I wanted to not send anything to the back-end.
 
-![New Tab Example](/uploads/2020/quickpic-3@2x.png)
+![New Tab Example](/uploads/2020/quickpic-3-2x.png)
 
 ## Usage
 
 Let's see a quick animated gif of it being used.
 
-![Animated use of the tool](/uploads/2020/quickpic-4@2x.gif)
+![Animated use of the tool](/uploads/2020/quickpic-4-2x.gif)
 
 And the final download from that.
 
-![Animated use of the tool](/uploads/2020/quickpic-result@2x.png)
+![Animated use of the tool](/uploads/2020/quickpic-result-2x.png)
 
 ## Source Code
 

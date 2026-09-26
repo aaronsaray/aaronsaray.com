@@ -99,7 +99,7 @@ Editorial note about this entry, not part of it.
 
 The second opens on click, and its target can also be a document. A lone image renders as a framed figure. A caption is its own paragraph below the image.
 
-The build stamps image `width` and `height`. A retina capture named `file@2x.png` or `file@3x.png` is stamped at half or a third of its pixels.
+The build stamps image `width` and `height`. A retina capture named `file-2x.png` or `file-3x.png` is stamped at half or a third of its pixels.
 
 ## Updating the CV
 

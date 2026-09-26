@@ -4,13 +4,13 @@ import { lookupDimensions } from "../lib/imageDimensions.ts";
 
 // `.prose img { max-width: 100%; height: auto }` in global.css is what
 // makes width and height an aspect ratio rather than a fixed size.
-// `@2x` or `@3x` in a filename is the capture's display density; no
+// `-2x` or `-3x` ending a filename is the capture's display density; no
 // PNG under public/uploads/ carries one. The attributes are the file's
 // pixels divided by it.
 // The first image stays eager: near the top of a post it is the LCP
 // element.
 
-const DENSITY = /@([23])x\.[^./]+$/i;
+const DENSITY = /-([23])x\.[^./]+$/i;
 
 export function rehypeImgAttrs() {
   return async (tree: Root) => {
