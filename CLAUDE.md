@@ -64,10 +64,10 @@ relying on it.
 ## Building and Verifying
 
 * `make verify` is the only gate: a new check goes inside it, never
-  beside it, and CI runs nothing else. It is slow, so it runs when
-  Aaron asks for it or once at the end of a feature, never after each
-  small edit. A small change gets the narrowest target that would
-  notice it (`make check`, `make lint`,
+  beside it, and CI runs nothing else before the deploy. It is slow, so
+  it runs when Aaron asks for it or once at the end of a feature, never
+  after each small edit. A small change gets the narrowest target that
+  would notice it (`make check`, `make lint`,
   `make test ARGS="--grep copy"`), and the reply says which target ran
   and that verify did not.
 * Every repeated command is a make target. `package.json` scripts are

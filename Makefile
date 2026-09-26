@@ -1,5 +1,5 @@
 MAKEFLAGS += --no-print-directory
-.PHONY: help install ci dev build preview post card check lint lint-js lint-format lint-md lint-fix format test clean verify
+.PHONY: help install ci dev build preview post card check lint lint-js lint-format lint-md lint-fix format test clean verify deploy
 
 # A "## " comment on a target line is its help text; a "##@ " line is
 # a heading.
@@ -14,7 +14,7 @@ install: ## npm ci, then the Chromium download
 
 # --only-shell fetches the headless shell alone. A test that sets
 # `channel` or runs headed needs the full Chromium build.
-ci: ## Fresh install, then verify (the GitHub workflow runs only this)
+ci: ## Fresh install, then verify (the GitHub verify job runs only this)
 	npm ci
 	npx playwright install --with-deps --only-shell chromium
 	$(MAKE) verify
@@ -97,3 +97,8 @@ verify: ## The gate: clean, check, lint, test (which builds)
 	$(MAKE) check
 	$(MAKE) lint
 	$(MAKE) test ARGS=
+
+##@ Deploy
+
+deploy: ## Upload dist/ to Cloudflare (the GitHub deploy job runs this on main)
+	npm run deploy

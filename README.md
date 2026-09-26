@@ -15,7 +15,8 @@ Source for [AaronSaray.com](https://aaronsaray.com).
 * [ESLint](https://eslint.org): lints the JS, TS, and Astro files.
 * [markdownlint](https://github.com/DavidAnson/markdownlint-cli2): lints the docs. All three skip `src/content/`.
 * [Playwright](https://playwright.dev): browser tests, with [axe](https://github.com/dequelabs/axe-core) for the accessibility sweep.
-* [GitHub Actions](https://docs.github.com/actions): runs `make ci` on push.
+* [GitHub Actions](https://docs.github.com/actions): runs `make ci` on push; on `main`, a second job deploys the tested `dist/`.
+* [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/): hosts `dist/`, with `public/_headers` and `public/_redirects` applied at the edge.
 
 ## Writing a Blog Post
 
@@ -181,7 +182,3 @@ make card
 ## The Konami Code
 
 Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. The bunchie/oogmagoog is rendered into a claude-developed background.
-
-## To-Do for Launch
-
-Cloudflare Pages deploy, turn off email obfuscation and enable hsts (probably)

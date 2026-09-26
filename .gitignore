@@ -6,3 +6,4 @@ dist/
 .playwright-mcp/
 test-results/
 .claude/settings.local.json
+.wrangler/

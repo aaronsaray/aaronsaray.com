@@ -22,7 +22,7 @@ const intended = readFileSync("public/_redirects", "utf8")
   .map((line) => line.split(/\s+/)[0]);
 
 // The host serves a page only at its slashed URL and answers the bare
-// form with a 301.
+// form with a 307.
 function fault(href: string): string | null {
   const path = decodeURIComponent(href.split(/[#?]/)[0]);
 
