@@ -11,15 +11,14 @@ relying on it.
 * **URLs never change.** Blog permalinks are `/:year/:slug/`
   (filename = slug, date's year = year). Every page and feed URL
   keeps resolving.
-* **Aaron's prose is his.** That is `src/content/` and the page copy
-  in `src/pages/`, punctuation and style included. Claude never edits
-  it unasked, and never inside a mechanical change. Mechanical
-  transforms (frontmatter, markup) and whitespace a linter flags need
-  no asking. His habits, the spaced hyphen ` - ` first among them, are
-  never flagged or converted, in the content or in feedback on a
-  draft; `.claude/skills/proofread/voice.md` lists them. When he asks
-  for a draft, Claude writes it into the file, unmarked, under the em
-  dash rule below; adding his habits is his edit. "Give me some
+* **Aaron's prose is his**: `src/content/` and the page copy in
+  `src/pages/`, punctuation and style included. Never edit it unasked
+  or inside a mechanical change; frontmatter, markup, and whitespace a
+  linter flags need no asking. His habits, listed in
+  `.claude/skills/proofread/voice.md` with the spaced hyphen ` - `
+  first, are never flagged or converted, in the content or in feedback
+  on a draft. A draft he asks for goes into the file unmarked, under
+  the em dash rule below; adding his habits is his edit. "Give me some
   options" gets several in chat, in his register.
 * **No em dashes in what Claude writes**: docs, comments, drafted
   copy, commit messages. That covers the en dash used as one and the
@@ -94,12 +93,11 @@ relying on it.
 
 ## Rules That Load by Path
 
-`.claude/rules/` holds the rest of this file: rules that load when
-the Read tool opens a file matching their `paths:` frontmatter. Before
-editing such a file reached any other way (`cat`, `grep`, a new file),
-read its rule. They carry the same weight as this file. When a change makes one untrue, or
-a new rule matters only to those files, the edit goes there, and a new
-rule file gets a line here.
+`.claude/rules/` holds rules that load when the Read tool opens a file
+matching their `paths:` frontmatter. They carry the same weight as
+this file. Before editing such a file reached any other way (`cat`,
+`grep`, a new file), read its rule. A rule that matters only to those
+files goes there, and a new rule file gets a line here.
 
 * `astro-templates.md`: template comments, `{" "}`, SVG and the logo.
 * `design-and-accessibility.md`: where a style lives, the palette and

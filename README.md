@@ -7,11 +7,11 @@ Source for [AaronSaray.com](https://aaronsaray.com).
 `make` lists every command.
 
 * [Astro](https://astro.build): builds the static site.
-* [TypeScript](https://www.typescriptlang.org): types for the `.ts` files and the script in every `.astro` file. `astro check` is the type-checker.
-* [Tailwind CSS](https://tailwindcss.com): styling. v4, so the config is `src/styles/global.css`.
+* [TypeScript](https://www.typescriptlang.org): type-checks the `.ts` files and every `.astro` script with `make check`.
+* [Tailwind CSS](https://tailwindcss.com): styling. The config is `src/styles/global.css`.
 * [Volta](https://volta.sh): pins Node and npm, in `package.json`.
 * [Make](https://www.gnu.org/software/make/): every repeated command is a target.
-* [Prettier](https://prettier.io): formatting. Separate from ESLint: `eslint-config-prettier` turns off ESLint's own formatting rules.
+* [Prettier](https://prettier.io): formatting.
 * [ESLint](https://eslint.org): lints the JS, TS, and Astro files.
 * [markdownlint](https://github.com/DavidAnson/markdownlint-cli2): lints the docs. All three skip `src/content/`.
 * [Playwright](https://playwright.dev): browser tests, with [axe](https://github.com/dequelabs/axe-core) for the accessibility sweep.
@@ -24,25 +24,22 @@ Source for [AaronSaray.com](https://aaronsaray.com).
 make post TITLE="My Post Title"
 ```
 
-* Remove `draft: true` to publish.
+Writes a draft dated today from `scripts/stubs/post.md` and prints its path. The filename is the URL slug and the date's year is the URL path: `/2026/my-post-title/`.
+
+* `draft: true` keeps the post out of every build; `make dev` shows it with a Draft badge. Remove it to publish.
 * The first tag picks the post's social card image.
 * A new tag gets a line in `scripts/stubs/post.md`. The build names the file and image it needs.
+* `context:` renders the "Context:" pills under the meta line.
 * `evergreen: true` turns off the old-post notice.
+* `<!--more-->` ends the excerpt shown on lists, in feeds, and as the meta description.
 * Body headers start at H2. The post title is the H1.
-* `/proofread <slug>` and `/fact-check <slug>` in Claude Code; with no argument they take the post modified in git. Both only report. The habits `/proofread` leaves alone are the bullets in `.claude/skills/proofread/voice.md`.
-* `/related <what you remember writing about>` prints paste-ready links to older posts. With no argument it checks its index against the posts and proposes the rows to change.
 * Link to another post by its final URL (`/2023/some-slug/`).
-
-### Post Behaviors
-
-`make post` writes a draft dated today from `scripts/stubs/post.md`, prints its path, and stops if the file exists.
-The filename is the URL slug and the date's year is the URL path: `/2026/my-post-title/`. `draft: true` keeps the post out of every build,
-and `make dev` shows it with a Draft badge. `context:` renders the "Context:" pills under the meta line.
-`<!--more-->` ends the excerpt shown on lists, in feeds, and as the meta description.
+* `/proofread <slug>` and `/fact-check <slug>` in Claude Code report on a post and never edit it; with no argument they take the post modified in git. `/proofread` skips the habits listed in `.claude/skills/proofread/voice.md`.
+* `/related <what you remember writing about>` prints paste-ready links to older posts. With no argument it checks its index against the posts and proposes the rows to change.
 
 ### Code
 
-Inline code is single backticks. A block is a fence with a language, which labels the block beside its copy button. A fence with no language is labeled `txt`.
+A block is a fence with a language, which labels the block beside its copy button. A fence with no language is labeled `txt`.
 
 ````markdown
 ```php
@@ -94,14 +91,10 @@ The build stamps image `width` and `height`. A retina capture named `file@2x.png
 
 ## Updating the CV
 
-`src/content/pages/cv.md`. Each kind of entry is typed one way, because the `.cv` rules in `src/styles/global.css` key on its shape.
+`src/content/pages/cv.md`. Frontmatter `title` is the H1 and `intro` is the lede; the section index under them is the H2s in file order. Each kind of entry is typed one way, because the `.cv` rules in `src/styles/global.css` key on its shape.
 
 * Dates are `Mon YYYY`, a bare `YYYY`, or a range with the word "to" (`Oct 2018 to present`). Never a slash or a dash.
 * A plain paragraph, like a section intro, takes no italic or bold. The first one in any paragraph is styled as an entry's date or title.
-
-### CV Behaviors
-
-Frontmatter `title` is the H1 and `intro` is the lede. The section index under them is the H2s in file order.
 
 ### Roles
 
@@ -163,8 +156,6 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 
 * A new icon is the Tabler SVG dropped into `src/icons/`. The filename is the `name`.
 * A new `src/assets/logo.svg` needs the two `style` fills (`--logo-s`, `--logo-a`) put back on its paths. The build stops and prints the format.
-
-`src/pages/logo.svg.ts` serves `/logo.svg`: during `make build` it reads that file and swaps each `var()` fill for its plain hex.
 
 ## Business Card
 
