@@ -189,5 +189,19 @@ CI deploys `main` to Cloudflare Workers with `make deploy`. The Worker is create
 never in the dashboard. One-time setup, done 2026-09-26:
 
 * Cloudflare > Workers & Pages > Account details: copy the Account ID.
-* My Profile > API Tokens > Create Token > template **Edit Cloudflare Workers**. Account Resources: Include > the `me@aaronsaray.com` account. Zone Resources: Include > Specific zone > aaronsaray.com.
+* My Profile > API Tokens > Create Token > template **Edit Cloudflare Workers**. Account Resources: the `me@aaronsaray.com` account. Zone Resources: Specific zone > aaronsaray.com.
 * GitHub repo > Settings > Environments > New environment > `production`. Environment secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
+* DNS > Records > Add record: Type `A`, Name `www`, IPv4 `192.0.2.1` (reserved placeholder), proxied, comment
+  `proxied for redirect tooling`.
+* Workers & Pages > aaronsaray-com > Domains > Add > Custom Domain: `aaronsaray.com`, subdomain field empty. Wait for
+  status Active. Cloudflare adds the apex DNS record itself.
+* aaronsaray.com zone > Rules > Overview > Create rule > Redirect Rule. Custom filter expression > Edit expression:
+
+  ```text
+  (not ssl) or (http.host eq "www.aaronsaray.com")
+  ```
+
+  URL redirect: Type Dynamic, Expression `concat("https://aaronsaray.com", http.request.uri.path)`, Status code 301,
+  Preserve query string on. Deploy.
+* SSL/TLS > Edge Certificates: HSTS on, Max Age 1 month.
+* Security > Settings > Client-side abuse: Email Address Obfuscation off.
