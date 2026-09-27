@@ -13,10 +13,11 @@ install: ## npm ci, then the Chromium download
 	npx playwright install chromium
 
 # --only-shell fetches the headless shell alone. A test that sets
-# `channel` or runs headed needs the full Chromium build.
+# `channel` or runs headed needs the full Chromium build. The shared
+# libraries Chromium links against come from the GitHub runner image.
 ci: ## Fresh install, then verify (the GitHub verify job runs only this)
 	npm ci
-	npx playwright install --with-deps --only-shell chromium
+	npx playwright install --only-shell chromium
 	$(MAKE) verify
 
 ##@ Build and run
