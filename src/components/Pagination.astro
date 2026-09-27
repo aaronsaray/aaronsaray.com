@@ -14,37 +14,33 @@ const olderHref = `/blog/page/${current + 1}/`;
   class="flex items-center justify-between gap-4 border-t border-hairline pt-8 text-sm"
   aria-label="Pagination"
 >
-  {
-    current > 1 ? (
-      <a
-        href={newerHref}
-        class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
-      >
-        <Icon
-          name="arrow-left"
-          class="size-4 text-ink-faint transition duration-300 group-hover:-translate-x-1 group-hover:text-accent"
-        />
-        Newer
-      </a>
-    ) : (
-      <span />
-    )
-  }
+  {current > 1 ? (
+    <a
+      href={newerHref}
+      class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
+    >
+      <Icon
+        name="arrow-left"
+        class="size-4 text-ink-faint transition duration-300 group-hover:-translate-x-1 group-hover:text-accent"
+      />
+      Newer
+    </a>
+  ) : (
+    <span />
+  )}
   <span class="text-xs text-ink-mute">Page {current} of {total}</span>
-  {
-    current < total ? (
-      <a
-        href={olderHref}
-        class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
-      >
-        Older
-        <Icon
-          name="arrow-right"
-          class="size-4 text-ink-faint transition duration-300 group-hover:translate-x-1 group-hover:text-accent"
-        />
-      </a>
-    ) : (
-      <span />
-    )
-  }
+  {current < total ? (
+    <a
+      href={olderHref}
+      class="group -my-1.5 inline-flex items-center gap-2 py-1.5 text-ink-dim transition-colors duration-300 hover:text-ink"
+    >
+      Older
+      <Icon
+        name="arrow-right"
+        class="size-4 text-ink-faint transition duration-300 group-hover:translate-x-1 group-hover:text-accent"
+      />
+    </a>
+  ) : (
+    <span />
+  )}
 </nav>

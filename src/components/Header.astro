@@ -30,7 +30,9 @@ import { NAV } from "../lib/nav";
       />
     </a>
     <nav class="flex items-center gap-5 text-sm sm:gap-8">
-      {NAV.map((item) => <NavItem item={item} />)}
+      {NAV.map((item) => (
+        <NavItem item={item} />
+      ))}
     </nav>
   </div>
 </header>

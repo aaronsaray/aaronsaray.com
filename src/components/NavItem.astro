@@ -27,69 +27,57 @@ const panelId = `nav-menu-${item.text.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
 const anchor = `--${panelId}`;
 ---
 
-{
-  kind === "panel" && (
-    <a
-      href={item.href}
-      aria-current={current}
-      class:list={[
-        "block px-4 py-1.5 transition-colors duration-300 hover:text-ink",
-        tone,
-      ]}
-    >
-      {item.text}
-    </a>
-  )
-}
+{kind === "panel" && <a
+  href={item.href}
+  aria-current={current}
+  class:list={[
+    "block px-4 py-1.5 transition-colors duration-300 hover:text-ink",
+    tone,
+  ]}
+>
+  {item.text}
+</a>}
 
-{
-  kind === "link" && (
-    <a
-      href={item.href}
-      aria-current={current}
-      class:list={[bar, "inline-flex duration-300 hover:text-ink", tone]}
-    >
-      <span class:list={rule}>{item.text}</span>
-    </a>
-  )
-}
+{kind === "link" && <a
+  href={item.href}
+  aria-current={current}
+  class:list={[bar, "inline-flex duration-300 hover:text-ink", tone]}
+>
+  <span class:list={rule}>{item.text}</span>
+</a>}
 
-{
-  kind === "section" && (
-    <div data-nav-section class="group">
-      {/* show, not toggle: hover has opened the panel before a click
+{kind === "section" && <div data-nav-section class="group">
+  {/* show, not toggle: hover has opened the panel before a click
           lands, and a toggle would close it. */}
-      <button
-        type="button"
-        popovertarget={panelId}
-        popovertargetaction="show"
-        style={`anchor-name: ${anchor}`}
-        class:list={[
-          bar,
-          "flex items-center gap-1 duration-150 group-has-[:popover-open]:text-ink",
-          tone,
-        ]}
-      >
-        <span class:list={rule}>{item.text}</span>
-        <Icon name="chevron-down" class="size-3.5" />
-      </button>
-      {/* pt-2, not a margin: the gap stays inside the section, so
+  <button
+    type="button"
+    popovertarget={panelId}
+    popovertargetaction="show"
+    style={`anchor-name: ${anchor}`}
+    class:list={[
+      bar,
+      "flex items-center gap-1 duration-150 group-has-[:popover-open]:text-ink",
+      tone,
+    ]}
+  >
+    <span class:list={rule}>{item.text}</span>
+    <Icon name="chevron-down" class="size-3.5" />
+  </button>
+  {/* pt-2, not a margin: the gap stays inside the section, so
           crossing it never ends the hover. */}
-      <div
-        id={panelId}
-        popover
-        style={`position-anchor: ${anchor}`}
-        class="top-[anchor(bottom)] right-[anchor(right)] bottom-auto left-auto bg-transparent pt-2 opacity-0 transition-[opacity,display,overlay] transition-discrete duration-150 open:opacity-100 starting:open:opacity-0"
-      >
-        <div class="min-w-36 border border-hairline bg-surface py-2">
-          {item.children!.map((child) => (
-            <Astro.self item={child} nested />
-          ))}
-        </div>
-      </div>
+  <div
+    id={panelId}
+    popover
+    style={`position-anchor: ${anchor}`}
+    class="top-[anchor(bottom)] right-[anchor(right)] bottom-auto left-auto bg-transparent pt-2 opacity-0 transition-[opacity,display,overlay] transition-discrete duration-150 open:opacity-100 starting:open:opacity-0"
+  >
+    <div class="min-w-36 border border-hairline bg-surface py-2">
+      {item.children!.map((child) => (
+        <Astro.self item={child} nested />
+      ))}
     </div>
-  )
-}
+  </div>
+</div>}
 
 <script>
   // Hover is mouse-only: a touch pointer leaves when it lifts, which

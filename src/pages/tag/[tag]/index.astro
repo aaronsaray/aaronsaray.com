@@ -43,9 +43,7 @@ const posts = (await getSortedPosts()).filter((post) =>
     href={new URL(`/tag/${term}/index.xml`, Astro.site)}
   />
   <main id="main" class="page-column">
-    <h1 class="page-title">
-      Entries with the tag &ldquo;{term}&rdquo;
-    </h1>
+    <h1 class="page-title">Entries with the tag &ldquo;{term}&rdquo;</h1>
     <div class="prose mt-6 border-b border-hairline pb-8">
       <Content />
     </div>

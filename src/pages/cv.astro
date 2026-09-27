@@ -12,16 +12,14 @@ const sections = headings.filter((h) => h.depth === 2);
     <h1 class="page-title">{entry.data.title}</h1>
     {entry.data.intro && <p class="page-lede">{entry.data.intro}</p>}
     <nav aria-label="Sections" class="mt-6 meta-line text-ink-dim">
-      {
-        sections.map((section, i) => (
-          <>
-            {i > 0 && <span aria-hidden="true">&middot;</span>}
-            <a href={`#${section.slug}`} class="quiet-link">
-              {section.text}
-            </a>
-          </>
-        ))
-      }
+      {sections.map((section, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true">&middot;</span>}
+          <a href={`#${section.slug}`} class="quiet-link">
+            {section.text}
+          </a>
+        </>
+      ))}
     </nav>
     <div class="prose cv">
       <Content />

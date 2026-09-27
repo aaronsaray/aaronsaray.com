@@ -21,6 +21,7 @@ export default defineConfig({
     format: "directory",
   },
   // The "jsx" default deletes a line break beside an inline tag.
+  // astroCompressHTML in .prettierrc mirrors this value.
   compressHTML: true,
   redirects: {
     // Builds a meta-refresh page; public/_redirects upgrades it to a 301.
