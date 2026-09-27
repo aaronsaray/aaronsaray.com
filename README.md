@@ -160,6 +160,7 @@ Copy a file in `src/content/books/` and put the cover image beside it.
 
 * An image in a page template goes in `src/assets/` and is imported, so the build optimizes it and stamps its size.
 * `public/images/` holds the social cards, served as-is at fixed URLs. The build names the file each new tag needs.
+* `/social-card` in Claude Code loads the card design rules before drawing or redrawing a tag's card.
 
 ## Icons and the Logo
 
