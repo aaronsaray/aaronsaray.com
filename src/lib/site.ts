@@ -1,5 +1,7 @@
 export const SITE_NAME = "Aaron Saray";
 
+export const AUTHOR = SITE_NAME;
+
 // The home page's description and the blog feed's.
 export const SITE_DESCRIPTION =
   "Aaron Saray coaches engineering managers and developers, builds software that stays simple, and leads through honest communication and education.";

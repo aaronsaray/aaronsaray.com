@@ -101,6 +101,7 @@ test.describe("head", () => {
       "summary_large_image",
     );
     expect(await content(page, 'meta[property="og:type"]')).toBe("article");
+    expect(await content(page, 'meta[name="author"]')).toBe("Aaron Saray");
     expect(await content(page, 'meta[property="article:published_time"]')).toBe(
       "2007-06-28",
     );

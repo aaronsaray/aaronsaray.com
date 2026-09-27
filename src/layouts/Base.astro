@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Konami from "../konami/Konami.astro";
 import { publicImageSize } from "../lib/ogImage";
-import { pageTitle, SITE_NAME, THEME_COLOR } from "../lib/site";
+import { AUTHOR, pageTitle, SITE_NAME, THEME_COLOR } from "../lib/site";
 
 interface Props {
   title: string;
@@ -40,6 +40,7 @@ const ogImageSize = await publicImageSize(ogImage);
     <meta name="theme-color" content={THEME_COLOR} />
     <title>{pageTitle(title)}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={AUTHOR} />
     {noindex && <meta name="robots" content="noindex" />}
     {!noindex && <link rel="canonical" href={canonical} />}
     <link rel="icon" href="/favicon.png" />
