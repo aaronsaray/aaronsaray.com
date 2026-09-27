@@ -19,6 +19,11 @@ updates:
       - dependency-name: "@types/node"
         update-types:
           - "version-update:semver-major"
+      # @astrojs/check and typescript-eslint cap their typescript peer
+      # below 7.
+      - dependency-name: "typescript"
+        versions:
+          - ">=7.0.0"
 
   - package-ecosystem: github-actions
     directory: /
