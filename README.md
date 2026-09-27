@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">aaronsaray.com</h1>
+<h1 align="center">I make things better.</h1>
 
 <p align="center">
   <a href="https://github.com/aaronsaray/aaronsaray.com/actions/workflows/ci.yml"><img src="https://github.com/aaronsaray/aaronsaray.com/actions/workflows/ci.yml/badge.svg?branch=main" alt="ci"></a>
