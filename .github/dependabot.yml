@@ -1,0 +1,32 @@
+# default-days mirrors min-release-age in .npmrc. It holds back version
+# updates only: a security update opens the day its fix is released.
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      npm:
+        patterns:
+          - "*"
+    # The @types/node major matches the Node major in package.json's
+    # volta.node. The two move together, by hand.
+    ignore:
+      - dependency-name: "@types/node"
+        update-types:
+          - "version-update:semver-major"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns:
+          - "*"

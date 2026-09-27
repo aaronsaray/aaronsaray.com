@@ -28,6 +28,7 @@
 * [ESLint](https://eslint.org): lints the JS, TS, and Astro files.
 * [Playwright](https://playwright.dev): browser tests, with [axe](https://github.com/dequelabs/axe-core) for the accessibility sweep.
 * [GitHub Actions](https://docs.github.com/actions): runs `make ci` on push; on `main`, a second job deploys the tested `dist/`.
+* [Dependabot](https://docs.github.com/code-security/dependabot): opens weekly pull requests for npm and GitHub Actions updates. The config is `.github/dependabot.yml`.
 * [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/): hosts `dist/`, with `public/_headers` and `public/_redirects` applied at the edge.
 
 ## Writing a Blog Post

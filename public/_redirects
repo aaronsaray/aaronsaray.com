@@ -1,5 +1,7 @@
 /book https://www.amazon.com/Professional-Design-Patterns-Aaron-Saray/dp/0470496703/ 301
+/book/ https://www.amazon.com/Professional-Design-Patterns-Aaron-Saray/dp/0470496703/ 301
 /resume /cv/ 301
+/resume/ /cv/ 301
 /feed.xml /blog/index.xml 301
 # Server-side upgrade of the /blog/page/1/ meta-refresh alias page
 /blog/page/1/ /blog/ 301

@@ -10,6 +10,7 @@ export default defineConfig(
       "dist/",
       ".astro/",
       ".playwright-mcp/",
+      ".wrangler/",
       "public/",
       "src/content/",
       "test-results/",
