@@ -2,8 +2,13 @@
 # NavItem.astro's anchor names emit. static.cloudflareinsights.com serves
 # the beacon Cloudflare Web Analytics injects, at a versioned path, and
 # the beacon reports to /cdn-cgi/rum under 'self'.
+#
+# A feature named in Permissions-Policy is off for the page and every
+# frame in it. The YouTube embeds use fullscreen and the copy button on
+# posts uses clipboard-write.
 /*
   Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com; frame-ancestors 'none'
+  Permissions-Policy: accelerometer=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=()
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
