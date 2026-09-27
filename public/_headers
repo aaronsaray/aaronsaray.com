@@ -12,8 +12,10 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
+# Browser-based fediverse clients fetch webfinger cross-origin.
 /.well-known/webfinger
   Content-Type: application/jrd+json
+  Access-Control-Allow-Origin: *
 
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable

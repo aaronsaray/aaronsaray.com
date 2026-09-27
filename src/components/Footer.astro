@@ -64,6 +64,10 @@ const year = new Date().getFullYear();
           <a href="https://twitter.com/aaronsaray" class="quiet-link"
             >Twitter</a
           >
+          {/* rel="me" is Mastodon link verification; the href mirrors public/.well-known/webfinger */}
+          <a href="https://phpc.social/@aaronsaray" rel="me" class="quiet-link"
+            >Mastodon</a
+          >
         </dd>
       </div>
       <div class="grid grid-cols-1 gap-y-3 md:grid-cols-[1fr_2fr] md:gap-x-12">
