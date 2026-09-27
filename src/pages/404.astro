@@ -21,13 +21,11 @@ const BANNER = [
     crossorigin
   />
   <main id="main" class="page-column">
-    {
-      /* 2.5cqw: C64 Pro Mono's cells are square, so 40 columns fill the
+    {/* 2.5cqw: C64 Pro Mono's cells are square, so 40 columns fill the
          container; 25lh is its 25 rows. The units sit on a child, not the
          @container div, or they resolve against the viewport. The rem
          floor keeps zoom growing the text once the column is narrower
-         than 40 cells. */
-    }
+         than 40 cells. */}
     <div class="border-[0.5rem] border-accent-dim bg-surface sm:border-[2rem]">
       <div class="@container">
         <div
@@ -72,5 +70,4 @@ const BANNER = [
       }
       document.getElementById("run")!.click();
     });
-  </script>
-</Base>
+  </script></Base>

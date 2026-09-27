@@ -40,11 +40,9 @@ const showThirtyThreeThings = entry.id === "33-things-book";
   publishedTime={entry.data.date}
 >
   <main id="main" class="page-column">
-    {
-      /* The title links to its own page, so a hover-only icon withholds
+    {/* The title links to its own page, so a hover-only icon withholds
          nothing. The h2/h3 anchors stay visible because they reach
-         somewhere otherwise unreachable. */
-    }
+         somewhere otherwise unreachable. */}
     <h1 class="page-title">
       <a
         href={postHref(entry)}
@@ -54,8 +52,7 @@ const showThirtyThreeThings = entry.id === "33-things-book";
           ><Icon
             name="link"
             class="absolute top-[-0.6em] left-[0.35em] size-[0.5em] text-ink-faint opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none"
-          /></span
-        >
+        /></span>
       </a>
     </h1>
 
@@ -65,30 +62,24 @@ const showThirtyThreeThings = entry.id === "33-things-book";
       <span aria-hidden="true">&middot;</span>
       <span>{minutes} min read</span>
       <span aria-hidden="true">&middot;</span>
-      {
-        tags.map((tag) => (
-          <a
-            href={`/tag/${tag}/`}
-            class="-my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
-          >
-            #{tag}
-          </a>
-        ))
-      }
+      {tags.map((tag) => <a
+        href={`/tag/${tag}/`}
+        class="-my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
+      >
+        #{tag}
+      </a>)}
     </div>
 
-    {
-      context && (
-        <div class="mt-6 flex flex-wrap items-center gap-2 text-sm text-ink-mute">
-          <strong class="font-semibold text-ink-dim">Context:</strong>
-          {context.map((item) => (
-            <span class="border border-hairline bg-surface/40 px-2 py-1 whitespace-nowrap text-ink-dim">
-              {item}
-            </span>
-          ))}
-        </div>
-      )
-    }
+    {context && <div
+      class="mt-6 flex flex-wrap items-center gap-2 text-sm text-ink-mute"
+    >
+      <strong class="font-semibold text-ink-dim">Context:</strong>
+      {context.map((item) => <span
+        class="border border-hairline bg-surface/40 px-2 py-1 whitespace-nowrap text-ink-dim"
+      >
+        {item}
+      </span>)}
+    </div>}
 
     {showOldNotice && <OldPostNotice />}
 
@@ -135,5 +126,4 @@ const showThirtyThreeThings = entry.id === "33-things-book";
         }
       });
     });
-  </script>
-</Base>
+  </script></Base>

@@ -26,17 +26,13 @@ const terms = [...counts.entries()].sort(
     </p>
 
     <div class="mt-8 flex flex-wrap gap-x-5 gap-y-3">
-      {
-        terms.map(([term, count]) => (
-          <a
-            href={`/tag/${term}/`}
-            class="group -my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
-          >
-            #{term}
-            <span class="text-sm text-ink-mute">({count})</span>
-          </a>
-        ))
-      }
+      {terms.map(([term, count]) => <a
+        href={`/tag/${term}/`}
+        class="group -my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
+      >
+        #{term}
+        <span class="text-sm text-ink-mute">({count})</span>
+      </a>)}
     </div>
   </main>
 </Base>

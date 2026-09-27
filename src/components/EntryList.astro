@@ -21,34 +21,30 @@ const entries = posts.map((post) => ({
 ---
 
 <section class="divide-y divide-hairline">
-  {
-    entries.map(({ post, href, excerpt, minutes, tags }) => (
-      <article class="py-10">
-        <h2 class="section-title">
-          <a
-            href={href}
-            class="underline decoration-transparent decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-accent/60"
-          >
-            {post.data.title}
-          </a>
-        </h2>
-        <div class="entry-excerpt" set:html={excerpt} />
-        <div class="mt-4 meta-line text-ink-mute">
-          {post.data.draft && <span class="draft-badge">Draft</span>}
-          <span>{formatDate(post.data.date)}</span>
-          <span aria-hidden="true">&middot;</span>
-          <span>{minutes} min read</span>
-          <span aria-hidden="true">&middot;</span>
-          {tags.map((tag) => (
-            <a
-              href={`/tag/${tag}/`}
-              class="-my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
-            >
-              #{tag}
-            </a>
-          ))}
-        </div>
-      </article>
-    ))
-  }
+  {entries.map(({ post, href, excerpt, minutes, tags }) => <article
+    class="py-10"
+  >
+    <h2 class="section-title">
+      <a
+        href={href}
+        class="underline decoration-transparent decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-accent/60"
+      >
+        {post.data.title}
+      </a>
+    </h2>
+    <div class="entry-excerpt" set:html={excerpt} />
+    <div class="mt-4 meta-line text-ink-mute">
+      {post.data.draft && <span class="draft-badge">Draft</span>}
+      <span>{formatDate(post.data.date)}</span>
+      <span aria-hidden="true">&middot;</span>
+      <span>{minutes} min read</span>
+      <span aria-hidden="true">&middot;</span>
+      {tags.map((tag) => <a
+        href={`/tag/${tag}/`}
+        class="-my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
+      >
+        #{tag}
+      </a>)}
+    </div>
+  </article>)}
 </section>
