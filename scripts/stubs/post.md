@@ -2,6 +2,7 @@
 title: {{title}}
 date: "{{date}}"
 tags:
+  - ai
   - apache
   - archived-projects
   - business

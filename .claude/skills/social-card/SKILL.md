@@ -59,3 +59,7 @@ object, never busy.
    `public/images/tag/<tag>.jpg`, flattened on `night`, as
    `jpeg({ quality: 90, progressive: true, mozjpeg: true })`. Delete
    the SVG.
+3. A new tag also needs `src/content/tags/<tag>.md` and its line in
+   `scripts/stubs/post.md`, in alphabetical order. The file's
+   frontmatter is `anchorDepth: 0`, and its body is
+   `These entries have all been tagged with "<tag>".`
