@@ -13,8 +13,6 @@
   <a href="https://astro.build"><img src="https://img.shields.io/github/package-json/dependency-version/aaronsaray/aaronsaray.com/astro?label=astro" alt="astro"></a>
 </p>
 
----
-
 ## Tech
 
 `make` lists every command.
