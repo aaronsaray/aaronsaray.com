@@ -57,6 +57,12 @@ we can use them to steer the agent when it uses the app with the MCP. Your tests
 
 ## Tests Are More Important Now than Ever
 
-Clearly I love [testing](/tag/testing/) - I've written about it a lot. But before, it was a "you should do this - because you can't trust your own code" style argument. While that is true,
-and I strongly believe that, others have pushed back. (Call it overconfidence, cockiness or just self-security - saying "I don't need tests because I don't write bugs") If you pushed back in the past,
-realize now that - depending on your workflow - you're moving yourself more out of the loop. You're no longer writing 'perfect code' if you're not writing it. More tests now are our protection.
+Clearly I love [testing](/tag/testing/) - I've written about it a lot. Before, it was a "you should do this - because you can't trust your own code" style argument. While that is true,
+and I strongly believe that, others have pushed back. (Call it overconfidence, cockiness or just self-security - saying "I don't need tests because I don't write bugs").
+
+If you pushed back in the past, let's be more honest about where we are now.
+
+First, AI is causing many more updates to software, code and libraries are shipped faster, and so are the security holes/fixes and CVE. You're going to be responsible for doing more
+updates and fixes than ever before. You need coverage. Test coverage.
+
+Second realize now that - depending on your workflow - you're moving yourself more out of the loop. You're no longer writing 'perfect code' if you're not writing it. More tests now are our protection.
