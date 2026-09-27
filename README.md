@@ -181,10 +181,6 @@ make card
 * A new page gets a line in `ROUTES` at the top of `tests/pages/all.spec.ts`. `make verify` fails until it has one.
 * `/testing` in Claude Code loads the test rules from `.claude/skills/testing/SKILL.md`.
 
-## The Konami Code
-
-Up, Up, Down, Down, Left, Right, Left, Right, B, A on any page. The bunchie/oogmagoog is rendered into a claude-developed background.
-
 ## Deploy
 
 CI deploys `main` to Cloudflare Workers with `make deploy`. The Worker is created by the first deploy from `wrangler.jsonc`,
@@ -207,3 +203,5 @@ never in the dashboard. One-time setup, done 2026-09-26:
   Preserve query string on. Deploy.
 * SSL/TLS > Edge Certificates: HSTS on, Max Age 1 month.
 * Security > Settings > Client-side abuse: Email Address Obfuscation off.
+
+<p><sub>The Konami code does something on the site.</sub></p>

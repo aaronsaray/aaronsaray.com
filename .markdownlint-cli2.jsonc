@@ -10,13 +10,22 @@
   ],
   "overrides": [
     {
-      // The README opens with a centered HTML header: logo, title, badges.
+      // The README opens with a centered HTML header (logo, title, badges)
+      // and ends with a centered line of small print.
       "filter": ["README.md"],
       "combine": "merge",
       "config": {
         "first-line-heading": false,
         "no-inline-html": {
-          "allowed_elements": ["p", "picture", "source", "img", "h1", "a"]
+          "allowed_elements": [
+            "p",
+            "picture",
+            "source",
+            "img",
+            "h1",
+            "a",
+            "sub"
+          ]
         }
       }
     }
