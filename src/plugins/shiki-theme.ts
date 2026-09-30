@@ -11,7 +11,7 @@ export const aaronsarayDark: ShikiConfig["theme"] = {
   settings: [
     { settings: { foreground: "#aab1b9", background: "#10141a" } },
     {
-      scope: ["keyword", "storage", "support.type"],
+      scope: ["keyword", "storage", "support.type", "entity.name.tag.yaml"],
       settings: { foreground: "#7fa6c4" },
     },
     {
