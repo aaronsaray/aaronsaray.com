@@ -23,6 +23,14 @@ export function formatDate(date: string): string {
   return `${MONTHS[m - 1]} ${d}, ${y}`;
 }
 
+const TODAY = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "America/Chicago",
+}).format(new Date());
+
+export function isFuturePost(date: string): boolean {
+  return date.slice(0, 10) > TODAY;
+}
+
 /**
  * 545 days is about 18 months. Age is measured at build time, so a post
  * gets the notice on the first build after its 545th day.

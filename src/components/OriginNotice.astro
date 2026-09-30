@@ -1,0 +1,12 @@
+---
+interface Props {
+  name: string;
+  url?: string;
+}
+
+const { name, url } = Astro.props;
+---
+
+<div class="callout">
+  <p>Originally published on {url ? <a href={url}>{name}</a> : name}.</p>
+</div>

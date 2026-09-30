@@ -64,8 +64,8 @@ your/you're), doubled words, a missing apostrophe, a sentence that
 lost a word. Then the checks a spellchecker cannot make: an odd count
 of lines starting with three backticks, a `:::callout` without its
 closing `:::`, frontmatter (`date` quoted and starting `YYYY-MM-DD`,
-every tag has a file in `src/content/tags/`, no key outside title,
-date, tags, context, draft, evergreen), every internal link
+every tag has a file in `src/content/tags/`, no key outside the blog
+schema in `src/content.config.ts`), every internal link
 `/YYYY/slug/` resolved to `src/content/blog/slug.md` with a date
 starting `YYYY`, a command or file name in prose that the post
 elsewhere puts in code font, and an identifier named in prose that

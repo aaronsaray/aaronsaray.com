@@ -6,7 +6,7 @@
 
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
-import { getSortedPosts, postHref } from "../lib/posts";
+import { getSortedPosts, originalUrl, postHref } from "../lib/posts";
 import { SITE_URL } from "../lib/rss";
 
 /** Frontmatter date as a full ISO lastmod. */
@@ -45,7 +45,7 @@ export const GET: APIRoute = async () => {
   }
 
   // A sitemap lists only canonical URLs, and a cross-post's is elsewhere.
-  for (const post of posts.filter((p) => !p.data.canonical)) {
+  for (const post of posts.filter((p) => !originalUrl(p))) {
     entries.push(url(postHref(post), lastmod(post.data.date)));
   }
 

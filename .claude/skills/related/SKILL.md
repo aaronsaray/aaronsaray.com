@@ -137,7 +137,8 @@ history yet and there is nothing to compare against; say so and stop.
 
 ## Calibration
 
-* Links go only to posts in `src/content/blog`, never to a draft.
+* Links go only to posts in `src/content/blog`, never to a draft or a
+  post dated after today.
 * A thought that names a post by title is still confirmed by reading.
 * Never pad to three. Prefer `Nothing close.` to a stretch.
 * No scores, no praise, no summary of the draft he is writing.

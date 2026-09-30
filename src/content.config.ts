@@ -40,7 +40,15 @@ const blog = defineCollection({
       context: z.array(z.string()).optional(),
       draft: z.boolean().optional(),
       evergreen: z.boolean().optional(),
-      canonical: z.url({ protocol: /^https?$/ }).optional(),
+      origin: z
+        .object({
+          name: z.string(),
+          url: z.url({ protocol: /^https?$/ }).optional(),
+          canonical: z.literal(true).optional(),
+        })
+        .strict()
+        .refine((o) => !o.canonical || o.url, "origin.canonical needs a url")
+        .optional(),
     })
     .strict(),
 });

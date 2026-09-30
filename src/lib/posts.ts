@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from "astro:content";
+import { isFuturePost } from "./dates";
 
 // Astro types `body` optional because the glob loader also loads JSON,
 // which has none; every blog entry is markdown.
@@ -9,9 +10,15 @@ export function postHref(post: Post): string {
   return `/${post.data.date.slice(0, 4)}/${post.id}/`;
 }
 
+/** The original's URL when it is this post's canonical. */
+export function originalUrl(post: Post): string | undefined {
+  return post.data.origin?.canonical ? post.data.origin.url : undefined;
+}
+
 /**
- * Every post the current mode shows. Drafts render on the dev server
- * (marked with a badge) and are absent from a build.
+ * Every post the current mode shows. Drafts and posts dated after today
+ * render on the dev server (marked with a badge) and are absent from a
+ * build.
  */
 export async function getPosts(): Promise<Post[]> {
   // MODE follows the astro command; DEV follows NODE_ENV, which a shell
@@ -19,7 +26,7 @@ export async function getPosts(): Promise<Post[]> {
   const dev = import.meta.env.MODE === "development";
   return (await getCollection(
     "blog",
-    ({ data }) => !data.draft || dev,
+    ({ data }) => (!data.draft && !isFuturePost(data.date)) || dev,
   )) as Post[];
 }
 

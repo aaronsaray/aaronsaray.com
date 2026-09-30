@@ -87,8 +87,9 @@ relying on it.
 ## How the Site Works
 
 * **A post's date string is the source of truth.** Its URL year is
-  `date.slice(0, 4)`, sorting compares the strings, and display splits
-  the string. Parsing it into a `Date` moves it by the build machine's
+  `date.slice(0, 4)`, sorting compares the strings, publishing compares
+  it to today's date in Central time, and display splits the string.
+  Parsing it into a `Date` moves it by the build machine's
   timezone, which can change a post's URL year.
 * **An `@` in a filename under `public/` costs a redirect.** Workers
   answers the path with a 307 to its `%40` form, and `astro dev` and

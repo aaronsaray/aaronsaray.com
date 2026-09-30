@@ -33,3 +33,9 @@ for (const { name, path, title } of FEEDS) {
     expect(parsed.title).toBe(title);
   });
 }
+
+test("the sitemap leaves out a cross-post", async ({ request }) => {
+  const sitemap = await (await request.get("/sitemap.xml")).text();
+
+  expect(sitemap).not.toContain("/2026/write-code-the-way-you-say-it/");
+});

@@ -40,11 +40,12 @@ make post TITLE="My Post Title"
 Writes a draft dated today from `scripts/stubs/post.md` and prints its path. The filename is the URL slug and the date's year is the URL path: `/2026/my-post-title/`.
 
 * `draft: true` keeps the post out of every build; `make dev` shows it with a Draft badge. Remove it to publish.
+* A date after today keeps the post out until a push on or after that day; `make dev` shows it with a Future badge.
 * The first tag picks the post's social card image.
 * A new tag gets a line in `scripts/stubs/post.md`. The build names the file and image it needs.
 * `context:` renders the "Context:" pills under the meta line.
 * `evergreen: true` turns off the old-post notice.
-* `canonical:` takes the original's URL for a post first published elsewhere. It becomes the canonical link, adds a "First published on" link to the meta line, and leaves the post out of the sitemap.
+* `origin:` adds an "Originally published on" box: `name`, an optional `url` to link it, and `canonical: true` to make that URL the canonical and drop the post from the sitemap.
 * `<!--more-->` ends the excerpt shown on lists, in feeds, and as the meta description.
 * Body headers start at H2. The post title is the H1.
 * Link to another post by its final URL (`/2023/some-slug/`).

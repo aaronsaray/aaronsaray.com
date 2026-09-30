@@ -5,8 +5,9 @@ import Base from "../../layouts/Base.astro";
 import OldPostNotice from "../../components/OldPostNotice.astro";
 import LaravelCta from "../../components/LaravelCta.astro";
 import ThirtyThreeThingsDownload from "../../components/ThirtyThreeThingsDownload.astro";
-import { formatDate, isOldPost } from "../../lib/dates";
-import { getPosts, postHref } from "../../lib/posts";
+import OriginNotice from "../../components/OriginNotice.astro";
+import { formatDate, isOldPost, isFuturePost } from "../../lib/dates";
+import { getPosts, originalUrl, postHref } from "../../lib/posts";
 import { readingTime } from "../../lib/readingTime";
 import { excerptText } from "../../lib/excerpt";
 import { ogImageForTag } from "../../lib/ogImage";
@@ -27,7 +28,8 @@ const description = excerptText(entry.body);
 const minutes = readingTime(entry.body);
 const tags = [...entry.data.tags].sort();
 const context = entry.data.context;
-const canonical = entry.data.canonical;
+const origin = entry.data.origin;
+const futurePost = isFuturePost(entry.data.date);
 const showOldNotice = isOldPost(entry.data.date) && !entry.data.evergreen;
 const showLaravelCta = entry.data.tags.includes("laravel");
 const showThirtyThreeThings = entry.id === "33-things-book";
@@ -39,7 +41,7 @@ const showThirtyThreeThings = entry.id === "33-things-book";
   ogImage={ogImageForTag(entry.data.tags[0])}
   ogType="article"
   publishedTime={entry.data.date}
-  canonical={canonical}
+  canonical={originalUrl(entry)}
 >
   <main id="main" class="page-column">
     {/* The title links to its own page, so a hover-only icon withholds
@@ -60,22 +62,12 @@ const showThirtyThreeThings = entry.id === "33-things-book";
 
     <div class="mt-6 meta-line border-b border-hairline pb-6 text-ink-mute">
       {entry.data.draft && <span class="draft-badge">Draft</span>}
+      {futurePost && <span class="draft-badge">Future</span>}
       <span>{formatDate(entry.data.date)}</span>
       <span aria-hidden="true">&middot;</span>
-      {canonical && (
-        <>
-          <a href={canonical} class="quiet-link">
-            First published on {new URL(canonical).hostname}
-          </a>
-          <span aria-hidden="true">&middot;</span>
-        </>
-      )}
       <span>{minutes} min read</span>
       <span aria-hidden="true">&middot;</span>
-      {tags.map((tag) => <a
-        href={`/tag/${tag}/`}
-        class="-my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4]"
-      >
+      {tags.map((tag) => <a href={`/tag/${tag}/`} class="accent-link">
         #{tag}
       </a>)}
     </div>
@@ -96,6 +88,7 @@ const showThirtyThreeThings = entry.id === "33-things-book";
     {showThirtyThreeThings && <ThirtyThreeThingsDownload />}
 
     <div class="prose mt-10">
+      {origin && <OriginNotice name={origin.name} url={origin.url} />}
       <Content />
     </div>
 

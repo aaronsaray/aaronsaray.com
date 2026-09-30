@@ -40,6 +40,8 @@ const ROUTES: { name: string; path: string; status?: number }[] = [
     name: "post with output blocks",
     path: "/2017/use-the-fail-method-with-mockery-on/",
   },
+  // An origin notice linking the original.
+  { name: "cross-post", path: "/2026/write-code-the-way-you-say-it/" },
 ];
 
 // axe reports text over the header gradient as "incomplete", which
@@ -128,6 +130,31 @@ test.describe("head", () => {
 
     expect(await content(page, 'meta[name="description"]')).toBe(
       "Recently, while working at (“the triangle”), I came across a project that I had to research. This project’s definition included finding an up-time monitoring system for our websites as well as a…",
+    );
+  });
+
+  test("a cross-post is canonical at the original", async ({ page }) => {
+    const original =
+      "https://masteringlaravel.io/daily/2026-09-17-write-code-the-way-you-say-it";
+    await page.goto("/2026/write-code-the-way-you-say-it/");
+
+    await expect(page.locator("link[rel=canonical]")).toHaveAttribute(
+      "href",
+      original,
+    );
+    expect(await content(page, 'meta[property="og:url"]')).toBe(original);
+  });
+
+  // Its origin links PHP Architect without canonical: true.
+  test("an origin link alone keeps the post canonical here", async ({
+    page,
+  }) => {
+    const path = "/2016/cc2-descriptive-naming-schemes/";
+    await page.goto(path);
+
+    await expect(page.locator("link[rel=canonical]")).toHaveAttribute(
+      "href",
+      `https://aaronsaray.com${path}`,
     );
   });
 

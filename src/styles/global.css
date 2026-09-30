@@ -122,6 +122,10 @@
   @apply -my-1 inline-block py-1 text-ink-dim transition-colors duration-300 hover:text-ink;
 }
 
+@utility accent-link {
+  @apply -my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4];
+}
+
 @utility meta-line {
   @apply flex flex-wrap items-center gap-x-3 gap-y-1 text-sm;
 }

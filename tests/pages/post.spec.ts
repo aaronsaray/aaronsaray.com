@@ -53,6 +53,25 @@ test.describe("copy button", () => {
   }
 });
 
+test.describe("origin", () => {
+  const POST = "/2026/write-code-the-way-you-say-it/";
+  const ORIGINAL =
+    "https://masteringlaravel.io/daily/2026-09-17-write-code-the-way-you-say-it";
+
+  test("the origin link opens the original", async ({ page }) => {
+    // Stubbed so the run never depends on masteringlaravel.io.
+    await page.route(ORIGINAL, (route) => route.fulfill({ body: "" }));
+    await page.goto(POST);
+
+    // The footer and the post title also link "Mastering Laravel".
+    await page
+      .getByRole("main")
+      .getByRole("link", { name: "Mastering Laravel", exact: true })
+      .click();
+    await expect(page).toHaveURL(ORIGINAL);
+  });
+});
+
 test.describe("output blocks", () => {
   // Three output blocks alternating with php ones.
   const POST = "/2017/use-the-fail-method-with-mockery-on/";
