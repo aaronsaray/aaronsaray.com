@@ -5,11 +5,9 @@ tags:
   - business
   - management
 evergreen: true
+origin:
+  name: The Dev Manager
 ---
-:::callout
-This is part of a series of articles from the retired The Dev Manager website.
-:::
-
 What happened to "why?" What happened to make people so afraid of asking this question? Perhaps it's when all of the 3-year-olds start asking "why" about everything. Why does mommy have to go to work? Why do we need money? Why is the sky blue?
 
 <!--more-->
@@ -29,3 +27,5 @@ When you ask the programmer "why," you get two benefits: the chance to make the 
 When you ask someone "why," a unique thing happens in the brain. Instead of having this vague reason floating around up there, it has to be solidified and put into spoken word. This is something in itself. There are times when we make decisions without thinking about it. I bet in the last few seconds, you adjusted your arm, perhaps supported your head. You made the decision to move your arm to do this. Why? Was your head too tired? What if that cost you five cents every time you made a move with your arm. Would you think through each movement then?
 
 A great Dev Manager doesn't ask why for no reason. They sometimes just ask why to understand, to constructively challenge, and to help own decisions.
+
+_This an entry from a series of articles from the retired The Dev Manager website._

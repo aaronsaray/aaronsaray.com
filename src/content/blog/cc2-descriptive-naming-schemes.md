@@ -3,6 +3,9 @@ title: Descriptive Naming Schemes
 date: "2016-03-02"
 tags:
   - php
+origin:
+  name: PHP Architect
+  url: "https://www.phparch.com/"
 ---
 There are two reactions to reading a new section of code for the first time.  Sadly, one of the most common seems to be of confusion, dismay, followed possibly by some sort of expletive (or many, depending on the length of the code).  The other is one of the most beautiful reactions, the most flattering, the most sought after reaction: "Oh, that makes sense" or "That's cool."
 
@@ -83,4 +86,4 @@ Now, I feel confident that this code block reads clearly and is not so confusing
 
 You have a great amount of freedom when choosing names for methods and variables.  There are many code standards which will give you pointers on how to name your items, though.  Remember to consider how your methods and variables read in the code.  Does your choice in naming require explanation?  If so, refactor until it reads like a sentence using verbs and nouns.  Then, you can confidently hand your code over to anyone with the knowledge that you'll get the prized response: "Oh, that makes sense."
 
-_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._
+_This entry was republished from an original column years ago and shared with permission by PHP Architect._

@@ -104,6 +104,7 @@ this file. Before editing such a file reached any other way (`cat`,
 `grep`, a new file), read its rule. A rule that matters only to those
 files goes there, and a new rule file gets a line here.
 
-* `astro-templates.md`: template comments, `{" "}`, SVG and the logo.
+* `astro-templates.md`: template comments, `{" "}`, SVG and the logo,
+  same-tab links.
 * `design-and-accessibility.md`: where a style lives, the palette and
   contrast rules, what axe cannot judge.

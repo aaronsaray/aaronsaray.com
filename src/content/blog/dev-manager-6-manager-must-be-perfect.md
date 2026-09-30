@@ -5,6 +5,8 @@ tags:
   - business
   - management
 evergreen: true
+origin:
+  name: The Dev Manager
 ---
 Oh, what a scary thought: a manager must always be perfect. But, stick with me here.
 
@@ -27,3 +29,5 @@ Having a team that expects you to be perfect isn't such a bad thing. This accoun
 When leadership doesn't try to be better, it is easy to for programmers to be subpar. When leaders are expecting, encouraging, and challenging, programmers develop insatiable desires to achieve greatness.
 
 A great Dev Manager will always be perfect - or at least try to be. You are in the spotlight and are used as a measuring stick for performance.
+
+_This an entry from a series of articles from the retired The Dev Manager website._

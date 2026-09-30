@@ -5,11 +5,9 @@ tags:
   - business
   - management
 evergreen: true
+origin:
+  name: The Dev Manager
 ---
-:::callout
-This is part of a series of articles from the retired The Dev Manager website.
-:::
-
 It's amazing what the internet can bring us, both positive and negative. Sadly, some of the worst people hang out on the internet. They bully, they rage, they say and do horrible things.
 
 <!--more-->
@@ -27,3 +25,5 @@ Now, I'm all in favor of flying/driving in to see people in person here and ther
 If you're in the office, you still have many options for making face to face work. If you're going to interrupt your employee's workday, at least resist picking up the phone or sending an IM. Instead, walk over and have a face to face talk with them. This style of communication will actually build bonds and communicate things much clearer.
 
 So, what does a poor performing employee, miscommunications and an internet troll have in common? The communication is probably not happening face to face. An excellent Dev Manager makes face to face work.
+
+_This an entry from a series of articles from the retired The Dev Manager website._

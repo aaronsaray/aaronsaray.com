@@ -5,11 +5,9 @@ tags:
   - business
   - management
 evergreen: true
+origin:
+  name: The Dev Manager
 ---
-:::callout
-This is part of a series of articles from the retired The Dev Manager website.  It was called **The Dev Manager Crash Course**. Looking for entry two? [Click here](/2020/dev-manager-2-3-tough-convos/)
-:::
-
 A colleague once said to me that I'm very lucky I haven't had to fire as many people as he had. I definitely agree with the fact that my management tenure has not involved many terminations, but I don't consider myself lucky. I put in work, just like you're doing, to understand how to manage different types of developers.
 
 <!--more-->
@@ -89,3 +87,5 @@ Before you jump to a conclusion that your developer is a bad seed, you need to r
 > ~ Red Green (or [Jim Wright](https://quoteinvestigator.com/2014/11/10/you-unique) - why am I so bad at picking quotes?)
 
 You are unique, intelligent and learning to do your job better. A step above the rest (that's why you're reading this newsletter, right?) You're certainly different than other managers who don't care. But remember, each one of your developers is unique and different, too. It's your job to understand that and apply this knowledge to your leadership.
+
+_This an entry from a series of articles from the retired The Dev Manager website originally called "The Dev Manager Crash Course."_

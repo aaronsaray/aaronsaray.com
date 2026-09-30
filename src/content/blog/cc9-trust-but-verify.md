@@ -3,6 +3,9 @@ title: Trust, But Verify
 date: "2016-04-25"
 tags:
   - php
+origin:
+  name: PHP Architect
+  url: "https://www.phparch.com/"
 ---
 "Trust falls" are a team-building activity that some of my friends have had to endure.  I've been threatened with this exercise a few times.  But, I've never had to do it.  Luckily, I've been able to convince my team members I will participate without having to test their bicep and shoulder strength.  Or, perhaps I'm just not trusting enough.  (I once worked at a place that had a few employees that were really good friends and would force-trust-fall on each other.  When a group of colleagues were walking in a row, one would just throw himself backwards into the person behind him surprising them and shouting "trust fall!"  This was the only "trust fall" that I was forced to participate in.)  
 
@@ -94,4 +97,4 @@ This third party saw how I was using the information and liked what they saw.  T
 
 Confident Coders know there is a difference between being trusting and confident.  Confident programming is knowing how a process or method should work.  Trust is implied in code, but trust can never be guaranteed.  Confident Coders know to follow the defensive programming mantra of trust, but verify to guarantee more accurate code.
 
-_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._
+_This entry was republished from an original column years ago and shared with permission by PHP Architect._

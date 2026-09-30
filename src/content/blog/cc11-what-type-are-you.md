@@ -3,6 +3,9 @@ title: What "type" are you?
 date: "2016-05-09"
 tags:
   - php
+origin:
+  name: PHP Architect
+  url: "https://www.phparch.com/"
 ---
 When I went to a University for a Computer Science degree, a required class was Introduction to Java Programming.  I remember the first thing the professor taught seemed very confusing at the time.  I can still hear his voice very clearly: "So to begin with, we'll type... string string equals new string."  
 
@@ -76,4 +79,4 @@ Since the `process()` method will always be calling the `doSomething()` method o
 
 Confident Coders know and appreciate the balance between the ease-of-use of our beloved loosely-typed language and the accuracy and standards enforced by strong typing.  It is incredibly important to understand the unique value that type-hinting inside a loosely typed language can add to your programming.  Learn to balance and embrace the flexibility of PHP with the benefits that type-hinting can add.
 
-_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._
+_This entry was republished from an original column years ago and shared with permission by PHP Architect._

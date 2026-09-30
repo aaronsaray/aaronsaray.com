@@ -4,6 +4,9 @@ date: "2016-05-16"
 tags:
   - php
   - business
+origin:
+  name: PHP Architect
+  url: "https://www.phparch.com/"
 ---
 From a very young age, we're told to brush our teeth regularly.  We know we should, but it can be a struggle.  The reasons to invest our important play-time aren't always compelling.  (If they were, why would some parents have to check to make sure the children had brushed their teeth before bed?)  
 
@@ -88,4 +91,4 @@ This particular dialog illustrated a good exercise in self reflection.  I think 
 
 When you're trying to create a better product, get consent, or keep hitting dead ends, the key is a compelling, overwhelming reason.  A Confident Coder understands and accepts responsibility for presenting these reasons.
 
-_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._
+_This entry was republished from an original column years ago and shared with permission by PHP Architect._

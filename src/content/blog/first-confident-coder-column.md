@@ -3,6 +3,9 @@ title: First Confident Coder Column
 date: "2016-02-22"
 tags:
   - php
+origin:
+  name: PHP Architect
+  url: "https://www.phparch.com/"
 ---
 Sweaty palms, a fast heart rate and an overwhelming sense of dread.  
 
@@ -60,4 +63,4 @@ First, we validate that the super global `$_SERVER` array has the key of `REQUES
 
 Now, I am confident that I can determine if this was request was indeed a POST.  And, in the spirit of confident coding for peer review, please feel free to send me your thoughts, questions, or critiques.  If you'd like me to cover something in an upcoming column, don't be afraid to ask.  
 
-_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._
+_This entry was republished from an original column years ago and shared with permission by PHP Architect._

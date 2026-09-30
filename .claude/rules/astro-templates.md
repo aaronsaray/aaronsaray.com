@@ -18,3 +18,6 @@ paths:
   in `src/icons/` rendered by `Icon.astro`. The logo is Astro's SVG
   import of `src/assets/logo.svg`. That file ships to the page
   verbatim and renders twice, so it carries no comment and no `id`.
+* **Every link opens in the same tab, external ones included.** No
+  `target`, and no `noopener` or "(opens in a new window)" text to go
+  with one. Markdown links in posts behave the same way.

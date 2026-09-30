@@ -3,6 +3,9 @@ title: Array Key Accuracy
 date: "2016-03-10"
 tags:
   - php
+origin:
+  name: PHP Architect
+  url: "https://www.phparch.com/"
 ---
 Bugs in code suck.  It's bad enough when you misspell a function or forget a semi-colon.  That's embarrassing and annoying.  But what's worse is when you write code that seems to work fine, is syntactically correct, yet still has a bug.  You know you did it right, but somehow it's also wrong.  That's not good.  That makes me paranoid and second guess the rest of my work.  That doesn't help me be a Confident Coder at all.
 
@@ -75,4 +78,4 @@ if (array_key_exists('offset', $settings) {
 
 Accuracy is important in programming.  A Confident Coder is never happy with "it's good enough." That generally means this code will work until it doesn't.  That's no way to build a robust, strong application.  Programming accurately and using the right methods may take more investment and time.  But, in the end, accuracy always wins out.  
 
-_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._
+_This entry was republished from an original column years ago and shared with permission by PHP Architect._

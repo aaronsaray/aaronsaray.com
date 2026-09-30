@@ -3,6 +3,9 @@ title: Commenting is More than Opinion
 date: "2016-03-14"
 tags:
   - php
+origin:
+  name: PHP Architect
+  url: "https://www.phparch.com/"
 ---
 In an earlier column, I discussed the advantage of using longer and more verbose variable and method names.  When you program using this more descriptive style, the code is easier to understand and more maintainable.  However, a short and concise method with a revealing name may not always be sufficient when it comes to complex processes.  To fill this gap, PHP has comments.  
 
@@ -54,4 +57,4 @@ There are no hard and fast rules for how to comment your code when it comes to l
 
 I've traveled the whole route from "no comments" to "extreme commenting," blazing my own trail and then following a comment standard.  I can make two suggestions from my journey.  First, pick an automated documentation commenting standard and stick with it rigorously.  There's nothing more valuable than jumping into a project with proper documentation!  And second, make the commitment to writing clear, easy to follow code.  Realize that commenting is a necessity to explain complex business rules not a crutch for sloppy code.
 
-_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._
+_This entry was republished from an original column years ago and shared with permission by PHP Architect._

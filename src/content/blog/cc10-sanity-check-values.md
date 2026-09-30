@@ -3,6 +3,9 @@ title: Sanity Check Values
 date: "2016-05-05"
 tags:
   - php
+origin:
+  name: PHP Architect
+  url: "https://www.phparch.com/"
 ---
 When I was growing up, having chocolate milk was a huge treat.  My mom would mix together some sugar and some dry cocoa powder into the glass and then slowly add milk.  After some more vigorous stirring, I had my small glass of chocolate milk.  It was quite the process, but it tasted great.  Imagine my surprise when I found out that chocolate milk also came from the store pre-mixed!
 
@@ -86,4 +89,4 @@ In this case, we've determined that if the amount of emails being submitted is m
 
 Sanity checking is a deep and in-depth concept to understand and implement.  But starting anywhere is a great first step.  When it comes to web applications, a Confident Coder knows that access to the application is paramount.  He or she does anything necessary to make sure that access can be guaranteed.  In this case, spending time validating that the incoming information falls within acceptable bounds and that the requests are not over-eager is important.  Stop insane values now!
 
-_This entry is republished from the original columns included years ago in the [PHP Architect](http://phparch.com) magazine.  I really recommend purchasing the magazine to get timely articles, columns and PHP news._
+_This entry was republished from an original column years ago and shared with permission by PHP Architect._
