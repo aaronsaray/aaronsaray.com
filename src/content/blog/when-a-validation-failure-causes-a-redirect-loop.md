@@ -11,13 +11,13 @@ origin:
 
 Laravel's default behavior on a failed `FormRequest` validation is to throw a `ValidationException`, which the framework's exception handler converts into a redirect to the previous URL with the input flashed to the session and errors attached.
 
-That works perfectly when the form was opened from a referring page in the same app.
-It breaks down when there is no previous URL, for example a bookmark to a `GET` form with validation, or submitting something into a `target="_blank"` (like PDF generation).
+That works perfectly when a person submits the form as the redirect lands them back on that page with the errors.
+It breaks down when the form submits itself, for example a bookmark to a `GET` form with validation, or submitting something into a `target="_blank"` (like PDF generation).
 
 <!--more-->
 
-In all of these, Laravel tries to redirect to `url()->previous()`.
-With no previous url, "previous" resolves to the form itself.
+In all of these, Laravel redirects to `url()->previous()` which is the `Referer` header or the last `GET` URL stored in the session.
+Both point at the form, because the form page sent the request and loading it stored it in the session.
 The form submits, validation fails, the framework redirects to the form, the form auto-submits again and the user is stuck.
 
 One fix for this rare condition is to override `failedValidation()` on the `FormRequest` and abort with a 422 instead of letting the default redirect behavior run:
@@ -38,3 +38,5 @@ Validation failures on these routes tend to be rare in practice, so showing the 
 You could also override `getRedirectUrl()` instead of `failedValidation()`, which lets you keep Laravel's normal flash-and-redirect flow.
 But then you need to have a location to redirect them to, and also a way to show error messages.
 I don't think that's worth it if this is a non-standard user flow and the result of good defense in depth coding.
+
+_This post has been edited from the original for accuracy._
