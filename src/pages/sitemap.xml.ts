@@ -44,7 +44,8 @@ export const GET: APIRoute = async () => {
     );
   }
 
-  for (const post of posts) {
+  // A sitemap lists only canonical URLs, and a cross-post's is elsewhere.
+  for (const post of posts.filter((p) => !p.data.canonical)) {
     entries.push(url(postHref(post), lastmod(post.data.date)));
   }
 

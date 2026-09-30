@@ -27,6 +27,7 @@ const description = excerptText(entry.body);
 const minutes = readingTime(entry.body);
 const tags = [...entry.data.tags].sort();
 const context = entry.data.context;
+const canonical = entry.data.canonical;
 const showOldNotice = isOldPost(entry.data.date) && !entry.data.evergreen;
 const showLaravelCta = entry.data.tags.includes("laravel");
 const showThirtyThreeThings = entry.id === "33-things-book";
@@ -38,6 +39,7 @@ const showThirtyThreeThings = entry.id === "33-things-book";
   ogImage={ogImageForTag(entry.data.tags[0])}
   ogType="article"
   publishedTime={entry.data.date}
+  canonical={canonical}
 >
   <main id="main" class="page-column">
     {/* The title links to its own page, so a hover-only icon withholds
@@ -60,6 +62,14 @@ const showThirtyThreeThings = entry.id === "33-things-book";
       {entry.data.draft && <span class="draft-badge">Draft</span>}
       <span>{formatDate(entry.data.date)}</span>
       <span aria-hidden="true">&middot;</span>
+      {canonical && (
+        <>
+          <a href={canonical} class="quiet-link">
+            First published on {new URL(canonical).hostname}
+          </a>
+          <span aria-hidden="true">&middot;</span>
+        </>
+      )}
       <span>{minutes} min read</span>
       <span aria-hidden="true">&middot;</span>
       {tags.map((tag) => <a

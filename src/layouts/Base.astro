@@ -14,6 +14,8 @@ interface Props {
   ogType?: "website" | "article";
   /** Frontmatter date string, passed through without Date coercion */
   publishedTime?: string;
+  /** Absolute URL of the original, for a page first published elsewhere */
+  canonical?: string;
   /** Drops the canonical and og:url along with adding the robots tag */
   noindex?: boolean;
 }
@@ -24,10 +26,11 @@ const {
   ogImage = "/images/og-image.png",
   ogType = "website",
   publishedTime,
+  canonical,
   noindex = false,
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site);
 const ogImageUrl = new URL(ogImage, Astro.site);
 const ogImageSize = await publicImageSize(ogImage);
 ---
@@ -42,7 +45,7 @@ const ogImageSize = await publicImageSize(ogImage);
     <meta name="description" content={description} />
     <meta name="author" content={AUTHOR} />
     {noindex && <meta name="robots" content="noindex" />}
-    {!noindex && <link rel="canonical" href={canonical} />}
+    {!noindex && <link rel="canonical" href={canonicalUrl} />}
     <link rel="icon" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -54,7 +57,7 @@ const ogImageSize = await publicImageSize(ogImage);
     <meta property="og:image:height" content={String(ogImageSize.height)} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />
-    {!noindex && <meta property="og:url" content={canonical} />}
+    {!noindex && <meta property="og:url" content={canonicalUrl} />}
     {publishedTime && (
       <meta property="article:published_time" content={publishedTime} />
     )}

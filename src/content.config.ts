@@ -40,6 +40,7 @@ const blog = defineCollection({
       context: z.array(z.string()).optional(),
       draft: z.boolean().optional(),
       evergreen: z.boolean().optional(),
+      canonical: z.url({ protocol: /^https?$/ }).optional(),
     })
     .strict(),
 });
