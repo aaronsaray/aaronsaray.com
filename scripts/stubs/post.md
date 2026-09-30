@@ -21,6 +21,7 @@ tags:
   - javascript
   - laravel
   - linux
+  - livewire
   - macos
   - management
   - misc-web
