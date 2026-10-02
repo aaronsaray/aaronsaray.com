@@ -145,12 +145,12 @@ After executing it, I got this error:
 <tr >
 <td colspan="2" align="right" style="background-color: #eeeeec" valign="top" >
     
-    $b =
+  $b =
 
 </td>
 <td colspan="4" style="background-color: #eeeeec" >
     
-    <small>string</small> <font color="#cc0000">'test'</font> <i>(length=4)</i>
+  <small>string</small> <font color="#cc0000">'test'</font> <i>(length=4)</i>
     
 
 </td></tr>

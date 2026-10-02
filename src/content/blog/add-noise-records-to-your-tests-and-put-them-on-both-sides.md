@@ -34,13 +34,13 @@ The problem is that both of these service implementations turn the test green:
 // Correct, scoped to the client.
 public function getForClient(Client $client): Order
 {
-    return Order::where('client_id', $client->id)->first();
+  return Order::where('client_id', $client->id)->first();
 }
 
 // Broken, returns the first order in the table regardless of client.
 public function getForClient(Client $client): Order
 {
-    return Order::first();
+  return Order::first();
 }
 ```
 

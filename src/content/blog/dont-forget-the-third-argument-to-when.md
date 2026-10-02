@@ -21,8 +21,8 @@ Most uses of `when()` look like this:
 
 ```php
 $query->when(
-    $this->customerId,
-    fn (Builder $query, int $customerId) => $query->where('customer_id', $customerId),
+  $this->customerId,
+  fn (Builder $query, int $customerId) => $query->where('customer_id', $customerId),
 );
 ```
 
@@ -37,9 +37,9 @@ That's exactly what the third argument to `when()` is for, a second callback tha
 
 ```php
 $query->when(
-    $this->customerId,
-    fn (Builder $query, int $customerId) => $query->where('customer_id', $customerId),
-    fn (Builder $query) => $query->whereIn('customer_id', Auth::user()->customers()->pluck('id')),
+  $this->customerId,
+  fn (Builder $query, int $customerId) => $query->where('customer_id', $customerId),
+  fn (Builder $query) => $query->whereIn('customer_id', Auth::user()->customers()->pluck('id')),
 );
 ```
 

@@ -53,8 +53,8 @@ So, let's write the code that way (I knew the helper would be useful):
 
 ```php
 $locationsList = collect($params['locations'])
-    ->map(fn ($location) => Str::wrap($location, "'"))
-    ->implode(',');
+  ->map(fn ($location) => Str::wrap($location, "'"))
+  ->implode(',');
 ```
 
 It's a little longer, sure.

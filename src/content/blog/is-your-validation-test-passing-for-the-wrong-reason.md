@@ -29,13 +29,13 @@ Imagine a test class covering registration, with a `setUp()` that seeds the user
 ```php
 class RegistrationTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
+  protected function setUp(): void
+  {
+    parent::setUp();
 
-        User::factory()->create(['username' => 'admin']);
-        User::factory()->create(['username' => 'regular-user']);
-    }
+    User::factory()->create(['username' => 'admin']);
+    User::factory()->create(['username' => 'regular-user']);
+  }
 }
 ```
 
@@ -46,9 +46,9 @@ Now, let's look at my contrived registration form with just two rules on `userna
 ```php
 public function rules(): array
 {
-    return [
-        'username' => [new NotReservedUsername, 'unique:users'],
-    ];
+  return [
+    'username' => [new NotReservedUsername, 'unique:users'],
+  ];
 }
 ```
 
@@ -60,9 +60,9 @@ The test for the custom rule:
 ```php
 public function testCannotRegisterWithReservedUsername(): void
 {
-    $response = $this->post('/register', ['username' => 'admin']);
+  $response = $this->post('/register', ['username' => 'admin']);
 
-    $response->assertSessionHasErrors(['username']);
+  $response->assertSessionHasErrors(['username']);
 }
 ```
 
@@ -76,7 +76,7 @@ The fix is to assert on the specific message:
 
 ```php
 $response->assertSessionHasErrors([
-    'username' => 'This username is reserved.',
+  'username' => 'This username is reserved.',
 ]);
 ```
 

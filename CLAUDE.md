@@ -13,8 +13,9 @@ relying on it.
   keeps resolving.
 * **Aaron's prose is his**: `src/content/` and the page copy in
   `src/pages/`, punctuation and style included. Never edit it unasked
-  or inside a mechanical change; frontmatter, markup, and whitespace a
-  linter flags need no asking. His habits, listed in
+  or inside a mechanical change; frontmatter, markup, whitespace a
+  linter flags, and code-block indentation (`README.md`, Code) need
+  no asking. His habits, listed in
   `.claude/skills/proofread/voice.md` with the spaced hyphen ` - `
   first, are never flagged or converted, in the content or in feedback
   on a draft. A draft he asks for goes into the file unmarked, under

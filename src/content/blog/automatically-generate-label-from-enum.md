@@ -35,10 +35,10 @@ You ready?
 ```php
 trait ProvidesLabelsById
 {
-    public function label(): string
-    {
-        return __(ucwords(strtolower($this->name)));
-    }
+  public function label(): string
+  {
+    return __(ucwords(strtolower($this->name)));
+  }
 }
 ```
 

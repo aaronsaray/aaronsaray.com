@@ -20,10 +20,10 @@ Before long the public method is down to a few lines:
 ```php
 public function process(int $userId): Receipt
 {
-    $user = $this->loadUser($userId);
-    $settings = $this->applySettings($user);
+  $user = $this->loadUser($userId);
+  $settings = $this->applySettings($user);
 
-    return $this->buildReceipt($user, $settings);
+  return $this->buildReceipt($user, $settings);
 }
 ```
 
@@ -34,7 +34,7 @@ Except now I can't actually tell what `loadUser()` even does.
 ```php
 private function loadUser(int $id): User
 {
-    return User::findOrFail($id);
+  return User::findOrFail($id);
 }
 ```
 

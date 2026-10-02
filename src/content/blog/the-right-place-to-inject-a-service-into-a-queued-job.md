@@ -17,24 +17,24 @@ Let's take a look at this job:
 ```php
 class ProcessElectionResults implements ShouldQueue
 {
-    use Queueable;
+  use Queueable;
 
-    private ElectionResultsService $resultsService;
+  private ElectionResultsService $resultsService;
 
-    public function __construct()
-    {
-        $this->resultsService = new ElectionResultsService();
+  public function __construct()
+  {
+    $this->resultsService = new ElectionResultsService();
+  }
+
+  public function handle(): void
+  {
+    if (Carbon::now()->isWeekend()) {
+      $this->resultsService->deferToStartOfNextWeek();
+      return;
     }
 
-    public function handle(): void
-    {
-        if (Carbon::now()->isWeekend()) {
-            $this->resultsService->deferToStartOfNextWeek();
-            return;
-        }
-
-        $this->resultsService->processNow();
-    }
+    $this->resultsService->processNow();
+  }
 }
 ```
 
@@ -74,12 +74,12 @@ Instead, the solution is the `handle()` method.
 ```php
 public function handle(ElectionResultsService $resultsService): void
 {
-    if (Carbon::now()->isWeekend()) {
-        $resultsService->deferToStartOfNextWeek();
-        return;
-    }
+  if (Carbon::now()->isWeekend()) {
+    $resultsService->deferToStartOfNextWeek();
+    return;
+  }
 
-    $resultsService->processNow();
+  $resultsService->processNow();
 }
 ```
 
@@ -93,8 +93,8 @@ And now the date logic is testable on its own with the mocked service.
 Carbon::setTestNow('2026-09-05'); // a Saturday
 
 $this->mock(ElectionResultsService::class, function (MockInterface $mock) {
-    $mock->shouldReceive('deferToStartOfNextWeek')->once();
-    $mock->shouldNotReceive('processNow');
+  $mock->shouldReceive('deferToStartOfNextWeek')->once();
+  $mock->shouldNotReceive('processNow');
 });
 
 ProcessElectionResults::dispatchSync();

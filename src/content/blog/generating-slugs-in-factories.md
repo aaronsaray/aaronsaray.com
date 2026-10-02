@@ -18,9 +18,9 @@ But, sometimes you can't do it like this. Perhaps it's a legacy project, events 
 
 ```php
 App\Models\Article::factory()->create([
-    'title' => 'The Baron of the Hoops',
-    'slug' => Str::slug('The Baron of the Hoops'),
-    'author' => 'R J J Kientol',
+  'title' => 'The Baron of the Hoops',
+  'slug' => Str::slug('The Baron of the Hoops'),
+  'author' => 'R J J Kientol',
 ]);
 ```
 
@@ -31,11 +31,11 @@ Laravel provides a solution, though. When you pass a closure to a field definiti
 ```php
 public function definition(): array
 {
-    return [
-        'title' => $this->faker->sentence(),
-        'slug' => fn(array $attributes) => Str::slug($attributes['title']),
-        'author' => $this->faker->name(),
-    ];
+  return [
+    'title' => $this->faker->sentence(),
+    'slug' => fn(array $attributes) => Str::slug($attributes['title']),
+    'author' => $this->faker->name(),
+  ];
 }
 ```
 
@@ -45,8 +45,8 @@ So, now, we can do this:
 
 ```php
 App\Models\Article::factory()->create([
-    'title' => 'The Baron of the Hoops',
-    'author' => 'R J J Kientol',
+  'title' => 'The Baron of the Hoops',
+  'author' => 'R J J Kientol',
 ]);
 ```
 

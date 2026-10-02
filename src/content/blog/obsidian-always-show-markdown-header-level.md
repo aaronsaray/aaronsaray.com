@@ -19,31 +19,31 @@ Next, what should we put in there?  Well, we want to add the hash tags or pound 
 
 ```css
 :not(.cm-formatting).cm-header-1:before {
-    content: '# ';
+  content: '# ';
 }
 
 :not(.cm-formatting).cm-header-2:before {
-    content: '## ';
+  content: '## ';
 }
 
 :not(.cm-formatting).cm-header-3:before {
-    content: '### ';
+  content: '### ';
 }
 
 :not(.cm-formatting).cm-header-4:before {
-    content: '#### ';
+  content: '#### ';
 }
 
 :not(.cm-formatting).cm-header-5:before {
-    content: '##### ';
+  content: '##### ';
 }
 
 :not(.cm-formatting).cm-header-6:before {
-    content: '###### ';
+  content: '###### ';
 }
 
 .cm-header:before {
-    color: var(--text-faint);
+  color: var(--text-faint);
 }
 
 .cm-active.cm-line .cm-header-1:before,
@@ -52,7 +52,7 @@ Next, what should we put in there?  Well, we want to add the hash tags or pound 
 .cm-active.cm-line .cm-header-4:before,
 .cm-active.cm-line .cm-header-5:before,
 .cm-active.cm-line .cm-header-6:before {
-    content: '';
+  content: '';
 }
 ```
 

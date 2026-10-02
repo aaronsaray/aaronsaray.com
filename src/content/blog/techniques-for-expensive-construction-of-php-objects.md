@@ -186,41 +186,41 @@ In this example, we're going to revert back to our original `DanceParty` and the
 <?php
 class DanceParty
 {
-    public function __construct()
-    {
-        sleep(3); // that's how long it takes
-    }
+  public function __construct()
+  {
+    sleep(3); // that's how long it takes
+  }
 
-    public function doFunk()
-    {
-        $this->applyForPermit();
-        // whatever you do here...
-    }
+  public function doFunk()
+  {
+    $this->applyForPermit();
+    // whatever you do here...
+  }
 
-    public function doMoshPit()
-    {
-        $this->applyForPermit();
-        // metal!!
-    }
+  public function doMoshPit()
+  {
+    $this->applyForPermit();
+    // metal!!
+  }
 
-    protected function applyForPermit()
-    {
-        // I know, I'm lame.
-    }
+  protected function applyForPermit()
+  {
+    // I know, I'm lame.
+  }
 }
 
 class DancePartyProxy
 {
-    protected $instance;
+  protected $instance;
     
-    public function __call($name, $arguments)
-    {
-        if (is_null($this->instance)) {
-            $this->instance = new DanceParty();
-        }
-        
-        return $this->instance->$name(...$arguments);
+  public function __call($name, $arguments)
+  {
+    if (is_null($this->instance)) {
+      $this->instance = new DanceParty();
     }
+        
+    return $this->instance->$name(...$arguments);
+  }
 }
 ```
 

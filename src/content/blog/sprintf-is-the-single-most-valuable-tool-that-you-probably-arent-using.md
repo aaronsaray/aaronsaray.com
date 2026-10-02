@@ -23,9 +23,9 @@ The PDF filename the client wants should contain the title field from the model,
 ```php
 public function getFilename(): string
 {
-    $name = Str::slug($this->model->title) . '-' . Str::slug($this->model->author->full_name);
-    $currentDate = \Carbon\Carbon::now()->toDateString();
-    return $name . '-' . $currentDate . '.pdf';
+  $name = Str::slug($this->model->title) . '-' . Str::slug($this->model->author->full_name);
+  $currentDate = \Carbon\Carbon::now()->toDateString();
+  return $name . '-' . $currentDate . '.pdf';
 }
 ```
 
@@ -38,12 +38,12 @@ Here's how you might write that cleanly with the `sprintf` formatting.
 ```php
 public function getFilename(): string
 {
-    return sprintf(
-        '%s-%s-%s.pdf',
-        Str::slug($this->model->title),
-        Str::slug($this->model->author->full_name),
-        \Carbon\Carbon::now()->toDateString(),
-    );
+  return sprintf(
+    '%s-%s-%s.pdf',
+    Str::slug($this->model->title),
+    Str::slug($this->model->author->full_name),
+    \Carbon\Carbon::now()->toDateString(),
+  );
 }
 ```
 

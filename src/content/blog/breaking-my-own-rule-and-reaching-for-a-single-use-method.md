@@ -18,16 +18,16 @@ So you'd think my `AppServiceProvider` would be a straight line of code. It isn'
 ```php
 public function boot(): void
 {
-    $this->bootBladeDirectives();
-    $this->bootModelStrictness();
-    $this->bootMacros();
-    $this->bootViewComposers();
+  $this->bootBladeDirectives();
+  $this->bootModelStrictness();
+  $this->bootMacros();
+  $this->bootViewComposers();
 }
 
 public function register(): void
 {
-    $this->registerStripe();
-    $this->registerLocalServiceStubs();
+  $this->registerStripe();
+  $this->registerLocalServiceStubs();
 }
 ```
 

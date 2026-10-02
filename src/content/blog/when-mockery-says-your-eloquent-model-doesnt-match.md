@@ -22,9 +22,9 @@ $order = Order::factory()->create();
 
 $invoiceMock = $this->mock(InvoiceGenerator::class);
 $invoiceMock->shouldReceive('generate')
-    ->once()
-    ->with($order)
-    ->andReturn($fakeInvoice);
+  ->once()
+  ->with($order)
+  ->andReturn($fakeInvoice);
 ```
 
 This tends to fail in most cases.
@@ -43,9 +43,9 @@ $order = Order::factory()->create();
 
 $invoiceMock = $this->mock(InvoiceGenerator::class);
 $invoiceMock->shouldReceive('generate')
-    ->once()
-    ->with(Mockery::on(fn ($arg) => $order->is($arg)))
-    ->andReturn($fakeInvoice);
+  ->once()
+  ->with(Mockery::on(fn ($arg) => $order->is($arg)))
+  ->andReturn($fakeInvoice);
 ```
 
 `Mockery::on` accepts a closure and matches the argument when the closure returns `true`.

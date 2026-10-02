@@ -26,15 +26,15 @@ It uses raw PHP file functions for performance:
 ```php
 public function handle(): void
 {
-    $input = fopen(config('imports.csv_input'), 'r');
-    $output = fopen(config('imports.csv_output'), 'w');
+  $input = fopen(config('imports.csv_input'), 'r');
+  $output = fopen(config('imports.csv_output'), 'w');
 
-    while (($row = fgetcsv($input)) !== false) {
-        fwrite($output, implode('|', $row) . PHP_EOL);
-    }
+  while (($row = fgetcsv($input)) !== false) {
+    fwrite($output, implode('|', $row) . PHP_EOL);
+  }
 
-    fclose($input);
-    fclose($output);
+  fclose($input);
+  fclose($output);
 }
 ```
 
@@ -51,21 +51,21 @@ The nice part is I can seed files into that virtual filesystem right when I set 
 ```php
 public function testItConvertsACommaCsvToPipeDelimited(): void
 {
-    $root = vfsStream::setup('data', null, [
-        'input.csv' => "item1,item2\nitem3,item4\n",
-    ]);
+  $root = vfsStream::setup('data', null, [
+    'input.csv' => "item1,item2\nitem3,item4\n",
+  ]);
 
-    config([
-        'imports.csv_input' => $root->url() . '/input.csv',
-        'imports.csv_output' => $root->url() . '/output.txt',
-    ]);
+  config([
+    'imports.csv_input' => $root->url() . '/input.csv',
+    'imports.csv_output' => $root->url() . '/output.txt',
+  ]);
 
-    $this->artisan('convert-csv')->assertSuccessful();
+  $this->artisan('convert-csv')->assertSuccessful();
 
-    self::assertSame(
-        "item1|item2\nitem3|item4\n",
-        $root->getChild('output.txt')->getContent(),
-    );
+  self::assertSame(
+    "item1|item2\nitem3|item4\n",
+    $root->getChild('output.txt')->getContent(),
+  );
 }
 ```
 

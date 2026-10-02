@@ -34,19 +34,19 @@ Here is an example of a logging system I have in place.
  * @return \Monolog\Logger
  */
 $container['logger'] = function(\Slim\Container $container) {
-    $logger = new \Monolog\Logger('handlebars');
+  $logger = new \Monolog\Logger('handlebars');
     
-    $errorHandler = new \Monolog\Handler\StreamHandler(
-        __DIR__ . '/../logs/error.log', \Monolog\Logger::WARNING
-    );
-    $logger->pushHandler($errorHandler);
+  $errorHandler = new \Monolog\Handler\StreamHandler(
+    __DIR__ . '/../logs/error.log', \Monolog\Logger::WARNING
+  );
+  $logger->pushHandler($errorHandler);
     
-    $allHandler = new \Monolog\Handler\StreamHandler(
-        __DIR__ . '/../logs/activity.log'
-    );
-    $logger->pushHandler($allHandler);
+  $allHandler = new \Monolog\Handler\StreamHandler(
+    __DIR__ . '/../logs/activity.log'
+  );
+  $logger->pushHandler($allHandler);
     
-    return $logger;
+  return $logger;
 };
 ```
 

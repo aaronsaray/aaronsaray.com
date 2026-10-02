@@ -68,14 +68,14 @@ Now your regular JSON like this:
 Will end up looking like this:
 ```json
 [
-    {
-        "id": 123,
-        "name": "first item"
-    },
-    {
-        "id": 123,
-        "name": "first item"
-    }
+  {
+    "id": 123,
+    "name": "first item"
+  },
+  {
+    "id": 123,
+    "name": "first item"
+  }
 ]
 ```
 

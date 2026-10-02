@@ -18,7 +18,7 @@ So I set up an optional argument:
 
 ```php
 protected $signature = 'import:clients
-    {file? : Path to CSV file, defaults to storage/app/clients.csv}';
+  {file? : Path to CSV file, defaults to storage/app/clients.csv}';
 ```
 
 Now I needed to get that value, falling back to a default path if none was provided.

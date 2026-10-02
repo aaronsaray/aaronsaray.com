@@ -55,6 +55,7 @@ Writes a draft dated today from `scripts/stubs/post.md` and prints its path. The
 ### Code
 
 A block is a fence with a language, which labels the block beside its copy button. A fence with no language is labeled `txt`.
+Code is indented 2 spaces, cross-posts included; `output` blocks keep what the program printed.
 
 ````markdown
 ```php

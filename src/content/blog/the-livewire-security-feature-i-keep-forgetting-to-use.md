@@ -20,14 +20,14 @@ public int $discountPercent;
 
 public function mount(User $user)
 {
-    $this->discountPercent = $user->loyaltyTier()->discount();
+  $this->discountPercent = $user->loyaltyTier()->discount();
 }
 
 public function checkout()
 {
-    $price = $this->getBasePrice() * (1 - $this->discountPercent / 100);
+  $price = $this->getBasePrice() * (1 - $this->discountPercent / 100);
 
-    // charge $price...
+  // charge $price...
 }
 ```
 

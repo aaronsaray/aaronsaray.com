@@ -22,19 +22,19 @@ So instead of using a `replicating` hook, we can just tell Eloquent that `public
 ```php
 trait HasPublicId
 {
-    protected static function bootHasPublicId(): void
-    {
-        self::creating(function (self $model): void {
-            if (empty($model->public_id)) {
-                $model->public_id = (string) Str::ulid();
-            }
-        });
-    }
+  protected static function bootHasPublicId(): void
+  {
+    self::creating(function (self $model): void {
+      if (empty($model->public_id)) {
+        $model->public_id = (string) Str::ulid();
+      }
+    });
+  }
 
-    public function uniqueIds(): array
-    {
-        return ['public_id'];
-    }
+  public function uniqueIds(): array
+  {
+    return ['public_id'];
+  }
 }
 ```
 

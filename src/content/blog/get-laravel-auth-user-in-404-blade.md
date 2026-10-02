@@ -18,9 +18,9 @@ So, to do that - it's simple.  We need our custom error 404 blade file - and a f
 @extends('_layouts.main')
 
 @section('content')
-    <section>
-       <h1>Page Not Found</h1>
-    </section>
+  <section>
+    <h1>Page Not Found</h1>
+  </section>
 @endsection
 ```
 

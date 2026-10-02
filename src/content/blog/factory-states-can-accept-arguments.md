@@ -24,11 +24,11 @@ We might make a state like this:
 ```php
 public function fromEventOneHourLater(ScheduledEvent $source): self
 {
-    return $this->state([
-        'start_at' => $source->start_at->addHour(),
-        'timezone' => $source->timezone,
-        'organizer_email' => $source->organizer_email,
-    ]);
+  return $this->state([
+    'start_at' => $source->start_at->addHour(),
+    'timezone' => $source->timezone,
+    'organizer_email' => $source->organizer_email,
+  ]);
 }
 ```
 

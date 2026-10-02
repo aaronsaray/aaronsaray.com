@@ -24,16 +24,16 @@ Most of the solutions I've seen end up requiring complex systems of sessions and
 ```php
 public function store(StoreRequest $request, SpotService $spotService)
 {
-    $county = App\Models\County::wherePostCode($request->validated('post_code'))->sole();
+  $county = App\Models\County::wherePostCode($request->validated('post_code'))->sole();
     
-    $rates = $spotService->getRates($county->city, $county->state, $county->postCode);
-    if ($rates === null) {
-        throw Illuminate\Validation\ValidationException::withMessages([
-            'post_code' => 'We are unable to service this area at this time.',
-        ]);
-    }
+  $rates = $spotService->getRates($county->city, $county->state, $county->postCode);
+  if ($rates === null) {
+    throw Illuminate\Validation\ValidationException::withMessages([
+      'post_code' => 'We are unable to service this area at this time.',
+    ]);
+  }
     
-    // do the rest of the process
+  // do the rest of the process
 }
 ```
 

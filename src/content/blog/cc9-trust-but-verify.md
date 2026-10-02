@@ -43,9 +43,9 @@ Fortunately (or unfortunately), the code will still execute after this error.  B
 $results = $thirdPartyService->fetchAll();
 
 if (is_array($results)) {
-    foreach ($results as $result) {
-        echo $result['name'] . '<br>';
-    }
+  foreach ($results as $result) {
+    echo $result['name'] . '<br>';
+  }
 }
 ```
 
@@ -69,10 +69,10 @@ $jsonString = file_get_contents('http://thirdparty.org/feed.json');
 $jsonObject = json_decode($jsonString);
 
 if (isset($jsonObject->name)) {
-    echo 'The name of the website we just consumed from:' . $jsonObject->name;
+  echo 'The name of the website we just consumed from:' . $jsonObject->name;
 }
 else {
-    // log that the json decoding has failed
+  // log that the json decoding has failed
 }
 ```
 

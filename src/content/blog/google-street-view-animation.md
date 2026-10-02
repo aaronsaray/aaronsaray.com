@@ -32,33 +32,33 @@ Next, the CSS.  The CSS really has two main parts.  The first is setting the vie
 
 ```css
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
 }
 #view {
-    width: 100%;
-    height: 100%;
-    opacity:0;
+  width: 100%;
+  height: 100%;
+  opacity:0;
 }
 #view.fade-in {
-    -webkit-animation: fadein 4s;
-    -moz-animation: fadein 4s;
-    animation: fadein 4s;
-    opacity: 1;
+  -webkit-animation: fadein 4s;
+  -moz-animation: fadein 4s;
+  animation: fadein 4s;
+  opacity: 1;
 }
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 ```
 
@@ -75,45 +75,45 @@ var panorama, position, currentHeading, viewElement = document.getElementById('v
             
 /** kicked off from google maps **/
 function initialize() {
-    position = {lat: 43.0258778, lng: -87.8989059};
-    currentHeading = 160;
+  position = {lat: 43.0258778, lng: -87.8989059};
+  currentHeading = 160;
 
-    panorama = new google.maps.StreetViewPanorama(
-            viewElement, {
-                position: position,
-                pov: {
-                    heading: currentHeading,
-                    pitch: -10
-                },
-                linksControl: false,
-                panControl: false,
-                enableCloseButton: false,
-                zoomControl: false,
-                fullscreenControl: false
-            });
-    /** wait a bit - then fade in and start rotate **/
-    setTimeout(function() {
-        viewElement.className = 'fade-in';
-        rotate();
-    }, 2000);
+  panorama = new google.maps.StreetViewPanorama(
+      viewElement, {
+        position: position,
+        pov: {
+          heading: currentHeading,
+          pitch: -10
+        },
+        linksControl: false,
+        panControl: false,
+        enableCloseButton: false,
+        zoomControl: false,
+        fullscreenControl: false
+      });
+  /** wait a bit - then fade in and start rotate **/
+  setTimeout(function() {
+    viewElement.className = 'fade-in';
+    rotate();
+  }, 2000);
 }
 
 /** Turn the head from hoan to down town **/ 
 function rotate()
 {
-    var endHeading = -15;
+  var endHeading = -15;
     
-    var anim = setInterval(function() {
-        currentHeading -= 0.2;
-        if (currentHeading < endHeading) {
-            clearInterval(anim);
-            return;
-        }
+  var anim = setInterval(function() {
+    currentHeading -= 0.2;
+    if (currentHeading < endHeading) {
+      clearInterval(anim);
+      return;
+    }
 
-        panorama.setPov({
-            heading: currentHeading,
-            pitch: -10
-        });
-    }, 20);
+    panorama.setPov({
+      heading: currentHeading,
+      pitch: -10
+    });
+  }, 20);
 }
 ```

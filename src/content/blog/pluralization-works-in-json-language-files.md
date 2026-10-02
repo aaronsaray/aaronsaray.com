@@ -39,7 +39,7 @@ Here is `lang/en.json`:
 
 ```json
 {
-    "There is :count user online|There are :count users online": "There is :count user online|There are :count users online"
+  "There is :count user online|There are :count users online": "There is :count user online|There are :count users online"
 }
 ```
 
@@ -47,7 +47,7 @@ And `lang/es.json`:
 
 ```json
 {
-    "There is :count user online|There are :count users online": "Hay :count usuario en línea|Hay :count usuarios en línea"
+  "There is :count user online|There are :count users online": "Hay :count usuario en línea|Hay :count usuarios en línea"
 }
 ```
 

@@ -25,10 +25,10 @@ One fix for this rare condition is to override `failedValidation()` on the `Form
 ```php
 protected function failedValidation(Validator $validator): void
 {
-    abort(422, sprintf(
-        'A validation error occurred: %s',
-        $validator->errors()->first()
-    ));
+  abort(422, sprintf(
+    'A validation error occurred: %s',
+    $validator->errors()->first()
+  ));
 }
 ```
 

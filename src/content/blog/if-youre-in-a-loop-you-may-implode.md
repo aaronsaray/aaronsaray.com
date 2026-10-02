@@ -19,16 +19,16 @@ You've probably seen this in action - especially when looping through lists of d
 
 ```blade
 @foreach($books as $book)
-    <h1>{{ $book->title }}</h1>
-    <div>
-        Author(s):
-        @foreach($book->authors as $author)
-            {{ $author->name }}
-            @unless($loop->last)
-                ,
-            @endunless
-        @endforeach
-    </div>
+  <h1>{{ $book->title }}</h1>
+  <div>
+    Author(s):
+    @foreach($book->authors as $author)
+      {{ $author->name }}
+      @unless($loop->last)
+        ,
+      @endunless
+    @endforeach
+  </div>
 @endforeach
 ```
 
@@ -38,7 +38,7 @@ Sometimes we don't always have to use a loop. Let's combine a few methods of the
 
 ```blade
 <div>
-    Author(s): {{ $book->authors->pluck('name')->implode(', ') }}
+  Author(s): {{ $book->authors->pluck('name')->implode(', ') }}
 </div>
 ```
 

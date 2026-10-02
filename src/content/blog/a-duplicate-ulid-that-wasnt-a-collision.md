@@ -16,14 +16,14 @@ Imagine I have this trait that gives any model a ULID-based `public_id` on creat
 ```php
 trait HasPublicId
 {
-    protected static function bootHasPublicId(): void
-    {
-        self::creating(function (self $model): void {
-            if (empty($model->public_id)) {
-                $model->public_id = (string) Str::ulid();
-            }
-        });
-    }
+  protected static function bootHasPublicId(): void
+  {
+    self::creating(function (self $model): void {
+      if (empty($model->public_id)) {
+        $model->public_id = (string) Str::ulid();
+      }
+    });
+  }
 }
 ```
 
@@ -43,10 +43,10 @@ I tracked it down to a "duplicate this record" action in the code somewhere:
 ```php
 public function duplicate(Order $order): RedirectResponse
 {
-    $copy = $order->replicate();
-    $copy->save();
+  $copy = $order->replicate();
+  $copy->save();
 
-    return redirect()->route('orders.edit', $copy);
+  return redirect()->route('orders.edit', $copy);
 }
 ```
 
@@ -57,7 +57,7 @@ The fix is a `replicating` hook:
 
 ```php
 self::replicating(function (self $model): void {
-    $model->public_id = (string) Str::ulid();
+  $model->public_id = (string) Str::ulid();
 });
 ```
 

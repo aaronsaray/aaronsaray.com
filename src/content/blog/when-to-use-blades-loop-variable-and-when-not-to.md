@@ -29,9 +29,9 @@ It doesn't put a border on the top of the first row as a design choice.
 
 ```blade
 @foreach($invoices as $invoice)
-    <div @class(['py-4', 'border-t' => ! $loop->first])>
-        {{ $invoice->number }}
-    </div>
+  <div @class(['py-4', 'border-t' => ! $loop->first])>
+    {{ $invoice->number }}
+  </div>
 @endforeach
 ```
 
@@ -41,9 +41,9 @@ If you're using Tailwind, you already have utility classes for this - and the in
 
 ```blade
 @foreach($invoices as $invoice)
-    <div class="py-4 not-first:border-t">
-        {{ $invoice->number }}
-    </div>
+  <div class="py-4 not-first:border-t">
+    {{ $invoice->number }}
+  </div>
 @endforeach
 ```
 
@@ -57,11 +57,11 @@ For example, on our tips archive page, a book promo shows up after the first mon
 
 ```blade
 @foreach($tipsByYearAndMonth as $yearMonth => $tips)
-    <!-- the month's tips -->
+  <!-- the month's tips -->
 
-    @if($loop->first)
-        <!-- book promo -->
-    @endif
+  @if($loop->first)
+    <!-- book promo -->
+  @endif
 @endforeach
 ```
 

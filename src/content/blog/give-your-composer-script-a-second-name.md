@@ -23,14 +23,14 @@ So, let's use Composer's `scripts-aliases` key.
 
 ```json
 "scripts": {
-    "phpstan": [
-        "@php vendor/bin/phpstan analyse"
-    ]
+  "phpstan": [
+    "@php vendor/bin/phpstan analyse"
+  ]
 },
 "scripts-aliases": {
-    "phpstan": [
-        "larastan"
-    ]
+  "phpstan": [
+    "larastan"
+  ]
 }
 ```
 

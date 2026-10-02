@@ -18,7 +18,7 @@ Now, we're going to change the way we assign messages in the controller.  Make a
 
 ```php filename="in some controller..."
 $this->_helper->flashMessenger->addMessage(
-    array('success'=>'The update was successful')
+  array('success'=>'The update was successful')
 );
 ```
 

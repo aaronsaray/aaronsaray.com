@@ -23,17 +23,17 @@ Here's an example for the official MySQL image:
 
 ```yaml
 database:
-    image: mysql:9.0.1
-    environment:
-        MYSQL_ROOT_PASSWORD: supersecretpassword
-        MYSQL_DATABASE: laravel-app
-        MYSQL_USER: appuser
-        MYSQL_PASSWORD: secretpassword
-    healthcheck:
-        test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
-        start_period: 3s
-        timeout: 2s
-        retries: 50
+  image: mysql:9.0.1
+  environment:
+    MYSQL_ROOT_PASSWORD: supersecretpassword
+    MYSQL_DATABASE: laravel-app
+    MYSQL_USER: appuser
+    MYSQL_PASSWORD: secretpassword
+  healthcheck:
+    test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+    start_period: 3s
+    timeout: 2s
+    retries: 50
 ```
 
 The healthcheck uses `mysqladmin ping` to verify MySQL is responding.

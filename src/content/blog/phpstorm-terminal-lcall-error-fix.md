@@ -29,7 +29,7 @@ The solution that works for me (and notice, I said works for me, because I'm not
 ```bash
 # Fix PhpStorm + macOS BCP47 locale issue before pyenv runs
 if [[ "$LC_ALL" == *"-u-"* ]]; then
-    unset LC_ALL
+  unset LC_ALL
 fi
 ```
 

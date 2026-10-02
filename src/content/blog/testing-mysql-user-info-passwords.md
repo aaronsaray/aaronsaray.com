@@ -34,12 +34,12 @@ Then, I decided to move on to my sha1 salted application.  First, I just thought
 
 ```sql
 select * from user where password in (
-    sha1(concat('password', passwordSalt)), 
-    sha1(concat('123456', passwordSalt)), 
-    sha1(concat('12345678', passwordSalt)), 
-    sha1(concat('qwerty', passwordSalt)), 
-    sha1(concat('abc123', passwordSalt)), 
-    sha1(concat('letmein', passwordSalt))
+  sha1(concat('password', passwordSalt)), 
+  sha1(concat('123456', passwordSalt)), 
+  sha1(concat('12345678', passwordSalt)), 
+  sha1(concat('qwerty', passwordSalt)), 
+  sha1(concat('abc123', passwordSalt)), 
+  sha1(concat('letmein', passwordSalt))
 );
 ```
 
