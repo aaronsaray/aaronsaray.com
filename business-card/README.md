@@ -4,7 +4,7 @@
 make card
 ```
 
-Writes `front.pdf` and `back.pdf` from `index.html`. Open `index.html` in a browser to iterate: 
+Writes `front.pdf` and `back.pdf` from `index.html`. Open `index.html` in a browser to iterate:
 both sides stack, with a dashed trim line (5 mm corners) and a dashed safe-area line that never print.
 
 ## This Card

@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 aaronsaray.com: a static Astro site styled with Tailwind CSS v4, npm,
-Node pinned via Volta. `make` lists the commands. `README.md` is
+Node pinned in `.node-version` (Vite+'s `vp` installs it). `make` lists the commands. `README.md` is
 Aaron's authoring how-to: posts, the CV, books, icons. Look Astro
 behavior up through the `astro-docs` MCP server before stating it or
 relying on it.

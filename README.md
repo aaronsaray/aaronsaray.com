@@ -22,7 +22,7 @@
 * [Astro](https://astro.build): builds the static site.
 * [TypeScript](https://www.typescriptlang.org): type-checks the `.ts` files and every `.astro` script with `make check`.
 * [Tailwind CSS](https://tailwindcss.com): styling. The config is `src/styles/global.css`.
-* [Volta](https://volta.sh): pins Node and npm, in `package.json`.
+* [Vite+](https://viteplus.dev): `vp` installs the Node pinned in `.node-version`, and the npm that ships with it.
 * [Make](https://www.gnu.org/software/make/): every repeated command is a target.
 * [Prettier](https://prettier.io): formatting.
 * [ESLint](https://eslint.org): lints the JS, TS, and Astro files.

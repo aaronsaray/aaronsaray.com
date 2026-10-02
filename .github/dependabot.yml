@@ -13,8 +13,8 @@ updates:
       npm:
         patterns:
           - "*"
-    # The @types/node major matches the Node major in package.json's
-    # volta.node. The two move together, by hand.
+    # The @types/node major matches the Node major in .node-version.
+    # The two move together, by hand.
     ignore:
       - dependency-name: "@types/node"
         update-types:
