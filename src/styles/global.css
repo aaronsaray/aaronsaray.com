@@ -444,6 +444,12 @@ h4 {
     }
   }
 
+  hr {
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+    border-color: var(--color-hairline);
+  }
+
   figure {
     @apply border border-hairline bg-surface/40 p-6 sm:p-8;
     margin-top: 2.5rem;
