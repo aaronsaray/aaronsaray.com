@@ -1,0 +1,59 @@
+#bsod {
+    height: 0;
+}
+
+nav img {
+    height: 30px;
+}
+
+header {
+    background: rgb(104,33,122);
+    background: linear-gradient(0deg, rgba(104,33,122,1) 0%, rgba(78,33,122,1) 100%);
+    color: #ffffff;
+    padding: 5rem 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    word-spacing: 1rem;
+}
+
+header h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+aside, article {
+    background: #151515;
+    color: #eeeeee
+}
+
+main h3 {
+    color: #002266;
+}
+
+/* Bootstrap 4's link colors. The navbar's own .nav-link colors outrank these. */
+button.nav-link {
+    background: none;
+    border: 0;
+    color: #007bff;
+}
+
+button.nav-link:hover {
+    color: #0056b3;
+}
+
+/* Bootstrap 4's .modal-dialog width and margin, and .modal-backdrop. No padding, so main.js can tell a backdrop click from a click inside. */
+#about-modal {
+    width: calc(100% - 1rem);
+    max-width: 500px;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+#about-modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}

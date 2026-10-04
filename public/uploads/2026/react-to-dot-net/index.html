@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <title>React to .NET Converter</title>
+    <meta name="description" content="Convert your ReactJS component to a .NET Component free, online.">
+    <meta property="og:title" content="React to .NET Converter">
+    <meta property="og:description" content="Convert your ReactJS component to a .NET Component free, online.">
+    <meta property="og:url" content="https://aaronsaray.com/uploads/2026/react-to-dot-net/">
+    <meta property="og:site_name" content="React to .NET Convertor">
+    <meta property="og:image" content="https://aaronsaray.com/uploads/2026/react-to-dot-net/logo.png">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+</head>
+
+<body>
+    <nav class="container navbar navbar-light bg-white navbar-expand-md">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" id="navbar-toggler"
+            aria-controls="navbarcontent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarcontent">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="./">Home</a>
+                <a class="nav-link" href="#start">Get Started</a>
+                <a class="nav-link" href="#learn-more">Learn More</a>
+            </div>
+        </div>
+        <div class="navbar-nav">
+            <button class="nav-link" type="button" commandfor="about-modal" command="show-modal">About</button>
+        </div>
+    </nav>
+    <header class="text-center">
+        <div class="container">
+            <h1 class="mb-5">React to .NET</h1>
+            <h2 class="mb-5">
+                Free. Online Converter. No Install Required. <br>Transform your React JS component to a .NET Component
+            </h2>
+            <a href="#start" class="btn-lg btn btn-light mr-3">Get Started</a>
+            <a href="#learn-more" class="btn-lg btn btn-outline-light ml-3">Learn More</a>
+        </div>
+    </header>
+    <aside>
+        <div class="container text-center">
+            <div class="p-4">
+                Support for Windows, MacOS, Linux. React 0.16+ and .NET Framework & Core support.
+            </div>
+        </div>
+    </aside>
+    <main class="container" id="start">
+        <form id="form">
+            <section class="row mt-5">
+                <div class="col-md-3">
+                    <h3 class="text-left text-md-right">Step 1</h3>
+                </div>
+                <div class="col-md-6">
+                    <textarea rows="10" class="form-control" required>ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);</textarea>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <p class="h5">
+                        Paste your React Javascript component here.
+                    </p>
+                    <p class="font-italic">
+                        Supports <code>JS</code> and <code>JSX</code>.
+                    </p>
+                    <p>
+                        In-browser real-time linting <span class="badge badge-success">coming soon</span>
+                    </p>
+                </div>
+            </section>
+            <section class="row mt-5">
+                <div class="col-md-3">
+                    <h3 class="text-left text-md-right">Step 2</h3>
+                </div>
+                <div class="col-md-6 pt-1">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" checked name="dest" id="dest1">
+                        <label class="form-check-label" for="dest1">.NET Core Blazor Component</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="dest" id="dest2">
+                        <label class="form-check-label" for="dest2">.NET Framework (C#)</label>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <p class="h5">
+                        Choose your conversion target.
+                    </p>
+                    <p>
+                        .NET Core conversion is in <span class="badge badge-danger">beta</span> Please review this code
+                        manually before implementing it in production.
+                    </p>
+                </div>
+            </section>
+
+            <section class="row mt-5">
+                <div class="col-md-3">
+                    <h3 class="text-left text-md-right">Step 3</h3>
+                </div>
+                <div class="col-md-6 pt-1">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" checked name="dl" id="dl1">
+                        <label class="form-check-label" for="dl1">Zip Download</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="dl" id="dl2">
+                        <label class="form-check-label" for="dl2">Display in Browser</label>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <p class="h5">
+                        Finally, select where you'd like your output.
+                    </p>
+                    <p>
+                        Zip files will automatically prompt for a download - or download automatically, based on your
+                        browser settings.
+                    </p>
+                </div>
+            </section>
+
+            <section class="row my-5">
+                <div class="offset-md-3 col-md-9">
+                    <button class="btn btn-large btn-success">
+                        Convert Code
+                    </button>
+                </div>
+            </section>
+        </form>
+    </main>
+
+    <article id="learn-more">
+        <section class="container py-5">
+            <h3>How Does This Work?</h3>
+            <p>
+                A ground-breaking technology in browser programming has been Web Assembly. Combine block chain with
+                RESTful
+                polymorphism, we're able to dynamically convert code from runtime to runtime. Analysis of Big Data has
+                made it possible to use AI and Machine Learning for many more things than you might have thought
+                possible.
+            </p>
+            <p>
+                Specifically, this tool, generated from reviewing actionable analytics, allows for an innovation
+                platform,
+                like this website, to cause disruptions in the programming ecosphere. Legacy applications no longer need
+                to be made with non-native toolsets.
+            </p>
+            <p>
+                Leveraging the C# .NET ecosystem and the React JS functionality, we decided to dogfood our own
+                conversion tools
+                by making this online internet-based tool open source. Through agile methodology, you can achieve
+                digital
+                transformation, without silos, using this website to convert between core competencies. Growth-hacking
+                consultants are a thing of the past.
+            </p>
+            <p>
+                If you've read this far, you clearly know now that this is not a real tool. I certainly suggest that you
+                put
+                any content that you'd like into the text area and hit submit to experience what all of the non-readers
+                have experienced
+                for themselves.
+            </p>
+        </section>
+    </article>
+
+    <footer class="container py-3">
+        <section class="row">
+            <div class="col-md-9">
+                <ul class="nav small">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#start">Get started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#learn-more">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-left text-md-right col-md-3">
+                <button class="nav-link small" type="button" commandfor="about-modal" command="show-modal">About</button>
+            </div>
+        </section>
+    </footer>
+    <dialog id="about-modal" closedby="any" aria-label="About">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Hello there. If you haven't put <strong>something</strong> in the text area and submitted, then
+                    you're missing out. That's the whole point.</p>
+                <p>Happy? Unhappy? Either way, you can Tweet @ me at <a href="https://twitter.com/aaronsaray"
+                        target="_blank">@aaronsaray</a> and I'll read it in a few days.</p>
+            </div>
+        </div>
+    </dialog>
+    <img src="bsod.png" id="bsod">
+    <script src="main.js"></script>
+</body>
+
+</html>
