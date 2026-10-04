@@ -72,7 +72,7 @@ So, we need to make a proxy with Netlify's functions.  (If you need, you can che
 
 I'm going to name my function `chickenfacts-facts` because I want the name to indicate the service I'm proxying and the end point I'm retrieving. I'll place it in a folder called `netlify/functions`. I'll name a folder `chickenfacts-facts` and the file will be called `index.js`. (Note: it is a synchronous function, otherwise we'd append `-background` to the name of the folder.)
 
-```javascript filename="netlify/functions/chicken-facts/index.js"
+```javascript filename="netlify/functions/chickenfacts-facts/index.js"
 exports.handler = async () => {
   return {
     statusCode: 200,
@@ -115,7 +115,7 @@ Now, Netlify will do the install during deploy.
 
 Let's move on to modifying our function.
 
-```javascript filename="netlify/functions/chicken-facts/index.js"
+```javascript filename="netlify/functions/chickenfacts-facts/index.js"
 const fetch = require('node-fetch')
 
 exports.handler = async () => {
