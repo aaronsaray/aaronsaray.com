@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>Your Next CTO</title>
+    <link rel="preload" href="short-stack.woff2" as="font" type="font/woff2" crossorigin>
+    <meta name="description" content="Maybe it's this guy">
+    <style>
+        @font-face {
+            font-family: 'Short Stack';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(short-stack.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'xkcd-local';
+            src: url(xkcd.woff) format('woff');
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        body {
+            max-width: 800px;
+            margin: auto;
+            padding: 1em;
+            font-family: 'Short Stack', cursive;
+            font-size: 2em;
+        }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 1.25em;
+                padding: 0.75em;
+            }
+        }
+
+        strong {
+            text-shadow: 0 0 black;
+        }
+
+        .doodle img.smile {
+            height: 2rem;
+            width: 2rem;
+            border: none;
+            vertical-align: middle;
+        }
+
+        .doodle input:focus,
+        .doodle textarea:focus {
+            outline: none;
+            background-color: #ffebd7;
+        }
+
+        .mt-0 {
+            margin-top: 0;
+        }
+
+        .mb-0 {
+            margin-bottom: 0
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .doodle button:hover {
+            background-color: #ffebd7;
+        }
+    </style>
+    <link rel="stylesheet" href="doodle.css" />
+    <script src="chart.xkcd.min.js" defer></script>
+</head>
+
+<body class="doodle">
+    <h1>Your Next CTO</h1>
+    <p>
+        Hello, my name is <a href="https://aaronsaray.com" target="_blank">Aaron Saray</a> and I am your next CTO.
+    </p>
+    <p>
+        Let me tell you why.
+    </p>
+    <hr>
+    <h2>Management Experience</h2>
+    <p>
+        I've managed multi-discipline teams at multiple levels in companies with 30 to 500
+        employees.
+    </p>
+    <ul>
+        <li><strong>Senior Director</strong> responsible for leading the team of Directors and managing 4 project teams.
+        </li>
+        <li><strong>Development Manager</strong> who built a team of designers, developers and QA engineers.</li>
+        <li><strong>CTO</strong> at multiple small-scale startups.</li>
+    </ul>
+    <h2>Technical Experience</h2>
+    <p>
+        Programming and software architecture best practices have been a passion of mine since... well... since I
+        started programming when I was 8.
+    </p>
+    <ul>
+        <li><strong>PHP &amp; Laravel</strong> projects including full-stack and API-first</li>
+        <li><strong>Javascript &amp; Vue</strong> coding focusing on efficiency and download speed</li>
+        <li><strong>Open Source Software &amp; Project Management</strong> including planning, timelines and ticketing
+            systems.</li>
+    </ul>
+    <h2>Communication Experience</h2>
+    <p>
+        An effective CTO has a number of responsibilities, chief among these is communicating to various stakeholders
+        with different experience and familiarity about complex technical challenges.
+    </p>
+    <ul>
+        <li><strong>Author for Wiley Publishing</strong> as well as self-published multiple paid and free e-books.</li>
+        <li><strong>Prolific Speaker</strong> with over 30 engagements ranging from intimate groups to conference
+            keynotes.</li>
+        <li><strong>Training and Documentation</strong> leader in most teams.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Last But Not Least...</h2>
+    <p>
+        Your next CTO needs that special... "something". You know what I mean, but how do you explain it?
+    </p>
+    <p>
+        If you're the one responsible for getting a new CTO, you probably speak Excel and graphs, so lets jump into your
+        world:
+    </p>
+    <svg id="special-chart" style="background: transparent"></svg>
+    <p>
+        As you can see, the numbers don't lie...
+    </p>
+
+    <hr>
+
+    <h2>Ready to Chat?</h2>
+
+    <p>
+        Great! If you're serious, make sure to include a joke in your message. While I'm
+        serious about my responsibilities, I can only work with people who have some sense of humor. Life is too short.
+        <img src="smile.svg" alt=":)" class="smile">
+    </p>
+
+    <form name="contact" id="contact">
+        <fieldset>
+            <legend>Contact Aaron</legend>
+
+            <p class="mt-0">
+                <label for="name">Your Name</label><br>
+                <input type="text" id="name" name="name" required>
+            </p>
+
+            <p>
+                <label for="email">Your Email</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="message">Your Message</label><br>
+                <textarea name="message" id="message" required></textarea>
+            </p>
+
+            <p class="mb-0">
+                <button type="submit">Send</button>
+            </p>
+        </fieldset>
+    </form>
+
+    <!-- defer keeps this after chart.xkcd.min.js, which is also deferred. -->
+    <script src="main.js" defer></script>
+</body>
+
+</html>
