@@ -190,17 +190,19 @@ make card
 
 ## Deploy
 
-CI deploys `main` to Cloudflare Workers with `make deploy`. The Worker is created by the first deploy from `wrangler.jsonc`,
-never in the dashboard. One-time setup, done 2026-09-26:
+GitHub Actions runs `make ci` on every push: the type check, the linters, the build, and the browser tests. On `main`, a
+second job deploys that `dist/` to Cloudflare Workers with `make deploy`. The Worker is created by the first deploy from
+`wrangler.jsonc`, never in the dashboard. One-time setup:
 
 * Cloudflare > Workers & Pages > Account details: copy the Account ID.
 * My Profile > API Tokens > Create Token > template **Edit Cloudflare Workers**. Account Resources: the `me@aaronsaray.com` account. Zone Resources: Specific zone > aaronsaray.com.
 * GitHub repo > Settings > Environments > New environment > `production`. Environment secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
 * DNS > Records > Add record: Type `A`, Name `www`, IPv4 `192.0.2.1` (reserved placeholder), proxied, comment
   `proxied for redirect tooling`.
-* Workers & Pages > aaronsaray-com > Domains > Add > Custom Domain: `aaronsaray.com`, subdomain field empty. Wait for
-  status Active. Cloudflare adds the apex DNS record itself.
-* aaronsaray.com zone > Rules > Overview > Create rule > Redirect Rule. Custom filter expression > Edit expression:
+* The first deploy attaches the custom domain from `wrangler.jsonc`, and Cloudflare adds the apex DNS record itself.
+  Workers & Pages > aaronsaray-com > Domains: wait for status Active.
+* aaronsaray.com zone > Rules > Overview > Create rule > Redirect Rule. Rule name `HTTPS apex`. Custom filter expression >
+  Edit expression:
 
   ```text
   (not ssl) or (http.host eq "www.aaronsaray.com")
@@ -208,7 +210,7 @@ never in the dashboard. One-time setup, done 2026-09-26:
 
   URL redirect: Type Dynamic, Expression `concat("https://aaronsaray.com", http.request.uri.path)`, Status code 301,
   Preserve query string on. Deploy.
-* SSL/TLS > Edge Certificates: HSTS on, Max Age 1 month.
+* SSL/TLS > Edge Certificates: HSTS on, Max Age 6 months. Minimum TLS Version 1.2.
 * Security > Settings > Client-side abuse: Email Address Obfuscation off.
 
 <p><sub>The Konami code does something on the site.</sub></p>
