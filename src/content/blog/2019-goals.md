@@ -6,7 +6,7 @@ tags:
 evergreen: true
 ---
 :::callout
-2019 was a great year, learned a lot. Unfortunately, The Dev Manager and StartUp Tribe are no longer active.
+2019 was a great year, learned a lot. Unfortunately, The Dev Manager, StartUp Tribe and ChickenFacts.io are no longer active.
 :::
 
 It's about halfway through 2019 and I think it's time to reflect a little bit on my professional goals.
