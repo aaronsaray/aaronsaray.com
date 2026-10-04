@@ -1,0 +1,302 @@
+:root {
+    --shadow-dark: rgba(0, 0, 0, 0.8);
+    --shadow-medium: rgba(0, 0, 0, 0.7);
+    --shadow-light: rgba(0, 0, 0, 0.6);
+    --shadow-subtle: rgba(0, 0, 0, 0.5);
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    z-index: 2;
+}
+
+main button {
+    width: 40vmin;
+    height: 40vmin;
+    min-width: 12.5rem;
+    min-height: 12.5rem;
+    max-width: 25rem;
+    max-height: 25rem;
+    border-radius: 50%;
+    border: 0.25rem solid #440000;
+    background: radial-gradient(circle at 30% 30%, #7f2222, #660000);
+    box-shadow:
+        0 15px 40px var(--shadow-dark),
+        inset 0 -15px 30px var(--shadow-light),
+        inset 0 10px 25px rgba(150, 50, 50, 0.4);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, filter 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+        box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.9),
+            0 0 40px rgba(255, 50, 50, 0.3),
+            inset 0 -15px 30px var(--shadow-subtle),
+            inset 0 10px 25px rgba(150, 50, 50, 0.5);
+        filter: brightness(1.1);
+    }
+
+    &:active {
+        transform: scale(0.98);
+        border-color: #210000;
+        box-shadow:
+            0 8px 20px var(--shadow-medium),
+            inset 0 -8px 20px var(--shadow-medium),
+            inset 0 5px 15px var(--shadow-dark),
+            inset 0 0 0 1px var(--shadow-light);
+    }
+
+    &:focus {
+        outline: 0.1875rem solid rgba(255, 255, 255, 0.5);
+        outline-offset: 0.25rem;
+
+        &:not(:focus-visible) {
+            outline: none;
+        }
+    }
+
+    img {
+        width: 15vmin;
+        height: 15vmin;
+        min-width: 5rem;
+        min-height: 5rem;
+        max-width: 11.25rem;
+        max-height: 11.25rem;
+        pointer-events: none;
+    }
+}
+
+aside {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vmin;
+    height: 60vmin;
+    min-width: 15.625rem;
+    min-height: 15.625rem;
+    max-width: 31.25rem;
+    max-height: 31.25rem;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    filter: blur(20px);
+    --fire-scale-final: 1.8;
+    --fire-color-r: 255;
+    --fire-color-g: 150;
+    --fire-color-b: 0;
+    --fire-duration: 600ms;
+
+    &.firing {
+        animation: fireExplosion var(--fire-duration) ease-out;
+    }
+}
+
+@keyframes fireExplosion {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(calc(var(--fire-scale-final) * 0.278));
+        background: radial-gradient(circle, rgba(var(--fire-color-r), var(--fire-color-g), var(--fire-color-b), 0) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(calc(var(--fire-scale-final) * 0.556));
+        background: radial-gradient(circle, rgba(var(--fire-color-r), var(--fire-color-g), var(--fire-color-b), 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    40% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(calc(var(--fire-scale-final) * 0.722));
+        background: radial-gradient(circle, rgba(var(--fire-color-r), var(--fire-color-g), var(--fire-color-b), 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(var(--fire-scale-final));
+        background: radial-gradient(circle, rgba(var(--fire-color-r), var(--fire-color-g), var(--fire-color-b), 0) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+dialog {
+    border: none;
+    border-radius: 1.5rem;
+    background: radial-gradient(circle at 20% 20%, #1f0f0f, #0c0a0a);
+    color: #f2f2f2;
+    padding: 2rem 2.5rem;
+    text-align: center;
+    width: min(26rem, calc(100% - 3rem));
+    max-height: calc(100% - 3rem);
+    overflow: auto;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 60, 60, 0.25);
+    display: grid;
+    gap: 1.25rem;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    z-index: 4;
+    box-sizing: border-box;
+    will-change: opacity, transform;
+}
+
+dialog:not([open]) {
+    display: none;
+}
+
+dialog[open]:not(.closing) {
+    opacity: 1;
+    transform: none;
+}
+
+dialog.closing {
+    animation: modalFadeOut 500ms ease forwards;
+}
+
+dialog img {
+    width: 5rem;
+    height: 5rem;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+    margin: 0 auto;
+}
+
+dialog p {
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: #dcdcdc;
+}
+
+dialog button {
+    justify-self: center;
+    padding: 0.75rem 1.75rem;
+    border-radius: 999px;
+    border: 1px solid #ff3b3b;
+    background: linear-gradient(135deg, #8a1f1f, #5c0e0e);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+dialog button:focus {
+    outline: none;
+}
+
+dialog button:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 0 20px rgba(255, 60, 60, 0.35);
+}
+
+dialog button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, #701616, #420a0a);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+dialog.closing::backdrop {
+    animation: backdropFadeOut 500ms ease forwards;
+}
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+}
+
+.fury {
+    color: #ff3b3b;
+}
+
+@media (max-width: 600px) {
+    dialog {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    dialog img {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+
+    dialog p {
+        font-size: 1rem;
+    }
+}
+@keyframes backdropFadeOut {
+    from { background: rgba(0, 0, 0, 0.9); }
+    to { background: rgba(0, 0, 0, 0); }
+}
+
+@media (max-width: 768px) {
+    main button {
+        width: 50vmin;
+        height: 50vmin;
+    }
+
+    main button img {
+        width: 20vmin;
+        height: 20vmin;
+    }
+
+    aside {
+        width: 70vmin;
+        height: 70vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    main button {
+        width: 60vmin;
+        height: 60vmin;
+    }
+
+    main button img {
+        width: 25vmin;
+        height: 25vmin;
+    }
+
+    aside {
+        width: 80vmin;
+        height: 80vmin;
+    }
+}
