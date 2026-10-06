@@ -11,7 +11,7 @@ origin:
   canonical: true
 ---
 
-In [part 1](https://masteringlaravel.io/daily/2024-10-22-best-framework-for-super-small-tasks-part-1), I introduced the problem of periodically retrieving a JSON data end point and appending it to a file. This small, quick task can easily
+In [part 1](/2024/best-framework-for-super-small-tasks-part-1/), I introduced the problem of periodically retrieving a JSON data end point and appending it to a file. This small, quick task can easily
 be solved by the demonstrated Laravel code. It's simple, concise and readable. But is it the best solution?
 
 <!--more-->
