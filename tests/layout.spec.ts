@@ -131,7 +131,7 @@ test("copyright-line links are underlined at rest", async ({ page }) => {
   await page.goto("/");
 
   const links = page.locator("footer p:has(a[href='/colophon/']) a");
-  await expect(links).toHaveCount(2);
+  await expect(links).toHaveCount(3);
   for (const link of await links.all()) {
     await expect(link).toHaveCSS("text-decoration-line", "underline");
   }
