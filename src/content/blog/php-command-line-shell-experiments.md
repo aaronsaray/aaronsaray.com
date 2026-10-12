@@ -88,7 +88,7 @@ This sucks because it may take you a few commands to get to your specific locati
 
 **PHP Interactive**
 
-Finally, let's check out this [tabbed, interactive shell simulator](http://www.hping.org/phpinteractive/).  This tool is a shell emulator - its not necessarily ran from the shell.  You can open up multiple tabs and execute your commands.
+Finally, let's check out this [tabbed, interactive shell simulator](https://web.archive.org/web/20070122024542/http://www.hping.org/phpinteractive/).  This tool is a shell emulator - its not necessarily ran from the shell.  You can open up multiple tabs and execute your commands.
 
 All three tests succeeded - but there were some side affects.  Every time we executed a command, the actual script itself was written to a folder inside of this distribution called `scripts`.  So for each command I ran, depending on the names at the bottom of the window.  I didn't like this that much... but I could deal.
 
