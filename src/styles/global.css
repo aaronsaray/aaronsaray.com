@@ -126,6 +126,15 @@
   @apply -my-1 py-1 text-accent transition-colors duration-300 hover:text-[#7fa6c4];
 }
 
+@utility link-card {
+  @apply border border-hairline transition-colors duration-300 hover:border-accent;
+}
+
+/* The card carries `group`; @apply cannot add it. */
+@utility link-card-arrow {
+  @apply size-5 text-ink-faint transition duration-300 group-hover:translate-x-1 group-hover:text-accent motion-reduce:group-hover:translate-x-0;
+}
+
 @utility meta-line {
   @apply flex flex-wrap items-center gap-x-3 gap-y-1 text-sm;
 }

@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
 
 const title = "Contact";
 const description = "Send me a note.";
@@ -20,7 +21,7 @@ const emailLink = `<a href="${encode(`mailto:${user}@${host}`)}" aria-label="${e
     <h1 class="page-title">Send me a note.</h1>
 
     <div
-      class="mt-10 grid grid-cols-1 gap-y-10 sm:mt-12 md:grid-cols-[3fr_2fr] md:items-baseline md:gap-x-12"
+      class="mt-10 grid grid-cols-1 gap-y-10 sm:mt-12 md:grid-cols-[3fr_2fr] md:items-start md:gap-x-12"
     >
       <div class="prose">
         <p>
@@ -39,15 +40,26 @@ const emailLink = `<a href="${encode(`mailto:${user}@${host}`)}" aria-label="${e
       </div>
 
       <div>
+        <a
+          href="https://meet.morebetterfaster.io"
+          class="group link-card block p-5 sm:p-6"
+        >
+          <div class="flex items-center justify-between gap-4">
+            <p class="subsection-title">Book a call</p>
+            <Icon name="arrow-right" class="link-card-arrow" />
+          </div>
+          <p class="mt-1 text-sm text-ink-dim">via Google Calendar</p>
+        </a>
+        <hr class="mx-auto my-8 w-10 border-ink-faint" />
         <div class="prose">
-          <p class="text-xl font-medium" set:html={emailLink} />
+          <p
+            class="text-sm leading-relaxed text-ink-dim"
+            set:html={`Rather email? ${emailLink}`}
+          />
         </div>
-        <p class="mt-3 leading-relaxed text-ink-dim">
-          Rather talk on the phone? Email me first and we'll set up a call.
-        </p>
         <p class="mt-3 text-sm leading-relaxed text-ink-dim">
           AI drafted email gets marked as spam. I'll accept your human words,
-          though.
+          gladly!
         </p>
       </div>
     </div>
