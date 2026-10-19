@@ -30,6 +30,7 @@
 * [GitHub Actions](https://docs.github.com/actions): runs `make ci` on push; on `main`, a second job deploys the tested `dist/`.
 * [Dependabot](https://docs.github.com/code-security/dependabot): opens weekly pull requests for npm and GitHub Actions updates. The config is `.github/dependabot.yml`.
 * [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/): hosts `dist/`, with `public/_headers` and `public/_redirects` applied at the edge.
+* [Umami](https://umami.is): page view stats, self-hosted at `ver.morebetterfaster.io`. The tag is in `src/layouts/Base.astro`.
 
 ## Writing a Blog Post
 
