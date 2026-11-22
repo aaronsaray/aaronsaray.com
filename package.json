@@ -16,10 +16,10 @@
     "deploy": "wrangler deploy"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "7.3.6",
+    "@astrojs/markdown-remark": "7.3.9",
     "@astrojs/rss": "4.0.19",
     "@tailwindcss/vite": "4.3.5",
-    "astro": "7.4.7",
+    "astro": "7.4.12",
     "hast-util-from-html": "2.1.0",
     "hast-util-to-text": "4.0.3",
     "rehype-raw": "7.0.0",
@@ -37,20 +37,20 @@
     "@astrojs/check": "0.9.12",
     "@axe-core/playwright": "4.14.0",
     "@eslint/js": "10.0.1",
-    "@playwright/test": "1.65.0",
+    "@playwright/test": "1.65.1",
     "@types/hast": "3.0.5",
     "@types/mdast": "4.0.4",
     "@types/node": "24.19.2",
-    "eslint": "10.14.0",
+    "eslint": "10.15.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-astro": "3.2.1",
-    "markdownlint-cli2": "0.24.0",
-    "prettier": "3.9.10",
+    "markdownlint-cli2": "0.24.1",
+    "prettier": "3.10.1",
     "prettier-plugin-astro": "1.1.2",
     "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.72.1",
+    "typescript-eslint": "8.72.2",
     "vfile": "6.0.3",
-    "wrangler": "4.158.0"
+    "wrangler": "4.162.0"
   }
 }
